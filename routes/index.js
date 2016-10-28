@@ -525,6 +525,16 @@ module.exports = function(router) {
 		}
 	});
 
+	router.get('/search', function(req, res) {
+		if (req.session.user) {
+			res.render('search', {});
+			req.session.messages = null;
+		} else {
+			res.render('login', {});
+			req.session.messages = null;
+		}
+	});
+
 	router
 			.post(
 					'/login',
@@ -588,7 +598,7 @@ module.exports = function(router) {
 
 		netlighter.changepassword(function(error, done) {
 			if (done != null) {
-				res.redirect('/search');
+				res.redirect('/');
 			}
 		});
 	});
