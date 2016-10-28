@@ -121,10 +121,9 @@ body {
     border: 0;
 
 }
-
+/*modified #6B238E*/
 .btn-success:hover{
-
-    background-color: #6B238E;
+    background-color: #3d9dcb;
 }
 
 .btn-primary:disabled{
