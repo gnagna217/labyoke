@@ -1,13 +1,13 @@
-var matchFinderClass = require('./matchfinder');
+var labyokeFinderClass = require('./labyokefinder');
 var dates = require('../config/staticvariables');
-var MatchFinder = matchFinderClass.MatchFinder;
-var MatchPredictorSingleTeam = matchFinderClass.MatchPredictorSingleTeam;
-var NetlighterMakesBet = matchFinderClass.NetlighterMakesBet;
-var NetlighterMakesBets = matchFinderClass.NetlighterMakesBets;
-var MatchPhase = matchFinderClass.MatchPhase;
-var Netlighter = matchFinderClass.Netlighter;
-var MatchResults = matchFinderClass.MatchResults;
-var MatchAdvancing = matchFinderClass.MatchAdvancing;
+var LabYokeFinder = labyokeFinderClass.LabYokeFinder;
+var MatchPredictorSingleTeam = labyokeFinderClass.MatchPredictorSingleTeam;
+var NetlighterMakesBet = labyokeFinderClass.NetlighterMakesBet;
+var NetlighterMakesBets = labyokeFinderClass.NetlighterMakesBets;
+var MatchPhase = labyokeFinderClass.MatchPhase;
+var Netlighter = labyokeFinderClass.Netlighter;
+var MatchResults = labyokeFinderClass.MatchResults;
+var MatchAdvancing = labyokeFinderClass.MatchAdvancing;
 var moment = require('moment-timezone');
 
 var express = require('express');
@@ -49,8 +49,8 @@ module.exports = function(router) {
 				netlighterMakesBets.checkIfBetsMade(function(error,
 						singleBetsMade) {
 
-					var matchFinder = new MatchFinder(dateStripped);
-					matchFinder.getMatchOfTheDay(function(error, match) {
+					var labyokeFinder = new LabYokeFinder(dateStripped);
+					labyokeFinder.getMatchOfTheDay(function(error, match) {
 						if (match != null && match.length > 0) {
 							req.session.matches = match;
 							res.render('index', {
@@ -596,10 +596,10 @@ module.exports = function(router) {
 	router.get('/admin', isAdmin, function(req, res) {
 		var dateStripped = moment(new Date).tz("Europe/Berlin").format(
 				'YYYY-MM-DD'); // '2014-06-09'
-		var matchFinder = new MatchFinder(dateStripped);
-		matchFinder.getAllTeams(function(error, allteams) {
-			matchFinder.getAllWinners(function(error, winners) {
-				matchFinder.getAllMatches(function(error, allmatches) {
+		var labyokeFinder = new LabYokeFinder(dateStripped);
+		labyokeFinder.getAllTeams(function(error, allteams) {
+			labyokeFinder.getAllWinners(function(error, winners) {
+				labyokeFinder.getAllMatches(function(error, allmatches) {
 					res.render('admin', {
 						title : 'Administer Results, Teams & Points',
 						loggedIn : true,
@@ -648,17 +648,17 @@ module.exports = function(router) {
 															.tz("Europe/Berlin")
 															.format(
 																	'YYYY-MM-DD'); // '2014-06-09'
-													var matchFinder = new MatchFinder(
+													var labyokeFinder = new LabYokeFinder(
 															dateStripped);
-													matchFinder
+													labyokeFinder
 															.getAllTeams(function(
 																	error,
 																	allteams) {
-																matchFinder
+																labyokeFinder
 																		.getAllWinners(function(
 																				error,
 																				winners) {
-																			matchFinder
+																			labyokeFinder
 																					.getAllMatches(function(
 																							error,
 																							allmatches) {
@@ -700,16 +700,16 @@ module.exports = function(router) {
 										var dateStripped = moment(new Date).tz(
 												"Europe/Berlin").format(
 												'YYYY-MM-DD'); // '2014-06-09'
-										var matchFinder = new MatchFinder(
+										var labyokeFinder = new LabYokeFinder(
 												dateStripped);
-										matchFinder
+										labyokeFinder
 												.getAllTeams(function(error,
 														allteams) {
-													matchFinder
+													labyokeFinder
 															.getAllWinners(function(
 																	error,
 																	winners) {
-																matchFinder
+																labyokeFinder
 																		.getAllMatches(function(
 																				error,
 																				allmatches) {

@@ -8,7 +8,7 @@ var conString = process.env.DATABASE_URL || "pg://" + config.username + ":"
 var client = new pg.Client(conString);
 client.connect();
 
-MatchFinder = function(today) {
+LabYokeFinder = function(today) {
 	this.now = today
 };
 
@@ -67,7 +67,7 @@ MatchEvent.prototype.getMatchOfTheDay = function(callback) {
 	});
 };
 
-MatchFinder.prototype.getMatchOfTheDay = function(callback) {
+LabYokeFinder.prototype.getMatchOfTheDay = function(callback) {
 	var results;
 	var query = client
 			.query("SELECT * FROM vm2014_match where date_trunc('day',datum)='"
@@ -81,7 +81,7 @@ MatchFinder.prototype.getMatchOfTheDay = function(callback) {
 	});
 };
 
-MatchFinder.prototype.getTeams = function(callback) {
+LabYokeFinder.prototype.getTeams = function(callback) {
 	var results
 	var query = client.query("SELECT DISTINCT typ FROM vm2014_match");
 	query.on("row", function(row, result) {
@@ -93,7 +93,7 @@ MatchFinder.prototype.getTeams = function(callback) {
 	});
 };
 
-MatchFinder.prototype.getTeamsPerGroup = function(callback) {
+LabYokeFinder.prototype.getTeamsPerGroup = function(callback) {
 	var results;
 	var query = client.query("SELECT DISTINCT typ, grupp FROM vm2014_match");
 	query.on("row", function(row, result) {
@@ -105,7 +105,7 @@ MatchFinder.prototype.getTeamsPerGroup = function(callback) {
 	});
 };
 
-MatchFinder.prototype.getGroupStage = function(callback) {
+LabYokeFinder.prototype.getGroupStage = function(callback) {
 	var results
 	var query = client.query("SELECT * FROM vm2014_match");
 	query.on("row", function(row, result) {
@@ -251,7 +251,7 @@ NetlighterMakesBets.prototype.checkIfBetsMade = function(callback) {
 NetlighterMakesBets.prototype.getranking = function(callback) {
 	var results;
 	var query = client
-			.query("SELECT a.id, sum(a.points) as totalpoints, b.first_name, b.name FROM vm2014_predictsingleteam a, vm2014_users_ext b where a.id=b.id group by a.id, b.first_name, b.name order by totalpoints desc");
+			.query("SELECT a.id, sum(a.points) as totalpoints, b.first_name, b.name FROM vm2014_predictsingleteam a, vm2016_users_ext b where a.id=b.id group by a.id, b.first_name, b.name order by totalpoints desc");
 	query.on("row", function(row, result) {
 		result.addRow(row);
 	});
@@ -270,9 +270,9 @@ Netlighter = function(username, password) {
 
 };
 
-MatchFinder.prototype.getNetlighter = function(callback) {
+LabYokeFinder.prototype.getNetlighter = function(callback) {
 	var results;
-	var query = client.query("SELECT * FROM vm2014_users where id='" + id
+	var query = client.query("SELECT * FROM vm2016_users where id='" + id
 			+ "' and password='" + password + "'");
 	query.on("row", function(row, result) {
 		result.addRow(row);
@@ -283,9 +283,9 @@ MatchFinder.prototype.getNetlighter = function(callback) {
 	});
 };
 
-MatchFinder.prototype.test = function(callback) {
+LabYokeFinder.prototype.test = function(callback) {
 	var results;
-	var query = client.query("SELECT * FROM vm2014_users where id='"
+	var query = client.query("SELECT * FROM vm2016_users where id='"
 			+ this.username + "'"/* and password='"+password+"'" */);
 	query.on("row", function(row, result) {
 		result.addRow(row);
@@ -301,7 +301,7 @@ Netlighter.prototype.login = function(callback) {
 	var username = this.username;
 
 	var results;
-	var query = client.query("SELECT * FROM vm2014_users where id='" + username
+	var query = client.query("SELECT * FROM vm2016_users where id='" + username
 			+ "'"/* and password='"+password+"'" */);
 	query.on("row", function(row, result) {
 		result.addRow(row);
@@ -322,7 +322,7 @@ Netlighter.prototype.login = function(callback) {
 				}
 			} else {
 				var query = client
-						.query("SELECT * FROM vm2014_users where id='"
+						.query("SELECT * FROM vm2016_users where id='"
 								+ username + "' and password='" + password
 								+ "'");
 				query.on("row", function(row, result) {
@@ -341,7 +341,7 @@ Netlighter.prototype.login = function(callback) {
 Netlighter.prototype.changepassword = function(callback) {
 	var hash = crypt.hashSync(this.password);
 	var results;
-	var query = client.query("UPDATE vm2014_users SET password='" + hash
+	var query = client.query("UPDATE vm2016_users SET password='" + hash
 			+ "', active=1 where id='" + this.username + "'");
 	query.on("row", function(row, result) {
 		result.addRow(row);
@@ -352,7 +352,7 @@ Netlighter.prototype.changepassword = function(callback) {
 	});
 };
 
-MatchFinder.prototype.getAllMatches = function(callback) {
+LabYokeFinder.prototype.getAllMatches = function(callback) {
 	var results
 	var query = client.query("SELECT * FROM vm2014_match order by datum asc");
 	query.on("row", function(row, result) {
@@ -364,7 +364,7 @@ MatchFinder.prototype.getAllMatches = function(callback) {
 	});
 };
 
-MatchFinder.prototype.getAllWinners = function(callback) {
+LabYokeFinder.prototype.getAllWinners = function(callback) {
 	var results
 	var query = client
 			.query("SELECT * FROM vm2014_teamadvancing order by id asc");
@@ -377,7 +377,7 @@ MatchFinder.prototype.getAllWinners = function(callback) {
 	});
 };
 
-MatchFinder.prototype.getAllTeams = function(callback) {
+LabYokeFinder.prototype.getAllTeams = function(callback) {
 	var results
 	var query = client
 			.query("select distinct typ from vm2014_match where phase=1 order by typ");
@@ -524,7 +524,7 @@ var analyze = function(matchresults, participantsResults) {
 }
 
 exports.Netlighter = Netlighter;
-exports.MatchFinder = MatchFinder;
+exports.LabYokeFinder = LabYokeFinder;
 exports.MatchPredictorSingleTeam = MatchPredictorSingleTeam;
 exports.NetlighterMakesBet = NetlighterMakesBet;
 exports.NetlighterMakesBets = NetlighterMakesBets;
