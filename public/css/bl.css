@@ -114,8 +114,9 @@ body {
     width:278px;
 }
 
+/*modified #460077*/
 .btn-success{
-    background-color: #460077;
+    background-color: #8a6d3b;
     width:278px;
     border: 0;
 
