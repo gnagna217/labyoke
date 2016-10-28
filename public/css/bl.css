@@ -60,6 +60,12 @@ body {
 {
     margin-top:20px;
 }
+
+.search{
+    text-align: center;
+    float: left;
+    width: auto !important;
+}
 /*navbar*/
 .navbar-fixed-top{
 
