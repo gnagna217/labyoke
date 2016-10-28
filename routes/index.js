@@ -517,7 +517,7 @@ module.exports = function(router) {
 
 	router.get('/login', function(req, res) {
 		if (req.session.user) {
-			res.redirect('/');
+			res.redirect('/search');
 		} else {
 			res.render('login', {});
 			req.session.messages = null;
@@ -530,8 +530,7 @@ module.exports = function(router) {
 			res.render('search', {});
 			req.session.messages = null;
 		} else {
-			res.render('login', {});
-			req.session.messages = null;
+			res.redirect('/search');
 		}
 	});
 
