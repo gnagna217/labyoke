@@ -1,0 +1,393 @@
+
+/* general stuff*/
+input[type='number'] {
+    -moz-appearance:textfield;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+body {
+
+    padding-top:50px;
+}
+
+.footer2{
+    margin-top:60px;
+    padding:20px 0px;
+    color: #808080;
+    text-align: center;
+}
+
+
+.logo {
+    float: left !important;
+    width: 50px;
+}
+
+.footer {
+    position:absolute;
+    bottom: 0;
+    width: 100%;
+
+    background-color: #36185F;
+}
+
+.footer div {
+    padding: 20px 10px;
+    border-right: 5px solid #CC9933;
+    text-align: right;
+}
+
+.uppercase {text-transform:uppercase;}
+
+/*login*/
+
+.login form div{
+
+    margin-bottom: 5px;
+}
+
+.login form input{
+
+    max-width: 400px;
+
+}
+
+.login .buttons
+{
+    margin-top:20px;
+}
+/*navbar*/
+.navbar-fixed-top{
+
+    background-color: #460077;
+    border:0;
+}
+
+.activeNav
+{
+
+    font-weight:bold;
+
+}
+
+.navbar-inverse .navbar-brand,  .navbar-inverse .navbar-nav>li>a{
+
+    color:white;
+}
+
+.navbar-inverse .navbar-brand:hover{
+    cursor:pointer;
+}
+
+.navbar-inverse .navbar-nav>.active>a{
+
+
+    background-color: #460077;
+
+
+}
+
+.navbar-brand
+{
+    font-size:14px;
+    padding:15px 10px;
+
+}
+/*today's page*/
+.dayHdr{
+    background-color: #460077;
+    color:white;
+    height:40px;
+    text-align:center;
+    padding-top:10px;
+    padding-bottom:10px;
+
+    font-size:16px;
+}
+
+.btn-primary, .btn-primary:hover, .btn-primary:active{
+    background-color: #077762;
+    width:278px;
+}
+
+.btn-success{
+    background-color: #460077;
+    width:278px;
+    border: 0;
+
+}
+
+.btn-success:hover{
+
+    background-color: #6B238E;
+}
+
+.btn-primary:disabled{
+    background-color: #DCDDD9;
+    border-color: darkgrey;
+
+}
+.gameTime
+{
+    text-align:center;
+    height:46px;
+    padding-top:10px;
+    padding-bottom:10px;
+    border-bottom: solid 1px #DCDDD9;
+    font-weight:bold;
+    font-size:18px;
+}
+
+.gameRivals{
+    text-align: center ;
+
+
+
+}
+
+
+
+.gameRivals .countryDomain{
+
+    font-size: 64px;
+    font-weight: bolder;
+    color:#460077;
+    display: inline-block;
+    text-transform: uppercase;
+
+
+
+}
+
+.versus{
+
+    font-size: 16px;
+    display:inline-block;
+    padding-right:15px;
+    padding-left:15px;
+
+}
+
+
+.versuspatch{
+
+
+    display:inline-block;
+    padding-right:4px;
+    padding-left:4px;
+
+}
+
+.btnCon{
+    padding-top:30px;
+    padding-bottom:20px;
+    border-bottom: solid 5px #DCDDD9;
+    text-align:center;
+
+}
+
+
+
+
+.navbar-brand{
+    margin-left:0px;
+}
+
+.teamsFull{
+
+    margin-top:-15px;
+}
+
+ .aligner {
+
+    margin-right:110px;
+
+}
+
+.inputs {
+    margin-top: 10px;
+}
+
+.patchycontainer
+{
+    margin-top:20px;
+    padding:20px 0px;
+}
+.teamsFull input, .patchyinput{
+
+    width:46px;
+    display: inline-block;
+}
+
+.patchyrow{
+
+    text-align:center;
+}
+
+.patchyteam{
+
+    width:87px;
+    display: inline-block;
+    font-size:15px;
+    font-weight:bold;
+
+}
+.countryDomain img {
+    margin-bottom:12px;
+    margin-left:15px;
+    margin-right:15px;
+}
+
+
+/*ranking page*/
+
+.rank
+{
+    margin: 0 auto;
+    //width:80%
+}
+
+
+#rankTbl{
+
+    overflow-x: visible;
+}
+
+#rankTbl tr.boldify{
+    font-weight:bold;
+}
+#rankTbl td
+{
+    text-align: center;
+    font-size:16px;
+}
+
+
+
+.jump{
+    display: block;
+    padding:27px 0px;
+
+}
+
+
+.jump:hover{
+
+    cursor: pointer;
+}
+
+
+
+/*calendar sida*/
+
+.roundHdr h1
+{
+
+    font-size:32px;
+    text-align: center;
+    color:#460077;
+    margin-top:25px;
+
+}
+
+.roundHdr ul{
+
+    text-align: center;
+    list-style-type: none;
+    padding:0px;
+    margin-left: 10%;
+    margin-right: 10%;
+
+
+
+}
+
+.roundHdr ul li a{
+
+    display: inline-block;
+    padding: 3px 0;
+    font-size:18px;
+}
+
+.roundHdr ul li a:hover{
+
+    cursor: pointer;
+}
+
+.gone{
+
+    background-color: #DCDDD9;
+
+}
+
+/*help */
+
+.help h4, .help h2
+{
+    padding-top:15px;
+    color: #460077;
+    font-weight:bold;
+}
+
+.pointsLayout
+{
+    padding-left:30px;
+}
+.pointsLayout li
+{
+    padding:10px 0;
+}
+
+.score{
+  	height: 40px !important;
+	width: 50px;
+	text-align: center;
+}
+  
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+}
+.row {
+	margin-left: 0px !important;
+	margin-right: 0px !important;
+}
+.icon-thumbs-up, .icon-thumbs-up-1, .icon-check {
+	color: #460077;
+	font-size: 25px;
+}
+
+.you {
+	color: #460077;
+	background-color: rgba(70, 0, 119, 0.4);
+}
+
+.wrapped {
+	white-space: normal !important;
+}
+
+ @media (max-width: 440px) {
+#rankTbl td
+{
+    text-align: center;
+    font-size:13px;
+}
+  
+}
+
+.pastdate {
+	color:#460077;
+}
+
+.pastdate:hover{
+   	cursor:pointer;
+   	color:#428bca;
+}
+
+.yammer{
+	font-size: 16px;
+}

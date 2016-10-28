@@ -1,0 +1,61 @@
+doctype html
+html(lang='en')
+   head
+     title= 'BrazilianLight'
+     link(href='/css/bootstrap.min.css', rel='stylesheet')
+     link(href='/css/bl.css', rel='stylesheet')
+     link(href='/css/fontello.css', rel='stylesheet')
+     link(href='/css/animation.css', rel='stylesheet')
+     script(type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js")
+     script(type="text/javascript" src="/javascripts/bootstrap.min.js")
+     meta(http-equiv='Content-Type', content='text/html; charset=UTF-8')
+     meta(http-equiv='X-UA-Compatible', content='IE=edge')
+     meta(name='viewport', content='width=device-width, initial-scale=1, user-scalable=0')
+     meta(name='robots', content='noindex, nofollow')
+     link(rel='shortcut icon', href='/images/BLlogin.png')
+
+
+     if scripts
+       each script in scripts
+          script(type='text/javascript', src=script)
+   body
+     if loggedIn
+        .navbar.navbar-inverse.navbar-fixed-top(role='navigation')
+            .container
+                .navbar-header
+                    button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-collapse')
+                        
+                        span.icon-bar
+                        span.icon-bar
+                        span.icon-bar
+
+                    - activate = ""
+                    - if (menu == 'today')
+                        - activate = "activeNav"
+
+                    a.navbar-brand(style="padding:0px;" href="/")
+                      img(src="/images/BL2.png")
+                    a.navbar-brand(style='margin-left: 0px;', href='/', class=activate) Today
+                    - activate = ""
+                        - if (menu == 'calendar')
+                            - activate = "activeNav"
+                    a.navbar-brand(style='margin-left: 0px;', href='/calendar', class=activate) Calendar
+                    - activate = ""
+                        - if (menu == 'ranking')
+                            - activate = "activeNav"
+
+                .collapse.navbar-collapse
+                    ul.nav.navbar-nav
+
+                        li(class=activate)
+                            a(href="/ranking") Ranking
+
+                    ul.nav.navbar-nav.navbar-right
+                        - activate = ""
+                        - if (menu == 'help')
+                            - activate = "activeNav"
+                        li(class=activate)
+                            a(href='/help') Help
+                        li
+                            a(href='/logout') Logout
+     block content

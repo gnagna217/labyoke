@@ -1,0 +1,25 @@
+extends layout
+
+block content
+
+
+  div(class="container login")
+     img(src="/images/BLlogin.png")
+     h1= 'Welcome!'
+     p The Brazilian Light is a step away..
+     div(id="ctl00_Div2" style="" class="row")
+       div
+        if message
+            div(class="alert alert-danger")!= message
+        form(action="/login" method="post")
+            div(class="textentry")
+                input(name="user" type="text" id="user" class="form-control" placeholder="Username")
+            div(class="textentry")
+                input(name="pass" type="password" id="pass" class="form-control" placeholder="Password")
+            div(class="buttons")
+                //input(type="submit" class="button" value="Get in")
+                button.btn.btn-success.btn-lg.btn-block(type='submit') Get in
+ 
+     div(style="padding:5px;")
+        img(src="images/map.png", alt="Netlight", style="border-width:0px; width: 50px")
+
