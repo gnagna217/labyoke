@@ -588,7 +588,7 @@ module.exports = function(router) {
 
 		netlighter.changepassword(function(error, done) {
 			if (done != null) {
-				res.redirect('/');
+				res.redirect('/search');
 			}
 		});
 	});
