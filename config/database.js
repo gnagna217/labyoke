@@ -10,10 +10,10 @@
 		};
 */
 module.exports = { 
-		  database: 'dcabu5aaunn4re', 
-		  username: 'ejlmxqkccfhtrr', 
-		  password: 'YGr6Gjn8nsuBjgyJQ_NBxQ-JTk',
-		  host: 'ec2-54-235-246-220.compute-1.amazonaws.com',
+		  database: 'dc1p7cvgjjk1cc', 
+		  username: 'ylwkyrhqofvgpb', 
+		  password: '-LFVLLwgI1bVco5Xjz-gXNhVw3',
+		  host: 'ec2-54-243-249-132.compute-1.amazonaws.com',
 		  port: '5432',
 		  dialect: 'postgres',
 		  native: true,
