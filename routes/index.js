@@ -558,7 +558,7 @@ module.exports = function(router) {
 														.redirect('/changepassword');
 											}
 
-											res.redirect('/');
+											res.redirect('/search');
 										} else {
 											res
 													.render(
