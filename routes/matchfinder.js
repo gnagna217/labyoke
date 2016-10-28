@@ -502,7 +502,7 @@ var analyze = function(matchresults, participantsResults) {
 				+ ":" + participant.scorehemma + "</b>.";
 		body += "<br/>You have earned: <span style='color:red'><b>" + points
 				+ " points</b></span>.";
-		body += "<br/><br/>Have you played today? Come and play with us again <a href=\"http:\/\/brazilianlight.netlight.com\">@BrazilianLight</a>";
+		body += "<br/><br/>Have you played today? Come and play with us again <a href=\"http:\/\/labyoke@gmail.com\">@BrazilianLight</a>";
 		body += "<br/><br/><b><i>The BrazilianLight Team -</i></b></div>";
 
 		var mailOptions = new MailOptions(email, subject, body);

@@ -466,7 +466,7 @@ module.exports = function(router) {
 
 	router.get('/help', isLoggedIn, function(req, res) {
 		res.render('help', {
-			title : 'You & BrazilianLight',
+			title : 'You & LabYoke',
 			loggedIn : true,
 			netlighter : req.session.user,
 			menu : 'help'
@@ -555,7 +555,7 @@ module.exports = function(router) {
 													.render(
 															'login',
 															{
-																message : "Your username and/or password is wrong. Please try again... Or <a href='mailto:brazilianlight2014@gmail.com?Subject="
+																message : "Your username and/or password is wrong. Please try again... Or <a href='mailto:labyoke@gmail.com?Subject="
 																		+ username
 																		+ " - Forgot Password' target='_top'>Contact us</a> to retrieve it."
 															});
@@ -566,7 +566,7 @@ module.exports = function(router) {
 									.render(
 											'login',
 											{
-												message : "Your username and/or password is wrong. Please try again... Or <a href='mailto:brazilianlight2014@gmail.com?Subject="
+												message : "Your username and/or password is wrong. Please try again... Or <a href='mailto:labyoke@gmail.com?Subject="
 														+ username
 														+ " - Forgot Password' target='_top'>Contact us</a> to retrieve it."
 											});
@@ -576,7 +576,7 @@ module.exports = function(router) {
 
 	router.get('/changepassword', isLoggedInAndNotActive, function(req, res) {
 		res.render('changepassword', {
-			title : 'You & BrazilianLight',
+			title : 'You & LabYoke',
 			loggedIn : true,
 			netlighter : req.session.user,
 			scripts : [ '/javascripts/utils.js' ]
