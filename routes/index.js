@@ -538,7 +538,7 @@ module.exports = function(router) {
 	router.get('/search', function(req, res) {
 		if (req.session.user) {
 			var searchText = req.body.searchText;
-			if (username != null && username.length > 0){
+			if (searchText != null && searchText.length > 0){
 				res.render('search', {searchResults : "Text being searched..."});
 			} else {
 				res.render('search', {});
