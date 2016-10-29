@@ -6,54 +6,62 @@ block content
   div(class="container login")
      a(href="/search")
         img(src="/images/yoke.jpg", alt="The Yoke",  title="Yoke", style="border-width:0px; width: 300px")
-     h1= 'Hello!'
-     p You are on your way to Lab Yoking with fellow researchers. Registering is a breeze!
-     div(id="ctl00_Div2" class="row")
        div
-        if message
-            div(class="alert alert-danger")!= message
         if !labentered && !regsuccess
-            form(action="/register" method="post")
-                div(style="margin-bottom: 20px;")
-                    div(class="textentry")
-                        input(name="reguser" type="text" id="reguser" class="form-control" placeholder="Username" style="border-color:#8a6d3b")
-                    div(class="textentry")
-                        input(name="regpass" type="password" id="regpass" class="form-control" placeholder="Password" style="border-color:#8a6d3b")
-                    div(class="textentry")
-                        input(name="regverpass" type="password" id="regverpass" class="form-control" placeholder="Verify Password" style="border-color:#8a6d3b")
+            h1= 'Hello!'
+                p You are on your way to Lab Yoking with fellow researchers. Registering is a breeze!
+            div(id="ctl00_Div2" class="row")
+                if message
+                    div(class="alert alert-danger")!= message
+                form(action="/register" method="post")
+                    div(style="margin-bottom: 20px;")
+                        div(class="textentry")
+                            input(name="reguser" type="text" id="reguser" class="form-control" placeholder="Username" style="border-color:#8a6d3b")
+                        div(class="textentry")
+                            input(name="regpass" type="password" id="regpass" class="form-control" placeholder="Password" style="border-color:#8a6d3b")
+                        div(class="textentry")
+                            input(name="regverpass" type="password" id="regverpass" class="form-control" placeholder="Verify Password" style="border-color:#8a6d3b")
 
-                div(style="margin-bottom: 20px;")
-                    div(class="textentry")
-                        input(name="reglab" type="text" id="reglab" class="form-control" style="border-color:#3d9dcb" placeholder="Lab")
+                    div(style="margin-bottom: 20px;")
+                        div(class="textentry")
+                            input(name="reglab" type="text" id="reglab" class="form-control" style="border-color:#3d9dcb" placeholder="Lab")
 
-                div(class="buttons")
-                    button.btn.btn-success.btn-lg.btn-block(type='submit') Next
-                    img(src="images/lab.png", alt="The Lab", title="Lab", style="border-width:0px; width: 50px; margin-top: -50px; margin-left: 300px;")  
+                    div(class="buttons")
+                        button.btn.btn-success.btn-lg.btn-block(type='submit') Next
+                        img(src="images/lab.png", alt="The Lab", title="Lab", style="border-width:0px; width: 50px; margin-top: -50px; margin-left: 300px;")  
 
         if labentered
-            form(action="/register" method="post")
-                div(style="margin-bottom: 20px;")
-                    div(class="textentry")
-                        input(name="regfirstname" type="text" id="regfirstname" class="form-control" placeholder="First Name")
-                    div(class="textentry")
-                        input(name="reglastname" type="text" id="lastname" class="form-control" placeholder="Last Name")
+            h1= 'Hello!'
+                p You are on your way to Lab Yoking with fellow researchers. Registering is a breeze!
+            div(id="ctl00_Div2" class="row")
+                if message
+                    div(class="alert alert-danger")!= message
+                form(action="/register" method="post")
+                    div(style="margin-bottom: 20px;")
+                        div(class="textentry")
+                            input(name="regfirstname" type="text" id="regfirstname" class="form-control" placeholder="First Name")
+                        div(class="textentry")
+                            input(name="reglastname" type="text" id="lastname" class="form-control" placeholder="Last Name")
 
-                div(style="margin-bottom: 20px;")
-                    div(class="textentry")
-                        input(name="regemail" type="text" id="regemail" class="form-control" placeholder="Email Address")
-                    div(class="textentry")
-                        input(name="regtel" type="text" id="tel" class="form-control" placeholder="Telephone")
-                div(class="buttons")
-                    //input(type="submit" class="button" value="Register")
-                    button.btn.btn-success.btn-lg.btn-block(type='submit') Start Lab Yoking
-                    img(src="images/lab.png", alt="The Lab", title="Lab", style="border-width:0px; width: 50px; margin-top: -50px; margin-left: 300px;")
+                    div(style="margin-bottom: 20px;")
+                        div(class="textentry")
+                            input(name="regemail" type="text" id="regemail" class="form-control" placeholder="Email Address")
+                        div(class="textentry")
+                            input(name="regtel" type="text" id="tel" class="form-control" placeholder="Telephone")
+                    div(class="buttons")
+                        //input(type="submit" class="button" value="Register")
+                        button.btn.btn-success.btn-lg.btn-block(type='submit') Start Lab Yoking
+                        img(src="images/lab.png", alt="The Lab", title="Lab", style="border-width:0px; width: 50px; margin-top: -50px; margin-left: 300px;")
             
         if regsuccess
-            span(style="text-align: center")
-                h3="Thanks for registering"
-                    span(style="color: #3d9dcb;")=" " + regsuccess + "!"
-                h4="You can now start "
-                    a(href="/search")="searching."
+            h1= 'Hello!'
+                    p You are on your way to Lab Yoking with fellow researchers. Registering is a breeze!
+                div(id="ctl00_Div2" class="row")
+                    span(style="text-align: center")
+                        h3="Thanks for registering"
+                            span(style="color: #3d9dcb;")=" " + regsuccess + "!"
+                        h4="You can now start "
+                            a(href="/search")="searching."
 
      div(style="padding:5px")
         
