@@ -22,7 +22,7 @@ html(lang='en')
      if loggedIn
         .navbar.navbar-inverse.navbar-fixed-top(role='navigation')
             .container
-                .navbar-header
+                .navbar-header(style="float:left; margin-left:auto;")
                     button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-collapse')
                         
                         span.icon-bar
@@ -40,7 +40,7 @@ html(lang='en')
                         - if (menu == 'ranking')
                             - activate = "activeNav"
 
-                .collapse.navbar-collapse
+                .collapse.navbar-collapse(style="margin-top: 50px;")
                     ul.nav.navbar-nav
 
                         li(class=activate)

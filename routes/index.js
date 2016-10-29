@@ -537,7 +537,7 @@ module.exports = function(router) {
 
 	router.get('/search', function(req, res) {
 		if (req.session.user) {
-			res.render('search', {});
+			res.render('search', {loggedIn : true});
 			req.session.messages = null;
 		} else {
 			res.redirect('/login');
