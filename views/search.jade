@@ -20,8 +20,8 @@ block content
                             button.btn.btn-success.btn-lg.btn-block(type='submit') Find
                             img(src="images/search.png", alt="The Search", title="Search", style="border-width:0px; width: 75px; margin-top: -50px; margin-left: 300px;")
         
-        div(style="float: left; width: 50%; margin-left: 100px;")
-           #netlighters.container
+        div(style="float: left; width: 60%; margin-left: 100px;")
+           #netlighters.container(style="width:100%;")
             a.jump(href="#") jump to your rank
             div(id="ctl00_Div2" class="row rank").match
                - i = 1
@@ -29,18 +29,22 @@ block content
                div(class="table-responsive")
                   table(id="rankTbl" class="table")
                     tbody
-                        tr(class="info" id="gna")
+                        tr(class="info-normal" id="and")
                               td= "1"
-                              td(class="wrapped icon-user")!= 'Gnagna [ Konate ] - Chemical1'
-                              td= "5 ml"
-                        tr(class="active" id="and")
+                              td(class="wrapped")!= 'Andria [ Schibler ] - Chemical1'
+                              td= "2 ml"
+                        tr(class="active" id="gna")
                               td= "2"
-                              td(class="wrapped icon-user")!= 'Gnagna [ Konate ] - Chemical1'
+                              td(class="wrapped")!= 'Gnagna [ Konate ] - Chemical1'
                               td= "5 ml"
-                        tr(class="boldify you" id="era")
+                        tr(class="info-best you" id="era")
                               td= "3"
-                              td(class="wrapped icon-user")!= 'Gnagna [ Konate ] - Chemical1'
-                              td= "5 ml"
+                              td(class="wrapped icon-user")!= 'Eran [ Shaysh] - Chemical1'
+                              td= "15 ml"
+                        tr(class="info-normal" id="len")
+                              td= "4"
+                              td(class="wrapped")!= 'Lena [ Konate ] - Chemical1'
+                              td= "1 ml"
     div(style="padding:5px")
         
 

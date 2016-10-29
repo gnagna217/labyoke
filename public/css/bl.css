@@ -120,6 +120,16 @@ body {
     width:278px;
 }
 
+
+
+.info-normal{
+    background-color: rgba(61, 157, 203, 0.84);
+}
+
+.info-best{
+    background-color: rgba(138, 109, 59, 0.54);
+}
+
 /*modified #460077*/
 .btn-success{
     background-color: #8a6d3b;
