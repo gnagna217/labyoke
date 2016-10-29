@@ -12,7 +12,7 @@ block content
        div
         if message
             div(class="alert alert-danger")!= message
-        if !labentered and !regsuccess
+        if !labentered && !regsuccess
             form(action="/register" method="post")
                 div(style="margin-bottom: 20px;")
                     div(class="textentry")
