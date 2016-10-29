@@ -12,22 +12,23 @@ block content
        div
         if message
             div(class="alert alert-danger")!= message
-        form(action="/register" method="post")
-            div(style="margin-bottom: 20px;")
-                div(class="textentry")
-                    input(name="reguser" type="text" id="reguser" class="form-control" placeholder="Username" style="border-color:#8a6d3b")
-                div(class="textentry")
-                    input(name="regpass" type="password" id="regpass" class="form-control" placeholder="Password" style="border-color:#8a6d3b")
-                div(class="textentry")
-                    input(name="regverpass" type="password" id="regverpass" class="form-control" placeholder="Verify Password" style="border-color:#8a6d3b")
+        if !labentered
+            form(action="/register" method="post")
+                div(style="margin-bottom: 20px;")
+                    div(class="textentry")
+                        input(name="reguser" type="text" id="reguser" class="form-control" placeholder="Username" style="border-color:#8a6d3b")
+                    div(class="textentry")
+                        input(name="regpass" type="password" id="regpass" class="form-control" placeholder="Password" style="border-color:#8a6d3b")
+                    div(class="textentry")
+                        input(name="regverpass" type="password" id="regverpass" class="form-control" placeholder="Verify Password" style="border-color:#8a6d3b")
 
-            div(style="margin-bottom: 20px;")
-                div(class="textentry")
-                    input(name="reglab" type="text" id="reglab" class="form-control" style="border-color:#3d9dcb" placeholder="Lab")
+                div(style="margin-bottom: 20px;")
+                    div(class="textentry")
+                        input(name="reglab" type="text" id="reglab" class="form-control" style="border-color:#3d9dcb" placeholder="Lab")
 
-            div(class="buttons")
-                button.btn.btn-success.btn-lg.btn-block(type='submit') Next
-                img(src="images/lab.png", alt="The Lab", title="Lab", style="border-width:0px; width: 50px; margin-top: -50px; margin-left: 300px;")  
+                div(class="buttons")
+                    button.btn.btn-success.btn-lg.btn-block(type='submit') Next
+                    img(src="images/lab.png", alt="The Lab", title="Lab", style="border-width:0px; width: 50px; margin-top: -50px; margin-left: 300px;")  
 
         if labentered
             form(action="/register" method="post")
