@@ -583,9 +583,9 @@ module.exports = function(router) {
 		if (req.session.user) {
 			var searchText = req.body.searchText;
 			if (searchText != null && searchText.length > 0){
-				res.render('search', {searchResults : searchText});
+				res.render('search', {searchResults : searchText,loggedIn : true});
 			} else {
-				res.render('search', {});
+				res.render('search', {loggedIn : true});
 			}
 			req.session.messages = null;
 		} else {

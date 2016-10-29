@@ -154,7 +154,11 @@ body {
 background-color: #3d9dcb;
 }
 .nav-menu-logout:hover{
-    color: #b77f20;
+    /*color: #b77f20;*/
+}
+
+.navbar-fixed-top{
+    position:static !important;
 }
 
 .yokelogo{
