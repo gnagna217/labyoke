@@ -137,10 +137,17 @@ body {
 
 }
 
+.searchResults{
+    float: left;
+    width: 60%;
+    margin-left: 100px;
+}
+
 .btn-success-results{
     background-color: #3d9dcb;
     width:278px;
     border: 0;
+    color: white;
 
 }
 
@@ -392,6 +399,30 @@ input::-webkit-inner-spin-button {
 
 .wrapped {
 	white-space: normal !important;
+}
+
+ @media (max-width: 700px) {
+    .searchResults{
+    float: none;
+    width: auto;
+    margin-left: 0;
+    }
+}
+
+ @media (min-width: 715px) {
+    .searchResults{
+    float: left;
+    width: 40%;
+    margin-left: 50px;
+    }
+}
+
+ @media (min-width: 1200px) {
+    .searchResults{
+        float: left;
+        width: 55%;
+        margin-left: 50px;
+    }
 }
 
  @media (max-width: 440px) {
