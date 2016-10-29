@@ -525,7 +525,7 @@ module.exports = function(router) {
 		}
 	});
 
-	router.get('/search', function(req, res) {
+/*	router.get('/search', function(req, res) {
 		if (req.session.user) {
 			res.render('search', {});
 			req.session.messages = null;
@@ -533,10 +533,16 @@ module.exports = function(router) {
 			res.redirect('/search');
 		}
 	});
+*/
 
-	router.get('/searching', function(req, res) {
+	router.get('/search', function(req, res) {
 		if (req.session.user) {
-			res.render('search', {searchResults : "Text being searched..."});
+			var searchText = req.body.searchText;
+			if (username != null && username.length > 0){
+				res.render('search', {searchResults : "Text being searched..."});
+			} else {
+				res.render('search', {});
+			}
 			req.session.messages = null;
 		} else {
 			res.redirect('/login');
