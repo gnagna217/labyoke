@@ -545,12 +545,8 @@ module.exports = function(router) {
 	});
 
 	router.get('/register', function(req, res) {
-		if (req.session.user) {
-			res.render('register', {});
-			req.session.messages = null;
-		} else {
-			res.redirect('/login');
-		}
+		res.render('register', {});
+		req.session.messages = null;
 	});
 
 	router.post('/search', function(req, res) {
