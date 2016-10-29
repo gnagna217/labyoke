@@ -32,14 +32,10 @@ html(lang='en')
                     - activate = ""
                     - if (menu == 'today')
                         - activate = "activeNav"
-
-                    a.navbar-brand(style="padding:0px;" href="/")
-                      img(src="/images/BL2.png")
-                    a.navbar-brand(style='margin-left: 0px;', href='/', class=activate) Today
                     - activate = ""
                         - if (menu == 'calendar')
                             - activate = "activeNav"
-                    a.navbar-brand(style='margin-left: 0px;', href='/calendar', class=activate) Calendar
+
                     - activate = ""
                         - if (menu == 'ranking')
                             - activate = "activeNav"

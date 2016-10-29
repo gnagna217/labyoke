@@ -69,8 +69,13 @@ body {
 /*navbar*/
 .navbar-fixed-top{
 
-    background-color: #460077;
+    /*background-color: #460077;*/
+    background: none;
     border:0;
+}
+
+.navbar-toggle{
+    background-color:#8a6d3b !important;
 }
 
 .activeNav
