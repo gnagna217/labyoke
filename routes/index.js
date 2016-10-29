@@ -537,6 +537,16 @@ module.exports = function(router) {
 
 	router.get('/search', function(req, res) {
 		if (req.session.user) {
+			res.render('search', {});
+			req.session.messages = null;
+		} else {
+			res.redirect('/login');
+		}
+	});
+
+
+	router.post('/search', function(req, res) {
+		if (req.session.user) {
 			var searchText = req.body.searchText;
 			if (searchText != null && searchText.length > 0){
 				res.render('search', {searchResults : "Text being searched..."});
@@ -548,6 +558,7 @@ module.exports = function(router) {
 			res.redirect('/login');
 		}
 	});
+
 
 	router
 			.post(
