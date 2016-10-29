@@ -549,7 +549,7 @@ module.exports = function(router) {
 		if (req.session.user) {
 			var searchText = req.body.searchText;
 			if (searchText != null && searchText.length > 0){
-				res.render('search', {searchResults : "Text being searched..."});
+				res.render('search', {searchResults : searchText});
 			} else {
 				res.render('search', {});
 			}
