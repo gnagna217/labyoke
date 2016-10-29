@@ -121,12 +121,11 @@ body {
 }
 
 
-
-.info-normal{
+.info-best{
     background-color: rgba(138, 109, 59, 0.54);
 }
 
-.info-best{
+.info-normal{
     background-color: rgba(61, 157, 203, 0.84);
 }
 
