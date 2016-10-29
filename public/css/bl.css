@@ -417,10 +417,18 @@ input::-webkit-inner-spin-button {
     }
 }
 
- @media (min-width: 1200px) {
+ @media (min-width: 990px) {
     .searchResults{
         float: left;
         width: 55%;
+        margin-left: 50px;
+    }
+}
+
+ @media (min-width: 1200px) {
+    .searchResults{
+        float: left;
+        width: 60%;
         margin-left: 50px;
     }
 }
