@@ -565,7 +565,8 @@ module.exports = function(router) {
 			var regfirstname = req.body.regfirstname;
 			console.log("regfirstname entered " + regfirstname);
 			if (regfirstname != null && regfirstname.length > 0){
-				res.render('register', {regsuccess : regfirstname});
+				req.session.user = regfirstname;
+				res.render('register', {regsuccess : regfirstname, loggedIn : true});
 			} else {
 				res.render('register', {});
 			}
