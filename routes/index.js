@@ -545,7 +545,19 @@ module.exports = function(router) {
 	});
 
 	router.get('/register', function(req, res) {
-		res.render('register', {});
+
+		if (req.body.reglab) {
+			var reglab = req.body.reglab;
+			if (reglab != null && reglab.length > 0){
+				res.render('register', {labentered : reglab});
+			} else {
+				res.render('register', {});
+			}
+		} else {
+			res.render('register', {});
+		}
+
+		
 		req.session.messages = null;
 	});
 
