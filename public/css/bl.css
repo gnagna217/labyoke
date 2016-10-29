@@ -136,6 +136,14 @@ body {
     border: 0;
 
 }
+
+.btn-success-results{
+    background-color: #3d9dcb;
+    width:278px;
+    border: 0;
+
+}
+
 /*modified #6B238E*/
 .btn-success:hover{
     background-color: #3d9dcb;
