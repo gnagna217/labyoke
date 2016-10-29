@@ -45,19 +45,19 @@ html(lang='en')
                         ul.nav.navbar-nav
 
                             li(class=activate)
-                                a(href="/search") Search
+                                a(href="/search", class="nav-menu") Search
                             li(class=activate)
-                                a(href='/help') Help
+                                a(href='/help', class="nav-menu") Help
                             
                             
                     div(style="padding-left: 150px;")
                         ul.nav.navbar-nav
                             li(class=activate)
-                                a(href="/account",class="icon-user")=" Account"
+                                a(href="/account",class="icon-user nav-menu")=" Account"
                             li(class=activate)
-                                a(href="/admin",class="icon-user")=" Admin"
+                                a(href="/admin",class="icon-user nav-menu")=" Admin"
 
                     ul.nav.navbar-nav.navbar-right
                         li
-                            a(href='/logout',style="background-color: #3d9dcb;") Logout
+                            a(href='/logout',class="nav-menu-logout") Logout
      block content

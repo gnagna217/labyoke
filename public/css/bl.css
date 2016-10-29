@@ -146,6 +146,17 @@ body {
 
 }
 
+.nav-menu:hover{
+    color: #3d9dcb;
+}
+
+.nav-menu-logout{
+background-color: #3d9dcb;
+}
+.nav-menu-logout:hover{
+    color: #b77f20;
+}
+
 .yokelogo{
     border-width:0px; width: 300px;
 }
