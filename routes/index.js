@@ -547,6 +547,7 @@ module.exports = function(router) {
 	router.get('/register', function(req, res) {
 		res.render('register', {});
 		req.session.messages = null;
+		req.body.reglab = null;
 	});
 
 	router.post('/register', function(req, res) {
