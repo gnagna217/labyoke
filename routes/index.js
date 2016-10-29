@@ -563,14 +563,16 @@ module.exports = function(router) {
 		}
 		if (req.body.regfirstname) {
 			var regfirstname = req.body.regfirstname;
+			console.log("regfirstname entered " + regfirstname);
 			if (regfirstname != null && regfirstname.length > 0){
-				res.render('register', {regsuccess : reglab});
+				res.render('register', {regsuccess : regfirstname});
 			} else {
 				res.render('register', {});
 			}
 			rendered = true;
 		} 
 		if(!rendered){
+			console.log("nothing entered");
 			res.render('register', {});
 		}
 
