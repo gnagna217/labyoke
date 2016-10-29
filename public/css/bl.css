@@ -409,7 +409,7 @@ input::-webkit-inner-spin-button {
     }
 }
 
- @media (min-width: 715px) {
+ @media (max-width: 715px) {
     .searchResults{
     float: left;
     width: 40%;
@@ -417,7 +417,7 @@ input::-webkit-inner-spin-button {
     }
 }
 
- @media (min-width: 1200px) {
+ @media (max-width: 1200px) {
     .searchResults{
         float: left;
         width: 55%;
