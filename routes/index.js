@@ -545,6 +545,11 @@ module.exports = function(router) {
 	});
 
 	router.get('/register', function(req, res) {
+		res.render('register', {});
+		req.session.messages = null;
+	});
+
+	router.post('/register', function(req, res) {
 
 		if (req.body.reglab) {
 			var reglab = req.body.reglab;
@@ -557,8 +562,6 @@ module.exports = function(router) {
 			res.render('register', {});
 		}
 
-		
-		req.session.messages = null;
 	});
 
 	router.post('/search', function(req, res) {
