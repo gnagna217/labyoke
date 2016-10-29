@@ -562,6 +562,17 @@ module.exports = function(router) {
 		} else {
 			res.render('register', {});
 		}
+		if (req.body.regfirstname) {
+			var regfirstname = req.body.regfirstname;
+			if (regfirstname != null && regfirstname.length > 0){
+				res.render('register', {regsuccess : reglab});
+			} else {
+				res.render('register', {});
+			}
+		} else {
+			res.render('register', {});
+		}
+
 
 	});
 
