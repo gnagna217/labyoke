@@ -41,21 +41,23 @@ html(lang='en')
                             - activate = "activeNav"
 
                 .collapse.navbar-collapse(style="margin-top: 50px;")
-                    ul.nav.navbar-nav
+                    div(style="float:left")
+                        ul.nav.navbar-nav
 
-                        li(class=activate)
-                            a(href="/search") Search
-                        li(class=activate)
-                            a(href="/admin") Admin
-                        li(class=activate)
-                            a(href="/account") Account
+                            li(class=activate)
+                                a(href="/search") Search
+                            li(class=activate)
+                                a(href='/help') Help
+                            
+                            
+                    div(style="padding-left: 150px;")
+                        ul.nav.navbar-nav
+                            li(class=activate)
+                                a(href="/account",class="icon-user") Account
+                            li(class=activate)
+                                a(href="/admin",class="icon-user") Admin
 
                     ul.nav.navbar-nav.navbar-right
-                        - activate = ""
-                        - if (menu == 'help')
-                            - activate = "activeNav"
-                        li(class=activate)
-                            a(href='/help') Help
                         li
                             a(href='/logout') Logout
      block content
