@@ -13,30 +13,34 @@ block content
         if message
             div(class="alert alert-danger")!= message
         form(action="/register" method="post")
-            div(class="textentry")
-                input(name="firstname" type="text" id="firstname" class="form-control" placeholder="First Name")
-            div(class="textentry")
-                input(name="lastname" type="text" id="lastname" class="form-control" placeholder="Last Name")
+            div(style="margin-bottom: 20px;")
+                div(class="textentry")
+                    input(name="user" type="text" id="user" class="form-control" placeholder="Username" style(border-color:"#8a6d3b"))
+                div(class="textentry")
+                    input(name="pass" type="password" id="pass" class="form-control" placeholder="Password" style(border-color:"#8a6d3b"))
+                div(class="textentry")
+                    input(name="verpass" type="password" id="pass" class="form-control" placeholder="Verify Password" style(border-color:"#8a6d3b"))
 
-            div(class="textentry")
-                input(name="lab" type="text" id="lab" class="form-control" placeholder="Lab")
+            div(style="margin-bottom: 20px;")
+                div(class="textentry")
+                    input(name="lab" type="text" id="lab" class="form-control" style="border:color:#3d9dcb" placeholder="Lab" style(border-color:"#3d9dcb"))                
 
-            div(class="textentry")
-                input(name="email" type="text" id="email" class="form-control" placeholder="Email Address")
-            div(class="textentry")
-                input(name="tel" type="text" id="tel" class="form-control" placeholder="Telephone")
-            
+            div(style="margin-bottom: 20px;")
+                div(class="textentry")
+                    input(name="firstname" type="text" id="firstname" class="form-control" placeholder="First Name")
+                div(class="textentry")
+                    input(name="lastname" type="text" id="lastname" class="form-control" placeholder="Last Name")
 
-            div(class="textentry")
-                input(name="user" type="text" id="user" class="form-control" placeholder="Username")
-            div(class="textentry")
-                input(name="pass" type="password" id="pass" class="form-control" placeholder="Password")
-            div(class="textentry")
-                input(name="verpass" type="password" id="pass" class="form-control" placeholder="Verify Password")
+            div(style="margin-bottom: 20px;")
+                div(class="textentry")
+                    input(name="email" type="text" id="email" class="form-control" placeholder="Email Address")
+                div(class="textentry")
+                    input(name="tel" type="text" id="tel" class="form-control" placeholder="Telephone")
             div(class="buttons")
                 //input(type="submit" class="button" value="Register")
                 button.btn.btn-success.btn-lg.btn-block(type='submit') Start Lab Yoking
                 img(src="images/lab.png", alt="The Lab", title="Lab", style="border-width:0px; width: 50px; margin-top: -50px; margin-left: 300px;")
+            
  
      div(style="padding:5px")
         
