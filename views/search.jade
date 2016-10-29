@@ -8,43 +8,51 @@ block content
             img(src="/images/yoke.jpg", alt="The Yoke",  title="Yoke", style="border-width:0px; width: 300px")
             h1= 'Search!'
             p Start your search by typing in the name of the chemical.
+            - searchText = "Looking for..."
+            if searchResults
+                - searchText = searchResults
             div(id="ctl00_Div2" class="row")
                 div
                     if message
                         div(class="alert alert-danger")!= message
-                    form(action="/login" method="post")
+                    form(action="/searching" method="post")
                         div(class="textentry")
-                            input(name="user" type="text" id="user" class="form-control" placeholder="Looking for...")
+                            input(name="user" type="text" id="user" class="form-control" placeholder=searchText)
                         div(class="buttons")
                             //input(type="submit" class="button" value="Get in")
                             button.btn.btn-success.btn-lg.btn-block(type='submit') Find
                             img(src="images/search.png", alt="The Search", title="Search", style="border-width:0px; width: 75px; margin-top: -50px; margin-left: 300px;")
         
-        div(style="float: left; width: 60%; margin-left: 100px;")
-           #netlighters.container(style="width:100%;")
-            a.jump(href="#") jump to your rank
-            div(id="ctl00_Div2" class="row rank").match
-               - i = 1
-               - className = ""
-               div(class="table-responsive")
-                  table(id="rankTbl" class="table")
-                    tbody
-                        tr(class="info-normal" id="and")
-                              td= "1"
-                              td(class="wrapped")!= 'Andria [ Schibler ] - Chemical1'
-                              td= "2 ml"
-                        tr(class="active" id="gna")
-                              td= "2"
-                              td(class="wrapped")!= 'Gnagna [ Konate ] - Chemical1'
-                              td= "5 ml"
-                        tr(class="info-best you" id="era")
-                              td= "3"
-                              td(class="wrapped icon-user")!= 'Eran [ Shaysh] - Chemical1'
-                              td= "15 ml"
-                        tr(class="info-normal" id="len")
-                              td= "4"
-                              td(class="wrapped")!= 'Lena [ Konate ] - Chemical1'
-                              td= "1 ml"
+        if searchResults
+            div(style="float: left; width: 60%; margin-left: 100px;")
+               #netlighters.container(style="width:100%;")
+                a.jump(href="#") jump to your Lab
+                div(id="ctl00_Div2" class="row rank").match
+                   - i = 1
+                   - className = ""
+                   div(class="table-responsive")
+                      table(id="rankTbl" class="table")
+                        tbody
+                            tr(class="info-normal" id="and")
+                                  td= "1"
+                                  td(class="wrapped")!= 'Andria [ Schibler ] @ Lab3'
+                                  td= "2 ml"
+                            tr(class="active" id="gna")
+                                  td= "2"
+                                  td(class="wrapped")!= 'Gnagna [ Konate ] @ Lab2'
+                                  td= "5 ml"
+                            tr(class="info-best you" id="era")
+                                  td= "3"
+                                  td(class="wrapped icon-user")!= 'Eran [ Shaysh] @ Lab1'
+                                  td= "15 ml"
+                            tr(class="active" id="len")
+                                  td= "4"
+                                  td(class="wrapped")!= 'Lena [ Konate ] @ Lab2'
+                                  td= "1 ml"
+                            tr(class="info-normal" id="someone")
+                                  td= "1"
+                                  td(class="wrapped")!= 'Some [ One ] @ Lab1'
+                                  td= "2 ml"
     div(style="padding:5px")
         
 

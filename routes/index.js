@@ -534,6 +534,15 @@ module.exports = function(router) {
 		}
 	});
 
+	router.get('/searching', function(req, res) {
+		if (req.session.user) {
+			res.render('search', {searchResults : "Text being searched..."});
+			req.session.messages = null;
+		} else {
+			res.redirect('/login');
+		}
+	});
+
 	router
 			.post(
 					'/login',

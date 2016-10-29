@@ -377,8 +377,9 @@ input::-webkit-inner-spin-button {
 }
 
 .you {
-	color: #460077;
-	background-color: rgba(70, 0, 119, 0.4);
+	/*color: #460077;*/
+    color: white;
+	background-color: #3d9dcb; /*rgba(70, 0, 119, 0.4);*/
 }
 
 .wrapped {
