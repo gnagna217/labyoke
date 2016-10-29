@@ -551,7 +551,7 @@ module.exports = function(router) {
 	});
 
 	router.post('/register', function(req, res) {
-
+		var rendered = false;
 		if (req.body.reglab) {
 			var reglab = req.body.reglab;
 			if (reglab != null && reglab.length > 0){
@@ -559,8 +559,7 @@ module.exports = function(router) {
 			} else {
 				res.render('register', {});
 			}
-		} else {
-			res.render('register', {});
+			rendered = true;
 		}
 		if (req.body.regfirstname) {
 			var regfirstname = req.body.regfirstname;
@@ -569,10 +568,11 @@ module.exports = function(router) {
 			} else {
 				res.render('register', {});
 			}
-		} else {
+			rendered = true;
+		} 
+		if(!rendered){
 			res.render('register', {});
 		}
-
 
 	});
 
