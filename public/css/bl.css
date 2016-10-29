@@ -401,7 +401,7 @@ input::-webkit-inner-spin-button {
 	white-space: normal !important;
 }
 
- @media (max-width: 700px) {
+ @media (min-width: 700px) {
     .searchResults{
     float: none;
     width: auto;
@@ -409,7 +409,7 @@ input::-webkit-inner-spin-button {
     }
 }
 
- @media (max-width: 715px) {
+ @media (min-width: 715px) {
     .searchResults{
     float: left;
     width: 40%;
@@ -417,7 +417,7 @@ input::-webkit-inner-spin-button {
     }
 }
 
- @media (max-width: 1200px) {
+ @media (min-width: 1200px) {
     .searchResults{
         float: left;
         width: 55%;
