@@ -146,6 +146,9 @@ body {
 
 }
 
+.nav-menu{
+    color: white;
+}
 .nav-menu:hover{
     color: #3d9dcb;
 }
@@ -153,6 +156,7 @@ body {
 .nav-menu-logout{
 background-color: #3d9dcb;
 margin-right: auto !important;
+margin-right: 15px !important;
 }
 .nav-menu-logout:hover{
     /*color: #b77f20;*/
