@@ -152,7 +152,12 @@ body {
 .nav-menu:hover{
     background-color: #3d9dcb !important;
 }
-
+.labColor{
+    color: #3d9dcb;
+}
+.yokeColor{
+    color: #8a6d3b;
+}
 .nav-menu-logout{
 background-color: #3d9dcb;
 margin-right: auto !important;
