@@ -2,7 +2,7 @@ extends layout
 
 block content
 
-
+  <div(id="ios-light")
   div(class="container login")
      a(href="/search")
         img(src="/images/yoke.jpg", alt="The Yoke",  title="Yoke", class="yokelogo")
@@ -27,5 +27,5 @@ block content
             span(style="float:right")
                 a(href="/forgot")="Forgot password"
 
-    div(class="button" id="ios-light" onclick="iosLight()")="iOS Light"
+    div(class="button" id="ios-light-button" onclick="iosLight()")="iOS Light"
 
