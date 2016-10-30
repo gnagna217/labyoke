@@ -544,6 +544,15 @@ module.exports = function(router) {
 		}
 	});
 
+	router.get('/orders', function(req, res) {
+		if (req.session.user) {
+			res.render('orders', {loggedIn : true});
+			req.session.messages = null;
+		} else {
+			res.redirect('/login');
+		}
+	});
+
 	router.get('/forgot', function(req, res) {
 			res.render('forgot', {});
 			req.session.messages = null;
