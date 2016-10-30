@@ -150,7 +150,7 @@ body {
     color: white;
 }
 .nav-menu:hover{
-    color: #3d9dcb;
+    color: #3d9dcb !important;
 }
 
 .nav-menu-logout{
