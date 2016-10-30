@@ -1,0 +1,51 @@
+extends layout
+
+block content
+
+
+  div(class="container login")
+     a(href="/search")
+        img(src="/images/yoke.jpg", alt="The Yoke",  title="Yoke", class="yokelogo")
+       div
+        if !userfound && !usernotfound
+            h1= 'Hello!'
+            p 
+                span="Don't worry! We got You! Please enter your username below and we shall send you an email to change your password"
+                span(class="labColor")="Registering "
+                span="is a breeze!"
+            div(id="ctl00_Div2" class="row")
+                if message
+                    div(class="alert alert-danger")!= message
+                form(action="/forgot" method="post")
+                    div(style="margin-bottom: 20px;")
+                        div(class="textentry")
+                            input(name="forgotuser" type="text" id="forgotuser" class="form-control" placeholder="Username" style="border-color:#8a6d3b")
+                        div(class="buttons")
+                        //input(type="submit" class="button" value="Register")
+                        button.btn.btn-success.btn-lg.btn-block(type='submit') Start Lab Yoking
+                        img(src="images/lab.png", alt="The Lab", title="Lab", style="border-width:0px; width: 50px; margin-top: -50px; margin-left: 300px;")
+
+        if userfound
+            div(id="ctl00_Div2" class="row")
+                    h1(style="text-align: center")
+                        span= "Great "
+                        span(style="color: #3d9dcb;")=" " + userfound
+                        span="!"
+                    p We found your account! Please check your inbox in order to change your password
+                    
+            
+        if usernotfound
+            div(id="ctl00_Div2" class="row")
+                    h1(style="text-align: center")
+                        span= "Oops..."
+                    p Sorry we could not find an account with this username. Please try again below.
+                    form(action="/forgot" method="post")
+                        div(style="margin-bottom: 20px;")
+                            div(class="textentry")
+                                input(name="forgotuser" type="text" id="forgotuser" class="form-control" placeholder="Username" style="border-color:#8a6d3b")
+                            div(class="buttons")
+                            //input(type="submit" class="button" value="Register")
+                            button.btn.btn-success.btn-lg.btn-block(type='submit') Start Lab Yoking
+                            img(src="images/lab.png", alt="The Lab", title="Lab", style="border-width:0px; width: 50px; margin-top: -50px; margin-left: 300px;")
+        
+

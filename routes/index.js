@@ -544,6 +544,21 @@ module.exports = function(router) {
 		}
 	});
 
+	router.get('/forgot', function(req, res) {
+			res.render('forgot', {});
+			req.session.messages = null;
+	});
+
+	router.post('/forgot', function(req, res) {
+			var forgotuser = req.body.forgotuser;
+			if (forgotuser != null && forgotuser.length > 0){
+				res.render('forgot', {userfound : forgotuser});
+			} else {
+				res.render('forgot', {usernotfound : forgotuser});
+			}
+			req.session.messages = null;
+	});
+
 	router.get('/register', function(req, res) {
 		res.render('register', {});
 		req.session.messages = null;
