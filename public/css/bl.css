@@ -491,6 +491,9 @@ input::-webkit-inner-spin-button {
 .nav-menu{
     width: 125px !important;
 }
+.nav-menu-logout{
+    margin-right: 0px !important;
+}
 }
 
 .pastdate {
