@@ -478,7 +478,7 @@ input::-webkit-inner-spin-button {
 }
 
 .navbar-collapse{
-    margin-top:50px;
+    margin-top:50px !important;
 }
   
 }
