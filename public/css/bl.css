@@ -477,15 +477,16 @@ input::-webkit-inner-spin-button {
     margin-left: 50px;
 }
 
-.navbar-collapse{
-    margin-top:50px !important;
-}
+
   
 }
 
 @media (max-width: 767px){
 .table-responsive {
     border: none !important;
+}
+.navbar-collapse{
+    margin-top:50px !important;
 }
 }
 
