@@ -485,6 +485,10 @@ input::-webkit-inner-spin-button {
 .centerText{
     text-align: center;
 }
+
+.desktabonly{
+    display: none;
+}
   
 }
 
