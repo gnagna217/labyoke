@@ -152,6 +152,7 @@ body {
 
 .nav-menu-logout{
 background-color: #3d9dcb;
+margin-right: auto !important;
 }
 .nav-menu-logout:hover{
     /*color: #b77f20;*/
@@ -470,6 +471,10 @@ input::-webkit-inner-spin-button {
 .yokelogo{
     width: 250px;
     margin-left: 50px;
+}
+
+.navbar-collapse{
+    margin-top:50px;
 }
   
 }
