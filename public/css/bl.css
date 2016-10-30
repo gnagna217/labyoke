@@ -488,6 +488,9 @@ input::-webkit-inner-spin-button {
 .navbar-collapse{
     margin-top:50px !important;
 }
+.nav-menu{
+    width: 125px !important;
+}
 }
 
 .pastdate {
