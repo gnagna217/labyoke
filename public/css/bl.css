@@ -482,7 +482,9 @@ input::-webkit-inner-spin-button {
     margin-left: 75px;
 }
 
-
+.centerText{
+    text-align: center;
+}
   
 }
 

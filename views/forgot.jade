@@ -25,16 +25,16 @@ block content
 
         if userfound
             div(id="ctl00_Div2" class="row")
-                    h1(style="text-align: center")
-                        span= "Great "
+                    h1(class="centerText")
+                        span= "Hello again "
                         span(class="labColor")=" " + userfound
                         span="!"
-                    p We found your account! Please check your inbox in order to change your password
+                    p Yes we indeed found your account! Please check your inbox in order to change your password.
                     
             
         if usernotfound
             div(id="ctl00_Div2" class="row")
-                    h1(style="text-align: center")
+                    h1(class="centerText")
                         span= "Oops..."
                     p Sorry we could not find an account with this username. Please try again below.
                     form(action="/forgot" method="post")
