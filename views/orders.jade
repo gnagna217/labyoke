@@ -1,0 +1,105 @@
+extends layout
+
+block content
+
+
+    div(class="container login")
+        div(style="float: left; width: 350px;")
+            a(href="/search")
+                img(src="/images/yoke.jpg", alt="The Yoke",  title="Yoke", class="yokelogo")
+            h1= 'Search.'
+            p Start your search by typing in the name of the chemical.
+            - searchText = "Looking for..."
+            - classButton = "btn-success"
+            if searchResults
+                - searchText = "Search: " + searchResults
+                - classButton = "btn-success-results"
+            div(id="ctl00_Div2" class="row")
+                div
+                    if message
+                        div(class="alert alert-danger")!= message
+                    form(action="/search" method="post")
+                        div(class="textentry")
+                            input(name="searchText" type="text" id="searchText" class="form-control" placeholder=searchText)
+                        div(class="buttons")
+                            //input(type="submit" class="button" value="Get in")
+                            button(class="btn " + classButton + " btn-lg btn-block" type='submit') Find
+                            img(src="images/search.png", alt="The Search", title="Search", style="border-width:0px; width: 70px; margin-top: -50px; margin-left: 300px;")
+        
+        if searchResults
+            div.searchResults(id="results")
+               #netlighters.container(style="width:100%;")
+                div(id="ctl00_Div2" class="row rank").match
+                   - i = 1
+                   - className = ""
+                   div(class="table-responsive")
+                      span(style="text-align: center")
+                        h3="These Researchers and Labs can share your"
+                            span(style="color: #3d9dcb;")=" " + searchResults
+                        h4="Call, Email, or Message them!"                    
+                      table(id="rankTbl" class="table")
+                        tbody
+                            tr(class="" id="and")
+                                  td(class="desktabonly")= "1"
+                                  td(class="wrapped")!= 'Andria Schibler'
+                                  td= 'Lab3'
+                                  td= "2 ml"
+                                  td
+                                    a(href="#")
+                                        img(src="images/call2.png", alt="Call Andria", title="Call Andria", style="border-width:0px; width: 24px; margin-top: 00px; margin-right: 10px;")
+                                    a(href="#")
+                                        img(src="images/email.png", alt="Email Andria", title="Email Andria", style="border-width:0px; width: 24px; margin-top: 00px; margin-right: 10px;")
+                                    a(href="#")
+                                        img(src="images/message.ico", alt="Message Andria", title="Message Andria", style="border-width:0px; width: 24px; margin-top: 00px; margin-right: 10px;")
+                            tr(class="active" id="gna")
+                                  td(class="desktabonly")= "2"
+                                  td(class="wrapped")!= 'Gnagna Konate'
+                                  td= 'Lab2'
+                                  td= "5 ml"
+                                  td
+                                    a(href="#")
+                                        img(src="images/call2.png", alt="Call Gnagna", title="Call Gnagna", style="border-width:0px; width: 24px; margin-top: 00px; margin-right: 10px;")
+                                    a(href="#")
+                                        img(src="images/email.png", alt="Email Gnagna", title="Email Gnagna", style="border-width:0px; width: 24px; margin-top: 00px; margin-right: 10px;")
+                                    a(href="#")
+                                        img(src="images/message.ico", alt="Message Gnagna", title="Message Gnagna", style="border-width:0px; width: 24px; margin-top: 00px; margin-right: 10px;")
+                            tr(class="you info-best" id="era")
+                                  td(class="desktabonly")= "3"
+                                  td(class="wrapped icon-user")!= 'Eran Shaysh'
+                                  td= 'Lab1'
+                                  td= "15 ml"
+                                  td
+                                    a(href="#")
+                                        img(src="images/call2.png", alt="Call Eran", title="Call Eran", style="border-width:0px; width: 24px; margin-top: 00px; margin-right: 10px;")
+                                    a(href="#")
+                                        img(src="images/email.png", alt="Email Eran", title="Email Eran", style="border-width:0px; width: 24px; margin-top: 00px; margin-right: 10px;")
+                                    a(href="#")
+                                        img(src="images/message.ico", alt="Message Eran", title="Message Eran", style="border-width:0px; width: 24px; margin-top: 00px; margin-right: 10px;")
+                            tr(class="active" id="len")
+                                  td(class="desktabonly")= "4"
+                                  td(class="wrapped")!= 'Lena Konate'
+                                  td= 'Lab2'
+                                  td= "1 ml"
+                                  td
+                                    a(href="#")
+                                        img(src="images/call2.png", alt="Call Lena", title="Call Lena", style="border-width:0px; width: 24px; margin-top: 00px; margin-right: 10px;")
+                                    a(href="#")
+                                        img(src="images/email.png", alt="Email Lena", title="Email Lena", style="border-width:0px; width: 24px; margin-top: 00px; margin-right: 10px;")
+                                    a(href="#")
+                                        img(src="images/message.ico", alt="Message Lena", title="Message Lena", style="border-width:0px; width: 24px; margin-top: 00px; margin-right: 10px;")
+                            tr(class="" id="someone")
+                                  td(class="desktabonly")= "5"
+                                  td(class="wrapped")!= 'Some One'
+                                  td= 'Lab26'
+                                  td= "2 ml"
+                                  td
+                                    a(href="#")
+                                        img(src="images/call2.png", alt="Call Someone", title="Call Someone", style="border-width:0px; width: 24px; margin-top: 00px; margin-right: 10px;")
+                                    a(href="#")
+                                        img(src="images/email.png", alt="Email Someone", title="Email Someone", style="border-width:0px; width: 24px; margin-top: 00px; margin-right: 10px;")
+                                    a(href="#")
+                                        img(src="images/message.ico", alt="Message Someone", title="Message Someone", style="border-width:0px; width: 24px; margin-top: 00px; margin-right: 10px;")
+            script="$(window).scrollTop($('#results').offset().top).scrollLeft($('#results').offset().left);"
+    div(style="padding:5px")
+        
+
