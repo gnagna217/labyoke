@@ -554,7 +554,7 @@ module.exports = function(router) {
 			if (forgotuser != null && forgotuser.length > 0){
 				res.render('forgot', {userfound : forgotuser});
 			} else {
-				res.render('forgot', {usernotfound : forgotuser});
+				res.render('forgot', {usernotfound : true});
 			}
 			req.session.messages = null;
 	});
