@@ -29,7 +29,10 @@ block content
                         span= "Hello again "
                         span(class="labColor")=" " + userfound
                         span="!"
-                    p Yes we indeed found your account! Please check your inbox in order to change your password.
+                    p Yes we indeed found your account! Please check your inbox in order to change your password. Then
+                    span=" "
+                        a(href="/login")="login"
+                        span=" again."
                     
             
         if usernotfound
