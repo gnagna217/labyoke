@@ -553,6 +553,24 @@ module.exports = function(router) {
 		}
 	});
 
+	router.get('/account', function(req, res) {
+		if (req.session.user) {
+			res.render('account', {loggedIn : true});
+			req.session.messages = null;
+		} else {
+			res.redirect('/login');
+		}
+	});
+
+	router.get('/share', function(req, res) {
+		if (req.session.user) {
+			res.render('share', {loggedIn : true});
+			req.session.messages = null;
+		} else {
+			res.redirect('/login');
+		}
+	});
+
 	router.get('/forgot', function(req, res) {
 			res.render('forgot', {});
 			req.session.messages = null;
