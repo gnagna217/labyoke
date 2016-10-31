@@ -490,7 +490,7 @@ input::-webkit-inner-spin-button {
     display: none;
 }
 
-.ios-light{
+#ios-light{
     width:70% !important;
 }
   
