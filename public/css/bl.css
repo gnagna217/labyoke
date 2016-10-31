@@ -489,6 +489,10 @@ input::-webkit-inner-spin-button {
 .desktabonly{
     display: none;
 }
+
+.ios-light{
+    width:70% !important;
+}
   
 }
 
