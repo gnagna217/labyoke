@@ -329,7 +329,7 @@ margin-right: 15px !important;
 }
 #rankTbl td
 {
-    text-align: center;
+    /*text-align: center;*/
     font-size:16px;
 }
 
