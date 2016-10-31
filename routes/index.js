@@ -688,7 +688,7 @@ module.exports = function(router) {
 	router.get('/changepassword', isLoggedInAndNotActive, function(req, res) {
 		res.render('changepassword', {
 			title : 'You & LabYoke',
-			loggedIn : true,
+			/*loggedIn : true,*/
 			netlighter : req.session.user,
 			scripts : [ '/javascripts/utils.js' ]
 		});
