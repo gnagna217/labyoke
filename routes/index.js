@@ -726,6 +726,7 @@ module.exports = function(router) {
 			}
 		});*/
 		var id = req.body.hashid;
+		console.log("changing password id is: " + id);
 		var dateStripped = moment(new Date).tz("Europe/Berlin").format(
 				'YYYY-MM-DD'); // '2014-06-09'
 
@@ -778,7 +779,8 @@ module.exports = function(router) {
 			}
 			});
 		} else {
-			res.redirect('/forgot');
+			console.log("redirecting to forgot page");
+			//res.redirect('/forgot');
 		}
 
 	});
