@@ -710,6 +710,7 @@ module.exports = function(router) {
 			title : 'You & LabYoke',
 			/*loggedIn : true,*/
 			displayForm: true,
+			hashid: req.params.id;
 			scripts : [ '/javascripts/utils.js' ]
 		});
 	});
@@ -718,18 +719,18 @@ module.exports = function(router) {
 		res.redirect('/forgot');
 	});
 
-	router.post('/changepassword/:id', /*isLoggedIn,*/ function(req, res) {
+	router.post('/changepassword', /*isLoggedIn,*/ function(req, res) {
 		/*labyoker.changepassword(function(error, done) {
 			if (done != null) {
 				res.redirect('/');
 			}
 		});*/
-		var id = req.params.id;
+		var id = req.body.hashid;
 		var dateStripped = moment(new Date).tz("Europe/Berlin").format(
 				'YYYY-MM-DD'); // '2014-06-09'
 
 		if (id != null && id.length > 0){
-			var hash = new HashNumber(req.params.id);
+			var hash = new HashNumber(id);
 			var LabyokerPasswordChange = new LabyokerPasswordChange(hash, req.body.pass);
 			LabyokerPasswordChange.checkIfChangePassword(function(error, results) {
 			
