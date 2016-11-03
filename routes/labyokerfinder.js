@@ -359,8 +359,10 @@ LabyokerPasswordChange.prototype.checkIfChangePassword = function(callback) {
 	query.on("end", function(result) {
 		results = result.rows;
 
-		if (results != null && results.length == 1 && changepwd_date != null) {
-		var changepwd_date = results[0].changepwd_date;
+		if (results != null && results.length == 1){
+			var changepwd_date = results[0].changepwd_date;
+			if(changepwd_date != null) {
+		
 		console.log("now is " + now);
 		console.log("changepwd_date is " + ( changepwd_date == now));
 			/*var query2 = client.query("SELECT * FROM vm2016_users where changepwd_id='"
@@ -404,7 +406,8 @@ LabyokerPasswordChange.prototype.checkIfChangePassword = function(callback) {
 			//});
 		} else {
 			callback(null, "cannotFindRequest");
-		}	
+		}
+	}
 	});
 }
 
