@@ -710,7 +710,7 @@ module.exports = function(router) {
 			title : 'You & LabYoke',
 			/*loggedIn : true,*/
 			displayForm: true,
-			hashid: req.params.id;
+			hashid: req.params.id,
 			scripts : [ '/javascripts/utils.js' ]
 		});
 	});
