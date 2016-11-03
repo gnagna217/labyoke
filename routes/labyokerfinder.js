@@ -357,21 +357,22 @@ Labyoker.prototype.requestChangePassword = function(callback) {
 
 			var query2 = client.query("UPDATE vm2016_users SET changepwd_id='" + hash
 			+ "', changepwd_status=0, changepwd_date='" + dateStripped + "' where id='" + username + "'");
-
+		var email = result[0].email;
+		var name = result[0].name;
 
 	query2.on("row", function(row, result2) {
 		result2.addRow(row);
 	});
 	query2.on("end", function(result2) {
 
-		var email = result[0].email;
+		
 		console.log("email: " + email);
 
 		/*if (email.length == 4 || email.length == 2) {
 			email += "@netlight.com";
 		}*/
 		var subject = "Labyoke - Change Password Request";
-		var body = "<div style=\"font-family:'calibri'; font-size:11pt\">Hello " + rresult[0].name
+		var body = "<div style=\"font-family:'calibri'; font-size:11pt\">Hello " + name
 				+ ",<br/><br/>";
 		body += "You have requested to change your password @ LabYoke. Please click on this link:<br/>";
 		body += "<p style=\"text-align:center\"><span style='font-size:20pt'><b>https:\/\/team-labyoke.herokuapp.com\/changepassword?id="
