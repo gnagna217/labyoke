@@ -592,7 +592,7 @@ module.exports = function(router) {
 						res.render(
 							'forgot',
 							{
-								message : "Sorry. We have already sent you an email today to change your password. Please check your inbox.", usernotfound : true, noforgotform: true
+								message : "Sorry <span class='labColor'>" + forgotuser + "</span>. We have already sent you an email today to change your password. Please check your inbox.", usernotfound : true, noforgotform: true
 							});
 					} else {
 						res.render(
