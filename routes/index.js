@@ -598,7 +598,7 @@ module.exports = function(router) {
 						res.render(
 							'forgot',
 							{
-								message : "Sorry. We couldn't find your username. Please try again...", usernotfound : true
+								message : "Sorry we could not find an account with this username. Please try again below.", usernotfound : true
 							});
 					}
 				});
