@@ -743,7 +743,7 @@ module.exports = function(router) {
 					res.render('changepassword', {
 						title : 'You & LabYoke',
 						/*loggedIn : true,*/
-						messageSuccess : "Congratulations you have successfully changed your Password. Please head to the login page.", 
+						messageSuccess : "Congratulations you have successfully changed your Password. Please head to the <a href='/login'>login</a> page.", 
 						scripts : [ '/javascripts/utils.js' ]
 					});
 			} else if(results != null && results.length > 0 && results == 'errorFound') {
@@ -751,14 +751,15 @@ module.exports = function(router) {
 						title : 'You & LabYoke',
 						/*loggedIn : true,*/
 						displayForm: true,
-						message : "An error was found while processing your change password. Please try again or Contact us.", 
+						message : "An error was found while processing your change password. Please try again or <a href='mailto:labyoke@gmail.com?Subject="
+																		+ "Change Password - " + id + "' target='_top'>Contact us</a>.", 
 						scripts : [ '/javascripts/utils.js' ]
 					});
 			} else if(results != null && results.length > 0 && results == 'dateExpired') {
 						res.render('forgot', {
 						title : 'You & LabYoke',
 						/*loggedIn : true,*/
-						message : "Unfortunately your Change Password request has expired. Please make a new request or Contact us.", 
+						message : "Unfortunately your Change Password request has expired. Please make a new request.", 
 						displayForm: true,
 						scripts : [ '/javascripts/utils.js' ]
 					});
@@ -767,7 +768,7 @@ module.exports = function(router) {
 						title : 'You & LabYoke',
 						/*loggedIn : true,*/
 						displayForm: true,
-						message : "Sorry we could not find your Change Password request. Please make a new request or Contact us.", 
+						message : "Sorry we could not find your Change Password request. Please make a new request.", 
 						scripts : [ '/javascripts/utils.js' ]
 					});
 			} else {
@@ -775,7 +776,8 @@ module.exports = function(router) {
 						title : 'You & LabYoke',
 						/*loggedIn : true,*/
 						displayForm: true,
-						message : "An error was found while processing your change password. Please try again or Contact us.", 
+						message : "An error was found while processing your change password. Please try again or <a href='mailto:labyoke@gmail.com?Subject="
+																		+ "Change Password - " + id + "' target='_top'>Contact us</a>.", 
 						scripts : [ '/javascripts/utils.js' ]
 					});
 			}
