@@ -1,4 +1,5 @@
 var nodemailer = require("nodemailer");
+var xoauth2 = require('xoauth2');
 
 // create reusable transport method (opens pool of SMTP connections)
 var smtpTransport = nodemailer.createTransport("SMTP", {
@@ -9,13 +10,34 @@ var smtpTransport = nodemailer.createTransport("SMTP", {
 	}
 });
 
-var transport = nodemailer.createTransport("SMTP", {
+/*var transport = nodemailer.createTransport("SMTP", {
     host: "smtp.gmail.com", // hostname
     secureConnection: true, // use SSL
     port: 465, // port for secure SMTP
     auth: {
         user: "labyoke@gmail.com",
         pass: "gnandria2016"
+    }
+});*/
+
+var tokenized_user = null;
+var tokenized_access = null;
+generator.on('token', function(token){
+    console.log('New token for %s: %s', token.user, token.accessToken);
+    tokenized_user = token.user;
+    tokenized_access = token.accessToken;
+});
+
+var transport = nodemailer.createTransport({
+    service: 'gmail',
+    auth: {
+        xoauth2: xoauth2.createXOAuth2Generator({
+            user: 'labyoke@gmail.com',
+            clientId: '722270197322-ue10ou0vmbapolg9rc3imkobrrv9m4mn.apps.googleusercontent.com',
+            clientSecret: 'UY-1x5L2cwV-TS0jI67Aznio',
+            refreshToken: '1/XXZRp2IHBsREpDkWZ1XPkRkOWn_8hOXhq40WiCDnjGM',
+            accessToken: 'ya29.Ci-KA1KX0TZ0GnddP69CguOT137m9TL8hvMDPED1KEfEFSOejfOCURvTHYJ-x-7-oA'
+        })
     }
 });
 
