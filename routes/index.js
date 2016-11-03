@@ -1,5 +1,7 @@
 var labyokeFinderClass = require('./labyokerfinder');
 var dates = require('../config/staticvariables');
+
+var LabyokerPasswordChange = labyokeFinderClass.LabyokerPasswordChange;
 var LabYokeFinder = labyokeFinderClass.LabYokeFinder;
 var MatchPredictorSingleTeam = labyokeFinderClass.MatchPredictorSingleTeam;
 var LabyokerMakesBet = labyokeFinderClass.LabyokerMakesBet;
