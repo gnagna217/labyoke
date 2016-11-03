@@ -592,13 +592,13 @@ module.exports = function(router) {
 						res.render(
 							'forgot',
 							{
-								message : "Sorry <span class='labColor'>" + forgotuser + "</span>. We have already sent you an email today to change your password. Please check your inbox.", usernotfound : true, noforgotform: true
+								message : "Ah. We have already sent you an email today to change your password. Please check your inbox.", usernotfound : true, noforgotform: true
 							});
 					} else {
 						res.render(
 							'forgot',
 							{
-								message : "Sorry we could not find an account with this username. Please try again below.", usernotfound : true
+								message : "Sorry. We could not find an account with this username. Please try again below.", usernotfound : true
 							});
 					}
 				});
