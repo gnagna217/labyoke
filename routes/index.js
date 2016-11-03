@@ -581,6 +581,7 @@ module.exports = function(router) {
 			if (forgotuser != null && forgotuser.length > 0){
 				var dateStripped = moment(new Date).tz("Europe/Berlin").format(
 				'YYYY-MM-DD');
+				console.log("dateStripped2: " + dateStripped);
 				var labyoker = new Labyoker(forgotuser,dateStripped);
 				labyoker.requestChangePassword(function(error, done) {
 					if (done != null && done.length > 0) {
