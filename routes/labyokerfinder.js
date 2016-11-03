@@ -372,7 +372,7 @@ Labyoker.prototype.requestChangePassword = function(callback) {
 			email += "@netlight.com";
 		}*/
 		var subject = "Labyoke - Change Password Request";
-		var body = "<img src='https:\/\/team-labyoke.herokuapp.com\/images\/yoke.jpg', alt='The Yoke',  title='Yoke', class='yokelogo'/><div style=\"font-family:'calibri'; font-size:11pt\">Hello " + name
+		var body = "<img style='width: 300px;' src='https:\/\/team-labyoke.herokuapp.com\/images\/yoke.jpg', alt='The Yoke',  title='Yoke', class='yokelogo'/><div style=\"font-family:'calibri'; font-size:11pt\">Hello " + name
 				+ ",<br/><br/>";
 		body += "You have requested to change your password @ LabYoke. Please click on this link:<br/>";
 		body += "<p style=\"text-align:center\"><span style=''><b>https:\/\/team-labyoke.herokuapp.com\/changepassword?id="
