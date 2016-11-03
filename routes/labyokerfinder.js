@@ -372,17 +372,17 @@ Labyoker.prototype.requestChangePassword = function(callback) {
 			email += "@netlight.com";
 		}*/
 		var subject = "Labyoke - Change Password Request";
-		var body = "<div style=\"font-family:'calibri'; font-size:11pt\">Hello " + name
+		var body = "<img src='https:\/\/team-labyoke.herokuapp.com\/images\/yoke.jpg', alt='The Yoke',  title='Yoke', class='yokelogo'/><div style=\"font-family:'calibri'; font-size:11pt\">Hello " + name
 				+ ",<br/><br/>";
 		body += "You have requested to change your password @ LabYoke. Please click on this link:<br/>";
-		body += "<p style=\"text-align:center\"><span style='font-size:20pt'><b>https:\/\/team-labyoke.herokuapp.com\/changepassword?id="
+		body += "<p style=\"text-align:center\"><span style=''><b>https:\/\/team-labyoke.herokuapp.com\/changepassword?id="
 				+ hash
 				+ "</b></span>";
-		body += "<span style='color:red; font-size:18pt'>You have <b>1 day"
-				+ "</b> to change your password. But don't worry you can always send us another request once this one has expired</span> <span style='font-size:20pt'><b>"
-				+ "https:\/\/team-labyoke.herokuapp.com\/forgot</b></span></p>";
-		body += "<br/><br/>Have you shared today? <a href=\"https:\/\/team-labyoke.herokuapp.com\/search\">@LabYoke</a>";
-		body += "<br/><br/><b><i>The LabYoke Team -</i></b></div>";
+		body += "<span>You have <b><span style='color:red;'>1 day</span>"
+				+ "</b> to change your password. But don't worry you can always send us another <a href=\"https:\/\/team-labyoke.herokuapp.com\/forgot\">request</a> once this one has expired</span> <span style=''>"
+				+ "</span></p>";
+		body += "<br/><br/>Have you shared some chemicals today? <a href=\"https:\/\/team-labyoke.herokuapp.com\/share\">@LabYoke</a>";
+		body += "<br/><br/><b><i>The LabYoke Team.</i></b></div>";
 		console.log("body: " + body);
 
 		var mailOptions = new MailOptions(email, subject, body);
