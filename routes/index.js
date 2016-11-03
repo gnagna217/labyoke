@@ -584,7 +584,8 @@ module.exports = function(router) {
 				console.log("dateStripped2: " + dateStripped);
 				var labyoker = new Labyoker(forgotuser,dateStripped);
 				labyoker.requestChangePassword(function(error, done) {
-					console.log("done: " + done);
+					console.log("done: " + (done != null && done.length > 0 && done == 'alreadySent'));
+					console.log("done2: " + (done != null && done == 'alreadySent'));
 					if (done != null && done.length > 0 && done != 'alreadySent') {
 						res.render('forgot', {userfound : forgotuser});
 					} else if(done != null && done.length > 0 && done == 'alreadySent') {
