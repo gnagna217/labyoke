@@ -389,7 +389,7 @@ LabyokerPasswordChange.prototype.checkIfChangePassword = function(callback) {
 					console.log("changing password pwd: " + pwd);
 					query3.on("end", function(result3) {
 						var results3 = result3.rows;
-						if (results3 != null && results3.length == 1) {
+						if (results3 != null) {
 							var results3 = result3.rows;
 							callback(null, "passwordReset");
 						} else {
