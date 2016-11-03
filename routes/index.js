@@ -725,8 +725,8 @@ module.exports = function(router) {
 				res.redirect('/');
 			}
 		});*/
-		var hash = req.body.hashid;
-		console.log("changing password id is: " + hash);
+		var id = req.body.hashid;
+		console.log("changing password id is: " + id);
 		console.log("changing password pwd is: " + req.body.pass);
 		var dateStripped = moment(new Date).tz("Europe/Berlin").format(
 				'YYYY-MM-DD'); // '2014-06-09'
