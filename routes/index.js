@@ -739,14 +739,14 @@ module.exports = function(router) {
 			
 			console.log("LabyokerPasswordChange results: " + results);
 			
-			if (results != null && results.length > 0 && results != 'passwordReset') {
+			if (results != null && results.length > 0 && results == 'passwordReset') {
 					res.render('changepassword', {
 						title : 'You & LabYoke',
 						/*loggedIn : true,*/
 						messageSuccess : "Congratulations you have successfully changed your Password. Please head to the login page.", 
 						scripts : [ '/javascripts/utils.js' ]
 					});
-			} else if(results != null && results.length > 0 && results != 'errorFound') {
+			} else if(results != null && results.length > 0 && results == 'errorFound') {
 					res.render('changepassword', {
 						title : 'You & LabYoke',
 						/*loggedIn : true,*/
@@ -754,7 +754,7 @@ module.exports = function(router) {
 						message : "An error was found while processing your change password. Please try again or Contact us.", 
 						scripts : [ '/javascripts/utils.js' ]
 					});
-			} else if(results != null && results.length > 0 && results != 'dateExpired') {
+			} else if(results != null && results.length > 0 && results == 'dateExpired') {
 						res.render('forgot', {
 						title : 'You & LabYoke',
 						/*loggedIn : true,*/
@@ -762,7 +762,7 @@ module.exports = function(router) {
 						displayForm: true,
 						scripts : [ '/javascripts/utils.js' ]
 					});
-			} else if(results != null && results.length > 0 && results != 'cannotFindRequest') {
+			} else if(results != null && results.length > 0 && results == 'cannotFindRequest') {
 					res.render('forgot', {
 						title : 'You & LabYoke',
 						/*loggedIn : true,*/
