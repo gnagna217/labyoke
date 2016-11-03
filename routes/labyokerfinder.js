@@ -380,7 +380,7 @@ LabyokerPasswordChange.prototype.checkIfChangePassword = function(callback) {
 					var hash_new_password = crypt.hashSync(pwd);
 					console.log("test0 " + hash_new_password);
 					var query3 = client.query("UPDATE vm2016_users SET password='" + hash_new_password
-							+ "', active=1, changepwd_date='', changepwd_status='' and changepwd_id=1 where id='" + userid + "'");
+							+ "', active=1, changepwd_date='', changepwd_status=1 and changepwd_id='' where id='" + userid + "'");
 					console.log("test1");
 					query3.on("row", function(row, result3) {
 						result3.addRow(row);
