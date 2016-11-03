@@ -374,14 +374,15 @@ LabyokerPasswordChange.prototype.checkIfChangePassword = function(callback) {
 				results2 = result2.rows;
 				if (results2 != null && results2.length == 1) {*/
 					console.log("changing password now for: " + name);
-
+					console.log("changing password pwd: " + this.password);
 					var hash_new_password = crypt.hashSync(this.password);
 					var query3 = client.query("UPDATE vm2016_users SET password='" + hash_new_password
 							+ "', active=1,changepwd_date='',changepwd_status='' and changepwd_id='' where id='" + this.username + "'");
 					query3.on("row", function(row, result3) {
 						result3.addRow(row);
 					});
-					query3.on("end", function(result) {
+					query3.on("end", function(result3) {
+						var results3 = result3.rows;
 						if (results3 != null && results3.length == 1) {
 							var results3 = result3.rows;
 							callback(null, "passwordReset");
