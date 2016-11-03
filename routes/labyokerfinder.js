@@ -427,7 +427,7 @@ Labyoker.prototype.requestChangePassword = function(callback) {
 				'YYYY-MM-DD');
 			var changepwd_date = results[0].changepwd_date;
 			console.log("diff: " + changepwd_date + " - " + now);
-			if(changepwd_date == null || (changepwd_date != null && changepwd_date!=now)){
+			if(changepwd_date == null || (changepwd_date != null && changepwd_date=='') || (changepwd_date != null && changepwd_date!=now)){
 				var hash = crypt.hashSync(username);
 				console.log("before requestChangePassword: " + hash);
 				hash = hash.replace(/\//g, "");
