@@ -357,6 +357,8 @@ LabyokerPasswordChange.prototype.checkIfChangePassword = function(callback) {
 	});
 	query.on("end", function(result) {
 		results = result.rows;
+		console.log("now is " + now);
+		console.log("changepwd_date is " + results[0].changepwd_date);
 		if (results != null && results.length == 1) {
 			var query2 = client.query("SELECT * FROM vm2016_users where changepwd_id='"
 				+ this.id + "' and changepwd_date='" + now + "'");
