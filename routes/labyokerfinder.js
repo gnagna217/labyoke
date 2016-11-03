@@ -357,7 +357,7 @@ LabyokerPasswordChange.prototype.checkIfChangePassword = function(callback) {
 		result.addRow(row);
 	});
 	query.on("end", function(result) {
-		results = result.rows;results[0].changepwd_date
+		results = result.rows;
 
 		if (results != null && results.length == 1 && changepwd_date != null) {
 		var changepwd_date = results[0].changepwd_date;
