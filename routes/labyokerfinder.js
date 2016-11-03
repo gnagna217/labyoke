@@ -395,7 +395,7 @@ Labyoker.prototype.requestChangePassword = function(callback) {
 					mailOptions.sendAllEmails();
 
 				});
-				callback(null, result.rows);
+				callback(null, results);
 			} else {
 				//Change Password already sent
 				console.log("alreadySent.");
