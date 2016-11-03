@@ -20,14 +20,6 @@ var smtpTransport = nodemailer.createTransport("SMTP", {
     }
 });*/
 
-var tokenized_user = null;
-var tokenized_access = null;
-generator.on('token', function(token){
-    console.log('New token for %s: %s', token.user, token.accessToken);
-    tokenized_user = token.user;
-    tokenized_access = token.accessToken;
-});
-
 var transport = nodemailer.createTransport({
     service: 'gmail',
     auth: {
