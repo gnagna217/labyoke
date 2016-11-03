@@ -7,6 +7,7 @@ var conString = process.env.DATABASE_URL || "pg://" + config.username + ":"
 		+ config.database;
 var client = new pg.Client(conString);
 client.connect();
+var crypt = require('bcrypt-nodejs');
 
 LabYokeFinder = function(today) {
 	this.now = today
@@ -261,7 +262,7 @@ LabyokerMakesBets.prototype.getranking = function(callback) {
 	});
 }
 
-var crypt = require('bcrypt-nodejs');
+//var crypt = require('bcrypt-nodejs');
 var salt = crypt.genSaltSync(1);
 
 Labyoker = function(username, password) {
@@ -387,6 +388,8 @@ Labyoker.prototype.requestChangePassword = function(callback) {
 
 	});
 			callback(null, result.rows);
+		} else {
+			callback(null, null);
 		}
 });
 };
