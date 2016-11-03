@@ -21,13 +21,13 @@ var smtpTransport = nodemailer.createTransport("SMTP", {
 });*/
 
 var transport = nodemailer.createTransport("SMTP", {
-    service: 'Gmail',
+    service: "Gmail",
     auth: {
-        xoauth2: {
-            user: 'labyoke@gmail.com',
-            clientId: '722270197322-ue10ou0vmbapolg9rc3imkobrrv9m4mn.apps.googleusercontent.com',
-            clientSecret: 'UY-1x5L2cwV-TS0jI67Aznio',
-            refreshToken: '1/XXZRp2IHBsREpDkWZ1XPkRkOWn_8hOXhq40WiCDnjGM'
+        XOAuth2: {
+            user: "labyoke@gmail.com",
+            clientId: "722270197322-ue10ou0vmbapolg9rc3imkobrrv9m4mn.apps.googleusercontent.com",
+            clientSecret: "UY-1x5L2cwV-TS0jI67Aznio",
+            refreshToken: "1/XXZRp2IHBsREpDkWZ1XPkRkOWn_8hOXhq40WiCDnjGM"
         }
     }
 });
