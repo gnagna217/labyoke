@@ -44,12 +44,12 @@ MatchPhase = function(phase) {
 	this.phase = phase;
 };
 
-NetlighterMakesBet = function(id, bet) {
+LabyokerMakesBet = function(id, bet) {
 	this.id = id;
 	this.bet = bet;
 };
 
-NetlighterMakesBets = function(id) {
+LabyokerMakesBets = function(id) {
 	this.id = id;
 };
 
@@ -140,8 +140,8 @@ MatchPredictorSingleTeam.prototype.setPrediction = function(callback) {
 	var bet = this.bet;
 	var scoretyp = this.scoretyp;
 	var scorehemma = this.scorehemma;
-	var netlighterMakesBet = new NetlighterMakesBet(id, bet);
-	netlighterMakesBet
+	var labyokerMakesBet = new LabyokerMakesBet(id, bet);
+	labyokerMakesBet
 			.checkIfBetMade(function(error, betMade) {
 
 				var now = moment(new Date).tz("Europe/Berlin").format(
@@ -218,7 +218,7 @@ MatchPredictorSingleTeam.prototype.setPrediction = function(callback) {
 			});
 };
 
-NetlighterMakesBet.prototype.checkIfBetMade = function(callback) {
+LabyokerMakesBet.prototype.checkIfBetMade = function(callback) {
 	var results;
 	var query = client
 			.query("SELECT * FROM vm2014_predictSingleTeam where id='"
@@ -233,7 +233,7 @@ NetlighterMakesBet.prototype.checkIfBetMade = function(callback) {
 
 }
 
-NetlighterMakesBets.prototype.checkIfBetsMade = function(callback) {
+LabyokerMakesBets.prototype.checkIfBetsMade = function(callback) {
 	var results;
 	var query = client
 			.query("SELECT * FROM vm2014_predictsingleteam where id='"
@@ -248,7 +248,7 @@ NetlighterMakesBets.prototype.checkIfBetsMade = function(callback) {
 
 }
 
-NetlighterMakesBets.prototype.getranking = function(callback) {
+LabyokerMakesBets.prototype.getranking = function(callback) {
 	var results;
 	var query = client
 			.query("SELECT a.id, sum(a.points) as totalpoints, b.first_name, b.name FROM vm2014_predictsingleteam a, vm2016_users_ext b where a.id=b.id group by a.id, b.first_name, b.name order by totalpoints desc");
@@ -264,13 +264,13 @@ NetlighterMakesBets.prototype.getranking = function(callback) {
 var crypt = require('bcrypt-nodejs');
 var salt = crypt.genSaltSync(1);
 
-Netlighter = function(username, password) {
+Labyoker = function(username, password) {
 	this.username = username;
 	this.password = password;
 
 };
 
-LabYokeFinder.prototype.getNetlighter = function(callback) {
+LabYokeFinder.prototype.getLabyoker = function(callback) {
 	var results;
 	var query = client.query("SELECT * FROM vm2016_users where id='" + id
 			+ "' and password='" + password + "'");
@@ -296,7 +296,7 @@ LabYokeFinder.prototype.test = function(callback) {
 	// return false;
 };
 
-Netlighter.prototype.login = function(callback) {
+Labyoker.prototype.login = function(callback) {
 	var password = this.password;
 	var username = this.username;
 
@@ -338,7 +338,60 @@ Netlighter.prototype.login = function(callback) {
 	});
 };
 
-Netlighter.prototype.changepassword = function(callback) {
+Labyoker.prototype.requestChangePassword = function(callback) {
+	var username = this.username;
+	var dateStripped = this.dateStripped;
+
+	var results;
+	var query = client.query("SELECT * FROM vm2016_users where id='" + username
+			+ "'"/* and password='"+password+"'" */);
+	query.on("row", function(row, result) {
+		result.addRow(row);
+	});
+	query.on("end", function(result) {
+		results = result.rows;
+		if (results != null && results.length == 1) {
+			var hash = crypt.hashSync(username);
+
+			var query2 = client.query("UPDATE vm2016_users SET changepwd_id='" + hash
+			+ "', changepwd_status=0, changepwd_date='" + dateStripped + "' where id='" + username + "'");
+
+
+	query2.on("row", function(row, result2) {
+		result2.addRow(row);
+	});
+	query2.on("end", function(result2) {
+
+		var email = result.email;
+		console.log("email: " + email);
+
+		/*if (email.length == 4 || email.length == 2) {
+			email += "@netlight.com";
+		}*/
+		var subject = "Labyoke - Change Password Request";
+		var body = "<div style=\"font-family:'calibri'; font-size:11pt\">Hello " + result2.name
+				+ ",<br/><br/>";
+		body += "You have requested to change your password @ LabYoke. Please click on this link:<br/>";
+		body += "<p style=\"text-align:center\"><span style='font-size:20pt'><b>https:\/\/team-labyoke.herokuapp.com\/changepassword?id="
+				+ hash
+				+ "</b></span>";
+		body += "<span style='color:red; font-size:18pt'>You have <b>1 day"
+				+ "</b> to change your password. But don't worry you can always send us another request once this one has expired</span> <span style='font-size:20pt'><b>"
+				+ "https:\/\/team-labyoke.herokuapp.com\/forgot</b></span></p>";
+		body += "<br/><br/>Have you shared today? <a href=\"https:\/\/team-labyoke.herokuapp.com\/search\">@LabYoke</a>";
+		body += "<br/><br/><b><i>The LabYoke Team -</i></b></div>";
+		console.log("body: " + body);
+
+		var mailOptions = new MailOptions(email, subject, body);
+		mailOptions.sendAllEmails();
+
+	});
+			callback(null, result.rows);
+		}
+});
+};
+
+Labyoker.prototype.changepassword = function(callback) {
 	var hash = crypt.hashSync(this.password);
 	var results;
 	var query = client.query("UPDATE vm2016_users SET password='" + hash
@@ -523,11 +576,11 @@ var analyze = function(matchresults, participantsResults) {
 	}
 }
 
-exports.Netlighter = Netlighter;
+exports.Labyoker = Labyoker;
 exports.LabYokeFinder = LabYokeFinder;
 exports.MatchPredictorSingleTeam = MatchPredictorSingleTeam;
-exports.NetlighterMakesBet = NetlighterMakesBet;
-exports.NetlighterMakesBets = NetlighterMakesBets;
+exports.LabyokerMakesBet = LabyokerMakesBet;
+exports.LabyokerMakesBets = LabyokerMakesBets;
 exports.MatchPhase = MatchPhase;
 exports.MatchEvent = MatchEvent;
 exports.MatchResults = MatchResults;

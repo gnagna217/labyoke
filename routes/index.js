@@ -1,11 +1,11 @@
-var labyokeFinderClass = require('./labyokefinder');
+var labyokeFinderClass = require('./labyokerfinder');
 var dates = require('../config/staticvariables');
 var LabYokeFinder = labyokeFinderClass.LabYokeFinder;
 var MatchPredictorSingleTeam = labyokeFinderClass.MatchPredictorSingleTeam;
-var NetlighterMakesBet = labyokeFinderClass.NetlighterMakesBet;
-var NetlighterMakesBets = labyokeFinderClass.NetlighterMakesBets;
+var LabyokerMakesBet = labyokeFinderClass.LabyokerMakesBet;
+var LabyokerMakesBets = labyokeFinderClass.LabyokerMakesBets;
 var MatchPhase = labyokeFinderClass.MatchPhase;
-var Netlighter = labyokeFinderClass.Netlighter;
+var Labyoker = labyokeFinderClass.Labyoker;
 var MatchResults = labyokeFinderClass.MatchResults;
 var MatchAdvancing = labyokeFinderClass.MatchAdvancing;
 var moment = require('moment-timezone');
@@ -20,18 +20,18 @@ module.exports = function(router) {
 
 	router.get('/', isLoggedIn, function(req, res) {
 
-		var netlighterMakesBets = new NetlighterMakesBets(req.session.userid);
+		var labyokerMakesBets = new LabyokerMakesBets(req.session.userid);
 		var betsMade;
 		var dateStripped = moment(new Date).tz("Europe/Berlin").format(
 				'YYYY-MM-DD'); // '2014-06-09'
 
 		if (moment(competitionEnds).diff(moment(dateStripped)) < 0) {
-			netlighterMakesBets.getranking(function(error, ranking) {
+			labyokerMakesBets.getranking(function(error, ranking) {
 				res.render('index', {
 					title : 'The World Cup has ended!',
 					matches : null,
 					loggedIn : true,
-					netlighter : req.session.user,
+					labyoker : req.session.user,
 					user : req.session.userid,
 					menu : 'today',
 					state : 'ended',
@@ -46,7 +46,7 @@ module.exports = function(router) {
 		} else {
 
 			if (moment(competitionStarts).diff(moment(dateStripped)) <= 0) {
-				netlighterMakesBets.checkIfBetsMade(function(error,
+				labyokerMakesBets.checkIfBetsMade(function(error,
 						singleBetsMade) {
 
 					var labyokeFinder = new LabYokeFinder(dateStripped);
@@ -60,7 +60,7 @@ module.exports = function(router) {
 										'/javascripts/image_preload.js' ],
 								loggedIn : true,
 								betsMade : singleBetsMade,
-								netlighter : req.session.user,
+								labyoker : req.session.user,
 								user : req.session.userid,
 								menu : 'today',
 								moment : moment,
@@ -69,13 +69,13 @@ module.exports = function(router) {
 							// '2014-06-09 HH:mm:ss'
 							});
 						} else {
-							netlighterMakesBets.getranking(function(error,
+							labyokerMakesBets.getranking(function(error,
 									ranking) {
 								res.render('index', {
 									title : 'Rest Day',
 									matches : null,
 									loggedIn : true,
-									netlighter : req.session.user,
+									labyoker : req.session.user,
 									user : req.session.userid,
 									menu : 'today',
 									state : 'rest',
@@ -94,7 +94,7 @@ module.exports = function(router) {
 					title : 'Countdown to the World Cup!!!',
 					matches : null,
 					loggedIn : true,
-					netlighter : req.session.user,
+					labyoker : req.session.user,
 					user : req.session.userid,
 					menu : 'today',
 					state : 'notstarted',
@@ -134,13 +134,13 @@ module.exports = function(router) {
 
 						var matchPredictorSingle = new MatchPredictorSingleTeam(
 								id, predictedTeam, bet, scoretyp, scorehemma);
-						var netlighterMakesBets = new NetlighterMakesBets(id);
+						var labyokerMakesBets = new LabyokerMakesBets(id);
 						var betsMade;
 
 						matchPredictorSingle
 								.setPrediction(function(error, predict) {
 
-									netlighterMakesBets
+									labyokerMakesBets
 											.checkIfBetsMade(function(error,
 													singleBetsMade) {
 												betsMade = singleBetsMade;
@@ -179,7 +179,7 @@ module.exports = function(router) {
 																				'/javascripts/utils.js',
 																				'/javascripts/image_preload.js' ],
 																		loggedIn : true,
-																		netlighter : req.session.user,
+																		labyoker : req.session.user,
 																		user : req.session.userid,
 																		betsMade : betsMade,
 																		placesuccess : predictedPosition,
@@ -206,7 +206,7 @@ module.exports = function(router) {
 																				'/javascripts/utils.js',
 																				'/javascripts/image_preload.js' ],
 																		loggedIn : true,
-																		netlighter : req.session.user,
+																		labyoker : req.session.user,
 																		user : req.session.userid,
 																		betsMade : betsMade,
 																		message : 'This match has expired. Please check the calendar for upcoming matches :)',
@@ -227,14 +227,14 @@ module.exports = function(router) {
 					});
 
 	router.get('/event/:date', isLoggedIn, function(req, res) {
-		var netlighterMakesBets = new NetlighterMakesBets(req.session.userid);
+		var labyokerMakesBets = new LabyokerMakesBets(req.session.userid);
 		var betsMade;
 		var dateStripped = moment(new Date).tz("Europe/Berlin").format(
 				'YYYY-MM-DD'); // '2014-06-09'
 
 		if (moment(competitionStarts).diff(moment(dateStripped)) <= 0) {
 
-			netlighterMakesBets
+			labyokerMakesBets
 					.checkIfBetsMade(function(error, singleBetsMade) {
 						var matchEvent = new MatchEvent(req.params.date);
 						matchEvent.getMatchOfTheDay(function(error, match) {
@@ -250,7 +250,7 @@ module.exports = function(router) {
 										'/javascripts/image_preload.js' ],
 								loggedIn : true,
 								betsMade : singleBetsMade,
-								netlighter : req.session.user,
+								labyoker : req.session.user,
 								user : req.session.userid,
 								menu : 'calendar',
 								moment : moment,
@@ -265,7 +265,7 @@ module.exports = function(router) {
 				title : 'Countdown to the World Cup!!!',
 				matches : null,
 				loggedIn : true,
-				netlighter : req.session.user,
+				labyoker : req.session.user,
 				user : req.session.userid,
 				menu : 'today',
 				state : 'notstarted',
@@ -304,13 +304,13 @@ module.exports = function(router) {
 
 						var matchPredictorSingle = new MatchPredictorSingleTeam(
 								id, predictedTeam, bet, scoretyp, scorehemma);
-						var netlighterMakesBets = new NetlighterMakesBets(id);
+						var labyokerMakesBets = new LabyokerMakesBets(id);
 						var betsMade;
 
 						matchPredictorSingle
 								.setPrediction(function(error, predict) {
 									
-										netlighterMakesBets
+										labyokerMakesBets
 												.checkIfBetsMade(function(
 														error, singleBetsMade) {
 
@@ -360,7 +360,7 @@ module.exports = function(router) {
 																				'/javascripts/utils.js',
 																				'/javascripts/image_preload.js' ],
 																		loggedIn : true,
-																		netlighter : req.session.user,
+																		labyoker : req.session.user,
 																		user : req.session.userid,
 																		betsMade : betsMade,
 																		placesuccess : predictedPosition,
@@ -400,7 +400,7 @@ module.exports = function(router) {
 																					'/javascripts/utils.js',
 																					'/javascripts/image_preload.js' ],
 																			loggedIn : true,
-																			netlighter : req.session.user,
+																			labyoker : req.session.user,
 																			user : req.session.userid,
 																			betsMade : betsMade,
 																			menu : 'calendar',
@@ -449,7 +449,7 @@ module.exports = function(router) {
 											third : calendarThird,
 											finals : calendarFinal,
 											loggedIn : true,
-											netlighter : req.session.user,
+											labyoker : req.session.user,
 											menu : 'calendar',
 											moment : moment,
 											now : moment(new Date).tz(
@@ -468,23 +468,23 @@ module.exports = function(router) {
 		res.render('help', {
 			title : 'You & LabYoke',
 			loggedIn : true,
-			netlighter : req.session.user,
+			labyoker : req.session.user,
 			menu : 'help'
 		});
 
 	});
 
 	router.get('/ranking', isLoggedIn, function(req, res) {
-		var netlighterMakesBets = new NetlighterMakesBets(req.session.userid);
+		var labyokerMakesBets = new LabyokerMakesBets(req.session.userid);
 
-		netlighterMakesBets.getranking(function(error, netlightersRanking) {
+		labyokerMakesBets.getranking(function(error, labyokersRanking) {
 			res.render('ranking', {
 				title : "You - v - The Others",
-				netlighters : netlightersRanking,
+				labyokers : labyokersRanking,
 				loggedIn : true,
 				userid : req.session.userid,
 				scripts : [ '/javascripts/scrolling.js' ],
-				netlighter : req.session.user,
+				labyoker : req.session.user,
 				menu : 'ranking'
 			});
 		});
@@ -579,11 +579,22 @@ module.exports = function(router) {
 	router.post('/forgot', function(req, res) {
 			var forgotuser = req.body.forgotuser;
 			if (forgotuser != null && forgotuser.length > 0){
-				res.render('forgot', {userfound : forgotuser});
-			} else {
-				res.render('forgot', {usernotfound : true});
+				var dateStripped = moment(new Date).tz("Europe/Berlin").format(
+				'YYYY-MM-DD');
+				var labyoker = new Labyoker(username,dateStripped);
+				labyoker.requestChangePassword(function(error, done) {
+					if (done != null && done.length > 0) {
+						res.render('forgot', {userfound : forgotuser});
+					} else {
+						res.render(
+							'forgot',
+							{
+								message : "Sorry. We couldn't find your username. Please try again...", usernotfound : true
+							});
+					}
+				});
 			}
-			req.session.messages = null;
+			//req.session.messages = null;
 	});
 
 	router.get('/register', function(req, res) {
@@ -644,9 +655,9 @@ module.exports = function(router) {
 						var password = req.body.pass;
 						if (username != null && username.length > 0
 								&& password != null && password.length > 0) {
-							var netlighter = new Netlighter(username, password);
+							var labyoker = new Labyoker(username, password);
 
-							netlighter
+							labyoker
 									.login(function(error, done) {
 
 										if (done != null && done.length > 0) {
@@ -689,15 +700,15 @@ module.exports = function(router) {
 		res.render('changepassword', {
 			title : 'You & LabYoke',
 			/*loggedIn : true,*/
-			netlighter : req.session.user,
+			labyoker : req.session.user,
 			scripts : [ '/javascripts/utils.js' ]
 		});
 	});
 
 	router.post('/changepassword', isLoggedIn, function(req, res) {
-		var netlighter = new Netlighter(req.session.userid, req.body.pass);
+		var labyoker = new Labyoker(req.session.userid, req.body.pass);
 
-		netlighter.changepassword(function(error, done) {
+		labyoker.changepassword(function(error, done) {
 			if (done != null) {
 				res.redirect('/');
 			}
@@ -714,7 +725,7 @@ module.exports = function(router) {
 					res.render('admin', {
 						title : 'Administer Results, Teams & Points',
 						loggedIn : true,
-						netlighter : req.session.user,
+						labyoker : req.session.user,
 						allteams : allteams,
 						matches : allmatches,
 						winners : winners,
@@ -779,7 +790,7 @@ module.exports = function(router) {
 																										{
 																											title : 'Administer Results, Teams & Points',
 																											loggedIn : true,
-																											netlighter : req.session.user,
+																											labyoker : req.session.user,
 																											allteams : allteams,
 																											matches : allmatches,
 																											winners : winners,
@@ -831,7 +842,7 @@ module.exports = function(router) {
 																							{
 																								title : 'Administer Results, Teams & Points',
 																								loggedIn : true,
-																								netlighter : req.session.user,
+																								labyoker : req.session.user,
 																								allteams : allteams,
 																								matches : allmatches,
 																								winners : winners,
