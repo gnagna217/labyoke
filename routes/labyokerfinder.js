@@ -353,43 +353,53 @@ Labyoker.prototype.requestChangePassword = function(callback) {
 		results = result.rows;
 		console.log("dateStripped: " + dateStripped);
 		if (results != null && results.length == 1 && dateStripped != null) {
-			var hash = crypt.hashSync(username);
+			var changepwd_status = results[0].changepwd_status;
+			var now = moment(new Date).tz("Europe/Berlin").format(
+				'YYYY-MM-DD');
+			var changepwd_date = results[0].changepwd_date;
+			console.log("diff: " + changepwd_date + " - " + now);
+			if(changepwd_status != null && changepwd_status==0){
+				var hash = crypt.hashSync(username);
+				var query2 = client.query("UPDATE vm2016_users SET changepwd_id='" + hash
+				+ "', changepwd_status=0, changepwd_date='" + dateStripped + "' where id='" + username + "'");
+				
+				var email = results[0].email;
+				var name = results[0].name;
 
-			var query2 = client.query("UPDATE vm2016_users SET changepwd_id='" + hash
-			+ "', changepwd_status=0, changepwd_date='" + dateStripped + "' where id='" + username + "'");
-		var email = results[0].email;
-		var name = results[0].name;
+				query2.on("row", function(row, result2) {
+					result2.addRow(row);
+				});
+				query2.on("end", function(result2) {
 
-	query2.on("row", function(row, result2) {
-		result2.addRow(row);
-	});
-	query2.on("end", function(result2) {
+					
+					console.log("email: " + email);
 
-		
-		console.log("email: " + email);
+					/*if (email.length == 4 || email.length == 2) {
+						email += "@netlight.com";
+					}*/
+					var subject = "Labyoke - Change Password Request";
+					var body = "<div style='float:left'><img style='width: 200px; margin: 0 20px;' src='https:\/\/team-labyoke.herokuapp.com\/images\/yoke.jpg', alt='The Yoke',  title='Yoke', class='yokelogo'/></div><div style=\"font-family:'calibri'; font-size:11pt;padding: 20px;\">Hello " + name
+							+ ",<br/><br/>";
+					body += "You have requested to change your password @LabYoke. Please click on this link:<br/>";
+					body += "<p style=\"text-align:center\"><span style=''><b><a href='https:\/\/team-labyoke.herokuapp.com\/changepassword?id="
+							+ hash + "'>https:\/\/team-labyoke.herokuapp.com\/changepassword?id="
+							+ hash
+							+ "</a></b></span></p>";
+					body += "<p><span>You have <b><span style='color:red;'>1 day</span>"
+							+ "</b> to change your password. But don't worry you can always send us another <a href=\"https:\/\/team-labyoke.herokuapp.com\/forgot\">request</a> once this one has expired.</span> </p>";
+					body += "<p>[PS: Have you <a href=\"https:\/\/team-labyoke.herokuapp.com\/share\">shared</a> some chemicals today?]";
+					body += "</p><b><i>The LabYoke Team.</i></b></div>";
+					console.log("body: " + body);
 
-		/*if (email.length == 4 || email.length == 2) {
-			email += "@netlight.com";
-		}*/
-		var subject = "Labyoke - Change Password Request";
-		var body = "<div style='float:left'><img style='width: 200px; margin: 0 20px;' src='https:\/\/team-labyoke.herokuapp.com\/images\/yoke.jpg', alt='The Yoke',  title='Yoke', class='yokelogo'/></div><div style=\"font-family:'calibri'; font-size:11pt;padding: 20px;\">Hello " + name
-				+ ",<br/><br/>";
-		body += "You have requested to change your password @LabYoke. Please click on this link:<br/>";
-		body += "<p style=\"text-align:center\"><span style=''><b><a href='https:\/\/team-labyoke.herokuapp.com\/changepassword?id="
-				+ hash + "'>https:\/\/team-labyoke.herokuapp.com\/changepassword?id="
-				+ hash
-				+ "</a></b></span></p>";
-		body += "<p><span>You have <b><span style='color:red;'>1 day</span>"
-				+ "</b> to change your password. But don't worry you can always send us another <a href=\"https:\/\/team-labyoke.herokuapp.com\/forgot\">request</a> once this one has expired.</span> </p>";
-		body += "<p>[PS: Have you <a href=\"https:\/\/team-labyoke.herokuapp.com\/share\">shared</a> some chemicals today?]";
-		body += "</p><b><i>The LabYoke Team.</i></b></div>";
-		console.log("body: " + body);
+					var mailOptions = new MailOptions(email, subject, body);
+					mailOptions.sendAllEmails();
 
-		var mailOptions = new MailOptions(email, subject, body);
-		mailOptions.sendAllEmails();
-
-	});
-			callback(null, result.rows);
+				});
+				callback(null, result.rows);
+			} else {
+				//Change Password already sent
+				callback(null, "alreadySent");
+			}
 		} else {
 			callback(null, null);
 		}
