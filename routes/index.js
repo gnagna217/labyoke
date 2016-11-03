@@ -604,6 +604,13 @@ module.exports = function(router) {
 							});
 					}
 				});
+			} else {
+				res.render(
+					'forgot',
+					{
+						message : "Sorry. You must enter your current username. Please try again below.", usernotfound : true
+					});
+
 			}
 			//req.session.messages = null;
 	});
