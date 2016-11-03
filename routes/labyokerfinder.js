@@ -364,14 +364,14 @@ Labyoker.prototype.requestChangePassword = function(callback) {
 	});
 	query2.on("end", function(result2) {
 
-		var email = result.email;
+		var email = result[0].email;
 		console.log("email: " + email);
 
 		/*if (email.length == 4 || email.length == 2) {
 			email += "@netlight.com";
 		}*/
 		var subject = "Labyoke - Change Password Request";
-		var body = "<div style=\"font-family:'calibri'; font-size:11pt\">Hello " + result2.name
+		var body = "<div style=\"font-family:'calibri'; font-size:11pt\">Hello " + rresult[0].name
 				+ ",<br/><br/>";
 		body += "You have requested to change your password @ LabYoke. Please click on this link:<br/>";
 		body += "<p style=\"text-align:center\"><span style='font-size:20pt'><b>https:\/\/team-labyoke.herokuapp.com\/changepassword?id="
