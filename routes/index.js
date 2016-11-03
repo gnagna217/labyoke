@@ -725,14 +725,13 @@ module.exports = function(router) {
 				res.redirect('/');
 			}
 		});*/
-		var id = req.body.id;
+		var hash = req.body.id;
 		console.log("changing password id is: " + id);
 		console.log("changing password pwd is: " + req.body.pass);
 		var dateStripped = moment(new Date).tz("Europe/Berlin").format(
 				'YYYY-MM-DD'); // '2014-06-09'
 
 		if (id != null && id.length > 0){
-			var hash = new HashNumber(id);
 			var LabyokerPasswordChange = new LabyokerPasswordChange(hash, req.body.pass);
 			LabyokerPasswordChange.checkIfChangePassword(function(error, results) {
 			
