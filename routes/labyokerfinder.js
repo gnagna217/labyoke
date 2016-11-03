@@ -358,20 +358,21 @@ LabyokerPasswordChange.prototype.checkIfChangePassword = function(callback) {
 	query.on("end", function(result) {
 		results = result.rows;
 		console.log("now is " + now);
-		console.log("changepwd_date is " + results[0].changepwd_date);
+		console.log("changepwd_date is " + (results[0].changepwd_date == now));
 		if (results != null && results.length == 1) {
-			var query2 = client.query("SELECT * FROM vm2016_users where changepwd_id='"
+			/*var query2 = client.query("SELECT * FROM vm2016_users where changepwd_id='"
 				+ this.id + "' and changepwd_date like '" + now + "'");
-			
+			*/
+			if(now == results[0].changepwd_date){
 			var email = results[0].email;
 			var name = results[0].name;
 
-			query2.on("row", function(row, result2) {
+			/*query2.on("row", function(row, result2) {
 				result2.addRow(row);
 			});
 			query2.on("end", function(result2) {
 				results2 = result2.rows;
-				if (results2 != null && results2.length == 1) {
+				if (results2 != null && results2.length == 1) {*/
 					console.log("changing password now for: " + name);
 
 					var hash_new_password = crypt.hashSync(this.password);
@@ -391,7 +392,7 @@ LabyokerPasswordChange.prototype.checkIfChangePassword = function(callback) {
 				} else {
 					callback(null, "dateExpired");
 				}
-			});
+			//});
 		} else {
 			callback(null, "cannotFindRequest");
 		}	
