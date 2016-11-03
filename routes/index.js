@@ -734,8 +734,8 @@ module.exports = function(router) {
 				'YYYY-MM-DD'); // '2014-06-09'
 
 		if (id != null && id.length > 0){
-			var LabyokerPasswordChange = new LabyokerPasswordChange(id, req.body.pass);
-			LabyokerPasswordChange.checkIfChangePassword(function(error, results) {
+			var pwdChange = new LabyokerPasswordChange(id, req.body.pass);
+			pwdChange.checkIfChangePassword(function(error, results) {
 			
 			console.log("LabyokerPasswordChange results: " + results);
 			
