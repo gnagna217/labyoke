@@ -351,7 +351,8 @@ Labyoker.prototype.requestChangePassword = function(callback) {
 	});
 	query.on("end", function(result) {
 		results = result.rows;
-		if (results != null && results.length == 1) {
+		console.log("dateStripped: " + dateStripped);
+		if (results != null && results.length == 1 && dateStripped != null) {
 			var hash = crypt.hashSync(username);
 
 			var query2 = client.query("UPDATE vm2016_users SET changepwd_id='" + hash
