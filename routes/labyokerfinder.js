@@ -361,7 +361,7 @@ LabyokerPasswordChange.prototype.checkIfChangePassword = function(callback) {
 		console.log("changepwd_date is " + results[0].changepwd_date);
 		if (results != null && results.length == 1) {
 			var query2 = client.query("SELECT * FROM vm2016_users where changepwd_id='"
-				+ this.id + "' and changepwd_date='" + now + "'");
+				+ this.id + "' and changepwd_date like '" + now + "'");
 			
 			var email = results[0].email;
 			var name = results[0].name;
