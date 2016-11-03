@@ -398,6 +398,7 @@ Labyoker.prototype.requestChangePassword = function(callback) {
 				callback(null, result.rows);
 			} else {
 				//Change Password already sent
+				console.log("alreadySent.");
 				callback(null, "alreadySent");
 			}
 		} else {
