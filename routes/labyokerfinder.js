@@ -341,7 +341,7 @@ Labyoker.prototype.login = function(callback) {
 
 Labyoker.prototype.requestChangePassword = function(callback) {
 	var username = this.username;
-	var dateStripped = this.dateStripped;
+	var dateStripped = this.password;
 
 	var results;
 	var query = client.query("SELECT * FROM vm2016_users where id='" + username
