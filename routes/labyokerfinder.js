@@ -13,6 +13,12 @@ LabYokeFinder = function(today) {
 	this.now = today
 };
 
+LabyokerPasswordChange = function(hash, password) {
+	this.hash = hash;
+	this.password = password;
+
+};
+
 MatchEvent = function(date) {
 	this.date = date;
 };
@@ -339,6 +345,57 @@ Labyoker.prototype.login = function(callback) {
 	});
 };
 
+LabyokerPasswordChange.prototype.checkIfChangePassword = function(callback) {
+	var results;
+	var now = moment(new Date).tz("Europe/Berlin").format(
+				'YYYY-MM-DD');
+	var query = client
+			.query("SELECT * FROM vm2016_users where changepwd_id='"
+					+ this.hash + "'");
+	query.on("row", function(row, result) {
+		result.addRow(row);
+	});
+	query.on("end", function(result) {
+		results = result.rows;
+		if (results != null && results.length == 1) {
+			var query2 = client.query("SELECT * FROM vm2016_users where changepwd_id='"
+				+ this.id + "' and changepwd_date='" + now + "'");
+			
+			var email = results[0].email;
+			var name = results[0].name;
+
+			query2.on("row", function(row, result2) {
+				result2.addRow(row);
+			});
+			query2.on("end", function(result2) {
+				results2 = result2.rows;
+				if (results2 != null && results2.length == 1) {
+					console.log("changing password now for: " + name);
+
+					var hash_new_password = crypt.hashSync(this.password);
+					var query3 = client.query("UPDATE vm2016_users SET password='" + hash_new_password
+							+ "', active=1,changepwd_date='',changepwd_status='' and changepwd_id='' where id='" + this.username + "'");
+					query3.on("row", function(row, result3) {
+						result3.addRow(row);
+					});
+					query3.on("end", function(result) {
+						if (results3 != null && results3.length == 1) {
+							var results3 = result3.rows;
+							callback(null, "passwordReset");
+						} else {
+							callback(null, "errorFound");
+						}
+					});
+				} else {
+					callback(null, "dateExpired");
+				}
+			});
+		} else {
+			callback(null, "cannotFindRequest");
+		}	
+	});
+}
+
 Labyoker.prototype.requestChangePassword = function(callback) {
 	var username = this.username;
 	var dateStripped = this.password;
@@ -381,7 +438,7 @@ Labyoker.prototype.requestChangePassword = function(callback) {
 					var body = "<div style='float:left'><img style='width: 200px; margin: 0 20px;' src='https:\/\/team-labyoke.herokuapp.com\/images\/yoke.jpg', alt='The Yoke',  title='Yoke', class='yokelogo'/></div><div style=\"font-family:'calibri'; font-size:11pt;padding: 20px;\">Hello " + name
 							+ ",<br/><br/>";
 					body += "You have requested to change your password @LabYoke. Please click on this link:<br/>";
-					body += "<p style=\"text-align:center\"><span style=''><b><a href='https:\/\/team-labyoke.herokuapp.com\/changepassword?id="
+					body += "<p style=\"text-align:center\"><span style=''><b><a href='https:\/\/team-labyoke.herokuapp.com\/changepassword/"
 							+ hash + "'>https:\/\/team-labyoke.herokuapp.com\/changepassword?id="
 							+ hash
 							+ "</a></b></span></p>";
@@ -599,5 +656,6 @@ exports.LabyokerMakesBet = LabyokerMakesBet;
 exports.LabyokerMakesBets = LabyokerMakesBets;
 exports.MatchPhase = MatchPhase;
 exports.MatchEvent = MatchEvent;
+exports.LabyokerPasswordChange = LabyokerPasswordChange;
 exports.MatchResults = MatchResults;
 exports.MatchAdvancing = MatchAdvancing;
