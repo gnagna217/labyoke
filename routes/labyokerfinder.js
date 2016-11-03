@@ -357,8 +357,8 @@ Labyoker.prototype.requestChangePassword = function(callback) {
 
 			var query2 = client.query("UPDATE vm2016_users SET changepwd_id='" + hash
 			+ "', changepwd_status=0, changepwd_date='" + dateStripped + "' where id='" + username + "'");
-		var email = result[0].email;
-		var name = result[0].name;
+		var email = results[0].email;
+		var name = results[0].name;
 
 	query2.on("row", function(row, result2) {
 		result2.addRow(row);
