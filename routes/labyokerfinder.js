@@ -357,10 +357,12 @@ LabyokerPasswordChange.prototype.checkIfChangePassword = function(callback) {
 		result.addRow(row);
 	});
 	query.on("end", function(result) {
-		results = result.rows;
+		results = result.rows;results[0].changepwd_date
+
+		if (results != null && results.length == 1 && changepwd_date != null) {
+		var changepwd_date = results[0].changepwd_date;
 		console.log("now is " + now);
-		console.log("changepwd_date is " + (results[0].changepwd_date == now));
-		if (results != null && results.length == 1) {
+		console.log("changepwd_date is " + ( changepwd_date == now));
 			/*var query2 = client.query("SELECT * FROM vm2016_users where changepwd_id='"
 				+ this.id + "' and changepwd_date like '" + now + "'");
 			*/
