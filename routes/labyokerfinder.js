@@ -349,6 +349,7 @@ LabyokerPasswordChange.prototype.checkIfChangePassword = function(callback) {
 	var results;
 	var now = moment(new Date).tz("Europe/Berlin").format(
 				'YYYY-MM-DD');
+	var pwd = this.password;
 	var query = client
 			.query("SELECT * FROM vm2016_users where changepwd_id='"
 					+ this.hash + "'");
@@ -366,6 +367,7 @@ LabyokerPasswordChange.prototype.checkIfChangePassword = function(callback) {
 			if(now == results[0].changepwd_date){
 			var email = results[0].email;
 			var name = results[0].name;
+			var userid = results[0].id;
 
 			/*query2.on("row", function(row, result2) {
 				result2.addRow(row);
@@ -374,10 +376,10 @@ LabyokerPasswordChange.prototype.checkIfChangePassword = function(callback) {
 				results2 = result2.rows;
 				if (results2 != null && results2.length == 1) {*/
 					console.log("changing password now for: " + name);
-					console.log("changing password pwd: " + this.password);
-					var hash_new_password = crypt.hashSync(this.password);
+					console.log("changing password pwd: " + pwd);
+					var hash_new_password = crypt.hashSync(pwd);
 					var query3 = client.query("UPDATE vm2016_users SET password='" + hash_new_password
-							+ "', active=1,changepwd_date='',changepwd_status='' and changepwd_id='' where id='" + this.username + "'");
+							+ "', active=1,changepwd_date='',changepwd_status='' and changepwd_id='' where id='" + userid + "'");
 					query3.on("row", function(row, result3) {
 						result3.addRow(row);
 					});
