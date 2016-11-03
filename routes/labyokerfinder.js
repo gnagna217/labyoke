@@ -378,7 +378,7 @@ Labyoker.prototype.requestChangePassword = function(callback) {
 		body += "<p style=\"text-align:center\"><span style=''><b>https:\/\/team-labyoke.herokuapp.com\/changepassword?id="
 				+ hash
 				+ "</b></span>";
-		body += "<span>You have <b><span style='color:red;'>1 day</span>"
+		body += "<br/><br/><span>You have <b><span style='color:red;'>1 day</span>"
 				+ "</b> to change your password. But don't worry you can always send us another <a href=\"https:\/\/team-labyoke.herokuapp.com\/forgot\">request</a> once this one has expired</span> <span style=''>"
 				+ "</span></p>";
 		body += "<br/><br/>Have you shared some chemicals today? <a href=\"https:\/\/team-labyoke.herokuapp.com\/share\">@LabYoke</a>";
