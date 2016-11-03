@@ -592,7 +592,7 @@ module.exports = function(router) {
 						res.render(
 							'forgot',
 							{
-								message : "Sorry. We have already sent you an email in order to change your password.", usernotfound : true
+								message : "Sorry. We have already sent you an email today to change your password. Please check your inbox.", usernotfound : true, noforgotform: true
 							});
 					} else {
 						res.render(
