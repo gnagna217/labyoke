@@ -20,7 +20,7 @@ var smtpTransport = nodemailer.createTransport("SMTP", {
     }
 });*/
 
-var transport = nodemailer.createTransport({
+var transport = nodemailer.createTransport("SMTP", {
     service: 'gmail',
     auth: {
         xoauth2: xoauth2.createXOAuth2Generator({
