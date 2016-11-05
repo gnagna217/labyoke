@@ -713,7 +713,7 @@ module.exports = function(router) {
 					res.render(
 						'register',
 						{
-							regsuccess : user_name, loggedIn : true
+							regsuccess : user_name
 						});
 				} else {
 					res.render(
