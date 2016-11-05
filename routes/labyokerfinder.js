@@ -432,7 +432,7 @@ LabyokerRegister.prototype.register = function(callback) {
 	var tel = this.tel;
 
 	var results;
-	var check = 
+	//var check = 
 
 	if(tel != null && tel.length>0 && username != null && username.length>0 && firstname != null && firstname.length>0 && lastname != null && lastname.length>0 && email != null && email.length>0 && password != null && password.length>0 && lab != null && lab.length>0 ){
 	var query = client.query("SELECT * FROM vm2016_users where id='" + username
