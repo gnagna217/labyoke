@@ -653,7 +653,9 @@ module.exports = function(router) {
 								email: req.session.email,
 								tel: req.session.tel
 							});
-					} else if (done != null && done.length > 0 && done != 'success') {
+					} else if (done != null && done.length > 0 && done == 'alreadyInUse') {
+						res.render('register', {message : "Sorry. This email address is already in use. Please try again below."});
+					}else if (done != null && done.length > 0 && done != 'success') {
 						res.render('register', {message : "Sorry. We could not register you. Please try again below."});
 					} else if(done != null && done.length > 0 && done == 'success') {
 						rendered = true;

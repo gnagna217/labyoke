@@ -452,7 +452,9 @@ LabyokerRegister.prototype.register = function(callback) {
 	query.on("end", function(result) {
 		results = result.rows;
 		if (results != null) {
-			callback(null, "alreadyInUse");
+			if(results[0].email == email){
+				callback(null, "alreadyInUse");
+			}
 		} else {
 			var hash = crypt.hashSync(password);
 			var query2 = client.query("UPDATE vm2016_users SET password='" + hash
