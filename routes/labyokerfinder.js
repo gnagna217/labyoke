@@ -13,11 +13,11 @@ LabYokeFinder = function(today) {
 	this.now = today
 };
 
-LabyokerRegister = function(user, password,lab,firsname,lastname,email,tel) {
+LabyokerRegister = function(user, password,lab,firstname,lastname,email,tel) {
 	this.username = user;
 	this.password = password;
 	this.lab = lab;
-	this.firsname = firsname;
+	this.firstname = firstname;
 	this.lastname = lastname;
 	this.email = email;
 	this.tel = tel;
@@ -426,7 +426,7 @@ LabyokerRegister.prototype.register = function(callback) {
 	var username = this.username;
 	var password = this.password;
 	var lab = this.lab;
-	var firsname = this.firsname;
+	var firstname = this.firstname;
 	var lastname = this.lastname;
 	var email = this.email;
 	var tel = this.tel;
@@ -437,7 +437,7 @@ LabyokerRegister.prototype.register = function(callback) {
 			console.log("labyoker username: " + username);
 			console.log("labyoker password: " + password);
 			console.log("labyoker lab: " + lab);
-			console.log("labyoker firsname: " + firsname);
+			console.log("labyoker firstname: " + firstname);
 			console.log("labyoker lastname: " + lastname);
 			console.log("labyoker email: " + email);
 			console.log("labyoker tel: " + tel);
