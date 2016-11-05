@@ -2,6 +2,7 @@ var labyokeFinderClass = require('./labyokerfinder');
 var dates = require('../config/staticvariables');
 
 var LabyokerPasswordChange = labyokeFinderClass.LabyokerPasswordChange;
+var LabyokerRegister = labyokeFinderClass.LabyokerRegister;
 var LabYokeFinder = labyokeFinderClass.LabYokeFinder;
 var MatchPredictorSingleTeam = labyokeFinderClass.MatchPredictorSingleTeam;
 var LabyokerMakesBet = labyokeFinderClass.LabyokerMakesBet;
@@ -623,29 +624,94 @@ module.exports = function(router) {
 
 	router.post('/register', function(req, res) {
 		var rendered = false;
-		if (req.body.reglab) {
-			var reglab = req.body.reglab;
-			if (reglab != null && reglab.length > 0){
-				res.render('register', {labentered : reglab});
-			} else {
-				res.render('register', {});
-			}
-			rendered = true;
-		}
-		if (req.body.regfirstname) {
-			var regfirstname = req.body.regfirstname;
+		var lab = req.body.reglab;
+		var user = req.body.reguser;
+		var user_pwd = req.body.regpass;
+
+		var user_name = req.body.regfirstname;
+		var user_surname = req.body.reglastname;
+		var user_email = req.body.regemail;
+		var user_tel = req.body.regtel;
+
+			if (lab != null && user != null && user_pwd != null && lab.length > 0 && user.length > 0 && user_pwd.length > 0 && !user_name){
+				var labyokerRegister = new LabyokerRegister(user,user_pwd,lab,null,null,null,null);
+				req.session.username = user;
+				req.session.user_pwd = user_pwd;
+				req.session.lab = lab;
+				labyokerRegister.register(function(error, done) {
+
+					if(done != null && done.length > 0 && done == 'firstsection') {
+						rendered = true;
+						res.render(
+							'register',
+							{
+								labentered : reglab,
+								username: req.session.username,
+								password: req.session.password,
+								lab: req.session.lab
+							});
+					} else if (done != null && done.length > 0 && done != 'success') {
+						res.render('register', {message : "Sorry. We could not register you. Please try again below."});
+					} else if(done != null && done.length > 0 && done == 'success') {
+						rendered = true;
+						res.render(
+							'register',
+							{
+								regsuccess : user_name, loggedIn : true
+							});
+					} else {
+						res.render(
+							'register',
+							{
+								message : "Sorry. You cannot proceed. Please try again below."
+							});
+					}
+				});
+			} 
+			
+		if (user && user_name && user_pwd && lab && user_surname && user_email && user_tel) {
+			var labyokerRegister = new LabyokerRegister(user,user_pwd,lab,user_name,user_surname,user_email,user_tel);
+			/*var regfirstname = req.body.regfirstname;
 			console.log("regfirstname entered " + regfirstname);
 			if (regfirstname != null && regfirstname.length > 0){
 				req.session.user = regfirstname;
 				res.render('register', {regsuccess : regfirstname, loggedIn : true});
 			} else {
 				res.render('register', {});
-			}
+			}*/
+			labyokerRegister.register(function(error, done) {
+				if(done != null && done.length > 0 && done == 'firstsection') {
+					rendered = true;
+					res.render(
+						'register',
+						{
+							labentered : reglab,
+							username: req.session.username,
+							password: req.session.password,
+							lab: req.session.lab
+						});
+				} else if (done != null && done.length > 0 && done != 'success') {
+					res.render('register', {message : "Sorry. We could not register you. Please try again below."});
+				} else if(done != null && done.length > 0 && done == 'success') {
+					rendered = true;
+					res.render(
+						'register',
+						{
+							regsuccess : user_name, loggedIn : true
+						});
+				} else {
+					res.render(
+						'register',
+						{
+							message : "Sorry. You cannot proceed. Please try again below."
+						});
+				}
+			});
 			rendered = true;
 		} 
 		if(!rendered){
 			console.log("nothing entered");
-			res.render('register', {});
+			res.render('register', {message : "Sorry. We could not register you. Please fill out all fields below."});
 		}
 
 	});

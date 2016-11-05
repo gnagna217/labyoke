@@ -13,6 +13,17 @@ LabYokeFinder = function(today) {
 	this.now = today
 };
 
+LabyokerRegister = function(user, password,lab,firsname,lastname,email,tel) {
+	this.username = user;
+	this.password = password;
+	this.lab = lab;
+	this.firsname = firsname;
+	this.lastname = lastname;
+	this.email = email;
+	this.tel = tel;
+
+};
+
 LabyokerPasswordChange = function(hash, password) {
 	this.hash = hash;
 	this.password = password;
@@ -411,6 +422,68 @@ LabyokerPasswordChange.prototype.checkIfChangePassword = function(callback) {
 	});
 }
 
+LabyokerRegister.prototype.register = function(callback) {
+	var username = this.username;
+	var password = this.password;
+	var lab = this.lab;
+	var firsname = this.firsname;
+	var lastname = this.lastname;
+	var email = this.email;
+	var tel = this.tel;
+
+	var results;
+	var check = 
+
+	if(tel != null && tel.length>0 && username != null && username.length>0 && firstname != null && firstname.length>0 && lastname != null && lastname.length>0 && email != null && email.length>0 && password != null && password.length>0 && lab != null && lab.length>0 ){
+	var query = client.query("SELECT * FROM vm2016_users where id='" + username
+			+ "'"/* and password='"+password+"'" */);
+	query.on("row", function(row, result) {
+		result.addRow(row);
+	});
+	query.on("end", function(result) {
+		results = result.rows;
+		if (results != null) {
+			callback(null, "alreadyInUse");
+		} else {
+			var hash = crypt.hashSync(password);
+			var query2 = client.query("UPDATE vm2016_users SET password='" + hash
+				+ "', lab='" + lab + "', tel='" + tel + "', id='" + username + ", name='" + firstname + "', surname='" + lastname + "', email='" + email + "' where id='" + username + "'");
+
+				query2.on("row", function(row, result2) {
+					result2.addRow(row);
+				});
+				query2.on("end", function(result2) {
+
+					
+					console.log("email: " + email);
+
+					/*if (email.length == 4 || email.length == 2) {
+						email += "@netlight.com";
+					}*/
+					var subject = "Labyoke - Start Labyoking";
+					var body = "<div style='float:left'><img style='width: 200px; margin: 0 20px;' src='https:\/\/team-labyoke.herokuapp.com\/images\/yoke.jpg', alt='The Yoke',  title='Yoke', class='yokelogo'/></div><div style=\"font-family:'calibri'; font-size:11pt;padding: 20px;\">Hello " + firstname
+							+ ",<br/><br/>";
+					body += "Thanks for registering with @LabYoke.";
+					body += "<p>[PS: Start <a href=\"https:\/\/team-labyoke.herokuapp.com\/share\">sharing</a> some chemicals today?]";
+					body += "</p><b><i>The LabYoke Team.</i></b></div>";
+					console.log("body: " + body);
+
+					var mailOptions = new MailOptions(email, subject, body);
+					mailOptions.sendAllEmails();
+
+					callback(null, "success");
+
+				});
+				
+		}
+	});
+} else if(lab != null && lab.length>0 && username != null && username.length>0 && password != null && password.length>0){
+	callback(null, "firstsection");
+} else{
+	callback(null, null);
+}
+};
+
 Labyoker.prototype.requestChangePassword = function(callback) {
 	var username = this.username;
 	var dateStripped = this.password;
@@ -668,6 +741,7 @@ var analyze = function(matchresults, participantsResults) {
 }
 
 exports.Labyoker = Labyoker;
+exports.LabyokerRegister = LabyokerRegister;
 exports.LabYokeFinder = LabYokeFinder;
 exports.MatchPredictorSingleTeam = MatchPredictorSingleTeam;
 exports.LabyokerMakesBet = LabyokerMakesBet;
