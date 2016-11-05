@@ -646,7 +646,7 @@ module.exports = function(router) {
 						res.render(
 							'register',
 							{
-								labentered : lab,
+								labentered : req.session.firstname,
 								firstname: req.session.firstname,
 								lastname: req.session.lastname,
 								email: req.session.email,
@@ -695,10 +695,11 @@ module.exports = function(router) {
 					res.render(
 						'register',
 						{
-							labentered : lab,
-							username: req.session.username,
-							pass: req.session.password,
-							lab: req.session.lab
+								labentered : req.session.firstname,
+								firstname: req.session.firstname,
+								lastname: req.session.lastname,
+								email: req.session.email,
+								tel: req.session.tel
 						});
 				} else if (done != null && done.length > 0 && done != 'success') {
 					res.render('register', {message : "Sorry. We could not register you. Please try again below."});
