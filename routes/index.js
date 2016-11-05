@@ -633,48 +633,6 @@ module.exports = function(router) {
 		var user_email = req.body.regemail;
 		var user_tel = req.body.regtel;
 
-			if (user_name && user_surname && user_email && user_tel) {
-				console.log("first section processing...");
-				var labyokerRegister = new LabyokerRegister(null,null,null,user_name,user_surname,user_email,user_tel);;
-				req.session.firstname = user_name;
-				req.session.lastname = user_surname;
-				req.session.email = user_email;
-				req.session.tel = user_tel;
-				labyokerRegister.register(function(error, done) {
-
-					if(done != null && done.length > 0 && done == 'firstsection') {
-						rendered = true;
-						res.render(
-							'register',
-							{
-								labentered : true,
-								firstname: req.session.firstname,
-								lastname: req.session.lastname,
-								email: req.session.email,
-								tel: req.session.tel
-							});
-					} else if (done != null && done.length > 0 && done == 'alreadyInUse') {
-						res.render('register', {message : "Sorry. This email address is already in use. Please try again below."});
-					}else if (done != null && done.length > 0 && done != 'success') {
-						res.render('register', {message : "Sorry. We could not register you. Please try again below."});
-					} else if(done != null && done.length > 0 && done == 'success') {
-						rendered = true;
-						res.render(
-							'register',
-							{
-								regsuccess : user_name,
-								labentered: false
-							});
-					} else {
-						res.render(
-							'register',
-							{
-								message : "Sorry. You cannot proceed. Please try again below."
-							});
-					}
-				});
-			} 
-		
 		if (user && user_name && user_pwd && lab && user_surname && user_email && user_tel) {
 			console.log("second section processing...");
 			console.log("user: " + user);
@@ -726,7 +684,49 @@ module.exports = function(router) {
 				}
 			});
 			rendered = true;
-		} 
+		} else if (user_name && user_surname && user_email && user_tel) {
+				console.log("first section processing...");
+				var labyokerRegister = new LabyokerRegister(null,null,null,user_name,user_surname,user_email,user_tel);;
+				req.session.firstname = user_name;
+				req.session.lastname = user_surname;
+				req.session.email = user_email;
+				req.session.tel = user_tel;
+				labyokerRegister.register(function(error, done) {
+
+					if(done != null && done.length > 0 && done == 'firstsection') {
+						rendered = true;
+						res.render(
+							'register',
+							{
+								labentered : true,
+								firstname: req.session.firstname,
+								lastname: req.session.lastname,
+								email: req.session.email,
+								tel: req.session.tel
+							});
+					} else if (done != null && done.length > 0 && done == 'alreadyInUse') {
+						res.render('register', {message : "Sorry. This email address is already in use. Please try again below."});
+					}else if (done != null && done.length > 0 && done != 'success') {
+						res.render('register', {message : "Sorry. We could not register you. Please try again below."});
+					} else if(done != null && done.length > 0 && done == 'success') {
+						rendered = true;
+						res.render(
+							'register',
+							{
+								regsuccess : user_name,
+								labentered: false
+							});
+					} else {
+						res.render(
+							'register',
+							{
+								message : "Sorry. You cannot proceed. Please try again below."
+							});
+					}
+				});
+			} 
+		
+ 
 		if(!rendered){
 			console.log("nothing entered");
 			res.render('register', {message : "Sorry. We could not register you. Please fill out all fields below."});
