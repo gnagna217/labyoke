@@ -434,7 +434,16 @@ LabyokerRegister.prototype.register = function(callback) {
 	var results;
 	//var check = 
 
+			console.log("labyoker username: " + username);
+			console.log("labyoker password: " + password);
+			console.log("labyoker lab: " + lab);
+			console.log("labyoker firsname: " + firsname);
+			console.log("labyoker lastname: " + lastname);
+			console.log("labyoker email: " + email);
+			console.log("labyoker tel: " + tel);
+
 	if(tel != null && tel.length>0 && username != null && username.length>0 && firstname != null && firstname.length>0 && lastname != null && lastname.length>0 && email != null && email.length>0 && password != null && password.length>0 && lab != null && lab.length>0 ){
+	console.log("processing registration...");
 	var query = client.query("SELECT * FROM vm2016_users where id='" + username
 			+ "'"/* and password='"+password+"'" */);
 	query.on("row", function(row, result) {

@@ -647,7 +647,7 @@ module.exports = function(router) {
 							{
 								labentered : lab,
 								username: req.session.username,
-								password: req.session.password,
+								pass: req.session.password,
 								lab: req.session.lab
 							});
 					} else if (done != null && done.length > 0 && done != 'success') {
@@ -695,7 +695,7 @@ module.exports = function(router) {
 						{
 							labentered : lab,
 							username: req.session.username,
-							password: req.session.password,
+							pass: req.session.password,
 							lab: req.session.lab
 						});
 				} else if (done != null && done.length > 0 && done != 'success') {
