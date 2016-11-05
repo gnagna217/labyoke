@@ -452,6 +452,7 @@ LabyokerRegister.prototype.register = function(callback) {
 	query.on("end", function(result) {
 		results = result.rows;
 		if (results != null && results.length > 0) {
+			console.log("results[0].email: " + results[0].email);
 			if(results[0].email == email){
 				callback(null, "alreadyInUse");
 			}
