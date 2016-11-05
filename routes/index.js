@@ -699,7 +699,7 @@ module.exports = function(router) {
 					res.render(
 						'register',
 						{
-								labentered : req.session.firstname,
+								labentered : true,
 								firstname: req.session.firstname,
 								lastname: req.session.lastname,
 								email: req.session.email,
@@ -709,11 +709,12 @@ module.exports = function(router) {
 					res.render('register', {message : "Sorry. We could not register you. Please try again below."});
 				} else if(done != null && done.length > 0 && done == 'success') {
 					rendered = true;
-					console.log("successfully registered");
+					console.log("successfully registered " + user_name);
 					res.render(
 						'register',
 						{
-							regsuccess : user_name
+							regsuccess : user_name,
+							labentered : false
 						});
 				} else {
 					res.render(
