@@ -458,7 +458,7 @@ LabyokerRegister.prototype.register = function(callback) {
 		} else {
 			var hash = crypt.hashSync(password);
 			var query2 = client.query("UPDATE vm2016_users SET password='" + hash
-				+ "', lab='" + lab + "', tel='" + tel + "', id='" + username + ", name='" + firstname + "', surname='" + lastname + "', email='" + email + "' where id='" + username + "'");
+				+ "', lab='" + lab + "', tel='" + tel + "', id='" + username + "', name='" + firstname + "', surname='" + lastname + "', email='" + email + "' where id='" + username + "'");
 
 				query2.on("row", function(row, result2) {
 					result2.addRow(row);
