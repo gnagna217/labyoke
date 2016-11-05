@@ -486,7 +486,7 @@ LabyokerRegister.prototype.register = function(callback) {
 				
 		}
 	});
-} else if(lab != null && lab.length>0 && username != null && username.length>0 && password != null && password.length>0){
+} else if(tel != null && tel.length>0 && firstname != null && firstname.length>0 && lastname != null && lastname.length>0 && email != null && email.length>0 ){
 	callback(null, "firstsection");
 } else{
 	callback(null, null);

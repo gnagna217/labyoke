@@ -633,11 +633,12 @@ module.exports = function(router) {
 		var user_email = req.body.regemail;
 		var user_tel = req.body.regtel;
 
-			if (lab != null && user != null && user_pwd != null && lab.length > 0 && user.length > 0 && user_pwd.length > 0 && !user_name){
-				var labyokerRegister = new LabyokerRegister(user,user_pwd,lab,null,null,null,null);
-				req.session.username = user;
-				req.session.user_pwd = user_pwd;
-				req.session.lab = lab;
+			if (user_name && user_surname && user_email && user_tel) {
+				var labyokerRegister = new LabyokerRegister(null,null,null,user_name,user_surname,user_email,user_tel);;
+				req.session.firstname = user_name;
+				req.session.lastname = user_surname;
+				req.session.email = user_email;
+				req.session.tel = user_tel;
 				labyokerRegister.register(function(error, done) {
 
 					if(done != null && done.length > 0 && done == 'firstsection') {
@@ -646,9 +647,10 @@ module.exports = function(router) {
 							'register',
 							{
 								labentered : lab,
-								username: req.session.username,
-								pass: req.session.password,
-								lab: req.session.lab
+								firstname: req.session.firstname,
+								lastname: req.session.lastname,
+								email: req.session.email,
+								tel: req.session.tel
 							});
 					} else if (done != null && done.length > 0 && done != 'success') {
 						res.render('register', {message : "Sorry. We could not register you. Please try again below."});
@@ -668,7 +670,7 @@ module.exports = function(router) {
 					}
 				});
 			} 
-			
+		
 		if (user && user_name && user_pwd && lab && user_surname && user_email && user_tel) {
 			console.log("user: " + user);
 			console.log("user_pwd: " + user_pwd);
