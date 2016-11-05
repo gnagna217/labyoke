@@ -645,7 +645,7 @@ module.exports = function(router) {
 						res.render(
 							'register',
 							{
-								labentered : reglab,
+								labentered : lab,
 								username: req.session.username,
 								password: req.session.password,
 								lab: req.session.lab
@@ -685,7 +685,7 @@ module.exports = function(router) {
 					res.render(
 						'register',
 						{
-							labentered : reglab,
+							labentered : lab,
 							username: req.session.username,
 							password: req.session.password,
 							lab: req.session.lab
