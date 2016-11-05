@@ -709,6 +709,7 @@ module.exports = function(router) {
 					res.render('register', {message : "Sorry. We could not register you. Please try again below."});
 				} else if(done != null && done.length > 0 && done == 'success') {
 					rendered = true;
+					console.log("successfully registered");
 					res.render(
 						'register',
 						{
