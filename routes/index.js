@@ -634,6 +634,7 @@ module.exports = function(router) {
 		var user_tel = req.body.regtel;
 
 			if (user_name && user_surname && user_email && user_tel) {
+				console.log("first section processing...");
 				var labyokerRegister = new LabyokerRegister(null,null,null,user_name,user_surname,user_email,user_tel);;
 				req.session.firstname = user_name;
 				req.session.lastname = user_surname;
@@ -672,6 +673,7 @@ module.exports = function(router) {
 			} 
 		
 		if (user && user_name && user_pwd && lab && user_surname && user_email && user_tel) {
+			console.log("second section processing...");
 			console.log("user: " + user);
 			console.log("user_pwd: " + user_pwd);
 			console.log("lab: " + lab);
