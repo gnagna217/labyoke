@@ -647,7 +647,7 @@ module.exports = function(router) {
 						res.render(
 							'register',
 							{
-								labentered : req.session.firstname,
+								labentered : true,
 								firstname: req.session.firstname,
 								lastname: req.session.lastname,
 								email: req.session.email,
@@ -662,7 +662,8 @@ module.exports = function(router) {
 						res.render(
 							'register',
 							{
-								regsuccess : user_name, loggedIn : true
+								regsuccess : user_name,
+								labentered: false
 							});
 					} else {
 						res.render(
