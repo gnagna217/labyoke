@@ -670,6 +670,13 @@ module.exports = function(router) {
 			} 
 			
 		if (user && user_name && user_pwd && lab && user_surname && user_email && user_tel) {
+			console.log("user: " + user);
+			console.log("user_pwd: " + user_pwd);
+			console.log("lab: " + lab);
+			console.log("user_name: " + user_name);
+			console.log("user_surname: " + user_surname);
+			console.log("user_email: " + user_email);
+			console.log("user_tel: " + user_tel);
 			var labyokerRegister = new LabyokerRegister(user,user_pwd,lab,user_name,user_surname,user_email,user_tel);
 			/*var regfirstname = req.body.regfirstname;
 			console.log("regfirstname entered " + regfirstname);
@@ -680,6 +687,7 @@ module.exports = function(router) {
 				res.render('register', {});
 			}*/
 			labyokerRegister.register(function(error, done) {
+				console.log("done: " + done);
 				if(done != null && done.length > 0 && done == 'firstsection') {
 					rendered = true;
 					res.render(
