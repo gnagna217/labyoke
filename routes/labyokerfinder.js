@@ -473,7 +473,7 @@ LabyokerRegister.prototype.register = function(callback) {
 						email += "@netlight.com";
 					}*/
 					var subject = "Labyoke - Start Labyoking";
-					var body = "<div style='float:left'><img style='width: 200px; margin: 0 20px;' src='https:\/\/team-labyoke.herokuapp.com\/images\/yoke.jpg', alt='The Yoke',  title='Yoke', class='yokelogo'/></div><div style=\"font-family:'calibri'; font-size:11pt;padding: 20px;\">Hello " + firstname
+					var body = "<div style='float:left'><img style='width: 150px; margin: 0 20px;' src='https:\/\/team-labyoke.herokuapp.com\/images\/yoke.jpg', alt='The Yoke',  title='Yoke', class='yokelogo'/></div><div style=\"font-family:'calibri'; font-size:11pt;padding: 20px;\">Hello " + firstname
 							+ ",<br/><br/>";
 					body += "Thanks for registering with @LabYoke.";
 					body += "<p>[PS: Start <a href=\"https:\/\/team-labyoke.herokuapp.com\/share\">sharing</a> some chemicals today?]";
