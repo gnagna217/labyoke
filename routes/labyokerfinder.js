@@ -508,22 +508,23 @@ LabyokerRegister.prototype.register = function(callback) {
 		console.log("email entered: " + email);
 		if (results != null && results.length > 0) {
 			
-			for (i = 0; i < results.length; i++) { 
-				console.log("results[i].email: " + results[i].email);
-				if(results[i].email == email){
+			//for (i = 0; i < results.length; i++) { 
+				console.log("results[0].email: " + results[0].email);
+				if(results[0].email == email){
 					rendered = true;
 					console.log("in use?: alreadyInUse");
 					callback(null, "alreadyInUse");
 				}
-			}
+			//}
 
 		}
+		console.log("rendered: " + rendered);
+		if(!rendered){
+			callback(null, "firstsection");
+		}
 	});
-	console.log("rendered: " + rendered);
-	if(!rendered){
-		callback(null, "firstsection");
-	}
-} else{
+
+} else {
 	callback(null, null);
 }
 };
