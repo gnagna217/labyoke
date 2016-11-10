@@ -696,7 +696,11 @@ module.exports = function(router) {
 				req.session.tel = user_tel;
 				labyokerRegister.register(function(error, done) {
 
-					if(done != null && done.length > 0 && done == 'firstsection') {
+					if (done != null && done.length > 0 && done == 'alreadyInUse') {
+						console.log("status = alreadyInUse");
+						rendered = true;
+						res.render('register', {message : "Sorry. This email address is already in use. Please try again below."});
+					} else if(done != null && done.length > 0 && done == 'firstsection') {
 						console.log("status = firstsection");
 						rendered = true;
 						res.render(
@@ -708,10 +712,6 @@ module.exports = function(router) {
 								email: req.session.email,
 								tel: req.session.tel
 							});
-					} else if (done != null && done.length > 0 && done == 'alreadyInUse') {
-						console.log("status = alreadyInUse");
-						rendered = true;
-						res.render('register', {message : "Sorry. This email address is already in use. Please try again below."});
 					} else if (done != null && done.length > 0 && done != 'success') {
 						console.log("status = not successful");
 						rendered = true;
