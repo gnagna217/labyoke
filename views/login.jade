@@ -2,27 +2,28 @@ extends layout
 
 block content
 
-  div(class="container login")
-     a(href="/search")
-        img(src="/images/yoke.jpg", alt="The Yoke",  title="Yoke", class="yokelogo")
-     h1= 'Hello.'
-     p Welcome to the Lab Yoke. One step away from getting your chems!
-     div(id="ctl00_Div2" class="row")
-       div
-        if message
-            div(class="alert alert-danger")!= message
-        form(action="/login" method="post")
-            div(class="textentry")
-                input(name="user" type="text" id="user" class="form-control" placeholder="Username")
-            div(class="textentry")
-                input(name="pass" type="password" id="pass" class="form-control" placeholder="Password")
-            div(class="buttons")
-                //input(type="submit" class="button" value="Get in")
-                button.btn.btn-success.btn-lg.btn-block(type='submit') Get in
-                img(src="images/lab.png", alt="The Lab", title="Lab", style="border-width:0px; width: 50px; margin-top: -50px; margin-left: 300px;")
-        div(style="width:350px")
-            span
-                a(href="/register")="Register now"
-            span(style="float:right")
-                a(href="/forgot")="Forgot password"
-
+    div(class="container login")
+         a(href="/search")
+            img(src="/images/yoke.jpg", alt="The Yoke",  title="Yoke", class="yokelogo")
+         h1= 'Hello.'
+         p Welcome to the Lab Yoke. One step away from getting your chems!
+         div(id="ctl00_Div2" class="row")
+           div
+            if message
+                div(class="alert alert-danger")!= message
+            form(action="/login" method="post")
+                div(class="textentry")
+                    input(name="user" type="text" id="user" class="form-control" placeholder="Username")
+                div(class="textentry")
+                    input(name="pass" type="password" id="pass" class="form-control" placeholder="Password")
+                div(class="buttons")
+                    //input(type="submit" class="button" value="Get in")
+                    button.btn.btn-success.btn-lg.btn-block(type='submit') Get in
+                    img(src="images/lab.png", alt="The Lab", title="Lab", style="border-width:0px; width: 50px; margin-top: -50px; margin-left: 300px;")
+            div(style="width:350px")
+                span
+                    a(href="/register")="Register now"
+                span(style="float:right")
+                    a(href="/forgot")="Forgot password"
+    div
+      img(src="images/help.png", alt="Help", title="Help", style="border-width:0px; width: 50px; margin-top: -50px; margin-left: 300px;")
