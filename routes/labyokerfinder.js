@@ -496,7 +496,7 @@ LabyokerRegister.prototype.register = function(callback) {
 		//}
 	//});
 } else if(tel != null && tel.length>0 && firstname != null && firstname.length>0 && lastname != null && lastname.length>0 && email != null && email.length>0 ){
-
+	var rendered = false;
 	console.log("processing registration...");
 	var query = client.query("SELECT * FROM vm2016_users where email='" + email
 			+ "'"/* and password='"+password+"'" */);
@@ -511,6 +511,7 @@ LabyokerRegister.prototype.register = function(callback) {
 			for (i = 0; i < results.length; i++) { 
 				console.log("results[i].email: " + results[i].email);
 				if(results[i].email == email){
+					rendered = true;
 					console.log("in use?: alreadyInUse");
 					callback(null, "alreadyInUse");
 				}
@@ -518,7 +519,9 @@ LabyokerRegister.prototype.register = function(callback) {
 
 		}
 	});
-	callback(null, "firstsection");
+	if(!rendered){
+		callback(null, "firstsection");
+	}
 } else{
 	callback(null, null);
 }
