@@ -505,8 +505,8 @@ input::-webkit-inner-spin-button {
 .helplogin{
     border-width: 0px;
     width: 50px;
-    margin-top: -50px;
-    margin-left: 150px;
+    margin-top: 0px;
+    margin-right: 45%;
 }
   
 }
