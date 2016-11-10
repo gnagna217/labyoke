@@ -696,7 +696,7 @@ module.exports = function(router) {
 				req.session.tel = user_tel;
 				labyokerRegister.register(function(error, done) {
 
-					if (done != null && done.length > 0 && done == 'alreadyInUse') {
+					if(done != null && done.length > 0 && done == 'alreadyInUse') {
 						console.log("status = alreadyInUse");
 						rendered = true;
 						res.render('register', {message : "Sorry. This email address is already in use. Please try again below."});
@@ -712,7 +712,7 @@ module.exports = function(router) {
 								email: req.session.email,
 								tel: req.session.tel
 							});
-					} else if (done != null && done.length > 0 && done != 'success') {
+					} else if(done != null && done.length > 0 && done != 'success') {
 						console.log("status = not successful");
 						rendered = true;
 						res.render('register', {message : "Sorry. We could not register you. Please try again below."});
@@ -727,21 +727,19 @@ module.exports = function(router) {
 							});
 					} else {
 						console.log("status = something else happened");
+						rendered = true;
 						res.render(
 							'register',
 							{
 								message : "Sorry. You cannot proceed. Please try again below."
 							});
 					}
+					if(!rendered){
+						console.log("nothing entered");
+						res.render('register', {message : "Sorry. We could not register you. Please fill out all fields below."});
+					}
 				});
-			} 
-		
- 
-		if(!rendered){
-			console.log("nothing entered");
-			res.render('register', {message : "Sorry. We could not register you. Please fill out all fields below."});
-		}
-
+			}
 	});
 
 	router.post('/search', function(req, res) {
