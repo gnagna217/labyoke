@@ -438,6 +438,14 @@ input::-webkit-inner-spin-button {
 	white-space: normal !important;
 }
 
+.helplogin{
+    border-width: 0px;
+    width: 50px;
+    margin-top: -50px;
+    margin-right: 30px;
+    float: right;
+}
+
  @media (max-width: 700px) {
     .searchResults{
     float: none;
@@ -492,6 +500,13 @@ input::-webkit-inner-spin-button {
 
 #ios-light{
     width:70% !important;
+}
+
+.helplogin{
+    border-width: 0px;
+    width: 50px;
+    margin-top: -50px;
+    margin-left: 150px;
 }
   
 }
