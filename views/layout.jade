@@ -19,7 +19,7 @@ html(lang='en')
        each script in scripts
           script(type='text/javascript', src=script)
    body(class=loggedIn)
-     if loggedIn==true
+     if (loggedIn==true)
         .navbar.navbar-inverse.navbar-fixed-top(role='navigation')
             .container
                 .navbar-header(style="float:left; margin-left:auto;")
