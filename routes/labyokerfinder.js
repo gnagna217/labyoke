@@ -519,6 +519,7 @@ LabyokerRegister.prototype.register = function(callback) {
 
 		}
 	});
+	console.log("rendered: " + rendered);
 	if(!rendered){
 		callback(null, "firstsection");
 	}
