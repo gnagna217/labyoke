@@ -18,7 +18,7 @@ html(lang='en')
      if scripts
        each script in scripts
           script(type='text/javascript', src=script)
-   body
+   body(class=loggedIn)
      if loggedIn
         .navbar.navbar-inverse.navbar-fixed-top(role='navigation')
             .container
