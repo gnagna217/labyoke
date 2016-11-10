@@ -470,7 +470,7 @@ module.exports = function(router) {
 	router.get('/help', /*isLoggedIn,*/ function(req, res) {
 		res.render('help', {
 			title : 'Help',
-			loggedIn : isLoggedIn,
+			loggedIn : req.session.loggedin,
 			labyoker : req.session.user,
 			menu : 'help'
 		});
@@ -496,6 +496,7 @@ module.exports = function(router) {
 	router.get('/logout', function(req, res) {
 		req.logout();
 		req.session.user = null;
+		req.session.loggedin = false;
 		res.redirect('/login');
 	});
 
@@ -780,7 +781,7 @@ module.exports = function(router) {
 												return res
 														.redirect('/changepassword');
 											}
-
+req.session.loggedin = true;
 											res.redirect('/search');
 										} else {
 											res
