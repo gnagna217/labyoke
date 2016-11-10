@@ -498,7 +498,7 @@ LabyokerRegister.prototype.register = function(callback) {
 } else if(tel != null && tel.length>0 && firstname != null && firstname.length>0 && lastname != null && lastname.length>0 && email != null && email.length>0 ){
 
 	console.log("processing registration...");
-	var query = client.query("SELECT * FROM vm2016_users where id='" + username
+	var query = client.query("SELECT * FROM vm2016_users where email='" + email
 			+ "'"/* and password='"+password+"'" */);
 	query.on("row", function(row, result) {
 		result.addRow(row);
