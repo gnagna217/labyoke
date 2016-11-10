@@ -705,10 +705,13 @@ module.exports = function(router) {
 								tel: req.session.tel
 							});
 					} else if (done != null && done.length > 0 && done == 'alreadyInUse') {
+						console.log("status = alreadyInUse");
 						res.render('register', {message : "Sorry. This email address is already in use. Please try again below."});
 					}else if (done != null && done.length > 0 && done != 'success') {
+						console.log("status = not successful");
 						res.render('register', {message : "Sorry. We could not register you. Please try again below."});
 					} else if(done != null && done.length > 0 && done == 'success') {
+						console.log("status = success");
 						rendered = true;
 						res.render(
 							'register',
@@ -717,6 +720,7 @@ module.exports = function(router) {
 								labentered: false
 							});
 					} else {
+						console.log("status = something else happened");
 						res.render(
 							'register',
 							{
