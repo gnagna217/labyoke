@@ -710,9 +710,11 @@ module.exports = function(router) {
 							});
 					} else if (done != null && done.length > 0 && done == 'alreadyInUse') {
 						console.log("status = alreadyInUse");
+						rendered = true;
 						res.render('register', {message : "Sorry. This email address is already in use. Please try again below."});
 					} else if (done != null && done.length > 0 && done != 'success') {
 						console.log("status = not successful");
+						rendered = true;
 						res.render('register', {message : "Sorry. We could not register you. Please try again below."});
 					} else if(done != null && done.length > 0 && done == 'success') {
 						console.log("status = success");
