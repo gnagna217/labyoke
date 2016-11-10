@@ -654,6 +654,7 @@ module.exports = function(router) {
 			labyokerRegister.register(function(error, done) {
 				console.log("done: " + done);
 				if(done != null && done.length > 0 && done == 'firstsection') {
+					console.log("status = firstsection1");
 					rendered = true;
 					res.render(
 						'register',
@@ -665,8 +666,10 @@ module.exports = function(router) {
 								tel: req.session.tel
 						});
 				} else if (done != null && done.length > 0 && done != 'success') {
+					console.log("status = status1");
 					res.render('register', {message : "Sorry. We could not register you. Please try again below."});
 				} else if(done != null && done.length > 0 && done == 'success') {
+					console.log("status = success1");
 					rendered = true;
 					console.log("successfully registered " + user_name);
 					res.render(
@@ -694,6 +697,7 @@ module.exports = function(router) {
 				labyokerRegister.register(function(error, done) {
 
 					if(done != null && done.length > 0 && done == 'firstsection') {
+						console.log("status = firstsection");
 						rendered = true;
 						res.render(
 							'register',
@@ -707,7 +711,7 @@ module.exports = function(router) {
 					} else if (done != null && done.length > 0 && done == 'alreadyInUse') {
 						console.log("status = alreadyInUse");
 						res.render('register', {message : "Sorry. This email address is already in use. Please try again below."});
-					}else if (done != null && done.length > 0 && done != 'success') {
+					} else if (done != null && done.length > 0 && done != 'success') {
 						console.log("status = not successful");
 						res.render('register', {message : "Sorry. We could not register you. Please try again below."});
 					} else if(done != null && done.length > 0 && done == 'success') {
