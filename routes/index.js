@@ -469,7 +469,7 @@ module.exports = function(router) {
 
 	router.get('/help', isLoggedIn, function(req, res) {
 		res.render('help', {
-			title : 'Help on the way.',
+			title : 'Help',
 			loggedIn : true,
 			labyoker : req.session.user,
 			menu : 'help'
