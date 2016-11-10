@@ -451,11 +451,17 @@ LabyokerRegister.prototype.register = function(callback) {
 	});
 	query.on("end", function(result) {
 		results = result.rows;
+		console.log("email entered: " + email);
 		if (results != null && results.length > 0) {
-			console.log("results[0].email: " + results[0].email);
-			if(results[0].email == email){
-				callback(null, "alreadyInUse");
+			
+			for (i = 0; i < results.length; i++) { 
+				console.log("results[i].email: " + results[i].email);
+				if(results[i].email == email){
+					console.log("in use?: alreadyInUse");
+					callback(null, "alreadyInUse");
+				}
 			}
+
 		} else {
 			var hash = crypt.hashSync(password);
 			var query2 = client.query("INSERT INTO vm2016_users VALUES ('" + username
