@@ -467,10 +467,10 @@ module.exports = function(router) {
 		});
 	});
 
-	router.get('/help', function(req, res) {
+	router.get('/help', /*isLoggedIn,*/ function(req, res) {
 		res.render('help', {
 			title : 'Help',
-			loggedIn : true,
+			/*loggedIn : true,*/
 			labyoker : req.session.user,
 			menu : 'help'
 		});
