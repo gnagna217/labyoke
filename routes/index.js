@@ -38,7 +38,7 @@ var storage = multer.diskStorage({ //multers disk storage settings
                         }
                         callback(null, true);
                     }
-                }).single('file');
+                }).single('share');
 
 
 module.exports = function(router) {
@@ -78,7 +78,7 @@ module.exports = function(router) {
                     res.json({error_code:0,err_desc:null, data: result});
                 });
             } catch (e){
-                res.json({error_code:1,err_desc:"Corupted excel file"});
+                res.json({error_code:1,err_desc:"Corrupted excel file"});
             }
         })
     });
