@@ -641,7 +641,8 @@ module.exports = function(router) {
 
 	router.get('/share', function(req, res) {
 		if (req.session.user) {
-			res.render('share', {loggedIn : true, title:'share'});
+			console.log("is admon? " + isLoggedInAdmin);
+			res.render('share', {loggedIn : true, isLoggedInAdmin: isLoggedInAdmin, title:'share'});
 			req.session.messages = null;
 		} else {
 			res.redirect('/login');
