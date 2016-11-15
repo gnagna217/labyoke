@@ -15,5 +15,6 @@ block content
 			if json
 				-var ob = json
 				-for(var prop in ob)
-					-console.log(JSON.parse(prop))
+					script
+						console.log(JSON.parse(prop))
 					p #{prop}: #{ob[prop]}
