@@ -77,7 +77,7 @@ module.exports = function(router) {
                     } 
                     //var ob = { data:result};
                     res.render('share', {
-                    json: result, loggedIn : true
+                    json: result, loggedIn : true, title: 'share'
                     });
                     //res.json({error_code:0,err_desc:null, data: result});
                 });
@@ -635,7 +635,7 @@ module.exports = function(router) {
 
 	router.get('/share', function(req, res) {
 		if (req.session.user) {
-			res.render('share', {loggedIn : true});
+			res.render('share', {loggedIn : true, title:'share'});
 			req.session.messages = null;
 		} else {
 			res.redirect('/login');
