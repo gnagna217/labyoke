@@ -7,7 +7,22 @@ block content
 			a(href="/search")
 				img(src="/images/yoke.jpg", alt="The Yoke",  title="Yoke", class="yokelogo")
 			h1= 'Share.'
+			h4="You are currently sharing."
+			p="An administrator has uploaded the following agents on your behalf."
+			div(class="table-responsive")               
+				table(id="rankTbl" class="table")
+					tbody
+						tr(class="you info-best" style="font-weight: bold")
+							td(class="desktabonly")= 'id'
+							td(class="wrapped")!= 'Agent'
+							td= 'Vendor'
+							td= 'Catalog#'
+							td= 'Location'
+
+
 			if isLoggedInAdmin
+				h4="Admin Upload."
+				p="You can now upload a list of agents (xcel spreadsheet) from your local computer or Google drive."
 				form(id="uploadForm", enctype="multipart/form-data", action="share", method="post")
 					input(style="display:none", type="file" name="file",id="file", class="inputfile inputfile-1", data-multiple-caption="{count} files selected")
 					label(for="file", style="width: 50%;text-align: center;border-radius: 6px;")
