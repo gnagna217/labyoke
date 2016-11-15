@@ -27,11 +27,17 @@ block content
 							tbody
 								tr(class="you info-best" style="font-weight: bold")
 									td(class="desktabonly")= 'id'
-									td(class="wrapped")!= 'X'
-									td= 'Y'
+									td(class="wrapped")!= 'Agent'
+									td= 'Vendor'
+									td= 'Catalog#'
+									td= 'Location'
+									td= 'User'
 								-var ob = json
 								-for(var prop in ob)
 									tr(class="")
 										td(class="desktabonly") #{prop}
-										td(class="wrapped") #{ob[prop].x}
-										td #{ob[prop].y}
+										td(class="wrapped") #{ob[prop].name_of_reagent}
+										td #{ob[prop].vendor}
+										td #{ob[prop].catalog_number}
+										td #{ob[prop].location}
+										td #{ob[prop].user}
