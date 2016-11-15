@@ -76,8 +76,9 @@ module.exports = function(router) {
                         return res.json({error_code:1,err_desc:err, data: null});
                     } 
                     //var ob = { data:result};
+                    console.log("is admin? " + isLoggedInAdmin);
                     res.render('share', {
-                    json: result, loggedIn : true, title: 'share', spreadname: req.file.originalname
+                    json: result, loggedIn : true, isLoggedInAdmin: isLoggedInAdmin, title: 'share', spreadname: req.file.originalname
                     });
                     //res.json({error_code:0,err_desc:null, data: result});
                 });
