@@ -46,7 +46,7 @@ module.exports = function(router) {
 	var competitionStarts = dates.competitionStarts;
 	var competitionEnds = dates.competitionEnds;
 
-    router.post('/share', function(req, res) {
+    router.post('/share', isLoggedIn, function(req, res) {
         var exceltojson;
         upload(req,res,function(err){
             if(err){
@@ -77,7 +77,7 @@ module.exports = function(router) {
                     } 
                     //var ob = { data:result};
                     res.render('share', {
-                    json: result
+                    json: result, loggedIn : true
                     });
                     //res.json({error_code:0,err_desc:null, data: result});
                 });
