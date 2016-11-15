@@ -19,13 +19,13 @@ block content
 							span(style="color: #3d9dcb;")=" data"                   
 					table(id="rankTbl" class="table")
 						tbody
-							tr(class="" id="and")
+							tr(class="you info-best")
 								td(class="desktabonly")= 'id'
 								td(class="wrapped")!= 'X'
 								td= 'Y'
 							-var ob = json
 							-for(var prop in ob)
-								tr(class="" id="and")
+								tr(class="")
 									td(class="desktabonly") #{prop}
 									td(class="wrapped") #{ob[prop].x}
 									td #{ob[prop].y}
