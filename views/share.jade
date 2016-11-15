@@ -9,7 +9,7 @@ block content
 			h1= 'Share.'
 			h4="You are currently sharing."
 			p="An administrator has uploaded the following agents on your behalf."
-			div.searchResults(id="results")
+			div.searchResult(id="results")
 				div(id="ctl00_Div2" class="row rank")
 					div(class="table-responsive")               
 						table(id="rankTbl" class="table")
@@ -35,25 +35,27 @@ block content
 						img(src="images/ship.png", alt="The Lab", title="Lab", style="border-width:0px; width: 50px; margin-top: -50px; margin-left: 300px;")
 
 			if json
-				div(class="table-responsive")
-					span(style="text-align: center")
-						h3="Fantastic! You have uploaded the file: "
-							span(style="color: #3d9dcb;")=" " + spreadname                   
-					table(id="rankTbl" class="table")
-						tbody
-							tr(class="you info-best" style="font-weight: bold")
-								td(class="desktabonly")= 'id'
-								td(class="wrapped")!= 'Agent'
-								td= 'Vendor'
-								td= 'Catalog#'
-								td= 'Location'
-								td= 'User'
-							-var ob = json
-							-for(var prop in ob)
-								tr(class="")
-									td(class="desktabonly") #{prop}
-									td(class="wrapped") #{ob[prop].name_of_reagent}
-									td #{ob[prop].vendor}
-									td #{ob[prop].catalog_number}
-									td #{ob[prop].location}
-									td #{ob[prop].user}
+				div.searchResult(id="results")
+					div(id="ctl00_Div2" class="row rank")
+						div(class="table-responsive")
+							span(style="text-align: center")
+								h3="Fantastic! You have uploaded the file: "
+									span(style="color: #3d9dcb;")=" " + spreadname                   
+							table(id="rankTbl" class="table")
+								tbody
+									tr(class="you info-best" style="font-weight: bold")
+										td(class="desktabonly")= 'id'
+										td(class="wrapped")!= 'Agent'
+										td= 'Vendor'
+										td= 'Catalog#'
+										td= 'Location'
+										td= 'User'
+									-var ob = json
+									-for(var prop in ob)
+										tr(class="")
+											td(class="desktabonly") #{prop}
+											td(class="wrapped") #{ob[prop].name_of_reagent}
+											td #{ob[prop].vendor}
+											td #{ob[prop].catalog_number}
+											td #{ob[prop].location}
+											td #{ob[prop].user}
