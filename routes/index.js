@@ -46,7 +46,7 @@ module.exports = function(router) {
 	var competitionStarts = dates.competitionStarts;
 	var competitionEnds = dates.competitionEnds;
 
-    router.post('/upload', function(req, res) {
+    router.post('/share', function(req, res) {
         var exceltojson;
         upload(req,res,function(err){
             if(err){
@@ -75,7 +75,10 @@ module.exports = function(router) {
                     if(err) {
                         return res.json({error_code:1,err_desc:err, data: null});
                     } 
-                    res.json({error_code:0,err_desc:null, data: result});
+                    res.render('share', {
+                    json: res.json({error_code:0,err_desc:null, data: result})
+                    });
+                    //res.json({error_code:0,err_desc:null, data: result});
                 });
             } catch (e){
                 res.json({error_code:1,err_desc:"Corrupted excel file"});
