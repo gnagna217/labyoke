@@ -13,4 +13,6 @@ block content
 					button.btn.btn-success.btn-lg.btn-block(type="submit",value="Upload",name="submit") Upload File
 					img(src="images/ship.png", alt="The Lab", title="Lab", style="border-width:0px; width: 50px; margin-top: -50px; margin-left: 300px;")
 			if json
-				p!=json
+				-var ob = JSON.parse(json)
+				-for(var prop in ob)
+ 					p #{prop}: #{ob[prop]}
