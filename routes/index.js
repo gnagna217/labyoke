@@ -75,8 +75,9 @@ module.exports = function(router) {
                     if(err) {
                         return res.json({error_code:1,err_desc:err, data: null});
                     } 
+                    var ob = { data:result};
                     res.render('share', {
-                    json: result
+                    json: ob
                     });
                     //res.json({error_code:0,err_desc:null, data: result});
                 });
