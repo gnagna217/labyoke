@@ -3,7 +3,7 @@ extends layout
 block content
 
 	div(class="container login")
-		div(style="float: left; width: 350px;")
+		div(style="float: left;")
 			a(href="/search")
 				img(src="/images/yoke.jpg", alt="The Yoke",  title="Yoke", class="yokelogo")
 			h1= 'Share.'
@@ -20,7 +20,7 @@ block content
 			if json
 				div(class="table-responsive")
 					span(style="text-align: center")
-						h3="Fantastic! You have uploaded the following"
+						h3="Fantastic! You have uploaded the file: "
 							span(style="color: #3d9dcb;")=" " + spreadname                   
 					table(id="rankTbl" class="table")
 						tbody
