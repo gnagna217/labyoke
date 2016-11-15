@@ -51,8 +51,10 @@
 /* style 1 */
 
 .inputfile-1 + label {
-    color: #f1e5e6;
-    background-color: #d3394c;
+    /*color: #f1e5e6;
+    background-color: #d3394c;*/
+    color: white;
+    background-color: #3d9dcb;
 }
 
 .inputfile-1:focus + label,
