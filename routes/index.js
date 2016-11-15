@@ -38,7 +38,7 @@ var storage = multer.diskStorage({ //multers disk storage settings
                         }
                         callback(null, true);
                     }
-                }).single('share');
+                }).single('file');
 
 
 module.exports = function(router) {
