@@ -572,6 +572,11 @@ module.exports = function(router) {
 			return next();
 		res.redirect('/login');
 	}
+	function isLoggedInAdmin(req, res, next) {
+		if (req.session.user && req.session.useradmin)
+			return next();
+		res.redirect('/search');
+	}
 
 	function isLoggedInAndNotActive(req, res, next) {
 		if (req.session.active != null && req.session.active == 0)
@@ -841,6 +846,9 @@ module.exports = function(router) {
 										if (done != null && done.length > 0) {
 											req.session.user = done[0].name;
 											req.session.userid = done[0].id;
+											console.log("admin? " + done[0].admin);
+											if(done[0].admin == 1)
+												req.session.admin = true;
 											req.session.active = done[0].active;
 
 											if (done[0].active == 0) {
