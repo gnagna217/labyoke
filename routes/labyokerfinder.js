@@ -465,7 +465,7 @@ LabyokerRegister.prototype.register = function(callback) {
 		} else {*/
 			var hash = crypt.hashSync(password);
 			var query2 = client.query("INSERT INTO vm2016_users VALUES ('" + username
-				+ "', '" + hash + "', '" + firstname + "',  1, null, null, '" + email + "', null, '" + lab + "', '" + lastname + "', '" + tel + "')");
+				+ "', '" + hash + "', '" + firstname + "',  1, null, null, '" + email + "', null, '" + lab + "', '" + lastname + "', '" + tel + "', 0)");
 
 				query2.on("row", function(row, result2) {
 					result2.addRow(row);

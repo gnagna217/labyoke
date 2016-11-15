@@ -8,5 +8,7 @@ block content
             a(href="/search")
                 img(src="/images/yoke.jpg", alt="The Yoke",  title="Yoke", class="yokelogo")
             h1= 'Share.'
-            p Coming soon.
+		    form(id="uploadForm", enctype="multipart/form-data", action="upload", method="post")
+				input(type="file", name="file")=Upload
+				input(type="submit",value="Upload",name="submit")
 
