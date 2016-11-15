@@ -77,7 +77,7 @@ module.exports = function(router) {
                     } 
                     //var ob = { data:result};
                     res.render('share', {
-                    json: result, loggedIn : true, title: 'share'
+                    json: result, loggedIn : true, title: 'share', spreadname: req.file.originalname
                     });
                     //res.json({error_code:0,err_desc:null, data: result});
                 });
