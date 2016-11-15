@@ -2,12 +2,11 @@ extends layout
 
 block content
 
-
-    div(class="container login")
-        div(style="float: left; width: 350px;")
-            a(href="/search")
-                img(src="/images/yoke.jpg", alt="The Yoke",  title="Yoke", class="yokelogo")
-            h1= 'Share.'
+	div(class="container login")
+		div(style="float: left; width: 350px;")
+			a(href="/search")
+				img(src="/images/yoke.jpg", alt="The Yoke",  title="Yoke", class="yokelogo")
+			h1= 'Share.'
 			form(id="uploadForm", enctype="multipart/form-data", action="upload", method="post")
 				input(type="file", name="file")=Upload
 				input(type="submit",value="Upload",name="submit")
