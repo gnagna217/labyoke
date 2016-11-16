@@ -123,7 +123,7 @@ LabYokeUploader.prototype.upload = function(callback) {
 	}
 	console.log("values " + values);
 
-	if(values!= null)){
+	if(values!= null){
 		var query2 = client.query("INSERT INTO vm2016_agentsshare VALUES " + values);
 
 		query2.on("row", function(row, result2) {
