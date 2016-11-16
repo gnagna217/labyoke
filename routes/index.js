@@ -649,7 +649,7 @@ var labYokeAgents = new LabYokeAgents(req.session.email);
 				labYokeAgents.findmyshares(function(error, results) {
 		if (req.session.user) {
 			console.log("is admon? " + isLoggedInAdmin);
-			res.render('share', {myshares: results, loggedIn : true, isLoggedInAdmin: isLoggedInAdmin, title:'share'});
+			res.render('share', {myshares: results, loggedIn : true, isLoggedInAdmin: req.session.admin, title:'share'});
 			req.session.messages = null;
 		} else {
 			res.redirect('/login');
@@ -857,8 +857,7 @@ var labYokeAgents = new LabYokeAgents(req.session.email);
 											req.session.user = done[0].name;
 											req.session.userid = done[0].id;
 											console.log("admin? " + done[0].admin);
-											if(done[0].admin == 1)
-												req.session.admin = true;
+											req.session.admin = done[0].admin;
 											req.session.active = done[0].active;
 											req.session.email = done[0].email;
 
