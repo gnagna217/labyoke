@@ -73,3 +73,4 @@ MailOptions.prototype.sendAllEmails = function() {
 };
 
 exports.MailOptions = MailOptions;
+exports.MailOptionsWithCC = MailOptionsWithCC;
