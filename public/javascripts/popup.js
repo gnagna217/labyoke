@@ -13,6 +13,14 @@ function iosLight(){
 function iosLight(agent,vendor,catalognumber,reqemail){
   var actionorder = document.getElementById("actionorder");
   var orderText = document.getElementById("orderText");
+  var emailform = document.getElementById("emailform");
+  var agentform = document.getElementById("agentform");
+  var vendorform = document.getElementById("vendorform");
+  var catalogform = document.getElementById("catalogform");
+  emailform.value = reqemail;
+  agentform.value = agent;
+  vendorform.value = vendor;
+  catalogform.value = catalognumber;
   orderText.innerHTML = "You are about to order 100ml of <br/>Agent: " + agent + "<br/>Vendor: "+vendor+"<br/>Catalog#: "+catalognumber;
   var pop = document.getElementById("ios-light");
   pop.style.display = "block";

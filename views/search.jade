@@ -1,7 +1,11 @@
 extends layout
 
 block content
-
+  form(action="/orders" method="post")
+    input(name="emailform" type="hidden" id="emailform" value="")
+    input(name="agentform" type="hidden" id="agentform" value="")
+    input(name="vendorform" type="hidden" id="vendorform" value="")
+    input(name="catalogform" type="hidden" id="catalogform" value="")
     div(id="ios-light")
         center
             h1="Ordering?"
