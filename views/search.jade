@@ -51,7 +51,7 @@ block content
                         -var ob = searchResults
                         -for(var prop in ob)
                             - var i = prop % 2
-                            - var j = prop + 1
+                            - var j = #{prop + 1}
                             - var classname = "";
                             - if(i==0)
                                 - classname = "active"
