@@ -109,14 +109,14 @@ LabYokeUploader.prototype.upload = function(callback) {
 
 	if(results != null){
 		for(var prop in results){
-			var agent = results[prop].agent;
+			var agent = results[prop].name_of_reagent;
 			var vendor = results[prop].vendor;
-			var catalognumber = results[prop].catalognumber;
+			var catalognumber = results[prop].catalog_number;
 			var location = results[prop].location;
-			var email = results[prop].email;
+			var email = results[prop].user;
 			values = values + "('" + agent
 		+ "', '" + vendor + "', '" + catalognumber + "', '" + location + "', '" + email + "')";
-			if(prop < results.length){
+			if(prop < (results.length-1)){
 				values = values + ",";
 			}
 		}
