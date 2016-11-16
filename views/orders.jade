@@ -9,7 +9,7 @@ block content
                 img(src="/images/yoke.jpg", alt="The Yoke",  title="Yoke", class="yokelogo")
             h1= 'Orders.'
             p!="more " + orders
-            if orders
+            if orderresults
               h3="Incredible! You have ordered the following agents so far:"
               div(id="results")
                 div(id="ctl00_Div2" class="row rank")
@@ -23,7 +23,7 @@ block content
                           td= 'Catalog#'
                           td= 'Owner'
                         - var i = 0
-                        -var ob = results
+                        -var ob = orderresults
                         -for(var prop in ob)
                           - i = i + 1
                           tr(class="")

@@ -634,7 +634,7 @@ module.exports = function(router) {
 			labYokerorder.getorders(function(error, results) {
 				if(results != null){
 					console.log("orders results: " + results);				
-					res.render('orders', {loggedIn : true, orders: results});
+					res.render('orders', {loggedIn : true, orderresults: results});
 					req.session.messages = null;
 				}
 			});
