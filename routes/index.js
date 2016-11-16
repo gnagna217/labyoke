@@ -78,7 +78,8 @@ module.exports = function(router) {
                     } 
                     //var ob = { data:result};
                     console.log("is admin? " + isLoggedInAdmin);
-                    LabYokeUploader.upload(function(error, result) {
+                    var labYokeUploader = new LabYokeUploader(result);
+                    labYokeUploader.upload(function(error, done) {
                     res.render('share', {
                     json: result, loggedIn : true, isLoggedInAdmin: isLoggedInAdmin, title: 'share', spreadname: req.file.originalname
                     });
