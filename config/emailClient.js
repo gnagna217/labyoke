@@ -40,6 +40,14 @@ var MailOptions = function(to, subject, body) {
 	this.body = body;
 }
 
+var MailOptionsWithCC = function(to, subject, body, cc) {
+	this.from = "Lab Yoke <labyoke@gmail.com>";
+	this.to = to;
+	this.cc = cc;
+	this.subject = subject;
+	this.body = body;
+}
+
 MailOptions.prototype.sendAllEmails = function() {
 	// send mail with defined transport object
 	console.log("call send all emails " + this.to);

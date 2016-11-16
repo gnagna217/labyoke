@@ -1,6 +1,7 @@
 var pg = require("pg");
 var moment = require('moment-timezone');
 var MailOptions = require('../config/emailClient').MailOptions;
+var MailOptionsWithCC = require('../config/emailClient').MailOptionsWithCC;
 var config = require("../config/database");
 var conString = process.env.DATABASE_URL || "pg://" + config.username + ":"
 		+ config.password + "@" + config.host + ":" + config.port + "/"
@@ -193,7 +194,7 @@ LabYokerOrder.prototype.order = function(callback) {
 		body += "</p><b><i>The LabYoke Team.</i></b></div>";
 		console.log("order body: " + body);
 
-		var mailOptions = new MailOptions(email, subject, body);
+		var mailOptions = new MailOptionsWithCC(email, subject, body, sendemail);
 		mailOptions.sendAllEmails();
 
 		callback(null, "successfulOrder")
