@@ -118,7 +118,7 @@ var query = client.query("select * from vm2016_agentsshare where agent='" + agen
 		});
 		query.on("end", function(result) {
 			var resultscheck = result.rows;
-			if(resultscheck == null){
+			if(!resultscheck){
 				values = values + "('" + agent + "', '" + vendor + "', '" + catalognumber + "', '" + location + "', '" + email + "','" + now + "')";
 				if(prop < (results.length-1)){
 					values = values + ",";
