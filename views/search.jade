@@ -20,8 +20,8 @@ block content
             p Start your search by typing in the name of the agent.
             - searchText = "Looking for..."
             - classButton = "btn-success"
-            if searchResults
-                - searchText = "Search: " + searchText
+            if searchText
+                - searchText = "Search: " + searchformText
                 - classButton = "btn-success-results"
             div(id="ctl00_Div2" class="row")
                 div
@@ -58,7 +58,7 @@ block content
                             - if(prop==1)
                                 - classname = "you info-best"
                             tr(class=classname)
-                                td(class="desktabonly")!= j
+                                td(class="desktabonly")= j
                                 td(class="wrapped") #{ob[prop].agent}
                                 td #{ob[prop].vendor}
                                 td #{ob[prop].location}

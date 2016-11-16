@@ -831,7 +831,7 @@ var labYokeAgents = new LabYokeAgents(req.session.email);
 			var labYokeSearch = new LabYokeSearch(searchText);
 			labYokeSearch.search(function(error, results) {			
 				if (searchText != null && searchText.length > 0){
-					res.render('search', {searchResults : results, searchText: searchText, loggedIn : true});
+					res.render('search', {searchResults : results, searchformText: searchText, loggedIn : true});
 				} else {
 					res.render('search', {loggedIn : true});
 				}
