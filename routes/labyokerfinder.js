@@ -13,7 +13,7 @@ LabYokeFinder = function(today) {
 	this.now = today
 };
 
-LabYokeUploader = function(agent, vendor,catalognumber,location,email) {
+LabYokeUploader = function(agent,vendor,catalognumber,location,email) {
 	this.agent = agent;
 	this.vendor = vendor;
 	this.catalognumber = catalognumber;
@@ -844,6 +844,7 @@ var analyze = function(matchresults, participantsResults) {
 exports.Labyoker = Labyoker;
 exports.LabyokerRegister = LabyokerRegister;
 exports.LabYokeFinder = LabYokeFinder;
+exports.LabYokeUploader = LabYokeUploader;
 exports.MatchPredictorSingleTeam = MatchPredictorSingleTeam;
 exports.LabyokerMakesBet = LabyokerMakesBet;
 exports.LabyokerMakesBets = LabyokerMakesBets;
