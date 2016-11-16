@@ -13,6 +13,18 @@ LabYokeFinder = function(today) {
 	this.now = today
 };
 
+LabYokeUploader = function(agent, vendor,catalognumber,location,email) {
+	this.agent = agent;
+	this.vendor = vendor;
+	this.catalognumber = catalognumber;
+	this.location = location;
+	this.email = email;
+};
+
+LabYokeUploader = function(jsonResults) {
+	this.jsonResults = jsonResults;
+};
+
 LabyokerRegister = function(user, password,lab,firstname,lastname,email,tel) {
 	this.username = user;
 	this.password = password;
@@ -83,6 +95,50 @@ MatchEvent.prototype.getMatchOfTheDay = function(callback) {
 		results = result.rows;
 		callback(null, results)
 	});
+};
+
+LabYokeUploader.prototype.upload = function(callback) {
+	/*var agent = this.agent;
+	var vendor = this.vendor;
+	var catalognumber = this.catalognumber;
+	var location = this.location;
+	var email = this.email;*/
+	var results = this.jsonResults;
+	console.log("location: " + location);
+	var values = "";
+
+	if(results != null){
+		for(var prop in results){
+			var agent = results[prop].agent;
+			var vendor = results[prop].vendor;
+			var catalognumber = results[prop].catalognumber;
+			var location = results[prop].location;
+			var email = results[prop].email;
+			values = values + "('" + agent
+		+ "', '" + vendor + "', '" + catalognumber + "', '" + location + "', '" + email + "')";
+			if(prop < results.length){
+				values = values + ",";
+			}
+		}
+	}
+	console.log("values " + values);
+
+	if(values!= null)){
+		var query2 = client.query("INSERT INTO vm2016_agentsshare VALUES " + values);
+
+		query2.on("row", function(row, result2) {
+			result2.addRow(row);
+		});
+		query2.on("end", function(result2) {
+			console.log("successfulUpload");
+			callback(null, "successfulUpload");
+		});
+			
+	} else {
+		//Change Password already sent
+		console.log("cannotUploadMissingData.");
+		callback(null, "cannotUploadMissingData");
+	}
 };
 
 LabYokeFinder.prototype.getMatchOfTheDay = function(callback) {

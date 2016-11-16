@@ -4,6 +4,7 @@ var dates = require('../config/staticvariables');
 var LabyokerPasswordChange = labyokeFinderClass.LabyokerPasswordChange;
 var LabyokerRegister = labyokeFinderClass.LabyokerRegister;
 var LabYokeFinder = labyokeFinderClass.LabYokeFinder;
+var LabYokeUploader = labyokeFinderClass.LabYokeUploader;
 var MatchPredictorSingleTeam = labyokeFinderClass.MatchPredictorSingleTeam;
 var LabyokerMakesBet = labyokeFinderClass.LabyokerMakesBet;
 var LabyokerMakesBets = labyokeFinderClass.LabyokerMakesBets;
@@ -77,9 +78,11 @@ module.exports = function(router) {
                     } 
                     //var ob = { data:result};
                     console.log("is admin? " + isLoggedInAdmin);
+                    LabYokeUploader.upload(function(error, result) {
                     res.render('share', {
                     json: result, loggedIn : true, isLoggedInAdmin: isLoggedInAdmin, title: 'share', spreadname: req.file.originalname
                     });
+                });
                     //res.json({error_code:0,err_desc:null, data: result});
                 });
             } catch (e){

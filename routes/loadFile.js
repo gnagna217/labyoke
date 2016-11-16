@@ -2,8 +2,11 @@ var moment = require('moment-timezone');
 
 var express = require('express');
 var router = express.Router();
-var XLS = require('xlsjs');
-//fileLoader.readFile('excel_file.xls');
+
+var express = require('express'); 
+var app = express(); 
+var bodyParser = require('body-parser');
+
 
 module.exports = function(router) {
 
