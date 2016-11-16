@@ -636,9 +636,13 @@ module.exports = function(router) {
 	});
 
 	router.post('/orders', function(req, res) {
-		console.log("ordering agentform" + req.body.agentform);
+		var agent = req.body.agentform;
+		var vendor = req.body.vendorform;
+		var catalognumber = req.body.catalogform;
+		var email = req.body.emailform;
+		console.log("ordering agentform: " + agent);
 		if (req.session.user) {
-			res.render('orders', {loggedIn : true});
+			res.render('orders', {loggedIn : true, agent: agent, vendor: vendor, catalog: catalognumber, email: email});
 			req.session.messages = null;
 		} else {
 			res.redirect('/login');

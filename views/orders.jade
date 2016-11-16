@@ -8,5 +8,10 @@ block content
             a(href="/search")
                 img(src="/images/yoke.jpg", alt="The Yoke",  title="Yoke", class="yokelogo")
             h1= 'Orders.'
-            p Coming soon.
+            if email != undefined
+              h4="Great! You have ordered ..."
+              h3="Agent: " + agent
+              h3="Catalog: " + catalog
+              h3="Vendor: " + vendor
+
 
