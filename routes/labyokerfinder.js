@@ -17,6 +17,9 @@ LabYokeAgents = function(email) {
 	this.email = email;
 };
 
+LabYokeSearch = function(searchText) {
+	this.searchText = searchText;
+};
 
 LabYokeUploader = function(jsonResults) {
 	this.jsonResults = jsonResults;
@@ -144,6 +147,21 @@ LabYokeAgents.prototype.findmyshares = function(callback) {
 	var query = client
 			.query("SELECT * FROM vm2016_agentsshare where email='"
 					+ this.email + "' order by date");
+	query.on("row", function(row, result) {
+		result.addRow(row);
+	});
+	query.on("end", function(result) {
+		results = result.rows;
+		callback(null, results)
+	});
+};
+
+LabYokeSearch.prototype.search = function(callback) {
+	var results;
+	console.log("searchText: " + this.searchText);
+	var query = client
+			.query("SELECT * FROM vm2016_agentsshare where agent like '%"
+					+ this.searchText + "%' order by agent, location");
 	query.on("row", function(row, result) {
 		result.addRow(row);
 	});
@@ -855,6 +873,7 @@ var analyze = function(matchresults, participantsResults) {
 
 exports.Labyoker = Labyoker;
 exports.LabYokeAgents = LabYokeAgents;
+exports.LabYokeSearch = LabYokeSearch;
 exports.LabyokerRegister = LabyokerRegister;
 exports.LabYokeFinder = LabYokeFinder;
 exports.LabYokeUploader = LabYokeUploader;
