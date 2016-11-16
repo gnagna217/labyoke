@@ -18,10 +18,10 @@ function iosLight(agent,vendor,catalognumber,reqemail){
   pop.style.display = "block";
   var shade = document.getElementById("shade");
   shade.style.display = "block";
-  order.onclick=iosLightOrder;
+  order.onclick=iosLightOrder(reqemail);
 }
-function iosLightOrder(){
-  alert("ordering");
+function iosLightOrder(email){
+  alert("TODO - ordering: " + email);
 }
 function iosDark(){
   var pop = document.getElementById("ios-dark");
