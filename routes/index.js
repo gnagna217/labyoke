@@ -635,11 +635,9 @@ module.exports = function(router) {
 				if(results != null){
 					console.log("orders results: " + results);				
 					res.render('orders', {loggedIn : true, orderresults: results});
-					req.session.messages = null;
+					//req.session.messages = null;
 				}
 			});
-			res.render('orders', {loggedIn : true});
-			req.session.messages = null;
 		} else {
 			res.redirect('/login');
 		}
