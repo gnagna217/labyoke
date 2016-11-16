@@ -18,7 +18,7 @@ function iosLight(agent,vendor,catalognumber,reqemail){
   pop.style.display = "block";
   var shade = document.getElementById("shade");
   shade.style.display = "block";
-  actionorder.onclick= = function(){iosLightOrder(reqemail)};
+  actionorder.onclick = function(){iosLightOrder(reqemail)};
 }
 function iosLightOrder(email){
   console.log("TODO - ordering: " + email);
