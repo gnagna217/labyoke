@@ -12,11 +12,16 @@ function iosLight(){
 }
 function iosLight(agent,vendor,catalognumber,reqemail){
   var order = document.getElementById("order");
-  order.innerHTML = "You are about to order 100ml of <br/>Agent: " + agent + "<br/>Vendor: "+vendor+"<br/>Catalog#: "+catalognumber;
+  var orderText = document.getElementById("orderText");
+  orderText.innerHTML = "You are about to order 100ml of <br/>Agent: " + agent + "<br/>Vendor: "+vendor+"<br/>Catalog#: "+catalognumber;
   var pop = document.getElementById("ios-light");
   pop.style.display = "block";
   var shade = document.getElementById("shade");
   shade.style.display = "block";
+  order.onclick=iosLightOrder;
+}
+function iosLightOrder(){
+  alert("ordering");
 }
 function iosDark(){
   var pop = document.getElementById("ios-dark");
