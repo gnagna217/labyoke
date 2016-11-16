@@ -11,14 +11,14 @@ function iosLight(){
   shade.style.display = "block";
 }
 function iosLight(agent,vendor,catalognumber,reqemail){
-  var order = document.getElementById("order");
+  var actionorder = document.getElementById("order");
   var orderText = document.getElementById("orderText");
   orderText.innerHTML = "You are about to order 100ml of <br/>Agent: " + agent + "<br/>Vendor: "+vendor+"<br/>Catalog#: "+catalognumber;
   var pop = document.getElementById("ios-light");
   pop.style.display = "block";
   var shade = document.getElementById("shade");
   shade.style.display = "block";
-  order.onclick=iosLightOrder(reqemail);
+  actionorder.onclick=iosLightOrder(reqemail);
 }
 function iosLightOrder(email){
   console.log("TODO - ordering: " + email);
