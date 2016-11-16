@@ -649,6 +649,7 @@ module.exports = function(router) {
 			labYokerorder.order(function(error, results) {
 				if(results != null && results=="successfulOrder"){
 					console.log("ordering agentform: " + agent);
+					console.log("ordering location: " + location);
 					console.log("ordering reqemail: " + reqemail);
 				
 					res.render('orders', {loggedIn : true, location: location, agent: agent, vendor: vendor, catalog: catalognumber, email: email});

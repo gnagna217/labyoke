@@ -174,7 +174,7 @@ LabYokerOrder.prototype.order = function(callback) {
 	var email = this.email;
 	var sendemail = this.sendemail;
 	var now = moment(new Date).tz("Europe/Berlin").format('YYYY-MM-DD');
-	console.log("order agent: " + this.agent);
+	console.log("order location: " + this.location);
 	var query = client.query("INSERT INTO vm2016_orders VALUES ('" + agent + "', '" + vendor + "', '" + catalognumber + "','" + email + "', '" + sendemail + "', '" + now + "')");
 
 	query.on("row", function(row, result) {
