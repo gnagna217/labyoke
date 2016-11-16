@@ -111,28 +111,11 @@ LabYokeUploader.prototype.upload = function(callback) {
 			var catalognumber = results[prop].catalog_number;
 			var location = results[prop].location;
 			var email = results[prop].user;
-
-var query = client.query("select * from vm2016_agentsshare where agent='" + agent + "' and vendor='"  + vendor + "' and catalognumber='" + catalognumber + "' and email='"  + email + "'"  );
-		query.on("row", function(row, result) {
-			result.addRow(row);
-		});
-		query.on("end", function(result) {
-			var resultscheck = result.rows;
-			if(!resultscheck){
-				values = values + "('" + agent + "', '" + vendor + "', '" + catalognumber + "', '" + location + "', '" + email + "','" + now + "')";
-				if(prop < (results.length-1)){
-					values = values + ",";
-				}
-			}
-			console.log("value " + values);
-		});
-
-
-		/*	values = values + "('" + agent
+			values = values + "('" + agent
 		+ "', '" + vendor + "', '" + catalognumber + "', '" + location + "', '" + email + "','" + now + "')";
 			if(prop < (results.length-1)){
 				values = values + ",";
-			}*/
+			}
 		}
 	}
 	console.log("values " + values);
