@@ -61,8 +61,9 @@ block content
                                 td(class="wrapped") #{ob[prop].agent}
                                 td #{ob[prop].vendor}
                                 td #{ob[prop].location}
-                                a(href="mailto:"+ ob[prop].email)
-                                        img(src="images/email.png", alt="Email Someone", title="Email Someone", style="border-width:0px; width: 24px; margin-top: 00px; margin-right: 15px;")
+                                td
+                                    a(href="mailto:"+ ob[prop].email)
+                                            img(src="images/email.png", alt="Email Someone", title="Email Someone", style="border-width:0px; width: 24px; margin-top: 00px; margin-right: 15px;")
                                 
                             
             script="$(window).scrollTop($('#results').offset().top).scrollLeft($('#results').offset().left);"
