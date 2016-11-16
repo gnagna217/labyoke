@@ -21,7 +21,7 @@ block content
             - searchText = "Looking for..."
             - classButton = "btn-success"
             if searchResults
-                - searchText = "Search: " + searchResults
+                - searchText = "Search: " + searchText
                 - classButton = "btn-success-results"
             div(id="ctl00_Div2" class="row")
                 div
@@ -51,13 +51,14 @@ block content
                         -var ob = searchResults
                         -for(var prop in ob)
                             - var i = prop % 2
+                            - var j = prop + 1
                             - var classname = "";
                             - if(i==0)
                                 - classname = "active"
                             - if(prop==1)
                                 - classname = "you info-best"
                             tr(class=classname)
-                                td(class="desktabonly")!= prop + 1
+                                td(class="desktabonly")!= j
                                 td(class="wrapped") #{ob[prop].agent}
                                 td #{ob[prop].vendor}
                                 td #{ob[prop].location}
