@@ -23,13 +23,6 @@ var multer = require('multer');
 var xlstojson = require("xls-to-json-lc");
 var xlsxtojson = require("xlsx-to-json-lc");
 
-function iosLight(agent,vendor,catalognumber,fullname,sendemail,reqemail){
-  var pop = document.getElementById("ios-light");
-  pop.style.display = "block";
-  var shade = document.getElementById("shade");
-  shade.style.display = "block";
-}
-
 var storage = multer.diskStorage({ //multers disk storage settings
         destination: function (req, file, cb) {
             cb(null, './uploads/')

@@ -10,6 +10,14 @@ function iosLight(){
   pop.style.display = "block";
   shade.style.display = "block";
 }
+function iosLight(agent,vendor,catalognumber,fullname,sendemail,reqemail){
+  var order = document.getElementById("order");
+  order.innerHTML = "You are about to order 100ml of %0DAgent: " + agent "%0DVendor: "+vendor+"%0DCatalog#: "+catalognumber;
+  var pop = document.getElementById("ios-light");
+  pop.style.display = "block";
+  var shade = document.getElementById("shade");
+  shade.style.display = "block";
+}
 function iosDark(){
   var pop = document.getElementById("ios-dark");
   pop.style.display = "block";
