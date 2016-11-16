@@ -7,6 +7,9 @@ block content
 			a(href="/search")
 				img(src="/images/yoke.jpg", alt="The Yoke",  title="Yoke", class="yokelogo")
 			h1= 'Share.'
+			if !myshares
+			h4="You are currently not sharing any agent."
+			if myshares
 			h4="You are currently sharing."
 			p="An administrator has uploaded the following agents on your behalf."
 			div(id="results")
