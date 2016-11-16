@@ -25,7 +25,7 @@ LabYokeUploader = function(jsonResults) {
 	this.jsonResults = jsonResults;
 };
 
-LabyokerOrder = function(agent, vendor,catalognumber,email,location,sendemail) {
+LabYokerOrder = function(agent, vendor,catalognumber,email,location,sendemail) {
 	this.agent = agent;
 	this.vendor = vendor;
 	this.catalognumber = catalognumber;
@@ -919,7 +919,7 @@ exports.Labyoker = Labyoker;
 exports.LabYokeAgents = LabYokeAgents;
 exports.LabYokeSearch = LabYokeSearch;
 exports.LabyokerRegister = LabyokerRegister;
-exports.LabyokerOrder = LabyokerOrder;
+exports.LabYokerOrder = LabYokerOrder;
 exports.LabYokeFinder = LabYokeFinder;
 exports.LabYokeUploader = LabYokeUploader;
 exports.MatchPredictorSingleTeam = MatchPredictorSingleTeam;
