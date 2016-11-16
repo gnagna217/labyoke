@@ -183,7 +183,7 @@ LabYokerOrder.prototype.order = function(callback) {
 		results = result.rows;
 
 		var subject = "LabYoke Request - Order for " + agent;
-		var body = "<div style='float:left'><img style='width: 150px; margin: 0 20px;' src='https:\/\/team-labyoke.herokuapp.com\/images\/yoke.jpg', alt='The Yoke',  title='Yoke', class='yokelogo'/></div><div style=\"font-family:'calibri'; font-size:11pt;padding: 20px;\">Hello,"
+		var body = "<div style='float:left'><img style='width: 150px; margin: 0 20px;' src='https:\/\/team-labyoke.herokuapp.com\/images\/yoke.jpg', alt='The Yoke',  title='Yoke', class='yokelogo'/></div><div style=\"font-family:'calibri'; font-size:11pt;padding: 20px;\">Hello " + this.location
 				+ ",<br/><br/>";
 		body += "This is a kind request to share 100 units from the following inventory: <br><b>Agent: </b> " + agent;
 		body += "<br><b>Vendor: </b> " + vendor;
