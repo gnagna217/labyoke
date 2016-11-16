@@ -9,14 +9,17 @@ block content
                 img(src="/images/yoke.jpg", alt="The Yoke",  title="Yoke", class="yokelogo")
             h1= 'Orders.'
             if email != undefined
-              h4="Great! You have ordered ..."
+              h3="Great! You have ordered the following agent from "
+                span(style="color: #3d9dcb;")=" " + location
+                span="!"
+              p=&nbsp;
               p
                 b="Agent: "
                 span=agent
-              p
+                br
                 b="Catalog: "
                 span=catalog
-              p
+                br
                 b="Vendor: "
                 span=vendor
 

@@ -640,9 +640,10 @@ module.exports = function(router) {
 		var vendor = req.body.vendorform;
 		var catalognumber = req.body.catalogform;
 		var email = req.body.emailform;
+		var location = req.body.locationform;
 		console.log("ordering agentform: " + agent);
 		if (req.session.user) {
-			res.render('orders', {loggedIn : true, agent: agent, vendor: vendor, catalog: catalognumber, email: email});
+			res.render('orders', {loggedIn : true, location: location, agent: agent, vendor: vendor, catalog: catalognumber, email: email});
 			req.session.messages = null;
 		} else {
 			res.redirect('/login');

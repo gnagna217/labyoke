@@ -17,6 +17,7 @@ function iosLight(agent,vendor,catalognumber,reqemail){
   var agentform = document.getElementById("agentform");
   var vendorform = document.getElementById("vendorform");
   var catalogform = document.getElementById("catalogform");
+  var locationform = document.getElementById("locationform");
   emailform.value = reqemail;
   agentform.value = agent;
   vendorform.value = vendor;
