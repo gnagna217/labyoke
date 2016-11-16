@@ -57,7 +57,7 @@ block content
                             - if(prop==1)
                                 - classname = "you info-best"
                             tr(class=classname)
-                                td(class="desktabonly") prop + 1
+                                td(class="desktabonly")!= prop + 1
                                 td(class="wrapped") #{ob[prop].agent}
                                 td #{ob[prop].vendor}
                                 td #{ob[prop].location}
