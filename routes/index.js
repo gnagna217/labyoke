@@ -1,6 +1,8 @@
 var labyokeFinderClass = require('./labyokerfinder');
 var dates = require('../config/staticvariables');
 
+
+var LabYokerOrder = labyokeFinderClass.LabYokerOrder;
 var LabyokerPasswordChange = labyokeFinderClass.LabyokerPasswordChange;
 var LabyokerRegister = labyokeFinderClass.LabyokerRegister;
 var LabYokeFinder = labyokeFinderClass.LabYokeFinder;
@@ -636,15 +638,23 @@ module.exports = function(router) {
 	});
 
 	router.post('/orders', function(req, res) {
-		var agent = req.body.agentform;
-		var vendor = req.body.vendorform;
-		var catalognumber = req.body.catalogform;
-		var email = req.body.emailform;
-		var location = req.body.locationform;
-		console.log("ordering agentform: " + agent);
 		if (req.session.user) {
-			res.render('orders', {loggedIn : true, location: location, agent: agent, vendor: vendor, catalog: catalognumber, email: email});
-			req.session.messages = null;
+			var agent = req.body.agentform;
+			var vendor = req.body.vendorform;
+			var catalognumber = req.body.catalogform;
+			var email = req.body.emailform;
+			var location = req.body.locationform;
+			var reqemail = req.session.email;
+			var labYokerorder = new LabYokerOrder(agent, vendor, catalognumber,email,location,reqemail);
+			labYokerorder.order(function(error, results) {
+				if(results != null && results=="successfulOrder"){
+					console.log("ordering agentform: " + agent);
+					console.log("ordering reqemail: " + reqemail);
+				
+					res.render('orders', {loggedIn : true, location: location, agent: agent, vendor: vendor, catalog: catalognumber, email: email});
+					req.session.messages = null;
+				}
+			});
 		} else {
 			res.redirect('/login');
 		}
@@ -757,11 +767,11 @@ var labYokeAgents = new LabYokeAgents(req.session.email);
 					res.render(
 						'register',
 						{
-								labentered : true,
-								firstname: req.session.firstname,
-								lastname: req.session.lastname,
-								email: req.session.email,
-								tel: req.session.tel
+							labentered : true,
+							firstname: req.session.firstname,
+							lastname: req.session.lastname,
+							email: req.session.email,
+							tel: req.session.tel
 						});
 				} else if (done != null && done.length > 0 && done != 'success') {
 					console.log("status = status1");

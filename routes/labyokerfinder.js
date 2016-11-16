@@ -25,6 +25,15 @@ LabYokeUploader = function(jsonResults) {
 	this.jsonResults = jsonResults;
 };
 
+LabyokerOrder = function(agent, vendor,catalognumber,email,loocation,sendemail) {
+	this.agent = agent;
+	this.vendor = vendor;
+	this.catalognumber = catalognumber;
+	this.email = email;
+	this.location = location;
+	this.sendemail = sendemail;
+};
+
 LabyokerRegister = function(user, password,lab,firstname,lastname,email,tel) {
 	this.username = user;
 	this.password = password;
@@ -153,6 +162,41 @@ LabYokeAgents.prototype.findmyshares = function(callback) {
 	query.on("end", function(result) {
 		results = result.rows;
 		callback(null, results)
+	});
+};
+
+LabYokerOrder.prototype.order = function(callback) {
+	var results;
+	var agent = this.agent;
+	var vendor = this.vendor;
+	var catalognumber = this.catalognumber;
+	var email = this.email;
+	var sendemail = this.sendemail;
+	var now = moment(new Date).tz("Europe/Berlin").format('YYYY-MM-DD');
+	console.log("order agent: " + this.agent);
+	var query = client.query("INSERT INTO vm2016_orders VALUES ('" + agent + "', '" + vendor + "', '" + catalognumber + "','" + email + "', '" + sendemail + "', '" + now + "')");
+
+	query.on("row", function(row, result) {
+		result.addRow(row);
+	});
+	query.on("end", function(result) {
+		results = result.rows;
+
+		var subject = "LabYoke Request - Order for " + agent;
+		var body = "<div style='float:left'><img style='width: 150px; margin: 0 20px;' src='https:\/\/team-labyoke.herokuapp.com\/images\/yoke.jpg', alt='The Yoke',  title='Yoke', class='yokelogo'/></div><div style=\"font-family:'calibri'; font-size:11pt;padding: 20px;\">Hello,"
+				+ ",<br/><br/>";
+		body += "This is a kind request to share 100 units from the following inventory: <br><b>Agent: </b> " + agent;
+		body += "<br><b>Vendor: </b> " + vendor;
+		body += "<br><b>Catalog#: </b> " + catalognumber;
+		body += "<br><b>Owner: </b> " + sendemail;
+		body += "<p>best regards,";
+		body += "</p><b><i>The LabYoke Team.</i></b></div>";
+		console.log("order body: " + body);
+
+		var mailOptions = new MailOptions(email, subject, body);
+		mailOptions.sendAllEmails();
+
+		callback(null, "successfulOrder")
 	});
 };
 
@@ -875,6 +919,7 @@ exports.Labyoker = Labyoker;
 exports.LabYokeAgents = LabYokeAgents;
 exports.LabYokeSearch = LabYokeSearch;
 exports.LabyokerRegister = LabyokerRegister;
+exports.LabyokerOrder = LabyokerOrder;
 exports.LabYokeFinder = LabYokeFinder;
 exports.LabYokeUploader = LabYokeUploader;
 exports.MatchPredictorSingleTeam = MatchPredictorSingleTeam;
