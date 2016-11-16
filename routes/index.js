@@ -19,9 +19,16 @@ var express = require('express');
 var router = express.Router();
 
 
-	var multer = require('multer');
+var multer = require('multer');
 var xlstojson = require("xls-to-json-lc");
 var xlsxtojson = require("xlsx-to-json-lc");
+
+function iosLight(agent,vendor,catalognumber,fullname,sendemail,reqemail){
+  var pop = document.getElementById("ios-light");
+  pop.style.display = "block";
+  var shade = document.getElementById("shade");
+  shade.style.display = "block";
+}
 
 var storage = multer.diskStorage({ //multers disk storage settings
         destination: function (req, file, cb) {
@@ -863,6 +870,7 @@ var labYokeAgents = new LabYokeAgents(req.session.email);
 											req.session.admin = done[0].admin;
 											req.session.active = done[0].active;
 											req.session.email = done[0].email;
+											req.session.fullname = done[0].name + " " + done[0].surname ;
 
 											if (done[0].active == 0) {
 
