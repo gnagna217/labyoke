@@ -25,6 +25,8 @@ block content
                         - var i = 0
                         -var ob = orderresults
                         -for(var prop in ob)
+                          - var d = ob[prop].date
+                          - d = d.toLocaleDateString("en-US")
                           - i = i + 1
                           tr(class="")
                             td(class="desktabonly")= i
@@ -32,7 +34,7 @@ block content
                             td #{ob[prop].vendor}
                             td #{ob[prop].catalognumber}
                             td #{ob[prop].email}
-                            td #{ob[prop].date}
+                            td d
 
             if email != undefined
               h3="Great! You have ordered the following agent from "
