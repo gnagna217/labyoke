@@ -71,7 +71,7 @@ block content
                                 td
                                     a(href="mailto:"+ ob[prop].email + "?Subject= LabYoke Request - Order for " + searchformText + "&body=Dear "+ ob[prop].location +",%0A%0AThis is a kind request to share 100 units from the following inventory: %0DAgent: " + ob[prop].agent + "%0DVendor: " + ob[prop].vendor + "%0DCatalog#: " + ob[prop].catalognumber + "%0A%0ARegards,%0A%0ALabyoke -")
                                         img(src="images/email.png", alt="Email", title="Email " + ob[prop].location, style="border-width:0px; width: 24px; margin-top: 00px; margin-right: 15px;")
-                                    span(onclick="iosLight(#{agent},#{vendor},#{catalognumber},#{reqemail})", style="cursor:pointer")
+                                    span(onclick="iosLight('#{agent}','#{vendor}','#{catalognumber}','#{reqemail}')", style="cursor:pointer")
                                         img(src="images/ship2.png", alt="Order now", title="Order now", style="border-width:0px; width: 24px; margin-top: 0px;")
                             - j = j + 1                
         if(searchResults != undefined && searchResults.length == 0 && searchformText)
