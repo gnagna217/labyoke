@@ -864,7 +864,8 @@ var labYokeAgents = new LabYokeAgents(req.session.email);
 											req.session.active = done[0].active;
 											req.session.email = done[0].email;
 											req.session.fullname = done[0].name + " " + done[0].surname ;
-
+											console.log("fullname " + req.session.fullname);
+											console.log("email " + req.session.email);
 											if (done[0].active == 0) {
 
 												return res
