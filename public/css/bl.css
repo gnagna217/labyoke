@@ -481,7 +481,7 @@ input::-webkit-inner-spin-button {
  @media (max-width: 440px) {
 #rankTbl td
 {
-    text-align: center;
+    /*text-align: center;*/
     font-size:13px;
 }
 
