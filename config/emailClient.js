@@ -72,5 +72,30 @@ MailOptions.prototype.sendAllEmails = function() {
 	});
 };
 
+MailOptionsWithCC.prototype.sendAllEmails = function() {
+	// send mail with defined transport object
+	console.log("call send all emails " + this.to);
+	var mailOptions = {
+		from : this.from,
+		to : this.to,
+		cc : this.cc,
+		subject : this.subject,
+		html : this.body
+	}
+	transport.sendMail(mailOptions, function(error, response) {
+		console.log("sent");
+		if (error) {
+			console.log(error);
+		} else {
+			console.log("Message sent: " + response.message);
+		}
+
+		// if you don't want to use this transport object anymore, uncomment
+		// following line
+		//transport.close(); // shut down the connection pool, no more
+								// messages
+	});
+};
+
 exports.MailOptions = MailOptions;
 exports.MailOptionsWithCC = MailOptionsWithCC;
