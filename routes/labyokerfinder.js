@@ -191,7 +191,7 @@ LabYokerOrder.prototype.order = function(callback) {
 		body += "<br><b>Vendor: </b> " + vendor;
 		body += "<br><b>Catalog#: </b> " + catalognumber;
 		body += "<br><b>Owner: </b> " + sendemail;
-		body += "<p>best regards,";
+		body += "<p>Best regards,";
 		body += "</p><b><i>The LabYoke Team.</i></b></div>";
 		console.log("order body: " + body);
 
