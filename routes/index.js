@@ -636,7 +636,7 @@ module.exports = function(router) {
 	});
 
 	router.post('/orders', function(req, res) {
-		console.log("ordering " + req.orders.agentform);
+		console.log("ordering agentform" + req.body.agentform);
 		if (req.session.user) {
 			res.render('orders', {loggedIn : true});
 			req.session.messages = null;
