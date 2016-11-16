@@ -21,7 +21,7 @@ function iosLight(agent,vendor,catalognumber,reqemail){
   order.onclick=iosLightOrder(reqemail);
 }
 function iosLightOrder(email){
-  alert("TODO - ordering: " + email);
+  console.log("TODO - ordering: " + email);
 }
 function iosDark(){
   var pop = document.getElementById("ios-dark");
