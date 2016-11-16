@@ -1,7 +1,7 @@
 extends layout
 
 block content
-    form(action="/orders" method="post")
+    form(action="/orders" id="orders" method="post")
         input(name="emailform" type="hidden" id="emailform" value="")
         input(name="agentform" type="hidden" id="agentform" value="")
         input(name="vendorform" type="hidden" id="vendorform" value="")

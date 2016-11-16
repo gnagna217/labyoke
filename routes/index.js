@@ -635,6 +635,16 @@ module.exports = function(router) {
 		}
 	});
 
+	router.post('/orders', function(req, res) {
+		console.log("ordering " + req.params.agentform);
+		if (req.session.user) {
+			res.render('orders', {loggedIn : true});
+			req.session.messages = null;
+		} else {
+			res.redirect('/login');
+		}
+	});
+
 	router.get('/account', function(req, res) {
 		if (req.session.user) {
 			res.render('account', {loggedIn : true});

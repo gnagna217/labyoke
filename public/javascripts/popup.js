@@ -30,7 +30,7 @@ function iosLight(agent,vendor,catalognumber,reqemail){
 }
 function iosLightOrder(agent,vendor,catalognumber,reqemail){
   console.log("TODO - ordering: " + email);
-  document.getElementById("order").submit();
+  document.getElementById("orders").submit();
 }
 function iosDark(){
   var pop = document.getElementById("ios-dark");
