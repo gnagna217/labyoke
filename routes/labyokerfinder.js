@@ -140,6 +140,7 @@ LabYokeUploader.prototype.upload = function(callback) {
 
 LabYokeAgents.prototype.findmyshares = function(callback) {
 	var results;
+	console.log("findmyshares: " + this.email);
 	var query = client
 			.query("SELECT * FROM vm2016_agentsshare where email='"
 					+ this.email + "' order by date");
