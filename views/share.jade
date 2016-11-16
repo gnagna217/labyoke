@@ -23,9 +23,9 @@ block content
 								-for(var prop in ob)
 									tr(class="")
 										td(class="desktabonly") #{prop}
-										td(class="wrapped") #{ob[prop].name_of_reagent}
+										td(class="wrapped") #{ob[prop].agent}
 										td #{ob[prop].vendor}
-										td #{ob[prop].catalog_number}
+										td #{ob[prop].catalognumber}
 			div(style="background-color: #3d9dcb; height: 2px; margin-bottom: 30px; margin-top: 30px;")
 
 			if isLoggedInAdmin
