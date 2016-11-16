@@ -12,7 +12,7 @@ function iosLight(){
 }
 function iosLight(agent,vendor,catalognumber,reqemail){
   var order = document.getElementById("order");
-  order.innerHTML = "You are about to order 100ml of %0DAgent: " + agent + "<br/>Vendor: "+vendor+"<br/>Catalog#: "+catalognumber;
+  order.innerHTML = "You are about to order 100ml of <br/>Agent: " + agent + "<br/>Vendor: "+vendor+"<br/>Catalog#: "+catalognumber;
   var pop = document.getElementById("ios-light");
   pop.style.display = "block";
   var shade = document.getElementById("shade");
