@@ -630,7 +630,7 @@ module.exports = function(router) {
 
 	router.get('/orders', function(req, res) {
 		if (req.session.user) {
-			var labYokerorder = new LabYokerOrder(eq.session.email);
+			var labYokerorder = new LabYokerOrder(req.session.email);
 			labYokerorder.getorders(function(error, results) {
 				if(results != null){
 					console.log("orders results: " + results);				
