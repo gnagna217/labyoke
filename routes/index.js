@@ -12,6 +12,7 @@ var MatchPhase = labyokeFinderClass.MatchPhase;
 var Labyoker = labyokeFinderClass.Labyoker;
 var MatchResults = labyokeFinderClass.MatchResults;
 var MatchAdvancing = labyokeFinderClass.MatchAdvancing;
+var LabYokeAgents = labyokeFinderClass.LabYokeAgents;
 var moment = require('moment-timezone');
 
 var express = require('express');
@@ -644,13 +645,16 @@ module.exports = function(router) {
 	});
 
 	router.get('/share', function(req, res) {
+var labYokeAgents = new LabYokeAgents(req.session.email);
+				labYokeAgents.findmyshares(function(error, results) {
 		if (req.session.user) {
 			console.log("is admon? " + isLoggedInAdmin);
-			res.render('share', {loggedIn : true, isLoggedInAdmin: isLoggedInAdmin, title:'share'});
+			res.render('share', {myshares: results, loggedIn : true, isLoggedInAdmin: isLoggedInAdmin, title:'share'});
 			req.session.messages = null;
 		} else {
 			res.redirect('/login');
 		}
+	});
 	});
 
 	router.get('/forgot', function(req, res) {
@@ -856,6 +860,7 @@ module.exports = function(router) {
 											if(done[0].admin == 1)
 												req.session.admin = true;
 											req.session.active = done[0].active;
+											req.session.email = done[0].email;
 
 											if (done[0].active == 0) {
 

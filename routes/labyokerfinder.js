@@ -13,13 +13,10 @@ LabYokeFinder = function(today) {
 	this.now = today
 };
 
-LabYokeUploader = function(agent,vendor,catalognumber,location,email) {
-	this.agent = agent;
-	this.vendor = vendor;
-	this.catalognumber = catalognumber;
-	this.location = location;
+LabYokeAgents = function(email) {
 	this.email = email;
 };
+
 
 LabYokeUploader = function(jsonResults) {
 	this.jsonResults = jsonResults;
@@ -33,7 +30,6 @@ LabyokerRegister = function(user, password,lab,firstname,lastname,email,tel) {
 	this.lastname = lastname;
 	this.email = email;
 	this.tel = tel;
-
 };
 
 LabyokerPasswordChange = function(hash, password) {
@@ -106,6 +102,7 @@ LabYokeUploader.prototype.upload = function(callback) {
 	var results = this.jsonResults;
 	console.log("location: " + location);
 	var values = "";
+	var now = moment(new Date).tz("Europe/Berlin").format('YYYY-MM-DD');
 
 	if(results != null){
 		for(var prop in results){
@@ -115,7 +112,7 @@ LabYokeUploader.prototype.upload = function(callback) {
 			var location = results[prop].location;
 			var email = results[prop].user;
 			values = values + "('" + agent
-		+ "', '" + vendor + "', '" + catalognumber + "', '" + location + "', '" + email + "')";
+		+ "', '" + vendor + "', '" + catalognumber + "', '" + location + "', '" + email + "','" + now + "')";
 			if(prop < (results.length-1)){
 				values = values + ",";
 			}
@@ -139,6 +136,20 @@ LabYokeUploader.prototype.upload = function(callback) {
 		console.log("cannotUploadMissingData.");
 		callback(null, "cannotUploadMissingData");
 	}
+};
+
+LabYokeAgents.prototype.findmyshares = function(callback) {
+	var results;
+	var query = client
+			.query("SELECT * FROM vm2016_agentsshare where email='"
+					+ this.email + "' order by date");
+	query.on("row", function(row, result) {
+		result.addRow(row);
+	});
+	query.on("end", function(result) {
+		results = result.rows;
+		callback(null, results)
+	});
 };
 
 LabYokeFinder.prototype.getMatchOfTheDay = function(callback) {
@@ -842,6 +853,7 @@ var analyze = function(matchresults, participantsResults) {
 }
 
 exports.Labyoker = Labyoker;
+exports.LabYokeAgents = LabYokeAgents;
 exports.LabyokerRegister = LabyokerRegister;
 exports.LabYokeFinder = LabYokeFinder;
 exports.LabYokeUploader = LabYokeUploader;
