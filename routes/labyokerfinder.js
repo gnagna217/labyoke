@@ -35,6 +35,10 @@ LabYokerOrder = function(agent, vendor,catalognumber,email,location,sendemail) {
 	this.sendemail = sendemail;
 };
 
+LabYokerOrder = function(sendemail) {
+	this.sendemail = sendemail;
+};
+
 LabyokerRegister = function(user, password,lab,firstname,lastname,email,tel) {
 	this.username = user;
 	this.password = password;
@@ -199,6 +203,22 @@ LabYokerOrder.prototype.order = function(callback) {
 		mailOptions.sendAllEmails();
 
 		callback(null, "successfulOrder")
+	});
+};
+
+LabYokerOrder.prototype.getorders = function(callback) {
+	var results;
+	var email = this.sendemail;
+	console.log("getorders: " + email);
+	var query = client
+			.query("SELECT * FROM vm2016_orders where requestoremail like '%"
+					+ email + "%' order by date");
+	query.on("row", function(row, result) {
+		result.addRow(row);
+	});
+	query.on("end", function(result) {
+		results = result.rows;
+		callback(null, results)
 	});
 };
 
