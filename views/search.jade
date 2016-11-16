@@ -1,20 +1,20 @@
 extends layout
 
 block content
-  form(action="/orders" method="post")
-    input(name="emailform" type="hidden" id="emailform" value="")
-    input(name="agentform" type="hidden" id="agentform" value="")
-    input(name="vendorform" type="hidden" id="vendorform" value="")
-    input(name="catalogform" type="hidden" id="catalogform" value="")
-    div(id="ios-light")
-        center
-            h1="Ordering?"
-            p(id="orderText")
-            div
-                div(id="actionorder" class="exit" style="width: 50%; float: left; background-color: rgba(138, 109, 59, 0.55);")="OK"
-                div(class="exit" onclick="iosLightExit()")="Cancel"
-    div(class="shade" id="shade")
-    div(class="shade-light" id="shade-light")
+    form(action="/orders" method="post")
+        input(name="emailform" type="hidden" id="emailform" value="")
+        input(name="agentform" type="hidden" id="agentform" value="")
+        input(name="vendorform" type="hidden" id="vendorform" value="")
+        input(name="catalogform" type="hidden" id="catalogform" value="")
+        div(id="ios-light")
+            center
+                h1="Ordering?"
+                p(id="orderText")
+                div
+                    div(id="actionorder" class="exit" style="width: 50%; float: left; background-color: rgba(138, 109, 59, 0.55);")="OK"
+                    div(class="exit" onclick="iosLightExit()")="Cancel"
+        div(class="shade" id="shade")
+        div(class="shade-light" id="shade-light")
 
     div(class="container login")
         div(style="float: left; width: 350px;")
