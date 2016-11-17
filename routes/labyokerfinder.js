@@ -179,7 +179,7 @@ LabYokerOrder.prototype.order = function(callback) {
 	var sendemail = this.sendemail;
 	var location = this.location;
 	var now = moment(new Date).tz("Europe/Berlin").format('YYYY-MM-DD');
-	console.log("order location: " + this.location);
+	console.log("order location: " + location);
 	var query = client.query("INSERT INTO vm2016_orders VALUES ('" + agent + "', '" + vendor + "', '" + catalognumber + "','" + email + "', '" + sendemail + "', '" + now + "')");
 
 	query.on("row", function(row, result) {
@@ -200,7 +200,7 @@ LabYokerOrder.prototype.order = function(callback) {
 		console.log("order body: " + body);
 
 		var mailOptions = new MailOptionsWithCC(email, subject, body, sendemail);
-		mailOptions.sendAllEmails();
+		//mailOptions.sendAllEmails();
 
 		callback(null, "successfulOrder")
 	});
