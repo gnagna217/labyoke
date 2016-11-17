@@ -237,6 +237,20 @@ LabYokeSearch.prototype.search = function(callback) {
 	});
 };
 
+LabYokeSearch.prototype.findagents = function(callback) {
+	var results;
+	console.log("searchText: " + this.searchText);
+	var query = client.query("SELECT distinct agent FROM vm2016_agentsshare");
+	
+	query.on("row", function(row, result) {
+		result.addRow(row);
+	});
+	query.on("end", function(result) {
+		results = result.rows;
+			callback(null, results)
+	});
+};
+
 LabYokeFinder.prototype.getMatchOfTheDay = function(callback) {
 	var results;
 	var query = client
