@@ -36,11 +36,9 @@ block content
                         div(class="textentry")
                             input(name="searchText" list="agent-datalist" type="text" id="searchText" class="form-control" placeholder=searchText)
                             datalist(id="agent-datalist")
-                                option(value="HTML")
-                                option(value="something")
-                                option(value="HTML")
-                                option(value="bamhi")
-                                option(value="buluioyu")
+                            -var ob2 = agentsResults
+                            -for(var prop in ob2)
+                                option(value=#{ob2[prop].agent})
                         div(class="buttons")
                             //input(type="submit" class="button" value="Get in")
                             button(class="btn " + classButton + " btn-lg btn-block" type='submit') Find
