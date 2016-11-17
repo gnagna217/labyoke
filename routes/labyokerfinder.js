@@ -35,7 +35,7 @@ LabYokerOrder = function(agent, vendor,catalognumber,email,location,sendemail) {
 	this.sendemail = sendemail;
 };
 
-LabYokerOrder = function(sendemail) {
+LabYokerGetOrder = function(sendemail) {
 	this.sendemail = sendemail;
 };
 
@@ -206,7 +206,7 @@ LabYokerOrder.prototype.order = function(callback) {
 	});
 };
 
-LabYokerOrder.prototype.getorders = function(callback) {
+LabYokerGetOrder.prototype.getorders = function(callback) {
 	var results;
 	var email = this.sendemail;
 	console.log("getorders: " + email);
@@ -955,6 +955,7 @@ exports.Labyoker = Labyoker;
 exports.LabYokeAgents = LabYokeAgents;
 exports.LabYokeSearch = LabYokeSearch;
 exports.LabyokerRegister = LabyokerRegister;
+exports.LabYokerGetOrder = LabYokerGetOrder;
 exports.LabYokerOrder = LabYokerOrder;
 exports.LabYokeFinder = LabYokeFinder;
 exports.LabYokeUploader = LabYokeUploader;

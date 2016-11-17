@@ -3,6 +3,7 @@ var dates = require('../config/staticvariables');
 
 
 var LabYokerOrder = labyokeFinderClass.LabYokerOrder;
+var LabYokerGetOrder = labyokeFinderClass.LabYokerGetOrder;
 var LabyokerPasswordChange = labyokeFinderClass.LabyokerPasswordChange;
 var LabyokerRegister = labyokeFinderClass.LabyokerRegister;
 var LabYokeFinder = labyokeFinderClass.LabYokeFinder;
@@ -637,8 +638,8 @@ module.exports = function(router) {
 
 	router.get('/orders', function(req, res) {
 		if (req.session.user) {
-			var labYokerorder = new LabYokerOrder(req.session.email);
-			labYokerorder.getorders(function(error, results) {
+			var labYokerGetOrder = new LabYokerGetOrder(req.session.email);
+			labYokerGetOrder.getorders(function(error, results) {
 				if(results != null){
 					console.log("orders results: " + results);				
 					res.render('orders', {loggedIn : true, orderresults: results});
