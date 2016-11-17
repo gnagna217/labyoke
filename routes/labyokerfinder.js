@@ -223,7 +223,7 @@ LabYokerGetOrder.prototype.getorders = function(callback) {
 };
 
 LabYokeSearch.prototype.search = function(callback) {
-	var results;
+	var results[];
 	console.log("searchText: " + this.searchText);
 	var query = client
 			.query("SELECT * FROM vm2016_agentsshare where lower(agent) like lower('%"
