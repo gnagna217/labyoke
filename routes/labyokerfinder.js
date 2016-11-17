@@ -224,31 +224,16 @@ LabYokerOrder.prototype.getorders = function(callback) {
 
 LabYokeSearch.prototype.search = function(callback) {
 	var results;
-	var results2;
 	console.log("searchText: " + this.searchText);
-	var query = client.query("SELECT * FROM vm2016_agentsshare where lower(agent) like lower('%"
+	var query = client
+			.query("SELECT * FROM vm2016_agentsshare where lower(agent) like lower('%"
 					+ this.searchText + "%') order by agent, location");
-	
-	query.on("row", function(row, result) {
-		result.addRow(row);
-	});
-	query.on("end", function(result) {
-			results = result.rows;
-			callback(null, results)
-	});
-};
-
-LabYokeSearch.prototype.findagents = function(callback) {
-	var results;
-	console.log("searchText: " + this.searchText);
-	var query = client.query("SELECT distinct agent FROM vm2016_agentsshare");
-	
 	query.on("row", function(row, result) {
 		result.addRow(row);
 	});
 	query.on("end", function(result) {
 		results = result.rows;
-			callback(null, results)
+		callback(null, results)
 	});
 };
 
