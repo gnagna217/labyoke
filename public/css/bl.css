@@ -152,6 +152,11 @@ body {
 .nav-menu:hover{
     background-color: #3d9dcb !important;
 }
+.menu{
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    margin-left: 5px;
+    -webkit-font-smoothing: auto;
+}
 .labColor{
     color: #3d9dcb;
 }
