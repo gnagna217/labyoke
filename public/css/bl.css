@@ -528,6 +528,15 @@ input::-webkit-inner-spin-button {
     margin-top: -95px;
     margin-left: 100px;
 }
+#menumyaccounta{
+    width: 100% !important;
+}
+#menusearch{
+    width: 130px !important;
+}
+#menushare{
+    width: 114px !important;
+}
 }
 
 .pastdate {

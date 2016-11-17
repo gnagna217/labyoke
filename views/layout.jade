@@ -48,20 +48,20 @@ html(lang='en')
                         ul.nav.navbar-nav
 
                             li(class=activate)
-                                a(href="/search", class="nav-menu") Search
+                                a(href="/search", class="nav-menu",id="menusearch")) Search
                             li(class=activate)
-                                a(href='/help', class="nav-menu") Help
+                                a(href='/help', class="nav-menu",id="menusearch")) Help
                             
                             
                     div(style="padding-left: 130px;")
                         ul.nav.navbar-nav(id="menumyshares",style="border-left-color: white;border-left-style: solid;border-width: thin;")
                             li(class=activate)
-                                a(href="/share",class="nav-menu")="My Shares"
+                                a(href="/share",class="nav-menu",id="menushare"))="My Shares"
                             li(class=activate)
-                                a(href="/orders",class="nav-menu")="My Orders"
+                                a(href="/orders",class="nav-menu",id="menushare")="My Orders"
                         ul.nav.navbar-nav(id="menumyaccount", style="border-left-color: white;border-left-style: solid;border-width: thin;")
                             li(class=activate)
-                                a(href="/account",class="icon-user nav-menu")=" My Account"
+                                a(href="/account",class="icon-user nav-menu", id="menumyaccounta")=" My Account"
                     ul.nav.navbar-nav.navbar-right
                         li
                             a(href='/logout',class="nav-menu-logout") Logout
