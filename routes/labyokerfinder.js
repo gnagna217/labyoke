@@ -232,14 +232,22 @@ LabYokeSearch.prototype.search = function(callback) {
 		result.addRow(row);
 	});
 	query.on("end", function(result) {
-		results = result.rows;
-		callback(null, results)
+		results[0] = result.rows;
+		var query2 = client.query("SELECT distinct agent FROM vm2016_agentsshare");
+		
+		query2.on("row", function(row, result2) {
+			result2.addRow(row);
+		});
+		query2.on("end", function(result2) {
+			results[1] = result2.rows;
+				callback(null, results)
+		});
+		//callback(null, results)
 	});
 };
 
 LabYokeSearch.prototype.findagents = function(callback) {
 	var results;
-	console.log("searchText: " + this.searchText);
 	var query = client.query("SELECT distinct agent FROM vm2016_agentsshare");
 	
 	query.on("row", function(row, result) {
