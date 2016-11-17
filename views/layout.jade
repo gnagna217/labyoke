@@ -54,14 +54,14 @@ html(lang='en')
                             
                             
                     div(style="padding-left: 130px;")
-                        ul.nav.navbar-nav(style="border-left-color: white;border-left-style: solid;border-width: thin;")
-                            li(class=activate)
-                                a(href="/account",class="icon-user nav-menu")=" My Account"
+                        ul.nav.navbar-nav(id="menumyshares",style="border-left-color: white;border-left-style: solid;border-width: thin;")
                             li(class=activate)
                                 a(href="/share",class="nav-menu")="My Shares"
                             li(class=activate)
                                 a(href="/orders",class="nav-menu")="My Orders"
-
+                        ul.nav.navbar-nav(id="menumyaccount", style="border-left-color: white;border-left-style: solid;border-width: thin;")
+                            li(class=activate)
+                                a(href="/account",class="icon-user nav-menu")=" My Account"
                     ul.nav.navbar-nav.navbar-right
                         li
                             a(href='/logout',class="nav-menu-logout") Logout

@@ -524,6 +524,10 @@ input::-webkit-inner-spin-button {
 .nav-menu-logout{
     margin-right: 0px !important;
 }
+#menumyaccount{
+    margin-top: -95px;
+    margin-left: 100px;
+}
 }
 
 .pastdate {
