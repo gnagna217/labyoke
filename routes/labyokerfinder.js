@@ -200,7 +200,7 @@ LabYokerOrder.prototype.order = function(callback) {
 		console.log("order body: " + body);
 
 		var mailOptions = new MailOptionsWithCC(email, subject, body, sendemail);
-		//mailOptions.sendAllEmails();
+		mailOptions.sendAllEmails();
 
 		callback(null, "successfulOrder")
 	});
