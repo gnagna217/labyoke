@@ -623,7 +623,7 @@ module.exports = function(router) {
 		if (req.session.user) {
 			var labYokeSearch = new LabYokeSearch("");
 			labYokeSearch.findagents(function(error, results) {			
-				if (searchText != null && searchText.length > 0){
+				if (results != null && results.length > 0){
 					res.render('search', {agentsResults : results, loggedIn : true});
 				} else {
 					res.render('search', {loggedIn : true});
