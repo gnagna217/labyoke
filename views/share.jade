@@ -75,15 +75,16 @@ block content
 			p="This graph depicts an example"
 				div(class="ct-chart ct-perfect-fourth")
 				- var array_rows = []
-				- var array_values2 = []
+				- var array_values2 = ""
 				-var ob = report_sharesbycategory
 				-for(var prop in ob)
-					- array_rows.push(ob[prop].category + "|")
-					- array_values2.push(ob[prop].count + "|")
+					- array_rows = array_rows + ob[prop].category + "|"
+					- array_values2 = array_values2 + ob[prop].count + "|"
 				- var array_rows = "['Bamhi', 'CCell', 'Agent1', 'Agent2', 'H-3']"
 				- var array_values = "[5, 2, 4, 2, 0]"
 				script.
-					var values = #{array_values2}.split("|");
+					var values = "'" + #{array_values2} + "'";
+					values = values.split("|");
 					var valTransform = [];
 					for(var prop in values){
 						valTransform.push(values[prop]);
