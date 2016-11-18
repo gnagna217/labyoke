@@ -67,8 +67,9 @@ block content
 										td(class="wrapped") #{ob[prop].name_of_reagent}
 										td #{ob[prop].vendor}
 										td #{ob[prop].catalog_number}
-										td #{ob[prop].location}
+										td #{ob[prop].location}								
 			div(style="background-color: #3d9dcb; height: 2px; margin-bottom: 30px; margin-top: 30px;")
+	if(report_sharesbycategory != "")
 		div(style="float:right; padding-left: 20px", class="share-container")
 			script(type="text/javascript" src="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.js")
 			div(style="background-color: #3d9dcb; height: 2px; margin-bottom: 30px; margin-top: 30px;")
