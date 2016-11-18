@@ -75,17 +75,12 @@ block content
 			p="This graph depicts an example"
 				div(class="ct-chart ct-perfect-fourth")
 				-var ob = report_sharesbycategory
+				-var a = '0'
+				-for(var prop in ob)
+					- a = #{ob[prop].category}
 				- var array_rows = "['Bamhi', 'CCell', 'Agent1', 'Agent2', 'H-3']"
 				- var array_values = "[5, 2, 4, 2, 0]"
-				- array_rows = []
-				- var array_values2 = []
-				-for(var prop in ob)
-					- array_rows.push(#{ob[prop].category})
-					- array_values2.push(#{ob[prop].count})
-				- array_rows = "['Bamhi', 'CCell', 'Agent1', 'Agent2', 'H-3']"
-				- array_values = "[5, 2, 4, 2, 0]"
 				script.
-					console.log("vals " + array_values2)
 					var data = {
 						labels: #{array_rows},
 						series: [
