@@ -74,6 +74,7 @@ block content
 			h4="A brief report of the monthly shares."
 			p="This graph depicts an example"
 				div(class="ct-chart ct-perfect-fourth")
+				-var ob = report_sharesbycategory
 				- var array_rows = "['Bamhi', 'CCell', 'Agent1', 'Agent2', 'H-3']"
 				- var array_values = "[5, 2, 4, 2, 0]"
 				script.
@@ -101,4 +102,5 @@ block content
 					];
 
 					new Chartist.Line('.ct-chart', data, responsiveOptions);
+
 	
