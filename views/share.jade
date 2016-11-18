@@ -78,18 +78,18 @@ block content
 				- var array_values2 = []
 				-var ob = report_sharesbycategory
 				-for(var prop in ob)
-					- var cat = "'" + ob[prop].category + "'"
-					- var val = "'" + ob[prop].count + "'"
-					- if(prop < (ob.length - 1))
-						- if(cat != undefined && cat != null)
-							- cat = cat + ","
-							- val = val + ","
-					- array_rows.push(cat)
-					- array_values2.push(val)
+					- array_rows.push(ob[prop].category + "|")
+					- array_values2.push(ob[prop].count + "|")
 				- var array_rows = "['Bamhi', 'CCell', 'Agent1', 'Agent2', 'H-3']"
 				- var array_values = "[5, 2, 4, 2, 0]"
 				script.
 					console.log("more values: '[" + #{array_values2} +"]'")
+					var values = #{array_values2}.split("|");
+					var valTransform = [];
+					for(var prop in values){
+						valTransform.push(values[prop]);
+					}
+					console.log("more values trans: " + valTransform)
 					var data = {
 						labels: #{array_rows},
 						series: [
