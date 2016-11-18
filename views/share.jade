@@ -74,11 +74,13 @@ block content
 			h4="A brief report of the monthly shares."
 			p="This graph depicts an example"
 				div(class="ct-chart ct-perfect-fourth")
+				- var array_rows = ['Bamhi', 'CCell', 'Agent1', 'Agent2', 'H-3']
+				- var array_values = [5, 2, 4, 2, 0]
 				script.
 					var data = {
-						labels: ['Bamhi', 'CCell', 'Agent1', 'Agent2', 'H-3'],
+						labels: array_rows,
 						series: [
-							[5, 2, 4, 2, 0]
+							array_values
 						]
 					};
 
