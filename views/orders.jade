@@ -37,7 +37,7 @@ block content
                             td #{ob[prop].vendor}
                             td #{ob[prop].catalognumber}
                             td #{d}
-
+      if(orderresults != "" && email == undefined)
         div(style="float:right; padding-left: 20px", class="share-container")
           script(type="text/javascript" src="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.js")
           div(style="background-color: #3d9dcb; height: 2px; margin-bottom: 30px; margin-top: 30px;")
