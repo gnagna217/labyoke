@@ -78,8 +78,8 @@ block content
 				- var array_values2 = []
 				-var ob = report_sharesbycategory
 				-for(var prop in ob)
-					- array_rows.push('#{ob[prop].category}')
-					- array_values2.push('#{ob[prop].count}')
+					- array_rows.push(#{ob[prop].category})
+					- array_values2.push(#{ob[prop].count})
 				- var array_rows = "['Bamhi', 'CCell', 'Agent1', 'Agent2', 'H-3']"
 				- var array_values = "[5, 2, 4, 2, 0]"
 				script.
