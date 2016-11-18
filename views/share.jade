@@ -80,7 +80,6 @@ block content
 				-for(var prop in ob)
 					- array_rows = array_rows + ob[prop].category + "|"
 					- array_values2 = array_values2 + ob[prop].count + "|"
-				- var array_rows = "['Bamhi', 'CCell']"
 				- var array_values = "[5, 2, 4, 2, 0]"
 				script.
 					var values = "#{array_values2}";
@@ -89,9 +88,15 @@ block content
 					for(var prop in values){
 						valTransform.push(values[prop]);
 					}
-					console.log("more values trans: " + valTransform)
+					var rows = "#{array_rows}";
+					rows = rows.split("|");
+					var rowTransform = [];
+					for(var prop in rows){
+						rowTransform.push(values[prop]);
+					}
+					console.log("more rowTransform trans: " + rowTransform)
 					var data = {
-						labels: #{array_rows},
+						labels: rowTransform,
 						series: [
 							valTransform
 						]
