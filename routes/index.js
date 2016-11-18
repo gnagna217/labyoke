@@ -211,7 +211,7 @@ module.exports = function(router) {
 	});
 
 	router.get('/play', function(req, res) {
-		res.render('play', {loggedIn : true});
+		res.render('play', {});
 		req.session.messages = null;
 	});
 
