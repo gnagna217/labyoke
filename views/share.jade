@@ -3,7 +3,7 @@ extends layout
 block content
 	link(href='//cdn.jsdelivr.net/chartist.js/latest/chartist.min.css', rel='stylesheet')
 	div(class="container login")
-		div(style="float: left;")
+		div(style="float: left;" class="share-container")
 			a(href="/search")
 				img(src="/images/yoke.jpg", alt="The Yoke",  title="Yoke", class="yokelogo")
 			h1= 'Share.'
@@ -68,7 +68,7 @@ block content
 										td #{ob[prop].catalog_number}
 										td #{ob[prop].location}
 			div(style="background-color: #3d9dcb; height: 2px; margin-bottom: 30px; margin-top: 30px;")
-		div
+		div(style="float:right", class="share-container")
 			script(type="text/javascript" src="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.js")
 			div(style="background-color: #3d9dcb; height: 2px; margin-bottom: 30px; margin-top: 30px;")
 			h4="A brief report of the monthly shares."

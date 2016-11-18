@@ -160,6 +160,9 @@ body {
 .order-container{
     width: 50%;
 }
+.share-container{
+    width: 50%;
+}
 .labColor{
     color: #3d9dcb;
 }
@@ -550,6 +553,9 @@ input::-webkit-inner-spin-button {
     width: 114px !important;
 }
 .order-container{
+    width: 100%;
+}
+.share-container{
     width: 100%;
 }
 }
