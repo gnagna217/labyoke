@@ -242,7 +242,7 @@ LabYokerGetOrder.prototype.getorders = function(callback) {
 	query.on("end", function(result) {
 		results.push(result.rows);
 		var query2 = client
-				.query("SELECT b.category, count(b.category) FROM vm2016_orders a, vm2016_agentsshare b where a.agent = b.agent group by b.category");
+				.query("SELECT category, count(category) from vm2016_agentsshare group by category order by category asc");
 		query2.on("row", function(row, result2) {
 			result2.addRow(row);
 		});
