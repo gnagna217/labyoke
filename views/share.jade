@@ -129,7 +129,7 @@ block content
 				var chart0 = new Chartist.Bar('.ct-chart0', data, responsiveOptions);
 
 				var sum = function(a, b) { return a + b };
-				var chart1 = new Chartist.Pie('.ct-chart', data, {
+				var chart1 = new Chartist.Pie('.ct-chart1', data, {
 					labelInterpolationFnc: function(value) {
 						return Math.round(value / data.series.reduce(sum) * 100) + '%';
 					}
