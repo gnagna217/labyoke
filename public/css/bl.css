@@ -553,7 +553,7 @@ input::-webkit-inner-spin-button {
 @media (max-width: 767px){
 .help{
     padding-right: 0px;
-    margin-top: 47px;
+    margin-top: 0px;
 }
 .table-responsive {
     border: none !important;
