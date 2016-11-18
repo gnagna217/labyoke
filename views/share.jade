@@ -80,9 +80,11 @@ block content
 				-for(var prop in ob)
 					- array_rows.push('#{ob[prop].category}')
 					- array_values2.push('#{ob[prop].count}')
+				- array_values2 = "\"" + array_values2 + "\""
 				- var array_rows = "['Bamhi', 'CCell', 'Agent1', 'Agent2', 'H-3']"
 				- var array_values = "[5, 2, 4, 2, 0]"
 				script.
+					console.log("more values " + #{array_values2})
 					var data = {
 						labels: #{array_rows},
 						series: [
