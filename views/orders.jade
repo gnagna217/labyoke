@@ -12,7 +12,7 @@ block content
               p="You have not ordered any agent yet! Click on the "
                 a(href='/search')="Search"
                 span=" button and start labyoking!"
-            if(orderresults != "")
+            if(orderresults != "" && email == undefined)
               p="Incredible! You have ordered the following agents so far:"
               div(id="results")
                 div(id="ctl00_Div2" class="row rank")
