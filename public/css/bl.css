@@ -167,8 +167,16 @@ body {
   stroke: #3d9dcb !important;
 }
 
+.ct-series-a .ct-bar {
+  stroke: #8a6d3b !important;
+}
+
 .ct-series-a .ct-point {
-  stroke: #3d9dcb !important;
+  stroke: #8a6d3b !important;
+}
+
+.ct-perfect-fourth:before {
+    padding-bottom: 0 !important;
 }
 .labColor{
     color: #3d9dcb;
