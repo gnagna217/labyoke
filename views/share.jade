@@ -72,11 +72,14 @@ block content
 		div(style="float:right; padding-left: 10px", class="share-container")
 			script(type="text/javascript" src="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.js")
 			div(style="background-color: #3d9dcb; height: 2px; margin-bottom: 30px; margin-top: 30px;")
-			h4="A brief report of the monthly shares."
+			h4="A brief Line report of the monthly shares."
 			p="This graph depicts the number of shares per Agent Category (line chart)."
 				div(class="ct-chart ct-perfect-fourth")
+			h4="A brief Pie report of the monthly shares."
+			p="This graph depicts the number of shares per Agent Category (pie chart)."
+				div(class="ct-chart1 ct-perfect-fourth")
 			if(isLoggedInAdmin == 1)
-				h4="Another brief report of the monthly shares."
+				h4="Another brief Bar report of the monthly shares."
 				p="This graph depicts the number of shares per Agent Category (bar chart)."
 					div(class="ct-chart0 ct-perfect-fourth")
 			- var array_rows = []
@@ -122,15 +125,12 @@ block content
 						height: 200
 					}]
 				];
-				var chart0, chart1, chart;
-				if(document.getElementById("ct-chart0") != undefined)
-					chart0 = new Chartist.Bar('.ct-chart0', data, responsiveOptions);
 
-				if(document.getElementById("ct-chart1") != undefined)
-					chart1 = new Chartist.Line('.ct-chart1', data, responsiveOptions);
+				var chart0 = new Chartist.Bar('.ct-chart0', data, responsiveOptions);
 
-				if(document.getElementById("ct-chart") != undefined)
-					chart = new Chartist.Line('.ct-chart', data, responsiveOptions);
+				var chart1 = new Chartist.Pie('.ct-chart1', data, responsiveOptions);
+
+				var chart = new Chartist.Line('.ct-chart', data, responsiveOptions);
 
 				// Let's put a sequence number aside so we can use it in the event callbacks
 				var seq = 0,
