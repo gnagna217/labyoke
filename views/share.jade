@@ -80,7 +80,7 @@ block content
 				- array_rows = []
 				- array_values = []
 				-for(var prop in ob)
-					- array_rows.push('#{ob[prop].category}')
+					- array_rows.push(#{ob[prop].category})
 					- array_values.push(#{ob[prop].count})
 				script.
 					var data = {
