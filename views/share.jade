@@ -69,7 +69,7 @@ block content
 										td #{ob[prop].catalog_number}
 										td #{ob[prop].location}
 			div(style="background-color: #3d9dcb; height: 2px; margin-bottom: 30px; margin-top: 30px;")
-		div(style="float:right; padding-left: 10px", class="share-container")
+		div(style="float:right; padding-left: 20px", class="share-container")
 			script(type="text/javascript" src="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.js")
 			div(style="background-color: #3d9dcb; height: 2px; margin-bottom: 30px; margin-top: 30px;")
 			h4="A brief Line report of the monthly shares."
@@ -128,7 +128,12 @@ block content
 
 				var chart0 = new Chartist.Bar('.ct-chart0', data, responsiveOptions);
 
-				var chart1 = new Chartist.Pie('.ct-chart1', data, responsiveOptions);
+				var sum = function(a, b) { return a + b };
+				var chart1 = new Chartist.Pie('.ct-chart', data, {
+					labelInterpolationFnc: function(value) {
+						return Math.round(value / data.series.reduce(sum) * 100) + '%';
+					}
+				});
 
 				var chart = new Chartist.Line('.ct-chart', data, responsiveOptions);
 
