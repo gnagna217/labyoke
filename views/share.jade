@@ -75,14 +75,14 @@ block content
 			p="This graph depicts an example"
 				div(class="ct-chart ct-perfect-fourth")
 				- var array_rows = []
-				- var array_values2 = ""
+				- var array_values = ""
 				-var ob = report_sharesbycategory
 				-for(var prop in ob)
 					- array_rows = array_rows + ob[prop].category + "|"
-					- array_values2 = array_values2 + ob[prop].count + "|"
-				- var array_values = "[5, 2, 4, 2, 0]"
+					- array_values = array_values + ob[prop].count + "|"
+
 				script.
-					var values = "#{array_values2}";
+					var values = "#{array_values}";
 					values = values.split("|");
 					var valTransform = [];
 					for(var prop in values){
@@ -92,7 +92,7 @@ block content
 					rows = rows.split("|");
 					var rowTransform = [];
 					for(var prop in rows){
-						rowTransform.push(values[rows]);
+						rowTransform.push(rows[prop]);
 					}
 					console.log("more rowTransform trans: " + rowTransform)
 					var data = {
