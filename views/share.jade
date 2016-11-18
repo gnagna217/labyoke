@@ -122,14 +122,15 @@ block content
 						height: 200
 					}]
 				];
+				var chart0, chart1, chart;
 				if(document.getElementById("ct-chart0") != undefined)
-					var chart0 = new Chartist.Bar('.ct-chart0', data, responsiveOptions);
+					chart0 = new Chartist.Bar('.ct-chart0', data, responsiveOptions);
 
 				if(document.getElementById("ct-chart1") != undefined)
-					var chart1 = new Chartist.Line('.ct-chart1', data, responsiveOptions);
+					chart1 = new Chartist.Line('.ct-chart1', data, responsiveOptions);
 
 				if(document.getElementById("ct-chart") != undefined)
-					var chart = new Chartist.Line('.ct-chart', data, responsiveOptions);
+					chart = new Chartist.Line('.ct-chart', data, responsiveOptions);
 
 				// Let's put a sequence number aside so we can use it in the event callbacks
 				var seq = 0,
