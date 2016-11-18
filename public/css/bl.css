@@ -186,6 +186,9 @@ a {
 }
 .help{
     padding-right: 100px;
+    position: fixed;
+    bottom: 20px;
+    width: 100%;
 }
 .labColor{
     color: #3d9dcb;
