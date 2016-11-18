@@ -4,7 +4,7 @@ block content
 
 
     div(class="container login")
-        div(style="float: left;")
+        div(style="float: left;" class="order-container")
             a(href="/search")
                 img(src="/images/yoke.jpg", alt="The Yoke",  title="Yoke", class="yokelogo")
             h1= 'Orders.'
@@ -48,5 +48,8 @@ block content
                 br
                 b="Vendor: "
                 span=vendor
-
+        div(class="alert alert-success fade in alert-dismissable order_container",style="margin-top:18px;float: right;")
+          a(href="#", class="close", data-dismiss="alert", aria-label="close", title="close")="Major Achievement!</strong> You have saved your lab over $1000 dollars for the past 4 months."
+        div(class="alert alert-success fade in alert-dismissable order_container",style="margin-top:18px;float: right;")
+          a(href="#", class="close", data-dismiss="alert", aria-label="close", title="close")="Another Major Achievement!</strong> You have saved the WORLD over $10,000 dollars for the past month."
 

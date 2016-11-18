@@ -157,6 +157,9 @@ body {
     margin-left: 5px;
     -webkit-font-smoothing: auto;
 }
+.order-container{
+    width: 50%;
+}
 .labColor{
     color: #3d9dcb;
 }
@@ -484,6 +487,9 @@ input::-webkit-inner-spin-button {
 }
 
  @media (max-width: 440px) {
+.order-container{
+    width: auto;
+}
 #rankTbl td
 {
     /*text-align: center;*/
