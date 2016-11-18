@@ -642,7 +642,7 @@ module.exports = function(router) {
 			labYokerGetOrder.getorders(function(error, results) {
 				if(results != null){
 					console.log("orders results: " + results);				
-					res.render('orders', {loggedIn : true, orderresults: results[0], report_sharesbycategory: results[1]});
+					res.render('orders', {title:'orders', loggedIn : true, orderresults: results[0], report_sharesbycategory: results[1]});
 					//req.session.messages = null;
 				}
 			});
@@ -666,7 +666,7 @@ module.exports = function(router) {
 					console.log("ordering location: " + location);
 					console.log("ordering reqemail: " + reqemail);
 				
-					res.render('orders', {loggedIn : true, location: location, agent: agent, vendor: vendor, catalog: catalognumber, email: email});
+					res.render('orders', {title:'orders',loggedIn : true, location: location, agent: agent, vendor: vendor, catalog: catalognumber, email: email});
 					req.session.messages = null;
 				}
 			});
