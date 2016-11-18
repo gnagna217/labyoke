@@ -84,7 +84,7 @@ block content
 				- var array_rows = "['Bamhi', 'CCell', 'Agent1', 'Agent2', 'H-3']"
 				- var array_values = "[5, 2, 4, 2, 0]"
 				script.
-					console.log("more values " + array_values2)
+					console.log("more values: '[" + #{array_values2} +"]'")
 					var data = {
 						labels: #{array_rows},
 						series: [
