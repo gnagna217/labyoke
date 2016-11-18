@@ -78,11 +78,13 @@ block content
 				- var array_values2 = []
 				-var ob = report_sharesbycategory
 				-for(var prop in ob)
-					- array_rows.push("'" + ob[prop].category + "'")
-					- array_values2.push("'" + ob[prop].count + "'")
+					- var cat = "'" + ob[prop].category + "'"
+					- var val = "'" + ob[prop].count + "'"
 					- if(prop < (ob.length - 1))
-						- array_rows.push(",")
-						- array_values2.push(",")
+						- cat = cat + ","
+						- val = val + ","
+					- array_rows.push(cat)
+					- array_values2.push(val)
 				- var array_rows = "['Bamhi', 'CCell', 'Agent1', 'Agent2', 'H-3']"
 				- var array_values = "[5, 2, 4, 2, 0]"
 				script.
