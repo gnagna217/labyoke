@@ -230,7 +230,7 @@ LabYokerOrder.prototype.order = function(callback) {
 };
 
 LabYokerGetOrder.prototype.getorders = function(callback) {
-	var results;
+	var results = [];
 	var email = this.sendemail;
 	console.log("getorders: " + email);
 	var query = client
@@ -240,8 +240,16 @@ LabYokerGetOrder.prototype.getorders = function(callback) {
 		result.addRow(row);
 	});
 	query.on("end", function(result) {
-		results = result.rows;
-		callback(null, results)
+		results.push(result.rows);
+		var query2 = client
+				.query("SELECT b.category, count(b.category) FROM vm2016_orders a, vm2016_agentsshare b where a.agent = b.agent group by b.category");
+		query2.on("row", function(row, result2) {
+			result2.addRow(row);
+		});
+		query2.on("end", function(result2) {
+			results.push(result2.rows);
+			callback(null, results)
+		});
 	});
 };
 

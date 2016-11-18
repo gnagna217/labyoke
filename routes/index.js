@@ -642,7 +642,7 @@ module.exports = function(router) {
 			labYokerGetOrder.getorders(function(error, results) {
 				if(results != null){
 					console.log("orders results: " + results);				
-					res.render('orders', {loggedIn : true, orderresults: results});
+					res.render('orders', {loggedIn : true, orderresults: results[0], report_sharesbycategory: results[1]});
 					//req.session.messages = null;
 				}
 			});
