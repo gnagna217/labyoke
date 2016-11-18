@@ -83,7 +83,7 @@ block content
 				- var array_rows = "['Bamhi', 'CCell', 'Agent1', 'Agent2', 'H-3']"
 				- var array_values = "[5, 2, 4, 2, 0]"
 				script.
-					var values = "'" + #{array_values2} + "'";
+					var values = "#{array_values2}";
 					values = values.split("|");
 					var valTransform = [];
 					for(var prop in values){
