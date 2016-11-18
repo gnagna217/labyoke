@@ -87,18 +87,18 @@ block content
 						height: 200
 					};
 					var responsiveOptions = [
-					['screen and (max-width: 440px)', {
-						width: 300,
-						height: 200
-					}],
-					['screen and (max-width: 767px)', {
-						width: 500,
-						height: 200
-					}],
-					['screen and (min-width: 990px)', {
-						width: 300,
-						height: 200
-					}]
+						['(max-width: 440px)', {
+							width: 300,
+							height: 200
+						}],
+						['(max-width: 767px)', {
+							width: 500,
+							height: 200
+						}],
+						['(min-width: 990px)', {
+							width: 300,
+							height: 200
+						}]
 					];
 
 					new Chartist.Line('.ct-chart', data, options, responsiveOptions);
