@@ -74,14 +74,10 @@ block content
 			div(style="background-color: #3d9dcb; height: 2px; margin-bottom: 30px; margin-top: 30px;")
 			h4="A brief Line report of the monthly shares."
 			p="This graph depicts the number of shares per Agent Category (line chart)."
-				div(class="ct-chart ct-perfect-fourth")
-			h4="A brief Pie report of the monthly shares."
-			p="This graph depicts the number of shares per Agent Category (pie chart)."
-				div(class="ct-chart1 ct-perfect-fourth")
-			if(isLoggedInAdmin == 1)
-				h4="Another brief Bar report of the monthly shares."
-				p="This graph depicts the number of shares per Agent Category (bar chart)."
-					div(class="ct-chart0 ct-perfect-fourth")
+			div(class="ct-chart ct-perfect-fourth")
+			h4="Another brief Bar report of the monthly shares."
+			p="This graph depicts the number of shares per Agent Category (bar chart)."
+			div(class="ct-chart0 ct-perfect-fourth")
 			- var array_rows = []
 			- var array_values = ""
 			-var ob = report_sharesbycategory
@@ -109,7 +105,9 @@ block content
 						valTransform
 					]
 				};
-
+				var options = {
+					height: 300
+				};
 
 				var responsiveOptions = [
 					['(max-width: 440px)', {
@@ -126,9 +124,9 @@ block content
 					}]
 				];
 
-				var chart0 = new Chartist.Bar('.ct-chart0', data, responsiveOptions);
+				var chart0 = new Chartist.Bar('.ct-chart0', data, options, responsiveOptions);
 
-				var chart = new Chartist.Line('.ct-chart', data, responsiveOptions);
+				var chart = new Chartist.Line('.ct-chart', data, options, responsiveOptions);
 
 				// Let's put a sequence number aside so we can use it in the event callbacks
 				var seq = 0,
@@ -245,7 +243,7 @@ block content
 					window.__exampleAnimateTimeout = setTimeout(chart.update.bind(chart), 12000);
 				});
 				
-				data = {
+				/*data = {
 					series: valTransform
 				};
 				var sum = function(a, b) { return a + b };
@@ -253,6 +251,6 @@ block content
 					labelInterpolationFnc: function(value) {
 						return Math.round(value / data.series.reduce(sum) * 100) + '%';
 					}
-				});
+				});*/
 
 					
