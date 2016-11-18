@@ -547,7 +547,7 @@ input::-webkit-inner-spin-button {
     width: 114px !important;
 }
 .order-container{
-    width: auto;
+    width: 100%;
 }
 }
 
