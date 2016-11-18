@@ -305,244 +305,6 @@ module.exports = function(router) {
 								});
 					});
 
-	router.get('/event/:date', isLoggedIn, function(req, res) {
-		var labyokerMakesBets = new LabyokerMakesBets(req.session.userid);
-		var betsMade;
-		var dateStripped = moment(new Date).tz("Europe/Berlin").format(
-				'YYYY-MM-DD'); // '2014-06-09'
-
-		if (moment(competitionStarts).diff(moment(dateStripped)) <= 0) {
-
-			labyokerMakesBets
-					.checkIfBetsMade(function(error, singleBetsMade) {
-						var matchEvent = new MatchEvent(req.params.date);
-						matchEvent.getMatchOfTheDay(function(error, match) {
-							req.session.matchEvent = match;
-							res.render('index', {
-								title : 'Events held '
-										+ moment(req.params.date).endOf('day')
-												.fromNow() + ' <br/>' + '['
-										+ moment(req.params.date).format('LL')
-										+ ']',
-								matches : match,
-								scripts : [ '/javascripts/utils.js',
-										'/javascripts/image_preload.js' ],
-								loggedIn : true,
-								betsMade : singleBetsMade,
-								labyoker : req.session.user,
-								user : req.session.userid,
-								menu : 'calendar',
-								moment : moment,
-								now : moment(new Date).tz("Europe/Berlin")
-										.format('YYYY-MM-DD HH:mm:ss')
-							// '2014-06-09 HH:mm:ss'
-							});
-						});
-					});
-		} else {
-			res.render('index', {
-				title : 'Countdown to the World Cup!!!',
-				matches : null,
-				loggedIn : true,
-				labyoker : req.session.user,
-				user : req.session.userid,
-				menu : 'today',
-				state : 'notstarted',
-				startdate : competitionStarts,
-				moment : moment,
-				now : moment(new Date).tz("Europe/Berlin").format(
-						'YYYY-MM-DD HH:mm:ss')
-			// '2014-06-09 HH:mm:ss'
-			});
-		}
-
-	});
-
-	router
-			.post(
-					'/event/:date',
-					isLoggedIn,
-					function(req, res) {
-						var id = req.session.userid;
-						var predictedTeam = '';
-						var predictedPosition = req.body.position;
-						var bet = req.body.bet;
-						var scoretyp = req.body.scoretyp;
-						var scorehemma = req.body.scorehemma;
-						var typ = req.body.typ;
-						var hemma = req.body.hemma;
-						if (scoretyp != null && scoretyp != "") {
-							if (scoretyp > scorehemma) {
-								predictedTeam = typ;
-							} else if (scorehemma > scoretyp) {
-								predictedTeam = hemma;
-							} else {
-								predictedTeam = "none";
-							}
-						}
-
-						var matchPredictorSingle = new MatchPredictorSingleTeam(
-								id, predictedTeam, bet, scoretyp, scorehemma);
-						var labyokerMakesBets = new LabyokerMakesBets(id);
-						var betsMade;
-
-						matchPredictorSingle
-								.setPrediction(function(error, predict) {
-									
-										labyokerMakesBets
-												.checkIfBetsMade(function(
-														error, singleBetsMade) {
-
-													betsMade = singleBetsMade;
-													if (predict != null) {
-													var successMessage = 'Great job! ';
-													if (predictedTeam != null
-															&& predictedTeam != '') {
-														if (predictedTeam != "none") {
-															successMessage += 'You have predicted the winning team to be ';
-															successMessage += '<b>'
-																	+ predictedTeam
-																	+ '</b><br/>';
-														} else {
-															successMessage += 'It\'s a <b>tie</b>?!! ';
-														}
-													}
-													if (scoretyp != null
-															&& scoretyp != "") {
-														successMessage += 'Score: <b>'
-																+ scoretyp
-																+ ' - '
-																+ scorehemma
-																+ '</b>';
-													}
-
-													successMessage += '<br/>Good luck!';
-													res
-															.render(
-																	'index',
-																	{
-																		title : 'Events held '
-																				+ moment(
-																						req.params.date)
-																						.endOf(
-																								'day')
-																						.fromNow()
-																				+ ' <br/>'
-																				+ '['
-																				+ moment(
-																						req.params.date)
-																						.format(
-																								'LL')
-																				+ ']',
-																		matches : req.session.matchEvent,
-																		scripts : [
-																				'/javascripts/utils.js',
-																				'/javascripts/image_preload.js' ],
-																		loggedIn : true,
-																		labyoker : req.session.user,
-																		user : req.session.userid,
-																		betsMade : betsMade,
-																		placesuccess : predictedPosition,
-																		successmessage : successMessage,
-																		menu : 'calendar',
-																		moment : moment,
-																		now : moment(
-																				new Date)
-																				.tz(
-																						"Europe/Berlin")
-																				.format(
-																						'YYYY-MM-DD HH:mm:ss')
-																	// '2014-06-09
-																	// HH:mm:ss'
-																	});
-													
-													} else {
-														res
-																.render(
-																		'index',
-																		{
-																			title : 'Events held '
-																					+ moment(
-																							req.params.date)
-																							.endOf(
-																									'day')
-																							.fromNow()
-																					+ ' <br/>'
-																					+ '['
-																					+ moment(
-																							req.params.date)
-																							.format(
-																									'LL')
-																					+ ']',
-																			matches : req.session.matchEvent,
-																			scripts : [
-																					'/javascripts/utils.js',
-																					'/javascripts/image_preload.js' ],
-																			loggedIn : true,
-																			labyoker : req.session.user,
-																			user : req.session.userid,
-																			betsMade : betsMade,
-																			menu : 'calendar',
-																			message : 'This match has expired. Please check the calendar for upcoming matches :)',
-																			moment : moment,
-																			placeerror : predictedPosition,
-																			now : moment(
-																					new Date)
-																					.tz(
-																							"Europe/Berlin")
-																					.format(
-																							'YYYY-MM-DD HH:mm:ss')
-																		});
-													}
-												});
-									
-								});
-
-					});
-
-	router.get('/calendar', isLoggedIn, function(req, res) {
-
-		var matchPhaseStageGroup = new MatchPhase(1);
-		var matchPhaseSecondPhase = new MatchPhase(2);
-		var matchPhaseQuarters = new MatchPhase(3);
-		var matchPhaseSemis = new MatchPhase(4);
-		var matchPhaseThird = new MatchPhase(5);
-		var matchPhaseFinal = new MatchPhase(6);
-		matchPhaseStageGroup.getCalendar(function(error, calendarGroupStage) {
-			matchPhaseSecondPhase.getCalendar(function(error,
-					calendarSecondPhase) {
-				matchPhaseQuarters
-						.getCalendar(function(error, calendarQuarters) {
-							matchPhaseSemis.getCalendar(function(error,
-									calendarSemis) {
-								matchPhaseThird.getCalendar(function(error,
-										calendarThird) {
-									matchPhaseFinal.getCalendar(function(error,
-											calendarFinal) {
-										res.render('calendar', {
-											title : 'Calendar',
-											groupPhase : calendarGroupStage,
-											secondPhase : calendarSecondPhase,
-											quarters : calendarQuarters,
-											semis : calendarSemis,
-											third : calendarThird,
-											finals : calendarFinal,
-											loggedIn : true,
-											labyoker : req.session.user,
-											menu : 'calendar',
-											moment : moment,
-											now : moment(new Date).tz(
-													"Europe/Berlin").format(
-													'YYYY-MM-DD HH:mm:ss')
-										});
-									});
-								});
-							});
-						});
-			});
-		});
-	});
-
 	router.get('/help', /*isLoggedIn,*/ function(req, res) {
 		res.render('help', {
 			title : 'Help',
@@ -551,22 +313,6 @@ module.exports = function(router) {
 			menu : 'help'
 		});
 
-	});
-
-	router.get('/ranking', isLoggedIn, function(req, res) {
-		var labyokerMakesBets = new LabyokerMakesBets(req.session.userid);
-
-		labyokerMakesBets.getranking(function(error, labyokersRanking) {
-			res.render('ranking', {
-				title : "You - v - The Others",
-				labyokers : labyokersRanking,
-				loggedIn : true,
-				userid : req.session.userid,
-				scripts : [ '/javascripts/scrolling.js' ],
-				labyoker : req.session.user,
-				menu : 'ranking'
-			});
-		});
 	});
 
 	router.get('/logout', function(req, res) {
@@ -609,16 +355,6 @@ module.exports = function(router) {
 
 		}
 	});
-
-/*	router.get('/search', function(req, res) {
-		if (req.session.user) {
-			res.render('search', {});
-			req.session.messages = null;
-		} else {
-			res.redirect('/search');
-		}
-	});
-*/
 
 	router.get('/search', function(req, res) {
 		if (req.session.user) {
@@ -676,44 +412,32 @@ module.exports = function(router) {
 	});
 
 	router.get('/account', isLoggedIn, function(req, res) {
-		if (req.session.user) {
-			res.render('account', {loggedIn : true});
-			req.session.messages = null;
-		} else {
-			res.redirect('/login');
-		}
+		res.render('account', {loggedIn : true});
+		req.session.messages = null;
 	});
 
 	router.get('/reports', isLoggedIn, function(req, res) {
-		if (req.session.user) {
-			res.render('reports', {loggedIn : true});
-			req.session.messages = null;
-		} else {
-			res.redirect('/login');
-		}
+		res.render('reports', {loggedIn : true});
+		req.session.messages = null;
 	});
 
 	router.get('/play', isLoggedIn, function(req, res) {
-			res.render('play', {loggedIn : true});
-			req.session.messages = null;
+		res.render('play', {loggedIn : true});
+		req.session.messages = null;
 	});
 
 	router.get('/share', isLoggedIn, function(req, res) {
-var labYokeAgents = new LabYokeAgents(req.session.email);
-				labYokeAgents.findmyshares(function(error, results) {
-		if (req.session.user) {
+		var labYokeAgents = new LabYokeAgents(req.session.email);
+		labYokeAgents.findmyshares(function(error, results) {
 			console.log("is admon? " + req.session.admin);
 			res.render('share', {myshares: results[0], report_sharesbycategory: results[1], loggedIn : true, isLoggedInAdmin: req.session.admin, title:'share'});
 			req.session.messages = null;
-		} else {
-			res.redirect('/login');
-		}
-	});
+		});
 	});
 
 	router.get('/forgot', function(req, res) {
-			res.render('forgot', {});
-			req.session.messages = null;
+		res.render('forgot', {});
+		req.session.messages = null;
 	});
 
 	router.post('/forgot', function(req, res) {
@@ -1033,157 +757,6 @@ req.session.loggedin = true;
 
 	});
 
-	router.get('/admin', isAdmin, function(req, res) {
-		var dateStripped = moment(new Date).tz("Europe/Berlin").format(
-				'YYYY-MM-DD'); // '2014-06-09'
-		var labyokeFinder = new LabYokeFinder(dateStripped);
-		labyokeFinder.getAllTeams(function(error, allteams) {
-			labyokeFinder.getAllWinners(function(error, winners) {
-				labyokeFinder.getAllMatches(function(error, allmatches) {
-					res.render('admin', {
-						title : 'Administer Results, Teams & Points',
-						loggedIn : true,
-						labyoker : req.session.user,
-						allteams : allteams,
-						matches : allmatches,
-						winners : winners,
-						moment : moment,
-						now : moment(new Date).tz("Europe/Berlin").format(
-								'YYYY-MM-DD HH:mm:ss')
-					// '2014-06-09 HH:mm:ss'
-					});
-				});
-			});
-		});
-	});
 
-	router
-			.post(
-					'/admin',
-					isAdmin,
-					function(req, res) {
-						var team;
-						var scoretyp = req.body.scoretyp;
-						var scorehemma = req.body.scorehemma;
-						var typ = req.body.typ;
-						var hemma = req.body.hemma;
-						var advanced = req.body.advanced;
-						if (scoretyp == scorehemma)
-							team = 'none';
-						else if (scoretyp > scorehemma)
-							team = typ;
-						else
-							team = hemma;
-						if (scoretyp != null) {
-							var matchResults = new MatchResults(scoretyp,
-									scorehemma, team, req.body.bet, typ, hemma);
-							matchResults
-									.putResults(function(error, results) {
-										matchResults
-												.analyzeResults(function(error,
-														participantsResults) {
 
-													var dateStripped = moment(
-															new Date)
-															.tz("Europe/Berlin")
-															.format(
-																	'YYYY-MM-DD'); // '2014-06-09'
-													var labyokeFinder = new LabYokeFinder(
-															dateStripped);
-													labyokeFinder
-															.getAllTeams(function(
-																	error,
-																	allteams) {
-																labyokeFinder
-																		.getAllWinners(function(
-																				error,
-																				winners) {
-																			labyokeFinder
-																					.getAllMatches(function(
-																							error,
-																							allmatches) {
-																						res
-																								.render(
-																										'admin',
-																										{
-																											title : 'Administer Results, Teams & Points',
-																											loggedIn : true,
-																											labyoker : req.session.user,
-																											allteams : allteams,
-																											matches : allmatches,
-																											winners : winners,
-																											moment : moment,
-																											now : moment(
-																													new Date)
-																													.tz(
-																															"Europe/Berlin")
-																													.format(
-																															'YYYY-MM-DD HH:mm:ss'), // '2014-06-09
-																											// HH:mm:ss'
-																											successmessage : 'You have successfully updated the Game Result <b>'
-																													+ typ
-																													+ ' v '
-																													+ hemma
-																													+ '</b> and Points'
-																										});
-																					});
-																		});
-															});
-												});
-									});
-						} else if (advanced != null) {
-							var matchAdvancing = new MatchAdvancing(
-									req.body.advanced, req.body.typorhemma,
-									req.body.bet);
-							matchAdvancing
-									.updateWinner(function(error, results) {
-										var dateStripped = moment(new Date).tz(
-												"Europe/Berlin").format(
-												'YYYY-MM-DD'); // '2014-06-09'
-										var labyokeFinder = new LabYokeFinder(
-												dateStripped);
-										labyokeFinder
-												.getAllTeams(function(error,
-														allteams) {
-													labyokeFinder
-															.getAllWinners(function(
-																	error,
-																	winners) {
-																labyokeFinder
-																		.getAllMatches(function(
-																				error,
-																				allmatches) {
-
-																			res
-																					.render(
-																							'admin',
-																							{
-																								title : 'Administer Results, Teams & Points',
-																								loggedIn : true,
-																								labyoker : req.session.user,
-																								allteams : allteams,
-																								matches : allmatches,
-																								winners : winners,
-																								moment : moment,
-																								now : moment(
-																										new Date)
-																										.tz(
-																												"Europe/Berlin")
-																										.format(
-																												'YYYY-MM-DD HH:mm:ss'), // '2014-06-09
-																								// HH:mm:ss'
-																								advancedsuccess : 'You have successfully updated the Advancing team for Match <b>'
-																										+ req.body.bet
-																										+ '</b>.'
-																							});
-
-																		});
-															});
-												});
-									});
-						} else {
-							res.redirect('/admin');
-						}
-
-					});
 };
