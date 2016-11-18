@@ -128,8 +128,9 @@ LabYokeUploader.prototype.upload = function(callback) {
 			var catalognumber = results[prop].catalog_number;
 			var location = results[prop].location;
 			var email = results[prop].user;
+			var category = results[prop].category;
 			values = values + "('" + agent
-		+ "', '" + vendor + "', '" + catalognumber + "', '" + location + "', '" + email + "','" + now + "')";
+		+ "', '" + vendor + "', '" + catalognumber + "', '" + location + "', '" + email + "','" + now + "','" + category + "')";
 			if(prop < (results.length-1)){
 				values = values + ",";
 			}
@@ -156,11 +157,33 @@ LabYokeUploader.prototype.upload = function(callback) {
 };
 
 LabYokeAgents.prototype.findmyshares = function(callback) {
-	var results;
+	var results = [];
 	console.log("findmyshares: " + this.email);
 	var query = client
 			.query("SELECT * FROM vm2016_agentsshare where email='"
 					+ this.email + "' order by date");
+	query.on("row", function(row, result) {
+		result.addRow(row);
+	});
+	query.on("end", function(result) {
+		results.push(result.rows);
+		var query2 = client
+				.query("SELECT b.category, count(b.category) FROM vm2016_orders a, vm2016_agentsshare b where a.agent = b.agent group by b.category");
+		query2.on("row", function(row, result2) {
+			result2.addRow(row);
+		});
+		query2.on("end", function(result2) {
+			results.push(result2.rows);
+			callback(null, results)
+		});
+	});
+};
+
+LabYokeAgents.prototype.reportAllSharesByCategory = function(callback) {
+	var results;
+	console.log("reportAllSharesByCategory: " + this.email);
+	var query = client
+			.query("SELECT b.category, count(b.category) FROM vm2016_orders a, vm2016_agentsshare b where a.agent = b.agent group by b.category");
 	query.on("row", function(row, result) {
 		result.addRow(row);
 	});
