@@ -128,13 +128,6 @@ block content
 
 				var chart0 = new Chartist.Bar('.ct-chart0', data, responsiveOptions);
 
-				var sum = function(a, b) { return a + b };
-				var chart1 = new Chartist.Pie('.ct-chart1', data, {
-					labelInterpolationFnc: function(value) {
-						return Math.round(value / data.series.reduce(sum) * 100) + '%';
-					}
-				});
-
 				var chart = new Chartist.Line('.ct-chart', data, responsiveOptions);
 
 				// Let's put a sequence number aside so we can use it in the event callbacks
@@ -250,6 +243,16 @@ block content
 						window.__exampleAnimateTimeout = null;
 					}
 					window.__exampleAnimateTimeout = setTimeout(chart.update.bind(chart), 12000);
+				});
+				
+				data = {
+					series: valTransform
+				};
+				var sum = function(a, b) { return a + b };
+				var chart1 = new Chartist.Pie('.ct-chart1', data, {
+					labelInterpolationFnc: function(value) {
+						return Math.round(value / data.series.reduce(sum) * 100) + '%';
+					}
 				});
 
 					
