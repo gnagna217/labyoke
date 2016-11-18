@@ -157,9 +157,6 @@ body {
     margin-left: 5px;
     -webkit-font-smoothing: auto;
 }
-.glyphicon{
-    -webkit-font-smoothing: auto !important;
-}
 .labColor{
     color: #3d9dcb;
 }
