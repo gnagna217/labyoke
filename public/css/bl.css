@@ -184,6 +184,9 @@ a {
 .ct-perfect-fourth:before {
     padding-bottom: 0 !important;
 }
+.help{
+    padding-right: 100px !important;
+}
 .labColor{
     color: #3d9dcb;
 }
@@ -514,6 +517,10 @@ input::-webkit-inner-spin-button {
 }
 
  @media (max-width: 440px) {
+
+.help{
+    padding-right: auto;
+}
 
 #rankTbl td
 {
