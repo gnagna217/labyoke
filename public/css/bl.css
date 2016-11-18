@@ -487,9 +487,7 @@ input::-webkit-inner-spin-button {
 }
 
  @media (max-width: 440px) {
-.order-container{
-    width: auto;
-}
+
 #rankTbl td
 {
     /*text-align: center;*/
@@ -547,6 +545,9 @@ input::-webkit-inner-spin-button {
 }
 #menushare{
     width: 114px !important;
+}
+.order-container{
+    width: auto;
 }
 }
 
