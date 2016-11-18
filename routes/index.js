@@ -693,6 +693,11 @@ module.exports = function(router) {
 		}
 	});
 
+	router.get('/play', isLoggedIn, function(req, res) {
+			res.render('play', {loggedIn : true});
+			req.session.messages = null;
+	});
+
 	router.get('/share', isLoggedIn, function(req, res) {
 var labYokeAgents = new LabYokeAgents(req.session.email);
 				labYokeAgents.findmyshares(function(error, results) {
