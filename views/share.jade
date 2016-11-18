@@ -72,18 +72,18 @@ block content
 		div(style="background-color: #3d9dcb; height: 2px; margin-bottom: 30px; margin-top: 30px;")
 		h4="A brief report of the monthly shares."
 		p="This graph depicts an example"
-		div(class="ct-chart ct-perfect-fourth")
-		script.
-			var data = {
-				labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri'],
-				series: [
-					[5, 2, 4, 2, 0]
-				]
-			};
+			div(class="ct-chart ct-perfect-fourth")
+			script.
+				var data = {
+					labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri'],
+					series: [
+						[5, 2, 4, 2, 0]
+					]
+				};
 
-			var options = {
-				width: 500,
-				height: 200
-			};
-			new Chartist.Line('.ct-chart', data, options);
+				var options = {
+					width: 500,
+					height: 200
+				};
+				new Chartist.Line('.ct-chart', data, options);
 	
