@@ -636,7 +636,7 @@ module.exports = function(router) {
 		}
 	});
 
-	router.get('/orders', function(req, res) {
+	router.get('/orders', isLoggedIn, function(req, res) {
 		if (req.session.user) {
 			var labYokerGetOrder = new LabYokerGetOrder(req.session.email);
 			labYokerGetOrder.getorders(function(error, results) {
@@ -651,7 +651,7 @@ module.exports = function(router) {
 		}
 	});
 
-	router.post('/orders', function(req, res) {
+	router.post('/orders', isLoggedIn, function(req, res) {
 		if (req.session.user) {
 			var agent = req.body.agentform;
 			var vendor = req.body.vendorform;
@@ -675,7 +675,7 @@ module.exports = function(router) {
 		}
 	});
 
-	router.get('/account', function(req, res) {
+	router.get('/account', isLoggedIn, function(req, res) {
 		if (req.session.user) {
 			res.render('account', {loggedIn : true});
 			req.session.messages = null;
@@ -684,7 +684,16 @@ module.exports = function(router) {
 		}
 	});
 
-	router.get('/share', function(req, res) {
+	router.get('/reports', isLoggedIn, function(req, res) {
+		if (req.session.user) {
+			res.render('reports', {loggedIn : true});
+			req.session.messages = null;
+		} else {
+			res.redirect('/login');
+		}
+	});
+
+	router.get('/share', isLoggedIn, function(req, res) {
 var labYokeAgents = new LabYokeAgents(req.session.email);
 				labYokeAgents.findmyshares(function(error, results) {
 		if (req.session.user) {

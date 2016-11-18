@@ -29,9 +29,10 @@ block content
 											td(class="wrapped") #{ob[prop].agent}
 											td #{ob[prop].vendor}
 											td #{ob[prop].catalognumber}
-			div(style="background-color: #3d9dcb; height: 2px; margin-bottom: 30px; margin-top: 30px;")
+			
 
 			if(isLoggedInAdmin == 1)
+				div(style="background-color: #3d9dcb; height: 2px; margin-bottom: 30px; margin-top: 30px;")
 				h4="Admin Upload."
 				p="You can now upload a list of agents (xcel spreadsheet) from your local computer or Google drive."
 				form(id="uploadForm", enctype="multipart/form-data", action="share", method="post")
@@ -121,11 +122,14 @@ block content
 						height: 200
 					}]
 				];
+				if(document.getElementById(.ct-chart0') != undefined)
+					var chart0 = new Chartist.Bar('.ct-chart0', data, responsiveOptions);
 
-				var chart0 = new Chartist.Bar('.ct-chart0', data, responsiveOptions);
+				if(document.getElementById(.ct-chart1') != undefined)
+					var chart1 = new Chartist.Line('.ct-chart1', data, responsiveOptions);
 
-
-				var chart = new Chartist.Line('.ct-chart', data, responsiveOptions);
+				if(document.getElementById(.ct-chart') != undefined)
+					var chart = new Chartist.Line('.ct-chart', data, responsiveOptions);
 
 				// Let's put a sequence number aside so we can use it in the event callbacks
 				var seq = 0,
