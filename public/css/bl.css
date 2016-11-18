@@ -160,6 +160,9 @@ body {
 .order-container{
     width: 45%;
 }
+a {
+    text-decoration: none;
+}
 .ct-label{
     color: black !important;
 }
