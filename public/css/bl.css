@@ -164,11 +164,11 @@ body {
     width: 50%;
 }
 .ct-series-a .ct-line {
-  stroke: #3d9dcb;
+  stroke: #3d9dcb !important;
 }
 
 .ct-series-a .ct-point {
-  stroke: #3d9dcb;
+  stroke: #3d9dcb !important;
 }
 .labColor{
     color: #3d9dcb;
