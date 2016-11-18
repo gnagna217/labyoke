@@ -69,6 +69,9 @@ block content
 										td #{ob[prop].location}
 			div(style="background-color: #3d9dcb; height: 2px; margin-bottom: 30px; margin-top: 30px;")
 
+	div(style="background-color: #3d9dcb; height: 2px; margin-bottom: 30px; margin-top: 30px;")
+	h4="A brief report of the monthly shares."
+	p="This graph depicts an example"
 	div(class="ct-chart ct-perfect-fourth")
 	script.
 		var data = {
@@ -80,8 +83,7 @@ block content
 
 		var options = {
 		  width: 400,
-		  height: 200,
-		  padding-left: 50px
+		  height: 200
 		};
 		new Chartist.Line('.ct-chart', data, options);
 	script(type="text/javascript" src="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.js")
