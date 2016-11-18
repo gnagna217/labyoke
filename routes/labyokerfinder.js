@@ -235,7 +235,7 @@ LabYokerGetOrder.prototype.getorders = function(callback) {
 	console.log("getorders: " + email);
 	var query = client
 			.query("SELECT * FROM vm2016_orders where requestoremail like '%"
-					+ email + "%' order by date");
+					+ email + "%' order by date desc");
 	query.on("row", function(row, result) {
 		result.addRow(row);
 	});
