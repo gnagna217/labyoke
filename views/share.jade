@@ -105,9 +105,11 @@ block content
 						valTransform
 					]
 				};
+				/*
 				var options = {
-					height: 300
-				};
+					width: 300,
+					height: 200
+				};*/
 
 				var responsiveOptions = [
 					['(max-width: 440px)', {
@@ -124,9 +126,9 @@ block content
 					}]
 				];
 
-				var chart0 = new Chartist.Bar('.ct-chart0', data, options, responsiveOptions);
+				var chart0 = new Chartist.Bar('.ct-chart0', data, responsiveOptions);
 
-				var chart = new Chartist.Line('.ct-chart', data, options, responsiveOptions);
+				var chart = new Chartist.Line('.ct-chart', data, responsiveOptions);
 
 				// Let's put a sequence number aside so we can use it in the event callbacks
 				var seq = 0,
