@@ -214,6 +214,7 @@ block content
               }
               window.__exampleAnimateTimeout = setTimeout(chart.update.bind(chart), 12000);
             });*/
+            var addedEvents = false;
             chart.on('draw', function() {
               if (!addedEvents) {
                 $('.ct-chart').on('mouseover', function() {
