@@ -44,7 +44,7 @@ block content
           h4="A brief Line report of the monthly shares."
           p="This graph depicts the number of orders per Agent Category (line chart)."
           div(class="ct-chart ct-perfect-fourth")
-          div(style="display:none", id="tooltips", class="labColor")
+          div(id="tooltips", class="labColor")
           h4="Another brief Bar report of the monthly shares."
           p="This graph depicts the number of orders per Agent Category (bar chart)."
           div(class="ct-chart0 ct-perfect-fourth")
@@ -218,12 +218,13 @@ block content
             chart.on('draw', function() {
               if (!addedEvents) {
                 $('.ct-point').on('mouseover', function() {
-                  $('#tooltips').show();
+                  //$('#tooltips').show();
                   $('#tooltips').html('<b>Selected Value: </b>' + $(this).attr('ct:value'));
                 });
 
                 $('.ct-point').on('mouseout', function() {
-                  $('#tooltips').hide();
+                  //$('#tooltips').hide();
+                  $('#tooltips').html("")
                 });
               }
             });
