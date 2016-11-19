@@ -78,7 +78,7 @@ module.exports = function(router) {
                     var labYokeUploader = new LabYokeUploader(result);
                     labYokeUploader.upload(function(error, done) {
                     res.render('share', {
-                    json: result, loggedIn : true, isLoggedInAdmin: isLoggedInAdmin, title: 'share', spreadname: req.file.originalname
+                    json: result, loggedIn : true, isLoggedInAdmin: isLoggedInAdmin, title: 'Share', spreadname: req.file.originalname
                     });
                 });
                     //res.json({error_code:0,err_desc:null, data: result});
@@ -100,7 +100,7 @@ module.exports = function(router) {
 			loggedIn : req.session.loggedin,
 			labyoker : req.session.user,
 			menu : 'help',
-			title: 'help'
+			title: 'Help'
 		});
 
 	});
@@ -140,7 +140,7 @@ module.exports = function(router) {
 		if (req.session.user) {
 			res.redirect('/search');
 		} else {
-			res.render('login', {title: 'login'});
+			res.render('login', {title: 'Login'});
 			req.session.messages = null;
 
 		}
@@ -151,9 +151,9 @@ module.exports = function(router) {
 			var labYokeSearch = new LabYokeSearch("");
 			labYokeSearch.findagents(function(error, results) {			
 				if (results != null && results.length > 0){
-					res.render('search', {agentsResults : results, loggedIn : true, title: 'search'});
+					res.render('search', {agentsResults : results, loggedIn : true, title: 'Search'});
 				} else {
-					res.render('search', {loggedIn : true, title: 'search'});
+					res.render('search', {loggedIn : true, title: 'Search'});
 				}
 				req.session.messages = null;
 			});
@@ -168,7 +168,7 @@ module.exports = function(router) {
 			labYokerGetOrder.getorders(function(error, results) {
 				if(results != null){
 					console.log("orders results: " + results);				
-					res.render('orders', {title:'orders', loggedIn : true, orderresults: results[0], report_sharesbycategory: results[1]});
+					res.render('orders', {title:'Orders', loggedIn : true, orderresults: results[0], report_sharesbycategory: results[1]});
 					//req.session.messages = null;
 				}
 			});
@@ -192,7 +192,7 @@ module.exports = function(router) {
 					console.log("ordering location: " + location);
 					console.log("ordering reqemail: " + reqemail);
 				
-					res.render('orders', {title:'orders',loggedIn : true, location: location, agent: agent, vendor: vendor, catalog: catalognumber, email: email});
+					res.render('orders', {title:'Orders',loggedIn : true, location: location, agent: agent, vendor: vendor, catalog: catalognumber, email: email});
 					req.session.messages = null;
 				}
 			});
@@ -202,12 +202,12 @@ module.exports = function(router) {
 	});
 
 	router.get('/account', isLoggedIn, function(req, res) {
-		res.render('account', {loggedIn : true, title: 'account'});
+		res.render('account', {loggedIn : true, title: 'Account'});
 		req.session.messages = null;
 	});
 
 	router.get('/reports', isLoggedIn, function(req, res) {
-		res.render('reports', {loggedIn : true, title: 'reports'});
+		res.render('reports', {loggedIn : true, title: 'Reports'});
 		req.session.messages = null;
 	});
 
@@ -220,7 +220,7 @@ module.exports = function(router) {
 		var labYokeAgents = new LabYokeAgents(req.session.email);
 		labYokeAgents.findmyshares(function(error, results) {
 			console.log("is admon? " + req.session.admin);
-			res.render('share', {myshares: results[0], report_sharesbycategory: results[1], loggedIn : true, isLoggedInAdmin: req.session.admin, title:'share'});
+			res.render('share', {myshares: results[0], report_sharesbycategory: results[1], loggedIn : true, isLoggedInAdmin: req.session.admin, title:'Share'});
 			req.session.messages = null;
 		});
 	});
@@ -405,9 +405,9 @@ module.exports = function(router) {
 			var labYokeSearch = new LabYokeSearch(searchText);
 			labYokeSearch.search(function(error, results) {			
 				if (searchText != null && searchText.length > 0){
-					res.render('search', {title: 'search', fullname: req.session.fullname, sendemail: req.session.email, searchResults : results[0], agentsResults : results[1], searchformText: searchText, loggedIn : true});
+					res.render('search', {title: 'Search', fullname: req.session.fullname, sendemail: req.session.email, searchResults : results[0], agentsResults : results[1], searchformText: searchText, loggedIn : true});
 				} else {
-					res.render('search', {title: 'search', loggedIn : true, agentsResults : results[1]});
+					res.render('search', {title: 'Search', loggedIn : true, agentsResults : results[1]});
 				}
 				req.session.messages = null;
 			});
