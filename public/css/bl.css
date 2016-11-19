@@ -193,6 +193,10 @@ a {
 .labColor{
     color: #3d9dcb;
 }
+
+.labColorBackground{
+    background-color: #3d9dcb !important;
+}
 .yokeColor{
     color: #8a6d3b;
 }
