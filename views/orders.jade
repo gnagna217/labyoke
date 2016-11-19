@@ -44,6 +44,7 @@ block content
           h4="A brief Line report of the monthly shares."
           p="This graph depicts the number of orders per Agent Category (line chart)."
           div(class="ct-chart ct-perfect-fourth")
+          div(style="display:none", id="tooltips")
           h4="Another brief Bar report of the monthly shares."
           p="This graph depicts the number of orders per Agent Category (bar chart)."
           div(class="ct-chart0 ct-perfect-fourth")
@@ -213,6 +214,19 @@ block content
               }
               window.__exampleAnimateTimeout = setTimeout(chart.update.bind(chart), 12000);
             });*/
+            chart.on('draw', function() {
+              if (!addedEvents) {
+                $('.ct-chart').on('mouseover', function() {
+                  $('#tooltips').show();
+                  $('#tooltips').html('<b>Selected Value: </b>' + $(this).attr('ct:value'));
+                });
+
+                $('.ct-chart').on('mouseout', function() {
+                  $('#tooltips').hide();
+                });
+              }
+            });
+
 
       if email != undefined
         h3="Great! You have ordered the following agent from "
