@@ -132,12 +132,12 @@ block content
 
 				// Let's put a sequence number aside so we can use it in the event callbacks
 				var seq = 0,
-				delays = 80,
+				delays = 8000000000,
 				durations = 500;
 
 				// Once the chart is fully created we reset the sequence
 				chart.on('created', function() {
-					//seq = 0;
+					seq = 0;
 				});
 
 				// On each drawn element by Chartist we use the Chartist.Svg API to trigger SMIL animations
