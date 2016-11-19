@@ -48,6 +48,7 @@ block content
           h4="Another brief Bar report of the monthly shares."
           p="This graph depicts the number of orders per Agent Category (bar chart)."
           div(class="ct-chart0 ct-perfect-fourth")
+          div(id="tooltips0", class="labColor") &nbsp;
           - var array_rows = []
           - var array_values = ""
           -var ob = report_sharesbycategory
@@ -228,7 +229,18 @@ block content
                 });
               }
             });
+            var addedEvents0 = false;
+            chart0.on('draw', function() {
+              if (!addedEvents0) {
+                $('.ct-bar').on('mouseover', function() {
+                  $('#tooltips0').html('<b>Selected Value: </b>' + $(this).attr('ct:value'));
+                });
 
+                $('.ct-bar').on('mouseout', function() {
+                  $('#tooltips0').html("&nbsp;")
+                });
+              }
+            });
 
       if email != undefined
         h3="Great! You have ordered the following agent from "
