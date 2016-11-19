@@ -217,12 +217,12 @@ block content
             var addedEvents = false;
             chart.on('draw', function() {
               if (!addedEvents) {
-                $('.ct-chart').on('mouseover', function() {
+                $('.ct-point').on('mouseover', function() {
                   $('#tooltips').show();
                   $('#tooltips').html('<b>Selected Value: </b>' + $(this).attr('ct:value'));
                 });
 
-                $('.ct-chart').on('mouseout', function() {
+                $('.ct-point').on('mouseout', function() {
                   $('#tooltips').hide();
                 });
               }
