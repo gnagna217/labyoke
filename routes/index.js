@@ -140,7 +140,7 @@ module.exports = function(router) {
 		if (req.session.user) {
 			res.redirect('/search');
 		} else {
-			res.render('login', {});
+			res.render('login', {title: 'login'});
 			req.session.messages = null;
 
 		}
@@ -212,7 +212,7 @@ module.exports = function(router) {
 	});
 
 	router.get('/play', function(req, res) {
-		res.render('play', {});
+		res.render('play', {title: 'Play'});
 		req.session.messages = null;
 	});
 
@@ -226,7 +226,7 @@ module.exports = function(router) {
 	});
 
 	router.get('/forgot', function(req, res) {
-		res.render('forgot', {});
+		res.render('forgot', {title: 'Forgot Password'});
 		req.session.messages = null;
 	});
 
@@ -246,13 +246,13 @@ module.exports = function(router) {
 						res.render(
 							'forgot',
 							{
-								message : "Ah. We have already sent you an email today to change your password. Please check your inbox.", usernotfound : true, noforgotform: true
+								title: 'Forgot Password', message : "Ah. We have already sent you an email today to change your password. Please check your inbox.", usernotfound : true, noforgotform: true
 							});
 					} else {
 						res.render(
 							'forgot',
 							{
-								message : "Sorry. We could not find an account with this username. Please try again below.", usernotfound : true
+								title: 'Forgot Password', message : "Sorry. We could not find an account with this username. Please try again below.", usernotfound : true
 							});
 					}
 				});
@@ -260,7 +260,7 @@ module.exports = function(router) {
 				res.render(
 					'forgot',
 					{
-						message : "Sorry. You must enter your current username. Please try again below.", usernotfound : true
+						title: 'Forgot Password', message : "Sorry. You must enter your current username. Please try again below.", usernotfound : true
 					});
 
 			}
@@ -268,7 +268,7 @@ module.exports = function(router) {
 	});
 
 	router.get('/register', function(req, res) {
-		res.render('register', {});
+		res.render('register', {title: 'Register'});
 		req.session.messages = null;
 		req.body.reglab = null;
 	});
@@ -314,11 +314,12 @@ module.exports = function(router) {
 							firstname: req.session.firstname,
 							lastname: req.session.lastname,
 							email: req.session.email,
-							tel: req.session.tel
+							tel: req.session.tel,
+							title: 'Register'
 						});
 				} else if (done != null && done.length > 0 && done != 'success') {
 					console.log("status = status1");
-					res.render('register', {message : "Sorry. We could not register you. Please try again below."});
+					res.render('register', {title: 'Register', message : "Sorry. We could not register you. Please try again below."});
 				} else if(done != null && done.length > 0 && done == 'success') {
 					console.log("status = success1");
 					rendered = true;
@@ -327,13 +328,15 @@ module.exports = function(router) {
 						'register',
 						{
 							regsuccess : user_name,
-							labentered : false
+							labentered : false,
+							title: 'Register'
 						});
 				} else {
 					res.render(
 						'register',
 						{
-							message : "Sorry. You cannot proceed. Please try again below."
+							message : "Sorry. You cannot proceed. Please try again below.",
+							title: 'Register'
 						});
 				}
 			});
@@ -350,7 +353,7 @@ module.exports = function(router) {
 					if(done != null && done.length > 0 && done == 'alreadyInUse') {
 						console.log("status = alreadyInUse");
 						rendered = true;
-						res.render('register', {message : "Sorry. This email address is already in use. Please use a different one and try again below."});
+						res.render('register', {title: 'Register', message : "Sorry. This email address is already in use. Please use a different one and try again below."});
 					} else if(done != null && done.length > 0 && done == 'firstsection') {
 						console.log("status = firstsection");
 						rendered = true;
@@ -361,12 +364,13 @@ module.exports = function(router) {
 								firstname: req.session.firstname,
 								lastname: req.session.lastname,
 								email: req.session.email,
-								tel: req.session.tel
+								tel: req.session.tel,
+								title: 'Register'
 							});
 					} else if(done != null && done.length > 0 && done != 'success') {
 						console.log("status = not successful");
 						rendered = true;
-						res.render('register', {message : "Sorry. We could not register you. Please try again below."});
+						res.render('register', {title: 'Register', message : "Sorry. We could not register you. Please try again below."});
 					} else if(done != null && done.length > 0 && done == 'success') {
 						console.log("status = success");
 						rendered = true;
@@ -374,7 +378,8 @@ module.exports = function(router) {
 							'register',
 							{
 								regsuccess : user_name,
-								labentered: false
+								labentered: false,
+								title: 'Register'
 							});
 					} else {
 						console.log("status = something else happened");
@@ -382,12 +387,13 @@ module.exports = function(router) {
 						res.render(
 							'register',
 							{
-								message : "Sorry. You cannot proceed. Please try again below."
+								message : "Sorry. You cannot proceed. Please try again below.",
+								title: 'Register'
 							});
 					}
 					if(!rendered){
 						console.log("nothing entered");
-						res.render('register', {message : "Sorry. We could not register you. Please fill out all fields below."});
+						res.render('register', {message : "Sorry. We could not register you. Please fill out all fields below.", title: 'Register'});
 					}
 				});
 			}
@@ -448,7 +454,7 @@ req.session.loggedin = true;
 															{
 																message : "Your username and/or password is wrong. Please try again... Or <a href='mailto:labyoke@gmail.com?Subject="
 																		+ username
-																		+ " - Forgot Password' target='_top'>Contact us</a> to retrieve it."
+																		+ " - Forgot Password' target='_top'>Contact us</a> to retrieve it.", title: 'Login'
 															});
 										}
 									});
@@ -459,7 +465,7 @@ req.session.loggedin = true;
 											{
 												message : "Your username and/or password is wrong. Please try again... Or <a href='mailto:labyoke@gmail.com?Subject="
 														+ username
-														+ " - Forgot Password' target='_top'>Contact us</a> to retrieve it."
+														+ " - Forgot Password' target='_top'>Contact us</a> to retrieve it.", title: 'Login'
 											});
 						}
 
@@ -467,7 +473,7 @@ req.session.loggedin = true;
 
 	router.get('/changepassword/:id', /*isLoggedInAndNotActive,*/ function(req, res) {
 		res.render('changepassword', {
-			title : 'You & LabYoke',
+			title : 'Change Password',
 			/*loggedIn : true,*/
 			displayForm: true,
 			hashid: req.params.id,
@@ -499,14 +505,14 @@ req.session.loggedin = true;
 			
 			if (results != null && results.length > 0 && results == 'passwordReset') {
 					res.render('changepassword', {
-						title : 'You & LabYoke',
+						title : 'Change Password',
 						/*loggedIn : true,*/
 						messageSuccess : "Congratulations you have successfully changed your Password. Please head to the <a href='/login'>login</a> page.", 
 						scripts : [ '/javascripts/utils.js' ]
 					});
 			} else if(results != null && results.length > 0 && results == 'errorFound') {
 					res.render('changepassword', {
-						title : 'You & LabYoke',
+						title : 'Change Password',
 						/*loggedIn : true,*/
 						displayForm: true,
 						message : "An error was found while processing your change password. Please try again or <a href='mailto:labyoke@gmail.com?Subject="
@@ -515,7 +521,7 @@ req.session.loggedin = true;
 					});
 			} else if(results != null && results.length > 0 && results == 'dateExpired') {
 						res.render('forgot', {
-						title : 'You & LabYoke',
+						title : 'Change Password',
 						/*loggedIn : true,*/
 						message : "Unfortunately your Change Password request has expired. Please make a new request.", 
 						displayForm: true,
@@ -523,7 +529,7 @@ req.session.loggedin = true;
 					});
 			} else if(results != null && results.length > 0 && results == 'cannotFindRequest') {
 					res.render('forgot', {
-						title : 'You & LabYoke',
+						title : 'Change Password',
 						/*loggedIn : true,*/
 						displayForm: true,
 						message : "Sorry we could not find your Change Password request. Please make a new request.", 
@@ -531,7 +537,7 @@ req.session.loggedin = true;
 					});
 			} else {
 					res.render('changepassword', {
-						title : 'You & LabYoke',
+						title : 'Change Password',
 						/*loggedIn : true,*/
 						displayForm: true,
 						message : "An error was found while processing your change password. Please try again or <a href='mailto:labyoke@gmail.com?Subject="
