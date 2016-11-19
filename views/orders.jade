@@ -206,22 +206,12 @@ block content
             });
 
             // For the sake of the example we update the chart every time it's created with a delay of 10 seconds
-            chart.on('created', function() {
+            /*chart.on('created', function() {
               if(window.__exampleAnimateTimeout) {
                 clearTimeout(window.__exampleAnimateTimeout);
                 window.__exampleAnimateTimeout = null;
               }
               window.__exampleAnimateTimeout = setTimeout(chart.update.bind(chart), 12000);
-            });
-            
-            /*data = {
-              series: valTransform
-            };
-            var sum = function(a, b) { return a + b };
-            var chart1 = new Chartist.Pie('.ct-chart1', data, {
-              labelInterpolationFnc: function(value) {
-                return Math.round(value / data.series.reduce(sum) * 100) + '%';
-              }
             });*/
 
       if email != undefined

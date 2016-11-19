@@ -136,14 +136,7 @@ block content
 				durations = 500;
 
 				// Once the chart is fully created we reset the sequence
-				/*chart.on('created', function() {
-					seq = 0;
-				});*/
-
-				// Prevent chart re-draw when scrolling down on a mobile screen,
-				// see https://github.com/gionkunz/chartist-js/issues/410
-				chart.on('created', function(){
-					chart.detach(); // it will detach resize and media query listeners
+				chart.on('created', function() {
 					seq = 0;
 				});
 
@@ -244,13 +237,13 @@ block content
 				});
 
 				// For the sake of the example we update the chart every time it's created with a delay of 10 seconds
-				chart.on('created', function() {
+				/*chart.on('created', function() {
 					if(window.__exampleAnimateTimeout) {
 						clearTimeout(window.__exampleAnimateTimeout);
 						window.__exampleAnimateTimeout = null;
 					}
 					window.__exampleAnimateTimeout = setTimeout(chart.update.bind(chart), 12000);
-				});
+				});*/
 				
 				/*data = {
 					series: valTransform
