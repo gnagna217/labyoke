@@ -522,7 +522,9 @@ input::-webkit-inner-spin-button {
 }
 
  @media (max-width: 440px) {
-
+#menumyshares{
+    width: 115px;
+}
 #rankTbl td
 {
     /*text-align: center;*/
