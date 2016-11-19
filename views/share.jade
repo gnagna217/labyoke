@@ -132,11 +132,18 @@ block content
 
 				// Let's put a sequence number aside so we can use it in the event callbacks
 				var seq = 0,
-				delays = 8000000000,
+				delays = 80,
 				durations = 500;
 
 				// Once the chart is fully created we reset the sequence
-				chart.on('created', function() {
+				/*chart.on('created', function() {
+					seq = 0;
+				});*/
+
+				// Prevent chart re-draw when scrolling down on a mobile screen,
+				// see https://github.com/gionkunz/chartist-js/issues/410
+				chart.on('created', function(){
+					chart.detach(); // it will detach resize and media query listeners
 					seq = 0;
 				});
 
