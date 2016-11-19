@@ -99,7 +99,8 @@ module.exports = function(router) {
 			title : 'Help',
 			loggedIn : req.session.loggedin,
 			labyoker : req.session.user,
-			menu : 'help'
+			menu : 'help',
+			title: 'help'
 		});
 
 	});
@@ -150,9 +151,9 @@ module.exports = function(router) {
 			var labYokeSearch = new LabYokeSearch("");
 			labYokeSearch.findagents(function(error, results) {			
 				if (results != null && results.length > 0){
-					res.render('search', {agentsResults : results, loggedIn : true});
+					res.render('search', {agentsResults : results, loggedIn : true, title: 'search'});
 				} else {
-					res.render('search', {loggedIn : true});
+					res.render('search', {loggedIn : true, title: 'search'});
 				}
 				req.session.messages = null;
 			});
@@ -201,12 +202,12 @@ module.exports = function(router) {
 	});
 
 	router.get('/account', isLoggedIn, function(req, res) {
-		res.render('account', {loggedIn : true});
+		res.render('account', {loggedIn : true, title: 'account'});
 		req.session.messages = null;
 	});
 
 	router.get('/reports', isLoggedIn, function(req, res) {
-		res.render('reports', {loggedIn : true});
+		res.render('reports', {loggedIn : true, title: 'reports'});
 		req.session.messages = null;
 	});
 
@@ -398,9 +399,9 @@ module.exports = function(router) {
 			var labYokeSearch = new LabYokeSearch(searchText);
 			labYokeSearch.search(function(error, results) {			
 				if (searchText != null && searchText.length > 0){
-					res.render('search', {fullname: req.session.fullname, sendemail: req.session.email, searchResults : results[0], agentsResults : results[1], searchformText: searchText, loggedIn : true});
+					res.render('search', {title: 'search', fullname: req.session.fullname, sendemail: req.session.email, searchResults : results[0], agentsResults : results[1], searchformText: searchText, loggedIn : true});
 				} else {
-					res.render('search', {loggedIn : true, agentsResults : results[1]});
+					res.render('search', {title: 'search', loggedIn : true, agentsResults : results[1]});
 				}
 				req.session.messages = null;
 			});

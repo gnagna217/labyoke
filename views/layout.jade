@@ -35,37 +35,44 @@ html(lang='en')
                         span.icon-bar
                         span.icon-bar
 
-                    - activate = ""
-                    - if (menu == 'today')
-                        - activate = "activeNav"
-                    - activate = ""
-                        - if (menu == 'calendar')
-                            - activate = "activeNav"
-
-                    - activate = ""
-                        - if (menu == 'ranking')
-                            - activate = "activeNav"
+                    - activateReports = ""
+                    - activateShares = ""
+                    - activateSearch = ""
+                    - activateHelp = ""
+                    - activateOrders = ""
+                    - activateAccount = ""
+                    - if (title == 'reports')
+                        - activateReports = "labColorBackground"
+                    - if (title == 'shares')
+                        - activateShares = "labColorBackground"
+                    - if (title == 'search')
+                        - activateSearch = "labColorBackground"
+                    - if (title == 'help')
+                        - activateHelp = "labColorBackground"
+                    - if (title == 'orders')
+                        - activateOrders = "labColorBackground"
+                    - if (title == 'account')
+                        - activateAccount = "labColorBackground"
 
                 .collapse.navbar-collapse
                     div(style="float:left")
                         ul.nav.navbar-nav
 
-                            li(class=activate)
+                            li(class=activateSearch)
                                 a(href="/search", class="nav-menu",id="menusearch") Search
-                            li(class=activate)
-                                a(href='/help', class="nav-menu",id="menusearch") Help
-                            
+                            li(class=activateHelp)
+                                a(href='/help', class="nav-menu",id="menusearch") Help                
                             
                     div(style="padding-left: 130px;")
                         ul.nav.navbar-nav(id="menumyshares",style="border-left-color: white;border-left-style: solid;border-width: thin;")
-                            li(class=activate)
+                            li(class=activateShares)
                                 a(href="/share",class="nav-menu",id="menushare")="My Shares"
-                            li(class=activate)
+                            li(class=activateOrders)
                                 a(href="/orders",class="nav-menu",id="menushare")="My Orders"
                         ul.nav.navbar-nav(id="menumyaccount", style="border-left-color: white;border-left-style: solid;border-width: thin;")
-                            li(class=activate)
+                            li(class=activateAccount)
                                 a(href="/account",class="icon-user nav-menu", id="menumyaccounta")=" Account"
-                            li(class=activate)
+                            li(class=activateReports)
                                 a(href="/reports",class="icon-ok nav-menu", id="menumyaccounta")=" Reports"
                     ul.nav.navbar-nav.navbar-right
                         li
