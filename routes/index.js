@@ -226,9 +226,12 @@ module.exports = function(router) {
 			var labYokereporter = new LabYokeReporter("datefrom", "dateto");
 			labYokereporter.reportSomething(function(error, results) {
 				if(results != null){
-					var options = { format: 'Letter' };
 					console.log("res " + results);
-					res.render('reports', {title:'Reports',loggedIn : true, results: results, isLoggedInAdmin: req.session.admin});
+					if(results != ""){
+						res.render('reports', {title:'Reports',loggedIn : true, results: results, isLoggedInAdmin: req.session.admin, addMessage: "success"});
+					} else {
+						res.render('reports', {title:'Reports',loggedIn : true, isLoggedInAdmin: req.session.admin, addMessage: "failure"});
+					}
 					req.session.messages = null;
 				}
 			});

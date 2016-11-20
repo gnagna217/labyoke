@@ -109,20 +109,29 @@ LabYokeUploader.prototype.upload = function(callback) {
 
 LabYokeReporter.prototype.reportSomething = function(callback) {
 	var results;
-	console.log("report on something: datefrom" + this.datefrom);
-	console.log("report on something: dateto " + this.dateto);
-	var query = client
-			.query("SELECT * FROM vm2016_agentsshare order by date");
+	var datefrom = this.datefrom;
+	var dateto = this.dateto;
+	console.log("report on something: datefrom: " + datefrom);
+	console.log("report on something: dateto: " + dateto);
+	var query;
+	if(datefrom != null && dateto != null && datefrom !=undefined && dateto !=undefined){
+		query = client.query("SELECT * FROM vm2016_agentsshare order by date where date between '" + datefrom + "' and '" + dateto + "' ");
+	} else {
+		query = client.query("SELECT * FROM vm2016_agentsshare order by date");
+	}
 	query.on("row", function(row, result) {
 		result.addRow(row);
 	});
 	query.on("end", function(result) {
 		results = result.rows;
-		var html = "<div style='float:left; width:50%'><img style='width: 150px; margin: 0 20px;' src='https:\/\/team-labyoke.herokuapp.com\/images\/yoke.jpg', alt='The Yoke',  title='Yoke', class='yokelogo'/></div><div style=\"font-family:'calibri'; font-size:11pt;padding: 20px;, width:50%\">"
+		console.log("results : " + results);
+		var html = "";
+		if(results != null){
+		html = "<div style='float:left; width:50%'><img style='width: 150px; margin: 0 20px;' src='https:\/\/team-labyoke.herokuapp.com\/images\/yoke.jpg', alt='The Yoke',  title='Yoke', class='yokelogo'/></div><div style=\"font-family:'calibri'; font-size:11pt;padding: 20px;, width:50%\">"
 				+ "<h1>Shares Uploaded.</h1>";
 		html += "<p>This report is listing all the shares uploaded:</p></div>"
 		html +="<table><tbody><tr style='color: white;background-color: #3d9dcb;'><td style='font-size: 12px;'>Agent</td><td style='font-size: 12px;'>Vendor</td><td style='font-size: 12px;'>Catalog#</td><td style='font-size: 12px;'>Location</td><td style='font-size: 12px;'>User</td><td style='font-size: 12px;'>Category</td><td>Date</td></tr>"
-		if(results != null){
+		
 			for(var prop in results){
 				var agent = results[prop].agent;
 				var vendor = results[prop].vendor;
@@ -141,8 +150,9 @@ LabYokeReporter.prototype.reportSomething = function(callback) {
 				html += " <td style='font-size: 12px;'>" + category + "</td></tr>";
 		
 			}
+			html += "</tbody></table><p><i><b>The LabYoke Team.</b></i></p>";
 		}
-		html += "</tbody></table><p><i><b>The LabYoke Team.</b></i></p>";
+		
 		callback(null, html)
 	});
 };
