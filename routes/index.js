@@ -103,6 +103,7 @@ module.exports = function(router) {
 			title : 'Help',
 			loggedIn : req.session.loggedin,
 			labyoker : req.session.user,
+			isLoggedInAdmin: req.session.admin,
 			menu : 'help',
 			title: 'Help'
 		});
@@ -144,7 +145,7 @@ module.exports = function(router) {
 		if (req.session.user) {
 			res.redirect('/search');
 		} else {
-			res.render('login', {title: 'Login'});
+			res.render('login', {title: 'Login',isLoggedInAdmin: req.session.admin});
 			req.session.messages = null;
 
 		}
@@ -155,9 +156,9 @@ module.exports = function(router) {
 			var labYokeSearch = new LabYokeSearch("");
 			labYokeSearch.findagents(function(error, results) {			
 				if (results != null && results.length > 0){
-					res.render('search', {agentsResults : results, loggedIn : true, title: 'Search'});
+					res.render('search', {isLoggedInAdmin: req.session.admin, agentsResults : results, loggedIn : true, title: 'Search'});
 				} else {
-					res.render('search', {loggedIn : true, title: 'Search'});
+					res.render('search', {isLoggedInAdmin: req.session.admin, loggedIn : true, title: 'Search'});
 				}
 				req.session.messages = null;
 			});
@@ -172,7 +173,7 @@ module.exports = function(router) {
 			labYokerGetOrder.getorders(function(error, results) {
 				if(results != null){
 					console.log("orders results: " + results);				
-					res.render('orders', {title:'Orders', loggedIn : true, orderresults: results[0], report_sharesbycategory: results[1]});
+					res.render('orders', {isLoggedInAdmin: req.session.admin, title:'Orders', loggedIn : true, orderresults: results[0], report_sharesbycategory: results[1]});
 					//req.session.messages = null;
 				}
 			});
@@ -196,7 +197,7 @@ module.exports = function(router) {
 					console.log("ordering location: " + location);
 					console.log("ordering reqemail: " + reqemail);
 				
-					res.render('orders', {title:'Orders',loggedIn : true, location: location, agent: agent, vendor: vendor, catalog: catalognumber, email: email});
+					res.render('orders', {isLoggedInAdmin: req.session.admin, title:'Orders',loggedIn : true, location: location, agent: agent, vendor: vendor, catalog: catalognumber, email: email});
 					req.session.messages = null;
 				}
 			});
@@ -206,12 +207,12 @@ module.exports = function(router) {
 	});
 
 	router.get('/account', isLoggedIn, function(req, res) {
-		res.render('account', {loggedIn : true, title: 'Account'});
+		res.render('account', {isLoggedInAdmin: req.session.admin, loggedIn : true, title: 'Account'});
 		req.session.messages = null;
 	});
 
 	router.get('/reports', isLoggedIn, function(req, res) {
-		res.render('reports', {loggedIn : true, title: 'Reports', isLoggedInAdmin: req.session.admin});
+		res.render('reports', {isLoggedInAdmin: req.session.admin, loggedIn : true, title: 'Reports', isLoggedInAdmin: req.session.admin});
 		req.session.messages = null;
 	});
 
@@ -266,7 +267,7 @@ module.exports = function(router) {
 	});
 
 	router.get('/forgot', function(req, res) {
-		res.render('forgot', {title: 'Forgot Password'});
+		res.render('forgot', {isLoggedInAdmin: req.session.admin, title: 'Forgot Password'});
 		req.session.messages = null;
 	});
 
@@ -281,18 +282,18 @@ module.exports = function(router) {
 					console.log("done: " + (done != null && done.length > 0 && done == 'alreadySent'));
 					console.log("done2: " + (done != null && done == 'alreadySent'));
 					if (done != null && done.length > 0 && done != 'alreadySent') {
-						res.render('forgot', {userfound : forgotuser});
+						res.render('forgot', {isLoggedInAdmin: req.session.admin, userfound : forgotuser});
 					} else if(done != null && done.length > 0 && done == 'alreadySent') {
 						res.render(
 							'forgot',
 							{
-								title: 'Forgot Password', message : "Ah. We have already sent you an email today to change your password. Please check your inbox.", usernotfound : true, noforgotform: true
+								isLoggedInAdmin: req.session.admin, title: 'Forgot Password', message : "Ah. We have already sent you an email today to change your password. Please check your inbox.", usernotfound : true, noforgotform: true
 							});
 					} else {
 						res.render(
 							'forgot',
 							{
-								title: 'Forgot Password', message : "Sorry. We could not find an account with this username. Please try again below.", usernotfound : true
+								isLoggedInAdmin: req.session.admin, title: 'Forgot Password', message : "Sorry. We could not find an account with this username. Please try again below.", usernotfound : true
 							});
 					}
 				});
@@ -300,7 +301,7 @@ module.exports = function(router) {
 				res.render(
 					'forgot',
 					{
-						title: 'Forgot Password', message : "Sorry. You must enter your current username. Please try again below.", usernotfound : true
+						isLoggedInAdmin: req.session.admin, title: 'Forgot Password', message : "Sorry. You must enter your current username. Please try again below.", usernotfound : true
 					});
 
 			}
@@ -308,7 +309,7 @@ module.exports = function(router) {
 	});
 
 	router.get('/register', function(req, res) {
-		res.render('register', {title: 'Register'});
+		res.render('register', {isLoggedInAdmin: req.session.admin, title: 'Register'});
 		req.session.messages = null;
 		req.body.reglab = null;
 	});
@@ -355,11 +356,12 @@ module.exports = function(router) {
 							lastname: req.session.lastname,
 							email: req.session.email,
 							tel: req.session.tel,
-							title: 'Register'
+							title: 'Register',
+							isLoggedInAdmin: req.session.admin
 						});
 				} else if (done != null && done.length > 0 && done != 'success') {
 					console.log("status = status1");
-					res.render('register', {title: 'Register', message : "Sorry. We could not register you. Please try again below."});
+					res.render('register', {isLoggedInAdmin: req.session.admin, title: 'Register', message : "Sorry. We could not register you. Please try again below."});
 				} else if(done != null && done.length > 0 && done == 'success') {
 					console.log("status = success1");
 					rendered = true;
@@ -369,14 +371,16 @@ module.exports = function(router) {
 						{
 							regsuccess : user_name,
 							labentered : false,
-							title: 'Register'
+							title: 'Register',
+							isLoggedInAdmin: req.session.admin
 						});
 				} else {
 					res.render(
 						'register',
 						{
 							message : "Sorry. You cannot proceed. Please try again below.",
-							title: 'Register'
+							title: 'Register',
+							isLoggedInAdmin: req.session.admin
 						});
 				}
 			});
@@ -393,7 +397,7 @@ module.exports = function(router) {
 					if(done != null && done.length > 0 && done == 'alreadyInUse') {
 						console.log("status = alreadyInUse");
 						rendered = true;
-						res.render('register', {title: 'Register', message : "Sorry. This email address is already in use. Please use a different one and try again below."});
+						res.render('register', {isLoggedInAdmin: req.session.admin, title: 'Register', message : "Sorry. This email address is already in use. Please use a different one and try again below."});
 					} else if(done != null && done.length > 0 && done == 'firstsection') {
 						console.log("status = firstsection");
 						rendered = true;
@@ -405,12 +409,13 @@ module.exports = function(router) {
 								lastname: req.session.lastname,
 								email: req.session.email,
 								tel: req.session.tel,
-								title: 'Register'
+								title: 'Register',
+								isLoggedInAdmin: req.session.admin
 							});
 					} else if(done != null && done.length > 0 && done != 'success') {
 						console.log("status = not successful");
 						rendered = true;
-						res.render('register', {title: 'Register', message : "Sorry. We could not register you. Please try again below."});
+						res.render('register', {isLoggedInAdmin: req.session.admin, title: 'Register', message : "Sorry. We could not register you. Please try again below."});
 					} else if(done != null && done.length > 0 && done == 'success') {
 						console.log("status = success");
 						rendered = true;
@@ -419,7 +424,8 @@ module.exports = function(router) {
 							{
 								regsuccess : user_name,
 								labentered: false,
-								title: 'Register'
+								title: 'Register',
+								isLoggedInAdmin: req.session.admin
 							});
 					} else {
 						console.log("status = something else happened");
@@ -428,12 +434,13 @@ module.exports = function(router) {
 							'register',
 							{
 								message : "Sorry. You cannot proceed. Please try again below.",
-								title: 'Register'
+								title: 'Register',
+								isLoggedInAdmin: req.session.admin
 							});
 					}
 					if(!rendered){
 						console.log("nothing entered");
-						res.render('register', {message : "Sorry. We could not register you. Please fill out all fields below.", title: 'Register'});
+						res.render('register', {isLoggedInAdmin: req.session.admin, message : "Sorry. We could not register you. Please fill out all fields below.", title: 'Register'});
 					}
 				});
 			}
@@ -445,9 +452,9 @@ module.exports = function(router) {
 			var labYokeSearch = new LabYokeSearch(searchText);
 			labYokeSearch.search(function(error, results) {			
 				if (searchText != null && searchText.length > 0){
-					res.render('search', {title: 'Search', fullname: req.session.fullname, sendemail: req.session.email, searchResults : results[0], agentsResults : results[1], searchformText: searchText, loggedIn : true});
+					res.render('search', {isLoggedInAdmin: req.session.admin, title: 'Search', fullname: req.session.fullname, sendemail: req.session.email, searchResults : results[0], agentsResults : results[1], searchformText: searchText, loggedIn : true});
 				} else {
-					res.render('search', {title: 'Search', loggedIn : true, agentsResults : results[1]});
+					res.render('search', {isLoggedInAdmin: req.session.admin, title: 'Search', loggedIn : true, agentsResults : results[1]});
 				}
 				req.session.messages = null;
 			});
@@ -517,6 +524,7 @@ req.session.loggedin = true;
 			/*loggedIn : true,*/
 			displayForm: true,
 			hashid: req.params.id,
+			isLoggedInAdmin: req.session.admin,
 			scripts : [ '/javascripts/utils.js' ]
 		});
 	});
@@ -546,6 +554,7 @@ req.session.loggedin = true;
 			if (results != null && results.length > 0 && results == 'passwordReset') {
 					res.render('changepassword', {
 						title : 'Change Password',
+						isLoggedInAdmin: req.session.admin,
 						/*loggedIn : true,*/
 						messageSuccess : "Congratulations you have successfully changed your Password. Please head to the <a href='/login'>login</a> page.", 
 						scripts : [ '/javascripts/utils.js' ]
@@ -555,6 +564,7 @@ req.session.loggedin = true;
 						title : 'Change Password',
 						/*loggedIn : true,*/
 						displayForm: true,
+						isLoggedInAdmin: req.session.admin,
 						message : "An error was found while processing your change password. Please try again or <a href='mailto:labyoke@gmail.com?Subject="
 																		+ "Change Password - " + id + "' target='_top'>Contact us</a>.", 
 						scripts : [ '/javascripts/utils.js' ]
@@ -562,6 +572,7 @@ req.session.loggedin = true;
 			} else if(results != null && results.length > 0 && results == 'dateExpired') {
 						res.render('forgot', {
 						title : 'Change Password',
+						isLoggedInAdmin: req.session.admin,
 						/*loggedIn : true,*/
 						message : "Unfortunately your Change Password request has expired. Please make a new request.", 
 						displayForm: true,
@@ -570,6 +581,7 @@ req.session.loggedin = true;
 			} else if(results != null && results.length > 0 && results == 'cannotFindRequest') {
 					res.render('forgot', {
 						title : 'Change Password',
+						isLoggedInAdmin: req.session.admin,
 						/*loggedIn : true,*/
 						displayForm: true,
 						message : "Sorry we could not find your Change Password request. Please make a new request.", 
@@ -578,6 +590,7 @@ req.session.loggedin = true;
 			} else {
 					res.render('changepassword', {
 						title : 'Change Password',
+						isLoggedInAdmin: req.session.admin,
 						/*loggedIn : true,*/
 						displayForm: true,
 						message : "An error was found while processing your change password. Please try again or <a href='mailto:labyoke@gmail.com?Subject="
