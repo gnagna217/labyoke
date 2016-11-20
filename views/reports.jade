@@ -127,9 +127,9 @@ block content
 							br
 							label(style="width: 100px;")="Date To"
 							input(name="reportDateToOrders" style="margin-bottom:10px" type="text" id="reportDateToOrders" class="form-control")
-							input(type="hidden" id="triggerSafariOrder")
 							button.btn.btn-success.btn-lg.btn-block(type="submit",value="Report",name="submit") Get Orders
 							img(src="images/ship.png", alt="The Lab", title="Lab", style="border-width:0px; width: 50px; margin-top: -50px; margin-left: 300px;")
+						span(id="triggerSafariOrder")
 						if(resultsOrders != null && resultsOrders !="")
 							script(type="text/javascript" src="/javascripts/jspdf.js")
 							script(type="text/javascript" src="/javascripts/FileSaver.js")
