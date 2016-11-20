@@ -72,9 +72,9 @@ html(lang='en')
                         ul.nav.navbar-nav(id="menumyaccount", style="border-left-color: white;border-left-style: solid;border-width: thin;")
                             li(class=activateAccount)
                                 a(href="/account",class="icon-user nav-menu", id="menumyaccounta")=" Account"
-                        if(isLoggedInAdmin == 1)
                             li(class=activateReports)
-                                a(href="/reports",class="icon-ok nav-menu", id="menumyaccounta")=" Reports"
+                               if(isLoggedInAdmin == 1)
+                                 a(href="/reports",class="icon-ok nav-menu", id="menumyaccounta")=" Reports"
                     ul.nav.navbar-nav.navbar-right
                         li
                             a(href='/logout',class="nav-menu-logout") Logout
