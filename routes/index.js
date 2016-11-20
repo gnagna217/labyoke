@@ -227,6 +227,7 @@ module.exports = function(router) {
 			labYokereporter.reportSomething(function(error, results) {
 				if(results != null){
 					var options = { format: 'Letter' };
+					console.log("res " + results);
 					pdf.create(results, options).toStream(function(err, stream){
 						stream.pipe(fs.createWriteStream('./foo.pdf'));
 					});
