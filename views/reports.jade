@@ -22,3 +22,8 @@ block content
 							input(name="reportDateTo" type="text" id="reportDateTo" placeholder=now)
 							button.btn.btn-success.btn-lg.btn-block(type="submit",value="Report",name="submit") Get All Shares
 							img(src="images/ship.png", alt="The Lab", title="Lab", style="border-width:0px; width: 50px; margin-top: -50px; margin-left: 300px;")
+						if results
+							script.
+							   var pdf = new jsPDF();
+                               pdf.text(30, 30, results);
+                               pdf.save('reportAllShare.pdf');

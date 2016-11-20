@@ -20,8 +20,8 @@ var multer = require('multer');
 var xlstojson = require("xls-to-json-lc");
 var xlsxtojson = require("xlsx-to-json-lc");
 
-var fs = require('fs');
-var jsPDF = require ('jspdf');
+//var fs = require('fs');
+//html-pdf
 
 var storage = multer.diskStorage({ //multers disk storage settings
         destination: function (req, file, cb) {
@@ -228,11 +228,7 @@ module.exports = function(router) {
 				if(results != null){
 					var options = { format: 'Letter' };
 					console.log("res " + results);
-					var doc = new jsPDF();
-					doc.text(20, 20, results);
-					doc.save('Test.pdf');
-				
-					res.render('reports', {title:'Reports',loggedIn : true, isLoggedInAdmin: req.session.admin});
+					res.render('reports', {title:'Reports',loggedIn : true, results: results, isLoggedInAdmin: req.session.admin});
 					req.session.messages = null;
 				}
 			});
