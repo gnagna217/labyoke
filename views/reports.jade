@@ -85,7 +85,8 @@ block content
 								pdf.save("#{file_shares}");
 								}
 								, margins);	
-							- results = ""						
+							- results = ""
+					script="$(window).scrollTop($('.reportShares').offset().top).scrollLeft($('.reportShares').offset().left);"	
 			div(class="reportOrders")
 				div(style="background-color: #3d9dcb; height: 2px; margin-bottom: 30px; margin-top: 30px;")
 				h4="All Orders report Upload."
@@ -176,3 +177,4 @@ block content
 								}
 								, margins);							
 							- resultsOrders = ""
+					script="$(window).scrollTop($('.reportOrders').offset().top).scrollLeft($('.reportOrders').offset().left);"	
