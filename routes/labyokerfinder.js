@@ -70,7 +70,7 @@ LabYokeUploader.prototype.upload = function(callback) {
 	var results = this.jsonResults;
 	console.log("location: " + location);
 	var values = "";
-	var now = moment(new Date).tz("Europe/Berlin").format('YYYY-MM-DD');
+	var now = moment(new Date).tz("America/New_York").format('YYYY-MM-DD');
 
 	if(results != null){
 		for(var prop in results){
@@ -148,7 +148,7 @@ LabYokeReporter.prototype.reportSomething = function(callback) {
 				html += " <td style='font-size: 12px;'>" + location + "</td>";
 				html += " <td style='font-size: 12px;'>" + email + "</td>";
 				html += " <td style='font-size: 12px;'>" + category + "</td>";
-				html += " <td style='font-size: 12px;'>" + date + "</td></tr>";
+				html += " <td style='font-size: 12px;'>" + moment(date).tz("America/New_York").format('YYYY-MM-DD') + "</td></tr>";
 		
 			}
 			html += "</tbody></table><p><i><b>The LabYoke Team.</b></i></p>";
@@ -203,7 +203,7 @@ LabYokerOrder.prototype.order = function(callback) {
 	var email = this.email;
 	var sendemail = this.sendemail;
 	var location = this.location;
-	var now = moment(new Date).tz("Europe/Berlin").format('YYYY-MM-DD');
+	var now = moment(new Date).tz("America/New_York").format('YYYY-MM-DD');
 	console.log("order location: " + location);
 	var query = client.query("INSERT INTO vm2016_orders VALUES ('" + agent + "', '" + vendor + "', '" + catalognumber + "','" + email + "', '" + sendemail + "', '" + now + "')");
 
@@ -371,7 +371,7 @@ Labyoker.prototype.login = function(callback) {
 
 LabyokerPasswordChange.prototype.checkIfChangePassword = function(callback) {
 	var results;
-	var now = moment(new Date).tz("Europe/Berlin").format(
+	var now = moment(new Date).tz("America/New_York").format(
 				'YYYY-MM-DD');
 	var pwd = this.password;
 	var query = client
@@ -557,7 +557,7 @@ Labyoker.prototype.requestChangePassword = function(callback) {
 		console.log("dateStripped: " + dateStripped);
 		if (results != null && results.length == 1 && dateStripped != null) {
 			var changepwd_status = results[0].changepwd_status;
-			var now = moment(new Date).tz("Europe/Berlin").format(
+			var now = moment(new Date).tz("America/New_York").format(
 				'YYYY-MM-DD');
 			var changepwd_date = results[0].changepwd_date;
 			console.log("diff: " + changepwd_date + " - " + now);
