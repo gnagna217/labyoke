@@ -1,14 +1,12 @@
 extends layout
 
 block content
-
-
 	div(class="container login")
 			a(href="/search")
 				img(src="/images/yoke.jpg", alt="The Yoke",  title="Yoke", class="yokelogo")
 			h1= 'Reports.'
 			p Trying out some reports. This page is indeed under construction.
-		if(isLoggedInAdmin == 1)
+
 				- var now = (new Date())
 				- now = (now.getMonth() + 1) + "/" + now.getDate() + "/" + now.getFullYear()
 			div(style="float: left; width: 50%;")
