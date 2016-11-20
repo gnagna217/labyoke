@@ -161,9 +161,11 @@ block content
 								if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent))
 								{
 									var binaryData = [];
-									binaryData.push(pdf.output('dataurlnewwindow'));
-									var blob = new Blob(pdf.output('dataurlnewwindow'), {type: "application/pdf"});
+									binaryData.push(pdf);
+									var blob = new Blob(pdf, {type: "application/pdf"});
 									window.open(window.URL.createObjectURL(blob));
+									//var blob = pdf.output();
+									//window.open(URL.createObjectURL(blob));
 								}
 								else
 								{
