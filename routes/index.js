@@ -225,9 +225,9 @@ module.exports = function(router) {
 			if(results != null){
 				console.log("res " + results);
 				if(results != ""){
-					res.render('reports', {datefromShares: datefrom, dateto: dateto, title:'Reports',loggedIn : true, resultsShares: results, isLoggedInAdmin: req.session.admin, addMessage: "success"});
+					res.render('reports', {datefromShares: datefrom, dateto: dateto, title:'Reports',loggedIn : true, resultsShares: results, isLoggedInAdmin: req.session.admin, addMessageShares: "success"});
 				} else {
-					res.render('reports', {datefromShares: datefrom, dateto: dateto, title:'Reports',loggedIn : true, isLoggedInAdmin: req.session.admin, addMessage: "failure"});
+					res.render('reports', {datefromShares: datefrom, dateto: dateto, title:'Reports',loggedIn : true, isLoggedInAdmin: req.session.admin, addMessageShares: "failure"});
 				}
 				req.session.messages = null;
 			}

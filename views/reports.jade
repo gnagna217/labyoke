@@ -23,9 +23,9 @@ block content
 					- dateto_shares = ""
 					- message_success_share = "Success! Your report has been generated for ALL orders and automatically downloaded in your computer."
 					- file_shares = "reportShares_all.pdf" 
-				if (addMessageOrders == 'failure')
+				if (addMessageShares == 'failure')
 					div(class="alert alert-danger")!= message_fail_share
-				if (addMessageOrders == 'success')
+				if (addMessageShares == 'success')
 					div(class="alert alert-success fade in alert-dismissable")!= message_success_share
 				div
 					form(action="reportShares", method="post")
