@@ -21,7 +21,7 @@ block content
 				- if(datefromShares == null || datefromShares == undefined || datefromShares == "")
 					- datefrom_shares = "all"
 					- dateto_shares = ""
-					- message_success_share = "Success! Your report has been generated for ALL orders and automatically downloaded in your computer."
+					- message_success_share = "Success! Your report has been generated for ALL shares and automatically downloaded in your computer."
 					- file_shares = "reportShares_all.pdf" 
 				if (addMessageShares == 'failure')
 					div(class="alert alert-danger")!= message_fail_share
