@@ -126,7 +126,7 @@ LabYokeReporter.prototype.reportSomething = function(callback) {
 		results = result.rows;
 		console.log("results : " + results);
 		var html = "";
-		if(results != null){
+		if(results != null && results != ""){
 		html = "<div style='float:left; width:50%'><img style='width: 150px; margin: 0 20px;' src='https:\/\/team-labyoke.herokuapp.com\/images\/yoke.jpg', alt='The Yoke',  title='Yoke', class='yokelogo'/></div><div style=\"font-family:'calibri'; font-size:11pt;padding: 20px;, width:50%\">"
 				+ "<h1>Shares Uploaded.</h1>";
 		html += "<p>This report is listing all the shares uploaded:</p></div>"
