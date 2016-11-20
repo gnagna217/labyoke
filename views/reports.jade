@@ -162,10 +162,10 @@ block content
 								{
 									var binaryData = [];
 									binaryData.push(pdf);
-									var blob = new Blob(pdf, {type: "application/pdf"});
+									var blob = new Blob(binaryData, {type: "application/pdf"});
 									window.open(window.URL.createObjectURL(blob));
 									//var blob = pdf.output();
-									//window.open(URL.createObjectURL(blob));
+									//window.open(window.URL.createObjectURL(blob));
 								}
 								else
 								{
