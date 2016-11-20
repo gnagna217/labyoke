@@ -165,7 +165,7 @@ var jsPDF = (function(global) {
 			compress = !!compressPdf && typeof Uint8Array === 'function',
 			textColor            = options.textColor  || '0 g',
 			drawColor            = options.drawColor  || '0 G',
-			activeFontSize       = options.fontSize   || 12, //gna - 16 or
+			activeFontSize       = options.fontSize   || 16,
 			lineHeightProportion = options.lineHeight || 1.15,
 			lineWidth            = options.lineWidth  || 0.200025, // 2mm
 			objectNumber =  2,  // 'n' Current object number
