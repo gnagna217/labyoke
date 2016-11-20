@@ -217,13 +217,9 @@ module.exports = function(router) {
 
 	router.post('/reportSomething', isLoggedIn, function(req, res) {
 		if (req.session.user) {
-			var agent = req.body.agentform;
-			var vendor = req.body.vendorform;
-			var catalognumber = req.body.catalogform;
-			var email = req.body.emailform;
-			var location = req.body.locationform;
-			var reqemail = req.session.email;
-			var labYokereporter = new LabYokeReporter("datefrom", "dateto");
+			var datefrom = req.body.datefrom;
+			var dateto = req.body.dateto;
+			var labYokereporter = new LabYokeReporter(datefrom, dateto);
 			labYokereporter.reportSomething(function(error, results) {
 				if(results != null){
 					console.log("res " + results);
