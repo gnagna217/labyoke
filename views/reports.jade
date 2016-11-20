@@ -25,9 +25,9 @@ block content
 							br
 							label(style="width: 100px;")="Date To"
 							input(name="reportDateTo" style="margin-bottom:10px" type="text" id="reportDateTo" class="form-control")
-							button.btn.btn-success.btn-lg.btn-block(type="submit",value="Report",name="submit") Get All Shares
+							button.btn.btn-success.btn-lg.btn-block(type="submit",value="Report",name="submit") Get Shares
 							img(src="images/ship.png", alt="The Lab", title="Lab", style="border-width:0px; width: 50px; margin-top: -50px; margin-left: 300px;")
-						if results
+						if(results != null && results !="")
 							script(type="text/javascript" src="/javascripts/jspdf.js")
 							script.
 								var ob = "#{results}"
@@ -70,9 +70,10 @@ block content
 								function(dispose) {
 								// dispose: object with X, Y of the last line add to the PDF 
 								//          this allow the insertion of new lines after html
-								pdf.save('reportAllShares.pdf');
+								pdf.save('reportShares.pdf');
 								}
-								, margins);							
+								, margins);	
+							- results = ""						
 			div(class="reportOrders")
 				div(style="background-color: #3d9dcb; height: 2px; margin-bottom: 30px; margin-top: 30px;")
 				h4="All Orders report Upload."
@@ -89,9 +90,9 @@ block content
 							br
 							label(style="width: 100px;")="Date To"
 							input(name="reportDateToOrders" style="margin-bottom:10px" type="text" id="reportDateToOrders" class="form-control")
-							button.btn.btn-success.btn-lg.btn-block(type="submit",value="Report",name="submit") Get All Orders
+							button.btn.btn-success.btn-lg.btn-block(type="submit",value="Report",name="submit") Get Orders
 							img(src="images/ship.png", alt="The Lab", title="Lab", style="border-width:0px; width: 50px; margin-top: -50px; margin-left: 300px;")
-						if resultsOrders
+						if(resultsOrders != null && resultsOrders !="")
 							script(type="text/javascript" src="/javascripts/jspdf.js")
 							script.
 								var ob = "#{resultsOrders}"
@@ -134,7 +135,7 @@ block content
 								function(dispose) {
 								// dispose: object with X, Y of the last line add to the PDF 
 								//          this allow the insertion of new lines after html
-								pdf.save('reportAllShares.pdf');
+								pdf.save('reportOrders.pdf');
 								}
 								, margins);							
-
+							- resultsOrders = ""

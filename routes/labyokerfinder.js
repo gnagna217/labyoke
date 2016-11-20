@@ -118,6 +118,7 @@ LabYokeReporter.prototype.reportSomething = function(callback) {
 		query = client.query("SELECT * FROM vm2016_agentsshare where date between '" + datefrom + "' and '" + dateto + "' order by date");
 	} else {
 		query = client.query("SELECT * FROM vm2016_agentsshare order by date");
+		datefrom = "all";
 	}
 	query.on("row", function(row, result) {
 		result.addRow(row);
@@ -129,7 +130,12 @@ LabYokeReporter.prototype.reportSomething = function(callback) {
 		if(results != null && results != ""){
 		html = "<div style='float:left; width:50%'><img style='width: 150px; margin: 0 20px;' src='https:\/\/team-labyoke.herokuapp.com\/images\/yoke.jpg', alt='The Yoke',  title='Yoke', class='yokelogo'/></div><div style=\"font-family:'calibri'; font-size:11pt;padding: 20px;, width:50%\">"
 				+ "<h1>Shares Uploaded.</h1>";
-		html += "<p>This report is listing all the shares uploaded:</p></div>"
+
+		if(datefrom == 'all'){
+			html += "<p>This report is listing all the shares requested:</p></div>"
+		} else {
+			html += "<p>This report is listing the shares requested between " + moment(datefrom).tz("America/New_York").format('YYYY-MM-DD') + " and " + moment(dateto).tz("America/New_York").format('YYYY-MM-DD') + "</p></div"
+		}
 		html +="<table><tbody><tr style='color: white;background-color: #3d9dcb;'><td style='font-size: 12px;'>Agent</td><td style='font-size: 12px;'>Vendor</td><td style='font-size: 12px;'>Catalog#</td><td style='font-size: 12px;'>Location</td><td style='font-size: 12px;'>User</td><td style='font-size: 12px;'>Category</td><td>Date</td></tr>"
 		
 			for(var prop in results){
@@ -169,6 +175,7 @@ LabYokeReporter.prototype.reportOrders = function(callback) {
 		query = client.query("SELECT * FROM vm2016_orders where date between '" + datefrom + "' and '" + dateto + "' order by date");
 	} else {
 		query = client.query("SELECT * FROM vm2016_orders order by date");
+		datefrom = "all";
 	}
 	query.on("row", function(row, result) {
 		result.addRow(row);
@@ -179,8 +186,12 @@ LabYokeReporter.prototype.reportOrders = function(callback) {
 		var html = "";
 		if(results != null && results != ""){
 		html = "<div style='float:left; width:50%'><img style='width: 150px; margin: 0 20px;' src='https:\/\/team-labyoke.herokuapp.com\/images\/yoke.jpg', alt='The Yoke',  title='Yoke', class='yokelogo'/></div><div style=\"font-family:'calibri'; font-size:11pt;padding: 20px;, width:50%\">"
-				+ "<h1>Shares Uploaded.</h1>";
-		html += "<p>This report is listing all the shares uploaded:</p></div>"
+				+ "<h1>Orders Uploaded.</h1>";
+		if(datefrom == 'all'){
+			html += "<p>This report is listing all the orders uploaded:</p></div>"
+		} else {
+			html += "<p>This report is listing the orders uploaded between " + moment(datefrom).tz("America/New_York").format('YYYY-MM-DD') + " and " + moment(dateto).tz("America/New_York").format('YYYY-MM-DD') + "</p></div"
+		}
 		html +="<table><tbody><tr style='color: white;background-color: #3d9dcb;'><td style='font-size: 12px;'>Agent</td><td style='font-size: 12px;'>Vendor</td><td style='font-size: 12px;'>Catalog#</td><td style='font-size: 12px;'>Owner</td><td style='font-size: 12px;'>Requestor</td><td>Date</td></tr>"
 		
 			for(var prop in results){
