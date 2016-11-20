@@ -217,8 +217,8 @@ module.exports = function(router) {
 
 	router.post('/reportSomething', isLoggedIn, function(req, res) {
 		if (req.session.user) {
-			var datefrom = req.body.datefrom;
-			var dateto = req.body.dateto;
+			var datefrom = req.body.reportDateFrom;
+			var dateto = req.body.reportDateTo;
 			console.log("reportSomething " + datefrom);
 			var labYokereporter = new LabYokeReporter(datefrom, dateto);
 			labYokereporter.reportSomething(function(error, results) {
