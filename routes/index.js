@@ -3,6 +3,7 @@ var dates = require('../config/staticvariables');
 
 
 var LabYokerOrder = labyokeFinderClass.LabYokerOrder;
+var LabYokeReporter = labyokeFinderClass.LabYokeReporter;
 var LabYokerGetOrder = labyokeFinderClass.LabYokerGetOrder;
 var LabyokerPasswordChange = labyokeFinderClass.LabyokerPasswordChange;
 var LabyokerRegister = labyokeFinderClass.LabyokerRegister;
@@ -222,7 +223,7 @@ module.exports = function(router) {
 			var email = req.body.emailform;
 			var location = req.body.locationform;
 			var reqemail = req.session.email;
-			var labYokereporter = new LabYokerReporter("datefrom", "dateto");
+			var labYokereporter = new LabYokeReporter("datefrom", "dateto");
 			labYokereporter.reportSomething(function(error, results) {
 				if(results != null){
 					var options = { format: 'Letter' };
