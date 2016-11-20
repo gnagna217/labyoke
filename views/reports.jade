@@ -10,6 +10,8 @@ block content
 			h1= 'Reports.'
 			p Trying out some reports. This page is indeed under construction.
 			if(isLoggedInAdmin == 1)
+				- var now = (new Date())
+				- now = (now.getMonth() + 1) + "/" + now.getDate() + "/" + now.getFullYear()
 				div(style="background-color: #3d9dcb; height: 2px; margin-bottom: 30px; margin-top: 30px;")
 				h4="All Shares report Upload."
 				p="You can now retrieve a report of all shares uploaded."
@@ -17,8 +19,6 @@ block content
 					div(class="alert alert-danger")!= "Unfortunately we could not generate the report within the time frame chosen. Please try again with new dates."
 				if (addMessage == 'success')
 					div(class="alert alert-success fade in alert-dismissable")!= "Success! Your report has been generated and automatically downloaded in your computer."
-				- var now = (new Date())
-				- now = (now.getMonth() + 1) + "/" + now.getDate() + "/" + now.getFullYear()
 				div
 					form(action="reportSomething", method="post")
 						div(class="buttons")
@@ -33,6 +33,70 @@ block content
 							script(type="text/javascript" src="/javascripts/jspdf.js")
 							script.
 								var ob = "#{results}"
+								ob = ob.replace(/&lt;/g,"<");
+								ob = ob.replace(/&gt;/g,">");
+
+								var pdf = new jsPDF('p', 'pt', 'ledger');
+								// source can be HTML-formatted string, or a reference
+								// to an actual DOM element from which the text will be scraped.
+								source = ob;
+
+								// we support special element handlers. Register them with jQuery-style 
+								// ID selector for either ID or node name. ("#iAmID", "div", "span" etc.)
+								// There is no support for any other type of selectors 
+								// (class, of compound) at this time.
+								specialElementHandlers = {
+									// element with id of "bypass" - jQuery style selector
+									'#bypassme': function(element, renderer) {
+									// true = "handled elsewhere, bypass text extraction"
+									return true;
+								}
+								};
+								margins = {
+									top: 30,
+									bottom: 30,
+									left: 40,
+									right: 40,
+									width: 622
+								};
+
+								// all coords and widths are in jsPDF instance's declared units
+								// 'inches' in this case
+								pdf.fromHTML(
+									source, // HTML string or DOM elem ref.
+									margins.left, // x coord
+									margins.top, {// y coord
+									'width': margins.width, // max width of content on PDF
+									'elementHandlers': specialElementHandlers
+								},
+								function(dispose) {
+								// dispose: object with X, Y of the last line add to the PDF 
+								//          this allow the insertion of new lines after html
+								pdf.save('reportAllShares.pdf');
+								}
+								, margins);							
+
+				div(style="background-color: #3d9dcb; height: 2px; margin-bottom: 30px; margin-top: 30px;")
+				h4="All Orders report Upload."
+				p="You can now retrieve a report of all orders requested."
+				if (addMessageOrders == 'failure')
+					div(class="alert alert-danger")!= "Unfortunately we could not generate the report within the time frame chosen. Please try again with new dates."
+				if (addMessageOrders == 'success')
+					div(class="alert alert-success fade in alert-dismissable")!= "Success! Your report has been generated and automatically downloaded in your computer."
+				div
+					form(action="reportOrders", method="post")
+						div(class="buttons")
+							label(style="width: 100px;")="Date From"
+							input(name="reportDateFromOrders" style="margin-bottom:10px" type="text" id="reportDateFromOrders" class="form-control")
+							br
+							label(style="width: 100px;")="Date To"
+							input(name="reportDateToOrders" style="margin-bottom:10px" type="text" id="reportDateToOrders" class="form-control")
+							button.btn.btn-success.btn-lg.btn-block(type="submit",value="Report",name="submit") Get All Orders
+							img(src="images/ship.png", alt="The Lab", title="Lab", style="border-width:0px; width: 50px; margin-top: -50px; margin-left: 300px;")
+						if resultsOrders
+							script(type="text/javascript" src="/javascripts/jspdf.js")
+							script.
+								var ob = "#{resultsOrders}"
 								ob = ob.replace(/&lt;/g,"<");
 								ob = ob.replace(/&gt;/g,">");
 

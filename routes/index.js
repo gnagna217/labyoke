@@ -233,6 +233,24 @@ module.exports = function(router) {
 		});
 	});
 
+	router.post('/reportOrders', isLoggedIn, function(req, res) {
+		var datefrom = req.body.reportDateFromOrders;
+		var dateto = req.body.reportDateToOrders;
+		console.log("reportOrders " + req.body.reportDateFromOrders);
+		var labYokereporter = new LabYokeReporter(datefrom, dateto);
+		labYokereporter.reportOrders(function(error, results) {
+			if(results != null){
+				console.log("res " + results);
+				if(results != ""){
+					res.render('reports', {title:'Reports',loggedIn : true, resultsOrders: results, isLoggedInAdmin: req.session.admin, addMessageOrders: "success"});
+				} else {
+					res.render('reports', {title:'Reports',loggedIn : true, isLoggedInAdmin: req.session.admin, addMessageOrders: "failure"});
+				}
+				req.session.messages = null;
+			}
+		});
+	});
+
 	router.get('/play', function(req, res) {
 		res.render('play', {title: 'Play'});
 		req.session.messages = null;

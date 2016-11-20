@@ -158,6 +158,55 @@ LabYokeReporter.prototype.reportSomething = function(callback) {
 	});
 };
 
+LabYokeReporter.prototype.reportOrders = function(callback) {
+	var results;
+	var datefrom = this.datefrom;
+	var dateto = this.dateto;
+	console.log("report on orders: datefrom: " + datefrom);
+	console.log("report on orders: dateto: " + dateto);
+	var query;
+	if(datefrom != null && dateto != null && datefrom !=undefined && dateto !=undefined && datefrom !="" && dateto !=""){
+		query = client.query("SELECT * FROM vm2016_orders where date between '" + datefrom + "' and '" + dateto + "' order by date");
+	} else {
+		query = client.query("SELECT * FROM vm2016_orders order by date");
+	}
+	query.on("row", function(row, result) {
+		result.addRow(row);
+	});
+	query.on("end", function(result) {
+		results = result.rows;
+		console.log("results : " + results);
+		var html = "";
+		if(results != null && results != ""){
+		html = "<div style='float:left; width:50%'><img style='width: 150px; margin: 0 20px;' src='https:\/\/team-labyoke.herokuapp.com\/images\/yoke.jpg', alt='The Yoke',  title='Yoke', class='yokelogo'/></div><div style=\"font-family:'calibri'; font-size:11pt;padding: 20px;, width:50%\">"
+				+ "<h1>Shares Uploaded.</h1>";
+		html += "<p>This report is listing all the shares uploaded:</p></div>"
+		html +="<table><tbody><tr style='color: white;background-color: #3d9dcb;'><td style='font-size: 12px;'>Agent</td><td style='font-size: 12px;'>Vendor</td><td style='font-size: 12px;'>Catalog#</td><td style='font-size: 12px;'>Owner</td><td style='font-size: 12px;'>Requestor</td><td>Date</td></tr>"
+		
+			for(var prop in results){
+				var agent = results[prop].agent;
+				var vendor = results[prop].vendor;
+				var catalognumber = results[prop].catalognumber;
+				var location = results[prop].email;
+				var email = results[prop].requestoremail;
+				var date = results[prop].date;
+
+
+				html += " <tr><td style='font-size: 12px;'>" + agent + "</td>";
+				html += " <td style='font-size: 12px;'>" + vendor + "</td>";
+				html += " <td style='font-size: 12px;'>" + catalognumber + "</td>";
+				html += " <td style='font-size: 12px;'>" + location + "</td>";
+				html += " <td style='font-size: 12px;'>" + email + "</td>";
+				html += " <td style='font-size: 12px;'>" + moment(date).tz("America/New_York").format('YYYY-MM-DD') + "</td></tr>";
+		
+			}
+			html += "</tbody></table><p><i><b>The LabYoke Team.</b></i></p>";
+		}
+		
+		callback(null, html)
+	});
+};
+
 LabYokeAgents.prototype.findmyshares = function(callback) {
 	var results = [];
 	console.log("findmyshares: " + this.email);
