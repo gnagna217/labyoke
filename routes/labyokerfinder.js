@@ -121,7 +121,7 @@ LabYokeReporter.prototype.reportSomething = function(callback) {
 		var html = "<div style='float:left; width:50%'><img style='width: 150px; margin: 0 20px;' src='https:\/\/team-labyoke.herokuapp.com\/images\/yoke.jpg', alt='The Yoke',  title='Yoke', class='yokelogo'/></div><div style=\"font-family:'calibri'; font-size:11pt;padding: 20px;, width:50%\">"
 				+ "<h1>Shares Uploaded.</h1>";
 		html += "<p>This report is listing all the shares uploaded:</p></div>"
-		html +="<table><tbody><tr style='color: white;background-color: #3d9dcb;'><td style='font-size: 12px;'>Agent</td><td style='font-size: 12px;'>Vendor</td><td style='font-size: 12px;'>Catalog#</td><td style='font-size: 12px;'>Location</td><td style='font-size: 12px;'>User</td><td style='font-size: 12px;'>Category</td></tr>"
+		html +="<table><tbody><tr style='color: white;background-color: #3d9dcb;'><td style='font-size: 12px;'>Agent</td><td style='font-size: 12px;'>Vendor</td><td style='font-size: 12px;'>Catalog#</td><td style='font-size: 12px;'>Location</td><td style='font-size: 12px;'>User</td><td style='font-size: 12px;'>Category</td><td>Date</td></tr>"
 		if(results != null){
 			for(var prop in results){
 				var agent = results[prop].agent;
@@ -130,6 +130,7 @@ LabYokeReporter.prototype.reportSomething = function(callback) {
 				var location = results[prop].location;
 				var email = results[prop].email;
 				var category = results[prop].category;
+				var date = results[prop].date;
 
 
 				html += " <tr><td style='font-size: 12px;'>" + agent + "</td>";
