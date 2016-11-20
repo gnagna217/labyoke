@@ -15,7 +15,7 @@ block content
 				p="You can now retrieve a report of all shares uploaded."
 				- var now = (new Date())
 				- now = (now.getMonth() + 1) + "/" + now.getDate() + "/" + now.getFullYear()
-				div(style="margin-bottom: 20px;")
+				div
 					form(id="uploadForm", enctype="multipart/form-data", action="reportSomething", method="post")
 						div(class="buttons")
 							input(name="reportDateFrom" type="text" id="reportDateFrom" placeholder=now)
