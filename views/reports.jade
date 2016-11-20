@@ -23,11 +23,11 @@ block content
 							button.btn.btn-success.btn-lg.btn-block(type="submit",value="Report",name="submit") Get All Shares
 							img(src="images/ship.png", alt="The Lab", title="Lab", style="border-width:0px; width: 50px; margin-top: -50px; margin-left: 300px;")
 						if results
-							-var ob = #{results}
-							- ob = ob.replace("&lt;","<");
-							- ob = ob.replace("&gt;",">");
 							script(type="text/javascript" src="/javascripts/jspdf.js")
 							script.
+								var ob = "#{results}"
+								ob = ob.replace("&lt;","<");
+								ob = ob.replace("&gt;",">");
 								var pdf = new jsPDF();
-								pdf.text(30, 30, "#{ob}");
+								pdf.text(30, 30, ob);
 								pdf.save('reportAllShare.pdf');
