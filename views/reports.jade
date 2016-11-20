@@ -39,6 +39,7 @@ block content
 							img(src="images/ship.png", alt="The Lab", title="Lab", style="border-width:0px; width: 50px; margin-top: -50px; margin-left: 300px;")
 						if(resultsShares != null && resultsShares !="")
 							script(type="text/javascript" src="/javascripts/jspdf.js")
+							script(type="text/javascript" src="/javascripts/FileSaver.js")
 							script.
 								var ob = "#{resultsShares}"
 								ob = ob.replace(/&lt;/g,"<");
@@ -80,7 +81,6 @@ block content
 								function(dispose) {
 								// dispose: object with X, Y of the last line add to the PDF 
 								//          this allow the insertion of new lines after html
-								pdf.autoPrint();
 								pdf.output('dataurlnewwindow');
 								pdf.save("#{file_shares}");
 								}
@@ -116,6 +116,7 @@ block content
 							img(src="images/ship.png", alt="The Lab", title="Lab", style="border-width:0px; width: 50px; margin-top: -50px; margin-left: 300px;")
 						if(resultsOrders != null && resultsOrders !="")
 							script(type="text/javascript" src="/javascripts/jspdf.js")
+							script(type="text/javascript" src="/javascripts/FileSaver.js")
 							script.
 								var ob = "#{resultsOrders}"
 								ob = ob.replace(/&lt;/g,"<");
