@@ -21,7 +21,7 @@ var xlstojson = require("xls-to-json-lc");
 var xlsxtojson = require("xlsx-to-json-lc");
 
 var fs = require('fs');
-
+var jsPDF = require ('jspdf');
 
 var storage = multer.diskStorage({ //multers disk storage settings
         destination: function (req, file, cb) {
