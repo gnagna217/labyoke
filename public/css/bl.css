@@ -523,7 +523,7 @@ input::-webkit-inner-spin-button {
     }
 }
 
- @media (min-width: 800px) {
+ @media (max-width: 800px) {
 .reportOrders{
     width: 100%;
     float:none;
