@@ -15,9 +15,10 @@ block content
 				p="You can now retrieve a report of all shares uploaded."
 				- var now = (new Date())
 				- now = (now.getMonth() + 1) + "/" + now.getDate() + "/" + now.getFullYear()
-				form(id="uploadForm", enctype="multipart/form-data", action="reportSomething", method="post")
-					div(class="buttons")
-						input(name="reportDateFrom" type="text" id="reportDateFrom" placeholder=now)
-						input(name="reportDateTo" type="text" id="reportDateTo" placeholder=now)
-						button.btn.btn-success.btn-lg.btn-block(type="submit",value="Report",name="submit") Get All Shares
-						img(src="images/ship.png", alt="The Lab", title="Lab", style="border-width:0px; width: 50px; margin-top: -50px; margin-left: 300px;")
+				div(style="margin-bottom: 20px;")
+					form(id="uploadForm", enctype="multipart/form-data", action="reportSomething", method="post")
+						div(class="buttons")
+							input(name="reportDateFrom" type="text" id="reportDateFrom" placeholder=now)
+							input(name="reportDateTo" type="text" id="reportDateTo" placeholder=now)
+							button.btn.btn-success.btn-lg.btn-block(type="submit",value="Report",name="submit") Get All Shares
+							img(src="images/ship.png", alt="The Lab", title="Lab", style="border-width:0px; width: 50px; margin-top: -50px; margin-left: 300px;")
