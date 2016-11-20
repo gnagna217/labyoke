@@ -125,11 +125,11 @@ LabYokeReporter.prototype.reportSomething = function(callback) {
 		html +="<table><tbody><tr><td>Agent</td><td>Vendor</td><td>Catalog#</td><td>Location</td><td>User</td><td>Category</td></tr>"
 		if(results != null){
 			for(var prop in results){
-				var agent = results[prop].name_of_reagent;
+				var agent = results[prop].agent;
 				var vendor = results[prop].vendor;
-				var catalognumber = results[prop].catalog_number;
+				var catalognumber = results[prop].catalognumber;
 				var location = results[prop].location;
-				var email = results[prop].user;
+				var email = results[prop].email;
 				var category = results[prop].category;
 
 
