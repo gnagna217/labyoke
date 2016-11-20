@@ -225,9 +225,9 @@ module.exports = function(router) {
 			if(results != null){
 				console.log("res " + results);
 				if(results != ""){
-					res.render('reports', {title:'Reports',loggedIn : true, results: results, isLoggedInAdmin: req.session.admin, addMessage: "success"});
+					res.render('reports', {datefrom: datefrom, title:'Reports',loggedIn : true, results: results, isLoggedInAdmin: req.session.admin, addMessage: "success"});
 				} else {
-					res.render('reports', {title:'Reports',loggedIn : true, isLoggedInAdmin: req.session.admin, addMessage: "failure"});
+					res.render('reports', {dateto: dateto, title:'Reports',loggedIn : true, isLoggedInAdmin: req.session.admin, addMessage: "failure"});
 				}
 				req.session.messages = null;
 			}
@@ -243,9 +243,9 @@ module.exports = function(router) {
 			if(results != null){
 				console.log("res " + results);
 				if(results != ""){
-					res.render('reports', {title:'Reports',loggedIn : true, resultsOrders: results, isLoggedInAdmin: req.session.admin, addMessageOrders: "success"});
+					res.render('reports', {datefromOrders: datefrom, title:'Reports',loggedIn : true, resultsOrders: results, isLoggedInAdmin: req.session.admin, addMessageOrders: "success"});
 				} else {
-					res.render('reports', {title:'Reports',loggedIn : true, isLoggedInAdmin: req.session.admin, addMessageOrders: "failure"});
+					res.render('reports', {datetoOrders: dateto, title:'Reports',loggedIn : true, isLoggedInAdmin: req.session.admin, addMessageOrders: "failure"});
 				}
 				req.session.messages = null;
 			}

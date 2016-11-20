@@ -134,7 +134,7 @@ LabYokeReporter.prototype.reportSomething = function(callback) {
 		if(datefrom == 'all'){
 			html += "<p>This report is listing all the shares requested:</p></div>"
 		} else {
-			html += "<p>This report is listing the shares requested between " + moment(datefrom).tz("America/New_York").format('YYYY-MM-DD') + " and " + moment(dateto).tz("America/New_York").format('YYYY-MM-DD') + "</p></div"
+			html += "<p>This report is listing the shares requested between " + moment(datefrom).tz("America/New_York").format('YYYY-MM-DD') + " and " + moment(dateto).tz("America/New_York").format('YYYY-MM-DD') + "</p></div>"
 		}
 		html +="<table><tbody><tr style='color: white;background-color: #3d9dcb;'><td style='font-size: 12px;'>Agent</td><td style='font-size: 12px;'>Vendor</td><td style='font-size: 12px;'>Catalog#</td><td style='font-size: 12px;'>Location</td><td style='font-size: 12px;'>User</td><td style='font-size: 12px;'>Category</td><td>Date</td></tr>"
 		
@@ -190,7 +190,7 @@ LabYokeReporter.prototype.reportOrders = function(callback) {
 		if(datefrom == 'all'){
 			html += "<p>This report is listing all the orders uploaded:</p></div>"
 		} else {
-			html += "<p>This report is listing the orders uploaded between " + moment(datefrom).tz("America/New_York").format('YYYY-MM-DD') + " and " + moment(dateto).tz("America/New_York").format('YYYY-MM-DD') + "</p></div"
+			html += "<p>This report is listing the orders uploaded between " + moment(datefrom).tz("America/New_York").format('YYYY-MM-DD') + " and " + moment(dateto).tz("America/New_York").format('YYYY-MM-DD') + "</p></div>"
 		}
 		html +="<table><tbody><tr style='color: white;background-color: #3d9dcb;'><td style='font-size: 12px;'>Agent</td><td style='font-size: 12px;'>Vendor</td><td style='font-size: 12px;'>Catalog#</td><td style='font-size: 12px;'>Owner</td><td style='font-size: 12px;'>Requestor</td><td>Date</td></tr>"
 		
