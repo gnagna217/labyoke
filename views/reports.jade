@@ -129,7 +129,7 @@ block content
 							input(name="reportDateToOrders" style="margin-bottom:10px" type="text" id="reportDateToOrders" class="form-control")
 							button.btn.btn-success.btn-lg.btn-block(type="submit",value="Report",name="submit") Get Orders
 							img(src="images/ship.png", alt="The Lab", title="Lab", style="border-width:0px; width: 50px; margin-top: -50px; margin-left: 300px;")
-						span(id="triggerSafariOrder" onclick="alert('click event occured')")
+						span(id="triggerSafariOrder")
 						if(resultsOrders != null && resultsOrders !="")
 							script(type="text/javascript" src="/javascripts/jspdf.js")
 							script(type="text/javascript" src="/javascripts/FileSaver.js")
@@ -176,16 +176,14 @@ block content
 								//          this allow the insertion of new lines after html
 								if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent))
 								{
-									
-										document.getElementById("triggerSafariOrder").click(function(){
+										$("#triggerSafariOrder").click(function(){
 											alert("The paragraph was clicked.");
 											var binaryData = [];
 											binaryData.push(pdf.output());
 											var blob = new Blob(binaryData, {type: "application/pdf"});
 											window.open(window.URL.createObjectURL(blob));
 										});
-										document.getElementById("triggerSafariOrder").click();
-
+										$("#triggerSafariOrder").click();
 									//var blob = pdf.output();
 									//window.open(window.URL.createObjectURL(blob));
 								}
