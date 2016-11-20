@@ -20,13 +20,13 @@ block content
 				- var now = (new Date())
 				- now = (now.getMonth() + 1) + "/" + now.getDate() + "/" + now.getFullYear()
 				div
-					form(id="reportForm", enctype="multipart/form-data", action="reportSomething", method="post")
+					form(action="reportSomething", method="post")
 						div(class="buttons")
 							label(style="width: 100px;")="Date From"
-							input(name="reportDateFrom" style="margin-bottom:10px" type="text" id="reportDateFrom")
+							input(name="reportDateFrom" style="margin-bottom:10px" type="text" id="reportDateFrom" class="form-control")
 							br
 							label(style="width: 100px;")="Date To"
-							input(name="reportDateTo" style="margin-bottom:10px" type="text" id="reportDateTo")
+							input(name="reportDateTo" style="margin-bottom:10px" type="text" id="reportDateTo" class="form-control")
 							button.btn.btn-success.btn-lg.btn-block(type="submit",value="Report",name="submit") Get All Shares
 							img(src="images/ship.png", alt="The Lab", title="Lab", style="border-width:0px; width: 50px; margin-top: -50px; margin-left: 300px;")
 						if results

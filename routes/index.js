@@ -219,7 +219,6 @@ module.exports = function(router) {
 		var datefrom = req.body.reportDateFrom;
 		var dateto = req.body.reportDateTo;
 		console.log("reportSomething " + req.body.reportDateFrom);
-		console.log("reportSomething2 " + req.reportForm.reportDateFrom);
 		var labYokereporter = new LabYokeReporter(datefrom, dateto);
 		labYokereporter.reportSomething(function(error, results) {
 			if(results != null){
