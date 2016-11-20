@@ -160,12 +160,8 @@ block content
 								//          this allow the insertion of new lines after html
 								if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent))
 								{
-									var binaryData = [];
-									binaryData.push(pdf);
-									var blob = new Blob(binaryData, {type: "application/pdf"});
+									var blob = pdf.output();
 									window.open(window.URL.createObjectURL(blob));
-									//var blob = pdf.output();
-									//window.open(window.URL.createObjectURL(blob));
 								}
 								else
 								{
