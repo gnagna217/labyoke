@@ -215,26 +215,22 @@ module.exports = function(router) {
 		req.session.messages = null;
 	});
 
-	router.post('/reportSomething', isLoggedIn, function(req, res) {
-		if (req.session.user) {
-			var datefrom = req.body.reportDateFrom;
-			var dateto = req.body.reportDateTo;
-			console.log("reportSomething " + datefrom);
-			var labYokereporter = new LabYokeReporter(datefrom, dateto);
-			labYokereporter.reportSomething(function(error, results) {
-				if(results != null){
-					console.log("res " + results);
-					if(results != ""){
-						res.render('reports', {title:'Reports',loggedIn : true, results: results, isLoggedInAdmin: req.session.admin, addMessage: "success"});
-					} else {
-						res.render('reports', {title:'Reports',loggedIn : true, isLoggedInAdmin: req.session.admin, addMessage: "failure"});
-					}
-					req.session.messages = null;
+	router.post('/reports', isLoggedIn, function(req, res) {
+		var datefrom = req.body.reportDateFrom;
+		var dateto = req.body.reportDateTo;
+		console.log("reportSomething " + datefrom);
+		var labYokereporter = new LabYokeReporter(datefrom, dateto);
+		labYokereporter.reportSomething(function(error, results) {
+			if(results != null){
+				console.log("res " + results);
+				if(results != ""){
+					res.render('reports', {title:'Reports',loggedIn : true, results: results, isLoggedInAdmin: req.session.admin, addMessage: "success"});
+				} else {
+					res.render('reports', {title:'Reports',loggedIn : true, isLoggedInAdmin: req.session.admin, addMessage: "failure"});
 				}
-			});
-		} else {
-			res.redirect('/login');
-		}
+				req.session.messages = null;
+			}
+		});
 	});
 
 	router.get('/play', function(req, res) {

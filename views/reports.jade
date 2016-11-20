@@ -20,7 +20,7 @@ block content
 				- var now = (new Date())
 				- now = (now.getMonth() + 1) + "/" + now.getDate() + "/" + now.getFullYear()
 				div
-					form(id="uploadForm", enctype="multipart/form-data", action="reportSomething", method="post")
+					form(id="uploadForm", enctype="multipart/form-data", action="reports", method="post")
 						div(class="buttons")
 							label(style="width: 100px;")="Date From"
 							input(name="reportDateFrom" style="margin-bottom:10px" type="text" id="reportDateFrom")
