@@ -19,6 +19,9 @@ var multer = require('multer');
 var xlstojson = require("xls-to-json-lc");
 var xlsxtojson = require("xlsx-to-json-lc");
 
+var fs = require('fs');
+var pdf = require('html-pdf');
+
 var storage = multer.diskStorage({ //multers disk storage settings
         destination: function (req, file, cb) {
             cb(null, './uploads/')
@@ -209,6 +212,31 @@ module.exports = function(router) {
 	router.get('/reports', isLoggedIn, function(req, res) {
 		res.render('reports', {loggedIn : true, title: 'Reports'});
 		req.session.messages = null;
+	});
+
+	router.post('/reportSomething', isLoggedIn, function(req, res) {
+		if (req.session.user) {
+			var agent = req.body.agentform;
+			var vendor = req.body.vendorform;
+			var catalognumber = req.body.catalogform;
+			var email = req.body.emailform;
+			var location = req.body.locationform;
+			var reqemail = req.session.email;
+			var labYokereporter = new LabYokerReporter("datefrom", "dateto");
+			labYokereporter.reportSomething(function(error, results) {
+				if(results != null){
+					var options = { format: 'Letter' };
+					pdf.create(html, options).toStream(function(err, stream){
+						stream.pipe(fs.createWriteStream('./foo.pdf'));
+					});
+				
+					res.render('report', {title:'Reports',loggedIn : true});
+					req.session.messages = null;
+				}
+			});
+		} else {
+			res.redirect('/login');
+		}
 	});
 
 	router.get('/play', function(req, res) {

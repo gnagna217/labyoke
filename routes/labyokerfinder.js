@@ -9,6 +9,7 @@ var conString = process.env.DATABASE_URL || "pg://" + config.username + ":"
 var client = new pg.Client(conString);
 client.connect();
 var crypt = require('bcrypt-nodejs');
+var pdf = require('html-pdf');
 
 LabYokeFinder = function(today) {
 	this.now = today
@@ -16,6 +17,11 @@ LabYokeFinder = function(today) {
 
 LabYokeAgents = function(email) {
 	this.email = email;
+};
+
+LabYokeReporter = function(datefrom, dateto) {
+	this.datefrom = datefrom;
+	thhis.dateto = dateto;
 };
 
 LabYokeSearch = function(searchText) {
@@ -100,6 +106,45 @@ LabYokeUploader.prototype.upload = function(callback) {
 		console.log("cannotUploadMissingData.");
 		callback(null, "cannotUploadMissingData");
 	}
+};
+
+LabYokeReporter.prototype.reportSomething = function(callback) {
+	var results;
+	console.log("report on something: datefrom" + this.datefrom);
+	console.log("report on something: dateto " + this.dateto);
+	var query = client
+			.query("SELECT * FROM vm2016_agentsshare order by date");
+	query.on("row", function(row, result) {
+		result.addRow(row);
+	});
+	query.on("end", function(result) {
+		results = result.rows;
+		var html = "<div style='float:left'><img style='width: 150px; margin: 0 20px;' src='https:\/\/team-labyoke.herokuapp.com\/images\/yoke.jpg', alt='The Yoke',  title='Yoke', class='yokelogo'/></div><div style=\"font-family:'calibri'; font-size:11pt;padding: 20px;\">"
+				+ "<h1>Shares Uploaded.</h1></div>";
+		html += "<p>This report is listing all the shares uploaded:</p>"
+		html +="<table><tbody><tr><td>Agent</td><td>Vendor</td><td>Catalog#</td><td>Location</td><td>User</td><td>Category</td></tr>"
+		if(results != null){
+			for(var prop in results){
+				var agent = results[prop].name_of_reagent;
+				var vendor = results[prop].vendor;
+				var catalognumber = results[prop].catalog_number;
+				var location = results[prop].location;
+				var email = results[prop].user;
+				var category = results[prop].category;
+
+
+				html = " <tr><td>" + agent + "</td>";
+				html = " <td>" + vendor + "</td>";
+				html = " <td>" + catalognumber + "</td>";
+				html = " <td>" + location + "</td>";
+				html = " <td>" + email + "</td>";
+				html = " <td>" + category + "</td></tr>";
+		
+			}
+		}
+		html += "</tbody></table><p><i><b>The LabYoke Team.</b></i></p>";
+		callback(null, html)
+	});
 };
 
 LabYokeAgents.prototype.findmyshares = function(callback) {
@@ -636,6 +681,7 @@ var analyze = function(matchresults, participantsResults) {
 }
 
 exports.Labyoker = Labyoker;
+exports.LabYokeReporter = LabYokeReporter;
 exports.LabYokeAgents = LabYokeAgents;
 exports.LabYokeSearch = LabYokeSearch;
 exports.LabyokerRegister = LabyokerRegister;
