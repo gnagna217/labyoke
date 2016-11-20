@@ -107,7 +107,7 @@ LabYokeUploader.prototype.upload = function(callback) {
 	}
 };
 
-LabYokeReporter.prototype.reportSomething = function(callback) {
+LabYokeReporter.prototype.reportShares = function(callback) {
 	var results;
 	var datefrom = this.datefrom;
 	var dateto = this.dateto;

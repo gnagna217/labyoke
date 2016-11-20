@@ -216,18 +216,18 @@ module.exports = function(router) {
 		req.session.messages = null;
 	});
 
-	router.post('/reportSomething', isLoggedIn, function(req, res) {
+	router.post('/reportShares', isLoggedIn, function(req, res) {
 		var datefrom = req.body.reportDateFrom;
 		var dateto = req.body.reportDateTo;
 		console.log("reportSomething " + req.body.reportDateFrom);
 		var labYokereporter = new LabYokeReporter(datefrom, dateto);
-		labYokereporter.reportSomething(function(error, results) {
+		labYokereporter.reportShares(function(error, results) {
 			if(results != null){
 				console.log("res " + results);
 				if(results != ""){
-					res.render('reports', {datefrom: datefrom, dateto: dateto, title:'Reports',loggedIn : true, results: results, isLoggedInAdmin: req.session.admin, addMessage: "success"});
+					res.render('reports', {datefromShares: datefrom, dateto: dateto, title:'Reports',loggedIn : true, resultsShares: results, isLoggedInAdmin: req.session.admin, addMessage: "success"});
 				} else {
-					res.render('reports', {datefrom: datefrom, dateto: dateto, title:'Reports',loggedIn : true, isLoggedInAdmin: req.session.admin, addMessage: "failure"});
+					res.render('reports', {datefromShares: datefrom, dateto: dateto, title:'Reports',loggedIn : true, isLoggedInAdmin: req.session.admin, addMessage: "failure"});
 				}
 				req.session.messages = null;
 			}
@@ -314,7 +314,11 @@ module.exports = function(router) {
 		req.body.reglab = null;
 	});
 
-	router.get('/reportSomething', function(req, res) {
+	router.get('/reportShares', function(req, res) {
+		res.redirect('/reports');
+	});
+
+	router.get('/reportOrders', function(req, res) {
 		res.redirect('/reports');
 	});
 
