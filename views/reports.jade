@@ -18,8 +18,9 @@ block content
 				div
 					form(id="uploadForm", enctype="multipart/form-data", action="reportSomething", method="post")
 						div(class="buttons")
-							input(name="reportDateFrom" type="text" id="reportDateFrom" placeholder=now)
-							input(name="reportDateTo" type="text" id="reportDateTo" placeholder=now)
+							input(name="reportDateFrom" style="margin-bottom:10px" type="text" id="reportDateFrom" placeholder="Date From")
+							br
+							input(name="reportDateTo" style="margin-bottom:10px" type="text" id="reportDateTo" placeholder="Date To")
 							button.btn.btn-success.btn-lg.btn-block(type="submit",value="Report",name="submit") Get All Shares
 							img(src="images/ship.png", alt="The Lab", title="Lab", style="border-width:0px; width: 50px; margin-top: -50px; margin-left: 300px;")
 						if results
