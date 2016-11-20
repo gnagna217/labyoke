@@ -80,6 +80,8 @@ block content
 								function(dispose) {
 								// dispose: object with X, Y of the last line add to the PDF 
 								//          this allow the insertion of new lines after html
+								pdf.autoPrint();
+								pdf.output('dataurlnewwindow');
 								pdf.save("#{file_shares}");
 								}
 								, margins);	
