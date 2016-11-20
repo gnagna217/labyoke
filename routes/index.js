@@ -21,7 +21,7 @@ var xlstojson = require("xls-to-json-lc");
 var xlsxtojson = require("xlsx-to-json-lc");
 
 var fs = require('fs');
-var pdf = require('html-pdf');
+var pdf = require('jspdf');
 
 var storage = multer.diskStorage({ //multers disk storage settings
         destination: function (req, file, cb) {
@@ -228,9 +228,9 @@ module.exports = function(router) {
 				if(results != null){
 					var options = { format: 'Letter' };
 					console.log("res " + results);
-					pdf.create(results, options).toStream(function(err, stream){
-						stream.pipe(fs.createWriteStream('./foo.pdf'));
-					});
+					var doc = new jsPDF();
+					doc.text(20, 20, results);
+					doc.save('Test.pdf');
 				
 					res.render('reports', {title:'Reports',loggedIn : true, isLoggedInAdmin: req.session.admin});
 					req.session.messages = null;
