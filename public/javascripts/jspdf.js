@@ -861,6 +861,8 @@ var jsPDF = (function(global) {
 				case 'datauri':
 				case 'dataurl':
 					return global.document.location.href = datauri;
+				case 'dataurinew':
+					return global.window.open(datauri);
 				default:
 					throw new Error('Output type "' + type + '" is not supported.');
 			}
