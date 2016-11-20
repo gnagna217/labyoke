@@ -215,10 +215,11 @@ module.exports = function(router) {
 		req.session.messages = null;
 	});
 
-	router.post('/reports', isLoggedIn, function(req, res) {
+	router.post('/reportSomething', isLoggedIn, function(req, res) {
 		var datefrom = req.body.reportDateFrom;
 		var dateto = req.body.reportDateTo;
-		console.log("reportSomething " + datefrom);
+		console.log("reportSomething " + req.body.reportDateFrom);
+		console.log("reportSomething2 " + req.reportForm.reportDateFrom);
 		var labYokereporter = new LabYokeReporter(datefrom, dateto);
 		labYokereporter.reportSomething(function(error, results) {
 			if(results != null){
