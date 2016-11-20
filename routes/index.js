@@ -314,6 +314,10 @@ module.exports = function(router) {
 		req.body.reglab = null;
 	});
 
+	router.get('/reportSomething', function(req, res) {
+		res.redirect('/reports');
+	});
+
 	router.post('/register', function(req, res) {
 		var rendered = false;
 		var lab = req.body.reglab;
