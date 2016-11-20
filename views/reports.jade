@@ -26,8 +26,8 @@ block content
 							script(type="text/javascript" src="/javascripts/jspdf.js")
 							script.
 								var ob = "#{results}"
-								ob = ob.replace("&lt;","<");
-								ob = ob.replace("&gt;",">");
+								ob = ob.replace(/&lt;/g,"<");
+								ob = ob.replace(/&gt;/g,">");
 								var pdf = new jsPDF();
 								pdf.text(30, 30, ob);
 								pdf.save('reportAllShare.pdf');
