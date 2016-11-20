@@ -81,8 +81,22 @@ block content
 								function(dispose) {
 								// dispose: object with X, Y of the last line add to the PDF 
 								//          this allow the insertion of new lines after html
-								pdf.output('dataurlnewwindow');
-								pdf.save("#{file_shares}");
+								
+								if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent))
+								{
+									var binaryData = [];
+									binaryData.push(pdf.output());
+									var blob = new Blob(binaryData, {type: "application/pdf"});
+									window.open(window.URL.createObjectURL(blob));
+									//var blob = pdf.output();
+									//window.open(window.URL.createObjectURL(blob));
+								}
+								else
+								{
+									pdf.output('dataurlnewwindow');
+									pdf.save("#{file_shares}");
+								}
+
 								}
 								, margins);	
 							- results = ""
