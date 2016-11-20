@@ -231,7 +231,7 @@ module.exports = function(router) {
 						stream.pipe(fs.createWriteStream('./foo.pdf'));
 					});
 				
-					res.render('report', {title:'Reports',loggedIn : true, isLoggedInAdmin: req.session.admin});
+					res.render('reports', {title:'Reports',loggedIn : true, isLoggedInAdmin: req.session.admin});
 					req.session.messages = null;
 				}
 			});
