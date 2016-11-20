@@ -16,7 +16,7 @@ block content
 				if (addMessage == 'failure')
 					div(class="alert alert-danger")!= "Unfortunately we could not generate this report. Please try again with new dates."
 				if (addMessage == 'success')
-					div(class="alert alert-success fade in alert-dismissable")!= "Your report has been generated and automatically downloaded in your computer."
+					div(class="alert alert-success fade in alert-dismissable")!= "Success! Your report has been generated and automatically downloaded in your computer."
 				- var now = (new Date())
 				- now = (now.getMonth() + 1) + "/" + now.getDate() + "/" + now.getFullYear()
 				div
