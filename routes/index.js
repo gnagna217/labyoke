@@ -210,7 +210,7 @@ module.exports = function(router) {
 	});
 
 	router.get('/reports', isLoggedIn, function(req, res) {
-		res.render('reports', {loggedIn : true, title: 'Reports'});
+		res.render('reports', {loggedIn : true, title: 'Reports', isLoggedInAdmin: req.session.admin});
 		req.session.messages = null;
 	});
 
@@ -230,7 +230,7 @@ module.exports = function(router) {
 						stream.pipe(fs.createWriteStream('./foo.pdf'));
 					});
 				
-					res.render('report', {title:'Reports',loggedIn : true});
+					res.render('report', {title:'Reports',loggedIn : true, isLoggedInAdmin: req.session.admin});
 					req.session.messages = null;
 				}
 			});
