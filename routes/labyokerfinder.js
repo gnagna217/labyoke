@@ -21,7 +21,7 @@ LabYokeAgents = function(email) {
 
 LabYokeReporter = function(datefrom, dateto) {
 	this.datefrom = datefrom;
-	thhis.dateto = dateto;
+	this.dateto = dateto;
 };
 
 LabYokeSearch = function(searchText) {
