@@ -188,6 +188,16 @@ a {
     bottom: 20px;
     width: 100%;
 }
+
+.reportOrders{
+    width: 45%;
+    float:right;
+    margin-right:10px
+}
+.reportShares{
+    float: left; 
+    width: 45%;
+}
 .labColor{
     color: #3d9dcb;
 }
@@ -522,6 +532,15 @@ input::-webkit-inner-spin-button {
 }
 
  @media (max-width: 440px) {
+.reportOrders{
+    width: 100%;
+    float:none;
+    margin-right:0px
+}
+.reportShares{
+    float: none; 
+    width: 100%;
+}
 #menumyshares{
     width: 115px;
 }

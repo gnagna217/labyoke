@@ -9,7 +9,7 @@ block content
 
 				- var now = (new Date())
 				- now = (now.getMonth() + 1) + "/" + now.getDate() + "/" + now.getFullYear()
-			div(style="float: left; width: 45%;")
+			div(class="reportShares")
 				div(style="background-color: #3d9dcb; height: 2px; margin-bottom: 30px; margin-top: 30px;")
 				h4="All Shares report Upload."
 				p="You can now retrieve a report of all shares uploaded."
@@ -73,7 +73,7 @@ block content
 								pdf.save('reportAllShares.pdf');
 								}
 								, margins);							
-			div(style="width: 45%; float:right;margin-right:10px")
+			div(class="reportOrders")
 				div(style="background-color: #3d9dcb; height: 2px; margin-bottom: 30px; margin-top: 30px;")
 				h4="All Orders report Upload."
 				p="You can now retrieve a report of all orders requested."
