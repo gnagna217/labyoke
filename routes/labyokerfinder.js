@@ -115,7 +115,7 @@ LabYokeReporter.prototype.reportSomething = function(callback) {
 	console.log("report on something: dateto: " + dateto);
 	var query;
 	if(datefrom != null && dateto != null && datefrom !=undefined && dateto !=undefined){
-		query = client.query("SELECT * FROM vm2016_agentsshare order by date where date between '" + datefrom + "' and '" + dateto + "' order by date");
+		query = client.query("SELECT * FROM vm2016_agentsshare where date between '" + datefrom + "' and '" + dateto + "' order by date");
 	} else {
 		query = client.query("SELECT * FROM vm2016_agentsshare order by date");
 	}
