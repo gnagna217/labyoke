@@ -5,19 +5,19 @@ block content
 
 	div(class="container login")
 		div(style="float: left; width: 350px;")
-		a(href="/search")
-			img(src="/images/yoke.jpg", alt="The Yoke",  title="Yoke", class="yokelogo")
-		h1= 'Reports.'
-		p Trying out some reports. This page is indeed under construction.
-		if(isLoggedInAdmin == 1)
-			div(style="background-color: #3d9dcb; height: 2px; margin-bottom: 30px; margin-top: 30px;")
-			h4="Admin Upload."
-			p="You can now retrieve a report of all shares uploaded."
-			- var now = (new Date())
-			- now = (now.getMonth() + 1) + "/" + now.getDate() + "/" + now.getFullYear()
-			form(id="uploadForm", enctype="multipart/form-data", action="reportSomething", method="post")
-				div(class="buttons")
-					input(name="reportDateFrom" type="text" id="reportDateFrom" placeholder=now)
-					input(name="reportDateTo" type="text" id="reportDateTo" placeholder=now)
-					button.btn.btn-success.btn-lg.btn-block(type="submit",value="Report",name="submit") Get All Shares
-					img(src="images/ship.png", alt="The Lab", title="Lab", style="border-width:0px; width: 50px; margin-top: -50px; margin-left: 300px;")
+			a(href="/search")
+				img(src="/images/yoke.jpg", alt="The Yoke",  title="Yoke", class="yokelogo")
+			h1= 'Reports.'
+			p Trying out some reports. This page is indeed under construction.
+			if(isLoggedInAdmin == 1)
+				div(style="background-color: #3d9dcb; height: 2px; margin-bottom: 30px; margin-top: 30px;")
+				h4="Admin Upload."
+				p="You can now retrieve a report of all shares uploaded."
+				- var now = (new Date())
+				- now = (now.getMonth() + 1) + "/" + now.getDate() + "/" + now.getFullYear()
+				form(id="uploadForm", enctype="multipart/form-data", action="reportSomething", method="post")
+					div(class="buttons")
+						input(name="reportDateFrom" type="text" id="reportDateFrom" placeholder=now)
+						input(name="reportDateTo" type="text" id="reportDateTo" placeholder=now)
+						button.btn.btn-success.btn-lg.btn-block(type="submit",value="Report",name="submit") Get All Shares
+						img(src="images/ship.png", alt="The Lab", title="Lab", style="border-width:0px; width: 50px; margin-top: -50px; margin-left: 300px;")
