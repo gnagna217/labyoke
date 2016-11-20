@@ -9,7 +9,6 @@ var conString = process.env.DATABASE_URL || "pg://" + config.username + ":"
 var client = new pg.Client(conString);
 client.connect();
 var crypt = require('bcrypt-nodejs');
-var pdf = require('html-pdf');
 
 LabYokeFinder = function(today) {
 	this.now = today
