@@ -121,7 +121,7 @@ LabYokeReporter.prototype.reportSomething = function(callback) {
 		var html = "<div style='float:left'><img style='width: 150px; margin: 0 20px;' src='https:\/\/team-labyoke.herokuapp.com\/images\/yoke.jpg', alt='The Yoke',  title='Yoke', class='yokelogo'/></div><div style=\"font-family:'calibri'; font-size:11pt;padding: 20px;\">"
 				+ "<h1>Shares Uploaded.</h1></div>";
 		html += "<p>This report is listing all the shares uploaded:</p>"
-		html +="<table><tbody><tr><td>Agent</td><td>Vendor</td><td>Catalog#</td><td>Location</td><td>User</td><td>Category</td></tr>"
+		html +="<table><tbody><tr style='color: white;background-color: #3d9dcb;'><td>Agent</td><td>Vendor</td><td>Catalog#</td><td>Location</td><td>User</td><td>Category</td></tr>"
 		if(results != null){
 			for(var prop in results){
 				var agent = results[prop].agent;
