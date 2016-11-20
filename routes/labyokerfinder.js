@@ -133,12 +133,12 @@ LabYokeReporter.prototype.reportSomething = function(callback) {
 				var category = results[prop].category;
 
 
-				html = " <tr><td>" + agent + "</td>";
-				html = " <td>" + vendor + "</td>";
-				html = " <td>" + catalognumber + "</td>";
-				html = " <td>" + location + "</td>";
-				html = " <td>" + email + "</td>";
-				html = " <td>" + category + "</td></tr>";
+				html += " <tr><td>" + agent + "</td>";
+				html += " <td>" + vendor + "</td>";
+				html += " <td>" + catalognumber + "</td>";
+				html += " <td>" + location + "</td>";
+				html += " <td>" + email + "</td>";
+				html += " <td>" + category + "</td></tr>";
 		
 			}
 		}
