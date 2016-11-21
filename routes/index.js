@@ -451,6 +451,14 @@ module.exports = function(router) {
 						res.render('register', {isLoggedInAdmin: req.session.admin, message : "Sorry. We could not register you. Please fill out all fields below.", title: 'Register'});
 					}
 				});
+			} else {
+				res.render(
+				'register',
+				{
+					message : "Sorry. You cannot proceed. Please try again below.",
+					title: 'Register',
+					isLoggedInAdmin: req.session.admin
+				});
 			}
 	});
 
