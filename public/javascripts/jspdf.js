@@ -2857,7 +2857,7 @@ var jsPDF = (function(global) {
         //set up defaults. If a value is provided in config, defaults will be overwritten:
            autoSize        = false,
            printHeaders    = true,
-           fontSize        = 12,
+           fontSize        = 9,
            margins         = NO_MARGINS;
 
            margins.width = this.internal.pageSize.width;
