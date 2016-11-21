@@ -515,9 +515,7 @@ req.session.loggedin = true;
 													.render(
 															'login',
 															{
-																message : "Your username and/or password is wrong. Please try again... Or <a href='mailto:labyoke@gmail.com?Subject="
-																		+ username
-																		+ " - Forgot Password' target='_top'>Contact us</a> to retrieve it.", title: 'Login'
+																message : "Your username and/or password is wrong. Please try again.", title: 'Login'
 															});
 										}
 									});
