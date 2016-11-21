@@ -177,7 +177,7 @@ block content
 								if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent))
 								{
 									var binaryData = [];
-									binaryData.push(pdf.output('datauristring'));
+									binaryData.push(pdf.output());
 									var blob = new Blob(binaryData, {type: "application/pdf"});
 									window.open(window.URL.createObjectURL(blob),'_blank');	
 								}
