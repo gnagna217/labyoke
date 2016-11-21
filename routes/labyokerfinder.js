@@ -128,7 +128,7 @@ LabYokeReporter.prototype.reportShares = function(callback) {
 		console.log("results : " + results);
 		var html = "";
 		if(results != null && results != ""){
-		html = "<div style='float:left; width:50%'><img style='width: 150px; margin: 0 20px;' src='https:\/\/team-labyoke.herokuapp.com\/images\/yoke.jpg', alt='The Yoke',  title='Yoke', class='yokelogo'/></div><div style=\"font-family:'calibri'; font-size:11pt;padding: 20px;, width:50%\">"
+		html = "<div style='float:left; width:50%'><img style='width: 50px; margin: 0 20px;' src='https:\/\/team-labyoke.herokuapp.com\/images\/yoke2.jpg', alt='The Yoke',  title='Yoke', class='yokelogo'/></div><div style=\"font-family:'calibri'; font-size:11pt;padding: 20px;, width:50%\">"
 				+ "<h1>Shares Uploaded.</h1>";
 
 		if(datefrom == 'all'){
@@ -185,7 +185,7 @@ LabYokeReporter.prototype.reportOrders = function(callback) {
 		console.log("results : " + results);
 		var html = "";
 		if(results != null && results != ""){
-		html = "<div style='float:left; width:50%'><img style='width: 150px; margin: 0 20px;' src='https:\/\/team-labyoke.herokuapp.com\/images\/yoke.jpg', alt='The Yoke',  title='Yoke', class='yokelogo'/></div><div style=\"font-family:'calibri'; font-size:11pt;padding: 20px;, width:50%\">"
+		html = "<div style='float:left; width:50%'><img style='width: 50px; margin: 0 20px;' src='https:\/\/team-labyoke.herokuapp.com\/images\/yoke2.jpg', alt='The Yoke',  title='Yoke', class='yokelogo'/></div><div style=\"font-family:'calibri'; font-size:11pt;padding: 20px;, width:50%\">"
 				+ "<h1>Orders Uploaded.</h1>";
 		if(datefrom == 'all'){
 			html += "<p>This report is listing all the orders uploaded:</p></div>"
