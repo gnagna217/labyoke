@@ -225,7 +225,7 @@ margin-right: 15px !important;
 }
 
 .yokelogo{
-    border-width:0px; width: 300px;
+    border:none; width: 300px;
 }
 .searchResults{
     float: left;
