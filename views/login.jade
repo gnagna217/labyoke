@@ -10,7 +10,7 @@ block content
          div(id="ctl00_Div2" class="row")
            div
             if message
-                div(class="alert alert-danger")!= message
+                div(class="alert alert-danger fade in alert-dismissable")!= message
             form(action="/login" method="post")
                 div(class="textentry")
                     input(name="user" type="text" id="user" class="form-control" placeholder="Username")
