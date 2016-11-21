@@ -20,7 +20,7 @@ block content
 				- var dateto_shares = datetoShares
 				- var file_shares = "reportShares_" + datefrom_shares + "_to_" + dateto_shares + ".pdf"
 				- var message_fail_share = "Unfortunately we could not generate the report within the time frame chosen. Please try again with new dates."
-				- var message_success_share = "Success! Your report has been generated for shares requested between " + datefrom_shares + " and " + dateto_shares + " then automatically downloaded in your computer."
+				- var message_success_share = "Success! Your report has been generated for shares requested between " + datefrom_shares + " and " + dateto_shares + " then automatically downloaded on your computer if you are logged in on a desktop/laptop."
 				- if(datefromShares == null || datefromShares == undefined || datefromShares == "")
 					- datefrom_shares = "all"
 					- dateto_shares = ""
@@ -118,7 +118,7 @@ block content
 				- if(datefromOrders == null || datefromOrders == undefined || datefromOrders == "")
 					- datefrom_orders = "all"
 					- dateto_orders = ""
-					- message_success_order = "Success! Your report has been generated for ALL orders and automatically downloaded in your computer."
+					- message_success_order = "Success! Your report has been generated for ALL orders and automatically downloaded on your computer if you are logged in on a desktop/laptop."
 					- file_orders = "reportOrders_all.pdf" 
 				if (addMessageOrders == 'failure')
 					div(class="alert alert-danger")!= message_fail_order
