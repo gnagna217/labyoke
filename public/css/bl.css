@@ -227,6 +227,11 @@ margin-right: 15px !important;
 .yokelogo{
     border:none; width: 300px;
 }
+.btn-success {
+    color: #fff;
+    background-color: #8a6d3b !important;
+    border-color: #8a6d3b !important;
+}
 .searchResults{
     float: left;
     width: 60%;
