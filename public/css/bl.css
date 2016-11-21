@@ -229,8 +229,8 @@ margin-right: 15px !important;
 }
 .btn-success {
     color: #fff;
-    background-color: #8a6d3b !important;
-    border-color: #8a6d3b !important;
+    background-color: #8a6d3b;
+    border-color: #8a6d3b;
 }
 .searchResults{
     float: left;
