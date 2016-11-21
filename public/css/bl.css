@@ -232,18 +232,6 @@ margin-right: 15px !important;
     background-color: #8a6d3b;
     border-color: #8a6d3b;
 }
-.btn-success.disabled:hover,
-.btn-success[disabled]:hover,
-fieldset[disabled] .btn-success:hover,
-.btn-success.disabled:focus,
-.btn-success[disabled]:focus,
-fieldset[disabled] .btn-success:focus,
-.btn-success.disabled.focus,
-.btn-success[disabled].focus,
-fieldset[disabled] .btn-success.focus {
-  background-color: #8a6d3b;
-  border-color: #8a6d3b;
-}
 .searchResults{
     float: left;
     width: 60%;
@@ -532,7 +520,7 @@ input::-webkit-inner-spin-button {
     }
 }
 
- @media (min-width: 990px) {
+ @media (min-width: 991px) {
     .searchResults{
         float: left;
         width: 55%;
@@ -540,6 +528,12 @@ input::-webkit-inner-spin-button {
     }
 }
 
+ @media (max-width: 991px) {
+    #rankTbl td {
+        /* text-align: center; */
+        font-size: 12px;
+    }
+}
  @media (max-width: 800px) {
 .reportOrders{
     width: 100%;
