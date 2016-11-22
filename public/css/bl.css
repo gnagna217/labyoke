@@ -557,6 +557,9 @@ input::-webkit-inner-spin-button {
 .addMargin{
     margin-bottom: 5px;
 }
+.addMargin2{
+    margin-bottom: 4px;
+}
 #menumyshares{
     width: 115px;
 }
