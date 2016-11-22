@@ -554,13 +554,6 @@ input::-webkit-inner-spin-button {
 }
 
  @media (max-width: 440px) {
-.addMargin{
-    margin-bottom: 5px;
-}
-.addMargin2{
-    margin-bottom: 4px;
-    margin-top: -2px;
-}
 #menumyshares{
     width: 115px;
 }
@@ -597,6 +590,13 @@ input::-webkit-inner-spin-button {
 }
 
 @media (max-width: 767px){
+.addMargin{
+    margin-bottom: 5px;
+}
+.addMargin2{
+    margin-bottom: 4px;
+    margin-top: -2px;
+}
 .help{
     padding-right: 0px;
     margin-top: 0px;
