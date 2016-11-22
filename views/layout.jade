@@ -60,8 +60,9 @@ html(lang='en')
                     div(style="float:left")
                         ul.nav.navbar-nav
                             li(class=activateSearch)
-                                span(class="fa fa-search")
-                                a(href="/search", class="nav-menu",id="menusearch")="Search"
+                                a(href="/search", class="nav-menu",id="menusearch")=
+                                    span(class="fa fa-search")
+                                    " Search"
                             li(class=activateHelp)
                                 span(class="fa fa-child")
                                 a(href='/help', class="fa fa-child nav-menu",id="menusearch")="Help"
