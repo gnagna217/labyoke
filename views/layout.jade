@@ -60,22 +60,28 @@ html(lang='en')
                     div(style="float:left")
                         ul.nav.navbar-nav
                             li(class=activateSearch)
+                                span(class="fa fa-search")
                                 a(href="/search", class="nav-menu",id="menusearch")="Search"
                             li(class=activateHelp)
-                                a(href='/help', class="nav-menu",id="menusearch")="Help"
+                                span(class="fa fa-child")
+                                a(href='/help', class="fa fa-child nav-menu",id="menusearch")="Help"
                             
                     div(style="padding-left: 130px;")
                         ul.nav.navbar-nav(id="menumyshares", class="addMargin", style="border-left-color: white;border-left-style: solid;border-width: thin;")
                             li(class=activateShares)
+                                span(class="fa fa-share")
                                 a(href="/share",class="nav-menu",id="menushare")="My Shares"
                             li(class=activateOrders)
+                                span(class="fa fa-shopping-cart")
                                 a(href="/orders",class="nav-menu",id="menushare")="My Orders"
                         ul.nav.navbar-nav(id="menumyaccount", class="addMargin", style="border-left-color: white;border-left-style: solid;border-width: thin;")
                             li(class=activateAccount)
-                                a(href="/account",class="fa fa-user fa-lg nav-menu", id="menumyaccounta")=" Account"
+                                span(class="fa fa-user")
+                                a(href="/account",class="fa-lg nav-menu", id="menumyaccounta")=" Account"
                             if(isLoggedInAdmin == 1)
                                 li(class=activateReports)
-                                    a(href="/reports",class="fa fa-cog nav-menu", id="menumyaccounta")=" Reports"
+                                    span(class="fa fa-cog fa-spin")
+                                    a(href="/reports",class="nav-menu", id="menumyaccounta")=" Reports"
                     ul.nav.navbar-nav.navbar-right
                         li
                             a(href='/logout',class="nav-menu-logout") Logout
