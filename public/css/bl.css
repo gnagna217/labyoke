@@ -198,12 +198,6 @@ a {
     float: left; 
     width: 45%;
 }
-#menumyaccount{
-    margin-left: 5%;
-}
-#menumyshares{
-    margin-left: 5%;
-}
 .labColor{
     color: #3d9dcb;
 }
@@ -563,10 +557,6 @@ input::-webkit-inner-spin-button {
 
 #menumyshares{
     width: 115px;
-    margin-left: 0;
-}
-#menumyaccount{
-    margin-left: 0;
 }
 #rankTbl td
 {
