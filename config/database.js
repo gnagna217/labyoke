@@ -10,10 +10,10 @@
 		};
 */
 module.exports = { 
-		  database: 'dc1p7cvgjjk1cc', 
-		  username: 'ylwkyrhqofvgpb', 
-		  password: '-LFVLLwgI1bVco5Xjz-gXNhVw3',
-		  host: 'ec2-54-243-249-132.compute-1.amazonaws.com',
+		  database: 'ddia63omjgq9h',//'dc1p7cvgjjk1cc', 
+		  username: 'ldymsebqqznosu',//'ylwkyrhqofvgpb', 
+		  password: 'zI5CePVOsKhS7qzan-h8jNchTV', //'-LFVLLwgI1bVco5Xjz-gXNhVw3',
+		  host: 'ec2-23-23-224-174.compute-1.amazonaws.com',//'ec2-54-243-249-132.compute-1.amazonaws.com',
 		  port: '5432',
 		  dialect: 'postgres',
 		  native: true,
