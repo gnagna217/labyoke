@@ -6,6 +6,7 @@ var config = require("../config/database");
 var conString = process.env.DATABASE_URL || "pg://" + config.username + ":"
 		+ config.password + "@" + config.host + ":" + config.port + "/"
 		+ config.database;
+pg.defaults.ssl = true;
 var client = new pg.Client(conString);
 client.connect();
 var crypt = require('bcrypt-nodejs');
