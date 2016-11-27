@@ -3,14 +3,15 @@ var moment = require('moment-timezone');
 var MailOptions = require('../config/emailClient').MailOptions;
 var MailOptionsWithCC = require('../config/emailClient').MailOptionsWithCC;
 var config = require("../config/database");
-var conString = /*process.env.DATABASE_URL || */"pg://" + config.username + ":"
+var pgquery = require("../config/pgquery");
+var conString = process.env.DATABASE_URL || "pg://" + config.username + ":"
 		+ config.password + "@" + config.host + ":" + config.port + "/"
 		+ config.database;
 console.log("connection db could be: " + process.env.DATABASE_URL);
 console.log("connection db is: " + conString);
 //pg.defaults.ssl = true;
-var client = new pg.Client(conString);
-client.connect();
+//var client = new pg.Client(conString);
+//client.connect();
 var crypt = require('bcrypt-nodejs');
 
 LabYokeFinder = function(today) {
@@ -93,15 +94,22 @@ LabYokeUploader.prototype.upload = function(callback) {
 	console.log("values " + values);
 
 	if(values!= null){
-		var query2 = client.query("INSERT INTO vm2016_agentsshare VALUES " + values);
 
-		query2.on("row", function(row, result2) {
-			result2.addRow(row);
-		});
-		query2.on("end", function(result2) {
-			console.log("successfulUpload");
-			callback(null, "successfulUpload");
-		});
+	pg.connect(process.env.DATABASE_URL, function(err, client) {
+	  if (err) throw err;
+	  console.log('Connected to postgres! Getting schemas...');
+
+			var query2 = client.query("INSERT INTO vm2016_agentsshare VALUES " + values);
+
+			query2.on("row", function(row, result2) {
+				result2.addRow(row);
+			});
+			query2.on("end", function(result2) {
+				console.log("successfulUpload");
+				callback(null, "successfulUpload");
+			});
+	});
+
 			
 	} else {
 		//Change Password already sent
@@ -117,6 +125,11 @@ LabYokeReporter.prototype.reportShares = function(callback) {
 	console.log("report on something: datefrom: " + datefrom);
 	console.log("report on something: dateto: " + dateto);
 	var query;
+
+pg.connect(process.env.DATABASE_URL, function(err, client) {
+  if (err) throw err;
+  console.log('Connected to postgres! Getting schemas...');
+
 	if(datefrom != null && dateto != null && datefrom !=undefined && dateto !=undefined && datefrom !="" && dateto !=""){
 		query = client.query("SELECT * FROM vm2016_agentsshare where date between '" + datefrom + "' and '" + dateto + "' order by date");
 	} else {
@@ -165,6 +178,9 @@ LabYokeReporter.prototype.reportShares = function(callback) {
 		
 		callback(null, html)
 	});
+});
+
+
 };
 
 LabYokeReporter.prototype.reportOrders = function(callback) {
@@ -174,6 +190,11 @@ LabYokeReporter.prototype.reportOrders = function(callback) {
 	console.log("report on orders: datefrom: " + datefrom);
 	console.log("report on orders: dateto: " + dateto);
 	var query;
+
+	pg.connect(process.env.DATABASE_URL, function(err, client) {
+  if (err) throw err;
+  console.log('Connected to postgres! Getting schemas...');
+
 	if(datefrom != null && dateto != null && datefrom !=undefined && dateto !=undefined && datefrom !="" && dateto !=""){
 		query = client.query("SELECT * FROM vm2016_orders where date between '" + datefrom + "' and '" + dateto + "' order by date");
 	} else {
@@ -219,11 +240,17 @@ LabYokeReporter.prototype.reportOrders = function(callback) {
 		
 		callback(null, html)
 	});
+});
+
 };
 
 LabYokeAgents.prototype.findmyshares = function(callback) {
 	var results = [];
 	console.log("findmyshares: " + this.email);
+
+pg.connect(process.env.DATABASE_URL, function(err, client) {
+  if (err) throw err;
+  console.log('Connected to postgres! Getting schemas...');
 	var query = client
 			.query("SELECT * FROM vm2016_agentsshare where email='"
 					+ this.email + "' order by date");
@@ -242,11 +269,18 @@ LabYokeAgents.prototype.findmyshares = function(callback) {
 			callback(null, results)
 		});
 	});
+});
+
 };
 
 LabYokeAgents.prototype.reportAllSharesByCategory = function(callback) {
 	var results;
 	console.log("reportAllSharesByCategory: " + this.email);
+
+pg.connect(process.env.DATABASE_URL, function(err, client) {
+  if (err) throw err;
+  console.log('Connected to postgres! Getting schemas...');
+
 	var query = client
 			.query("SELECT b.category, count(b.category) FROM vm2016_orders a, vm2016_agentsshare b where a.agent = b.agent group by b.category");
 	query.on("row", function(row, result) {
@@ -256,6 +290,8 @@ LabYokeAgents.prototype.reportAllSharesByCategory = function(callback) {
 		results = result.rows;
 		callback(null, results)
 	});
+});
+
 };
 
 LabYokerOrder.prototype.order = function(callback) {
@@ -268,6 +304,12 @@ LabYokerOrder.prototype.order = function(callback) {
 	var location = this.location;
 	var now = moment(new Date).tz("America/New_York").format('YYYY-MM-DD');
 	console.log("order location: " + location);
+
+
+pg.connect(process.env.DATABASE_URL, function(err, client) {
+  if (err) throw err;
+  console.log('Connected to postgres! Getting schemas...');
+
 	var query = client.query("INSERT INTO vm2016_orders VALUES ('" + agent + "', '" + vendor + "', '" + catalognumber + "','" + email + "', '" + sendemail + "', '" + now + "')");
 
 	query.on("row", function(row, result) {
@@ -292,12 +334,19 @@ LabYokerOrder.prototype.order = function(callback) {
 
 		callback(null, "successfulOrder")
 	});
+});
+
 };
 
 LabYokerGetOrder.prototype.getorders = function(callback) {
 	var results = [];
 	var email = this.sendemail;
 	console.log("getorders: " + email);
+
+pg.connect(process.env.DATABASE_URL, function(err, client) {
+  if (err) throw err;
+  console.log('Connected to postgres! Getting schemas...');
+
 	var query = client
 			.query("SELECT * FROM vm2016_orders where requestoremail like '%"
 					+ email + "%' order by date desc");
@@ -316,11 +365,18 @@ LabYokerGetOrder.prototype.getorders = function(callback) {
 			callback(null, results)
 		});
 	});
+});
+
 };
 
 LabYokeSearch.prototype.search = function(callback) {
 	var results = [];
 	console.log("searchText: " + this.searchText);
+
+pg.connect(process.env.DATABASE_URL, function(err, client) {
+  if (err) throw err;
+  console.log('Connected to postgres! Getting schemas...');
+
 	var query = client
 			.query("SELECT * FROM vm2016_agentsshare where lower(agent) like lower('%"
 					+ this.searchText + "%') order by agent, location");
@@ -340,10 +396,18 @@ LabYokeSearch.prototype.search = function(callback) {
 		});
 		//callback(null, results)
 	});
+});
+
+
 };
 
 LabYokeSearch.prototype.findagents = function(callback) {
 	var results;
+
+pg.connect(process.env.DATABASE_URL, function(err, client) {
+  if (err) throw err;
+  console.log('Connected to postgres! Getting schemas...');
+
 	var query = client.query("SELECT distinct agent FROM vm2016_agentsshare");
 	
 	query.on("row", function(row, result) {
@@ -353,6 +417,8 @@ LabYokeSearch.prototype.findagents = function(callback) {
 		results = result.rows;
 			callback(null, results)
 	});
+});
+
 };
 
 //var crypt = require('bcrypt-nodejs');
@@ -366,6 +432,11 @@ Labyoker = function(username, password) {
 
 LabYokeFinder.prototype.getLabyoker = function(callback) {
 	var results;
+
+pg.connect(process.env.DATABASE_URL, function(err, client) {
+  if (err) throw err;
+  console.log('Connected to postgres! Getting schemas...');
+
 	var query = client.query("SELECT * FROM vm2016_users where id='" + id
 			+ "' and password='" + password + "'");
 	query.on("row", function(row, result) {
@@ -375,10 +446,17 @@ LabYokeFinder.prototype.getLabyoker = function(callback) {
 		results = result.rows;
 		callback(null, results);
 	});
+});
+
 };
 
 LabYokeFinder.prototype.test = function(callback) {
 	var results;
+
+pg.connect(process.env.DATABASE_URL, function(err, client) {
+  if (err) throw err;
+  console.log('Connected to postgres! Getting schemas...');
+
 	var query = client.query("SELECT * FROM vm2016_users where id='"
 			+ this.username + "'"/* and password='"+password+"'" */);
 	query.on("row", function(row, result) {
@@ -387,6 +465,8 @@ LabYokeFinder.prototype.test = function(callback) {
 	query.on("end", function(result) {
 		callback(null, results);
 	});
+});
+
 	// return false;
 };
 
@@ -395,6 +475,11 @@ Labyoker.prototype.login = function(callback) {
 	var username = this.username;
 
 	var results;
+
+pg.connect(process.env.DATABASE_URL, function(err, client) {
+  if (err) throw err;
+  console.log('Connected to postgres! Getting schemas...');
+
 	var query = client.query("SELECT * FROM vm2016_users where id='" + username
 			+ "'"/* and password='"+password+"'" */);
 	query.on("row", function(row, result) {
@@ -430,6 +515,9 @@ Labyoker.prototype.login = function(callback) {
 			callback(null, null);
 		}
 	});
+});
+
+
 };
 
 LabyokerPasswordChange.prototype.checkIfChangePassword = function(callback) {
@@ -437,6 +525,11 @@ LabyokerPasswordChange.prototype.checkIfChangePassword = function(callback) {
 	var now = moment(new Date).tz("America/New_York").format(
 				'YYYY-MM-DD');
 	var pwd = this.password;
+
+pg.connect(process.env.DATABASE_URL, function(err, client) {
+  if (err) throw err;
+  console.log('Connected to postgres! Getting schemas...');
+
 	var query = client
 			.query("SELECT * FROM vm2016_users where changepwd_id='"
 					+ this.hash + "'");
@@ -496,6 +589,9 @@ LabyokerPasswordChange.prototype.checkIfChangePassword = function(callback) {
 		}
 	}
 	});
+});
+
+
 }
 
 LabyokerRegister.prototype.register = function(callback) {
@@ -509,6 +605,10 @@ LabyokerRegister.prototype.register = function(callback) {
 
 	var results;
 	//var check = 
+
+pg.connect(process.env.DATABASE_URL, function(err, client) {
+  if (err) throw err;
+  console.log('Connected to postgres! Getting schemas...');
 
 			console.log("labyoker username: " + username);
 			console.log("labyoker password: " + password);
@@ -603,6 +703,9 @@ LabyokerRegister.prototype.register = function(callback) {
 } else {
 	callback(null, null);
 }
+
+});
+
 };
 
 Labyoker.prototype.requestChangePassword = function(callback) {
@@ -610,6 +713,11 @@ Labyoker.prototype.requestChangePassword = function(callback) {
 	var dateStripped = this.password;
 
 	var results;
+
+pg.connect(process.env.DATABASE_URL, function(err, client) {
+  if (err) throw err;
+  console.log('Connected to postgres! Getting schemas...');
+
 	var query = client.query("SELECT * FROM vm2016_users where id='" + username
 			+ "'"/* and password='"+password+"'" */);
 	query.on("row", function(row, result) {
@@ -674,11 +782,19 @@ Labyoker.prototype.requestChangePassword = function(callback) {
 			callback(null, null);
 		}
 });
+});
+
+
 };
 
 Labyoker.prototype.changepassword = function(callback) {
 	var hash = crypt.hashSync(this.password);
 	var results;
+
+pg.connect(process.env.DATABASE_URL, function(err, client) {
+  if (err) throw err;
+  console.log('Connected to postgres! Getting schemas...');
+
 	var query = client.query("UPDATE vm2016_users SET password='" + hash
 			+ "', active=1 where id='" + this.username + "'");
 	query.on("row", function(row, result) {
@@ -688,6 +804,8 @@ Labyoker.prototype.changepassword = function(callback) {
 		results = result.rows;
 		callback(null, results);
 	});
+});
+
 };
 
 var analyze = function(matchresults, participantsResults) {
@@ -743,6 +861,11 @@ var analyze = function(matchresults, participantsResults) {
 		var queryString = "UPDATE vm2014_predictsingleteam SET points = "
 				+ points + " where bet = " + matchresults.bet + " and id = '"
 				+ participant.id + "'";
+
+pg.connect(process.env.DATABASE_URL, function(err, client) {
+  if (err) throw err;
+  console.log('Connected to postgres! Getting schemas...');
+
 		var query = client.query(queryString);
 		query.on("row", function(row, result) {
 			result.addRow(row);
@@ -751,6 +874,8 @@ var analyze = function(matchresults, participantsResults) {
 			results = result.rows;
 			return results;
 		});
+});
+
 	}
 }
 
