@@ -9,7 +9,7 @@ var conString = process.env.DATABASE_URL || "pg://" + config.username + ":"
 		+ config.database;
 console.log("connection db could be: " + process.env.DATABASE_URL);
 console.log("connection db is: " + conString);
-//pg.defaults.ssl = true;
+pg.defaults.ssl = true;
 //var client = new pg.Client(conString);
 //client.connect();
 var crypt = require('bcrypt-nodejs');
