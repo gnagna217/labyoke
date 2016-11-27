@@ -7,8 +7,6 @@ var pgquery = require("../config/pgquery");
 var conString = process.env.DATABASE_URL || "pg://" + config.username + ":"
 		+ config.password + "@" + config.host + ":" + config.port + "/"
 		+ config.database;
-
-console.log("connection db could be: " + process.env.DATABASE_URL);
 console.log("connection db is: " + conString);
 pg.defaults.ssl = true;
 //var client = new pg.Client(conString);
