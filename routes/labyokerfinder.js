@@ -7,6 +7,9 @@ var pgquery = require("../config/pgquery");
 var conString = process.env.DATABASE_URL || "pg://" + config.username + ":"
 		+ config.password + "@" + config.host + ":" + config.port + "/"
 		+ config.database;
+var conString = "pg://" + config.username + ":"
+		+ config.password + "@" + config.host + ":5572/"
+		+ config.database;
 console.log("connection db could be: " + process.env.DATABASE_URL);
 console.log("connection db is: " + conString);
 pg.defaults.ssl = true;
@@ -95,7 +98,7 @@ LabYokeUploader.prototype.upload = function(callback) {
 
 	if(values!= null){
 
-	pg.connect(process.env.DATABASE_URL, function(err, client) {
+	pg.connect(conString, function(err, client) {
 	  if (err) throw err;
 	  console.log('Connected to postgres! Getting schemas...');
 
@@ -126,7 +129,7 @@ LabYokeReporter.prototype.reportShares = function(callback) {
 	console.log("report on something: dateto: " + dateto);
 	var query;
 
-pg.connect(process.env.DATABASE_URL, function(err, client) {
+pg.connect(conString, function(err, client) {
   if (err) throw err;
   console.log('Connected to postgres! Getting schemas...');
 
@@ -191,7 +194,7 @@ LabYokeReporter.prototype.reportOrders = function(callback) {
 	console.log("report on orders: dateto: " + dateto);
 	var query;
 
-	pg.connect(process.env.DATABASE_URL, function(err, client) {
+	pg.connect(conString, function(err, client) {
   if (err) throw err;
   console.log('Connected to postgres! Getting schemas...');
 
@@ -248,7 +251,7 @@ LabYokeAgents.prototype.findmyshares = function(callback) {
 	var results = [];
 	console.log("findmyshares: " + this.email);
 
-pg.connect(process.env.DATABASE_URL, function(err, client) {
+pg.connect(conString, function(err, client) {
   if (err) throw err;
   console.log('Connected to postgres! Getting schemas...');
 	var query = client
@@ -277,7 +280,7 @@ LabYokeAgents.prototype.reportAllSharesByCategory = function(callback) {
 	var results;
 	console.log("reportAllSharesByCategory: " + this.email);
 
-pg.connect(process.env.DATABASE_URL, function(err, client) {
+pg.connect(conString, function(err, client) {
   if (err) throw err;
   console.log('Connected to postgres! Getting schemas...');
 
@@ -306,7 +309,7 @@ LabYokerOrder.prototype.order = function(callback) {
 	console.log("order location: " + location);
 
 
-pg.connect(process.env.DATABASE_URL, function(err, client) {
+pg.connect(conString, function(err, client) {
   if (err) throw err;
   console.log('Connected to postgres! Getting schemas...');
 
@@ -343,7 +346,7 @@ LabYokerGetOrder.prototype.getorders = function(callback) {
 	var email = this.sendemail;
 	console.log("getorders: " + email);
 
-pg.connect(process.env.DATABASE_URL, function(err, client) {
+pg.connect(conString, function(err, client) {
   if (err) throw err;
   console.log('Connected to postgres! Getting schemas...');
 
@@ -373,7 +376,7 @@ LabYokeSearch.prototype.search = function(callback) {
 	var results = [];
 	console.log("searchText: " + this.searchText);
 
-pg.connect(process.env.DATABASE_URL, function(err, client) {
+pg.connect(conString, function(err, client) {
   if (err) throw err;
   console.log('Connected to postgres! Getting schemas...');
 
@@ -404,7 +407,7 @@ pg.connect(process.env.DATABASE_URL, function(err, client) {
 LabYokeSearch.prototype.findagents = function(callback) {
 	var results;
 
-pg.connect(process.env.DATABASE_URL, function(err, client) {
+pg.connect(conString, function(err, client) {
   if (err) throw err;
   console.log('Connected to postgres! Getting schemas...');
 
@@ -433,7 +436,7 @@ Labyoker = function(username, password) {
 LabYokeFinder.prototype.getLabyoker = function(callback) {
 	var results;
 
-pg.connect(process.env.DATABASE_URL, function(err, client) {
+pg.connect(conString, function(err, client) {
   if (err) throw err;
   console.log('Connected to postgres! Getting schemas...');
 
@@ -453,7 +456,7 @@ pg.connect(process.env.DATABASE_URL, function(err, client) {
 LabYokeFinder.prototype.test = function(callback) {
 	var results;
 
-pg.connect(process.env.DATABASE_URL, function(err, client) {
+pg.connect(conString, function(err, client) {
   if (err) throw err;
   console.log('Connected to postgres! Getting schemas...');
 
@@ -476,7 +479,7 @@ Labyoker.prototype.login = function(callback) {
 
 	var results;
 
-pg.connect(process.env.DATABASE_URL, function(err, client) {
+pg.connect(conString, function(err, client) {
   if (err) throw err;
   console.log('Connected to postgres! Getting schemas...');
 
@@ -526,7 +529,7 @@ LabyokerPasswordChange.prototype.checkIfChangePassword = function(callback) {
 				'YYYY-MM-DD');
 	var pwd = this.password;
 
-pg.connect(process.env.DATABASE_URL, function(err, client) {
+pg.connect(conString, function(err, client) {
   if (err) throw err;
   console.log('Connected to postgres! Getting schemas...');
 
@@ -606,7 +609,7 @@ LabyokerRegister.prototype.register = function(callback) {
 	var results;
 	//var check = 
 
-pg.connect(process.env.DATABASE_URL, function(err, client) {
+pg.connect(conString, function(err, client) {
   if (err) throw err;
   console.log('Connected to postgres! Getting schemas...');
 
@@ -714,7 +717,7 @@ Labyoker.prototype.requestChangePassword = function(callback) {
 
 	var results;
 
-pg.connect(process.env.DATABASE_URL, function(err, client) {
+pg.connect(conString, function(err, client) {
   if (err) throw err;
   console.log('Connected to postgres! Getting schemas...');
 
@@ -791,7 +794,7 @@ Labyoker.prototype.changepassword = function(callback) {
 	var hash = crypt.hashSync(this.password);
 	var results;
 
-pg.connect(process.env.DATABASE_URL, function(err, client) {
+pg.connect(conString, function(err, client) {
   if (err) throw err;
   console.log('Connected to postgres! Getting schemas...');
 
@@ -862,7 +865,7 @@ var analyze = function(matchresults, participantsResults) {
 				+ points + " where bet = " + matchresults.bet + " and id = '"
 				+ participant.id + "'";
 
-pg.connect(process.env.DATABASE_URL, function(err, client) {
+pg.connect(conString, function(err, client) {
   if (err) throw err;
   console.log('Connected to postgres! Getting schemas...');
 
