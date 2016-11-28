@@ -1,6 +1,12 @@
 {
-  "name": "worldcup",
-  "version": "0.0.1",
+  //"name": "worldcup",
+  //"version": "0.0.1",
+  "name": "labyoke",
+  "description": "Let's labyoke together!",
+  "version": "1.0.0",
+  "engines": {
+    "node": "5.11.1"
+  },
   "private": true,
   "scripts": {
     "start": "node ./bin/www"
