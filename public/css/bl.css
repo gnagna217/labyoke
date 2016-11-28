@@ -160,6 +160,7 @@ body {
 }
 a {
     text-decoration: none;
+    outline:none
 }
 .ct-label{
     color: black !important;
