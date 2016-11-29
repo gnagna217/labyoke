@@ -203,6 +203,9 @@ a {
     color: #3d9dcb;
 }
 
+.navbar{
+    margin-bottom: 0px !important;
+}
 .container{
     padding-bottom: 25px;
 }
