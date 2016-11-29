@@ -258,12 +258,14 @@ pg.connect(conString, function(err, client) {
 	});
 	query.on("end", function(result) {
 		results.push(result.rows);
+		console.log("findmyshares2: " + results);
 		var query2 = client
 				.query("SELECT category, count(category) from vm2016_agentsshare group by category order by category asc");
 		query2.on("row", function(row, result2) {
 			result2.addRow(row);
 		});
 		query2.on("end", function(result2) {
+			console.log("findmyshares3: " + results2);
 			results.push(result2.rows);
 			callback(null, results)
 		});
