@@ -638,6 +638,10 @@ input::-webkit-inner-spin-button {
 }
 
 @media (max-width: 767px){
+    .rankTbl td {
+        /* text-align: center; */
+        font-size: 13px;
+    }
 #menumyshares{
     width: 115px;
 }
