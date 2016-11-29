@@ -4,7 +4,10 @@ block content
 
 
     div(class="container login")
-      div(style="float: left; min-height: 800px;" class="order-container")
+      - var classContainer = ""
+      if email == undefined
+         - classContainer = "min-height: 800px;"
+      div(style="float: left;" + classContainer class="order-container")
             a(href="/search")
                 img(src="/images/yoke.jpg", alt="The Yoke",  title="Yoke", class="yokelogo")
             h1= 'Orders.'
