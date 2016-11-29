@@ -55,11 +55,12 @@ block content
                         h3="These Researchers and Labs can share your"
                             span(style="color: #3d9dcb;")=" " + searchText
                         h4="Email them!"                    
-                      table(id="rankTbl" class="table")
+                      table(id="rankTblSearch" class="table")
+                        thead
                         tbody
-                        -var ob = searchResults
-                        - var j = 1
-                        -for(var prop in ob)
+                         -var ob = searchResults
+                         - var j = 1
+                         -for(var prop in ob)
                             - var i = prop % 2
                             - var classname = "";
                             - if(i==0)
@@ -81,7 +82,11 @@ block content
                                 td
                                   span(onclick="iosLight('#{agent}','#{vendor}','#{catalognumber}','#{reqemail}','#{location}')", style="cursor:pointer")
                                         img(src="images/ship2.png", alt="Order now", title="Order now", style="border-width:0px; width: 24px; margin-top: 0px;")
-                            - j = j + 1                
+                            - j = j + 1
+                      script.
+                        $(document).ready(function() {
+                           $('#rankTblSearch').DataTable();
+                        });
         if(searchResults != undefined && searchResults.length == 0 && searchformText)
             div.searchResults(id="results")
                 div(id="ctl00_Div2" class="row rank")
