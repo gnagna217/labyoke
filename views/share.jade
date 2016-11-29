@@ -16,32 +16,21 @@ block content
 					div(id="ctl00_Div2" class="row rank")
 						div(class="table-responsive")               
 							table(id="rankTbl" class="table")
-								tbody
+								thead
 									tr(class="you info-best" style="font-weight: bold")
-										td(class="desktabonly")= 'id'
-										td(class="wrapped")!= 'Agent'
-										td= 'Vendor'
-										td= 'Catalog#'
+										th(class="desktabonly")= 'id'
+										th(class="wrapped")!= 'Agent'
+										th= 'Vendor'
+										th= 'Catalog#'
+								tbody
 									-var ob = myshares
 									- var pageCount = 0
 									-for(var prop in ob)
-										- var i = prop % 3
-										- if(i == 0)
-											- pageCount++
-											div(class="cssPagination")
-												div(class="pages")
-													div(class="page" id="page"+pageCount)									
-														tr
-															td(class="desktabonly") #{prop}
-															td(class="wrapped") #{ob[prop].agent}
-															td #{ob[prop].vendor}
-															td #{ob[prop].catalognumber}
-										- else
-											tr(class="")
-												td(class="desktabonly") #{prop}
-												td(class="wrapped") #{ob[prop].agent}
-												td #{ob[prop].vendor}
-												td #{ob[prop].catalognumber}
+										tr(class="")
+											td(class="desktabonly") #{prop}
+											td(class="wrapped") #{ob[prop].agent}
+											td #{ob[prop].vendor}
+											td #{ob[prop].catalognumber}
 							script.
 								$(document).ready(function() {
 									$('#rankTbl').DataTable();
