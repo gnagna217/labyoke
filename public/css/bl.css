@@ -213,14 +213,20 @@ a {
 .paginate_button.current:hover {
     color: #3d9dcb !important;
     border: 1px solid #3d9dcb !important;
+    font-weight: bolder;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    background: transparent;
+    border-bottom-width: thick;
 }
 .dataTables_wrapper .dataTables_paginate .paginate_button:hover {
     background-color: transparent !important;
     color: #3d9dcb !important;
     border: 1px solid #3d9dcb !important;
 }
-.dataTables_wrapper .dataTables_paginate .paginate_button.current, .dataTables_wrapper .dataTables_paginate .paginate_button.current:hover {
-    color: #8a6d3b;
+.dataTables_wrapper .dataTables_paginate .paginate_button.current {
+    color: #8a6d3b !important;
     border: 1px solid #8a6d3b;
     font-weight: bolder;
     border-top: none;
