@@ -57,6 +57,11 @@ block content
                         h4="Email them!"                    
                       table(id="rankTblSearch" class="table")
                         thead
+                         tr(class="you info-best" style="font-weight: bold")
+                          td(class="desktabonly")= 'id'
+                          td(class="wrapped")!= 'Agent'
+                          td= 'Vendor'
+                          td= 'Location'
                         tbody
                          -var ob = searchResults
                          - var j = 1
