@@ -466,7 +466,8 @@ module.exports = function(router) {
 		if (req.session.user) {
 			var searchText = req.body.searchText;
 			var labYokeSearch = new LabYokeSearch(searchText);
-			labYokeSearch.search(function(error, results) {			
+			labYokeSearch.search(function(error, results) {
+				console.log("results " + results[0].length);	
 				if (searchText != null && searchText.length > 0){
 					res.render('search', {isLoggedInAdmin: req.session.admin, title: 'Search', fullname: req.session.fullname, sendemail: req.session.email, searchResults : results[0], agentsResults : results[1], searchformText: searchText, loggedIn : true});
 				} else {

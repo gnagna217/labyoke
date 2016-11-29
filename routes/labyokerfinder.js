@@ -388,6 +388,7 @@ pg.connect(conString, function(err, client) {
 	});
 	query.on("end", function(result) {
 		results.push(result.rows);
+		if(results != undefined && results!=null){
 		var query2 = client.query("SELECT distinct agent FROM vm2016_agentsshare");
 		
 		query2.on("row", function(row, result2) {
@@ -395,8 +396,11 @@ pg.connect(conString, function(err, client) {
 		});
 		query2.on("end", function(result2) {
 			results.push(result2.rows);
-				callback(null, results)
+				callback(null, results);
 		});
+	} else {
+		callback(null, results);
+	}
 		//callback(null, results)
 	});
 });
