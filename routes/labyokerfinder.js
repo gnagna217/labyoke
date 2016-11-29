@@ -174,7 +174,7 @@ pg.connect(conString, function(err, client) {
 			}
 			html += "</tbody></table><p><i><b>The LabYoke Team.</b></i></p>";
 		}
-		
+		done();
 		callback(null, html)
 	});
 });
@@ -236,7 +236,7 @@ LabYokeReporter.prototype.reportOrders = function(callback) {
 			}
 			html += "</tbody></table><p><i><b>The LabYoke Team.</b></i></p>";
 		}
-		
+		done();
 		callback(null, html)
 	});
 });
@@ -268,6 +268,7 @@ pg.connect(conString, function(err, client) {
 		query2.on("end", function(result2) {
 			console.log("findmyshares3: " + result2);
 			results.push(result2.rows);
+			done();
 			callback(null, results);
 		});
 	});
@@ -290,6 +291,7 @@ pg.connect(conString, function(err, client) {
 	});
 	query.on("end", function(result) {
 		results = result.rows;
+		done();
 		callback(null, results)
 	});
 });
@@ -333,7 +335,7 @@ pg.connect(conString, function(err, client) {
 
 		var mailOptions = new MailOptionsWithCC(email, subject, body, sendemail);
 		mailOptions.sendAllEmails();
-
+done();
 		callback(null, "successfulOrder")
 	});
 });
@@ -364,6 +366,7 @@ pg.connect(conString, function(err, client) {
 		});
 		query2.on("end", function(result2) {
 			results.push(result2.rows);
+			done();
 			callback(null, results);
 		});
 	});
@@ -396,9 +399,11 @@ pg.connect(conString, function(err, client) {
 		});
 		query2.on("end", function(result2) {
 			results.push(result2.rows);
+			done();
 				callback(null, results);
 		});
 	} else {
+		done();
 		callback(null, results);
 	}
 		//callback(null, results)
@@ -422,6 +427,7 @@ pg.connect(conString, function(err, client) {
 	});
 	query.on("end", function(result) {
 		results = result.rows;
+		done();
 			callback(null, results)
 	});
 });
@@ -451,6 +457,7 @@ pg.connect(conString, function(err, client) {
 	});
 	query.on("end", function(result) {
 		results = result.rows;
+		done();
 		callback(null, results);
 	});
 });
@@ -470,6 +477,7 @@ pg.connect(conString, function(err, client) {
 		result.addRow(row);
 	});
 	query.on("end", function(result) {
+		done();
 		callback(null, results);
 	});
 });
@@ -520,6 +528,7 @@ pg.connect(conString, function(err, client) {
 				});
 			}
 		} else {
+			done();
 			callback(null, null);
 		}
 	});
@@ -584,16 +593,20 @@ pg.connect(conString, function(err, client) {
 						var results3 = result3.rows;
 						if (results3 != null) {
 							var results3 = result3.rows;
+							done();
 							callback(null, "passwordReset");
 						} else {
+							done();
 							callback(null, "errorFound");
 						}
 					});
 				} else {
+					done();
 					callback(null, "dateExpired");
 				}
 			//});
 		} else {
+			done();
 			callback(null, "cannotFindRequest");
 		}
 	}
@@ -698,6 +711,7 @@ pg.connect(conString, function(err, client) {
 				if(results[0].email == email){
 					rendered = true;
 					console.log("in use?: alreadyInUse");
+					done();
 					callback(null, "alreadyInUse");
 				}
 			//}
@@ -705,6 +719,7 @@ pg.connect(conString, function(err, client) {
 		}
 		console.log("rendered: " + rendered);
 		if(!rendered){
+			done();
 			callback(null, "firstsection");
 		}
 	});
@@ -781,13 +796,16 @@ pg.connect(conString, function(err, client) {
 					mailOptions.sendAllEmails();
 
 				});
+done();
 				callback(null, results);
 			} else {
 				//Change Password already sent
 				console.log("alreadySent.");
+				done();
 				callback(null, "alreadySent");
 			}
 		} else {
+			done();
 			callback(null, null);
 		}
 });
@@ -812,6 +830,7 @@ pg.connect(conString, function(err, client) {
 	});
 	query.on("end", function(result) {
 		results = result.rows;
+		done();
 		callback(null, results);
 	});
 });
@@ -881,6 +900,7 @@ pg.connect(conString, function(err, client) {
 			result.addRow(row);
 		});
 		query.on("end", function(result) {
+			done();
 			results = result.rows;
 			return results;
 		});
