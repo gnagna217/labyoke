@@ -7,7 +7,7 @@ block content
       - var classContainer = ""
       if email == undefined
          - classContainer = "min-height: 800px;"
-      div(style="float: left;" + classContainer class="order-container")
+      div(style="float: left;" + classContainer class="order-container" id="order-container")
             a(href="/search")
                 img(src="/images/yoke.jpg", alt="The Yoke",  title="Yoke", class="yokelogo")
             h1= 'Orders.'
@@ -44,6 +44,11 @@ block content
                     script.
                       $(document).ready(function() {
                         $('#rankTblOrders').DataTable();
+                        var win = $( window ).width();
+                        console.log(win);
+                        if(win < 767){
+                          $("#order-container").css( "min-height", "0px" );
+                        }
                       });
       if(orderresults != "" && email == undefined)
         div(style="float:right; padding-left: 20px", class="share-container")
