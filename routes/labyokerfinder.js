@@ -265,7 +265,7 @@ pg.connect(conString, function(err, client) {
 			result2.addRow(row);
 		});
 		query2.on("end", function(result2) {
-			console.log("findmyshares3: " + results2);
+			console.log("findmyshares3: " + result2);
 			results.push(result2.rows);
 			callback(null, results)
 		});
