@@ -155,6 +155,11 @@ body {
     margin-left: 5px;
     -webkit-font-smoothing: auto;
 }
+.alert-info {
+    color: white;
+    background-color: rgba(138, 109, 59, 0.52);
+    border-color: rgba(138, 109, 59, 0.52);
+}
 .order-container{
     width: 45%;
 }
