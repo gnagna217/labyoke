@@ -210,7 +210,13 @@ a {
     padding-bottom: 25px;
     padding-top: 10px;
 }
-
+.table-responsive input{
+    font-size: 14px;
+    padding: 4px 10px;
+    line-height: 1.42857143;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
 .dataTables_wrapper .dataTables_paginate .paginate_button:hover {
     color: #3d9dcb !important;
     border: 1px solid #3d9dcb !important;
