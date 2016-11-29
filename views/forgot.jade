@@ -10,7 +10,7 @@ block content
         if !userfound && !usernotfound
             h1="We got You."
             p 
-                span="Please enter your username below and we shall send you an email to change your password. If you remember it, you can go back to the <a href='/login'>LabYoke</a> home page."
+                span!="Please enter your username below and we shall send you an email to change your password. If you remember it, you can go back to the <a href='/login'>LabYoke</a> home page."
             div(id="ctl00_Div2" class="row")
                 if message
                     div(class="alert alert-danger")!= message
@@ -39,7 +39,7 @@ block content
             div(id="ctl00_Div2" class="row")
                     h1(class="centerText")
                         span= "Oops..."
-                    p=message + ". You can go back to the <a href='/login'>LabYoke</a> home page."
+                    p!=message + ". You can go back to the <a href='/login'>LabYoke</a> home page."
                     if !noforgotform
                         form(action="/forgot" method="post")
                             div(style="margin-bottom: 20px;")
