@@ -203,6 +203,10 @@ a {
     color: #3d9dcb;
 }
 
+.container{
+    padding-bottom: 25px;
+}
+
 .labColorBackground{
     background-color: #3d9dcb !important;
 }
