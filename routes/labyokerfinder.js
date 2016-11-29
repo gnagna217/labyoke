@@ -427,7 +427,7 @@ pg.connect(conString, function(err, client) {
 	});
 	query.on("end", function(result) {
 		results = result.rows;
-		done();
+		//done();
 			callback(null, results)
 	});
 });
