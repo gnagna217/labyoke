@@ -646,7 +646,7 @@ input::-webkit-inner-spin-button {
   
 }
 
-@media (max-width: 768px){
+@media (max-width: 767px){
 .desktabonly{
     display: none;
 }
