@@ -221,7 +221,7 @@ table.dataTable thead .sorting_desc {
     background-image: url(/images/sort_desc.png);
 }
 table.dataTable thead .sorting_asc {
-    background-image: url(/images/sort_desc.png);
+    background-image: url(/images/sort_asc.png);
 }
 .dataTables_wrapper .dataTables_paginate .paginate_button:hover {
     color: #3d9dcb !important;
