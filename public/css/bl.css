@@ -208,12 +208,10 @@ a {
 }
 .container{
     padding-bottom: 25px;
+    padding-top: 10px;
 }
-.navcontainer{
-    padding-right: 15px;
-    padding-left: 15px;
-    margin-right: auto;
-    margin-left: auto;
+.nobottom{
+    padding-bottom: 0px !important;
 }
 .labColorBackground{
     background-color: #3d9dcb !important;
