@@ -216,8 +216,8 @@ a {
     border: 1px solid #3d9dcb !important;
     font-weight: bolder !important;
     border-top: none !important;
-    border-right: none !important;
-    border-left: none !important;
+    border-right: white !important;
+    border-left: white !important;
     background: transparent !important;
     border-bottom-width: thick !important;
 }
@@ -226,8 +226,8 @@ a {
     border: 1px solid #8a6d3b !important;
     font-weight: bolder !important;
     border-top: none !important;
-    border-right: none !important;
-    border-left: none !important;
+    border-right: white !important;
+    border-left: white !important;
     background: transparent !important;
     border-bottom-width: thick !important;
 }
