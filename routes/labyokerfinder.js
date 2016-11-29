@@ -245,14 +245,15 @@ LabYokeReporter.prototype.reportOrders = function(callback) {
 
 LabYokeAgents.prototype.findmyshares = function(callback) {
 	var results = [];
-	console.log("findmyshares: " + this.email);
+	var email = this.email;
+	console.log("findmyshares: " + email);
 
 pg.connect(conString, function(err, client) {
   if (err) throw err;
   console.log('Connected to postgres! Getting schemas...');
 	var query = client
 			.query("SELECT * FROM vm2016_agentsshare where email='"
-					+ this.email + "' order by date");
+					+ email + "' order by date");
 	query.on("row", function(row, result) {
 		result.addRow(row);
 	});
@@ -267,7 +268,7 @@ pg.connect(conString, function(err, client) {
 		query2.on("end", function(result2) {
 			console.log("findmyshares3: " + result2);
 			results.push(result2.rows);
-			callback(null, results)
+			callback(null, results);
 		});
 	});
 });
@@ -363,7 +364,7 @@ pg.connect(conString, function(err, client) {
 		});
 		query2.on("end", function(result2) {
 			results.push(result2.rows);
-			callback(null, results)
+			callback(null, results);
 		});
 	});
 });
@@ -372,7 +373,8 @@ pg.connect(conString, function(err, client) {
 
 LabYokeSearch.prototype.search = function(callback) {
 	var results = [];
-	console.log("searchText: " + this.searchText);
+	var searchText = this.searchText;
+	console.log("searchText: " + searchText);
 
 pg.connect(conString, function(err, client) {
   if (err) throw err;
@@ -380,7 +382,7 @@ pg.connect(conString, function(err, client) {
 
 	var query = client
 			.query("SELECT * FROM vm2016_agentsshare where lower(agent) like lower('%"
-					+ this.searchText + "%') order by agent, location");
+					+ searchText + "%') order by agent, location");
 	query.on("row", function(row, result) {
 		result.addRow(row);
 	});
@@ -526,6 +528,7 @@ LabyokerPasswordChange.prototype.checkIfChangePassword = function(callback) {
 	var now = moment(new Date).tz("America/New_York").format(
 				'YYYY-MM-DD');
 	var pwd = this.password;
+	var hash = this.hash;
 
 pg.connect(conString, function(err, client) {
   if (err) throw err;
@@ -533,7 +536,7 @@ pg.connect(conString, function(err, client) {
 
 	var query = client
 			.query("SELECT * FROM vm2016_users where changepwd_id='"
-					+ this.hash + "'");
+					+ hash + "'");
 	query.on("row", function(row, result) {
 		result.addRow(row);
 	});
@@ -791,13 +794,14 @@ pg.connect(conString, function(err, client) {
 Labyoker.prototype.changepassword = function(callback) {
 	var hash = crypt.hashSync(this.password);
 	var results;
+	var username = this.username;
 
 pg.connect(conString, function(err, client) {
   if (err) throw err;
   console.log('Connected to postgres! Getting schemas...');
 
 	var query = client.query("UPDATE vm2016_users SET password='" + hash
-			+ "', active=1 where id='" + this.username + "'");
+			+ "', active=1 where id='" + username + "'");
 	query.on("row", function(row, result) {
 		result.addRow(row);
 	});
