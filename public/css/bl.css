@@ -220,14 +220,14 @@ a {
     border: 1px solid #3d9dcb !important;
 }
 .dataTables_wrapper .dataTables_paginate .paginate_button.current, .dataTables_wrapper .dataTables_paginate .paginate_button.current:hover {
-    color: #8a6d3b !important;
-    border: 1px solid #8a6d3b !important;
-    font-weight: bolder !important;
-    border-top: none !important;
-    border-right: none !important;
-    border-left: none !important;
-    background: transparent !important;
-    border-bottom-width: thick !important;
+    color: #8a6d3b;
+    border: 1px solid #8a6d3b;
+    font-weight: bolder;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    background: transparent;
+    border-bottom-width: thick;
 }
 
 .nobottom{
