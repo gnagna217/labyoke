@@ -219,9 +219,14 @@ a {
 }
 table.dataTable thead .sorting_desc {
     background-image: url(/images/sort_desc.png);
+    padding-right: 20px;
 }
 table.dataTable thead .sorting_asc {
     background-image: url(/images/sort_asc.png);
+    padding-right: 20px;
+}
+table.dataTable thead .sorting {
+    padding-right: 20px;
 }
 .dataTables_wrapper .dataTables_paginate .paginate_button:hover {
     color: #3d9dcb !important;
