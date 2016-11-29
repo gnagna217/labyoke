@@ -280,7 +280,8 @@ margin-right: 15px !important;
 }
 
 .yokelogo{
-    border:none; width: 300px;
+    border:none; 
+    /*width: 300px;*/
 }
 .btn-success {
     color: #fff;
