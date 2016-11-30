@@ -30,7 +30,7 @@ html(lang='en')
           script(type='text/javascript', src=script)
    - var user = labyoker
    - if(user != null && user != undefined && user.length>11)
-        - user = user.substring(0, 9) + "."
+        - user = user.substring(0, 7) + "."
    body(class=loggedIn)
      if (loggedIn==true)
         .navbar.navbar-inverse.navbar-fixed-top(role='navigation')
