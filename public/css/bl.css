@@ -653,6 +653,9 @@ input::-webkit-inner-spin-button {
 }
 
 @media (max-width: 767px){
+.desktabonly2{
+    display: none;
+}
 .desktabonly{
     display: none;
 }

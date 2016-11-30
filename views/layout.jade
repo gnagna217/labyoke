@@ -87,7 +87,8 @@ html(lang='en')
                             li(class=activateAccount)
                                 a(href="/account",class="nav-menu", id="menumyaccounta")
                                     span(class="fa fa-cog fa-spin")
-                                    span=" " + user + "'s Account"
+                                    span(class="desktabonly2")=" " + user + "'s"
+                                    span=" Account"
                             if(isLoggedInAdmin == 1)
                                 li(class=activateReports)
                                     a(href="/reports",class="nav-menu", id="menumyaccounta")
