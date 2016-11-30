@@ -82,7 +82,7 @@ module.exports = function(router) {
                     var labYokeUploader = new LabYokeUploader(result);
                     labYokeUploader.upload(function(error, done) {
                     res.render('share', {
-                    json: result, loggedIn : true, isLoggedInAdmin: isLoggedInAdmin, title: 'Share', spreadname: req.file.originalname
+                    json: result, loggedIn : true, isLoggedInAdmin: isLoggedInAdmin, title: 'Share', spreadname: req.file.originalname, labyoker : req.session.user
                     });
                 });
                     //res.json({error_code:0,err_desc:null, data: result});
@@ -145,7 +145,7 @@ module.exports = function(router) {
 		if (req.session.user) {
 			res.redirect('/search');
 		} else {
-			res.render('login', {title: 'Login',isLoggedInAdmin: req.session.admin});
+			res.render('login', {labyoker : req.session.user, title: 'Login',isLoggedInAdmin: req.session.admin});
 			req.session.messages = null;
 
 		}
@@ -156,9 +156,9 @@ module.exports = function(router) {
 			var labYokeSearch = new LabYokeSearch("");
 			labYokeSearch.findagents(function(error, results) {			
 				if (results != null && results.length > 0){
-					res.render('search', {isLoggedInAdmin: req.session.admin, agentsResults : results, loggedIn : true, title: 'Search'});
+					res.render('search', {labyoker : req.session.user, isLoggedInAdmin: req.session.admin, agentsResults : results, loggedIn : true, title: 'Search'});
 				} else {
-					res.render('search', {isLoggedInAdmin: req.session.admin, loggedIn : true, title: 'Search'});
+					res.render('search', {labyoker : req.session.user, isLoggedInAdmin: req.session.admin, loggedIn : true, title: 'Search'});
 				}
 				req.session.messages = null;
 			});
@@ -173,7 +173,7 @@ module.exports = function(router) {
 			labYokerGetOrder.getorders(function(error, results) {
 				if(results != null){
 					console.log("orders results: " + results);				
-					res.render('orders', {isLoggedInAdmin: req.session.admin, title:'Orders', loggedIn : true, orderresults: results[0], report_sharesbycategory: results[1]});
+					res.render('orders', {labyoker : req.session.user, isLoggedInAdmin: req.session.admin, title:'Orders', loggedIn : true, orderresults: results[0], report_sharesbycategory: results[1]});
 					//req.session.messages = null;
 				}
 			});
@@ -197,7 +197,7 @@ module.exports = function(router) {
 					console.log("ordering location: " + location);
 					console.log("ordering reqemail: " + reqemail);
 				
-					res.render('orders', {isLoggedInAdmin: req.session.admin, title:'Orders',loggedIn : true, location: location, agent: agent, vendor: vendor, catalog: catalognumber, email: email});
+					res.render('orders', {labyoker : req.session.user, isLoggedInAdmin: req.session.admin, title:'Orders',loggedIn : true, location: location, agent: agent, vendor: vendor, catalog: catalognumber, email: email});
 					req.session.messages = null;
 				}
 			});
@@ -207,12 +207,12 @@ module.exports = function(router) {
 	});
 
 	router.get('/account', isLoggedIn, function(req, res) {
-		res.render('account', {isLoggedInAdmin: req.session.admin, loggedIn : true, title: 'Account'});
+		res.render('account', {labyoker : req.session.user, isLoggedInAdmin: req.session.admin, loggedIn : true, title: 'Account'});
 		req.session.messages = null;
 	});
 
 	router.get('/reports', isLoggedIn, function(req, res) {
-		res.render('reports', {isLoggedInAdmin: req.session.admin, loggedIn : true, title: 'Reports', isLoggedInAdmin: req.session.admin});
+		res.render('reports', {labyoker : req.session.user, isLoggedInAdmin: req.session.admin, loggedIn : true, title: 'Reports', isLoggedInAdmin: req.session.admin});
 		req.session.messages = null;
 	});
 
@@ -225,9 +225,9 @@ module.exports = function(router) {
 			if(results != null){
 				console.log("res " + results);
 				if(results != ""){
-					res.render('reports', {datefromShares: datefrom, dateto: dateto, title:'Reports',loggedIn : true, resultsShares: results, isLoggedInAdmin: req.session.admin, addMessageShares: "success"});
+					res.render('reports', {labyoker : req.session.user, datefromShares: datefrom, dateto: dateto, title:'Reports',loggedIn : true, resultsShares: results, isLoggedInAdmin: req.session.admin, addMessageShares: "success"});
 				} else {
-					res.render('reports', {datefromShares: datefrom, dateto: dateto, title:'Reports',loggedIn : true, isLoggedInAdmin: req.session.admin, addMessageShares: "failure"});
+					res.render('reports', {labyoker : req.session.user, datefromShares: datefrom, dateto: dateto, title:'Reports',loggedIn : true, isLoggedInAdmin: req.session.admin, addMessageShares: "failure"});
 				}
 				req.session.messages = null;
 			}
@@ -243,9 +243,9 @@ module.exports = function(router) {
 			if(results != null){
 				console.log("res " + results);
 				if(results != ""){
-					res.render('reports', {datefromOrders: datefrom, datetoOrders: dateto, title:'Reports',loggedIn : true, resultsOrders: results, isLoggedInAdmin: req.session.admin, addMessageOrders: "success"});
+					res.render('reports', {labyoker : req.session.user, datefromOrders: datefrom, datetoOrders: dateto, title:'Reports',loggedIn : true, resultsOrders: results, isLoggedInAdmin: req.session.admin, addMessageOrders: "success"});
 				} else {
-					res.render('reports', {datefromOrders: datefrom, datetoOrders: dateto, title:'Reports',loggedIn : true, isLoggedInAdmin: req.session.admin, addMessageOrders: "failure"});
+					res.render('reports', {labyoker : req.session.user, datefromOrders: datefrom, datetoOrders: dateto, title:'Reports',loggedIn : true, isLoggedInAdmin: req.session.admin, addMessageOrders: "failure"});
 				}
 				req.session.messages = null;
 			}
@@ -253,7 +253,7 @@ module.exports = function(router) {
 	});
 
 	router.get('/play', function(req, res) {
-		res.render('play', {title: 'Play'});
+		res.render('play', {title: 'Play',labyoker : req.session.user});
 		req.session.messages = null;
 	});
 
@@ -261,13 +261,13 @@ module.exports = function(router) {
 		var labYokeAgents = new LabYokeAgents(req.session.email);
 		labYokeAgents.findmyshares(function(error, results) {
 			console.log("is admon? " + req.session.admin);
-			res.render('share', {myshares: results[0], report_sharesbycategory: results[1], loggedIn : true, isLoggedInAdmin: req.session.admin, title:'Share'});
+			res.render('share', {labyoker : req.session.user, myshares: results[0], report_sharesbycategory: results[1], loggedIn : true, isLoggedInAdmin: req.session.admin, title:'Share'});
 			req.session.messages = null;
 		});
 	});
 
 	router.get('/forgot', function(req, res) {
-		res.render('forgot', {isLoggedInAdmin: req.session.admin, title: 'Forgot Password'});
+		res.render('forgot', {labyoker : req.session.user, isLoggedInAdmin: req.session.admin, title: 'Forgot Password'});
 		req.session.messages = null;
 	});
 
@@ -282,18 +282,18 @@ module.exports = function(router) {
 					console.log("done: " + (done != null && done.length > 0 && done == 'alreadySent'));
 					console.log("done2: " + (done != null && done == 'alreadySent'));
 					if (done != null && done.length > 0 && done != 'alreadySent') {
-						res.render('forgot', {isLoggedInAdmin: req.session.admin, userfound : forgotuser});
+						res.render('forgot', {labyoker : req.session.user, isLoggedInAdmin: req.session.admin, userfound : forgotuser});
 					} else if(done != null && done.length > 0 && done == 'alreadySent') {
 						res.render(
 							'forgot',
 							{
-								isLoggedInAdmin: req.session.admin, title: 'Forgot Password', message : "Ah. We have already sent you an email today to change your password. Please check your inbox.", usernotfound : true, noforgotform: true
+								labyoker : req.session.user, isLoggedInAdmin: req.session.admin, title: 'Forgot Password', message : "Ah. We have already sent you an email today to change your password. Please check your inbox.", usernotfound : true, noforgotform: true
 							});
 					} else {
 						res.render(
 							'forgot',
 							{
-								isLoggedInAdmin: req.session.admin, title: 'Forgot Password', message : "Sorry. We could not find an account with this username. Please try again below.", usernotfound : true
+								labyoker : req.session.user, isLoggedInAdmin: req.session.admin, title: 'Forgot Password', message : "Sorry. We could not find an account with this username. Please try again below.", usernotfound : true
 							});
 					}
 				});
@@ -301,7 +301,7 @@ module.exports = function(router) {
 				res.render(
 					'forgot',
 					{
-						isLoggedInAdmin: req.session.admin, title: 'Forgot Password', message : "Sorry. You must enter your current username. Please try again below.", usernotfound : true
+						labyoker : req.session.user, isLoggedInAdmin: req.session.admin, title: 'Forgot Password', message : "Sorry. You must enter your current username. Please try again below.", usernotfound : true
 					});
 
 			}
@@ -309,7 +309,7 @@ module.exports = function(router) {
 	});
 
 	router.get('/register', function(req, res) {
-		res.render('register', {isLoggedInAdmin: req.session.admin, title: 'Register'});
+		res.render('register', {labyoker : req.session.user, isLoggedInAdmin: req.session.admin, title: 'Register'});
 		req.session.messages = null;
 		req.body.reglab = null;
 	});
@@ -365,11 +365,12 @@ module.exports = function(router) {
 							email: req.session.email,
 							tel: req.session.tel,
 							title: 'Register',
-							isLoggedInAdmin: req.session.admin
+							isLoggedInAdmin: req.session.admin,
+							labyoker : req.session.user
 						});
 				} else if (done != null && done.length > 0 && done != 'success') {
 					console.log("status = status1");
-					res.render('register', {isLoggedInAdmin: req.session.admin, title: 'Register', message : "Sorry. We could not register you. Please try again below."});
+					res.render('register', {labyoker : req.session.user, isLoggedInAdmin: req.session.admin, title: 'Register', message : "Sorry. We could not register you. Please try again below."});
 				} else if(done != null && done.length > 0 && done == 'success') {
 					console.log("status = success1");
 					rendered = true;
@@ -380,7 +381,8 @@ module.exports = function(router) {
 							regsuccess : user_name,
 							labentered : false,
 							title: 'Register',
-							isLoggedInAdmin: req.session.admin
+							isLoggedInAdmin: req.session.admin,
+							labyoker : req.session.user
 						});
 				} else {
 					res.render(
@@ -388,7 +390,8 @@ module.exports = function(router) {
 						{
 							message : "Sorry. You cannot proceed. Please try again below.",
 							title: 'Register',
-							isLoggedInAdmin: req.session.admin
+							isLoggedInAdmin: req.session.admin,
+							labyoker : req.session.user
 						});
 				}
 			});
@@ -405,7 +408,7 @@ module.exports = function(router) {
 					if(done != null && done.length > 0 && done == 'alreadyInUse') {
 						console.log("status = alreadyInUse");
 						rendered = true;
-						res.render('register', {isLoggedInAdmin: req.session.admin, title: 'Register', message : "Sorry. This email address is already in use. Please use a different one and try again below."});
+						res.render('register', {labyoker : req.session.user, isLoggedInAdmin: req.session.admin, title: 'Register', message : "Sorry. This email address is already in use. Please use a different one and try again below."});
 					} else if(done != null && done.length > 0 && done == 'firstsection') {
 						console.log("status = firstsection");
 						rendered = true;
@@ -418,12 +421,13 @@ module.exports = function(router) {
 								email: req.session.email,
 								tel: req.session.tel,
 								title: 'Register',
-								isLoggedInAdmin: req.session.admin
+								isLoggedInAdmin: req.session.admin,
+								labyoker : req.session.user
 							});
 					} else if(done != null && done.length > 0 && done != 'success') {
 						console.log("status = not successful");
 						rendered = true;
-						res.render('register', {isLoggedInAdmin: req.session.admin, title: 'Register', message : "Sorry. We could not register you. Please try again below."});
+						res.render('register', {labyoker : req.session.user, isLoggedInAdmin: req.session.admin, title: 'Register', message : "Sorry. We could not register you. Please try again below."});
 					} else if(done != null && done.length > 0 && done == 'success') {
 						console.log("status = success");
 						rendered = true;
@@ -433,7 +437,8 @@ module.exports = function(router) {
 								regsuccess : user_name,
 								labentered: false,
 								title: 'Register',
-								isLoggedInAdmin: req.session.admin
+								isLoggedInAdmin: req.session.admin,
+								labyoker : req.session.user
 							});
 					} else {
 						console.log("status = something else happened");
@@ -443,12 +448,13 @@ module.exports = function(router) {
 							{
 								message : "Sorry. You cannot proceed. Please try again below.",
 								title: 'Register',
-								isLoggedInAdmin: req.session.admin
+								isLoggedInAdmin: req.session.admin,
+								labyoker : req.session.user
 							});
 					}
 					if(!rendered){
 						console.log("nothing entered");
-						res.render('register', {isLoggedInAdmin: req.session.admin, message : "Sorry. We could not register you. Please fill out all fields below.", title: 'Register'});
+						res.render('register', {labyoker : req.session.user, isLoggedInAdmin: req.session.admin, message : "Sorry. We could not register you. Please fill out all fields below.", title: 'Register'});
 					}
 				});
 			} else {
@@ -457,7 +463,8 @@ module.exports = function(router) {
 				{
 					message : "Sorry. You cannot proceed. Please try again below.",
 					title: 'Register',
-					isLoggedInAdmin: req.session.admin
+					isLoggedInAdmin: req.session.admin,
+					labyoker : req.session.user
 				});
 			}
 	});
@@ -469,9 +476,9 @@ module.exports = function(router) {
 			labYokeSearch.search(function(error, results) {
 				console.log("results " + results[0].length);	
 				if (searchText != null && searchText.length > 0){
-					res.render('search', {isLoggedInAdmin: req.session.admin, title: 'Search', fullname: req.session.fullname, sendemail: req.session.email, searchResults : results[0], agentsResults : results[1], searchformText: searchText, loggedIn : true});
+					res.render('search', {labyoker : req.session.user, isLoggedInAdmin: req.session.admin, title: 'Search', fullname: req.session.fullname, sendemail: req.session.email, searchResults : results[0], agentsResults : results[1], searchformText: searchText, loggedIn : true});
 				} else {
-					res.render('search', {isLoggedInAdmin: req.session.admin, title: 'Search', loggedIn : true, agentsResults : results[1]});
+					res.render('search', {labyoker : req.session.user, isLoggedInAdmin: req.session.admin, title: 'Search', loggedIn : true, agentsResults : results[1]});
 				}
 				req.session.messages = null;
 			});
@@ -538,6 +545,7 @@ req.session.loggedin = true;
 			displayForm: true,
 			hashid: req.params.id,
 			isLoggedInAdmin: req.session.admin,
+			labyoker : req.session.user,
 			scripts : [ '/javascripts/utils.js' ]
 		});
 	});
@@ -568,6 +576,7 @@ req.session.loggedin = true;
 					res.render('changepassword', {
 						title : 'Change Password',
 						isLoggedInAdmin: req.session.admin,
+						labyoker : req.session.user,
 						/*loggedIn : true,*/
 						messageSuccess : "Congratulations you have successfully changed your Password. Please head to the <a href='/login'>login</a> page.", 
 						scripts : [ '/javascripts/utils.js' ]
@@ -577,6 +586,7 @@ req.session.loggedin = true;
 						title : 'Change Password',
 						/*loggedIn : true,*/
 						displayForm: true,
+						labyoker : req.session.user,
 						isLoggedInAdmin: req.session.admin,
 						message : "An error was found while processing your change password. Please try again or <a href='mailto:labyoke@gmail.com?Subject="
 																		+ "Change Password - " + id + "' target='_top'>Contact us</a>.", 
@@ -586,6 +596,7 @@ req.session.loggedin = true;
 						res.render('forgot', {
 						title : 'Change Password',
 						isLoggedInAdmin: req.session.admin,
+						labyoker : req.session.user,
 						/*loggedIn : true,*/
 						message : "Unfortunately your Change Password request has expired. Please make a new request.", 
 						displayForm: true,
@@ -595,6 +606,7 @@ req.session.loggedin = true;
 					res.render('forgot', {
 						title : 'Change Password',
 						isLoggedInAdmin: req.session.admin,
+						labyoker : req.session.user,
 						/*loggedIn : true,*/
 						displayForm: true,
 						message : "Sorry we could not find your Change Password request. Please make a new request.", 
@@ -604,6 +616,7 @@ req.session.loggedin = true;
 					res.render('changepassword', {
 						title : 'Change Password',
 						isLoggedInAdmin: req.session.admin,
+						labyoker : req.session.user,
 						/*loggedIn : true,*/
 						displayForm: true,
 						message : "An error was found while processing your change password. Please try again or <a href='mailto:labyoke@gmail.com?Subject="

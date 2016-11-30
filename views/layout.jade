@@ -28,6 +28,9 @@ html(lang='en')
      if scripts
        each script in scripts
           script(type='text/javascript', src=script)
+   - var user = labyoker
+   - if(labyoker.length>11)
+        - user = user.substring(0, 9) + "."
    body(class=loggedIn)
      if (loggedIn==true)
         .navbar.navbar-inverse.navbar-fixed-top(role='navigation')
@@ -84,7 +87,7 @@ html(lang='en')
                             li(class=activateAccount)
                                 a(href="/account",class="nav-menu", id="menumyaccounta")
                                     span(class="fa fa-cog fa-spin")
-                                    span=" Account"
+                                    span=" " + user + "'s Account"
                             if(isLoggedInAdmin == 1)
                                 li(class=activateReports)
                                     a(href="/reports",class="nav-menu", id="menumyaccounta")
