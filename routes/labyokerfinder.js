@@ -406,6 +406,7 @@ Labyoker.prototype.login = function(callback) {
 
 			var pass = results[0].password;
 			var active = results[0].active;
+			console.log("email is: " + results[0].email);
 			// var hash = crypt.hashSync(pass, salt);
 			if (active == 1) {
 				var c = crypt.compareSync(password, pass);
@@ -423,7 +424,19 @@ Labyoker.prototype.login = function(callback) {
 					result.addRow(row);
 				});
 				query.on("end", function(result) {
-					callback(null, result.rows);
+
+		var query2 = client
+				.query("SELECT count(agent) from vm2016_agentsshare");
+		query2.on("row", function(row, result2) {
+			result2.addRow(row);
+		});
+		query2.on("end", function(result2) {
+			//results.push(result2.rows);
+			console.log("shares found: " + result2.rows)
+			callback(null, result.rows)
+		});
+
+					//callback(null, result.rows);
 				});
 			}
 		} else {
