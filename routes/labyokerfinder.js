@@ -407,6 +407,7 @@ Labyoker.prototype.login = function(callback) {
 
 			var pass = results[0].password;
 			var active = results[0].active;
+			var email = results[0].email;
 			console.log("email is: " + results[0].email);
 			// var hash = crypt.hashSync(pass, salt);
 			if (active == 1) {
