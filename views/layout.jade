@@ -88,13 +88,13 @@ html(lang='en')
                         ul.nav.navbar-nav(id="menumyaccount", class="addMargin", style="border-left-color: white;border-left-style: solid;border-width: thin;")
                             li(class=activateAccount)
                                 a(href="/account",class="nav-menu", id="menumyaccounta")
-                                    span(class="fa fa-cog fa-spin")
+                                    span(class="fa fa-cog")
                                     span(class="desktabonly2")=" " + user + "'s"
                                     span=" Account"
                             if(isLoggedInAdmin == 1)
                                 li(class=activateReports)
                                     a(href="/reports",class="nav-menu", id="menumyaccounta")
-                                        span(class="fa fa-file-text")
+                                        span(class="fa fa-files-o")
                                         span=" Reports"
                     ul.nav.navbar-nav.navbar-right
                         li
