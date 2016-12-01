@@ -394,7 +394,7 @@ Labyoker.prototype.login = function(callback) {
 	var password = this.password;
 	var username = this.username;
 
-	var results;
+	var results, resultsLogin;
 	var query = client.query("SELECT * FROM vm2016_users where id='" + username
 			+ "'"/* and password='"+password+"'" */);
 	query.on("row", function(row, result) {
@@ -420,8 +420,10 @@ Labyoker.prototype.login = function(callback) {
 		query2.on("end", function(result2) {
 			//results.push(result2.rows);
 			var test = result2.rows;
+			resultsLogin.push(results);
+			resultsLogin.push(test[0].counting);
 			console.log("shares found: " + test[0].counting)
-			callback(null, results)
+			callback(null, resultsLogin)
 		});
 
 					//callback(null, results);
