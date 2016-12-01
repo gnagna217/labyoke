@@ -419,7 +419,8 @@ Labyoker.prototype.login = function(callback) {
 		});
 		query2.on("end", function(result2) {
 			//results.push(result2.rows);
-			console.log("shares found: " + result2.rows)
+			var test = result2.rows;
+			console.log("shares found: " + test[0])
 			callback(null, results)
 		});
 
