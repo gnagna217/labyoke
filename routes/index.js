@@ -505,6 +505,8 @@ module.exports = function(router) {
 											done = results[0];
 										if(results != null && results.length > 1)
 											shares = results[1];
+										console.log("done is " + done);
+										console.log("shares is " + shares);
 										if (done != null && done.length > 0) {
 											req.session.user = done[0].name;
 											req.session.userid = done[0].id;
@@ -527,7 +529,7 @@ req.session.loggedin = true;
 													.render(
 															'login',
 															{
-																message : "Your username and/or password is wrong. Please try again.", title: 'Login', findsharesnum: shares
+																message : "Your username and/or password is wrong. Please try again.", title: 'Login'
 															});
 										}
 									});

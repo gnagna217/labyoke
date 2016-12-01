@@ -424,6 +424,7 @@ Labyoker.prototype.login = function(callback) {
 				});
 				query.on("end", function(result) {
 var email = results[0].email;
+console.log("email in index is " + email);
 var query2 = client
 			.query("SELECT count(agent) FROM vm2016_agentsshare where email='"
 					+ email + "'");
@@ -432,8 +433,11 @@ var query2 = client
 					result2.addRow(row);
 				});
 				query2.on("end", function(result2) {
+					console.log("result2 is " + result2);
 					results.push(result.rows);
 					results.push(result2.rows);
+					console.log("results shares is " + results[1]);
+					console.log("results done is " + results[0]);
 					callback(null, results);
 				});
 
