@@ -414,7 +414,8 @@ Labyoker.prototype.login = function(callback) {
 				if (c) {
 
 		var query2 = client
-				.query("SELECT count(agent) as counting from vm2016_agentsshare");
+				.query("SELECT count(agent) as counting from vm2016_agentsshare email='" + email
+			+ "'");
 		query2.on("row", function(row, result2) {
 			result2.addRow(row);
 		});
