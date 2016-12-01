@@ -499,8 +499,12 @@ module.exports = function(router) {
 							var labyoker = new Labyoker(username, password);
 
 							labyoker
-									.login(function(error, done) {
-
+									.login(function(error, results) {
+										var done, shares;
+										if(results != null && results.length > 0)
+											done = results[0];
+										if(results != null && results.length > 1)
+											shares = results[1];
 										if (done != null && done.length > 0) {
 											req.session.user = done[0].name;
 											req.session.userid = done[0].id;
@@ -523,7 +527,7 @@ req.session.loggedin = true;
 													.render(
 															'login',
 															{
-																message : "Your username and/or password is wrong. Please try again.", title: 'Login'
+																message : "Your username and/or password is wrong. Please try again.", title: 'Login', findsharesnum: shares
 															});
 										}
 									});

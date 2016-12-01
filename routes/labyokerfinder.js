@@ -394,7 +394,7 @@ Labyoker.prototype.login = function(callback) {
 	var password = this.password;
 	var username = this.username;
 
-	var results;
+	var results = [];
 	var query = client.query("SELECT * FROM vm2016_users where id='" + username
 			+ "'"/* and password='"+password+"'" */);
 	query.on("row", function(row, result) {
@@ -423,7 +423,22 @@ Labyoker.prototype.login = function(callback) {
 					result.addRow(row);
 				});
 				query.on("end", function(result) {
-					callback(null, result.rows);
+var email = results[0].email;
+var query2 = client
+			.query("SELECT count(agent) FROM vm2016_agentsshare where email='"
+					+ email + "'");
+
+				query2.on("row", function(row, result2) {
+					result2.addRow(row);
+				});
+				query2.on("end", function(result2) {
+					results.push(result.rows);
+					results.push(result2.rows);
+					callback(null, results);
+				});
+
+				//callback(null, result.rows);
+
 				});
 			}
 		} else {
