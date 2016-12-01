@@ -413,14 +413,14 @@ Labyoker.prototype.login = function(callback) {
 				if (c) {
 
 		var query2 = client
-				.query("SELECT count(agent) from vm2016_agentsshare");
+				.query("SELECT count(agent) as counting from vm2016_agentsshare");
 		query2.on("row", function(row, result2) {
 			result2.addRow(row);
 		});
 		query2.on("end", function(result2) {
 			//results.push(result2.rows);
 			var test = result2.rows;
-			console.log("shares found: " + test[0])
+			console.log("shares found: " + test[0].counting)
 			callback(null, results)
 		});
 
