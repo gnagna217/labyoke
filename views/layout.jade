@@ -29,6 +29,24 @@ html(lang='en')
        each script in scripts
           script(type='text/javascript', src=script)
    - var user = labyoker
+
+   - var sharesnum = 9
+   - var ordersnum = 20
+   - var ordersnumclass = "num"
+   - var sharesnumclass = "num"
+   - if(sharesnum != null && sharesnum <10)
+        - sharesnumclass = "num"
+   - else if(sharesnum != null && sharesnum <100)
+        - sharesnumclass = "num greatherthannine"
+   - else if(sharesnum != null && sharesnum <1000)
+        - sharesnumclass = "num greatherthanninetynine"
+
+   - if(ordersnum != null && ordersnum <10)
+        - ordersnumclass = "num"
+   - else if(ordersnum != null && ordersnum <100)
+        - ordersnumclass = "num greatherthannine"
+   - else if(ordersnum != null && ordersnum <1000)
+        - ordersnumclass = "num greatherthanninetynine"
    - if(user != null && user != undefined && user.length>11)
         - user = user.substring(0, 8)
         - if(user.substring(8,8) == " ")
@@ -81,13 +99,14 @@ html(lang='en')
                                 a(href="/share",class="nav-menu",id="menushare")
                                     span(class="fa fa-exchange colmenu")
                                     span=" Shares"
-                                    a(class="fa fa-globe")
-                                      span(class="fa fa-comment")
-                                      span(class="num")=2
+                                    span(class="fa fa-comment")
+                                    span(class=sharesnumclass)!=sharesnum
                             li(class=activateOrders)
                                 a(href="/orders",class="nav-menu",id="menushare")
                                     span(class="fa fa-ship colmenu")
                                     span=" Orders"
+                                    span(class="fa fa-comment")
+                                    span(class=ordersnumclass)!=ordersnum
                         ul.nav.navbar-nav(id="menumyaccount", class="addMargin", style="border-left-color: white;border-left-style: solid;border-width: thick; border-right-color: white;border-right-style: solid;")
                             li(class=activateAccount)
                                 a(href="/account",class="nav-menu", id="menumyaccounta")

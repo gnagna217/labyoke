@@ -202,18 +202,28 @@ a.fa-globe {
   cursor: pointer;
 }
 span.fa-comment {
-  position: absolute;
-  font-size: 0.6em;
-  top: -4px;
-  color: red;
-  right: -4px;
+    position: absolute;
+    font-size: 1.8em;
+    top: -6px;
+    color: #3d9dcb;
+    right: -8px;
 }
+
 span.num {
-  position: absolute;
-  font-size: 0.3em;
-  top: 1px;
-  color: #fff;
-  right: 2px;
+position: absolute;
+    font-size: 0.8em;
+    top: -2px;
+    color: #fff;
+    right: 0.5px;
+    text-align: center;
+}
+
+.greatherthannine{
+    right: -2px !important;      
+}
+
+.greatherthanninetynine{
+    right: -5px !important;      
 }
 
 .reportOrders{
