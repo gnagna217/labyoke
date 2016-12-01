@@ -76,16 +76,19 @@ html(lang='en')
                                     span!=" Help "
                             
                     div(style="padding-left: 130px;")
-                        ul.nav.navbar-nav(id="menumyshares", class="addMargin", style="border-left-color: white;border-left-style: solid;border-width: thin;")
+                        ul.nav.navbar-nav(id="menumyshares", class="addMargin", style="border-left-color: white;border-left-style: solid;border-width: thick;")
                             li(class=activateShares)
                                 a(href="/share",class="nav-menu",id="menushare")
                                     span(class="fa fa-exchange colmenu")
                                     span=" Shares"
+                                    a(class="fa fa-globe")
+                                      span(class="fa fa-comment")
+                                      span(class="num")=2
                             li(class=activateOrders)
                                 a(href="/orders",class="nav-menu",id="menushare")
                                     span(class="fa fa-ship colmenu")
                                     span=" Orders"
-                        ul.nav.navbar-nav(id="menumyaccount", class="addMargin", style="border-left-color: white;border-left-style: solid;border-width: thin;")
+                        ul.nav.navbar-nav(id="menumyaccount", class="addMargin", style="border-left-color: white;border-left-style: solid;border-width: thick; border-right-color: white;border-right-style: solid;")
                             li(class=activateAccount)
                                 a(href="/account",class="nav-menu", id="menumyaccounta")
                                     span(class="fa fa-cog colmenu")
