@@ -68,33 +68,33 @@ html(lang='en')
                         ul.nav.navbar-nav
                             li(class=activateSearch)
                                 a(href="/search", class="nav-menu",id="menusearch")
-                                    span(class="fa fa-search")
+                                    span(class="fa fa-search colmenu")
                                     span=" Search"
                             li(class=activateHelp)
                                 a(href='/help', class="nav-menu",id="menusearch")
-                                    span(class="fa fa-anchor")
+                                    span(class="fa fa-anchor colmenu")
                                     span!=" Help "
                             
                     div(style="padding-left: 130px;")
                         ul.nav.navbar-nav(id="menumyshares", class="addMargin", style="border-left-color: white;border-left-style: solid;border-width: thin;")
                             li(class=activateShares)
                                 a(href="/share",class="nav-menu",id="menushare")
-                                    span(class="fa fa-exchange")
+                                    span(class="fa fa-exchange colmenu")
                                     span=" Shares"
                             li(class=activateOrders)
                                 a(href="/orders",class="nav-menu",id="menushare")
-                                    span(class="fa fa-ship")
+                                    span(class="fa fa-ship colmenu")
                                     span=" Orders"
                         ul.nav.navbar-nav(id="menumyaccount", class="addMargin", style="border-left-color: white;border-left-style: solid;border-width: thin;")
                             li(class=activateAccount)
                                 a(href="/account",class="nav-menu", id="menumyaccounta")
-                                    span(class="fa fa-cog")
+                                    span(class="fa fa-cog colmenu")
                                     span(class="desktabonly2")=" " + user + "'s"
                                     span=" Account"
                             if(isLoggedInAdmin == 1)
                                 li(class=activateReports)
                                     a(href="/reports",class="nav-menu", id="menumyaccounta")
-                                        span(class="fa fa-files-o")
+                                        span(class="fa fa-files-o colmenu")
                                         span=" Reports"
                     ul.nav.navbar-nav.navbar-right
                         li
