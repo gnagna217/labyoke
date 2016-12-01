@@ -203,10 +203,10 @@ a.fa-globe {
 }
 span.fa-comment {
     position: absolute;
-    font-size: 1.8em;
-    top: -6px;
+    font-size: 2.0em;
+    top: -8px;
     color: #3d9dcb;
-    right: -8px;
+    right: -9px;
 }
 
 span.num {
