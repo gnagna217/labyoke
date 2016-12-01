@@ -688,7 +688,18 @@ input::-webkit-inner-spin-button {
 }
 
 @media (max-width: 767px){
-
+span.fa-comment {
+    right: 10px !important;
+}
+span.num {
+    right: 19px !important;
+}
+span.num.greatherthannine {
+    right: 17px !important;
+}
+span.num.greatherthanninetynine {
+    right: 13px !important;
+}
 .desktabonly{
     display: none;
 }
