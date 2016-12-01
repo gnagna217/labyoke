@@ -411,7 +411,19 @@ Labyoker.prototype.login = function(callback) {
 			if (active == 1) {
 				var c = crypt.compareSync(password, pass);
 				if (c) {
-					callback(null, results);
+
+		var query2 = client
+				.query("SELECT count(agent) from vm2016_agentsshare");
+		query2.on("row", function(row, result2) {
+			result2.addRow(row);
+		});
+		query2.on("end", function(result2) {
+			//results.push(result2.rows);
+			console.log("shares found: " + result2.rows)
+			callback(null, results)
+		});
+
+					//callback(null, results);
 				} else {
 					callback(null, null);
 				}
@@ -424,19 +436,7 @@ Labyoker.prototype.login = function(callback) {
 					result.addRow(row);
 				});
 				query.on("end", function(result) {
-
-		var query2 = client
-				.query("SELECT count(agent) from vm2016_agentsshare");
-		query2.on("row", function(row, result2) {
-			result2.addRow(row);
-		});
-		query2.on("end", function(result2) {
-			//results.push(result2.rows);
-			console.log("shares found: " + result2.rows)
-			callback(null, result.rows)
-		});
-
-					//callback(null, result.rows);
+					callback(null, result.rows);
 				});
 			}
 		} else {
