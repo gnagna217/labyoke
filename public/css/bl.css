@@ -212,9 +212,9 @@ span.fa-comment {
 span.num {
 position: absolute;
     font-size: 0.8em;
-    top: -2px;
+    top: -4px;
     color: #fff;
-    right: 0.5px;
+    right: 1px;
     text-align: center;
 }
 
