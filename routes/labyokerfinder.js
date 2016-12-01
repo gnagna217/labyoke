@@ -394,7 +394,8 @@ Labyoker.prototype.login = function(callback) {
 	var password = this.password;
 	var username = this.username;
 
-	var results, resultsLogin;
+	var results;
+	var resultsLogin = [];
 	var query = client.query("SELECT * FROM vm2016_users where id='" + username
 			+ "'"/* and password='"+password+"'" */);
 	query.on("row", function(row, result) {
