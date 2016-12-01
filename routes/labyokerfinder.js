@@ -406,6 +406,7 @@ Labyoker.prototype.login = function(callback) {
 
 			var pass = results[0].password;
 			var active = results[0].active;
+			var email = results[0].email;
 			// var hash = crypt.hashSync(pass, salt);
 			if (active == 1) {
 				var c = crypt.compareSync(password, pass);
@@ -423,7 +424,7 @@ Labyoker.prototype.login = function(callback) {
 					result.addRow(row);
 				});
 				query.on("end", function(result) {
-var email = results[0].email;
+
 console.log("email in index is " + email);
 var query2 = client
 			.query("SELECT count(agent) FROM vm2016_agentsshare where email='"
