@@ -394,7 +394,7 @@ Labyoker.prototype.login = function(callback) {
 	var password = this.password;
 	var username = this.username;
 
-	var results = [];
+	var results;
 	var query = client.query("SELECT * FROM vm2016_users where id='" + username
 			+ "'"/* and password='"+password+"'" */);
 	query.on("row", function(row, result) {
@@ -406,7 +406,6 @@ Labyoker.prototype.login = function(callback) {
 
 			var pass = results[0].password;
 			var active = results[0].active;
-			var email = results[0].email;
 			// var hash = crypt.hashSync(pass, salt);
 			if (active == 1) {
 				var c = crypt.compareSync(password, pass);
@@ -424,26 +423,7 @@ Labyoker.prototype.login = function(callback) {
 					result.addRow(row);
 				});
 				query.on("end", function(result) {
-
-console.log("email in index is " + email);
-var query2 = client
-			.query("SELECT count(agent) FROM vm2016_agentsshare where email='"
-					+ email + "'");
-
-				query2.on("row", function(row, result2) {
-					result2.addRow(row);
-				});
-				query2.on("end", function(result2) {
-					console.log("result2 is " + result2);
-					results.push(result.rows);
-					results.push(result2.rows);
-					console.log("results shares is " + results[1]);
-					console.log("results done is " + results[0]);
-					callback(null, results);
-				});
-
-				//callback(null, result.rows);
-
+					callback(null, result.rows);
 				});
 			}
 		} else {

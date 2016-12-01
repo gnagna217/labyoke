@@ -499,14 +499,8 @@ module.exports = function(router) {
 							var labyoker = new Labyoker(username, password);
 
 							labyoker
-									.login(function(error, results) {
-										var done, shares;
-										if(results != null && results.length > 0)
-											done = results[0];
-										if(results != null && results.length > 1)
-											shares = results[1];
-										console.log("done is " + done);
-										console.log("shares is " + shares);
+									.login(function(error, done) {
+
 										if (done != null && done.length > 0) {
 											req.session.user = done[0].name;
 											req.session.userid = done[0].id;
