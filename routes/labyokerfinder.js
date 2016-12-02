@@ -251,12 +251,22 @@ LabYokeAgents.prototype.findmyshares = function(callback) {
 			result4.addRow(row);
 		});
 		query4.on("end", function(result4) {
-			//results.push(result2.rows);
+
+		var query3 = client
+				.query("update vm2016_orders set status='' where status='new' and email='" + email
+			+ "'");
+		query3.on("row", function(row, result3) {
+			result3.addRow(row);
+		});
+		query3.on("end", function(result3) {
 			var test4 = result4.rows;
 			results.push(test4.length);
 			results.push(test4);
 			console.log("orders findmyshares found: " + test4.length)
 			callback(null, results)
+
+		});
+
 
 		});
 
@@ -345,11 +355,23 @@ LabYokerGetOrder.prototype.getorders = function(callback) {
 		query3.on("end", function(result3) {
 			//results.push(result2.rows);
 
+		var query4 = client
+				.query("update vm2016_orders set status='' where status='new' requestoremail='" + email
+			+ "'");
+		query4.on("row", function(row, result4) {
+			result4.addRow(row);
+		});
+		query4.on("end", function(result4) {
+			//results.push(result2.rows);
 			var test3 = result3.rows;
 
 			results.push(test3[0].counting);
 			console.log("shares found: " + test3[0].counting)
 			callback(null, results)
+
+		});
+
+
 
 		});
 
