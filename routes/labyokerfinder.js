@@ -227,6 +227,7 @@ LabYokeAgents.prototype.findmyshares = function(callback) {
 	var query = client
 			.query("SELECT * FROM vm2016_agentsshare where email='"
 					+ this.email + "' order by date");
+	var email = this.email;
 	query.on("row", function(row, result) {
 		result.addRow(row);
 	});
@@ -241,7 +242,7 @@ LabYokeAgents.prototype.findmyshares = function(callback) {
 			results.push(result2.rows);
 
 		var query3 = client
-				.query("SELECT count(agent) as counting from vm2016_agentsshare where email='" + this.email
+				.query("SELECT count(agent) as counting from vm2016_agentsshare where email='" + email
 			+ "'");
 		query3.on("row", function(row, result3) {
 			result3.addRow(row);
@@ -250,7 +251,7 @@ LabYokeAgents.prototype.findmyshares = function(callback) {
 			//results.push(result2.rows);
 
 		var query4 = client
-				.query("SELECT count(agent) as counting from vm2016_orders where requestoremail='" + this.email
+				.query("SELECT count(agent) as counting from vm2016_orders where requestoremail='" + email
 			+ "'");
 		query4.on("row", function(row, result4) {
 			result4.addRow(row);
@@ -362,8 +363,8 @@ LabYokerGetOrder.prototype.getorders = function(callback) {
 			//results.push(result2.rows);
 			var test3 = result3.rows;
 			var test4 = result4.rows;
-			results.push(test3[0].counting);
 			results.push(test4[0].counting);
+			results.push(test3[0].counting);
 			console.log("shares found: " + test3[0].counting)
 			console.log("orders found: " + test4[0].counting)
 			callback(null, results)
