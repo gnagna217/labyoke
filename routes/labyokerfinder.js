@@ -337,7 +337,7 @@ LabYokerGetOrder.prototype.getorders = function(callback) {
 
 		var query3 = client
 				.query("SELECT count(agent) as counting from vm2016_agentsshare where email='" + email
-			+ "' and status='new' ");
+			+ "'");
 		query3.on("row", function(row, result3) {
 			result3.addRow(row);
 		});
