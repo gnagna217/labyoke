@@ -321,7 +321,7 @@ LabYokerGetOrder.prototype.getorders = function(callback) {
 	console.log("getorders: " + email);
 	var query = client
 			.query("SELECT * FROM vm2016_orders where requestoremail like '%"
-					+ email + "%' and status='new' order by date desc");
+					+ email + "%' order by date desc");
 	query.on("row", function(row, result) {
 		result.addRow(row);
 	});
@@ -337,7 +337,7 @@ LabYokerGetOrder.prototype.getorders = function(callback) {
 
 		var query3 = client
 				.query("SELECT count(agent) as counting from vm2016_agentsshare where email='" + email
-			+ "'");
+			+ "' and status='new' ");
 		query3.on("row", function(row, result3) {
 			result3.addRow(row);
 		});
