@@ -34,7 +34,7 @@ block content
                         -for(var prop in ob)
                           - var d = ob[prop].date
                           - d = d.toLocaleDateString("en-US")
-                          - var n = '#{ob[prop].status}'
+                          - var n = ob[prop].status
                           - var isnew = ""
                           - if(n == "new")
                              - isnew = "isnew"
