@@ -245,7 +245,7 @@ LabYokeAgents.prototype.findmyshares = function(callback) {
 			//results.push(result2.rows);
 
 		var query4 = client
-				.query("SELECT * as counting from vm2016_orders where requestoremail='" + email
+				.query("SELECT * from vm2016_orders where requestoremail='" + email
 			+ "' and status='new'");
 		query4.on("row", function(row, result4) {
 			result4.addRow(row);
