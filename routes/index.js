@@ -174,7 +174,7 @@ module.exports = function(router) {
 			var labYokerGetOrder = new LabYokerGetOrder(req.session.email);
 			labYokerGetOrder.getorders(function(error, results) {
 				if(results != null){
-					req.session.shares = results[2];
+					//req.session.shares = results[2];
 					req.session.orders = 0;
 					console.log("orders results: " + results);				
 					res.render('orders', {ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, isLoggedInAdmin: req.session.admin, title:'Orders', loggedIn : true, orderresults: results[0], report_sharesbycategory: results[1]});
@@ -188,7 +188,6 @@ module.exports = function(router) {
 
 	router.post('/orders', isLoggedIn, function(req, res) {
 		if (req.session.user) {
-			req.session.orders = 0;
 			var agent = req.body.agentform;
 			var vendor = req.body.vendorform;
 			var catalognumber = req.body.catalogform;
