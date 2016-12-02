@@ -239,7 +239,36 @@ LabYokeAgents.prototype.findmyshares = function(callback) {
 		});
 		query2.on("end", function(result2) {
 			results.push(result2.rows);
+
+		var query3 = client
+				.query("SELECT count(agent) as counting from vm2016_agentsshare where email='" + email
+			+ "'");
+		query3.on("row", function(row, result3) {
+			result3.addRow(row);
+		});
+		query3.on("end", function(result3) {
+			//results.push(result2.rows);
+
+		var query4 = client
+				.query("SELECT count(agent) as counting from vm2016_orders where requestoremail='" + email
+			+ "'");
+		query4.on("row", function(row, result4) {
+			result4.addRow(row);
+		});
+		query4.on("end", function(result4) {
+			//results.push(result2.rows);
+			var test3 = result3.rows;
+			var test4 = result4.rows;
+			results.push(test3[0].counting);
+			results.push(test4[0].counting);
+			console.log("shares found: " + test3[0].counting)
+			console.log("orders found: " + test4[0].counting)
 			callback(null, results)
+		});
+		});
+
+
+			//callback(null, results)
 		});
 	});
 };
@@ -313,7 +342,35 @@ LabYokerGetOrder.prototype.getorders = function(callback) {
 		});
 		query2.on("end", function(result2) {
 			results.push(result2.rows);
+
+		var query3 = client
+				.query("SELECT count(agent) as counting from vm2016_agentsshare where email='" + email
+			+ "'");
+		query3.on("row", function(row, result3) {
+			result3.addRow(row);
+		});
+		query3.on("end", function(result3) {
+			//results.push(result2.rows);
+
+		var query4 = client
+				.query("SELECT count(agent) as counting from vm2016_orders where requestoremail='" + email
+			+ "'");
+		query4.on("row", function(row, result4) {
+			result4.addRow(row);
+		});
+		query4.on("end", function(result4) {
+			//results.push(result2.rows);
+			var test3 = result3.rows;
+			var test4 = result4.rows;
+			results.push(test3[0].counting);
+			results.push(test4[0].counting);
+			console.log("shares found: " + test3[0].counting)
+			console.log("orders found: " + test4[0].counting)
 			callback(null, results)
+		});
+		});
+
+			//callback(null, results)
 		});
 	});
 };

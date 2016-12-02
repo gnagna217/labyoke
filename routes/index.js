@@ -174,6 +174,8 @@ module.exports = function(router) {
 			var labYokerGetOrder = new LabYokerGetOrder(req.session.email);
 			labYokerGetOrder.getorders(function(error, results) {
 				if(results != null){
+					req.session.orders = results[2];
+					req.session.shares = results[3];
 					console.log("orders results: " + results);				
 					res.render('orders', {ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, isLoggedInAdmin: req.session.admin, title:'Orders', loggedIn : true, orderresults: results[0], report_sharesbycategory: results[1]});
 					//req.session.messages = null;
@@ -262,6 +264,8 @@ module.exports = function(router) {
 	router.get('/share', isLoggedIn, function(req, res) {
 		var labYokeAgents = new LabYokeAgents(req.session.email);
 		labYokeAgents.findmyshares(function(error, results) {
+			req.session.orders = results[2];
+			req.session.shares = results[3];
 			console.log("is admon? " + req.session.admin);
 			res.render('share', {ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, myshares: results[0], report_sharesbycategory: results[1], loggedIn : true, isLoggedInAdmin: req.session.admin, title:'Share'});
 			req.session.messages = null;
