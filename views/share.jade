@@ -21,6 +21,7 @@ block content
 										th(class="wrapped")!= 'Agent'
 										th= 'Vendor'
 										th= 'Catalog'
+										th= 'Date'
 								tbody
 									-var ob = mysharesrequest
 									-for(var prop in ob)
@@ -31,7 +32,8 @@ block content
 										tr(class=isnew)
 											td(class="wrapped") #{ob[prop].agent}
 											td #{ob[prop].vendor}
-											td #{ob[prop].catalognumber}
+											td(class="desktabonly") #{ob[prop].catalognumber}
+											td #{ob[prop].date}
 							script.
 								$(document).ready(function() {
 									$('#rankTblreqshares').DataTable();
@@ -48,18 +50,14 @@ block content
 									tr(class="you info-best" style="font-weight: bold")
 										th(class="wrapped")!= 'Agent'
 										th= 'Vendor'
-										th(class="desktabonly")= 'Catalog'
-										th= 'Date'
+										th= 'Catalog'
 								tbody
 									-var ob = myshares
-									- var pageCount = 0
 									-for(var prop in ob)
-										- pageCount = prop + 1	
 										tr
 											td(class="wrapped") #{ob[prop].agent}
 											td #{ob[prop].vendor}
 											td #{ob[prop].catalognumber}
-											td(class="desktabonly") #{ob[prop].date}
 							script.
 								$(document).ready(function() {
 									$('#rankTblshares').DataTable();
