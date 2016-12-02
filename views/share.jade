@@ -9,6 +9,36 @@ block content
 			h1= 'Share.'
 			if(myshares == "")
 				h4="You are currently not sharing any agent."
+			if(mysharesrequest != "")
+				h4="Fantastic."
+				p="Your agents are being requested by your colleagues."
+				div(id="results")
+					div(id="ctl00_Div2" class="row rank")
+						div(class="table-responsive")               
+							table(id="rankTblreqshares" class="table rankTbl")
+								thead
+									tr(class="you info-best" style="font-weight: bold")
+										th(class="desktabonly")= 'id'
+										th(class="wrapped")!= 'Agent'
+										th= 'Vendor'
+										th= 'Catalog'
+								tbody
+									-var ob = mysharesrequest
+									- var pageCount = 0
+									- var n = ob[prop].status
+									- var isnew = ""
+									- if(n == "new")
+										- isnew = "isnew"
+									-for(var prop in ob)
+										tr(class=isnew)
+											td(class="desktabonly") #{prop}
+											td(class="wrapped") #{ob[prop].agent}
+											td #{ob[prop].vendor}
+											td #{ob[prop].catalognumber}
+							script.
+								$(document).ready(function() {
+									$('#rankTblreqshares').DataTable();
+								});
 			if(myshares != "")
 				h4="You are currently sharing."
 				p="An administrator has uploaded the following agents on your behalf."
@@ -26,7 +56,7 @@ block content
 									-var ob = myshares
 									- var pageCount = 0
 									-for(var prop in ob)
-										tr(class="")
+										tr
 											td(class="desktabonly") #{prop}
 											td(class="wrapped") #{ob[prop].agent}
 											td #{ob[prop].vendor}

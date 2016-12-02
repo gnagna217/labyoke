@@ -245,7 +245,7 @@ LabYokeAgents.prototype.findmyshares = function(callback) {
 			//results.push(result2.rows);
 
 		var query4 = client
-				.query("SELECT count(agent) as counting from vm2016_orders where requestoremail='" + email
+				.query("SELECT * as counting from vm2016_orders where requestoremail='" + email
 			+ "' and status='new'");
 		query4.on("row", function(row, result4) {
 			result4.addRow(row);
@@ -253,8 +253,9 @@ LabYokeAgents.prototype.findmyshares = function(callback) {
 		query4.on("end", function(result4) {
 			//results.push(result2.rows);
 			var test4 = result4.rows;
-			results.push(test4[0].counting);
-			console.log("orders found: " + test4[0].counting)
+			results.push(test4.length);
+			results.push(test4);
+			console.log("orders found: " + test4.length)
 			callback(null, results)
 
 		});
