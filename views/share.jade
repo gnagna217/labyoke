@@ -30,8 +30,9 @@ block content
 										- var isnew = ""
 										- if(n == "new")
 											- isnew = "isnew"
+										- pageCount = prop + 1
 										tr(class=isnew)
-											td(class="desktabonly") #{prop}
+											td(class="desktabonly") pageCount
 											td(class="wrapped") #{ob[prop].agent}
 											td #{ob[prop].vendor}
 											td #{ob[prop].catalognumber}
@@ -57,8 +58,9 @@ block content
 									-var ob = myshares
 									- var pageCount = 0
 									-for(var prop in ob)
+										- pageCount = prop + 1	
 										tr
-											td(class="desktabonly")!=#{prop}+1
+											td(class="desktabonly") pageCount
 											td(class="wrapped") #{ob[prop].agent}
 											td #{ob[prop].vendor}
 											td #{ob[prop].catalognumber}
