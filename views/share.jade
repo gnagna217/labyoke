@@ -9,7 +9,7 @@ block content
 			h1= 'Share.'
 			if(myshares == "")
 				h4="You are currently not sharing any agent."
-			if(mysharesrequest != "")
+			if(mysharesrequest != null && mysharesrequest!=undefined)
 				h4="Fantastic."
 				p="Your agents are being requested by your colleagues."
 				div(id="results")
