@@ -298,7 +298,7 @@ LabYokerOrder.prototype.order = function(callback) {
 	var location = this.location;
 	var now = moment(new Date).tz("America/New_York").format('YYYY-MM-DD');
 	console.log("order location: " + location);
-	var query = client.query("INSERT INTO vm2016_orders VALUES ('" + agent + "', '" + vendor + "', '" + catalognumber + "','" + email + "', '" + sendemail + "', '" + now + ", 'new')");
+	var query = client.query("INSERT INTO vm2016_orders VALUES ('" + agent + "', '" + vendor + "', '" + catalognumber + "','" + email + "', '" + sendemail + "', '" + now + "', 'new')");
 
 	query.on("row", function(row, result) {
 		result.addRow(row);
