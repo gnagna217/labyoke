@@ -34,8 +34,12 @@ block content
                         -for(var prop in ob)
                           - var d = ob[prop].date
                           - d = d.toLocaleDateString("en-US")
+                          - var n = #{ob[prop].status}
+                          - var isnew = ""
+                          - if(n == "new")
+                             - isnew = "isnew"
                           - i = i + 1
-                          tr(class="")
+                          tr(class=isnew)
                             td(class="desktabonly")= i
                             td(class="wrapped") #{ob[prop].agent}
                             td #{ob[prop].vendor}

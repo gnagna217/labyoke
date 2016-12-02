@@ -209,6 +209,9 @@ span.fa-comment {
     right: -9px;
 }
 
+.isnew{
+    background-color: #a4d2e8;
+}
 span.num {
 position: absolute;
     font-size: 0.8em;
