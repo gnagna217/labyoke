@@ -25,11 +25,11 @@ block content
 								tbody
 									-var ob = mysharesrequest
 									- var pageCount = 0
-									- var n = ob[prop].status
-									- var isnew = ""
-									- if(n == "new")
-										- isnew = "isnew"
 									-for(var prop in ob)
+										- var n = ob[prop].status
+										- var isnew = ""
+										- if(n == "new")
+											- isnew = "isnew"
 										tr(class=isnew)
 											td(class="desktabonly") #{prop}
 											td(class="wrapped") #{ob[prop].agent}
