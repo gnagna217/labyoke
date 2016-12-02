@@ -260,8 +260,8 @@ LabYokeAgents.prototype.findmyshares = function(callback) {
 			//results.push(result2.rows);
 			var test3 = result3.rows;
 			var test4 = result4.rows;
-			results.push(test3[0].counting);
 			results.push(test4[0].counting);
+			results.push(test3[0].counting);
 			console.log("shares found: " + test3[0].counting)
 			console.log("orders found: " + test4[0].counting)
 			callback(null, results)
