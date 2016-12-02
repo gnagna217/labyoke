@@ -188,6 +188,7 @@ module.exports = function(router) {
 
 	router.post('/orders', isLoggedIn, function(req, res) {
 		if (req.session.user) {
+			req.session.orders = 0;
 			var agent = req.body.agentform;
 			var vendor = req.body.vendorform;
 			var catalognumber = req.body.catalogform;
@@ -264,7 +265,7 @@ module.exports = function(router) {
 	router.get('/share', isLoggedIn, function(req, res) {
 		var labYokeAgents = new LabYokeAgents(req.session.email);
 		labYokeAgents.findmyshares(function(error, results) {
-			req.session.orders = results[2];
+			//req.session.orders = results[2];
 			req.session.shares = 0;
 			console.log("is orders? " + req.session.orders);
 			res.render('share', {ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, myshares: results[0], mysharesrequest: results[3], report_sharesbycategory: results[1], loggedIn : true, isLoggedInAdmin: req.session.admin, title:'Share'});

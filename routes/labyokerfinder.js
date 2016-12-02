@@ -456,7 +456,7 @@ Labyoker.prototype.login = function(callback) {
 
 		var query2 = client
 				.query("SELECT count(agent) as counting from vm2016_agentsshare where email='" + email
-			+ "'");
+			+ "' and status='new'");
 		query2.on("row", function(row, result2) {
 			result2.addRow(row);
 		});
@@ -465,7 +465,7 @@ Labyoker.prototype.login = function(callback) {
 
 		var query3 = client
 				.query("SELECT count(agent) as counting from vm2016_orders where requestoremail='" + email
-			+ "'");
+			+ "' and status='new'");
 		query3.on("row", function(row, result3) {
 			result3.addRow(row);
 		});
