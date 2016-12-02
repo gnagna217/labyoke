@@ -84,7 +84,7 @@ LabYokeUploader.prototype.upload = function(callback) {
 			var email = results[prop].user;
 			var category = results[prop].category;
 			values = values + "('" + agent
-		+ "', '" + vendor + "', '" + catalognumber + "', '" + location + "', '" + email + "','" + now + "','" + category + "')";
+		+ "', '" + vendor + "', '" + catalognumber + "', '" + location + "', '" + email + "','" + now + "','" + category + "','new')";
 			if(prop < (results.length-1)){
 				values = values + ",";
 			}
@@ -243,7 +243,7 @@ LabYokeAgents.prototype.findmyshares = function(callback) {
 
 		var query3 = client
 				.query("SELECT count(agent) as counting from vm2016_agentsshare where email='" + email
-			+ "'");
+			+ "' and status='new'");
 		query3.on("row", function(row, result3) {
 			result3.addRow(row);
 		});
@@ -252,7 +252,7 @@ LabYokeAgents.prototype.findmyshares = function(callback) {
 
 		var query4 = client
 				.query("SELECT count(agent) as counting from vm2016_orders where requestoremail='" + email
-			+ "'");
+			+ "' and status='new'");
 		query4.on("row", function(row, result4) {
 			result4.addRow(row);
 		});
@@ -298,7 +298,7 @@ LabYokerOrder.prototype.order = function(callback) {
 	var location = this.location;
 	var now = moment(new Date).tz("America/New_York").format('YYYY-MM-DD');
 	console.log("order location: " + location);
-	var query = client.query("INSERT INTO vm2016_orders VALUES ('" + agent + "', '" + vendor + "', '" + catalognumber + "','" + email + "', '" + sendemail + "', '" + now + "')");
+	var query = client.query("INSERT INTO vm2016_orders VALUES ('" + agent + "', '" + vendor + "', '" + catalognumber + "','" + email + "', '" + sendemail + "', '" + now + ", 'new')");
 
 	query.on("row", function(row, result) {
 		result.addRow(row);
