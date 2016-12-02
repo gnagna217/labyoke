@@ -31,9 +31,13 @@ html(lang='en')
    - var user = labyoker
 
    - var sharesnumber = sharesnum
-   - var ordersnum = 999
+   - var ordersnumber = ordersnum
    - var ordersnumclass = "num"
    - var sharesnumclass = "num"
+   - if(sharesnumber == null || sharesnumber == undefined)
+       - sharesnumber = 0
+   - if(ordersnumber == null || ordersnumber == undefined)
+       - ordersnumber = 0
    - if(sharesnumber != null && sharesnumber <10)
         - sharesnumclass = "num"
    - else if(sharesnumber != null && sharesnumber <100)
@@ -41,11 +45,11 @@ html(lang='en')
    - else if(sharesnumber != null && sharesnumber <1000)
         - sharesnumclass = "num greatherthanninetynine"
 
-   - if(ordersnum != null && ordersnum <10)
+   - if(ordersnumber != null && ordersnumber <10)
         - ordersnumclass = "num"
-   - else if(ordersnum != null && ordersnum <100)
+   - else if(ordersnumber != null && ordersnumber <100)
         - ordersnumclass = "num greatherthannine"
-   - else if(ordersnum != null && ordersnum <1000)
+   - else if(ordersnumber != null && ordersnumber <1000)
         - ordersnumclass = "num greatherthanninetynine"
    - if(user != null && user != undefined && user.length>11)
         - user = user.substring(0, 8)
@@ -106,7 +110,7 @@ html(lang='en')
                                     span(class="fa fa-ship colmenu")
                                     span=" Orders"
                                     span(class="fa fa-comment")
-                                    span(class=ordersnumclass)!=ordersnum
+                                    span(class=ordersnumclass)!=ordersnumber
                         ul.nav.navbar-nav(id="menumyaccount", class="addMargin", style="border-left-color: white;border-left-style: solid;border-width: thick; border-right-color: white;border-right-style: solid;")
                             li(class=activateAccount)
                                 a(href="/account",class="nav-menu", id="menumyaccounta")

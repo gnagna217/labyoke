@@ -82,7 +82,7 @@ module.exports = function(router) {
                     var labYokeUploader = new LabYokeUploader(result);
                     labYokeUploader.upload(function(error, done) {
                     res.render('share', {
-                    sharesnum: req.session.shares, json: result, loggedIn : true, isLoggedInAdmin: isLoggedInAdmin, title: 'Share', spreadname: req.file.originalname, labyoker : req.session.user
+                    orderssnum: req.session.orders, sharesnum: req.session.shares, json: result, loggedIn : true, isLoggedInAdmin: isLoggedInAdmin, title: 'Share', spreadname: req.file.originalname, labyoker : req.session.user
                     });
                 });
                     //res.json({error_code:0,err_desc:null, data: result});
@@ -100,6 +100,7 @@ module.exports = function(router) {
 
 	router.get('/help', /*isLoggedIn,*/ function(req, res) {
 		res.render('help', {
+			orderssnum: req.session.orders,
 			sharesnum: req.session.shares,
 			title : 'Help',
 			loggedIn : req.session.loggedin,
@@ -146,7 +147,7 @@ module.exports = function(router) {
 		if (req.session.user) {
 			res.redirect('/search');
 		} else {
-			res.render('login', {sharesnum: req.session.shares, labyoker : req.session.user, title: 'Login',isLoggedInAdmin: req.session.admin});
+			res.render('login', {orderssnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, title: 'Login',isLoggedInAdmin: req.session.admin});
 			req.session.messages = null;
 
 		}
@@ -157,9 +158,9 @@ module.exports = function(router) {
 			var labYokeSearch = new LabYokeSearch("");
 			labYokeSearch.findagents(function(error, results) {			
 				if (results != null && results.length > 0){
-					res.render('search', {sharesnum: req.session.shares, labyoker : req.session.user, isLoggedInAdmin: req.session.admin, agentsResults : results, loggedIn : true, title: 'Search'});
+					res.render('search', {orderssnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, isLoggedInAdmin: req.session.admin, agentsResults : results, loggedIn : true, title: 'Search'});
 				} else {
-					res.render('search', {sharesnum: req.session.shares, labyoker : req.session.user, isLoggedInAdmin: req.session.admin, loggedIn : true, title: 'Search'});
+					res.render('search', {orderssnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, isLoggedInAdmin: req.session.admin, loggedIn : true, title: 'Search'});
 				}
 				req.session.messages = null;
 			});
@@ -174,7 +175,7 @@ module.exports = function(router) {
 			labYokerGetOrder.getorders(function(error, results) {
 				if(results != null){
 					console.log("orders results: " + results);				
-					res.render('orders', {sharesnum: req.session.shares, labyoker : req.session.user, isLoggedInAdmin: req.session.admin, title:'Orders', loggedIn : true, orderresults: results[0], report_sharesbycategory: results[1]});
+					res.render('orders', {orderssnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, isLoggedInAdmin: req.session.admin, title:'Orders', loggedIn : true, orderresults: results[0], report_sharesbycategory: results[1]});
 					//req.session.messages = null;
 				}
 			});
@@ -198,7 +199,7 @@ module.exports = function(router) {
 					console.log("ordering location: " + location);
 					console.log("ordering reqemail: " + reqemail);
 				
-					res.render('orders', {sharesnum: req.session.shares, labyoker : req.session.user, isLoggedInAdmin: req.session.admin, title:'Orders',loggedIn : true, location: location, agent: agent, vendor: vendor, catalog: catalognumber, email: email});
+					res.render('orders', {orderssnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, isLoggedInAdmin: req.session.admin, title:'Orders',loggedIn : true, location: location, agent: agent, vendor: vendor, catalog: catalognumber, email: email});
 					req.session.messages = null;
 				}
 			});
@@ -208,12 +209,12 @@ module.exports = function(router) {
 	});
 
 	router.get('/account', isLoggedIn, function(req, res) {
-		res.render('account', {sharesnum: req.session.shares, labyoker : req.session.user, isLoggedInAdmin: req.session.admin, loggedIn : true, title: 'Account'});
+		res.render('account', {orderssnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, isLoggedInAdmin: req.session.admin, loggedIn : true, title: 'Account'});
 		req.session.messages = null;
 	});
 
 	router.get('/reports', isLoggedIn, function(req, res) {
-		res.render('reports', {sharesnum: req.session.shares, labyoker : req.session.user, isLoggedInAdmin: req.session.admin, loggedIn : true, title: 'Reports', isLoggedInAdmin: req.session.admin});
+		res.render('reports', {orderssnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, isLoggedInAdmin: req.session.admin, loggedIn : true, title: 'Reports', isLoggedInAdmin: req.session.admin});
 		req.session.messages = null;
 	});
 
@@ -226,9 +227,9 @@ module.exports = function(router) {
 			if(results != null){
 				console.log("res " + results);
 				if(results != ""){
-					res.render('reports', {sharesnum: req.session.shares, labyoker : req.session.user, datefromShares: datefrom, dateto: dateto, title:'Reports',loggedIn : true, resultsShares: results, isLoggedInAdmin: req.session.admin, addMessageShares: "success"});
+					res.render('reports', {orderssnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, datefromShares: datefrom, dateto: dateto, title:'Reports',loggedIn : true, resultsShares: results, isLoggedInAdmin: req.session.admin, addMessageShares: "success"});
 				} else {
-					res.render('reports', {sharesnum: req.session.shares, labyoker : req.session.user, datefromShares: datefrom, dateto: dateto, title:'Reports',loggedIn : true, isLoggedInAdmin: req.session.admin, addMessageShares: "failure"});
+					res.render('reports', {orderssnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, datefromShares: datefrom, dateto: dateto, title:'Reports',loggedIn : true, isLoggedInAdmin: req.session.admin, addMessageShares: "failure"});
 				}
 				req.session.messages = null;
 			}
@@ -244,9 +245,9 @@ module.exports = function(router) {
 			if(results != null){
 				console.log("res " + results);
 				if(results != ""){
-					res.render('reports', {sharesnum: req.session.shares, labyoker : req.session.user, datefromOrders: datefrom, datetoOrders: dateto, title:'Reports',loggedIn : true, resultsOrders: results, isLoggedInAdmin: req.session.admin, addMessageOrders: "success"});
+					res.render('reports', {orderssnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, datefromOrders: datefrom, datetoOrders: dateto, title:'Reports',loggedIn : true, resultsOrders: results, isLoggedInAdmin: req.session.admin, addMessageOrders: "success"});
 				} else {
-					res.render('reports', {sharesnum: req.session.shares, labyoker : req.session.user, datefromOrders: datefrom, datetoOrders: dateto, title:'Reports',loggedIn : true, isLoggedInAdmin: req.session.admin, addMessageOrders: "failure"});
+					res.render('reports', {orderssnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, datefromOrders: datefrom, datetoOrders: dateto, title:'Reports',loggedIn : true, isLoggedInAdmin: req.session.admin, addMessageOrders: "failure"});
 				}
 				req.session.messages = null;
 			}
@@ -254,7 +255,7 @@ module.exports = function(router) {
 	});
 
 	router.get('/play', function(req, res) {
-		res.render('play', {sharesnum: req.session.shares, title: 'Play',labyoker : req.session.user});
+		res.render('play', {orderssnum: req.session.orders, sharesnum: req.session.shares, title: 'Play',labyoker : req.session.user});
 		req.session.messages = null;
 	});
 
@@ -262,13 +263,13 @@ module.exports = function(router) {
 		var labYokeAgents = new LabYokeAgents(req.session.email);
 		labYokeAgents.findmyshares(function(error, results) {
 			console.log("is admon? " + req.session.admin);
-			res.render('share', {sharesnum: req.session.shares, labyoker : req.session.user, myshares: results[0], report_sharesbycategory: results[1], loggedIn : true, isLoggedInAdmin: req.session.admin, title:'Share'});
+			res.render('share', {orderssnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, myshares: results[0], report_sharesbycategory: results[1], loggedIn : true, isLoggedInAdmin: req.session.admin, title:'Share'});
 			req.session.messages = null;
 		});
 	});
 
 	router.get('/forgot', function(req, res) {
-		res.render('forgot', {sharesnum: req.session.shares, labyoker : req.session.user, isLoggedInAdmin: req.session.admin, title: 'Forgot Password'});
+		res.render('forgot', {orderssnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, isLoggedInAdmin: req.session.admin, title: 'Forgot Password'});
 		req.session.messages = null;
 	});
 
@@ -283,18 +284,18 @@ module.exports = function(router) {
 					console.log("done: " + (done != null && done.length > 0 && done == 'alreadySent'));
 					console.log("done2: " + (done != null && done == 'alreadySent'));
 					if (done != null && done.length > 0 && done != 'alreadySent') {
-						res.render('forgot', {sharesnum: req.session.shares, labyoker : req.session.user, isLoggedInAdmin: req.session.admin, userfound : forgotuser});
+						res.render('forgot', {orderssnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, isLoggedInAdmin: req.session.admin, userfound : forgotuser});
 					} else if(done != null && done.length > 0 && done == 'alreadySent') {
 						res.render(
 							'forgot',
 							{
-								sharesnum: req.session.shares, labyoker : req.session.user, isLoggedInAdmin: req.session.admin, title: 'Forgot Password', message : "Ah. We have already sent you an email today to change your password. Please check your inbox.", usernotfound : true, noforgotform: true
+								orderssnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, isLoggedInAdmin: req.session.admin, title: 'Forgot Password', message : "Ah. We have already sent you an email today to change your password. Please check your inbox.", usernotfound : true, noforgotform: true
 							});
 					} else {
 						res.render(
 							'forgot',
 							{
-								sharesnum: req.session.shares, labyoker : req.session.user, isLoggedInAdmin: req.session.admin, title: 'Forgot Password', message : "Sorry. We could not find an account with this username. Please try again below.", usernotfound : true
+								orderssnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, isLoggedInAdmin: req.session.admin, title: 'Forgot Password', message : "Sorry. We could not find an account with this username. Please try again below.", usernotfound : true
 							});
 					}
 				});
@@ -302,7 +303,7 @@ module.exports = function(router) {
 				res.render(
 					'forgot',
 					{
-						sharesnum: req.session.shares, labyoker : req.session.user, isLoggedInAdmin: req.session.admin, title: 'Forgot Password', message : "Sorry. You must enter your current username. Please try again below.", usernotfound : true
+						orderssnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, isLoggedInAdmin: req.session.admin, title: 'Forgot Password', message : "Sorry. You must enter your current username. Please try again below.", usernotfound : true
 					});
 
 			}
@@ -310,7 +311,7 @@ module.exports = function(router) {
 	});
 
 	router.get('/register', function(req, res) {
-		res.render('register', {sharesnum: req.session.shares, labyoker : req.session.user, isLoggedInAdmin: req.session.admin, title: 'Register'});
+		res.render('register', {orderssnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, isLoggedInAdmin: req.session.admin, title: 'Register'});
 		req.session.messages = null;
 		req.body.reglab = null;
 	});
@@ -360,6 +361,7 @@ module.exports = function(router) {
 					res.render(
 						'register',
 						{
+							orderssnum: req.session.orders,
 							sharesnum: req.session.shares,
 							labentered : true,
 							firstname: req.session.firstname,
@@ -372,7 +374,7 @@ module.exports = function(router) {
 						});
 				} else if (done != null && done.length > 0 && done != 'success') {
 					console.log("status = status1");
-					res.render('register', {sharesnum: req.session.shares, labyoker : req.session.user, isLoggedInAdmin: req.session.admin, title: 'Register', message : "Sorry. We could not register you. Please try again below."});
+					res.render('register', {orderssnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, isLoggedInAdmin: req.session.admin, title: 'Register', message : "Sorry. We could not register you. Please try again below."});
 				} else if(done != null && done.length > 0 && done == 'success') {
 					console.log("status = success1");
 					rendered = true;
@@ -380,6 +382,7 @@ module.exports = function(router) {
 					res.render(
 						'register',
 						{
+							orderssnum: req.session.orders,
 							sharesnum: req.session.shares, 
 							regsuccess : user_name,
 							labentered : false,
@@ -391,6 +394,7 @@ module.exports = function(router) {
 					res.render(
 						'register',
 						{
+							orderssnum: req.session.orders,
 							sharesnum: req.session.shares,
 							message : "Sorry. You cannot proceed. Please try again below.",
 							title: 'Register',
@@ -412,13 +416,14 @@ module.exports = function(router) {
 					if(done != null && done.length > 0 && done == 'alreadyInUse') {
 						console.log("status = alreadyInUse");
 						rendered = true;
-						res.render('register', {sharesnum: req.session.shares, labyoker : req.session.user, isLoggedInAdmin: req.session.admin, title: 'Register', message : "Sorry. This email address is already in use. Please use a different one and try again below."});
+						res.render('register', {orderssnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, isLoggedInAdmin: req.session.admin, title: 'Register', message : "Sorry. This email address is already in use. Please use a different one and try again below."});
 					} else if(done != null && done.length > 0 && done == 'firstsection') {
 						console.log("status = firstsection");
 						rendered = true;
 						res.render(
 							'register',
 							{
+								orderssnum: req.session.orders,
 								sharesnum: req.session.shares, 
 								labentered : true,
 								firstname: req.session.firstname,
@@ -432,13 +437,14 @@ module.exports = function(router) {
 					} else if(done != null && done.length > 0 && done != 'success') {
 						console.log("status = not successful");
 						rendered = true;
-						res.render('register', {sharesnum: req.session.shares, labyoker : req.session.user, isLoggedInAdmin: req.session.admin, title: 'Register', message : "Sorry. We could not register you. Please try again below."});
+						res.render('register', {orderssnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, isLoggedInAdmin: req.session.admin, title: 'Register', message : "Sorry. We could not register you. Please try again below."});
 					} else if(done != null && done.length > 0 && done == 'success') {
 						console.log("status = success");
 						rendered = true;
 						res.render(
 							'register',
 							{
+								orderssnum: req.session.orders,
 								sharesnum: req.session.shares, 
 								regsuccess : user_name,
 								labentered: false,
@@ -452,6 +458,7 @@ module.exports = function(router) {
 						res.render(
 							'register',
 							{
+								orderssnum: req.session.orders,
 								sharesnum: req.session.shares, 
 								message : "Sorry. You cannot proceed. Please try again below.",
 								title: 'Register',
@@ -461,13 +468,14 @@ module.exports = function(router) {
 					}
 					if(!rendered){
 						console.log("nothing entered");
-						res.render('register', {sharesnum: req.session.shares, labyoker : req.session.user, isLoggedInAdmin: req.session.admin, message : "Sorry. We could not register you. Please fill out all fields below.", title: 'Register'});
+						res.render('register', {orderssnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, isLoggedInAdmin: req.session.admin, message : "Sorry. We could not register you. Please fill out all fields below.", title: 'Register'});
 					}
 				});
 			} else {
 				res.render(
 				'register',
 				{
+					orderssnum: req.session.orders,
 					sharesnum: req.session.shares, 
 					message : "Sorry. You cannot proceed. Please try again below.",
 					title: 'Register',
@@ -484,9 +492,9 @@ module.exports = function(router) {
 			labYokeSearch.search(function(error, results) {
 				console.log("results " + results[0].length);	
 				if (searchText != null && searchText.length > 0){
-					res.render('search', {sharesnum: req.session.shares, labyoker : req.session.user, isLoggedInAdmin: req.session.admin, title: 'Search', fullname: req.session.fullname, sendemail: req.session.email, searchResults : results[0], agentsResults : results[1], searchformText: searchText, loggedIn : true});
+					res.render('search', {orderssnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, isLoggedInAdmin: req.session.admin, title: 'Search', fullname: req.session.fullname, sendemail: req.session.email, searchResults : results[0], agentsResults : results[1], searchformText: searchText, loggedIn : true});
 				} else {
-					res.render('search', {sharesnum: req.session.shares, labyoker : req.session.user, isLoggedInAdmin: req.session.admin, title: 'Search', loggedIn : true, agentsResults : results[1]});
+					res.render('search', {orderssnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, isLoggedInAdmin: req.session.admin, title: 'Search', loggedIn : true, agentsResults : results[1]});
 				}
 				req.session.messages = null;
 			});
@@ -508,15 +516,20 @@ module.exports = function(router) {
 
 							labyoker
 									.login(function(error, results) {
-										var done, shares;
+										var done, shares, orders;
 										if(results != null && results.length > 0)
 											done = results[0];
 										if(results != null && results.length > 1){
 											shares = results[1];
 											req.session.shares = shares;
 										}
+										if(results != null && results.length > 2){
+											orders = results[2];
+											req.session.orders = orders;
+										}
 										console.log("done is " + done);
 										console.log("shares is " + shares);
+										console.log("orders is " + orders);
 
 										if (done != null && done.length > 0) {
 											req.session.user = done[0].name;
@@ -557,6 +570,7 @@ req.session.loggedin = true;
 
 	router.get('/changepassword/:id', /*isLoggedInAndNotActive,*/ function(req, res) {
 		res.render('changepassword', {
+			orderssnum: req.session.orders,
 			sharesnum: req.session.shares,
 			title : 'Change Password',
 			/*loggedIn : true,*/
@@ -592,6 +606,7 @@ req.session.loggedin = true;
 			
 			if (results != null && results.length > 0 && results == 'passwordReset') {
 					res.render('changepassword', {
+						orderssnum: req.session.orders,
 						sharesnum: req.session.shares,
 						title : 'Change Password',
 						isLoggedInAdmin: req.session.admin,
@@ -602,6 +617,7 @@ req.session.loggedin = true;
 					});
 			} else if(results != null && results.length > 0 && results == 'errorFound') {
 					res.render('changepassword', {
+						orderssnum: req.session.orders,
 						sharesnum: req.session.shares, 
 						title : 'Change Password',
 						/*loggedIn : true,*/
@@ -614,6 +630,7 @@ req.session.loggedin = true;
 					});
 			} else if(results != null && results.length > 0 && results == 'dateExpired') {
 						res.render('forgot', {
+						orderssnum: req.session.orders,
 						sharesnum: req.session.shares, 
 						title : 'Change Password',
 						isLoggedInAdmin: req.session.admin,
@@ -625,6 +642,7 @@ req.session.loggedin = true;
 					});
 			} else if(results != null && results.length > 0 && results == 'cannotFindRequest') {
 					res.render('forgot', {
+						orderssnum: req.session.orders,
 						sharesnum: req.session.shares, 
 						title : 'Change Password',
 						isLoggedInAdmin: req.session.admin,
@@ -636,6 +654,7 @@ req.session.loggedin = true;
 					});
 			} else {
 					res.render('changepassword', {
+						orderssnum: req.session.orders,
 						sharesnum: req.session.shares,
 						title : 'Change Password',
 						isLoggedInAdmin: req.session.admin,

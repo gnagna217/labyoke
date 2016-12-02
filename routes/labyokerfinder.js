@@ -422,11 +422,25 @@ Labyoker.prototype.login = function(callback) {
 		});
 		query2.on("end", function(result2) {
 			//results.push(result2.rows);
-			var test = result2.rows;
+
+		var query3 = client
+				.query("SELECT count(agent) as counting from vm2016_orders where requestoremail='" + email
+			+ "'");
+		query3.on("row", function(row, result3) {
+			result3.addRow(row);
+		});
+		query3.on("end", function(result3) {
+			//results.push(result2.rows);
+			var test3 = result3.rows;
+			var test2 = result2.rows;
 			resultsLogin.push(results);
-			resultsLogin.push(test[0].counting);
-			console.log("shares found: " + test[0].counting)
+			resultsLogin.push(test2[0].counting);
+			resultsLogin.push(test3[0].counting);
+			console.log("shares found: " + test2[0].counting)
+			console.log("orders found: " + test3[0].counting)
 			callback(null, resultsLogin)
+		});
+			
 		});
 
 					//callback(null, results);
