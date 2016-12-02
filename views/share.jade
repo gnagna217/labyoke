@@ -21,6 +21,7 @@ block content
 										th(class="wrapped")!= 'Agent'
 										th= 'Vendor'
 										th= 'Catalog'
+										th= 'Requestor'
 										th= 'Date'
 								tbody
 									-var ob = mysharesrequest
@@ -33,8 +34,9 @@ block content
 											- isnew = "isnew"
 										tr(class=isnew)
 											td(class="wrapped") #{ob[prop].agent}
-											td #{ob[prop].vendor}
+											td(class="desktabonly") #{ob[prop].vendor}
 											td(class="desktabonly") #{ob[prop].catalognumber}
+											td #{ob[prop].requestoremail}
 											td #{d}
 							script.
 								$(document).ready(function() {
