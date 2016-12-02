@@ -210,7 +210,7 @@ span.fa-comment {
 }
 
 .isnew{
-    background-color: #a4d2e8;
+    background-color: #a4d2e8 !important;
 }
 span.num {
 position: absolute;
