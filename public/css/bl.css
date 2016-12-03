@@ -317,7 +317,9 @@ margin-right: 15px !important;
 }
 
 .yokelogo{
-    border:none; 
+    border:none;
+    width:300px; 
+    height:258px;
     /*width: 300px;*/
 }
 .btn-success {
