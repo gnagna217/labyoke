@@ -27,7 +27,7 @@ var transport = nodemailer.createTransport("SMTP", {
             user: "labyoke@gmail.com",
             clientId: "722270197322-ue10ou0vmbapolg9rc3imkobrrv9m4mn.apps.googleusercontent.com",
             clientSecret: "UY-1x5L2cwV-TS0jI67Aznio",
-            refreshToken: "1/XXZRp2IHBsREpDkWZ1XPkRkOWn_8hOXhq40WiCDnjGM"
+            refreshToken: "1/JxuCX4Hn-ehAgMS8Bv-UTVd5Cmd2OeHgAkyBJCdveyQ"
         }
     }
 });
