@@ -130,12 +130,18 @@ block content
 			div(style="padding-top:25px;", class="") &nbsp;
 			- var array_rows = []
 			- var array_values = ""
+			- var array_rows2 = []
+			- var array_values2 = ""
 			- var now = new Date()
 			- var filteroutput = report_sharesbycategory.filter(function(x){var d = new Date(x.date); return (d.getFullYear() == now.getFullYear() && d.getMonth() == now.getMonth())});
 			-var ob = report_sharesbycategory
 			-for(var prop in ob)
 				- array_rows = array_rows + ob[prop].category + "|"
 				- array_values = array_values + ob[prop].count + "|"
+			-var ob2 = filteroutput
+			-for(var prop in ob2)
+				- array_rows2 = array_rows2 + ob2[prop].category + "|"
+				- array_values2 = array_values2 + ob2[prop].count + "|"
 
 			script.
 				var values = "#{array_values}";
@@ -155,6 +161,26 @@ block content
 					labels: rowTransform,
 					series: [
 						valTransform
+					]
+				};
+
+				var values2 = "#{array_values2}";
+				values2 = values2.split("|");
+				var valTransform2 = [];
+				for(var prop in values2){
+					valTransform2.push(values2[prop]);
+				}
+				var rows2 = "#{array_rows2}";
+				rows2 = rows2.split("|");
+				var rowTransform2 = [];
+				for(var prop in rows2){
+					rowTransform2.push(rows[prop]);
+				}
+				console.log("more rowTransform trans: " + rowTransform2)
+				var data2 = {
+					labels: rowTransform2,
+					series: [
+						valTransform2
 					]
 				};
 				/*
@@ -180,7 +206,7 @@ block content
 
 				var chart0 = new Chartist.Bar('.ct-chart0', data, responsiveOptions);
 
-				var chart = new Chartist.Line('.ct-chart', data, responsiveOptions);
+				var chart = new Chartist.Line('.ct-chart', data2, responsiveOptions);
 
 				// Let's put a sequence number aside so we can use it in the event callbacks
 				var seq = 0,
