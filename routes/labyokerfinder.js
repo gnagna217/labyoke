@@ -234,8 +234,8 @@ LabYokeAgents.prototype.findmyshares = function(callback) {
 	query.on("end", function(result) {
 		results.push(result.rows);
 		var query2 = client
-				.query("SELECT a.category, count(a.category) from vm2016_agentsshare a, vm2016_orders b where a.agent = b.agent and a.catalognumber = b.catalognumber and email='"
-					+ email + "' group by category order by category asc");
+				.query("SELECT a.category, count(a.category) from vm2016_agentsshare a, vm2016_orders b where a.agent = b.agent and a.catalognumber = b.catalognumber and b.email='"
+					+ email + "' group by a.category order by a.category asc");
 		query2.on("row", function(row, result2) {
 			result2.addRow(row);
 		});
