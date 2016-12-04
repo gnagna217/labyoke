@@ -177,9 +177,9 @@ block content
 					})
 				}
 
-				var result = groupBy("#{filteroutput}", function(item)
+				var result = groupBy(#{filteroutput}, function(item)
 				{
-				return [item.category, item.agent];
+					return [item.category, item.agent];
 				});
 
 				var values2 = result;
