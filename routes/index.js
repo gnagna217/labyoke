@@ -177,7 +177,7 @@ module.exports = function(router) {
 					//req.session.shares = results[2];
 					//req.session.orders = 0;
 					console.log("orders results: " + results);				
-					res.render('orders', {ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, isLoggedInAdmin: req.session.admin, title:'Orders', loggedIn : true, orderresults: results[0], report_sharesbycategory: results[1]});
+					res.render('orders', {test: results[3], ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, isLoggedInAdmin: req.session.admin, title:'Orders', loggedIn : true, orderresults: results[0], report_sharesbycategory: results[1]});
 					//req.session.messages = null;
 				}
 			});

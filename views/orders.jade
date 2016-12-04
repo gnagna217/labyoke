@@ -61,19 +61,26 @@ block content
           script(type="text/javascript" src="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.js")
           div(style="background-color: #3d9dcb; height: 2px; margin-bottom: 30px; margin-top: 30px;")
           h4="A brief Line report of the monthly orders."
-          p="This graph depicts the number of orders per Agent Category (line chart)."
+          p="This line graph depicts your total number of orders per Agent Category."
           div(class="ct-chart ct-perfect-fourth")
           div(id="tooltips", class="labColor") &nbsp;
           h4="Another brief Bar report of the monthly orders."
-          p="This graph depicts the number of orders per Agent Category (bar chart)."
+          p="This bar chart depicts your number of orders this month (so far) per Agent Category."
           div(class="ct-chart0 ct-perfect-fourth")
           div(id="tooltips0", class="labColor") &nbsp;
           - var array_rows = []
           - var array_values = ""
+          - var array_rows2 = []
+          - var array_values2 = ""
+          - var filteroutput = test.filter(function(x){console.log("x.monthorder: "+x.monthorder); console.log("x.yearorder: "+x.yearorder); console.log("now.getFullYear(): "+ now.getFullYear()); console.log("now.getMonth(): "+ now.getMonth()); console.log("so: "+ (x.yearorder == now.getFullYear() && x.monthorder == now.getMonth())); return (x.yearorder == now.getFullYear() && x.monthorder == now.getMonth() + 1)});
           -var ob = report_sharesbycategory
           -for(var prop in ob)
             - array_rows = array_rows + ob[prop].category + "|"
             - array_values = array_values + ob[prop].count + "|"
+          -var ob2 = filteroutput
+          -for(var prop in ob2)
+            - array_rows2 = array_rows2 + ob2[prop].category + "|"
+            - array_values2 = array_values2 + ob2[prop].counting + "|"
 
           script.
             var values = "#{array_values}";
@@ -93,6 +100,26 @@ block content
               labels: rowTransform,
               series: [
                 valTransform
+              ]
+            };
+            var values2 = "#{array_values2}";
+            values2 = values2.split("|");
+            var valTransform2 = [];
+            for(var prop in values2){
+              valTransform2.push(values2[prop]);
+            }
+            var rows2 = "#{array_rows2}";
+            rows2 = rows2.split("|");
+            var rowTransform2 = [];
+            for(var prop in rows2){
+             rowTransform2.push(rows2[prop]);
+            }
+            console.log("more valTransform2 trans: " + valTransform2)
+            console.log("more rowTransform2 trans: " + rowTransform2)
+            var data2 = {
+              labels: rowTransform2,
+              series: [
+               valTransform2
               ]
             };
             /*
@@ -116,7 +143,7 @@ block content
               }]
             ];
 
-            var chart0 = new Chartist.Bar('.ct-chart0', data, responsiveOptions);
+            var chart0 = new Chartist.Bar('.ct-chart0', data2, responsiveOptions);
 
             var chart = new Chartist.Line('.ct-chart', data, responsiveOptions);
 

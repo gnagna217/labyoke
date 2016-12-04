@@ -370,21 +370,22 @@ LabYokerGetOrder.prototype.getorders = function(callback) {
 		query3.on("end", function(result3) {
 			//results.push(result2.rows);
 
-		/*var query4 = client
-				.query("update vm2016_orders set status='' where status='new' and email='" + email
-			+ "'");
+		var query4 = client
+				.query("SELECT category, count(category) as counting, EXTRACT(MONTH FROM date_trunc( 'month', date )) as monthorder, EXTRACT(year FROM date_trunc( 'year', date )) as yearorder from vm2016_orders where requestoremail='" + email
+			+ "' group by category, date_trunc( 'month', date ), date_trunc( 'year', date ) order by category asc");
 		query4.on("row", function(row, result4) {
 			result4.addRow(row);
 		});
-		query4.on("end", function(result4) {*/
+		query4.on("end", function(result4) {
 			//results.push(result2.rows);
 			var test3 = result3.rows;
 
 			results.push(test3[0].counting);
+			results.push(result4.rows);
 			console.log("shares found: " + test3[0].counting)
 			callback(null, results)
 
-		/*});*/
+		});
 
 
 
