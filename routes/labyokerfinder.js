@@ -266,9 +266,8 @@ var test4 = result4.rows;
 		query3.on("end", function(result3) {
 
 			var query5 = client
-				.query("SELECT category, count(category) as counting, date_trunc( 'month', date ) as monthorder, date_trunc( 'year', date ) as yearorder from vm2016_orders where email='" + email
+				.query("SELECT category, count(category) as counting, EXTRACT(MONTH FROM date_trunc( 'month', date )) as monthorder, EXTRACT(year FROM date_trunc( 'year', date )) as yearorder from vm2016_orders where email='" + email
 			+ "' group by category, date_trunc( 'month', date ), date_trunc( 'year', date ) order by category asc");
-
 			query5.on("row", function(row, result5) {
 			result5.addRow(row);
 		});
