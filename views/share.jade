@@ -163,7 +163,25 @@ block content
 					]
 				};
 
-				var values2 = "#{array_values2}";
+				function groupBy( array , f ){
+					var groups = {};
+					array.forEach( function( o ){
+						var group = JSON.stringify( f(o) );
+						groups[group] = groups[group] || [];
+						groups[group].push( o );  
+					});
+						return Object.keys(groups).map( function( group )
+					{
+						return groups[group]; 
+					})
+				}
+
+				var result = groupBy("#{array_values2}", function(item)
+				{
+				return [item.category, item.agent];
+				});
+
+				var values2 = result;
 				values2 = values2.split("|");
 				var valTransform2 = [];
 				for(var prop in values2){
