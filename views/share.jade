@@ -131,7 +131,7 @@ block content
 			- var array_rows2 = []
 			- var array_values2 = ""
 			- var now = new Date()
-			- var filteroutput = test.filter(function(x){console.log("x.yearorder: "+x.yearorder); console.log("now.getFullYear(): "+ now.getFullYear()); console.log("so: "+ (x.yearorder == now.getFullYear() && x.monthorder == now.getMonth())); return (x.yearorder == now.getFullYear() && x.monthorder == now.getMonth())});
+			- var filteroutput = test.filter(function(x){console.log("x.monthorder: "+x.monthorder); console.log("x.yearorder: "+x.yearorder); console.log("now.getFullYear(): "+ now.getFullYear()); console.log("now.getMonth(): "+ now.getMonth()); console.log("so: "+ (x.yearorder == now.getFullYear() && x.monthorder == now.getMonth())); return (x.yearorder == now.getFullYear() && x.monthorder == now.getMonth())});
 			-var ob = report_sharesbycategory
 			-for(var prop in ob)
 				- array_rows = array_rows + ob[prop].category + "|"
