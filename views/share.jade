@@ -122,7 +122,10 @@ block content
 			div(class="ct-chart ct-perfect-fourth")
 			div(id="tooltips", class="labColor") &nbsp;
 			h4="A brief Bar report of your monthly shares."
-			p="This graph depicts your number of shares this month (so far) per Agent Category (bar chart)."
+			- var now = new Date()
+			- var check = moment(now, 'YYYY/MM/DD').tz("America/New_York");
+			- var month = check.format('MMMM');
+			p!="This graph depicts your number of shares this " + month + " (so far) per Agent Category (bar chart)."
 			div(class="ct-chart0 ct-perfect-fourth")
 			div(id="tooltips0", class="labColor") &nbsp;
 			div(style="padding-top:25px;", class="") &nbsp;
@@ -130,7 +133,6 @@ block content
 			- var array_values = ""
 			- var array_rows2 = []
 			- var array_values2 = ""
-			- var now = new Date()
 			- var filteroutput = test.filter(function(x){console.log("x.monthorder: "+x.monthorder); console.log("x.yearorder: "+x.yearorder); console.log("now.getFullYear(): "+ now.getFullYear()); console.log("now.getMonth(): "+ now.getMonth()); console.log("so: "+ (x.yearorder == now.getFullYear() && x.monthorder == now.getMonth())); return (x.yearorder == now.getFullYear() && x.monthorder == now.getMonth() + 1)});
 			-var ob = report_sharesbycategory
 			-for(var prop in ob)

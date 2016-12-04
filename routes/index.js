@@ -281,7 +281,7 @@ module.exports = function(router) {
 	router.post('/forgot', function(req, res) {
 			var forgotuser = req.body.forgotuser;
 			if (forgotuser != null && forgotuser.length > 0){
-				var dateStripped = moment(new Date).tz("Europe/Berlin").format(
+				var dateStripped = moment(new Date).tz("America/New_York").format(
 				'YYYY-MM-DD');
 				console.log("dateStripped2: " + dateStripped);
 				var labyoker = new Labyoker(forgotuser,dateStripped);
@@ -600,7 +600,7 @@ req.session.loggedin = true;
 		var id = req.body.hashid;
 		console.log("changing password id is: " + id);
 		console.log("changing password pwd is: " + req.body.pass);
-		var dateStripped = moment(new Date).tz("Europe/Berlin").format(
+		var dateStripped = moment(new Date).tz("America/New_York").format(
 				'YYYY-MM-DD'); // '2014-06-09'
 
 		if (id != null && id.length > 0){

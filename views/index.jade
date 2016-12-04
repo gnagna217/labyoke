@@ -4,7 +4,7 @@ block content
     if(matches!=null && matches.length > 0)
       #matches
          - now = (new Date(now))
-         div.col-xs-12(class="uppercase" style="display:none;")= moment(matches[0].datum).tz("Europe/Berlin").format('dddd, MMMM Do, YYYY')
+         div.col-xs-12(class="uppercase" style="display:none;")= moment(matches[0].datum).tz("America/New_York").format('dddd, MMMM Do, YYYY')
        div
          div
             - now = (new Date(now))
