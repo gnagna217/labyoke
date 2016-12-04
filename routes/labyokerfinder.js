@@ -264,7 +264,7 @@ LabYokeAgents.prototype.findmyshares = function(callback) {
 			var test4 = result4.rows;
 			results.push(test4.length);
 			results.push(test4);
-			console.log("orders findmyshares found: " + test4.length)
+			console.log("orders findmyshares found: " + test4)
 			callback(null, results)
 
 		});
