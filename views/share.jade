@@ -167,17 +167,20 @@ block content
 					var groups = {};
 					console.log("array: " + array);
 					array.forEach( function( o ){
+					if(array[o] != undefined){
 						var group = JSON.stringify( f(o) );
 						groups[group] = groups[group] || [];
 						groups[group].push( o );  
+						}
 					});
 						return Object.keys(groups).map( function( group )
 					{
 						return groups[group]; 
 					})
+
 				}
 
-				var result = groupBy({#{filteroutput}}, function(item)
+				var result = groupBy("#{filteroutput}", function(item)
 				{
 					return [item.category, item.agent];
 				});
