@@ -141,7 +141,7 @@ block content
 			-var ob2 = filteroutput
 			-for(var prop in ob2)
 				- array_rows2 = array_rows2 + ob2[prop].category + "|"
-				- array_values2 = array_values2 + ob2[prop].count + "|"
+				- array_values2 = array_values2 + ob2[prop].agent + "|"
 
 			script.
 				var values = "#{array_values}";
