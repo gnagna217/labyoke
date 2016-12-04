@@ -14,9 +14,7 @@ block content
 				h4="Fantastic."
 				p
 					span(class="labColor")!= output.length + " new chems"
-					span=" are currently being requested by your colleagues."
-				p
-					span="In total, "
+					span=" are currently being requested by your colleagues. In total, "
 					span(class="labColor")!= mysharesrequest.length + " requests"
 					span=" have come from your lab."
 				div(id="results")
@@ -144,6 +142,7 @@ block content
 				- array_values2 = array_values2 + ob2[prop].agent + "|"
 
 			script.
+				console.log("filter: " + filteroutput);
 				var values = "#{array_values}";
 				values = values.split("|");
 				var valTransform = [];
