@@ -134,11 +134,11 @@ block content
 			- var array_values2 = ""
 			- var now = new Date()
 			- var filteroutput = mysharesrequest.filter(function(x){var d = new Date(x.date); console.log("x.date: "+x.date); console.log("now: "+now); console.log("d: "+d); console.log("d.getFullYear(): "+d.getFullYear); console.log("d.getMonth(): "+d.getMonth()); return (d.getFullYear() == now.getFullYear() && d.getMonth() == now.getMonth())});
-			-var ob = filteroutput
+			-var ob = report_sharesbycategory
 			-for(var prop in ob)
 				- array_rows = array_rows + ob[prop].category + "|"
 				- array_values = array_values + ob[prop].count + "|"
-			-var ob2 = report_sharesbycategory
+			-var ob2 = filteroutput
 			-for(var prop in ob2)
 				- array_rows2 = array_rows2 + ob2[prop].category + "|"
 				- array_values2 = array_values2 + ob2[prop].count + "|"
