@@ -355,13 +355,13 @@ LabYokerGetOrder.prototype.getorders = function(callback) {
 		query3.on("end", function(result3) {
 			//results.push(result2.rows);
 
-		var query4 = client
+		/*var query4 = client
 				.query("update vm2016_orders set status='' where status='new' and email='" + email
 			+ "'");
 		query4.on("row", function(row, result4) {
 			result4.addRow(row);
 		});
-		query4.on("end", function(result4) {
+		query4.on("end", function(result4) {*/
 			//results.push(result2.rows);
 			var test3 = result3.rows;
 
@@ -369,7 +369,7 @@ LabYokerGetOrder.prototype.getorders = function(callback) {
 			console.log("shares found: " + test3[0].counting)
 			callback(null, results)
 
-		});
+		/*});*/
 
 
 

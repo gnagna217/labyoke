@@ -11,7 +11,9 @@ block content
 				h4="You are currently not sharing any agent."
 			if(mysharesrequest != null && mysharesrequest!=undefined)
 				h4="Fantastic."
-				p="Your agents are being requested by your colleagues."
+				p
+					span(class="labColor")!= mysharesrequest.length + " new chems"
+					span=" are requested by your colleagues."
 				div(id="results")
 					div(id="ctl00_Div2" class="row rank")
 						div(class="table-responsive")               
