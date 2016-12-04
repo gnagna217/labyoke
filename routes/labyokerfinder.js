@@ -247,25 +247,38 @@ LabYokeAgents.prototype.findmyshares = function(callback) {
 			//results.push(result2.rows);
 
 		var query4 = client
-				.query("SELECT category, count(category) as counting, EXTRACT(MONTH FROM date) as monthorder, EXTRACT(year FROM date) as yearorder from vm2016_orders where email='" + email
-			+ "' group by category, date order by date desc");
+				.query("SELECT * from vm2016_orders where email='" + email
+			+ "' order by date desc");
 		query4.on("row", function(row, result4) {
 			result4.addRow(row);
 		});
 		query4.on("end", function(result4) {
-
+var test4 = result4.rows;
+			results.push(test4.length);
+			results.push(test4);
 		var query3 = client
 				.query("update vm2016_orders set status='' where status='new' and email='" + email
 			+ "'");
+
 		query3.on("row", function(row, result3) {
 			result3.addRow(row);
 		});
 		query3.on("end", function(result3) {
-			var test4 = result4.rows;
-			results.push(test4.length);
-			results.push(test4);
-			console.log("orders findmyshares found: " + test4)
+
+			var query5 = client
+				.query("SELECT category, count(category) as counting, EXTRACT(MONTH FROM date) as monthorder, EXTRACT(year FROM date) as yearorder from vm2016_orders where email='" + email
+			+ "' group by category, date order by date desc");
+
+			query5.on("row", function(row, result5) {
+			result5.addRow(row);
+		});
+		query5.on("end", function(result5) {
+			
+			
+			results.push(result5.rows);
+			console.log("orders findmyshares result5: " + result5.rows)
 			callback(null, results)
+		});
 
 		});
 
