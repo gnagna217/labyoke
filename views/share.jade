@@ -133,7 +133,7 @@ block content
 			- var array_rows2 = []
 			- var array_values2 = ""
 			- var now = new Date()
-			- var filteroutput = report_sharesbycategory.filter(function(x){var d = new Date(x.date); console.log("x.date: "+x.date); console.log("now: "+now); console.log("d: "+d); console.log("d.getFullYear(): "+d.getFullYear); console.log("d.getMonth(): "+d.getMonth()); return (d.getFullYear() == now.getFullYear() && d.getMonth() == now.getMonth())});
+			- var filteroutput = mysharesrequest.filter(function(x){var d = new Date(x.date); console.log("x.date: "+x.date); console.log("now: "+now); console.log("d: "+d); console.log("d.getFullYear(): "+d.getFullYear); console.log("d.getMonth(): "+d.getMonth()); return (d.getFullYear() == now.getFullYear() && d.getMonth() == now.getMonth())});
 			-var ob = filteroutput
 			-for(var prop in ob)
 				- array_rows = array_rows + ob[prop].category + "|"
