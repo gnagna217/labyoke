@@ -165,6 +165,7 @@ block content
 
 				function groupBy( array , f ){
 					var groups = {};
+					console.log("array: " + array);
 					array.forEach( function( o ){
 						var group = JSON.stringify( f(o) );
 						groups[group] = groups[group] || [];
