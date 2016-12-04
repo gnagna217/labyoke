@@ -34,13 +34,14 @@ LabYokeUploader = function(jsonResults) {
 	this.jsonResults = jsonResults;
 };
 
-LabYokerOrder = function(agent, vendor,catalognumber,email,location,sendemail) {
+LabYokerOrder = function(agent, vendor,catalognumber,email,location,sendemail, category) {
 	this.agent = agent;
 	this.vendor = vendor;
 	this.catalognumber = catalognumber;
 	this.email = email;
 	this.location = location;
 	this.sendemail = sendemail;
+	this.category = category;
 };
 
 LabYokerGetOrder = function(sendemail) {
@@ -246,8 +247,8 @@ LabYokeAgents.prototype.findmyshares = function(callback) {
 			//results.push(result2.rows);
 
 		var query4 = client
-				.query("SELECT * from vm2016_orders where email='" + email
-			+ "' order by date desc");
+				.query("SELECT category, count(category) as counting, year(date) as yearorder, month(date) as monthorder from vm2016_orders where email='" + email
+			+ "' group by category, date order by date desc");
 		query4.on("row", function(row, result4) {
 			result4.addRow(row);
 		});
@@ -299,9 +300,10 @@ LabYokerOrder.prototype.order = function(callback) {
 	var email = this.email;
 	var sendemail = this.sendemail;
 	var location = this.location;
+	var category = this.category;
 	var now = moment(new Date).tz("America/New_York").format('YYYY-MM-DD');
 	console.log("order location: " + location);
-	var query = client.query("INSERT INTO vm2016_orders VALUES ('" + agent + "', '" + vendor + "', '" + catalognumber + "','" + email + "', '" + sendemail + "', '" + now + "', 'new')");
+	var query = client.query("INSERT INTO vm2016_orders VALUES ('" + agent + "', '" + vendor + "', '" + catalognumber + "','" + email + "', '" + sendemail + "', '" + now + "', 'new', '" + category + "')");
 
 	query.on("row", function(row, result) {
 		result.addRow(row);

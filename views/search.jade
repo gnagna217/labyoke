@@ -7,6 +7,7 @@ block content
         input(name="vendorform" type="hidden" id="vendorform" value="")
         input(name="catalogform" type="hidden" id="catalogform" value="")
         input(name="locationform" type="hidden" id="locationform" value="")
+        input(name="categoryform" type="hidden" id="categoryform" value="")
         div(id="ios-light")
             center
                 h1="Ordering?"
@@ -79,14 +80,15 @@ block content
                             - var fullname = fullname
                             - var sendemail = sendemail
                             - var reqemail = ob[prop].email
-                            - var location = ob[prop].location                        
+                            - var location = ob[prop].location  
+                            - var category = ob[prop].category                      
                             tr(class=classname)
                                 td(class="desktabonly")= j
                                 td(class="wrapped") #{ob[prop].agent}
                                 td(class="desktabonly") #{ob[prop].vendor}
                                 td #{ob[prop].location}
                                 td
-                                  span(onclick="iosLight('#{agent}','#{vendor}','#{catalognumber}','#{reqemail}','#{location}')", style="cursor:pointer")
+                                  span(onclick="iosLight('#{agent}','#{vendor}','#{catalognumber}','#{reqemail}','#{location}','#{category}')", style="cursor:pointer")
                                         img(src="images/ship2.png", alt="Order now", title="Order now", style="border-width:0px; width: 24px; margin-top: 0px;")
                             - j = j + 1
                       script.
