@@ -247,6 +247,10 @@ position: absolute;
 .labColor{
     color: #3d9dcb;
 }
+
+.admin{
+    margin-bottom: 30px;
+}
 .container {
     padding-right: 10px !important;
     padding-left: 10px !important;
@@ -658,6 +662,9 @@ input::-webkit-inner-spin-button {
 .reportShares{
     float: none; 
     width: 100%;
+}
+.admin{
+    background-color: #3d9dcb; height: 2px; margin-bottom: 30px; margin-top: 30px;
 }
 }
 
