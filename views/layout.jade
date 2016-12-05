@@ -72,6 +72,7 @@ html(lang='en')
                     - activateHelp = ""
                     - activateOrders = ""
                     - activateAccount = "addMargin "
+                    - activateAdmin = "addMargin "
                     - if (title == 'Reports')
                         - activateReports = "labColorBackground"
                     - if (title == 'Share')
@@ -124,7 +125,7 @@ html(lang='en')
                                     a(href="/reports",class="nav-menu", id="menumyaccounta")
                                         span(class="fa fa-file-text colmenu")
                                         span=" Reports"
-                                li(class=activateReports)
+                                li(class=activateAdmin)
                                     a(href="/share#upload",class="nav-menu", id="menumyaccounta")
                                         span(class="fa fa-file-text colmenu")
                                         span=" Admin Upload"
