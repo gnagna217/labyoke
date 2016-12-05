@@ -62,12 +62,21 @@ block content
           div(style="background-color: #3d9dcb; height: 2px; margin-bottom: 30px; margin-top: 30px;")
           h4="A brief Line report of the monthly orders."
           p="This line graph depicts your total number of orders per Agent Category."
+      - if(report_sharesbycategory != null && report_sharesbycategory != undefined)
           div(class="ct-chart ct-perfect-fourth")
           div(id="tooltips", class="labColor") &nbsp;
+      - if(report_sharesbycategory == null && report_sharesbycategory == undefined)
+          h5="You have not ordered any agent. "
+            a(href="/search")
+              span(class="labColot")="Search now"
           h4="Another brief Bar report of the monthly orders."
           p="This bar chart depicts your number of orders this month (so far) per Agent Category."
+      - if(test != null && test != undefined)
           div(class="ct-chart0 ct-perfect-fourth")
           div(id="tooltips0", class="labColor") &nbsp;
+      - if(test == null || test == undefined) 
+          div="You have not ordered any agent this month."
+          
           - var now = new Date()
           - var array_rows = []
           - var array_values = ""
@@ -143,9 +152,10 @@ block content
                 height: 200
               }]
             ];
-
+            if(array_values2 != ""){
             var chart0 = new Chartist.Bar('.ct-chart0', data2, responsiveOptions);
-
+            }
+            if(array_values != ""){
             var chart = new Chartist.Line('.ct-chart', data, responsiveOptions);
 
             // Let's put a sequence number aside so we can use it in the event callbacks
@@ -253,6 +263,7 @@ block content
                 data.element.animate(animations);
               }
             });
+            }
 
             // For the sake of the example we update the chart every time it's created with a delay of 10 seconds
             /*chart.on('created', function() {
@@ -262,6 +273,7 @@ block content
               }
               window.__exampleAnimateTimeout = setTimeout(chart.update.bind(chart), 12000);
             });*/
+            if(array_values != ""){
             var addedEvents = false;
             chart.on('draw', function() {
               if (!addedEvents) {
@@ -276,6 +288,8 @@ block content
                 });
               }
             });
+            }
+            if(array_values2 != ""){
             var addedEvents0 = false;
             chart0.on('draw', function() {
               if (!addedEvents0) {
@@ -288,6 +302,7 @@ block content
                 });
               }
             });
+            }
 
       if email != undefined
         h3="Great! You have ordered the following agent from "
