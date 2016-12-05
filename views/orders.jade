@@ -65,17 +65,18 @@ block content
           - if(report_sharesbycategory != null && report_sharesbycategory != undefined)
              div(class="ct-chart ct-perfect-fourth")
              div(id="tooltips", class="labColor") &nbsp;
+          - var filteroutput = test.filter(function(x){console.log("x.monthorder: "+x.monthorder); console.log("x.yearorder: "+x.yearorder); console.log("now.getFullYear(): "+ now.getFullYear()); console.log("now.getMonth(): "+ now.getMonth()); console.log("so: "+ (x.yearorder == now.getFullYear() && x.monthorder == now.getMonth())); return (x.yearorder == now.getFullYear() && x.monthorder == now.getMonth() + 1)});
           - if(report_sharesbycategory == null && report_sharesbycategory == undefined)
            h5="You have not ordered any agent. "
             a(href="/search")
               span(class="labColot")="Search now"
           h4="Another brief Bar report of the monthly orders."
           p="This bar chart depicts your number of orders this month (so far) per Agent Category."
-          span!="here " + test
-          - if(test && null && test.length > 0) 
+          span!="here " + filteroutput.length
+          - if(filteroutput && null && filteroutput.length > 0) 
              div(class="ct-chart0 ct-perfect-fourth")
              div(id="tooltips0", class="labColor") &nbsp;
-          - if(test && null && test.length == 0) 
+          - if(filteroutput && null && filteroutput.length == 0) 
            div="You have not ordered any agent this month."
           
           - var now = new Date()
@@ -83,7 +84,7 @@ block content
           - var array_values = ""
           - var array_rows2 = []
           - var array_values2 = ""
-          - var filteroutput = test.filter(function(x){console.log("x.monthorder: "+x.monthorder); console.log("x.yearorder: "+x.yearorder); console.log("now.getFullYear(): "+ now.getFullYear()); console.log("now.getMonth(): "+ now.getMonth()); console.log("so: "+ (x.yearorder == now.getFullYear() && x.monthorder == now.getMonth())); return (x.yearorder == now.getFullYear() && x.monthorder == now.getMonth() + 1)});
+          
           -var ob = report_sharesbycategory
           -for(var prop in ob)
             - array_rows = array_rows + ob[prop].category + "|"
