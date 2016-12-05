@@ -70,7 +70,7 @@ block content
 										tr(class=qtyinsufficient)
 											td(class="wrapped") #{ob[prop].agent}
 											td #{ob[prop].vendor}
-											td!=qtyinsufficient
+											td!=currentqty
 							script.
 								$(document).ready(function() {
 									$('#rankTblshares').DataTable();
