@@ -61,18 +61,18 @@ block content
           script(type="text/javascript" src="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.js")
           div(style="background-color: #3d9dcb; height: 2px; margin-bottom: 30px; margin-top: 30px;")
           h4="A brief Line report of the monthly orders."
-          p="This line graph depicts your total number of orders per Agent Category."
-          - if(report_sharesbycategory != null && report_sharesbycategory != undefined)
+          p="This line graph depicts your total number of orders per Agent Category:"
+          - if(report_sharesbycategory != null && report_sharesbycategory.length >0)
              div(class="ct-chart ct-perfect-fourth")
              div(id="tooltips", class="labColor") &nbsp;
           - var now = new Date()
           - var filteroutput = test.filter(function(x){console.log("x.monthorder: "+x.monthorder); console.log("x.yearorder: "+x.yearorder); console.log("now.getFullYear(): "+ now.getFullYear()); console.log("now.getMonth(): "+ now.getMonth()); console.log("so: "+ (x.yearorder == now.getFullYear() && x.monthorder == now.getMonth())); return (x.yearorder == now.getFullYear() && x.monthorder == now.getMonth() + 1)});
-          - if(report_sharesbycategory == null && report_sharesbycategory == undefined)
+          - if(report_sharesbycategory != null && report_sharesbycategory.length==0)
            h5="You have not ordered any agent. "
             a(href="/search")
               span(class="labColot")="Search now."
           h4="Another brief Bar report of the monthly orders."
-          p="This bar chart depicts your number of orders this month (so far) per Agent Category."
+          p="This bar chart depicts your number of orders this month (so far) per Agent Category:"
           - if(filteroutput && null && filteroutput.length > 0) 
              div(class="ct-chart0 ct-perfect-fourth")
              div(id="tooltips0", class="labColor") &nbsp;
