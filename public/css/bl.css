@@ -707,7 +707,7 @@ input::-webkit-inner-spin-button {
 @media (max-width: 767px){
 
 .desktabonly2{
-    display: block;
+    display: initial;
 }
 
 span.fa-comment {
