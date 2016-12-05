@@ -129,7 +129,7 @@ block content
 			- var month = "month";
 			- var filteroutput = test.filter(function(x){console.log("x.monthorder: "+x.monthorder); console.log("x.yearorder: "+x.yearorder); console.log("now.getFullYear(): "+ now.getFullYear()); console.log("now.getMonth(): "+ now.getMonth()); console.log("so: "+ (x.yearorder == now.getFullYear() && x.monthorder == now.getMonth())); return (x.yearorder == now.getFullYear() && x.monthorder == now.getMonth() + 1)});
 			p!="This bar graph depicts your number of shares this " + month + " (so far) per Agent Category:"
-			- if(filteroutput && null && filteroutput.length > 0) 
+			- if(filteroutput != null && filteroutput.length > 0) 
 				div(class="ct-chart0 ct-perfect-fourth")
 				div(id="tooltips0", class="labColor") &nbsp;
 			- if(filteroutput != null && filteroutput.length == 0) 
