@@ -141,7 +141,7 @@ body {
     background-color: #8a6d3b;
     width:278px;
     border: 0;
-
+    outline: none;
 }
 
 .nav-menu{
