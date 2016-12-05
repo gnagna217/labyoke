@@ -15,7 +15,7 @@ block content
 				p
 					span(class="labColor")!= output.length + " new chems"
 					span=" are currently being requested by your colleagues. In total, "
-					span(class="yokeColor", style="font-weight: bold;")!= mysharesrequest.length + " requests"
+					span(class="yokeColorBold")!= mysharesrequest.length + " requests"
 					span=" have come from your lab."
 				div(id="results")
 					div(id="ctl00_Div2" class="row rank")
@@ -68,7 +68,7 @@ block content
 										- var currentqtyint = parseInt(ob[prop].currentquantity)
 										- var qtyinsufficient = ""
 										- if(currentqtyint < 100)
-											- qtyinsufficient = "yokeBackground"
+											- qtyinsufficient = "yokeColorBold"
 										tr(class=qtyinsufficient)
 											td(class="wrapped") #{ob[prop].agent}
 											td #{ob[prop].vendor}

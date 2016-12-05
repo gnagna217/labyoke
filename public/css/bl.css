@@ -230,9 +230,9 @@ position: absolute;
     right: -5px !important;      
 }
 
-.yokeBackground{
-    background-color: rgba(138, 109, 59, 0.82) !important;
-    color: white;
+.yokeColorBold{
+    color: #8a6d3b;
+    font-weight: bold;
 }
 
 .reportOrders{
