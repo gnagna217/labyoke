@@ -65,6 +65,7 @@ block content
           - if(report_sharesbycategory != null && report_sharesbycategory != undefined)
              div(class="ct-chart ct-perfect-fourth")
              div(id="tooltips", class="labColor") &nbsp;
+          - var now = new Date()
           - var filteroutput = test.filter(function(x){console.log("x.monthorder: "+x.monthorder); console.log("x.yearorder: "+x.yearorder); console.log("now.getFullYear(): "+ now.getFullYear()); console.log("now.getMonth(): "+ now.getMonth()); console.log("so: "+ (x.yearorder == now.getFullYear() && x.monthorder == now.getMonth())); return (x.yearorder == now.getFullYear() && x.monthorder == now.getMonth() + 1)});
           - if(report_sharesbycategory == null && report_sharesbycategory == undefined)
            h5="You have not ordered any agent. "
@@ -79,7 +80,7 @@ block content
           - if(filteroutput && null && filteroutput.length == 0) 
            div="You have not ordered any agent this month."
           
-          - var now = new Date()
+          
           - var array_rows = []
           - var array_values = ""
           - var array_rows2 = []
