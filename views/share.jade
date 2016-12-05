@@ -15,7 +15,7 @@ block content
 				p
 					span(class="labColor")!= output.length + " new chems"
 					span=" are currently being requested by your colleagues. In total, "
-					span(class="yokeColorBold")!= mysharesrequest.length + " requests"
+					span(class="labColor")!= mysharesrequest.length + " requests"
 					span=" have come from your lab."
 				div(id="results")
 					div(id="ctl00_Div2" class="row rank")
@@ -51,7 +51,7 @@ block content
 			if(myshares != "")
 				h4="You are currently sharing."
 				p="An administrator has uploaded the following agents on your behalf. "
-					span(class="")= "Insufficient quantities"
+					span(class="yokeColorBold")= "Insufficient quantities"
 					span=" are listed. Please have your admin refresh the quantities."
 				div(id="results")
 					div(id="ctl00_Div2" class="row rank")
