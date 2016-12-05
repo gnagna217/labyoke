@@ -668,7 +668,9 @@ input::-webkit-inner-spin-button {
 }
 
  @media (max-width: 440px) {
-
+.desktabonly2{
+    display: none;
+}
 .rankTbl td
 {
     /*text-align: center;*/
@@ -703,6 +705,11 @@ input::-webkit-inner-spin-button {
 }
 
 @media (max-width: 767px){
+
+.desktabonly2{
+    display: block;
+}
+
 span.fa-comment {
     right: 10px !important;
 }
