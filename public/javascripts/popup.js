@@ -19,12 +19,16 @@ function iosLight(agent,vendor,catalognumber,reqemail,location,category){
   var catalogform = document.getElementById("catalogform");
   var locationform = document.getElementById("locationform");
   var categoryform = document.getElementById("categoryform");
+  var startqtyform = document.getElementById("startqtyform");
+  var currentqtyform = document.getElementById("currentqtyform");
   emailform.value = reqemail;
   agentform.value = agent;
   vendorform.value = vendor;
   catalogform.value = catalognumber;
   locationform.value = location;
   categoryform.value = category;
+  startqtyform.value = startqty;
+  currentqtyform.value = currentqty;
   orderText.innerHTML = "You are about to order 100ml of <br/>Agent: " + agent + "<br/>Vendor: "+vendor+"<br/>Catalog#: "+catalognumber;
   var pop = document.getElementById("ios-light");
   pop.style.display = "block";

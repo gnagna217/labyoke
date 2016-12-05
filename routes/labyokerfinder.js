@@ -34,7 +34,7 @@ LabYokeUploader = function(jsonResults) {
 	this.jsonResults = jsonResults;
 };
 
-LabYokerOrder = function(agent, vendor,catalognumber,email,location,sendemail, category) {
+LabYokerOrder = function(agent, vendor,catalognumber,email,location,sendemail,category,startquantity,currentquantity) {
 	this.agent = agent;
 	this.vendor = vendor;
 	this.catalognumber = catalognumber;
@@ -42,6 +42,8 @@ LabYokerOrder = function(agent, vendor,catalognumber,email,location,sendemail, c
 	this.location = location;
 	this.sendemail = sendemail;
 	this.category = category;
+	this.startquantity = startquantity;
+	this.currentquantity = currentquantity;
 };
 
 LabYokerGetOrder = function(sendemail) {
@@ -313,9 +315,12 @@ LabYokerOrder.prototype.order = function(callback) {
 	var sendemail = this.sendemail;
 	var location = this.location;
 	var category = this.category;
+	var startquantity = this.startquantity;
+	var currentquantity = this.currentquantity;
+	currentquantity = currentquantity - 100;
 	var now = moment(new Date).tz("America/New_York").format('YYYY-MM-DD');
 	console.log("order location: " + location);
-	var query = client.query("INSERT INTO vm2016_orders VALUES ('" + agent + "', '" + vendor + "', '" + catalognumber + "','" + email + "', '" + sendemail + "', '" + now + "', 'new', '" + category + "')");
+	var query = client.query("INSERT INTO vm2016_orders VALUES ('" + agent + "', '" + vendor + "', '" + catalognumber + "','" + email + "', '" + sendemail + "', '" + now + "', 'new', '" + category + "'" + startquantity + "'" + currentquantity + "')");
 
 	query.on("row", function(row, result) {
 		result.addRow(row);
@@ -401,7 +406,7 @@ LabYokeSearch.prototype.search = function(callback) {
 	console.log("searchText: " + this.searchText);
 	var query = client
 			.query("SELECT * FROM vm2016_agentsshare where lower(agent) like lower('%"
-					+ this.searchText + "%') order by agent, location");
+					+ this.searchText + "%') and currentquantity >= 100 order by agent, location");
 	query.on("row", function(row, result) {
 		result.addRow(row);
 	});
