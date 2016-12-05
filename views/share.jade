@@ -50,7 +50,9 @@ block content
 				div(style="background-color: #3d9dcb; height: 2px; margin-bottom: 30px; margin-top: 30px;")
 			if(myshares != "")
 				h4="You are currently sharing."
-				p="An administrator has uploaded the following agents on your behalf."
+				p="An administrator has uploaded the following agents on your behalf. "
+					span(class="")= "Insufficient quantities"
+					span=" are listed. Please have your admin refresh the quantities."
 				div(id="results")
 					div(id="ctl00_Div2" class="row rank")
 						div(class="table-responsive")               
