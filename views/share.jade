@@ -63,9 +63,10 @@ block content
 								tbody
 									-var ob = myshares
 									-for(var prop in ob)
-										- var currentqty = parseInt("#{ob[prop].currentquantity}")
+										- var currentqty = "#{ob[prop].currentquantity}"
+										- var currentqtyint = parseInt(currentqty)
 										- var qtyinsufficient = ""
-										- if(currentqty < 100)
+										- if(currentqtyint < 100)
 											- qtyinsufficient = "yokeColor"
 										tr(class=qtyinsufficient)
 											td(class="wrapped") #{ob[prop].agent}
