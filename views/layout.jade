@@ -120,7 +120,8 @@ html(lang='en')
                                     span(class="fa fa-cog colmenu")
                                     span(class="desktabonly2")=" " + user + "'s"
                                     span=" Account"
-                            if(isLoggedInAdmin == 1)
+                        if(isLoggedInAdmin == 1)
+                         ul.nav.navbar-nav(id="menumyaccount", class="addMargin", style="border-left-color: white;border-left-style: solid;border-width: thick; border-right-color: white;border-right-style: solid;")
                                 li(class=activateReports)
                                     a(href="/reports",class="nav-menu", id="menumyaccounta")
                                         span(class="fa fa-file-text colmenu")
