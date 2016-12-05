@@ -231,7 +231,7 @@ position: absolute;
 }
 
 .yokeBackground{
-    background-color: #8a6d3b;
+    background-color: #8a6d3b !important;
     color: white;
 }
 
