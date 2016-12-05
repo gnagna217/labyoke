@@ -230,6 +230,11 @@ position: absolute;
     right: -5px !important;      
 }
 
+.yokeBackground{
+    background-color: #8a6d3b;
+    color: white;
+}
+
 .reportOrders{
     width: 45%;
     float:right;
