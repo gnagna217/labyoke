@@ -694,7 +694,7 @@ input::-webkit-inner-spin-button {
   
 }
 
-@media (max-width: 991px){
+@media (max-width: 767px){
 span.fa-comment {
     right: 10px !important;
 }
