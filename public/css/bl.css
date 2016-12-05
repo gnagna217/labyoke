@@ -636,7 +636,7 @@ input::-webkit-inner-spin-button {
 .desktabonly2{
     display: none;
 }
-}
+
 
 
     .desktabonly{
@@ -647,6 +647,8 @@ input::-webkit-inner-spin-button {
         font-size: 12px;
     }
 }
+
+
  @media (max-width: 800px) {
 .reportOrders{
     width: 100%;
@@ -658,6 +660,7 @@ input::-webkit-inner-spin-button {
     width: 100%;
 }
 }
+
  @media (max-width: 1200px) {
     .rankTbl td {
         /* text-align: center; */
