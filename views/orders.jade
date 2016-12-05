@@ -63,8 +63,8 @@ block content
           h4="A brief Line report of the monthly orders."
           p="This line graph depicts your total number of orders per Agent Category."
           - if(report_sharesbycategory != null && report_sharesbycategory != undefined)
-           div(class="ct-chart ct-perfect-fourth")
-           div(id="tooltips", class="labColor") &nbsp;
+             div(class="ct-chart ct-perfect-fourth")
+             div(id="tooltips", class="labColor") &nbsp;
           - if(report_sharesbycategory == null && report_sharesbycategory == undefined)
            h5="You have not ordered any agent. "
             a(href="/search")
@@ -72,8 +72,8 @@ block content
           h4="Another brief Bar report of the monthly orders."
           p="This bar chart depicts your number of orders this month (so far) per Agent Category."
           - if(test != null && test != undefined)
-           div(class="ct-chart0 ct-perfect-fourth")
-           div(id="tooltips0", class="labColor") &nbsp;
+             div(class="ct-chart0 ct-perfect-fourth")
+             div(id="tooltips0", class="labColor") &nbsp;
           - if(test == null || test == undefined) 
            div="You have not ordered any agent this month."
           
@@ -153,11 +153,11 @@ block content
               }]
             ];
             console.log("values2 : " + values2);
-            if(values2 != null){
+            if(values2 != null && values2 != ""){
             var chart0 = new Chartist.Bar('.ct-chart0', data2, responsiveOptions);
             }
             console.log("values : " + values);
-            if(values != null){
+            if(values != null && values != ""){
             var chart = new Chartist.Line('.ct-chart', data, responsiveOptions);
 
             // Let's put a sequence number aside so we can use it in the event callbacks
@@ -275,7 +275,7 @@ block content
               }
               window.__exampleAnimateTimeout = setTimeout(chart.update.bind(chart), 12000);
             });*/
-            if(values != ""){
+            if(values != "" && values != ""){
             var addedEvents = false;
             chart.on('draw', function() {
               if (!addedEvents) {
@@ -291,7 +291,7 @@ block content
               }
             });
             }
-            if(values2 != ""){
+            if(values2 != "" && values2 != ""){
             var addedEvents0 = false;
             chart0.on('draw', function() {
               if (!addedEvents0) {
