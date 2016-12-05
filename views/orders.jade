@@ -70,14 +70,14 @@ block content
           - if(report_sharesbycategory == null && report_sharesbycategory == undefined)
            h5="You have not ordered any agent. "
             a(href="/search")
-              span(class="labColot")="Search now"
+              span(class="labColot")="Search now."
           h4="Another brief Bar report of the monthly orders."
           p="This bar chart depicts your number of orders this month (so far) per Agent Category."
           - if(filteroutput && null && filteroutput.length > 0) 
              div(class="ct-chart0 ct-perfect-fourth")
              div(id="tooltips0", class="labColor") &nbsp;
           - if(filteroutput != null && filteroutput.length == 0) 
-           div="You have not ordered any agent this month."
+           h5="You have not ordered any agent this month."
           
           
           - var array_rows = []
