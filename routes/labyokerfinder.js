@@ -233,6 +233,7 @@ LabYokeAgents.prototype.getLabyoker = function(callback) {
 	});
 	query.on("end", function(result) {
 		results = result.rows;
+		console.log("get user details " + results);
 		callback(null, results);
 	});
 };
