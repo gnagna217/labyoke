@@ -124,7 +124,7 @@ block content
 			div(style="background-color: #3d9dcb; height: 2px; margin-bottom: 30px; margin-top: 30px;")
 		div(style="float:right; padding-left: 25px", class="share-container")
 			script(type="text/javascript" src="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.js")
-			div(style="background-color: #3d9dcb; height: 2px; margin-bottom: 30px; margin-top: 30px;")
+			div(style="/*background-color: #3d9dcb; height: 2px;*/ margin-bottom: 30px; margin-top: 0px;")
 			h4="A brief Line report of all your shares."
 			p="This line graph depicts your total number of shares per Agent Category:"
 			- if(report_sharesbycategory != null && report_sharesbycategory.length >0)
