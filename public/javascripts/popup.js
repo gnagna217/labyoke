@@ -22,9 +22,9 @@ function updatenameform(){
   var changename = document.getElementById("changename");
   var pencilname = document.getElementById("pencilname");
   nameform.style.display = 'none';
-  divname.style.display = 'block';
+  divname.style.display = 'initial';
   changename.style.display = 'none';
-  pencilname.style.display = 'block';
+  pencilname.style.display = 'initial';
 }
 
 function iosLight(){
