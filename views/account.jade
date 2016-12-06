@@ -27,6 +27,7 @@ block content
                             - var email = ob[prop].email
                             - var tel = ob[prop].tel
                             - var admin = ob[prop].admin
+                            - var adminIntro = ""
                             - var lab = ob[prop].lab
                             - if(!name)
                                 - name = "..."
@@ -37,10 +38,10 @@ block content
                             - if(!tel)
                                 - tel = "..."
                             - if(admin == 1)
-                                - admin = "You are an administrator."
+                                - adminIntro = "You are an administrator."
                             - if(!lab)
                                 - lab = "..."
-                            p(class="yokeColor", style="font-weight:bold")!=admin
+                            p(class="yokeColor", style="font-weight:bold")!=adminIntro
                             div(style="float:left;")
                               p(class="labColor", style="font-weight:bold")="Name"
                               p(class="labColor", style="font-weight:bold")="Surname"
