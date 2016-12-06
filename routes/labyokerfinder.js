@@ -330,6 +330,7 @@ LabYokerOrder.prototype.order = function(callback) {
 	query.on("end", function(result) {
 		results = result.rows;
 
+
 		var subject = "LabYoke Request - Order for " + agent;
 		var body = "<div style='float:left'><img style='width: 150px; margin: 0 20px;' src='https:\/\/team-labyoke.herokuapp.com\/images\/yoke.jpg', alt='The Yoke',  title='Yoke', class='yokelogo'/></div><div style=\"font-family:'calibri'; font-size:11pt;padding: 20px;\">Hello " + location
 				+ ",<br/><br/>";
@@ -341,10 +342,18 @@ LabYokerOrder.prototype.order = function(callback) {
 		body += "</p><b><i>The LabYoke Team.</i></b></div>";
 		console.log("order body: " + body);
 
+	var query2 = client.query("UPDATE INTO vm2016_agentsshare SET currentquantity=" + currentquantity + " WHERE agent='"+agent+"' AND vendor='" + vendor +"' AND catalognumber='" + catalognumber + "' AND email='" + email + "')");
+	query2.on("row", function(row, result2) {
+		result2.addRow(row);
+	});
+	query2.on("end", function(result2) {
+		
+
 		var mailOptions = new MailOptionsWithCC(email, subject, body, sendemail);
 		mailOptions.sendAllEmails();
 
 		callback(null, "successfulOrder")
+	});
 	});
 };
 
