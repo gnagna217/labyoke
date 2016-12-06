@@ -8,8 +8,8 @@ function materialLight(){
 function updatename(){
   var nameform = document.getElementById("nameform");
   var divnamme = document.getElementById("name");
-  nameform.hide();
-  divname.show();
+  nameform.style.display = 'block';
+  divname.style.display = 'none';
 }
 
 function iosLight(){
