@@ -11,7 +11,7 @@ block content
             p
               span="This page is dedicated to " 
               span(style="color: #3d9dcb;font-weight:bold")="you. "
-              span="If you wish to change your personal details such as your telephone number or Lab information. Or just to check what those details currently are."
+              span="If you wish to change your personal details such as your telephone number or Lab information."
             div(class="table-responsive")
                          -var ob = userDetails
                          - var j = 1
@@ -27,6 +27,7 @@ block content
                             - var email = ob[prop].email
                             - var tel = ob[prop].tel
                             - var admin = ob[prop].admin
+                            - var lab = ob[prop].lab
                             - if(!name)
                                 - name = "..."
                             - if(!email)
@@ -35,19 +36,23 @@ block content
                                 - surname = "..."
                             - if(!tel)
                                 - tel = "..."
-                            - if(!admin)
-                                - admin = "..."
+                            - if(admin == 1)
+                                - admin = "You are an administrator."
+                            - if(!lab)
+                                - lab = "..."
+                            p(class="yokeColor", style="font-weight:bold")!=admin
                             div(style="float:left;")
                               p(class="labColor", style="font-weight:bold")="Name"
                               p(class="labColor", style="font-weight:bold")="Surname"
                               p(class="labColor", style="font-weight:bold")="Email"
                               p(class="labColor", style="font-weight:bold")="Tel"
-                              p(class="labColor", style="font-weight:bold")="Admin"
+                              p(class="labColor", style="font-weight:bold")="Lab"
                             div(style="margin-left: 100px;", class="wrapped")
                               p #{name}
                               p(class="desktabonly") #{surname}
                               p #{email}
                               p #{tel}
-                              p #{admin}
+                              p #{lab}
+
 
 
