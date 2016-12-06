@@ -245,7 +245,6 @@ LabYokeAgents.prototype.findmyshares = function(callback) {
 		query2.on("end", function(result2) {
 			results.push(result2.rows);
 
-
 			//results.push(result2.rows);
 
 		var query4 = client
@@ -316,8 +315,11 @@ LabYokerOrder.prototype.order = function(callback) {
 	var location = this.location;
 	var category = this.category;
 	var startquantity = this.startquantity;
+	console.log("startquantity: " + startquantity);
+	console.log("currentquantity: " + currentquantity);
 	var currentquantity = this.currentquantity;
 	currentquantity = currentquantity - 100;
+	console.log("currentquantity2: " + currentquantity);
 	var now = moment(new Date).tz("America/New_York").format('YYYY-MM-DD');
 	console.log("order location: " + location);
 	var query = client.query("INSERT INTO vm2016_orders VALUES ('" + agent + "', '" + vendor + "', '" + catalognumber + "','" + email + "', '" + sendemail + "', '" + now + "', 'new', '" + category + "'" + startquantity + "'" + currentquantity + "')");

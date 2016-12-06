@@ -195,7 +195,9 @@ module.exports = function(router) {
 			var location = req.body.locationform;
 			var reqemail = req.session.email;
 			var reqcategory = req.body.categoryform;
-			var labYokerorder = new LabYokerOrder(agent, vendor, catalognumber,email,location,reqemail,reqcategory);
+			var startquantity = req.body.startqtyform;
+			var currentquantity = req.body.currentqtyform;
+			var labYokerorder = new LabYokerOrder(agent, vendor, catalognumber,email,location,reqemail,reqcategory,startquantity,currentquantity);
 			labYokerorder.order(function(error, results) {
 				if(results != null && results=="successfulOrder"){
 					console.log("ordering agentform: " + agent);
