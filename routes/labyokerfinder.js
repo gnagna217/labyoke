@@ -134,7 +134,7 @@ LabYokeReporter.prototype.reportShares = function(callback) {
 		console.log("results : " + results);
 		var html = "";
 		if(results != null && results != ""){
-		html = "<div style='float:left; width:50%'><img style='width: 150px; margin: 0 20px;' src='https:\/\/team-labyoke.herokuapp.com\/images\/yoke.jpg', alt='The Yoke',  title='Yoke', class='yokelogo'/></div><div style=\"font-family:'calibri'; font-size:11pt;padding: 20px;, width:50%\">"
+		html = "<div style='float:left; width:50%'><img style='width: 150px; margin: 0 20px;' src='https:\/\/team-labyoke.herokuapp.com\/images\/yoke4.png', alt='The Yoke',  title='Yoke', class='yokelogo'/></div><div style=\"font-family:'calibri'; font-size:11pt;padding: 20px;, width:50%\">"
 				+ "<h1>Shares Uploaded.</h1>";
 
 		if(datefrom == 'all'){
@@ -191,7 +191,7 @@ LabYokeReporter.prototype.reportOrders = function(callback) {
 		console.log("results : " + results);
 		var html = "";
 		if(results != null && results != ""){
-		html = "<div style='float:left; width:50%'><img style='width: 150px; margin: 0 20px;' src='https:\/\/team-labyoke.herokuapp.com\/images\/yoke.jpg', alt='The Yoke',  title='Yoke', class='yokelogo'/></div><div style=\"font-family:'calibri'; font-size:11pt;padding: 20px;, width:50%\">"
+		html = "<div style='float:left; width:50%'><img style='width: 150px; margin: 0 20px;' src='https:\/\/team-labyoke.herokuapp.com\/images\/yoke4.png', alt='The Yoke',  title='Yoke', class='yokelogo'/></div><div style=\"font-family:'calibri'; font-size:11pt;padding: 20px;, width:50%\">"
 				+ "<h1>Orders Requested.</h1>";
 		if(datefrom == 'all'){
 			html += "<p>This report is listing all the orders requested:</p></div>"
@@ -332,7 +332,7 @@ LabYokerOrder.prototype.order = function(callback) {
 
 
 		var subject = "LabYoke Request - Order for " + agent;
-		var body = "<div style='float:left'><img style='width: 150px; margin: 0 20px;' src='https:\/\/team-labyoke.herokuapp.com\/images\/yoke.jpg', alt='The Yoke',  title='Yoke', class='yokelogo'/></div><div style=\"font-family:'calibri'; font-size:11pt;padding: 20px;\">Hello " + location
+		var body = "<div style='float:left'><img style='width: 150px; margin: 0 20px;' src='https:\/\/team-labyoke.herokuapp.com\/images\/yoke4.png', alt='The Yoke',  title='Yoke', class='yokelogo'/></div><div style=\"font-family:'calibri'; font-size:11pt;padding: 20px;\">Hello " + location
 				+ ",<br/><br/>";
 		body += "This is a kind request to share 100 units from the following inventory: <br><b>Agent: </b> " + agent;
 		body += "<br><b>Vendor: </b> " + vendor;
@@ -684,7 +684,7 @@ LabyokerRegister.prototype.register = function(callback) {
 						email += "@netlight.com";
 					}*/
 					var subject = "Labyoke - Start Labyoking";
-					var body = "<div style='float:left'><img style='width: 150px; margin: 0 20px;' src='https:\/\/team-labyoke.herokuapp.com\/images\/yoke.jpg', alt='The Yoke',  title='Yoke', class='yokelogo'/></div><div style=\"font-family:'calibri'; font-size:11pt;padding: 20px;\">Hello " + firstname
+					var body = "<div style='float:left'><img style='width: 150px; margin: 0 20px;' src='https:\/\/team-labyoke.herokuapp.com\/images\/yoke4.png', alt='The Yoke',  title='Yoke', class='yokelogo'/></div><div style=\"font-family:'calibri'; font-size:11pt;padding: 20px;\">Hello " + firstname
 							+ ",<br/><br/>";
 					body += "Thanks for registering with @LabYoke.";
 					body += "<p>[PS: Start <a href=\"https:\/\/team-labyoke.herokuapp.com\/share\">sharing</a> some chemicals today?]";
@@ -776,7 +776,7 @@ Labyoker.prototype.requestChangePassword = function(callback) {
 						email += "@netlight.com";
 					}*/
 					var subject = "Labyoke - Change Password Request";
-					var body = "<div style='float:left'><img style='width: 150px; margin: 0 20px;' src='https:\/\/team-labyoke.herokuapp.com\/images\/yoke.jpg', alt='The Yoke',  title='Yoke', class='yokelogo'/></div><div style=\"font-family:'calibri'; font-size:11pt;padding: 20px;\">Hello " + name
+					var body = "<div style='float:left'><img style='width: 150px; margin: 0 20px;' src='https:\/\/team-labyoke.herokuapp.com\/images\/yoke4.png', alt='The Yoke',  title='Yoke', class='yokelogo'/></div><div style=\"font-family:'calibri'; font-size:11pt;padding: 20px;\">Hello " + name
 							+ ",<br/><br/>";
 					body += "You have requested to change your password @LabYoke. Please click on this link:<br/>";
 					body += "<p style=\"text-align:center\"><span style=''><b><a href='https:\/\/team-labyoke.herokuapp.com\/changepassword/"
