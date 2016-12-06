@@ -5,6 +5,13 @@ function materialLight(){
   pop.style.display = "block";
   shade.style.display = "block";
 }
+function updatename(){
+  var nameform = document.getElementById("nameform");
+  var divnamme = document.getElementById("name");
+  nameform.hide();
+  divname.show();
+}
+
 function iosLight(){
   var pop = document.getElementById("ios-light");
   pop.style.display = "block";
