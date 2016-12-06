@@ -248,6 +248,10 @@ position: absolute;
     color: #3d9dcb;
 }
 
+.inputfile-1:focus + label, .inputfile-1.has-focus + label, .inputfile-1 + label:hover {
+    background-color: #8a6d3b;
+}
+
 .admin{
     margin-bottom: 30px;
 }
