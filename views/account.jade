@@ -27,11 +27,17 @@ block content
                             - var email = ob[prop].email
                             - var tel = ob[prop].tel
                             - var admin = ob[prop].admin
-                            span(class="desktabonly")= j
-                            span(class="wrapped") #{name}
-                            span(class="desktabonly") #{surname}
-                            span #{email}
-                            span #{tel}
-                            span #{admin}
+                            div(style="float:left;")
+                              p="Name"
+                              p="Surname"
+                              p="Email"
+                              p="Tel"
+                              p="Admin"
+                            div(style="float:right;", class="wrapped")
+                              p #{name}
+                              p(class="desktabonly") #{surname}
+                              p #{email}
+                              p #{tel}
+                              p #{admin}
 
 
