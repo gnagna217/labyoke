@@ -49,17 +49,21 @@ block content
                               p(class="labColor", style="font-weight:bold")="Tel"
                               p(class="labColor", style="font-weight:bold")="Lab"
                             div(style="margin-left: 100px;", class="wrapped")
-                              p!= name + " "
+                              p(id="name")!= name + " "
+                                form(action="/changename" id="changename" method="post" class="nameform")
+                                  input(name="nameform" type="hidden" id="nameform" value="")
                                 a(href="#")
                                  span(class="fa fa-pencil")
-                              p!= surname + " "
+                              p(id="surname")!= surname + " "
+                                form(action="/changesurname" id="changesurname" method="post" class="surnameform")
+                                  input(name="surnameform" type="hidden" id="surnameform" value="")
                                 a(href="#")
                                  span(class="fa fa-pencil")
                               p #{email}
-                              p!= tel + " "
+                              p(id=tel"")!= tel + " "
+                                form(action="/changetel" id="changetel" method="post" class="telform")
+                                  input(name="telform" type="hidden" id="telform" value="")
                                 a(href="#")
                                  span(class="fa fa-pencil")
                               p #{lab}
-
-
 

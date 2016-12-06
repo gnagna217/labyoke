@@ -222,6 +222,17 @@ position: absolute;
     z-index: 10;
 }
 
+.nameform{
+    display:none;
+}
+
+.surnameform{
+    display:none;
+}
+.telform{
+    display:none;
+}
+
 .greatherthannine{
     right: -2px !important;      
 }
