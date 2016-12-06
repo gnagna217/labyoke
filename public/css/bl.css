@@ -252,6 +252,9 @@ position: absolute;
     background-color: #8a6d3b !important;
 }
 
+.adjustpadding{
+    padding-left: 25px;
+}
 .admin{
     margin-bottom: 30px;
 }
@@ -724,7 +727,9 @@ input::-webkit-inner-spin-button {
 }
 
 @media (max-width: 767px){
-
+.adjustpadding{
+    padding-left: 0px;
+}
 .desktabonly2{
     display: initial;
 }
