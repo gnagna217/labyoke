@@ -10,5 +10,28 @@ block content
             h1= 'Hello ' + labyoker + "."
             p
               span="This page is dedicated to " 
-              span(style="color: #3d9dcb;")="you. "
+              span(style="color: #3d9dcb;font-weight:bold")="you. "
               span="If you wish to change your personal details such as your telephone number or Lab information. Or just to check what those details currently are."
+            div(class="table-responsive")
+                         -var ob = userDetails
+                         - var j = 1
+                         -for(var prop in ob)
+                            - var i = prop % 2
+                            - var classname = "";
+                            - if(i==0)
+                                - classname = "active"
+                            - if(prop==1)
+                                - classname = "you info-best"
+                            - var name = ob[prop].name
+                            - var surname = ob[prop].surname
+                            - var email = ob[prop].email
+                            - var tel = ob[prop].tel
+                            - var admin = ob[prop].admin
+                            span(class="desktabonly")= j
+                            span(class="wrapped") #{name}
+                            span(class="desktabonly") #{surname}
+                            span #{email}
+                            span #{tel}
+                            span #{admin}
+
+

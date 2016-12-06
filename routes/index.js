@@ -213,10 +213,10 @@ module.exports = function(router) {
 		}
 	});
 
-	router.get('/account', isLoggedIn, function(req, res) {
+	/*router.get('/account', isLoggedIn, function(req, res) {
 		res.render('account', {ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, isLoggedInAdmin: req.session.admin, loggedIn : true, title: 'Account'});
 		req.session.messages = null;
-	});
+	});*/
 
 	router.get('/reports', isLoggedIn, function(req, res) {
 		res.render('reports', {ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, isLoggedInAdmin: req.session.admin, loggedIn : true, title: 'Reports', isLoggedInAdmin: req.session.admin});
@@ -274,6 +274,15 @@ module.exports = function(router) {
 			req.session.messages = null;
 		});
 	});
+
+	router.get('/account', isLoggedIn, function(req, res) {
+		var labYokeAgents = new LabYokeAgents(req.session.email);
+		labYokeAgents.getLabyoker(function(error, results) {
+			res.render('account', {userDetails: results[4], ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, loggedIn : true, isLoggedInAdmin: req.session.admin, title:'Account'});
+			req.session.messages = null;
+		});
+	});
+	
 
 	router.get('/forgot', function(req, res) {
 		res.render('forgot', {ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, isLoggedInAdmin: req.session.admin, title: 'Forgot Password'});

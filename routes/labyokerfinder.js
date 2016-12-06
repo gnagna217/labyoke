@@ -224,6 +224,19 @@ LabYokeReporter.prototype.reportOrders = function(callback) {
 	});
 };
 
+LabYokeAgents.prototype.getLabyoker = function(callback) {
+	var results;
+	var query = client.query("SELECT * FROM vm2016_users where email='" + this.email
+			+ "'");
+	query.on("row", function(row, result) {
+		result.addRow(row);
+	});
+	query.on("end", function(result) {
+		results = result.rows;
+		callback(null, results);
+	});
+};
+
 LabYokeAgents.prototype.findmyshares = function(callback) {
 	var results = [];
 	console.log("findmyshares: " + this.email);
