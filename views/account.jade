@@ -49,12 +49,12 @@ block content
                               p(class="labColor", style="font-weight:bold")="Tel"
                               p(class="labColor", style="font-weight:bold")="Lab"
                             div(style="margin-left: 100px;", class="wrapped")
-                              p #{name}
+                              p!=#{name} + " "
                                 span(class="fa fa-pencil")
-                              p #{surname}
+                              p!= #{surname} + " "
                                 span(class="fa fa-pencil")
                               p #{email}
-                              p #{tel}
+                              p!= #{tel} + " "
                                 span(class="fa fa-pencil")
                               p #{lab}
 
