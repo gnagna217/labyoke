@@ -52,18 +52,18 @@ block content
                               div(style="margin-bottom:10px;")
                                 span(id="name")!=name + " "
                                 form(action="/changename" id="changename" method="post" class="nameform")
-                                  input(name="nameform" type="text" id="nameform" value=name)
-                                span(onclick="updatename()", class="fa fa-pencil")
+                                  input(name="nameform" type="text" id="nameform" value=name onfocusout="updatenameform()")
+                                span(onclick="updatename()", id="pencilname", class="fa fa-pencil")
                               div(style="margin-bottom:10px;")
                                 span(id="surname")!= surname + " "
                                 form(action="/changesurname" id="changesurname" method="post" class="surnameform")
-                                  input(name="surnameform" type="text" id="surnameform" value=surname)
-                                span(onclick="updatesurname()", class="fa fa-pencil")
+                                  input(name="surnameform" type="text" id="surnameform" value=surname onfocusout="updatesurnameform()")
+                                span(onclick="updatesurname()", id="pencilsurname", class="fa fa-pencil")
                               div(style="margin-bottom:10px;") #{email}
                               div(style="margin-bottom:10px;")
                                 span(id="tel")!= tel + " "
                                 form(action="/changetel" id="changetel" method="post" class="telform")
-                                  input(name="telform" type="text" id="telform" value=tel)
-                                span(onclick="updatetel()", class="fa fa-pencil")
+                                  input(name="telform" type="text" id="telform" value=tel onfocusout="updatetelform()")
+                                span(onclick="updatetel()",, id="penciltel" class="fa fa-pencil")
                               div(style="margin-bottom:10px;") #{lab}
 
