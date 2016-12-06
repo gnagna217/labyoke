@@ -43,27 +43,27 @@ block content
                                 - lab = "..."
                             p(class="yokeColor", style="font-weight:bold")!=adminIntro
                             div(style="float:left;")
-                              p(class="labColor", style="font-weight:bold")="Name"
-                              p(class="labColor", style="font-weight:bold")="Surname"
-                              p(class="labColor", style="font-weight:bold")="Email"
-                              p(class="labColor", style="font-weight:bold")="Tel"
-                              p(class="labColor", style="font-weight:bold")="Lab"
+                              div(class="labColor", style="font-weight:bold; margin-bottom:10px;")="Name"
+                              div(class="labColor", style="font-weight:bold margin-bottom:10px;")="Surname"
+                              div(class="labColor", style="font-weight:bold margin-bottom:10px;")="Email"
+                              div(class="labColor", style="font-weight:bold margin-bottom:10px;")="Tel"
+                              div(class="labColor", style="font-weight:bold margin-bottom:10px;")="Lab"
                             div(style="margin-left: 100px;", class="wrapped")
-                              div(id="name")!= name + " "
+                              div(style="margin-bottom:10px;", id="name")!= name + " "
                                 form(action="/changename" id="changename" method="post" class="nameform")
                                   input(name="nameform" type="hidden" id="nameform" value="")
                                 a(href="#")
                                  span(class="fa fa-pencil")
-                              div(id="surname")!= surname + " "
+                              div(style="margin-bottom:10px;", id="surname")!= surname + " "
                                 form(action="/changesurname" id="changesurname" method="post" class="surnameform")
                                   input(name="surnameform" type="hidden" id="surnameform" value="")
                                 a(href="#")
                                  span(class="fa fa-pencil")
-                              div #{email}
-                              div(id="tel")!= tel + " "
+                              div(style="margin-bottom:10px;") #{email}
+                              div(style="margin-bottom:10px;", id="tel")!= tel + " "
                                 form(action="/changetel" id="changetel" method="post" class="telform")
                                   input(name="telform" type="hidden" id="telform" value="")
                                 a(href="#")
                                  span(class="fa fa-pencil")
-                              div #{lab}
+                              div(style="margin-bottom:10px;") #{lab}
 
