@@ -278,7 +278,7 @@ module.exports = function(router) {
 	router.get('/account', isLoggedIn, function(req, res) {
 		var labYokeAgents = new LabYokeAgents(req.session.email);
 		labYokeAgents.getLabyoker(function(error, results) {
-			res.render('account', {userDetails: results[4], ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, loggedIn : true, isLoggedInAdmin: req.session.admin, title:'Account'});
+			res.render('account', {userDetails: results, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, loggedIn : true, isLoggedInAdmin: req.session.admin, title:'Account'});
 			req.session.messages = null;
 		});
 	});
