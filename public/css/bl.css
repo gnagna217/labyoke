@@ -249,7 +249,7 @@ position: absolute;
 }
 
 .inputfile-1:focus + label, .inputfile-1.has-focus + label, .inputfile-1 + label:hover {
-    background-color: #8a6d3b;
+    background-color: #8a6d3b !important;
 }
 
 .admin{
