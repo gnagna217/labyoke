@@ -341,19 +341,21 @@ LabYokerOrder.prototype.order = function(callback) {
 		body += "<p>Best regards,";
 		body += "</p><b><i>The LabYoke Team.</i></b></div>";
 		console.log("order body: " + body);
+		var tes = "UPDATE vm2016_agentsshare SET currentquantity = " + currentquantity + " WHERE agent='" + agent + "' AND vendor='" + vendor + "' AND catalognumber='" + catalognumber + "' AND email='" + email + "')";
+		console.log("order tes: " + tes);
+		var query2 = client.query(tes);
+		console.log("query2: " + query2);
+		query2.on("row", function(row, result2) {
+			result2.addRow(row);
+		});
+		query2.on("end", function(result2) {
+			
 
-	var query2 = client.query("UPDATE vm2016_agentsshare SET currentquantity=" + currentquantity + " WHERE agent='"+agent+"' AND vendor='" + vendor +"' AND catalognumber='" + catalognumber + "' AND email='" + email + "')");
-	query2.on("row", function(row, result2) {
-		result2.addRow(row);
-	});
-	query2.on("end", function(result2) {
-		
+			var mailOptions = new MailOptionsWithCC(email, subject, body, sendemail);
+			mailOptions.sendAllEmails();
 
-		var mailOptions = new MailOptionsWithCC(email, subject, body, sendemail);
-		mailOptions.sendAllEmails();
-
-		callback(null, "successfulOrder")
-	});
+			callback(null, "successfulOrder")
+		});
 	});
 };
 
