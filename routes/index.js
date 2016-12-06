@@ -273,6 +273,7 @@ module.exports = function(router) {
 	});
 
 	router.get('/account', isLoggedIn, function(req, res) {
+		console.log("inside accounnt: " + req.session.email);
 		var labYokeAgents = new LabYokeAgents(req.session.email);
 		labYokeAgents.getLabyoker(function(error, results) {
 			res.render('account', {userDetails: results, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, loggedIn : true, isLoggedInAdmin: req.session.admin, title:'Account'});
