@@ -342,7 +342,7 @@ LabYokerOrder.prototype.order = function(callback) {
 		body += "</p><b><i>The LabYoke Team.</i></b></div>";
 		console.log("order body: " + body);
 
-	var query2 = client.query("UPDATE INTO vm2016_agentsshare SET currentquantity=" + currentquantity + " WHERE agent='"+agent+"' AND vendor='" + vendor +"' AND catalognumber='" + catalognumber + "' AND email='" + email + "')");
+	var query2 = client.query("UPDATE vm2016_agentsshare SET currentquantity=" + currentquantity + " WHERE agent='"+agent+"' AND vendor='" + vendor +"' AND catalognumber='" + catalognumber + "' AND email='" + email + "')");
 	query2.on("row", function(row, result2) {
 		result2.addRow(row);
 	});
