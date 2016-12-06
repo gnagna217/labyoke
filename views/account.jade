@@ -27,13 +27,23 @@ block content
                             - var email = ob[prop].email
                             - var tel = ob[prop].tel
                             - var admin = ob[prop].admin
+                            - if(name == "")
+                                - name = "&nbsp;"
+                            - if(email == "")
+                                - email = "&nbsp;"
+                            - if(surname == "")
+                                - surname = "&nbsp;"
+                            - if(tel == "")
+                                - tel = "&nbsp;"
+                            - if(admin == "")
+                                - admin = "&nbsp;"
                             div(style="float:left;")
                               p="Name"
                               p="Surname"
                               p="Email"
                               p="Tel"
                               p="Admin"
-                            div(style="float:right;", class="wrapped")
+                            div(style="margin-left: 100px;", class="wrapped")
                               p #{name}
                               p(class="desktabonly") #{surname}
                               p #{email}
