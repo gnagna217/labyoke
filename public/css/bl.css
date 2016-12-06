@@ -727,9 +727,7 @@ input::-webkit-inner-spin-button {
 }
 
 @media (max-width: 767px){
-.adjustpadding{
-    padding-left: 0px;
-}
+
 .desktabonly2{
     display: initial;
 }
@@ -794,6 +792,9 @@ span.num.greatherthanninetynine {
 }
 .share-container{
     width: 100%;
+}
+.adjustpadding{
+    padding-left: 0px !important;
 }
 }
 
