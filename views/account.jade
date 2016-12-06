@@ -51,18 +51,18 @@ block content
                             div(style="margin-left: 100px;", class="wrapped")
                               div(style="margin-bottom:10px;", id="name")!= name + " "
                                 form(action="/changename" id="changename" method="post" class="nameform")
-                                  input(name="nameform" type="hidden" id="nameform" value="")
+                                  input(name="nameform" type="text" id="nameform" value=name)
                                 a(href="#")
                                  span(class="fa fa-pencil")
                               div(style="margin-bottom:10px;", id="surname")!= surname + " "
                                 form(action="/changesurname" id="changesurname" method="post" class="surnameform")
-                                  input(name="surnameform" type="hidden" id="surnameform" value="")
+                                  input(name="surnameform" type="text" id="surnameform" value=surname)
                                 a(href="#")
                                  span(class="fa fa-pencil")
                               div(style="margin-bottom:10px;") #{email}
                               div(style="margin-bottom:10px;", id="tel")!= tel + " "
                                 form(action="/changetel" id="changetel" method="post" class="telform")
-                                  input(name="telform" type="hidden" id="telform" value="")
+                                  input(name="telform" type="text" id="telform" value=tel)
                                 a(href="#")
                                  span(class="fa fa-pencil")
                               div(style="margin-bottom:10px;") #{lab}
