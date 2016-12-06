@@ -27,15 +27,15 @@ block content
                             - var email = ob[prop].email
                             - var tel = ob[prop].tel
                             - var admin = ob[prop].admin
-                            - if(name == "")
+                            - if(!name)
                                 - name = "&nbsp;"
-                            - if(email == undefined)
+                            - if(!email)
                                 - email = "test"
-                            - if(surname == "")
+                            - if(!surname)
                                 - surname = "&nbsp;"
-                            - if(tel == "")
+                            - if(!tel)
                                 - tel = "&nbsp;"
-                            - if(admin == "")
+                            - if(!admin)
                                 - admin = "&nbsp;"
                             div(style="float:left;")
                               p="Name"
