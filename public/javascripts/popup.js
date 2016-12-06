@@ -7,7 +7,7 @@ function materialLight(){
 }
 function updatename(){
   var nameform = document.getElementById("nameform");
-  var divnamme = document.getElementById("name");
+  var divname = document.getElementById("name");
   nameform.style.display = 'block';
   divname.style.display = 'none';
 }
