@@ -9,7 +9,7 @@ function updatename(){
   var nameform = document.getElementById("nameform");
   var divname = document.getElementById("name");
   var changename = document.getElementById("changename");
-  var pencilname = document.getElementById("changename");
+  var pencilname = document.getElementById("pencilname");
   nameform.style.display = 'block';
   divname.style.display = 'none';
   changename.style.display = 'block';
@@ -20,7 +20,7 @@ function updatenameform(){
   var nameform = document.getElementById("nameform");
   var divname = document.getElementById("name");
   var changename = document.getElementById("changename");
-  var pencilname = document.getElementById("changename");
+  var pencilname = document.getElementById("pencilname");
   nameform.style.display = 'none';
   divname.style.display = 'block';
   changename.style.display = 'none';
