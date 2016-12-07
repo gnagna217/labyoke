@@ -45,7 +45,7 @@ function updatenameform(){
   changename.style.display = 'none';
   pencilname.style.display = 'initial';
   checkname.style.display = 'none';
-  if($('#name').html() != nameform.attr('placeholder')){ 
+  if($('#name').html().trim() != nameform.attr('placeholder').trim()){ 
     $('#changename').submit();
   }
 }
@@ -75,7 +75,7 @@ function updatesurnameform(){
   changesurname.style.display = 'none';
   pencilsurname.style.display = 'initial';
   checksurname.style.display = 'none';
-  if($('#surname').html() != surnameform.attr('placeholder')){ 
+  if($('#surname').html().trim() != surnameform.attr('placeholder').trim()){ 
     $('#changesurname').submit();
   }
 }
@@ -110,7 +110,7 @@ function updatetelform(){
   alert("placeholder: " + placeholder);
   alert("current tel: " + currenttel);
   alert(placeholder != currenttel);
-  if(placeholder != currenttel){ 
+  if(placeholder.trim() != currenttel.trim()){ 
     $('#changetel').submit();
   }
 }
