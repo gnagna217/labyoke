@@ -222,15 +222,10 @@ position: absolute;
     z-index: 10;
 }
 
-.nameform{
+.valuedetail{
     display:none;
 }
-.surnameform{
-    display:none;
-}
-.telform{
-    display:none;
-}
+
 
 #checkname{
     display:none;

@@ -56,14 +56,14 @@ block content
                               div(style="margin-bottom:25px;")
                                 span(id="name")!=name + " "
                                 form(action="/changeDetails" id="changename" method="post" class="nameform")
-                                  input(name="nameform" type="text" id="valuedetail" placeholder=name value="")
+                                  input(name="valuedetail" type="text" id="valuedetail" placeholder=name)
                                   input(name="column" type="hidden" id="column" value="name")
                                 span(onclick="pencilname()", id="pencilname", class="fa fa-pencil")
                                 span(onclick="updatenameform()", id="checkname", class="fa fa-check", style="color:green")
                               div(style="margin-bottom:25px;")
                                 span(id="surname")!= surname + " "
                                 form(action="/changeDetails" id="changesurname" method="post" class="surnameform")
-                                  input(name="surnameform" type="text" id="valuedetail" placeholder=surname value="")
+                                  input(name="valuedetail" type="text" id="valuedetail" placeholder=surname)
                                   input(name="column" type="hidden" id="column" value="surname")
                                 span(onclick="pencilsurname()", id="pencilsurname", class="fa fa-pencil")
                                 span(onclick="updatesurnameform()", id="checksurname", class="fa fa-check", style="color:green")
@@ -71,7 +71,7 @@ block content
                               div(style="margin-bottom:25px;")
                                 span(id="tel")!= tel + " "
                                 form(action="/changeDetails" id="changetel" method="post" class="telform")
-                                  input(name="telform" type="text" id="valuedetail" placeholder=tel value="")
+                                  input(name="valuedetail" type="text" id="valuedetail" placeholder=tel)
                                   input(name="column" type="hidden" id="column" value="tel")
                                 span(onclick="penciltel()", id="penciltel" class="fa fa-pencil")
                                 span(onclick="updatetelform()", id="checktel" class="fa fa-check", style="color:green")
