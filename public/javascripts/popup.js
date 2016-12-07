@@ -19,11 +19,12 @@ function materialLight(){
   pop.style.display = "block";
   shade.style.display = "block";
 }
-function updatename(){
+function pencilname(){
   var nameform = document.getElementById("nameform");
   var divname = document.getElementById("name");
   var changename = document.getElementById("changename");
   var pencilname = document.getElementById("pencilname");
+  var checkname = document.getElementById("checkname");
   nameform.style.display = 'block';
   divname.style.display = 'none';
   changename.style.display = 'block';
@@ -35,18 +36,21 @@ function updatenameform(){
   var divname = document.getElementById("name");
   var changename = document.getElementById("changename");
   var pencilname = document.getElementById("pencilname");
+  var checkname = document.getElementById("checkname");
   nameform.style.display = 'none';
   divname.style.display = 'initial';
   changename.style.display = 'none';
   pencilname.style.display = 'initial';
+  checkname.style.display = 'none';
 }
 
 
-function updatesurname(){
+function pencilsurname(){
   var surnameform = document.getElementById("surnameform");
   var divsurname = document.getElementById("surname");
   var changesurname = document.getElementById("changesurname");
   var pencilsurname = document.getElementById("pencilsurname");
+  var checksurname = document.getElementById("checksurname");
   surnameform.style.display = 'block';
   divsurname.style.display = 'none';
   changesurname.style.display = 'block';
@@ -58,17 +62,20 @@ function updatesurnameform(){
   var divsurname = document.getElementById("surname");
   var changesurname = document.getElementById("changesurname");
   var pencilsurname = document.getElementById("pencilsurname");
+  var checksurname = document.getElementById("checksurname");
   surnameform.style.display = 'none';
   divsurname.style.display = 'initial';
   changesurname.style.display = 'none';
   pencilsurname.style.display = 'initial';
+  checksurname.style.display = 'none';
 }
 
-function updatetel(){
+function penciltel(){
   var telform = document.getElementById("telform");
   var divtel = document.getElementById("tel");
   var changetel = document.getElementById("changetel");
   var penciltel = document.getElementById("penciltel");
+  var checktel = document.getElementById("checktel");
   telform.style.display = 'block';
   divtel.style.display = 'none';
   changetel.style.display = 'block';
@@ -80,10 +87,12 @@ function updatetelform(){
   var divtel = document.getElementById("tel");
   var changetel = document.getElementById("changetel");
   var penciltel = document.getElementById("penciltel");
+  var checktel = document.getElementById("checktel");
   telform.style.display = 'none';
   divtel.style.display = 'initial';
   changetel.style.display = 'none';
   penciltel.style.display = 'initial';
+  checkname.style.display = 'none';
 }
 
 

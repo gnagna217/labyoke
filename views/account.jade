@@ -52,18 +52,21 @@ block content
                               div(style="margin-bottom:25px;")
                                 span(id="name")!=name + " "
                                 form(action="/changename" id="changename" method="post" class="nameform")
-                                  input(name="nameform" type="text" id="nameform" value=name onmouseout="updatenameform()")
-                                span(onclick="updatename()", id="pencilname", class="fa fa-pencil")
+                                  input(name="nameform" type="text" id="nameform" value=name)
+                                span(onclick="pencilname()", id="pencilname", class="fa fa-pencil")
+                                span(onclick="updatename()", id="checkname", class="fa fa-check", style="color:green")
                               div(style="margin-bottom:25px;")
                                 span(id="surname")!= surname + " "
                                 form(action="/changesurname" id="changesurname" method="post" class="surnameform")
-                                  input(name="surnameform" type="text" id="surnameform" value=surname onmouseout="updatesurnameform()")
-                                span(onclick="updatesurname()", id="pencilsurname", class="fa fa-pencil")
+                                  input(name="surnameform" type="text" id="surnameform" value=surname)
+                                span(onclick="pencilsurname()", id="pencilsurname", class="fa fa-pencil")
+                                span(onclick="updatesurname()", id="checksurname", class="fa fa-check", style="color:green")
                               div(style="margin-bottom:25px;") #{email}
                               div(style="margin-bottom:25px;")
                                 span(id="tel")!= tel + " "
                                 form(action="/changetel" id="changetel" method="post" class="telform")
-                                  input(name="telform" type="text" id="telform" value=tel onmouseout="updatetelform()")
-                                span(onclick="updatetel()",, id="penciltel" class="fa fa-pencil")
+                                  input(name="telform" type="text" id="telform" value=tel)
+                                span(onclick="penciltel()", id="penciltel" class="fa fa-pencil")
+                                span(onclick="updatetel()", id="checktel" class="fa fa-check", style="color:green")
                               div(style="margin-bottom:25px;") #{lab}
 
