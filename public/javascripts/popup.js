@@ -34,7 +34,7 @@ function pencilname(){
 }
 
 function updatenameform(){
-  var nameform = $('#changename').find('input[name="valuedetail"]'); //document.getElementById("nameform");
+  var nameform = $('#changename').find('input[id="valuedetail"]'); //document.getElementById("nameform");
   var divname = document.getElementById("name");
   var changename = document.getElementById("changename");
   var pencilname = document.getElementById("pencilname");
@@ -48,7 +48,7 @@ function updatenameform(){
 
 
 function pencilsurname(){
-  var surnameform = $('#changesurname').find('input[name="valuedetail"]'); //document.getElementById("surnameform");
+  var surnameform = $('#changesurname').find('input[id="valuedetail"]'); //document.getElementById("surnameform");
   var divsurname = document.getElementById("surname");
   var changesurname = document.getElementById("changesurname");
   var pencilsurname = document.getElementById("pencilsurname");
@@ -61,7 +61,7 @@ function pencilsurname(){
 }
 
 function updatesurnameform(){
-  var surnameform = $('#changesurname').find('input[name="valuedetail"]'); // document.getElementById("surnameform");
+  var surnameform = $('#changesurname').find('input[id="valuedetail"]'); // document.getElementById("surnameform");
   var divsurname = document.getElementById("surname");
   var changesurname = document.getElementById("changesurname");
   var pencilsurname = document.getElementById("pencilsurname");
