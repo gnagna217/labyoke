@@ -45,7 +45,9 @@ function updatenameform(){
   changename.style.display = 'none';
   pencilname.style.display = 'initial';
   checkname.style.display = 'none';
-  $('#changename').submit();
+  if($('#name').html() != nameform.attr('placeholder')){ 
+    $('#changename').submit();
+  }
 }
 
 
@@ -73,7 +75,9 @@ function updatesurnameform(){
   changesurname.style.display = 'none';
   pencilsurname.style.display = 'initial';
   checksurname.style.display = 'none';
-  $('#changesurname').submit();
+  if($('#surname').html() != surnameform.attr('placeholder')){ 
+    $('#changesurname').submit();
+  }
 }
 
 function penciltel(){
@@ -100,7 +104,9 @@ function updatetelform(){
   changetel.style.display = 'none';
   penciltel.style.display = 'initial';
   checktel.style.display = 'none';
-  $('#changetel').submit();
+  if($('#tel').html() != telform.attr('placeholder')){ 
+    $('#changetel').submit();
+  }
 }
 
 
