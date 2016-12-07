@@ -29,6 +29,7 @@ function pencilname(){
   divname.style.display = 'none';
   changename.style.display = 'block';
   pencilname.style.display = 'none';
+  checkname.style.display = 'block';
 }
 
 function updatenameform(){
@@ -55,6 +56,7 @@ function pencilsurname(){
   divsurname.style.display = 'none';
   changesurname.style.display = 'block';
   pencilsurname.style.display = 'none';
+  checksurname.style.display = 'block';
 }
 
 function updatesurnameform(){
@@ -80,6 +82,7 @@ function penciltel(){
   divtel.style.display = 'none';
   changetel.style.display = 'block';
   penciltel.style.display = 'none';
+  checktel.style.display = 'block';
 }
 
 function updatetelform(){
