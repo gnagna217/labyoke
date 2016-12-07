@@ -104,6 +104,8 @@ function updatetelform(){
   changetel.style.display = 'none';
   penciltel.style.display = 'initial';
   checktel.style.display = 'none';
+  alert("placeholder: " + telform.attr('placeholder'));
+  alert("current tel: " + $('#tel').html());
   if($('#tel').html() != telform.attr('placeholder')){ 
     $('#changetel').submit();
   }
