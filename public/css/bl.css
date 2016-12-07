@@ -234,12 +234,24 @@ position: absolute;
 
 #checkname{
     display:none;
+    width: 20px;
+    top: -25px;
+    position: relative;
+    margin-left: 180px;
 }
 #checksurname{
     display:none;
+    width: 20px;
+    top: -25px;
+    position: relative;
+    margin-left: 180px;
 }
 #checktel{
     display:none;
+    width: 20px;
+    top: -25px;
+    position: relative;
+    margin-left: 180px;
 }
 
 .greatherthannine{
