@@ -45,7 +45,7 @@ function updatenameform(){
   changename.style.display = 'none';
   pencilname.style.display = 'initial';
   checkname.style.display = 'none';
-  //$('#changename').submit();
+  $('#changename').submit();
 }
 
 
