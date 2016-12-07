@@ -20,7 +20,7 @@ function materialLight(){
   shade.style.display = "block";
 }
 function pencilname(){
-  var nameform = $('#changename').find('input[name="valuedetail"]'); //document.getElementById("nameform");
+  var nameform = $('#changename').find('input[id="valuedetail"]'); //document.getElementById("nameform");
   var divname = document.getElementById("name");
   var changename = document.getElementById("changename");
   var pencilname = document.getElementById("pencilname");
@@ -74,7 +74,7 @@ function updatesurnameform(){
 }
 
 function penciltel(){
-  var telform = $('#changetel').find('input[name="valuedetail"]'); //document.getElementById("telform");
+  var telform = $('#changetel').find('input[id="valuedetail"]'); //document.getElementById("telform");
   var divtel = document.getElementById("tel");
   var changetel = document.getElementById("changetel");
   var penciltel = document.getElementById("penciltel");
@@ -87,7 +87,7 @@ function penciltel(){
 }
 
 function updatetelform(){
-  var telform = $('#changetel').find('input[name="valuedetail"]'); //document.getElementById("telform");
+  var telform = $('#changetel').find('input[id="valuedetail"]'); //document.getElementById("telform");
   var divtel = document.getElementById("tel");
   var changetel = document.getElementById("changetel");
   var penciltel = document.getElementById("penciltel");
