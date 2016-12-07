@@ -21,8 +21,6 @@ function materialLight(){
 }
 function pencilname(){
   var nameform = $('#changename input[id="valuedetail"]'); //document.getElementById("nameform");
-  alert("form: " + $('#changename'));
-  alert("nameform: " + nameform.val());
   var divname = document.getElementById("name");
   var changename = document.getElementById("changename");
   var pencilname = document.getElementById("pencilname");
@@ -37,26 +35,27 @@ function pencilname(){
 }
 
 function updatenameform(){
-  var nameform = $('#changename').find('input[id="valuedetail"]'); //document.getElementById("nameform");
+  var nameform = $('#changename input[id="valuedetail"]'); //document.getElementById("nameform");
   var divname = document.getElementById("name");
   var changename = document.getElementById("changename");
   var pencilname = document.getElementById("pencilname");
   var checkname = document.getElementById("checkname");
-  nameform.style.display = 'none';
+  nameform.hide();
   divname.style.display = 'initial';
   changename.style.display = 'none';
   pencilname.style.display = 'initial';
   checkname.style.display = 'none';
+  //$('#changename').submit();
 }
 
 
 function pencilsurname(){
-  var surnameform = $('#changesurname').find('input[id="valuedetail"]'); //document.getElementById("surnameform");
+  var surnameform = $('#changesurname input[id="valuedetail"]'); //document.getElementById("surnameform");
   var divsurname = document.getElementById("surname");
   var changesurname = document.getElementById("changesurname");
   var pencilsurname = document.getElementById("pencilsurname");
   var checksurname = document.getElementById("checksurname");
-  surnameform.style.display = 'block';
+  surnameform.show();
   divsurname.style.display = 'none';
   changesurname.style.display = 'block';
   pencilsurname.style.display = 'none';
@@ -64,12 +63,12 @@ function pencilsurname(){
 }
 
 function updatesurnameform(){
-  var surnameform = $('#changesurname').find('input[id="valuedetail"]'); // document.getElementById("surnameform");
+  var surnameform = $('#changesurname input[id="valuedetail"]'); // document.getElementById("surnameform");
   var divsurname = document.getElementById("surname");
   var changesurname = document.getElementById("changesurname");
   var pencilsurname = document.getElementById("pencilsurname");
   var checksurname = document.getElementById("checksurname");
-  surnameform.style.display = 'none';
+  surnameform.hide();
   divsurname.style.display = 'initial';
   changesurname.style.display = 'none';
   pencilsurname.style.display = 'initial';
@@ -77,12 +76,12 @@ function updatesurnameform(){
 }
 
 function penciltel(){
-  var telform = $('#changetel').find('input[id="valuedetail"]'); //document.getElementById("telform");
+  var telform = $('#changetel input[id="valuedetail"]'); //document.getElementById("telform");
   var divtel = document.getElementById("tel");
   var changetel = document.getElementById("changetel");
   var penciltel = document.getElementById("penciltel");
   var checktel = document.getElementById("checktel");
-  telform.style.display = 'block';
+  telform.show();
   divtel.style.display = 'none';
   changetel.style.display = 'block';
   penciltel.style.display = 'none';
@@ -90,12 +89,12 @@ function penciltel(){
 }
 
 function updatetelform(){
-  var telform = $('#changetel').find('input[id="valuedetail"]'); //document.getElementById("telform");
+  var telform = $('#changetel input[id="valuedetail"]'); //document.getElementById("telform");
   var divtel = document.getElementById("tel");
   var changetel = document.getElementById("changetel");
   var penciltel = document.getElementById("penciltel");
   var checktel = document.getElementById("checktel");
-  telform.style.display = 'none';
+  telform.hide();
   divtel.style.display = 'initial';
   changetel.style.display = 'none';
   penciltel.style.display = 'initial';
