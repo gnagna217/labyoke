@@ -59,9 +59,9 @@ function updatesurnameform(){
   var changesurname = document.getElementById("changesurname");
   var pencilsurname = document.getElementById("pencilsurname");
   surnameform.style.display = 'none';
-  divsurname.style.display = 'block';
+  divsurname.style.display = 'initial';
   changesurname.style.display = 'none';
-  pencilsurname.style.display = 'block';
+  pencilsurname.style.display = 'initial';
 }
 
 function updatetel(){
@@ -81,9 +81,9 @@ function updatetelform(){
   var changetel = document.getElementById("changetel");
   var penciltel = document.getElementById("penciltel");
   telform.style.display = 'none';
-  divtel.style.display = 'block';
+  divtel.style.display = 'initial';
   changetel.style.display = 'none';
-  penciltel.style.display = 'block';
+  penciltel.style.display = 'initial';
 }
 
 
