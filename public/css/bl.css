@@ -226,6 +226,9 @@ position: absolute;
     display:none;
 }
 
+.formemail{
+    display:none;
+}
 .nameform{
     display:none;
 }

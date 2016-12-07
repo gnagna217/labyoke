@@ -244,12 +244,14 @@ module.exports = function(router) {
 	router.post('/changeDetails', isLoggedIn, function(req, res) {
 		var col = req.body.column;
 		var val = req.body.valuedetail;
+		var email = req.body.email;
 		console.log("changeDetails col: " + col);
 		console.log("changeDetails val: " + val);
+		console.log("changeDetails email: " + email);
 		if(col == 'name'){
 			req.session.user = val;
 		}
-		var labYokedetails = new LabyokerUserDetails(col, val);
+		var labYokedetails = new LabyokerUserDetails(col, val, email);
 		labYokedetails.changeDetails(function(error, results) {
 			if(results){
 				console.log("res changeDetails " + results);

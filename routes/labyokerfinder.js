@@ -21,9 +21,10 @@ LabYokeAgents = function(email) {
 	this.email = email;
 };
 
-LabyokerUserDetails = function(column, value) {
+LabyokerUserDetails = function(column, value, email) {
 	this.column = column;
 	this.value = value;
+	this.email = email;
 }
 
 LabYokeReporter = function(datefrom, dateto) {
@@ -841,9 +842,10 @@ Labyoker.prototype.changepassword = function(callback) {
 LabyokerUserDetails.prototype.changeDetails = function(callback) {
 	var column = this.column;
 	var value = this.value;
+	var email = this.email;
 	var results;
 	var query = client.query("UPDATE vm2016_users SET " + column + "='" + value
-			+ "'");
+			+ "' where email='" + email + "'");
 	query.on("row", function(row, result) {
 		result.addRow(row);
 	});
