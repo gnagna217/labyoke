@@ -848,7 +848,7 @@ LabyokerUserDetails.prototype.changeDetails = function(callback) {
 		result.addRow(row);
 	});
 	query.on("end", function(result) {
-		results = result.rows;
+		results = column + " to " + value;
 		callback(null, results);
 	});
 };

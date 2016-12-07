@@ -12,6 +12,10 @@ block content
               span="This page is dedicated to " 
               span(style="color: #3d9dcb;")="you. "
               span="If you wish to change your personal details such as your telephone number or Lab information."
+            - if(resultDetails)
+                h3="Great! You have successfully changed "
+                   span(style="color: #3d9dcb;")=" " + resultDetails
+                   span="!"                 
             div(class="table-responsive")
                          -var ob = userDetails
                          - var j = 1
