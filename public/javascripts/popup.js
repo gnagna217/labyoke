@@ -73,6 +73,7 @@ function updatesurnameform(){
   changesurname.style.display = 'none';
   pencilsurname.style.display = 'initial';
   checksurname.style.display = 'none';
+  $('#changesurname').submit();
 }
 
 function penciltel(){
@@ -99,6 +100,7 @@ function updatetelform(){
   changetel.style.display = 'none';
   penciltel.style.display = 'initial';
   checktel.style.display = 'none';
+  $('#changetel').submit();
 }
 
 
