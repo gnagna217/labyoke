@@ -21,6 +21,10 @@ LabYokeAgents = function(email) {
 	this.email = email;
 };
 
+LabyokerUserDetails = function(placeholder) {
+	this.placeholder = placeholder;
+}
+
 LabYokeReporter = function(datefrom, dateto) {
 	this.datefrom = datefrom;
 	this.dateto = dateto;
@@ -833,6 +837,48 @@ Labyoker.prototype.changepassword = function(callback) {
 	});
 };
 
+LabyokerUserDetails.prototype.changename = function(callback) {
+	var username = this.placeholder;
+	var results;
+	var query = client.query("UPDATE vm2016_users SET name='" + username
+			+ "'");
+	query.on("row", function(row, result) {
+		result.addRow(row);
+	});
+	query.on("end", function(result) {
+		results = result.rows;
+		callback(null, results);
+	});
+};
+
+LabyokerUserDetails.prototype.changesurname = function(callback) {
+	var surname = this.placeholder;
+	var results;
+	var query = client.query("UPDATE vm2016_users SET surname='" + surname
+			+ "'");
+	query.on("row", function(row, result) {
+		result.addRow(row);
+	});
+	query.on("end", function(result) {
+		results = result.rows;
+		callback(null, results);
+	});
+};
+
+LabyokerUserDetails.prototype.changetel = function(callback) {
+	var tel = this.placeholder;
+	var results;
+	var query = client.query("UPDATE vm2016_users SET tel='" + tel
+			+ "'");
+	query.on("row", function(row, result) {
+		result.addRow(row);
+	});
+	query.on("end", function(result) {
+		results = result.rows;
+		callback(null, results);
+	});
+};
+
 var analyze = function(matchresults, participantsResults) {
 	for (var i = 0; i < participantsResults.length; i++) {
 		var participant = participantsResults[i];
@@ -898,6 +944,7 @@ var analyze = function(matchresults, participantsResults) {
 }
 
 exports.Labyoker = Labyoker;
+exports.LabyokerUserDetails = LabyokerUserDetails;
 exports.LabYokeReporter = LabYokeReporter;
 exports.LabYokeAgents = LabYokeAgents;
 exports.LabYokeSearch = LabYokeSearch;
