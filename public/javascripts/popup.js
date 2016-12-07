@@ -20,7 +20,7 @@ function materialLight(){
   shade.style.display = "block";
 }
 function pencilname(){
-  var nameform = $('#changename').find('input[id="valuedetail"]'); //document.getElementById("nameform");
+  var nameform = $('#changename input[id="valuedetail"]'); //document.getElementById("nameform");
   alert("form: " + $('#changename'));
   alert("nameform: " + nameform.val());
   var divname = document.getElementById("name");
