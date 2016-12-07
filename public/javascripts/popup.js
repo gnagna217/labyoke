@@ -2,12 +2,12 @@ var shade = document.getElementById("shade");
 var shadelight = document.getElementById("shade-light");
 
 $('html').click(function() {
-  $('#nameform:visible').hide();
+  /*$('#nameform:visible').hide();
   if($('#nameform:hidden')){
     $('#name:hidden').show();
     $('#changename:visible').hide();
     $('#pencilname:hidden').show();
-  }
+  }*/
  /* $('#nameform').size()
   if($('#nameform') && $('#nameform').){
     alert();
