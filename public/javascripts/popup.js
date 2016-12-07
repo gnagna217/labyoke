@@ -104,9 +104,13 @@ function updatetelform(){
   changetel.style.display = 'none';
   penciltel.style.display = 'initial';
   checktel.style.display = 'none';
-  alert("placeholder: " + telform.attr('placeholder'));
-  alert("current tel: " + $('#tel').html());
-  if($('#tel').html() != telform.attr('placeholder')){ 
+
+  var placeholder = telform.attr('placeholder');
+  var currenttel = $('#tel').html();
+  alert("placeholder: " + placeholder);
+  alert("current tel: " + currenttel);
+  alert(placeholder != currenttel);
+  if(placeholder != currenttel){ 
     $('#changetel').submit();
   }
 }
