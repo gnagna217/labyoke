@@ -28,7 +28,8 @@ function pencilname(){
   var pencilname = document.getElementById("pencilname");
   var checkname = document.getElementById("checkname");
 
-  nameform.style.display = 'block';
+  nameform.show();
+  //nameform.style.display = 'block';
   divname.style.display = 'none';
   changename.style.display = 'block';
   pencilname.style.display = 'none';
