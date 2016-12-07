@@ -1,5 +1,9 @@
 var shade = document.getElementById("shade");
 var shadelight = document.getElementById("shade-light");
+
+$(window).click(function() {
+alert("click");
+});
 function materialLight(){
   var pop = document.getElementById("material-light");
   pop.style.display = "block";
