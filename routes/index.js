@@ -244,8 +244,8 @@ module.exports = function(router) {
 	router.post('/changeDetails', isLoggedIn, function(req, res) {
 		var col = req.body.column;
 		var val = req.body.valuedetail;
-		console.log("changeDetails col: " + req.body.column);
-		console.log("changeDetails val: " + req.body.value);
+		console.log("changeDetails col: " + column);
+		console.log("changeDetails val: " + val);
 		var labYokedetails = new LabyokerUserDetails(col, val);
 		labYokedetails.changeDetails(function(error, results) {
 			if(results){
