@@ -63,28 +63,6 @@ function updatesurnameform(){
   pencilsurname.style.display = 'block';
 }
 
-function updatename(){
-  var nameform = document.getElementById("nameform");
-  var divname = document.getElementById("name");
-  var changename = document.getElementById("changename");
-  var pencilname = document.getElementById("pencilname");
-  nameform.style.display = 'block';
-  divname.style.display = 'none';
-  changename.style.display = 'block';
-  pencilname.style.display = 'none';
-}
-
-function updatenameform(){
-  var nameform = document.getElementById("nameform");
-  var divname = document.getElementById("name");
-  var changename = document.getElementById("changename");
-  var pencilname = document.getElementById("pencilname");
-  nameform.style.display = 'none';
-  divname.style.display = 'initial';
-  changename.style.display = 'none';
-  pencilname.style.display = 'initial';
-}
-
 function updatetel(){
   var telform = document.getElementById("telform");
   var divtel = document.getElementById("tel");
