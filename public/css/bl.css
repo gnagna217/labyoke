@@ -723,6 +723,17 @@ input::-webkit-inner-spin-button {
 }
 
  @media (max-width: 440px) {
+#checkname{
+    margin-left: 200px;
+}
+
+#checksurname{
+    margin-left: 200px;
+}
+#checktel{
+    margin-left: 200px;
+}
+
 .desktabonly2{
     display: none !important;
 }
