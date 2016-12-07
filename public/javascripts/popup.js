@@ -45,9 +45,13 @@ function updatenameform(){
   changename.style.display = 'none';
   pencilname.style.display = 'initial';
   checkname.style.display = 'none';
-  if($('#name').html().trim() != nameform.val().trim()){ 
+
+  var valentered = nameform.val().trim();
+  var current = $('#name').html().trim();
+  if(valentered && valentered!="" && current != valentered){ 
     $('#changename').submit();
   }
+
 }
 
 
@@ -75,9 +79,13 @@ function updatesurnameform(){
   changesurname.style.display = 'none';
   pencilsurname.style.display = 'initial';
   checksurname.style.display = 'none';
-  if($('#surname').html().trim() != surnameform.attr('placeholder').trim()){ 
+
+  var valentered = surnameform.val().trim();
+  var current = $('#surname').html().trim();
+  if(valentered && valentered!="" && current != valentered){ 
     $('#changesurname').submit();
   }
+
 }
 
 function penciltel(){
@@ -105,12 +113,9 @@ function updatetelform(){
   penciltel.style.display = 'initial';
   checktel.style.display = 'none';
 
-  var val = telform.val().trim();
+  var valentered = telform.val().trim();
   var currenttel = $('#tel').html().trim();
-  alert("placeholder: " + val +".");
-  alert("current tel: " + currenttel +".");
-  alert(val && val!="" && val != currenttel);
-  if(val && val!="" && currenttel != val){ 
+  if(valentered && valentered!="" && currenttel != valentered){ 
     $('#changetel').submit();
   }
 }
