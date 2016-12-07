@@ -1,9 +1,19 @@
 var shade = document.getElementById("shade");
 var shadelight = document.getElementById("shade-light");
 
-$(window).click(function() {
-alert("click");
+$('html').click(function() {
+  $('#nameform:visible').hide();
+  if($('#nameform:hidden')){
+    $('#name:hidden').show();
+    $('#changename:visible').hide();
+    $('#pencilname:hidden').show();
+  }
+ /* $('#nameform').size()
+  if($('#nameform') && $('#nameform').){
+    alert();
+  }*/
 });
+
 function materialLight(){
   var pop = document.getElementById("material-light");
   pop.style.display = "block";
