@@ -226,6 +226,15 @@ position: absolute;
     display:none;
 }
 
+.nameform{
+    display:none;
+}
+.surnameform{
+    display:none;
+}
+.telform{
+    display:none;
+}
 
 #checkname{
     display:none;
