@@ -45,7 +45,7 @@ function updatenameform(){
   changename.style.display = 'none';
   pencilname.style.display = 'initial';
   checkname.style.display = 'none';
-  if($('#name').html().trim() != nameform.attr('placeholder').trim()){ 
+  if($('#name').html().trim() != nameform.val().trim()){ 
     $('#changename').submit();
   }
 }
