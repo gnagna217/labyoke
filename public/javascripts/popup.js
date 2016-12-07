@@ -105,12 +105,12 @@ function updatetelform(){
   penciltel.style.display = 'initial';
   checktel.style.display = 'none';
 
-  var placeholder = telform.attr('placeholder');
-  var currenttel = $('#tel').html();
-  alert("placeholder: " + placeholder);
-  alert("current tel: " + currenttel);
-  alert(placeholder != currenttel);
-  if(placeholder.trim() != currenttel.trim()){ 
+  var val = telform.val().trim();
+  var currenttel = $('#tel').html().trim();
+  alert("placeholder: " + val +".");
+  alert("current tel: " + currenttel +".");
+  alert(val != currenttel);
+  if(currenttel != val){ 
     $('#changetel').submit();
   }
 }
