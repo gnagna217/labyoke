@@ -95,7 +95,7 @@ function updatetelform(){
   divtel.style.display = 'initial';
   changetel.style.display = 'none';
   penciltel.style.display = 'initial';
-  checkname.style.display = 'none';
+  checktel.style.display = 'none';
 }
 
 
