@@ -109,8 +109,8 @@ function updatetelform(){
   var currenttel = $('#tel').html().trim();
   alert("placeholder: " + val +".");
   alert("current tel: " + currenttel +".");
-  alert(val != currenttel);
-  if(currenttel != val){ 
+  alert(val && val!="" && val != currenttel);
+  if(val && val!="" && currenttel != val){ 
     $('#changetel').submit();
   }
 }
