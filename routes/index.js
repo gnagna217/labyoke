@@ -11,6 +11,7 @@ var LabYokeFinder = labyokeFinderClass.LabYokeFinder;
 var LabYokeUploader = labyokeFinderClass.LabYokeUploader;
 var Labyoker = labyokeFinderClass.Labyoker;
 var LabYokeAgents = labyokeFinderClass.LabYokeAgents;
+var LabyokerUserDetails = labyokeFinderClass.LabyokerUserDetails;
 var moment = require('moment-timezone');
 
 var express = require('express');
@@ -233,6 +234,23 @@ module.exports = function(router) {
 				} else {
 					res.render('reports', {ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, datefromShares: datefrom, dateto: dateto, title:'Reports',loggedIn : true, isLoggedInAdmin: req.session.admin, addMessageShares: "failure"});
 				}
+				req.session.messages = null;
+			}
+		});
+	});
+
+
+
+	router.post('/changeDetails', isLoggedIn, function(req, res) {
+		var col = req.body.column;
+		var val = req.body.valuedetail;
+		console.log("changeDetails col: " + req.body.column);
+		console.log("changeDetails val: " + req.body.value);
+		var labYokedetails = new LabyokerUserDetails(col, val);
+		labYokedetails.changeDetails(function(error, results) {
+			if(results){
+				console.log("res changeDetails " + results);
+				res.render('account', {ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, title:'Account',loggedIn : true, resultsAccount: results, isLoggedInAdmin: req.session.admin});
 				req.session.messages = null;
 			}
 		});
