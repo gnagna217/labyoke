@@ -232,13 +232,13 @@ position: absolute;
     display:none;
 }
 
-.checkname{
+#checkname{
     display:none;
 }
-.checksurname{
+#checksurname{
     display:none;
 }
-.checktel{
+#checktel{
     display:none;
 }
 
