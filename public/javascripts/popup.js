@@ -22,7 +22,7 @@ function materialLight(){
 function pencilname(){
   var nameform = $('#changename').find('input[id="valuedetail"]'); //document.getElementById("nameform");
   alert("form: " + $('#changename'));
-  alert("nameform: " + nameform);
+  alert("nameform: " + nameform.val());
   var divname = document.getElementById("name");
   var changename = document.getElementById("changename");
   var pencilname = document.getElementById("pencilname");
