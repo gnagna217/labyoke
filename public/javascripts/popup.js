@@ -41,7 +41,7 @@ function updatenameform(){
   pencilname.style.display = 'initial';
 }
 
-/*
+
 function updatesurname(){
   var surnameform = document.getElementById("surnameform");
   var divsurname = document.getElementById("surname");
@@ -85,7 +85,7 @@ function updatetelform(){
   changetel.style.display = 'none';
   penciltel.style.display = 'block';
 }
-*/
+
 
 function iosLight(){
   var pop = document.getElementById("ios-light");
