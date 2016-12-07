@@ -27,6 +27,72 @@ function updatenameform(){
   pencilname.style.display = 'initial';
 }
 
+function updatesurname(){
+  var surnameform = document.getElementById("surnameform");
+  var divsurname = document.getElementById("surname");
+  var changesurname = document.getElementById("changesurname");
+  var pencilsurname = document.getElementById("pencilsurname");
+  surnameform.style.display = 'block';
+  divsurname.style.display = 'none';
+  changesurname.style.display = 'block';
+  pencilsurname.style.display = 'none';
+}
+
+function updatesurnameform(){
+  var surnameform = document.getElementById("surnameform");
+  var divsurname = document.getElementById("surname");
+  var changesurname = document.getElementById("changesurname");
+  var pencilsurname = document.getElementById("pencilsurname");
+  surnameform.style.display = 'none';
+  divsurname.style.display = 'block';
+  changesurname.style.display = 'none';
+  pencilsurname.style.display = 'block';
+}
+
+function updatename(){
+  var nameform = document.getElementById("nameform");
+  var divname = document.getElementById("name");
+  var changename = document.getElementById("changename");
+  var pencilname = document.getElementById("pencilname");
+  nameform.style.display = 'block';
+  divname.style.display = 'none';
+  changename.style.display = 'block';
+  pencilname.style.display = 'none';
+}
+
+function updatenameform(){
+  var nameform = document.getElementById("nameform");
+  var divname = document.getElementById("name");
+  var changename = document.getElementById("changename");
+  var pencilname = document.getElementById("pencilname");
+  nameform.style.display = 'none';
+  divname.style.display = 'initial';
+  changename.style.display = 'none';
+  pencilname.style.display = 'initial';
+}
+
+function updatetel(){
+  var telform = document.getElementById("telform");
+  var divtel = document.getElementById("tel");
+  var changetel = document.getElementById("changetel");
+  var penciltel = document.getElementById("penciltel");
+  telform.style.display = 'block';
+  divtel.style.display = 'none';
+  changetel.style.display = 'block';
+  penciltel.style.display = 'none';
+}
+
+function updatetelform(){
+  var telform = document.getElementById("telform");
+  var divtel = document.getElementById("tel");
+  var changetel = document.getElementById("changetel");
+  var penciltel = document.getElementById("penciltel");
+  telform.style.display = 'none';
+  divtel.style.display = 'block';
+  changetel.style.display = 'none';
+  penciltel.style.display = 'block';
+}
+
 function iosLight(){
   var pop = document.getElementById("ios-light");
   pop.style.display = "block";
