@@ -309,7 +309,7 @@ LabYokeAgents.prototype.reportAllSharesByCategory = function(callback) {
 	var results;
 	console.log("reportAllSharesByCategory: " + this.email);
 	var query = client
-			.query("SELECT b.category, count(b.category) FROM vm2016_orders a, vm2016_agentsshare b where a.agent = b.agent group by b.category order by a.date desc");
+			.query("SELECT b.category, count(b.category) FROM vm2016_orders a, vm2016_agentsshare b where a.agent = b.agent group by b.category");
 	query.on("row", function(row, result) {
 		result.addRow(row);
 	});
@@ -386,7 +386,7 @@ LabYokerGetOrder.prototype.getorders = function(callback) {
 	query.on("end", function(result) {
 		results.push(result.rows);
 		var query2 = client
-				.query("SELECT b.category, count(b.category) FROM vm2016_orders a, vm2016_agentsshare b where a.agent = b.agent group by b.category order by a.date desc");
+				.query("SELECT b.category, count(b.category) FROM vm2016_orders a, vm2016_agentsshare b where a.agent = b.agent group by b.category");
 		query2.on("row", function(row, result2) {
 			result2.addRow(row);
 		});
@@ -526,7 +526,7 @@ Labyoker.prototype.login = function(callback) {
 
 		var query2 = client
 				.query("SELECT count(agent) as counting from vm2016_orders where email='" + email
-			+ "' and status='new' order by date desc");
+			+ "' and status='new'");
 		query2.on("row", function(row, result2) {
 			result2.addRow(row);
 		});
@@ -535,7 +535,7 @@ Labyoker.prototype.login = function(callback) {
 
 		var query3 = client
 				.query("SELECT count(agent) as counting from vm2016_orders where requestoremail='" + email
-			+ "' and status='new' order by date desc");
+			+ "' and status='new'");
 		query3.on("row", function(row, result3) {
 			result3.addRow(row);
 		});
