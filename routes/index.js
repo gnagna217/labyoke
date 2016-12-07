@@ -246,6 +246,9 @@ module.exports = function(router) {
 		var val = req.body.valuedetail;
 		console.log("changeDetails col: " + col);
 		console.log("changeDetails val: " + val);
+		if(col == 'name'){
+			req.session.user = val;
+		}
 		var labYokedetails = new LabyokerUserDetails(col, val);
 		labYokedetails.changeDetails(function(error, results) {
 			if(results){
