@@ -160,8 +160,9 @@ block content
             }
             var values4 = "#{array_values4}";
             values4 = values4.split("|");
+            var valTransform4 = [];
             for(var prop in values4){
-              valTransform3.push(values4[prop]);
+              valTransform4.push(values4[prop]);
             }
             var rowTransform3 = [];
             var rows4 = "#{array_rows4}";
@@ -179,7 +180,7 @@ block content
             var data3 = {
               labels: rowTransform3,
               series: [
-               valTransform3, valTransform4
+               valTransform4, valTransform3
               ]
             };
             /*
