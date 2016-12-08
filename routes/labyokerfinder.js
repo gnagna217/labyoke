@@ -360,14 +360,23 @@ LabYokerOrder.prototype.order = function(callback) {
 };
 
 LabYokerGetOrder.prototype.getLabOrders = function(callback) {
-	var results;
+	var results = [];
 	console.log("getLabOrders");
-	var query = client.query("SELECT b.lab, count(a.agent) as counting FROM vm2016_orders a, vm2016_users b where a.email = b.email group by b.lab, a.agent");
+	var query = client.query("SELECT lab, count(lab) as counting FROM vm2016_orders where lab='Sama Lab' group by lab");
 	query.on("row", function(row, result) {
 		result.addRow(row);
 	});
 	query.on("end", function(result) {
-		callback(null, result.rows)
+		results.push(result.rows);
+		var query2 = client.query("SELECT lab, count(lab) as counting FROM vm2016_orders where lab='Sougnou Lab' group by lab");
+		query2.on("row", function(row, result2) {
+			result2.addRow(row);
+		});
+		query2.on("end", function(result2) {
+			results.push(result2.rows);
+			callback(null, results)
+		});
+
 	});
 };
 

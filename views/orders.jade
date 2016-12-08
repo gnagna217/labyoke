@@ -92,6 +92,8 @@ block content
           - var array_values2 = ""
           - var array_rows3 = []
           - var array_values3 = ""
+          - var array_rows4 = []
+          - var array_values4 = ""
 
           -var ob = report_sharesbycategory
           -for(var prop in ob)
@@ -105,6 +107,10 @@ block content
           -for(var prop in ob3)
             - array_rows3 = array_rows3 + ob3[prop].lab + "|"
             - array_values3 = array_values3 + ob3[prop].counting + "|"
+          -var ob4 = lab1orders
+          -for(var prop in ob4)
+            - array_rows4 = array_rows4 + ob4[prop].lab + "|"
+            - array_values4 = array_values4 + ob4[prop].counting + "|"
 
           script.
             var values = "#{array_values}";
@@ -152,6 +158,12 @@ block content
             for(var prop in values3){
               valTransform3.push(values3[prop]);
             }
+            var values4 = "#{array_values4}";
+            values4 = values4.split("|");
+            var valTransform4 = [];
+            for(var prop in values4){
+              valTransform4.push(values4[prop]);
+            }
             var rows3 = "#{array_rows3}";
             rows3 = rows3.split("|");
             var rowTransform3 = [];
@@ -163,7 +175,7 @@ block content
             var data3 = {
               labels: rowTransform3,
               series: [
-               valTransform3
+               valTransform3, valTransform4
               ]
             };
             /*
@@ -192,7 +204,7 @@ block content
             }
             console.log("values3 : " + values3);
             if(values3 != null && values3 != ""){
-            var chart3 = new Chartist.Bar('.ct-chart3', data3, responsiveOptions);
+            var chart3 = new Chartist.Line('.ct-chart3', data3, responsiveOptions);
             }
             console.log("values : " + values);
             if(values != null && values != ""){
