@@ -222,11 +222,11 @@ block content
             }
             console.log("values3 : " + values3);
             if(values3 != null && values3 != ""){
-            var chart3 = new Chartist.Line('.ct-chart3', data3, responsiveOptions);
+            var chart3 = new Chartist.Bar('.ct-chart3', data3, responsiveOptions);
             }
             console.log("values : " + values);
             if(values != null && values != ""){
-            var chart = new Chartist.Line('.ct-chart', data, {lineSmooth: Chartist.Interpolation.cardinal({fillHoles: true,}),low: 0});
+            var chart = new Chartist.Line('.ct-chart', data, responsiveOptions);
 
             // Let's put a sequence number aside so we can use it in the event callbacks
             var seq = 0,
