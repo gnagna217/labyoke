@@ -71,20 +71,28 @@ block content
            h5="You have not ordered any agent. "
             a(href="/search")
               span(class="labColot")="Search now."
-          h4="Another brief Bar report of the monthly orders."
+          h4="A brief Bar report of the monthly orders."
           p="This bar chart depicts your number of orders this month (so far) per Agent Category:"
           - if(filteroutput != null && filteroutput.length > 0) 
              div(class="ct-chart0 ct-perfect-fourth")
              div(id="tooltips0", class="labColor") &nbsp;
           - if(filteroutput != null && filteroutput.length == 0) 
            h5="You have not ordered any agent this month."
-          
+          h4="A brief Bar report of all orders in each lab."
+          p="This bar chart depicts the number of orders (so far) per lab:"
+          - if(laborders != null && laborders.length > 0) 
+             div(class="ct-chart3 ct-perfect-fourth")
+             div(id="tooltips3", class="labColor") &nbsp;
+          - if(laborders != null && laborders.length == 0) 
+           h5="No agent has been ordered in any lab so far."
           
           - var array_rows = []
           - var array_values = ""
           - var array_rows2 = []
           - var array_values2 = ""
-          
+          - var array_rows3 = []
+          - var array_values3 = ""
+
           -var ob = report_sharesbycategory
           -for(var prop in ob)
             - array_rows = array_rows + ob[prop].category + "|"
@@ -93,6 +101,10 @@ block content
           -for(var prop in ob2)
             - array_rows2 = array_rows2 + ob2[prop].category + "|"
             - array_values2 = array_values2 + ob2[prop].counting + "|"
+          -var ob3 = laborders
+          -for(var prop in ob3)
+            - array_rows3 = array_rows3 + ob3[prop].lab + "|"
+            - array_values3 = array_values3 + ob3[prop].counting + "|"
 
           script.
             var values = "#{array_values}";
@@ -134,6 +146,26 @@ block content
                valTransform2
               ]
             };
+            var values3 = "#{array_values3}";
+            values3 = values3.split("|");
+            var valTransform3 = [];
+            for(var prop in values3){
+              valTransform3.push(values3[prop]);
+            }
+            var rows3 = "#{array_rows3}";
+            rows3 = rows3.split("|");
+            var rowTransform3 = [];
+            for(var prop in rows3){
+             rowTransform3.push(rows3[prop]);
+            }
+            console.log("more valTransform3 trans: " + valTransform3)
+            console.log("more rowTransform3 trans: " + rowTransform3)
+            var data3 = {
+              labels: rowTransform3,
+              series: [
+               valTransform3
+              ]
+            };
             /*
             var options = {
               width: 300,
@@ -157,6 +189,10 @@ block content
             console.log("values2 : " + values2);
             if(values2 != null && values2 != ""){
             var chart0 = new Chartist.Bar('.ct-chart0', data2, responsiveOptions);
+            }
+            console.log("values3 : " + values3);
+            if(values3 != null && values3 != ""){
+            var chart3 = new Chartist.Bar('.ct-chart3', data3, responsiveOptions);
             }
             console.log("values : " + values);
             if(values != null && values != ""){
@@ -307,7 +343,20 @@ block content
               }
             });
             }
+            if(values3 != "" && values3 != ""){
+            var addedEvents3 = false;
+            chart3.on('draw', function() {
+              if (!addedEvents3) {
+                $('.ct-bar').on('mouseover', function() {
+                  $('#tooltips3').html('<b>Selected Value: </b>' + $(this).attr('ct:value'));
+                });
 
+                $('.ct-bar').on('mouseout', function() {
+                  $('#tooltips3').html("&nbsp;")
+                });
+              }
+            });
+            }
       if email != undefined
         h3="Great! You have ordered the following agent from "
           span(style="color: #3d9dcb;")=" " + location

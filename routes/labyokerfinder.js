@@ -72,13 +72,7 @@ LabyokerPasswordChange = function(hash, password) {
 
 };
 
-
 LabYokeUploader.prototype.upload = function(callback) {
-	/*var agent = this.agent;
-	var vendor = this.vendor;
-	var catalognumber = this.catalognumber;
-	var location = this.location;
-	var email = this.email;*/
 	var results = this.jsonResults;
 	console.log("location: " + location);
 	var values = "";
@@ -158,7 +152,6 @@ LabYokeReporter.prototype.reportShares = function(callback) {
 				var email = results[prop].email;
 				var category = results[prop].category;
 				var date = results[prop].date;
-
 
 				html += " <tr><td style='font-size: 12px;'>" + agent + "</td>";
 				html += " <td style='font-size: 12px;'>" + vendor + "</td>";
@@ -264,48 +257,37 @@ LabYokeAgents.prototype.findmyshares = function(callback) {
 		});
 		query2.on("end", function(result2) {
 			results.push(result2.rows);
+			var query4 = client.query("SELECT * from vm2016_orders where email='" + email
+				+ "' order by date desc");
+			query4.on("row", function(row, result4) {
+				result4.addRow(row);
+			});
+			query4.on("end", function(result4) {
+				var test4 = result4.rows;
+				results.push(test4.length);
+				results.push(test4);
+				var query3 = client
+					.query("update vm2016_orders set status='' where status='new' and email='" + email
+				+ "'");
 
-			//results.push(result2.rows);
+				query3.on("row", function(row, result3) {
+					result3.addRow(row);
+				});
+				query3.on("end", function(result3) {
+					var query5 = client
+						.query("SELECT category, count(category) as counting, EXTRACT(MONTH FROM date_trunc( 'month', date )) as monthorder, EXTRACT(year FROM date_trunc( 'year', date )) as yearorder from vm2016_orders where email='" + email
+					+ "' group by category, date_trunc( 'month', date ), date_trunc( 'year', date ) order by category asc");
+					query5.on("row", function(row, result5) {
+						result5.addRow(row);
+					});
+					query5.on("end", function(result5) {
+						results.push(result5.rows);
+						console.log("orders findmyshares result5: " + result5.rows)
+						callback(null, results)
+					});
+				});
 
-		var query4 = client
-				.query("SELECT * from vm2016_orders where email='" + email
-			+ "' order by date desc");
-		query4.on("row", function(row, result4) {
-			result4.addRow(row);
-		});
-		query4.on("end", function(result4) {
-var test4 = result4.rows;
-			results.push(test4.length);
-			results.push(test4);
-		var query3 = client
-				.query("update vm2016_orders set status='' where status='new' and email='" + email
-			+ "'");
-
-		query3.on("row", function(row, result3) {
-			result3.addRow(row);
-		});
-		query3.on("end", function(result3) {
-
-			var query5 = client
-				.query("SELECT category, count(category) as counting, EXTRACT(MONTH FROM date_trunc( 'month', date )) as monthorder, EXTRACT(year FROM date_trunc( 'year', date )) as yearorder from vm2016_orders where email='" + email
-			+ "' group by category, date_trunc( 'month', date ), date_trunc( 'year', date ) order by category asc");
-			query5.on("row", function(row, result5) {
-			result5.addRow(row);
-		});
-		query5.on("end", function(result5) {
-			
-			
-			results.push(result5.rows);
-			console.log("orders findmyshares result5: " + result5.rows)
-			callback(null, results)
-		});
-
-		});
-
-
-		});
-
-
+			});
 			//callback(null, results)
 		});
 	});
@@ -350,7 +332,6 @@ LabYokerOrder.prototype.order = function(callback) {
 	query.on("end", function(result) {
 		results = result.rows;
 
-
 		var subject = "LabYoke Request - Order for " + agent;
 		var body = "<div style='float:left'><img style='width: 150px; margin: 0 20px;' src='https:\/\/team-labyoke.herokuapp.com\/images\/yoke4.png', alt='The Yoke',  title='Yoke', class='yokelogo'/></div><div style=\"font-family:'calibri'; font-size:11pt;padding: 20px;\">Hello " + location
 				+ ",<br/><br/>";
@@ -369,13 +350,25 @@ LabYokerOrder.prototype.order = function(callback) {
 			result2.addRow(row);
 		});
 		query2.on("end", function(result2) {
-			
 
 			var mailOptions = new MailOptionsWithCC(email, subject, body, sendemail);
 			mailOptions.sendAllEmails();
 
 			callback(null, "successfulOrder")
 		});
+	});
+};
+
+LabYokerGetOrder.prototype.getLabOrders = function(callback) {
+	var results;
+	console.log("getLabOrders");
+	var query = client
+			.query("SELECT b.lab, count(b.lab) FROM vm2016_orders a, vm2016_users b where and a.email = b.email order by date desc");
+	query.on("row", function(row, result) {
+		result.addRow(row);
+	});
+	query.on("end", function(result) {
+		callback(null, result.rows;)
 	});
 };
 
@@ -391,8 +384,7 @@ LabYokerGetOrder.prototype.getorders = function(callback) {
 	});
 	query.on("end", function(result) {
 		results.push(result.rows);
-		var query2 = client
-				.query("SELECT b.category, count(b.category) FROM vm2016_orders a, vm2016_agentsshare b where a.agent = b.agent group by b.category");
+		var query2 = client.query("SELECT b.category, count(b.category) FROM vm2016_orders a, vm2016_agentsshare b where a.agent = b.agent group by b.category");
 		query2.on("row", function(row, result2) {
 			result2.addRow(row);
 		});
@@ -407,9 +399,7 @@ LabYokerGetOrder.prototype.getorders = function(callback) {
 		});
 		query3.on("end", function(result3) {
 			//results.push(result2.rows);
-
-		var query4 = client
-				.query("SELECT category, count(category) as counting, EXTRACT(MONTH FROM date_trunc( 'month', date )) as monthorder, EXTRACT(year FROM date_trunc( 'year', date )) as yearorder from vm2016_orders where requestoremail='" + email
+		var query4 = client.query("SELECT category, count(category) as counting, EXTRACT(MONTH FROM date_trunc( 'month', date )) as monthorder, EXTRACT(year FROM date_trunc( 'year', date )) as yearorder from vm2016_orders where requestoremail='" + email
 			+ "' group by category, date_trunc( 'month', date ), date_trunc( 'year', date ) order by category asc");
 		query4.on("row", function(row, result4) {
 			result4.addRow(row);
@@ -424,8 +414,6 @@ LabYokerGetOrder.prototype.getorders = function(callback) {
 			callback(null, results)
 
 		});
-
-
 
 		});
 
