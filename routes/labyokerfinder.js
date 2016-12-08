@@ -363,7 +363,7 @@ LabYokerGetOrder.prototype.getLabOrders = function(callback) {
 	var results;
 	console.log("getLabOrders");
 	var query = client
-			.query("SELECT b.lab, count(b.lab) FROM vm2016_orders a, vm2016_users b where a.email = b.email order by date desc");
+			.query("SELECT b.lab, count(b.lab) FROM vm2016_orders a, vm2016_users b where a.email = b.email group by b.lab order by date desc");
 	query.on("row", function(row, result) {
 		result.addRow(row);
 	});
