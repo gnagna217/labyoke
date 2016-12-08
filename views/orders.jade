@@ -164,9 +164,14 @@ block content
             for(var prop in values4){
               valTransform4.push(values4[prop]);
             }
+            var rowTransform3 = [];
+            var rows4 = "#{array_rows4}";
+            rows4 = rows4.split("|");
+            for(var prop in rows4){
+             rowTransform3.push(rows4[prop]);
+            }
             var rows3 = "#{array_rows3}";
             rows3 = rows3.split("|");
-            var rowTransform3 = [];
             for(var prop in rows3){
              rowTransform3.push(rows3[prop]);
             }
