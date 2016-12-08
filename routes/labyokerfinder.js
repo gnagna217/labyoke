@@ -368,7 +368,7 @@ LabYokerGetOrder.prototype.getLabOrders = function(callback) {
 		result.addRow(row);
 	});
 	query.on("end", function(result) {
-		callback(null, result.rows;)
+		callback(null, result.rows)
 	});
 };
 
