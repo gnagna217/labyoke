@@ -156,26 +156,39 @@ block content
             values3 = values3.split("|");
             var valTransform3 = [];
             for(var prop in values3){
-              valTransform3.push(values3[prop]);
+              var i = values3[prop];
+              if(i){
+              valTransform3.push(i);
+              }
             }
             var values4 = "#{array_values4}";
             values4 = values4.split("|");
             var valTransform4 = [];
             for(var prop in values4){
-              valTransform4.push(values4[prop]);
+              var i = values4[prop];
+              if(i){
+              valTransform4.push(i);
+              }
             }
             var rowTransform3 = [];
             var rows4 = "#{array_rows4}";
             rows4 = rows4.split("|");
             for(var prop in rows4){
-             rowTransform3.push(rows4[prop]);
+             var i = rows4[prop];
+              if(i){
+               rowTransform3.push(i);
+             }
             }
             var rows3 = "#{array_rows3}";
             rows3 = rows3.split("|");
             for(var prop in rows3){
-             rowTransform3.push(rows3[prop]);
+              var i = rows3[prop];
+              if(i){
+                rowTransform3.push(i);
+              }
             }
             console.log("more valTransform3 trans: " + valTransform3)
+            console.log("more valTransform4 trans: " + valTransform4)
             console.log("more rowTransform3 trans: " + rowTransform3)
             var data3 = {
               labels: rowTransform3,
