@@ -42,13 +42,13 @@ block content
 										- var d = ob[prop].date
 										- d = d.toLocaleDateString("en-US")
 										- var isnew = ""
-										- var checked = ""
+										- var checkedstr = ""
 										- if(n == "new")
 											- isnew = "isnew"
 										- var insuff = parseInt(ob[prop].insufficient)
 										- if(insuff == 0)
 											- isnew = "yokeBackColor"
-											- checked = "checked"
+											- checkedstr = "checked"
 										tr(class=isnew)
 											td(class="wrapped") #{ob[prop].agent}
 											td(class="desktabonly") #{ob[prop].vendor}
@@ -57,7 +57,7 @@ block content
 											td #{d}
 											td
 												form(action="/cancelshare" method="post")
-													input(type="checkbox" name="cancel" value="cancel" class="cancel" checked)
+													input(type="checkbox" name="cancel" value="cancel" class="cancel" checkedstr)
 													input(type="hidden" name="agent" value=ob[prop].agent)
 													input(type="hidden" name="vendor" value=ob[prop].vendor)
 													input(type="hidden" name="catalognumber" value=ob[prop].catalognumber)
@@ -89,17 +89,17 @@ block content
 									-for(var prop in ob)
 										- var currentqtyint = parseInt(ob[prop].currentquantity)
 										- var qtyinsufficient = ""
-										- var checked = ""
+										- var checkedstr = ""
 										- if(currentqtyint < 100)
 											- qtyinsufficient = "yokeBackColor"
-											- checked = "checked"
+											- checkedstr = "checked"
 										tr(class=qtyinsufficient)
 											td(class="wrapped") #{ob[prop].agent}
 											td #{ob[prop].vendor}
 											td #{ob[prop].catalognumber}
 											td
 												form(action="/cancelshare" method="post")
-													input(type="checkbox" name="cancel" value="cancel" class="cancel" checked)
+													input(type="checkbox" name="cancel" value="cancel" class="cancel" checkedstr)
 													input(type="hidden" name="agent" value=ob[prop].agent)
 													input(type="hidden" name="vendor" value=ob[prop].vendor)
 													input(type="hidden" name="catalognumber" value=ob[prop].catalognumber)
