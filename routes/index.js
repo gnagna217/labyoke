@@ -237,8 +237,9 @@ module.exports = function(router) {
 			console.log("email: " + email);
 			var labYokechange = new LabYokerChangeShare(table,agent, vendor, catalognumber,email,checked);
 			labYokechange.cancelShare(function(error, results) {
-				if(results != null && results.length > 0){				
-					res.render('share', {ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, isLoggedInAdmin: req.session.admin, title:'Shares',loggedIn : true});
+				if(results != null && results.length > 0){
+					res.redirect('/share');			
+					//res.render('share', {ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, isLoggedInAdmin: req.session.admin, title:'Shares',loggedIn : true});
 					req.session.messages = null;
 				}
 			});
