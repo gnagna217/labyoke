@@ -102,14 +102,15 @@ block content
           
           - var arraylabRows = [];
           - var arraylabValues = [];
-          - each item in laborders
-            - var array_rows5 = []
-            - var array_values5 = ""
-            -for(var prop in item)
-              - array_rows5 = array_rows5 + item[prop].lab + "|"
-              - array_values5 = array_values5 + item[prop].counting + "|"
-              - arraylabRows.push(array_rows5)
-              - arraylabValues.push(array_values5)
+          - if(laborders != null && laborders.length > 0)
+            - each item in laborders
+              - var array_rows5 = []
+              - var array_values5 = ""
+              - for(var prop in item)
+                - array_rows5 = array_rows5 + item[prop].lab + "|"
+                - array_values5 = array_values5 + item[prop].counting + "|"
+                - arraylabRows.push(array_rows5)
+                - arraylabValues.push(array_values5)
           script.
             for(var prop in arraylabRows){
               console.log("row: " + arraylabRows[prop])
