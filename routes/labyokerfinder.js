@@ -398,6 +398,20 @@ LabYokerGetOrder.prototype.getLabOrders = function(callback) {
 	});
 };
 
+LabYokerGetOrder.prototype.getLabOrders_2 = function(callback) {
+	var results;
+	console.log("getLabOrders");
+	var query = client.query("SELECT lab, count(lab) as counting FROM vm2016_orders group by lab");
+	query.on("row", function(row, result) {
+		result.addRow(row);
+	});
+	query.on("end", function(result) {
+		results = result.rows;
+		callback(null, results)
+	});
+};
+
+
 LabYokerGetOrder.prototype.getorders = function(callback) {
 	var results = [];
 	var email = this.sendemail;

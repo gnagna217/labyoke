@@ -175,15 +175,15 @@ module.exports = function(router) {
 		if (req.session.user) {
 			var labYokerGetOrder = new LabYokerGetOrder(req.session.email);
 			labYokerGetOrder.getorders(function(error, results) {
-				labYokerGetOrder.getLabOrders(function(error, results2) {
+				labYokerGetOrder.getLabOrders_2(function(error, results2) {
 				if(results != null){
 					//req.session.shares = results[2];
 					//req.session.orders = 0;
 					console.log("orders results: " + results);
-					console.log("lab orders results0: " + results2[0]);	
-					console.log("lab orders results1: " + results2[1]);				
-					res.render('orders', {test: results[3], laborders: results2[0],lab1orders: results2[1], ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, isLoggedInAdmin: req.session.admin, title:'Orders', loggedIn : true, orderresults: results[0], report_sharesbycategory: results[1]});
-
+					console.log("lab orders results0: " + results);	
+					//console.log("lab orders results1: " + results2[1]);				
+					//res.render('orders', {test: results[3], laborders: results2[0],lab1orders: results2[1], ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, isLoggedInAdmin: req.session.admin, title:'Orders', loggedIn : true, orderresults: results[0], report_sharesbycategory: results[1]});
+					res.render('orders', {test: results[3], laborders: results2, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, isLoggedInAdmin: req.session.admin, title:'Orders', loggedIn : true, orderresults: results[0], report_sharesbycategory: results[1]});
 				}
 			});
 				});

@@ -80,7 +80,7 @@ block content
            h5="You have not ordered any agent this month."
           h4="A brief Bar report of all orders in each lab."
           p="This bar chart depicts the number of orders (so far) per lab:"
-          - if(laborders != null && laborders.length > 0) 
+          - if(laborders != null && laborders.length > 0)
              div(class="ct-chart3 ct-perfect-fourth")
              div(id="tooltips3", class="labColor") &nbsp;
           - if(laborders != null && laborders.length == 0) 
@@ -90,10 +90,6 @@ block content
           - var array_values = ""
           - var array_rows2 = []
           - var array_values2 = ""
-          - var array_rows3 = []
-          - var array_values3 = ""
-          - var array_rows4 = []
-          - var array_values4 = ""
 
           -var ob = report_sharesbycategory
           -for(var prop in ob)
@@ -103,55 +99,26 @@ block content
           -for(var prop in ob2)
             - array_rows2 = array_rows2 + ob2[prop].category + "|"
             - array_values2 = array_values2 + ob2[prop].counting + "|"
-          -var ob3 = laborders
-          -for(var prop in ob3)
-            - array_rows3 = array_rows3 + ob3[prop].lab + "|"
-            - array_values3 = array_values3 + ob3[prop].counting + "|"
-          -var ob4 = lab1orders
-          -for(var prop in ob4)
-            - array_rows4 = array_rows4 + ob4[prop].lab + "|"
-            - array_values4 = array_values4 + ob4[prop].counting + "|"
-
+          
+          - var arraylabRows = [];
+          - var arraylabValues = [];
+          - each item in laborders
+            - var array_rows5 = []
+            - var array_values5 = ""
+            -var ob = item
+            -for(var prop in ob)
+              - array_rows5 = array_rows5 + ob[prop].lab + "|"
+              - array_values5 = array_values5 + ob[prop].counting + "|"
+              - arraylabRows.push(array_rows5)
+              - arraylabValues.push(array_values5)
           script.
-            var values = "#{array_values}";
-            values = values.split("|");
-            var valTransform = [];
-            for(var prop in values){
-              valTransform.push(values[prop]);
+            for(var prop in arraylabRows){
+              console.log("row: " + arraylabRows[prop])
             }
-            var rows = "#{array_rows}";
-            rows = rows.split("|");
-            var rowTransform = [];
-            for(var prop in rows){
-              rowTransform.push(rows[prop]);
+            for(var prop in arraylabValues){
+              console.log("val: " + arraylabValues[prop])
             }
-            console.log("more rowTransform trans: " + rowTransform)
-            var data = {
-              labels: rowTransform,
-              series: [
-                valTransform
-              ]
-            };
-            var values2 = "#{array_values2}";
-            values2 = values2.split("|");
-            var valTransform2 = [];
-            for(var prop in values2){
-              valTransform2.push(values2[prop]);
-            }
-            var rows2 = "#{array_rows2}";
-            rows2 = rows2.split("|");
-            var rowTransform2 = [];
-            for(var prop in rows2){
-             rowTransform2.push(rows2[prop]);
-            }
-            console.log("more valTransform2 trans: " + valTransform2)
-            console.log("more rowTransform2 trans: " + rowTransform2)
-            var data2 = {
-              labels: rowTransform2,
-              series: [
-               valTransform2
-              ]
-            };
+
             var values3 = "#{array_values3}";
             values3 = values3.split("|");
             var valTransform3 = [];
@@ -196,12 +163,85 @@ block content
                valTransform4, valTransform3
               ]
             };
-            /*
-            var options = {
-              width: 300,
-              height: 200
-            };*/
+ 
 
+            var responsiveOptions = [
+              ['(max-width: 440px)', {
+                width: 300,
+                height: 200
+              }],
+              ['(max-width: 767px)', {
+                width: 500,
+                height: 200
+              }],
+              ['(min-width: 990px)', {
+                width: 300,
+                height: 200
+              }]
+            ];
+
+            console.log("values3 : " + values3);
+            if(values3 != null && values3 != ""){
+            var chart3 = new Chartist.Bar('.ct-chart3', data3, responsiveOptions);
+            }
+
+            if(values3 != "" && values3 != ""){
+            var addedEvents3 = false;
+            chart3.on('draw', function() {
+              if (!addedEvents3) {
+                $('.ct-bar').on('mouseover', function() {
+                  $('#tooltips3').html('<b>Selected Value: </b>' + $(this).attr('ct:value'));
+                });
+
+                $('.ct-bar').on('mouseout', function() {
+                  $('#tooltips3').html("&nbsp;")
+                });
+              }
+            });
+            }
+
+
+
+          script.
+            var values = "#{array_values}";
+            values = values.split("|");
+            var valTransform = [];
+            for(var prop in values){
+              valTransform.push(values[prop]);
+            }
+            var rows = "#{array_rows}";
+            rows = rows.split("|");
+            var rowTransform = [];
+            for(var prop in rows){
+              rowTransform.push(rows[prop]);
+            }
+            console.log("more rowTransform trans: " + rowTransform)
+            var data = {
+              labels: rowTransform,
+              series: [
+                valTransform
+              ]
+            };
+            var values2 = "#{array_values2}";
+            values2 = values2.split("|");
+            var valTransform2 = [];
+            for(var prop in values2){
+              valTransform2.push(values2[prop]);
+            }
+            var rows2 = "#{array_rows2}";
+            rows2 = rows2.split("|");
+            var rowTransform2 = [];
+            for(var prop in rows2){
+             rowTransform2.push(rows2[prop]);
+            }
+            console.log("more valTransform2 trans: " + valTransform2)
+            console.log("more rowTransform2 trans: " + rowTransform2)
+            var data2 = {
+              labels: rowTransform2,
+              series: [
+               valTransform2
+              ]
+            };
             var responsiveOptions = [
               ['(max-width: 440px)', {
                 width: 300,
@@ -220,10 +260,10 @@ block content
             if(values2 != null && values2 != ""){
             var chart0 = new Chartist.Bar('.ct-chart0', data2, responsiveOptions);
             }
-            console.log("values3 : " + values3);
+            /*console.log("values3 : " + values3);
             if(values3 != null && values3 != ""){
             var chart3 = new Chartist.Bar('.ct-chart3', data3, responsiveOptions);
-            }
+            }*/
             console.log("values : " + values);
             if(values != null && values != ""){
             var chart = new Chartist.Line('.ct-chart', data, responsiveOptions);
@@ -373,7 +413,7 @@ block content
               }
             });
             }
-            if(values3 != "" && values3 != ""){
+            /*if(values3 != "" && values3 != ""){
             var addedEvents3 = false;
             chart3.on('draw', function() {
               if (!addedEvents3) {
@@ -386,7 +426,8 @@ block content
                 });
               }
             });
-            }
+            }*/
+            
       if email != undefined
         h3="Great! You have ordered the following agent from "
           span(style="color: #3d9dcb;")=" " + location
