@@ -44,6 +44,9 @@ block content
 										- var isnew = ""
 										- if(n == "new")
 											- isnew = "isnew"
+										- var insuff = parseInt(ob[prop].insufficient)
+										- if(insuff == 0)
+											- isnew = "yokeColorBold"
 										tr(class=isnew)
 											td(class="wrapped") #{ob[prop].agent}
 											td(class="desktabonly") #{ob[prop].vendor}
