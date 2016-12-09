@@ -100,70 +100,49 @@ block content
             - array_rows2 = array_rows2 + ob2[prop].category + "|"
             - array_values2 = array_values2 + ob2[prop].counting + "|"
           
-          - var arraylabRows = [];
-          - var arraylabValues = [];
           - var arraylabRowsStr = "";
           - var arraylabValuesStr = "";
           - if(laborders != null && laborders.length > 0)
             - for(var prop in laborders)
               - var array_rows5 = []
-              - var array_values5 = ""           
-              - array_rows5 = array_rows5 + laborders[prop].lab + "|"
-              - array_values5 = array_values5 + laborders[prop].counting + "|"
-              - arraylabRows.push(array_rows5)
-              - arraylabValues.push(array_values5)
-            -for(var prop in arraylabRows)
-              - arraylabRowsStr = arraylabRowsStr + arraylabRows[prop]+ ";"
-            -for(var prop in arraylabValues)
-              - arraylabValuesStr = arraylabValuesStr + arraylabValues[prop]+ ";"
+              - var array_values5 = ""
+              - if(laborders[prop].lab != null)
+                 - arraylabRowsStr = arraylabRowsStr + laborders[prop].lab + "|"
+                 - arraylabValuesStr = arraylabValuesStr + laborders[prop].counting + "|"
+
           script.
             console.log("row: " + "#{arraylabRowsStr}")
 
             console.log("val: " + "#{arraylabValuesStr}")
 
-            var values3 = "#{array_values3}";
+            var values3 = "#{arraylabValuesStr}";
+            var series = [];
+            var rows = [];
             values3 = values3.split("|");
-            var valTransform3 = [];
+            
             for(var prop in values3){
+              var valTransform3 = [];
               var i = values3[prop];
               if(i){
               valTransform3.push(i);
+              series.push(valTransform3);
               }
             }
-            var values4 = "#{array_values4}";
-            values4 = values4.split("|");
-            var valTransform4 = [];
-            for(var prop in values4){
-              var i = values4[prop];
-              if(i){
-              valTransform4.push(i);
-              }
-            }
-            var rowTransform3 = [];
-            var rows4 = "#{array_rows4}";
+
+            var rows4 = "#{arraylabRowsStr}";
             rows4 = rows4.split("|");
             for(var prop in rows4){
              var i = rows4[prop];
               if(i){
-               rowTransform3.push(i);
+               rows.push(i);
              }
             }
-            var rows3 = "#{array_rows3}";
-            rows3 = rows3.split("|");
-            for(var prop in rows3){
-              var i = rows3[prop];
-              if(i){
-                rowTransform3.push(i);
-              }
-            }
-            console.log("more valTransform3 trans: " + valTransform3)
-            console.log("more valTransform4 trans: " + valTransform4)
-            console.log("more rowTransform3 trans: " + rowTransform3)
-            var data3 = {
-              labels: rowTransform3,
-              series: [
-               valTransform4, valTransform3
-              ]
+
+            console.log("more rows: " + rows)
+            console.log("more series: " + series)
+            var data = {
+              labels: rows,
+              series: series
             };
  
 
@@ -182,12 +161,12 @@ block content
               }]
             ];
 
-            console.log("values3 : " + values3);
-            if(values3 != null && values3 != ""){
-            var chart3 = new Chartist.Bar('.ct-chart3', data3, responsiveOptions);
+            console.log("series : " + series);
+            if(series != null && series.length > 0){
+            var chart3 = new Chartist.Bar('.ct-chart3', data, responsiveOptions);
             }
 
-            if(values3 != "" && values3 != ""){
+            if(series != "" && series.length > 0){
             var addedEvents3 = false;
             chart3.on('draw', function() {
               if (!addedEvents3) {
