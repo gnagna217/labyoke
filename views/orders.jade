@@ -102,6 +102,8 @@ block content
           
           - var arraylabRows = [];
           - var arraylabValues = [];
+          - var arraylabRowsStr = "";
+          - var arraylabValuesStr = "";
           - if(laborders != null && laborders.length > 0)
             - for(var prop in laborders)
               - var array_rows5 = []
@@ -110,13 +112,14 @@ block content
               - array_values5 = array_values5 + laborders[prop].counting + "|"
               - arraylabRows.push(array_rows5)
               - arraylabValues.push(array_values5)
+            -for(var prop in arraylabRows)
+              - arraylabRowsStr = arraylabRowsStr + arraylabRows[prop]+ ";"
+            -for(var prop in arraylabValues)
+              - arraylabValuesStr = arraylabValuesStr + arraylabValues[prop]+ ";"
           script.
-            for(var prop in arraylabRows){
-              console.log("row: " + arraylabRows[prop])
-            }
-            for(var prop in arraylabValues){
-              console.log("val: " + arraylabValues[prop])
-            }
+              console.log("row: " + "#{arraylabRowsStr}")
+
+              console.log("val: " + "#{arraylabValuesStr}")
 
             var values3 = "#{array_values3}";
             values3 = values3.split("|");
