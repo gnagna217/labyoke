@@ -152,11 +152,11 @@ block content
             var addedEvents3 = false;
             chart3.on('draw', function() {
               if (!addedEvents3) {
-                $('.ct-bar').on('mouseover', function() {
+                $(this).find('.ct-bar').on('mouseover', function() {
                   $('#tooltips3').html('<b>Selected Value: </b>' + $(this).attr('ct:value'));
                 });
 
-                $('.ct-bar').on('mouseout', function() {
+                $(this).find('.ct-bar').on('mouseout', function() {
                   $('#tooltips3').html("&nbsp;")
                 });
               }
@@ -225,11 +225,11 @@ block content
             var addedEvents0 = false;
             chart0.on('draw', function() {
               if (!addedEvents0) {
-                $('.ct-bar').on('mouseover', function() {
+                $(this).find('.ct-bar').on('mouseover', function() {
                   $('#tooltips0').html('<b>Selected Value: </b>' + $(this).attr('ct:value'));
                 });
 
-                $('.ct-bar').on('mouseout', function() {
+                $(this).find('.ct-bar').on('mouseout', function() {
                   $('#tooltips0').html("&nbsp;")
                 });
               }
@@ -243,12 +243,12 @@ block content
               if (!addedEvents) {
                 $('.ct-point').on('mouseover', function() {
                   //$('#tooltips').show();
-                  $('#tooltips').html('<b>Selected Value: </b>' + $(this).attr('ct:value'));
+                  $(this).find('#tooltips').html('<b>Selected Value: </b>' + $(this).attr('ct:value'));
                 });
 
                 $('.ct-point').on('mouseout', function() {
                   //$('#tooltips').hide();
-                  $('#tooltips').html("&nbsp;")
+                  $(this).find('#tooltips').html("&nbsp;")
                 });
               }
             });
