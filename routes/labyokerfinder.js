@@ -51,7 +51,7 @@ LabYokeUploader = function(jsonResults) {
 	this.jsonResults = jsonResults;
 };
 
-LabYokerOrder = function(lab,agent,vendor,catalognumber,email,location,sendemail,category,startquantity,currentquantity) {
+LabYokerOrder = function(lab,agent,vendor,catalognumber,email,location,sendemail,category,quantity) {
 	this.agent = agent;
 	this.vendor = vendor;
 	this.catalognumber = catalognumber;
@@ -60,8 +60,7 @@ LabYokerOrder = function(lab,agent,vendor,catalognumber,email,location,sendemail
 	this.sendemail = sendemail;
 	this.category = category;
 	this.lab = lab;
-	this.startquantity = startquantity;
-	this.currentquantity = currentquantity;
+	this.quantity = quantity;
 };
 
 LabYokerGetOrder = function(sendemail) {
@@ -329,12 +328,10 @@ LabYokerOrder.prototype.order = function(callback) {
 	var location = this.location;
 	var category = this.category;
 	var lab = this.lab;
-	var startquantity = this.startquantity;
-	console.log("startquantity: " + startquantity);
-	var currentquantity = this.currentquantity;
-	console.log("currentquantity: " + currentquantity);
-	currentquantity = currentquantity - 100;
-	console.log("currentquantity2: " + currentquantity);
+	var quantity = this.quantity;
+	console.log("quantity: " + quantity);
+	quantity = quantity + 100;
+	console.log("currentquantity2: " + quantity);
 	var now = moment(new Date).tz("America/New_York").format('YYYY-MM-DD');
 	console.log("order location: " + location);
 	var query = client.query("INSERT INTO vm2016_orders VALUES ('" + agent + "', '" + vendor + "', '" + catalognumber + "','" + email + "', '" + sendemail + "', '" + now + "', 'new', '" + category + "','" + lab + "',1 )");
@@ -356,7 +353,7 @@ LabYokerOrder.prototype.order = function(callback) {
 		body += "<p>Best regards,";
 		body += "</p><b><i>The LabYoke Team.</i></b></div>";
 		console.log("order body: " + body);
-		var tes = "UPDATE vm2016_agentsshare SET currentquantity = " + currentquantity + " WHERE agent='" + agent + "' AND vendor='" + vendor + "' AND catalognumber='" + catalognumber + "' AND email='" + email + "'";
+		var tes = "UPDATE vm2016_agentsshare SET quantity = " + quantity + " WHERE agent='" + agent + "' AND vendor='" + vendor + "' AND catalognumber='" + catalognumber + "' AND email='" + email + "'";
 		console.log("order tes: " + tes);
 		var query2 = client.query(tes);
 		console.log("query2: " + query2);

@@ -148,8 +148,7 @@ function iosLight(agent,vendor,catalognumber,reqemail,location,category,startqty
   var catalogform = document.getElementById("catalogform");
   var locationform = document.getElementById("locationform");
   var categoryform = document.getElementById("categoryform");
-  var startqtyform = document.getElementById("startqtyform");
-  var currentqtyform = document.getElementById("currentqtyform");
+  var qtyform = document.getElementById("qtyform");
   var labform = document.getElementById("labform");
   emailform.value = reqemail;
   agentform.value = agent;
@@ -157,8 +156,7 @@ function iosLight(agent,vendor,catalognumber,reqemail,location,category,startqty
   catalogform.value = catalognumber;
   locationform.value = location;
   categoryform.value = category;
-  startqtyform.value = startqty;
-  currentqtyform.value = currentqty;
+  qtyform.value = qty;
   labform.value = lab;
   orderText.innerHTML = "You are about to order 100 units of <br/>Agent: " + agent + "<br/>Vendor: "+vendor+"<br/>Catalog#: "+catalognumber;
   var pop = document.getElementById("ios-light");
