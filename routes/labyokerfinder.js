@@ -868,8 +868,10 @@ LabYokerChangeShare.prototype.cancelShare = function(callback) {
 	var table = this.table;
 	var email = this.email;
 	var results;
-	var query = client.query("UPDATE " + table + " SET insufficient=" + checked
-			+ " where agent='" + agent + "' and vendor='" + vendor + "' and catalognumber='" + catalognumber + "' and email='" + email + "'");
+	var str = "UPDATE " + table + " SET insufficient=" + checked
+			+ " where agent='" + agent + "' and vendor='" + vendor + "' and catalognumber='" + catalognumber + "' and email='" + email + "'";
+	console.log("str: " + str);
+	var query = client.query(str);
 	query.on("row", function(row, result) {
 		result.addRow(row);
 	});
