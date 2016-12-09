@@ -444,7 +444,7 @@ LabYokeSearch.prototype.search = function(callback) {
 	console.log("searchText: " + this.searchText);
 	var query = client
 			.query("SELECT * FROM vm2016_agentsshare where lower(agent) like lower('%"
-					+ this.searchText + "%') and currentquantity >= 100 order by agent, location");
+					+ this.searchText + "%') and insufficient = 1 order by agent, location");
 	query.on("row", function(row, result) {
 		result.addRow(row);
 	});
@@ -868,15 +868,15 @@ LabYokerChangeShare.prototype.cancelShare = function(callback) {
 	var table = this.table;
 	var email = this.email;
 	var results;
-	/*var query = client.query("UPDATE " + table + " SET insufficient='" + checked
-			+ "' where agent='" + agent + "' and vendor='" + vendor + "' and catalognumber='" + catalognumber + "' and email='" + email + "'");
+	var query = client.query("UPDATE " + table + " SET insufficient=" + checked
+			+ " where agent='" + agent + "' and vendor='" + vendor + "' and catalognumber='" + catalognumber + "' and email='" + email + "'");
 	query.on("row", function(row, result) {
 		result.addRow(row);
 	});
 	query.on("end", function(result) {
 		callback(null, results);
-	});*/
-callback(null, results);
+	});
+//callback(null, results);
 };
 
 /*LabyokerUserDetails.prototype.changesurname = function(callback) {

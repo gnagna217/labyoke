@@ -227,13 +227,15 @@ module.exports = function(router) {
 			var table = req.body.table;
 			var email = req.body.email;
 			var checked = req.body.cancel;
+			if(checked != null)
+				checked = 0;
 			console.log("agent: " + agent);
 			console.log("vendor: " + vendor);
 			console.log("catalognumber: " + catalognumber);
 			console.log("checked: " + checked);
 			console.log("table: " + table);
 			console.log("email: " + email);
-			var labYokechange = new LabYokerChangeShare(table,agent, vendor, catalognumber,email,cancel);
+			var labYokechange = new LabYokerChangeShare(table,agent, vendor, catalognumber,email,checked);
 			labYokechange.cancelShare(function(error, results) {
 				if(results != null && results.length > 0){				
 					res.render('share', {ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, isLoggedInAdmin: req.session.admin, title:'Shares',loggedIn : true});
