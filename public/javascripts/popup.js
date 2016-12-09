@@ -15,7 +15,7 @@ $('html').click(function() {
 });
 
 $('#cancel').click(function() {
-  var parenttr = $('#cancel').closest('tr');
+  var parenttr = $(this).closest('tr');
   var currentbackgroundColor = parenttr.css('backgroundColor');
   
   console.log("currentbackgroundColor: " + currentbackgroundColor);
