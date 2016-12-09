@@ -21,13 +21,14 @@ LabYokeAgents = function(email) {
 	this.email = email;
 };
 
-LabYokerChangeShare = function(table, agent, vendor,catalognumber,email,checked) {
+LabYokerChangeShare = function(table, agent, vendor,catalognumber,email,checked,date) {
 	this.agent = agent;
 	this.vendor = vendor;
 	this.catalognumber = catalognumber;
 	this.checked = checked;
 	this.table = table;
 	this.email = email;
+	this.date = date;
 };
 
 LabyokerUserDetails = function(column, value, email) {
@@ -870,9 +871,10 @@ LabYokerChangeShare.prototype.cancelShare = function(callback) {
 	var checked = this.checked;
 	var table = this.table;
 	var email = this.email;
+	var date = this.date;
 	var results;
 	var str = "UPDATE " + table + " SET insufficient=" + checked
-			+ " where agent='" + agent + "' and vendor='" + vendor + "' and catalognumber='" + catalognumber + "' and email='" + email + "'";
+			+ ", insuffdate='" + date + "' where agent='" + agent + "' and vendor='" + vendor + "' and catalognumber='" + catalognumber + "' and email='" + email + "'";
 	console.log("str: " + str);
 	var query = client.query(str);
 	query.on("row", function(row, result) {
