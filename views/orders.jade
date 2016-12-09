@@ -149,9 +149,6 @@ block content
             console.log("series : " + series);
             if(series != null && series.length > 0){
             var chart3 = new Chartist.Bar('.ct-chart3', data, options);
-            }
-
-            if(series != "" && series.length > 0){
             var addedEvents3 = false;
             chart3.on('draw', function() {
               if (!addedEvents3) {
@@ -225,11 +222,36 @@ block content
             console.log("values2 : " + values2);
             if(values2 != null && values2 != ""){
             var chart0 = new Chartist.Bar('.ct-chart0', data2, responsiveOptions);
+            var addedEvents0 = false;
+            chart0.on('draw', function() {
+              if (!addedEvents0) {
+                $('.ct-bar').on('mouseover', function() {
+                  $('#tooltips0').html('<b>Selected Value: </b>' + $(this).attr('ct:value'));
+                });
+
+                $('.ct-bar').on('mouseout', function() {
+                  $('#tooltips0').html("&nbsp;")
+                });
+              }
+            });
             }
             console.log("values : " + values);
             if(values != null && values != ""){
             var chart = new Chartist.Line('.ct-chart', data, responsiveOptions);
+            var addedEvents = false;
+            chart.on('draw', function() {
+              if (!addedEvents) {
+                $('.ct-point').on('mouseover', function() {
+                  //$('#tooltips').show();
+                  $('#tooltips').html('<b>Selected Value: </b>' + $(this).attr('ct:value'));
+                });
 
+                $('.ct-point').on('mouseout', function() {
+                  //$('#tooltips').hide();
+                  $('#tooltips').html("&nbsp;")
+                });
+              }
+            });
             // Let's put a sequence number aside so we can use it in the event callbacks
             var seq = 0,
             delays = 50,
@@ -333,45 +355,6 @@ block content
                 };
 
                 data.element.animate(animations);
-              }
-            });
-            }
-
-            // For the sake of the example we update the chart every time it's created with a delay of 10 seconds
-            /*chart.on('created', function() {
-              if(window.__exampleAnimateTimeout) {
-                clearTimeout(window.__exampleAnimateTimeout);
-                window.__exampleAnimateTimeout = null;
-              }
-              window.__exampleAnimateTimeout = setTimeout(chart.update.bind(chart), 12000);
-            });*/
-            if(values != "" && values != ""){
-            var addedEvents = false;
-            chart.on('draw', function() {
-              if (!addedEvents) {
-                $('.ct-point').on('mouseover', function() {
-                  //$('#tooltips').show();
-                  $('#tooltips').html('<b>Selected Value: </b>' + $(this).attr('ct:value'));
-                });
-
-                $('.ct-point').on('mouseout', function() {
-                  //$('#tooltips').hide();
-                  $('#tooltips').html("&nbsp;")
-                });
-              }
-            });
-            }
-            if(values2 != "" && values2 != ""){
-            var addedEvents0 = false;
-            chart0.on('draw', function() {
-              if (!addedEvents0) {
-                $('.ct-bar').on('mouseover', function() {
-                  $('#tooltips0').html('<b>Selected Value: </b>' + $(this).attr('ct:value'));
-                });
-
-                $('.ct-bar').on('mouseout', function() {
-                  $('#tooltips0').html("&nbsp;")
-                });
               }
             });
             }
