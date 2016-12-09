@@ -139,7 +139,7 @@ function iosLight(){
   pop.style.display = "block";
   shade.style.display = "block";
 }
-function iosLight(agent,vendor,catalognumber,reqemail,location,category,startqty,currentqty){
+function iosLight(agent,vendor,catalognumber,reqemail,location,category,startqty,currentqty,lab){
   var actionorder = document.getElementById("actionorder");
   var orderText = document.getElementById("orderText");
   var emailform = document.getElementById("emailform");
@@ -150,6 +150,7 @@ function iosLight(agent,vendor,catalognumber,reqemail,location,category,startqty
   var categoryform = document.getElementById("categoryform");
   var startqtyform = document.getElementById("startqtyform");
   var currentqtyform = document.getElementById("currentqtyform");
+  var labform = document.getElementById("labform");
   emailform.value = reqemail;
   agentform.value = agent;
   vendorform.value = vendor;
@@ -158,7 +159,8 @@ function iosLight(agent,vendor,catalognumber,reqemail,location,category,startqty
   categoryform.value = category;
   startqtyform.value = startqty;
   currentqtyform.value = currentqty;
-  orderText.innerHTML = "You are about to order 100ml of <br/>Agent: " + agent + "<br/>Vendor: "+vendor+"<br/>Catalog#: "+catalognumber;
+  labform.value = lab;
+  orderText.innerHTML = "You are about to order 100 units of <br/>Agent: " + agent + "<br/>Vendor: "+vendor+"<br/>Catalog#: "+catalognumber;
   var pop = document.getElementById("ios-light");
   pop.style.display = "block";
   var shade = document.getElementById("shade");

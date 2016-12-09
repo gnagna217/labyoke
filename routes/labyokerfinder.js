@@ -49,7 +49,7 @@ LabYokeUploader = function(jsonResults) {
 	this.jsonResults = jsonResults;
 };
 
-LabYokerOrder = function(agent, vendor,catalognumber,email,location,sendemail,category,startquantity,currentquantity) {
+LabYokerOrder = function(lab,agent,vendor,catalognumber,email,location,sendemail,category,startquantity,currentquantity) {
 	this.agent = agent;
 	this.vendor = vendor;
 	this.catalognumber = catalognumber;
@@ -57,6 +57,7 @@ LabYokerOrder = function(agent, vendor,catalognumber,email,location,sendemail,ca
 	this.location = location;
 	this.sendemail = sendemail;
 	this.category = category;
+	this.lab = lab;
 	this.startquantity = startquantity;
 	this.currentquantity = currentquantity;
 };
@@ -325,6 +326,7 @@ LabYokerOrder.prototype.order = function(callback) {
 	var sendemail = this.sendemail;
 	var location = this.location;
 	var category = this.category;
+	var lab = this.lab;
 	var startquantity = this.startquantity;
 	console.log("startquantity: " + startquantity);
 	var currentquantity = this.currentquantity;
@@ -333,7 +335,7 @@ LabYokerOrder.prototype.order = function(callback) {
 	console.log("currentquantity2: " + currentquantity);
 	var now = moment(new Date).tz("America/New_York").format('YYYY-MM-DD');
 	console.log("order location: " + location);
-	var query = client.query("INSERT INTO vm2016_orders VALUES ('" + agent + "', '" + vendor + "', '" + catalognumber + "','" + email + "', '" + sendemail + "', '" + now + "', 'new', '" + category + "')");
+	var query = client.query("INSERT INTO vm2016_orders VALUES ('" + agent + "', '" + vendor + "', '" + catalognumber + "','" + email + "', '" + sendemail + "', '" + now + "', 'new', '" + category + "','" + lab + "',1 )");
 
 	query.on("row", function(row, result) {
 		result.addRow(row);
@@ -348,6 +350,7 @@ LabYokerOrder.prototype.order = function(callback) {
 		body += "<br><b>Vendor: </b> " + vendor;
 		body += "<br><b>Catalog#: </b> " + catalognumber;
 		body += "<br><b>Owner: </b> " + sendemail;
+		body += "<br><b>Lab: </b> " + lab;
 		body += "<p>Best regards,";
 		body += "</p><b><i>The LabYoke Team.</i></b></div>";
 		console.log("order body: " + body);

@@ -195,6 +195,7 @@ module.exports = function(router) {
 	router.post('/orders', isLoggedIn, function(req, res) {
 		if (req.session.user) {
 			var agent = req.body.agentform;
+			var lab = req.body.labform;
 			var vendor = req.body.vendorform;
 			var catalognumber = req.body.catalogform;
 			var email = req.body.emailform;
@@ -203,7 +204,7 @@ module.exports = function(router) {
 			var reqcategory = req.body.categoryform;
 			var startquantity = req.body.startqtyform;
 			var currentquantity = req.body.currentqtyform;
-			var labYokerorder = new LabYokerOrder(agent, vendor, catalognumber,email,location,reqemail,reqcategory,startquantity,currentquantity);
+			var labYokerorder = new LabYokerOrder(lab, agent, vendor, catalognumber,email,location,reqemail,reqcategory,startquantity,currentquantity);
 			labYokerorder.order(function(error, results) {
 				if(results != null && results=="successfulOrder"){
 					console.log("ordering agentform: " + agent);

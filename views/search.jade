@@ -10,6 +10,7 @@ block content
         input(name="categoryform" type="hidden" id="categoryform" value="")
         input(name="startqtyform" type="hidden" id="startqtyform" value="")
         input(name="currentqtyform" type="hidden" id="currentqtyform" value="")
+        input(name="labform" type="hidden" id="labform" value="")
         div(id="ios-light")
             center
                 h1="Ordering?"
@@ -85,14 +86,15 @@ block content
                             - var location = ob[prop].location  
                             - var category = ob[prop].category  
                             - var startqty = ob[prop].startquantity
-                            - var currentqty = ob[prop].currentquantity                    
+                            - var currentqty = ob[prop].currentquantity
+                            - var lab = ob[prop].lab                    
                             tr(class=classname)
                                 td(class="desktabonly")= j
                                 td(class="wrapped") #{ob[prop].agent}
                                 td(class="desktabonly") #{ob[prop].vendor}
                                 td #{ob[prop].location}
                                 td
-                                  span(onclick="iosLight('#{agent}','#{vendor}','#{catalognumber}','#{reqemail}','#{location}','#{category}','#{startqty}','#{currentqty}')", style="cursor:pointer")
+                                  span(onclick="iosLight('#{agent}','#{vendor}','#{catalognumber}','#{reqemail}','#{location}','#{category}','#{startqty}','#{currentqty}','#{lab}')", style="cursor:pointer")
                                         img(src="images/ship2.png", alt="Order now", title="Order now", style="border-width:0px; width: 24px; margin-top: 0px;")
                             - j = j + 1
                       script.
