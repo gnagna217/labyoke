@@ -357,11 +357,11 @@ table.dataTable thead .sorting {
     background-color: #3d9dcb !important;
 }
 .yokeColor{
-    color: #8a6d3b !important;
+    color: #8a6d3b;
 }
 
 .yokeBackColor{
-    background-color: rgba(138, 109, 59, 0.66);
+    background-color: rgba(138, 109, 59, 0.66) !important;
 }
 .ct-perfect-fourth>svg {
 position: relative !important;
