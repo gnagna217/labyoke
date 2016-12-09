@@ -90,7 +90,8 @@ block content
 										- var currentqtyint = parseInt(ob[prop].currentquantity)
 										- var qtyinsufficient = ""
 										- var checkedstr = false
-										- if(currentqtyint < 100)
+										- var insuff = parseInt(ob[prop].insufficient)
+										- if(insuff == 0)
 											- qtyinsufficient = "yokeBackColor"
 											- checkedstr = true
 										tr(class=qtyinsufficient)
