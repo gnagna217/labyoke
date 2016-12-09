@@ -391,6 +391,10 @@ module.exports = function(router) {
 		res.redirect('/reports');
 	});
 
+	router.get('/cancelshare', function(req, res) {
+		res.redirect('/share');
+	});
+
 	router.post('/register', function(req, res) {
 		var rendered = false;
 		var lab = req.body.reglab;
