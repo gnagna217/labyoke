@@ -385,7 +385,14 @@ LabYokerGetOrder.prototype.getLabOrders = function(callback) {
 		});
 		query2.on("end", function(result2) {
 			results.push(result2.rows);
-			callback(null, results)
+			var query3 = client.query("SELECT lab, count(lab) as counting FROM vm2016_orders where lab='SeneLab' group by lab");
+			query3.on("row", function(row, result3) {
+				result3.addRow(row);
+			});
+			query3.on("end", function(result3) {
+				results.push(result3.rows);
+				callback(null, results)
+			});
 		});
 
 	});
