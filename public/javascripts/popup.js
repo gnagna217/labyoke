@@ -19,10 +19,10 @@ $('#cancel').click(function() {
   var currentbackgroundColor = parenttr.css('backgroundColor');
   
   console.log("currentbackgroundColor: " + currentbackgroundColor);
-  if(currentbackgroundColor == '#ffffff'){
+  if(currentbackgroundColor == 'rgb(255, 255, 255)'){
     parenttr.css('background-color', 'rgba(138, 109, 59, 0.66)');
   } else {
-    parenttr.css('background-color', '#ffffff');
+    parenttr.css('background-color', 'rgb(255, 255, 255');
   }
   //$('#cancel').closest('form').submit();
 });
