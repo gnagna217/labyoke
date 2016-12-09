@@ -243,12 +243,12 @@ block content
               if (!addedEvents) {
                 $('.ct-point').on('mouseover', function() {
                   //$('#tooltips').show();
-                  $('.ct-chart').find('#tooltips').html('<b>Selected Value: </b>' + $(this).attr('ct:value'));
+                  $('#tooltips').html('<b>Selected Value: </b>' + $(this).attr('ct:value'));
                 });
 
                 $('.ct-point').on('mouseout', function() {
                   //$('#tooltips').hide();
-                  $('.ct-chart').find('#tooltips').html("&nbsp;")
+                  $('#tooltips').html("&nbsp;")
                 });
               }
             });
