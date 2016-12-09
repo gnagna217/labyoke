@@ -228,7 +228,7 @@ module.exports = function(router) {
 			var table = req.body.table;
 			var email = req.body.email;
 			var checked = req.body.cancel;
-			var date = moment(req.body.date).tz("America/New_York").format(
+			var date = moment(req.body.date).add(1, 'day').tz("America/New_York").format(
 				'YYYY-MM-DD');
 			var datenow = moment(new Date).tz("America/New_York").format(
 				'YYYY-MM-DD');

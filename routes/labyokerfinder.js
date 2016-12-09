@@ -152,7 +152,7 @@ LabYokeReporter.prototype.reportShares = function(callback) {
 		if(datefrom == 'all'){
 			html += "<p>This report is listing all the shares uploaded:</p></div>"
 		} else {
-			html += "<p>This report is listing the shares uploaded between " + moment(datefrom).tz("America/New_York").format('YYYY-MM-DD') + " and " + moment(dateto).tz("America/New_York").format('YYYY-MM-DD') + "</p></div>"
+			html += "<p>This report is listing the shares uploaded between " + moment(datefrom).add(1, 'day').tz("America/New_York").format('YYYY-MM-DD') + " and " + moment(dateto).add(1, 'day').tz("America/New_York").format('YYYY-MM-DD') + "</p></div>"
 		}
 		html +="<table><tbody><tr style='color: white;background-color: #3d9dcb;'><td style='font-size: 12px;'>Agent</td><td style='font-size: 12px;'>Vendor</td><td style='font-size: 12px;'>Catalog#</td><td style='font-size: 12px;'>Location</td><td style='font-size: 12px;'>User</td><td style='font-size: 12px;'>Category</td><td>Date</td></tr>"
 		
@@ -171,7 +171,7 @@ LabYokeReporter.prototype.reportShares = function(callback) {
 				html += " <td style='font-size: 12px;'>" + location + "</td>";
 				html += " <td style='font-size: 12px;'>" + email + "</td>";
 				html += " <td style='font-size: 12px;'>" + category + "</td>";
-				html += " <td style='font-size: 12px;'>" + moment(date).tz("America/New_York").format('YYYY-MM-DD') + "</td></tr>";
+				html += " <td style='font-size: 12px;'>" + moment(date).add(1, 'day').tz("America/New_York").format('YYYY-MM-DD') + "</td></tr>";
 		
 			}
 			html += "</tbody></table><p><i><b>The LabYoke Team.</b></i></p>";
@@ -207,7 +207,7 @@ LabYokeReporter.prototype.reportOrders = function(callback) {
 		if(datefrom == 'all'){
 			html += "<p>This report is listing all the orders requested:</p></div>"
 		} else {
-			html += "<p>This report is listing the orders requested between " + moment(datefrom).tz("America/New_York").format('YYYY-MM-DD') + " and " + moment(dateto).tz("America/New_York").format('YYYY-MM-DD') + "</p></div>"
+			html += "<p>This report is listing the orders requested between " + moment(datefrom).add(1, 'day').tz("America/New_York").format('YYYY-MM-DD') + " and " + moment(dateto).add(1, 'day').tz("America/New_York").format('YYYY-MM-DD') + "</p></div>"
 		}
 		html +="<table><tbody><tr style='color: white;background-color: #3d9dcb;'><td style='font-size: 12px;'>Agent</td><td style='font-size: 12px;'>Vendor</td><td style='font-size: 12px;'>Catalog#</td><td style='font-size: 12px;'>Owner</td><td style='font-size: 12px;'>Requestor</td><td>Date</td></tr>"
 		
@@ -225,7 +225,7 @@ LabYokeReporter.prototype.reportOrders = function(callback) {
 				html += " <td style='font-size: 12px;'>" + catalognumber + "</td>";
 				html += " <td style='font-size: 12px;'>" + location + "</td>";
 				html += " <td style='font-size: 12px;'>" + email + "</td>";
-				html += " <td style='font-size: 12px;'>" + moment(date).tz("America/New_York").format('YYYY-MM-DD') + "</td></tr>";
+				html += " <td style='font-size: 12px;'>" + moment(date).add(1, 'day').tz("America/New_York").format('YYYY-MM-DD') + "</td></tr>";
 		
 			}
 			html += "</tbody></table><p><i><b>The LabYoke Team.</b></i></p>";
