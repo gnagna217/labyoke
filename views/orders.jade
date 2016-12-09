@@ -125,7 +125,7 @@ block content
               var i = values3[prop];
               if(i){
               valTransform3.push(i);
-              series.push(valTransform3);
+              series.push(i);
               }
             }
 
@@ -144,26 +144,11 @@ block content
               labels: rows,
               series: series
             };
- 
 
-            var responsiveOptions = [
-              ['(max-width: 440px)', {
-                width: 300,
-                height: 200
-              }],
-              ['(max-width: 767px)', {
-                width: 500,
-                height: 200
-              }],
-              ['(min-width: 990px)', {
-                width: 300,
-                height: 200
-              }]
-            ];
-
+            var options = {distributeSeries: true};
             console.log("series : " + series);
             if(series != null && series.length > 0){
-            var chart3 = new Chartist.Bar('.ct-chart3', data, responsiveOptions);
+            var chart3 = new Chartist.Bar('.ct-chart3', data, options);
             }
 
             if(series != "" && series.length > 0){
@@ -241,10 +226,6 @@ block content
             if(values2 != null && values2 != ""){
             var chart0 = new Chartist.Bar('.ct-chart0', data2, responsiveOptions);
             }
-            /*console.log("values3 : " + values3);
-            if(values3 != null && values3 != ""){
-            var chart3 = new Chartist.Bar('.ct-chart3', data3, responsiveOptions);
-            }*/
             console.log("values : " + values);
             if(values != null && values != ""){
             var chart = new Chartist.Line('.ct-chart', data, responsiveOptions);
@@ -394,20 +375,6 @@ block content
               }
             });
             }
-            /*if(values3 != "" && values3 != ""){
-            var addedEvents3 = false;
-            chart3.on('draw', function() {
-              if (!addedEvents3) {
-                $('.ct-bar').on('mouseover', function() {
-                  $('#tooltips3').html('<b>Selected Value: </b>' + $(this).attr('ct:value'));
-                });
-
-                $('.ct-bar').on('mouseout', function() {
-                  $('#tooltips3').html("&nbsp;")
-                });
-              }
-            });
-            }*/
 
       if email != undefined
         h3="Great! You have ordered the following agent from "
