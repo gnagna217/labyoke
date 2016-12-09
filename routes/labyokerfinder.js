@@ -21,6 +21,15 @@ LabYokeAgents = function(email) {
 	this.email = email;
 };
 
+LabYokerChangeShare = function(table, agent, vendor,catalognumber,email,checked) {
+	this.agent = agent;
+	this.vendor = vendor;
+	this.catalognumber = catalognumber;
+	this.checked = checked;
+	this.table = table;
+	this.email = email;
+};
+
 LabyokerUserDetails = function(column, value, email) {
 	this.column = column;
 	this.value = value;
@@ -851,6 +860,25 @@ LabyokerUserDetails.prototype.changeDetails = function(callback) {
 	});
 };
 
+LabYokerChangeShare.prototype.cancelShare = function(callback) {
+	var agent = this.agent;
+	var vendor = this.vendor;
+	var catalognumber = this.catalognumber;
+	var checked = this.checked;
+	var table = this.table;
+	var email = this.email;
+	var results;
+	/*var query = client.query("UPDATE " + table + " SET insufficient='" + checked
+			+ "' where agent='" + agent + "' and vendor='" + vendor + "' and catalognumber='" + catalognumber + "' and email='" + email + "'");
+	query.on("row", function(row, result) {
+		result.addRow(row);
+	});
+	query.on("end", function(result) {
+		callback(null, results);
+	});*/
+callback(null, results);
+};
+
 /*LabyokerUserDetails.prototype.changesurname = function(callback) {
 	var surname = this.placeholder;
 	var results;
@@ -955,3 +983,4 @@ exports.LabYokerOrder = LabYokerOrder;
 exports.LabYokeFinder = LabYokeFinder;
 exports.LabYokeUploader = LabYokeUploader;
 exports.LabyokerPasswordChange = LabyokerPasswordChange;
+exports.LabYokerChangeShare = LabYokerChangeShare;

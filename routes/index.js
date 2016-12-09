@@ -12,6 +12,7 @@ var LabYokeUploader = labyokeFinderClass.LabYokeUploader;
 var Labyoker = labyokeFinderClass.Labyoker;
 var LabYokeAgents = labyokeFinderClass.LabYokeAgents;
 var LabyokerUserDetails = labyokeFinderClass.LabyokerUserDetails;
+var LabYokerChangeShare = labyokeFinderClass.LabYokerChangeShare;
 var moment = require('moment-timezone');
 
 var express = require('express');
@@ -218,6 +219,31 @@ module.exports = function(router) {
 		}
 	});
 
+	router.post('/cancelshare', isLoggedIn, function(req, res) {
+		if (req.session.user) {
+			var agent = req.body.agent;
+			var vendor = req.body.vendor;
+			var catalognumber = req.body.catalognumber;
+			var table = req.body.table;
+			var email = req.body.email;
+			var checked = req.body.cancel;
+			console.log("agent: " + agent);
+			console.log("vendor: " + vendor);
+			console.log("catalognumber: " + catalognumber);
+			console.log("checked: " + checked);
+			console.log("table: " + table);
+			console.log("email: " + email);
+			var labYokechange = new LabYokerChangeShare(table,agent, vendor, catalognumber,email,cancel);
+			labYokechange.cancelShare(function(error, results) {
+				if(results != null && results.length > 0){				
+					res.render('share', {ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, isLoggedInAdmin: req.session.admin, title:'Shares',loggedIn : true});
+					req.session.messages = null;
+				}
+			});
+		} else {
+			res.redirect('/login');
+		}
+	});
 
 
 	router.get('/reports', isLoggedIn, function(req, res) {
