@@ -152,11 +152,11 @@ block content
             var addedEvents3 = false;
             chart3.on('draw', function() {
               if (!addedEvents3) {
-                $(this).find('.ct-bar').on('mouseover', function() {
+                $('.ct-chart3').find('.ct-bar').on('mouseover', function() {
                   $('#tooltips3').html('<b>Selected Value: </b>' + $(this).attr('ct:value'));
                 });
 
-                $(this).find('.ct-bar').on('mouseout', function() {
+                $('.ct-chart3').find('.ct-bar').on('mouseout', function() {
                   $('#tooltips3').html("&nbsp;")
                 });
               }
