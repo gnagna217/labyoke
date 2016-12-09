@@ -105,10 +105,9 @@ block content
           - each item in laborders
             - var array_rows5 = []
             - var array_values5 = ""
-            -var ob = item
-            -for(var prop in ob)
-              - array_rows5 = array_rows5 + ob[prop].lab + "|"
-              - array_values5 = array_values5 + ob[prop].counting + "|"
+            -for(var prop in item)
+              - array_rows5 = array_rows5 + item[prop].lab + "|"
+              - array_values5 = array_values5 + item[prop].counting + "|"
               - arraylabRows.push(array_rows5)
               - arraylabValues.push(array_values5)
           script.
@@ -427,7 +426,7 @@ block content
               }
             });
             }*/
-            
+
       if email != undefined
         h3="Great! You have ordered the following agent from "
           span(style="color: #3d9dcb;")=" " + location
