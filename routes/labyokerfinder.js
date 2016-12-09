@@ -874,6 +874,7 @@ LabYokerChangeShare.prototype.cancelShare = function(callback) {
 	var email = this.email;
 	var datenow = this.datenow;
 	var date = this.date;
+	console.log("date2: " + date);
 	var results;
 	var str = "UPDATE " + table + " SET insufficient=" + checked
 			+ ", insuffdate='" + datenow + "' where date='" + date + "' and agent='" + agent + "' and vendor='" + vendor + "' and catalognumber='" + catalognumber + "' and email='" + email + "'";

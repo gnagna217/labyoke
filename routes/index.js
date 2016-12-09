@@ -234,6 +234,7 @@ module.exports = function(router) {
 				'YYYY-MM-DD');
 			if(checked != null)
 				checked = 0;
+			console.log("date: " + date);
 			console.log("agent: " + agent);
 			console.log("vendor: " + vendor);
 			console.log("catalognumber: " + catalognumber);
