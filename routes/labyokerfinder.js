@@ -876,7 +876,7 @@ LabYokerChangeShare.prototype.cancelShare = function(callback) {
 		result.addRow(row);
 	});
 	query.on("end", function(result) {
-		results = result.rows;
+		results = "success";
 		callback(null, results);
 	});
 //callback(null, results);
