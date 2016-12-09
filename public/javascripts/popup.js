@@ -14,6 +14,19 @@ $('html').click(function() {
   }*/
 });
 
+$('#cancel').click(function() {
+  var parenttr = $('#cancel').closest('tr');
+  var currentbackgroundColor = parenttr.css('backgroundColor');
+  
+  console.log("currentbackgroundColor: " + currentbackgroundColor);
+  if(currentbackgroundColor == '#ffffff'){
+    parenttr.css('background-color', 'rgba(138, 109, 59, 0.66)');
+  } else {
+    parenttr.css('background-color', '#ffffff');
+  }
+  //$('#cancel').closest('form').submit();
+});
+
 function materialLight(){
   var pop = document.getElementById("material-light");
   pop.style.display = "block";
