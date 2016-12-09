@@ -24,7 +24,7 @@ $('.cancel').click(function() {
   } else {
     parenttr.css('background-color', 'rgb(255, 255, 255');
   }
-  //$('#cancel').closest('form').submit();
+  $(this).closest('form').submit();
 });
 
 function materialLight(){
