@@ -160,9 +160,9 @@ module.exports = function(router) {
 			var labYokeSearch = new LabYokeSearch("");
 			labYokeSearch.findagents(function(error, results) {			
 				if (results != null && results.length > 0){
-					res.render('search', {ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, isLoggedInAdmin: req.session.admin, agentsResults : results, loggedIn : true, title: 'Search'});
+					res.render('search', {ordersnum: req.session.orders, sharesnum: req.session.shares, labyokeremail : req.session.email, labyoker : req.session.user, isLoggedInAdmin: req.session.admin, agentsResults : results, loggedIn : true, title: 'Search'});
 				} else {
-					res.render('search', {ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, isLoggedInAdmin: req.session.admin, loggedIn : true, title: 'Search'});
+					res.render('search', {ordersnum: req.session.orders, sharesnum: req.session.shares, labyokeremail : req.session.email, labyoker : req.session.user, isLoggedInAdmin: req.session.admin, loggedIn : true, title: 'Search'});
 				}
 				req.session.messages = null;
 			});
