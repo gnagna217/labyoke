@@ -40,8 +40,8 @@ block content
 										th(class="wrapped")!= 'Agent'
 										th(class="desktabonly")= 'Vendor'
 										th(class="desktabonly")= 'Catalog'
-										th= 'Requestor'
-										th(class="desktabonly") = 'Date'
+										th(class="desktabonly") = 'Requestor'
+										th= 'Date'
 										th= 'X'
 								tbody
 									-var ob = mysharesrequest
@@ -61,8 +61,8 @@ block content
 											td(class="wrapped") #{ob[prop].agent}
 											td(class="desktabonly") #{ob[prop].vendor}
 											td(class="desktabonly") #{ob[prop].catalognumber}
-											td #{ob[prop].requestoremail}
-											td(class="desktabonly")  #{d}
+											td(class="desktabonly") #{ob[prop].requestoremail}
+											td #{d}
 											td
 												form(action="/cancelshare" method="post")
 													input(type="checkbox" name="cancel" value="cancel" class="cancel" checked=(checkedstr===true ? "checked" : undefined))
