@@ -468,8 +468,8 @@ LabYokeSearch.prototype.search = function(callback) {
 	var results = [];
 	console.log("searchText: " + this.searchText);
 	var query = client
-			.query("SELECT * FROM vm2016_agentsshare where lower(agent) like lower('%"
-					+ this.searchText + "%') and insufficient = 1 and email != '" + this.email+ "' order by agent, location");
+			.query("SELECT * FROM vm2016_agentsshare a, vm2016_users b where a.email = b.email and lower(a.agent) like lower('%"
+					+ this.searchText + "%') and a.insufficient = 1 and a.email != '" + this.email+ "' order by a.agent");
 	query.on("row", function(row, result) {
 		result.addRow(row);
 	});
