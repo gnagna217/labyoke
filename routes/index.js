@@ -226,6 +226,7 @@ module.exports = function(router) {
 			var catalognumber = req.body.catalognumber;
 			var table = req.body.table;
 			var email = req.body.email;
+			var requestor = req.body.requestoremail;
 			var checked = req.body.cancel;
 			var date = moment(req.body.date).add(1, 'day').tz("America/New_York").format(
 				'YYYY-MM-DD');
@@ -242,7 +243,8 @@ module.exports = function(router) {
 			console.log("checked: " + checked);
 			console.log("table: " + table);
 			console.log("email: " + email);
-			var labYokechange = new LabYokerChangeShare(table,agent, vendor, catalognumber,email,checked,datenow,date);
+			console.log("requestoremail: " + requestoremail);
+			var labYokechange = new LabYokerChangeShare(table,agent, vendor, catalognumber,email,requestor,checked,datenow,date);
 			labYokechange.cancelShare(function(error, results) {
 				if(results != null && results.length > 0){
 					res.redirect('/share');			

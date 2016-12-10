@@ -892,9 +892,11 @@ LabYokerChangeShare.prototype.cancelShare = function(callback) {
 	var table = this.table;
 	var email = this.email;
 	var datenow = this.datenow;
-	var date = this.date;
+	var requestor = this.requestor;
 	console.log("date2: " + date);
+	console.log("requestor: " + requestor);
 	var results;
+
 	var str = "UPDATE " + table + " SET insufficient=" + checked
 			+ ", insuffdate='" + datenow + "' where date between '" + date + "' and '" + date + "' and agent='" + agent + "' and vendor='" + vendor + "' and catalognumber='" + catalognumber + "' and email='" + email + "'";
 	console.log("str: " + str);
@@ -904,6 +906,21 @@ LabYokerChangeShare.prototype.cancelShare = function(callback) {
 	});
 	query.on("end", function(result) {
 		results = "success";
+
+		if(table == "vm2016_orders" && checked == 0){
+			var subject = "LabYoke Order - Cancelled for " + agent;
+			var body = "<div style='float:left'><img style='width: 150px; margin: 0 20px;' src='https:\/\/team-labyoke.herokuapp.com\/images\/yoke4.png', alt='The Yoke',  title='Yoke', class='yokelogo'/></div><div style=\"font-family:'calibri'; font-size:11pt;padding: 20px;\">Hello,<br/><br/>";
+			body += "Unfortunately your order has been cancelled due to insufficient quantities from the following inventory: <br><b>Agent: </b> " + agent;
+			body += "<br><b>Vendor: </b> " + vendor;
+			body += "<br><b>Catalog#: </b> " + catalognumber;
+			body += "<br><b>Owner: </b> " + email;
+			body += "<p>Best regards,";
+			body += "</p><b><i>The LabYoke Team.</i></b></div>";
+			console.log("order body: " + body);
+			var mailOptions = new MailOptionsWithCC(email, subject, body, requestor);
+			mailOptions.sendAllEmails();
+		}
+
 		callback(null, results);
 	});
 //callback(null, results);
