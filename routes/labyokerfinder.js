@@ -898,9 +898,13 @@ LabYokerChangeShare.prototype.cancelShare = function(callback) {
 	console.log("date2: " + date);
 	console.log("requestor: " + requestor);
 	var results;
+	var orderonly = "";
+	if(table == "vm2016_orders"){
+		orderonly = " and requestoremail='" + requestor + "'";
+	}
 
 	var str = "UPDATE " + table + " SET insufficient=" + checked
-			+ ", insuffdate='" + datenow + "' where date between '" + date + "' and '" + date + "' and agent='" + agent + "' and vendor='" + vendor + "' and catalognumber='" + catalognumber + "' and email='" + email + "'";
+			+ ", insuffdate='" + datenow + "' where date between '" + date + "' and '" + date + "' and agent='" + agent + "' and vendor='" + vendor + "' and catalognumber='" + catalognumber + "' and email='" + email + "'" + orderonly;
 	console.log("str: " + str);
 	var query = client.query(str);
 	query.on("row", function(row, result) {
