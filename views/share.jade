@@ -1,7 +1,15 @@
 extends layout
 
 block content
-
+	div(id="ios-light")
+		center
+			h1="Ordering?"
+			p(id="orderText")
+			div
+				div(id="actionorder" class="exit" style="width: 50%; float: left; background-color: rgba(138, 109, 59, 0.55);")="OK"
+				div(class="exit" onclick="iosLightExit()")="Cancel"
+	div(class="shade" id="shade")
+	div(class="shade-light" id="shade-light")
 	div(class="container login")
 		div(style="float: left;" class="share-container")
 			a(href="/search")
