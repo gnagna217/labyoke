@@ -139,7 +139,7 @@ function iosLight(){
   pop.style.display = "block";
   shade.style.display = "block";
 }
-function iosLight(agent,vendor,catalognumber,reqemail,location,category,startqty,currentqty,lab){
+function iosLight(agent,vendor,catalognumber,reqemail,location,category,qty,lab){
   var actionorder = document.getElementById("actionorder");
   var orderText = document.getElementById("orderText");
   var emailform = document.getElementById("emailform");
