@@ -15,14 +15,19 @@ $('html').click(function() {
 });
 
 $('.cancel').click(function() {
-
+  var cancel = $(this);
+  var checked = cancel.is(':checked');
   var orderText = document.getElementById("orderText");
-  orderText.innerHTML = "Do you want to mark this agent as insufficient?";
+  if(checked){
+    orderText.innerHTML = "Do you want to mark this agent as insufficient?";
+  } else {
+    orderText.innerHTML = "Do you want to mark this agent as replenished and in sufficient quantities?";
+  }
   var pop = document.getElementById("ios-light");
   pop.style.display = "block";
   var shade = document.getElementById("shade");
   shade.style.display = "block";
-  var cancel = $(this);
+
 
   actionorder.onclick = function(){
   var parenttr = cancel.closest('tr');
@@ -35,6 +40,15 @@ $('.cancel').click(function() {
     parenttr.css('background-color', 'rgb(255, 255, 255');
   }
   cancel.closest('form').submit();
+}
+
+  actioncancel.onclick = function(){
+    if(checked){
+      cancel.prop('checked', false);
+    } else {
+      cancel.prop('checked', true);
+    }
+    iosLightExit();
 }
 
 });
