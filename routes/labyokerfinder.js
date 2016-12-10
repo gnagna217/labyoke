@@ -21,7 +21,7 @@ LabYokeAgents = function(email) {
 	this.email = email;
 };
 
-LabYokerChangeShare = function(table, agent, vendor,catalognumber,email,checked,datenow,date) {
+LabYokerChangeShare = function(table, agent, vendor,catalognumber,email,requestor,checked,datenow,date) {
 	this.agent = agent;
 	this.vendor = vendor;
 	this.catalognumber = catalognumber;
@@ -30,6 +30,7 @@ LabYokerChangeShare = function(table, agent, vendor,catalognumber,email,checked,
 	this.email = email;
 	this.date = date;
 	this.datenow = datenow;
+	this.requestor = requestor;
 };
 
 LabyokerUserDetails = function(column, value, email) {
@@ -893,6 +894,7 @@ LabYokerChangeShare.prototype.cancelShare = function(callback) {
 	var email = this.email;
 	var datenow = this.datenow;
 	var requestor = this.requestor;
+	var date = this.date;
 	console.log("date2: " + date);
 	console.log("requestor: " + requestor);
 	var results;
