@@ -3,7 +3,7 @@ extends layout
 block content
 
 
-  div(class="container login")
+  div(class="container login front")
      a(href="/search")
         img(src="/images/yoke4.png", alt="The Yoke",  title="Yoke", class="yokelogo")
        div
@@ -11,7 +11,7 @@ block content
             h1="We got You."
             p 
                 span!="Please enter your username below and we shall send you an email to change your password and <a href='/login'>login</a> again."
-            div(id="ctl00_Div2" class="row")
+            div(id="ctl00_Div2" class="frontdiv")
                 if message
                     div(class="alert alert-danger")!= message
                 form(action="/forgot" method="post")

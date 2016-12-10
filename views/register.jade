@@ -3,7 +3,7 @@ extends layout
 block content
 
 
-  div(class="container login")
+  div(class="container login front")
      a(href="/search" class=labentered)
         img(src="/images/yoke4.png", alt="The Yoke",  title="Yoke", class="yokelogo")
        div
@@ -13,7 +13,7 @@ block content
                 span!="You are on your way to <a href='/login'>Lab Yoking</a> with fellow researchers. "
                 span(class="labColor")="Registering "
                 span="is a breeze!"
-            div(id="ctl00_Div2" class="row")
+            div(id="ctl00_Div2" class="frontdiv")
                 if message
                     div(class="alert alert-danger")!= message
                 form(action="/register" method="post")
