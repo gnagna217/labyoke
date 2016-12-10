@@ -157,12 +157,12 @@ module.exports = function(router) {
 
 	router.get('/search', function(req, res) {
 		if (req.session.user) {
-			var labYokeSearch = new LabYokeSearch("");
+			var labYokeSearch = new LabYokeSearch("",req.session.email);
 			labYokeSearch.findagents(function(error, results) {			
 				if (results != null && results.length > 0){
-					res.render('search', {ordersnum: req.session.orders, sharesnum: req.session.shares, labyokeremail : req.session.email, labyoker : req.session.user, isLoggedInAdmin: req.session.admin, agentsResults : results, loggedIn : true, title: 'Search'});
+					res.render('search', {ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, isLoggedInAdmin: req.session.admin, agentsResults : results, loggedIn : true, title: 'Search'});
 				} else {
-					res.render('search', {ordersnum: req.session.orders, sharesnum: req.session.shares, labyokeremail : req.session.email, labyoker : req.session.user, isLoggedInAdmin: req.session.admin, loggedIn : true, title: 'Search'});
+					res.render('search', {ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, isLoggedInAdmin: req.session.admin, loggedIn : true, title: 'Search'});
 				}
 				req.session.messages = null;
 			});
@@ -569,7 +569,7 @@ module.exports = function(router) {
 	router.post('/search', function(req, res) {
 		if (req.session.user) {
 			var searchText = req.body.searchText;
-			var labYokeSearch = new LabYokeSearch(searchText);
+			var labYokeSearch = new LabYokeSearch(searchText, req.session.email);
 			labYokeSearch.search(function(error, results) {
 				console.log("results " + results[0].length);	
 				if (searchText != null && searchText.length > 0){
