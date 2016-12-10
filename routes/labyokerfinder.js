@@ -923,7 +923,7 @@ LabYokerChangeShare.prototype.cancelShare = function(callback) {
 			body += "<p>Best regards,";
 			body += "</p><b><i>The LabYoke Team.</i></b></div>";
 			console.log("order body: " + body);
-			var mailOptions = new MailOptionsWithCC(email, subject, body, requestor);
+			var mailOptions = new MailOptionsWithCC(requestor, subject, body, email);
 			mailOptions.sendAllEmails();
 		}
 
