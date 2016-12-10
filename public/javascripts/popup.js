@@ -15,7 +15,17 @@ $('html').click(function() {
 });
 
 $('.cancel').click(function() {
-  var parenttr = $(this).closest('tr');
+
+  var orderText = document.getElementById("orderText");
+  orderText.innerHTML = "Do you want to mark this agent as insufficient?";
+  var pop = document.getElementById("ios-light");
+  pop.style.display = "block";
+  var shade = document.getElementById("shade");
+  shade.style.display = "block";
+  var cancel = $(this);
+
+  actionorder.onclick = function(){
+  var parenttr = cancel.closest('tr');
   var currentbackgroundColor = parenttr.css('backgroundColor');
   
   console.log("currentbackgroundColor: " + currentbackgroundColor);
@@ -24,7 +34,9 @@ $('.cancel').click(function() {
   } else {
     parenttr.css('background-color', 'rgb(255, 255, 255');
   }
-  $(this).closest('form').submit();
+  cancel.closest('form').submit();
+}
+
 });
 
 function materialLight(){
@@ -165,6 +177,7 @@ function iosLight(agent,vendor,catalognumber,reqemail,location,category,qty,lab)
   shade.style.display = "block";
   actionorder.onclick = function(){iosLightOrder(reqemail)};
 }
+
 function iosLightOrder(email){
   console.log("TODO - ordering: " + email);
   document.getElementById("orders").submit();
