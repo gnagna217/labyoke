@@ -670,6 +670,37 @@ input::-webkit-inner-spin-button {
     margin-left: 0;
     }
 }
+ @media (min-width: 767px) {
+.front{
+    text-align: center;
+}
+
+.frontdiv{
+    margin: auto;
+    width: 45%;
+    padding: 10px;
+}
+
+.floatleft{
+    float:left;
+}
+}
+
+ @media (min-width: 993px) {
+.front{
+    text-align: center;
+}
+
+.frontdiv{
+    margin: auto;
+    width: 35%;
+    padding: 10px;
+}
+
+.floatleft{
+    float:left;
+}
+}
 
  @media (min-width: 715px) {
     .searchResults{

@@ -2,12 +2,12 @@ extends layout
 
 block content
 
-    div(class="container login")
+    div(class="container login front")
          a(href="/search")
             img(src="/images/yoke4.png", alt="The Yoke",  title="Yoke", class="yokelogo")
          h1= 'Hello.'
          p Welcome to the Lab Yoke. One step away from getting your chems!
-         div(id="ctl00_Div2" class="row")
+         div(id="ctl00_Div2" class="frontdiv")
            div
             if message
                 div(class="alert alert-danger fade in alert-dismissable")!= message
@@ -21,7 +21,7 @@ block content
                     button.btn.btn-success.btn-lg.btn-block(type='submit') Get in
                     img(src="images/lab.png", alt="The Lab", title="Lab", style="border-width:0px; width: 50px; margin-top: -50px; margin-left: 300px;")
             div(style="width:350px")
-                span
+                span(class="floatleft")
                     a(href="/register", style="z-index:10")="Register now"
                 span(style="float:right")
                     a(href="/forgot", style="z-index:10")="Forgot password"
