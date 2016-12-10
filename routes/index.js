@@ -243,7 +243,7 @@ module.exports = function(router) {
 			console.log("checked: " + checked);
 			console.log("table: " + table);
 			console.log("email: " + email);
-			console.log("requestoremail: " + requestoremail);
+			console.log("requestoremail: " + requestor);
 			var labYokechange = new LabYokerChangeShare(table,agent, vendor, catalognumber,email,requestor,checked,datenow,date);
 			labYokechange.cancelShare(function(error, results) {
 				if(results != null && results.length > 0){
