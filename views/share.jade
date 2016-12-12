@@ -17,7 +17,7 @@ block content
 			h1= 'Share.'
 			if(myshares == "")
 				h4="You are currently not sharing any agent."
-			if(mysharesrequest != null && mysharesrequest!=undefined)
+			if(mysharesrequest != null && mysharesrequest.length>0)
 				- var output = mysharesrequest.filter(function(x){return x.status=="new"});
 				h4="Fantastic."
 				p
@@ -40,7 +40,7 @@ block content
 										th(class="wrapped")!= 'Agent'
 										th(class="desktabonly")= 'Vendor'
 										th(class="desktabonly")= 'Catalog'
-										th(class="desktabonly") = 'Requestor'
+										th(class="desktabonly")= 'Requestor'
 										th= 'Date'
 										th= 'X'
 								tbody
@@ -168,19 +168,19 @@ block content
 		div(style="float:right;", class="share-container adjustpadding")
 			script(type="text/javascript" src="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.js")
 			div(style="/*background-color: #3d9dcb; height: 2px;*/ margin-bottom: 30px; margin-top: 0px;")
-			h4="A brief Line report of all your shares."
-			p="This line graph depicts your total number of shares per Agent Category:"
+			h4="A Line report of all your shares."
 			- if(report_sharesbycategory != null && report_sharesbycategory.length >0)
+				p="This line graph depicts your total number of shares per Agent Category:"
 				div(class="ct-chart ct-perfect-fourth")
 				div(id="tooltips", class="labColor") &nbsp;
 			- if(report_sharesbycategory != null && report_sharesbycategory.length==0)
 				h5="No chemicals have been requested."
-			h4="A brief Bar report of your monthly shares."
+			h4="A Bar report of your monthly shares."
 			- var now = new Date()
 			- var month = "month";
 			- var filteroutput = test.filter(function(x){console.log("x.monthorder: "+x.monthorder); console.log("x.yearorder: "+x.yearorder); console.log("now.getFullYear(): "+ now.getFullYear()); console.log("now.getMonth(): "+ now.getMonth()); console.log("so: "+ (x.yearorder == now.getFullYear() && x.monthorder == now.getMonth())); return (x.yearorder == now.getFullYear() && x.monthorder == now.getMonth() + 1)});
-			p!="This bar graph depicts your number of shares this " + month + " (so far) per Agent Category:"
 			- if(filteroutput != null && filteroutput.length > 0) 
+				p!="This bar graph depicts your number of shares this " + month + " (so far) per Agent Category:"
 				div(class="ct-chart0 ct-perfect-fourth")
 				div(id="tooltips0", class="labColor") &nbsp;
 			- if(filteroutput != null && filteroutput.length == 0) 
