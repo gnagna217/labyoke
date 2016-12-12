@@ -21,12 +21,12 @@ block content
 				- var output = mysharesrequest.filter(function(x){return x.status=="new"});
 				h4="Fantastic."
 				p
-					- var requestIntro = output.length + " new chems"
+					- var requestIntro = output.length + " new chem(s)"
 					- if(output.length == 0)
 						- requestIntro = "No new chem"
 					span(class="labColor")!= requestIntro
 					span=" currently being requested by your colleagues. In total, "
-					- var totalrequestIntro = mysharesrequest.length + " requests"
+					- var totalrequestIntro = mysharesrequest.length + " request(s)"
 					- if(mysharesrequest.length == 0)
 						- totalrequestIntro = "No request"
 					span(class="labColor")!= totalrequestIntro 
