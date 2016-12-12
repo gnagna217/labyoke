@@ -344,16 +344,27 @@ LabYokerOrder.prototype.order = function(callback) {
 	query.on("end", function(result) {
 		results = result.rows;
 
-		var subject = "LabYoke Request - Order for " + agent;
-		var body = "<div style='float:left'><img style='width: 150px; margin: 0 20px;' src='https:\/\/team-labyoke.herokuapp.com\/images\/yoke4.png', alt='The Yoke',  title='Yoke', class='yokelogo'/></div><div style=\"font-family:'calibri'; font-size:11pt;padding: 20px;\">Hello " + location
+		var subject = "LabYoke - Pending Order for " + agent;
+		var subjectReq = "LabYoke - Your Request to order " + agent;
+		var body = "<div style='text-align:center'><img style='width: 150px; margin: 0 20px;' src='https:\/\/team-labyoke.herokuapp.com\/images\/yoke4.png', alt='The Yoke',  title='Yoke', class='yokelogo'/></div><div style=\"font-family:'calibri'; font-size:11pt;padding: 20px;\">Hello " + location
 				+ ",<br/><br/>";
-		body += "This is a kind request to share 100 units from the following inventory: <br><b>Agent: </b> " + agent;
+		var bodyReq = "<div style='text-align:center'><img style='width: 150px; margin: 0 20px;' src='https:\/\/team-labyoke.herokuapp.com\/images\/yoke4.png', alt='The Yoke',  title='Yoke', class='yokelogo'/></div><div style=\"font-family:'calibri'; font-size:11pt;padding: 20px;float:left\">Hello,<br/><br/>";
+		body += "This is a kind request to share 100 units from the following inventory:";
+		bodyReq += "You have requested 100 units from the following inventory:";
+		body += "<br><b>Agent: </b> " + agent;
+		bodyReq += "<br><b>Agent: </b> " + agent;
 		body += "<br><b>Vendor: </b> " + vendor;
+		bodyReq += "<br><b>Vendor: </b> " + vendor;
 		body += "<br><b>Catalog#: </b> " + catalognumber;
+		bodyReq += "<br><b>Catalog#: </b> " + catalognumber;
 		body += "<br><b>Owner: </b> " + sendemail;
+		bodyReq += "<br><b>Owner: </b> " + sendemail;
 		body += "<br><b>Lab: </b> " + lab;
+		bodyReq += "<br><b>Lab: </b> " + lab;
 		body += "<p>Best regards,";
+		bodyReq += "<p>Best regards,";
 		body += "</p><b><i>The LabYoke Team.</i></b></div>";
+		bodyReq += "</p><b><i>The LabYoke Team.</i></b></div>";
 		console.log("order body: " + body);
 		var tes = "UPDATE vm2016_agentsshare SET quantity = " + quantity + " WHERE agent='" + agent + "' AND vendor='" + vendor + "' AND catalognumber='" + catalognumber + "' AND email='" + email + "'";
 		console.log("order tes: " + tes);
@@ -364,8 +375,10 @@ LabYokerOrder.prototype.order = function(callback) {
 		});
 		query2.on("end", function(result2) {
 
-			var mailOptions = new MailOptionsWithCC(email, subject, body, sendemail);
+			var mailOptions = new MailOptionsWithCC(sendemail, subject, body);
+			var mailOptionsReq = new MailOptionsWithCC(email, subjectReq, bodyReq);
 			mailOptions.sendAllEmails();
+			mailOptionsReq.sendAllEmails();
 
 			callback(null, "successfulOrder")
 		});
