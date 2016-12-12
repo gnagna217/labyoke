@@ -64,7 +64,7 @@ block content
         div(style="float:right; padding-left: 20px", class="share-container adjustpadding")
           script(type="text/javascript" src="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.js")
           div(style="background-color: #3d9dcb; height: 2px; margin-bottom: 30px; margin-top: 30px;")
-          h4="A brief Line report of all orders."
+          h4="A Line report of all orders."
           p="This line graph depicts the current stotal number of orders per Agent Category:"
           - if(report_sharesbycategory != null && report_sharesbycategory.length >0)
              div(class="ct-chart ct-perfect-fourth")
@@ -75,14 +75,14 @@ block content
            h5="You have not ordered any agent. "
             a(href="/search")
               span(class="labColot")="Search now."
-          h4="A brief Bar report of the monthly orders."
+          h4="A Bar report of the monthly orders."
           p="This bar chart depicts your number of orders this month (so far) per Agent Category:"
           - if(filteroutput != null && filteroutput.length > 0) 
              div(class="ct-chart0 ct-perfect-fourth")
              div(id="tooltips0", class="labColor") &nbsp;
           - if(filteroutput != null && filteroutput.length == 0) 
            h5="You have not ordered any agent this month."
-          h4="A brief Bar report of all orders in each lab."
+          h4="A Bar report of all orders in each lab."
           p="This bar chart depicts the number of orders (so far) per lab:"
           - if(laborders != null && laborders.length > 0)
              div(class="ct-chart3 ct-perfect-fourth")
