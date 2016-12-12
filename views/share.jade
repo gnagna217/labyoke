@@ -11,11 +11,6 @@ block content
 	div(class="shade" id="shade")
 	div(class="shade-light" id="shade-light")
 	div(class="container login")
-		-var ly = mysharesrequest
-		span= 'Test'
-		-for(var prop in ly)
-			p #{ly[prop].agent}
-			p #{ly[prop].date}
 		div(style="float: left;" class="share-container")
 			a(href="/search")
 				img(src="/images/yoke4.png", alt="The Yoke",  title="Yoke", class="yokelogo")
@@ -80,7 +75,7 @@ block content
 													input(type="hidden" name="table" value="vm2016_orders")
 							script.
 								$(document).ready(function() {
-									$('#rankTblreqshares').DataTable();
+									$('#rankTblreqshares').DataTable({"order": [[ 4, "desc" ]]});
 								});
 				div(style="background-color: #3d9dcb; height: 2px; margin-bottom: 30px; margin-top: 30px;")
 			if(myshares != "")
