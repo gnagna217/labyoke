@@ -64,8 +64,8 @@ block content
         div(style="float:right; padding-left: 20px", class="share-container adjustpadding")
           script(type="text/javascript" src="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.js")
           div(style="background-color: #3d9dcb; height: 2px; margin-bottom: 30px; margin-top: 30px;")
-          h4="A brief Line report of all your orders."
-          p="This line graph depicts your total number of orders per Agent Category:"
+          h4="A brief Line report of all orders."
+          p="This line graph depicts the current stotal number of orders per Agent Category:"
           - if(report_sharesbycategory != null && report_sharesbycategory.length >0)
              div(class="ct-chart ct-perfect-fourth")
              div(id="tooltips", class="labColor") &nbsp;
