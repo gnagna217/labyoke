@@ -12,7 +12,7 @@ block content
             p 
                 span!="Please enter your "
                 span(class="labColor")="username"
-                span= " below and we shall send you an email to change your password and <a href='/login'>login</a> again."
+                span!= " below and we shall send you an email to change your password and <a href='/login'>login</a> again."
             div(id="ctl00_Div2" class="frontdiv")
                 if message
                     div(class="alert alert-danger")!= message
