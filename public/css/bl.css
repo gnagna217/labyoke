@@ -850,8 +850,8 @@ span.num.greatherthanninetynine {
 }
 .help{
     padding-right: 0px;
-    margin-top: 0px;
-    z-index: -4;
+    /*margin-top: 0px;
+    z-index: -4;*/
 }
 .table-responsive {
     border: none !important;
