@@ -285,7 +285,7 @@ module.exports = function(router) {
 
 	router.post('/changeDetails', isLoggedIn, function(req, res) {
 		var col = req.body.column;
-		var val = escape(req.body.valuedetail);
+		var val = req.body.valuedetail.replace("'","");
 		var email = req.body.formemail;
 		console.log("changeDetails col: " + col);
 		console.log("changeDetails val: " + val);
