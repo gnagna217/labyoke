@@ -17,7 +17,7 @@ block content
             if(orderresults != "" && email == undefined)
               p="Incredible! You have ordered the following agents so far. "
                 span(class="yokeColorBold")= "Cancelled orders"
-                span=" are listed if they cannot be fulfilled.."
+                span=" are listed if they cannot be fulfilled."
               div(id="results")
                 div(id="ctl00_Div2" class="row rank")
                   div(class="table-responsive")               
@@ -64,7 +64,7 @@ block content
         div(style="float:right; padding-left: 20px", class="share-container adjustpadding")
           script(type="text/javascript" src="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.js")
           div(style="background-color: #3d9dcb; height: 2px; margin-bottom: 30px; margin-top: 30px;")
-          h4="A brief Line report of the monthly orders."
+          h4="A brief Line report of all your orders."
           p="This line graph depicts your total number of orders per Agent Category:"
           - if(report_sharesbycategory != null && report_sharesbycategory.length >0)
              div(class="ct-chart ct-perfect-fourth")
