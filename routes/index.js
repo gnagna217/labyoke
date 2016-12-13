@@ -155,7 +155,7 @@ module.exports = function(router) {
 		}
 	});
 
-	router.get('/search', function(req, res) {
+	router.get('/search', isLoggedIn, function(req, res) {
 		if (req.session.user) {
 			var labYokeSearch = new LabYokeSearch("",req.session.email);
 			labYokeSearch.findagents(function(error, results) {			
@@ -615,15 +615,6 @@ module.exports = function(router) {
 										console.log("orders is " + orders);
 
 										if (done != null && done.length > 0) {
-											req.session.user = done[0].name;
-											req.session.userid = done[0].id;
-											console.log("admin? " + done[0].admin);
-											req.session.admin = done[0].admin;
-											req.session.active = done[0].active;
-											req.session.email = done[0].email;
-											req.session.fullname = done[0].name;
-											console.log("fullname " + req.session.fullname);
-											console.log("email " + req.session.email);
 											if (done[0].active == 0) {
 
 												return res
@@ -649,6 +640,15 @@ module.exports = function(router) {
 														orders = resultsOrders;
 														req.session.orders = orders;
 													}
+													req.session.user = done[0].name;
+													req.session.userid = done[0].id;
+													console.log("admin? " + done[0].admin);
+													req.session.admin = done[0].admin;
+													req.session.active = done[0].active;
+													req.session.email = done[0].email;
+													req.session.fullname = done[0].name;
+													console.log("fullname " + req.session.fullname);
+													console.log("email " + req.session.email);
 													req.session.loggedin = true;
 													res.redirect('/search');
 												});
