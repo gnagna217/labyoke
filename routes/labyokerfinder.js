@@ -642,8 +642,9 @@ Labyoker.prototype.login = function(callback) {
 			var email = results[0].email;
 			console.log("email is: " + results[0].email);
 			// var hash = crypt.hashSync(pass, salt);
-			if (active == 1) {
+			//if (active == 1) {
 				var c = crypt.compareSync(password, pass);
+				console.log("compare is: " + c);
 				if (c) {
 
 		/*var query2 = client
@@ -679,7 +680,7 @@ Labyoker.prototype.login = function(callback) {
 				} else {
 					callback(null, null);
 				}
-			} else {
+			/*} else {
 				var query = client
 						.query("SELECT * FROM vm2016_users where id='"
 								+ username + "'");
@@ -689,7 +690,7 @@ Labyoker.prototype.login = function(callback) {
 				query.on("end", function(result) {
 					callback(null, result.rows);
 				});
-			}
+			}*/
 		} else {
 			callback(null, null);
 		}
