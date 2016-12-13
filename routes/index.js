@@ -603,7 +603,7 @@ module.exports = function(router) {
 
 										if(results != null && results.length > 0){
 											done = results[0];
-											var init = new LabyokerInit();
+											var init = new LabyokerInit(done[0].email);
 											init.initialShares(function(error, resultsShares) {
 												if(resultsShares != null && resultsShares.length > 0){
 													shares = resultsShares[0];

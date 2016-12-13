@@ -559,7 +559,7 @@ LabYokeFinder.prototype.test = function(callback) {
 
 LabyokerInit.prototype.initialShares = function(callback) {
 	var email = this.email;
-
+console.log("shares email: " + email);
 	var resultsLogin = [];
 
 		var query = client
@@ -603,7 +603,7 @@ LabyokerInit.prototype.initialOrders = function(callback) {
 	var email = this.email;
 
 	var resultsLogin = [];
-
+console.log("orders email: " + email);
 var query = client
 				.query("SELECT count(agent) as counting from vm2016_orders where requestoremail='" + email
 			+ "' and status='new'");
