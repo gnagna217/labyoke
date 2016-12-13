@@ -897,10 +897,10 @@ Labyoker.prototype.changepassword = function(callback) {
 
 LabyokerConfirm.prototype.confirm = function(callback) {
 	var results;
-	var username = this.username;
+	var registerid = this.registerid;
 	var query = client
 			.query("SELECT * FROM vm2016_users where register_id='"
-					+ this.hashid + "'");
+					+ registerid + "'");
 	query.on("row", function(row, result) {
 		result.addRow(row);
 	});
@@ -915,7 +915,7 @@ LabyokerConfirm.prototype.confirm = function(callback) {
 			query2.on("row", function(row, result2) {
 				result2.addRow(row);
 			});
-			console.log("confirming reg: " + username);
+			console.log("confirming reg: " + registerid);
 			query2.on("end", function(result2) {
 				var results2 = result2.rows;
 				if (results2 != null) {
