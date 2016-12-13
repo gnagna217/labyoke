@@ -39,7 +39,7 @@ block content
 									tr(class="you info-best" style="font-weight: bold")
 										th(class="wrapped")!= 'Agent'
 										th(class="desktabonly")= 'Vendor'
-										th(class="desktabonly")= 'Catalog'
+										th(class="deskfullonly")= 'Catalog'
 										th(class="desktabonly")= 'Requestor'
 										th= 'Date'
 										th= 'X'
@@ -60,7 +60,7 @@ block content
 										tr(class=isnew)
 											td(class="wrapped") #{ob[prop].agent}
 											td(class="desktabonly") #{ob[prop].vendor}
-											td(class="desktabonly") #{ob[prop].catalognumber}
+											td(class="deskfullonly") #{ob[prop].catalognumber}
 											td(class="desktabonly") #{ob[prop].requestoremail}
 											td #{d}
 											td

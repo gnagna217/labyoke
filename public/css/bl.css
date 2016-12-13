@@ -751,6 +751,9 @@ input::-webkit-inner-spin-button {
 }
 
  @media (max-width: 1200px) {
+    .deskfullonly{
+    display: none;
+}
     .rankTbl td {
         /* text-align: center; */
         font-size: 13px;
