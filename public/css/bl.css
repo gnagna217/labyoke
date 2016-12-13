@@ -750,6 +750,12 @@ input::-webkit-inner-spin-button {
 }
 }
 
+@media (min-width: 768px){
+.container {
+    width: 900px !important;
+}
+}
+
  @media (max-width: 1200px) {
     .deskfullonly{
     display: none;
