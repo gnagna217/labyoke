@@ -603,23 +603,6 @@ module.exports = function(router) {
 
 										if(results != null && results.length > 0){
 											done = results[0];
-											var init = new LabyokerInit(done[0].email);
-											init.initialShares(function(error, resultsShares) {
-												console.log("inside init shares " + resultsShares);
-												if(resultsShares != null){
-													console.log("initshares is " + resultsShares);
-													shares = resultsShares;
-													req.session.shares = shares;
-												}
-											});
-											init.initialOrders(function(error, resultsOrders) {
-												console.log("inside init orders " + resultsOrders);
-												if(resultsOrders != null){
-													console.log("initorders is " + resultsOrders);
-													orders = resultsOrders;
-													req.session.orders = orders;
-												}
-											});
 										}
 										
 										/*if(results != null && results.length > 2){
@@ -650,8 +633,26 @@ module.exports = function(router) {
 																message : "You have not completed your registration. Please check your emails and click on the link.", title: 'Login'
 															});
 											}
-req.session.loggedin = true;
-											res.redirect('/search');
+
+											var init = new LabyokerInit(done[0].email);
+											init.initialShares(function(error, resultsShares) {
+												console.log("inside init shares " + resultsShares);
+												if(resultsShares != null){
+													console.log("initshares is " + resultsShares);
+													shares = resultsShares;
+													req.session.shares = shares;
+												}
+												init.initialOrders(function(error, resultsOrders) {
+													console.log("inside init orders " + resultsOrders);
+													if(resultsOrders != null){
+														console.log("initorders is " + resultsOrders);
+														orders = resultsOrders;
+														req.session.orders = orders;
+													}
+													req.session.loggedin = true;
+													res.redirect('/search');
+												});
+											});
 										} else {
 											res
 													.render(
