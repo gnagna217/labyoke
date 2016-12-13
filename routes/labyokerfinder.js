@@ -731,9 +731,13 @@ LabyokerRegister.prototype.register = function(callback) {
 			}
 
 		} else {*/
+				var hash_register_id = crypt.hashSync(username);
+				console.log("before registerid: " + hash_register_id);
+				hash_register_id = hash_register_id.replace(/\//g, "");
+				console.log("registerid: " + hash_register_id);
 			var hash = crypt.hashSync(password);
 			var query2 = client.query("INSERT INTO vm2016_users VALUES ('" + username
-				+ "', '" + hash + "', '" + firstname + "',  1, null, null, '" + email + "', null, '" + lab + "', '" + lastname + "', '" + tel + "', 0)");
+				+ "', '" + hash + "', '" + firstname + "',  0, null, null, '" + email + "', null, '" + lab + "', '" + lastname + "', '" + tel + "', 0, '','" + hash_register_id + "')");
 
 				query2.on("row", function(row, result2) {
 					result2.addRow(row);
@@ -750,6 +754,11 @@ LabyokerRegister.prototype.register = function(callback) {
 					var body = "<div style='text-align:center'><img style='width: 150px; margin: 0 20px;' src='https:\/\/team-labyoke.herokuapp.com\/images\/yoke4.png', alt='The Yoke',  title='Yoke', class='yokelogo'/></div><div style=\"font-family:'calibri'; font-size:11pt;padding: 20px;float:left\">Hello " + firstname
 							+ ",<br/><br/>";
 					body += "Thanks for registering with @LabYoke.";
+					body += "You are one step away from labyoking! Please click on this link:<br/>";
+					body += "<p style=\"text-align:center\"><span style=''><b><a href='https:\/\/team-labyoke.herokuapp.com\/confirmreg/"
+							+ hash_register_id + "'>https:\/\/team-labyoke.herokuapp.com\/confirmreg?id="
+							+ hash_register_id
+							+ "</a></b></span></p>";
 					body += "<p>[PS: Start <a href=\"https:\/\/team-labyoke.herokuapp.com\/share\">sharing</a> some chemicals today?]";
 					body += "</p><b><i>The LabYoke Team.</i></b></div>";
 					console.log("body: " + body);
