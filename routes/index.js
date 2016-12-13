@@ -651,6 +651,79 @@ req.session.loggedin = true;
 
 					});
 
+	router.get('/confirmreg', /*isLoggedInAndNotActive,*/ function(req, res) {
+		res.redirect('/register');
+	}); 
+
+	router.get('/confirmreg/:id', /*isLoggedInAndNotActive,*/ function(req, res) {
+
+		var id = req.params.id;
+		console.log("confirm register id is: " + id);
+
+		if (id != null && id.length > 0){
+			var confirmReg = new LabyokerConfirm(id);
+			confirmReg.confirm(function(error, results) {
+			
+			console.log("LabyokerConfirm results: " + results);
+			
+			if (results != null && results.length > 0 && results == 'confirmReset') {
+					res.render('register', {
+						ordersnum: req.session.orders,
+						sharesnum: req.session.shares,
+						title : 'Confirm Registration',
+						/*loggedIn : true,*/
+						displayForm: true,
+						hashid: id,
+						isLoggedInAdmin: req.session.admin,
+						labyoker : req.session.user,
+						messageSuccess : "Congratulations you have successfully registered. You can now start searching to the <a href='/search'>search</a> page.",
+						scripts : [ '/javascripts/utils.js' ]
+					});
+			} else if(results != null && results.length > 0 && results == 'errorFound') {
+					res.render('register', {
+						ordersnum: req.session.orders,
+						sharesnum: req.session.shares,
+						title : 'Confirm Registration',
+						/*loggedIn : true,*/
+						displayForm: true,
+						hashid: id,
+						isLoggedInAdmin: req.session.admin,
+						labyoker : req.session.user,
+						message : "An error was found while processing your confirmation. Please try again or <a href='mailto:labyoke@gmail.com?Subject="
+																		+ "Change Password - " + id + "' target='_top'>Contact us</a>.",
+						scripts : [ '/javascripts/utils.js' ]
+					});
+			} else if(results != null && results.length > 0 && results == 'cannotFindRequest') {
+				res.render('register', {
+					ordersnum: req.session.orders,
+					sharesnum: req.session.shares,
+					title : 'Confirm Registration',
+					/*loggedIn : true,*/
+					displayForm: true,
+					hashid: id,
+					isLoggedInAdmin: req.session.admin,
+					labyoker : req.session.user,
+					message : "Sorry we could not find your Pre-Registration. Please Register.",
+					scripts : [ '/javascripts/utils.js' ]
+				});
+			} else {
+					res.render('register', {
+						ordersnum: req.session.orders,
+						sharesnum: req.session.shares,
+						title : 'Confirm Registration',
+						/*loggedIn : true,*/
+						displayForm: true,
+						hashid: id,
+						isLoggedInAdmin: req.session.admin,
+						labyoker : req.session.user,
+						message : "An error was found while processing your registration. Please try again or <a href='mailto:labyoke@gmail.com?Subject="
+																		+ "Change Password - " + id + "' target='_top'>Contact us</a>.",
+						scripts : [ '/javascripts/utils.js' ]
+					});
+			}
+			});
+	});
+
 	router.get('/changepassword/:id', /*isLoggedInAndNotActive,*/ function(req, res) {
 		res.render('changepassword', {
 			ordersnum: req.session.orders,

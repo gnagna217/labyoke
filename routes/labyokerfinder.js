@@ -53,6 +53,10 @@ LabYokeUploader = function(jsonResults) {
 	this.jsonResults = jsonResults;
 };
 
+LabyokerConfirm = function(registerid) {
+	this.registerid = registerid;
+};
+
 LabYokerOrder = function(lab,agent,vendor,catalognumber,email,location,sendemail,category,quantity) {
 	this.agent = agent;
 	this.vendor = vendor;
@@ -891,6 +895,41 @@ Labyoker.prototype.changepassword = function(callback) {
 	});
 };
 
+LabyokerConfirm.prototype.confirm = function(callback) {
+	var results;
+	var username = this.username;
+	var query = client
+			.query("SELECT * FROM vm2016_users where register_id='"
+					+ this.hashid + "'");
+	query.on("row", function(row, result) {
+		result.addRow(row);
+	});
+	query.on("end", function(result) {
+		results = result.rows;
+
+		if (results != null && results.length == 1){
+			var userid = results[0].id;
+			console.log("confirm registration now for: " + userid);
+
+			var query2 = client.query("UPDATE vm2016_users SET active=1, register_id='' where id='" + userid + "'");
+			query2.on("row", function(row, result2) {
+				result2.addRow(row);
+			});
+			console.log("confirming reg: " + username);
+			query2.on("end", function(result2) {
+				var results2 = result2.rows;
+				if (results2 != null) {
+					callback(null, "confirmReset");
+				} else {
+					callback(null, "errorFound");
+				}
+			});
+		} else {
+			callback(null, "cannotFindRequest");
+		}
+	});
+};
+
 LabyokerUserDetails.prototype.changeDetails = function(callback) {
 	var column = this.column;
 	var value = this.value;
@@ -1059,3 +1098,4 @@ exports.LabYokeFinder = LabYokeFinder;
 exports.LabYokeUploader = LabYokeUploader;
 exports.LabyokerPasswordChange = LabyokerPasswordChange;
 exports.LabYokerChangeShare = LabYokerChangeShare;
+exports.LabyokerConfirm = LabyokerConfirm;
