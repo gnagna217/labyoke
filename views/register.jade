@@ -7,7 +7,7 @@ block content
      a(href="/search" class=labentered)
         img(src="/images/yoke4.png", alt="The Yoke",  title="Yoke", class="yokelogo")
        div
-        if !labentered && !regsuccess
+        if !labentered && !regsuccess && !confirmReset
             h1= 'Sign Up.'
             p 
                 span!="You are on your way to <a href='/login'>Lab Yoking</a> with fellow researchers. "
@@ -29,7 +29,7 @@ block content
                             input(name="regtel" type="text" id="tel" class="form-control" placeholder="Telephone")
                     div(class="buttons")
                         button.btn.btn-success.btn-lg.btn-block(type='submit') Next
-                        img(src="images/ship.png", alt="The Lab", title="Lab", style="border-width:0px; width: 50px; margin-top: -50px; margin-left: 300px;")  
+                        img(src="/images/ship.png", alt="The Lab", title="Lab", style="border-width:0px; width: 50px; margin-top: -50px; margin-left: 300px;")  
 
         if labentered
             h1= 'Almost there.'
@@ -62,12 +62,21 @@ block content
         if regsuccess && !labentered
                 div(id="ctl00_Div2" class="row")
                     span(style="text-align: center")
+                        h3="Thanks for pre-registering"
+                            span(style="color: #3d9dcb;")=" " + regsuccess + "!"
+                        h4="We have sent you an email to "
+                            a(href="/search")="complete"
+                            span=" your registration. "
+                            a(href="/share")="sharing"
+                            span=" your own chemicals."
+        if confirmReset
+                div(id="ctl00_Div2" class="row")
+                    span(style="text-align: center")
                         h3="Thanks for registering"
                             span(style="color: #3d9dcb;")=" " + regsuccess + "!"
                         h4="You can now start "
                             a(href="/search")="searching"
                             span=" or "
                             a(href="/share")="sharing"
-                            span=" your own chemicals."
-        
+                            span=" your own chemicals."        
 
