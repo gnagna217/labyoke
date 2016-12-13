@@ -565,10 +565,10 @@ LabyokerInit.prototype.initialShares = function(callback) {
 		var query = client
 				.query("SELECT count(agent) as counting from vm2016_orders where email='" + email
 			+ "' and status='new'");
-		query.on("row", function(row, result2) {
-			result2.addRow(row);
+		query.on("row", function(row, result) {
+			result.addRow(row);
 		});
-		query.on("end", function(result2) {
+		query.on("end", function(result) {
 			var test = result.rows;
 			//resultsLogin.push(results);
 			resultsLogin.push(test[0].counting);
