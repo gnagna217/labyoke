@@ -722,7 +722,8 @@ req.session.loggedin = true;
 					});
 			}
 			});
-	});
+	}
+});
 
 	router.get('/changepassword/:id', /*isLoggedInAndNotActive,*/ function(req, res) {
 		res.render('changepassword', {
