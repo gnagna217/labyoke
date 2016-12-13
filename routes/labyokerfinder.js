@@ -613,8 +613,11 @@ Labyoker.prototype.login = function(callback) {
 			} else {
 				var query = client
 						.query("SELECT * FROM vm2016_users where id='"
+								+ username + "'");
+				/*var query = client
+						.query("SELECT * FROM vm2016_users where id='"
 								+ username + "' and password='" + password
-								+ "'");
+								+ "'");*/
 				query.on("row", function(row, result) {
 					result.addRow(row);
 				});

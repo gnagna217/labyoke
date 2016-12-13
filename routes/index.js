@@ -627,7 +627,11 @@ module.exports = function(router) {
 											if (done[0].active == 0) {
 
 												return res
-														.redirect('/changepassword');
+														.render(
+															'login',
+															{
+																message : "You have not completed your registration. Please check your emails and click on the link.", title: 'Login'
+															});
 											}
 req.session.loggedin = true;
 											res.redirect('/search');
@@ -651,11 +655,11 @@ req.session.loggedin = true;
 
 					});
 
-	router.get('/confirmreg', /*isLoggedInAndNotActive,*/ function(req, res) {
+	router.get('/confirmreg', function(req, res) {
 		res.redirect('/register');
 	}); 
 
-	router.get('/confirmreg/:id', /*isLoggedInAndNotActive,*/ function(req, res) {
+	router.get('/confirmreg/:id', function(req, res) {
 
 		var id = req.params.id;
 		console.log("confirm register id is: " + id);
