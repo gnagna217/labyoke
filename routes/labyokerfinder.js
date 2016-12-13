@@ -567,7 +567,7 @@ Labyoker.prototype.login = function(callback) {
 	query.on("end", function(result) {
 		results = result.rows;
 		if (results != null && results.length == 1) {
-
+			resultsLogin.push(results);
 			var pass = results[0].password;
 			var active = results[0].active;
 			var email = results[0].email;
@@ -596,7 +596,7 @@ Labyoker.prototype.login = function(callback) {
 			//results.push(result2.rows);
 			var test3 = result3.rows;
 			var test2 = result2.rows;
-			resultsLogin.push(results);
+			//resultsLogin.push(results);
 			resultsLogin.push(test2[0].counting);
 			resultsLogin.push(test3[0].counting);
 			console.log("shares found: " + test2[0].counting)
