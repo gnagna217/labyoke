@@ -752,7 +752,7 @@ input::-webkit-inner-spin-button {
 
 @media (min-width: 768px){
 .container {
-    width: 900px !important;
+    width: 97% !important;
 }
 }
 
