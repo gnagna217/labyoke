@@ -44,6 +44,10 @@ LabYokeReporter = function(datefrom, dateto) {
 	this.dateto = dateto;
 };
 
+LabyokerInit = function(email) {
+	this.email = email;
+};
+
 LabYokeSearch = function(searchText, email) {
 	this.searchText = searchText;
 	this.email = email;
@@ -553,6 +557,71 @@ LabYokeFinder.prototype.test = function(callback) {
 	// return false;
 };
 
+LabyokerInit.prototype.initialShares = function(callback) {
+	var email = this.email;
+
+	var resultsLogin = [];
+
+		var query = client
+				.query("SELECT count(agent) as counting from vm2016_orders where email='" + email
+			+ "' and status='new'");
+		query.on("row", function(row, result2) {
+			result2.addRow(row);
+		});
+		query.on("end", function(result2) {
+			var test = result.rows;
+			//resultsLogin.push(results);
+			resultsLogin.push(test[0].counting);
+			console.log("shares found: " + test[0].counting)
+			callback(null, resultsLogin);
+			//results.push(result2.rows);
+
+		/*var query3 = client
+				.query("SELECT count(agent) as counting from vm2016_orders where requestoremail='" + email
+			+ "' and status='new'");
+		query3.on("row", function(row, result3) {
+			result3.addRow(row);
+		});
+		query3.on("end", function(result3) {
+			//results.push(result2.rows);
+			var test3 = result3.rows;
+			var test2 = result2.rows;
+			//resultsLogin.push(results);
+			resultsLogin.push(test2[0].counting);
+			resultsLogin.push(test3[0].counting);
+			console.log("shares found: " + test2[0].counting)
+			console.log("orders found: " + test3[0].counting)
+			callback(null, resultsLogin)
+		});*/
+			
+
+					//callback(null, results);
+	});
+};
+
+LabyokerInit.prototype.initialOrders = function(callback) {
+	var email = this.email;
+
+	var resultsLogin = [];
+
+var query = client
+				.query("SELECT count(agent) as counting from vm2016_orders where requestoremail='" + email
+			+ "' and status='new'");
+		query.on("row", function(row, result) {
+			result.addRow(row);
+		});
+		query.on("end", function(result) {
+			//results.push(result2.rows);
+			var test = result.rows;
+			//resultsLogin.push(results);
+			resultsLogin.push(test[0].counting);
+			console.log("orders found: " + test[0].counting)
+			callback(null, resultsLogin)
+		});
+			
+
+};
+
 Labyoker.prototype.login = function(callback) {
 	var password = this.password;
 	var username = this.username;
@@ -577,7 +646,7 @@ Labyoker.prototype.login = function(callback) {
 				var c = crypt.compareSync(password, pass);
 				if (c) {
 
-		var query2 = client
+		/*var query2 = client
 				.query("SELECT count(agent) as counting from vm2016_orders where email='" + email
 			+ "' and status='new'");
 		query2.on("row", function(row, result2) {
@@ -600,11 +669,11 @@ Labyoker.prototype.login = function(callback) {
 			resultsLogin.push(test2[0].counting);
 			resultsLogin.push(test3[0].counting);
 			console.log("shares found: " + test2[0].counting)
-			console.log("orders found: " + test3[0].counting)
+			console.log("orders found: " + test3[0].counting)*/
 			callback(null, resultsLogin)
-		});
+		/*});
 			
-		});
+		});*/
 
 					//callback(null, results);
 				} else {
@@ -614,10 +683,6 @@ Labyoker.prototype.login = function(callback) {
 				var query = client
 						.query("SELECT * FROM vm2016_users where id='"
 								+ username + "'");
-				/*var query = client
-						.query("SELECT * FROM vm2016_users where id='"
-								+ username + "' and password='" + password
-								+ "'");*/
 				query.on("row", function(row, result) {
 					result.addRow(row);
 				});
@@ -1102,3 +1167,4 @@ exports.LabYokeUploader = LabYokeUploader;
 exports.LabyokerPasswordChange = LabyokerPasswordChange;
 exports.LabYokerChangeShare = LabYokerChangeShare;
 exports.LabyokerConfirm = LabyokerConfirm;
+exports.LabyokerInit = LabyokerInit;

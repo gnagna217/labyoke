@@ -600,16 +600,28 @@ module.exports = function(router) {
 							labyoker
 									.login(function(error, results) {
 										var done, shares, orders;
-										if(results != null && results.length > 0)
+
+										if(results != null && results.length > 0){
 											done = results[0];
-										if(results != null && results.length > 1){
-											shares = results[1];
-											req.session.shares = shares;
+											var init = new LabyokerInit();
+											init.initialShares(function(error, resultsShares) {
+												if(resultsShares != null && resultsShares.length > 0){
+													shares = resultsShares[0];
+													req.session.shares = shares;
+												}
+											});
+											init.initialOrders(function(error, resultsOrders) {
+												if(resultsOrders != null && resultsOrders.length > 0){
+													orders = resultsOrders[0];
+													req.session.orders = orders;
+												}
+											});
 										}
-										if(results != null && results.length > 2){
+										
+										/*if(results != null && results.length > 2){
 											orders = results[2];
 											req.session.orders = orders;
-										}
+										}*/
 										console.log("done is " + done);
 										console.log("done2 is " + done.length);
 										console.log("shares is " + shares);
