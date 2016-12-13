@@ -560,7 +560,7 @@ LabYokeFinder.prototype.test = function(callback) {
 LabyokerInit.prototype.initialShares = function(callback) {
 	var email = this.email;
 console.log("shares email: " + email);
-	var resultsLogin = [];
+	var resultsLogin;
 
 		var query = client
 				.query("SELECT count(agent) as counting from vm2016_orders where email='" + email
@@ -571,7 +571,7 @@ console.log("shares email: " + email);
 		query.on("end", function(result) {
 			var test = result.rows;
 			//resultsLogin.push(results);
-			resultsLogin.push(test[0].counting);
+			resultsLogin=test[0].counting;
 			console.log("shares found: " + test[0].counting)
 			callback(null, resultsLogin);
 			//results.push(result2.rows);
@@ -602,7 +602,7 @@ console.log("shares email: " + email);
 LabyokerInit.prototype.initialOrders = function(callback) {
 	var email = this.email;
 
-	var resultsLogin = [];
+	var resultsLogin;
 console.log("orders email: " + email);
 var query = client
 				.query("SELECT count(agent) as counting from vm2016_orders where requestoremail='" + email
@@ -614,7 +614,7 @@ var query = client
 			//results.push(result2.rows);
 			var test = result.rows;
 			//resultsLogin.push(results);
-			resultsLogin.push(test[0].counting);
+			resultsLogin = test[0].counting;
 			console.log("orders found: " + test[0].counting)
 			callback(null, resultsLogin)
 		});

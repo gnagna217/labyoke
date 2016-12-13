@@ -605,13 +605,13 @@ module.exports = function(router) {
 											done = results[0];
 											var init = new LabyokerInit(done[0].email);
 											init.initialShares(function(error, resultsShares) {
-												if(resultsShares != null && resultsShares.length > 0){
+												if(resultsShares != null){
 													shares = resultsShares[0];
 													req.session.shares = shares;
 												}
 											});
 											init.initialOrders(function(error, resultsOrders) {
-												if(resultsOrders != null && resultsOrders.length > 0){
+												if(resultsOrders != null){
 													orders = resultsOrders[0];
 													req.session.orders = orders;
 												}
