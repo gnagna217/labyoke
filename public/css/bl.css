@@ -286,6 +286,9 @@ position: absolute;
 .labColor{
     color: #3d9dcb;
 }
+.btn{
+    outline: none !important;
+}
 .accountdetail{
     margin-bottom:25px;
     /*font-weight:bold;*/
