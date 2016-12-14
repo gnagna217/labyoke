@@ -832,13 +832,16 @@ input::-webkit-inner-spin-button {
     }
 #checkname{
     margin-left: 200px;
+    float:none;
 }
 
 #checksurname{
     margin-left: 200px;
+    float:none;
 }
 #checktel{
     margin-left: 200px;
+    float:none;
 }
 
 .desktabonly2{
