@@ -427,9 +427,11 @@ module.exports = function(router) {
 		const util = require('util');
 		var labs = req.session.labs;
 		for(var i in labs){
+			var labrow = util.inspect(labs[i], false, null);
        		//var lab = labs[i].lab
        		console.log("i is: "+ i);
-       		console.log("lab util: " + util.inspect(labs[i], false, null));
+       		console.log("lab util: " + labrow);
+       		console.log("labrow lab util: " + labrow.lab);
        		
        			//console.log("lab is: "+ lab);
        	}
