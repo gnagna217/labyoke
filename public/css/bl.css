@@ -286,6 +286,9 @@ position: absolute;
 .labColor{
     color: #3d9dcb;
 }
+.menu-border{
+    border-left-color: white;border-left-style: solid;border-width: thick; border-right-color: white;border-right-style: solid;
+}
 .btn{
     outline: none !important;
 }
@@ -892,6 +895,9 @@ span.num.greatherthanninetynine {
 }
 .nav-menu{
     width: 135px !important;
+}
+.menu-border{
+    border-left-color: white;border-left-style: solid;border-width: thick; border-right-color: white;border-right-style: none;
 }
 .nav-menu-logout{
     margin-right: 0px !important;
