@@ -55,11 +55,11 @@ block content
                                 - lab = "..."
                             
                             div(style="float:left;", class="accountdetailWidth")
-                              div(class="labColor accountdetail", style="font-weight:bold;")="Name"
-                              div(class="labColor accountdetail", style="font-weight:bold;")="Surname"
-                              div(class="labColor accountdetail", style="font-weight:bold;")="Email"
-                              div(class="labColor accountdetail", style="font-weight:bold;")="Tel"
-                              div(class="labColor accountdetail", style="font-weight:bold;")="Lab"
+                              div(class="labColor accountdetail", style="font-weight:bold;border-bottom-color:#8a6d3b;border-bottom-style:solid;margin-right: 5px;")="Name"
+                              div(class="labColor accountdetail", style="font-weight:bold;border-bottom-color:#8a6d3b;border-bottom-style:solid;margin-right: 5px;")="Surname"
+                              div(class="labColor accountdetail", style="font-weight:bold;border-bottom-color:#8a6d3b;border-bottom-style:solid;margin-right: 5px;")="Email"
+                              div(class="labColor accountdetail", style="font-weight:bold;border-bottom-color:#8a6d3b;border-bottom-style:solid;margin-right: 5px;")="Tel"
+                              div(class="labColor accountdetail", style="font-weight:bold;border-bottom-color:#8a6d3b;border-bottom-style:solid;margin-right: 5px;")="Lab"
                             div(class="wrapped accountdetailMargin")
                               div(style="margin-bottom:25px;", class="accountdetail")
                                 span(id="name")!=name + " "
@@ -69,7 +69,7 @@ block content
                                   input(name="formemail" type="hidden" id="formemail" value=email)
                                 span(onclick="pencilname()", id="pencilname", class="fa fa-pencil labColor")
                                 span(onclick="updatenameform()", id="checkname", class="fa fa-check labColor")
-                              div(style="margin-bottom:25px;", class="accountdetail")
+                              div(style="margin-bottom:25px;margin-left:5px", class="accountdetail")
                                 span(id="surname")!= surname + " "
                                 form(action="/changeDetails" id="changesurname" method="post" class="surnameform")
                                   input(name="valuedetail" type="text" id="valuedetail" placeholder=surname)
@@ -77,8 +77,8 @@ block content
                                   input(name="formemail" type="hidden" id="formemail" value=email)
                                 span(onclick="pencilsurname()", id="pencilsurname", class="fa fa-pencil labColor")
                                 span(onclick="updatesurnameform()", id="checksurname", class="fa fa-check labColor")
-                              div(style="margin-bottom:25px;", class="accountdetail") #{email}
-                              div(style="margin-bottom:25px;", class="accountdetail")
+                              div(style="margin-bottom:25px;margin-left:5px", class="accountdetail") #{email}
+                              div(style="margin-bottom:25px;margin-left:5px", class="accountdetail")
                                 span(id="tel")!= tel + " "
                                 form(action="/changeDetails" id="changetel" method="post" class="telform")
                                   input(name="valuedetail" type="text" id="valuedetail" placeholder=tel)
@@ -86,6 +86,6 @@ block content
                                   input(name="formemail" type="hidden" id="formemail" value=email)
                                 span(onclick="penciltel()", id="penciltel" class="fa fa-pencil labColor")
                                 span(onclick="updatetelform()", id="checktel" class="fa fa-check labColor")
-                              div(style="margin-bottom:25px;", class="accountdetail") #{lab}
+                              div(style="margin-bottom:25px;margin-left:5px", class="accountdetail") #{lab}
         div
           p(class="yokeColor", style="font-weight:bold")!=adminIntro
