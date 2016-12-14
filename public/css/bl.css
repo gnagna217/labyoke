@@ -758,6 +758,9 @@ input::-webkit-inner-spin-button {
     float: left; 
     width: 20%;
 }
+.accountdetailWidth{
+    width: 100%;
+}
 }
 
  @media (max-width: 1200px) {
