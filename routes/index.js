@@ -395,7 +395,8 @@ module.exports = function(router) {
 	});
 
 	router.get('/register', function(req, res) {
-			res.render('register', {ordersnum: req.session.orders, labs:req.session.labs, sharesnum: req.session.shares, labyoker : req.session.user, isLoggedInAdmin: req.session.admin, title: 'Register'});
+			console.log("register labs: " + req.session.labs);
+			res.render('register', {ordersnum: req.session.orders, labs: req.session.labs, sharesnum: req.session.shares, labyoker : req.session.user, isLoggedInAdmin: req.session.admin, title: 'Register'});
 			req.session.messages = null;
 			req.body.reglab = null;
 	});
