@@ -244,21 +244,23 @@ position: absolute;
     width: 20px;
     top: -25px;
     position: relative;
-    margin-left: 220px;
+    /*margin-left: 220px;*/
+    float: right;
 }
 #checksurname{
     display:none;
     width: 20px;
     top: -25px;
     position: relative;
-    margin-left: 220px;
+    float: right;
+
 }
 #checktel{
     display:none;
     width: 20px;
     top: -25px;
     position: relative;
-    margin-left: 220px;
+    float: right;
 }
 
 .greatherthannine{
