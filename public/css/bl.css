@@ -408,8 +408,8 @@ margin-right: 15px !important;
 }
 .searchResults{
     float: left;
-    width: 70%;
-    margin-left: 50px;
+    width: 100%;
+    margin-left: 0px;
 }
 
 .btn-success-results{
