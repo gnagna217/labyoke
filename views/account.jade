@@ -4,11 +4,11 @@ block content
 
 
     div(class="container login")
-        div(style="float: left;")
+        div(style="float: left; width: 100%;")
             a(href="/search")
                 img(src="/images/yoke4.png", alt="The Yoke",  title="Yoke", class="yokelogo")
             h1= 'Hello ' + labyoker + "."
-            p
+            p(style="padding-bottom: 20px;")
               span="This page is dedicated to " 
               span(style="color: #3d9dcb;")="you. "
               span="If you wish to change your personal details such as your telephone number or Lab information."
@@ -16,7 +16,7 @@ block content
                 h3="Great! You have successfully changed your "
                    span(style="color: #3d9dcb;")=" " + resultsAccount
                    span="!"                 
-            div(class="table-responsive")
+                div(class="table-responsive")
                          -var ob = userDetails
                          - var j = 1
                          -for(var prop in ob)
@@ -53,7 +53,7 @@ block content
                                 - tel = "..."
                             - if(!lab)
                                 - lab = "..."
-                            p(class="yokeColor", style="font-weight:bold")!=adminIntro
+                            
                             div(style="float:left;")
                               div(class="labColor", style="font-weight:bold; margin-bottom:25px;")="Name"
                               div(class="labColor", style="font-weight:bold; margin-bottom:25px;")="Surname"
@@ -87,4 +87,5 @@ block content
                                 span(onclick="penciltel()", id="penciltel" class="fa fa-pencil")
                                 span(onclick="updatetelform()", id="checktel" class="fa fa-check", style="color:green")
                               div(style="margin-bottom:25px;") #{lab}
-
+              div
+                p(class="yokeColor", style="font-weight:bold")!=adminIntro
