@@ -16,7 +16,7 @@ block content
                 h3="Great! You have successfully changed your "
                    span(style="color: #3d9dcb;")=" " + resultsAccount
                    span="!"                 
-                div(class="table-responsive")
+            div(class="table-responsive")
                          -var ob = userDetails
                          - var j = 1
                          -for(var prop in ob)
@@ -87,5 +87,5 @@ block content
                                 span(onclick="penciltel()", id="penciltel" class="fa fa-pencil")
                                 span(onclick="updatetelform()", id="checktel" class="fa fa-check", style="color:green")
                               div(style="margin-bottom:25px;") #{lab}
-              div
-                p(class="yokeColor", style="font-weight:bold")!=adminIntro
+        div
+          p(class="yokeColor", style="font-weight:bold")!=adminIntro
