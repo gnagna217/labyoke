@@ -49,15 +49,14 @@ block content
                     div(style="margin-bottom: 20px;")
                         div(class="textentry")
                             select(name="reglab" type="text" id="reglab" class="form-control" style="border-color:#3d9dcb" placeholder="Lab")
-                            - var ob = labs
-                            - for(var prop in ob)
-                              - var lab = ob[prop].lab
-                              option(value=lab)!= lab
+                             - var ob = labs
+                             - for(var prop in ob)
+                               - var lab = ob[prop].lab
+                               option(value=#{lab})!= lab
                         input(name="regfirstname" type="hidden" id="regfirstname" value=firstname)
                         input(name="reglastname" type="hidden" id="reglastname" value=lastname)
                         input(name="regemail" type="hidden" id="regemail" value=email)
                         input(name="regtel" type="hidden" id="regtel" value=tel)
-                    span!= "labs2: " + labs
                     div(class="buttons")
                         //input(type="submit" class="button" value="Register")
                         button.btn.btn-success.btn-lg.btn-block(type='submit') Start Lab Yoking
