@@ -100,6 +100,10 @@ module.exports = function(router) {
 		res.redirect('/search');
 	});
 
+	router.get('/admin', function(req, res) {
+		res.redirect('/share');
+	});
+
 	router.get('/help', /*isLoggedIn,*/ function(req, res) {
 		res.render('help', {
 			ordersnum: req.session.orders,
@@ -125,12 +129,14 @@ module.exports = function(router) {
 		if (req.session.user)
 			return next();
 		console.log('requested url: '+req.originalUrl);
-		
+		req.session.to = req.originalUrl;
 		res.redirect('/login');
 	}
 	function isLoggedInAdmin(req, res, next) {
 		if (req.session.user && req.session.useradmin)
 			return next();
+		console.log('requested url: '+req.originalUrl);
+		req.session.to = req.originalUrl;
 		res.redirect('/search');
 	}
 
@@ -691,7 +697,11 @@ module.exports = function(router) {
 													console.log("fullname " + req.session.fullname);
 													console.log("email " + req.session.email);
 													req.session.loggedin = true;
-													res.redirect('/search');
+													if(req.session.to.length > 0){
+														res.redirect(req.session.to);
+													} else {
+														res.redirect('/search');
+													}
 												});
 											});
 										} else {
