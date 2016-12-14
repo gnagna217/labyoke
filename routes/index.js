@@ -436,6 +436,9 @@ module.exports = function(router) {
 		var user_email = req.body.regemail;
 		var user_tel = req.body.regtel;
 
+		if(req.session.labs == undefined){
+			res.redirect('/register');
+		}
 		/*const util = require('util');
 		var labs = req.session.labs;
 		for(var i in labs){
