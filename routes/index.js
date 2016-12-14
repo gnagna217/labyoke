@@ -104,7 +104,7 @@ module.exports = function(router) {
 		res.redirect('/share#upload');
 	});
 
-	router.get('/help', /*isLoggedIn,*/ function(req, res) {
+	router.get('/help', function(req, res) {
 		res.render('help', {
 			ordersnum: req.session.orders,
 			sharesnum: req.session.shares,
