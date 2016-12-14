@@ -124,6 +124,8 @@ module.exports = function(router) {
 	function isLoggedIn(req, res, next) {
 		if (req.session.user)
 			return next();
+		console.log('requested url: '+req.originalUrl);
+		
 		res.redirect('/login');
 	}
 	function isLoggedInAdmin(req, res, next) {
