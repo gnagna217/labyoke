@@ -68,7 +68,7 @@ block content
                                   input(name="column" type="hidden" id="column" value="name")
                                   input(name="formemail" type="hidden" id="formemail" value=email)
                                 span(onclick="pencilname()", id="pencilname", class="fa fa-pencil labColor")
-                                span(onclick="updatenameform()", id="checkname", class="fa fa-check labColor", style="color:green")
+                                span(onclick="updatenameform()", id="checkname", class="fa fa-check labColor")
                               div(style="margin-bottom:25px;", class="accountdetail")
                                 span(id="surname")!= surname + " "
                                 form(action="/changeDetails" id="changesurname" method="post" class="surnameform")
@@ -76,7 +76,7 @@ block content
                                   input(name="column" type="hidden" id="column" value="surname")
                                   input(name="formemail" type="hidden" id="formemail" value=email)
                                 span(onclick="pencilsurname()", id="pencilsurname", class="fa fa-pencil labColor")
-                                span(onclick="updatesurnameform()", id="checksurname", class="fa fa-check labColor", style="color:green")
+                                span(onclick="updatesurnameform()", id="checksurname", class="fa fa-check labColor")
                               div(style="margin-bottom:25px;", class="accountdetail") #{email}
                               div(style="margin-bottom:25px;", class="accountdetail")
                                 span(id="tel")!= tel + " "
@@ -85,7 +85,7 @@ block content
                                   input(name="column" type="hidden" id="column" value="tel")
                                   input(name="formemail" type="hidden" id="formemail" value=email)
                                 span(onclick="penciltel()", id="penciltel" class="fa fa-pencil labColor")
-                                span(onclick="updatetelform()", id="checktel" class="fa fa-check labColor", style="color:green")
+                                span(onclick="updatetelform()", id="checktel" class="fa fa-check labColor")
                               div(style="margin-bottom:25px;", class="accountdetail") #{lab}
         div
           p(class="yokeColor", style="font-weight:bold")!=adminIntro
