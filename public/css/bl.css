@@ -288,7 +288,10 @@ position: absolute;
 }
 .accountdetail{
     margin-bottom:25px;
-    font-weight:bold;
+    /*font-weight:bold;*/
+}
+.accountdetailWidth{
+    margin-left:100px;
 }
 .inputfile-1:focus + label, .inputfile-1.has-focus + label, .inputfile-1 + label:hover {
     background-color: #8a6d3b !important;
@@ -761,10 +764,11 @@ input::-webkit-inner-spin-button {
     float: left; 
     width: 20%;
     margin-bottom:15px;
-    font-weight:bold;
+    /*font-weight:bold;*/
 }
 .accountdetailWidth{
     width: 100%;
+    margin-left: 0px;
 }
 }
 
