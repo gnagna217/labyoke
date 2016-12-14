@@ -101,7 +101,7 @@ module.exports = function(router) {
 	});
 
 	router.get('/admin', function(req, res) {
-		res.redirect('/share#upload');
+		res.redirect('/share');
 	});
 
 	router.get('/help', function(req, res) {
