@@ -427,7 +427,7 @@ module.exports = function(router) {
 		var labs = req.session.labs;
 		for(var i in labs){
        		//var lab = labs[i].lab
-       		console.log("labi is: "+ labs);
+       		console.log("labi is: "+ labs[i]);
        			//console.log("lab is: "+ lab);
        	}
 
