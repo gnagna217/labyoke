@@ -729,7 +729,7 @@ input::-webkit-inner-spin-button {
     .searchResults{
         float: left;
         width: 65%;
-        margin-left: 58px;
+        margin-left: 80px;
     }
 }
 
