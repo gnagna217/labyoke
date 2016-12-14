@@ -424,6 +424,12 @@ module.exports = function(router) {
 		var user_email = req.body.regemail;
 		var user_tel = req.body.regtel;
 
+		for(var i in req.session.labs){
+       		var lab = labs[i].lab
+       		console.log("labi is: "+ lab[i]);
+       			console.log("lab is: "+ lab);
+       	}
+
 		if (user && user_name && user_pwd && lab && user_surname && user_email && user_tel) {
 			console.log("second section processing...");
 			console.log("user: " + user);
