@@ -699,6 +699,7 @@ module.exports = function(router) {
 													req.session.loggedin = true;
 													if(req.session.to.length > 0){
 														res.redirect(req.session.to);
+														req.session.to = null;
 													} else {
 														res.redirect('/search');
 													}
