@@ -413,7 +413,7 @@ module.exports = function(router) {
 
 	router.post('/register', function(req, res) {
 		var rendered = false;
-		var lab = req.body.	;
+		var lab = req.body.reglab;
 		var user = req.body.reguser;
 		var user_pwd = req.body.regpass;
 
