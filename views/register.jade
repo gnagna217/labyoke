@@ -6,11 +6,6 @@ block content
   div(class="container login front")
      a(href="/search" class=labentered)
         img(src="/images/yoke4.png", alt="The Yoke",  title="Yoke", class="yokelogo")
-     - for(var i in labs)
-       - var lab = labs[i].labname
-       span(class=lab) #{lab}
-       p labs
-       p!= labs
        div
         if !labentered && !regsuccess && !confirmReset
             h1= 'Sign Up.'
@@ -57,7 +52,7 @@ block content
                              if(labs != undefined)
                                  - var ob = labs
                                  - for(var prop in ob)
-                                   - var lab = ob[prop].lab
+                                   - var lab = ob[prop].labname
                                    option(value=lab) #{lab}
                         input(name="regfirstname" type="hidden" id="regfirstname" value=firstname)
                         input(name="reglastname" type="hidden" id="reglastname" value=lastname)
