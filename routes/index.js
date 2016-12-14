@@ -697,7 +697,7 @@ module.exports = function(router) {
 													console.log("fullname " + req.session.fullname);
 													console.log("email " + req.session.email);
 													req.session.loggedin = true;
-													if(req.session.to.length > 0){
+													if(req.session.to != null && req.session.to.length > 0){
 														res.redirect(req.session.to);
 														req.session.to = null;
 													} else {
