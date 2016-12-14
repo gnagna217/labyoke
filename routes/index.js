@@ -310,7 +310,7 @@ module.exports = function(router) {
 		labYokedetails.changeDetails(function(error, results) {
 			if(results){
 				console.log("res changeDetails " + results);
-				res.render('account', {ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, title:'Account',loggedIn : true, resultsAccount: results, isLoggedInAdmin: req.session.admin});
+				res.render('account', {labs: req.session.labs, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, title:'Account',loggedIn : true, resultsAccount: results, isLoggedInAdmin: req.session.admin});
 				req.session.messages = null;
 			}
 		});
@@ -352,11 +352,25 @@ module.exports = function(router) {
 
 	router.get('/account', isLoggedIn, function(req, res) {
 		console.log("inside accounnt: " + req.session.email);
-		var labYokeAgents = new LabYokeAgents(req.session.email);
-		labYokeAgents.getLabyoker(function(error, results) {
-			res.render('account', {userDetails: results, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, loggedIn : true, isLoggedInAdmin: req.session.admin, title:'Account'});
-			req.session.messages = null;
-		});
+		console.log("account labs: " + req.session.labs);
+		if(req.session.labs == undefined){
+			var labyokerLabs = new LabyokerLabs('','');
+			labyokerLabs.getlabs(function(error, labs) {
+				req.session.labs = labs;
+				console.log("load labs in account : " + labs);
+				var labYokeAgents = new LabYokeAgents(req.session.email);
+				labYokeAgents.getLabyoker(function(error, results) {
+					res.render('account', {labs: req.session.labs, userDetails: results, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, loggedIn : true, isLoggedInAdmin: req.session.admin, title:'Account'});
+					req.session.messages = null;
+				});
+			});
+		} else {
+			var labYokeAgents = new LabYokeAgents(req.session.email);
+			labYokeAgents.getLabyoker(function(error, results) {
+				res.render('account', {labs: req.session.labs, userDetails: results, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, loggedIn : true, isLoggedInAdmin: req.session.admin, title:'Account'});
+				req.session.messages = null;
+			});
+		}
 	});
 	
 
