@@ -720,7 +720,7 @@ input::-webkit-inner-spin-button {
  @media (min-width: 715px) {
     .searchResults{
     float: left;
-    width: 40%;
+    width: 60%;
     margin-left: 125px;
     }
 }
