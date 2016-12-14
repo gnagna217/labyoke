@@ -424,10 +424,13 @@ module.exports = function(router) {
 		var user_email = req.body.regemail;
 		var user_tel = req.body.regtel;
 
+		const util = require('util');
 		var labs = req.session.labs;
 		for(var i in labs){
        		//var lab = labs[i].lab
-       		console.log("labi is: "+ labs[i]);
+       		console.log("i is: "+ i);
+       		console.log("lab util: " + util.inspect(i, false, null));
+       		
        			//console.log("lab is: "+ lab);
        	}
 
