@@ -290,7 +290,7 @@ position: absolute;
     margin-bottom:25px;
     /*font-weight:bold;*/
 }
-.accountdetailWidth{
+.accountdetailMargin{
     margin-left:100px;
 }
 .inputfile-1:focus + label, .inputfile-1.has-focus + label, .inputfile-1 + label:hover {
@@ -768,6 +768,9 @@ input::-webkit-inner-spin-button {
 }
 .accountdetailWidth{
     width: 100%;
+    
+}
+.accountdetailMargin{
     margin-left: 0px;
 }
 }
