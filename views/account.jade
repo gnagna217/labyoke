@@ -33,6 +33,16 @@ block content
                             - var admin = ob[prop].admin
                             - var adminIntro = ""
                             - var lab = ob[prop].lab
+                            - var ob = labs
+                            - for(var prop in ob)
+                               - var labname = ob[prop].labname
+                               - if(lab == ob[prop].labname)
+                                  - var labadmin = ob[prop].admin
+                                  - adminIntro = "Your Lab Administrator is <a href=\"mailto:'"+labadmin+"'\">" + labadmin + "</a>."
+                               - if(admin == 1)
+                                 - if(email == ob[prop].admin)
+                                    - var labadmin = ob[prop].labname
+                                    - adminIntro = "You are a Lab Administrator for <span class='labColor'>" + labadmin + "</span>."
                             - if(!name)
                                 - name = "..."
                             - if(!email)
@@ -41,8 +51,6 @@ block content
                                 - surname = "..."
                             - if(!tel)
                                 - tel = "..."
-                            - if(admin == 1)
-                                - adminIntro = "You are an administrator."
                             - if(!lab)
                                 - lab = "..."
                             p(class="yokeColor", style="font-weight:bold")!=adminIntro
