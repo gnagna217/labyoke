@@ -426,9 +426,9 @@ module.exports = function(router) {
 
 		var labs = req.session.labs;
 		for(var i in labs){
-       		var lab = labs[i].lab
-       		console.log("labi is: "+ lab[i]);
-       			console.log("lab is: "+ lab);
+       		//var lab = labs[i].lab
+       		console.log("labi is: "+ labs);
+       			//console.log("lab is: "+ lab);
        	}
 
 		if (user && user_name && user_pwd && lab && user_surname && user_email && user_tel) {
