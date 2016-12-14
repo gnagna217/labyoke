@@ -152,6 +152,7 @@ module.exports = function(router) {
 			var labyokerLabs = new LabyokerLabs('','');
 			labyokerLabs.getlabs(function(error, labs) {
 				req.session.labs = labs;
+				console.log("loggin in labs: " + labs);
 				res.render('login', {ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, title: 'Login',isLoggedInAdmin: req.session.admin});
 				req.session.messages = null;
 			});

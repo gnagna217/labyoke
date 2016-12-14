@@ -268,6 +268,8 @@ LabyokerLabs.prototype.getlabs = function(callback) {
 	var lab = this.lab;
 	var adminemail = this.adminemail;
 	var where = "";
+	console.log("get lab " + lab);
+	console.log("get admin " + adminemail);
 	if(adminemail != null && adminemail.length>0){
 		where = " where admin='" + adminemail + "'";
 	}
@@ -280,8 +282,6 @@ LabyokerLabs.prototype.getlabs = function(callback) {
 	});
 	query.on("end", function(result) {
 		results = result.rows;
-		console.log("get lab " + lab);
-		console.log("get admin " + adminemail);
 		console.log("get labs results" + results);
 		callback(null, results);
 	});
