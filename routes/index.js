@@ -396,9 +396,21 @@ module.exports = function(router) {
 
 	router.get('/register', function(req, res) {
 			console.log("register labs: " + req.session.labs);
-			res.render('register', {ordersnum: req.session.orders, labs: req.session.labs, sharesnum: req.session.shares, labyoker : req.session.user, isLoggedInAdmin: req.session.admin, title: 'Register'});
-			req.session.messages = null;
-			req.body.reglab = null;
+			if(req.session.labs == undefined){
+				var labyokerLabs = new LabyokerLabs('','');
+				labyokerLabs.getlabs(function(error, labs) {
+					req.session.labs = labs;
+					console.log("load labs in register : " + labs);
+					res.render('register', {ordersnum: req.session.orders, labs: req.session.labs, sharesnum: req.session.shares, labyoker : req.session.user, isLoggedInAdmin: req.session.admin, title: 'Register'});
+					req.session.messages = null;
+					req.body.reglab = null;
+				});
+			} else {
+				res.render('register', {ordersnum: req.session.orders, labs: req.session.labs, sharesnum: req.session.shares, labyoker : req.session.user, isLoggedInAdmin: req.session.admin, title: 'Register'});
+				req.session.messages = null;
+				req.body.reglab = null;
+			}
+
 	});
 
 	router.get('/reportShares', function(req, res) {
@@ -424,7 +436,7 @@ module.exports = function(router) {
 		var user_email = req.body.regemail;
 		var user_tel = req.body.regtel;
 
-		const util = require('util');
+		/*const util = require('util');
 		var labs = req.session.labs;
 		for(var i in labs){
 			var labrow = util.inspect(labs[i], false, null);
@@ -432,9 +444,8 @@ module.exports = function(router) {
        		console.log("i is: "+ i);
        		console.log("lab util: " + labrow);
        		console.log("labrow lab util: " + labrow.labname);
-       		
-       			//console.log("lab is: "+ lab);
-       	}
+       		//console.log("lab is: "+ lab);
+       	}*/
 
 		if (user && user_name && user_pwd && lab && user_surname && user_email && user_tel) {
 			console.log("second section processing...");
