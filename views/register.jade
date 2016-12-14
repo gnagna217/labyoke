@@ -49,10 +49,8 @@ block content
                     div(style="margin-bottom: 20px;")
                         div(class="textentry")
                             select(name="reglab" type="text" id="reglab" class="form-control" style="border-color:#3d9dcb" placeholder="Lab")
-                                option(value='Sougnou Lab')='Sougnou Lab'
-                                option(value='Sama Lab')='Sama Lab'
-                                option(value='Sene Lab')='Sene Lab'
-                                option(value='MGHbLab')='MGHbLab'
+                                - for(var prop in labs)
+                                     option(value=#{labs[prop].lab})= #{labs[prop].lab}
                         input(name="regfirstname" type="hidden" id="regfirstname" value=firstname)
                         input(name="reglastname" type="hidden" id="reglastname" value=lastname)
                         input(name="regemail" type="hidden" id="regemail" value=email)

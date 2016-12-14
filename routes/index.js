@@ -149,8 +149,12 @@ module.exports = function(router) {
 		if (req.session.user) {
 			res.redirect('/search');
 		} else {
-			res.render('login', {ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, title: 'Login',isLoggedInAdmin: req.session.admin});
-			req.session.messages = null;
+			var labyokerLabs = new LabyokerLabs('','');
+			labyokerLabs.getlabs(function(error, labs) {
+				req.session.labs = labs;
+				res.render('login', {ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, title: 'Login',isLoggedInAdmin: req.session.admin});
+				req.session.messages = null;
+			});
 
 		}
 	});
@@ -390,9 +394,9 @@ module.exports = function(router) {
 	});
 
 	router.get('/register', function(req, res) {
-		res.render('register', {ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, isLoggedInAdmin: req.session.admin, title: 'Register'});
-		req.session.messages = null;
-		req.body.reglab = null;
+			res.render('register', {ordersnum: req.session.orders, labs:req.session.labs, sharesnum: req.session.shares, labyoker : req.session.user, isLoggedInAdmin: req.session.admin, title: 'Register'});
+			req.session.messages = null;
+			req.body.reglab = null;
 	});
 
 	router.get('/reportShares', function(req, res) {
@@ -409,7 +413,7 @@ module.exports = function(router) {
 
 	router.post('/register', function(req, res) {
 		var rendered = false;
-		var lab = req.body.reglab;
+		var lab = req.body.	;
 		var user = req.body.reguser;
 		var user_pwd = req.body.regpass;
 

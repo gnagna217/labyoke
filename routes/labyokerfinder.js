@@ -21,6 +21,11 @@ LabYokeAgents = function(email) {
 	this.email = email;
 };
 
+LabyokerLabs = function(lab,adminemail) {
+	this.adminemail = adminemail;
+	this.lab = lab;
+};
+
 LabYokerChangeShare = function(table, agent, vendor,catalognumber,email,requestor,checked,datenow,date) {
 	this.agent = agent;
 	this.vendor = vendor;
@@ -254,6 +259,30 @@ LabYokeAgents.prototype.getLabyoker = function(callback) {
 	query.on("end", function(result) {
 		results = result.rows;
 		console.log("get user details " + results);
+		callback(null, results);
+	});
+};
+
+LabyokerLabs.prototype.getlabs = function(callback) {
+	var results;
+	var lab = this.lab;
+	var adminemail = this.adminemail;
+	var where = "";
+	if(adminemail != null && adminemail.length>0){
+		where = " where admin='" + adminemail + "'";
+	}
+	if(lab != null && lab.length>0){
+		where = " where lab='" + lab + "'";
+	}
+	var query = client.query("SELECT * FROM labs" + where);
+	query.on("row", function(row, result) {
+		result.addRow(row);
+	});
+	query.on("end", function(result) {
+		results = result.rows;
+		console.log("get lab " + lab);
+		console.log("get admin " + adminemail);
+		console.log("get labs results" + results);
 		callback(null, results);
 	});
 };
@@ -1169,3 +1198,4 @@ exports.LabyokerPasswordChange = LabyokerPasswordChange;
 exports.LabYokerChangeShare = LabYokerChangeShare;
 exports.LabyokerConfirm = LabyokerConfirm;
 exports.LabyokerInit = LabyokerInit;
+exports.LabyokerLabs = LabyokerLabs;
