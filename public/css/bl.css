@@ -721,15 +721,15 @@ input::-webkit-inner-spin-button {
     .searchResults{
     float: left;
     width: 40%;
-    margin-left: 50px;
+    margin-left: 58px;
     }
 }
 
  @media (min-width: 991px) {
     .searchResults{
         float: left;
-        width: 60%;
-        margin-left: 50px;
+        width: 65%;
+        margin-left: 58px;
     }
 }
 
