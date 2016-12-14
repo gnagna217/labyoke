@@ -459,11 +459,12 @@ module.exports = function(router) {
 							tel: req.session.tel,
 							title: 'Register',
 							isLoggedInAdmin: req.session.admin,
-							labyoker : req.session.user
+							labyoker : req.session.user,
+							labs: req.session.labs
 						});
 				} else if (done != null && done.length > 0 && done != 'success') {
 					console.log("status = status1");
-					res.render('register', {ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, isLoggedInAdmin: req.session.admin, title: 'Register', message : "Sorry. We could not register you. Please try again below."});
+					res.render('register', {labs: req.session.labs, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, isLoggedInAdmin: req.session.admin, title: 'Register', message : "Sorry. We could not register you. Please try again below."});
 				} else if(done != null && done.length > 0 && done == 'success') {
 					console.log("status = success1");
 					rendered = true;
@@ -477,7 +478,8 @@ module.exports = function(router) {
 							labentered : false,
 							title: 'Register',
 							isLoggedInAdmin: req.session.admin,
-							labyoker : req.session.user
+							labyoker : req.session.user,
+							labs: req.session.labs
 						});
 				} else {
 					res.render(
@@ -488,7 +490,8 @@ module.exports = function(router) {
 							message : "Sorry. You cannot proceed. Please try again below.",
 							title: 'Register',
 							isLoggedInAdmin: req.session.admin,
-							labyoker : req.session.user
+							labyoker : req.session.user,
+							labs: req.session.labs
 						});
 				}
 			});
@@ -505,7 +508,7 @@ module.exports = function(router) {
 					if(done != null && done.length > 0 && done == 'alreadyInUse') {
 						console.log("status = alreadyInUse");
 						rendered = true;
-						res.render('register', {ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, isLoggedInAdmin: req.session.admin, title: 'Register', message : "Sorry. This email address is already in use. Please use a different one and try again below."});
+						res.render('register', {labs: req.session.labs, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, isLoggedInAdmin: req.session.admin, title: 'Register', message : "Sorry. This email address is already in use. Please use a different one and try again below."});
 					} else if(done != null && done.length > 0 && done == 'firstsection') {
 						console.log("status = firstsection");
 						rendered = true;
@@ -521,12 +524,13 @@ module.exports = function(router) {
 								tel: req.session.tel,
 								title: 'Register',
 								isLoggedInAdmin: req.session.admin,
-								labyoker : req.session.user
+								labyoker : req.session.user,
+								labs: req.session.labs
 							});
 					} else if(done != null && done.length > 0 && done != 'success') {
 						console.log("status = not successful");
 						rendered = true;
-						res.render('register', {ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, isLoggedInAdmin: req.session.admin, title: 'Register', message : "Sorry. We could not register you. Please try again below."});
+						res.render('register', {labs: req.session.labs, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, isLoggedInAdmin: req.session.admin, title: 'Register', message : "Sorry. We could not register you. Please try again below."});
 					} else if(done != null && done.length > 0 && done == 'success') {
 						console.log("status = success");
 						rendered = true;
@@ -539,7 +543,8 @@ module.exports = function(router) {
 								labentered: false,
 								title: 'Register',
 								isLoggedInAdmin: req.session.admin,
-								labyoker : req.session.user
+								labyoker : req.session.user,
+								labs: req.session.labs
 							});
 					} else {
 						console.log("status = something else happened");
@@ -552,12 +557,13 @@ module.exports = function(router) {
 								message : "Sorry. You cannot proceed. Please try again below.",
 								title: 'Register',
 								isLoggedInAdmin: req.session.admin,
-								labyoker : req.session.user
+								labyoker : req.session.user,
+								labs: req.session.labs,
 							});
 					}
 					if(!rendered){
 						console.log("nothing entered");
-						res.render('register', {ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, isLoggedInAdmin: req.session.admin, message : "Sorry. We could not register you. Please fill out all fields below.", title: 'Register'});
+						res.render('register', {labs: req.session.labs, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, isLoggedInAdmin: req.session.admin, message : "Sorry. We could not register you. Please fill out all fields below.", title: 'Register'});
 					}
 				});
 			} else {
@@ -569,7 +575,8 @@ module.exports = function(router) {
 					message : "Sorry. You cannot proceed. Please try again below.",
 					title: 'Register',
 					isLoggedInAdmin: req.session.admin,
-					labyoker : req.session.user
+					labyoker : req.session.user,
+					labs: req.session.labs
 				});
 			}
 	});
