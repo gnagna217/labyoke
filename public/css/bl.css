@@ -286,7 +286,10 @@ position: absolute;
 .labColor{
     color: #3d9dcb;
 }
-
+.accountdetail{
+    margin-bottom:25px;
+    font-weight:bold;
+}
 .inputfile-1:focus + label, .inputfile-1.has-focus + label, .inputfile-1 + label:hover {
     background-color: #8a6d3b !important;
 }
@@ -757,6 +760,8 @@ input::-webkit-inner-spin-button {
 .accountdetail{
     float: left; 
     width: 20%;
+    margin-bottom:15px;
+    font-weight:bold;
 }
 .accountdetailWidth{
     width: 100%;
