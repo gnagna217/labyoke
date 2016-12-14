@@ -431,7 +431,7 @@ module.exports = function(router) {
        		//var lab = labs[i].lab
        		console.log("i is: "+ i);
        		console.log("lab util: " + labrow);
-       		console.log("labrow lab util: " + labrow.lab);
+       		console.log("labrow lab util: " + labrow.labname);
        		
        			//console.log("lab is: "+ lab);
        	}
