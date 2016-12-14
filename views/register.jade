@@ -6,6 +6,11 @@ block content
   div(class="container login front")
      a(href="/search" class=labentered)
         img(src="/images/yoke4.png", alt="The Yoke",  title="Yoke", class="yokelogo")
+     - for(var i in labs)
+       - var lab = labs[i].lab
+       span(class=lab) #{lab}
+       p labs
+       p!= labs
        div
         if !labentered && !regsuccess && !confirmReset
             h1= 'Sign Up.'
