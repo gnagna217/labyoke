@@ -429,7 +429,7 @@ module.exports = function(router) {
 		for(var i in labs){
        		//var lab = labs[i].lab
        		console.log("i is: "+ i);
-       		console.log("lab util: " + util.inspect(i, false, null));
+       		console.log("lab util: " + util.inspect(labs[i], false, null));
        		
        			//console.log("lab is: "+ lab);
        	}
