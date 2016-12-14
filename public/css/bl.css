@@ -882,6 +882,19 @@ input::-webkit-inner-spin-button {
 
 @media (max-width: 767px){
 
+#checkname{
+    margin-left: 200px;
+    float:none;
+}
+
+#checksurname{
+    margin-left: 200px;
+    float:none;
+}
+#checktel{
+    margin-left: 200px;
+    float:none;
+}
 .desktabonly2{
     display: initial;
 }
