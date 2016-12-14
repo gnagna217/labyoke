@@ -52,7 +52,7 @@ block content
                              - var ob = labs
                              - for(var prop in ob)
                                - var lab = ob[prop].lab
-                               option(value=#{lab})!= lab
+                               option(value=lab)!= #{lab}
                         input(name="regfirstname" type="hidden" id="regfirstname" value=firstname)
                         input(name="reglastname" type="hidden" id="reglastname" value=lastname)
                         input(name="regemail" type="hidden" id="regemail" value=email)
