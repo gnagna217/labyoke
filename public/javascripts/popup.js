@@ -28,7 +28,6 @@ $('.cancel').click(function() {
   var shade = document.getElementById("shade");
   shade.style.display = "block";
 
-
   actionorder.onclick = function(){
   var parenttr = cancel.closest('tr');
   var currentbackgroundColor = parenttr.css('backgroundColor');
