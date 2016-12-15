@@ -392,8 +392,8 @@ margin-right: 15px !important;
 
 .navbar-fixed-top{
     position:static !important;
-    width: 98%;
 }
+
 
 .yokelogo{
     border:none;
@@ -836,6 +836,9 @@ input::-webkit-inner-spin-button {
 
 
  @media (max-width: 440px) {
+.adjustnav{
+    width: 98%;
+}
     .help{
     z-index: 9;
     width: 100px;
