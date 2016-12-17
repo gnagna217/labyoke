@@ -81,4 +81,7 @@ block content
                             span=" or "
                             a(href="/share")="sharing"
                             span=" your own chemicals."        
-
+    script.
+      $(document).ready(function(){
+        $('#changetel input[id="valuedetail"]').mask("(999) 999-9999");
+      }); 
