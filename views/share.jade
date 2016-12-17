@@ -30,7 +30,9 @@ block content
 					- if(mysharesrequest.length == 0)
 						- totalrequestIntro = "No request"
 					span(class="labColor")!= totalrequestIntro 
-					span=" registered for your lab."
+					span=" registered for your lab. "
+					span(class="yokeColor")!= "Cancelled orders "
+					span="are highlighted." 
 				div(id="results")
 					div(id="ctl00_Div2" class="row rank")
 						div(class="table-responsive")               
