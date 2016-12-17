@@ -30,7 +30,7 @@ block content
 					div(class="alert alert-danger")!= message_fail_share
 				if (addMessageMoney == 'success')
 					div(class="alert alert-success fade in alert-dismissable")!= message_success_money
-				div(style="max-width:100%")
+				div
 					form(action="reportMoney", method="post")
 						div(class="buttons")
 							label(style="width: 100px;")="Date From"
@@ -47,9 +47,9 @@ block content
 									- for(var prop in ob)
 										- var lab = ob[prop].labname
 										option(value=lab) #{lab}
-							div
-								button.btn.btn-success.btn-lg.btn-block(type="submit",value="Report",name="submit") Get Savings
-								img(src="images/ship.png", alt="The Lab", title="Lab", style="border-width:0px; width: 50px; margin-top: -50px; margin-left: 300px;")
+							div(style="max-width:100%")
+								button.btn.btn-success.btn-lg.btn-block(type="submit",value="Report",name="submit", style="max-width: 75%;") Get Savings
+								img(src="images/ship.png", alt="The Lab", title="Lab", style="border-width:0px; width: 50px; margin-top: -50px; margin-left: 40px; float:right")
 						if(resultsMoney != null && resultsMoney !="")
 							script(type="text/javascript" src="/javascripts/jspdf.js")
 							script(type="text/javascript" src="/javascripts/FileSaver.js")
@@ -156,8 +156,8 @@ block content
 										- var lab = ob[prop].labname
 										option(value=lab) #{lab}
 							div(style="max-width:100%")
-								button.btn.btn-success.btn-lg.btn-block(type="submit",value="Report",name="submit") Get Orders
-								img(src="images/ship.png", alt="The Lab", title="Lab", style="border-width:0px; width: 50px; margin-top: -50px; margin-left: 300px;")
+								button.btn.btn-success.btn-lg.btn-block(type="submit",value="Report",name="submit", style="max-width: 75%;") Get Orders
+								img(src="images/ship.png", alt="The Lab", title="Lab", style="border-width:0px; width: 50px; margin-top: -50px; margin-left: 40px; float:right")
 						span(id="triggerSafariOrder")
 						if(resultsOrders != null && resultsOrders !="")
 							script(type="text/javascript" src="/javascripts/jspdf.js")
@@ -282,8 +282,8 @@ block content
 										- var lab = ob[prop].labname
 										option(value=lab) #{lab}
 							div(style="max-width:100%")
-								button.btn.btn-success.btn-lg.btn-block(type="submit",value="Report",name="submit") Get Shares
-								img(src="images/ship.png", alt="The Lab", title="Lab", style="border-width:0px; width: 50px; margin-top: -50px; margin-left: 300px;")
+								button.btn.btn-success.btn-lg.btn-block(type="submit",value="Report",name="submit", style="max-width: 75%;") Get Shares
+								img(src="images/ship.png", alt="The Lab", title="Lab", style="border-width:0px; width: 50px; margin-top: -50px; margin-left: 40px;float:right")
 						if(resultsShares != null && resultsShares !="")
 							script(type="text/javascript" src="/javascripts/jspdf.js")
 							script(type="text/javascript" src="/javascripts/FileSaver.js")
