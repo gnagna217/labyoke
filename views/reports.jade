@@ -38,6 +38,12 @@ block content
 							br
 							label(style="width: 100px;")="Date To"
 							input(name="reportDateTo" style="margin-bottom:10px" type="text" id="reportDateTo" class="form-control")
+							br
+							label(style="width: 100px;")="Agent Category"
+							input(name="reportAgentCat" style="margin-bottom:10px" type="text" id="reportAgentCat" class="form-control")
+							br
+							label(style="width: 100px;")="Lab"
+							input(name="reportLab" style="margin-bottom:10px" type="text" id="reportLab" class="form-control")
 							button.btn.btn-success.btn-lg.btn-block(type="submit",value="Report",name="submit") Get Shares
 							img(src="images/ship.png", alt="The Lab", title="Lab", style="border-width:0px; width: 50px; margin-top: -50px; margin-left: 300px;")
 						if(resultsShares != null && resultsShares !="")
@@ -162,6 +168,12 @@ block content
 							br
 							label(style="width: 100px;")="Date To"
 							input(name="reportDateToOrders" style="margin-bottom:10px" type="text" id="reportDateToOrders" class="form-control")
+							br
+							label(style="width: 100px;")="Agent Category"
+							input(name="reportAgentCatOrders" style="margin-bottom:10px" type="text" id="reportAgentCatOrders" class="form-control")
+							br
+							label(style="width: 100px;")="Lab"
+							input(name="reportLabOrders" style="margin-bottom:10px" type="text" id="reportLabOrders" class="form-control")
 							button.btn.btn-success.btn-lg.btn-block(type="submit",value="Report",name="submit") Get Orders
 							img(src="images/ship.png", alt="The Lab", title="Lab", style="border-width:0px; width: 50px; margin-top: -50px; margin-left: 300px;")
 						span(id="triggerSafariOrder")
