@@ -89,3 +89,7 @@ block content
                               div(style="margin-bottom:25px;", class="accountdetail accountdetailRowMargin") #{lab}
         div
           p(class="yokeColor", style="font-weight:bold")!=adminIntro
+        script.
+          $(document).ready(function(){
+            $('#changetel input[id="valuedetail"]').mask("(999) 999-9999");
+          }); 
