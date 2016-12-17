@@ -277,14 +277,20 @@ position: absolute;
     font-weight: bold;
 }
 
+.reportMoney{
+    width: 31%;
+    float:left;
+    margin-right:20px
+}
+
 .reportOrders{
-    width: 45%;
-    float:right;
-    margin-right:10px
+    width: 31%;
+    float:left;
+    margin-right:20px
 }
 .reportShares{
     float: left; 
-    width: 45%;
+    width: 31%;
 }
 .labColor{
     color: #3d9dcb;
@@ -767,6 +773,10 @@ input::-webkit-inner-spin-button {
     margin-right:0px
 }
 .reportShares{
+    float: none; 
+    width: 100%;
+}
+.reportMoney{
     float: none; 
     width: 100%;
 }
