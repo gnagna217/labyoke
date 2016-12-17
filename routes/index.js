@@ -285,9 +285,9 @@ module.exports = function(router) {
 			if(results != null){
 				console.log("res " + results);
 				if(results != ""){
-					res.render('reports', {ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, datefromShares: datefrom, dateto: dateto, title:'Reports',loggedIn : true, resultsShares: results, isLoggedInAdmin: req.session.admin, addMessageShares: "success"});
+					res.render('reports', {ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, datefromShares: datefrom, datetoShares: dateto, title:'Reports',loggedIn : true, resultsShares: results, isLoggedInAdmin: req.session.admin, addMessageShares: "success"});
 				} else {
-					res.render('reports', {ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, datefromShares: datefrom, dateto: dateto, title:'Reports',loggedIn : true, isLoggedInAdmin: req.session.admin, addMessageShares: "failure"});
+					res.render('reports', {ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, datefromShares: datefrom, datetoShares: dateto, title:'Reports',loggedIn : true, isLoggedInAdmin: req.session.admin, addMessageShares: "failure"});
 				}
 				req.session.messages = null;
 			}
