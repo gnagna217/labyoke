@@ -41,6 +41,13 @@ block content
 							br
 							label(style="width: 100px;")="Lab"
 							input(name="reportLab" style="margin-bottom:10px" type="text" id="reportLab" class="form-control")
+							select(name="reportLab" type="text" id="reportLab" class="form-control" style="border-color:#3d9dcb;margin-bottom:10px" placeholder="Lab")
+									option(value="none")="none"
+                             if(labs != undefined)
+                                 - var ob = labs
+                                 - for(var prop in ob)
+                                   - var lab = ob[prop].labname
+                                   	option(value=lab) #{lab}
 							button.btn.btn-success.btn-lg.btn-block(type="submit",value="Report",name="submit") Get Shares
 							img(src="images/ship.png", alt="The Lab", title="Lab", style="border-width:0px; width: 50px; margin-top: -50px; margin-left: 300px;")
 						if(resultsShares != null && resultsShares !="")
