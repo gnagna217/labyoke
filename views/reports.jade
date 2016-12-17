@@ -3,7 +3,7 @@ extends layout
 block content
 	div(class="container login")
 			a(href="/search")
-				img(src="/images/yoke13.png", alt="The Yoke",  title="Yoke", class="yokelogo")
+				img(src="/images/yoke4.png", alt="The Yoke",  title="Yoke", class="yokelogo")
 			h1= 'Reports.'
 			p Here are the reports that an administrator can generate and build a portfolio with. Please note that reports can only be generated using 
 				span
@@ -251,4 +251,10 @@ block content
 								}
 								, margins);						
 							- resultsOrders = ""
-							script="$(window).scrollTop($('.reportOrders').offset().top).scrollLeft($('.reportOrders').offset().left);"	
+							script="$(window).scrollTop($('.reportOrders').offset().top).scrollLeft($('.reportOrders').offset().left);"
+				.script
+					$(document).ready(function(){
+						//$.mask.definitions['~']='[+-]';
+						//$("#eyescript").mask("~9.99 ~9.99 999");
+						$("#reportDateFrom").mask("99/99/9999");
+					});			
