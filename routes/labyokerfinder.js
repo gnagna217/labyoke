@@ -161,7 +161,7 @@ LabYokeReporterSavings.prototype.reportMoney = function(callback) {
 	var groupby = "a.category, b.lab";
 	var params = "";
 	var columns ="<td>Category</td><td>Lab</td>";
-	var html = "<div style='text-align:center; width:50%'><img style='width: 150px; margin: 0 20px;' src='https:\/\/team-labyoke.herokuapp.com\/images\/yoke4.png', alt='The Yoke',  title='Yoke', class='yokelogo'/><span style='font-weight:bold;font-size:48pt'>Savings.</span></div><div style=\"font-family:'calibri'; font-size:11pt;padding: 20px; width:50%;float:left\">"
+	var html = "<div style='text-align:center; width:50%'><img style='width: 150px; margin: 0 20px;' src='https:\/\/team-labyoke.herokuapp.com\/images\/yoke4.png', alt='The Yoke',  title='Yoke', class='yokelogo'/><span style='font-weight:bold;font-size:36pt;margin-bottom:20px;'>Savings.</span></div><div style=\"font-family:'calibri'; font-size:11pt;padding: 20px; width:50%;float:left\">"
 				+ "";
 	console.log("report on savings- datefrom: " + datefrom);
 	console.log("report on savings- dateto: " + dateto);
