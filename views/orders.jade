@@ -65,7 +65,11 @@ block content
           script(type="text/javascript" src="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.js")
           div(style="background-color: #3d9dcb; height: 2px; margin-bottom: 30px; margin-top: 30px;")
           h4="A comparison between your lab's orders and shares."
-          p="This graph depicts the current trend of your lab's total number of orders and total number of shares per Reagent Category:"
+          p="This graph depicts the current trend of your lab's "
+            span(class="yokeColor")="total number of orders "
+            span="and "
+            span(class="labColor")="total number of shares "
+            span="per Reagent Category:"
           - if(report_sharesbycategory != null && report_sharesbycategory.length >0)
              div(class="ct-chart ct-perfect-fourth")
              div(id="tooltips", class="labColor") &nbsp;
