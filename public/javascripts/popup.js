@@ -183,7 +183,7 @@ function iosLight(agent,vendor,catalognumber,reqemail,location,category,qty,lab)
   categoryform.value = category;
   qtyform.value = qty;
   labform.value = lab;
-  orderText.innerHTML = "You are about to order 100 units of <br/>Agent: " + agent + "<br/>Vendor: "+vendor+"<br/>Catalog#: "+catalognumber;
+  orderText.innerHTML = "You are about to order <br/>Agent: " + agent + "<br/>Vendor: "+vendor+"<br/>Catalog#: "+catalognumber;
   var pop = document.getElementById("ios-light");
   pop.style.display = "block";
   var shade = document.getElementById("shade");

@@ -188,7 +188,7 @@ module.exports = function(router) {
 
 	router.get('/orders', isLoggedIn, function(req, res) {
 		if (req.session.user) {
-			var labYokerGetOrder = new LabYokerGetOrder(req.session.email);
+			var labYokerGetOrder = new LabYokerGetOrder(req.session.email, req.session.lab);
 			labYokerGetOrder.getorders(function(error, results) {
 				labYokerGetOrder.getLabOrders_2(function(error, results2) {
 				if(results != null){
@@ -198,7 +198,7 @@ module.exports = function(router) {
 					console.log("lab orders results0: " + results2);	
 					//console.log("lab orders results1: " + results2[1]);				
 					//res.render('orders', {test: results[3], laborders: results2[0],lab1orders: results2[1], ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, isLoggedInAdmin: req.session.admin, title:'Orders', loggedIn : true, orderresults: results[0], report_sharesbycategory: results[1]});
-					res.render('orders', {test: results[3], laborders: results2, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, isLoggedInAdmin: req.session.admin, title:'Orders', loggedIn : true, orderresults: results[0], report_sharesbycategory: results[1]});
+					res.render('orders', {test: results[3], laborders: results2, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, isLoggedInAdmin: req.session.admin, title:'Orders', loggedIn : true, orderresults: results[0], report_sharesbycategory: results[1], report_ordersbycategory: results[4]});
 				}
 			});
 				});
@@ -763,6 +763,7 @@ module.exports = function(router) {
 													req.session.admin = done[0].admin;
 													req.session.active = done[0].active;
 													req.session.email = done[0].email;
+													req.session.lab = done[0].lab;
 													req.session.fullname = done[0].name;
 													console.log("fullname " + req.session.fullname);
 													console.log("email " + req.session.email);

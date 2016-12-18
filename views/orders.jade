@@ -94,11 +94,19 @@ block content
           - var array_values = ""
           - var array_rows2 = []
           - var array_values2 = ""
+          - var array_rows3 = []
+          - var array_values3 = ""
 
           -var ob = report_sharesbycategory
           -for(var prop in ob)
             - array_rows = array_rows + ob[prop].category + "|"
             - array_values = array_values + ob[prop].count + "|"
+
+          -var ob3 = report_ordersbycategory
+          -for(var prop in ob3)
+            - array_rows3 = array_rows3 + ob3[prop].category + "|"
+            - array_values3 = array_values3 + ob3[prop].count + "|"
+
           -var ob2 = filteroutput
           -for(var prop in ob2)
             - array_rows2 = array_rows2 + ob2[prop].category + "|"
@@ -182,11 +190,26 @@ block content
             for(var prop in rows){
               rowTransform.push(rows[prop]);
             }
+            var valuesorders = "#{array_values3}";
+            valuesorders = valuesorders.split("|");
+            var valTransformOrders = [];
+            for(var prop in valuesorders){
+              valTransformOrders.push(valuesorders[prop]);
+            }
+            var rowsOrders = "#{array_rows3}";
+            rowsOrders = rowsOrders.split("|");
+            var rowTransformOrders = [];
+            for(var prop in rowsOrders){
+              rowTransformOrders.push(rowsOrders[prop]);
+            }
+            console.log("chart orders and shares valTransformOrders: " + valTransformOrders);
+            console.log("chart orders and shares rowTransformOrders: " + rowTransformOrders);
+
             console.log("more rowTransform trans: " + rowTransform)
             var data = {
               labels: rowTransform,
               series: [
-                valTransform
+                valTransform, valTransformOrders
               ]
             };
             var values2 = "#{array_values2}";

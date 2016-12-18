@@ -99,8 +99,9 @@ LabYokerOrder = function(lab,agent,vendor,catalognumber,email,location,sendemail
 	this.quantity = quantity;
 };
 
-LabYokerGetOrder = function(sendemail) {
+LabYokerGetOrder = function(sendemail,lab) {
 	this.sendemail = sendemail;
+	this.lab = lab;
 };
 
 LabyokerRegister = function(user, password,lab,firstname,lastname,email,tel) {
@@ -133,8 +134,9 @@ LabYokeUploader.prototype.upload = function(callback) {
 			var location = results[prop].location;
 			var email = results[prop].user;
 			var category = results[prop].category;
+			var price = results[prop].price;
 			values = values + "('" + agent
-		+ "', '" + vendor + "', '" + catalognumber + "', '" + location + "', '" + email + "','" + now + "','" + category + "','new')";
+		+ "', '" + vendor + "', '" + catalognumber + "', '" + location + "', '" + email + "','" + now + "','" + category + "','new',0,1,''," + price + ")";
 			if(prop < (results.length-1)){
 				values = values + ",";
 			}
@@ -415,12 +417,12 @@ LabYokeReporterShares.prototype.reportShares = function(callback) {
 		console.log("results : " + results);
 		var html = "";
 		if(results != null && results != ""){
-		html = "<div><span style='font-weight:bold;font-size:36pt;margin-bottom:20px;float:left'>Shares.</span></div><div style=\"font-family:'calibri'; font-size:11pt;padding: 20px; width:50%;float:left\">";
+		html = "<div><span style='font-weight:bold;font-size:36pt;margin-bottom:20px;float:left'>Inventory.</span></div><div style=\"font-family:'calibri'; font-size:11pt;padding: 20px; width:50%;float:left\">";
 
 		if(datefrom == 'all'){
-			html += "<p>This report is listing all the shares uploaded:</p></div>"
+			html += "<p>This report is listing all the inventory uploaded:</p></div>"
 		} else {
-			html += "<p>This report is listing the shares uploaded between " + moment(datefrom).add(1, 'day').tz("America/New_York").format('MM-DD-YYYY') + " and " + moment(dateto).add(1, 'day').tz("America/New_York").format('MM-DD-YYYY') + "</p></div>"
+			html += "<p>This report is listing the inventory uploaded between " + moment(datefrom).add(1, 'day').tz("America/New_York").format('MM-DD-YYYY') + " and " + moment(dateto).add(1, 'day').tz("America/New_York").format('MM-DD-YYYY') + "</p></div>"
 		}
 		html += params;
 		html +="<table><tbody><tr style='color: white;background-color: #3d9dcb;'><td style='font-size: 12px;'>Reagent</td><td style='font-size: 12px;'>Lab</td><td style='font-size: 12px;'>Vendor</td><td style='font-size: 12px;'>Catalog#</td><td style='font-size: 12px;'>Location</td><td style='font-size: 12px;'>User</td><td style='font-size: 12px;'>Category</td><td>Date</td></tr>"
@@ -783,6 +785,7 @@ LabYokerGetOrder.prototype.getLabOrders_2 = function(callback) {
 LabYokerGetOrder.prototype.getorders = function(callback) {
 	var results = [];
 	var email = this.sendemail;
+	var lab = this.lab;
 	console.log("getorders: " + email);
 	var query = client
 			.query("SELECT * FROM vm2016_orders where requestoremail = '"
@@ -792,7 +795,8 @@ LabYokerGetOrder.prototype.getorders = function(callback) {
 	});
 	query.on("end", function(result) {
 		results.push(result.rows);
-		var query2 = client.query("SELECT b.category, count(b.category) FROM vm2016_orders a, vm2016_agentsshare b where a.agent = b.agent group by b.category");
+		var query2 = client.query("SELECT b.category, count(b.category) FROM vm2016_orders a, vm2016_agentsshare b where a.agent = b.agent and a.lab='"+lab+"' group by b.category");
+		//("SELECT b.category, count(b.category) FROM vm2016_orders a, vm2016_agentsshare b where a.agent = b.agent and a.lab='"+lab+"' group by b.category");
 		query2.on("row", function(row, result2) {
 			result2.addRow(row);
 		});
@@ -819,7 +823,15 @@ LabYokerGetOrder.prototype.getorders = function(callback) {
 			results.push(test3[0].counting);
 			results.push(result4.rows);
 			console.log("shares found: " + test3[0].counting)
+
+			var query5 = client.query("SELECT a.category, count(a.category) FROM vm2016_orders a where a.lab='"+lab+"' group by a.category");
+		query5.on("row", function(row, result5) {
+			result5.addRow(row);
+		});
+		query5.on("end", function(result5) {
+			results.push(result5.rows);
 			callback(null, results)
+			});
 
 		});
 
