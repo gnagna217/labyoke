@@ -178,12 +178,20 @@ a {
   stroke: #3d9dcb !important;
 }
 
+.ct-series-b .ct-line {
+  stroke: #8a6d3b  !important;
+}
+
 .ct-series-a .ct-bar {
   stroke: #8a6d3b !important;
 }
 
 .ct-series-a .ct-point {
   stroke: #8a6d3b !important;
+}
+
+.ct-series-b .ct-point {
+  stroke: #3d9dcb !important;
 }
 
 .ct-perfect-fourth:before {
