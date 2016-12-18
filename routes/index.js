@@ -479,6 +479,10 @@ module.exports = function(router) {
 		res.redirect('/reports');
 	});
 
+	router.get('/reportMoney', function(req, res) {
+		res.redirect('/reports');
+	});
+
 	router.get('/reportOrders', function(req, res) {
 		res.redirect('/reports');
 	});
