@@ -169,15 +169,15 @@ LabYokeReporterSavings.prototype.reportMoney = function(callback) {
 	if(datefrom != null && dateto != null && datefrom !=undefined && dateto !=undefined && datefrom !="" && dateto !=""){
 		if(selected.length>0)
 			selected +=", ";
-		selected += "b.datefrom,b.dateto";
+		selected += "b.date";
 		if(where.length>0)
 			where +=" and ";
 		where += "date between '" + datefrom + "' and '" + dateto + "'";
 		if(groupby.length>0)
 			groupby +=" , ";
-		groupby += "b.datefrom, b.dateto";
+		groupby += "b.date";
 		html += "<p>This report is listing savings between " + moment(datefrom).add(1, 'day').tz("America/New_York").format('YYYY-MM-DD') + " and " + moment(dateto).add(1, 'day').tz("America/New_York").format('YYYY-MM-DD') + "</p></div>"
-
+		columns+="<td>Date</td>";
 	} else {
 		datefrom = "all";
 		html += "<p>This report is listing all savings:</p></div>"
@@ -241,11 +241,14 @@ LabYokeReporterSavings.prototype.reportMoney = function(callback) {
 				if(agent != null && agent !=undefined && agent !=""){
 				html += " <td style='font-size: 12px;'>" + results[prop].agent + "</td>";
 				}
-				if(agent != null && vendor !=undefined && vendor !=""){
+				if(vendor != null && vendor !=undefined && vendor !=""){
 				html += " <td style='font-size: 12px;'>" + results[prop].vendor + "</td>";
 				}
-				if(agent != null && catalognumber !=undefined && catalognumber !=""){
+				if(catalognumber != null && catalognumber !=undefined && catalognumber !=""){
 				html += " <td style='font-size: 12px;'>" + results[prop].catalognumber + "</td>";
+				}
+				if(datefrom != null && datefrom !=undefined && datefrom !="" && datefrom != null && datefrom !=undefined && datefrom !="" ){
+				html += " <td style='font-size: 12px;'>" + results[prop].date + "</td>";
 				}
 				html += " <td style='font-size: 12px;'>" + results[prop].counting + "</td>";
 				html += " </tr>";
