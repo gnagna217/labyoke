@@ -190,7 +190,7 @@ block content
             categories = categories.split("|");
             var catTransform = [];
             for(var prop in categories){
-              catTransform.push(categories[prop]);
+              catTransform.push((categories[prop]).toLowerCase());
             }
 
             var rows = "#{array_rows}";
@@ -229,7 +229,7 @@ block content
               var cat = (catTransform[prop]).toLowerCase();
               var r = rowTransformOrders[prop];
               console.log("order: " + cat + " - "+ r);
-              if(r != undefined && cat.find(r.toLowerCase())){
+              if(r != undefined && catTransform.find(r.toLowerCase())){
               valTransformOrders.push(valuesorders[prop]);
               } else {
               valTransformOrders.push(0);
