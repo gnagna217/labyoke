@@ -266,7 +266,7 @@ LabYokeReporterSavings.prototype.reportMoney = function(callback) {
 				html += " </tr>";
 		
 			}
-			html += "</tbody></table><p><i><b>The LabYoke Team.</b></i></p><img style='margin: 0 20px;text-align:center' src='https:\/\/team-labyoke.herokuapp.com\/images\/yoke4.png', alt='The Yoke',  title='Yoke', class='yokelogo'/>";
+			html += "</tbody></table><p><i><b>The LabYoke Team.</b></i></p><img style='width: 150px; margin: 0 20px;float:left' src='https:\/\/team-labyoke.herokuapp.com\/images\/yoke4.png', alt='The Yoke',  title='Yoke', class='yokelogo'/>";
 			console.log("html money: " + html);
 		}
 		
@@ -295,8 +295,7 @@ LabYokeReporter.prototype.reportShares = function(callback) {
 		console.log("results : " + results);
 		var html = "";
 		if(results != null && results != ""){
-		html = "<div style='text-align:center; width:50%'><img style='width: 150px; margin: 0 20px;' src='https:\/\/team-labyoke.herokuapp.com\/images\/yoke4.png', alt='The Yoke',  title='Yoke', class='yokelogo'/></div><div style=\"font-family:'calibri'; font-size:11pt;padding: 20px; width:50%;float:left\">"
-				+ "<h1>Shares Uploaded.</h1>";
+		html = "<div><span style='font-weight:bold;font-size:36pt;margin-bottom:20px;float:left'>Shares.</span></div><div style=\"font-family:'calibri'; font-size:11pt;padding: 20px; width:50%;float:left\">";
 
 		if(datefrom == 'all'){
 			html += "<p>This report is listing all the shares uploaded:</p></div>"
@@ -323,7 +322,7 @@ LabYokeReporter.prototype.reportShares = function(callback) {
 				html += " <td style='font-size: 12px;'>" + moment(date).add(1, 'day').tz("America/New_York").format('MM-DD-YYYY') + "</td></tr>";
 		
 			}
-			html += "</tbody></table><p><i><b>The LabYoke Team.</b></i></p>";
+			html += "</tbody></table><p><i><b>The LabYoke Team.</b></i></p><img style='width: 150px; margin: 0 20px;float:left' src='https:\/\/team-labyoke.herokuapp.com\/images\/yoke4.png', alt='The Yoke',  title='Yoke', class='yokelogo'/>";
 		}
 		
 		callback(null, html)
@@ -351,8 +350,7 @@ LabYokeReporter.prototype.reportOrders = function(callback) {
 		console.log("results : " + results);
 		var html = "";
 		if(results != null && results != ""){
-		html = "<div style='text-align:center; width:50%'><img style='width: 150px; margin: 0 20px;' src='https:\/\/team-labyoke.herokuapp.com\/images\/yoke4.png', alt='The Yoke',  title='Yoke', class='yokelogo'/></div><div style=\"font-family:'calibri'; font-size:11pt;padding: 20px; width:50%;float:left\">"
-				+ "<h1>Orders Requested.</h1>";
+		html = "<div><span style='font-weight:bold;font-size:36pt;margin-bottom:20px;float:left'>Orders.</span></div><div style=\"font-family:'calibri'; font-size:11pt;padding: 20px; width:50%;float:left\">";
 		if(datefrom == 'all'){
 			html += "<p>This report is listing all the orders requested:</p></div>"
 		} else {
@@ -377,7 +375,7 @@ LabYokeReporter.prototype.reportOrders = function(callback) {
 				html += " <td style='font-size: 12px;'>" + moment(date).add(1, 'day').tz("America/New_York").format('MM-DD-YYYY') + "</td></tr>";
 		
 			}
-			html += "</tbody></table><p><i><b>The LabYoke Team.</b></i></p>";
+			html += "</tbody></table><p><i><b>The LabYoke Team.</b></i></p><img style='width: 150px; margin: 0 20px;float:left' src='https:\/\/team-labyoke.herokuapp.com\/images\/yoke4.png', alt='The Yoke',  title='Yoke', class='yokelogo'/>";
 		}
 		
 		callback(null, html)
