@@ -183,7 +183,7 @@ LabYokeReporterSavings.prototype.reportMoney = function(callback) {
 		html += "<p>This report is listing all savings:</p></div>"
 	}
 
-	if(lab != null && lab !=undefined && lab !=""){
+	if(lab != null && lab !=undefined && lab !="all"){
 		if(where.length>0)
 			where +=" and ";
 		where += "b.lab = '" + lab + "'";
