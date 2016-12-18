@@ -147,8 +147,15 @@ block content
 							label(style="width: 100px;")="Date To"
 							input(name="reportDateToOrders" style="margin-bottom:10px" type="text" id="reportDateToOrders" class="form-control")
 							
-							label(style="width: 150px;")="Agent Category"
-							input(name="reportAgentCatOrders" style="margin-bottom:10px" type="text" id="reportAgentCatOrders" class="form-control")
+							label(style="width: 100px;")="Agent Category"
+							select(name="reportCategory" type="text" id="reportCategory" class="form-control" style="border-color:#3d9dcb;margin-bottom:10px" 
+							placeholder="Category")
+								option(value="all")="all"
+								if(categories != undefined)
+									- var ob = categories
+									- for(var prop in ob)
+										- var cat = ob[prop].category
+										option(value=cat) #{cat}
 							
 							label(style="width: 100px;")="Lab"
 							select(name="reportLabOrders" type="text" id="reportLabOrders" class="form-control" style="border-color:#3d9dcb;margin-bottom:10px" placeholder="Lab")
@@ -276,14 +283,15 @@ block content
 							label(style="width: 100px;")="Date To"
 							input(name="reportDateTo" style="margin-bottom:10px" type="text" id="reportDateTo" class="form-control")
 							
-							label(style="width: 100px;")="Lab"
-							select(name="reportLab" type="text" id="reportLab" class="form-control" style="border-color:#3d9dcb;margin-bottom:10px" placeholder="Lab")
+							label(style="width: 100px;")="Agent Category"
+							select(name="reportCategory" type="text" id="reportCategory" class="form-control" style="border-color:#3d9dcb;margin-bottom:10px" 
+							placeholder="Category")
 								option(value="all")="all"
-								if(labs != undefined)
-									- var ob = labs
+								if(categories != undefined)
+									- var ob = categories
 									- for(var prop in ob)
-										- var lab = ob[prop].labname
-										option(value=lab) #{lab}
+										- var cat = ob[prop].category
+										option(value=cat) #{cat}
 							div(style="max-width:100%")
 								button.btn.btn-success.btn-lg.btn-block(type="submit",value="Report",name="submit", style="max-width: 80%;width: 80%;") Get Shares
 								img(src="images/ship.png", alt="The Lab", title="Lab", style="border-width:0px; width: 50px; margin-top: -50px;float:right")

@@ -21,6 +21,9 @@ LabYokeAgents = function(email) {
 	this.email = email;
 };
 
+LabyokerCategories = function() {
+};
+
 LabyokerLabs = function(lab,adminemail) {
 	this.adminemail = adminemail;
 	this.lab = lab;
@@ -48,6 +51,13 @@ LabYokeReporter = function(datefrom, dateto, lab) {
 	this.datefrom = datefrom;
 	this.dateto = dateto;
 	this.lab = lab;
+};
+
+LabYokeReporterShares = function(datefrom, dateto, category) {
+	this.datefrom = datefrom;
+	this.dateto = dateto;
+	this.agent = agent;
+	this.category = category;
 };
 
 LabYokeReporterSavings = function(datefrom,dateto,agent,vendor,catalognumber,lab) {
@@ -275,16 +285,16 @@ LabYokeReporterSavings.prototype.reportMoney = function(callback) {
 	});
 };
 
-LabYokeReporter.prototype.reportShares = function(callback) {
+LabYokeReporterShares.prototype.reportShares = function(callback) {
 	var results;
 	var datefrom = this.datefrom;
 	var dateto = this.dateto;
-	var lab = this.lab;
+	var category = this.category;
 	var params = "";
 	var where = "";
 	console.log("report on something: datefrom: " + datefrom);
 	console.log("report on something: dateto: " + dateto);
-	console.log("report on something: lab: " + lab);
+	console.log("report on something: agent: " + agent);
 	var query;
 	if(datefrom != null && dateto != null && datefrom !=undefined && dateto !=undefined && datefrom !="" && dateto !=""){
 		if(params == ""){
@@ -298,19 +308,18 @@ LabYokeReporter.prototype.reportShares = function(callback) {
 	} else {
 		datefrom = "all";
 	}
-	if(lab != null && lab !=undefined && lab !="all"){
+	if(category != null && category !=undefined && category !="all"){
 		if(params == ""){
 			params += "<div style='font-weight:bold'>Parameters</div>";
 		}
-		params += "<div><span style='font-weight:bold'>Lab: </span><span>" + lab + "</span></div>";
+		params += "<div><span style='font-weight:bold'>Category: </span><span>" + category + "</span></div>";
 		if(where == ""){
 			where =" where ";
 		}
 		if(where.trim() != "where")
 			where +=" and ";
-		where += "lab = '" + lab + "'";
+		where += "category = '" + category + "'";
 	} 
-
 	var qryStr = "SELECT * FROM vm2016_agentsshare " + where + " order by date desc";
 	console.log("query report shares: " + qryStr);
 	query = client.query(qryStr);
@@ -360,7 +369,7 @@ LabYokeReporter.prototype.reportShares = function(callback) {
 	});
 };
 
-LabYokeReporter.prototype.reportOrders = function(callback) {
+LabYokeReporterOrders.prototype.reportOrders = function(callback) {
 	var results;
 	var datefrom = this.datefrom;
 	var dateto = this.dateto;
@@ -553,6 +562,21 @@ LabYokeAgents.prototype.reportAllSharesByCategory = function(callback) {
 		callback(null, results)
 	});
 };
+
+LabyokerCategories.prototype.getcategories = function(callback) {
+	var results;
+	var query = client
+			.query("SELECT distinct category FROM vm2016_agentsshare");
+	query.on("row", function(row, result) {
+		result.addRow(row);
+	});
+	query.on("end", function(result) {
+		results = result.rows;
+		callback(null, results)
+	});
+};
+
+
 
 LabYokerOrder.prototype.order = function(callback) {
 	var results;
@@ -1383,7 +1407,7 @@ var analyze = function(matchresults, participantsResults) {
 
 exports.Labyoker = Labyoker;
 exports.LabyokerUserDetails = LabyokerUserDetails;
-exports.LabYokeReporter = LabYokeReporter;
+exports.LabYokeReporterOrders = LabYokeReporterOrders;
 exports.LabYokeAgents = LabYokeAgents;
 exports.LabYokeSearch = LabYokeSearch;
 exports.LabyokerRegister = LabyokerRegister;
@@ -1397,3 +1421,5 @@ exports.LabyokerConfirm = LabyokerConfirm;
 exports.LabyokerInit = LabyokerInit;
 exports.LabyokerLabs = LabyokerLabs;
 exports.LabYokeReporterSavings = LabYokeReporterSavings;
+exports.LabYokeReporterShares = LabYokeReporterShares;
+exports.LabyokerCategories = LabyokerCategories;

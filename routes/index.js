@@ -275,10 +275,14 @@ module.exports = function(router) {
 		if(req.session.labs == undefined){
 			var labyokerLabs = new LabyokerLabs('','');
 			labyokerLabs.getlabs(function(error, labs) {
-				req.session.labs = labs;
-				console.log("load labs in reports : " + labs);
-				res.render('reports', {labs: req.session.labs, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, isLoggedInAdmin: req.session.admin, loggedIn : true, title: 'Reports', isLoggedInAdmin: req.session.admin});
-				req.session.messages = null;
+				var labyokerCats = new LabyokerCategories();
+				labyokerLabs.getcategories(function(error, categories) {
+					req.session.labs = labs;
+					console.log("load labs in reports : " + labs);
+					console.log("load categories in reports : " + categories);
+					res.render('reports', {categories: categories, labs: req.session.labs, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, isLoggedInAdmin: req.session.admin, loggedIn : true, title: 'Reports', isLoggedInAdmin: req.session.admin});
+					req.session.messages = null;
+				});
 			});
 		} else {
 			res.render('reports', {labs: req.session.labs, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, isLoggedInAdmin: req.session.admin, loggedIn : true, title: 'Reports', isLoggedInAdmin: req.session.admin});
@@ -290,9 +294,9 @@ module.exports = function(router) {
 	router.post('/reportShares', isLoggedIn, function(req, res) {
 		var datefrom = req.body.reportDateFrom;
 		var dateto = req.body.reportDateTo;
-		var lab = req.body.reportLab;
+		var category = req.body.reportCategory;
 		console.log("reportSomething " + req.body.reportDateFrom);
-		var labYokereporter = new LabYokeReporter(datefrom, dateto, lab);
+		var labYokereporter = new LabYokeReporterShares(datefrom, dateto, category);
 		labYokereporter.reportShares(function(error, results) {
 			if(results != null){
 				console.log("res " + results);
