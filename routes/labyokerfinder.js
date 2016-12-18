@@ -44,9 +44,10 @@ LabyokerUserDetails = function(column, value, email) {
 	this.email = email;
 }
 
-LabYokeReporter = function(datefrom, dateto) {
+LabYokeReporter = function(datefrom, dateto, lab) {
 	this.datefrom = datefrom;
 	this.dateto = dateto;
+	this.lab = lab;
 };
 
 LabYokeReporterSavings = function(datefrom,dateto,agent,vendor,catalognumber,lab) {
