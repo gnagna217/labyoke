@@ -159,6 +159,7 @@ LabYokeReporterSavings.prototype.reportMoney = function(callback) {
 	var selected = "a.category, count(a.category) as counting, b.lab";
 	var where = "a.agent = b.agent and a.catalognumber = b.catalognumber ";
 	var groupby = "a.category, b.lab";
+	var params = "<div style='font-weight:bold'>Parameters:</div>";
 	var columns ="<td>Category</td><td>Lab</td>";
 	var html = "<div style='text-align:center; width:50%'><img style='width: 150px; margin: 0 20px;' src='https:\/\/team-labyoke.herokuapp.com\/images\/yoke4.png', alt='The Yoke',  title='Yoke', class='yokelogo'/></div><div style=\"font-family:'calibri'; font-size:11pt;padding: 20px; width:50%;float:left\">"
 				+ "<h1>Savings.</h1>";
@@ -167,6 +168,8 @@ LabYokeReporterSavings.prototype.reportMoney = function(callback) {
 	var query;
 
 	if(datefrom != null && dateto != null && datefrom !=undefined && dateto !=undefined && datefrom !="" && dateto !=""){
+		params += "<span style='font-weight:bold'>Date From: </span><span>" + moment(datefrom).add(1, 'day').tz("America/New_York").format('MM-DD-YYYY')  + "</span>";
+		params += "<span style='font-weight:bold'>Date To: </span><span>" + moment(dateto).add(1, 'day').tz("America/New_York").format('MM-DD-YYYY')  + "</span>";
 		if(selected.length>0)
 			selected +=", ";
 		selected += "b.date";
@@ -183,6 +186,7 @@ LabYokeReporterSavings.prototype.reportMoney = function(callback) {
 	}
 
 	if(lab != null && lab !=undefined && lab !="all"){
+		params += "<span style='font-weight:bold'>Lab: </span><span>" + lab + "</span>";
 		if(where.length>0)
 			where +=" and ";
 		where += "b.lab = '" + lab + "'";
