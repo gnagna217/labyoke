@@ -244,7 +244,7 @@ LabYokeReporterSavings.prototype.reportMoney = function(callback) {
 		console.log("results : " + results);
 		html += params;
 		if(results != null && results != ""){
-		html +="<table style='margin-top:100px;><tbody><tr style='color: white;background-color: #3d9dcb;font-size:12px'>" + columns + "</tr>"
+		html +="<table style='margin-top:100px;float:left><tbody><tr style='color: white;background-color: #3d9dcb;font-size:12px'>" + columns + "</tr>"
 		
 			for(var prop in results){
 
