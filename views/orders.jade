@@ -190,7 +190,7 @@ block content
             categories = categories.split("|");
             var catTransform = [];
             for(var prop in categories){
-              catTransform.push(categories[prop]);
+              catTransform.push(categories[prop].category);
             }
 
             var rows = "#{array_rows}";
