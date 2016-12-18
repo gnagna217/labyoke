@@ -91,9 +91,6 @@ block content
 								
 								if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent))
 								{
-									binaryData.push(pdf.output());
-									var blob = new Blob(binaryData, {type: "application/pdf"});
-									window.open(window.URL.createObjectURL(blob),'_blank');*/
 									pdf.output('dataurlnewwindow');
 								}
 								else
@@ -113,9 +110,7 @@ block content
 								function(dispose) {
 								if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent))
 								{
-									binaryData.push(pdf.output());
-									var blob = new Blob(binaryData, {type: "application/pdf"});
-									window.open(window.URL.createObjectURL(blob),'_blank');*/
+									pdf.output('dataurlnewwindow');
 								}
 								else
 								{
