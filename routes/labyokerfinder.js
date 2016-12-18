@@ -394,7 +394,7 @@ LabYokeReporter.prototype.reportOrders = function(callback) {
 		where += "lab = '" + lab + "'";
 	} 
 
-	var qryStr = "SELECT * FROM vm2016_agentsshare " + where + " order by date desc";
+	var qryStr = "SELECT * FROM vm2016_orders " + where + " order by date desc";
 	console.log("qry report orders: " + qryStr)
 	query = client.query(qryStr);
 	/*if(datefrom != null && dateto != null && datefrom !=undefined && dateto !=undefined && datefrom !="" && dateto !=""){
