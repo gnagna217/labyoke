@@ -411,12 +411,12 @@ LabYokeReporterOrders.prototype.reportOrders = function(callback) {
 		if(params == ""){
 			params += "<div style='font-weight:bold'>Parameters</div>";
 		}
-		params += "<div><span style='font-weight:bold'>Category: </span><span>" + category.toLowerCase() + "</span></div>";
+		params += "<div><span style='font-weight:bold'>Category: </span><span>" + category+ "</span></div>";
 		if(where == "")
 			where =" where ";
 		if(where.trim() != "where")
 			where +=" and ";
-		where += " lower(category) like '%" + category + "%'";
+		where += " lower(category) like '%" + category.toLowerCase()  + "%'";
 	} 
 	var qryStr = "SELECT * FROM vm2016_orders " + where + " order by date desc";
 	console.log("qry report orders: " + qryStr)
