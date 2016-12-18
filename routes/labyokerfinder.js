@@ -47,10 +47,11 @@ LabyokerUserDetails = function(column, value, email) {
 	this.email = email;
 }
 
-LabYokeReporterOrders = function(datefrom, dateto, lab) {
+LabYokeReporterOrders = function(datefrom, dateto, lab, category) {
 	this.datefrom = datefrom;
 	this.dateto = dateto;
 	this.lab = lab;
+	this.category = category;
 };
 
 LabYokeReporterShares = function(datefrom, dateto, category) {
@@ -374,11 +375,13 @@ LabYokeReporterOrders.prototype.reportOrders = function(callback) {
 	var datefrom = this.datefrom;
 	var dateto = this.dateto;
 	var lab = this.lab;
+	var category = this.category;
 	var params = "";
 	var where = "";
 	console.log("report on something: datefrom: " + datefrom);
 	console.log("report on something: dateto: " + dateto);
 	console.log("report on something: lab: " + lab);
+	console.log("report on something: category: " + category);
 	var query;
 
 	if(datefrom != null && dateto != null && datefrom !=undefined && dateto !=undefined && datefrom !="" && dateto !=""){
@@ -404,7 +407,17 @@ LabYokeReporterOrders.prototype.reportOrders = function(callback) {
 			where +=" and ";
 		where += "lab = '" + lab + "'";
 	} 
-
+	if(category != null && category !=undefined && category !="all"){
+		if(params == ""){
+			params += "<div style='font-weight:bold'>Parameters</div>";
+		}
+		params += "<div><span style='font-weight:bold'>Category: </span><span>" + category + "</span></div>";
+		if(where == "")
+			where =" where ";
+		if(where.trim() != "where")
+			where +=" and ";
+		where += "category = '" + category + "'";
+	} 
 	var qryStr = "SELECT * FROM vm2016_orders " + where + " order by date desc";
 	console.log("qry report orders: " + qryStr)
 	query = client.query(qryStr);
