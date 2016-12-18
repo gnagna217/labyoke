@@ -177,7 +177,6 @@ LabYokeReporterSavings.prototype.reportMoney = function(callback) {
 			groupby +=" , ";
 		groupby += "b.date";
 		html += "<p>This report is listing savings between " + moment(datefrom).add(1, 'day').tz("America/New_York").format('MM-DD-YYYY') + " and " + moment(dateto).add(1, 'day').tz("America/New_York").format('MM-DD-YYYY') + "</p></div>"
-		columns+="<td>Date</td>";
 	} else {
 		datefrom = "all";
 		html += "<p>This report is listing all savings:</p></div>"
@@ -215,6 +214,9 @@ LabYokeReporterSavings.prototype.reportMoney = function(callback) {
 			groupby +=" , ";
 		groupby += "b.catalognumber";
 		columns+="<td>Catalog#</td>";
+	}
+	if(datefrom != null && dateto != null && datefrom !=undefined && dateto !=undefined && datefrom !="" && dateto !=""){
+		columns+="<td>Date</td>";
 	}
 	if(selected.length>0)
 		selected +=", ";
