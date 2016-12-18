@@ -158,7 +158,7 @@ LabYokeReporterSavings.prototype.reportMoney = function(callback) {
 	var catalognumber = this.catalognumber;
 	var selected = "a.category, count(a.category) as counting, b.lab";
 	var where = "a.agent = b.agent and a.catalognumber = b.catalognumber ";
-	var groupby = "a.category";
+	var groupby = "a.category, b.lab";
 	var columns ="<td>Category</td><td>Lab</td>";
 	var html = "<div style='text-align:center; width:50%'><img style='width: 150px; margin: 0 20px;' src='https:\/\/team-labyoke.herokuapp.com\/images\/yoke4.png', alt='The Yoke',  title='Yoke', class='yokelogo'/></div><div style=\"font-family:'calibri'; font-size:11pt;padding: 20px; width:50%;float:left\">"
 				+ "<h1>Savings.</h1>";
