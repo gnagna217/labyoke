@@ -303,9 +303,10 @@ LabYokeReporter.prototype.reportShares = function(callback) {
 			params += "<div style='font-weight:bold'>Parameters</div>";
 		}
 		params += "<div><span style='font-weight:bold'>Lab: </span><span>" + lab + "</span></div>";
-		if(where == "")
+		if(where == ""){
 			where =" where ";
-		if(where != "" && where.length>0)
+		}
+		if(where.trim() != "where")
 			where +=" and ";
 		where += "lab = '" + lab + "'";
 	} 
@@ -390,7 +391,7 @@ LabYokeReporter.prototype.reportOrders = function(callback) {
 		params += "<div><span style='font-weight:bold'>Lab: </span><span>" + lab + "</span></div>";
 		if(where == "")
 			where =" where ";
-		if(where != "" && where.length>0)
+		if(where.trim() != "where")
 			where +=" and ";
 		where += "lab = '" + lab + "'";
 	} 
