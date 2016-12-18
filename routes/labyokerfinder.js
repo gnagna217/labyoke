@@ -311,6 +311,7 @@ LabYokeReporter.prototype.reportShares = function(callback) {
 	} 
 
 	var qryStr = "SELECT * FROM vm2016_agentsshare " + where + " order by date desc";
+	console.log("query report shares: " + qryStr);
 	query = client.query(qryStr);
 
 	query.on("row", function(row, result) {
