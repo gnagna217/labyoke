@@ -25,7 +25,7 @@ block content
                       thead
                         tr(class="you info-best" style="font-weight: bold")
                           th(class="desktabonly")= 'id '
-                          th(class="wrapped")!= 'Agent'
+                          th(class="wrapped")!= 'Reagent'
                           th= 'Vendor'
                           th(class="desktabonly")= 'Catalog'
                           th= 'Date'
@@ -65,30 +65,30 @@ block content
           script(type="text/javascript" src="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.js")
           div(style="background-color: #3d9dcb; height: 2px; margin-bottom: 30px; margin-top: 30px;")
           h4="A Line report of all orders."
-          p="This line graph depicts the current total number of orders per Agent Category:"
+          p="This line graph depicts the current total number of orders per Reagent Category:"
           - if(report_sharesbycategory != null && report_sharesbycategory.length >0)
              div(class="ct-chart ct-perfect-fourth")
              div(id="tooltips", class="labColor") &nbsp;
           - var now = new Date()
           - var filteroutput = test.filter(function(x){console.log("x.monthorder: "+x.monthorder); console.log("x.yearorder: "+x.yearorder); console.log("now.getFullYear(): "+ now.getFullYear()); console.log("now.getMonth(): "+ now.getMonth()); console.log("so: "+ (x.yearorder == now.getFullYear() && x.monthorder == now.getMonth())); return (x.yearorder == now.getFullYear() && x.monthorder == now.getMonth() + 1)});
           - if(report_sharesbycategory != null && report_sharesbycategory.length==0)
-           h5="You have not ordered any agent. "
+           h5="You have not ordered any reagent. "
             a(href="/search")
               span(class="labColot")="Search now."
           h4="A Bar report of the monthly orders."
-          p="This bar chart depicts your number of orders this month (so far) per Agent Category:"
+          p="This bar chart depicts your number of orders this month (so far) per Reagent Category:"
           - if(filteroutput != null && filteroutput.length > 0) 
              div(class="ct-chart0 ct-perfect-fourth")
              div(id="tooltips0", class="labColor") &nbsp;
           - if(filteroutput != null && filteroutput.length == 0) 
-           h5="You have not ordered any agent this month."
+           h5="You have not ordered any reagent this month."
           h4="A Bar report of all orders in each lab."
           p="This bar chart depicts the number of orders (so far) per lab:"
           - if(laborders != null && laborders.length > 0)
              div(class="ct-chart3 ct-perfect-fourth")
              div(id="tooltips3", class="labColor") &nbsp;
           - if(laborders != null && laborders.length == 0) 
-           h5="No agent has been ordered in any lab so far."
+           h5="No reagent has been ordered in any lab so far."
           
           - var array_rows = []
           - var array_values = ""
@@ -364,12 +364,12 @@ block content
             }
 
       if email != undefined
-        h3="Great! You have ordered the following agent from "
+        h3="Great! You have ordered the following reagent from "
           span(style="color: #3d9dcb;")=" " + location
           span="!"
         p=" "
         p
-          b="Agent: "
+          b="Reagent: "
           span=agent
           br
           b="Catalog: "

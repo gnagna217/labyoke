@@ -39,7 +39,7 @@ block content
 							table(id="rankTblreqshares" class="table rankTbl")
 								thead
 									tr(class="you info-best" style="font-weight: bold")
-										th(class="wrapped")!= 'Agent'
+										th(class="wrapped")!= 'Reagent'
 										th(class="desktabonly")= 'Vendor'
 										th(class="deskfullonly")= 'Catalog'
 										th(class="desktabonly")= 'Requestor'
@@ -82,7 +82,7 @@ block content
 				div(style="background-color: #3d9dcb; height: 2px; margin-bottom: 30px; margin-top: 30px;")
 			if(myshares != "")
 				h4="You are currently sharing."
-				p="An administrator has uploaded the following agents on your behalf. "
+				p="An administrator has uploaded the following reagents on your behalf. "
 					span(class="yokeColorBold")= "Insufficient quantities"
 					span=" are listed. Please have your admin refresh the quantities."
 				div(id="results")
@@ -91,7 +91,7 @@ block content
 							table(id="rankTblshares" class="table rankTbl")
 								thead
 									tr(class="you info-best" style="font-weight: bold")
-										th(class="wrapped")!= 'Agent'
+										th(class="wrapped")!= 'Reagent'
 										th= 'Vendor'
 										th= 'Catalog'
 										th= 'X'
@@ -127,7 +127,7 @@ block content
 				a(name="upload")
 				div(class="admin")
 				h4="Admin Upload."
-				p="You can now upload a list of agents (xcel spreadsheet) from your local computer or Google drive."
+				p="You can now upload a list of reagents (xcel spreadsheet) from your local computer or Google drive."
 				form(id="uploadForm", enctype="multipart/form-data", action="share", method="post")
 					input(style="display:none", type="file" name="file",id="file", class="inputfile inputfile-1", data-multiple-caption="{count} files selected")
 					label(for="file", style="width: 50%;text-align: center;border-radius: 6px;")
@@ -149,7 +149,7 @@ block content
 								thead
 									tr(class="you info-best" style="font-weight: bold")
 										td(class="desktabonly")= 'id '
-										td(class="wrapped")!= 'Agent'
+										td(class="wrapped")!= 'Reagent'
 										td= 'Vendor'
 										td= 'Catalog'
 										td= 'Location'
@@ -172,7 +172,7 @@ block content
 			div(style="/*background-color: #3d9dcb; height: 2px;*/ margin-bottom: 30px; margin-top: 0px;")
 			h4="A Line report of all your shares."
 			- if(report_sharesbycategory != null && report_sharesbycategory.length >0)
-				p="This line graph depicts your total number of shares per Agent Category:"
+				p="This line graph depicts your total number of shares per Reagent Category:"
 				div(class="ct-chart ct-perfect-fourth")
 				div(id="tooltips", class="labColor") &nbsp;
 			- if(report_sharesbycategory != null && report_sharesbycategory.length==0)
@@ -183,12 +183,12 @@ block content
 			- var month = "month";
 			- var filteroutput = test.filter(function(x){console.log("x.monthorder: "+x.monthorder); console.log("x.yearorder: "+x.yearorder); console.log("now.getFullYear(): "+ now.getFullYear()); console.log("now.getMonth(): "+ now.getMonth()); console.log("so: "+ (x.yearorder == now.getFullYear() && x.monthorder == now.getMonth())); return (x.yearorder == now.getFullYear() && x.monthorder == now.getMonth() + 1)});
 			- if(filteroutput != null && filteroutput.length > 0) 
-				p!="This bar graph depicts your number of shares this " + month + " (so far) per Agent Category:"
+				p!="This bar graph depicts your number of shares this " + month + " (so far) per Reagent Category:"
 				div(class="ct-chart0 ct-perfect-fourth")
 				div(id="tooltips0", class="labColor") &nbsp;
 			- if(filteroutput != null && filteroutput.length == 0) 
 				h5
-					span="You have not shared any agent this month. If you have new chems to share, have your "
+					span="You have not shared any reagent this month. If you have new chems to share, have your "
 					span(class="labColor")= "administrator" 
 					span=" upload them on your behalf and start saving money for your lab."
 			div(style="padding-top:25px;", class="") &nbsp;

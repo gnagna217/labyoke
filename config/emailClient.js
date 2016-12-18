@@ -34,14 +34,14 @@ var transport = nodemailer.createTransport("SMTP", {
 
 // setup e-mail data with unicode symbols
 var MailOptions = function(to, subject, body) {
-	this.from = "Lab Yoke <labyoke@gmail.com>";
+	this.from = "labYoke <labyoke@gmail.com>";
 	this.to = to;
 	this.subject = subject;
 	this.body = body;
 }
 
 var MailOptionsWithCC = function(to, subject, body, cc) {
-	this.from = "Lab Yoke <labyoke@gmail.com>";
+	this.from = "labYoke <labyoke@gmail.com>";
 	this.to = to;
 	this.cc = cc;
 	this.subject = subject;
