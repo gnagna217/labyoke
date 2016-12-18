@@ -205,7 +205,7 @@ block content
             var valTransform = [];
             for(var prop in values){
             console.log("share: " + (catTransform[prop]).toLowerCase() + " - "+ (rowTransform[prop]).toLowerCase());
-              if((catTransform[prop]).toLowerCase() == (rowTransform[prop]).toLowerCase()){
+              if(rowTransform[prop] != undefined && (catTransform[prop]).toLowerCase() == (rowTransform[prop]).toLowerCase()){
               valTransform.push(values[prop]);
               } else {
               valTransform.push(0);
@@ -224,7 +224,7 @@ block content
             var valTransformOrders = [];
             for(var prop in valuesorders){
               console.log("order: " + (catTransform[prop]).toLowerCase() + " - "+ (rowTransform[prop]).toLowerCase());
-              if((catTransform[prop]).toLowerCase() == (rowTransformOrders[prop]).toLowerCase()){
+              if(rowTransformOrders[prop] != undefined && (catTransform[prop]).toLowerCase() == (rowTransformOrders[prop]).toLowerCase()){
               valTransformOrders.push(valuesorders[prop]);
               } else {
               valTransformOrders.push(0);
