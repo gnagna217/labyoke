@@ -159,9 +159,9 @@ LabYokeReporterSavings.prototype.reportMoney = function(callback) {
 	var selected = "a.category, count(a.category) as counting, b.lab";
 	var where = "a.agent = b.agent and a.catalognumber = b.catalognumber ";
 	var groupby = "a.category, b.lab";
-	var params = "<div style='font-weight:bold'>Parameters:</div>";
+	var params = "<div style='font-weight:bold'>Parameters</div>";
 	var columns ="<td>Category</td><td>Lab</td>";
-	var html = "<div style='text-align:center; width:50%'><img style='width: 150px; margin: 0 20px;' src='https:\/\/team-labyoke.herokuapp.com\/images\/yoke4.png', alt='The Yoke',  title='Yoke', class='yokelogo'/></div><div style=\"font-family:'calibri'; font-size:11pt;padding: 20px; width:50%;float:left\">"
+	var html = "<div style='text-align:center; width:50%'><img style='width: 150px; margin-left:40px;' src='https:\/\/team-labyoke.herokuapp.com\/images\/yoke4.png', alt='The Yoke',  title='Yoke', class='yokelogo'/><h1>Savings.</h1></div><div style=\"font-family:'calibri'; font-size:11pt;padding: 20px; width:50%;float:left\">"
 				+ "<h1>Savings.</h1>";
 	console.log("report on savings- datefrom: " + datefrom);
 	console.log("report on savings- dateto: " + dateto);
