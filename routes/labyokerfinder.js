@@ -710,7 +710,7 @@ LabYokerOrder.prototype.order = function(callback) {
 		bodyReq += "<br><b>Vendor: </b> " + vendor;
 		body += "<br><b>Catalog#: </b> " + catalognumber;
 		bodyReq += "<br><b>Catalog#: </b> " + catalognumber;
-		body += "<br><b>Owner: </b> " + sendemail;
+		body += "<br><b>Owner: </b> " + email;
 		bodyReq += "<br><b>Owner: </b> " + sendemail;
 		body += "<br><b>Lab: </b> " + lab;
 		bodyReq += "<br><b>Lab: </b> " + lab;
@@ -728,8 +728,8 @@ LabYokerOrder.prototype.order = function(callback) {
 		});
 		query2.on("end", function(result2) {
 
-			var mailOptions = new MailOptionsWithCC(sendemail, subject, body);
-			var mailOptionsReq = new MailOptionsWithCC(email, subjectReq, bodyReq);
+			var mailOptions = new MailOptionsWithCC(email, subject, body);
+			var mailOptionsReq = new MailOptionsWithCC(sendemail, subjectReq, bodyReq);
 			mailOptions.sendAllEmails();
 			mailOptionsReq.sendAllEmails();
 
