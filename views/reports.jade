@@ -15,7 +15,7 @@ block content
 			div(class="reportMoney")
 				div(style="background-color: #3d9dcb; height: 2px; margin-bottom: 30px; margin-top: 30px;")
 				h4="Savings report Upload."
-				p="You can now retrieve a report of the savings each lab has made over a period of time per agent category."
+				p="You can now retrieve a report of the savings each lab has made over a period of time per reagent category."
 				- var datefrom_money = datefromMoney
 				- var dateto_money = datetoMoney
 				- var file_money = "reportMoney_" + datefrom_money + "_to_" + dateto_money + ".pdf"
@@ -49,7 +49,7 @@ block content
 										option(value=lab) #{lab}
 							label(style="width: 100px;")="Show:"
 							br
-							label(style="width: 50px;")="Agent"
+							label(style="width: 50px;")="Reagent"
 							input(type="checkbox" name="reportAgentMoney" id="reportAgentMoney" value="agent")
 							label(style="width: 50px; margin-left: 20px;")="Vendor"
 							input(type="checkbox" name="reportVendorMoney" id="reportVendorMoney" value="vendor")
@@ -147,7 +147,7 @@ block content
 							label(style="width: 100px;")="Date To"
 							input(name="reportDateToOrders" style="margin-bottom:10px" type="text" id="reportDateToOrders" class="form-control")
 							
-							label(style="width: 150px;")="Agent Category"
+							label(style="width: 150px;")="Reagent Category"
 							select(name="reportCategoryOrders" type="text" id="reportCategoryOrders" class="form-control" style="border-color:#3d9dcb;margin-bottom:10px" 
 							placeholder="Category")
 								option(value="all")="all"
@@ -283,7 +283,7 @@ block content
 							label(style="width: 100px;")="Date To"
 							input(name="reportDateTo" style="margin-bottom:10px" type="text" id="reportDateTo" class="form-control")
 							
-							label(style="width: 150px;")="Agent Category"
+							label(style="width: 150px;")="Reagent Category"
 							select(name="reportCategory" type="text" id="reportCategory" class="form-control" style="border-color:#3d9dcb;margin-bottom:10px" 
 							placeholder="Category")
 								option(value="all")="all"
