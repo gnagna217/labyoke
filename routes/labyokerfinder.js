@@ -159,7 +159,7 @@ LabYokeReporterSavings.prototype.reportMoney = function(callback) {
 	var selected = "a.category, count(a.category) as counting, b.lab";
 	var where = "a.agent = b.agent and a.catalognumber = b.catalognumber ";
 	var groupby = "a.category, b.lab";
-	var params = "<div style='font-weight:bold'>Parameters</div>";
+	var params = "";
 	var columns ="<td>Category</td><td>Lab</td>";
 	var html = "<div style='text-align:center; width:50%'><img style='width: 150px; margin: 0 20px;' src='https:\/\/team-labyoke.herokuapp.com\/images\/yoke4.png', alt='The Yoke',  title='Yoke', class='yokelogo'/></div><div style=\"font-family:'calibri'; font-size:11pt;padding: 20px; width:50%;float:left\">"
 				+ "<h1>Savings.</h1>";
@@ -168,6 +168,9 @@ LabYokeReporterSavings.prototype.reportMoney = function(callback) {
 	var query;
 
 	if(datefrom != null && dateto != null && datefrom !=undefined && dateto !=undefined && datefrom !="" && dateto !=""){
+		if(params == ""){
+			params += "<div style='font-weight:bold'>Parameters</div>";
+		}
 		params += "<div><span style='font-weight:bold'>Date From: </span><span>" + moment(datefrom).add(1, 'day').tz("America/New_York").format('MM-DD-YYYY')  + "</span></div>";
 		params += "<div><span style='font-weight:bold'>Date To: </span><span>" + moment(dateto).add(1, 'day').tz("America/New_York").format('MM-DD-YYYY')  + "</span></div>";
 		if(selected.length>0)
@@ -186,6 +189,9 @@ LabYokeReporterSavings.prototype.reportMoney = function(callback) {
 	}
 
 	if(lab != null && lab !=undefined && lab !="all"){
+		if(params == ""){
+			params += "<div style='font-weight:bold'>Parameters</div>";
+		}
 		params += "<div><span style='font-weight:bold'>Lab: </span><span>" + lab + "</span></div>";
 		if(where.length>0)
 			where +=" and ";
@@ -242,7 +248,7 @@ LabYokeReporterSavings.prototype.reportMoney = function(callback) {
 		
 			for(var prop in results){
 
-				html += " <tr>" + "<td style='font-size: 12px;'>" + results[prop].category + "</td>" + "<td style='font-size: 12px;'>" + results[prop].lab + "</td>";
+				html += "<tr>" + "<td style='font-size: 12px;'>" + results[prop].category + "</td>" + "<td style='font-size: 12px;'>" + results[prop].lab + "</td>";
 
 				if(agent != null && agent !=undefined && agent !=""){
 				html += "<td style='font-size: 12px;'>" + results[prop].agent + "</td>";
@@ -254,7 +260,7 @@ LabYokeReporterSavings.prototype.reportMoney = function(callback) {
 				html += "<td style='font-size: 12px;'>" + results[prop].catalognumber + "</td>";
 				}
 				if(datefrom != null && datefrom !=undefined && datefrom !="" && dateto != null && dateto !=undefined && dateto !="" ){
-				html += "<td style='font-size: 12px;'>HERE" + moment(results[prop].date).add(1, 'day').tz("America/New_York").format('MM-DD-YYYY')+ "</td>";
+				html += "<td style='font-size: 12px;'>" + moment(results[prop].date).add(1, 'day').tz("America/New_York").format('MM-DD-YYYY')+ "</td>";
 				}
 				html += "<td style='font-size: 12px;'>" + results[prop].counting + "</td>";
 				html += " </tr>";
