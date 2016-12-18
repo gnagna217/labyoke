@@ -278,15 +278,36 @@ LabYokeReporter.prototype.reportShares = function(callback) {
 	var results;
 	var datefrom = this.datefrom;
 	var dateto = this.dateto;
+	var lab = this.lab;
+	var params = "";
+	var where = "";
 	console.log("report on something: datefrom: " + datefrom);
 	console.log("report on something: dateto: " + dateto);
+	console.log("report on something: lab: " + lab);
 	var query;
 	if(datefrom != null && dateto != null && datefrom !=undefined && dateto !=undefined && datefrom !="" && dateto !=""){
-		query = client.query("SELECT * FROM vm2016_agentsshare where date between '" + datefrom + "' and '" + dateto + "' order by date");
-	} else {
-		query = client.query("SELECT * FROM vm2016_agentsshare order by date");
-		datefrom = "all";
-	}
+		if(params == ""){
+			params += "<div style='font-weight:bold'>Parameters</div>";
+		}
+		params += "<div><span style='font-weight:bold'>Date From: </span><span>" + datefrom + "</span></div>";
+		params += "<div><span style='font-weight:bold'>Date To: </span><span>" + dateto + "</span></div>";
+		if(where.length>0)
+			where +=" and ";
+		where += "date between '" + datefrom + "' and '" + dateto + "'";
+	} 
+	if(lab != null && lab !=undefined && lab !="all"){
+		if(params == ""){
+			params += "<div style='font-weight:bold'>Parameters</div>";
+		}
+		params += "<div><span style='font-weight:bold'>Lab: </span><span>" + lab + "</span></div>";
+		if(where.length>0)
+			where +=" and ";
+		where += "lab = '" + lab + "'";
+	} 
+
+	var qryStr = "SELECT * FROM vm2016_agentsshare " + where + " order by date desc";
+	query = client.query(qryStr);
+
 	query.on("row", function(row, result) {
 		result.addRow(row);
 	});
@@ -302,7 +323,8 @@ LabYokeReporter.prototype.reportShares = function(callback) {
 		} else {
 			html += "<p>This report is listing the shares uploaded between " + moment(datefrom).add(1, 'day').tz("America/New_York").format('MM-DD-YYYY') + " and " + moment(dateto).add(1, 'day').tz("America/New_York").format('MM-DD-YYYY') + "</p></div>"
 		}
-		html +="<table><tbody><tr style='color: white;background-color: #3d9dcb;'><td style='font-size: 12px;'>Agent</td><td style='font-size: 12px;'>Vendor</td><td style='font-size: 12px;'>Catalog#</td><td style='font-size: 12px;'>Location</td><td style='font-size: 12px;'>User</td><td style='font-size: 12px;'>Category</td><td>Date</td></tr>"
+		html += params;
+		html +="<table><tbody><tr style='color: white;background-color: #3d9dcb;'><td style='font-size: 12px;'>Agent</td><td style='font-size: 12px;'>Lab</td><td style='font-size: 12px;'>Vendor</td><td style='font-size: 12px;'>Catalog#</td><td style='font-size: 12px;'>Location</td><td style='font-size: 12px;'>User</td><td style='font-size: 12px;'>Category</td><td>Date</td></tr>"
 		
 			for(var prop in results){
 				var agent = results[prop].agent;
@@ -311,9 +333,11 @@ LabYokeReporter.prototype.reportShares = function(callback) {
 				var location = results[prop].location;
 				var email = results[prop].email;
 				var category = results[prop].category;
+				var labrow = results[prop].lab;
 				var date = results[prop].date;
 
 				html += " <tr><td style='font-size: 12px;'>" + agent + "</td>";
+				html += " <tr><td style='font-size: 12px;'>" + labrow + "</td>";
 				html += " <td style='font-size: 12px;'>" + vendor + "</td>";
 				html += " <td style='font-size: 12px;'>" + catalognumber + "</td>";
 				html += " <td style='font-size: 12px;'>" + location + "</td>";
@@ -333,15 +357,42 @@ LabYokeReporter.prototype.reportOrders = function(callback) {
 	var results;
 	var datefrom = this.datefrom;
 	var dateto = this.dateto;
-	console.log("report on orders: datefrom: " + datefrom);
-	console.log("report on orders: dateto: " + dateto);
+	var lab = this.lab;
+	var params = "";
+	var where = "";
+	console.log("report on something: datefrom: " + datefrom);
+	console.log("report on something: dateto: " + dateto);
+	console.log("report on something: lab: " + lab);
 	var query;
+
 	if(datefrom != null && dateto != null && datefrom !=undefined && dateto !=undefined && datefrom !="" && dateto !=""){
+		if(params == ""){
+			params += "<div style='font-weight:bold'>Parameters</div>";
+		}
+		params += "<div><span style='font-weight:bold'>Date From: </span><span>" + datefrom + "</span></div>";
+		params += "<div><span style='font-weight:bold'>Date To: </span><span>" + dateto + "</span></div>";
+		if(where.length>0)
+			where +=" and ";
+		where += "date between '" + datefrom + "' and '" + dateto + "'";
+	} 
+	if(lab != null && lab !=undefined && lab !="all"){
+		if(params == ""){
+			params += "<div style='font-weight:bold'>Parameters</div>";
+		}
+		params += "<div><span style='font-weight:bold'>Lab: </span><span>" + lab + "</span></div>";
+		if(where.length>0)
+			where +=" and ";
+		where += "lab = '" + lab + "'";
+	} 
+
+	var qryStr = "SELECT * FROM vm2016_agentsshare " + where + " order by date desc";
+	query = client.query(qryStr);
+	/*if(datefrom != null && dateto != null && datefrom !=undefined && dateto !=undefined && datefrom !="" && dateto !=""){
 		query = client.query("SELECT * FROM vm2016_orders where date between '" + datefrom + "' and '" + dateto + "' order by date desc");
 	} else {
 		query = client.query("SELECT * FROM vm2016_orders order by date desc");
 		datefrom = "all";
-	}
+	}*/
 	query.on("row", function(row, result) {
 		result.addRow(row);
 	});
@@ -356,6 +407,7 @@ LabYokeReporter.prototype.reportOrders = function(callback) {
 		} else {
 			html += "<p>This report is listing the orders requested between " + moment(datefrom).add(1, 'day').tz("America/New_York").format('MM-DD-YYYY') + " and " + moment(dateto).add(1, 'day').tz("America/New_York").format('MM-DD-YYYY') + "</p></div>"
 		}
+		html += params;
 		html +="<table><tbody><tr style='color: white;background-color: #3d9dcb;'><td style='font-size: 12px;'>Agent</td><td style='font-size: 12px;'>Vendor</td><td style='font-size: 12px;'>Catalog#</td><td style='font-size: 12px;'>Owner</td><td style='font-size: 12px;'>Requestor</td><td>Date</td></tr>"
 		
 			for(var prop in results){
