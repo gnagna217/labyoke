@@ -161,7 +161,7 @@ LabYokeReporterSavings.prototype.reportMoney = function(callback) {
 	var groupby = "a.category, b.lab";
 	var params = "";
 	var columns ="<td>Category</td><td>Lab</td>";
-	var html = "<div style='width:50%'><img style='width: 150px; margin: 0 20px;float:left' src='https:\/\/team-labyoke.herokuapp.com\/images\/yoke4.png', alt='The Yoke',  title='Yoke', class='yokelogo'/><span style='font-weight:bold;font-size:36pt;margin-bottom:20px;float:left'>Savings.</span></div><div style=\"font-family:'calibri'; font-size:11pt;padding: 20px; width:50%;float:left\">"
+	var html = "<div><span style='font-weight:bold;font-size:36pt;margin-bottom:20px;float:left'>Savings.</span></div><div style=\"font-family:'calibri'; font-size:11pt;padding: 20px; width:50%;float:left\">"
 				+ "";
 	console.log("report on savings- datefrom: " + datefrom);
 	console.log("report on savings- dateto: " + dateto);
@@ -266,7 +266,7 @@ LabYokeReporterSavings.prototype.reportMoney = function(callback) {
 				html += " </tr>";
 		
 			}
-			html += "</tbody></table><p><i><b>The LabYoke Team.</b></i></p>";
+			html += "</tbody></table><p><i><b>The LabYoke Team.</b></i></p><img style='margin: 0 20px;text-align:center' src='https:\/\/team-labyoke.herokuapp.com\/images\/yoke4.png', alt='The Yoke',  title='Yoke', class='yokelogo'/>";
 			console.log("html money: " + html);
 		}
 		
