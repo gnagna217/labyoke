@@ -168,6 +168,10 @@ a {
     text-decoration: none;
     outline:none
 }
+
+.bold{
+    font-weight: bold;
+}
 .ct-label{
     color: black !important;
 }
