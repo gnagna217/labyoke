@@ -290,7 +290,7 @@ module.exports = function(router) {
 	router.post('/reportShares', isLoggedIn, function(req, res) {
 		var datefrom = req.body.reportDateFrom;
 		var dateto = req.body.reportDateTo;
-		var lab = req.body.lab;
+		var lab = req.body.reportLab;
 		console.log("reportSomething " + req.body.reportDateFrom);
 		var labYokereporter = new LabYokeReporter(datefrom, dateto, lab);
 		labYokereporter.reportShares(function(error, results) {
@@ -360,8 +360,9 @@ module.exports = function(router) {
 	router.post('/reportOrders', isLoggedIn, function(req, res) {
 		var datefrom = req.body.reportDateFromOrders;
 		var dateto = req.body.reportDateToOrders;
-		var lab = req.body.lab;
+		var lab = req.body.reportLabOrders;
 		console.log("reportOrders " + req.body.reportDateFromOrders);
+		console.log("reportOrders " + req.body.lab);
 		var labYokereporter = new LabYokeReporter(datefrom, dateto, lab);
 		labYokereporter.reportOrders(function(error, results) {
 			if(results != null){

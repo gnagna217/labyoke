@@ -292,16 +292,20 @@ LabYokeReporter.prototype.reportShares = function(callback) {
 		}
 		params += "<div><span style='font-weight:bold'>Date From: </span><span>" + datefrom + "</span></div>";
 		params += "<div><span style='font-weight:bold'>Date To: </span><span>" + dateto + "</span></div>";
-		if(where.length>0)
-			where +=" and ";
+		if(where == "")
+			where =" where ";
 		where += "date between '" + datefrom + "' and '" + dateto + "'";
-	} 
+	} else {
+		datefrom = "all";
+	}
 	if(lab != null && lab !=undefined && lab !="all"){
 		if(params == ""){
 			params += "<div style='font-weight:bold'>Parameters</div>";
 		}
 		params += "<div><span style='font-weight:bold'>Lab: </span><span>" + lab + "</span></div>";
-		if(where.length>0)
+		if(where == "")
+			where =" where ";
+		if(where != "" && where.length>0)
 			where +=" and ";
 		where += "lab = '" + lab + "'";
 	} 
@@ -375,7 +379,9 @@ LabYokeReporter.prototype.reportOrders = function(callback) {
 		if(where == "")
 			where =" where ";
 		where += "date between '" + datefrom + "' and '" + dateto + "'";
-	} 
+	} else {
+		datefrom = "all";
+	}
 	if(lab != null && lab !=undefined && lab !="all"){
 		if(params == ""){
 			params += "<div style='font-weight:bold'>Parameters</div>";
