@@ -47,6 +47,9 @@ block content
 									- for(var prop in ob)
 										- var lab = ob[prop].labname
 										option(value=lab) #{lab}
+							input(type="checkbox" name="agent" id="agent" value="Show Agent")
+							input(type="checkbox" name="vendor" id="vendor" value="Show Vendor")
+							input(type="checkbox" name="catalognumber" id="catalognumber" value="Show Catalog Number")
 							div(style="max-width:100%")
 								button.btn.btn-success.btn-lg.btn-block(type="submit",value="Report",name="submit", style="max-width: 80%;width: 80%;") Get Savings
 								img(src="images/ship.png", alt="The Lab", title="Lab", style="border-width:0px; width: 50px; margin-top: -50px;float:right")

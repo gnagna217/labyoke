@@ -49,6 +49,15 @@ LabYokeReporter = function(datefrom, dateto) {
 	this.dateto = dateto;
 };
 
+LabYokeReporterSavings = function(datefrom,dateto,agent,vendor,catalognumber,lab) {
+	this.datefrom = datefrom;
+	this.dateto = dateto;
+	this.vendor = vendor;
+	this.lab = lab;
+	this.agent = agent;
+	this.catalognumber = catalognumber;
+};
+
 LabyokerInit = function(email) {
 	this.email = email;
 };
@@ -137,6 +146,125 @@ LabYokeUploader.prototype.upload = function(callback) {
 		console.log("cannotUploadMissingData.");
 		callback(null, "cannotUploadMissingData");
 	}
+};
+
+LabYokeReporterSavings.prototype.reportMoney = function(callback) {
+	var results;
+	var datefrom = this.datefrom;
+	var dateto = this.dateto;
+	var vendor = this.vendor;
+	var lab = this.lab;
+	var agent = this.agent;
+	var catalognumber = this.catalognumber;
+	var selected = "a.category, b.lab";
+	var where = "a.agent = b.agent and a.catalognumber = b.catalognumber ";
+	var groupby = "a.category, b.lab";
+	var columns+="<td>Category</td><td>Lab</td>";
+	var html = "<div style='text-align:center; width:50%'><img style='width: 150px; margin: 0 20px;' src='https:\/\/team-labyoke.herokuapp.com\/images\/yoke4.png', alt='The Yoke',  title='Yoke', class='yokelogo'/></div><div style=\"font-family:'calibri'; font-size:11pt;padding: 20px; width:50%;float:left\">"
+				+ "<h1>Savings.</h1>";
+	console.log("report on savings- datefrom: " + datefrom);
+	console.log("report on savings- dateto: " + dateto);
+	var query;
+
+	if(datefrom != null && dateto != null && datefrom !=undefined && dateto !=undefined && datefrom !="" && dateto !=""){
+		if(selected.length>0)
+			selected +=", ";
+		selected += "b.datefrom,b.dateto";
+		if(where.length>0)
+			where +=" and ";
+		where += "date between '" + datefrom + "' and '" + dateto + "'";
+		if(groupby.length>0)
+			groupby +=" , ";
+		groupby += "b.datefrom, b.dateto";
+		html += "<p>This report is listing savings between " + moment(datefrom).add(1, 'day').tz("America/New_York").format('YYYY-MM-DD') + " and " + moment(dateto).add(1, 'day').tz("America/New_York").format('YYYY-MM-DD') + "</p></div>"
+
+	} else {
+		datefrom = "all";
+		html += "<p>This report is listing all savings:</p></div>"
+	}
+
+	if(lab != null && lab !=undefined && lab !=""){
+		if(where.length>0)
+			where +=" and ";
+		where += "b.lab = '" + lab + "'";
+	} 
+
+	if(agent != null && agent !=undefined && agent !=""){
+		if(selected.length>0)
+			selected +=", ";
+		selected += "b.agent";
+		if(groupby.length>0)
+			groupby +=" , ";
+		groupby += "b.agent";
+		columns+="<td>Agent</td>";
+	} 
+	if(vendor != null && vendor !=undefined && vendor !=""){
+		if(selected.length>0)
+			selected +=", ";
+		selected += "b.vendor";
+		if(groupby.length>0)
+			groupby +=" , ";
+		groupby += "b.vendor";
+		columns+="<td>Vendor</td>";
+	}
+	if(catalognumber != null && catalognumber !=undefined && catalognumber !=""){
+		if(selected.length>0)
+			selected +=", ";
+		selected += "b.catalognumber";
+		if(groupby.length>0)
+			groupby +=" , ";
+		groupby += "b.catalognumber";
+		columns+="<td>Catalog#</td>";
+	}
+	if(selected.length>0)
+		selected +=", ";
+	selected +="count(a.category)";
+	columns+="<td>Savings</td>";
+	var qrstr = "SELECT " + selected + " from vm2016_agentsshare a, vm2016_orders b where " + where + " group by " + groupby + " order by a.category asc";
+	console.log("qrstr = " + qrStr);
+	query = client.query(qrStr);
+
+	query.on("row", function(row, result) {
+		result.addRow(row);
+	});
+	query.on("end", function(result) {
+		results = result.rows;
+		console.log("results : " + results);
+		//var html = "";
+		if(results != null && results != ""){
+		html +="<table><tbody><tr style='color: white;background-color: #3d9dcb;font-size:12px'>" + columns + "</tr>"
+		
+			for(var prop in results){
+
+				var agentRow = ;
+				var vendorRow = ;
+				var catalognumberRow = ;
+				var locationRow = results[prop].location;
+				var emailRow = results[prop].email;
+				var categoryRow = ;
+				var dateRow = results[prop].date;
+
+				html += " <tr>" + "<td style='font-size: 12px;'>" + results[prop].category + "</td>" + "<td style='font-size: 12px;'>" + results[prop].lab + "</td>";
+
+				if(agent != null && agent !=undefined && agent !=""){
+				html += " <td style='font-size: 12px;'>" + results[prop].agent + "</td>";
+				}
+				if(agent != null && vendor !=undefined && vendor !=""){
+				html += " <td style='font-size: 12px;'>" + results[prop].vendor + "</td>";
+				}
+				if(agent != null && catalognumber !=undefined && catalognumber !=""){
+				html += " <td style='font-size: 12px;'>" + results[prop].catalognumber + "</td>";
+				}
+
+				html += " </tr>";
+		
+			}
+			html += "</tbody></table><p><i><b>The LabYoke Team.</b></i></p>";
+			console.log("html money: " + html);
+		}
+		
+		callback(null, html)
+	});
 };
 
 LabYokeReporter.prototype.reportShares = function(callback) {
@@ -1199,3 +1327,4 @@ exports.LabYokerChangeShare = LabYokerChangeShare;
 exports.LabyokerConfirm = LabyokerConfirm;
 exports.LabyokerInit = LabyokerInit;
 exports.LabyokerLabs = LabyokerLabs;
+exports.LabYokeReporterSavings = LabYokeReporterSavings;
