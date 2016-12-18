@@ -360,7 +360,7 @@ LabYokeReporterSavings.prototype.reportMoney = function(callback) {
 				html += " </tr>";
 		
 			}
-			html += "</tbody></table><div>The <span style='font-weight:bold'>Total</span> savings are <span style='font-size:36pt'>$" + savings + ".</span></div><br/><p><i><b>The LabYoke Team.</b></i></p><img style='width: 150px; margin: 0 20px;float:left' src='https:\/\/team-labyoke.herokuapp.com\/images\/yoke4.png', alt='The Yoke',  title='Yoke', class='yokelogo'/>";
+			html += "</tbody></table><div>The <span style='font-weight:bold'>Total</span> savings are <span style='font-size:28pt'>$" + savings + ".</span></div><br/><p><i><b>The LabYoke Team.</b></i></p><img style='width: 150px; margin: 0 20px;float:left' src='https:\/\/team-labyoke.herokuapp.com\/images\/yoke4.png', alt='The Yoke',  title='Yoke', class='yokelogo'/>";
 			console.log("html money: " + html);
 		}
 		
