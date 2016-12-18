@@ -248,7 +248,7 @@ LabYokeReporterSavings.prototype.reportMoney = function(callback) {
 				html += " <td style='font-size: 12px;'>" + results[prop].catalognumber + "</td>";
 				}
 				if(datefrom != null && datefrom !=undefined && datefrom !="" && datefrom != null && datefrom !=undefined && datefrom !="" ){
-				html += " <td style='font-size: 12px;'>" + results[prop].date + "</td>";
+				html += " <td style='font-size: 12px;'>" + moment(results[prop].date).add(1, 'day').tz("America/New_York").format('YYYY-MM-DD')+ "</td>";
 				}
 				html += " <td style='font-size: 12px;'>" + results[prop].counting + "</td>";
 				html += " </tr>";
