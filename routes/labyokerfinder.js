@@ -319,7 +319,7 @@ LabYokeReporterShares.prototype.reportShares = function(callback) {
 		}
 		if(where.trim() != "where")
 			where +=" and ";
-		where += " lower(category) like '%" + category + "%'";
+		where += " lower(category) like '%" + category.toLowerCase() + "%'";
 	} 
 	var qryStr = "SELECT * FROM vm2016_agentsshare " + where + " order by date desc";
 	console.log("query report shares: " + qryStr);
@@ -411,7 +411,7 @@ LabYokeReporterOrders.prototype.reportOrders = function(callback) {
 		if(params == ""){
 			params += "<div style='font-weight:bold'>Parameters</div>";
 		}
-		params += "<div><span style='font-weight:bold'>Category: </span><span>" + category + "</span></div>";
+		params += "<div><span style='font-weight:bold'>Category: </span><span>" + category.toLowerCase() + "</span></div>";
 		if(where == "")
 			where =" where ";
 		if(where.trim() != "where")
