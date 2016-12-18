@@ -160,6 +160,85 @@ LabYokeUploader.prototype.upload = function(callback) {
 	}
 };
 
+LabYokeReporterSavings.prototype.dataMoney = function(callback) {
+	var results;
+	var datefrom = this.datefrom;
+	var dateto = this.dateto;
+	var vendor = this.vendor;
+	var lab = this.lab;
+	var agent = this.agent;
+	var catalognumber = this.catalognumber;
+	var selected = "a.category, count(a.category) as counting, b.lab, a.price";
+	var where = "a.agent = b.agent and a.catalognumber = b.catalognumber ";
+	var groupby = "a.category, b.lab, a.price";
+	console.log("report on savings- datefrom: " + datefrom);
+	console.log("report on savings- dateto: " + dateto);
+	var query;
+
+	if(datefrom != null && dateto != null && datefrom !=undefined && dateto !=undefined && datefrom !="" && dateto !=""){
+		if(selected.length>0)
+			selected +=", ";
+		selected += "b.date";
+		if(where.length>0)
+			where +=" and ";
+		where += "b.date between '" + datefrom + "' and '" + dateto + "'";
+		if(groupby.length>0)
+			groupby +=" , ";
+		groupby += "b.date";
+	} else {
+		datefrom = "all";
+	}
+
+	if(lab != null && lab !=undefined && lab !="all"){
+		if(where.length>0)
+			where +=" and ";
+		where += "b.lab = '" + lab + "'";
+	} 
+
+	if(agent != null && agent !=undefined && agent !=""){
+		if(selected.length>0)
+			selected +=", ";
+		selected += "b.agent";
+		if(groupby.length>0)
+			groupby +=" , ";
+		groupby += "b.agent";
+	} 
+	if(vendor != null && vendor !=undefined && vendor !=""){
+		if(selected.length>0)
+			selected +=", ";
+		selected += "b.vendor";
+		if(groupby.length>0)
+			groupby +=" , ";
+		groupby += "b.vendor";
+	}
+	if(catalognumber != null && catalognumber !=undefined && catalognumber !=""){
+		if(selected.length>0)
+			selected +=", ";
+		selected += "b.catalognumber";
+		if(groupby.length>0)
+			groupby +=" , ";
+		groupby += "b.catalognumber";
+	}
+
+	var qrstr = "SELECT " + selected + " from vm2016_agentsshare a, vm2016_orders b where " + where + " group by " + groupby + " order by a.category asc";
+	console.log("qrstr = " + qrstr);
+	query = client.query(qrstr);
+
+	query.on("row", function(row, result) {
+		result.addRow(row);
+	});
+	query.on("end", function(result) {
+		results = result.rows;
+		console.log("results : " + results);
+
+		if(results != null && results != ""){
+			console.log("data money: " + results);
+		}
+		
+		callback(null, results)
+	});
+};
+
 LabYokeReporterSavings.prototype.reportMoney = function(callback) {
 	var results;
 	var datefrom = this.datefrom;
@@ -168,9 +247,9 @@ LabYokeReporterSavings.prototype.reportMoney = function(callback) {
 	var lab = this.lab;
 	var agent = this.agent;
 	var catalognumber = this.catalognumber;
-	var selected = "a.category, count(a.category) as counting, b.lab";
+	var selected = "a.category, count(a.category) as counting, b.lab, a.price";
 	var where = "a.agent = b.agent and a.catalognumber = b.catalognumber ";
-	var groupby = "a.category, b.lab";
+	var groupby = "a.category, b.lab, a.price";
 	var params = "";
 	var columns ="<td>Category</td><td>Lab</td>";
 	var html = "<div><span style='font-weight:bold;font-size:36pt;margin-bottom:20px;float:left'>Savings.</span></div><div style=\"font-family:'calibri'; font-size:11pt;padding: 20px; width:50%;float:left\">"
@@ -274,7 +353,7 @@ LabYokeReporterSavings.prototype.reportMoney = function(callback) {
 				if(datefrom != null && datefrom !=undefined && datefrom !="" && dateto != null && dateto !=undefined && dateto !="" ){
 				html += "<td style='font-size: 12px;'>" + moment(results[prop].date).add(1, 'day').tz("America/New_York").format('MM-DD-YYYY')+ "</td>";
 				}
-				html += "<td style='font-size: 12px;'>" + results[prop].counting + "</td>";
+				html += "<td style='font-size: 12px;'>" + results[prop].counting * results[prop].price + "</td>";
 				html += " </tr>";
 		
 			}
