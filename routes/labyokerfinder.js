@@ -47,7 +47,7 @@ LabyokerUserDetails = function(column, value, email) {
 	this.email = email;
 }
 
-LabYokeReporter = function(datefrom, dateto, lab) {
+LabYokeReporterOrders = function(datefrom, dateto, lab) {
 	this.datefrom = datefrom;
 	this.dateto = dateto;
 	this.lab = lab;

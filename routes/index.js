@@ -3,7 +3,9 @@ var dates = require('../config/staticvariables');
 
 
 var LabYokerOrder = labyokeFinderClass.LabYokerOrder;
-var LabYokeReporter = labyokeFinderClass.LabYokeReporter;
+var LabYokeReporterOrders = labyokeFinderClass.LabYokeReporterOrders;
+var LabYokeReporterShares = labyokeFinderClass.LabYokeReporterShares;
+var LabYokeReporterSavings = labyokeFinderClass.LabYokeReporterSavings;
 var LabYokerGetOrder = labyokeFinderClass.LabYokerGetOrder;
 var LabyokerPasswordChange = labyokeFinderClass.LabyokerPasswordChange;
 var LabyokerRegister = labyokeFinderClass.LabyokerRegister;
@@ -367,7 +369,7 @@ module.exports = function(router) {
 		var lab = req.body.reportLabOrders;
 		console.log("reportOrders " + req.body.reportDateFromOrders);
 		console.log("reportOrders " + req.body.lab);
-		var labYokereporter = new LabYokeReporter(datefrom, dateto, lab);
+		var labYokereporter = new LabYokeReporterOrders(datefrom, dateto, lab);
 		labYokereporter.reportOrders(function(error, results) {
 			if(results != null){
 				console.log("res " + results);
