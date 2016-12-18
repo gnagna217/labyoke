@@ -172,7 +172,7 @@ LabYokeReporterSavings.prototype.reportMoney = function(callback) {
 		selected += "b.date";
 		if(where.length>0)
 			where +=" and ";
-		where += "date between '" + datefrom + "' and '" + dateto + "'";
+		where += "b.date between '" + datefrom + "' and '" + dateto + "'";
 		if(groupby.length>0)
 			groupby +=" , ";
 		groupby += "b.date";
