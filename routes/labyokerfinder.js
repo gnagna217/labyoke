@@ -222,9 +222,9 @@ LabYokeReporterSavings.prototype.reportMoney = function(callback) {
 	if(datefrom != null && dateto != null && datefrom !=undefined && dateto !=undefined && datefrom !="" && dateto !=""){
 		columns+="<td>Date</td>";
 	}
-	if(selected.length>0)
+	/*if(selected.length>0)
 		selected +=", ";
-	selected +="count(a.category)";
+	selected +="count(a.category)";*/
 	columns+="<td>Savings</td>";
 	var qrstr = "SELECT " + selected + " from vm2016_agentsshare a, vm2016_orders b where " + where + " group by " + groupby + " order by a.category asc";
 	console.log("qrstr = " + qrstr);
@@ -245,18 +245,18 @@ LabYokeReporterSavings.prototype.reportMoney = function(callback) {
 				html += " <tr>" + "<td style='font-size: 12px;'>" + results[prop].category + "</td>" + "<td style='font-size: 12px;'>" + results[prop].lab + "</td>";
 
 				if(agent != null && agent !=undefined && agent !=""){
-				html += " <td style='font-size: 12px;'>" + results[prop].agent + "</td>";
+				html += "<td style='font-size: 12px;'>" + results[prop].agent + "</td>";
 				}
 				if(vendor != null && vendor !=undefined && vendor !=""){
-				html += " <td style='font-size: 12px;'>" + results[prop].vendor + "</td>";
+				html += "<td style='font-size: 12px;'>" + results[prop].vendor + "</td>";
 				}
 				if(catalognumber != null && catalognumber !=undefined && catalognumber !=""){
-				html += " <td style='font-size: 12px;'>" + results[prop].catalognumber + "</td>";
+				html += "<td style='font-size: 12px;'>" + results[prop].catalognumber + "</td>";
 				}
-				if(datefrom != null && datefrom !=undefined && datefrom !="" && datefrom != null && datefrom !=undefined && datefrom !="" ){
-				html += " <td style='font-size: 12px;'>" + moment(results[prop].date).add(1, 'day').tz("America/New_York").format('MM-DD-YYYY')+ "</td>";
+				if(datefrom != null && datefrom !=undefined && datefrom !="" && dateto != null && dateto !=undefined && dateto !="" ){
+				html += "<td style='font-size: 12px;'>HERE" + moment(results[prop].date).add(1, 'day').tz("America/New_York").format('MM-DD-YYYY')+ "</td>";
 				}
-				html += " <td style='font-size: 12px;'>" + results[prop].counting + "</td>";
+				html += "<td style='font-size: 12px;'>" + results[prop].counting + "</td>";
 				html += " </tr>";
 		
 			}
