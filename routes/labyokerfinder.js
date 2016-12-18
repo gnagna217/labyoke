@@ -236,14 +236,6 @@ LabYokeReporterSavings.prototype.reportMoney = function(callback) {
 		
 			for(var prop in results){
 
-				var agentRow = ;
-				var vendorRow = ;
-				var catalognumberRow = ;
-				var locationRow = results[prop].location;
-				var emailRow = results[prop].email;
-				var categoryRow = ;
-				var dateRow = results[prop].date;
-
 				html += " <tr>" + "<td style='font-size: 12px;'>" + results[prop].category + "</td>" + "<td style='font-size: 12px;'>" + results[prop].lab + "</td>";
 
 				if(agent != null && agent !=undefined && agent !=""){
