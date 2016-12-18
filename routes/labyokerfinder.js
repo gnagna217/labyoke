@@ -372,8 +372,8 @@ LabYokeReporter.prototype.reportOrders = function(callback) {
 		}
 		params += "<div><span style='font-weight:bold'>Date From: </span><span>" + datefrom + "</span></div>";
 		params += "<div><span style='font-weight:bold'>Date To: </span><span>" + dateto + "</span></div>";
-		if(where.length>0)
-			where +=" and ";
+		if(where == "")
+			where =" where ";
 		where += "date between '" + datefrom + "' and '" + dateto + "'";
 	} 
 	if(lab != null && lab !=undefined && lab !="all"){
@@ -381,12 +381,15 @@ LabYokeReporter.prototype.reportOrders = function(callback) {
 			params += "<div style='font-weight:bold'>Parameters</div>";
 		}
 		params += "<div><span style='font-weight:bold'>Lab: </span><span>" + lab + "</span></div>";
-		if(where.length>0)
+		if(where == "")
+			where =" where ";
+		if(where != "" && where.length>0)
 			where +=" and ";
 		where += "lab = '" + lab + "'";
 	} 
 
 	var qryStr = "SELECT * FROM vm2016_agentsshare " + where + " order by date desc";
+	console.log("qry report orders: " + qryStr)
 	query = client.query(qryStr);
 	/*if(datefrom != null && dateto != null && datefrom !=undefined && dateto !=undefined && datefrom !="" && dateto !=""){
 		query = client.query("SELECT * FROM vm2016_orders where date between '" + datefrom + "' and '" + dateto + "' order by date desc");
