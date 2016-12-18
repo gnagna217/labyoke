@@ -188,7 +188,7 @@ block content
           script.
             var categories = "#{categorieslist}";
             categories = categories.split("|");
-            var catTransform = [];
+            var catTransform = [""];
             for(var prop in categories){
               catTransform.push((categories[prop]).toLowerCase());
             }
