@@ -334,6 +334,7 @@ LabYokeReporterSavings.prototype.reportMoney = function(callback) {
 		results = result.rows;
 		console.log("results : " + results);
 		html += params;
+		var savings = 0;
 		if(results != null && results != ""){
 		html +="<table style='margin-top:100px;float:left><tbody><tr style='color: white;background-color: #3d9dcb;font-size:12px'>" + columns + "</tr>"
 		
@@ -353,11 +354,13 @@ LabYokeReporterSavings.prototype.reportMoney = function(callback) {
 				if(datefrom != null && datefrom !=undefined && datefrom !="" && dateto != null && dateto !=undefined && dateto !="" ){
 				html += "<td style='font-size: 12px;'>" + moment(results[prop].date).add(1, 'day').tz("America/New_York").format('MM-DD-YYYY')+ "</td>";
 				}
-				html += "<td style='font-size: 12px;'>" + results[prop].counting * results[prop].price + "</td>";
+				var total = results[prop].counting * results[prop].price;
+				savings += total;
+				html += "<td style='font-size: 12px;'>" + total + "</td>";
 				html += " </tr>";
 		
 			}
-			html += "</tbody></table><p><i><b>The LabYoke Team.</b></i></p><img style='width: 150px; margin: 0 20px;float:left' src='https:\/\/team-labyoke.herokuapp.com\/images\/yoke4.png', alt='The Yoke',  title='Yoke', class='yokelogo'/>";
+			html += "</tbody></table><div>The <span style='font-weight:bold'>Total</span> savings are <span style='font-size:36pt'>$" + savings + ".</span></div><br/><p><i><b>The LabYoke Team.</b></i></p><img style='width: 150px; margin: 0 20px;float:left' src='https:\/\/team-labyoke.herokuapp.com\/images\/yoke4.png', alt='The Yoke',  title='Yoke', class='yokelogo'/>";
 			console.log("html money: " + html);
 		}
 		
