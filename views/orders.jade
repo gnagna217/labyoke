@@ -100,7 +100,11 @@ block content
           - var array_values2 = ""
           - var array_rows3 = []
           - var array_values3 = ""
-
+          - var categories = ""
+          
+          -var cat = categories
+          -for(var prop in cat)
+            - categories = categories + cat[prop] + "|"
           -var ob = report_sharesbycategory
           -for(var prop in ob)
             - array_rows = array_rows + ob[prop].category + "|"
@@ -182,38 +186,60 @@ block content
 
 
           script.
-            var values = "#{array_values}";
-            values = values.split("|");
-            var valTransform = [];
-            for(var prop in values){
-              valTransform.push(values[prop]);
+            var categories = "#{categories}";
+            categories = categories.split("|");
+            var catTransform = [];
+            for(var prop in categories){
+              catTransform.push(categories[prop]);
             }
+
             var rows = "#{array_rows}";
             rows = rows.split("|");
             var rowTransform = [];
             for(var prop in rows){
               rowTransform.push(rows[prop]);
             }
-            var valuesorders = "#{array_values3}";
-            valuesorders = valuesorders.split("|");
-            var valTransformOrders = [];
-            for(var prop in valuesorders){
-              valTransformOrders.push(valuesorders[prop]);
+
+            var values = "#{array_values}";
+            values = values.split("|");
+            var valTransform = [];
+            for(var prop in values){
+              if(catTransform[prop] == rowTransform[prop]){
+              valTransform.push(values[prop]);
+              } else {
+              valTransform.push(0);
+              }
             }
+
             var rowsOrders = "#{array_rows3}";
             rowsOrders = rowsOrders.split("|");
             var rowTransformOrders = [];
             for(var prop in rowsOrders){
               rowTransformOrders.push(rowsOrders[prop]);
             }
+
+            var valuesorders = "#{array_values3}";
+            valuesorders = valuesorders.split("|");
+            var valTransformOrders = [];
+            for(var prop in valuesorders){
+
+              if(catTransform[prop] == rowTransformOrders[prop]){
+              valTransformOrders.push(valuesorders[prop]);
+              } else {
+              valTransformOrders.push(0);
+              }
+
+            }
+
             console.log("chart orders  valTransformOrders: " + valTransformOrders);
             console.log("chart orders  rowTransformOrders: " + rowTransformOrders);
             console.log("chart shares valTransform: " + valTransform);
             console.log("chart shares rowTransform: " + rowTransform);
+            console.log("chart categories: " + categories);
 
             console.log("more rowTransform trans: " + rowTransform)
             var data = {
-              labels: rowTransform,
+              labels: catTransform,
               series: [
                 valTransform, valTransformOrders
               ]
