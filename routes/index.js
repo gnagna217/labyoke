@@ -242,9 +242,9 @@ module.exports = function(router) {
 			var requestor = req.body.requestoremail;
 			var checked = req.body.cancel;
 			var date = moment(req.body.date).add(1, 'day').tz("America/New_York").format(
-				'YYYY-MM-DD');
+				'MM-DD-YYYY');
 			var datenow = moment(new Date).tz("America/New_York").format(
-				'YYYY-MM-DD');
+				'MM-DD-YYYY');
 			if(checked != null)
 				checked = 0;
 			if(checked == undefined)
@@ -423,7 +423,7 @@ module.exports = function(router) {
 			var forgotuser = req.body.forgotuser;
 			if (forgotuser != null && forgotuser.length > 0){
 				var dateStripped = moment(new Date).tz("America/New_York").format(
-				'YYYY-MM-DD');
+				'MM-DD-YYYY');
 				console.log("dateStripped2: " + dateStripped);
 				var labyoker = new Labyoker(forgotuser,dateStripped);
 				labyoker.requestChangePassword(function(error, done) {
@@ -885,7 +885,7 @@ module.exports = function(router) {
 		console.log("changing password id is: " + id);
 		console.log("changing password pwd is: " + req.body.pass);
 		var dateStripped = moment(new Date).tz("America/New_York").format(
-				'YYYY-MM-DD'); // '2014-06-09'
+				'MM-DD-YYYY'); // '2014-06-09'
 
 		if (id != null && id.length > 0){
 			var pwdChange = new LabyokerPasswordChange(id, req.body.pass);

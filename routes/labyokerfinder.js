@@ -111,7 +111,7 @@ LabYokeUploader.prototype.upload = function(callback) {
 	var results = this.jsonResults;
 	console.log("location: " + location);
 	var values = "";
-	var now = moment(new Date).tz("America/New_York").format('YYYY-MM-DD');
+	var now = moment(new Date).tz("America/New_York").format('MM-DD-YYYY');
 
 	if(results != null){
 		for(var prop in results){
@@ -176,7 +176,7 @@ LabYokeReporterSavings.prototype.reportMoney = function(callback) {
 		if(groupby.length>0)
 			groupby +=" , ";
 		groupby += "b.date";
-		html += "<p>This report is listing savings between " + moment(datefrom).add(1, 'day').tz("America/New_York").format('YYYY-MM-DD') + " and " + moment(dateto).add(1, 'day').tz("America/New_York").format('YYYY-MM-DD') + "</p></div>"
+		html += "<p>This report is listing savings between " + moment(datefrom).add(1, 'day').tz("America/New_York").format('MM-DD-YYYY') + " and " + moment(dateto).add(1, 'day').tz("America/New_York").format('MM-DD-YYYY') + "</p></div>"
 		columns+="<td>Date</td>";
 	} else {
 		datefrom = "all";
@@ -248,7 +248,7 @@ LabYokeReporterSavings.prototype.reportMoney = function(callback) {
 				html += " <td style='font-size: 12px;'>" + results[prop].catalognumber + "</td>";
 				}
 				if(datefrom != null && datefrom !=undefined && datefrom !="" && datefrom != null && datefrom !=undefined && datefrom !="" ){
-				html += " <td style='font-size: 12px;'>" + moment(results[prop].date).add(1, 'day').tz("America/New_York").format('YYYY-MM-DD')+ "</td>";
+				html += " <td style='font-size: 12px;'>" + moment(results[prop].date).add(1, 'day').tz("America/New_York").format('MM-DD-YYYY')+ "</td>";
 				}
 				html += " <td style='font-size: 12px;'>" + results[prop].counting + "</td>";
 				html += " </tr>";
@@ -289,7 +289,7 @@ LabYokeReporter.prototype.reportShares = function(callback) {
 		if(datefrom == 'all'){
 			html += "<p>This report is listing all the shares uploaded:</p></div>"
 		} else {
-			html += "<p>This report is listing the shares uploaded between " + moment(datefrom).add(1, 'day').tz("America/New_York").format('YYYY-MM-DD') + " and " + moment(dateto).add(1, 'day').tz("America/New_York").format('YYYY-MM-DD') + "</p></div>"
+			html += "<p>This report is listing the shares uploaded between " + moment(datefrom).add(1, 'day').tz("America/New_York").format('MM-DD-YYYY') + " and " + moment(dateto).add(1, 'day').tz("America/New_York").format('MM-DD-YYYY') + "</p></div>"
 		}
 		html +="<table><tbody><tr style='color: white;background-color: #3d9dcb;'><td style='font-size: 12px;'>Agent</td><td style='font-size: 12px;'>Vendor</td><td style='font-size: 12px;'>Catalog#</td><td style='font-size: 12px;'>Location</td><td style='font-size: 12px;'>User</td><td style='font-size: 12px;'>Category</td><td>Date</td></tr>"
 		
@@ -308,7 +308,7 @@ LabYokeReporter.prototype.reportShares = function(callback) {
 				html += " <td style='font-size: 12px;'>" + location + "</td>";
 				html += " <td style='font-size: 12px;'>" + email + "</td>";
 				html += " <td style='font-size: 12px;'>" + category + "</td>";
-				html += " <td style='font-size: 12px;'>" + moment(date).add(1, 'day').tz("America/New_York").format('YYYY-MM-DD') + "</td></tr>";
+				html += " <td style='font-size: 12px;'>" + moment(date).add(1, 'day').tz("America/New_York").format('MM-DD-YYYY') + "</td></tr>";
 		
 			}
 			html += "</tbody></table><p><i><b>The LabYoke Team.</b></i></p>";
@@ -344,7 +344,7 @@ LabYokeReporter.prototype.reportOrders = function(callback) {
 		if(datefrom == 'all'){
 			html += "<p>This report is listing all the orders requested:</p></div>"
 		} else {
-			html += "<p>This report is listing the orders requested between " + moment(datefrom).add(1, 'day').tz("America/New_York").format('YYYY-MM-DD') + " and " + moment(dateto).add(1, 'day').tz("America/New_York").format('YYYY-MM-DD') + "</p></div>"
+			html += "<p>This report is listing the orders requested between " + moment(datefrom).add(1, 'day').tz("America/New_York").format('MM-DD-YYYY') + " and " + moment(dateto).add(1, 'day').tz("America/New_York").format('MM-DD-YYYY') + "</p></div>"
 		}
 		html +="<table><tbody><tr style='color: white;background-color: #3d9dcb;'><td style='font-size: 12px;'>Agent</td><td style='font-size: 12px;'>Vendor</td><td style='font-size: 12px;'>Catalog#</td><td style='font-size: 12px;'>Owner</td><td style='font-size: 12px;'>Requestor</td><td>Date</td></tr>"
 		
@@ -362,7 +362,7 @@ LabYokeReporter.prototype.reportOrders = function(callback) {
 				html += " <td style='font-size: 12px;'>" + catalognumber + "</td>";
 				html += " <td style='font-size: 12px;'>" + location + "</td>";
 				html += " <td style='font-size: 12px;'>" + email + "</td>";
-				html += " <td style='font-size: 12px;'>" + moment(date).add(1, 'day').tz("America/New_York").format('YYYY-MM-DD') + "</td></tr>";
+				html += " <td style='font-size: 12px;'>" + moment(date).add(1, 'day').tz("America/New_York").format('MM-DD-YYYY') + "</td></tr>";
 		
 			}
 			html += "</tbody></table><p><i><b>The LabYoke Team.</b></i></p>";
@@ -494,7 +494,7 @@ LabYokerOrder.prototype.order = function(callback) {
 	console.log("quantity: " + quantity);
 	quantity = quantity + 100;
 	console.log("currentquantity2: " + quantity);
-	var now = moment(new Date).tz("America/New_York").format('YYYY-MM-DD');
+	var now = moment(new Date).tz("America/New_York").format('MM-DD-YYYY');
 	console.log("order location: " + location);
 	var query = client.query("INSERT INTO vm2016_orders VALUES ('" + agent + "', '" + vendor + "', '" + catalognumber + "','" + email + "', '" + sendemail + "', '" + now + "', 'new', '" + category + "','" + lab + "',1 )");
 
@@ -852,7 +852,7 @@ Labyoker.prototype.login = function(callback) {
 LabyokerPasswordChange.prototype.checkIfChangePassword = function(callback) {
 	var results;
 	var now = moment(new Date).tz("America/New_York").format(
-				'YYYY-MM-DD');
+				'MM-DD-YYYY');
 	var pwd = this.password;
 	var query = client
 			.query("SELECT * FROM vm2016_users where changepwd_id='"
@@ -1047,7 +1047,7 @@ Labyoker.prototype.requestChangePassword = function(callback) {
 		if (results != null && results.length == 1 && dateStripped != null) {
 			var changepwd_status = results[0].changepwd_status;
 			var now = moment(new Date).tz("America/New_York").format(
-				'YYYY-MM-DD');
+				'MM-DD-YYYY');
 			var changepwd_date = results[0].changepwd_date;
 			console.log("diff: " + changepwd_date + " - " + now);
 			if(changepwd_date == null || (changepwd_date != null && changepwd_date=='') || (changepwd_date != null && changepwd_date!=now)){
