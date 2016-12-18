@@ -182,7 +182,7 @@ LabYokeReporterSavings.prototype.reportMoney = function(callback) {
 		if(groupby.length>0)
 			groupby +=" , ";
 		groupby += "b.date";
-		html += "<p style='margin-top:100px;'>This report is listing savings between " + moment(datefrom).add(1, 'day').tz("America/New_York").format('MM-DD-YYYY') + " and " + moment(dateto).add(1, 'day').tz("America/New_York").format('MM-DD-YYYY') + "</p></div>"
+		html += "<p'>This report is listing savings between " + moment(datefrom).add(1, 'day').tz("America/New_York").format('MM-DD-YYYY') + " and " + moment(dateto).add(1, 'day').tz("America/New_York").format('MM-DD-YYYY') + "</p></div>"
 	} else {
 		datefrom = "all";
 		html += "<p>This report is listing all savings:</p></div>"
@@ -244,7 +244,7 @@ LabYokeReporterSavings.prototype.reportMoney = function(callback) {
 		console.log("results : " + results);
 		html += params;
 		if(results != null && results != ""){
-		html +="<table><tbody><tr style='color: white;background-color: #3d9dcb;font-size:12px'>" + columns + "</tr>"
+		html +="<table style='margin-top:100px;><tbody><tr style='color: white;background-color: #3d9dcb;font-size:12px'>" + columns + "</tr>"
 		
 			for(var prop in results){
 
