@@ -208,7 +208,7 @@ block content
             var cat = (catTransform[prop]).toLowerCase();
             var r = rowTransform[prop];
              console.log("share: " + cat + " - "+ r);
-              if(r != undefined && cat.find(r.toLowerCase())){
+              if(r != undefined && catTransform.find(r.toLowerCase())){
               valTransform.push(values[prop]);
               } else {
               valTransform.push(0);
