@@ -319,7 +319,7 @@ LabYokeReporterShares.prototype.reportShares = function(callback) {
 		}
 		if(where.trim() != "where")
 			where +=" and ";
-		where += "category = '" + category + "'";
+		where += " lower(category) like '%" + category + "%'";
 	} 
 	var qryStr = "SELECT * FROM vm2016_agentsshare " + where + " order by date desc";
 	console.log("query report shares: " + qryStr);
@@ -416,7 +416,7 @@ LabYokeReporterOrders.prototype.reportOrders = function(callback) {
 			where =" where ";
 		if(where.trim() != "where")
 			where +=" and ";
-		where += "category = '" + category + "'";
+		where += " lower(category) like '%" + category + "%'";
 	} 
 	var qryStr = "SELECT * FROM vm2016_orders " + where + " order by date desc";
 	console.log("qry report orders: " + qryStr)
