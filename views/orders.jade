@@ -202,7 +202,7 @@ block content
 
             var values = "#{array_values}";
             values = values.split("|");
-            var valTransform = [];
+            var valTransform = [0];
             for(var prop in catTransform){
             
             var cat = (catTransform[prop]).toLowerCase();
@@ -224,7 +224,7 @@ block content
 
             var valuesorders = "#{array_values3}";
             valuesorders = valuesorders.split("|");
-            var valTransformOrders = [];
+            var valTransformOrders = [0];
             for(var prop in catTransform){
               var cat = (catTransform[prop]).toLowerCase();
               var r = rowTransformOrders[prop];
