@@ -274,22 +274,22 @@ module.exports = function(router) {
 
 
 	router.get('/reports', isLoggedIn, function(req, res) {
-		if(req.session.labs == undefined){
-			var labyokerLabs = new LabyokerLabs('','');
-			labyokerLabs.getlabs(function(error, labs) {
-				var labyokerCats = new LabyokerCategories();
-				labyokerLabs.getcategories(function(error, categories) {
-					req.session.labs = labs;
-					console.log("load labs in reports : " + labs);
-					console.log("load categories in reports : " + categories);
-					res.render('reports', {categories: categories, labs: req.session.labs, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, isLoggedInAdmin: req.session.admin, loggedIn : true, title: 'Reports', isLoggedInAdmin: req.session.admin});
-					req.session.messages = null;
+		var labyokerCats = new LabyokerCategories();
+		labyokerCats.getcategories(function(error, categories) {
+			if(req.session.labs == undefined){
+				var labyokerLabs = new LabyokerLabs('','');
+				labyokerLabs.getlabs(function(error, labs) {
+						req.session.labs = labs;
+						console.log("load labs in reports : " + labs);
+						console.log("load categories in reports : " + categories);
+						res.render('reports', {categories: categories, labs: req.session.labs, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, isLoggedInAdmin: req.session.admin, loggedIn : true, title: 'Reports', isLoggedInAdmin: req.session.admin});
+						req.session.messages = null;
 				});
-			});
-		} else {
-			res.render('reports', {labs: req.session.labs, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, isLoggedInAdmin: req.session.admin, loggedIn : true, title: 'Reports', isLoggedInAdmin: req.session.admin});
-			req.session.messages = null;
-		}
+			} else {
+				res.render('reports', {categories: categories, labs: req.session.labs, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, isLoggedInAdmin: req.session.admin, loggedIn : true, title: 'Reports', isLoggedInAdmin: req.session.admin});
+				req.session.messages = null;
+			}
+		});
 
 	});
 
