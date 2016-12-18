@@ -204,7 +204,8 @@ block content
             values = values.split("|");
             var valTransform = [];
             for(var prop in values){
-              if(catTransform[prop] == rowTransform[prop]){
+            console.log("share: " + (catTransform[prop]).toLowerCase() + " - "+ (rowTransform[prop]).toLowerCase());
+              if((catTransform[prop]).toLowerCase() == (rowTransform[prop]).toLowerCase()){
               valTransform.push(values[prop]);
               } else {
               valTransform.push(0);
@@ -222,8 +223,8 @@ block content
             valuesorders = valuesorders.split("|");
             var valTransformOrders = [];
             for(var prop in valuesorders){
-
-              if(catTransform[prop] == rowTransformOrders[prop]){
+              console.log("order: " + (catTransform[prop]).toLowerCase() + " - "+ (rowTransform[prop]).toLowerCase());
+              if((catTransform[prop]).toLowerCase() == (rowTransformOrders[prop]).toLowerCase()){
               valTransformOrders.push(valuesorders[prop]);
               } else {
               valTransformOrders.push(0);
