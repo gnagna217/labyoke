@@ -104,7 +104,7 @@ block content
           
           -var cat = categories
           -for(var prop in cat)
-            - categorieslist = categorieslist + cat[prop] + "|"
+            - categorieslist = categorieslist + cat[prop].category + "|"
           -var ob = report_sharesbycategory
           -for(var prop in ob)
             - array_rows = array_rows + ob[prop].category + "|"
@@ -190,7 +190,7 @@ block content
             categories = categories.split("|");
             var catTransform = [];
             for(var prop in categories){
-              catTransform.push(categories[prop].category);
+              catTransform.push(categories[prop]);
             }
 
             var rows = "#{array_rows}";
