@@ -208,7 +208,7 @@ block content
             var cat = (catTransform[prop]).toLowerCase();
             var r = rowTransform[prop];
              console.log("share: " + cat + " - "+ r);
-              if(r != undefined && catTransform.find(r.toLowerCase())){
+              if(r != undefined && catTransform.indexOf(r.toLowerCase()) != -1){
               valTransform.push(values[prop]);
               } else {
               valTransform.push(0);
@@ -229,7 +229,7 @@ block content
               var cat = (catTransform[prop]).toLowerCase();
               var r = rowTransformOrders[prop];
               console.log("order: " + cat + " - "+ r);
-              if(r != undefined && catTransform.find(r.toLowerCase())){
+              if(r != undefined && catTransform.indexOf(r.toLowerCase()) != -1){
               valTransformOrders.push(valuesorders[prop]);
               } else {
               valTransformOrders.push(0);
