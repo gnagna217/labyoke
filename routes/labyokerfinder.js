@@ -168,8 +168,8 @@ LabYokeReporterSavings.prototype.reportMoney = function(callback) {
 	var query;
 
 	if(datefrom != null && dateto != null && datefrom !=undefined && dateto !=undefined && datefrom !="" && dateto !=""){
-		params += "<span style='font-weight:bold'>Date From: </span><span>" + moment(datefrom).add(1, 'day').tz("America/New_York").format('MM-DD-YYYY')  + "</span>";
-		params += "<span style='font-weight:bold'>Date To: </span><span>" + moment(dateto).add(1, 'day').tz("America/New_York").format('MM-DD-YYYY')  + "</span>";
+		params += "<div><span style='font-weight:bold'>Date From: </span><span>" + moment(datefrom).add(1, 'day').tz("America/New_York").format('MM-DD-YYYY')  + "</span></div>";
+		params += "<div><span style='font-weight:bold'>Date To: </span><span>" + moment(dateto).add(1, 'day').tz("America/New_York").format('MM-DD-YYYY')  + "</span></div>";
 		if(selected.length>0)
 			selected +=", ";
 		selected += "b.date";
@@ -186,7 +186,7 @@ LabYokeReporterSavings.prototype.reportMoney = function(callback) {
 	}
 
 	if(lab != null && lab !=undefined && lab !="all"){
-		params += "<span style='font-weight:bold'>Lab: </span><span>" + lab + "</span>";
+		params += "<div><span style='font-weight:bold'>Lab: </span><span>" + lab + "</span></div>";
 		if(where.length>0)
 			where +=" and ";
 		where += "b.lab = '" + lab + "'";
