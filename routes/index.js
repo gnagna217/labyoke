@@ -507,6 +507,10 @@ module.exports = function(router) {
 		res.redirect('/reports');
 	});
 
+	router.get('/changeDetails'), function(req, res) {
+		res.redirect('/account');
+	});
+
 	router.get('/cancelshare', function(req, res) {
 		res.redirect('/share');
 	});
