@@ -832,7 +832,7 @@ module.exports = function(router) {
 													console.log("choosetime: " + choosetime);
 
 													if(lab == "all"){
-														labsavings = "WORLD";
+														labsavings = "<b><i>WORLD</i></b>";
 													} else {
 														labsavings = "<b><i>" + lab + "</i></b>";
 													}
