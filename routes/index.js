@@ -832,7 +832,7 @@ module.exports = function(router) {
 													console.log("choosetime: " + choosetime);
 
 													if(lab == "all"){
-														labsavings = "the WORLD";
+														labsavings = "WORLD";
 													} else {
 														labsavings = "<b><i>" + lab + "</i></b>";
 													}
@@ -883,9 +883,16 @@ module.exports = function(router) {
 														} else if(savings > 100){
 															cheer = "Keep it up!";
 														} 
-														var text = "<strong> Major Achievement!</strong> You have saved " + labsavings + " a total of <b>$" + savings + "</b> dollars " + timeframesavings + ". " + cheer;
+														if(savings > 0){
+														var text = "";
+														if(lab == "all"){
+															text = "<strong> Major Achievement!</strong> You are part of a " + labsavings + " savings for a total of <b>$" + savings + "</b> dollars " + timeframesavings + ". " + cheer;
+														} else {
+															text = "<strong> Major Achievement!</strong> You have saved " + labsavings + " a total of <b>$" + savings + "</b> dollars " + timeframesavings + ". " + cheer;
+														}
 														booster.push(text);
 														boostercolor.push("success");
+														}
 
 														var b = Math.floor((Math.random() * booster.length-1) + 1);
 														req.session.savingsTextInitial = booster[b];
