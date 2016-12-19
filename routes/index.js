@@ -876,13 +876,13 @@ module.exports = function(router) {
 
 														req.session.savings = savings;
 														var cheer = "Keep searching, ordering, and sharing!";
-														if(savings > 100){
-															cheer = "Keep it up!";
+														if (savings > 10000){
+															cheer = "Amazing! You are a rock star!";
 														} else if (savings > 1000){
 															cheer = "Incredible!";
-														} else if (savings > 10000){
-															cheer = "Amazing! You are a rock star!";
-														}
+														} else if(savings > 100){
+															cheer = "Keep it up!";
+														} 
 														var text = "<strong> Major Achievement!</strong> You have saved " + labsavings + " a total of <b>$" + savings + "</b> dollars " + timeframesavings + ". " + cheer;
 														booster.push(text);
 														boostercolor.push("success");
