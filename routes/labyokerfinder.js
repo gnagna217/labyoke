@@ -328,7 +328,7 @@ LabYokeReporterSavings.prototype.reportMoney = function(callback) {
 	/*if(selected.length>0)
 		selected +=", ";
 	selected +="count(a.category)";*/
-	columns+="<td>Savings</td>";
+	columns+="<td>Shares Savings</td>";
 	var qrstr = "SELECT " + selected + " from vm2016_agentsshare a, vm2016_orders b where " + where + " group by " + groupby + " order by a.category asc";
 	console.log("qrstr = " + qrstr);
 	query = client.query(qrstr);
