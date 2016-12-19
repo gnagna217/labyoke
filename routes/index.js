@@ -833,8 +833,8 @@ module.exports = function(router) {
 													labYokereporterSavings.dataMoney(function(error, savings) {
 
 														req.session.savings = savings;
-														req.session.savingsText = "You have saved <b>" + labsavings + "</b> $" + savings + "</b> dollars for this <b>" + timeframesavings + "</b>.";
-														booster.push(req.session.savingsText);
+														var text = "You have saved <b>" + labsavings + "</b> $" + savings + "</b> dollars for this <b>" + timeframesavings + "</b>.";
+														booster.push(text);
 
 														var b = Math.floor((Math.random() * booster.length-1) + 1);
 														req.session.savingsText = booster[b];
