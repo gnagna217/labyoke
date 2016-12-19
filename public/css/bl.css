@@ -308,34 +308,34 @@ position: absolute;
     color: #3d9dcb;
 }
 
-.placeholderColor::-webkit-input-placeholder {
+/*.placeholderColor::-webkit-input-placeholder {
    color: white !important;
 }
 
-.placeholderColor::-moz-placeholder { /* Firefox 18- */
+.placeholderColor::-moz-placeholder { 
    color: white !important;
 }
 
-.placeholderColor::-moz-placeholder {  /* Firefox 19+ */
+.placeholderColor::-moz-placeholder {
    color: white !important;
 }
 
 .placeholderColor::-ms-input-placeholder {  
    color: white !important; 
-}
+}*/
 
 input:-webkit-autofill {
-    -webkit-box-shadow: 0 0 0px 1000px #3d9dcb inset;
+    -webkit-box-shadow: 0 0 0px 1000px rgba(61, 157, 203, 0.7); inset;
     -webkit-text-fill-color: white !important;
 }
 
 input:-webkit-autofill:focus {
-    -webkit-box-shadow: 0 0 0px 1000px #3d9dcb inset;
+    -webkit-box-shadow: 0 0 0px 1000px rgba(61, 157, 203, 0.7); inset;
     -webkit-text-fill-color: white !important;
 }
 
 input:-webkit-autofill:hover {
-    -webkit-box-shadow: 0 0 0px 1000px #3d9dcb inset;
+    -webkit-box-shadow: 0 0 0px 1000px rgba(61, 157, 203, 0.7); inset;
     -webkit-text-fill-color: white !important;
 }
 
