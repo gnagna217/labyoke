@@ -212,17 +212,22 @@ module.exports = function(router) {
 					if(results != null && results.length > 1){
 						totalshares = results[1].length;
 					}
+
 					booster.push("<strong> Self Information!</strong> You have ordered a total of <b>" + totalorders + " orders</b> and received a total of <b>" + totalshares + " requested shares</b>.");
+					var boostercolor = [];
 					if(totalorders > totalshares){
 						booster.push("<strong> Caution!</strong> You are ordering <b>more</b> than you are sharing.");
+						boostercolor.push("warning");
 					} else if(totalshares > totalorders){
 						booster.push("<strong> Major Achievement!</strong>  You are sharing <b>more</b> than you are ordering. Way to contribute to your lab's savings!");
+						boostercolor.push("success");
 					}
 					var b = Math.floor((Math.random() * booster.length-1) + 1);
 					req.session.savingsText = booster[b];
+					req.session.savingsColor = boostercolor[b];
 					//console.log("lab orders results1: " + results2[1]);				
 					//res.render('orders', {test: results[3], laborders: results2[0],lab1orders: results2[1], ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, isLoggedInAdmin: req.session.admin, title:'Orders', loggedIn : true, orderresults: results[0], report_sharesbycategory: results[1]});
-					res.render('orders', {booster:req.session.savingsText, lab:req.session.lab, categories: req.session.categories, test: results[3], laborders: results2, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, isLoggedInAdmin: req.session.admin, title:'Orders', loggedIn : true, orderresults: results[0], report_sharesbycategory: results[1], report_ordersbycategory: results[4]});
+					res.render('orders', {booster:req.session.savingsText, boostercolor:req.session.savingsColor, lab:req.session.lab, categories: req.session.categories, test: results[3], laborders: results2, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, isLoggedInAdmin: req.session.admin, title:'Orders', loggedIn : true, orderresults: results[0], report_sharesbycategory: results[1], report_ordersbycategory: results[4]});
 				}
 			});
 				});
@@ -251,7 +256,7 @@ module.exports = function(router) {
 					console.log("ordering reqcategory: " + reqcategory);
 					console.log("booster",req.session.savingsText);
 				
-					res.render('orders', {booster:req.session.savingsText, lab:req.session.lab, categories: req.session.categories, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, isLoggedInAdmin: req.session.admin, title:'Orders',loggedIn : true, location: location, agent: agent, vendor: vendor, catalog: catalognumber, email: email});
+					res.render('orders', {booster:req.session.savingsText, boostercolor:req.session.savingsColor, lab:req.session.lab, categories: req.session.categories, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, isLoggedInAdmin: req.session.admin, title:'Orders',loggedIn : true, location: location, agent: agent, vendor: vendor, catalog: catalognumber, email: email});
 					req.session.messages = null;
 				}
 			});
@@ -852,12 +857,14 @@ module.exports = function(router) {
 													console.log("timeframesavings datetosavings: " + datetosavings);
 													console.log("timeframesavings: " + timeframesavings);
 													var booster = [];
-													
+													var boostercolor = [];
 													if(orders > 0){
 														booster.push("<strong> Notification!</strong> You have <b>" + orders + " new order(s)</b> pending completion.");
+														boostercolor.push("warning");
 													}
 													if(shares > 0){
 														booster.push("<strong> Notification!</strong> You have <b>" + shares + " new share(s)</b> pending completion. Way to contribute to your lab's savings!");
+														boostercolor.push("warning");
 													}
 
 													var labYokereporterSavings = new LabYokeReporterSavings(datefromsavings,datetosavings,undefined,undefined,undefined,lab);
@@ -866,9 +873,11 @@ module.exports = function(router) {
 														req.session.savings = savings;
 														var text = "<strong> Major Achievement!</strong> You have saved " + labsavings + " <b>$" + savings + "</b> dollars " + timeframesavings + ".";
 														booster.push(text);
+														boostercolor.push("success");
 
 														var b = Math.floor((Math.random() * booster.length-1) + 1);
 														req.session.savingsText = booster[b];
+														req.session.savingsColor = boostercolor[b];
 														console.log("req.session.savingsText: " + req.session.savingsText);
 													
 
