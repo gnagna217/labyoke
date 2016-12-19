@@ -878,9 +878,9 @@ module.exports = function(router) {
 														var cheer = "Keep searching, ordering, and sharing!";
 														if(savings > 100){
 															cheer = "Keep it up!";
-														} else if savings > 1000){
+														} else if (savings > 1000){
 															cheer = "Incredible!";
-														} else if savings > 10000){
+														} else if (savings > 10000){
 															cheer = "Amazing! You are a rock star!";
 														}
 														var text = "<strong> Major Achievement!</strong> You have saved " + labsavings + " a total of <b>$" + savings + "</b> dollars " + timeframesavings + ". " + cheer;
