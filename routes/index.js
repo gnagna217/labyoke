@@ -203,7 +203,9 @@ module.exports = function(router) {
 					console.log("booster",req.session.savingsText);
 
 					var booster = [];
+					var boostercolor = [];
 					booster.push(req.session.savingsText);
+					boostercolor.push(req.session.savingsColor);
 					var totalorders = 0;
 					var totalshares = 0;
 					if(results != null && results.length > 0){
@@ -214,7 +216,7 @@ module.exports = function(router) {
 					}
 
 					booster.push("<strong> Self Information!</strong> You have ordered a total of <b>" + totalorders + " orders</b> and received a total of <b>" + totalshares + " requested shares</b>.");
-					var boostercolor = [];
+					
 					if(totalorders > totalshares){
 						booster.push("<strong> Caution!</strong> You are ordering <b>more</b> than you are sharing.");
 						boostercolor.push("warning");
