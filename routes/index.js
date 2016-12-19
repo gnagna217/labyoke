@@ -204,8 +204,8 @@ module.exports = function(router) {
 
 					var booster = [];
 					var boostercolor = [];
-					booster.push(req.session.savingsText);
-					boostercolor.push(req.session.savingsColor);
+					booster.push(req.session.savingsTextInitial);
+					boostercolor.push(req.session.savingsColorInitial);
 					var totalorders = 0;
 					var totalshares = 0;
 					if(results != null && results.length > 0){
@@ -880,8 +880,8 @@ module.exports = function(router) {
 														boostercolor.push("success");
 
 														var b = Math.floor((Math.random() * booster.length-1) + 1);
-														req.session.savingsText = booster[b];
-														req.session.savingsColor = boostercolor[b];
+														req.session.savingsTextInitial = booster[b];
+														req.session.savingsColorInitial = boostercolor[b];
 														console.log("req.session.savingsText: " + req.session.savingsText);
 													
 
