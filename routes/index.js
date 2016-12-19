@@ -206,7 +206,7 @@ module.exports = function(router) {
 					booster.push(req.session.savingsText);
 					var totalorders = 0;
 					var totalshares = 0;
-					if(results != null && orderresults.length > 0){
+					if(results != null && results.length > 0){
 						totalorders = results[0].length;
 					}
 					if(results != null && results.length > 1){
