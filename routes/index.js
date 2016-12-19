@@ -230,7 +230,7 @@ module.exports = function(router) {
 					console.log("ordering location: " + location);
 					console.log("ordering reqcategory: " + reqcategory);
 				
-					res.render('orders', {categories: req.session.categories, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, isLoggedInAdmin: req.session.admin, title:'Orders',loggedIn : true, location: location, agent: agent, vendor: vendor, catalog: catalognumber, email: email});
+					res.render('orders', {lab:req.session.lab, categories: req.session.categories, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, isLoggedInAdmin: req.session.admin, title:'Orders',loggedIn : true, location: location, agent: agent, vendor: vendor, catalog: catalognumber, email: email});
 					req.session.messages = null;
 				}
 			});
