@@ -63,6 +63,10 @@ block content
       if(orderresults != "" && email == undefined)
         div(style="float:right; padding-left: 25px", class="share-container adjustpadding")
           script(type="text/javascript" src="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.js")
+          if(orderresults != "" && email == undefined)
+            div(class="alert alert-" + boostercolor + " fade in alert-dismissable order-container",style="margin-top:18px;width:100%/*float: right;*/")
+              a(href="#", class="close", data-dismiss="alert", aria-label="close", title="close")="x"
+              span!= booster          
           div(style="background-color: #3d9dcb; height: 2px; margin-bottom: 30px; margin-top: 30px;")
           h4!="A quantity comparison between <i>" + lab + "</i>'s orders and shares."
           p="This graph depicts the current trend of your lab's "
@@ -438,7 +442,3 @@ block content
           br
           b="Vendor: "
           span=vendor
-      if(orderresults != "" && email == undefined)
-        div(class="alert alert-" + boostercolor + " fade in alert-dismissable order-container",style="margin-top:18px;float: right;")
-          a(href="#", class="close", data-dismiss="alert", aria-label="close", title="close")="x"
-          span!= booster
