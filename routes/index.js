@@ -850,7 +850,7 @@ module.exports = function(router) {
 														/*datefromsavings = "12-01-2016";
 														datetosavings = "12-31-2016";*/
 													}
-													timeframesavings = "for this past <b>" + choosetime + "</b>";
+													timeframesavings = "this past <b>" + choosetime + "</b>";
 													if(choosetime == "all"){
 														datefromsavings = undefined;
 														datetosavings = undefined;
