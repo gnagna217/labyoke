@@ -356,12 +356,15 @@ module.exports = function(router) {
 		console.log("changeDetails col: " + col);
 		console.log("changeDetails val: " + val);
 		console.log("changeDetails email: " + email);
-		if(col == 'name'){
-			req.session.user = val;
-		}
-		var labYokedetails = new LabyokerUserDetails(col, val, email);
+		var labYokedetails = new LabyokerUserDetails(col, val, email,req.session.user,req.session.surname);
 		labYokedetails.changeDetails(function(error, results) {
 			if(results){
+				if(col == 'name'){
+					req.session.user = val;
+				}
+				if(col == 'surname'){
+					re.session.surname = val;
+				}
 				console.log("res changeDetails " + results);
 				res.render('account', {labs: req.session.labs, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, title:'Account',loggedIn : true, resultsAccount: results, isLoggedInAdmin: req.session.admin});
 				req.session.messages = null;
@@ -770,6 +773,7 @@ module.exports = function(router) {
 													req.session.email = done[0].email;
 													req.session.lab = done[0].lab;
 													req.session.fullname = done[0].name;
+													req.session.surname = done[0].surname;
 													console.log("fullname " + req.session.fullname);
 													console.log("email " + req.session.email);
 													req.session.loggedin = true;

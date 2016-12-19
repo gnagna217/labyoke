@@ -41,10 +41,12 @@ LabYokerChangeShare = function(table, agent, vendor,catalognumber,email,requesto
 	this.requestor = requestor;
 };
 
-LabyokerUserDetails = function(column, value, email) {
+LabyokerUserDetails = function(column, value, email,curname,cursurname) {
 	this.column = column;
 	this.value = value;
 	this.email = email;
+	this.curname = curname;
+	this.cursurname = cursurname;
 }
 
 LabYokeReporterOrders = function(datefrom, dateto, lab, category) {
