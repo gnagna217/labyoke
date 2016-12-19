@@ -217,7 +217,7 @@ a.fa-globe {
 span.fa-comment {
     position: absolute;
     font-size: 2.0em;
-    top: -8px;
+    top: -11px;
     color: #3d9dcb;
     right: -9px;
 }
@@ -936,10 +936,10 @@ input::-webkit-inner-spin-button {
 }
 
 span.fa-comment {
-    right: 10px !important;
+    right: 5px !important;
 }
 span.num {
-    right: 19px !important;
+    right: 14px !important;
 }
 span.num.greatherthannine {
     right: 16px !important;
