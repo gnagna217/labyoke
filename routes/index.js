@@ -225,6 +225,8 @@ module.exports = function(router) {
 						boostercolor.push("success");
 					}
 					var b = Math.floor((Math.random() * booster.length-1) + 1);
+					console.log("orders - b radomized: " + b);
+					console.log("orders - b length radomized: " + booster.length);
 					req.session.savingsText = booster[b];
 					req.session.savingsColor = boostercolor[b];
 					//console.log("lab orders results1: " + results2[1]);				
