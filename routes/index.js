@@ -791,8 +791,8 @@ module.exports = function(router) {
 													var lab = "";
 													var labsavings = "";
 
-													var t = Math.floor((Math.random() * timearr.length) + 1);
-													var l = Math.floor((Math.random() * labarr.length) + 1);
+													var t = Math.floor((Math.random() * timearr.length-1) + 1);
+													var l = Math.floor((Math.random() * labarr.length-1) + 1);
 													console.log("random int time: " + t);
 													console.log("random int lab: " + l);
 
