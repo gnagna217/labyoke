@@ -841,7 +841,7 @@ module.exports = function(router) {
 														var b = Math.floor((Math.random() * booster.length-1) + 1);
 														req.session.savingsText = booster[b];
 														console.log("req.session.savingsText: " + req.session.savingsText);
-													});
+													
 
 													if(req.session.to != null && req.session.to.length > 0){
 														res.redirect(req.session.to);
@@ -849,6 +849,7 @@ module.exports = function(router) {
 													} else {
 														res.redirect('/search');
 													}
+													});
 												});
 											});
 										} else {
