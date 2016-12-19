@@ -507,7 +507,7 @@ module.exports = function(router) {
 		res.redirect('/reports');
 	});
 
-	router.get('/changeDetails'), function(req, res) {
+	router.get('/changeDetails', function(req, res) {
 		res.redirect('/account');
 	});
 
