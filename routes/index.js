@@ -822,6 +822,12 @@ module.exports = function(router) {
 													timeframesavings = "past " + choosetime;
 													console.log("timeframesavings: " + timeframesavings);
 													var booster = [];
+													booster.push("You have ordered a total of <b>" + orders + " orders</b> and <b>" + shares + "shares</b>.");
+													if(orders > shares){
+														booster.push("You are ordering <b>more</b> than you are sharing.");
+													} else if(shares > orders){
+														booster.push("You are sharing <b>more</b> than you are ordering. Way to contribute to your lab's savings!");
+													}
 
 													var labYokereporterSavings = new LabYokeReporterSavings(datefromsavings,datetosavings,undefined,undefined,undefined,lab);
 													labYokereporterSavings.dataMoney(function(error, savings) {
@@ -829,6 +835,9 @@ module.exports = function(router) {
 														req.session.savings = savings;
 														req.session.savingsText = "You have saved <b>" + labsavings + "</b> $" + savings + "</b> dollars for this <b>" + timeframesavings + "</b>.";
 														booster.push(req.session.savingsText);
+
+														var b = Math.floor((Math.random() * booster.length-1) + 1);
+														req.session.savingsText = booster[b];
 														console.log("req.session.savingsText: " + req.session.savingsText);
 													});
 
