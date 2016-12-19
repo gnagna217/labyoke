@@ -25,7 +25,7 @@ block content
             a(href="/search")
                 img(src="/images/yoke4.png", alt="The Yoke",  title="Yoke", class="yokelogo")
             h1= 'Search.'
-            p Start your search by typing in the name of the agent.
+            p Start your search by typing in the name of the reagent.
             - searchText = "Looking for..."
             - classButton = "btn-success"
             if searchformText
@@ -62,7 +62,7 @@ block content
                         thead
                          tr(class="you info-best" style="font-weight: bold")
                           td(class="desktabonly")= 'id '
-                          td(class="wrapped")!= 'Agent'
+                          td(class="wrapped")!= 'Reagent'
                           td(class="desktabonly")= 'Vendor'
                           td= 'Location'
                           td= 'Order'
@@ -106,7 +106,7 @@ block content
                       span(style="text-align: center")
                         h3="Sorry we could not find any location for your"
                             span(style="color: #3d9dcb;")=" " + searchText
-                        h4="Try another chemical agent!" 
+                        h4="Try another chemical reagent!" 
                          
             script="$(window).scrollTop($('#results').offset().top).scrollLeft($('#results').offset().left);"
 
