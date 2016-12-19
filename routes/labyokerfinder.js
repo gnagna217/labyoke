@@ -234,12 +234,14 @@ LabYokeReporterSavings.prototype.dataMoney = function(callback) {
 	query.on("end", function(result) {
 		results = result.rows;
 		console.log("results : " + results);
-
+		var savings = 0;
 		if(results != null && results != ""){
 			console.log("data money: " + results);
+			for(var prop in results){
+				savings += results[prop].counting * results[prop].price;
+			}
 		}
-		
-		callback(null, results)
+		callback(null, savings)
 	});
 };
 

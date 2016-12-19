@@ -781,6 +781,57 @@ module.exports = function(router) {
 													console.log("fullname " + req.session.fullname);
 													console.log("email " + req.session.email);
 													req.session.loggedin = true;
+
+													var timeframesavings = "year";
+													var choosetime = "";
+													var timearr = ["year","month","all"];
+													var labarr = ["all",req.session.lab];
+													var datefromsavings = "";
+													var datetosavings = "";
+													var lab = "";
+													var labsavings = "";
+
+													var t = Math.floor((Math.random() * timearr.length) + 1);
+													var l = Math.floor((Math.random() * labarr.length) + 1);
+													console.log("random int time: " + t);
+													console.log("random int lab: " + l);
+
+													lab = labarr[l];
+													choosetime = timearr[t];
+													console.log("lab: " + lab);
+													console.log("choosetime: " + choosetime);
+
+													if(lab == "all"){
+														labsavings = "the WORLD";
+													} else {
+														labsavings = "your <i>" + lab + "</i> lab";
+													}
+													if(choosetime == "year"){
+														datefromsavings = "01-01-2016";
+														datetosavings = "12-31-2016";
+													}
+													if(choosetime == "month"){
+														datefromsavings = "12-01-2016";
+														datetosavings = "12-31-2016";
+													}
+													if(choosetime == "all"){
+														datefromsavings = "01-01-2016";
+														datetosavings = "12-31-2016";
+													}
+													
+													timeframesavings = "past " + choosetime;
+													console.log("timeframesavings: " + timeframesavings);
+													var booster = [];
+
+													var labYokereporterSavings = new LabYokeReporterSavings(datefromsavings,datetosavings,undefined,undefined,undefined,lab);
+													labYokereporterSavings.dataMoney(function(error, savings) {
+
+														req.session.savings = savings;
+														req.session.savingsText = "You have saved <b>" + labsavings + "</b> $" + savings + "</b> dollars for this <b>" + timeframesavings + "</b>.";
+														booster.push(req.session.savingsText);
+														console.log("req.session.savingsText: " + req.session.savingsText);
+													});
+
 													if(req.session.to != null && req.session.to.length > 0){
 														res.redirect(req.session.to);
 														req.session.to = null;
