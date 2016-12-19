@@ -201,6 +201,25 @@ module.exports = function(router) {
 					console.log("orders results: " + results[0]);
 					console.log("lab orders results0: " + results2);
 					console.log("booster",req.session.savingsText);
+
+					var booster = [];
+					booster.push(req.session.savingsText);
+					var totalorders = 0;
+					var totalshares = 0;
+					if(results != null && orderresults.length > 0){
+						totalorders = results[0].length;
+					}
+					if(results != null && results.length > 1){
+						totalshares = results[1].length;
+					}
+					booster.push("You have ordered a total of <b>" + totalorders + " orders</b> and <b>" + totalshares + " shares</b>.");
+					if(totalorders > totalshares){
+						booster.push("You are ordering <b>more</b> than you are sharing.");
+					} else if(totalshares > totalorders){
+						booster.push("You are sharing <b>more</b> than you are ordering. Way to contribute to your lab's savings!");
+					}
+					var b = Math.floor((Math.random() * booster.length-1) + 1);
+					req.session.savingsText = booster[b];
 					//console.log("lab orders results1: " + results2[1]);				
 					//res.render('orders', {test: results[3], laborders: results2[0],lab1orders: results2[1], ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, isLoggedInAdmin: req.session.admin, title:'Orders', loggedIn : true, orderresults: results[0], report_sharesbycategory: results[1]});
 					res.render('orders', {booster:req.session.savingsText, lab:req.session.lab, categories: req.session.categories, test: results[3], laborders: results2, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, isLoggedInAdmin: req.session.admin, title:'Orders', loggedIn : true, orderresults: results[0], report_sharesbycategory: results[1], report_ordersbycategory: results[4]});
@@ -824,11 +843,12 @@ module.exports = function(router) {
 													timeframesavings = "past " + choosetime;
 													console.log("timeframesavings: " + timeframesavings);
 													var booster = [];
-													booster.push("You have ordered a total of <b>" + orders + " orders</b> and <b>" + shares + " shares</b>.");
-													if(orders > shares){
-														booster.push("You are ordering <b>more</b> than you are sharing.");
-													} else if(shares > orders){
-														booster.push("You are sharing <b>more</b> than you are ordering. Way to contribute to your lab's savings!");
+													
+													if(orders > 0){
+														booster.push("You have <b>" + orders + " new order(s)</b> pending completion.");
+													}
+													if(shares > 0){
+														booster.push("You have <b>" + shares + " new share(s)</b> pending completion. Way to contribute to your lab's savings!");
 													}
 
 													var labYokereporterSavings = new LabYokeReporterSavings(datefromsavings,datetosavings,undefined,undefined,undefined,lab);
