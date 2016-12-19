@@ -212,7 +212,7 @@ module.exports = function(router) {
 					if(results != null && results.length > 1){
 						totalshares = results[1].length;
 					}
-					booster.push("<strong> Self Information!</strong> You have ordered a total of <b>" + totalorders + " orders</b> and <b>" + totalshares + " shares</b>.");
+					booster.push("<strong> Self Information!</strong> You have ordered a total of <b>" + totalorders + " orders</b> and received a total of <b>" + totalshares + " requested shares</b>.");
 					if(totalorders > totalshares){
 						booster.push("<strong> Caution!</strong> You are ordering <b>more</b> than you are sharing.");
 					} else if(totalshares > totalorders){
