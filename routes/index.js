@@ -834,7 +834,7 @@ module.exports = function(router) {
 													if(lab == "all"){
 														labsavings = "the WORLD";
 													} else {
-														labsavings = "<b><i>" + lab + "</i></b> lab";
+														labsavings = "<b><i>" + lab + "</i></b>";
 													}
 													if(choosetime == "year"){
 														var date = new Date(), y = date.getFullYear(), m = date.getMonth();
@@ -875,7 +875,7 @@ module.exports = function(router) {
 													labYokereporterSavings.dataMoney(function(error, savings) {
 
 														req.session.savings = savings;
-														var text = "<strong> Major Achievement!</strong> You have saved " + labsavings + " <b>$" + savings + "</b> dollars " + timeframesavings + ".";
+														var text = "<strong> Major Achievement!</strong> You have saved " + labsavings + " a total of <b>$" + savings + "</b> dollars " + timeframesavings + ". Incredible!";
 														booster.push(text);
 														boostercolor.push("success");
 
