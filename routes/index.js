@@ -199,7 +199,8 @@ module.exports = function(router) {
 					//req.session.shares = results[2];
 					//req.session.orders = 0;
 					console.log("orders results: " + results[0]);
-					console.log("lab orders results0: " + results2);	
+					console.log("lab orders results0: " + results2);
+					console.log("booster",req.session.savingsText);
 					//console.log("lab orders results1: " + results2[1]);				
 					//res.render('orders', {test: results[3], laborders: results2[0],lab1orders: results2[1], ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, isLoggedInAdmin: req.session.admin, title:'Orders', loggedIn : true, orderresults: results[0], report_sharesbycategory: results[1]});
 					res.render('orders', {booster:req.session.savingsText, lab:req.session.lab, categories: req.session.categories, test: results[3], laborders: results2, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, isLoggedInAdmin: req.session.admin, title:'Orders', loggedIn : true, orderresults: results[0], report_sharesbycategory: results[1], report_ordersbycategory: results[4]});
@@ -229,6 +230,7 @@ module.exports = function(router) {
 					console.log("ordering agentform: " + agent);
 					console.log("ordering location: " + location);
 					console.log("ordering reqcategory: " + reqcategory);
+					console.log("booster",req.session.savingsText);
 				
 					res.render('orders', {booster:req.session.savingsText, lab:req.session.lab, categories: req.session.categories, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, isLoggedInAdmin: req.session.admin, title:'Orders',loggedIn : true, location: location, agent: agent, vendor: vendor, catalog: catalognumber, email: email});
 					req.session.messages = null;
