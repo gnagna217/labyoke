@@ -828,12 +828,18 @@ module.exports = function(router) {
 														labsavings = "<b><i>" + lab + "</i></b> lab";
 													}
 													if(choosetime == "year"){
-														datefromsavings = "01-01-2016";
-														datetosavings = "12-31-2016";
+														var date = new Date(), y = date.getFullYear(), m = date.getMonth();
+														datefromsavings = moment(new Date(y, 1, 1)).tz("America/New_York").format('MM-DD-YYYY');
+														datetosavings = moment(new Date(y, 12, 0)).tz("America/New_York").format('MM-DD-YYYY');
+														/*datefromsavings = "01-01-2016";
+														datetosavings = "12-31-2016";*/
 													}
 													if(choosetime == "month"){
-														datefromsavings = "12-01-2016";
-														datetosavings = "12-31-2016";
+														var date = new Date(), y = date.getFullYear(), m = date.getMonth();
+														datefromsavings = moment(new Date(y, m, 1)).tz("America/New_York").format('MM-DD-YYYY');
+														datetosavings = moment(new Date(y, m + 1, 0)).tz("America/New_York").format('MM-DD-YYYY');
+														/*datefromsavings = "12-01-2016";
+														datetosavings = "12-31-2016";*/
 													}
 													timeframesavings = "for this past <b>" + choosetime + "</b>";
 													if(choosetime == "all"){
@@ -842,7 +848,8 @@ module.exports = function(router) {
 														timeframesavings = "over time";
 													}
 													
-													
+													console.log("timeframesavings datefromsavings: " + datefromsavings);
+													console.log("timeframesavings datetosavings: " + datetosavings);
 													console.log("timeframesavings: " + timeframesavings);
 													var booster = [];
 													
