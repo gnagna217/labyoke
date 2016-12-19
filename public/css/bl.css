@@ -309,19 +309,19 @@ position: absolute;
 }
 
 .placeholderColor::-webkit-input-placeholder {
-   color: red !important;
+   color: white !important;
 }
 
 .placeholderColor::-moz-placeholder { /* Firefox 18- */
-   color: red !important;
+   color: white !important;
 }
 
 .placeholderColor::-moz-placeholder {  /* Firefox 19+ */
-   color: red !important;
+   color: white !important;
 }
 
 .placeholderColor::-ms-input-placeholder {  
-   color: red !important; 
+   color: white !important; 
 }
 
 input:-webkit-autofill {
