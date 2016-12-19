@@ -837,8 +837,8 @@ module.exports = function(router) {
 													}
 													timeframesavings = "for this past <b>" + choosetime + "</b>";
 													if(choosetime == "all"){
-														datefromsavings = "01-01-2016";
-														datetosavings = "12-31-2016";
+														datefromsavings = undefined;
+														datetosavings = undefined;
 														timeframesavings = "over time";
 													}
 													
