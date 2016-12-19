@@ -1402,7 +1402,7 @@ LabyokerUserDetails.prototype.changeDetails = function(callback) {
 			query2.on("row", function(row, result2) {
 				result2.addRow(row);
 			});
-			query.on("end", function(result2) {
+			query2.on("end", function(result2) {
 
 			});
 
