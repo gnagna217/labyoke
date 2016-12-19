@@ -822,7 +822,7 @@ module.exports = function(router) {
 													timeframesavings = "past " + choosetime;
 													console.log("timeframesavings: " + timeframesavings);
 													var booster = [];
-													booster.push("You have ordered a total of <b>" + orders + " orders</b> and <b>" + shares + "shares</b>.");
+													booster.push("You have ordered a total of <b>" + orders + " orders</b> and <b>" + shares + " shares</b>.");
 													if(orders > shares){
 														booster.push("You are ordering <b>more</b> than you are sharing.");
 													} else if(shares > orders){
