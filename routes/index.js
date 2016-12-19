@@ -363,7 +363,7 @@ module.exports = function(router) {
 					req.session.user = val;
 				}
 				if(col == 'surname'){
-					re.session.surname = val;
+					req.session.surname = val;
 				}
 				console.log("res changeDetails " + results);
 				res.render('account', {labs: req.session.labs, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, title:'Account',loggedIn : true, resultsAccount: results, isLoggedInAdmin: req.session.admin});
