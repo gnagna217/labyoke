@@ -313,6 +313,16 @@ input:-webkit-autofill {
     /*-webkit-text-fill-color: red !important;*/
 }
 
+input:-webkit-autofill:focus {
+    -webkit-box-shadow: 0 0 0px 1000px white inset;
+    /*-webkit-text-fill-color: red !important;*/
+}
+
+input:-webkit-autofill:hover {
+    -webkit-box-shadow: 0 0 0px 1000px white inset;
+    /*-webkit-text-fill-color: red !important;*/
+}
+
 .menu-border{
     border-left-color: white;border-left-style: solid;border-width: thick; border-right-color: white;border-right-style: solid;
 }
