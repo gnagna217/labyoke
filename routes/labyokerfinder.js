@@ -1360,6 +1360,8 @@ LabyokerUserDetails.prototype.changeDetails = function(callback) {
 	var column = this.column;
 	var value = this.value;
 	var email = this.email;
+	var curname = this.curname;
+	var cursurname = this.cursurname;
 	var results;
 	var query = client.query("UPDATE vm2016_users SET " + column + "='" + value
 			+ "' where email='" + email + "'");
@@ -1367,6 +1369,44 @@ LabyokerUserDetails.prototype.changeDetails = function(callback) {
 		result.addRow(row);
 	});
 	query.on("end", function(result) {
+		var qStr = "";
+		var where = "";
+		var location = "";
+		var name = curname;
+		var surname = cursurname;
+		var update = false;
+		if(column == "name"){
+			if(where==""){
+				where = " where email='" + email + "'";
+			}
+			name = value.charAt(0);
+			location = name.toUpperCase() + ". " + surname;
+			console.log("location name: " + location);
+			update = true;
+
+		}
+		if(column == "surname"){
+			if(where==""){
+				where = " where email='" + email + "'";
+			}
+			update = true;
+			surname = value;
+			name = name.charAt(0);
+			location = name.toUpperCase() + ". " + surname;
+			console.log("location surname: " + location);
+		}
+		if(update){
+			qStr = "update vm2016_agentsshare set location='" + location + "' " + where;
+			console.log("qstr changedetails update share tbl: " + qStr);
+			var query2 = client.query(qStr);
+			query2.on("row", function(row, result2) {
+				result2.addRow(row);
+			});
+			query.on("end", function(result2) {
+
+			});
+
+		}
 		results = column + " to " + value;
 		callback(null, results);
 	});
