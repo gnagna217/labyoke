@@ -212,11 +212,11 @@ module.exports = function(router) {
 					if(results != null && results.length > 1){
 						totalshares = results[1].length;
 					}
-					booster.push("You have ordered a total of <b>" + totalorders + " orders</b> and <b>" + totalshares + " shares</b>.");
+					booster.push(" You have ordered a total of <b>" + totalorders + " orders</b> and <b>" + totalshares + " shares</b>.");
 					if(totalorders > totalshares){
-						booster.push("You are ordering <b>more</b> than you are sharing.");
+						booster.push(" You are ordering <b>more</b> than you are sharing.");
 					} else if(totalshares > totalorders){
-						booster.push("You are sharing <b>more</b> than you are ordering. Way to contribute to your lab's savings!");
+						booster.push(" You are sharing <b>more</b> than you are ordering. Way to contribute to your lab's savings!");
 					}
 					var b = Math.floor((Math.random() * booster.length-1) + 1);
 					req.session.savingsText = booster[b];
@@ -825,7 +825,7 @@ module.exports = function(router) {
 													if(lab == "all"){
 														labsavings = "the WORLD";
 													} else {
-														labsavings = "your <i>" + lab + "</i> lab";
+														labsavings = "<b><i>" + lab + "</i></b> lab";
 													}
 													if(choosetime == "year"){
 														datefromsavings = "01-01-2016";
@@ -835,27 +835,29 @@ module.exports = function(router) {
 														datefromsavings = "12-01-2016";
 														datetosavings = "12-31-2016";
 													}
+													timeframesavings = "for this past <b>" + choosetime + "</b>";
 													if(choosetime == "all"){
 														datefromsavings = "01-01-2016";
 														datetosavings = "12-31-2016";
+														timeframesavings = "over time";
 													}
 													
-													timeframesavings = "past " + choosetime;
+													
 													console.log("timeframesavings: " + timeframesavings);
 													var booster = [];
 													
 													if(orders > 0){
-														booster.push("You have <b>" + orders + " new order(s)</b> pending completion.");
+														booster.push(" You have <b>" + orders + " new order(s)</b> pending completion.");
 													}
 													if(shares > 0){
-														booster.push("You have <b>" + shares + " new share(s)</b> pending completion. Way to contribute to your lab's savings!");
+														booster.push(" You have <b>" + shares + " new share(s)</b> pending completion. Way to contribute to your lab's savings!");
 													}
 
 													var labYokereporterSavings = new LabYokeReporterSavings(datefromsavings,datetosavings,undefined,undefined,undefined,lab);
 													labYokereporterSavings.dataMoney(function(error, savings) {
 
 														req.session.savings = savings;
-														var text = "You have saved <b>" + labsavings + "</b> $" + savings + "</b> dollars for this <b>" + timeframesavings + "</b>.";
+														var text = " You have saved " + labsavings + " <b>$" + savings + "</b> dollars " + timeframesavings + ".";
 														booster.push(text);
 
 														var b = Math.floor((Math.random() * booster.length-1) + 1);
