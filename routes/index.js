@@ -421,9 +421,9 @@ module.exports = function(router) {
 			if(results != null){
 				console.log("res " + results);
 				if(results != ""){
-					res.render('reports', {categories: req.session.categories, labs: req.session.labs, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, datefromMoney: datefrom, datetoMoney: dateto, title:'Reports',loggedIn : true, resultsMoney: results, isLoggedInAdmin: req.session.admin, addMessageMoney: "success"});
+					res.render('reports', {categories: req.session.categories, labs: req.session.labs, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, title:'Reports',loggedIn : true, resultsInsuff: results, isLoggedInAdmin: req.session.admin, addMessageInsuff: "success"});
 				} else {
-					res.render('reports', {categories: req.session.categories, labs: req.session.labs, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, datefromMoney: datefrom, datetoMoney: dateto, title:'Reports',loggedIn : true, isLoggedInAdmin: req.session.admin, addMessageMoney: "failure"});
+					res.render('reports', {categories: req.session.categories, labs: req.session.labs, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, title:'Reports',loggedIn : true, isLoggedInAdmin: req.session.admin, addMessageInsuff: "failure"});
 				}
 				req.session.messages = null;
 			}
