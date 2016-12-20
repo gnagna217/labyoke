@@ -870,7 +870,7 @@ module.exports = function(router) {
 														boostercolor.push("warning");
 													}
 													if(shares > 0){
-														booster.push("<strong> Notification!</strong> You have <b>" + shares + " new share(s)</b> pending completion. <a href='/shares'>Check it out</a> promptly and fulfill the request. Way to contribute to your lab's savings!");
+														booster.push("<strong> Notification!</strong> You have <b>" + shares + " new share(s)</b> pending completion. <a href='/share'>Check it out</a> promptly and fulfill the request. Way to contribute to your lab's savings!");
 														boostercolor.push("warning");
 													}
 
