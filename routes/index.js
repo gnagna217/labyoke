@@ -220,17 +220,12 @@ module.exports = function(router) {
 					var labadmin;
 					console.log("booster labs "+ labs);
 					for(var i in labs){
-						var labrow = util.inspect(labs[i], false, null);
+						//var labrow = util.inspect(labs[i], false, null);
 						console.log("booster labi "+ labs[i]);
 						console.log("booster labiname "+ labs[i].labname);
-						console.log("booster labrow "+ labrow);
-						console.log("booster labrowname "+ labrow.labname);
 			       		//var lab = labs[i].lab
-			       		if(labrow.labname == req.session.lab){
-			       		console.log("i is: "+ i);
-			       		console.log("lab util: " + labrow);
-			       		console.log("labrow lab util: " + labrow.labname);
-			       		labadmin = labrow.admin;
+			       		if(labs[i].labname == req.session.lab){
+			       		labadmin = labs[i].admin;
 			       		}
 			       		//console.log("lab is: "+ lab);
 			       	}
