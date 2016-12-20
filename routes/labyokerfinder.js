@@ -549,7 +549,7 @@ LabYokeReporterShares.prototype.reportShares = function(callback) {
 				var date = results[prop].date;
 
 				html += " <tr><td style='font-size: 12px;'>" + agent + "</td>";
-				html += " <tr><td style='font-size: 12px;'>" + labrow + "</td>";
+				html += " <td style='font-size: 12px;'>" + labrow + "</td>";
 				html += " <td style='font-size: 12px;'>" + vendor + "</td>";
 				html += " <td style='font-size: 12px;'>" + catalognumber + "</td>";
 				html += " <td style='font-size: 12px;'>" + location + "</td>";
