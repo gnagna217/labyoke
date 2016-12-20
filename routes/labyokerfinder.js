@@ -101,6 +101,10 @@ LabYokerOrder = function(lab,agent,vendor,catalognumber,email,location,sendemail
 	this.quantity = quantity;
 };
 
+LabyokerTeam = function(lab) {
+	this.lab = lab;
+};
+
 LabYokerGetOrder = function(sendemail,lab) {
 	this.sendemail = sendemail;
 	this.lab = lab;
@@ -1325,6 +1329,18 @@ Labyoker.prototype.changepassword = function(callback) {
 	});
 };
 
+LabyokerTeam.prototype.getTeam = function(callback) {
+	var results;
+	var query = client.query("Select * from vm2016_users where lab='" + this.lab + "'");
+	query.on("row", function(row, result) {
+		result.addRow(row);
+	});
+	query.on("end", function(result) {
+		results = result.rows;
+		callback(null, results);
+	});
+};
+
 LabyokerConfirm.prototype.confirm = function(callback) {
 	var results;
 	var registerid = this.registerid;
@@ -1573,4 +1589,5 @@ exports.LabyokerInit = LabyokerInit;
 exports.LabyokerLabs = LabyokerLabs;
 exports.LabYokeReporterSavings = LabYokeReporterSavings;
 exports.LabYokeReporterShares = LabYokeReporterShares;
+exports.LabyokerTeam = LabyokerTeam;
 exports.LabyokerCategories = LabyokerCategories;
