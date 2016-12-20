@@ -214,11 +214,24 @@ module.exports = function(router) {
 					if(results != null && results.length > 1){
 						totalshares = results[1].length;
 					}
+					var labs = req.session.labs;
+					var labadmin;
+					for(var i in labs){
+						var labrow = util.inspect(labs[i], false, null);
+			       		//var lab = labs[i].lab
+			       		if(labrow.labname == req.session.lab){
+			       		console.log("i is: "+ i);
+			       		console.log("lab util: " + labrow);
+			       		console.log("labrow lab util: " + labrow.labname);
+			       		labadmin = labrow.admin;
+			       		}
+			       		//console.log("lab is: "+ lab);
+			       	}
 
 					booster.push("<strong> Self Kudos!</strong> You have ordered a total of <b>" + totalorders + " order(s)</b> and received a total of <b>" + totalshares + " requested share(s)</b>. Keep it up!");
 					boostercolor.push("success");
 					if(totalorders > totalshares){
-						booster.push("<strong> Caution.</strong> You are ordering <b>more</b> than you are sharing. Did you replenish your inventory? Email you <a href='"+req.session.admin+"'>administrator</a> if needed.");
+						booster.push("<strong> Caution.</strong> You are ordering <b>more</b> than you are sharing. Did you replenish your inventory? Email your <a href='"+labadmin+"'>administrator</a> if needed.");
 						boostercolor.push("warning");
 					} else if(totalshares > totalorders){
 						booster.push("<strong> Major Achievement!</strong>  You are sharing <b>more</b> than you are ordering. Way to contribute to your lab's savings!");
