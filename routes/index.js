@@ -247,7 +247,7 @@ module.exports = function(router) {
 					req.session.savingsColor = boostercolor[b];
 					//console.log("lab orders results1: " + results2[1]);				
 					//res.render('orders', {test: results[3], laborders: results2[0],lab1orders: results2[1], ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, isLoggedInAdmin: req.session.admin, title:'Orders', loggedIn : true, orderresults: results[0], report_sharesbycategory: results[1]});
-					res.render('orders', {booster:req.session.savingsText, boostercolor:req.session.savingsColor, lab:req.session.lab, categories: req.session.categories, test: results[3], laborders: results2, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, isLoggedInAdmin: req.session.admin, title:'Orders', loggedIn : true, orderresults: results[0], report_sharesbycategory: results[1], report_ordersbycategory: results[4]});
+					res.render('orders', {booster:req.session.savingsText, boostercolor:req.session.savingsColor, labname:req.session.lab, categories: req.session.categories, test: results[3], laborders: results2, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, isLoggedInAdmin: req.session.admin, title:'Orders', loggedIn : true, orderresults: results[0], report_sharesbycategory: results[1], report_ordersbycategory: results[4]});
 				}
 			});
 				});
@@ -459,6 +459,7 @@ module.exports = function(router) {
 	router.get('/account', isLoggedIn, function(req, res) {
 		console.log("inside accounnt: " + req.session.email);
 		console.log("account labs: " + req.session.labs);
+		console.log("account lab: " + req.session.lab);
 		var labyokerTeam = new LabyokerTeam(req.session.lab);
 		labyokerTeam.getTeam(function(error, team) {
 		if(req.session.labs == undefined){
