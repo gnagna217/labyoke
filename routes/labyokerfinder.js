@@ -1131,14 +1131,14 @@ Labyoker.prototype.login = function(callback) {
 	var results;
 	var resultsLogin = [];
 pg.connect(connectionString, (err, client, done) => {
-	    if(err) {
+	if(err) {
       done();
       console.log(err);
       return res.status(500).json({success: false, data: err});
     }
 
     client.query("SELECT * FROM vm2016_users where id='" + username+ "'", function(err, result) {
-          done();
+          
 
 	//var query = client.query("SELECT * FROM vm2016_users where id='" + username+ "'"/* and password='"+password+"'" */);
 	/*query.on("row", function(row, result) {
@@ -1158,9 +1158,15 @@ pg.connect(connectionString, (err, client, done) => {
 				console.log("compare is: " + c);
 				if (c) {
 
+  client.query("SELECT count(agent) as counting from vm2016_orders where email='" + email + "' and status='new'", function(err, result2) {  
+
+  	done();
+
+  	client.query("SELECT count(agent) as counting from vm2016_orders where email='" + email + "' and status='new'", function(err, result3) { 
+  		done();
+    
 		/*var query2 = client
-				.query("SELECT count(agent) as counting from vm2016_orders where email='" + email
-			+ "' and status='new'");
+				.query("SELECT count(agent) as counting from vm2016_orders where email='" + email + "' and status='new'");
 		query2.on("row", function(row, result2) {
 			result2.addRow(row);
 		});
@@ -1182,6 +1188,10 @@ pg.connect(connectionString, (err, client, done) => {
 			resultsLogin.push(test3[0].counting);
 			console.log("shares found: " + test2[0].counting)
 			console.log("orders found: " + test3[0].counting)*/
+			var test3 = result3;
+			var test2 = result2;
+			resultsLogin.push(test2[0].counting);
+			resultsLogin.push(test3[0].counting);
 			callback(null, resultsLogin)
 		/*});
 			
@@ -1205,9 +1215,10 @@ pg.connect(connectionString, (err, client, done) => {
 		} else {
 			callback(null, null);
 		}
-
+});
         /*});*/
 	});
+});
 });
 };
 
