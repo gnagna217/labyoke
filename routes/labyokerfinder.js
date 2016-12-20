@@ -1361,6 +1361,7 @@ pg.connect(connectionString, (err, client, done) => {
 		} else {
 			callback(null, null);
 		}
+	});
 });
 };
 
