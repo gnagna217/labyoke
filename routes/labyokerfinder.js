@@ -10,7 +10,7 @@ console.log("connection db could be: " + process.env.DATABASE_URL);
 console.log("connection db is: " + conString);
 //pg.defaults.ssl = true;
 var client = new pg.Client(conString);
-client.connect();
+//client.connect();
 var crypt = require('bcrypt-nodejs');
 
 LabYokeFinder = function(today) {
@@ -145,6 +145,13 @@ LabYokeUploader.prototype.upload = function(callback) {
 		}
 	}
 	console.log("values " + values);
+pg.connect(connectionString, (err, client, done) => {
+    // Handle connection errors
+    if(err) {
+      done();
+      console.log(err);
+      return res.status(500).json({success: false, data: err});
+    }
 
 	if(values!= null){
 		var query2 = client.query("INSERT INTO vm2016_agentsshare VALUES " + values);
@@ -162,6 +169,7 @@ LabYokeUploader.prototype.upload = function(callback) {
 		console.log("cannotUploadMissingData.");
 		callback(null, "cannotUploadMissingData");
 	}
+});
 };
 
 LabYokeReporterSavings.prototype.dataMoney = function(callback) {
@@ -226,6 +234,7 @@ LabYokeReporterSavings.prototype.dataMoney = function(callback) {
 
 	var qrstr = "SELECT " + selected + " from vm2016_agentsshare a, vm2016_orders b where " + where + " group by " + groupby + " order by a.category asc";
 	console.log("qrstr = " + qrstr);
+pg.connect(connectionString, (err, client, done) => {
 	query = client.query(qrstr);
 
 	query.on("row", function(row, result) {
@@ -243,6 +252,7 @@ LabYokeReporterSavings.prototype.dataMoney = function(callback) {
 		}
 		callback(null, savings)
 	});
+});
 };
 
 LabYokeReporterSavings.prototype.reportMoney = function(callback) {
@@ -331,6 +341,8 @@ LabYokeReporterSavings.prototype.reportMoney = function(callback) {
 	columns+="<td>Shares Savings</td>";
 	var qrstr = "SELECT " + selected + " from vm2016_agentsshare a, vm2016_orders b where " + where + " group by " + groupby + " order by a.category asc";
 	console.log("qrstr = " + qrstr);
+
+pg.connect(connectionString, (err, client, done) => {
 	query = client.query(qrstr);
 
 	query.on("row", function(row, result) {
@@ -372,6 +384,7 @@ LabYokeReporterSavings.prototype.reportMoney = function(callback) {
 		
 		callback(null, html)
 	});
+});
 };
 
 LabYokeReporterShares.prototype.reportShares = function(callback) {
@@ -411,6 +424,7 @@ LabYokeReporterShares.prototype.reportShares = function(callback) {
 	} 
 	var qryStr = "SELECT * FROM vm2016_agentsshare " + where + " order by date desc";
 	console.log("query report shares: " + qryStr);
+pg.connect(connectionString, (err, client, done) => {
 	query = client.query(qryStr);
 
 	query.on("row", function(row, result) {
@@ -456,6 +470,7 @@ LabYokeReporterShares.prototype.reportShares = function(callback) {
 		
 		callback(null, html)
 	});
+});
 };
 
 LabYokeReporterOrders.prototype.reportOrders = function(callback) {
@@ -508,6 +523,7 @@ LabYokeReporterOrders.prototype.reportOrders = function(callback) {
 	} 
 	var qryStr = "SELECT * FROM vm2016_orders " + where + " order by date desc";
 	console.log("qry report orders: " + qryStr)
+pg.connect(connectionString, (err, client, done) => {
 	query = client.query(qryStr);
 	/*if(datefrom != null && dateto != null && datefrom !=undefined && dateto !=undefined && datefrom !="" && dateto !=""){
 		query = client.query("SELECT * FROM vm2016_orders where date between '" + datefrom + "' and '" + dateto + "' order by date desc");
@@ -554,10 +570,12 @@ LabYokeReporterOrders.prototype.reportOrders = function(callback) {
 		
 		callback(null, html)
 	});
+});
 };
 
 LabYokeAgents.prototype.getLabyoker = function(callback) {
 	var results;
+pg.connect(connectionString, (err, client, done) => {
 	var query = client.query("SELECT * FROM vm2016_users where email='" + this.email
 			+ "'");
 	query.on("row", function(row, result) {
@@ -568,6 +586,7 @@ LabYokeAgents.prototype.getLabyoker = function(callback) {
 		console.log("get user details " + results);
 		callback(null, results);
 	});
+});
 };
 
 LabyokerLabs.prototype.getlabs = function(callback) {
@@ -583,6 +602,7 @@ LabyokerLabs.prototype.getlabs = function(callback) {
 	if(lab != null && lab.length>0){
 		where = " where lab='" + lab + "'";
 	}
+pg.connect(connectionString, (err, client, done) => {
 	var query = client.query("SELECT * FROM labs" + where);
 	query.on("row", function(row, result) {
 		result.addRow(row);
@@ -592,11 +612,13 @@ LabyokerLabs.prototype.getlabs = function(callback) {
 		console.log("get labs results" + results);
 		callback(null, results);
 	});
+});
 };
 
 LabYokeAgents.prototype.findmyshares = function(callback) {
 	var results = [];
 	console.log("findmyshares: " + this.email);
+pg.connect(connectionString, (err, client, done) => {
 	var query = client
 			.query("SELECT * FROM vm2016_agentsshare where email='"
 					+ this.email + "' order by date desc");
@@ -648,11 +670,13 @@ LabYokeAgents.prototype.findmyshares = function(callback) {
 			//callback(null, results)
 		});
 	});
+});
 };
 
 LabYokeAgents.prototype.reportAllSharesByCategory = function(callback) {
 	var results;
 	console.log("reportAllSharesByCategory: " + this.email);
+pg.connect(connectionString, (err, client, done) => {
 	var query = client
 			.query("SELECT b.category, count(b.category) FROM vm2016_orders a, vm2016_agentsshare b where a.agent = b.agent group by b.category");
 	query.on("row", function(row, result) {
@@ -662,10 +686,12 @@ LabYokeAgents.prototype.reportAllSharesByCategory = function(callback) {
 		results = result.rows;
 		callback(null, results)
 	});
+});
 };
 
 LabyokerCategories.prototype.getcategories = function(callback) {
 	var results;
+pg.connect(connectionString, (err, client, done) => {
 	var query = client
 			.query("SELECT distinct category FROM vm2016_agentsshare");
 	query.on("row", function(row, result) {
@@ -675,6 +701,7 @@ LabyokerCategories.prototype.getcategories = function(callback) {
 		results = result.rows;
 		callback(null, results)
 	});
+});
 };
 
 
@@ -695,6 +722,7 @@ LabYokerOrder.prototype.order = function(callback) {
 	console.log("currentquantity2: " + quantity);
 	var now = moment(new Date).tz("America/New_York").format('MM-DD-YYYY');
 	console.log("order location: " + location);
+pg.connect(connectionString, (err, client, done) => {
 	var query = client.query("INSERT INTO vm2016_orders VALUES ('" + agent + "', '" + vendor + "', '" + catalognumber + "','" + email + "', '" + sendemail + "', '" + now + "', 'new', '" + category + "','" + lab + "',1 )");
 
 	query.on("row", function(row, result) {
@@ -742,11 +770,13 @@ LabYokerOrder.prototype.order = function(callback) {
 			callback(null, "successfulOrder")
 		});
 	});
+});
 };
 
 LabYokerGetOrder.prototype.getLabOrders = function(callback) {
 	var results = [];
 	console.log("getLabOrders");
+pg.connect(connectionString, (err, client, done) => {
 	var query = client.query("SELECT lab, count(lab) as counting FROM vm2016_orders where lab='Sama Lab' group by lab");
 	query.on("row", function(row, result) {
 		result.addRow(row);
@@ -770,11 +800,13 @@ LabYokerGetOrder.prototype.getLabOrders = function(callback) {
 		});
 
 	});
+});
 };
 
 LabYokerGetOrder.prototype.getLabOrders_2 = function(callback) {
 	var results;
 	console.log("getLabOrders");
+pg.connect(connectionString, (err, client, done) => {
 	var query = client.query("SELECT lab, count(lab) as counting FROM vm2016_orders group by lab");
 	query.on("row", function(row, result) {
 		result.addRow(row);
@@ -783,6 +815,7 @@ LabYokerGetOrder.prototype.getLabOrders_2 = function(callback) {
 		results = result.rows;
 		callback(null, results)
 	});
+});
 };
 
 
@@ -791,6 +824,7 @@ LabYokerGetOrder.prototype.getorders = function(callback) {
 	var email = this.sendemail;
 	var lab = this.lab;
 	console.log("getorders: " + email);
+pg.connect(connectionString, (err, client, done) => {
 	var query = client
 			.query("SELECT * FROM vm2016_orders where requestoremail = '"
 					+ email + "' order by date desc");
@@ -844,11 +878,14 @@ LabYokerGetOrder.prototype.getorders = function(callback) {
 			//callback(null, results)
 		});
 	});
+});
+
 };
 
 LabYokeSearch.prototype.search = function(callback) {
 	var results = [];
 	console.log("searchText: " + this.searchText);
+pg.connect(connectionString, (err, client, done) => {
 	var query = client
 			.query("SELECT * FROM vm2016_agentsshare a, vm2016_users b where a.email = b.email and lower(a.agent) like lower('%"
 					+ this.searchText + "%') and a.insufficient = 1 and a.email != '" + this.email+ "' order by a.agent");
@@ -868,10 +905,12 @@ LabYokeSearch.prototype.search = function(callback) {
 		});
 		//callback(null, results)
 	});
+});
 };
 
 LabYokeSearch.prototype.findagents = function(callback) {
 	var results;
+pg.connect(connectionString, (err, client, done) => {
 	var query = client.query("SELECT distinct agent FROM vm2016_agentsshare");
 	
 	query.on("row", function(row, result) {
@@ -881,6 +920,7 @@ LabYokeSearch.prototype.findagents = function(callback) {
 		results = result.rows;
 			callback(null, results)
 	});
+});
 };
 
 //var crypt = require('bcrypt-nodejs');
@@ -894,6 +934,7 @@ Labyoker = function(username, password) {
 
 LabYokeFinder.prototype.getLabyoker = function(callback) {
 	var results;
+pg.connect(connectionString, (err, client, done) => {
 	var query = client.query("SELECT * FROM vm2016_users where id='" + id
 			+ "' and password='" + password + "'");
 	query.on("row", function(row, result) {
@@ -903,10 +944,12 @@ LabYokeFinder.prototype.getLabyoker = function(callback) {
 		results = result.rows;
 		callback(null, results);
 	});
+});
 };
 
 LabYokeFinder.prototype.test = function(callback) {
 	var results;
+pg.connect(connectionString, (err, client, done) => {
 	var query = client.query("SELECT * FROM vm2016_users where id='"
 			+ this.username + "'"/* and password='"+password+"'" */);
 	query.on("row", function(row, result) {
@@ -915,6 +958,7 @@ LabYokeFinder.prototype.test = function(callback) {
 	query.on("end", function(result) {
 		callback(null, results);
 	});
+});
 	// return false;
 };
 
@@ -922,7 +966,7 @@ LabyokerInit.prototype.initialShares = function(callback) {
 	var email = this.email;
 console.log("shares email: " + email);
 	var resultsLogin;
-
+pg.connect(connectionString, (err, client, done) => {
 		var query = client
 				.query("SELECT count(agent) as counting from vm2016_orders where email='" + email
 			+ "' and status='new'");
@@ -958,6 +1002,7 @@ console.log("shares email: " + email);
 
 					//callback(null, results);
 	});
+});
 };
 
 LabyokerInit.prototype.initialOrders = function(callback) {
@@ -965,6 +1010,7 @@ LabyokerInit.prototype.initialOrders = function(callback) {
 
 	var resultsLogin;
 console.log("orders email: " + email);
+pg.connect(connectionString, (err, client, done) => {
 var query = client
 				.query("SELECT count(agent) as counting from vm2016_orders where requestoremail='" + email
 			+ "' and status='new'");
@@ -979,7 +1025,7 @@ var query = client
 			console.log("orders found: " + test[0].counting)
 			callback(null, resultsLogin)
 		});
-			
+});		
 
 };
 
@@ -989,6 +1035,7 @@ Labyoker.prototype.login = function(callback) {
 
 	var results;
 	var resultsLogin = [];
+pg.connect(connectionString, (err, client, done) => {
 	var query = client.query("SELECT * FROM vm2016_users where id='" + username
 			+ "'"/* and password='"+password+"'" */);
 	query.on("row", function(row, result) {
@@ -1056,6 +1103,7 @@ Labyoker.prototype.login = function(callback) {
 			callback(null, null);
 		}
 	});
+});
 };
 
 LabyokerPasswordChange.prototype.checkIfChangePassword = function(callback) {
@@ -1063,6 +1111,7 @@ LabyokerPasswordChange.prototype.checkIfChangePassword = function(callback) {
 	var now = moment(new Date).tz("America/New_York").format(
 				'MM-DD-YYYY');
 	var pwd = this.password;
+pg.connect(connectionString, (err, client, done) => {
 	var query = client
 			.query("SELECT * FROM vm2016_users where changepwd_id='"
 					+ this.hash + "'");
@@ -1122,6 +1171,7 @@ LabyokerPasswordChange.prototype.checkIfChangePassword = function(callback) {
 		}
 	}
 	});
+});
 }
 
 LabyokerRegister.prototype.register = function(callback) {
@@ -1144,6 +1194,7 @@ LabyokerRegister.prototype.register = function(callback) {
 			console.log("labyoker email: " + email);
 			console.log("labyoker tel: " + tel);
 
+pg.connect(connectionString, (err, client, done) => {
 	if(tel != null && tel.length>0 && username != null && username.length>0 && firstname != null && firstname.length>0 && lastname != null && lastname.length>0 && email != null && email.length>0 && password != null && password.length>0 && lab != null && lab.length>0 ){
 	console.log("processing registration2...");
 	//var query = client.query("SELECT * FROM vm2016_users where id='" + username
@@ -1238,6 +1289,7 @@ LabyokerRegister.prototype.register = function(callback) {
 } else {
 	callback(null, null);
 }
+});
 };
 
 Labyoker.prototype.requestChangePassword = function(callback) {
@@ -1245,6 +1297,7 @@ Labyoker.prototype.requestChangePassword = function(callback) {
 	var dateStripped = this.password;
 
 	var results;
+pg.connect(connectionString, (err, client, done) => {
 	var query = client.query("SELECT * FROM vm2016_users where id='" + username
 			+ "'"/* and password='"+password+"'" */);
 	query.on("row", function(row, result) {
@@ -1314,6 +1367,7 @@ Labyoker.prototype.requestChangePassword = function(callback) {
 Labyoker.prototype.changepassword = function(callback) {
 	var hash = crypt.hashSync(this.password);
 	var results;
+pg.connect(connectionString, (err, client, done) => {
 	var query = client.query("UPDATE vm2016_users SET password='" + hash
 			+ "', active=1 where id='" + this.username + "'");
 	query.on("row", function(row, result) {
@@ -1323,11 +1377,13 @@ Labyoker.prototype.changepassword = function(callback) {
 		results = result.rows;
 		callback(null, results);
 	});
+});
 };
 
 LabyokerConfirm.prototype.confirm = function(callback) {
 	var results;
 	var registerid = this.registerid;
+pg.connect(connectionString, (err, client, done) => {
 	var query = client
 			.query("SELECT * FROM vm2016_users where register_id='"
 					+ registerid + "'");
@@ -1358,6 +1414,7 @@ LabyokerConfirm.prototype.confirm = function(callback) {
 			callback(null, "cannotFindRequest");
 		}
 	});
+});
 };
 
 LabyokerUserDetails.prototype.changeDetails = function(callback) {
@@ -1367,6 +1424,7 @@ LabyokerUserDetails.prototype.changeDetails = function(callback) {
 	var curname = this.curname;
 	var cursurname = this.cursurname;
 	var results;
+pg.connect(connectionString, (err, client, done) => {
 	var query = client.query("UPDATE vm2016_users SET " + column + "='" + value
 			+ "' where email='" + email + "'");
 	query.on("row", function(row, result) {
@@ -1414,6 +1472,7 @@ LabyokerUserDetails.prototype.changeDetails = function(callback) {
 		results = column + " to " + value;
 		callback(null, results);
 	});
+});
 };
 
 LabYokerChangeShare.prototype.cancelShare = function(callback) {
@@ -1437,6 +1496,7 @@ LabYokerChangeShare.prototype.cancelShare = function(callback) {
 	var str = "UPDATE " + table + " SET insufficient=" + checked
 			+ ", insuffdate='" + datenow + "' where date between '" + date + "' and '" + date + "' and agent='" + agent + "' and vendor='" + vendor + "' and catalognumber='" + catalognumber + "' and email='" + email + "'" + orderonly;
 	console.log("str: " + str);
+pg.connect(connectionString, (err, client, done) => {
 	var query = client.query(str);
 	query.on("row", function(row, result) {
 		result.addRow(row);
@@ -1460,6 +1520,7 @@ LabYokerChangeShare.prototype.cancelShare = function(callback) {
 
 		callback(null, results);
 	});
+});
 //callback(null, results);
 };
 
@@ -1545,6 +1606,7 @@ var analyze = function(matchresults, participantsResults) {
 		var queryString = "UPDATE vm2014_predictsingleteam SET points = "
 				+ points + " where bet = " + matchresults.bet + " and id = '"
 				+ participant.id + "'";
+pg.connect(connectionString, (err, client, done) => {
 		var query = client.query(queryString);
 		query.on("row", function(row, result) {
 			result.addRow(row);
@@ -1553,6 +1615,7 @@ var analyze = function(matchresults, participantsResults) {
 			results = result.rows;
 			return results;
 		});
+});
 	}
 }
 
