@@ -214,6 +214,7 @@ module.exports = function(router) {
 					if(results != null && results.length > 1){
 						totalshares = results[1].length;
 					}
+					const util = require('util');
 					var labs = req.session.labs;
 					var labadmin;
 					for(var i in labs){
