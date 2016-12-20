@@ -490,7 +490,7 @@ LabYokeReporterShares.prototype.reportShares = function(callback) {
 	var isempty = true;
 	console.log("report on something: datefrom: " + datefrom);
 	console.log("report on something: dateto: " + dateto);
-	console.log("report on something: agent: " + agent);
+	//console.log("report on something: agent: " + agent);
 	var query;
 	if(datefrom != null && dateto != null && datefrom !=undefined && dateto !=undefined && datefrom !="" && dateto !=""){
 		if(params == ""){
