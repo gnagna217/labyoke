@@ -218,6 +218,7 @@ module.exports = function(router) {
 
 					var labs = req.session.labs;
 					var labadmin;
+					var nonadmin = " Email your <a href='mailto:"+labadmin+"'>administrator</a> if needed.";
 					console.log("booster labs "+ labs);
 					for(var i in labs){
 						//var labrow = util.inspect(labs[i], false, null);
@@ -230,14 +231,19 @@ module.exports = function(router) {
 			       		}
 			       		//console.log("lab is: "+ lab);
 			       	}
-
+			       	if(req.session.admin == 1){
+			       	nonadmin = " You can do so with the <a href='/share#upload'>upload tool</a> to add more reagents under your name."
+			       	}
 					booster.push("<strong> Self Kudos!</strong> You have ordered a total of <b>" + totalorders + " order(s)</b> and received a total of <b>" + totalshares + " requested share(s)</b>. Keep it up!");
 					boostercolor.push("success");
 					if(totalorders > totalshares){
-						booster.push("<strong> Caution.</strong> You are ordering <b>more</b> than you are sharing. Did you replenish your inventory? Email your <a href='mailto:"+labadmin+"'>administrator</a> if needed.");
+						booster.push("<strong> Caution.</strong> You are ordering <b>more</b> than you are sharing. Did you replenish your inventory?" + nonadmin);
 						boostercolor.push("warning");
 					} else if(totalshares > totalorders){
 						booster.push("<strong> Major Achievement!</strong>  You are sharing <b>more</b> than you are ordering. Way to contribute to your lab's savings!");
+						boostercolor.push("success");
+					} else if(totalshares == totalorders){
+						booster.push("<strong> Strong and Steady!</strong> You are perfectly <b>balanced</b>! You are sharing as many reagents as you are ordering. Way to go!");
 						boostercolor.push("success");
 					}
 					var b = Math.floor((Math.random() * booster.length-1) + 1);
