@@ -412,7 +412,7 @@ block content
 				div(style="background-color: #3d9dcb; height: 2px; margin-bottom: 30px; margin-top: 30px;")
 				h4="Insufficient Reagents report Upload."
 				p="You can now retrieve a report of the low inventories in each lab."
-				- var message_fail_insuff = "Unfortunately we could not generate the report as there is no data retrieved. Please try again with a new lab. Or better yet: There are no insufficient inventory to report at the moment."
+				- var message_fail_insuff = "Unfortunately we could not generate the report as there is no data retrieved. Please try again with a new lab. Or better yet: <b>There are no insufficient inventory to report at the moment</b>."
 				- var message_success_insuff = "Success! Your report has been generated for low inventories. It has been automatically downloaded on your computer if you are logged in on a desktop/laptop."
 				if (addMessageInsuff == 'failure')
 					div(class="alert alert-danger")!= message_fail_insuff
