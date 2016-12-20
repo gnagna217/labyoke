@@ -218,8 +218,13 @@ module.exports = function(router) {
 
 					var labs = req.session.labs;
 					var labadmin;
+					console.log("booster labs "+ labs);
 					for(var i in labs){
 						var labrow = util.inspect(labs[i], false, null);
+						console.log("booster labi "+ labs[i]);
+						console.log("booster labiname "+ labs[i].labname);
+						console.log("booster labrow "+ labrow);
+						console.log("booster labrowname "+ labrow.labname);
 			       		//var lab = labs[i].lab
 			       		if(labrow.labname == req.session.lab){
 			       		console.log("i is: "+ i);
