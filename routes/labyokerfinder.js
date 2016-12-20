@@ -1201,7 +1201,7 @@ pg.connect(connectionString, (err, client, done) => {
 					//callback(null, results);
 				} else {
 					callback(null, null);
-				//}
+				}
 			/*} else {
 				var query = client
 						.query("SELECT * FROM vm2016_users where id='"
@@ -1213,9 +1213,9 @@ pg.connect(connectionString, (err, client, done) => {
 					callback(null, result.rows);
 				});
 			}*/
-		} else {
+		/*} else {
 			callback(null, null);
-		}
+		}*/
 });
         /*});*/
 	});
