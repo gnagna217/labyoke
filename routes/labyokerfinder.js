@@ -535,7 +535,7 @@ LabYokeReporterShares.prototype.reportShares = function(callback) {
 			html += "<p>This report is listing the inventory uploaded between " + moment(datefrom).add(1, 'day').tz("America/New_York").format('MM-DD-YYYY') + " and " + moment(dateto).add(1, 'day').tz("America/New_York").format('MM-DD-YYYY') + "</p></div>"
 		}
 		html += params;
-		html +="<table><tbody><tr style='color: white;background-color: #3d9dcb;'><td style='font-size: 12px;'>Reagent</td><td style='font-size: 12px;'>Lab</td><td style='font-size: 12px;'>Vendor</td><td style='font-size: 12px;'>Catalog#</td><td style='font-size: 12px;'>Location</td><td style='font-size: 12px;'>User</td><td style='font-size: 12px;'>Category</td><td>Date</td></tr>"
+		html +="<table><tbody><tr style='color: white;background-color: #3d9dcb;'><td style='font-size: 12px;'>Reagent</td><td style='font-size: 12px;'>Vendor</td><td style='font-size: 12px;'>Catalog#</td><td style='font-size: 12px;'>Location</td><td style='font-size: 12px;'>User</td><td style='font-size: 12px;'>Category</td><td>Date</td></tr>"
 		
 			for(var prop in results){
 				isempty = false;
@@ -545,11 +545,9 @@ LabYokeReporterShares.prototype.reportShares = function(callback) {
 				var location = results[prop].location;
 				var email = results[prop].email;
 				var category = results[prop].category;
-				var labrow = results[prop].lab;
 				var date = results[prop].date;
 
 				html += " <tr><td style='font-size: 12px;'>" + agent + "</td>";
-				html += " <td style='font-size: 12px;'>" + labrow + "</td>";
 				html += " <td style='font-size: 12px;'>" + vendor + "</td>";
 				html += " <td style='font-size: 12px;'>" + catalognumber + "</td>";
 				html += " <td style='font-size: 12px;'>" + location + "</td>";
