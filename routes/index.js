@@ -222,6 +222,7 @@ module.exports = function(router) {
 					for(var i in labs){
 						//var labrow = util.inspect(labs[i], false, null);
 						console.log("booster labi "+ labs[i]);
+						console.log("booster curent lab is: "+ req.session.lab);
 						console.log("booster labiname "+ labs[i].labname);
 			       		//var lab = labs[i].lab
 			       		if(labs[i].labname == req.session.lab){
