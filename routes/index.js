@@ -452,14 +452,14 @@ module.exports = function(router) {
 				console.log("load labs in account : " + labs);
 				var labYokeAgents = new LabYokeAgents(req.session.email);
 				labYokeAgents.getLabyoker(function(error, results) {
-					res.render('account', {team:team, labs: req.session.labs, userDetails: results, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, loggedIn : true, isLoggedInAdmin: req.session.admin, title:'Account'});
+					res.render('account', {labname: req.session.lab, team:team, labs: req.session.labs, userDetails: results, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, loggedIn : true, isLoggedInAdmin: req.session.admin, title:'Account'});
 					req.session.messages = null;
 				});
 			});
 		} else {
 			var labYokeAgents = new LabYokeAgents(req.session.email);
 			labYokeAgents.getLabyoker(function(error, results) {
-				res.render('account', {team:team, labs: req.session.labs, userDetails: results, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, loggedIn : true, isLoggedInAdmin: req.session.admin, title:'Account'});
+				res.render('account', {labname: req.session.lab, team:team, labs: req.session.labs, userDetails: results, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, loggedIn : true, isLoggedInAdmin: req.session.admin, title:'Account'});
 				req.session.messages = null;
 			});
 		}
