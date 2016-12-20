@@ -831,6 +831,7 @@ module.exports = function(router) {
 													console.log("email " + req.session.email);
 													req.session.loggedin = true;
 
+													console.log("initial req.session.lab: " + req.session.lab);
 													var timeframesavings = "year";
 													var choosetime = "";
 													var timearr = ["year","month","all"];
