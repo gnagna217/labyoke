@@ -233,7 +233,7 @@ module.exports = function(router) {
 					booster.push("<strong> Self Kudos!</strong> You have ordered a total of <b>" + totalorders + " order(s)</b> and received a total of <b>" + totalshares + " requested share(s)</b>. Keep it up!");
 					boostercolor.push("success");
 					if(totalorders > totalshares){
-						booster.push("<strong> Caution.</strong> You are ordering <b>more</b> than you are sharing. Did you replenish your inventory? Email your <a href='"+labadmin+"'>administrator</a> if needed.");
+						booster.push("<strong> Caution.</strong> You are ordering <b>more</b> than you are sharing. Did you replenish your inventory? Email your <a href='mailto:"+labadmin+"'>administrator</a> if needed.");
 						boostercolor.push("warning");
 					} else if(totalshares > totalorders){
 						booster.push("<strong> Major Achievement!</strong>  You are sharing <b>more</b> than you are ordering. Way to contribute to your lab's savings!");
