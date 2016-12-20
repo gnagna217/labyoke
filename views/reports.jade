@@ -2,16 +2,17 @@ extends layout
 
 block content
 	div(class="container login")
-			a(href="/search")
-				img(src="/images/yoke4.png", alt="The Yoke",  title="Yoke", class="yokelogo")
-			h1= 'Reports.'
-			p Here are the reports that an administrator can generate and build a portfolio with. Please note that reports can only be generated using 
-				span
-					b="Chrome or Firefox "
-				span browsers.
+		a(href="/search")
+			img(src="/images/yoke4.png", alt="The Yoke",  title="Yoke", class="yokelogo")
+		h1= 'Reports.'
+		p Here are the reports that an administrator can generate and build a portfolio with. Please note that reports can only be generated using 
+			span
+				b="Chrome or Firefox "
+			span browsers.
 
-				- var now = (new Date())
-				- now = (now.getMonth() + 1) + "/" + now.getDate() + "/" + now.getFullYear()
+			- var now = (new Date())
+			- now = (now.getMonth() + 1) + "/" + now.getDate() + "/" + now.getFullYear()
+		div
 			div(class="reportMoney")
 				div(style="background-color: #3d9dcb; height: 2px; margin-bottom: 30px; margin-top: 30px;")
 				h4="Shares Savings report Upload."
@@ -402,4 +403,100 @@ block content
 						$("#reportDateFromMoney").mask("99-99-9999",{placeholder:"mm-dd-yyyy"});
 						$("#reportDateToMoney").mask("99-99-9999",{placeholder:"mm-dd-yyyy"});
 						
-					});			
+					});
+		div
+			div(class="reportInsuff")
+				div(style="background-color: #3d9dcb; height: 2px; margin-bottom: 30px; margin-top: 30px;")
+				h4="Insufficient Reagents report Upload."
+				p="You can now retrieve a report of the low inventories in each lab."
+				- var message_fail_share = "Unfortunately we could not generate the report within the time frame chosen. Please try again with new dates."
+				- var message_success_insuff = "Success! Your report has been generated for low inventories. It has been automatically downloaded on your computer if you are logged in on a desktop/laptop."
+				if (addMessageInsuff == 'failure')
+					div(class="alert alert-danger")!= message_fail_share
+				if (addMessageInsuff == 'success')
+					div(class="alert alert-success fade in alert-dismissable")!= message_success_insuff
+				div
+					form(action="reportInsuff", method="post")
+						div(class="buttons")
+							label(style="width: 100px;")="Lab"
+							select(name="reportLabInsuff" type="text" id="reportLabInsuff" class="form-control" style="border-color:#3d9dcb;margin-bottom:10px" placeholder="Lab")
+								option(value="all")="all"
+								if(labs != undefined)
+									- var ob = labs
+									- for(var prop in ob)
+										- var lab = ob[prop].labname
+										option(value=lab) #{lab}
+							label(style="width: 100px;")="Show:"
+							br
+							label(style="width: 65px;")="Reagent"
+							input(type="checkbox" name="reportAgentInsuff" id="reportAgentInsuff" value="agent")
+							label(style="width: 55px; margin-left: 20px;")="Vendor"
+							input(type="checkbox" name="reportVendorInsuff" id="reportVendorInsuff" value="vendor")
+							label(style="width: 68px; margin-left: 20px;")="Catalog#"
+							input(type="checkbox" name="reportCatalogInsuff" id="reportCatalogInsuff" value="catalogNumber")
+							div(style="max-width:100%")
+								button.btn.btn-success.btn-lg.btn-block(type="submit",value="Report",name="submit", style="max-width: 80%;width: 80%;") Get Insufficient Reagents
+								img(src="images/ship.png", alt="The Lab", title="Lab", style="border-width:0px; width: 50px; margin-top: -50px;float:right")
+						if(resultsInsuff != null && resultsInsuff !="")
+							- var file_insuff = "reportInsufficient_"+labinsuff+".pdf" 
+							script(type="text/javascript" src="/javascripts/jspdf.js")
+							script(type="text/javascript" src="/javascripts/FileSaver.js")
+							script.
+								var ob = "#{resultsInsuff}"
+								ob = ob.replace(/&lt;/g,"<");
+								ob = ob.replace(/&gt;/g,">");
+								var pdf = new jsPDF('l', 'pt', 'ledger');
+								var pdf2 = new jsPDF('l', 'pt', 'ledger');
+								source = ob;
+								specialElementHandlers = {
+									'#bypassme': function(element, renderer) {
+									return true;
+								}
+								};
+								margins = {
+									top: 30,
+									bottom: 30,
+									left: 40,
+									right: 40,
+									width: 622
+								};
+								pdf.fromHTML(
+									source, // HTML string or DOM elem ref.
+									margins.left, // x coord
+									margins.top, {// y coord
+									'width': margins.width, // max width of content on PDF
+									'elementHandlers': specialElementHandlers
+								},
+								function(dispose) {
+								
+								if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent))
+								{
+									pdf.output('dataurlnewwindow');
+								}
+								else
+								{
+									pdf.output('dataurlnewwindow');
+								}
+
+								}
+								, margins);	
+								pdf2.fromHTML(
+									source, // HTML string or DOM elem ref.
+									margins.left, // x coord
+									margins.top, {// y coord
+									'width': margins.width, // max width of content on PDF
+									'elementHandlers': specialElementHandlers
+								},
+								function(dispose) {
+								if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent))
+								{
+									pdf.output('dataurlnewwindow');
+								}
+								else
+								{
+									pdf2.save("#{file_insuff}");
+								}
+								}
+								, margins);
+							- results = ""
+							script="$(window).scrollTop($('.reportInsuff').offset().top).scrollLeft($('.reportInsuff').offset().left);"

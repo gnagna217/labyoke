@@ -295,6 +295,12 @@ position: absolute;
     margin-right:20px
 }
 
+.reportInsuff{
+    width: 31%;
+    float:left;
+    margin-right:20px
+}
+
 .reportOrders{
     width: 31%;
     float:left;
@@ -821,6 +827,10 @@ input::-webkit-inner-spin-button {
     width: 100%;
 }
 .reportMoney{
+    float: none; 
+    width: 100%;
+}
+.reportInsuff{
     float: none; 
     width: 100%;
 }

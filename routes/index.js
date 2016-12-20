@@ -400,6 +400,35 @@ module.exports = function(router) {
 		});
 	});
 
+	router.post('/reportInsuff', isLoggedIn, function(req, res) {
+		var datefrom = undefined;
+		var dateto = undefined;
+		var agent = req.body.reportAgentInsuff;
+		var vendor = req.body.reportVendorInsuff;
+		var catalognumber = req.body.reportCatalogInsuff;
+		var lab = req.body.reportLabInsuff;
+		 
+
+		console.log("reportInsuff datefrom: " + datefrom);
+		console.log("reportInsuff dateto: " + dateto);
+		console.log("reportInsuff agent: " + agent);
+		console.log("reportInsuff vendor: " + vendor);
+		console.log("reportInsuff catalognumber: " + catalognumber);
+		console.log("reportInsuff lab: " + lab);
+
+		var labYokereporterSavings = new LabYokeReporterSavings(datefrom,dateto,agent,vendor,catalognumber,lab);
+		labYokereporterSavings.reportInsuff(function(error, results) {
+			if(results != null){
+				console.log("res " + results);
+				if(results != ""){
+					res.render('reports', {categories: req.session.categories, labs: req.session.labs, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, datefromMoney: datefrom, datetoMoney: dateto, title:'Reports',loggedIn : true, resultsMoney: results, isLoggedInAdmin: req.session.admin, addMessageMoney: "success"});
+				} else {
+					res.render('reports', {categories: req.session.categories, labs: req.session.labs, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, datefromMoney: datefrom, datetoMoney: dateto, title:'Reports',loggedIn : true, isLoggedInAdmin: req.session.admin, addMessageMoney: "failure"});
+				}
+				req.session.messages = null;
+			}
+		});
+	});
 
 	router.post('/changeDetails', isLoggedIn, function(req, res) {
 		var col = req.body.column;
@@ -556,6 +585,10 @@ module.exports = function(router) {
 	});
 
 	router.get('/reportMoney', function(req, res) {
+		res.redirect('/reports');
+	});
+
+	router.get('/reportInsuff', function(req, res) {
 		res.redirect('/reports');
 	});
 

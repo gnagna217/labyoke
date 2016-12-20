@@ -378,6 +378,99 @@ LabYokeReporterSavings.prototype.reportMoney = function(callback) {
 	});
 };
 
+LabYokeReporterSavings.prototype.reportInsuff = function(callback) {
+	var results;
+	var datefrom = this.datefrom;
+	var dateto = this.dateto;
+	var vendor = this.vendor;
+	var lab = this.lab;
+	var agent = this.agent;
+	var catalognumber = this.catalognumber;
+	var selected = "a.agent, b.lab";
+	var where = "a.email = b.email and a.insufficient = 0";
+	//var groupby = "a.category, b.lab, a.price";
+	var params = "";
+	var columns ="<td>Agent</td><td>Lab</td>";
+	var html = "<div><span style='font-weight:bold;font-size:36pt;margin-bottom:20px;float:left'>Insufficient Reagent Shares.</span></div><div style=\"font-family:'calibri'; font-size:11pt;padding: 20px; width:50%;float:left\">"
+				+ "";
+	console.log("report on savings- datefrom: " + datefrom);
+	console.log("report on savings- dateto: " + dateto);
+	var query;
+
+	if(lab != null && lab !=undefined && lab !="all"){
+		if(params == ""){
+			params += "<div style='font-weight:bold'>Parameters</div>";
+		}
+		params += "<div><span style='font-weight:bold'>Lab: </span><span>" + lab + "</span></div>";
+		if(where.length>0)
+			where +=" and ";
+		where += "b.lab = '" + lab + "'";
+	} 
+
+	if(agent != null && agent !=undefined && agent !=""){
+		if(selected.length>0)
+			selected +=", ";
+		selected += "a.agent";
+		columns+="<td>Reagent</td>";
+	} 
+	if(vendor != null && vendor !=undefined && vendor !=""){
+		if(selected.length>0)
+			selected +=", ";
+		selected += "a.vendor";
+		columns+="<td>Vendor</td>";
+	}
+	if(catalognumber != null && catalognumber !=undefined && catalognumber !=""){
+		if(selected.length>0)
+			selected +=", ";
+		selected += "a.catalognumber";
+		columns+="<td>Catalog#</td>";
+	}
+
+	/*if(selected.length>0)
+		selected +=", ";
+	selected +="count(a.category)";*/
+	columns+="<td>Insufficient Reagents Shared</td>";
+	var qrstr = "SELECT " + selected + " from vm2016_agentsshare a, vm2016_users b where " + where + " order by a.agent asc";
+	console.log("qrstr = " + qrstr);
+	query = client.query(qrstr);
+
+	query.on("row", function(row, result) {
+		result.addRow(row);
+	});
+	query.on("end", function(result) {
+		results = result.rows;
+		console.log("results : " + results);
+		html += params;
+		var savings = 0;
+		if(results != null && results != ""){
+		html +="<table style='margin-top:100px;float:left><tbody><tr style='color: white;background-color: #3d9dcb;font-size:12px'>" + columns + "</tr>"
+		
+			for(var prop in results){
+
+				html += "<tr>" + "<td style='font-size: 12px;'>" + results[prop].agent + "</td>" + "<td style='font-size: 12px;'>" + results[prop].lab + "</td>";
+
+				if(agent != null && agent !=undefined && agent !=""){
+				html += "<td style='font-size: 12px;'>" + results[prop].agent + "</td>";
+				}
+				if(vendor != null && vendor !=undefined && vendor !=""){
+				html += "<td style='font-size: 12px;'>" + results[prop].vendor + "</td>";
+				}
+				if(catalognumber != null && catalognumber !=undefined && catalognumber !=""){
+				html += "<td style='font-size: 12px;'>" + results[prop].catalognumber + "</td>";
+				}
+				html += "<td style='font-size: 12px;'>" + moment(results[prop].insuffdate).add(1, 'day').tz("America/New_York").format('MM-DD-YYYY')+ "</td>";
+				html += " </tr>";
+		
+			}
+			html += "</tbody></table><br/><p style='margin-top:50px'><i><b>The LabYoke Team.</b></i></p><img style='width: 150px; margin: 0 20px;float:left' src='https:\/\/team-labyoke.herokuapp.com\/images\/yoke4.png', alt='The Yoke',  title='Yoke', class='yokelogo'/>";
+			console.log("html insuff: " + html);
+		}
+		
+		callback(null, html)
+	});
+};
+
+
 LabYokeReporterShares.prototype.reportShares = function(callback) {
 	var results;
 	var datefrom = this.datefrom;
