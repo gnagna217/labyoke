@@ -87,7 +87,7 @@ block content
                                 span(onclick="penciltel()", id="penciltel" class="fa fa-pencil labColor")
                                 span(onclick="updatetelform()", id="checktel" class="fa fa-check labColor")
                               div(style="margin-bottom:25px;", class="accountdetail accountdetailRowMargin") #{lab}
- 
+      - if(!resultsAccount || resultsAccount == undefined)
         div
           p(class="yokeColor")!=adminIntro
         div(style="background-color: #3d9dcb; height: 2px; margin-bottom: 30px; margin-top: 30px;")
