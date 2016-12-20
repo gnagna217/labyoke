@@ -59,7 +59,6 @@ LabYokeReporterOrders = function(datefrom, dateto, lab, category) {
 LabYokeReporterShares = function(datefrom, dateto, category) {
 	this.datefrom = datefrom;
 	this.dateto = dateto;
-	this.agent = agent;
 	this.category = category;
 };
 
