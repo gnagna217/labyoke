@@ -345,11 +345,12 @@ LabYokeReporterSavings.prototype.reportMoney = function(callback) {
 		console.log("results : " + results);
 		html += params;
 		var savings = 0;
+		var isempty = true;
 		if(results != null && results != ""){
 		html +="<table style='margin-top:100px;float:left><tbody><tr style='color: white;background-color: #3d9dcb;font-size:12px'>" + columns + "</tr>"
 		
 			for(var prop in results){
-
+				isempty = false;
 				html += "<tr>" + "<td style='font-size: 12px;'>" + results[prop].category + "</td>" + "<td style='font-size: 12px;'>" + results[prop].lab + "</td>";
 
 				if(agent != null && agent !=undefined && agent !=""){
@@ -373,7 +374,11 @@ LabYokeReporterSavings.prototype.reportMoney = function(callback) {
 			html += "</tbody></table><div>The <span style='font-weight:bold'>Total</span> savings are <span style='font-size:30pt'>$" + savings + ".</span></div><br/><p style='margin-top:50px'><i><b>The LabYoke Team.</b></i></p><img style='width: 150px; margin: 0 20px;float:left' src='https:\/\/team-labyoke.herokuapp.com\/images\/yoke4.png', alt='The Yoke',  title='Yoke', class='yokelogo'/>";
 			console.log("html money: " + html);
 		}
-		callback(null, html)
+		if(!isempty){
+			callback(null, html);
+		} else {
+			callback(null, results);
+		}
 	});
 };
 
@@ -440,11 +445,12 @@ LabYokeReporterSavings.prototype.reportInsuff = function(callback) {
 		results = result.rows;
 		console.log("results : " + results);
 		html += params;
-		var savings = 0;
+		var isempty = true;
 		if(results != null && results != ""){
 		html +="<table style='margin-top:100px;float:left><tbody><tr style='color: white;background-color: #3d9dcb;font-size:12px'>" + columns + "</tr>"
 		
 			for(var prop in results){
+				isempty = false;
 
 				html += "<tr>" + "<td style='font-size: 12px;'>" + results[prop].agent + "</td>" + "<td style='font-size: 12px;'>" + results[prop].lab + "</td>";
 
@@ -464,8 +470,12 @@ LabYokeReporterSavings.prototype.reportInsuff = function(callback) {
 			html += "</tbody></table><br/><p style='margin-top:50px'><i><b>The LabYoke Team.</b></i></p><img style='width: 150px; margin: 0 20px;float:left' src='https:\/\/team-labyoke.herokuapp.com\/images\/yoke4.png', alt='The Yoke',  title='Yoke', class='yokelogo'/>";
 			console.log("html insuff: " + html);
 		}
+		if(!isempty){
+			callback(null, html);
+		} else {
+			callback(null, results)
+		}
 		
-		callback(null, html)
 	});
 };
 
@@ -477,6 +487,7 @@ LabYokeReporterShares.prototype.reportShares = function(callback) {
 	var category = this.category;
 	var params = "";
 	var where = "";
+	var isempty = true;
 	console.log("report on something: datefrom: " + datefrom);
 	console.log("report on something: dateto: " + dateto);
 	console.log("report on something: agent: " + agent);
@@ -528,6 +539,7 @@ LabYokeReporterShares.prototype.reportShares = function(callback) {
 		html +="<table><tbody><tr style='color: white;background-color: #3d9dcb;'><td style='font-size: 12px;'>Reagent</td><td style='font-size: 12px;'>Lab</td><td style='font-size: 12px;'>Vendor</td><td style='font-size: 12px;'>Catalog#</td><td style='font-size: 12px;'>Location</td><td style='font-size: 12px;'>User</td><td style='font-size: 12px;'>Category</td><td>Date</td></tr>"
 		
 			for(var prop in results){
+				isempty = false;
 				var agent = results[prop].agent;
 				var vendor = results[prop].vendor;
 				var catalognumber = results[prop].catalognumber;
@@ -549,8 +561,11 @@ LabYokeReporterShares.prototype.reportShares = function(callback) {
 			}
 			html += "</tbody></table><p><i><b>The LabYoke Team.</b></i></p><img style='width: 150px; margin: 0 20px;float:left' src='https:\/\/team-labyoke.herokuapp.com\/images\/yoke4.png', alt='The Yoke',  title='Yoke', class='yokelogo'/>";
 		}
-		
-		callback(null, html)
+		if(!isempty){
+			callback(null, html);
+		} else {
+			callback(null, results);
+		}
 	});
 };
 
@@ -562,6 +577,7 @@ LabYokeReporterOrders.prototype.reportOrders = function(callback) {
 	var category = this.category;
 	var params = "";
 	var where = "";
+	var isempty = true;
 	console.log("report on something: datefrom: " + datefrom);
 	console.log("report on something: dateto: " + dateto);
 	console.log("report on something: lab: " + lab);
@@ -629,6 +645,7 @@ LabYokeReporterOrders.prototype.reportOrders = function(callback) {
 		html +="<table><tbody><tr style='color: white;background-color: #3d9dcb;'><td style='font-size: 12px;'>Reagent</td><td style='font-size: 12px;'>Vendor</td><td style='font-size: 12px;'>Catalog#</td><td style='font-size: 12px;'>Owner</td><td style='font-size: 12px;'>Requestor</td><td>Date</td></tr>"
 		
 			for(var prop in results){
+				isempty = false;
 				var agent = results[prop].agent;
 				var vendor = results[prop].vendor;
 				var catalognumber = results[prop].catalognumber;
@@ -648,7 +665,11 @@ LabYokeReporterOrders.prototype.reportOrders = function(callback) {
 			html += "</tbody></table><p><i><b>The LabYoke Team.</b></i></p><img style='width: 150px; margin: 0 20px;float:left' src='https:\/\/team-labyoke.herokuapp.com\/images\/yoke4.png', alt='The Yoke',  title='Yoke', class='yokelogo'/>";
 		}
 		
-		callback(null, html)
+		if(!isempty){
+			callback(null, html);
+		} else {
+			callback(null, results);
+		}
 	});
 };
 

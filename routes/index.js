@@ -420,7 +420,7 @@ module.exports = function(router) {
 		labYokereporterSavings.reportInsuff(function(error, results) {
 			if(results != null){
 				console.log("res " + results);
-				if(results != ""){
+				if(results!=null && results != ""){
 					res.render('reports', {categories: req.session.categories, labs: req.session.labs, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, title:'Reports',loggedIn : true, resultsInsuff: results, isLoggedInAdmin: req.session.admin, addMessageInsuff: "success"});
 				} else {
 					res.render('reports', {categories: req.session.categories, labs: req.session.labs, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, title:'Reports',loggedIn : true, isLoggedInAdmin: req.session.admin, addMessageInsuff: "failure"});
