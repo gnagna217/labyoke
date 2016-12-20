@@ -120,7 +120,8 @@ block content
 								}
 								, margins);
 							- resultsMoney = ""
-							script="$(window).scrollTop($('.reportMoney').offset().top).scrollLeft($('.reportMoney').offset().left);"	
+							script.
+								$(window).scrollTop($('.reportMoney').offset().top).scrollLeft($('.reportMoney').offset().left);
 			div(class="reportOrders")
 				div(style="background-color: #3d9dcb; height: 2px; margin-bottom: 30px; margin-top: 30px;")
 				h4="Orders report Upload."
@@ -256,7 +257,8 @@ block content
 								}
 								, margins);						
 							- resultsOrders = ""
-							script="$(window).scrollTop($('.reportOrders').offset().top).scrollLeft($('.reportOrders').offset().left);"
+							script.
+								$(window).scrollTop($('.reportOrders').offset().top).scrollLeft($('.reportOrders').offset().left);
 			div(class="reportShares")
 				div(style="background-color: #3d9dcb; height: 2px; margin-bottom: 30px; margin-top: 30px;")
 				h4="Inventory report Upload."
@@ -391,7 +393,8 @@ block content
 								}
 								, margins);
 							- resultsShares = ""
-							script="$(window).scrollTop($('.reportShares').offset().top).scrollLeft($('.reportShares').offset().left);"
+							script.
+								$(window).scrollTop($('.reportShares').offset().top).scrollLeft($('.reportShares').offset().left);
 				script.
 					$(document).ready(function(){
 						//$.mask.definitions['~']='[+-]';
@@ -499,4 +502,5 @@ block content
 								}
 								, margins);
 							- resultsInsuff = ""
-							script="$(window).scrollTop($('.reportInsuff').offset().top).scrollLeft($('.reportInsuff').offset().left);"
+							script.
+								$(window).scrollTop($('.reportInsuff').offset().top).scrollLeft($('.reportInsuff').offset().left);
