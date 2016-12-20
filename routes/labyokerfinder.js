@@ -1156,7 +1156,7 @@ pg.connect(connectionString, (err, client, done) => {
 			//if (active == 1) {
 				var c = crypt.compareSync(password, pass);
 				console.log("compare is: " + c);
-				if (c) {
+				
 
   client.query("SELECT count(agent) as counting from vm2016_orders where email='" + email + "' and status='new'", function(err, result2) {  
 
@@ -1188,6 +1188,7 @@ pg.connect(connectionString, (err, client, done) => {
 			resultsLogin.push(test3[0].counting);
 			console.log("shares found: " + test2[0].counting)
 			console.log("orders found: " + test3[0].counting)*/
+			if (c) {
 			var test3 = result3;
 			var test2 = result2;
 			resultsLogin.push(test2[0].counting);
