@@ -48,16 +48,16 @@ block content
                             img(src="images/search.png", alt="The Search", title="Search", style="border-width:0px; width: 60px; margin-top: -50px; margin-left: 300px;")
         
         if(searchResults != null && searchResults.length > 0)
+            span(style="text-align: center")
+                h3="These Researchers and Labs can share your"
+                    span(style="color: #3d9dcb;")=" " + searchText
+                h4="Order now!"
             div.searchResults(id="results")
                #labyokers.container(style="width:100%;")
                 div(id="ctl00_Div2" class="row rank").match
                    - i = 1
                    - className = ""
-                   div(class="table-responsive")
-                      span(style="text-align: center")
-                        h3="These Researchers and Labs can share your"
-                            span(style="color: #3d9dcb;")=" " + searchText
-                        h4="Order now!"                    
+                   div(class="table-responsive")                    
                       table(id="rankTblSearch" class="table rankTbl")
                         thead
                          tr(class="you info-best" style="font-weight: bold")
