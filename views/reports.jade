@@ -52,27 +52,27 @@ block content
 			console.log("resultsMoney: " + resultsMoney.length);
 			console.log("resultsInsuff: " + resultsInsuff.length);*/
 			var eSelect = document.getElementById('reportSelect');
-			console.debug("selected: " + eSelect);
+			console.debug("selected: " + $('#reportSelect').val());
 				eSelect.onchange = function() {
-					if(eSelect.selectedIndex === 1 ) {
+					if(eSelect.selectedIndex === 1 || $('#reportSelect').val() == 'Savings') {
 						console.log("resultsMoney inside");
 						$('#reportMoney').show();
 						$('#reportShares').hide();
 						$('#reportOrders').hide();
 						$('#reportInsuff').hide();
-					} else if(eSelect.selectedIndex === 2) {
+					} else if(eSelect.selectedIndex === 2 || $('#reportSelect').val() == 'Orders') {
 						console.log("resultsOrders inside");
 						$('#reportOrders').show();
 						$('#reportShares').hide();
 						$('#reportMoney').hide();
 						$('#reportInsuff').hide();
-					} else if(eSelect.selectedIndex === 3) {
+					} else if(eSelect.selectedIndex === 3 || $('#reportSelect').val() == 'Inventory') {
 						console.log("resultsShares inside");
 						$('#reportShares').show();
 						$('#reportMoney').hide();
 						$('#reportOrders').hide();
 						$('#reportInsuff').hide();
-					}else if(eSelect.selectedIndex === 4) {
+					}else if(eSelect.selectedIndex === 4 || $('#reportSelect').val() == 'insufficient Inventory') {
 						console.log("resultsInsuff inside");
 						$('#reportInsuff').show();
 						$('#reportShares').hide();
