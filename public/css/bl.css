@@ -292,23 +292,27 @@ position: absolute;
 .reportMoney{
     width: 31%;
     float:left;
-    margin-right:20px
+    margin-right:20px;
+    display:none;
 }
 
 .reportInsuff{
     width: 31%;
     float:left;
-    margin-right:20px
+    margin-right:20px;
+    display:none;
 }
 
 .reportOrders{
     width: 31%;
     float:left;
-    margin-right:20px
+    margin-right:20px;
+    display:none;
 }
 .reportShares{
     float: left; 
     width: 31%;
+    display:none;
 }
 .labColor{
     color: #3d9dcb;
