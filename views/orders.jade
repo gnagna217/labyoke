@@ -68,35 +68,89 @@ block content
               a(href="#", class="close", data-dismiss="alert", aria-label="close", title="close")="x"
               span!= booster          
           div(style="background-color: #3d9dcb; height: 2px; margin-bottom: 30px; margin-top: 30px;")
-          h4!="A quantity comparison between <i>" + currentlabname + "</i>'s orders and shares."
-          p="This graph depicts the current trend of your lab's "
-            span(class="yokeColor bold")="total number of orders "
-            span="and "
-            span(class="labColor bold")="total number of requested shares "
-            span="per Reagent Category:"
-          - if(report_sharesbycategory != null && report_sharesbycategory.length >0)
-             div(class="ct-chart ct-perfect-fourth")
-             div(id="tooltips", class="labColor") &nbsp;
-          - var now = new Date()
-          - var filteroutput = test.filter(function(x){console.log("x.monthorder: "+x.monthorder); console.log("x.yearorder: "+x.yearorder); console.log("now.getFullYear(): "+ now.getFullYear()); console.log("now.getMonth(): "+ now.getMonth()); console.log("so: "+ (x.yearorder == now.getFullYear() && x.monthorder == now.getMonth())); return (x.yearorder == now.getFullYear() && x.monthorder == now.getMonth() + 1)});
-          - if(report_sharesbycategory != null && report_sharesbycategory.length==0)
-           h5="You have not ordered any reagent. "
-            a(href="/search")
-              span(class="labColot")="Search now."
-          h4="A Bar report of the monthly orders."
-          p="This bar chart depicts your number of orders this month (so far) per Reagent Category:"
-          - if(filteroutput != null && filteroutput.length > 0) 
-             div(class="ct-chart0 ct-perfect-fourth")
-             div(id="tooltips0", class="labColor") &nbsp;
-          - if(filteroutput != null && filteroutput.length == 0) 
-           h5="You have not ordered any reagent this month."
-          h4="A Bar report of all orders in each lab."
-          p="This bar chart depicts the number of orders (so far) per lab:"
-          - if(laborders != null && laborders.length > 0)
-             div(class="ct-chart3 ct-perfect-fourth")
-             div(id="tooltips3", class="labColor") &nbsp;
-          - if(laborders != null && laborders.length == 0) 
-           h5="No reagent has been ordered in any lab so far."
+
+          - var selResultsQty = report_sharesbycategory
+          - var checkedstrQty = false;
+          - if(selResultsQty !=null && selResultsQty.length>0)
+            - checkedstrQty = true
+          - var selResultsOrders = filteroutput
+          - var checkedstrOrders = false;
+          - if(selResultsOrders !=null && selResultsOrders.length>0)
+            - checkedstrOrders = true
+          - var selResultsLabs = laborders
+          - var checkedstrLabs = false;
+          - if(selResultsLabs !=null && selResultsLabs.length>0)
+            - checkedstrLabs = true
+          form(action="chartSelect", method="post")
+            div(class="buttons")
+              select(name="chartSelect" type="text" id="chartSelect" class="form-control" style="border-color:#3d9dcb;margin-bottom:10px" placeholder="Select Chart")
+                option(value="chartNone",style="font-weight:bold")="Select A Chart..."
+                option(value="chartQty" selected=(checkedstrQty===true ? "selected" : undefined))="Orders & Shares Comparison"
+                option(value="chartOrders" selected=(checkedstrOrders===true ? "selected" : undefined))="Your monthly orders"
+                option(value="chartLabs" selected=(checkedstrLabs===true ? "selected" : undefined))="Lab Orders Comparison"
+          script.
+            window.onload = function() {
+            $('#labsComp').hide();
+            $('#monthComp').hide();
+            $('#qtyComp').hide();
+
+            var eSelect = document.getElementById('chartSelect');
+            console.debug("selected: " + $('#chartSelect').val());
+
+            if(chartSelect.selectedIndex === 1 || $('#chartSelect').val() == 'chartQty') {
+              console.log("chartQty inside");
+              $('#qtyComp').show();
+              $('#monthComp').hide();
+              $('#labsComp').hide();
+            } else if(chartSelect.selectedIndex === 2 || $('#reportSelect').val() == 'chartOrders') {
+              console.log("chartOrders inside");
+              $('#qtyComp').hide();
+              $('#monthComp').show();
+              $('#labsComp').hide();
+            } else if(chartSelect.selectedIndex === 3 || $('#reportSelect').val() == 'chartLabs') {
+              console.log("chartLabs inside");
+              $('#qtyComp').hide();
+              $('#monthComp').hide();
+              $('#labsComp').show();
+            } else if(eSelect.selectedIndex === 0 || $('#reportSelect').val() == 'chartNone') {
+              console.log("result None inside");
+              $('#qtyComp').hide();
+              $('#monthComp').hide();
+              $('#labsComp').hide();
+            }
+
+          div(id="qtyComp")
+            h4!="A quantity comparison between <i>" + currentlabname + "</i>'s orders and shares."
+            p="This graph depicts the current trend of your lab's "
+              span(class="yokeColor bold")="total number of orders "
+              span="and "
+              span(class="labColor bold")="total number of requested shares "
+              span="per Reagent Category:"
+            - if(report_sharesbycategory != null && report_sharesbycategory.length >0)
+               div(class="ct-chart ct-perfect-fourth")
+               div(id="tooltips", class="labColor") &nbsp;
+          div(id="monthComp")
+            - var now = new Date()
+            - var filteroutput = test.filter(function(x){console.log("x.monthorder: "+x.monthorder); console.log("x.yearorder: "+x.yearorder); console.log("now.getFullYear(): "+ now.getFullYear()); console.log("now.getMonth(): "+ now.getMonth()); console.log("so: "+ (x.yearorder == now.getFullYear() && x.monthorder == now.getMonth())); return (x.yearorder == now.getFullYear() && x.monthorder == now.getMonth() + 1)});
+            - if(report_sharesbycategory != null && report_sharesbycategory.length==0)
+             h5="You have not ordered any reagent. "
+              a(href="/search")
+                span(class="labColor")="Search now."
+            h4="A Bar report of the monthly orders."
+            p="This bar chart depicts your number of orders this month (so far) per Reagent Category:"
+            - if(filteroutput != null && filteroutput.length > 0) 
+               div(class="ct-chart0 ct-perfect-fourth")
+               div(id="tooltips0", class="labColor") &nbsp;
+          div(id="labsComp")
+            - if(filteroutput != null && filteroutput.length == 0) 
+             h5="You have not ordered any reagent this month."
+            h4="A Bar report of all orders in each lab."
+            p="This bar chart depicts the number of orders (so far) per lab:"
+            - if(laborders != null && laborders.length > 0)
+               div(class="ct-chart3 ct-perfect-fourth")
+               div(id="tooltips3", class="labColor") &nbsp;
+            - if(laborders != null && laborders.length == 0) 
+             h5="No reagent has been ordered in any lab so far."
           
           - var array_rows = []
           - var array_values = ""

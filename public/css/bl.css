@@ -300,6 +300,18 @@ position: absolute;
     display: none;
 }
 
+#qtyComp{
+    display: none;
+}
+
+#labsComp{
+    display: none;
+}
+
+#monthComp{
+    display: none;
+}
+
 .reportInsuff{
     width: 31%;
     float:left;
