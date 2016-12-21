@@ -42,7 +42,7 @@ block content
 			$('#reportShares').hide();
 			$('#reportOrders').hide();
 			$('#reportInsuff').hide();
-			console.debug("selected: " + eSelect);
+
 			/*var resultsMoney = "#{resultsMoney}";
 			var resultsOrders = "#{resultsOrders}";
 			var resultsShares = "#{resultsShares}";
@@ -52,6 +52,7 @@ block content
 			console.log("resultsMoney: " + resultsMoney.length);
 			console.log("resultsInsuff: " + resultsInsuff.length);*/
 			var eSelect = document.getElementById('reportSelect');
+			console.debug("selected: " + eSelect);
 				eSelect.onchange = function() {
 					if(eSelect.selectedIndex === 1 ) {
 						console.log("resultsMoney inside");
