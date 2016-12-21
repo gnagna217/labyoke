@@ -294,6 +294,7 @@ position: absolute;
     float:left;
     margin-right:0px;
     display:none;
+    margin-top: 20px;
 }
 
 .alert-orders{
@@ -365,6 +366,7 @@ position: absolute;
     float:left;
     margin-right:0px;
     display:none;
+    margin-top: 20px;
 }
 
 .reportOrders{
@@ -372,11 +374,13 @@ position: absolute;
     float:left;
     margin-right:0px;
     display:none;
+    margin-top: 20px;
 }
 .reportShares{
     float: left; 
     width: 50%;
     display:none;
+    margin-top: 20px;
 }
 .labColor{
     color: #3d9dcb;

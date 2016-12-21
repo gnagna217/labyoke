@@ -123,7 +123,7 @@ block content
 		div(class="reportSlot") &nbsp;
 		div
 			div(class="reportMoney results", id="reportMoney")
-				div(style="background-color: #3d9dcb; height: 2px; margin-bottom: 30px; margin-top: 30px;")
+				div(style="/*background-color: #3d9dcb; height: 2px; margin-bottom: 30px; margin-top: 30px;*/")
 				h4="Shares Savings report Upload."
 				p="You can now retrieve a report of the savings each lab has made over a period of time per reagent category."
 				- var datefrom_money = datefromMoney
@@ -232,7 +232,7 @@ block content
 					script.
 						$(window).scrollTop($('.reportMoney').offset().top).scrollLeft($('.reportMoney').offset().left);
 			div(class="reportOrders results", id="reportOrders")
-				div(style="background-color: #3d9dcb; height: 2px; margin-bottom: 30px; margin-top: 30px;")
+				div(style="/*background-color: #3d9dcb; height: 2px; margin-bottom: 30px; margin-top: 30px;*/")
 				h4="Orders report Upload."
 				p="You can now retrieve a report of all orders requested."
 				- var datefrom_orders = datefromOrders
@@ -369,7 +369,7 @@ block content
 					script.
 						$(window).scrollTop($('.reportOrders').offset().top).scrollLeft($('.reportOrders').offset().left);
 			div(class="reportShares results", id="reportShares")
-				div(style="background-color: #3d9dcb; height: 2px; margin-bottom: 30px; margin-top: 30px;")
+				div(style="/*background-color: #3d9dcb; height: 2px; margin-bottom: 30px; margin-top: 30px;*/")
 				h4="Inventory report Upload."
 				p="You can now retrieve a report of all shares uploaded."
 				- var datefrom_shares = datefromShares
@@ -518,7 +518,7 @@ block content
 					});
 		div(style="/*float: left; width: 100%;*/")
 			div(class="reportInsuff results", id="reportInsuff")
-				div(style="background-color: #3d9dcb; height: 2px; margin-bottom: 30px; margin-top: 30px;")
+				div(style="/*background-color: #3d9dcb; height: 2px; margin-bottom: 30px; margin-top: 30px;*/")
 				h4="Insufficient Reagents report Upload."
 				p="You can now retrieve a report of the low inventories in each lab."
 				- var message_fail_insuff = "Unfortunately we could not generate the report as there is no data retrieved. Please try again with a new lab. Or better yet: <b>There are no insufficient inventory to report at the moment</b>."
