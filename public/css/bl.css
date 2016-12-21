@@ -296,6 +296,10 @@ position: absolute;
     display:none;
 }
 
+#team{
+    display: none;
+}
+
 .reportInsuff{
     width: 31%;
     float:left;
