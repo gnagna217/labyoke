@@ -37,21 +37,25 @@ block content
 			var eSelect = document.getElementById('reportSelect');
 				eSelect.onchange = function() {
 					if(eSelect.selectedIndex === 1 || resultsMoney.length>0) {
+						console.log("resultsMoney inside");
 						$('#reportMoney').show();
 						$('#reportShares').hide();
 						$('#reportOrders').hide();
 						$('#reportInsuff').hide();
 					} else if(eSelect.selectedIndex === 2 || resultsOrders.length>0) {
+						console.log("resultsOrders inside");
 						$('#reportOrders').show();
 						$('#reportShares').hide();
 						$('#reportMoney').hide();
 						$('#reportInsuff').hide();
 					} else if(eSelect.selectedIndex === 3 || resultsShares.length>0) {
+						console.log("resultsShares inside");
 						$('#reportShares').show();
 						$('#reportMoney').hide();
 						$('#reportOrders').hide();
 						$('#reportInsuff').hide();
 					}else if(eSelect.selectedIndex === 4 || resultsInsuff.length>0) {
+						console.log("resultsInsuff inside");
 						$('#reportInsuff').show();
 						$('#reportShares').hide();
 						$('#reportOrders').hide();
