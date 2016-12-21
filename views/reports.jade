@@ -30,10 +30,10 @@ block content
 			var resultsOrders = "#{resultsOrders}";
 			var resultsShares = "#{resultsShares}";
 			var resultsInsuff = "#{resultsInsuff}";
-			console.log("resultsOrders: " + resultsOrders);
-			console.log("resultsShares: " + resultsShares);
-			console.log("resultsMoney: " + resultsMoney);
-			console.log("resultsInsuff: " + resultsInsuff);
+			console.log("resultsOrders: " + resultsOrders.length);
+			console.log("resultsShares: " + resultsShares.length);
+			console.log("resultsMoney: " + resultsMoney.length);
+			console.log("resultsInsuff: " + resultsInsuff.length);
 			var eSelect = document.getElementById('reportSelect');
 				eSelect.onchange = function() {
 					if(eSelect.selectedIndex === 1 || resultsMoney.length>0) {
