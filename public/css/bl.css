@@ -302,14 +302,17 @@ position: absolute;
 
 #qtyComp{
     display: none;
+    margin-top:40px;
 }
 
 #labsComp{
     display: none;
+    margin-top:40px;
 }
 
 #monthComp{
     display: none;
+    margin-top:40px;
 }
 
 .reportInsuff{
