@@ -36,22 +36,22 @@ block content
 			console.log("resultsInsuff: " + resultsInsuff);
 			var eSelect = document.getElementById('reportSelect');
 				eSelect.onchange = function() {
-					if(eSelect.selectedIndex === 0 || resultsMoney.length>0) {
+					if(eSelect.selectedIndex === 1 || resultsMoney.length>0) {
 						$('#reportMoney').show();
 						$('#reportShares').hide();
 						$('#reportOrders').hide();
 						$('#reportInsuff').hide();
-					} else if(eSelect.selectedIndex === 1 || resultsOrders.length>0) {
+					} else if(eSelect.selectedIndex === 2 || resultsOrders.length>0) {
 						$('#reportOrders').show();
 						$('#reportShares').hide();
 						$('#reportMoney').hide();
 						$('#reportInsuff').hide();
-					} else if(eSelect.selectedIndex === 2 || resultsShares.length>0) {
+					} else if(eSelect.selectedIndex === 3 || resultsShares.length>0) {
 						$('#reportShares').show();
 						$('#reportMoney').hide();
 						$('#reportOrders').hide();
 						$('#reportInsuff').hide();
-					}else if(eSelect.selectedIndex === 3 || resultsInsuff.length>0) {
+					}else if(eSelect.selectedIndex === 4 || resultsInsuff.length>0) {
 						$('#reportInsuff').show();
 						$('#reportShares').hide();
 						$('#reportOrders').hide();
