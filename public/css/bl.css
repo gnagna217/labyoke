@@ -296,6 +296,11 @@ position: absolute;
     display:none;
 }
 
+.reportSlot{
+    float:left;
+    width:30%;
+}
+
 #team{
     display: none;
 }
@@ -932,6 +937,10 @@ input::-webkit-inner-spin-button {
 
 
  @media (max-width: 440px) {
+.reportSlot{
+    float:none;
+    width:0;
+}
 .adjustnav{
     width: 98%;
 }
