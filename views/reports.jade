@@ -89,7 +89,7 @@ block content
 				eSelect.onchange = function() {
 					if(eSelect.selectedIndex === 1 || $('#reportSelect').val() == 'reportMoney') {
 						console.log("resultsMoney inside");
-						$('#reportMoney').show();
+						$('#reportMoney').show(2000);
 						$('#reportShares').hide();
 						$('#reportOrders').hide();
 						$('#reportInsuff').hide();
