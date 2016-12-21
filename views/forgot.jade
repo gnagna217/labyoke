@@ -13,7 +13,7 @@ block content
                 span!="Please enter your "
                 span(class="labColor")="username"
                 span!= " below and we shall send you an email to change your password and <a href='/login'>login</a> again."
-            div(id="ctl00_Div2" class="frontdiv results")
+            div(id="ctl00_Div2" class="frontdiv")
                 if message
                     div(class="alert alert-danger")!= message
                 form(action="/forgot" method="post")
@@ -43,7 +43,7 @@ block content
                         span= "Oops..."
                     p!=message
                     if !noforgotform
-                        form(action="/forgot" method="post" class="results")
+                        form(action="/forgot" method="post")
                             div(style="margin-bottom: 20px;")
                                 div(class="textentry")
                                     input(name="forgotuser" type="text" id="forgotuser" class="form-control" placeholder="Username" style="border-color:#8a6d3b")
