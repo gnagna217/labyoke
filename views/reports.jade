@@ -159,7 +159,7 @@ block content
 							input(type="checkbox" name="reportVendorMoney" id="reportVendorMoney" value="vendor")
 							label(style="width: 68px; margin-left: 20px;")="Catalog#"
 							input(type="checkbox" name="reportCatalogMoney" id="reportCatalogMoney" value="catalogNumber")
-							div(style="max-width:100%")
+							div(style="max-width:100%; margin-top: 20px;")
 								button.btn.btn-success.btn-lg.btn-block(type="submit",value="Report",name="submit", style="max-width: 80%;width: 80%;") Get Savings
 								img(src="images/ship.png", alt="The Lab", title="Lab", style="border-width:0px; width: 50px; margin-top: -50px;float:right")
 						if(resultsMoney != null && resultsMoney !="")
@@ -270,7 +270,7 @@ block content
 									- for(var prop in ob)
 										- var lab = ob[prop].labname
 										option(value=lab) #{lab}
-							div(style="max-width:100%")
+							div(style="max-width:100%; margin-top: 20px;")
 								button.btn.btn-success.btn-lg.btn-block(type="submit",value="Report",name="submit", style="max-width: 80%;width: 80%;") Get Orders
 								img(src="images/ship.png", alt="The Lab", title="Lab", style="border-width:0px; width: 50px; margin-top: -50px; float:right")
 						span(id="triggerSafariOrder")
@@ -398,7 +398,7 @@ block content
 									- for(var prop in ob)
 										- var cat = ob[prop].category
 										option(value=cat) #{cat}
-							div(style="max-width:100%")
+							div(style="max-width:100%; margin-top: 20px;")
 								button.btn.btn-success.btn-lg.btn-block(type="submit",value="Report",name="submit", style="max-width: 80%;width: 80%;") Get Shares
 								img(src="images/ship.png", alt="The Lab", title="Lab", style="border-width:0px; width: 50px; margin-top: -50px;float:right")
 						if(resultsShares != null && resultsShares !="")
@@ -510,7 +510,7 @@ block content
 						$("#reportDateToMoney").mask("99-99-9999",{placeholder:"mm-dd-yyyy"});
 						
 					});
-		div(style="float: left; width: 100%;")
+		div(style="/*float: left; width: 100%;*/")
 			div(class="reportInsuff", id="reportInsuff")
 				div(style="background-color: #3d9dcb; height: 2px; margin-bottom: 30px; margin-top: 30px;")
 				h4="Insufficient Reagents report Upload."
@@ -540,7 +540,7 @@ block content
 							input(type="checkbox" name="reportVendorInsuff" id="reportVendorInsuff" value="vendor")
 							label(style="width: 68px; margin-left: 20px;")="Catalog#"
 							input(type="checkbox" name="reportCatalogInsuff" id="reportCatalogInsuff" value="catalogNumber")
-							div(style="max-width:100%")
+							div(style="max-width:100%; margin-top: 20px;")
 								button.btn.btn-success.btn-lg.btn-block(type="submit",value="Report",name="submit", style="max-width: 80%;width: 80%;") Get Insufficient Reagents
 								img(src="images/ship.png", alt="The Lab", title="Lab", style="border-width:0px; width: 50px; margin-top: -50px;float:right")
 						if(resultsInsuff != null && resultsInsuff !="")
