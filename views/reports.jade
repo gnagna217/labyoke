@@ -16,6 +16,7 @@ block content
 			div(class="buttons")
 				label="Select a Report"
 				select(name="reportSelect" type="text" id="reportSelect" class="form-control" style="border-color:#3d9dcb;margin-bottom:10px" placeholder="Select Report")
+					option(value="reportNone")="Select A Report..."
 					option(value="reportMoney")="Savings"
 					option(value="reportOrders")="Orders"
 					option(value="reportShares")="Inventory"
@@ -26,24 +27,28 @@ block content
 			$('#reportShares').hide();
 			$('#reportOrders').hide();
 			$('#reportInsuff').hide();
+			var resultsMoney = "#{resultsMoney}";
+			var resultsOrders = "#{resultsOrders}";
+			var resultsShares = "#{resultsShares}";
+			var resultsInsuff = "#{resultsInsuff}";
 			var eSelect = document.getElementById('reportSelect');
 				eSelect.onchange = function() {
-					if(eSelect.selectedIndex === 0) {
+					if(eSelect.selectedIndex === 0 && resultsMoney.length>0) {
 						$('#reportMoney').show();
 						$('#reportShares').hide();
 						$('#reportOrders').hide();
 						$('#reportInsuff').hide();
-					} else if(eSelect.selectedIndex === 1) {
+					} else if(eSelect.selectedIndex === 1 && resultsOrders.length>0) {
 						$('#reportOrders').show();
 						$('#reportShares').hide();
 						$('#reportMoney').hide();
 						$('#reportInsuff').hide();
-					} else if(eSelect.selectedIndex === 2) {
+					} else if(eSelect.selectedIndex === 2 && resultsShares.length>0) {
 						$('#reportShares').show();
 						$('#reportMoney').hide();
 						$('#reportOrders').hide();
 						$('#reportInsuff').hide();
-					}else if(eSelect.selectedIndex === 3) {
+					}else if(eSelect.selectedIndex === 3 && resultsInsuff.length>0) {
 						$('#reportInsuff').show();
 						$('#reportShares').hide();
 						$('#reportOrders').hide();
