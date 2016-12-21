@@ -231,7 +231,7 @@ block content
 							- resultsMoney = ""
 					script.
 						$(window).scrollTop($('.reportMoney').offset().top).scrollLeft($('.reportMoney').offset().left);
-			div(class="reportOrders", id="reportOrders")
+			div(class="reportOrders results", id="reportOrders")
 				div(style="background-color: #3d9dcb; height: 2px; margin-bottom: 30px; margin-top: 30px;")
 				h4="Orders report Upload."
 				p="You can now retrieve a report of all orders requested."
@@ -368,7 +368,7 @@ block content
 							- resultsOrders = ""
 					script.
 						$(window).scrollTop($('.reportOrders').offset().top).scrollLeft($('.reportOrders').offset().left);
-			div(class="reportShares", id="reportShares")
+			div(class="reportShares results", id="reportShares")
 				div(style="background-color: #3d9dcb; height: 2px; margin-bottom: 30px; margin-top: 30px;")
 				h4="Inventory report Upload."
 				p="You can now retrieve a report of all shares uploaded."
@@ -517,7 +517,7 @@ block content
 						
 					});
 		div(style="/*float: left; width: 100%;*/")
-			div(class="reportInsuff", id="reportInsuff")
+			div(class="reportInsuff results", id="reportInsuff")
 				div(style="background-color: #3d9dcb; height: 2px; margin-bottom: 30px; margin-top: 30px;")
 				h4="Insufficient Reagents report Upload."
 				p="You can now retrieve a report of the low inventories in each lab."
