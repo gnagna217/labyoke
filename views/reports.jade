@@ -72,9 +72,15 @@ block content
 				$('#reportMoney').hide();
 				$('#reportOrders').hide();
 				$('#reportInsuff').hide();
-			}else if(eSelect.selectedIndex === 4 || $('#reportSelect').val() == 'reportInsuff') {
+			} else if(eSelect.selectedIndex === 4 || $('#reportSelect').val() == 'reportInsuff') {
 				console.log("resultsInsuff inside");
 				$('#reportInsuff').show();
+				$('#reportShares').hide();
+				$('#reportOrders').hide();
+				$('#reportMoney').hide();
+			} else if(eSelect.selectedIndex === 0 || $('#reportSelect').val() == 'reportNone') {
+				console.log("result None inside");
+				$('#reportInsuff').hide();
 				$('#reportShares').hide();
 				$('#reportOrders').hide();
 				$('#reportMoney').hide();
