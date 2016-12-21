@@ -89,10 +89,7 @@ block content
 				eSelect.onchange = function() {
 					if(eSelect.selectedIndex === 1 || $('#reportSelect').val() == 'reportMoney') {
 						console.log("resultsMoney inside");
-						//$('#reportMoney').show();
-						$( "#reportMoney div" ).first().show( "fast", function showNext() {
-						$( this ).next( "div" ).show( "fast", showNext );
-						})
+						$('#reportMoney').show();
 						$('#reportShares').hide();
 						$('#reportOrders').hide();
 						$('#reportInsuff').hide();
@@ -127,9 +124,8 @@ block content
 		div
 			div(class="reportMoney", id="reportMoney")
 				div(style="background-color: #3d9dcb; height: 2px; margin-bottom: 30px; margin-top: 30px;")
-				div
-					h4="Shares Savings report Upload."
-					p="You can now retrieve a report of the savings each lab has made over a period of time per reagent category."
+				h4="Shares Savings report Upload."
+				p="You can now retrieve a report of the savings each lab has made over a period of time per reagent category."
 				- var datefrom_money = datefromMoney
 				- var dateto_money = datetoMoney
 				- var file_money = "reportMoney_" + datefrom_money + "_to_" + dateto_money + ".pdf"
