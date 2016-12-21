@@ -90,7 +90,7 @@ block content
 					if(eSelect.selectedIndex === 1 || $('#reportSelect').val() == 'reportMoney') {
 						console.log("resultsMoney inside");
 						//$('#reportMoney').show();
-						$( "#reportMoney:div" ).first().show( "fast", function showNext() {
+						$( "#reportMoney div" ).first().show( "fast", function showNext() {
 						$( this ).next( "div" ).show( "fast", showNext );
 						})
 						$('#reportShares').hide();
