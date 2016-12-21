@@ -111,6 +111,12 @@ block content
 						$('#reportShares').hide();
 						$('#reportOrders').hide();
 						$('#reportMoney').hide();
+					} else if(eSelect.selectedIndex === 0 || $('#reportSelect').val() == 'reportNone') {
+						console.log("result None inside");
+						$('#reportInsuff').hide();
+						$('#reportShares').hide();
+						$('#reportOrders').hide();
+						$('#reportMoney').hide();
 					}
 				}
 			}
