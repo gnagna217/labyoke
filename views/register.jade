@@ -13,7 +13,7 @@ block content
                 span!="You are on your way to <a href='/login'>Lab Yoking</a> with fellow researchers. "
                 span(class="labColor")="Registering "
                 span="is a breeze!"
-            div(id="ctl00_Div2" class="frontdiv")
+            div(id="ctl00_Div2" class="frontdiv results")
                 if message
                     div(class="alert alert-danger")!= message
                 form(action="/register" method="post")
@@ -34,7 +34,7 @@ block content
         if labentered
             h1= 'Almost there.'
             p Now... Tell us more about yourself!
-            div(id="ctl00_Div2" class="frontdiv")
+            div(id="ctl00_Div2" class="frontdiv results")
                 if message
                     div(class="alert alert-danger")!= message
                 form(action="/register" method="post")
