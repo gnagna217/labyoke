@@ -170,56 +170,56 @@ block content
 		div(style="float:right;", class="share-container adjustpadding")
 			script(type="text/javascript" src="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.js")
 
-          h3="Operational Charts."
-          form(action="chartSelect", method="post")
-            div(class="buttons")
-              select(name="chartSelect" type="text" id="chartSelect" class="form-control" style="border-color:#3d9dcb;margin-bottom:10px" placeholder="Select Chart")
-                option(value="chartNone",style="font-weight:bold")="Select A Chart..."
-                option(value="chartAll")="Your Shares"
-                option(value="chartMonth")="Your Shares this month"
-	          script.
-	            window.onload = function() {
-	            $('#monthAll').hide();
-	            $('#sharesAll').hide();
+			h3="Operational Charts."
+			form(action="chartSelect", method="post")
+				div(class="buttons")
+					select(name="chartSelect" type="text" id="chartSelect" class="form-control" style="border-color:#3d9dcb;margin-bottom:10px" placeholder="Select Chart")
+						option(value="chartNone",style="font-weight:bold")="Select A Chart..."
+						option(value="chartAll")="Your Shares"
+						option(value="chartMonth")="Your Shares this month"
+			script.
+				window.onload = function() {
+				$('#monthAll').hide();
+				$('#sharesAll').hide();
 
-	            var eSelect = document.getElementById('chartSelect');
-	            console.debug("selected: " + $('#chartSelect').val());
+				var eSelect = document.getElementById('chartSelect');
+				console.debug("selected: " + $('#chartSelect').val());
 
-	            if(chartSelect.selectedIndex === 1 || $('#chartSelect').val() == 'chartAll') {
-	              console.log("sharesAll inside");
-	              $('#sharesAll').show();
-	              document.querySelector('.ct-chart').__chartist__.update();
-	              $('#monthAll').hide();
-	            } else if(chartSelect.selectedIndex === 2 || $('#reportSelect').val() == 'chartMonth') {
-	              console.log("chartOrders inside");
-	              $('#sharesAll').hide();
-	              $('#monthAll').show();
-	              document.querySelector('.ct-chart0').__chartist__.update();
-	            } else if(eSelect.selectedIndex === 0 || $('#reportSelect').val() == 'chartNone') {
-	              console.log("result None inside");
-	              $('#monthAll').hide();
-	              $('#sharesAll').hide();
-	            }
+				if(chartSelect.selectedIndex === 1 || $('#chartSelect').val() == 'chartAll') {
+				console.log("sharesAll inside");
+				$('#sharesAll').show();
+				document.querySelector('.ct-chart').__chartist__.update();
+				$('#monthAll').hide();
+				} else if(chartSelect.selectedIndex === 2 || $('#reportSelect').val() == 'chartMonth') {
+				console.log("chartOrders inside");
+				$('#sharesAll').hide();
+				$('#monthAll').show();
+				document.querySelector('.ct-chart0').__chartist__.update();
+				} else if(eSelect.selectedIndex === 0 || $('#reportSelect').val() == 'chartNone') {
+				console.log("result None inside");
+				$('#monthAll').hide();
+				$('#sharesAll').hide();
+				}
 
-	            chartSelect.onchange = function() {
-	            if(chartSelect.selectedIndex === 1 || $('#chartSelect').val() == 'chartAll') {
-	              console.log("sharesAll inside");
-	              $('#sharesAll').show();
-	              document.querySelector('.ct-chart').__chartist__.update();
-	              $('#monthAll').hide();
-	            } else if(chartSelect.selectedIndex === 2 || $('#reportSelect').val() == 'chartMonth') {
-	              console.log("chartOrders inside");
-	              $('#sharesAll').hide();
-	              $('#monthAll').show();
-	              document.querySelector('.ct-chart0').__chartist__.update();
-	            } else if(eSelect.selectedIndex === 0 || $('#reportSelect').val() == 'chartNone') {
-	              console.log("result None inside");
-	              $('#monthAll').hide();
-	              $('#sharesAll').hide();
-	            }           
-	            };
+				chartSelect.onchange = function() {
+				if(chartSelect.selectedIndex === 1 || $('#chartSelect').val() == 'chartAll') {
+				console.log("sharesAll inside");
+				$('#sharesAll').show();
+				document.querySelector('.ct-chart').__chartist__.update();
+				$('#monthAll').hide();
+				} else if(chartSelect.selectedIndex === 2 || $('#reportSelect').val() == 'chartMonth') {
+				console.log("chartOrders inside");
+				$('#sharesAll').hide();
+				$('#monthAll').show();
+				document.querySelector('.ct-chart0').__chartist__.update();
+				} else if(eSelect.selectedIndex === 0 || $('#reportSelect').val() == 'chartNone') {
+				console.log("result None inside");
+				$('#monthAll').hide();
+				$('#sharesAll').hide();
+				}           
+				};
 
-	            };
+				};
 
 
 			div(style="/*background-color: #3d9dcb; height: 2px;*/ margin-bottom: 30px; margin-top: 0px;")
