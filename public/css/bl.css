@@ -290,7 +290,7 @@ position: absolute;
 }
 
 .reportMoney{
-    width: 50%;
+    width: 60%;
     float:left;
     margin-right:0px;
     display:none;
@@ -330,7 +330,7 @@ position: absolute;
 }
 .reportSlot{
     float:left;
-    width:25%;
+    width:20%;
 }
 
 #team{
@@ -362,7 +362,7 @@ position: absolute;
 }
 
 .reportInsuff{
-    width: 50%;
+    width: 60%;
     float:left;
     margin-right:0px;
     display:none;
@@ -370,7 +370,7 @@ position: absolute;
 }
 
 .reportOrders{
-    width: 50%;
+    width: 60%;
     float:left;
     margin-right:0px;
     display:none;
@@ -378,7 +378,7 @@ position: absolute;
 }
 .reportShares{
     float: left; 
-    width: 50%;
+    width: 60%;
     display:none;
     margin-top: 20px;
 }
