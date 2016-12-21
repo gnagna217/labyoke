@@ -312,7 +312,7 @@ position: absolute;
     border-radius: 4px;
 }*/
 
-#results{
+#results, .results{
     border-style: solid;
     border-top: none;
     border-bottom: none;
@@ -809,7 +809,7 @@ input::-webkit-inner-spin-button {
     width: auto;
     margin-left: 0;
     }
-    #results{
+    #results, .results{
     border:none;
     padding: 0px;
     }
