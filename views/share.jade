@@ -210,11 +210,13 @@ block content
 				chartSelect.onchange = function() {
 				if(chartSelect.selectedIndex === 1 || $('#chartSelect').val() == 'chartAll') {
 				console.log("sharesAll inside");
+				$('#chartNotes').hide();
 				$('#sharesAll').show();
 				document.querySelector('.ct-chart').__chartist__.update();
 				$('#monthAll').hide();
 				} else if(chartSelect.selectedIndex === 2 || $('#reportSelect').val() == 'chartMonth') {
 				console.log("chartOrders inside");
+				$('#chartNotes').hide();
 				$('#sharesAll').hide();
 				$('#monthAll').show();
 				document.querySelector('.ct-chart0').__chartist__.update();
@@ -222,6 +224,7 @@ block content
 				console.log("result None inside");
 				$('#monthAll').hide();
 				$('#sharesAll').hide();
+				$('#chartNotes').show();
 				}           
 				};
 
