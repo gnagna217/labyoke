@@ -69,25 +69,13 @@ block content
               span!= booster          
           div(style="background-color: #3d9dcb; height: 2px; margin-bottom: 30px; margin-top: 30px;")
 
-          - var selResultsQty = report_sharesbycategory
-          - var checkedstrQty = false;
-          - if(selResultsQty !=null && selResultsQty.length>0)
-            - checkedstrQty = true
-          - var selResultsOrders = test
-          - var checkedstrOrders = false;
-          - if(selResultsOrders !=null && selResultsOrders.length>0)
-            - checkedstrOrders = true
-          - var selResultsLabs = laborders
-          - var checkedstrLabs = false;
-          - if(selResultsLabs !=null && selResultsLabs.length>0)
-            - checkedstrLabs = true
           form(action="chartSelect", method="post")
             div(class="buttons")
               select(name="chartSelect" type="text" id="chartSelect" class="form-control" style="border-color:#3d9dcb;margin-bottom:10px" placeholder="Select Chart")
                 option(value="chartNone",style="font-weight:bold")="Select A Chart..."
-                option(value="chartQty" selected=(checkedstrQty===true ? "selected" : undefined))="Orders & Shares Comparison"
-                option(value="chartOrders" selected=(checkedstrOrders===true ? "selected" : undefined))="Your monthly orders"
-                option(value="chartLabs" selected=(checkedstrLabs===true ? "selected" : undefined))="Lab Orders Comparison"
+                option(value="chartQty")="Orders & Shares Comparison"
+                option(value="chartOrders")="Your monthly orders"
+                option(value="chartLabs")="Lab Orders Comparison"
           script.
             window.onload = function() {
             $('#labsComp').hide();
