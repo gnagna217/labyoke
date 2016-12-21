@@ -54,25 +54,25 @@ block content
 			var eSelect = document.getElementById('reportSelect');
 			console.debug("selected: " + $('#reportSelect').val());
 				eSelect.onchange = function() {
-					if(eSelect.selectedIndex === 1 || $('#reportSelect').val() == 'Savings') {
+					if(eSelect.selectedIndex === 1 || $('#reportSelect').val() == 'reportMoney') {
 						console.log("resultsMoney inside");
 						$('#reportMoney').show();
 						$('#reportShares').hide();
 						$('#reportOrders').hide();
 						$('#reportInsuff').hide();
-					} else if(eSelect.selectedIndex === 2 || $('#reportSelect').val() == 'Orders') {
+					} else if(eSelect.selectedIndex === 2 || $('#reportSelect').val() == 'reportOrders') {
 						console.log("resultsOrders inside");
 						$('#reportOrders').show();
 						$('#reportShares').hide();
 						$('#reportMoney').hide();
 						$('#reportInsuff').hide();
-					} else if(eSelect.selectedIndex === 3 || $('#reportSelect').val() == 'Inventory') {
+					} else if(eSelect.selectedIndex === 3 || $('#reportSelect').val() == 'reportShares') {
 						console.log("resultsShares inside");
 						$('#reportShares').show();
 						$('#reportMoney').hide();
 						$('#reportOrders').hide();
 						$('#reportInsuff').hide();
-					}else if(eSelect.selectedIndex === 4 || $('#reportSelect').val() == 'insufficient Inventory') {
+					}else if(eSelect.selectedIndex === 4 || $('#reportSelect').val() == 'reportInsuff') {
 						console.log("resultsInsuff inside");
 						$('#reportInsuff').show();
 						$('#reportShares').hide();
