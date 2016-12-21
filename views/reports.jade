@@ -14,9 +14,8 @@ block content
 			- now = (now.getMonth() + 1) + "/" + now.getDate() + "/" + now.getFullYear()
 		form(action="reportSelect", method="post")
 			div(class="buttons")
-				label="Select a Report"
 				select(name="reportSelect" type="text" id="reportSelect" class="form-control" style="border-color:#3d9dcb;margin-bottom:10px" placeholder="Select Report")
-					option(value="reportNone")="Select A Report..."
+					option(value="reportNone",style="font-weight:bold")="Select A Report..."
 					option(value="reportMoney")="Savings"
 					option(value="reportOrders")="Orders"
 					option(value="reportShares")="Inventory"
