@@ -300,6 +300,15 @@ position: absolute;
     display: none;
 }
 
+#sharesAll{
+    display: none;
+    margin-top:40px;
+}
+#monthAll{
+    display: none;
+    margin-top:40px;
+}
+
 #qtyComp{
     display: none;
     margin-top:40px;

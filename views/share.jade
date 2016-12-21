@@ -169,28 +169,83 @@ block content
 			div(style="background-color: #3d9dcb; height: 2px; margin-bottom: 0px; margin-top: 30px;")
 		div(style="float:right;", class="share-container adjustpadding")
 			script(type="text/javascript" src="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.js")
+
+          h3="Operational Charts."
+          form(action="chartSelect", method="post")
+            div(class="buttons")
+              select(name="chartSelect" type="text" id="chartSelect" class="form-control" style="border-color:#3d9dcb;margin-bottom:10px" placeholder="Select Chart")
+                option(value="chartNone",style="font-weight:bold")="Select A Chart..."
+                option(value="chartAll")="Your Shares"
+                option(value="chartMonth")="Your Shares this month"
+	          script.
+	            window.onload = function() {
+	            $('#monthAll').hide();
+	            $('#sharesAll').hide();
+
+	            var eSelect = document.getElementById('chartSelect');
+	            console.debug("selected: " + $('#chartSelect').val());
+
+	            if(chartSelect.selectedIndex === 1 || $('#chartSelect').val() == 'chartAll') {
+	              console.log("sharesAll inside");
+	              $('#sharesAll').show();
+	              document.querySelector('.ct-chart').__chartist__.update();
+	              $('#monthAll').hide();
+	            } else if(chartSelect.selectedIndex === 2 || $('#reportSelect').val() == 'chartMonth') {
+	              console.log("chartOrders inside");
+	              $('#sharesAll').hide();
+	              $('#monthAll').show();
+	              document.querySelector('.ct-chart0').__chartist__.update();
+	            } else if(eSelect.selectedIndex === 0 || $('#reportSelect').val() == 'chartNone') {
+	              console.log("result None inside");
+	              $('#monthAll').hide();
+	              $('#sharesAll').hide();
+	            }
+
+	            chartSelect.onchange = function() {
+	            if(chartSelect.selectedIndex === 1 || $('#chartSelect').val() == 'chartAll') {
+	              console.log("sharesAll inside");
+	              $('#sharesAll').show();
+	              document.querySelector('.ct-chart').__chartist__.update();
+	              $('#monthAll').hide();
+	            } else if(chartSelect.selectedIndex === 2 || $('#reportSelect').val() == 'chartMonth') {
+	              console.log("chartOrders inside");
+	              $('#sharesAll').hide();
+	              $('#monthAll').show();
+	              document.querySelector('.ct-chart0').__chartist__.update();
+	            } else if(eSelect.selectedIndex === 0 || $('#reportSelect').val() == 'chartNone') {
+	              console.log("result None inside");
+	              $('#monthAll').hide();
+	              $('#sharesAll').hide();
+	            }           
+	            };
+
+	            };
+
+
 			div(style="/*background-color: #3d9dcb; height: 2px;*/ margin-bottom: 30px; margin-top: 0px;")
-			h4="A Line report of all your shares."
-			- if(report_sharesbycategory != null && report_sharesbycategory.length >0)
-				p="This line graph depicts your total number of shares per Reagent Category:"
-				div(class="ct-chart ct-perfect-fourth")
-				div(id="tooltips", class="labColor") &nbsp;
-			- if(report_sharesbycategory != null && report_sharesbycategory.length==0)
-				h5="No chemicals have been requested."
-				p(style="padding-top: 20px;")=" "
-			h4="A Bar report of your monthly shares."
-			- var now = new Date()
-			- var month = "month";
-			- var filteroutput = test.filter(function(x){console.log("x.monthorder: "+x.monthorder); console.log("x.yearorder: "+x.yearorder); console.log("now.getFullYear(): "+ now.getFullYear()); console.log("now.getMonth(): "+ now.getMonth()); console.log("so: "+ (x.yearorder == now.getFullYear() && x.monthorder == now.getMonth())); return (x.yearorder == now.getFullYear() && x.monthorder == now.getMonth() + 1)});
-			- if(filteroutput != null && filteroutput.length > 0) 
-				p!="This bar graph depicts your number of shares this " + month + " (so far) per Reagent Category:"
-				div(class="ct-chart0 ct-perfect-fourth")
-				div(id="tooltips0", class="labColor") &nbsp;
-			- if(filteroutput != null && filteroutput.length == 0) 
-				h5
-					span="You have not shared any reagent this month. If you have new chems to share, have your "
-					span(class="labColor")= "administrator" 
-					span=" upload them on your behalf and start saving money for your lab."
+			div(id="sharesAll")
+				h4="A Line report of all your shares."
+				- if(report_sharesbycategory != null && report_sharesbycategory.length >0)
+					p="This line graph depicts your total number of shares per Reagent Category:"
+					div(class="ct-chart ct-perfect-fourth")
+					div(id="tooltips", class="labColor") &nbsp;
+				- if(report_sharesbycategory != null && report_sharesbycategory.length==0)
+					h5="No chemicals have been requested."
+					p(style="padding-top: 20px;")=" "
+			div(id="monthAll")
+				h4="A Bar report of your monthly shares."
+				- var now = new Date()
+				- var month = "month";
+				- var filteroutput = test.filter(function(x){console.log("x.monthorder: "+x.monthorder); console.log("x.yearorder: "+x.yearorder); console.log("now.getFullYear(): "+ now.getFullYear()); console.log("now.getMonth(): "+ now.getMonth()); console.log("so: "+ (x.yearorder == now.getFullYear() && x.monthorder == now.getMonth())); return (x.yearorder == now.getFullYear() && x.monthorder == now.getMonth() + 1)});
+				- if(filteroutput != null && filteroutput.length > 0) 
+					p!="This bar graph depicts your number of shares this " + month + " (so far) per Reagent Category:"
+					div(class="ct-chart0 ct-perfect-fourth")
+					div(id="tooltips0", class="labColor") &nbsp;
+				- if(filteroutput != null && filteroutput.length == 0) 
+					h5
+						span="You have not shared any reagent this month. If you have new chems to share, have your "
+						span(class="labColor")= "administrator" 
+						span=" upload them on your behalf and start saving money for your lab."
 			div(style="padding-top:25px;", class="") &nbsp;
 			- var array_rows = " |"
 			- var array_values = "0|"
