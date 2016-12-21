@@ -296,6 +296,22 @@ position: absolute;
     display:none;
 }
 
+.alert-orders{
+    padding: 46px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 300px;
+    text-align: center;
+    font-size: 14pt;
+}
+
+/*.alert{
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}*/
+
 .reportSlot{
     float:left;
     width:25%;
