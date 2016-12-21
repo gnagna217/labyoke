@@ -92,8 +92,11 @@ block content
             script.
               $('#showteam').click(function() {
                   console.log("team inside");
-                   $('#team:visible').hide();
-                    $('#team:hidden').show();
+                  if($(team).is(":visible")){
+                    $('#team').hide();
+                  } else {
+                    $('#team').show();
+                  }     
               });
           div(id="team")
             div(style="background-color: #3d9dcb; height: 2px; margin-bottom: 30px; margin-top: 30px;")
