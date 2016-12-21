@@ -118,7 +118,34 @@ block content
               $('#monthComp').hide();
               $('#labsComp').hide();
             }
+
+            chartSelect.onchange = function() {
+            if(chartSelect.selectedIndex === 1 || $('#chartSelect').val() == 'chartQty') {
+              console.log("chartQty inside");
+              $('#qtyComp').show();
+              $('#monthComp').hide();
+              $('#labsComp').hide();
+            } else if(chartSelect.selectedIndex === 2 || $('#reportSelect').val() == 'chartOrders') {
+              console.log("chartOrders inside");
+              $('#qtyComp').hide();
+              $('#monthComp').show();
+              $('#labsComp').hide();
+            } else if(chartSelect.selectedIndex === 3 || $('#reportSelect').val() == 'chartLabs') {
+              console.log("chartLabs inside");
+              $('#qtyComp').hide();
+              $('#monthComp').hide();
+              $('#labsComp').show();
+            } else if(eSelect.selectedIndex === 0 || $('#reportSelect').val() == 'chartNone') {
+              console.log("result None inside");
+              $('#qtyComp').hide();
+              $('#monthComp').hide();
+              $('#labsComp').hide();
+            }            
             };
+
+            };
+
+
 
           div(id="qtyComp")
             h4!="A quantity comparison between <i>" + currentlabname + "</i>'s orders and shares."
