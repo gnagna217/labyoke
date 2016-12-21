@@ -312,6 +312,10 @@ position: absolute;
     border-radius: 4px;
 }*/
 
+#chartNotes{
+    display:none;
+    margin-top:20px;
+}
 .reportSlot{
     float:left;
     width:25%;
