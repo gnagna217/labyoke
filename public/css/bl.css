@@ -312,6 +312,16 @@ position: absolute;
     border-radius: 4px;
 }*/
 
+#results{
+    border-top: none;
+    border-bottom: none;
+    padding-left: 20px;
+    border-color: #8a6d3b;
+    border-style: solid;
+    margin-left: 0px;
+    border-radius: 8px;
+    padding-right: 20px;
+}
 #chartNotes{
     display:none;
     margin-top:20px;
@@ -800,6 +810,10 @@ input::-webkit-inner-spin-button {
     }
 }
  @media (min-width: 767px) {
+#results{
+border:none;
+padding: 0px;
+}
 .front{
     text-align: center;
 }
