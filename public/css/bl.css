@@ -290,15 +290,15 @@ position: absolute;
 }
 
 .reportMoney{
-    width: 31%;
+    width: 50%;
     float:left;
-    margin-right:20px;
+    margin-right:0px;
     display:none;
 }
 
 .reportSlot{
     float:left;
-    width:30%;
+    width:25%;
 }
 
 #team{
@@ -330,21 +330,21 @@ position: absolute;
 }
 
 .reportInsuff{
-    width: 31%;
+    width: 50%;
     float:left;
-    margin-right:20px;
+    margin-right:0px;
     display:none;
 }
 
 .reportOrders{
-    width: 31%;
+    width: 50%;
     float:left;
-    margin-right:20px;
+    margin-right:0px;
     display:none;
 }
 .reportShares{
     float: left; 
-    width: 31%;
+    width: 50%;
     display:none;
 }
 .labColor{
