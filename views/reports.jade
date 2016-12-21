@@ -14,14 +14,45 @@ block content
 			- now = (now.getMonth() + 1) + "/" + now.getDate() + "/" + now.getFullYear()
 		form(action="reportSelect", method="post")
 			div(class="buttons")
-				label(style="width: 100px;")="Select a Report"
-				select(name="submit" type="text" id="reportSelect" class="form-control" style="border-color:#3d9dcb;margin-bottom:10px" placeholder="Select Report")
+				label="Select a Report"
+				select(name="reportSelect" type="text" id="reportSelect" class="form-control" style="border-color:#3d9dcb;margin-bottom:10px" placeholder="Select Report")
 					option(value="reportMoney")="Savings"
 					option(value="reportOrders")="Orders"
 					option(value="reportShares")="Inventory"
 					option(value="reportInsuff")="Insufficient Inventory"
+		script.
+			window.onload = function() {
+			$('#reportMoney').hide();
+			$('#reportShares').hide();
+			$('#reportOrders').hide();
+			$('#reportInsuff').hide();
+			var eSelect = document.getElementById('reportSelect');
+				eSelect.onchange = function() {
+					if(eSelect.selectedIndex === 0) {
+						$('#reportMoney').show();
+						$('#reportShares').hide();
+						$('#reportOrders').hide();
+						$('#reportInsuff').hide();
+					} else if(eSelect.selectedIndex === 1) {
+						$('#reportOrders').show();
+						$('#reportShares').hide();
+						$('#reportMoney').hide();
+						$('#reportInsuff').hide();
+					} else if(eSelect.selectedIndex === 2) {
+						$('#reportShares').show();
+						$('#reportMoney').hide();
+						$('#reportOrders').hide();
+						$('#reportInsuff').hide();
+					}else if(eSelect.selectedIndex === 3) {
+						$('#reportInsuff').show();
+						$('#reportShares').hide();
+						$('#reportOrders').hide();
+						$('#reportMoney').hide();
+					}
+				}
+			}
 		div
-			div(class="reportMoney")
+			div(class="reportMoney", id="reportMoney")
 				div(style="background-color: #3d9dcb; height: 2px; margin-bottom: 30px; margin-top: 30px;")
 				h4="Shares Savings report Upload."
 				p="You can now retrieve a report of the savings each lab has made over a period of time per reagent category."
@@ -130,7 +161,7 @@ block content
 							- resultsMoney = ""
 					script.
 						$(window).scrollTop($('.reportMoney').offset().top).scrollLeft($('.reportMoney').offset().left);
-			div(class="reportOrders")
+			div(class="reportOrders", id="reportOrders")
 				div(style="background-color: #3d9dcb; height: 2px; margin-bottom: 30px; margin-top: 30px;")
 				h4="Orders report Upload."
 				p="You can now retrieve a report of all orders requested."
@@ -267,7 +298,7 @@ block content
 							- resultsOrders = ""
 					script.
 						$(window).scrollTop($('.reportOrders').offset().top).scrollLeft($('.reportOrders').offset().left);
-			div(class="reportShares")
+			div(class="reportShares", id="reportShares")
 				div(style="background-color: #3d9dcb; height: 2px; margin-bottom: 30px; margin-top: 30px;")
 				h4="Inventory report Upload."
 				p="You can now retrieve a report of all shares uploaded."
@@ -416,7 +447,7 @@ block content
 						
 					});
 		div(style="float: left; width: 100%;margin-top: 20px;")
-			div(class="reportInsuff")
+			div(class="reportInsuff", id="reportInsuff")
 				div(style="background-color: #3d9dcb; height: 2px; margin-bottom: 30px; margin-top: 30px;")
 				h4="Insufficient Reagents report Upload."
 				p="You can now retrieve a report of the low inventories in each lab."
