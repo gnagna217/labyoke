@@ -28,8 +28,8 @@ block content
                         div(class="textentry")
                             input(name="regtel" type="text" id="tel" class="form-control" placeholder="Telephone")
                     div(class="buttons")
-                        button.btn.btn-success.btn-lg.btn-block(type='submit') Next
-                        img(src="/images/ship.png", alt="The Lab", title="Lab", style="border-width:0px; width: 50px; margin-top: -65px; margin-left: 300px;")  
+                        button.btn.btn-success.btn-lg.btn-block(type='submit',style='width:75%') Next
+                        img(src="/images/ship.png", alt="The Lab", title="Lab", style="border-width:0px; width: 50px; margin-top: -45px; margin-top: -45px;float: right;")  
 
         if labentered
             h1= 'Almost there.'
@@ -63,8 +63,8 @@ block content
                         input(name="regtel" type="hidden" id="regtel" value=tel)
                     div(class="buttons")
                         //input(type="submit" class="button" value="Register")
-                        button.btn.btn-success.btn-lg.btn-block(type='submit') Start Lab Yoking
-                        img(src="/images/ship.png", alt="The Lab", title="Lab", style="border-width:0px; width: 50px; margin-top: -65px; margin-left: 300px;")
+                        button.btn.btn-success.btn-lg.btn-block(type='submit',style='width:75%') Start Lab Yoking
+                        img(src="/images/ship.png", alt="The Lab", title="Lab", style="border-width:0px; width: 50px; margin-top: -45px; margin-top: -45px;float: right;")
             
         if regsuccess && !labentered
                 div(id="ctl00_Div2" class="row")
