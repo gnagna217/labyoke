@@ -95,9 +95,11 @@ block content
                   if($(team).is(":visible")){
                     $('#team').hide();
                     $('#teamTitle').html("Who's in your team?");
+                    $('#teamTitle').css('background-color','#8a6d3b');
                   } else {
                     $('#team').show();
                     $('#teamTitle').html("Hide");
+                    $('#teamTitle').css('background-color','#3d9dcb');
                   }     
               });
           div(id="team")
