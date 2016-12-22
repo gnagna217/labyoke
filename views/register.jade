@@ -54,6 +54,9 @@ block content
                                  - for(var prop in ob)
                                    - var lab = ob[prop].labname
                                    option(value=lab) #{lab}
+                            div(style="top: -35px; position: relative; float: right; margin-right: 10px;")
+                                div(class="arrow-up")
+                                div(class="arrow-down")
                         input(name="regfirstname" type="hidden" id="regfirstname" value=firstname)
                         input(name="reglastname" type="hidden" id="reglastname" value=lastname)
                         input(name="regemail" type="hidden" id="regemail" value=email)

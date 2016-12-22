@@ -36,6 +36,9 @@ block content
 					option(value="reportOrders" selected=(checkedstrOrders===true ? "selected" : undefined))="Orders"
 					option(value="reportShares" selected=(checkedstrShares===true ? "selected" : undefined))="Inventory"
 					option(value="reportInsuff" selected=(checkedstrInsuff===true ? "selected" : undefined))="Insufficient Inventory"
+				div(style="top: -35px; position: relative; float: right; margin-right: 10px;")
+					div(class="arrow-up")
+					div(class="arrow-down")
 		script.
 			window.onload = function() {
 			$('#reportMoney').hide();
@@ -157,6 +160,9 @@ block content
 									- for(var prop in ob)
 										- var lab = ob[prop].labname
 										option(value=lab) #{lab}
+							div(style="top: -35px; position: relative; float: right; margin-right: 10px;")
+								div(class="arrow-up")
+								div(class="arrow-down")
 							label(style="width: 100px;")="Show:"
 							br
 							label(style="width: 65px;")="Reagent"
@@ -267,6 +273,9 @@ block content
 									- for(var prop in ob)
 										- var cat = ob[prop].category
 										option(value=cat) #{cat}
+							div(style="top: -35px; position: relative; float: right; margin-right: 10px;")
+								div(class="arrow-up")
+								div(class="arrow-down")
 							
 							label(style="width: 100px;")="Lab"
 							select(name="reportLabOrders" type="text" id="reportLabOrders" class="form-control" style="border-color:#3d9dcb;margin-bottom:10px" placeholder="Lab")
@@ -276,6 +285,9 @@ block content
 									- for(var prop in ob)
 										- var lab = ob[prop].labname
 										option(value=lab) #{lab}
+							div(style="top: -35px; position: relative; float: right; margin-right: 10px;")
+								div(class="arrow-up")
+								div(class="arrow-down")
 							div(style="max-width:100%; margin-top: 20px;")
 								button.btn.btn-success.btn-lg.btn-block(type="submit",value="Report",name="submit", style="max-width: 80%;width: 80%;") Get Orders
 								img(src="images/ship.png", alt="The Lab", title="Lab", style="border-width:0px; width: 50px; margin-top: -50px; float:right")
@@ -404,6 +416,9 @@ block content
 									- for(var prop in ob)
 										- var cat = ob[prop].category
 										option(value=cat) #{cat}
+							div(style="top: -35px; position: relative; float: right; margin-right: 10px;")
+								div(class="arrow-up")
+								div(class="arrow-down")
 							div(style="max-width:100%; margin-top: 20px;")
 								button.btn.btn-success.btn-lg.btn-block(type="submit",value="Report",name="submit", style="max-width: 80%;width: 80%;") Get Shares
 								img(src="images/ship.png", alt="The Lab", title="Lab", style="border-width:0px; width: 50px; margin-top: -50px;float:right")
@@ -538,6 +553,9 @@ block content
 									- for(var prop in ob)
 										- var lab = ob[prop].labname
 										option(value=lab) #{lab}
+							div(style="top: -35px; position: relative; float: right; margin-right: 10px;")
+								div(class="arrow-up")
+								div(class="arrow-down")
 							label(style="width: 100px;")="Show:"
 							br
 							label(style="width: 65px;")="Reagent"
