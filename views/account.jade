@@ -128,12 +128,11 @@ block content
                       tr
                        td #{ob2[prop].name + " " + ob2[prop].surname }
                        td #{ob2[prop].email}
-            script.
-              if($('#team').is(":visible")){
-                console.log("team inside: " + $('#team').offset().top);
-                $(window).scrollTop($('#team').offset().top).scrollLeft($('#team').offset().left);
-              }
           script.
+            if($('#team').is(":visible")){
+              console.log("team inside: " + $('#team').offset().top);
+              $(window).scrollTop($('#team').offset().top).scrollLeft($('#team').offset().left);
+            }
             $(document).ready(function(){
               $('#changetel input[id="valuedetail"]').mask("(999) 999-9999");
             }); 
