@@ -100,6 +100,8 @@ block content
                     }).mouseleave(function() {
                          $(this).css("background", "#8a6d3b");
                     });
+                    console.log("team inside: " + $('#team').offset().top);
+                    $(window).scrollTop($('#team').offset().top).scrollLeft($('#team').offset().left);
                   } else {
                     $('#team').show();
                     $('#teamTitle').html("Hide");
@@ -130,8 +132,7 @@ block content
                        td #{ob2[prop].email}
           script.
             if($('#team').is(":visible")){
-              console.log("team inside: " + $('#team').offset().top);
-              $(window).scrollTop($('#team').offset().top).scrollLeft($('#team').offset().left);
+              
             }
             $(document).ready(function(){
               $('#changetel input[id="valuedetail"]').mask("(999) 999-9999");
