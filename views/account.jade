@@ -101,7 +101,7 @@ block content
                     }).mouseleave(function() {
                          $(this).css("background", "#8a6d3b");
                     });
-                    $(window).scrollTop($('#team').offset().top).scrollLeft($('#team').offset().left);
+                    $(window).scrollTop($('.team').offset().top).scrollLeft($('.team').offset().left);
                   } else {
                     $('#team').show();
                     $('#teamTitle').html("Hide");
@@ -114,7 +114,7 @@ block content
                   }     
               });
               
-          div(id="team")
+          div(id="team" class="team")
             div(style="background-color: #3d9dcb; height: 2px; margin-bottom: 30px; margin-top: 30px;")
             h2!="Your <i>" + labname + "</i> Team."
             p="Here's a list of all your registered colleagues labyoking along with you and rising the amount of savings everyday:"
