@@ -88,7 +88,7 @@ block content
                               div(style="margin-bottom:25px;", class="accountdetail accountdetailRowMargin") #{lab}
         - if(!resultsAccount || resultsAccount == undefined)
           div
-            p(class="yokeColor")!=adminIntro + " <span id='showteam' class='labColor' style='cursor:pointer;font-weight:bold'><div class='buttons'><button type='submit' class='btn btn-success btn-lg btn-block' id='teamTitle'>Who's in your team?</button></div></span>"
+            span(class="yokeColor")!=adminIntro + " <span id='showteam' class='labColor' style='cursor:pointer;font-weight:bold'><div class='buttons'><button type='submit' class='btn btn-success btn-lg btn-block' id='teamTitle'>Who's in your team?</button></div></span>"
             script.
               $('#showteam').click(function() {
                   console.log("team inside");
