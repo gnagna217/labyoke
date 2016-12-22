@@ -297,6 +297,10 @@ position: absolute;
     margin-top: 20px;
 }
 
+.form-control{
+    -moz-appearance:none;
+}
+
 .alert-orders{
     padding: 46px !important;
     margin-bottom: 20px !important;
