@@ -302,6 +302,9 @@ position: absolute;
     -webkit-appearance: none;
 }
 
+select {
+    outline: none;
+}
 .arrow-up {
   width: 0; 
   height: 0; 
