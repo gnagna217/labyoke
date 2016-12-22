@@ -91,7 +91,6 @@ block content
             span(class="yokeColor")!=adminIntro + " <span id='showteam' class='labColor' style='cursor:pointer;font-weight:bold'><div class='buttons'><button type='submit' class='btn btn-success btn-lg btn-block' id='teamTitle'>Who's in your team?</button></div></span>"
             script.
               $('#showteam').click(function() {
-                  console.log("team inside: " + $('#team').offset().top);
                   if($(team).is(":visible")){
                     $('#team').hide();
                     $('#teamTitle').html("Who's in your team?");
@@ -112,7 +111,6 @@ block content
                     });
                   }   
               });
-              $(window).scrollTop($('#team').offset().top).scrollLeft($('#team').offset().left);
               
           div(id="team")
             div(style="background-color: #3d9dcb; height: 2px; margin-bottom: 30px; margin-top: 30px;")
@@ -129,7 +127,10 @@ block content
                     - for(var prop in ob2)
                       tr
                        td #{ob2[prop].name + " " + ob2[prop].surname }
-                       td #{ob2[prop].email} 
+                       td #{ob2[prop].email}
+            script.
+              console.log("team inside: " + $('#team').offset().top);
+              $(window).scrollTop($('#team').offset().top).scrollLeft($('#team').offset().left);
           script.
             $(document).ready(function(){
               $('#changetel input[id="valuedetail"]').mask("(999) 999-9999");
