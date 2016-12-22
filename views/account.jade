@@ -112,7 +112,7 @@ block content
                   }   
               });
               
-          div(id="team")
+          div(id="team", style="display: block;")
             div(style="background-color: #3d9dcb; height: 2px; margin-bottom: 30px; margin-top: 30px;")
             h2!="Your <i>" + labname + "</i> Team."
             p="Here's a list of all your registered colleagues labyoking along with you and rising the amount of savings everyday:"
@@ -129,7 +129,7 @@ block content
                        td #{ob2[prop].name + " " + ob2[prop].surname }
                        td #{ob2[prop].email}
             script.
-              if($("#team:visible")){
+              if($('#team').is(":visible")){
                 console.log("team inside: " + $('#team').offset().top);
                 $(window).scrollTop($('#team').offset().top).scrollLeft($('#team').offset().left);
               }
