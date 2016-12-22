@@ -91,7 +91,7 @@ block content
             span(class="yokeColor")!=adminIntro + " <span id='showteam' class='labColor' style='cursor:pointer;font-weight:bold'><div class='buttons'><button type='submit' class='btn btn-success btn-lg btn-block' id='teamTitle'>Who's in your team?</button></div></span>"
             script.
               $('#showteam').click(function() {
-                  if($(team).is(":visible")){
+                  if($('#team').is(":visible")){
                     $('#team').hide();
                     $('#teamTitle').html("Who's in your team?");
                     $('#teamTitle').css('background-color','#8a6d3b');
@@ -130,7 +130,9 @@ block content
                        td #{ob2[prop].email}
             script.
               console.log("team inside: " + $('#team').offset().top);
-              $(window).scrollTop($('#team').offset().top).scrollLeft($('#team').offset().left);
+              if($('#team').is(":visible")){
+                $(window).scrollTop($('#team').offset().top).scrollLeft($('#team').offset().left);
+              }
           script.
             $(document).ready(function(){
               $('#changetel input[id="valuedetail"]').mask("(999) 999-9999");
