@@ -62,7 +62,7 @@ block content
                             div(class="wrapped accountdetailMargin")
                               div(style="margin-bottom:25px;", class="accountdetail")
                                 span(id="name")!=name + " "
-                                form(action="/changeDetails" id="changename" method="post" class="nameform")
+                                form(action="/changeDetails" id="changename" method="post" class="nameform" style="top: -5px; position: relative;")
                                   input(name="valuedetail" type="text" id="valuedetail" placeholder=name)
                                   input(name="column" type="hidden" id="column" value="name")
                                   input(name="formemail" type="hidden" id="formemail" value=email)
@@ -70,7 +70,7 @@ block content
                                 span(onclick="updatenameform()", id="checkname", class="fa fa-check labColor")
                               div(style="margin-bottom:25px;", class="accountdetail accountdetailRowMargin")
                                 span(id="surname")!= surname + " "
-                                form(action="/changeDetails" id="changesurname" method="post" class="surnameform")
+                                form(action="/changeDetails" id="changesurname" method="post" class="surnameform" style="top: -5px; position: relative;")
                                   input(name="valuedetail" type="text" id="valuedetail" placeholder=surname)
                                   input(name="column" type="hidden" id="column" value="surname")
                                   input(name="formemail" type="hidden" id="formemail" value=email)
@@ -79,7 +79,7 @@ block content
                               div(style="margin-bottom:25px;", class="accountdetail accountdetailRowMargin") #{email}
                               div(style="margin-bottom:25px;", class="accountdetail accountdetailRowMargin")
                                 span(id="tel")!= tel + " "
-                                form(action="/changeDetails" id="changetel" method="post" class="telform")
+                                form(action="/changeDetails" id="changetel" method="post" class="telform" style="top: -5px; position: relative;")
                                   input(name="valuedetail" type="text" id="valuedetail" placeholder=tel)
                                   input(name="column" type="hidden" id="column" value="tel")
                                   input(name="formemail" type="hidden" id="formemail" value=email)
