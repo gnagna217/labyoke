@@ -69,9 +69,9 @@ html(lang='en')
                     - activateReports = "addMargin "
                     - activateShares = "addMargin "
                     - activateSearch = "addMargin "
-                    - activateHelp = ""
-                    - activateAbout = ""
-                    - activateOrders = ""
+                    - activateHelp = "addMargin"
+                    - activateAbout = "addMargin"
+                    - activateOrders = "addMargin"
                     - activateAccount = "addMargin "
                     - activateAdmin = "addMargin "
                     - if (title == 'Reports')
@@ -81,17 +81,17 @@ html(lang='en')
                     - if (title == 'Search')
                         - activateSearch = activateSearch + "labColorBackground"
                     - if (title == 'Help')
-                        - activateHelp = "labColorBackground"
+                        - activateHelp = activateHelp + "labColorBackground"
                     - if (title == 'Orders')
-                        - activateOrders = "labColorBackground"
+                        - activateOrders = activateOrders + "labColorBackground"
                     - if (title == 'Account')
                         - activateAccount = activateAccount + "labColorBackground"
                     - if (title == 'About Us')
-                        - activateAbout = "labColorBackground"
+                        - activateAbout = activateAbout + "labColorBackground"
 
                 .collapse.navbar-collapse
                     div(style="float:left")
-                        ul.nav.navbar-nav
+                        ul.nav.navbar-nav.addMargin(id="menumysearch")
                             li(class=activateSearch)
                                 a(href="/search", class="nav-menu",id="menusearch")
                                     span(class="fa fa-search colmenu")
