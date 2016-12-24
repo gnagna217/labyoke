@@ -90,13 +90,13 @@ html(lang='en')
                         - activateAbout = activateAbout + "labColorBackground"
 
                 .collapse.navbar-collapse
-                    div(style="float:left")
+                    div.adjustWidthSearch(style="float:left")
                         - adjustWidth = ""
                         - menuaccount = "menumyaccountadmin"
                         if(isLoggedInAdmin == false)
                             - adjustWidth = "width: 111px;"
                             - menuaccount = "menumyaccount"
-                        ul.nav.navbar-nav.addMargin(id="menumysearch")
+                        ul.nav.navbar-nav.addMargin.adjustWidthSearchUL(id="menumysearch")
                             li(class=activateSearch)
                                 a(href="/search", class="nav-menu",id="menusearch", style=adjustWidth)
                                     span(class="fa fa-search colmenu")

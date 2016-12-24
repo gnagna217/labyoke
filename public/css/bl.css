@@ -871,6 +871,12 @@ input::-webkit-inner-spin-button {
     border:none;
     padding: 0px;
     }
+    .adjustWidthSearch{
+        width: 28.5%;
+    }
+    .adjustWidthSearchUL{
+        width: 108%;
+    }
 }
  @media (min-width: 767px) {
 .front{
