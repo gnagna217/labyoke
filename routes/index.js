@@ -121,6 +121,19 @@ module.exports = function(router) {
 
 	});
 
+	router.get('/about', isLoggedIn, function(req, res) {
+		res.render('about', {
+			ordersnum: req.session.orders,
+			sharesnum: req.session.shares,
+			title : 'About Us',
+			loggedIn : req.session.loggedin,
+			labyoker : req.session.user,
+			isLoggedInAdmin: req.session.admin,
+			menu : 'about'
+		});
+
+	});
+
 	router.get('/logout', function(req, res) {
 		req.logout();
 		req.session.user = null;

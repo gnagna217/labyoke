@@ -70,6 +70,7 @@ html(lang='en')
                     - activateShares = "addMargin "
                     - activateSearch = "addMargin "
                     - activateHelp = ""
+                    - activateAbout = ""
                     - activateOrders = ""
                     - activateAccount = "addMargin "
                     - activateAdmin = "addMargin "
@@ -84,7 +85,9 @@ html(lang='en')
                     - if (title == 'Orders')
                         - activateOrders = "labColorBackground"
                     - if (title == 'Account')
-                        - activateAccount = activateAccount + "labColorBackground"
+                        - activateAbout = activateAbout + "labColorBackground"
+                    - if (title == 'About Us')
+                        - activateAccount = "labColorBackground"
 
                 .collapse.navbar-collapse
                     div(style="float:left")
@@ -128,7 +131,7 @@ html(lang='en')
                                 a(href='/help', class="nav-menu",id="menusearch")
                                     span(class="fa fa-anchor colmenu")
                                     span!=" Help "
-                            li(class=activateHelp)
+                            li(class=activateAbout)
                                 a(href='/about', class="nav-menu",id="menuabout")
                                     span(class="fa fa-home colmenu")
                                     span!=" Us "
