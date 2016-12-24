@@ -880,9 +880,7 @@ input::-webkit-inner-spin-button {
 
 }
  @media (min-width: 767px) {
-.paddingMobile{
-        padding-left: 32%;
-    }
+
 .front{
     text-align: center;
 }
@@ -1112,7 +1110,9 @@ input::-webkit-inner-spin-button {
 }
 
 @media (max-width: 767px){
-
+.paddingMobile{
+        padding-left: 32%;
+    }
 .us{
 font-size:75pt !important;text-align: left; position: relative; width: initial;
 }
