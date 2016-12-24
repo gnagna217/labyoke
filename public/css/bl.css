@@ -1162,6 +1162,10 @@ span.num.greatherthanninetynine {
 .nav-menu{
     /*width: 135px !important;*/
 }
+
+input{
+    outline: none;
+}
 .menu-border{
     border-left-color: white;border-left-style: solid;border-width: thick; border-right-color: white;border-right-style: none;
 }
