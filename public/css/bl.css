@@ -1081,6 +1081,15 @@ input::-webkit-inner-spin-button {
   
 }
 
+@media (max-width: 849px){
+.nav > li > a {
+    position: relative;
+    display: block;
+    padding: 6px 10px;
+
+}
+}
+
 @media (max-width: 767px){
 
 #checkname{
@@ -1146,7 +1155,7 @@ span.num.greatherthanninetynine {
     margin-right: 0px !important;
 }
 #menumyaccount{
-    margin-top: -97px;
+    margin-top: -147px;
     margin-left: 95px;
 }
 #menumyaccounta{
