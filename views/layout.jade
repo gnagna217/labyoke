@@ -96,9 +96,9 @@ html(lang='en')
                         if(isLoggedInAdmin == false)
                             - adjustWidth = "width: 130px;"
                             - adjustBorder = "margin-top: -115px;"
-                        ul.nav.navbar-nav.addMargin(id="menumysearch", style=adjustWidth)
+                        ul.nav.navbar-nav.addMargin(id="menumysearch")
                             li(class=activateSearch)
-                                a(href="/search", class="nav-menu",id="menusearch")
+                                a(href="/search", class="nav-menu",id="menusearch", style=adjustWidth)
                                     span(class="fa fa-search colmenu")
                                     span=" Search"
                             if(isLoggedInAdmin == true)
