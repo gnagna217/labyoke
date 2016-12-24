@@ -1155,14 +1155,15 @@ span.num.greatherthanninetynine {
     margin-right: 0px !important;
 }
 #menumyaccount{
-    margin-top: -147px;
+    margin-top: -177px;
     margin-left: 95px;
 }
 #menumyaccounta{
     width: 100% !important;
 }
 #menusearch{
-    width: 130px !important;
+    width: 100% !important;
+    /*130px*/
 }
 #menushare{
     width: 105px !important;
