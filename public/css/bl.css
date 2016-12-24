@@ -1175,11 +1175,13 @@ span.num.greatherthanninetynine {
 }
 #menumyaccountadmin{
     margin-top: -175px;
-    margin-left: 95px;
+    /*margin-left: 95px;*/
+    margin-left: 50%;
 }
 #menumyaccount{
     margin-top: -115px;
-    margin-left: 95px;
+    /*margin-left: 95px;*/
+    margin-left: 50%;
 }
 #menumyaccounta{
     width: 100% !important;
