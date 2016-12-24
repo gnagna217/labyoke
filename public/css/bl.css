@@ -209,7 +209,7 @@ a {
 }
 
 .us{
-font-size:150pt;text-align: center; position: relative; width: 100%;
+font-size:150pt !important;text-align: center; position: relative; width: 100%;
 }
 
 a.fa-globe {
@@ -1100,7 +1100,7 @@ input::-webkit-inner-spin-button {
 @media (max-width: 767px){
 
 .us{
-font-size:75;text-align: left; position: relative; width: initial;
+font-size:75pt !important;text-align: left; position: relative; width: initial;
 }
 
 #checkname{
