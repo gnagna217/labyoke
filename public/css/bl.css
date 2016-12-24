@@ -1173,8 +1173,12 @@ span.num.greatherthanninetynine {
 .nav-menu-logout{
     margin-right: 0px !important;
 }
-#menumyaccount{
+#menumyaccountadmin{
     margin-top: -175px;
+    margin-left: 95px;
+}
+#menumyaccount{
+    margin-top: -115px;
     margin-left: 95px;
 }
 #menumyaccounta{

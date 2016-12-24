@@ -92,8 +92,10 @@ html(lang='en')
                 .collapse.navbar-collapse
                     div(style="float:left")
                         - adjustWidth = ""
+                        - menuaccount = "menumyaccountadmin"
                         if(isLoggedInAdmin == false)
                             - adjustWidth = "width: 130px;"
+                            - menuaccount = "menumyaccount"
                         ul.nav.navbar-nav.addMargin(id="menumysearch")
                             li(class=activateSearch)
                                 a(href="/search", class="nav-menu",id="menusearch", style=adjustWidth)
@@ -125,7 +127,7 @@ html(lang='en')
                                   - if(ordersnumber>0) 
                                     span(class="fa fa-comment")
                                     span(class=ordersnumclass)!=ordersnumber
-                        ul.nav.navbar-nav(id="menumyaccount", class="addMargin menu-border")
+                        ul.nav.navbar-nav(id=menuaccount, class="addMargin menu-border")
                             li(class=activateAccount)
                                 a(href="/account",class="nav-menu", id="menumyaccounta")
                                     span(class="fa fa-cog colmenu")
