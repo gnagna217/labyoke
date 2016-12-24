@@ -1175,7 +1175,7 @@ span.num.greatherthanninetynine {
 #menumyaccounta{
     width: 100% !important;
 }
-#menusearch, #menuaccount{
+#menusearch #menuaccount{
     width: 100% !important;
     /*130px*/
 }
