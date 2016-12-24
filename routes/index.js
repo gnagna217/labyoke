@@ -343,7 +343,7 @@ module.exports = function(router) {
 	});
 
 
-	router.get('/reports', isLoggedIn, function(req, res) {
+	router.get('/reports', isLoggedInAdmin, function(req, res) {
 		var labyokerCats = new LabyokerCategories();
 		labyokerCats.getcategories(function(error, categories) {
 			console.log("load categories in reports : " + categories);
@@ -364,7 +364,7 @@ module.exports = function(router) {
 
 	});
 
-	router.post('/reportShares', isLoggedIn, function(req, res) {
+	router.post('/reportShares', isLoggedInAdmin, function(req, res) {
 		var datefrom = req.body.reportDateFrom;
 		var dateto = req.body.reportDateTo;
 		var category = req.body.reportCategory;
@@ -383,7 +383,7 @@ module.exports = function(router) {
 		});
 	});
 
-	router.post('/reportMoney', isLoggedIn, function(req, res) {
+	router.post('/reportMoney', isLoggedInAdmin, function(req, res) {
 		var datefrom = req.body.reportDateFromMoney;
 		var dateto = req.body.reportDateToMoney;
 		var agent = req.body.reportAgentMoney;
@@ -413,7 +413,7 @@ module.exports = function(router) {
 		});
 	});
 
-	router.post('/reportInsuff', isLoggedIn, function(req, res) {
+	router.post('/reportInsuff', isLoggedInAdmin, function(req, res) {
 		var datefrom = undefined;
 		var dateto = undefined;
 		var agent = req.body.reportAgentInsuff;
@@ -466,7 +466,7 @@ module.exports = function(router) {
 		});
 	});
 
-	router.post('/reportOrders', isLoggedIn, function(req, res) {
+	router.post('/reportOrders', isLoggedInAdmin, function(req, res) {
 		var datefrom = req.body.reportDateFromOrders;
 		var dateto = req.body.reportDateToOrders;
 		var lab = req.body.reportLabOrders;
