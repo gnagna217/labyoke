@@ -1105,6 +1105,9 @@ input::-webkit-inner-spin-button {
 }
 
 @media (max-width: 767px){
+    .addWidth2{
+        width: 99%;
+    }
     .adjustWidthSearch{
         width: 27%;
     margin-left: 5px;
@@ -1152,7 +1155,7 @@ span.num.greatherthanninetynine {
     display: none;
 }
 #menumyshares{
-    width: 54%;
+    width: 53%;
 }
 #menumysearch{
     /*width: 111px;*/
