@@ -553,6 +553,10 @@ table.dataTable thead .sorting {
     color: #8a6d3b;
 }
 
+input{
+    outline: none;
+}
+
 .yokeBackColor{
     background-color: rgba(138, 109, 59, 0.66) !important;
 }
@@ -1163,9 +1167,6 @@ span.num.greatherthanninetynine {
     /*width: 135px !important;*/
 }
 
-input{
-    outline: none;
-}
 .menu-border{
     border-left-color: white;border-left-style: solid;border-width: thick; border-right-color: white;border-right-style: none;
 }
