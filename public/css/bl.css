@@ -875,7 +875,7 @@ input::-webkit-inner-spin-button {
         width: 30%;
     }
     .adjustWidthSearchUL{
-        width: 108%;
+        width: 106%;
     }
 }
  @media (min-width: 767px) {
