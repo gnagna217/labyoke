@@ -873,8 +873,11 @@ module.exports = function(router) {
 													}
 													req.session.user = done[0].name;
 													req.session.userid = done[0].id;
+													req.session.useradmin = false;
 													console.log("admin? " + done[0].admin);
 													req.session.admin = done[0].admin;
+													if(req.session.admin == 1)
+														req.session.useradmin = true;
 													req.session.active = done[0].active;
 													req.session.email = done[0].email;
 													req.session.lab = done[0].lab;
