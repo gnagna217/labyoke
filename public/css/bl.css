@@ -1160,7 +1160,7 @@ span.num.greatherthanninetynine {
     margin-top:50px !important;
 }
 .nav-menu{
-    width: 135px !important;
+    /*width: 135px !important;*/
 }
 .menu-border{
     border-left-color: white;border-left-style: solid;border-width: thick; border-right-color: white;border-right-style: none;
