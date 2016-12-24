@@ -871,12 +871,7 @@ input::-webkit-inner-spin-button {
     border:none;
     padding: 0px;
     }
-    .adjustWidthSearch{
-        width: 30%;
-    }
-    .adjustWidthSearchUL{
-        width: 106%;
-    }
+
 
 }
  @media (min-width: 767px) {
@@ -1110,6 +1105,13 @@ input::-webkit-inner-spin-button {
 }
 
 @media (max-width: 767px){
+    .adjustWidthSearch{
+        width: 27%;
+    margin-left: 5px;
+    }
+    .adjustWidthSearchUL{
+        width: 106%;
+    }
 .paddingMobile{
         padding-left: 32%;
     }
@@ -1201,7 +1203,7 @@ span.num.greatherthanninetynine {
     /*130px*/
 }
 #menushare{
-    width: 100% !important
+    width: 98% !important
 }
 .order-container{
     width: 100%;
