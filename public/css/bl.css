@@ -877,6 +877,9 @@ input::-webkit-inner-spin-button {
     .adjustWidthSearchUL{
         width: 106%;
     }
+    .paddingMobile{
+        padding-left: 32%;
+    }
 }
  @media (min-width: 767px) {
 .front{
