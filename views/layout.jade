@@ -91,7 +91,10 @@ html(lang='en')
 
                 .collapse.navbar-collapse
                     div(style="float:left")
-                        ul.nav.navbar-nav.addMargin(id="menumysearch")
+                        - adjustWidth = ""
+                        if(isLoggedInAdmin == false)
+                            - adjustWidth = "width: 130px;"
+                        ul.nav.navbar-nav.addMargin(id="menumysearch", style=adjustWidth)
                             li(class=activateSearch)
                                 a(href="/search", class="nav-menu",id="menusearch")
                                     span(class="fa fa-search colmenu")
