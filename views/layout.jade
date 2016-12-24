@@ -96,15 +96,14 @@ html(lang='en')
                                 a(href="/search", class="nav-menu",id="menusearch")
                                     span(class="fa fa-search colmenu")
                                     span=" Search"
-                            - if isLoggedInAdmin == 1
-                                li(class=activateReports)
-                                        a(href="/reports",class="nav-menu", id="menumyaccounta")
-                                            span(class="fa fa-file-text colmenu")
-                                            span=" Reports"
-                                li(class=activateAdmin)
-                                        a(href="/share#upload",class="nav-menu", id="menumyaccounta")
-                                            span(class="fa fa-user-plus colmenu")
-                                            span=" Admin"
+                            li(class=activateReports)
+                                    a(href="/reports",class="nav-menu", id="menumyaccounta")
+                                        span(class="fa fa-file-text colmenu")
+                                        span=" Reports"
+                            li(class=activateAdmin)
+                                    a(href="/share#upload",class="nav-menu", id="menumyaccounta")
+                                        span(class="fa fa-user-plus colmenu")
+                                        span=" Admin"
                             
                     div(style="padding-left: 130px;")
                         ul.nav.navbar-nav(id="menumyshares", class="addMargin", style="border-left-color: white;border-left-style: solid;border-width: thick;")
