@@ -536,6 +536,9 @@ table.dataTable thead .sorting {
     border-bottom-width: thick !important;
 }
 
+.alert-dismissable .close, .alert-dismissible .close {
+    top: 20px !important;
+}
 .nobottom{
     padding-bottom: 0px !important;
 }
