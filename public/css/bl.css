@@ -1265,6 +1265,9 @@ span.num.greatherthanninetynine {
 #menumyaccounta{
     width: 99%;
 }
+.adjustWidthSearchUL {
+    width: 99%;
+}
 }
 
 .pastdate {
