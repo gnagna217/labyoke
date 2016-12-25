@@ -96,17 +96,17 @@ html(lang='en')
                         if(isLoggedInAdmin == false)
                             - adjustWidth = "width: 111px;"
                             - menuaccount = "menumyaccount"
-                        ul.nav.navbar-nav.addMargin.adjustWidthSearchUL(id="#menumyaccounta")
-                            li(class=activateSearch)
+                        ul.nav.navbar-nav.addMargin.adjustWidthSearchUL(id="#menumyaccounta", style="width: 100%;")
+                            li(class=activateSearch, style="margin-right: 5px;")
                                 a(href="/search", class="nav-menu",id="menusearch", style=adjustWidth)
                                     span(class="fa fa-search colmenu")
                                     span=" Search"
                             if(isLoggedInAdmin == true)
-                                li(class=activateReports)
+                                li(class=activateReports, style="margin-right: 5px;")
                                         a(href="/reports",class="nav-menu", id="menumyaccounta")
                                             span(class="fa fa-file-text colmenu")
                                             span=" Reports"
-                                li(class=activateAdmin)
+                                li(class=activateAdmin, style="margin-right: 5px;")
                                         a(href="/share#upload",class="nav-menu", id="menumyaccounta")
                                             span(class="fa fa-user-plus colmenu")
                                             span=" Admin"
