@@ -500,6 +500,7 @@ input:-webkit-autofill:hover {
 .container{
     padding-bottom: 25px;
     padding-top: 10px;
+    margin-bottom: 70px;
 }
 .table-responsive input{
     font-size: 14px;
@@ -576,6 +577,14 @@ margin-right: 15px !important;
     position:static !important;
 }
 
+.yokelogous{
+    border: none;
+    width: 209px;
+    /* height: 194px; */
+    top: -12px;
+    left: 30px;
+    position: relative;
+}
 
 .yokelogo{
     border:none;
@@ -1109,6 +1118,14 @@ input::-webkit-inner-spin-button {
 }
 
 @media (max-width: 767px){
+.yokelogous{
+    border: none;
+    width: 134px;
+    /* height: 194px; */
+    top: -12px;
+    left: 30px;
+    position: relative;
+}
     .addWidth2{
         width: 99%;
     }
