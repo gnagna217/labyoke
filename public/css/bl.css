@@ -1126,6 +1126,9 @@ input::-webkit-inner-spin-button {
 }
 
 @media (max-width: 767px){
+.marginbottom{
+    min-height: 500px;
+}
 .yokelogous{
     border: none;
     width: 134px;
