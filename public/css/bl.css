@@ -1051,12 +1051,6 @@ input::-webkit-inner-spin-button {
 }
 }
 
-@media (max-width: 520px) {
-#menumyshares {
-    width: 55%;
-}
-}
-
  @media (max-width: 440px) {
     .marginbottom{
     /*min-height: 450px;*/
@@ -1261,6 +1255,12 @@ span.num.greatherthanninetynine {
 }
 .adjustpadding{
     padding-left: 0px !important;
+}
+}
+
+@media (max-width: 520px) {
+#menumyshares {
+    width: 55% !important;
 }
 }
 
