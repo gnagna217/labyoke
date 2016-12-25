@@ -503,9 +503,9 @@ input:-webkit-autofill:hover {
     /*margin-bottom: 70px;*/
 }
 .marginbottom{
-    margin-bottom: 15px;
+    margin-bottom: 0px;
     margin-top: 25px;
-    min-height: 600px;
+    min-height: 630px;
 }
 .table-responsive input{
     font-size: 14px;
