@@ -585,7 +585,7 @@ margin-right: 15px !important;
 .yokelogous{
     border: none;
     width: 209px;
-    /* height: 194px; */
+    height: 143.78px;
     top: -12px;
     left: 30px;
     position: relative;
@@ -596,12 +596,13 @@ margin-right: 15px !important;
     /*width:300px; 
     height:258px;*/
     width: 282px;
-    /*height: 194px;*/
+    height: 194px;
 }
 .yokelogofooter{
     border:none;
     width: 94px;
     margin-bottom: 20px;
+    height: 64.66px;
 }
 .btn-success {
     color: #fff;
@@ -1089,6 +1090,7 @@ input::-webkit-inner-spin-button {
 
 .yokelogo{
     width: 200px;
+    height: 137.59px;
     margin-left: 75px;
     height:110px;
 }
@@ -1127,6 +1129,7 @@ input::-webkit-inner-spin-button {
 .yokelogous{
     border: none;
     width: 134px;
+    height: 92.18px;
     /* height: 194px; */
     top: -12px;
     left: 30px;
