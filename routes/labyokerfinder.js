@@ -370,7 +370,7 @@ LabYokeReporterSavings.prototype.reportMoney = function(callback) {
 				html += " </tr>";
 		
 			}
-			html += "</tbody></table><div>The <span style='font-weight:bold'>Total</span> savings are <span style='font-size:30pt'>$" + savings + ".</span></div><br/><p style='margin-top:50px'><i><b>The LabYoke Team.</b></i></p><img style='width: 150px; margin: 0 20px;float:left' src='https:\/\/team-labyoke.herokuapp.com\/images\/yoke4.png', alt='The Yoke',  title='Yoke', class='yokelogo'/>";
+			html += "</tbody></table><div>The <span style='font-weight:bold'>Total</span> savings are <span style='font-size:30pt'>$" + savings + ".</span></div><br/><p style='margin-top:50px'><i><b>The LabYoke Team.</b></i></p><img style='width: 141px; margin: 0 20px;float:left' src='https:\/\/team-labyoke.herokuapp.com\/images\/yoke4.png', alt='The Yoke',  title='Yoke', class='yokelogo'/>";
 			console.log("html money: " + html);
 		}
 		if(!isempty){
@@ -466,7 +466,7 @@ LabYokeReporterSavings.prototype.reportInsuff = function(callback) {
 				html += " </tr>";
 		
 			}
-			html += "</tbody></table><br/><p style='margin-top:50px'><i><b>The LabYoke Team.</b></i></p><img style='width: 150px; margin: 0 20px;float:left' src='https:\/\/team-labyoke.herokuapp.com\/images\/yoke4.png', alt='The Yoke',  title='Yoke', class='yokelogo'/>";
+			html += "</tbody></table><br/><p style='margin-top:50px'><i><b>The LabYoke Team.</b></i></p><img style='width: 141px; margin: 0 20px;float:left' src='https:\/\/team-labyoke.herokuapp.com\/images\/yoke4.png', alt='The Yoke',  title='Yoke', class='yokelogo'/>";
 			console.log("html insuff: " + html);
 		}
 		if(!isempty){
@@ -556,7 +556,7 @@ LabYokeReporterShares.prototype.reportShares = function(callback) {
 				html += " <td style='font-size: 12px;'>" + moment(date).add(1, 'day').tz("America/New_York").format('MM-DD-YYYY') + "</td></tr>";
 		
 			}
-			html += "</tbody></table><p><i><b>The LabYoke Team.</b></i></p><img style='width: 150px; margin: 0 20px;float:left' src='https:\/\/team-labyoke.herokuapp.com\/images\/yoke4.png', alt='The Yoke',  title='Yoke', class='yokelogo'/>";
+			html += "</tbody></table><p><i><b>The LabYoke Team.</b></i></p><img style='width: 141px; margin: 0 20px;float:left' src='https:\/\/team-labyoke.herokuapp.com\/images\/yoke4.png', alt='The Yoke',  title='Yoke', class='yokelogo'/>";
 		}
 		if(!isempty){
 			callback(null, html);
@@ -659,7 +659,7 @@ LabYokeReporterOrders.prototype.reportOrders = function(callback) {
 				html += " <td style='font-size: 12px;'>" + moment(date).add(1, 'day').tz("America/New_York").format('MM-DD-YYYY') + "</td></tr>";
 		
 			}
-			html += "</tbody></table><p><i><b>The LabYoke Team.</b></i></p><img style='width: 150px; margin: 0 20px;float:left' src='https:\/\/team-labyoke.herokuapp.com\/images\/yoke4.png', alt='The Yoke',  title='Yoke', class='yokelogo'/>";
+			html += "</tbody></table><p><i><b>The LabYoke Team.</b></i></p><img style='width: 141px; margin: 0 20px;float:left' src='https:\/\/team-labyoke.herokuapp.com\/images\/yoke4.png', alt='The Yoke',  title='Yoke', class='yokelogo'/>";
 		}
 		
 		if(!isempty){
@@ -819,9 +819,9 @@ LabYokerOrder.prototype.order = function(callback) {
 
 		var subject = "LabYoke - Pending Order for " + agent;
 		var subjectReq = "LabYoke - Your Request to order " + agent;
-		var body = "<div style='text-align:center'><img style='width: 150px; margin: 0 20px;' src='https:\/\/team-labyoke.herokuapp.com\/images\/yoke4.png', alt='The Yoke',  title='Yoke', class='yokelogo'/></div><div style=\"font-family:'calibri'; font-size:11pt;padding: 20px;float:left\">Hello " + location
+		var body = "<div style='text-align:center'><img style='width: 141px; margin: 0 20px;' src='https:\/\/team-labyoke.herokuapp.com\/images\/yoke4.png', alt='The Yoke',  title='Yoke', class='yokelogo'/></div><div style=\"font-family:'calibri'; font-size:11pt;padding: 20px;float:left\">Hello " + location
 				+ ",<br/><br/>";
-		var bodyReq = "<div style='text-align:center'><img style='width: 150px; margin: 0 20px;' src='https:\/\/team-labyoke.herokuapp.com\/images\/yoke4.png', alt='The Yoke',  title='Yoke', class='yokelogo'/></div><div style=\"font-family:'calibri'; font-size:11pt;padding: 20px;float:left\">Hello,<br/><br/>";
+		var bodyReq = "<div style='text-align:center'><img style='width: 141px; margin: 0 20px;' src='https:\/\/team-labyoke.herokuapp.com\/images\/yoke4.png', alt='The Yoke',  title='Yoke', class='yokelogo'/></div><div style=\"font-family:'calibri'; font-size:11pt;padding: 20px;float:left\">Hello,<br/><br/>";
 		body += "This is a kind request to share 100 units from the following inventory:";
 		bodyReq += "You have requested 100 units from the following inventory:";
 		body += "<br><b>Agent: </b> " + agent;
@@ -1299,7 +1299,7 @@ LabyokerRegister.prototype.register = function(callback) {
 						email += "@netlight.com";
 					}*/
 					var subject = "Labyoke - Start Labyoking";
-					var body = "<div style='text-align:center'><img style='width: 150px; margin: 0 20px;' src='https:\/\/team-labyoke.herokuapp.com\/images\/yoke4.png', alt='The Yoke',  title='Yoke', class='yokelogo'/></div><div style=\"font-family:'calibri'; font-size:11pt;padding: 20px;float:left\">Hello " + firstname
+					var body = "<div style='text-align:center'><img style='width: 141px; margin: 0 20px;' src='https:\/\/team-labyoke.herokuapp.com\/images\/yoke4.png', alt='The Yoke',  title='Yoke', class='yokelogo'/></div><div style=\"font-family:'calibri'; font-size:11pt;padding: 20px;float:left\">Hello " + firstname
 							+ ",<br/><br/>";
 					body += "Thanks for registering with @LabYoke.";
 					body += "You are one step away from labyoking! Please click on this link:<br/>";
@@ -1396,7 +1396,7 @@ Labyoker.prototype.requestChangePassword = function(callback) {
 						email += "@netlight.com";
 					}*/
 					var subject = "Labyoke - Change Password Request";
-					var body = "<div style='text-align:center'><img style='width: 150px; margin: 0 20px;' src='https:\/\/team-labyoke.herokuapp.com\/images\/yoke4.png', alt='The Yoke',  title='Yoke', class='yokelogo'/></div><div style=\"font-family:'calibri'; font-size:11pt;padding: 20px;float:left\">Hello " + name
+					var body = "<div style='text-align:center'><img style='width: 141px; margin: 0 20px;' src='https:\/\/team-labyoke.herokuapp.com\/images\/yoke4.png', alt='The Yoke',  title='Yoke', class='yokelogo'/></div><div style=\"font-family:'calibri'; font-size:11pt;padding: 20px;float:left\">Hello " + name
 							+ ",<br/><br/>";
 					body += "You have requested to change your password @LabYoke. Please click on this link:<br/>";
 					body += "<p style=\"text-align:center\"><span style=''><b><a href='https:\/\/team-labyoke.herokuapp.com\/changepassword/"
@@ -1572,7 +1572,7 @@ LabYokerChangeShare.prototype.cancelShare = function(callback) {
 
 		if(table == "vm2016_orders" && checked == 0){
 			var subject = "LabYoke Order - Cancelled for " + agent;
-			var body = "<div style='text-align:center'><img style='width: 150px; margin: 0 20px;' src='https:\/\/team-labyoke.herokuapp.com\/images\/yoke4.png', alt='The Yoke',  title='Yoke', class='yokelogo'/></div><div style=\"font-family:'calibri'; font-size:11pt;padding: 20px;float:left\">Hello,<br/><br/>";
+			var body = "<div style='text-align:center'><img style='width: 141px; margin: 0 20px;' src='https:\/\/team-labyoke.herokuapp.com\/images\/yoke4.png', alt='The Yoke',  title='Yoke', class='yokelogo'/></div><div style=\"font-family:'calibri'; font-size:11pt;padding: 20px;float:left\">Hello,<br/><br/>";
 			body += "Unfortunately your order has been cancelled due to insufficient quantities from the following inventory: <br><b>Agent: </b> " + agent;
 			body += "<br><b>Vendor: </b> " + vendor;
 			body += "<br><b>Catalog#: </b> " + catalognumber;
