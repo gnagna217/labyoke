@@ -91,23 +91,23 @@ html(lang='en')
 
                 .collapse.navbar-collapse
                     div.adjustWidthSearch(style="float:left")
-                        - adjustWidth = ""
+                        - adjustWidth = "width: 99%;"
                         - menuaccount = "menumyaccountadmin"
                         if(isLoggedInAdmin == false)
-                            - adjustWidth = "width: 111px;"
+                            - adjustWidth =  "width: 111px;"
                             - menuaccount = "menumyaccount"
                         ul.nav.navbar-nav.addMargin.adjustWidthSearchUL(id="#menumyaccounta", style="width: 100%;")
-                            li(class=activateSearch, style="margin-right: 10px;width: 99%;")
+                            li(class=activateSearch, style="margin-right: 10px;")
                                 a(href="/search", class="nav-menu",id="menusearch", style=adjustWidth)
                                     span(class="fa fa-search colmenu")
                                     span=" Search"
                             if(isLoggedInAdmin == true)
-                                li(class=activateReports, style="margin-right: 10px;width: 99%;")
-                                        a(href="/reports",class="nav-menu", id="menumyaccounta")
+                                li(class=activateReports, style="margin-right: 10px;")
+                                        a(href="/reports",class="nav-menu", id="menumyaccounta", style="width: 99%;")
                                             span(class="fa fa-file-text colmenu")
                                             span=" Reports"
-                                li(class=activateAdmin, style="margin-right: 10px;width: 99%;")
-                                        a(href="/share#upload",class="nav-menu", id="menumyaccounta")
+                                li(class=activateAdmin, style="margin-right: 10px;")
+                                        a(href="/share#upload",class="nav-menu", id="menumyaccounta", style="width: 99%;")
                                             span(class="fa fa-user-plus colmenu")
                                             span=" Admin"
                             
