@@ -1054,7 +1054,7 @@ input::-webkit-inner-spin-button {
 
  @media (max-width: 440px) {
     .marginbottom{
-    min-height: 400px;
+    min-height: 450px;
 }
 .reportSlot{
     float:none;
