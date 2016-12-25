@@ -1129,6 +1129,10 @@ input::-webkit-inner-spin-button {
 }
 
 @media (max-width: 767px){
+    #menusearch{
+    width: 99% !important;
+    /*130px*/
+}
 .yokelogous{
     border: none;
     width: 134px;
@@ -1146,7 +1150,7 @@ input::-webkit-inner-spin-button {
     margin-left: 5px;
     }
     .adjustWidthSearchUL{
-        width: 113%;
+        width: 100%;
     }
 .paddingMobile{
         padding-left: 32%;
