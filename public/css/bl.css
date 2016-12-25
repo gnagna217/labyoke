@@ -505,6 +505,7 @@ input:-webkit-autofill:hover {
 .marginbottom{
     margin-bottom: 70px;
     margin-top: 25px;
+    min-height: 500px;
 }
 .table-responsive input{
     font-size: 14px;
@@ -600,6 +601,7 @@ margin-right: 15px !important;
 .yokelogofooter{
     border:none;
     width: 94px;
+    margin-bottom: 20px;
 }
 .btn-success {
     color: #fff;
