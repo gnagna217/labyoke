@@ -1051,6 +1051,11 @@ input::-webkit-inner-spin-button {
 }
 }
 
+@media (max-width: 520px) {
+#menumyshares {
+    width: 55%;
+}
+}
 
  @media (max-width: 440px) {
     .marginbottom{
