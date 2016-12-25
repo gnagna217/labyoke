@@ -1133,7 +1133,7 @@ input::-webkit-inner-spin-button {
     margin-right: 9px;
 }
     #menusearch{
-    width: 99% !important;
+    /*width: 99% !important;*/
     /*130px*/
 }
 .yokelogous{
