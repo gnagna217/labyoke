@@ -1104,6 +1104,9 @@ input::-webkit-inner-spin-button {
     height: 137.59px !important;
     /*margin-left: 75px;*/
     height:110px;
+    text-align: center;
+    position: relative;
+
 }
 
 .centerText{
@@ -1137,6 +1140,9 @@ input::-webkit-inner-spin-button {
 }
 
 @media (max-width: 767px){
+.front {
+    text-align: center;
+}
 .addMargin3{
     margin-right: 9px;
 }
