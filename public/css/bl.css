@@ -620,11 +620,15 @@ margin-right: 15px !important;
 }
 
 .btn-success-results{
-    background-color: #3d9dcb;
+    background-color: #2975b4;
     width:278px;
     border: 0;
     color: white;
 
+}
+
+.btn:hover, .btn:focus, .btn.focus {
+    color: white;
 }
 
 /*modified #6B238E*/
