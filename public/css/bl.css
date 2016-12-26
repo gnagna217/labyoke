@@ -553,7 +553,9 @@ table.dataTable thead .sorting {
     padding-bottom: 0px !important;
 }
 .labColorBackground{
-    background-color: #3d9dcb !important;
+    /*background-color: #3d9dcb !important;*/
+    background-color: #2975b4 !important;
+    
 }
 .yokeColor{
     color: #8a6d3b;
