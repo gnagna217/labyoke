@@ -909,6 +909,10 @@ input::-webkit-inner-spin-button {
     text-align: center;
 }
 
+.fronthelp{
+    text-align: center;
+}
+
 .frontdiv{
     margin: auto;
     width: 55%;
@@ -916,12 +920,16 @@ input::-webkit-inner-spin-button {
 }
 
 .floatleft{
-    float:left !important;
+    float:left;
 }
 }
 
  @media (min-width: 993px) {
 .front{
+    text-align: center;
+}
+
+.fronthelp{
     text-align: center;
 }
 
@@ -1140,7 +1148,7 @@ input::-webkit-inner-spin-button {
 }
 
 @media (max-width: 767px){
-.front {
+.fronthelp {
     text-align: center;
 }
 .addMargin3{
