@@ -97,30 +97,30 @@ html(lang='en')
                             - adjustWidth =  "width: 111px;"
                             - menuaccount = "menumyaccount"
                         ul.nav.navbar-nav.addMargin.adjustWidthSearchUL(id="#menumyaccounta")
-                            li(class=activateSearch)
+                            li(class=activateSearch, style="border-right-color: transparent;border-right-style: solid;border-width: thick;")
                                 a(href="/search", class="nav-menu",id="menusearch", style=adjustWidth)
                                     span(class="fa fa-search colmenu")
                                     span=" Search"
                             if(isLoggedInAdmin == true)
-                                li(class=activateReports)
+                                li(class=activateReports, style="border-right-color: transparent;border-right-style: solid;border-width: thick;")
                                         a(href="/reports",class="nav-menu", id="menusearch", style="")
                                             span(class="fa fa-file-text colmenu")
                                             span=" Reports"
-                                li(class=activateAdmin)
+                                li(class=activateAdmin, style="border-right-color: transparent;border-right-style: solid;border-width: thick;")
                                         a(href="/share#upload",class="nav-menu", id="menusearch", style="")
                                             span(class="fa fa-user-plus colmenu")
                                             span=" Admin"
                             
                     div(class="paddingMobile")
                         ul.nav.navbar-nav(id="menumyshares", class="addMargin", style="border-left-color: white;border-left-style: solid;border-width: thick;")
-                            li(class=activateShares)
+                            li(class=activateShares, style="border-right-color: transparent;border-right-style: solid;border-width: thick;")
                                 a(href="/share",class="nav-menu",id="menushare")
                                     span(class="fa fa-exchange colmenu")
                                     span=" Shares"
                                    - if(sharesnumber>0) 
                                     span(class="fa fa-comment")
                                     span(class=sharesnumclass)!=sharesnumber
-                            li(class=activateOrders)
+                            li(class=activateOrders, style="border-right-color: transparent;border-right-style: solid;border-width: thick;")
                                 a(href="/orders",class="nav-menu",id="menushare")
                                     span(class="fa fa-ship colmenu")
                                     span=" Orders"
