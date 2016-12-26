@@ -94,18 +94,18 @@ block content
                     $('#teamTitle').html("Who's in your team?");
                     $('#teamTitle').css('background-color','#8a6d3b');
                     $("#teamTitle").mouseenter(function() {
-                    $(this).css("background", "#3d9dcb");
+                    $(this).css("background", "#2975b4");
                     }).mouseleave(function() {
                          $(this).css("background", "#8a6d3b");
                     });
                   } else {
                     $('#team').show();
                     $('#teamTitle').html("Hide");
-                    $('#teamTitle').css('background-color','#3d9dcb');
+                    $('#teamTitle').css('background-color','#2975b4');
                     $("#teamTitle").mouseenter(function() {
                     $(this).css("background", "#8a6d3b");
                     }).mouseleave(function() {
-                         $(this).css("background", "#3d9dcb");
+                         $(this).css("background", "#2975b4");
                     });
                     console.log("team inside: " + $('#team').offset().top);
                     $(window).scrollTop($('#team').offset().top).scrollLeft($('#team').offset().left);

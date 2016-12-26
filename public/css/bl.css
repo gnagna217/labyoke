@@ -433,6 +433,10 @@ border-top: 5px solid #8a6d3b;
     color: #3d9dcb;
 }
 
+.newlabColor{
+    color: #2975b4;
+}
+
 /*.placeholderColor::-webkit-input-placeholder {
    color: white !important;
 }
