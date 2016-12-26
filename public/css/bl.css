@@ -916,7 +916,7 @@ input::-webkit-inner-spin-button {
 }
 
 .floatleft{
-    float:left;
+    float:left !important;
 }
 }
 
