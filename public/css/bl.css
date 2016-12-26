@@ -149,7 +149,8 @@ body {
     color: white;
 }
 .nav-menu:hover{
-    background-color: #3d9dcb !important;
+    /*background-color: #3d9dcb !important;*/
+    background-color: #2975b4 !important;
 }
 .menu{
     font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
@@ -553,9 +554,7 @@ table.dataTable thead .sorting {
     padding-bottom: 0px !important;
 }
 .labColorBackground{
-    /*background-color: #3d9dcb !important;*/
-    background-color: #2975b4 !important;
-    
+    background-color: #3d9dcb !important;
 }
 .yokeColor{
     color: #8a6d3b;
@@ -627,7 +626,8 @@ margin-right: 15px !important;
 
 /*modified #6B238E*/
 .btn-success:hover{
-    background-color: #3d9dcb;
+    /*background-color: #3d9dcb;*/
+    background-color: #2975b4;
 }
 
 .btn-primary:disabled{
