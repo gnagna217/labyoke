@@ -490,11 +490,11 @@ input:-webkit-autofill:hover {
 
 .myaccount{
     background-color: white;
-    color: #3d9dcb;
+    color: #3d9dcb !important;
 }
 
 .myaccount:hover{
-    color: white;
+    color: white !important;
 }
 
 .adjustpadding{
