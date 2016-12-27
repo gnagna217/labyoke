@@ -1245,7 +1245,7 @@ span.num.greatherthanninetynine {
 }
 
 .menu-border{
-    border-left-color: white;border-left-style: solid;border-width: thick; border-right-color: white;border-right-style: none;
+    border-left-color: #3d9dcb;border-left-style: solid;border-width: thick; border-right-color: white;border-right-style: none;
 }
 .nav-menu-logout{
     margin-right: 0px !important;
