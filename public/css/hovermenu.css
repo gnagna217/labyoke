@@ -6,96 +6,26 @@ $white: #fff;
 
 //base styles
 
-* {
-  box-sizing: inherit;
-  transition-property: all;
-  transition-duration: .6s;
-  transition-timing-function: ease;
-}
 
-html,
-body {
-  box-sizing: border-box;
-  height: 100%;
-  width: 100%;
-}
-
-body {
-  background: $red;
-  font-family: 'Roboto', sans-serif;
-  font-weight: 400;
-}
-
-.buttons {
+.buttons2 {
   display: table;
   height: 100%;
   width: 100%;
 }
 
-.container { 
+.container2 { 
   display: table-cell;
   padding: 1em;
   text-align: center; 
   vertical-align: middle;
 }
 
-h1 {
-  color: $white;
-  font-size: 1.25em;
-  font-weight: 900;
-  margin: 0 0 2em;
-  
-  @media (min-width: 450px) {
-    font-size: 1.75em;
-  }
-  
-  @media (min-width: 760px) {
-    font-size: 3.25em;
-  }
-  
-  @media (min-width: 900px) {
-    font-size: 5.25em;
-    margin: 0 0 1em;
-  }
-}
 
-p {
-  color: $white;
-  font-size: 12px;
-  
-  @media(min-width: 600px) {
-    left: 50%;
-    position: absolute; 
-    transform: translate(-50%, 0);
-    top: 90%;
-  }
-  
-  @media(max-height: 500px) {
-    left: 0;
-    position: relative;
-    top: 0;
-    transform: translate(0, 0);
-  }
-  
-  a {
-    background: rgba($white, 0);
-    border-bottom: 1px solid;
-    color: $white;
-    line-height: 1.4;
-    padding: .25em;
-    text-decoration: none;
-    
-    &:hover {
-      background: rgba($white, 1);
-      color: $red;
-    }
-  }
-}
 //button styles
 
 
 //default button
-.btn {
+.btn2 {
   color: #fff;
   cursor: pointer;
   display: block;
@@ -138,7 +68,7 @@ p {
 /////////////////////////////////
 //button one
 ///////////////////////////////
-.btn-1 {
+.btn2-1 {
   background: darken($red, 1.5%);
   font-weight: 100;
   
@@ -158,7 +88,7 @@ p {
   }
 }
 
-.btn-1:hover {
+.btn2-1:hover {
   background: rgba($red, 0);
   font-weight: 900;
   letter-spacing: 1px;
@@ -174,17 +104,17 @@ p {
 ////////////////////////////
 //button two
 //////////////////////////
-.btn-2 {
+.btn2-2 {
     letter-spacing: 0;
 }
 
-.btn-2:hover,
-.btn-2:active {
+.btn2-2:hover,
+.btn2-2:active {
   letter-spacing: 5px;
 }
 
-.btn-2:after,
-.btn-2:before {
+.btn2-2:after,
+.btn2-2:before {
   backface-visibility: hidden;
   border: 1px solid rgba(#fff, 0);
   bottom: 0px;
@@ -196,15 +126,15 @@ p {
   width: 0;
 }
 
-.btn-2:hover:after,
-.btn-2:hover:before {
+.btn2-2:hover:after,
+.btn2-2:hover:before {
   backface-visibility: hidden;
   border-color: #fff;
   transition: width 350ms ease-in-out;
   width: 70%;
 }
 
-.btn-2:hover:before {
+.btn2-2:hover:before {
   bottom: auto;
   top: 0;
   width: 70%;
@@ -213,7 +143,7 @@ p {
 /////////////////////////////
 //button -3 
 ///////////////////////////
-.btn-3 {
+.btn2-3 {
   background: lighten($red, 3%);  
   border: 1px solid darken($red, 4%);
   box-shadow: 0px 2px 0 darken($red, 5%), 2px 4px 6px darken($red, 2%);
@@ -222,7 +152,7 @@ p {
   transition: all 150ms linear;
 }
 
-.btn-3:hover {
+.btn2-3:hover {
   background: darken($red, 1.5%);
   border: 1px solid rgba(#000, .05);
   box-shadow: 1px 1px 2px rgba(#fff, .2);
@@ -235,7 +165,7 @@ p {
 /////////////////////////////
 //button-4 
 ///////////////////////////
-.btn-4 {
+.btn2-4 {
   border: 1px solid;
   overflow: hidden;
   position: relative;
@@ -259,7 +189,7 @@ p {
   }
 }
 
-.btn-4:hover {
+.btn2-4:hover {
   
   &:after {
     left: 120%;
@@ -270,7 +200,7 @@ p {
 /////////////////////////////
 //button-5 
 ///////////////////////////
-.btn-5 {
+.btn2-5 {
   border: 0 solid;
   box-shadow: inset 0 0 20px rgba(255, 255, 255, 0);
   outline: 1px solid;
@@ -280,7 +210,7 @@ p {
   transition: all 1250ms cubic-bezier(0.19, 1, 0.22, 1);
 } 
 
-.btn-5:hover {
+.btn2-5:hover {
   border: 1px solid;
   box-shadow: inset 0 0 20px rgba(255, 255, 255, .5), 0 0 20px rgba(255, 255, 255, .2);
   outline-color: rgba(255, 255, 255, 0);
