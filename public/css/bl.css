@@ -471,6 +471,9 @@ input:-webkit-autofill:hover {
 .menu-border{
     /*border-left-color: #3d9dcb;border-left-style: solid;*/border-width: thick; border-right-color: white;border-right-style: solid;
 }
+.account-border{
+    border-color: #3d9dcb;border-right-style: solid;border-width: thick;border-left-style: solid;
+}
 .btn{
     outline: none !important;
 }
@@ -1148,6 +1151,9 @@ input::-webkit-inner-spin-button {
 }
 
 @media (max-width: 767px){
+.account-border{
+    border-color: #3d9dcb;border-right-style: solid;border-width: thick;border-left-style: none;
+}
 .fronthelp {
     text-align: center;
 }
