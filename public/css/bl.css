@@ -488,6 +488,15 @@ input:-webkit-autofill:hover {
     background-color: #8a6d3b !important;
 }
 
+.myaccount{
+    background-color: white;
+    color: #3d9dcb;
+}
+
+.myaccount:hover{
+    color: white;
+}
+
 .adjustpadding{
     padding-left: 25px;
 }
