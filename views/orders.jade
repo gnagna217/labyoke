@@ -169,7 +169,7 @@ block content
              h5="You have not ordered any reagent. "
               a(href="/search")
                 span(class="labColor")="Search now."
-            h4="A Bar report of the monthly orders."
+            h4="A Bar chart of the monthly orders."
             p="This bar chart depicts your number of orders this month (so far) per Reagent Category:"
             - if(filteroutput != null && filteroutput.length > 0) 
                div(class="ct-chart0 ct-perfect-fourth")
@@ -177,7 +177,7 @@ block content
           div(id="labsComp")
             - if(filteroutput != null && filteroutput.length == 0) 
              h5="You have not ordered any reagent this month."
-            h4="A Bar report of all orders in each lab."
+            h4="A Bar chart of all orders in each lab."
             p="This bar chart depicts the number of orders (so far) per lab:"
             - if(laborders != null && laborders.length > 0)
                div(class="ct-chart3 ct-perfect-fourth")
