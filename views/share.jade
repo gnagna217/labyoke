@@ -261,7 +261,7 @@ block content
 			- var array_values = "0|"
 			- var array_rows2 = []
 			- var array_values2 = ""
-			- var filteroutput2 = report_sharesbycategory.filter(function(x){console.debug("filter: " + x.category); return (x.insufficient == 1)});
+			- var filteroutput2 = report_sharesbycategory.filter(function(x){console.log("filter: " + x.category); return (x.insufficient == 1)});
 			- if(report_sharesbycategory != null && report_sharesbycategory.length > 0) 
 				-var ob = filteroutput2
 				-for(var prop in ob)
