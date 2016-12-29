@@ -729,7 +729,7 @@ LabYokeAgents.prototype.findmyshares = function(callback) {
 		query2.on("end", function(result2) {
 			results.push(result2.rows);
 			var query4 = client.query("SELECT * from vm2016_orders where email='" + email
-				+ "' and insufficient=1 order by date desc");
+				+ "' order by date desc");
 			query4.on("row", function(row, result4) {
 				result4.addRow(row);
 			});
