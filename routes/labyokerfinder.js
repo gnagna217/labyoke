@@ -729,7 +729,7 @@ LabYokeAgents.prototype.findmyshares = function(callback) {
 		query2.on("end", function(result2) {
 			results.push(result2.rows);
 			var query4 = client.query("SELECT * from vm2016_orders where email='" + email
-				+ "' order by date desc");
+				+ "' and insufficient=1 order by date desc");
 			query4.on("row", function(row, result4) {
 				result4.addRow(row);
 			});
@@ -747,7 +747,7 @@ LabYokeAgents.prototype.findmyshares = function(callback) {
 				query3.on("end", function(result3) {
 					var query5 = client
 						.query("SELECT category, count(category) as counting, EXTRACT(MONTH FROM date_trunc( 'month', date )) as monthorder, EXTRACT(year FROM date_trunc( 'year', date )) as yearorder from vm2016_orders where email='" + email
-					+ "' group by category, date_trunc( 'month', date ), date_trunc( 'year', date ) order by category asc");
+					+ "' and insufficient=1 group by category, date_trunc( 'month', date ), date_trunc( 'year', date ) order by category asc");
 					query5.on("row", function(row, result5) {
 						result5.addRow(row);
 					});
