@@ -264,7 +264,7 @@ block content
             chart3.on('draw', function() {
               if (!addedEvents3) {
                 $('.ct-chart3').find('.ct-bar').on('mouseover', function() {
-                  $('#tooltips3').html('<b>Selected Value: </b>' + $(this).attr('ct:value'));
+                  $('#tooltips3').html('<b>Selected Quantity: </b>' + $(this).attr('ct:value'));
                 });
 
                 $('.ct-chart3').find('.ct-bar').on('mouseout', function() {
@@ -382,7 +382,7 @@ block content
             chart0.on('draw', function() {
               if (!addedEvents0) {
                 $('.ct-chart0').find('.ct-bar').on('mouseover', function() {
-                  $('#tooltips0').html('<b>Selected Value: </b>' + $(this).attr('ct:value'));
+                  $('#tooltips0').html('<b>Selected Quantity: </b>' + $(this).attr('ct:value'));
                 });
 
                 $('.ct-chart0').find('.ct-bar').on('mouseout', function() {
@@ -399,7 +399,7 @@ block content
               if (!addedEvents) {
                 $('.ct-point').on('mouseover', function() {
                   //$('#tooltips').show();
-                  $('#tooltips').html('<b>Selected Value: </b>' + $(this).attr('ct:value'));
+                  $('#tooltips').html('<b>Selected Quantity: </b>' + $(this).attr('ct:value'));
                 });
 
                 $('.ct-point').on('mouseout', function() {
