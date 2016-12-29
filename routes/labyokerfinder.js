@@ -393,7 +393,7 @@ LabYokeReporterSavings.prototype.reportInsuff = function(callback) {
 	var where = "a.email = b.email and a.insufficient = 0";
 	//var groupby = "a.category, b.lab, a.price";
 	var params = "";
-	var columns ="<td>Agent</td><td>Lab</td>";
+	var columns ="<td>Reagent</td><td>Lab</td>";
 	var html = "<div><span style='font-weight:bold;font-size:36pt;margin-bottom:20px;float:left'>Insufficient Reagent Shares.</span></div><div style=\"font-family:'calibri'; font-size:11pt;padding: 20px; width:50%;float:left\">"
 				+ "";
 	console.log("report on savings- datefrom: " + datefrom);
@@ -824,8 +824,8 @@ LabYokerOrder.prototype.order = function(callback) {
 		var bodyReq = "<div style='text-align:center'><img style='width: 141px; margin: 0 20px;' src='https:\/\/team-labyoke.herokuapp.com\/images\/yoke4.png', alt='The Yoke',  title='Yoke', class='yokelogo'/></div><div style=\"font-family:'calibri'; font-size:11pt;padding: 20px;float:left\">Hello,<br/><br/>";
 		body += "This is a kind request to share 100 units from the following inventory:";
 		bodyReq += "You have requested 100 units from the following inventory:";
-		body += "<br><b>Agent: </b> " + agent;
-		bodyReq += "<br><b>Agent: </b> " + agent;
+		body += "<br><b>Reagent: </b> " + agent;
+		bodyReq += "<br><b>Reagent: </b> " + agent;
 		body += "<br><b>Vendor: </b> " + vendor;
 		bodyReq += "<br><b>Vendor: </b> " + vendor;
 		body += "<br><b>Catalog#: </b> " + catalognumber;
@@ -1573,7 +1573,7 @@ LabYokerChangeShare.prototype.cancelShare = function(callback) {
 		if(table == "vm2016_orders" && checked == 0){
 			var subject = "LabYoke Order - Cancelled for " + agent;
 			var body = "<div style='text-align:center'><img style='width: 141px; margin: 0 20px;' src='https:\/\/team-labyoke.herokuapp.com\/images\/yoke4.png', alt='The Yoke',  title='Yoke', class='yokelogo'/></div><div style=\"font-family:'calibri'; font-size:11pt;padding: 20px;float:left\">Hello,<br/><br/>";
-			body += "Unfortunately your order has been cancelled due to insufficient quantities from the following inventory: <br><b>Agent: </b> " + agent;
+			body += "Unfortunately your order has been cancelled due to insufficient quantities from the following inventory: <br><b>Reagent: </b> " + agent;
 			body += "<br><b>Vendor: </b> " + vendor;
 			body += "<br><b>Catalog#: </b> " + catalognumber;
 			body += "<br><b>Owner: </b> " + email;
