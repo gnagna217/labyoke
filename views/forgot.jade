@@ -26,7 +26,7 @@ block content
                         img(src="images/email_icon.png", alt="The Lab", title="Lab", style="border-width:0px; width: 50px; margin-top: -45px; float: right;")
 
         if userfound
-            div(id="ctl00_Div2" class="row")
+            div(id="ctl00_Div2" class="frontdiv")
                     h1(class="centerText")
                         span= "Hello again "
                         span(class="labColor")=" " + userfound
@@ -38,7 +38,7 @@ block content
                     
             
         if usernotfound
-            div(id="ctl00_Div2" class="row")
+            div(id="ctl00_Div2" class="frontdiv")
                     h1(class="centerText")
                         span= "Oops..."
                     p!=message
