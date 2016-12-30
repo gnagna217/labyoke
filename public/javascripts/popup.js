@@ -19,9 +19,9 @@ $('.cancel').click(function() {
   var checked = cancel.is(':checked');
   var orderText = document.getElementById("orderText");
   if(checked){
-    orderText.innerHTML = "Do you want to mark this agent as insufficient?";
+    orderText.innerHTML = "Do you want to mark this reagent as insufficient?";
   } else {
-    orderText.innerHTML = "Do you want to mark this agent as replenished and in sufficient quantities?";
+    orderText.innerHTML = "Do you want to mark this reagent as replenished and in sufficient quantities?";
   }
   var pop = document.getElementById("ios-light");
   pop.style.display = "block";
@@ -183,7 +183,7 @@ function iosLight(agent,vendor,catalognumber,reqemail,location,category,qty,lab)
   categoryform.value = category;
   qtyform.value = qty;
   labform.value = lab;
-  orderText.innerHTML = "You are about to order <br/>Agent: " + agent + "<br/>Vendor: "+vendor+"<br/>Catalog#: "+catalognumber;
+  orderText.innerHTML = "You are about to order <br/>Reagent: " + agent + "<br/>Vendor: "+vendor+"<br/>Catalog#: "+catalognumber;
   var pop = document.getElementById("ios-light");
   pop.style.display = "block";
   var shade = document.getElementById("shade");
