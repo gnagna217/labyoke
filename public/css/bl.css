@@ -515,8 +515,7 @@ input:-webkit-autofill:hover {
 }
 .container{
     padding-bottom: 25px;
-    padding-top: 10px;
-    /*margin-bottom: 70px;*/
+    /*padding-top: 10px;*/
 }
 .marginbottom{
     margin-bottom: 0px;
@@ -1029,7 +1028,8 @@ input::-webkit-inner-spin-button {
     text-align:center;
 }
 .container {
-    width: 97% !important;
+    width: 99% !important;
+    /*width: 97% !important;*/
 }
 .accountdetail{
     float: left; 
