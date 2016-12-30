@@ -649,6 +649,9 @@ margin-right: 15px !important;
     background-color: #2975b4;
 }
 
+.btn-success:active:hover, .btn-success.active:hover, .open > .dropdown-toggle.btn-success:hover, .btn-success:active:focus, .btn-success.active:focus, .open > .dropdown-toggle.btn-success:focus, .btn-success:active.focus, .btn-success.active.focus, .open > .dropdown-toggle.btn-success.focus{
+    background-color: #2975b4;
+}
 .btn-primary:disabled{
     background-color: #DCDDD9;
     border-color: darkgrey;
