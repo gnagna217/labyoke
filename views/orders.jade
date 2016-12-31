@@ -195,20 +195,20 @@ block content
           
           -var cat = categories
           -for(var prop in cat)
-            - categorieslist = categorieslist + cat[prop].category + "|"
+            - categorieslist = categorieslist + cat[prop].agent + "|"
           -var ob = report_sharesbycategory
           -for(var prop in ob)
-            - array_rows = array_rows + ob[prop].category + "|"
+            - array_rows = array_rows + ob[prop].agent + "|"
             - array_values = array_values + ob[prop].count + "|"
 
           -var ob3 = report_ordersbycategory
           -for(var prop in ob3)
-            - array_rows3 = array_rows3 + ob3[prop].category + "|"
+            - array_rows3 = array_rows3 + ob3[prop].agent + "|"
             - array_values3 = array_values3 + ob3[prop].count + "|"
 
           -var ob2 = filteroutput
           -for(var prop in ob2)
-            - array_rows2 = array_rows2 + ob2[prop].category + "|"
+            - array_rows2 = array_rows2 + ob2[prop].agent + "|"
             - array_values2 = array_values2 + ob2[prop].counting + "|"
           
           - var arraylabRowsStr = "";
