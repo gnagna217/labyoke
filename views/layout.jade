@@ -143,10 +143,11 @@ html(lang='en')
                                     span(class="fa fa-home colmenu")
                                     span!=" Us "
                     ul.nav.navbar-nav.navbar-right
-                        li
+                        li(class="nav-menu-logout")
                             a(href='/logout',class="nav-menu-logout") 
                                 span(style="margin-left: 5px;")="Logout"
-                            a(href='/logout',class="nav-menu-logout-layer", style="display:none;margin-right: 15px !important;") 
+                        li(class="nav-menu-logout-layer", style="display:none;margin-right: 15px !important;"))
+                            a(href='/logout') 
                                 span(style="margin-left: 5px;")="Logout"
      block content
      script(type="text/javascript" src="/javascripts/bootstrap.min.js")
