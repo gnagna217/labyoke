@@ -146,6 +146,8 @@ html(lang='en')
                         li
                             a(href='/logout',class="nav-menu-logout") 
                                 span(style="margin-left: 5px;")="Logout"
+                            a(href='/logout',class="nav-menu-logout-layer", style="display:none;margin-right: 15px !important;") 
+                                span(style="margin-left: 5px;")="Logout"
      block content
      script(type="text/javascript" src="/javascripts/bootstrap.min.js")
      script(type="text/javascript" src="/javascripts/popup.js")
@@ -162,6 +164,12 @@ html(lang='en')
      div(style="margin-top: 40px; background-color: #8a6d3b; position: fixed;bottom: 0;width: 100%;")
             div(style="color:white; text-align:center; font-size:11px;")="@labyoke"
     script.
+        $( "nav-menu-logout" ).hover(
+          function() {
+            $( this ).addClass( "animated hinge" );
+            $( "nav-menu-logout-layer" ).show();
+          }
+        );
         function preload(arrayOfImages) {
             $(arrayOfImages).each(function(){
                 $('<img/>')[0].src = this;
