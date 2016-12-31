@@ -146,9 +146,7 @@ html(lang='en')
                         li(class="nav-menu-logout")
                             a(href='/logout') 
                                 span(style="margin-left: 5px;")="Logout"
-                        li(class="nav-menu-logout-layer", style="display:none;margin-right: 15px !important;")
-                            a(href='/logout') 
-                                span(style="margin-left: 5px;")="Logout"
+
      block content
      script(type="text/javascript" src="/javascripts/bootstrap.min.js")
      script(type="text/javascript" src="/javascripts/popup.js")
@@ -166,11 +164,9 @@ html(lang='en')
             div(style="color:white; text-align:center; font-size:11px;")="@labyoke"
     script.
         $(".nav-menu-logout").mouseenter(function() {
-                    $( this ).addClass( "animated hinge" );
-                    $( ".nav-menu-logout-layer" ).show();
+                    $( this ).addClass( "animated hinge" ).delay(3000);
                     }).mouseleave(function() {
                     $( this ).removeClass( "animated hinge" );
-                    $( ".nav-menu-logout-layer" ).hide();
                     });
 
         function preload(arrayOfImages) {
