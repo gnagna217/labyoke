@@ -721,8 +721,8 @@ LabYokeAgents.prototype.findmyshares = function(callback) {
 	query.on("end", function(result) {
 		results.push(result.rows);
 		var query2 = client
-				.query("SELECT a.category, count(a.category), b.insufficient as insuff from vm2016_agentsshare a, vm2016_orders b where a.agent = b.agent and a.catalognumber = b.catalognumber and b.email='"
-					+ email + "' group by a.category, b.insufficient order by a.category asc");
+				.query("SELECT a.agent, count(a.agent), b.insufficient as insuff from vm2016_agentsshare a, vm2016_orders b where a.agent = b.agent and a.catalognumber = b.catalognumber and b.email='"
+					+ email + "' group by a.category, b.insufficient order by a.agent asc");
 		query2.on("row", function(row, result2) {
 			result2.addRow(row);
 		});
@@ -746,8 +746,8 @@ LabYokeAgents.prototype.findmyshares = function(callback) {
 				});
 				query3.on("end", function(result3) {
 					var query5 = client
-						.query("SELECT category, count(category) as counting, EXTRACT(MONTH FROM date_trunc( 'month', date )) as monthorder, EXTRACT(year FROM date_trunc( 'year', date )) as yearorder from vm2016_orders where email='" + email
-					+ "' and insufficient=1 group by category, date_trunc( 'month', date ), date_trunc( 'year', date ) order by category asc");
+						.query("SELECT agent, count(agent) as counting, EXTRACT(MONTH FROM date_trunc( 'month', date )) as monthorder, EXTRACT(year FROM date_trunc( 'year', date )) as yearorder from vm2016_orders where email='" + email
+					+ "' and insufficient=1 group by agent, date_trunc( 'month', date ), date_trunc( 'year', date ) order by agent asc");
 					query5.on("row", function(row, result5) {
 						result5.addRow(row);
 					});
