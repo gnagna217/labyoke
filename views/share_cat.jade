@@ -158,7 +158,7 @@ block content
               span(class="yokeColor bold")="total number of orders "
               span="and "
               span(class="labColor bold")="total number of requested shares "
-              span="per Reagent:"
+              span="per Reagent Category:"
             - if(report_sharesbycategory != null && report_sharesbycategory.length >0)
                div(class="ct-chart ct-perfect-fourth")
                div(id="tooltips", class="labColor") &nbsp;
@@ -170,7 +170,7 @@ block content
               a(href="/search")
                 span(class="labColor")="Search now."
             h4="A Bar chart of the monthly orders."
-            p="This bar chart depicts your number of orders this month (so far) per Reagent:"
+            p="This bar chart depicts your number of orders this month (so far) per Reagent Category:"
             - if(filteroutput != null && filteroutput.length > 0) 
                div(class="ct-chart0 ct-perfect-fourth")
                div(id="tooltips0", class="labColor") &nbsp;
@@ -195,20 +195,20 @@ block content
           
           -var cat = categories
           -for(var prop in cat)
-            - categorieslist = categorieslist + cat[prop].agent + "|"
+            - categorieslist = categorieslist + cat[prop].category + "|"
           -var ob = report_sharesbycategory
           -for(var prop in ob)
-            - array_rows = array_rows + ob[prop].agent + "|"
+            - array_rows = array_rows + ob[prop].category + "|"
             - array_values = array_values + ob[prop].count + "|"
 
           -var ob3 = report_ordersbycategory
           -for(var prop in ob3)
-            - array_rows3 = array_rows3 + ob3[prop].agent + "|"
+            - array_rows3 = array_rows3 + ob3[prop].category + "|"
             - array_values3 = array_values3 + ob3[prop].count + "|"
 
           -var ob2 = filteroutput
           -for(var prop in ob2)
-            - array_rows2 = array_rows2 + ob2[prop].agent + "|"
+            - array_rows2 = array_rows2 + ob2[prop].category + "|"
             - array_values2 = array_values2 + ob2[prop].counting + "|"
           
           - var arraylabRowsStr = "";
