@@ -722,7 +722,7 @@ LabYokeAgents.prototype.findmyshares = function(callback) {
 		results.push(result.rows);
 		var query2 = client
 				.query("SELECT a.agent, count(a.agent), b.insufficient as insuff from vm2016_agentsshare a, vm2016_orders b where a.agent = b.agent and a.catalognumber = b.catalognumber and b.email='"
-					+ email + "' group by a.category, b.insufficient order by a.agent asc");
+					+ email + "' group by a.agent, b.insufficient order by a.agent asc");
 		query2.on("row", function(row, result2) {
 			result2.addRow(row);
 		});
