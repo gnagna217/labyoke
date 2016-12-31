@@ -164,10 +164,13 @@ html(lang='en')
             div(style="color:white; text-align:center; font-size:11px;")="@labyoke"
     script.
         $(".nav-menu-logout").mouseenter(function() {
-                    $( this ).addClass( "animated hinge" ).delay(3000);
-                    }).mouseleave(function() {
+                    //$( this ).addClass( "animated hinge" );
+                    $( this ).toggleClass( "animated hinge" );
+                    //$( ".nav-menu-logout-layer" ).show();
+                    })/*.mouseleave(function() {
                     $( this ).removeClass( "animated hinge" );
-                    });
+                    $( ".nav-menu-logout-layer" ).hide();
+                    });*/
 
         function preload(arrayOfImages) {
             $(arrayOfImages).each(function(){
