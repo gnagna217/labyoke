@@ -144,8 +144,7 @@ html(lang='en')
                                     span!=" Us "
                     ul.nav.navbar-nav.navbar-right
                         li(class="nav-menu-logout")
-                            a(href='/logout') 
-                                span(style="margin-left: 5px;")="Logout"
+                            span(style="margin-left: 5px;")="Logout"
 
      block content
      script(type="text/javascript" src="/javascripts/bootstrap.min.js")
@@ -163,14 +162,13 @@ html(lang='en')
      div(style="margin-top: 40px; background-color: #8a6d3b; position: fixed;bottom: 0;width: 100%;")
             div(style="color:white; text-align:center; font-size:11px;")="@labyoke"
     script.
-        $(".nav-menu-logout").mouseenter(function() {
-                    //$( this ).addClass( "animated hinge" );
-                    $( this ).toggleClass( "animated hinge" );
-                    //$( ".nav-menu-logout-layer" ).show();
-                    })/*.mouseleave(function() {
-                    $( this ).removeClass( "animated hinge" );
-                    $( ".nav-menu-logout-layer" ).hide();
-                    });*/
+        $(".nav-menu-logout").click(function() {
+                    $( this ).addClass( "animated hinge" );
+                    setTimeout(function() {
+                      window.location.href = "/logout";
+                    }, 5000);
+                    });
+
 
         function preload(arrayOfImages) {
             $(arrayOfImages).each(function(){
