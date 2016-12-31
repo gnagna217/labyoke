@@ -164,12 +164,14 @@ html(lang='en')
      div(style="margin-top: 40px; background-color: #8a6d3b; position: fixed;bottom: 0;width: 100%;")
             div(style="color:white; text-align:center; font-size:11px;")="@labyoke"
     script.
-        $( "nav-menu-logout" ).hover(
-          function() {
-            $( this ).addClass( "animated hinge" );
-            $( "nav-menu-logout-layer" ).show();
-          }
-        );
+        $(".nav-menu-logout").mouseenter(function() {
+                    $( this ).addClass( "animated hinge" );
+                    $( ".nav-menu-logout-layer" ).show();
+                    }).mouseleave(function() {
+                    $( this ).removeClass( "animated hinge" );
+                    $( ".nav-menu-logout-layer" ).hide();
+                    });
+
         function preload(arrayOfImages) {
             $(arrayOfImages).each(function(){
                 $('<img/>')[0].src = this;
