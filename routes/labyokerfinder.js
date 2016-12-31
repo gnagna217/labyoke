@@ -781,7 +781,7 @@ LabYokeAgents.prototype.reportAllSharesByCategory = function(callback) {
 LabyokerCategories.prototype.getcategories = function(callback) {
 	var results;
 	var query = client
-			.query("SELECT distinct category FROM vm2016_agentsshare");
+			.query("SELECT distinct agent FROM vm2016_agentsshare");
 	query.on("row", function(row, result) {
 		result.addRow(row);
 	});
