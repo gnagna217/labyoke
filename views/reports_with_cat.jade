@@ -126,7 +126,7 @@ block content
 			div(class="reportMoney results", id="reportMoney")
 				div(style="/*background-color: #3d9dcb; height: 2px; margin-bottom: 30px; margin-top: 30px;*/")
 				h4="Shares Savings report Upload."
-				p="You can now retrieve a report of the savings each lab has made over a period of time per reagent."
+				p="You can now retrieve a report of the savings each lab has made over a period of time per reagent category."
 				- var datefrom_money = datefromMoney
 				- var dateto_money = datetoMoney
 				- var file_money = "reportMoney_" + datefrom_money + "_to_" + dateto_money + ".pdf"
@@ -262,6 +262,19 @@ block content
 							label(style="width: 100px;")="Date To"
 							input(name="reportDateToOrders" style="margin-bottom:10px" type="text" id="reportDateToOrders" class="form-control")
 							
+							label(style="width: 150px;")="Reagent Category"
+							select(name="reportCategoryOrders" type="text" id="reportCategoryOrders" class="form-control" style="border-color:#3d9dcb;margin-bottom:10px" 
+							placeholder="Category")
+								option(value="all")="all"
+								if(categories != undefined)
+									- var ob = categories
+									- for(var prop in ob)
+										- var cat = ob[prop].category
+										option(value=cat) #{cat}
+							div(style="top: -35px; position: relative; float: right; margin-right: 10px;")
+								div(class="arrow-up")
+								div(class="arrow-down")
+							
 							label(style="width: 100px;")="Lab"
 							select(name="reportLabOrders" type="text" id="reportLabOrders" class="form-control" style="border-color:#3d9dcb;margin-bottom:10px" placeholder="Lab")
 								option(value="all")="all"
@@ -392,6 +405,18 @@ block content
 							label(style="width: 100px;")="Date To"
 							input(name="reportDateTo" style="margin-bottom:10px" type="text" id="reportDateTo" class="form-control")
 							
+							label(style="width: 150px;")="Reagent Category"
+							select(name="reportCategory" type="text" id="reportCategory" class="form-control" style="border-color:#3d9dcb;margin-bottom:10px" 
+							placeholder="Category")
+								option(value="all")="all"
+								if(categories != undefined)
+									- var ob = categories
+									- for(var prop in ob)
+										- var cat = ob[prop].category
+										option(value=cat) #{cat}
+							div(style="top: -35px; position: relative; float: right; margin-right: 10px;")
+								div(class="arrow-up")
+								div(class="arrow-down")
 							div(style="max-width:100%; margin-top: 20px;")
 								button.btn.btn-success.btn-lg.btn-block(type="submit",value="Report",name="submit", style="max-width: 80%;width: 80%;") Get Shares
 								img(src="images/ship.png", alt="The Lab", title="Lab", style="border-width:0px; width: 50px; margin-top: -50px;float:right")

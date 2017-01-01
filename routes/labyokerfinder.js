@@ -49,17 +49,17 @@ LabyokerUserDetails = function(column, value, email,curname,cursurname) {
 	this.cursurname = cursurname;
 }
 
-LabYokeReporterOrders = function(datefrom, dateto, lab, category) {
+LabYokeReporterOrders = function(datefrom, dateto, lab) {
 	this.datefrom = datefrom;
 	this.dateto = dateto;
 	this.lab = lab;
-	this.category = category;
+	//this.category = category;
 };
 
-LabYokeReporterShares = function(datefrom, dateto, category) {
+LabYokeReporterShares = function(datefrom, dateto) {
 	this.datefrom = datefrom;
 	this.dateto = dateto;
-	this.category = category;
+	//this.category = category;
 };
 
 LabYokeReporterSavings = function(datefrom,dateto,agent,vendor,catalognumber,lab) {
@@ -175,9 +175,9 @@ LabYokeReporterSavings.prototype.dataMoney = function(callback) {
 	var lab = this.lab;
 	var agent = this.agent;
 	var catalognumber = this.catalognumber;
-	var selected = "a.category, count(a.category) as counting, b.lab, a.price";
+	var selected = "a.agent, count(a.agent) as counting, b.lab, a.price";
 	var where = "a.agent = b.agent and a.catalognumber = b.catalognumber ";
-	var groupby = "a.category, b.lab, a.price";
+	var groupby = "a.agent, b.lab, a.price";
 	console.log("report on savings- datefrom: " + datefrom);
 	console.log("report on savings- dateto: " + dateto);
 	var query;
@@ -227,7 +227,7 @@ LabYokeReporterSavings.prototype.dataMoney = function(callback) {
 		groupby += "b.catalognumber";
 	}
 
-	var qrstr = "SELECT " + selected + " from vm2016_agentsshare a, vm2016_orders b where " + where + " group by " + groupby + " order by a.category asc";
+	var qrstr = "SELECT " + selected + " from vm2016_agentsshare a, vm2016_orders b where " + where + " group by " + groupby + " order by a.agent asc";
 	console.log("qrstr = " + qrstr);
 	query = client.query(qrstr);
 
@@ -256,11 +256,11 @@ LabYokeReporterSavings.prototype.reportMoney = function(callback) {
 	var lab = this.lab;
 	var agent = this.agent;
 	var catalognumber = this.catalognumber;
-	var selected = "a.category, count(a.category) as counting, b.lab, a.price";
+	var selected = "a.agent, count(a.agent) as counting, b.lab, a.price";
 	var where = "a.agent = b.agent and a.catalognumber = b.catalognumber ";
-	var groupby = "a.category, b.lab, a.price";
+	var groupby = "a.agent, b.lab, a.price";
 	var params = "";
-	var columns ="<td>Category</td><td>Lab</td>";
+	var columns ="<td>Lab</td>";
 	var html = "<div><span style='font-weight:bold;font-size:36pt;margin-bottom:20px;float:left'>Savings.</span></div><div style=\"font-family:'calibri'; font-size:11pt;padding: 20px; width:50%;float:left\">"
 				+ "";
 	console.log("report on savings- datefrom: " + datefrom);
@@ -332,7 +332,7 @@ LabYokeReporterSavings.prototype.reportMoney = function(callback) {
 		selected +=", ";
 	selected +="count(a.category)";*/
 	columns+="<td>Shares Savings</td>";
-	var qrstr = "SELECT " + selected + " from vm2016_agentsshare a, vm2016_orders b where " + where + " group by " + groupby + " order by a.category asc";
+	var qrstr = "SELECT " + selected + " from vm2016_agentsshare a, vm2016_orders b where " + where + " group by " + groupby + " order by a.agent asc";
 	console.log("qrstr = " + qrstr);
 	query = client.query(qrstr);
 
@@ -350,7 +350,7 @@ LabYokeReporterSavings.prototype.reportMoney = function(callback) {
 		
 			for(var prop in results){
 				isempty = false;
-				html += "<tr>" + "<td style='font-size: 12px;'>" + results[prop].category + "</td>" + "<td style='font-size: 12px;'>" + results[prop].lab + "</td>";
+				html += "<tr><td style='font-size: 12px;'>" + results[prop].lab + "</td>";
 
 				if(agent != null && agent !=undefined && agent !=""){
 				html += "<td style='font-size: 12px;'>" + results[prop].agent + "</td>";
@@ -483,7 +483,7 @@ LabYokeReporterShares.prototype.reportShares = function(callback) {
 	var results;
 	var datefrom = this.datefrom;
 	var dateto = this.dateto;
-	var category = this.category;
+	//var category = this.category;
 	var params = "";
 	var where = "";
 	var isempty = true;
@@ -503,7 +503,7 @@ LabYokeReporterShares.prototype.reportShares = function(callback) {
 	} else {
 		datefrom = "all";
 	}
-	if(category != null && category !=undefined && category !="all"){
+	/*if(category != null && category !=undefined && category !="all"){
 		if(params == ""){
 			params += "<div style='font-weight:bold'>Parameters</div>";
 		}
@@ -514,7 +514,7 @@ LabYokeReporterShares.prototype.reportShares = function(callback) {
 		if(where.trim() != "where")
 			where +=" and ";
 		where += " lower(category) like '%" + category.toLowerCase() + "%'";
-	} 
+	} */
 	var qryStr = "SELECT * FROM vm2016_agentsshare " + where + " order by date desc";
 	console.log("query report shares: " + qryStr);
 	query = client.query(qryStr);
@@ -535,7 +535,7 @@ LabYokeReporterShares.prototype.reportShares = function(callback) {
 			html += "<p>This report is listing the inventory uploaded between " + moment(datefrom).add(1, 'day').tz("America/New_York").format('MM-DD-YYYY') + " and " + moment(dateto).add(1, 'day').tz("America/New_York").format('MM-DD-YYYY') + "</p></div>"
 		}
 		html += params;
-		html +="<table><tbody><tr style='color: white;background-color: #3d9dcb;'><td style='font-size: 12px;'>Reagent</td><td style='font-size: 12px;'>Vendor</td><td style='font-size: 12px;'>Catalog#</td><td style='font-size: 12px;'>Location</td><td style='font-size: 12px;'>User</td><td style='font-size: 12px;'>Category</td><td>Date</td></tr>"
+		html +="<table><tbody><tr style='color: white;background-color: #3d9dcb;'><td style='font-size: 12px;'>Reagent</td><td style='font-size: 12px;'>Vendor</td><td style='font-size: 12px;'>Catalog#</td><td style='font-size: 12px;'>Location</td><td style='font-size: 12px;'>User</td><td>Date</td></tr>"
 		
 			for(var prop in results){
 				isempty = false;
@@ -544,7 +544,7 @@ LabYokeReporterShares.prototype.reportShares = function(callback) {
 				var catalognumber = results[prop].catalognumber;
 				var location = results[prop].location;
 				var email = results[prop].email;
-				var category = results[prop].category;
+				//var category = results[prop].category;
 				var date = results[prop].date;
 
 				html += " <tr><td style='font-size: 12px;'>" + agent + "</td>";
@@ -552,7 +552,7 @@ LabYokeReporterShares.prototype.reportShares = function(callback) {
 				html += " <td style='font-size: 12px;'>" + catalognumber + "</td>";
 				html += " <td style='font-size: 12px;'>" + location + "</td>";
 				html += " <td style='font-size: 12px;'>" + email + "</td>";
-				html += " <td style='font-size: 12px;'>" + category + "</td>";
+				//html += " <td style='font-size: 12px;'>" + category + "</td>";
 				html += " <td style='font-size: 12px;'>" + moment(date).add(1, 'day').tz("America/New_York").format('MM-DD-YYYY') + "</td></tr>";
 		
 			}
@@ -571,14 +571,14 @@ LabYokeReporterOrders.prototype.reportOrders = function(callback) {
 	var datefrom = this.datefrom;
 	var dateto = this.dateto;
 	var lab = this.lab;
-	var category = this.category;
+	//var category = this.category;
 	var params = "";
 	var where = "";
 	var isempty = true;
 	console.log("report on something: datefrom: " + datefrom);
 	console.log("report on something: dateto: " + dateto);
 	console.log("report on something: lab: " + lab);
-	console.log("report on something: category: " + category);
+	//console.log("report on something: category: " + category);
 	var query;
 
 	if(datefrom != null && dateto != null && datefrom !=undefined && dateto !=undefined && datefrom !="" && dateto !=""){
@@ -604,7 +604,7 @@ LabYokeReporterOrders.prototype.reportOrders = function(callback) {
 			where +=" and ";
 		where += "lab = '" + lab + "'";
 	} 
-	if(category != null && category !=undefined && category !="all"){
+	/*if(category != null && category !=undefined && category !="all"){
 		if(params == ""){
 			params += "<div style='font-weight:bold'>Parameters</div>";
 		}
@@ -614,7 +614,7 @@ LabYokeReporterOrders.prototype.reportOrders = function(callback) {
 		if(where.trim() != "where")
 			where +=" and ";
 		where += " lower(category) like '%" + category.toLowerCase()  + "%'";
-	} 
+	}*/
 	var qryStr = "SELECT * FROM vm2016_orders " + where + " order by date desc";
 	console.log("qry report orders: " + qryStr)
 	query = client.query(qryStr);
@@ -768,7 +768,7 @@ LabYokeAgents.prototype.reportAllSharesByCategory = function(callback) {
 	var results;
 	console.log("reportAllSharesByCategory: " + this.email);
 	var query = client
-			.query("SELECT b.category, count(b.category) FROM vm2016_orders a, vm2016_agentsshare b where a.agent = b.agent group by b.category");
+			.query("SELECT b.agent, count(b.agent) FROM vm2016_orders a, vm2016_agentsshare b where a.agent = b.agent group by b.agent");
 	query.on("row", function(row, result) {
 		result.addRow(row);
 	});
@@ -831,6 +831,7 @@ LabYokerOrder.prototype.order = function(callback) {
 		body += "<br><b>Catalog#: </b> " + catalognumber;
 		bodyReq += "<br><b>Catalog#: </b> " + catalognumber;
 		body += "<br><b>Owner: </b> " + email;
+		body += "<br><b>Requestor: </b> " + sendemail;
 		bodyReq += "<br><b>Owner: </b> " + email;
 		body += "<br><b>Lab: </b> " + lab;
 		bodyReq += "<br><b>Lab: </b> " + lab;
