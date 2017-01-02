@@ -410,7 +410,15 @@ block content
               if (!addedEvents) {
                 $('.ct-point').on('mouseover', function() {
                   //$('#tooltips').show();
-                  $('#tooltips').html('<b>Selected Quantity: </b>' + $(this).attr('ct:value'));
+                  var findvalue = $(this).attr('ct:value');
+                  var xis = $(this).attr('x2');
+                  var roundxis = (Math.round(findx)).toFixed(3);
+                  console.log("roundxis: " + roundxis);
+                  var findx = $("foreignObject[x=roundxis]");
+                  console.log("findx: " + findx);
+                  var label = findx.find('.ct-label').html();
+                  console.log("label: " + label);
+                  $('#tooltips').html('<b>Selected Quantity: </b>' + $(this).attr('ct:value') + ' - <b>Reagent:</b> ' + label);
                 });
 
                 $('.ct-point').on('mouseout', function() {
