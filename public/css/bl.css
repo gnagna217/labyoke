@@ -172,7 +172,7 @@ a {
 .bold{
     font-weight: bold;
 }
-.ct-chart > .ct-label{
+.ct-chart .ct-labels{
     display:none;
 }
 .ct-label{
