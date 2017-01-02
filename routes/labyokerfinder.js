@@ -914,7 +914,7 @@ LabYokerGetOrder.prototype.getorders = function(callback) {
 	});
 	query.on("end", function(result) {
 		results.push(result.rows);
-		var query2 = client.query("SELECT b.agent, count(b.agent) FROM vm2016_orders b where b.lab='"+lab+"' and b.insufficient=1 group by b.agent order by count(b.agent) desc asc limit 10");
+		var query2 = client.query("SELECT b.agent, count(b.agent) FROM vm2016_orders b where b.lab='"+lab+"' and b.insufficient=1 group by b.agent order by count(b.agent) desc limit 10");
 		//("SELECT b.category, count(b.category) FROM vm2016_orders a, vm2016_agentsshare b where a.agent = b.agent and a.lab='"+lab+"' group by b.category");
 		query2.on("row", function(row, result2) {
 			result2.addRow(row);
