@@ -412,7 +412,8 @@ block content
                   //$('#tooltips').show();
                   var findvalue = $(this).attr('ct:value');
                   var xis = $(this).attr('x2');
-                  var roundxis = (Math.round(findx)).toFixed(3);
+                  console.log("xis: " + xis);
+                  var roundxis = (Math.round(xis)).toFixed(3);
                   console.log("roundxis: " + roundxis);
                   var findx = $("foreignObject[x=roundxis]");
                   console.log("findx: " + findx);
