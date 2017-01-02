@@ -424,7 +424,7 @@ block content
                     return (Math.round($( this ).attr( "x" ) * 1000))/1000  === xis;
                   }); 
                   //$("foreignObject[x=roundxis]");
-                  console.log("findx: " + findx);
+                  console.log("findx: " + findx.attr('x'));
                   var label = findx.find('.ct-label').html();
                   console.log("label: " + label);
                   $('#tooltips').html('<b>Selected Quantity: </b>' + $(this).attr('ct:value') + ' - <b>Reagent:</b> ' + label);
