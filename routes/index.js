@@ -975,6 +975,10 @@ module.exports = function(router) {
 														}
 
 														var b = Math.floor((Math.random() * booster.length-1) + 1);
+														if(booster[b].length == 0){
+															booster[b] = "Using LabyYoke reduces purchasing prices for <strong>You</strong> and your <strong>Lab</strong>. Use it as a social platform. Have fun and Keep it Up!";
+															boostercolor[b] = "success"
+														}
 														req.session.savingsTextInitial = booster[b];
 														req.session.savingsColorInitial = boostercolor[b];
 														console.log("req.session.savingsText: " + req.session.savingsText);
