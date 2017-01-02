@@ -308,10 +308,11 @@ block content
             console.log("previous catTransform: " + catTransform);
 
             var c = 0;
+            catTransform.pop();
+            console.log("catTransform pop: " + catTransform);
             for(var prop in rows){
               rowTransform.push(rows[prop]);
-              catTransform.pop();
-              console.log("catTransform pop: " + catTransform);
+
               if(catTransform.indexOf(rows[prop]) == -1){
                 console.log("rows[prop]: " + rows[prop]);
                 if((rows[prop]).length >0){
