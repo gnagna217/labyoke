@@ -311,9 +311,11 @@ block content
             for(var prop in rows){
               rowTransform.push(rows[prop]);
               if(catTransform.indexOf(rows[prop]) == -1){
+                if((rowsOrders[prop]).length >0){
                 catTransform.push((rows[prop]).toLowerCase());
                 valTransform.push(0);
                 valTransformOrders.push(0);
+                }
               }
             }
             console.log("last catTransform: " + catTransform);
