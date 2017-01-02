@@ -914,7 +914,7 @@ LabYokerGetOrder.prototype.getorders = function(callback) {
 	});
 	query.on("end", function(result) {
 		results.push(result.rows);
-		var query2 = client.query("SELECT b.agent, count(b.agent) FROM vm2016_orders b where b.lab='"+lab+"' and b.insufficient=1 group by b.agent order by b.agent asc");
+		var query2 = client.query("SELECT b.agent, count(b.agent) FROM vm2016_orders b where b.lab='"+lab+"' and b.insufficient=1 group by b.agent order by b.agent asc limit 10");
 		//("SELECT b.category, count(b.category) FROM vm2016_orders a, vm2016_agentsshare b where a.agent = b.agent and a.lab='"+lab+"' group by b.category");
 		query2.on("row", function(row, result2) {
 			result2.addRow(row);
@@ -943,7 +943,7 @@ LabYokerGetOrder.prototype.getorders = function(callback) {
 			results.push(result4.rows);
 			console.log("shares found: " + test3[0].counting)
 
-			var query5 = client.query("SELECT a.agent, count(a.agent) FROM vm2016_orders a, vm2016_users b where b.lab='"+lab+"' and a.insufficient=1 and a.requestoremail=b.email group by a.agent order by a.agent asc");
+			var query5 = client.query("SELECT a.agent, count(a.agent) FROM vm2016_orders a, vm2016_users b where b.lab='"+lab+"' and a.insufficient=1 and a.requestoremail=b.email group by a.agent order by a.agent asc limit 10");
 		query5.on("row", function(row, result5) {
 			result5.addRow(row);
 		});

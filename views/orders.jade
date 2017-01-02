@@ -71,7 +71,7 @@ block content
             div(class="buttons")
               select(name="chartSelect" type="text" id="chartSelect" class="form-control" style="border-color:#3d9dcb;margin-bottom:10px" placeholder="Select Chart")
                 option(value="chartNone",style="font-weight:bold")="Select A Chart..."
-                option(value="chartQty")="Orders & Shares Comparison"
+                option(value="chartQty")="Top 10 Orders & Shares Comparison"
                 option(value="chartOrders")="Your Monthly Top 5 Orders"
                 option(value="chartLabs")="Lab Orders Comparison"
               div(style="top: -35px; position: relative; float: right; margin-right: 10px;")
@@ -153,9 +153,9 @@ block content
 
 
           div(id="qtyComp")
-            h4!="A quantity comparison between <i>" + currentlabname + "</i>'s all time orders and shares."
+            h4!="A quantity comparison between <i>" + currentlabname + "</i>'s all time top 10 orders and shares."
             p="This graph depicts the current trend of your lab's all time "
-              span(class="yokeColor bold")="number of orders "
+              span(class="yokeColor bold")=" top 10 number of orders "
               span="and "
               span(class="labColor bold")="number of requested shares "
               span="per Reagent:"
@@ -287,25 +287,43 @@ block content
             var valTransform = [];
             var valTransformOrders = [];
             for(var prop in categories){
-              catTransform.push((categories[prop]).toLowerCase());
-              valTransform.push(0);
-              valTransformOrders.push(0);
+              //catTransform.push((categories[prop]).toLowerCase());
+              //valTransform.push(0);
+              //valTransformOrders.push(0);
             }
 
             var rows = "#{array_rows}";
             rows = rows.split("|");
             var rowTransform = [];
+
+            var rowsOrders = "#{array_rows3}";
+            rowsOrders = rowsOrders.split("|");
+            var rowTransformOrders = [];
+            for(var prop in rowsOrders){
+              rowTransformOrders.push(rowsOrders[prop]);
+              catTransform.push(rowsOrders[prop]);
+              valTransform.push(0);
+              valTransformOrders.push(0);
+            }
+
+            var c = 0;
             for(var prop in rows){
               rowTransform.push(rows[prop]);
+              if(catTransform.indexOf(rows[prop]) == -1){
+                catTransform.push(rows[prop]);
+                valTransform.push(0);
+                valTransformOrders.push(0);
+              }
             }
+            
 
             var values = "#{array_values}";
             values = values.split("|");
             
-            //var count = 0;
+            var count = 0;
             for(var prop in catTransform){
-            //if(count < 6){
-                //count++;
+            if(count < 11){
+                count++;
             var cat = (catTransform[prop]).toLowerCase();
             var r = rowTransform[prop];
             catTransformLimit.push(cat);
@@ -316,23 +334,18 @@ block content
               } /*else {
               valTransform.push(0);
               }*/
-            //  }
+             }
             }
 
-            var rowsOrders = "#{array_rows3}";
-            rowsOrders = rowsOrders.split("|");
-            var rowTransformOrders = [];
-            for(var prop in rowsOrders){
-              rowTransformOrders.push(rowsOrders[prop]);
-            }
+
 
             var valuesorders = "#{array_values3}";
             valuesorders = valuesorders.split("|");
             
-            //count = 0;
+            count = 0;
             for(var prop in catTransform){
-              //if(count < 6){
-                //count++;
+              if(count < 11){
+                count++;
                 var cat = (catTransform[prop]).toLowerCase();
                 var r = rowTransformOrders[prop];
                 console.log("order: " + cat + " - "+ r);
@@ -342,7 +355,7 @@ block content
                 } /*else {
                 valTransformOrders.push(0);
                 }*/
-              //}
+              }
             }
 
             console.log("chart orders  valTransformOrders: " + valTransformOrders);
