@@ -418,7 +418,7 @@ block content
                   console.log("roundxis: " + roundxis);
                   var findx = $("foreignObject").filter(function( index ) {
                     console.log('inside : ' + (Math.round($( this ).attr( "x" ) * 100))/100  );
-                    return ((Math.round($( this ).attr( "x" ) * 100))/100)  == xis;
+                    return ((Math.round($( this ).attr( "x" ) * 100))/100)  == roundxis;
                   }); 
                   //$("foreignObject[x=roundxis]");
                   console.log("findx: " + findx.attr('x'));
