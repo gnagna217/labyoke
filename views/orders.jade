@@ -280,7 +280,7 @@ block content
             var categories = "#{categorieslist}";
             categories = categories.split("|");
             var catTransform = [""];
-            var catTransformLimit = [""];
+            var catTransformLimit = [];
             for(var prop in categories){
               catTransform.push((categories[prop]).toLowerCase());
             }
