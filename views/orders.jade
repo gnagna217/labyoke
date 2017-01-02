@@ -375,7 +375,7 @@ block content
             var responsiveOptions = {
               axisX: {
                 labelInterpolationFnc: function(value) {
-                  return value.toFixed(3);
+                  return parseFloat(value).toFixed(3);
                 }
               }
             };
