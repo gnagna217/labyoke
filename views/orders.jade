@@ -310,7 +310,7 @@ block content
             var c = 0;
             for(var prop in rows){
               rowTransform.push(rows[prop]);
-              catTransform.remove(catTransform.length-1);
+              catTransform.splice(catTransform.indexOf(catTransform.length-1),1);
               if(catTransform.indexOf(rows[prop]) == -1){
                 console.log("rows[prop]: " + rows[prop]);
                 if((rows[prop]).length >0){
