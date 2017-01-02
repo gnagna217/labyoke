@@ -421,9 +421,8 @@ block content
                   console.log("roundxis: " + roundxis);
                   var findx = $("foreignObject").filter(function( index ) {
                     return (Math.round($( this ).attr( "x" ) * 1000))/1000  === xis;
-                  })
-    ; 
-    //$("foreignObject[x=roundxis]");
+                  }); 
+                  //$("foreignObject[x=roundxis]");
                   console.log("findx: " + findx);
                   var label = findx.find('.ct-label').html();
                   console.log("label: " + label);
