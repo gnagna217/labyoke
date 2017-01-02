@@ -173,8 +173,8 @@ block content
 				div(class="buttons")
 					select(name="chartSelect" type="text" id="chartSelect" class="form-control" style="border-color:#3d9dcb;margin-bottom:10px" placeholder="Select Chart")
 						option(value="chartNone",style="font-weight:bold")="Select A Chart..."
-						option(value="chartAll")="Your Shares"
-						option(value="chartMonth")="Your Shares this month"
+						option(value="chartAll")="Your Top 5 Shares"
+						option(value="chartMonth")="Your Top 5 Shares this month"
 					div(style="top: -35px; position: relative; float: right; margin-right: 10px;")
 						div(class="arrow-up")
 						div(class="arrow-down")
@@ -234,7 +234,7 @@ block content
 
 			div(style="/*background-color: #3d9dcb; height: 2px;*/ margin-bottom: 30px; margin-top: 0px;")
 			div(id="sharesAll")
-				h4="A Line chart of all your shares."
+				h4="A Line chart of your top 5 shares."
 				- if(report_sharesbycategory != null && report_sharesbycategory.length >0)
 					p="This line graph depicts your total number of shares per Reagent:"
 					div(class="ct-chart ct-perfect-fourth")
@@ -243,7 +243,7 @@ block content
 					h5="No chemicals have been requested."
 					p(style="padding-top: 20px;")=" "
 			div(id="monthAll")
-				h4="A Bar chart of your monthly shares."
+				h4="A Bar chart of your top 5 monthly shares."
 				- var now = new Date()
 				- var month = "month";
 				- var filteroutput = test.filter(function(x){console.log("x.monthorder: "+x.monthorder); console.log("x.yearorder: "+x.yearorder); console.log("now.getFullYear(): "+ now.getFullYear()); console.log("now.getMonth(): "+ now.getMonth()); console.log("so: "+ (x.yearorder == now.getFullYear() && x.monthorder == now.getMonth())); return (x.yearorder == now.getFullYear() && x.monthorder == now.getMonth() + 1)});
