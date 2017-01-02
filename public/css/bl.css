@@ -172,6 +172,9 @@ a {
 .bold{
     font-weight: bold;
 }
+.ct-chart > .ct-label{
+    display:none;
+}
 .ct-label{
     color: black !important;
 }
