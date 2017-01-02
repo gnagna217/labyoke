@@ -92,7 +92,7 @@ block content
               $('#chartNotes').hide();
               console.log("chartQty inside");
               $('#qtyComp').show();
-              document.querySelector('.ct-chart').__chartist__.update();
+              document.querySelector('.ct-chart1').__chartist__.update();
               $('#monthComp').hide();
               $('#labsComp').hide();
             } else if(chartSelect.selectedIndex === 2 || $('#reportSelect').val() == 'chartOrders') {
@@ -122,7 +122,7 @@ block content
               console.log("chartQty inside");
               $('#chartNotes').hide();
               $('#qtyComp').show();
-              document.querySelector('.ct-chart').__chartist__.update();
+              document.querySelector('.ct-chart1').__chartist__.update();
               $('#monthComp').hide();
               $('#labsComp').hide();
             } else if(chartSelect.selectedIndex === 2 || $('#reportSelect').val() == 'chartOrders') {
@@ -160,7 +160,7 @@ block content
               span(class="labColor bold")="number of requested shares "
               span="per Reagent:"
             - if(report_sharesbycategory != null && report_sharesbycategory.length >0)
-               div(class="ct-chart ct-perfect-fourth")
+               div(class="ct-chart1 ct-perfect-fourth")
                div(id="tooltips", class="labColor") &nbsp;
           div(id="monthComp")
             - var now = new Date()
@@ -437,7 +437,7 @@ block content
 
             console.log("values : " + values);
             if(values != null && values != ""){
-            var chart = new Chartist.Line('.ct-chart', data, responsiveOptions);
+            var chart = new Chartist.Line('.ct-chart1', data, responsiveOptions);
             var addedEvents = false;
             chart.on('draw', function() {
               if (!addedEvents) {
