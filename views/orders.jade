@@ -294,8 +294,10 @@ block content
             var values = "#{array_values}";
             values = values.split("|");
             var valTransform = [0];
+            var count = 0;
             for(var prop in catTransform){
-            
+            if(count < 6){
+                count++;
             var cat = (catTransform[prop]).toLowerCase();
             var r = rowTransform[prop];
              console.log("share: " + cat + " - "+ r);
@@ -303,6 +305,7 @@ block content
               valTransform.push(values[prop]);
               } else {
               valTransform.push(0);
+              }
               }
             }
 
@@ -316,7 +319,7 @@ block content
             var valuesorders = "#{array_values3}";
             valuesorders = valuesorders.split("|");
             var valTransformOrders = [0];
-            var count = 0;
+            count = 0;
             for(var prop in catTransform){
               if(count < 6){
                 count++;
