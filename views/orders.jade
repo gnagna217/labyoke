@@ -280,6 +280,7 @@ block content
             var categories = "#{categorieslist}";
             categories = categories.split("|");
             var catTransform = [""];
+            var catTransformLimit = [""];
             for(var prop in categories){
               catTransform.push((categories[prop]).toLowerCase());
             }
@@ -300,6 +301,7 @@ block content
                 count++;
             var cat = (catTransform[prop]).toLowerCase();
             var r = rowTransform[prop];
+            catTransformLimit.push(cat);
              console.log("share: " + cat + " - "+ r);
               if(r != undefined && catTransform.indexOf(r.toLowerCase()) != -1){
               valTransform.push(values[prop]);
@@ -342,7 +344,7 @@ block content
 
             console.log("more rowTransform trans: " + rowTransform)
             var data = {
-              labels: catTransform,
+              labels: catTransformLimit,
               series: [
                 valTransform, valTransformOrders
               ]
