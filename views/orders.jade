@@ -301,7 +301,7 @@ block content
             var rowTransformOrders = [];
             for(var prop in rowsOrders){
               rowTransformOrders.push(rowsOrders[prop]);
-              catTransform.push(rowsOrders[prop]);
+              catTransform.push((rowsOrders[prop]).toLowerCase());
               valTransform.push(0);
               valTransformOrders.push(0);
             }
@@ -311,7 +311,7 @@ block content
             for(var prop in rows){
               rowTransform.push(rows[prop]);
               if(catTransform.indexOf(rows[prop]) == -1){
-                catTransform.push(rows[prop]);
+                catTransform.push((rows[prop]).toLowerCase());
                 valTransform.push(0);
                 valTransformOrders.push(0);
               }
