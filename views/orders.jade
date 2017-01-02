@@ -305,6 +305,7 @@ block content
               valTransform.push(0);
               valTransformOrders.push(0);
             }
+            console.log("previous catTransform: " + catTransform);
 
             var c = 0;
             for(var prop in rows){
@@ -315,7 +316,7 @@ block content
                 valTransformOrders.push(0);
               }
             }
-            
+            console.log("last catTransform: " + catTransform);
 
             var values = "#{array_values}";
             values = values.split("|");
