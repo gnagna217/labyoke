@@ -234,9 +234,9 @@ block content
 
 			div(style="/*background-color: #3d9dcb; height: 2px;*/ margin-bottom: 30px; margin-top: 0px;")
 			div(id="sharesAll")
-				h4="A Line chart of your top 5 shares."
+				h4="A Line chart of your all time top 5 shares."
 				- if(report_sharesbycategory != null && report_sharesbycategory.length >0)
-					p="This line graph depicts your total number of shares per Reagent:"
+					p="This line graph depicts your top 5 total number of shares per Reagent:"
 					div(class="ct-chart ct-perfect-fourth")
 					div(id="tooltips", class="labColor") &nbsp;
 				- if(report_sharesbycategory != null && report_sharesbycategory.length==0)
@@ -248,7 +248,7 @@ block content
 				- var month = "month";
 				- var filteroutput = test.filter(function(x){console.log("x.monthorder: "+x.monthorder); console.log("x.yearorder: "+x.yearorder); console.log("now.getFullYear(): "+ now.getFullYear()); console.log("now.getMonth(): "+ now.getMonth()); console.log("so: "+ (x.yearorder == now.getFullYear() && x.monthorder == now.getMonth())); return (x.yearorder == now.getFullYear() && x.monthorder == now.getMonth() + 1)});
 				- if(filteroutput != null && filteroutput.length > 0) 
-					p!="This bar graph depicts your number of shares this " + month + " (so far) per Reagent:"
+					p!="This bar graph depicts your top 5 number of shares this " + month + " (so far) per Reagent:"
 					div(class="ct-chart0 ct-perfect-fourth")
 					div(id="tooltips0", class="labColor") &nbsp;
 				- if(filteroutput != null && filteroutput.length == 0) 
