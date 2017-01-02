@@ -372,13 +372,20 @@ block content
                valTransform2
               ]
             };
-            var responsiveOptions = {
-              axisX: {
-                labelInterpolationFnc: function(value) {
-                  return parseFloat(value).toFixed(3);
-                }
-              }
-            };
+            var responsiveOptions = [
+              ['(max-width: 440px)', {
+                width: 300,
+                height: 200
+              }],
+              ['(max-width: 767px)', {
+                width: 500,
+                height: 200
+              }],
+              ['(min-width: 990px)', {
+                width: 300,
+                height: 200
+              }]
+            ];
             console.log("values2 : " + values2);
             if(values2 != null && values2 != ""){
             var chart0 = new Chartist.Bar('.ct-chart0', data2, responsiveOptions);
@@ -399,6 +406,7 @@ block content
             if(values != null && values != ""){
             var chart = new Chartist.Line('.ct-chart', data, responsiveOptions);
             var addedEvents = false;
+            chart.precision = 3;
             chart.on('draw', function() {
               if (!addedEvents) {
                 $('.ct-point').on('mouseover', function() {
@@ -406,7 +414,7 @@ block content
                   var findvalue = $(this).attr('ct:value');
                   var xis = $(this).attr('x2');
                   console.log("xis: " + xis);
-                  var roundxis = (Math.round(xis * 100))/100;
+                  var roundxis = (Math.round(xis * 1000))/1000;
                   console.log("roundxis: " + roundxis);
                   var findx = $("foreignObject[x=roundxis]");
                   console.log("findx: " + findx);
