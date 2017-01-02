@@ -71,7 +71,7 @@ block content
             div(class="buttons")
               select(name="chartSelect" type="text" id="chartSelect" class="form-control" style="border-color:#3d9dcb;margin-bottom:10px" placeholder="Select Chart")
                 option(value="chartNone",style="font-weight:bold")="Select A Chart..."
-                option(value="chartQty")="Orders & Shares Comparison"
+                option(value="chartQty")="Top 5 Orders & Shares Comparison"
                 option(value="chartOrders")="Your monthly orders"
                 option(value="chartLabs")="Lab Orders Comparison"
               div(style="top: -35px; position: relative; float: right; margin-right: 10px;")
@@ -153,11 +153,11 @@ block content
 
 
           div(id="qtyComp")
-            h4!="A quantity comparison between <i>" + currentlabname + "</i>'s orders and shares."
+            h4!="A quantity comparison between <i>" + currentlabname + "</i>'s top 5 orders and shares."
             p="This graph depicts the current trend of your lab's "
-              span(class="yokeColor bold")="total number of orders "
+              span(class="yokeColor bold")="top 5 number of orders "
               span="and "
-              span(class="labColor bold")="total number of requested shares "
+              span(class="labColor bold")="number of requested shares "
               span="per Reagent:"
             - if(report_sharesbycategory != null && report_sharesbycategory.length >0)
                div(class="ct-chart ct-perfect-fourth")
