@@ -172,7 +172,7 @@ a {
 .bold{
     font-weight: bold;
 }
-.ct-chart .ct-end{
+.ct-chart span.ct-label.ct-horizontal.ct-end{
     display:none;
 }
 .ct-label{
