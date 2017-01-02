@@ -284,8 +284,12 @@ block content
             categories = categories.split("|");
             var catTransform = [""];
             var catTransformLimit = [];
+            var valTransform = [];
+            var valTransformOrders = [];
             for(var prop in categories){
               catTransform.push((categories[prop]).toLowerCase());
+              valTransform.push(0);
+              valTransformOrders.push(0);
             }
 
             var rows = "#{array_rows}";
@@ -297,7 +301,7 @@ block content
 
             var values = "#{array_values}";
             values = values.split("|");
-            var valTransform = [0];
+            
             //var count = 0;
             for(var prop in catTransform){
             //if(count < 6){
@@ -307,10 +311,11 @@ block content
             catTransformLimit.push(cat);
              console.log("share: " + cat + " - "+ r);
               if(r != undefined && catTransform.indexOf(r.toLowerCase()) != -1){
-              valTransform.push(values[prop]);
-              } else {
+              //valTransform.push(values[prop]);
+              valTransform[catTransform.indexOf(r.toLowerCase())]=values[prop];
+              } /*else {
               valTransform.push(0);
-              }
+              }*/
             //  }
             }
 
@@ -323,7 +328,7 @@ block content
 
             var valuesorders = "#{array_values3}";
             valuesorders = valuesorders.split("|");
-            var valTransformOrders = [0];
+            
             //count = 0;
             for(var prop in catTransform){
               //if(count < 6){
@@ -332,10 +337,11 @@ block content
                 var r = rowTransformOrders[prop];
                 console.log("order: " + cat + " - "+ r);
                 if(r != undefined && catTransform.indexOf(r.toLowerCase()) != -1){
-                valTransformOrders.push(valuesorders[prop]);
-                } else {
+                //valTransformOrders.push(valuesorders[prop]);
+                valTransformOrders[catTransform.indexOf(r.toLowerCase())]=valuesorders[prop];
+                } /*else {
                 valTransformOrders.push(0);
-                }
+                }*/
               //}
             }
 
