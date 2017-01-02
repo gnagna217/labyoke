@@ -372,14 +372,20 @@ block content
                valTransform2
               ]
             };
-            var responsiveOptions = {
-              axisX: {
-                onlyInteger: true
-              },
-              axisY: {
-                onlyInteger: true
-              }
-            };
+            var responsiveOptions = [
+              ['(max-width: 440px)', {
+                width: 300,
+                height: 200
+              }],
+              ['(max-width: 767px)', {
+                width: 500,
+                height: 200
+              }],
+              ['(min-width: 990px)', {
+                width: 300,
+                height: 200
+              }]
+            ];
             console.log("values2 : " + values2);
             if(values2 != null && values2 != ""){
             var chart0 = new Chartist.Bar('.ct-chart0', data2, responsiveOptions);
@@ -396,9 +402,12 @@ block content
               }
             });
             }
+            var optionsLine = {
+              onlyInteger: true
+            };
             console.log("values : " + values);
             if(values != null && values != ""){
-            var chart = new Chartist.Line('.ct-chart', data, responsiveOptions);
+            var chart = new Chartist.Line('.ct-chart', data, optionsLine);
             var addedEvents = false;
             chart.precision = 3;
             chart.on('draw', function() {
