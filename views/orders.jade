@@ -316,16 +316,19 @@ block content
             var valuesorders = "#{array_values3}";
             valuesorders = valuesorders.split("|");
             var valTransformOrders = [0];
+            var count = 0;
             for(var prop in catTransform){
-              var cat = (catTransform[prop]).toLowerCase();
-              var r = rowTransformOrders[prop];
-              console.log("order: " + cat + " - "+ r);
-              if(r != undefined && catTransform.indexOf(r.toLowerCase()) != -1){
-              valTransformOrders.push(valuesorders[prop]);
-              } else {
-              valTransformOrders.push(0);
+              if(count < 6){
+                count++;
+                var cat = (catTransform[prop]).toLowerCase();
+                var r = rowTransformOrders[prop];
+                console.log("order: " + cat + " - "+ r);
+                if(r != undefined && catTransform.indexOf(r.toLowerCase()) != -1){
+                valTransformOrders.push(valuesorders[prop]);
+                } else {
+                valTransformOrders.push(0);
+                }
               }
-
             }
 
             console.log("chart orders  valTransformOrders: " + valTransformOrders);
