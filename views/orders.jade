@@ -322,8 +322,8 @@ block content
             
             var count = 0;
             for(var prop in catTransform){
-            if(count < 11){
-                count++;
+            //if(count < 11){
+            //    count++;
             var cat = (catTransform[prop]).toLowerCase();
             var r = rowTransform[prop];
             catTransformLimit.push(cat);
@@ -334,7 +334,7 @@ block content
               } /*else {
               valTransform.push(0);
               }*/
-             }
+             //}
             }
 
 
@@ -344,8 +344,8 @@ block content
             
             count = 0;
             for(var prop in catTransform){
-              if(count < 11){
-                count++;
+             // if(count < 11){
+               // count++;
                 var cat = (catTransform[prop]).toLowerCase();
                 var r = rowTransformOrders[prop];
                 console.log("order: " + cat + " - "+ r);
@@ -355,7 +355,7 @@ block content
                 } /*else {
                 valTransformOrders.push(0);
                 }*/
-              }
+             // }
             }
 
             console.log("chart orders  valTransformOrders: " + valTransformOrders);
