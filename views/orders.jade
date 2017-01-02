@@ -402,14 +402,11 @@ block content
               }
             });
             }
-            var optionsLine = {
-              onlyInteger: true
-            };
+
             console.log("values : " + values);
             if(values != null && values != ""){
-            var chart = new Chartist.Line('.ct-chart', data, optionsLine);
+            var chart = new Chartist.Line('.ct-chart', data, responsiveOptions);
             var addedEvents = false;
-            chart.precision = 3;
             chart.on('draw', function() {
               if (!addedEvents) {
                 $('.ct-point').on('mouseover', function() {
