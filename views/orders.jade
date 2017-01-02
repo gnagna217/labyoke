@@ -328,6 +328,7 @@ block content
             var r = rowTransform[prop];
             catTransformLimit.push(cat);
              console.log("share: " + cat + " - "+ r);
+             console.log("order0: " + catTransform.indexOf(r.toLowerCase()));
               if(r != undefined && catTransform.indexOf(r.toLowerCase()) != -1){
               //valTransform.push(values[prop]);
               valTransform[catTransform.indexOf(r.toLowerCase())]=values[prop];
@@ -349,6 +350,7 @@ block content
                 var cat = (catTransform[prop]).toLowerCase();
                 var r = rowTransformOrders[prop];
                 console.log("order: " + cat + " - "+ r);
+                console.log("order0: " + catTransform.indexOf(r.toLowerCase()));
                 if(r != undefined && catTransform.indexOf(r.toLowerCase()) != -1){
                 //valTransformOrders.push(valuesorders[prop]);
                 valTransformOrders[catTransform.indexOf(r.toLowerCase())]=valuesorders[prop];
