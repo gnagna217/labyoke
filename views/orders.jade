@@ -298,10 +298,10 @@ block content
             var values = "#{array_values}";
             values = values.split("|");
             var valTransform = [0];
-            var count = 0;
+            //var count = 0;
             for(var prop in catTransform){
-            if(count < 6){
-                count++;
+            //if(count < 6){
+                //count++;
             var cat = (catTransform[prop]).toLowerCase();
             var r = rowTransform[prop];
             catTransformLimit.push(cat);
@@ -311,7 +311,7 @@ block content
               } else {
               valTransform.push(0);
               }
-              }
+            //  }
             }
 
             var rowsOrders = "#{array_rows3}";
@@ -324,10 +324,10 @@ block content
             var valuesorders = "#{array_values3}";
             valuesorders = valuesorders.split("|");
             var valTransformOrders = [0];
-            count = 0;
+            //count = 0;
             for(var prop in catTransform){
-              if(count < 6){
-                count++;
+              //if(count < 6){
+                //count++;
                 var cat = (catTransform[prop]).toLowerCase();
                 var r = rowTransformOrders[prop];
                 console.log("order: " + cat + " - "+ r);
@@ -336,7 +336,7 @@ block content
                 } else {
                 valTransformOrders.push(0);
                 }
-              }
+              //}
             }
 
             console.log("chart orders  valTransformOrders: " + valTransformOrders);
