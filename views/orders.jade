@@ -420,6 +420,7 @@ block content
                   var roundxis = xis; //(Math.round(xis * 1000))/1000;
                   console.log("roundxis: " + roundxis);
                   var findx = $("foreignObject").filter(function( index ) {
+                    console.log('inside : ' + (Math.round($( this ).attr( "x" ) * 1000))/1000  );
                     return (Math.round($( this ).attr( "x" ) * 1000))/1000  === xis;
                   }); 
                   //$("foreignObject[x=roundxis]");
