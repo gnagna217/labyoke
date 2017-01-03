@@ -1,6 +1,7 @@
 extends layout
 
 block content
+	- var adjust = "adjustpadding"
 	div(id="ios-light")
 		center
 			h1="Sharing?"
@@ -14,6 +15,7 @@ block content
 		div(style="float: left;" class="share-container")
 			h1= 'Share.'
 			if(myshares == "")
+				- adjust = ""
 				h4="You are currently not sharing any reagent."
 			if(mysharesrequest != null && mysharesrequest.length>0)
 				- var output = mysharesrequest.filter(function(x){return x.status=="new"});
@@ -165,7 +167,7 @@ block content
 									$('#rankTblload').DataTable();
 								});
 			div(style="background-color: #3d9dcb; height: 2px; margin-bottom: 0px; margin-top: 30px;")
-		div(style="float:right;", class="share-container adjustpadding")
+		div(style="float:right;", class="share-container " + adjust)
 			script(type="text/javascript" src="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.js")
 
 			h3="Operational Charts."
