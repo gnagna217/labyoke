@@ -932,26 +932,28 @@ LabYokerGetOrder.prototype.getorders = function(callback) {
 	var a = "a";
 	var requestor = "";
 	var date = "";
+	var select = "";
 
 	for(var prop in labs){
 		a = "a" + i;
-		labsstr = labsstr + (labs[prop].labname).replace(" ","").toLowerCase() + "_orders " + a + ", ";
-		requestor = requestor + a + ".requestoremail = '"+ email + "' and ";
-		date = date + a + ".date , ";
+		labsstr = (labs[prop].labname).replace(" ","").toLowerCase() + "_orders " + a + " ";
+		requestor = a + ".requestoremail = '"+ email + "' ";
+		date = a + ".date , ";
+		select = select + "SELECT * FROM " + labsstr + " where " + requestor + " order by " + date + " desc UNION ";
 		i++;
 	}
 
-	labsstr = labsstr.replace(/,\s*$/, "");
-	date = date.replace(/,\s*$/, "");
-	requestor = requestor.replace(/and\s*$/, "");
+	//labsstr = labsstr.replace(/,\s*$/, "");
+	//date = date.replace(/,\s*$/, "");
+	select = select.replace(/UNION\s*$/, "");
 
 	console.log("get orders labsstr: " + labsstr);
 	console.log("get orders date: " + date);
 	console.log("get orders requestor: " + requestor);
-	console.log("full query: " + "SELECT * FROM " + labsstr + " where " + requestor + " order by " + date + " desc");
+	console.log("full query: " + select);
 
 	var query = client
-			.query("SELECT * FROM " + labsstr + " where " + requestor + " order by " + date + " desc");
+			.query(select);
 	query.on("row", function(row, result) {
 		result.addRow(row);
 	});
