@@ -821,7 +821,7 @@ LabYokerOrder.prototype.order = function(callback) {
 	var quantity = this.quantity;
 	var mylab = this.lab.replace(" ","").toLowerCase();
 	console.log("quantity: " + quantity);
-	quantity = quantity + 100;
+	quantity = parseInt(quantity) + 100;
 	console.log("currentquantity2: " + quantity);
 	var now = moment(new Date).tz("America/New_York").format('MM-DD-YYYY');
 	console.log("order location: " + location);
