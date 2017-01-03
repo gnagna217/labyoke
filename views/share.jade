@@ -11,7 +11,6 @@ block content
 	div(class="shade" id="shade")
 	div(class="shade-light" id="shade-light")
 	div(class="container login marginbottom")
-		- var sharing = false;
 		div(style="float: left;" class="share-container")
 			h1= 'Share.'
 			if(myshares == "")
@@ -80,7 +79,6 @@ block content
 								});
 				div(style="background-color: #3d9dcb; height: 2px; margin-bottom: 30px; margin-top: 30px;")
 			if(myshares != "")
-				- sharing = true;
 				h4="You are currently sharing."
 				p="An administrator has uploaded the following reagents on your behalf. "
 					span(class="yokeColorBold")= "Insufficient quantities"
@@ -166,9 +164,7 @@ block content
 								$(document).ready(function() {
 									$('#rankTblload').DataTable();
 								});
-	if(sharing)
 			div(style="background-color: #3d9dcb; height: 2px; margin-bottom: 0px; margin-top: 30px;")
-	if(sharing)
 		div(style="float:right;", class="share-container adjustpadding")
 			script(type="text/javascript" src="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.js")
 
