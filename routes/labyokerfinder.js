@@ -1119,8 +1119,8 @@ var labyokerLabs = new LabyokerLabs('','');
 		//results.push(result2.rows);
 		var test = result.rows;
 		//resultsLogin.push(results);
-		resultsLogin = test.length();
-		console.log("shares found: " + test.length())
+		resultsLogin = test.length;
+		console.log("shares found: " + test.length)
 		callback(null, resultsLogin)
 	});
 });
@@ -1165,8 +1165,8 @@ var labyokerLabs = new LabyokerLabs('','');
 		//results.push(result2.rows);
 		var test = result.rows;
 		//resultsLogin.push(results);
-		resultsLogin = test.length();
-		console.log("orders found: " + test.length())
+		resultsLogin = test.length;
+		console.log("orders found: " + test.length)
 		callback(null, resultsLogin)
 	});
 });
