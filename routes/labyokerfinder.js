@@ -1106,8 +1106,8 @@ var labyokerLabs = new LabyokerLabs('','');
 	//date = date.replace(/,\s*$/, "");
 	select = select.replace(/UNION\s*$/, "");
 
-	console.log("get orders labsstr: " + labsstr);
-	console.log("get orders requestor: " + requested);
+	console.log("get shares labsstr: " + labsstr);
+	console.log("get shares requestor: " + requested);
 	console.log("full query: " + select + " order by date desc");
 
 	var query = client
@@ -1127,10 +1127,10 @@ var labyokerLabs = new LabyokerLabs('','');
 };
 
 LabyokerInit.prototype.initialOrders = function(callback) {
-
+var email = this.email;
 var labyokerLabs = new LabyokerLabs('','');
 			labyokerLabs.getlabs(function(error, labs) {
-	var email = this.email;
+	
 	//var mylab = this.mylab.replace(" ","").toLowerCase();
 	var resultsLogin;
 
