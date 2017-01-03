@@ -818,7 +818,7 @@ LabYokerOrder.prototype.order = function(callback) {
 	var category = this.category;
 	var lab = this.lab;
 	var quantity = this.quantity;
-	var mylab = this.mylab.replace(" ","").toLowerCase();
+	var mylab = this.lab.replace(" ","").toLowerCase();
 	console.log("quantity: " + quantity);
 	quantity = quantity + 100;
 	console.log("currentquantity2: " + quantity);
@@ -878,19 +878,19 @@ LabYokerGetOrder.prototype.getLabOrders = function(callback) {
 	var results = [];
 	console.log("getLabOrders");
 	var mylab = this.mylab.replace(" ","").toLowerCase();
-	var query = client.query("SELECT lab, count(lab) as counting FROM " + mylab + "_orders where lab='Sama Lab' group by lab");
+	var query = client.query("SELECT lab, count(lab) as counting FROM samalab_orders where lab='Sama Lab' group by lab");
 	query.on("row", function(row, result) {
 		result.addRow(row);
 	});
 	query.on("end", function(result) {
 		results.push(result.rows);
-		var query2 = client.query("SELECT lab, count(lab) as counting FROM " + mylab + "_orders where lab='Sougnou Lab' group by lab");
+		var query2 = client.query("SELECT lab, count(lab) as counting FROM sougnoulab_orders where lab='Sougnou Lab' group by lab");
 		query2.on("row", function(row, result2) {
 			result2.addRow(row);
 		});
 		query2.on("end", function(result2) {
 			results.push(result2.rows);
-			var query3 = client.query("SELECT lab, count(lab) as counting FROM " + mylab + "_orders where lab='SeneLab' group by lab");
+			var query3 = client.query("SELECT lab, count(lab) as counting FROM senelab_orders where lab='SeneLab' group by lab");
 			query3.on("row", function(row, result3) {
 				result3.addRow(row);
 			});
