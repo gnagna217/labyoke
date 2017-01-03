@@ -110,10 +110,10 @@ LabyokerTeam = function(lab) {
 	this.lab = lab;
 };
 
-LabYokerGetOrder = function(sendemail,mylab,labs) {
+LabYokerGetOrder = function(sendemail,lab,labs) {
 	this.sendemail = sendemail;
 	//this.lab = lab;
-	this.mylab = mylab;
+	this.lab = lab;
 	this.labs = labs;
 };
 
@@ -878,7 +878,7 @@ LabYokerOrder.prototype.order = function(callback) {
 LabYokerGetOrder.prototype.getLabOrders = function(callback) {
 	var results = [];
 	console.log("getLabOrders");
-	var mylab = this.mylab.replace(" ","").toLowerCase();
+	var mylab = this.lab.replace(" ","").toLowerCase();
 	var query = client.query("SELECT lab, count(lab) as counting FROM samalab_orders where lab='Sama Lab' group by lab");
 	query.on("row", function(row, result) {
 		result.addRow(row);
@@ -908,7 +908,6 @@ LabYokerGetOrder.prototype.getLabOrders_2 = function(callback) {
 	var results;
 	var labs = this.labs;
 
-	var labs = this.labs;
 	var labsstr = "";
 	var i = 0;
 	var a = "a";
@@ -999,7 +998,7 @@ LabYokerGetOrder.prototype.getorders = function(callback) {
 	for(var prop in labs){
 		a = "a" + i;
 		labsstr = (labs[prop].labname).replace(" ","").toLowerCase() + "_orders " + a + " ";
-		select = select + "SELECT agent, count(agent) FROM " + labsstr + "_orders where lab='"+lab+"' and insufficient=1 group by agent UNION ";
+		select = select + "SELECT agent, count(agent) FROM " + labsstr + " where lab='"+lab+"' and insufficient=1 group by agent UNION ";
 		i++;
 	}
 
