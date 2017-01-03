@@ -935,7 +935,7 @@ LabYokerGetOrder.prototype.getorders = function(callback) {
 
 	for(var prop in labs){
 		a = "a" + i;
-		labsstr = labsstr + labs[prop].labname + "_orders " + a + ", ";
+		labsstr = labsstr + (labs[prop].labname).replace(" ","").toLowerCase() + "_orders " + a + ", ";
 		requestor = requestor + a + ".requestoremail = '"+ email + "' and ";
 		date = date + a + ".date , ";
 		i++;
