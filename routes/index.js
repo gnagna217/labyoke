@@ -880,8 +880,10 @@ module.exports = function(router) {
 													req.session.useradmin = false;
 													console.log("admin? " + done[0].admin);
 													req.session.admin = done[0].admin;
-													if(req.session.admin == 1)
+													if(req.session.admin > 0)
 														req.session.useradmin = true;
+													if(req.session.admin > 1)
+														req.session.usersuperadmin = true;
 													req.session.active = done[0].active;
 													req.session.email = done[0].email;
 													req.session.lab = done[0].lab;
