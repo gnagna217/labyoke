@@ -456,7 +456,8 @@ block content
                   console.log("findx: " + findx.attr('x'));
                   var label = findx.find('.ct-label').html();
                   console.log("label: " + label);
-                  $('#tooltips').html('<b>Selected Quantity: </b>' + $(this).attr('ct:value') + ' - <b>Reagent:</b> ' + label);
+                  if(label != undefined && label.length > 0)
+                    $('#tooltips').html('<b>Selected Quantity: </b>' + $(this).attr('ct:value') + ' - <b>Reagent:</b> ' + label);
                 });
 
                 $('.ct-point').on('mouseout', function() {
