@@ -998,15 +998,15 @@ LabYokerGetOrder.prototype.getorders = function(callback) {
 	for(var prop in labs){
 		a = "a" + i;
 		labsstr = (labs[prop].labname).replace(" ","").toLowerCase() + "_orders " + a + " ";
-		select = select + "SELECT agent, count(agent) FROM " + labsstr + " where lab='"+lab+"' and insufficient=1 group by agent UNION ";
+		select = select + "SELECT agent, count(agent) as counting FROM " + labsstr + " where lab='"+lab+"' and insufficient=1 group by agent UNION ";
 		i++;
 	}
 
 	//labsstr = labsstr.replace(/,\s*$/, "");
 	//date = date.replace(/,\s*$/, "");
 	select = select.replace(/UNION\s*$/, "");
-	console.log("getorders: total number of orders - " + select + " order by count(agent) desc limit 10");
-		var query2 = client.query(select + " order by count(agent) desc limit 10");
+	console.log("getorders: total number of orders - " + select + " order by counting desc limit 10");
+		var query2 = client.query(select + " order by counting desc limit 10");
 		//("SELECT b.category, count(b.category) FROM vm2016_orders a, vm2016_agentsshare b where a.agent = b.agent and a.lab='"+lab+"' group by b.category");
 		query2.on("row", function(row, result2) {
 			result2.addRow(row);
