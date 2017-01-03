@@ -36,7 +36,7 @@ block content
                                - if(lab == ob[prop].labname)
                                   - var labadmin = ob[prop].admin
                                   - adminIntro = "Indeed! Your Lab Administrator is <a href=\"mailto:'"+labadmin+"'\">" + labadmin + "</a>. You can contact your admin anytime."
-                               - if(admin == 1)
+                               - if(admin > 0)
                                  - if(email == ob[prop].admin)
                                     - var labadmin = ob[prop].labname
                                     - adminIntro = "Yes! You are a Lab Administrator for <span class='labColor'>" + labadmin + "</span>. Way to have responsabilities!"
