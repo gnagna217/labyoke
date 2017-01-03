@@ -176,7 +176,7 @@ LabYokeUploader.prototype.upload = function(callback) {
 
 LabYokeReporterSavings.prototype.dataMoney = function(callback) {
 	var results;
-	var mylab = this.mylab.trim().toLowerCase();
+	var mylab = this.mylab.replace(" ","").toLowerCase();
 	var datefrom = this.datefrom;
 	var dateto = this.dateto;
 	var vendor = this.vendor;
@@ -264,7 +264,7 @@ LabYokeReporterSavings.prototype.reportMoney = function(callback) {
 	var lab = this.lab;
 	var agent = this.agent;
 	var catalognumber = this.catalognumber;
-	var mylab = this.mylab.trim().toLowerCase();
+	var mylab = this.mylab.replace(" ","").toLowerCase();
 	var selected = "a.agent, count(a.agent) as counting, b.lab, a.price";
 	var where = "a.agent = b.agent and a.catalognumber = b.catalognumber ";
 	var groupby = "a.agent, b.lab, a.price";
@@ -392,7 +392,7 @@ LabYokeReporterSavings.prototype.reportMoney = function(callback) {
 
 LabYokeReporterSavings.prototype.reportInsuff = function(callback) {
 	var results;
-	var mylab = this.mylab.trim().toLowerCase();
+	var mylab = this.mylab.replace(" ","").toLowerCase();
 	var datefrom = this.datefrom;
 	var dateto = this.dateto;
 	var vendor = this.vendor;
@@ -497,7 +497,7 @@ LabYokeReporterShares.prototype.reportShares = function(callback) {
 	var params = "";
 	var where = "";
 	var isempty = true;
-	var mylab = this.mylab.trim().toLowerCase();
+	var mylab = this.mylab.replace(" ","").toLowerCase();
 	console.log("report on something: datefrom: " + datefrom);
 	console.log("report on something: dateto: " + dateto);
 	//console.log("report on something: agent: " + agent);
@@ -582,7 +582,7 @@ LabYokeReporterOrders.prototype.reportOrders = function(callback) {
 	var datefrom = this.datefrom;
 	var dateto = this.dateto;
 	var lab = this.lab;
-	var mylab = this.mylab.trim().toLowerCase();
+	var mylab = this.mylab.replace(" ","").toLowerCase();
 	//var category = this.category;
 	var params = "";
 	var where = "";
@@ -722,7 +722,7 @@ LabyokerLabs.prototype.getlabs = function(callback) {
 
 LabYokeAgents.prototype.findmyshares = function(callback) {
 	var results = [];
-	var mylab = this.mylab.trim().toLowerCase();
+	var mylab = this.mylab.replace(" ","").toLowerCase();
 	console.log("findmyshares: " + this.email);
 	var query = client
 			.query("SELECT * FROM vm2016_agentsshare where email='"
@@ -780,7 +780,7 @@ LabYokeAgents.prototype.findmyshares = function(callback) {
 LabYokeAgents.prototype.reportAllSharesByCategory = function(callback) {
 	var results;
 	console.log("reportAllSharesByCategory: " + this.email);
-	var mylab = this.mylab.trim().toLowerCase();
+	var mylab = this.mylab.replace(" ","").toLowerCase();
 	var query = client
 			.query("SELECT b.agent, count(b.agent) FROM " + mylab + "_orders a, vm2016_agentsshare b where a.agent = b.agent group by b.agent");
 	query.on("row", function(row, result) {
@@ -818,7 +818,7 @@ LabYokerOrder.prototype.order = function(callback) {
 	var category = this.category;
 	var lab = this.lab;
 	var quantity = this.quantity;
-	var mylab = this.mylab.trim().toLowerCase();
+	var mylab = this.mylab.replace(" ","").toLowerCase();
 	console.log("quantity: " + quantity);
 	quantity = quantity + 100;
 	console.log("currentquantity2: " + quantity);
@@ -877,7 +877,7 @@ LabYokerOrder.prototype.order = function(callback) {
 LabYokerGetOrder.prototype.getLabOrders = function(callback) {
 	var results = [];
 	console.log("getLabOrders");
-	var mylab = this.mylab.trim().toLowerCase();
+	var mylab = this.mylab.replace(" ","").toLowerCase();
 	var query = client.query("SELECT lab, count(lab) as counting FROM " + mylab + "_orders where lab='Sama Lab' group by lab");
 	query.on("row", function(row, result) {
 		result.addRow(row);
@@ -906,7 +906,7 @@ LabYokerGetOrder.prototype.getLabOrders = function(callback) {
 LabYokerGetOrder.prototype.getLabOrders_2 = function(callback) {
 	var results;
 	console.log("getLabOrders");
-	var mylab = this.mylab.trim().toLowerCase();
+	var mylab = this.mylab.replace(" ","").toLowerCase();
 	var query = client.query("SELECT lab, count(lab) as counting FROM " + mylab + "_orders group by lab");
 	query.on("row", function(row, result) {
 		result.addRow(row);
@@ -922,7 +922,7 @@ LabYokerGetOrder.prototype.getorders = function(callback) {
 	var results = [];
 	var email = this.sendemail;
 	var lab = this.lab;
-	var mylab = this.mylab.trim().toLowerCase();
+	var mylab = this.mylab.replace(" ","").toLowerCase();
 	console.log("getorders: " + email);
 	var query = client
 			.query("SELECT * FROM " + mylab + "_orders where requestoremail = '"
@@ -1054,7 +1054,7 @@ LabYokeFinder.prototype.test = function(callback) {
 LabyokerInit.prototype.initialShares = function(callback) {
 	var email = this.email;
 console.log("shares email: " + email);
-var mylab = this.mylab.trim().toLowerCase();
+var mylab = this.mylab.replace(" ","").toLowerCase();
 console.log("mylab is: " +  mylab);
 	var resultsLogin;
 
@@ -1097,7 +1097,7 @@ console.log("mylab is: " +  mylab);
 
 LabyokerInit.prototype.initialOrders = function(callback) {
 	var email = this.email;
-	var mylab = this.mylab.trim().toLowerCase();
+	var mylab = this.mylab.replace(" ","").toLowerCase();
 	var resultsLogin;
 console.log("orders email: " + email);
 var query = client
@@ -1572,7 +1572,7 @@ LabYokerChangeShare.prototype.cancelShare = function(callback) {
 	var email = this.email;
 	var datenow = this.datenow;
 	var requestor = this.requestor;
-	var mylab = this.mylab.trim().toLowerCase();
+	var mylab = this.mylab.replace(" ","").toLowerCase();
 	var date = this.date;
 	console.log("date2: " + date);
 	console.log("requestor: " + requestor);
