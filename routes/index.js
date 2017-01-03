@@ -206,7 +206,7 @@ module.exports = function(router) {
 		labyokerCats.getcategories(function(error, categories) {
 			console.log("load categories in reports : " + categories);
 			req.session.categories = categories;
-			var labYokerGetOrder = new LabYokerGetOrder(req.session.email, req.session.lab);
+			var labYokerGetOrder = new LabYokerGetOrder(req.session.email, req.session.lab,req.session.labs);
 			labYokerGetOrder.getorders(function(error, results) {
 				labYokerGetOrder.getLabOrders_2(function(error, results2) {
 				if(results != null){

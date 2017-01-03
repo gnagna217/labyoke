@@ -110,10 +110,11 @@ LabyokerTeam = function(lab) {
 	this.lab = lab;
 };
 
-LabYokerGetOrder = function(sendemail,mylab) {
+LabYokerGetOrder = function(sendemail,mylab,labs) {
 	this.sendemail = sendemail;
 	//this.lab = lab;
 	this.mylab = mylab;
+	this.labs = labs;
 };
 
 LabyokerRegister = function(user, password,lab,firstname,lastname,email,tel) {
@@ -905,6 +906,7 @@ LabYokerGetOrder.prototype.getLabOrders = function(callback) {
 
 LabYokerGetOrder.prototype.getLabOrders_2 = function(callback) {
 	var results;
+	var labs = this.labs;
 	console.log("getLabOrders");
 	var mylab = this.mylab.replace(" ","").toLowerCase();
 	var query = client.query("SELECT lab, count(lab) as counting FROM " + mylab + "_orders group by lab");
@@ -924,9 +926,31 @@ LabYokerGetOrder.prototype.getorders = function(callback) {
 	var lab = this.lab;
 	var mylab = this.mylab.replace(" ","").toLowerCase();
 	console.log("getorders: " + email);
+	var labs = this.labs;
+	var labsstr = "";
+	var i = 0;
+	var a = "a";
+	var requestor = "";
+	var date = "";
+
+	for(var prop in labs){
+		a = "a" + i;
+		labsstr = labsstr + labs[prop] + "_orders " + a + ", ";
+		requestor = requestor + a + ".requestoremail = '"+ email + "' and ";
+		date = date + a + ".date , ";
+		i++;
+	}
+
+	labsstr = labsstr.replace(/,\s*$/, "");
+	date = date.replace(/,\s*$/, "");
+	requestor = requestor.replace(/and\s*$/, "");
+
+	console.log("get orders labsstr: " + labsstr);
+	console.log("get orders date: " + date);
+	console.log("get orders requestor: " + requestor);
+
 	var query = client
-			.query("SELECT * FROM " + mylab + "_orders where requestoremail = '"
-					+ email + "' order by date desc");
+			.query("SELECT * FROM " + labsstr + " where " + requestor + "' order by " + date + " desc");
 	query.on("row", function(row, result) {
 		result.addRow(row);
 	});
