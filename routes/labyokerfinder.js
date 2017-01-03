@@ -1085,65 +1085,86 @@ var mylab = this.mylab.replace(" ","").toLowerCase();
 console.log("mylab is: " +  mylab);
 	var resultsLogin;
 
-		var query = client
-				.query("SELECT count(agent) as counting from " + mylab + "_orders where email='" + email
-			+ "' and status='new'");
-		query.on("row", function(row, result) {
-			result.addRow(row);
-		});
-		query.on("end", function(result) {
-			var test = result.rows;
-			//resultsLogin.push(results);
-			resultsLogin=test[0].counting;
-			console.log("shares found: " + test[0].counting)
-			callback(null, resultsLogin);
-			//results.push(result2.rows);
 
-		/*var query3 = client
-				.query("SELECT count(agent) as counting from vm2016_orders where requestoremail='" + email
-			+ "' and status='new'");
-		query3.on("row", function(row, result3) {
-			result3.addRow(row);
-		});
-		query3.on("end", function(result3) {
-			//results.push(result2.rows);
-			var test3 = result3.rows;
-			var test2 = result2.rows;
-			//resultsLogin.push(results);
-			resultsLogin.push(test2[0].counting);
-			resultsLogin.push(test3[0].counting);
-			console.log("shares found: " + test2[0].counting)
-			console.log("orders found: " + test3[0].counting)
-			callback(null, resultsLogin)
-		});*/
-			
+	var labsstr = "";
+	var i = 0;
+	var a = "a";
+	var requested = "";
+	var select = "";
 
-					//callback(null, results);
+	for(var prop in labs){
+		a = "a" + i;
+		labsstr = (labs[prop].labname).replace(" ","").toLowerCase() + "_orders " + a + " ";
+		requested = a + ".email = '"+ email + "' ";
+		select = select + "SELECT * FROM " + labsstr + " where " + requested + " and status='new' UNION ";
+		i++;
+	}
+
+	//labsstr = labsstr.replace(/,\s*$/, "");
+	//date = date.replace(/,\s*$/, "");
+	select = select.replace(/UNION\s*$/, "");
+
+	console.log("get orders labsstr: " + labsstr);
+	console.log("get orders requestor: " + requested);
+	console.log("full query: " + select + " order by date desc");
+
+	var query = client
+			.query(select + " order by date desc");
+	query.on("row", function(row, result) {
+		result.addRow(row);
+	});
+	query.on("end", function(result) {
+		//results.push(result2.rows);
+		var test = result.rows;
+		//resultsLogin.push(results);
+		resultsLogin = test[0].counting;
+		console.log("shares found: " + test[0].counting)
+		callback(null, resultsLogin)
 	});
 };
 
 LabyokerInit.prototype.initialOrders = function(callback) {
+
+
 	var email = this.email;
 	var mylab = this.mylab.replace(" ","").toLowerCase();
 	var resultsLogin;
-console.log("initial orders email: " + email);
-console.log("initial orders mylab: " + mylab);
-var query = client
-				.query("SELECT count(agent) as counting from " + mylab + "_orders where requestoremail='" + email
-			+ "' and status='new'");
-		query.on("row", function(row, result) {
-			result.addRow(row);
-		});
-		query.on("end", function(result) {
-			//results.push(result2.rows);
-			var test = result.rows;
-			//resultsLogin.push(results);
-			resultsLogin = test[0].counting;
-			console.log("orders found: " + test[0].counting)
-			callback(null, resultsLogin)
-		});
-			
 
+	var labsstr = "";
+	var i = 0;
+	var a = "a";
+	var requestor = "";
+	var select = "";
+
+	for(var prop in labs){
+		a = "a" + i;
+		labsstr = (labs[prop].labname).replace(" ","").toLowerCase() + "_orders " + a + " ";
+		requestor = a + ".requestoremail = '"+ email + "' ";
+		select = select + "SELECT * FROM " + labsstr + " where " + requestor + " and status='new' UNION ";
+		i++;
+	}
+
+	//labsstr = labsstr.replace(/,\s*$/, "");
+	//date = date.replace(/,\s*$/, "");
+	select = select.replace(/UNION\s*$/, "");
+
+	console.log("get orders labsstr: " + labsstr);
+	console.log("get orders requestor: " + requestor);
+	console.log("full query: " + select + " order by date desc");
+
+	var query = client
+			.query(select + " order by date desc");
+	query.on("row", function(row, result) {
+		result.addRow(row);
+	});
+	query.on("end", function(result) {
+		//results.push(result2.rows);
+		var test = result.rows;
+		//resultsLogin.push(results);
+		resultsLogin = test[0].counting;
+		console.log("orders found: " + test[0].counting)
+		callback(null, resultsLogin)
+	});
 };
 
 Labyoker.prototype.login = function(callback) {
