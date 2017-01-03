@@ -130,7 +130,8 @@ block content
               console.log("chartQty inside");
               $('#chartNotes').hide();
               $('#qtyComp').show();
-              document.querySelector('.ct-chart1').__chartist__.update();
+              if("#{find0}" != null && "#{find0}" != undefined && ("#{find0}").length > 0)
+                document.querySelector('.ct-chart1').__chartist__.update();
               $('#monthComp').hide();
               $('#labsComp').hide();
             } else if(chartSelect.selectedIndex === 2 || $('#reportSelect').val() == 'chartOrders') {
@@ -138,7 +139,8 @@ block content
               $('#chartNotes').hide();
               $('#qtyComp').hide();
               $('#monthComp').show();
-              document.querySelector('.ct-chart0').__chartist__.update();
+              if("#{find1}" != null && "#{find1}" != undefined && ("#{find1}").length > 0)
+                document.querySelector('.ct-chart0').__chartist__.update();
               $('#labsComp').hide();
             } else if(chartSelect.selectedIndex === 3 || $('#reportSelect').val() == 'chartLabs') {
               console.log("chartLabs inside");
@@ -146,7 +148,8 @@ block content
               $('#qtyComp').hide();
               $('#monthComp').hide();
               $('#labsComp').show();
-              document.querySelector('.ct-chart3').__chartist__.update();
+              if("#{find2}" != null && "#{find2}" != undefined && ("#{find2}").length > 0)
+                document.querySelector('.ct-chart3').__chartist__.update();
             } else if(eSelect.selectedIndex === 0 || $('#reportSelect').val() == 'chartNone') {
               console.log("result None inside");
               $('#qtyComp').hide();
