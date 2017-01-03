@@ -1055,6 +1055,7 @@ LabyokerInit.prototype.initialShares = function(callback) {
 	var email = this.email;
 console.log("shares email: " + email);
 var mylab = this.mylab.trim().toLowerCase();
+console.log("mylab is: " +  mylab);
 	var resultsLogin;
 
 		var query = client
