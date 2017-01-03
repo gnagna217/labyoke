@@ -952,7 +952,7 @@ LabYokerGetOrder.prototype.getorders = function(callback) {
 	var results = [];
 	var email = this.sendemail;
 	var lab = this.lab;
-	var mylab = this.mylab.replace(" ","").toLowerCase();
+	var mylab = this.lab.replace(" ","").toLowerCase();
 	console.log("getorders: " + email);
 	var labs = this.labs;
 	var labsstr = "";
