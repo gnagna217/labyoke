@@ -907,12 +907,40 @@ LabYokerGetOrder.prototype.getLabOrders = function(callback) {
 LabYokerGetOrder.prototype.getLabOrders_2 = function(callback) {
 	var results;
 	var labs = this.labs;
-	console.log("getLabOrders");
-	var mylab = this.mylab.replace(" ","").toLowerCase();
-	var query = client.query("SELECT lab, count(lab) as counting FROM " + mylab + "_orders group by lab");
+
+	var labs = this.labs;
+	var labsstr = "";
+	var i = 0;
+	var a = "a";
+	var select = "";
+
+	for(var prop in labs){
+		a = "a" + i;
+		labsstr = (labs[prop].labname).replace(" ","").toLowerCase() + "_orders "; //+ a + " ";
+		select = select + "SELECT lab, count(lab) as counting FROM " + labsstr + " group by lab UNION ";
+		i++;
+	}
+
+	//labsstr = labsstr.replace(/,\s*$/, "");
+	//date = date.replace(/,\s*$/, "");
+	select = select.replace(/UNION\s*$/, "");
+
+	console.log("get getLabOrders_2 labsstr: " + labsstr);
+	console.log("full getLabOrders_2 query: " + select);
+
+	var query = client
+			.query(select);
 	query.on("row", function(row, result) {
 		result.addRow(row);
 	});
+
+
+	console.log("getLabOrders");
+	/*var mylab = this.mylab.replace(" ","").toLowerCase();
+	var query = client.query("SELECT lab, count(lab) as counting FROM " + mylab + "_orders group by lab");
+	query.on("row", function(row, result) {
+		result.addRow(row);
+	});*/
 	query.on("end", function(result) {
 		results = result.rows;
 		callback(null, results)
