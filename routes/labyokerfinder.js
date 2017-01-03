@@ -1085,6 +1085,8 @@ var mylab = this.mylab.replace(" ","").toLowerCase();
 console.log("mylab is: " +  mylab);
 	var resultsLogin;
 
+var labyokerLabs = new LabyokerLabs('','');
+			labyokerLabs.getlabs(function(error, labs) {
 
 	var labsstr = "";
 	var i = 0;
@@ -1121,11 +1123,13 @@ console.log("mylab is: " +  mylab);
 		console.log("shares found: " + test[0].counting)
 		callback(null, resultsLogin)
 	});
+});
 };
 
 LabyokerInit.prototype.initialOrders = function(callback) {
 
-
+var labyokerLabs = new LabyokerLabs('','');
+			labyokerLabs.getlabs(function(error, labs) {
 	var email = this.email;
 	var mylab = this.mylab.replace(" ","").toLowerCase();
 	var resultsLogin;
@@ -1165,6 +1169,7 @@ LabyokerInit.prototype.initialOrders = function(callback) {
 		console.log("orders found: " + test[0].counting)
 		callback(null, resultsLogin)
 	});
+});
 };
 
 Labyoker.prototype.login = function(callback) {
