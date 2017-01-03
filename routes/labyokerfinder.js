@@ -1081,8 +1081,8 @@ LabYokeFinder.prototype.test = function(callback) {
 LabyokerInit.prototype.initialShares = function(callback) {
 	var email = this.email;
 console.log("shares email: " + email);
-var mylab = this.mylab.replace(" ","").toLowerCase();
-console.log("mylab is: " +  mylab);
+//var mylab = this.mylab.replace(" ","").toLowerCase();
+//console.log("mylab is: " +  mylab);
 	var resultsLogin;
 
 var labyokerLabs = new LabyokerLabs('','');
@@ -1131,7 +1131,7 @@ LabyokerInit.prototype.initialOrders = function(callback) {
 var labyokerLabs = new LabyokerLabs('','');
 			labyokerLabs.getlabs(function(error, labs) {
 	var email = this.email;
-	var mylab = this.mylab.replace(" ","").toLowerCase();
+	//var mylab = this.mylab.replace(" ","").toLowerCase();
 	var resultsLogin;
 
 	var labsstr = "";
