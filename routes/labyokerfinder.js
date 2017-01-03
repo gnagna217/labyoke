@@ -1099,7 +1099,8 @@ LabyokerInit.prototype.initialOrders = function(callback) {
 	var email = this.email;
 	var mylab = this.mylab.replace(" ","").toLowerCase();
 	var resultsLogin;
-console.log("orders email: " + email);
+console.log("initial orders email: " + email);
+console.log("initial orders mylab: " + mylab);
 var query = client
 				.query("SELECT count(agent) as counting from " + mylab + "_orders where requestoremail='" + email
 			+ "' and status='new'");
