@@ -110,9 +110,9 @@ LabyokerTeam = function(lab) {
 	this.lab = lab;
 };
 
-LabYokerGetOrder = function(sendemail,lab,mylab) {
+LabYokerGetOrder = function(sendemail,mylab) {
 	this.sendemail = sendemail;
-	this.lab = lab;
+	//this.lab = lab;
 	this.mylab = mylab;
 };
 
