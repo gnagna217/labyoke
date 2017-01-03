@@ -939,7 +939,7 @@ LabYokerGetOrder.prototype.getorders = function(callback) {
 		labsstr = (labs[prop].labname).replace(" ","").toLowerCase() + "_orders " + a + " ";
 		requestor = a + ".requestoremail = '"+ email + "' ";
 		date = a + ".date ";
-		select = select + "SELECT * FROM " + labsstr + " where " + requestor + " order by " + date + " desc UNION ";
+		select = select + "SELECT * FROM " + labsstr + " where " + requestor + " UNION ";
 		i++;
 	}
 
@@ -950,10 +950,10 @@ LabYokerGetOrder.prototype.getorders = function(callback) {
 	console.log("get orders labsstr: " + labsstr);
 	console.log("get orders date: " + date);
 	console.log("get orders requestor: " + requestor);
-	console.log("full query: " + select);
+	console.log("full query: " + select + " order by date desc");
 
 	var query = client
-			.query(select);
+			.query(select + " order by date desc");
 	query.on("row", function(row, result) {
 		result.addRow(row);
 	});
