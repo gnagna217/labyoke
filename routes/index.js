@@ -287,7 +287,7 @@ module.exports = function(router) {
 			var reqemail = req.session.email;
 			var reqcategory = req.body.categoryform;
 			var quantity = req.body.qtyform;
-			var labYokerorder = new LabYokerOrder(lab, agent, vendor, catalognumber,email,location,reqemail,reqcategory,quantity);
+			var labYokerorder = new LabYokerOrder(lab, agent, vendor, catalognumber,email,location,reqemail,reqcategory,quantity, req.session.lab);
 			labYokerorder.order(function(error, results) {
 				if(results != null && results=="successfulOrder"){
 					console.log("ordering agentform: " + agent);
@@ -329,7 +329,7 @@ module.exports = function(router) {
 			console.log("table: " + table);
 			console.log("email: " + email);
 			console.log("requestoremail: " + requestor);
-			var labYokechange = new LabYokerChangeShare(table,agent, vendor, catalognumber,email,requestor,checked,datenow,date);
+			var labYokechange = new LabYokerChangeShare(table,agent, vendor, catalognumber,email,requestor,checked,datenow,date, req.session.lab);
 			labYokechange.cancelShare(function(error, results) {
 				if(results != null && results.length > 0){
 					res.redirect('/share');			
@@ -369,7 +369,7 @@ module.exports = function(router) {
 		var dateto = req.body.reportDateTo;
 		var category = req.body.reportCategory;
 		console.log("reportSomething " + req.body.reportDateFrom);
-		var labYokereporter = new LabYokeReporterShares(datefrom, dateto, category);
+		var labYokereporter = new LabYokeReporterShares(datefrom, dateto, category, req.session.lab);
 		labYokereporter.reportShares(function(error, results) {
 			if(results != null){
 				console.log("res " + results);
@@ -399,7 +399,7 @@ module.exports = function(router) {
 		console.log("reportMoney catalognumber: " + catalognumber);
 		console.log("reportMoney lab: " + lab);
 
-		var labYokereporterSavings = new LabYokeReporterSavings(datefrom,dateto,agent,vendor,catalognumber,lab);
+		var labYokereporterSavings = new LabYokeReporterSavings(datefrom,dateto,agent,vendor,catalognumber,lab, req.session.lab);
 		labYokereporterSavings.reportMoney(function(error, results) {
 			if(results != null){
 				console.log("res " + results);
@@ -429,7 +429,7 @@ module.exports = function(router) {
 		console.log("reportInsuff catalognumber: " + catalognumber);
 		console.log("reportInsuff lab: " + lab);
 
-		var labYokereporterSavings = new LabYokeReporterSavings(datefrom,dateto,agent,vendor,catalognumber,lab);
+		var labYokereporterSavings = new LabYokeReporterSavings(datefrom,dateto,agent,vendor,catalognumber,lab, req.session.lab);
 		labYokereporterSavings.reportInsuff(function(error, results) {
 			if(results != null){
 				console.log("res " + results);
@@ -494,7 +494,7 @@ module.exports = function(router) {
 	});
 
 	router.get('/share', isLoggedIn, function(req, res) {
-		var labYokeAgents = new LabYokeAgents(req.session.email);
+		var labYokeAgents = new LabYokeAgents(req.session.email, req.session.lab);
 		labYokeAgents.findmyshares(function(error, results) {
 			//req.session.orders = results[2];
 			req.session.shares = 0;
@@ -515,14 +515,14 @@ module.exports = function(router) {
 			labyokerLabs.getlabs(function(error, labs) {
 				req.session.labs = labs;
 				console.log("load labs in account : " + labs);
-				var labYokeAgents = new LabYokeAgents(req.session.email);
+				var labYokeAgents = new LabYokeAgents(req.session.email, req.session.lab);
 				labYokeAgents.getLabyoker(function(error, results) {
 					res.render('account', {labname: req.session.lab, team:team, labs: req.session.labs, userDetails: results, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, loggedIn : true, isLoggedInAdmin: req.session.admin, title:'Account'});
 					req.session.messages = null;
 				});
 			});
 		} else {
-			var labYokeAgents = new LabYokeAgents(req.session.email);
+			var labYokeAgents = new LabYokeAgents(req.session.email, req.session.lab);
 			labYokeAgents.getLabyoker(function(error, results) {
 				res.render('account', {labname: req.session.lab, team:team, labs: req.session.labs, userDetails: results, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, loggedIn : true, isLoggedInAdmin: req.session.admin, title:'Account'});
 				req.session.messages = null;
@@ -860,7 +860,7 @@ module.exports = function(router) {
 															});
 											}
 
-											var init = new LabyokerInit(done[0].email);
+											var init = new LabyokerInit(done[0].email, done[0].lab);
 											init.initialShares(function(error, resultsShares) {
 												console.log("inside init shares " + resultsShares);
 												if(resultsShares != null){
@@ -951,7 +951,7 @@ module.exports = function(router) {
 														boostercolor.push("warning");
 													}
 
-													var labYokereporterSavings = new LabYokeReporterSavings(datefromsavings,datetosavings,undefined,undefined,undefined,lab);
+													var labYokereporterSavings = new LabYokeReporterSavings(datefromsavings,datetosavings,undefined,undefined,undefined,lab, req.session.lab);
 													labYokereporterSavings.dataMoney(function(error, savings) {
 
 														req.session.savings = savings;
