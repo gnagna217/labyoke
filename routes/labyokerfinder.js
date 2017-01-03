@@ -1016,7 +1016,7 @@ LabYokerGetOrder.prototype.getorders = function(callback) {
 		a = "a" + i;
 		labsstr = (labs[prop].labname).replace(" ","").toLowerCase() + "_orders " + a + " ";
 		select = select + "SELECT agent, count(agent) as counting, EXTRACT(MONTH FROM date_trunc( 'month', date )) as monthorder, EXTRACT(year FROM date_trunc( 'year', date )) as yearorder from " + labsstr + " where requestoremail='" + email
-			+ "' group by agent, date_trunc( 'month', date ), date_trunc( 'year', date ) order by agent asc limit 5 UNION ";
+			+ "' group by agent, date_trunc( 'month', date ), date_trunc( 'year', date ) UNION ";
 		i++;
 	}
 
@@ -1026,10 +1026,10 @@ LabYokerGetOrder.prototype.getorders = function(callback) {
 
 	console.log("get orders for month orders labsstr: " + labsstr);
 
-	console.log("full for month orders query: " + select + " order by date desc");
+	console.log("full for month orders query: " + select + " order by agent asc limit 5");
 
 
-		var query4 = client.query(select);
+		var query4 = client.query(select + " order by agent asc limit 5");
 		query4.on("row", function(row, result4) {
 			result4.addRow(row);
 		});
