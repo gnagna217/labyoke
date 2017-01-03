@@ -175,6 +175,10 @@ a {
 .ct-chart1 span.ct-label.ct-horizontal.ct-end{
     display:none;
 }
+line.ct-point{
+    stroke-width: 8px;
+    cursor: context-menu;
+}
 .ct-label{
     color: black !important;
 }
