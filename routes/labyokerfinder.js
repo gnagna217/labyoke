@@ -948,9 +948,10 @@ LabYokerGetOrder.prototype.getorders = function(callback) {
 	console.log("get orders labsstr: " + labsstr);
 	console.log("get orders date: " + date);
 	console.log("get orders requestor: " + requestor);
+	console.log("full query: " + "SELECT * FROM " + labsstr + " where " + requestor + " order by " + date + " desc");
 
 	var query = client
-			.query("SELECT * FROM " + labsstr + " where " + requestor + "' order by " + date + " desc");
+			.query("SELECT * FROM " + labsstr + " where " + requestor + " order by " + date + " desc");
 	query.on("row", function(row, result) {
 		result.addRow(row);
 	});
