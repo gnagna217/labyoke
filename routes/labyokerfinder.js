@@ -1004,8 +1004,32 @@ LabYokerGetOrder.prototype.getorders = function(callback) {
 		});
 		query3.on("end", function(result3) {
 			//results.push(result2.rows);
-		var query4 = client.query("SELECT agent, count(agent) as counting, EXTRACT(MONTH FROM date_trunc( 'month', date )) as monthorder, EXTRACT(year FROM date_trunc( 'year', date )) as yearorder from " + mylab + "_orders where requestoremail='" + email
-			+ "' group by agent, date_trunc( 'month', date ), date_trunc( 'year', date ) order by agent asc limit 5");
+
+	 labsstr = "";
+	 i = 0;
+	 a = "a";
+	 requestor = "";
+
+	 select = "";
+
+	for(var prop in labs){
+		a = "a" + i;
+		labsstr = (labs[prop].labname).replace(" ","").toLowerCase() + "_orders " + a + " ";
+		select = select + "SELECT agent, count(agent) as counting, EXTRACT(MONTH FROM date_trunc( 'month', date )) as monthorder, EXTRACT(year FROM date_trunc( 'year', date )) as yearorder from " + labsstr + "_orders where requestoremail='" + email
+			+ "' group by agent, date_trunc( 'month', date ), date_trunc( 'year', date ) order by agent asc limit 5 UNION ";
+		i++;
+	}
+
+	//labsstr = labsstr.replace(/,\s*$/, "");
+	//date = date.replace(/,\s*$/, "");
+	select = select.replace(/UNION\s*$/, "");
+
+	console.log("get orders for month orders labsstr: " + labsstr);
+
+	console.log("full for month orders query: " + select + " order by date desc");
+
+
+		var query4 = client.query(select);
 		query4.on("row", function(row, result4) {
 			result4.addRow(row);
 		});
