@@ -943,6 +943,7 @@ LabYokerGetOrder.prototype.getLabOrders_2 = function(callback) {
 	});*/
 	query.on("end", function(result) {
 		results = result.rows;
+		console.log("getLabOrders results: " + results);
 		callback(null, results)
 	});
 };
