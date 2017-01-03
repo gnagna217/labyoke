@@ -1015,7 +1015,7 @@ LabYokerGetOrder.prototype.getorders = function(callback) {
 	for(var prop in labs){
 		a = "a" + i;
 		labsstr = (labs[prop].labname).replace(" ","").toLowerCase() + "_orders " + a + " ";
-		select = select + "SELECT agent, count(agent) as counting, EXTRACT(MONTH FROM date_trunc( 'month', date )) as monthorder, EXTRACT(year FROM date_trunc( 'year', date )) as yearorder from " + labsstr + "_orders where requestoremail='" + email
+		select = select + "SELECT agent, count(agent) as counting, EXTRACT(MONTH FROM date_trunc( 'month', date )) as monthorder, EXTRACT(year FROM date_trunc( 'year', date )) as yearorder from " + labsstr + " where requestoremail='" + email
 			+ "' group by agent, date_trunc( 'month', date ), date_trunc( 'year', date ) order by agent asc limit 5 UNION ";
 		i++;
 	}
