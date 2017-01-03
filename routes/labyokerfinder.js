@@ -17,8 +17,9 @@ LabYokeFinder = function(today) {
 	this.now = today
 };
 
-LabYokeAgents = function(email) {
+LabYokeAgents = function(email,mylab) {
 	this.email = email;
+	this.mylab = mylab;
 };
 
 LabyokerCategories = function() {
@@ -29,7 +30,7 @@ LabyokerLabs = function(lab,adminemail) {
 	this.lab = lab;
 };
 
-LabYokerChangeShare = function(table, agent, vendor,catalognumber,email,requestor,checked,datenow,date) {
+LabYokerChangeShare = function(table, agent, vendor,catalognumber,email,requestor,checked,datenow,date,mylab) {
 	this.agent = agent;
 	this.vendor = vendor;
 	this.catalognumber = catalognumber;
@@ -39,6 +40,7 @@ LabYokerChangeShare = function(table, agent, vendor,catalognumber,email,requesto
 	this.date = date;
 	this.datenow = datenow;
 	this.requestor = requestor;
+	this.mylab = mylab;
 };
 
 LabyokerUserDetails = function(column, value, email,curname,cursurname) {
@@ -56,23 +58,26 @@ LabYokeReporterOrders = function(datefrom, dateto, lab) {
 	//this.category = category;
 };
 
-LabYokeReporterShares = function(datefrom, dateto) {
+LabYokeReporterShares = function(datefrom, dateto, mylab) {
 	this.datefrom = datefrom;
 	this.dateto = dateto;
+	this.mylab = mylab;
 	//this.category = category;
 };
 
-LabYokeReporterSavings = function(datefrom,dateto,agent,vendor,catalognumber,lab) {
+LabYokeReporterSavings = function(datefrom,dateto,agent,vendor,catalognumber,lab, mylab) {
 	this.datefrom = datefrom;
 	this.dateto = dateto;
 	this.vendor = vendor;
 	this.lab = lab;
 	this.agent = agent;
 	this.catalognumber = catalognumber;
+	this.mylab = mylab;
 };
 
-LabyokerInit = function(email) {
+LabyokerInit = function(email, mylab) {
 	this.email = email;
+	this.mylab = mylab;
 };
 
 LabYokeSearch = function(searchText, email) {
@@ -88,7 +93,7 @@ LabyokerConfirm = function(registerid) {
 	this.registerid = registerid;
 };
 
-LabYokerOrder = function(lab,agent,vendor,catalognumber,email,location,sendemail,category,quantity) {
+LabYokerOrder = function(lab,agent,vendor,catalognumber,email,location,sendemail,category,quantity,mylab) {
 	this.agent = agent;
 	this.vendor = vendor;
 	this.catalognumber = catalognumber;
@@ -98,15 +103,17 @@ LabYokerOrder = function(lab,agent,vendor,catalognumber,email,location,sendemail
 	this.category = category;
 	this.lab = lab;
 	this.quantity = quantity;
+	this.mylab = mylab;
 };
 
 LabyokerTeam = function(lab) {
 	this.lab = lab;
 };
 
-LabYokerGetOrder = function(sendemail,lab) {
+LabYokerGetOrder = function(sendemail,lab,mylab) {
 	this.sendemail = sendemail;
 	this.lab = lab;
+	this.mylab = mylab;
 };
 
 LabyokerRegister = function(user, password,lab,firstname,lastname,email,tel) {
@@ -169,6 +176,7 @@ LabYokeUploader.prototype.upload = function(callback) {
 
 LabYokeReporterSavings.prototype.dataMoney = function(callback) {
 	var results;
+	var mylab = this.mylab.trim().toLowerCase();
 	var datefrom = this.datefrom;
 	var dateto = this.dateto;
 	var vendor = this.vendor;
@@ -227,7 +235,7 @@ LabYokeReporterSavings.prototype.dataMoney = function(callback) {
 		groupby += "b.catalognumber";
 	}
 
-	var qrstr = "SELECT " + selected + " from vm2016_agentsshare a, vm2016_orders b where " + where + " group by " + groupby + " order by a.agent asc";
+	var qrstr = "SELECT " + selected + " from vm2016_agentsshare a, "+mylab+"_orders b where " + where + " group by " + groupby + " order by a.agent asc";
 	console.log("qrstr = " + qrstr);
 	query = client.query(qrstr);
 
@@ -256,6 +264,7 @@ LabYokeReporterSavings.prototype.reportMoney = function(callback) {
 	var lab = this.lab;
 	var agent = this.agent;
 	var catalognumber = this.catalognumber;
+	var mylab = this.mylab.trim().toLowerCase();
 	var selected = "a.agent, count(a.agent) as counting, b.lab, a.price";
 	var where = "a.agent = b.agent and a.catalognumber = b.catalognumber ";
 	var groupby = "a.agent, b.lab, a.price";
@@ -332,7 +341,7 @@ LabYokeReporterSavings.prototype.reportMoney = function(callback) {
 		selected +=", ";
 	selected +="count(a.category)";*/
 	columns+="<td>Shares Savings</td>";
-	var qrstr = "SELECT " + selected + " from vm2016_agentsshare a, vm2016_orders b where " + where + " group by " + groupby + " order by a.agent asc";
+	var qrstr = "SELECT " + selected + " from vm2016_agentsshare a, "+mylab+"_orders b where " + where + " group by " + groupby + " order by a.agent asc";
 	console.log("qrstr = " + qrstr);
 	query = client.query(qrstr);
 
@@ -383,6 +392,7 @@ LabYokeReporterSavings.prototype.reportMoney = function(callback) {
 
 LabYokeReporterSavings.prototype.reportInsuff = function(callback) {
 	var results;
+	var mylab = this.mylab.trim().toLowerCase();
 	var datefrom = this.datefrom;
 	var dateto = this.dateto;
 	var vendor = this.vendor;
@@ -487,6 +497,7 @@ LabYokeReporterShares.prototype.reportShares = function(callback) {
 	var params = "";
 	var where = "";
 	var isempty = true;
+	var mylab = this.mylab.trim().toLowerCase();
 	console.log("report on something: datefrom: " + datefrom);
 	console.log("report on something: dateto: " + dateto);
 	//console.log("report on something: agent: " + agent);
@@ -571,6 +582,7 @@ LabYokeReporterOrders.prototype.reportOrders = function(callback) {
 	var datefrom = this.datefrom;
 	var dateto = this.dateto;
 	var lab = this.lab;
+	var mylab = this.mylab.trim().toLowerCase();
 	//var category = this.category;
 	var params = "";
 	var where = "";
@@ -615,7 +627,7 @@ LabYokeReporterOrders.prototype.reportOrders = function(callback) {
 			where +=" and ";
 		where += " lower(category) like '%" + category.toLowerCase()  + "%'";
 	}*/
-	var qryStr = "SELECT * FROM vm2016_orders " + where + " order by date desc";
+	var qryStr = "SELECT * FROM " + mylab + "_orders " + where + " order by date desc";
 	console.log("qry report orders: " + qryStr)
 	query = client.query(qryStr);
 	/*if(datefrom != null && dateto != null && datefrom !=undefined && dateto !=undefined && datefrom !="" && dateto !=""){
@@ -710,6 +722,7 @@ LabyokerLabs.prototype.getlabs = function(callback) {
 
 LabYokeAgents.prototype.findmyshares = function(callback) {
 	var results = [];
+	var mylab = this.mylab.trim().toLowerCase();
 	console.log("findmyshares: " + this.email);
 	var query = client
 			.query("SELECT * FROM vm2016_agentsshare where email='"
@@ -721,14 +734,14 @@ LabYokeAgents.prototype.findmyshares = function(callback) {
 	query.on("end", function(result) {
 		results.push(result.rows);
 		var query2 = client
-				.query("SELECT a.agent, count(a.agent), b.insufficient as insuff from vm2016_agentsshare a, vm2016_orders b where a.agent = b.agent and a.catalognumber = b.catalognumber and b.email='"
+				.query("SELECT a.agent, count(a.agent), b.insufficient as insuff from vm2016_agentsshare a, " + mylab + "_orders b where a.agent = b.agent and a.catalognumber = b.catalognumber and b.email='"
 					+ email + "' group by a.agent, b.insufficient order by a.agent asc limit 6");
 		query2.on("row", function(row, result2) {
 			result2.addRow(row);
 		});
 		query2.on("end", function(result2) {
 			results.push(result2.rows);
-			var query4 = client.query("SELECT * from vm2016_orders where email='" + email
+			var query4 = client.query("SELECT * from " + mylab + "_orders where email='" + email
 				+ "' order by date desc");
 			query4.on("row", function(row, result4) {
 				result4.addRow(row);
@@ -738,7 +751,7 @@ LabYokeAgents.prototype.findmyshares = function(callback) {
 				results.push(test4.length);
 				results.push(test4);
 				var query3 = client
-					.query("update vm2016_orders set status='' where status='new' and email='" + email
+					.query("update " + mylab + "_orders set status='' where status='new' and email='" + email
 				+ "'");
 
 				query3.on("row", function(row, result3) {
@@ -746,7 +759,7 @@ LabYokeAgents.prototype.findmyshares = function(callback) {
 				});
 				query3.on("end", function(result3) {
 					var query5 = client
-						.query("SELECT agent, count(agent) as counting, EXTRACT(MONTH FROM date_trunc( 'month', date )) as monthorder, EXTRACT(year FROM date_trunc( 'year', date )) as yearorder from vm2016_orders where email='" + email
+						.query("SELECT agent, count(agent) as counting, EXTRACT(MONTH FROM date_trunc( 'month', date )) as monthorder, EXTRACT(year FROM date_trunc( 'year', date )) as yearorder from " + mylab + "_orders where email='" + email
 					+ "' and insufficient=1 group by agent, date_trunc( 'month', date ), date_trunc( 'year', date ) order by agent asc limit 5");
 					query5.on("row", function(row, result5) {
 						result5.addRow(row);
@@ -767,8 +780,9 @@ LabYokeAgents.prototype.findmyshares = function(callback) {
 LabYokeAgents.prototype.reportAllSharesByCategory = function(callback) {
 	var results;
 	console.log("reportAllSharesByCategory: " + this.email);
+	var mylab = this.mylab.trim().toLowerCase();
 	var query = client
-			.query("SELECT b.agent, count(b.agent) FROM vm2016_orders a, vm2016_agentsshare b where a.agent = b.agent group by b.agent");
+			.query("SELECT b.agent, count(b.agent) FROM " + mylab + "_orders a, vm2016_agentsshare b where a.agent = b.agent group by b.agent");
 	query.on("row", function(row, result) {
 		result.addRow(row);
 	});
@@ -804,12 +818,13 @@ LabYokerOrder.prototype.order = function(callback) {
 	var category = this.category;
 	var lab = this.lab;
 	var quantity = this.quantity;
+	var mylab = this.mylab.trim().toLowerCase();
 	console.log("quantity: " + quantity);
 	quantity = quantity + 100;
 	console.log("currentquantity2: " + quantity);
 	var now = moment(new Date).tz("America/New_York").format('MM-DD-YYYY');
 	console.log("order location: " + location);
-	var query = client.query("INSERT INTO vm2016_orders VALUES ('" + agent + "', '" + vendor + "', '" + catalognumber + "','" + email + "', '" + sendemail + "', '" + now + "', 'new', '" + category + "','" + lab + "',1 )");
+	var query = client.query("INSERT INTO " + mylab + "_orders VALUES ('" + agent + "', '" + vendor + "', '" + catalognumber + "','" + email + "', '" + sendemail + "', '" + now + "', 'new', '" + category + "','" + lab + "',1 )");
 
 	query.on("row", function(row, result) {
 		result.addRow(row);
@@ -862,19 +877,20 @@ LabYokerOrder.prototype.order = function(callback) {
 LabYokerGetOrder.prototype.getLabOrders = function(callback) {
 	var results = [];
 	console.log("getLabOrders");
-	var query = client.query("SELECT lab, count(lab) as counting FROM vm2016_orders where lab='Sama Lab' group by lab");
+	var mylab = this.mylab.trim().toLowerCase();
+	var query = client.query("SELECT lab, count(lab) as counting FROM " + mylab + "_orders where lab='Sama Lab' group by lab");
 	query.on("row", function(row, result) {
 		result.addRow(row);
 	});
 	query.on("end", function(result) {
 		results.push(result.rows);
-		var query2 = client.query("SELECT lab, count(lab) as counting FROM vm2016_orders where lab='Sougnou Lab' group by lab");
+		var query2 = client.query("SELECT lab, count(lab) as counting FROM " + mylab + "_orders where lab='Sougnou Lab' group by lab");
 		query2.on("row", function(row, result2) {
 			result2.addRow(row);
 		});
 		query2.on("end", function(result2) {
 			results.push(result2.rows);
-			var query3 = client.query("SELECT lab, count(lab) as counting FROM vm2016_orders where lab='SeneLab' group by lab");
+			var query3 = client.query("SELECT lab, count(lab) as counting FROM " + mylab + "_orders where lab='SeneLab' group by lab");
 			query3.on("row", function(row, result3) {
 				result3.addRow(row);
 			});
@@ -890,7 +906,8 @@ LabYokerGetOrder.prototype.getLabOrders = function(callback) {
 LabYokerGetOrder.prototype.getLabOrders_2 = function(callback) {
 	var results;
 	console.log("getLabOrders");
-	var query = client.query("SELECT lab, count(lab) as counting FROM vm2016_orders group by lab");
+	var mylab = this.mylab.trim().toLowerCase();
+	var query = client.query("SELECT lab, count(lab) as counting FROM " + mylab + "_orders group by lab");
 	query.on("row", function(row, result) {
 		result.addRow(row);
 	});
@@ -905,16 +922,17 @@ LabYokerGetOrder.prototype.getorders = function(callback) {
 	var results = [];
 	var email = this.sendemail;
 	var lab = this.lab;
+	var mylab = this.mylab.trim().toLowerCase();
 	console.log("getorders: " + email);
 	var query = client
-			.query("SELECT * FROM vm2016_orders where requestoremail = '"
+			.query("SELECT * FROM " + mylab + "_orders where requestoremail = '"
 					+ email + "' order by date desc");
 	query.on("row", function(row, result) {
 		result.addRow(row);
 	});
 	query.on("end", function(result) {
 		results.push(result.rows);
-		var query2 = client.query("SELECT b.agent, count(b.agent) FROM vm2016_orders b where b.lab='"+lab+"' and b.insufficient=1 group by b.agent order by count(b.agent) desc limit 10");
+		var query2 = client.query("SELECT b.agent, count(b.agent) FROM " + mylab + "_orders b where b.lab='"+lab+"' and b.insufficient=1 group by b.agent order by count(b.agent) desc limit 10");
 		//("SELECT b.category, count(b.category) FROM vm2016_orders a, vm2016_agentsshare b where a.agent = b.agent and a.lab='"+lab+"' group by b.category");
 		query2.on("row", function(row, result2) {
 			result2.addRow(row);
@@ -930,7 +948,7 @@ LabYokerGetOrder.prototype.getorders = function(callback) {
 		});
 		query3.on("end", function(result3) {
 			//results.push(result2.rows);
-		var query4 = client.query("SELECT agent, count(agent) as counting, EXTRACT(MONTH FROM date_trunc( 'month', date )) as monthorder, EXTRACT(year FROM date_trunc( 'year', date )) as yearorder from vm2016_orders where requestoremail='" + email
+		var query4 = client.query("SELECT agent, count(agent) as counting, EXTRACT(MONTH FROM date_trunc( 'month', date )) as monthorder, EXTRACT(year FROM date_trunc( 'year', date )) as yearorder from " + mylab + "_orders where requestoremail='" + email
 			+ "' group by agent, date_trunc( 'month', date ), date_trunc( 'year', date ) order by agent asc limit 5");
 		query4.on("row", function(row, result4) {
 			result4.addRow(row);
@@ -943,7 +961,7 @@ LabYokerGetOrder.prototype.getorders = function(callback) {
 			results.push(result4.rows);
 			console.log("shares found: " + test3[0].counting)
 
-			var query5 = client.query("SELECT a.agent, count(a.agent) FROM vm2016_orders a, vm2016_users b where b.lab='"+lab+"' and a.insufficient=1 and a.requestoremail=b.email group by a.agent order by count(a.agent) desc limit 10");
+			var query5 = client.query("SELECT a.agent, count(a.agent) FROM " + mylab + "_orders a, vm2016_users b where b.lab='"+lab+"' and a.insufficient=1 and a.requestoremail=b.email group by a.agent order by count(a.agent) desc limit 10");
 		query5.on("row", function(row, result5) {
 			result5.addRow(row);
 		});
@@ -1036,10 +1054,11 @@ LabYokeFinder.prototype.test = function(callback) {
 LabyokerInit.prototype.initialShares = function(callback) {
 	var email = this.email;
 console.log("shares email: " + email);
+var mylab = this.mylab.trim().toLowerCase();
 	var resultsLogin;
 
 		var query = client
-				.query("SELECT count(agent) as counting from vm2016_orders where email='" + email
+				.query("SELECT count(agent) as counting from " + mylab + "_orders where email='" + email
 			+ "' and status='new'");
 		query.on("row", function(row, result) {
 			result.addRow(row);
@@ -1077,11 +1096,11 @@ console.log("shares email: " + email);
 
 LabyokerInit.prototype.initialOrders = function(callback) {
 	var email = this.email;
-
+	var mylab = this.mylab.trim().toLowerCase();
 	var resultsLogin;
 console.log("orders email: " + email);
 var query = client
-				.query("SELECT count(agent) as counting from vm2016_orders where requestoremail='" + email
+				.query("SELECT count(agent) as counting from " + mylab + "_orders where requestoremail='" + email
 			+ "' and status='new'");
 		query.on("row", function(row, result) {
 			result.addRow(row);
@@ -1552,12 +1571,13 @@ LabYokerChangeShare.prototype.cancelShare = function(callback) {
 	var email = this.email;
 	var datenow = this.datenow;
 	var requestor = this.requestor;
+	var mylab = this.mylab.trim().toLowerCase();
 	var date = this.date;
 	console.log("date2: " + date);
 	console.log("requestor: " + requestor);
 	var results;
 	var orderonly = "";
-	if(table == "vm2016_orders"){
+	if(table == mylab + "_orders"){
 		orderonly = " and requestoremail='" + requestor + "'";
 	}
 
@@ -1571,7 +1591,7 @@ LabYokerChangeShare.prototype.cancelShare = function(callback) {
 	query.on("end", function(result) {
 		results = "success";
 
-		if(table == "vm2016_orders" && checked == 0){
+		if(table == mylab+"_orders" && checked == 0){
 			var subject = "LabYoke Order - Cancelled for " + agent;
 			var body = "<div style='text-align:center'><img style='width: 141px; margin: 0 20px;' src='https:\/\/team-labyoke.herokuapp.com\/images\/yoke4.png', alt='The Yoke',  title='Yoke', class='yokelogo'/></div><div style=\"font-family:'calibri'; font-size:11pt;padding: 20px;float:left\">Hello,<br/><br/>";
 			body += "Unfortunately your order has been cancelled due to insufficient quantities from the following inventory: <br><b>Reagent: </b> " + agent;
