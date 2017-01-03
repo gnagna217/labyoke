@@ -938,7 +938,7 @@ LabYokerGetOrder.prototype.getorders = function(callback) {
 		a = "a" + i;
 		labsstr = (labs[prop].labname).replace(" ","").toLowerCase() + "_orders " + a + " ";
 		requestor = a + ".requestoremail = '"+ email + "' ";
-		date = a + ".date , ";
+		date = a + ".date ";
 		select = select + "SELECT * FROM " + labsstr + " where " + requestor + " order by " + date + " desc UNION ";
 		i++;
 	}
