@@ -361,7 +361,7 @@ console.log("report on savings- dateto: " + labsindept);
 	where = where + " and (";
 	
 	for(var prop in labsindept){
-		where = where + " b.lab = '" + labs[prop].labname + "' or ";
+		where = where + " b.lab = '" + labsindept[prop].labname + "' or ";
 	}
 	where = where.replace(/or\s*$/, "");
 	where = where + ")";
