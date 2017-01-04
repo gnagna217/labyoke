@@ -879,7 +879,7 @@ module.exports = function(router) {
 														req.session.orders = orders;
 													}
 													req.session.user = done[0].name;
-													req.session.dept = "department";//results[1].department;
+													req.session.dept = results[1].department;
 													req.session.userid = done[0].id;
 													req.session.useradmin = false;
 													console.log("admin? " + done[0].admin);
