@@ -1709,11 +1709,12 @@ LabYokerChangeShare.prototype.cancelShare = function(callback) {
 	var vendor = this.vendor;
 	var catalognumber = this.catalognumber;
 	var checked = this.checked;
-	var table = this.table;
+	var lab = this.lab.replace(" ","").toLowerCase();
+	var table = lab + "_orders";
 	var email = this.email;
 	var datenow = this.datenow;
 	var requestor = this.requestor;
-	var lab = this.lab.replace(" ","").toLowerCase();
+	
 	var date = this.date;
 	console.log("date2: " + date);
 	console.log("requestor: " + requestor);
