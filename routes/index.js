@@ -847,6 +847,7 @@ module.exports = function(router) {
 											req.session.orders = orders;
 										}*/
 										console.log("done is " + done);
+										console.log("department is : " results[1]);
 										//console.log("done2 is " + done.length);
 										console.log("shares is " + shares);
 										console.log("orders is " + orders);
@@ -878,7 +879,7 @@ module.exports = function(router) {
 														req.session.orders = orders;
 													}
 													req.session.user = done[0].name;
-													req.session.dept = results[1].department;
+													req.session.dept = "department";//results[1].department;
 													req.session.userid = done[0].id;
 													req.session.useradmin = false;
 													console.log("admin? " + done[0].admin);
