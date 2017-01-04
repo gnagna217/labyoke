@@ -373,8 +373,7 @@ console.log("report on savings- dateto: " + labsindept);
 	
 
 	console.log("get orders labsstr: " + labsstr);
-	console.log("get orders date: " + date);
-	console.log("full query: " + select + " order by date desc");
+	console.log("full query: " + select);
 
 
 	/*if(selected.length>0)
@@ -382,7 +381,7 @@ console.log("report on savings- dateto: " + labsindept);
 	selected +="count(a.category)";*/
 	columns+="<td>Shares Savings</td>";
 	//var qrstr = "SELECT " + selected + " from vm2016_agentsshare a, "+mylab+"_orders b where " + where + " group by " + groupby + " order by a.agent asc";
-	var qrstr = select + " order by a.agent asc";
+	var qrstr = select + " order by agent asc";
 	console.log("qrstr = " + qrstr);
 	query = client.query(qrstr);
 
