@@ -1057,7 +1057,24 @@ LabYokerGetOrder.prototype.getorders = function(callback) {
 			results.push(result4.rows);
 			console.log("shares found: " + test3[0].counting)
 
-			var query5 = client.query("SELECT a.agent, count(a.agent) FROM " + mylab + "_orders a, vm2016_users b where b.lab='"+lab+"' and a.insufficient=1 and a.requestoremail=b.email group by a.agent order by count(a.agent) desc limit 10");
+	 labsstr = "";
+	 i = 0;
+	 a = "a";
+	 requestor = "";
+
+	 select = "";
+
+	for(var prop in labs){
+		a = "a" + i;
+		labsstr = (labs[prop].labname).replace(" ","").toLowerCase() + "_orders " + a + " ";
+		select = select + "SELECT a.agent, count(a.agent) counting FROM " + labsstr + " a, vm2016_users b where b.lab='"+lab+"' and a.insufficient=1 and a.requestoremail=b.email group by a.agent UNION ";
+		i++;
+	}
+	select = select.replace(/UNION\s*$/, "");
+	
+	var query5 = client.query(select + " order by counting desc limit 10");
+
+			//var query5 = client.query("SELECT a.agent, count(a.agent) FROM " + mylab + "_orders a, vm2016_users b where b.lab='"+lab+"' and a.insufficient=1 and a.requestoremail=b.email group by a.agent order by count(a.agent) desc limit 10");
 		query5.on("row", function(row, result5) {
 			result5.addRow(row);
 		});
