@@ -360,10 +360,10 @@ console.log("report on savings- dateto: " + labsindept);
 
 	
 	for(var prop in labsindept){
-		where = where + " b.lab = '" + labs[prop].labname + "' and ";
+		where = where + " and b.lab = '" + labs[prop].labname + "'";
 	}
 	where = where.replace(/and\s*$/, "");
-	
+
 	for(var prop in labs){
 		a = "a" + i;
 		labsstr = (labs[prop].labname).replace(" ","").toLowerCase() + "_orders b ";
