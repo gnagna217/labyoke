@@ -1071,7 +1071,8 @@ LabYokerGetOrder.prototype.getorders = function(callback) {
 		i++;
 	}
 	select = select.replace(/UNION\s*$/, "");
-	
+	console.log("reportorderbycategories: " + select + " order by counting desc limit 10");
+
 	var query5 = client.query(select + " order by counting desc limit 10");
 
 			//var query5 = client.query("SELECT a.agent, count(a.agent) FROM " + mylab + "_orders a, vm2016_users b where b.lab='"+lab+"' and a.insufficient=1 and a.requestoremail=b.email group by a.agent order by count(a.agent) desc limit 10");
