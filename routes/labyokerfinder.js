@@ -66,7 +66,7 @@ LabYokeReporterShares = function(datefrom, dateto, mylab) {
 	//this.category = category;
 };
 
-LabYokeReporterSavings = function(datefrom,dateto,agent,vendor,catalognumber,lab, mylab) {
+LabYokeReporterSavings = function(datefrom,dateto,agent,vendor,catalognumber,lab, mylab,labs) {
 	this.datefrom = datefrom;
 	this.dateto = dateto;
 	this.vendor = vendor;
@@ -74,6 +74,7 @@ LabYokeReporterSavings = function(datefrom,dateto,agent,vendor,catalognumber,lab
 	this.agent = agent;
 	this.catalognumber = catalognumber;
 	this.mylab = mylab;
+	this.labs = labs;
 };
 
 LabyokerInit = function(email, mylab) {
@@ -183,6 +184,7 @@ LabYokeReporterSavings.prototype.dataMoney = function(callback) {
 	var dateto = this.dateto;
 	var vendor = this.vendor;
 	var lab = this.lab;
+	var labs = this.labs;
 	var agent = this.agent;
 	var catalognumber = this.catalognumber;
 	var selected = "a.agent, count(a.agent) as counting, b.lab, a.price";
@@ -267,6 +269,7 @@ LabYokeReporterSavings.prototype.reportMoney = function(callback) {
 	var agent = this.agent;
 	var catalognumber = this.catalognumber;
 	var mylab = this.mylab.replace(" ","").toLowerCase();
+	var labs = this.labs;
 	var selected = "a.agent, count(a.agent) as counting, b.lab, a.price";
 	var where = "a.agent = b.agent and a.catalognumber = b.catalognumber ";
 	var groupby = "a.agent, b.lab, a.price";
@@ -356,10 +359,14 @@ console.log("report on savings- dateto: " + labsindept);
 	if(lab != null && lab !=undefined && lab =="all"){
 
 	
-
 	for(var prop in labsindept){
+		where = where + " b.lab = '" + labs[prop].labname + "' and ";
+	}
+	where = where.replace(/and\s*$/, "");
+	
+	for(var prop in labs){
 		a = "a" + i;
-		labsstr = (labsindept[prop].labname).replace(" ","").toLowerCase() + "_orders b ";
+		labsstr = (labs[prop].labname).replace(" ","").toLowerCase() + "_orders b ";
 		select = select + "SELECT " + selected + " from vm2016_agentsshare a, "+labsstr+" where " + where + " group by " + groupby + " UNION ";
 		i++;
 	}

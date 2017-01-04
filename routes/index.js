@@ -401,7 +401,7 @@ module.exports = function(router) {
 		console.log("reportMoney catalognumber: " + catalognumber);
 		console.log("reportMoney lab: " + lab);
 
-		var labYokereporterSavings = new LabYokeReporterSavings(datefrom,dateto,agent,vendor,catalognumber,lab, req.session.lab);
+		var labYokereporterSavings = new LabYokeReporterSavings(datefrom,dateto,agent,vendor,catalognumber,lab, req.session.lab,req.session.labs);
 		labYokereporterSavings.reportMoney(function(error, results) {
 			if(results != null){
 				console.log("res " + results);
@@ -431,7 +431,7 @@ module.exports = function(router) {
 		console.log("reportInsuff catalognumber: " + catalognumber);
 		console.log("reportInsuff lab: " + lab);
 
-		var labYokereporterSavings = new LabYokeReporterSavings(datefrom,dateto,agent,vendor,catalognumber,lab, req.session.lab);
+		var labYokereporterSavings = new LabYokeReporterSavings(datefrom,dateto,agent,vendor,catalognumber,lab, req.session.lab,req.session.labs);
 		labYokereporterSavings.reportInsuff(function(error, results) {
 			if(results != null){
 				console.log("res " + results);
@@ -958,7 +958,7 @@ module.exports = function(router) {
 														boostercolor.push("warning");
 													}
 
-													var labYokereporterSavings = new LabYokeReporterSavings(datefromsavings,datetosavings,undefined,undefined,undefined,lab, req.session.lab);
+													var labYokereporterSavings = new LabYokeReporterSavings(datefromsavings,datetosavings,undefined,undefined,undefined,lab, req.session.lab,req.session.labs);
 													labYokereporterSavings.dataMoney(function(error, savings) {
 
 														req.session.savings = savings;
