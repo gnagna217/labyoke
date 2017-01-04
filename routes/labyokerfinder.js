@@ -360,8 +360,6 @@ console.log("report on savings- dateto: " + labsindept);
 	for(var prop in labsindept){
 		a = "a" + i;
 		labsstr = (labsindept[prop].labname).replace(" ","").toLowerCase() + "_orders b ";
-		requestor = a + ".requestoremail = '"+ email + "' ";
-		date = a + ".date ";
 		select = select + "SELECT " + selected + " from vm2016_agentsshare a, "+labsstr+" where " + where + " group by " + groupby + " UNION ";
 		i++;
 	}
