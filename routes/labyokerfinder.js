@@ -1266,6 +1266,7 @@ Labyoker.prototype.login = function(callback) {
 	var username = this.username;
 
 	var results;
+	var results2;
 	var resultsLogin = [];
 	var query = client.query("SELECT * FROM vm2016_users where id='" + username
 			+ "'"/* and password='"+password+"'" */);
@@ -1285,6 +1286,7 @@ Labyoker.prototype.login = function(callback) {
 			result2.addRow(row);
 		});
 		query2.on("end", function(result2) {
+			results2 = result2.rows;
 			resultsLogin.push(results2);
 			console.log("email is: " + results[0].email);
 			// var hash = crypt.hashSync(pass, salt);
