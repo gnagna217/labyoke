@@ -280,6 +280,7 @@ LabYokeReporterSavings.prototype.reportMoney = function(callback) {
 
 var labyokerLab = new LabyokerLab(this.mylab);
 		labyokerLab.getLabsInDept(function(error, labsindept) {
+console.log("report on savings- dateto: " + labsindept);
 
 	if(datefrom != null && dateto != null && datefrom !=undefined && dateto !=undefined && datefrom !="" && dateto !=""){
 		if(params == ""){
@@ -342,11 +343,48 @@ var labyokerLab = new LabyokerLab(this.mylab);
 	if(datefrom != null && dateto != null && datefrom !=undefined && dateto !=undefined && datefrom !="" && dateto !=""){
 		columns+="<td>Date</td>";
 	}
+
+
+
+	var labsstr = "";
+	var i = 0;
+	var a = "a";
+	var requestor = "";
+	var date = "";
+	var select = "";
+
+	if(lab != null && lab !=undefined && lab =="all"){
+
+	
+
+	for(var prop in labsindept){
+		a = "a" + i;
+		labsstr = (labsindept[prop].labname).replace(" ","").toLowerCase() + "_orders b ";
+		requestor = a + ".requestoremail = '"+ email + "' ";
+		date = a + ".date ";
+		select = select + "SELECT " + selected + " from vm2016_agentsshare a, "+labsstr+" where " + where + " group by " + groupby + " UNION ";
+		i++;
+	}
+	select = select.replace(/UNION\s*$/, "");
+} else {
+	select = select + "SELECT " + selected + " from vm2016_agentsshare a, "+mylab+"_orders b where " + where + " group by " + groupby;
+}
+
+	//labsstr = labsstr.replace(/,\s*$/, "");
+	//date = date.replace(/,\s*$/, "");
+	
+
+	console.log("get orders labsstr: " + labsstr);
+	console.log("get orders date: " + date);
+	console.log("full query: " + select + " order by date desc");
+
+
 	/*if(selected.length>0)
 		selected +=", ";
 	selected +="count(a.category)";*/
 	columns+="<td>Shares Savings</td>";
-	var qrstr = "SELECT " + selected + " from vm2016_agentsshare a, "+mylab+"_orders b where " + where + " group by " + groupby + " order by a.agent asc";
+	//var qrstr = "SELECT " + selected + " from vm2016_agentsshare a, "+mylab+"_orders b where " + where + " group by " + groupby + " order by a.agent asc";
+	var qrstr = select + " order by a.agent asc";
 	console.log("qrstr = " + qrstr);
 	query = client.query(qrstr);
 
