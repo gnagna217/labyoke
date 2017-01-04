@@ -194,6 +194,8 @@ LabYokeReporterSavings.prototype.dataMoney = function(callback) {
 	console.log("report on savings- dateto: " + dateto);
 	var query;
 
+var labyokerLab = new LabyokerLab(this.mylab);
+		labyokerLab.getLabsInDept(function(error, labsindept) {
 	if(datefrom != null && dateto != null && datefrom !=undefined && dateto !=undefined && datefrom !="" && dateto !=""){
 		if(selected.length>0)
 			selected +=", ";
@@ -239,7 +241,47 @@ LabYokeReporterSavings.prototype.dataMoney = function(callback) {
 		groupby += "b.catalognumber";
 	}
 
-	var qrstr = "SELECT " + selected + " from vm2016_agentsshare a, "+mylab+"_orders b where " + where + " group by " + groupby + " order by a.agent asc";
+//	var qrstr = "SELECT " + selected + " from vm2016_agentsshare a, "+mylab+"_orders b where " + where + " group by " + groupby + " order by a.agent asc";
+//	console.log("qrstr = " + qrstr);
+//	query = client.query(qrstr);
+
+	var labsstr = "";
+	var i = 0;
+	var a = "a";
+	var requestor = "";
+	var date = "";
+	var select = "";
+
+	if(lab != null && lab !=undefined && lab =="all"){
+
+	where = where + " and (";
+	
+	for(var prop in labsindept){
+		where = where + " b.lab = '" + labsindept[prop].labname + "' or ";
+	}
+	where = where.replace(/or\s*$/, "");
+	where = where + ")";
+
+	for(var prop in labs){
+		a = "a" + i;
+		labsstr = (labs[prop].labname).replace(" ","").toLowerCase() + "_orders b ";
+		select = select + "SELECT " + selected + " from vm2016_agentsshare a, "+labsstr+" where " + where + " group by " + groupby + " UNION ";
+		i++;
+	}
+	select = select.replace(/UNION\s*$/, "");
+} else {
+	select = select + "SELECT " + selected + " from vm2016_agentsshare a, "+mylab+"_orders b where " + where + " group by " + groupby;
+}
+
+	//labsstr = labsstr.replace(/,\s*$/, "");
+	//date = date.replace(/,\s*$/, "");
+	
+
+	console.log("get orders labsstr: " + labsstr);
+	console.log("full query: " + select);
+
+	//var qrstr = "SELECT " + selected + " from vm2016_agentsshare a, "+mylab+"_orders b where " + where + " group by " + groupby + " order by a.agent asc";
+	var qrstr = select + " order by agent asc";
 	console.log("qrstr = " + qrstr);
 	query = client.query(qrstr);
 
@@ -257,6 +299,7 @@ LabYokeReporterSavings.prototype.dataMoney = function(callback) {
 			}
 		}
 		callback(null, savings)
+	});
 	});
 };
 
@@ -443,6 +486,7 @@ console.log("report on savings- dateto: " + labsindept);
 LabYokeReporterSavings.prototype.reportInsuff = function(callback) {
 	var results;
 	var mylab = this.mylab.replace(" ","").toLowerCase();
+	var labs = this.labs;
 	var datefrom = this.datefrom;
 	var dateto = this.dateto;
 	var vendor = this.vendor;
@@ -460,6 +504,9 @@ LabYokeReporterSavings.prototype.reportInsuff = function(callback) {
 	console.log("report on savings- dateto: " + dateto);
 	var query;
 
+var labyokerLab = new LabyokerLab(this.mylab);
+		labyokerLab.getLabsInDept(function(error, labsindept) {
+console.log("report on insuff: " + labsindept);
 	if(lab != null && lab !=undefined && lab !="all"){
 		if(params == ""){
 			params += "<div style='font-weight:bold'>Parameters</div>";
@@ -493,6 +540,20 @@ LabYokeReporterSavings.prototype.reportInsuff = function(callback) {
 		selected +=", ";
 	selected +="count(a.category)";*/
 	columns+="<td>Insufficient Reagents Shared</td>";
+
+
+
+if(lab != null && lab !=undefined && lab =="all"){
+	where = where + " and (";
+	
+	for(var prop in labsindept){
+		where = where + " a.lab = '" + labsindept[prop].labname + "' or ";
+	}
+	where = where.replace(/or\s*$/, "");
+	where = where + ")";
+}
+
+
 	var qrstr = "SELECT " + selected + " from vm2016_agentsshare a, vm2016_users b where " + where + " order by a.agent asc";
 	console.log("qrstr = " + qrstr);
 	query = client.query(qrstr);
@@ -536,6 +597,7 @@ LabYokeReporterSavings.prototype.reportInsuff = function(callback) {
 		}
 		
 	});
+});
 };
 
 
@@ -552,6 +614,9 @@ LabYokeReporterShares.prototype.reportShares = function(callback) {
 	console.log("report on something: dateto: " + dateto);
 	//console.log("report on something: agent: " + agent);
 	var query;
+	var labyokerLab = new LabyokerLab(this.mylab);
+		labyokerLab.getLabsInDept(function(error, labsindept) {
+console.log("report on shares: " + labsindept);
 	if(datefrom != null && dateto != null && datefrom !=undefined && dateto !=undefined && datefrom !="" && dateto !=""){
 		if(params == ""){
 			params += "<div style='font-weight:bold'>Parameters</div>";
@@ -576,6 +641,13 @@ LabYokeReporterShares.prototype.reportShares = function(callback) {
 			where +=" and ";
 		where += " lower(category) like '%" + category.toLowerCase() + "%'";
 	} */
+	where = where + " and (";
+	for(var prop in labsindept){
+		where = where + " lab = '" + labsindept[prop].labname + "' or ";
+	}
+	where = where.replace(/or\s*$/, "");
+	where = where + ")";
+
 	var qryStr = "SELECT * FROM vm2016_agentsshare " + where + " order by date desc";
 	console.log("query report shares: " + qryStr);
 	query = client.query(qryStr);
@@ -625,6 +697,7 @@ LabYokeReporterShares.prototype.reportShares = function(callback) {
 			callback(null, results);
 		}
 	});
+});
 };
 
 LabYokeReporterOrders.prototype.reportOrders = function(callback) {
@@ -642,6 +715,10 @@ LabYokeReporterOrders.prototype.reportOrders = function(callback) {
 	console.log("report on something: lab: " + lab);
 	//console.log("report on something: category: " + category);
 	var query;
+
+	var labyokerLab = new LabyokerLab(this.mylab);
+		labyokerLab.getLabsInDept(function(error, labsindept) {
+console.log("report on orders: " + labsindept);
 
 	if(datefrom != null && dateto != null && datefrom !=undefined && dateto !=undefined && datefrom !="" && dateto !=""){
 		if(params == ""){
@@ -677,9 +754,44 @@ LabYokeReporterOrders.prototype.reportOrders = function(callback) {
 			where +=" and ";
 		where += " lower(category) like '%" + category.toLowerCase()  + "%'";
 	}*/
-	var qryStr = "SELECT * FROM " + mylab + "_orders " + where + " order by date desc";
-	console.log("qry report orders: " + qryStr)
-	query = client.query(qryStr);
+
+
+	var labsstr = "";
+	var i = 0;
+	var a = "a";
+	var requestor = "";
+	var date = "";
+	var select = "";
+
+	if(lab != null && lab !=undefined && lab =="all"){
+
+	where = where + " and (";
+	
+	for(var prop in labsindept){
+		where = where + " b.lab = '" + labsindept[prop].labname + "' or ";
+	}
+	where = where.replace(/or\s*$/, "");
+	where = where + ")";
+
+	for(var prop in labs){
+		a = "a" + i;
+		labsstr = (labs[prop].labname).replace(" ","").toLowerCase() + "_orders ";
+		select = select + "SELECT * FROM " + labsstr + where + " UNION ";
+		i++;
+	}
+	select = select.replace(/UNION\s*$/, "");
+} else {
+	select = "SELECT * FROM " + lab.replace(" ","").toLowerCase() + "_orders " + where + " order by date desc";
+}
+	console.log("get orders labsstr: " + labsstr);
+	console.log("full query: " + select);
+	
+	var qrstr = select + " order by agent asc";
+
+
+	//var qryStr = "SELECT * FROM " + mylab + "_orders " + where + " order by date desc";
+	console.log("qry report orders: " + qryStr + " order by date desc")
+	query = client.query(qryStr + " order by date desc");
 	/*if(datefrom != null && dateto != null && datefrom !=undefined && dateto !=undefined && datefrom !="" && dateto !=""){
 		query = client.query("SELECT * FROM vm2016_orders where date between '" + datefrom + "' and '" + dateto + "' order by date desc");
 	} else {
@@ -730,6 +842,7 @@ LabYokeReporterOrders.prototype.reportOrders = function(callback) {
 			callback(null, results);
 		}
 	});
+});
 };
 
 LabYokeAgents.prototype.getLabyoker = function(callback) {
