@@ -706,6 +706,7 @@ LabYokeReporterOrders.prototype.reportOrders = function(callback) {
 	var datefrom = this.datefrom;
 	var dateto = this.dateto;
 	var lab = this.lab;
+	var labs = this.labs;
 	var mylab = this.mylab.replace(" ","").toLowerCase();
 	//var category = this.category;
 	var params = "";
