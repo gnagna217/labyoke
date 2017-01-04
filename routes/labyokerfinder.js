@@ -358,11 +358,13 @@ console.log("report on savings- dateto: " + labsindept);
 
 	if(lab != null && lab !=undefined && lab =="all"){
 
+	where = where + " and (";
 	
 	for(var prop in labsindept){
-		where = where + " and b.lab = '" + labs[prop].labname + "'";
+		where = where + " b.lab = '" + labs[prop].labname + "' or ";
 	}
-	where = where.replace(/and\s*$/, "");
+	where = where.replace(/or\s*$/, "");
+	where = where + ")";
 
 	for(var prop in labs){
 		a = "a" + i;
