@@ -1065,8 +1065,8 @@ LabYokerGetOrder.prototype.getorders = function(callback) {
 	 select = "";
 
 	for(var prop in labs){
-		a = "a" + i;
-		labsstr = (labs[prop].labname).replace(" ","").toLowerCase() + "_orders " + a + " ";
+		//a = "a" + i;
+		labsstr = (labs[prop].labname).replace(" ","").toLowerCase() + "_orders" ; //+ a + " ";
 		select = select + "SELECT a.agent, count(a.agent) counting FROM " + labsstr + " a, vm2016_users b where b.lab='"+lab+"' and a.insufficient=1 and a.requestoremail=b.email group by a.agent UNION ";
 		i++;
 	}
