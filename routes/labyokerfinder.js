@@ -30,7 +30,7 @@ LabyokerLabs = function(lab,adminemail) {
 	this.lab = lab;
 };
 
-LabYokerChangeShare = function(table, agent, vendor,catalognumber,email,requestor,checked,datenow,date,mylab) {
+LabYokerChangeShare = function(table, agent, vendor,catalognumber,email,requestor,checked,datenow,date,lab) {
 	this.agent = agent;
 	this.vendor = vendor;
 	this.catalognumber = catalognumber;
@@ -40,7 +40,7 @@ LabYokerChangeShare = function(table, agent, vendor,catalognumber,email,requesto
 	this.date = date;
 	this.datenow = datenow;
 	this.requestor = requestor;
-	this.mylab = mylab;
+	this.lab = lab;
 };
 
 LabyokerUserDetails = function(column, value, email,curname,cursurname) {
@@ -1713,13 +1713,13 @@ LabYokerChangeShare.prototype.cancelShare = function(callback) {
 	var email = this.email;
 	var datenow = this.datenow;
 	var requestor = this.requestor;
-	var mylab = this.mylab.replace(" ","").toLowerCase();
+	var lab = this.lab.replace(" ","").toLowerCase();
 	var date = this.date;
 	console.log("date2: " + date);
 	console.log("requestor: " + requestor);
 	var results;
 	var orderonly = "";
-	if(table == mylab + "_orders"){
+	if(table == lab + "_orders"){
 		orderonly = " and requestoremail='" + requestor + "'";
 	}
 

@@ -59,6 +59,7 @@ block content
 										- if(insuff == 0)
 											- isnew = "yokeBackColor"
 											- checkedstr = true
+											- var lab = (ob[prop].lab).replace(" ","").toLowerCase();
 										tr(class=isnew)
 											td(class="wrapped") #{ob[prop].agent}
 											td(class="desktabonly") #{ob[prop].vendor}
@@ -69,12 +70,13 @@ block content
 												form(action="/cancelshare" method="post")
 													input(type="checkbox" name="cancel" value="cancel" class="cancel" checked=(checkedstr===true ? "checked" : undefined))
 													input(type="hidden" name="agent" value=ob[prop].agent)
+													input(type="hidden" name="lab" value=ob[prop].lab)
 													input(type="hidden" name="vendor" value=ob[prop].vendor)
 													input(type="hidden" name="catalognumber" value=ob[prop].catalognumber)
 													input(type="hidden" name="email" value=ob[prop].email)
 													input(type="hidden" name="requestoremail" value=ob[prop].requestoremail)
 													input(type="hidden" name="date" value=ob[prop].date)
-													input(type="hidden" name="table" value="vm2016_orders")
+													input(type="hidden" name="table" value=lab+"_orders")
 							script.
 								$(document).ready(function() {
 									$('#rankTblreqshares').DataTable({"order": [[ 4, "desc" ]]});

@@ -307,6 +307,7 @@ module.exports = function(router) {
 	router.post('/cancelshare', isLoggedIn, function(req, res) {
 		if (req.session.user) {
 			var agent = req.body.agent;
+			var lab = req.body.lab;
 			var vendor = req.body.vendor;
 			var catalognumber = req.body.catalognumber;
 			var table = req.body.table;
@@ -322,6 +323,7 @@ module.exports = function(router) {
 			if(checked == undefined)
 				checked = 1;
 			console.log("date: " + date);
+			console.log("laab: " + lab);
 			console.log("agent: " + agent);
 			console.log("vendor: " + vendor);
 			console.log("catalognumber: " + catalognumber);
@@ -329,7 +331,7 @@ module.exports = function(router) {
 			console.log("table: " + table);
 			console.log("email: " + email);
 			console.log("requestoremail: " + requestor);
-			var labYokechange = new LabYokerChangeShare(table,agent, vendor, catalognumber,email,requestor,checked,datenow,date, req.session.lab);
+			var labYokechange = new LabYokerChangeShare(table,agent, vendor, catalognumber,email,requestor,checked,datenow,date, lab);
 			labYokechange.cancelShare(function(error, results) {
 				if(results != null && results.length > 0){
 					res.redirect('/share');			
