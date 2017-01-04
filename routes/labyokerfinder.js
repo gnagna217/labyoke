@@ -52,10 +52,11 @@ LabyokerUserDetails = function(column, value, email,curname,cursurname) {
 	this.cursurname = cursurname;
 }
 
-LabYokeReporterOrders = function(datefrom, dateto, lab) {
+LabYokeReporterOrders = function(datefrom, dateto, lab, labs) {
 	this.datefrom = datefrom;
 	this.dateto = dateto;
 	this.lab = lab;
+	this.labs = labs;
 	//this.category = category;
 };
 
