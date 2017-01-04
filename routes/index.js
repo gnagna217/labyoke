@@ -836,10 +836,11 @@ module.exports = function(router) {
 
 							labyoker
 									.login(function(error, results) {
-										var done, shares, orders;
+										var done, shares, orders, dept;
 
 										if(results != null && results.length > 0){
 											done = results[0];
+											dept = results[1];
 										}
 										
 										/*if(results != null && results.length > 2){
@@ -847,7 +848,7 @@ module.exports = function(router) {
 											req.session.orders = orders;
 										}*/
 										console.log("done is " + done);
-										console.log("department is : " + results[1]);
+										console.log("department is : " + dept[0].department);
 										//console.log("done2 is " + done.length);
 										console.log("shares is " + shares);
 										console.log("orders is " + orders);
@@ -879,7 +880,7 @@ module.exports = function(router) {
 														req.session.orders = orders;
 													}
 													req.session.user = done[0].name;
-													req.session.dept = results[1].department;
+													req.session.dept = dept[0].department;
 													req.session.userid = done[0].id;
 													req.session.useradmin = false;
 													console.log("admin? " + done[0].admin);
