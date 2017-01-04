@@ -278,6 +278,9 @@ LabYokeReporterSavings.prototype.reportMoney = function(callback) {
 	console.log("report on savings- dateto: " + dateto);
 	var query;
 
+var labyokerLab = new LabyokerLab(this.mylab);
+		labyokerLab.getLabsInDept(function(error, labsindept) {
+
 	if(datefrom != null && dateto != null && datefrom !=undefined && dateto !=undefined && datefrom !="" && dateto !=""){
 		if(params == ""){
 			params += "<div style='font-weight:bold'>Parameters</div>";
@@ -390,6 +393,7 @@ LabYokeReporterSavings.prototype.reportMoney = function(callback) {
 			callback(null, results);
 		}
 	});
+});
 };
 
 LabYokeReporterSavings.prototype.reportInsuff = function(callback) {
