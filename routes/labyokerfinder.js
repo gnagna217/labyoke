@@ -1337,10 +1337,11 @@ Labyoker.prototype.login = function(callback) {
 					callback(null, result.rows);
 				});
 			}*/
+			});
 		} else {
 			callback(null, null);
 		}
-		});
+		
 	});
 };
 

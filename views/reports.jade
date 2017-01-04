@@ -150,7 +150,7 @@ block content
 							label(style="width: 100px;")="Date To"
 							input(name="reportDateToMoney" style="margin-bottom:10px" type="text" id="reportDateToMoney" class="form-control")
 
-							label(style="width: 100px;")="Lab"
+							label(style="width: 100px;")!="Lab in " + dept
 							select(name="reportLabMoney" type="text" id="reportLabMoney" class="form-control" style="border-color:#3d9dcb;margin-bottom:10px" placeholder="Lab")
 								option(value="all")="all"
 								if(categories != undefined)
@@ -262,7 +262,7 @@ block content
 							label(style="width: 100px;")="Date To"
 							input(name="reportDateToOrders" style="margin-bottom:10px" type="text" id="reportDateToOrders" class="form-control")
 							
-							label(style="width: 100px;")="Lab"
+							label(style="width: 100px;")!="Lab in " + dept
 							select(name="reportLabOrders" type="text" id="reportLabOrders" class="form-control" style="border-color:#3d9dcb;margin-bottom:10px" placeholder="Lab")
 								option(value="all")="all"
 								if(categories != undefined)
@@ -518,7 +518,7 @@ block content
 				div
 					form(action="reportInsuff", method="post")
 						div(class="buttons")
-							label(style="width: 100px;")="Lab"
+							label(style="width: 100px;")!="Lab in " + dept
 							select(name="reportLabInsuff" type="text" id="reportLabInsuff" class="form-control" style="border-color:#3d9dcb;margin-bottom:10px" placeholder="Lab")
 								option(value="all")="all"
 								if(categories != undefined)
