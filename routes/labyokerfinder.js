@@ -22,7 +22,8 @@ LabYokeAgents = function(email,mylab) {
 	this.mylab = mylab;
 };
 
-LabyokerCategories = function() {
+LabyokerLab = function(lab) {
+	this.lab = lab;
 };
 
 LabyokerLabs = function(lab,adminemail) {
@@ -793,10 +794,11 @@ LabYokeAgents.prototype.reportAllSharesByCategory = function(callback) {
 	});
 };
 
-LabyokerCategories.prototype.getcategories = function(callback) {
+LabyokerLab.prototype.getLabsInDept = function(callback) {
 	var results;
+	var lab = this.lab;
 	var query = client
-			.query("SELECT distinct agent FROM vm2016_agentsshare");
+			.query("SELECT distinct labname FROM labs where department in (select department from labs where labname='"+lab+"')");
 	query.on("row", function(row, result) {
 		result.addRow(row);
 	});
@@ -1277,6 +1279,13 @@ Labyoker.prototype.login = function(callback) {
 			var pass = results[0].password;
 			var active = results[0].active;
 			var email = results[0].email;
+			var lab = results[0].lab;
+			var query2 = client.query("SELECT department from vm2016_users where lab='" + lab + "'");
+		query2.on("row", function(row, result2) {
+			result2.addRow(row);
+		});
+		query2.on("end", function(result2) {
+			resultsLogin.push(results2);
 			console.log("email is: " + results[0].email);
 			// var hash = crypt.hashSync(pass, salt);
 			//if (active == 1) {
@@ -1331,6 +1340,7 @@ Labyoker.prototype.login = function(callback) {
 		} else {
 			callback(null, null);
 		}
+		});
 	});
 };
 
@@ -1864,4 +1874,4 @@ exports.LabyokerLabs = LabyokerLabs;
 exports.LabYokeReporterSavings = LabYokeReporterSavings;
 exports.LabYokeReporterShares = LabYokeReporterShares;
 exports.LabyokerTeam = LabyokerTeam;
-exports.LabyokerCategories = LabyokerCategories;
+exports.LabyokerLab = LabyokerLab;

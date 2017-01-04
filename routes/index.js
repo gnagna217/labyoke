@@ -202,8 +202,8 @@ module.exports = function(router) {
 
 	router.get('/orders', isLoggedIn, function(req, res) {
 		if (req.session.user) {
-			var labyokerCats = new LabyokerCategories();
-		labyokerCats.getcategories(function(error, categories) {
+			var labyokerLab = new LabyokerLab(req.session.lab);
+		labyokerLab.getLabsInDept(function(error, categories) {
 			console.log("load categories in reports : " + categories);
 			req.session.categories = categories;
 			var labYokerGetOrder = new LabYokerGetOrder(req.session.email, req.session.lab,req.session.labs);
@@ -346,20 +346,20 @@ module.exports = function(router) {
 
 
 	router.get('/reports', isLoggedInAdmin, function(req, res) {
-		var labyokerCats = new LabyokerCategories();
-		labyokerCats.getcategories(function(error, categories) {
-			console.log("load categories in reports : " + categories);
+		var labyokerLab = new LabyokerLab(req.session.lab);
+		labyokerLab.getLabsInDept(function(error, categories) {
+			console.log("load labs in dept in reports : " + categories);
 			req.session.categories = categories;
 			if(req.session.labs == undefined){
 				var labyokerLabs = new LabyokerLabs('','');
 				labyokerLabs.getlabs(function(error, labs) {
 						req.session.labs = labs;
 						console.log("load labs in reports : " + labs);
-						res.render('reports', {categories: categories, labs: req.session.labs, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, isLoggedInAdmin: req.session.admin, loggedIn : true, title: 'Reports', isLoggedInAdmin: req.session.admin});
+						res.render('reports', {dept:req.session.dept,categories: categories, labs: req.session.labs, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, isLoggedInAdmin: req.session.admin, loggedIn : true, title: 'Reports', isLoggedInAdmin: req.session.admin});
 						req.session.messages = null;
 				});
 			} else {
-				res.render('reports', {categories: categories, labs: req.session.labs, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, isLoggedInAdmin: req.session.admin, loggedIn : true, title: 'Reports', isLoggedInAdmin: req.session.admin});
+				res.render('reports', {dept:req.session.dept,categories: categories, labs: req.session.labs, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, isLoggedInAdmin: req.session.admin, loggedIn : true, title: 'Reports', isLoggedInAdmin: req.session.admin});
 				req.session.messages = null;
 			}
 		});
@@ -376,9 +376,9 @@ module.exports = function(router) {
 			if(results != null){
 				console.log("res " + results);
 				if(results != ""){
-					res.render('reports', {categories: req.session.categories, labs: req.session.labs, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, datefromShares: datefrom, datetoShares: dateto, title:'Reports',loggedIn : true, resultsShares: results, isLoggedInAdmin: req.session.admin, addMessageShares: "success"});
+					res.render('reports', {dept:req.session.dept,categories: req.session.categories, labs: req.session.labs, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, datefromShares: datefrom, datetoShares: dateto, title:'Reports',loggedIn : true, resultsShares: results, isLoggedInAdmin: req.session.admin, addMessageShares: "success"});
 				} else {
-					res.render('reports', {categories: req.session.categories, labs: req.session.labs, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, datefromShares: datefrom, datetoShares: dateto, title:'Reports',loggedIn : true, isLoggedInAdmin: req.session.admin, addMessageShares: "failure"});
+					res.render('reports', {dept:req.session.dept,categories: req.session.categories, labs: req.session.labs, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, datefromShares: datefrom, datetoShares: dateto, title:'Reports',loggedIn : true, isLoggedInAdmin: req.session.admin, addMessageShares: "failure"});
 				}
 				req.session.messages = null;
 			}
@@ -406,9 +406,9 @@ module.exports = function(router) {
 			if(results != null){
 				console.log("res " + results);
 				if(results != ""){
-					res.render('reports', {categories: req.session.categories, labs: req.session.labs, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, datefromMoney: datefrom, datetoMoney: dateto, title:'Reports',loggedIn : true, resultsMoney: results, isLoggedInAdmin: req.session.admin, addMessageMoney: "success"});
+					res.render('reports', {dept:req.session.dept,categories: req.session.categories, labs: req.session.labs, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, datefromMoney: datefrom, datetoMoney: dateto, title:'Reports',loggedIn : true, resultsMoney: results, isLoggedInAdmin: req.session.admin, addMessageMoney: "success"});
 				} else {
-					res.render('reports', {categories: req.session.categories, labs: req.session.labs, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, datefromMoney: datefrom, datetoMoney: dateto, title:'Reports',loggedIn : true, isLoggedInAdmin: req.session.admin, addMessageMoney: "failure"});
+					res.render('reports', {dept:req.session.dept,categories: req.session.categories, labs: req.session.labs, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, datefromMoney: datefrom, datetoMoney: dateto, title:'Reports',loggedIn : true, isLoggedInAdmin: req.session.admin, addMessageMoney: "failure"});
 				}
 				req.session.messages = null;
 			}
@@ -436,9 +436,9 @@ module.exports = function(router) {
 			if(results != null){
 				console.log("res " + results);
 				if(results!=null && results != ""){
-					res.render('reports', {categories: req.session.categories, labs: req.session.labs, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, title:'Reports',loggedIn : true, resultsInsuff: results, isLoggedInAdmin: req.session.admin, addMessageInsuff: "success"});
+					res.render('reports', {dept:req.session.dept,categories: req.session.categories, labs: req.session.labs, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, title:'Reports',loggedIn : true, resultsInsuff: results, isLoggedInAdmin: req.session.admin, addMessageInsuff: "success"});
 				} else {
-					res.render('reports', {categories: req.session.categories, labs: req.session.labs, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, title:'Reports',loggedIn : true, isLoggedInAdmin: req.session.admin, addMessageInsuff: "failure"});
+					res.render('reports', {dept:req.session.dept,categories: req.session.categories, labs: req.session.labs, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, title:'Reports',loggedIn : true, isLoggedInAdmin: req.session.admin, addMessageInsuff: "failure"});
 				}
 				req.session.messages = null;
 			}
@@ -481,9 +481,9 @@ module.exports = function(router) {
 			if(results != null){
 				console.log("res " + results);
 				if(results != ""){
-					res.render('reports', {categories: req.session.categories, labs: req.session.labs, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, datefromOrders: datefrom, datetoOrders: dateto, title:'Reports',loggedIn : true, resultsOrders: results, isLoggedInAdmin: req.session.admin, addMessageOrders: "success"});
+					res.render('reports', {dept:req.session.dept,categories: req.session.categories, labs: req.session.labs, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, datefromOrders: datefrom, datetoOrders: dateto, title:'Reports',loggedIn : true, resultsOrders: results, isLoggedInAdmin: req.session.admin, addMessageOrders: "success"});
 				} else {
-					res.render('reports', {categories: req.session.categories, labs: req.session.labs, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, datefromOrders: datefrom, datetoOrders: dateto, title:'Reports',loggedIn : true, isLoggedInAdmin: req.session.admin, addMessageOrders: "failure"});
+					res.render('reports', {dept:req.session.dept,categories: req.session.categories, labs: req.session.labs, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, datefromOrders: datefrom, datetoOrders: dateto, title:'Reports',loggedIn : true, isLoggedInAdmin: req.session.admin, addMessageOrders: "failure"});
 				}
 				req.session.messages = null;
 			}
@@ -519,7 +519,7 @@ module.exports = function(router) {
 				console.log("load labs in account : " + labs);
 				var labYokeAgents = new LabYokeAgents(req.session.email, req.session.lab);
 				labYokeAgents.getLabyoker(function(error, results) {
-					res.render('account', {labname: req.session.lab, team:team, labs: req.session.labs, userDetails: results, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, loggedIn : true, isLoggedInAdmin: req.session.admin, title:'Account'});
+					res.render('account', {dept:req.session.dept,labname: req.session.lab, team:team, labs: req.session.labs, userDetails: results, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, loggedIn : true, isLoggedInAdmin: req.session.admin, title:'Account'});
 					req.session.messages = null;
 				});
 			});
@@ -878,6 +878,7 @@ module.exports = function(router) {
 														req.session.orders = orders;
 													}
 													req.session.user = done[0].name;
+													req.session.dept = results[1].department;
 													req.session.userid = done[0].id;
 													req.session.useradmin = false;
 													console.log("admin? " + done[0].admin);

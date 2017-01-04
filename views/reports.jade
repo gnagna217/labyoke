@@ -153,8 +153,8 @@ block content
 							label(style="width: 100px;")="Lab"
 							select(name="reportLabMoney" type="text" id="reportLabMoney" class="form-control" style="border-color:#3d9dcb;margin-bottom:10px" placeholder="Lab")
 								option(value="all")="all"
-								if(labs != undefined)
-									- var ob = labs
+								if(categories != undefined)
+									- var ob = categories
 									- for(var prop in ob)
 										- var lab = ob[prop].labname
 										option(value=lab) #{lab}
@@ -265,8 +265,8 @@ block content
 							label(style="width: 100px;")="Lab"
 							select(name="reportLabOrders" type="text" id="reportLabOrders" class="form-control" style="border-color:#3d9dcb;margin-bottom:10px" placeholder="Lab")
 								option(value="all")="all"
-								if(labs != undefined)
-									- var ob = labs
+								if(categories != undefined)
+									- var ob = categories
 									- for(var prop in ob)
 										- var lab = ob[prop].labname
 										option(value=lab) #{lab}
@@ -521,8 +521,8 @@ block content
 							label(style="width: 100px;")="Lab"
 							select(name="reportLabInsuff" type="text" id="reportLabInsuff" class="form-control" style="border-color:#3d9dcb;margin-bottom:10px" placeholder="Lab")
 								option(value="all")="all"
-								if(labs != undefined)
-									- var ob = labs
+								if(categories != undefined)
+									- var ob = categories
 									- for(var prop in ob)
 										- var lab = ob[prop].labname
 										option(value=lab) #{lab}
