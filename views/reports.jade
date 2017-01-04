@@ -12,19 +12,19 @@ block content
 			- now = (now.getMonth() + 1) + "/" + now.getDate() + "/" + now.getFullYear()
 		- var selResultsMoney = resultsMoney
 		- var checkedstrMoney = false;
-		- if(selResultsMoney !=null && selResultsMoney.length>0)
+		- if(section !=null && section.length>0 && section == "money")
 			- checkedstrMoney = true
 		- var selResultsOrders = resultsOrders
 		- var checkedstrOrders = false;
-		- if(selResultsOrders !=null && selResultsOrders.length>0)
+		- if(section !=null && section.length>0 && section == "orders")
 			- checkedstrOrders = true
 		- var selResultsShares = resultsShares
 		- var checkedstrShares = false;
-		- if(selResultsShares !=null && selResultsShares.length>0)
+		- if(section !=null && section.length>0 && section == "shares")
 			- checkedstrShares = true
 		- var selResultsInsuff = resultsInsuff
 		- var checkedstrInsuff = false;
-		- if(selResultsInsuff !=null && selResultsInsuff.length>0)
+		- if(section !=null && section.length>0 && section == "insuff")
 			- checkedstrInsuff = true
 		form(action="reportSelect", method="post")
 			div(class="buttons")
