@@ -1734,7 +1734,7 @@ LabYokerChangeShare.prototype.cancelShare = function(callback) {
 	query.on("end", function(result) {
 		results = "success";
 
-		if(table == mylab+"_orders" && checked == 0){
+		if(table == lab+"_orders" && checked == 0){
 			var subject = "LabYoke Order - Cancelled for " + agent;
 			var body = "<div style='text-align:center'><img style='width: 141px; margin: 0 20px;' src='https:\/\/team-labyoke.herokuapp.com\/images\/yoke4.png', alt='The Yoke',  title='Yoke', class='yokelogo'/></div><div style=\"font-family:'calibri'; font-size:11pt;padding: 20px;float:left\">Hello,<br/><br/>";
 			body += "Unfortunately your order has been cancelled due to insufficient quantities from the following inventory: <br><b>Reagent: </b> " + agent;
