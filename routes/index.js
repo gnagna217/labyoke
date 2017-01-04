@@ -405,9 +405,11 @@ module.exports = function(router) {
 		labYokereporterSavings.reportMoney(function(error, results) {
 			if(results != null){
 				console.log("res " + results);
-				if(results != ""){
+				if(results!=undefined && results != ""){
+					console.log("successful money report");
 					res.render('reports', {dept: req.session.dept, categories: req.session.categories, labs: req.session.labs, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, datefromMoney: datefrom, datetoMoney: dateto, title:'Reports',loggedIn : true, resultsMoney: results, isLoggedInAdmin: req.session.admin, addMessageMoney: "success"});
 				} else {
+					console.log("failed money report");
 					res.render('reports', {dept: req.session.dept, categories: req.session.categories, labs: req.session.labs, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, datefromMoney: datefrom, datetoMoney: dateto, title:'Reports',loggedIn : true, isLoggedInAdmin: req.session.admin, addMessageMoney: "failure"});
 				}
 				req.session.messages = null;
