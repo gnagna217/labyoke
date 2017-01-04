@@ -1280,7 +1280,7 @@ Labyoker.prototype.login = function(callback) {
 			var active = results[0].active;
 			var email = results[0].email;
 			var lab = results[0].lab;
-			var query2 = client.query("SELECT department from labs where lab='" + lab + "'");
+			var query2 = client.query("SELECT department from labs where labname='" + lab + "'");
 		query2.on("row", function(row, result2) {
 			result2.addRow(row);
 		});
