@@ -903,6 +903,7 @@ LabYokeAgents.prototype.findmyshares = function(callback) {
 	var results = [];
 	var labs = this.labs;
 	var mylab = this.mylab;
+	var mylabtable = mylab.replace(" ","").toLowerCase();
 	console.log("findmyshares: " + this.email);
 	var query = client
 			.query("SELECT * FROM vm2016_agentsshare where email='"
@@ -941,7 +942,7 @@ LabYokeAgents.prototype.findmyshares = function(callback) {
 		});
 		query2.on("end", function(result2) {
 			results.push(result2.rows);
-			var query4 = client.query("SELECT * from " + mylab + "_orders where email='" + email
+			var query4 = client.query("SELECT * from " + mylabtable + "_orders where email='" + email
 				+ "' order by date desc");
 			query4.on("row", function(row, result4) {
 				result4.addRow(row);
@@ -951,7 +952,7 @@ LabYokeAgents.prototype.findmyshares = function(callback) {
 				results.push(test4.length);
 				results.push(test4);
 				var query3 = client
-					.query("update " + mylab + "_orders set status='' where status='new' and email='" + email
+					.query("update " + mylabtable + "_orders set status='' where status='new' and email='" + email
 				+ "'");
 
 				query3.on("row", function(row, result3) {
@@ -959,7 +960,7 @@ LabYokeAgents.prototype.findmyshares = function(callback) {
 				});
 				query3.on("end", function(result3) {
 					var query5 = client
-						.query("SELECT agent, count(agent) as counting, EXTRACT(MONTH FROM date_trunc( 'month', date )) as monthorder, EXTRACT(year FROM date_trunc( 'year', date )) as yearorder from " + mylab + "_orders where email='" + email
+						.query("SELECT agent, count(agent) as counting, EXTRACT(MONTH FROM date_trunc( 'month', date )) as monthorder, EXTRACT(year FROM date_trunc( 'year', date )) as yearorder from " + mylabtable + "_orders where email='" + email
 					+ "' and insufficient=1 group by agent, date_trunc( 'month', date ), date_trunc( 'year', date ) order by agent asc limit 5");
 					query5.on("row", function(row, result5) {
 						result5.addRow(row);
