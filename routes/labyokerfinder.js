@@ -965,20 +965,12 @@ LabYokeAgents.prototype.findmyshares = function(callback) {
 				results.push(test4);
 
 	labsstr = "";
-	i = 0;
-	a = "a";
-	var cond = "";
 	select = "";
 
 	for(var prop in labs){
-		a = "a" + i;
 		labsstr = (labs[prop].labname).replace(" ","").toLowerCase() + "_orders "; //+ a + " ";
 		select = select + " update "+ labsstr + " set status='' where status='new' and email='" + email+ "'; ";
-		cond = cond + labsstr + ".status='' and ";
-		i++;
 	}
-	//select = select.replace(/,\s*$/, "");
-	//cond = cond.replace(/and\s*$/, "");
 	var q = "BEGIN TRANSACTION; " + select + " COMMIT;";
 	console.log("q update: " + q);
 			var query3 = client.query(q);
@@ -990,9 +982,23 @@ LabYokeAgents.prototype.findmyshares = function(callback) {
 					result3.addRow(row);
 				});
 				query3.on("end", function(result3) {
-					var query5 = client
-						.query("SELECT agent, count(agent) as counting, EXTRACT(MONTH FROM date_trunc( 'month', date )) as monthorder, EXTRACT(year FROM date_trunc( 'year', date )) as yearorder from " + mylabtable + "_orders where email='" + email
-					+ "' and insufficient=1 group by agent, date_trunc( 'month', date ), date_trunc( 'year', date ) order by agent asc limit 5");
+
+	labsstr = "";
+	select = "";
+
+	for(var prop in labs){
+		labsstr = (labs[prop].labname).replace(" ","").toLowerCase() + "_orders ";
+		select = select + "SELECT agent, count(agent) as counting, EXTRACT(MONTH FROM date_trunc( 'month', date )) as monthorder, EXTRACT(year FROM date_trunc( 'year', date )) as yearorder from " + labsstr + " where email='" + email + "' and insufficient=1 group by agent, date_trunc( 'month', date ), date_trunc( 'year', date ) UNION ";
+	}
+	select = select.replace(/UNION\s*$/, "");
+	var q = select + " order by agent asc limit 5";
+	console.log("q monthly: " + q);
+	var query5 = client.query(q);
+	
+
+					//var query5 = client
+					//	.query("SELECT agent, count(agent) as counting, EXTRACT(MONTH FROM date_trunc( 'month', date )) as monthorder, EXTRACT(year FROM date_trunc( 'year', date )) as yearorder from " + mylabtable + "_orders where email='" + email
+					//+ "' and insufficient=1 group by agent, date_trunc( 'month', date ), date_trunc( 'year', date ) order by agent asc limit 5");
 					query5.on("row", function(row, result5) {
 						result5.addRow(row);
 					});
