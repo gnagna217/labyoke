@@ -771,7 +771,7 @@ console.log("report on orders: " + labsindept);
 	where = where + " and (";
 	
 	for(var prop in labsindept){
-		where = where + " b.lab = '" + labsindept[prop].labname + "' or ";
+		where = where + " lab = '" + labsindept[prop].labname + "' or ";
 	}
 	where = where.replace(/or\s*$/, "");
 	where = where + ")";
