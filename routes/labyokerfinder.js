@@ -783,17 +783,17 @@ console.log("report on orders: " + labsindept);
 	}
 	select = select.replace(/UNION\s*$/, "");
 } else {
-	select = "SELECT * FROM " + lab.replace(" ","").toLowerCase() + "_orders " + where + " order by date desc";
+	select = "SELECT * FROM " + lab.replace(" ","").toLowerCase() + "_orders " + where;
 }
 	console.log("get orders labsstr: " + labsstr);
 	console.log("full query: " + select);
 	
-	var qryStr = select + " order by agent asc";
+	var qryStr = select + " order by date desc";
 
 
 	//var qryStr = "SELECT * FROM " + mylab + "_orders " + where + " order by date desc";
-	console.log("qry report orders: " + qryStr + " order by date desc")
-	query = client.query(qryStr + " order by date desc");
+	console.log("qry report orders: " + qryStr)
+	query = client.query(qryStr);
 	/*if(datefrom != null && dateto != null && datefrom !=undefined && dateto !=undefined && datefrom !="" && dateto !=""){
 		query = client.query("SELECT * FROM vm2016_orders where date between '" + datefrom + "' and '" + dateto + "' order by date desc");
 	} else {
