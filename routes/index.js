@@ -371,7 +371,7 @@ module.exports = function(router) {
 		var dateto = req.body.reportDateTo;
 		var category = req.body.reportCategory;
 		console.log("reportSomething " + req.body.reportDateFrom);
-		var labYokereporter = new LabYokeReporterShares(datefrom, dateto, category, req.session.lab, req.session.labs);
+		var labYokereporter = new LabYokeReporterShares(datefrom, dateto, req.session.lab, req.session.labs);
 		labYokereporter.reportShares(function(error, results) {
 			if(results != null){
 				console.log("res " + results);
