@@ -61,10 +61,11 @@ LabYokeReporterOrders = function(datefrom, dateto, lab, labs, mylab) {
 	//this.category = category;
 };
 
-LabYokeReporterShares = function(datefrom, dateto, mylab) {
+LabYokeReporterShares = function(datefrom, dateto, mylab, labs) {
 	this.datefrom = datefrom;
 	this.dateto = dateto;
 	this.mylab = mylab;
+	this.labs = labs;
 	//this.category = category;
 };
 
