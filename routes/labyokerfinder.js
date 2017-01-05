@@ -935,7 +935,7 @@ LabYokeAgents.prototype.findmyshares = function(callback) {
 
 	console.log("get getLabOrders_2 select: " + select /*+ " order by agent asc limit 6"*/);
 
-		var query2 = client.query(select + " order by a.agent asc limit 6");
+		var query2 = client.query(select + " order by agent asc limit 6");
 		query2.on("row", function(row, result2) {
 			result2.addRow(row);
 		});
