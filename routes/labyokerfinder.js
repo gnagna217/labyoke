@@ -612,14 +612,16 @@ LabYokeReporterShares.prototype.reportShares = function(callback) {
 	var params = "";
 	var where = "";
 	var isempty = true;
+	var mylab = this.mylab;
 	//var mylab = this.mylab.replace(" ","").toLowerCase();
 	console.log("report on something: datefrom: " + datefrom);
 	console.log("report on something: dateto: " + dateto);
 	//console.log("report on something: agent: " + agent);
 	var query;
-	var labyokerLab = new LabyokerLab(this.mylab);
+	var labyokerLab = new LabyokerLab(mylab);
 		labyokerLab.getLabsInDept(function(error, labsindept) {
 console.log("report on shares: " + labsindept);
+console.log("report on shares my lab: " + mylab);
 	if(datefrom != null && dateto != null && datefrom !=undefined && dateto !=undefined && datefrom !="" && dateto !=""){
 		if(params == ""){
 			params += "<div style='font-weight:bold'>Parameters</div>";
