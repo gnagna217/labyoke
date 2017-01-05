@@ -498,7 +498,7 @@ module.exports = function(router) {
 	});
 
 	router.get('/share', isLoggedIn, function(req, res) {
-		var labYokeAgents = new LabYokeAgents(req.session.email, req.session.lab);
+		var labYokeAgents = new LabYokeAgents(req.session.email, req.session.lab, req.session.labs);
 		labYokeAgents.findmyshares(function(error, results) {
 			//req.session.orders = results[2];
 			req.session.shares = 0;
@@ -519,14 +519,14 @@ module.exports = function(router) {
 			labyokerLabs.getlabs(function(error, labs) {
 				req.session.labs = labs;
 				console.log("load labs in account : " + labs);
-				var labYokeAgents = new LabYokeAgents(req.session.email, req.session.lab);
+				var labYokeAgents = new LabYokeAgents(req.session.email, req.session.lab, req.session.labs);
 				labYokeAgents.getLabyoker(function(error, results) {
 					res.render('account', {dept: req.session.dept, labname: req.session.lab, team:team, labs: req.session.labs, userDetails: results, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, loggedIn : true, isLoggedInAdmin: req.session.admin, title:'Account'});
 					req.session.messages = null;
 				});
 			});
 		} else {
-			var labYokeAgents = new LabYokeAgents(req.session.email, req.session.lab);
+			var labYokeAgents = new LabYokeAgents(req.session.email, req.session.lab, req.session.labs);
 			labYokeAgents.getLabyoker(function(error, results) {
 				res.render('account', {dept: req.session.dept, labname: req.session.lab, team:team, labs: req.session.labs, userDetails: results, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, loggedIn : true, isLoggedInAdmin: req.session.admin, title:'Account'});
 				req.session.messages = null;
