@@ -920,23 +920,24 @@ LabYokeAgents.prototype.findmyshares = function(callback) {
 	var a = "a";
 	var select = "";
 
-	for(var prop in labs){
+	/*for(var prop in labs){
 		a = "a" + i;
 		labsstr = (labs[prop].labname).replace(" ","").toLowerCase() + "_orders "; //+ a + " ";
 		select = select + "SELECT a.agent, count(a.agent), b.insufficient as insuff from vm2016_agentsshare a, " + labsstr + " b where a.agent = b.agent and a.catalognumber = b.catalognumber and b.email='"
 					+ email + "' and b.lab='" + mylab + "' group by a.agent, b.insufficient UNION ";
 		i++;
-	}
+	}*/
 
 	//labsstr = labsstr.replace(/,\s*$/, "");
 	//date = date.replace(/,\s*$/, "");
-	select = select.replace(/UNION\s*$/, "");
+	//select = select.replace(/UNION\s*$/, "");
 
 	console.log("get getLabOrders_2 labsstr: " + labsstr);
 
 	console.log("get getLabOrders_2 select: " + select /*+ " order by agent asc limit 6"*/);
 
-		var query2 = client.query(select + " order by agent asc limit 6");
+		var query2 = client.query("SELECT a.agent, count(a.agent), b.insufficient as insuff from vm2016_agentsshare a, " + mylabtable + "_orders b where a.agent = b.agent and a.catalognumber = b.catalognumber and b.email='"
+					+ email + "' group by a.agent, b.insufficient order by agent asc limit 6");
 		query2.on("row", function(row, result2) {
 			result2.addRow(row);
 		});
@@ -967,11 +968,13 @@ LabYokeAgents.prototype.findmyshares = function(callback) {
 	labsstr = "";
 	select = "";
 
-	for(var prop in labs){
+	/*for(var prop in labs){
 		labsstr = (labs[prop].labname).replace(" ","").toLowerCase() + "_orders "; //+ a + " ";
 		select = select + " update "+ labsstr + " set status='' where status='new' and email='" + email+ "'; ";
 	}
 	var q = "BEGIN TRANSACTION; " + select + " COMMIT;";
+	*/
+	var q = "update "+ mylabtable + "_orders set status='' where status='new' and email='" + email+ "'";
 	console.log("q update: " + q);
 			var query3 = client.query(q);
 
@@ -986,12 +989,14 @@ LabYokeAgents.prototype.findmyshares = function(callback) {
 	labsstr = "";
 	select = "";
 
-	for(var prop in labs){
+	/*for(var prop in labs){
 		labsstr = (labs[prop].labname).replace(" ","").toLowerCase() + "_orders ";
 		select = select + "SELECT agent, count(agent) as counting, EXTRACT(MONTH FROM date_trunc( 'month', date )) as monthorder, EXTRACT(year FROM date_trunc( 'year', date )) as yearorder from " + labsstr + " where email='" + email + "' and insufficient=1 group by agent, date_trunc( 'month', date ), date_trunc( 'year', date ) UNION ";
 	}
 	select = select.replace(/UNION\s*$/, "");
 	var q = select + " order by agent asc limit 5";
+	*/
+	var q = "SELECT agent, count(agent) as counting, EXTRACT(MONTH FROM date_trunc( 'month', date )) as monthorder, EXTRACT(year FROM date_trunc( 'year', date )) as yearorder from " + mylabtable + " where email='" + email + "' and insufficient=1 group by agent, date_trunc( 'month', date ), date_trunc( 'year', date )";
 	console.log("q monthly: " + q);
 	var query5 = client.query(q);
 	
@@ -1233,16 +1238,16 @@ LabYokerGetOrder.prototype.getorders = function(callback) {
 
 	 select = "";
 
-	/*for(var prop in labs){
+	for(var prop in labs){
 		a = "a" + i;
 		labsstr = (labs[prop].labname).replace(" ","").toLowerCase() + "_orders " + a + " ";
 		select = select + "SELECT agent, count(agent) as counting FROM " + labsstr + " where lab='"+lab+"' and insufficient=1 group by agent UNION ";
 		i++;
-	}*/
+	}
 
 	//labsstr = labsstr.replace(/,\s*$/, "");
 	//date = date.replace(/,\s*$/, "");
-	select = "SELECT agent, count(agent) as counting FROM " + mylab + "_orders where insufficient=1 group by agent ";
+	select = select.replace(/UNION\s*$/, "");
 	console.log("getorders: total number of orders - " + select + " order by counting desc limit 10");
 		var query2 = client.query(select + " order by counting desc limit 10");
 		//("SELECT b.category, count(b.category) FROM vm2016_orders a, vm2016_agentsshare b where a.agent = b.agent and a.lab='"+lab+"' group by b.category");
