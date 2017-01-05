@@ -944,7 +944,7 @@ LabYokeAgents.prototype.findmyshares = function(callback) {
 		query2.on("end", function(result2) {
 			results.push(result2.rows);
 
-	var labsstr = "";
+	/*var labsstr = "";
 	var i = 0;
 	var a = "a";
 	var select = "";
@@ -956,7 +956,8 @@ LabYokeAgents.prototype.findmyshares = function(callback) {
 		i++;
 	}
 	select = select.replace(/UNION\s*$/, "");
-			var query4 = client.query(select + " order by date desc");
+	*/
+			var query4 = client.query("SELECT * from " + mylabtable + "_orders where email='" + email + "'  order by date desc");
 			query4.on("row", function(row, result4) {
 				result4.addRow(row);
 			});
