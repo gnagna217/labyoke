@@ -77,7 +77,7 @@ block content
 													input(type="hidden" name="email" value=ob[prop].email)
 													input(type="hidden" name="requestoremail" value=ob[prop].requestoremail)
 													input(type="hidden" name="date" value=ob[prop].date)
-													input(type="hidden" name="table" value=lab+"_orders")
+													input(type="hidden" name="table" value=currentlabname.replace(" ","").toLowerCase() + "_orders")
 							script.
 								$(document).ready(function() {
 									$('#rankTblreqshares').DataTable({"order": [[ 4, "desc" ]]});
