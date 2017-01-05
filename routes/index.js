@@ -478,7 +478,7 @@ module.exports = function(router) {
 		console.log("reportOrders reportDateFromOrders: " + req.body.reportDateFromOrders);
 		console.log("reportOrders lab: " + lab);
 		console.log("reportOrders category: " + category);
-		var labYokereporter = new LabYokeReporterOrders(datefrom, dateto, lab, req.session.labs);
+		var labYokereporter = new LabYokeReporterOrders(datefrom, dateto, lab, req.session.labs, req.session.lab);
 		labYokereporter.reportOrders(function(error, results) {
 			if(results != null){
 				console.log("res " + results);
