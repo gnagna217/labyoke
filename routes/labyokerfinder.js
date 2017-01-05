@@ -973,13 +973,13 @@ LabYokeAgents.prototype.findmyshares = function(callback) {
 	for(var prop in labs){
 		a = "a" + i;
 		labsstr = (labs[prop].labname).replace(" ","").toLowerCase() + "_orders "; //+ a + " ";
-		select = select + labsstr + " , ";
+		select = select + labsstr + " set status='' where status='new' and email='" + email+ "'; ";
 		cond = cond + labsstr + ".status='' and ";
 		i++;
 	}
-	select = select.replace(/,\s*$/, "");
-	cond = cond.replace(/and\s*$/, "");
-	var q = "update " + select + " set " + cond + " where status='new' and email='" + email+ "'";
+	//select = select.replace(/,\s*$/, "");
+	//cond = cond.replace(/and\s*$/, "");
+	var q = "BEGIN TRANSACTION; " + select + " COMMIT;";
 	console.log("q update: " + q);
 			var query3 = client.query(q);
 
