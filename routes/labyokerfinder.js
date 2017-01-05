@@ -967,16 +967,18 @@ LabYokeAgents.prototype.findmyshares = function(callback) {
 	labsstr = "";
 	i = 0;
 	a = "a";
-	select = "";
+	var cond = "";
 
 	for(var prop in labs){
 		a = "a" + i;
 		labsstr = (labs[prop].labname).replace(" ","").toLowerCase() + "_orders "; //+ a + " ";
 		select = select + labsstr + " , ";
+		cond = cond + labsstr + ".status='' and ";
 		i++;
 	}
 	select = select.replace(/,\s*$/, "");
-	var q = "update " + select + " set status='' where status='new' and email='" + email+ "'";
+	cond = cond.replace(/and\s*$/, "");
+	var q = "update " + select + " set " + cond + " where status='new' and email='" + email+ "'";
 	console.log("q update: " + q);
 			var query3 = client.query(q);
 
