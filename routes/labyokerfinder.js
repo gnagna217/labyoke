@@ -644,12 +644,19 @@ console.log("report on shares: " + labsindept);
 			where +=" and ";
 		where += " lower(category) like '%" + category.toLowerCase() + "%'";
 	} */
-	where = where + " and (";
+	console.log("where: " +  where);
+	if(where == "")
+		where = " where ";
+	else
+		where = where + " and (";
+	console.log("where0: " +  where);
 	for(var prop in labsindept){
 		where = where + " lab = '" + labsindept[prop].labname + "' or ";
 	}
+	console.log("where1: " +  where);
 	where = where.replace(/or\s*$/, "");
 	where = where + ")";
+	console.log("where2: " +  where);
 
 	var qryStr = "SELECT * FROM vm2016_agentsshare " + where + " order by date desc";
 	console.log("query report shares: " + qryStr);
