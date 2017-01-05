@@ -996,7 +996,7 @@ LabYokeAgents.prototype.findmyshares = function(callback) {
 	select = select.replace(/UNION\s*$/, "");
 	var q = select + " order by agent asc limit 5";
 	*/
-	var q = "SELECT agent, count(agent) as counting, EXTRACT(MONTH FROM date_trunc( 'month', date )) as monthorder, EXTRACT(year FROM date_trunc( 'year', date )) as yearorder from " + mylabtable + " where email='" + email + "' and insufficient=1 group by agent, date_trunc( 'month', date ), date_trunc( 'year', date )";
+	var q = "SELECT agent, count(agent) as counting, EXTRACT(MONTH FROM date_trunc( 'month', date )) as monthorder, EXTRACT(year FROM date_trunc( 'year', date )) as yearorder from " + mylabtable + "_orders where email='" + email + "' and insufficient=1 group by agent, date_trunc( 'month', date ), date_trunc( 'year', date )";
 	console.log("q monthly: " + q);
 	var query5 = client.query(q);
 	
