@@ -1003,7 +1003,7 @@ LabYokerOrder.prototype.order = function(callback) {
 	console.log("currentquantity2: " + quantity);
 	var now = moment(new Date).tz("America/New_York").format('MM-DD-YYYY');
 	console.log("order location: " + location);
-	var query = client.query("INSERT INTO " + mylab + "_orders VALUES ('" + agent + "', '" + vendor + "', '" + catalognumber + "','" + email + "', '" + sendemail + "', '" + now + "', 'new', '" + category + "','" + lab + "',1 )");
+	var query = client.query("INSERT INTO " + this.mylab + "_orders VALUES ('" + agent + "', '" + vendor + "', '" + catalognumber + "','" + email + "', '" + sendemail + "', '" + now + "', 'new', '" + category + "','" + lab + "',1 )");
 
 	query.on("row", function(row, result) {
 		result.addRow(row);
