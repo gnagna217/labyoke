@@ -1155,7 +1155,7 @@ LabYokerGetOrder.prototype.getLabOrders_2 = function(callback) {
 	var labsstr = "";
 	var i = 0;
 	var a = "a";
-	var select = "";
+	var select = "select lab,sum(counting) counting from (";
 
 	for(var prop in labs){
 		a = "a" + i;
@@ -1164,9 +1164,12 @@ LabYokerGetOrder.prototype.getLabOrders_2 = function(callback) {
 		i++;
 	}
 
+
+
 	//labsstr = labsstr.replace(/,\s*$/, "");
 	//date = date.replace(/,\s*$/, "");
 	select = select.replace(/UNION\s*$/, "");
+	select = ") t group by lab";
 
 	console.log("get getLabOrders_2 labsstr: " + labsstr);
 	console.log("full getLabOrders_2 query: " + select);
