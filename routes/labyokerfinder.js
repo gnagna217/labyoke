@@ -901,6 +901,7 @@ LabyokerLabs.prototype.getlabs = function(callback) {
 
 LabYokeAgents.prototype.findmyshares = function(callback) {
 	var results = [];
+	var labs = this.labs;
 	var mylab = this.mylab.replace(" ","").toLowerCase();
 	console.log("findmyshares: " + this.email);
 	var query = client
