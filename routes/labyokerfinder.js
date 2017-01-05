@@ -968,6 +968,7 @@ LabYokeAgents.prototype.findmyshares = function(callback) {
 	i = 0;
 	a = "a";
 	var cond = "";
+	select = "";
 
 	for(var prop in labs){
 		a = "a" + i;
