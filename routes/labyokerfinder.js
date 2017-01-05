@@ -550,7 +550,7 @@ if(lab != null && lab !=undefined && lab =="all"){
 	where = where + " and (";
 	
 	for(var prop in labsindept){
-		where = where + " a.lab = '" + labsindept[prop].labname + "' or ";
+		where = where + " b.lab = '" + labsindept[prop].labname + "' or ";
 	}
 	where = where.replace(/or\s*$/, "");
 	where = where + ")";
