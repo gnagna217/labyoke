@@ -657,7 +657,7 @@ console.log("report on shares my lab: " + mylab);
 	}
 	console.log("where1: " +  where);
 	where = where.replace(/or\s*$/, "");
-	where = where + ")";
+
 	console.log("where2: " +  where);
 
 	var qryStr = "SELECT * FROM vm2016_agentsshare " + where + " order by date desc";
