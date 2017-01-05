@@ -1032,13 +1032,13 @@ LabYokerOrder.prototype.order = function(callback) {
 	var category = this.category;
 	var lab = this.lab;
 	var quantity = this.quantity;
-	var mylab = this.lab.replace(" ","").toLowerCase();
+	var mylab = this.mylab; //.replace(" ","").toLowerCase();
 	console.log("quantity: " + quantity);
 	quantity = parseInt(quantity) + 100;
 	console.log("currentquantity2: " + quantity);
 	var now = moment(new Date).tz("America/New_York").format('MM-DD-YYYY');
 	console.log("order location: " + location);
-	var query = client.query("INSERT INTO " + this.mylab + "_orders VALUES ('" + agent + "', '" + vendor + "', '" + catalognumber + "','" + email + "', '" + sendemail + "', '" + now + "', 'new', '" + category + "','" + lab + "',1 )");
+	var query = client.query("INSERT INTO " + lab.replace(" ","").toLowerCase() + "_orders VALUES ('" + agent + "', '" + vendor + "', '" + catalognumber + "','" + email + "', '" + sendemail + "', '" + now + "', 'new', '" + category + "','" + mylab + "',1 )");
 
 	query.on("row", function(row, result) {
 		result.addRow(row);
