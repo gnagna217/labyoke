@@ -651,13 +651,13 @@ console.log("report on shares my lab: " + mylab);
 		where = " where ";
 	else
 		where = where + " and ";
-	where = where + " b.email = a.email and ";
+	where = where + " b.email = a.email and a.";
 	console.log("where0: " +  where);
 	for(var prop in labsindept){
-		where = where + " b.lab = '" + labsindept[prop].labname + "' or ";
+		where = where + " b.lab = '" + labsindept[prop].labname + "' and ";
 	}
 	console.log("where1: " +  where);
-	where = where.replace(/or\s*$/, "");
+	where = where.replace(/and\s*$/, "");
 
 	console.log("where2: " +  where);
 
