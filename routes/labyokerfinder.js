@@ -650,17 +650,18 @@ console.log("report on shares my lab: " + mylab);
 	if(where == "")
 		where = " where ";
 	else
-		where = where + " and (";
+		where = where + " and ";
+	where = where + " b.email = a.email and (";
 	console.log("where0: " +  where);
 	for(var prop in labsindept){
-		where = where + " lab = '" + labsindept[prop].labname + "' or ";
+		where = where + " b.lab = '" + labsindept[prop].labname + "' or ";
 	}
 	console.log("where1: " +  where);
 	where = where.replace(/or\s*$/, "");
 
 	console.log("where2: " +  where);
 
-	var qryStr = "SELECT * FROM vm2016_agentsshare " + where + " order by date desc";
+	var qryStr = "SELECT * FROM vm2016_agentsshare a, vm2016_users b" + where + " order by a.date desc";
 	console.log("query report shares: " + qryStr);
 	query = client.query(qryStr);
 
