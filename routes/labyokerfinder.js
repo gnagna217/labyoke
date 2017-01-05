@@ -769,13 +769,11 @@ console.log("report on orders: " + labsindept);
 	if(lab != null && lab !=undefined && lab =="all"){
 	if(where == "")
 			where =" where ";
-	where = where + " and (";
 	
 	for(var prop in labsindept){
 		where = where + " lab = '" + labsindept[prop].labname + "' or ";
 	}
 	where = where.replace(/or\s*$/, "");
-	where = where + ")";
 
 	for(var prop in labs){
 		a = "a" + i;
