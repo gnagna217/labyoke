@@ -651,7 +651,7 @@ console.log("report on shares my lab: " + mylab);
 		where = " where ";
 	else
 		where = where + " and ";
-	where = where + " b.email = a.email and (";
+	where = where + " b.email = a.email and ";
 	console.log("where0: " +  where);
 	for(var prop in labsindept){
 		where = where + " b.lab = '" + labsindept[prop].labname + "' or ";
