@@ -973,7 +973,7 @@ LabYokeAgents.prototype.findmyshares = function(callback) {
 	for(var prop in labs){
 		a = "a" + i;
 		labsstr = (labs[prop].labname).replace(" ","").toLowerCase() + "_orders "; //+ a + " ";
-		select = select + labsstr + " set status='' where status='new' and email='" + email+ "'; ";
+		select = select + " update "+ labsstr + " set status='' where status='new' and email='" + email+ "'; ";
 		cond = cond + labsstr + ".status='' and ";
 		i++;
 	}
