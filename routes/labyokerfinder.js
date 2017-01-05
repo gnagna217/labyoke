@@ -942,8 +942,20 @@ LabYokeAgents.prototype.findmyshares = function(callback) {
 		});
 		query2.on("end", function(result2) {
 			results.push(result2.rows);
-			var query4 = client.query("SELECT * from " + mylabtable + "_orders where email='" + email
-				+ "' order by date desc");
+
+	var labsstr = "";
+	var i = 0;
+	var a = "a";
+	var select = "";
+
+	for(var prop in labs){
+		a = "a" + i;
+		labsstr = (labs[prop].labname).replace(" ","").toLowerCase() + "_orders "; //+ a + " ";
+		select = select + "SELECT * from " + labsstr + "_orders where email='" + email + "' and lab='" + mylab + "' UNION ";
+		i++;
+	}
+	select = select.replace(/UNION\s*$/, "");
+			var query4 = client.query(select + " order by date desc");
 			query4.on("row", function(row, result4) {
 				result4.addRow(row);
 			});
