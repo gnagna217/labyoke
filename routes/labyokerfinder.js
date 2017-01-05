@@ -789,7 +789,7 @@ console.log("report on orders: " + labsindept);
 	console.log("get orders labsstr: " + labsstr);
 	console.log("full query: " + select);
 	
-	var qrstr = select + " order by agent asc";
+	var qryStr = select + " order by agent asc";
 
 
 	//var qryStr = "SELECT * FROM " + mylab + "_orders " + where + " order by date desc";
