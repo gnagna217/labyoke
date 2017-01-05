@@ -976,7 +976,9 @@ LabYokeAgents.prototype.findmyshares = function(callback) {
 		i++;
 	}
 	select = select.replace(/,\s*$/, "");
-			var query3 = client.query("update " + select + " set status='' where status='new' and email='" + email+ "'");
+	var q = "update " + select + " set status='' where status='new' and email='" + email+ "'";
+	console.log("q update: " + q);
+			var query3 = client.query(q);
 
 
 				//var query3 = client.query("update " + mylabtable + "_orders set status='' where status='new' and email='" + email+ "'");
