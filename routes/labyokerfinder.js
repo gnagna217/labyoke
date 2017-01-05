@@ -612,7 +612,7 @@ LabYokeReporterShares.prototype.reportShares = function(callback) {
 	var params = "";
 	var where = "";
 	var isempty = true;
-	var mylab = this.mylab.replace(" ","").toLowerCase();
+	//var mylab = this.mylab.replace(" ","").toLowerCase();
 	console.log("report on something: datefrom: " + datefrom);
 	console.log("report on something: dateto: " + dateto);
 	//console.log("report on something: agent: " + agent);
