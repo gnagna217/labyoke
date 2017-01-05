@@ -1169,7 +1169,7 @@ LabYokerGetOrder.prototype.getLabOrders_2 = function(callback) {
 	//labsstr = labsstr.replace(/,\s*$/, "");
 	//date = date.replace(/,\s*$/, "");
 	select = select.replace(/UNION\s*$/, "");
-	select = ") t group by lab";
+	select = select + ") t group by lab";
 
 	console.log("get getLabOrders_2 labsstr: " + labsstr);
 	console.log("full getLabOrders_2 query: " + select);
