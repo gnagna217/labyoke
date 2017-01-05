@@ -923,7 +923,7 @@ LabYokeAgents.prototype.findmyshares = function(callback) {
 		a = "a" + i;
 		labsstr = (labs[prop].labname).replace(" ","").toLowerCase() + "_orders "; //+ a + " ";
 		select = select + "SELECT a.agent, count(a.agent), b.insufficient as insuff from vm2016_agentsshare a, " + labsstr + " b where a.agent = b.agent and a.catalognumber = b.catalognumber and b.email='"
-					+ email + "' and b.lab='" + labs[prop].labname + "' group by a.agent, b.insufficient UNION ";
+					+ email + "' and b.lab='" + this.mylab + "' group by a.agent, b.insufficient UNION ";
 		i++;
 	}
 
@@ -933,7 +933,7 @@ LabYokeAgents.prototype.findmyshares = function(callback) {
 
 	console.log("get getLabOrders_2 labsstr: " + labsstr);
 
-	console.log("get getLabOrders_2 select: " + select + " order by a.agent asc limit 6");
+	console.log("get getLabOrders_2 select: " + select + " order by agent asc limit 6");
 
 		var query2 = client.query(select + " order by a.agent asc limit 6");
 		query2.on("row", function(row, result2) {
