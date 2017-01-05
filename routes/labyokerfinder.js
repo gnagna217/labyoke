@@ -767,7 +767,8 @@ console.log("report on orders: " + labsindept);
 	var select = "";
 
 	if(lab != null && lab !=undefined && lab =="all"){
-
+	if(where == "")
+			where =" where ";
 	where = where + " and (";
 	
 	for(var prop in labsindept){
