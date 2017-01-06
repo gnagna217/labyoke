@@ -1251,7 +1251,7 @@ LabYokerGetOrder.prototype.getorders = function(callback) {
 */
 	//labsstr = labsstr.replace(/,\s*$/, "");
 	//date = date.replace(/,\s*$/, "");
-	select = "SELECT agent, count(agent) as counting, email FROM " + mylab + "_orders where insufficient=1 group by agent, email";
+	select = "SELECT agent, count(agent) as counting FROM " + mylab + "_orders where insufficient=1 group by agent";
 	console.log("getorders: total number of orders - " + select + " order by counting desc limit 10");
 		var query2 = client.query(select + " order by counting desc limit 10");
 		//("SELECT b.category, count(b.category) FROM vm2016_orders a, vm2016_agentsshare b where a.agent = b.agent and a.lab='"+lab+"' group by b.category");
@@ -1299,7 +1299,6 @@ LabYokerGetOrder.prototype.getorders = function(callback) {
 		query4.on("end", function(result4) {
 			//results.push(result2.rows);
 			var test3 = result3.rows;
-
 			results.push(test3[0].counting);
 			results.push(result4.rows);
 			console.log("shares found: " + test3[0].counting)
@@ -1327,9 +1326,22 @@ LabYokerGetOrder.prototype.getorders = function(callback) {
 			result5.addRow(row);
 		});
 		query5.on("end", function(result5) {
+
+		
+		select = "SELECT agent, count(agent) as counting, email FROM " + mylab + "_orders where insufficient=1 group by agent, email";
+		var query6 = client.query(select + " order by counting desc limit 10");
+		//("SELECT b.category, count(b.category) FROM vm2016_orders a, vm2016_agentsshare b where a.agent = b.agent and a.lab='"+lab+"' group by b.category");
+		query6.on("row", function(row, result6) {
+			result6.addRow(row);
+		});
+		query6.on("end", function(result6) {
+			
+
 			results.push(result5.rows);
+			results.push(result6.rows);
 			callback(null, results)
 			});
+		});
 
 		});
 
