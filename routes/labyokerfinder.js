@@ -1344,14 +1344,15 @@ LabYokeSearch.prototype.search = function(callback) {
 	var results = [];
 	console.log("searchText: " + this.searchText);
 	var query = client
-			.query("SELECT * FROM vm2016_agentsshare a, vm2016_users b where a.email = b.email and lower(a.agent) like lower('%"
-					+ this.searchText + "%') and a.insufficient = 1 and a.email != '" + this.email+ "' order by a.agent");
+			.query("SELECT * FROM vm2016_agentsshare a, vm2016_users b where a.email = b.email and (lower(a.agent) like lower('%"
+					+ this.searchText + "%') or lower(a.catalognumber) like lower('%"
+					+ this.searchText + "%')) and a.insufficient = 1 and a.email != '" + this.email+ "' order by a.agent");
 	query.on("row", function(row, result) {
 		result.addRow(row);
 	});
 	query.on("end", function(result) {
 		results.push(result.rows);
-		var query2 = client.query("SELECT distinct agent FROM vm2016_agentsshare");
+		var query2 = client.query("SELECT distinct agent, catalognumber FROM vm2016_agentsshare");
 		
 		query2.on("row", function(row, result2) {
 			result2.addRow(row);
