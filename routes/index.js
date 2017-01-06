@@ -203,8 +203,7 @@ module.exports = function(router) {
 function checkOrder(op, myemail) {
 	console.log("op agent is: " + op.agent);
 	console.log("op email is: " + op.email);
-	console.log("op is: " + op);
-	console.log("op [] is: " + op[0]);
+	console.log("myemail: " + myemail);
     return op.email == myemail;
 }
 
