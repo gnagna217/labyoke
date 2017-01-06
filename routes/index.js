@@ -200,8 +200,8 @@ module.exports = function(router) {
 		}
 	});
 
-function checkOrder(op) {
-    return op.email == req.session.email;
+function checkOrder(op, myemail) {
+    return op.email == myemail;
 }
 
 	router.get('/orders', isLoggedIn, function(req, res) {
@@ -231,7 +231,7 @@ function checkOrder(op) {
 					}
 					if(results != null && results.length > 1){
 						
-						totalshares = results[1].filter(checkOrder);
+						totalshares = results[1].filter(checkOrder, req.session.email);
 
 						console.log("totalshares in booster: " + totalshares);
 						totalshares = totalshares.length;
