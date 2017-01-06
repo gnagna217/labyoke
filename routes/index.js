@@ -200,12 +200,7 @@ module.exports = function(router) {
 		}
 	});
 
-function checkOrder(op, myemail) {
-	console.log("op agent is: " + op.agent);
-	console.log("op email is: " + op.email);
-	console.log("myemail: " + myemail);
-    return op.email == myemail;
-}
+
 
 	router.get('/orders', isLoggedIn, function(req, res) {
 		if (req.session.user) {
@@ -234,7 +229,12 @@ function checkOrder(op, myemail) {
 					}
 					if(results != null && results.length > 1){
 						
-						totalshares = results[1].filter(checkOrder, req.session.email);
+						totalshares = results[1].filter(function checkOrder(op) {
+	console.log("op agent is: " + op.agent);
+	console.log("op email is: " + op.email);
+	console.log("myemail: " + req.session.email);
+    return op.email == req.session.email;
+});
 
 						console.log("totalshares in booster: " + totalshares);
 						totalshares = totalshares.length;
