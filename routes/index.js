@@ -230,9 +230,11 @@ function checkOrder(op) {
 						totalorders = results[0].length;
 					}
 					if(results != null && results.length > 1){
-						totalshares = results[1].length;
-						totalshares = totalshares.filter(checkOrder);
+						
+						totalshares = results[1].filter(checkOrder);
+
 						console.log("totalshares in booster: " + totalshares);
+						totalshares = totalshares.length;
 					}
 
 					var findx = $("foreignObject").filter(function( index ) {
