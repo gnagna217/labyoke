@@ -1251,7 +1251,7 @@ LabYokerGetOrder.prototype.getorders = function(callback) {
 */
 	//labsstr = labsstr.replace(/,\s*$/, "");
 	//date = date.replace(/,\s*$/, "");
-	select = "SELECT agent, count(agent),email as counting FROM " + mylab + "_orders where insufficient=1 group by agent";
+	select = "SELECT agent, count(agent),email as counting FROM " + mylab + "_orders where insufficient=1 group by agent, email";
 	console.log("getorders: total number of orders - " + select + " order by counting desc limit 10");
 		var query2 = client.query(select + " order by counting desc limit 10");
 		//("SELECT b.category, count(b.category) FROM vm2016_orders a, vm2016_agentsshare b where a.agent = b.agent and a.lab='"+lab+"' group by b.category");
