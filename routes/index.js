@@ -200,6 +200,10 @@ module.exports = function(router) {
 		}
 	});
 
+function checkOrder(op) {
+    return op.email == req.session.email;
+}
+
 	router.get('/orders', isLoggedIn, function(req, res) {
 		if (req.session.user) {
 			var labyokerLab = new LabyokerLab(req.session.lab);
@@ -227,7 +231,15 @@ module.exports = function(router) {
 					}
 					if(results != null && results.length > 1){
 						totalshares = results[1].length;
+						totalshares = totalshares.filter(checkOrder);
+						console.log("totalshares in booster: " + totalshares);
 					}
+
+					var findx = $("foreignObject").filter(function( index ) {
+                    console.log('inside round: ' + (Math.round($( this ).attr( "x" ) * 100))/100  );
+                    console.log('inside floo: ' + (Math.floor($( this ).attr( "x" ) * 100))/100  );
+                    return ((Math.round($( this ).attr( "x" ) * 100))/100)  == roundxis || ((Math.round($( this ).attr( "x" ) * 100))/100)  == (roundxis + 10) || ((Math.floor($( this ).attr( "x" ) * 100))/100)  == roundxis || ((Math.floor($( this ).attr( "x" ) * 100))/100)  == (roundxis + 10);
+                  	}); 
 
 					var labs = req.session.labs;
 					var labadmin;
