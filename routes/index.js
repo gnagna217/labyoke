@@ -850,7 +850,7 @@ module.exports = function(router) {
 											req.session.orders = orders;
 										}*/
 										console.log("done is " + done);
-										console.log("department is : " + dept[0].department);
+										console.log("department is : " + dept);
 										//console.log("done2 is " + done.length);
 										console.log("shares is " + shares);
 										console.log("orders is " + orders);
