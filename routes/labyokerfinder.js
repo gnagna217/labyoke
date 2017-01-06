@@ -336,8 +336,8 @@ console.log("report on savings- dateto: " + labsindept);
 		if(params == ""){
 			params += "<div style='font-weight:bold'>Parameters</div>";
 		}
-		params += "<div><span style='font-weight:bold'>Date From: </span><span>" + moment(datefrom).add(1, 'day').tz("America/New_York").format('MM-DD-YYYY')  + "</span></div>";
-		params += "<div><span style='font-weight:bold'>Date To: </span><span>" + moment(dateto).add(1, 'day').tz("America/New_York").format('MM-DD-YYYY')  + "</span></div>";
+		params += "<div><span style='font-weight:bold'>Date From: </span><span>" + moment(datefrom).tz("America/New_York").format('MM-DD-YYYY')  + "</span></div>";
+		params += "<div><span style='font-weight:bold'>Date To: </span><span>" + moment(dateto).tz("America/New_York").format('MM-DD-YYYY')  + "</span></div>";
 		if(selected.length>0)
 			selected +=", ";
 		selected += "b.date";
@@ -347,7 +347,7 @@ console.log("report on savings- dateto: " + labsindept);
 		if(groupby.length>0)
 			groupby +=" , ";
 		groupby += "b.date";
-		html += "<p'>This report is listing savings between " + moment(datefrom).add(1, 'day').tz("America/New_York").format('MM-DD-YYYY') + " and " + moment(dateto).add(1, 'day').tz("America/New_York").format('MM-DD-YYYY') + "</p></div>"
+		html += "<p'>This report is listing savings between " + moment(datefrom).tz("America/New_York").format('MM-DD-YYYY') + " and " + moment(dateto).tz("America/New_York").format('MM-DD-YYYY') + "</p></div>"
 	} else {
 		datefrom = "all";
 		html += "<p>This report is listing all savings:</p></div>"
@@ -467,7 +467,7 @@ console.log("report on savings- dateto: " + labsindept);
 				html += "<td style='font-size: 12px;'>" + results[prop].catalognumber + "</td>";
 				}
 				if(datefrom != null && datefrom !=undefined && datefrom !="" && dateto != null && dateto !=undefined && dateto !="" ){
-				html += "<td style='font-size: 12px;'>" + moment(results[prop].date).add(1, 'day').tz("America/New_York").format('MM-DD-YYYY')+ "</td>";
+				html += "<td style='font-size: 12px;'>" + moment(results[prop].date).tz("America/New_York").format('MM-DD-YYYY')+ "</td>";
 				}
 				var total = results[prop].counting * results[prop].price;
 				savings += total;
@@ -587,7 +587,7 @@ if(lab != null && lab !=undefined && lab =="all"){
 				if(catalognumber != null && catalognumber !=undefined && catalognumber !=""){
 				html += "<td style='font-size: 12px;'>" + results[prop].catalognumber + "</td>";
 				}
-				html += "<td style='font-size: 12px;'>" + moment(results[prop].insuffdate).add(1, 'day').tz("America/New_York").format('MM-DD-YYYY')+ "</td>";
+				html += "<td style='font-size: 12px;'>" + moment(results[prop].insuffdate).tz("America/New_York").format('MM-DD-YYYY')+ "</td>";
 				html += " </tr>";
 		
 			}
@@ -681,7 +681,7 @@ console.log("report on shares my lab: " + mylab);
 		if(datefrom == 'all'){
 			html += "<p>This report is listing all the inventory uploaded:</p></div>"
 		} else {
-			html += "<p>This report is listing the inventory uploaded between " + moment(datefrom).add(1, 'day').tz("America/New_York").format('MM-DD-YYYY') + " and " + moment(dateto).add(1, 'day').tz("America/New_York").format('MM-DD-YYYY') + "</p></div>"
+			html += "<p>This report is listing the inventory uploaded between " + moment(datefrom).tz("America/New_York").format('MM-DD-YYYY') + " and " + moment(dateto).tz("America/New_York").format('MM-DD-YYYY') + "</p></div>"
 		}
 		html += params;
 		html +="<table><tbody><tr style='color: white;background-color: #3d9dcb;'><td style='font-size: 12px;'>Reagent</td><td style='font-size: 12px;'>Vendor</td><td style='font-size: 12px;'>Catalog#</td><td style='font-size: 12px;'>Location</td><td style='font-size: 12px;'>User</td><td>Date</td></tr>"
@@ -702,7 +702,7 @@ console.log("report on shares my lab: " + mylab);
 				html += " <td style='font-size: 12px;'>" + location + "</td>";
 				html += " <td style='font-size: 12px;'>" + email + "</td>";
 				//html += " <td style='font-size: 12px;'>" + category + "</td>";
-				html += " <td style='font-size: 12px;'>" + moment(date).add(1, 'day').tz("America/New_York").format('MM-DD-YYYY') + "</td></tr>";
+				html += " <td style='font-size: 12px;'>" + moment(date).tz("America/New_York").format('MM-DD-YYYY') + "</td></tr>";
 		
 			}
 			html += "</tbody></table><p><i><b>The LabYoke Team.</b></i></p><img style='width: 141px; margin: 0 20px;float:left' src='https:\/\/team-labyoke.herokuapp.com\/images\/yoke4.png', alt='The Yoke',  title='Yoke', class='yokelogo'/>";
@@ -826,7 +826,7 @@ console.log("report on orders: " + labsindept);
 		if(datefrom == 'all'){
 			html += "<p>This report is listing all the orders requested:</p></div>"
 		} else {
-			html += "<p>This report is listing the orders requested between " + moment(datefrom).add(1, 'day').tz("America/New_York").format('MM-DD-YYYY') + " and " + moment(dateto).add(1, 'day').tz("America/New_York").format('MM-DD-YYYY') + "</p></div>"
+			html += "<p>This report is listing the orders requested between " + moment(datefrom).tz("America/New_York").format('MM-DD-YYYY') + " and " + moment(dateto).tz("America/New_York").format('MM-DD-YYYY') + "</p></div>"
 		}
 		html += params;
 		html +="<table><tbody><tr style='color: white;background-color: #3d9dcb;'><td style='font-size: 12px;'>Reagent</td><td style='font-size: 12px;'>Vendor</td><td style='font-size: 12px;'>Catalog#</td><td style='font-size: 12px;'>Owner</td><td style='font-size: 12px;'>Requestor</td><td>Date</td></tr>"
@@ -846,7 +846,7 @@ console.log("report on orders: " + labsindept);
 				html += " <td style='font-size: 12px;'>" + catalognumber + "</td>";
 				html += " <td style='font-size: 12px;'>" + location + "</td>";
 				html += " <td style='font-size: 12px;'>" + email + "</td>";
-				html += " <td style='font-size: 12px;'>" + moment(date).add(1, 'day').tz("America/New_York").format('MM-DD-YYYY') + "</td></tr>";
+				html += " <td style='font-size: 12px;'>" + moment(date).tz("America/New_York").format('MM-DD-YYYY') + "</td></tr>";
 		
 			}
 			html += "</tbody></table><p><i><b>The LabYoke Team.</b></i></p><img style='width: 141px; margin: 0 20px;float:left' src='https:\/\/team-labyoke.herokuapp.com\/images\/yoke4.png', alt='The Yoke',  title='Yoke', class='yokelogo'/>";
