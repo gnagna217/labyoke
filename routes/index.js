@@ -235,13 +235,8 @@ function checkOrder(op, myemail) {
 
 						console.log("totalshares in booster: " + totalshares);
 						totalshares = totalshares.length;
+						console.log("totalshares in booster length: " + totalshares);
 					}
-
-					var findx = $("foreignObject").filter(function( index ) {
-                    console.log('inside round: ' + (Math.round($( this ).attr( "x" ) * 100))/100  );
-                    console.log('inside floo: ' + (Math.floor($( this ).attr( "x" ) * 100))/100  );
-                    return ((Math.round($( this ).attr( "x" ) * 100))/100)  == roundxis || ((Math.round($( this ).attr( "x" ) * 100))/100)  == (roundxis + 10) || ((Math.floor($( this ).attr( "x" ) * 100))/100)  == roundxis || ((Math.floor($( this ).attr( "x" ) * 100))/100)  == (roundxis + 10);
-                  	}); 
 
 					var labs = req.session.labs;
 					var labadmin;
