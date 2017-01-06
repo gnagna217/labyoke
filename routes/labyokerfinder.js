@@ -1352,7 +1352,7 @@ LabYokeSearch.prototype.search = function(callback) {
 	});
 	query.on("end", function(result) {
 		results.push(result.rows);
-		var query2 = client.query("SELECT distinct agent, catalognumber FROM vm2016_agentsshare");
+		var query2 = client.query("SELECT distinct agent, catalognumber FROM vm2016_agentsshare order by agent, catalognumber");
 		
 		query2.on("row", function(row, result2) {
 			result2.addRow(row);
@@ -1367,7 +1367,7 @@ LabYokeSearch.prototype.search = function(callback) {
 
 LabYokeSearch.prototype.findagents = function(callback) {
 	var results;
-	var query = client.query("SELECT distinct agent, catalognumber FROM vm2016_agentsshare");
+	var query = client.query("SELECT distinct agent, catalognumber FROM vm2016_agentsshare order by agent, catalognumber");
 	
 	query.on("row", function(row, result) {
 		result.addRow(row);
