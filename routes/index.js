@@ -974,6 +974,7 @@ module.exports = function(router) {
 
 													var labYokereporterSavings = new LabYokeReporterSavings(datefromsavings,datetosavings,undefined,undefined,undefined,lab, req.session.lab,req.session.labs);
 													labYokereporterSavings.dataMoney(function(error, savings) {
+														console.log("savings: " + savings);
 
 														req.session.savings = savings;
 														var cheer = "Keep searching, ordering, and sharing!";
