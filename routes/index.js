@@ -1003,7 +1003,7 @@ module.exports = function(router) {
 														}
 														req.session.savingsTextInitial = booster[b];
 														req.session.savingsColorInitial = boostercolor[b];
-														console.log("req.session.savingsText: " + req.session.savingsText);
+														console.log("req.session.savingsText: " + req.session.savingsTextInitial);
 													
 
 													if(req.session.to != null && req.session.to.length > 0){
