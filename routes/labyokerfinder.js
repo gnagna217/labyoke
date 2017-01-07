@@ -1160,7 +1160,7 @@ LabYokerGetOrder.prototype.getLabOrders_2 = function(callback) {
 	for(var prop in labs){
 		a = "a" + i;
 		labsstr = (labs[prop].labname).replace(" ","").toLowerCase() + "_orders "; //+ a + " ";
-		select = select + "SELECT lab, count(lab) as counting FROM " + labsstr + " group by lab UNION ";
+		select = select + "SELECT agent, count(agent),lab as counting FROM " + labsstr + " group by agent,lab UNION ";
 		i++;
 	}
 
