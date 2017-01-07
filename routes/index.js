@@ -939,8 +939,8 @@ module.exports = function(router) {
 													}
 													if(choosetime == "year"){
 														var date = new Date(), y = date.getFullYear(), m = date.getMonth();
-														datefromsavings = moment(new Date(y, 0, 1)).tz("America/New_York").format('MM-DD-YYYY');
-														datetosavings = moment(new Date(y, 11, 31)).tz("America/New_York").format('MM-DD-YYYY');
+														datefromsavings = moment(new Date(y, 0, 2)).tz("America/New_York").format('MM-DD-YYYY');
+														datetosavings = moment(new Date(y, 12, 1)).tz("America/New_York").format('MM-DD-YYYY');
 														/*datefromsavings = "01-01-2016";
 														datetosavings = "12-31-2016";*/
 													}
