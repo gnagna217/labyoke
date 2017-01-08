@@ -239,7 +239,7 @@ module.exports = function(router) {
 totalshares = results[5].counting;
 
 						console.log("totalshares in booster: " + totalshares);
-						totalshares = totalshares.length;
+						//totalshares = totalshares.length;
 						console.log("totalshares in booster length: " + totalshares);
 					}
 
