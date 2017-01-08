@@ -215,8 +215,8 @@ var labyokerLab = new LabyokerLab(this.mylab);
 	}
 
 	if(lab != null && lab !=undefined && lab !="all"){
-		if(where.length>0)
-			where +=" and ";
+		//if(where.length>0)
+		//	where +=" and ";
 		//where += "b.lab = '" + lab + "'";
 	} 
 
@@ -358,8 +358,8 @@ console.log("report on savings- dateto: " + labsindept);
 			params += "<div style='font-weight:bold'>Parameters</div>";
 		}
 		params += "<div><span style='font-weight:bold'>Lab: </span><span>" + lab + "</span></div>";
-		if(where.length>0)
-			where +=" and ";
+		//if(where.length>0)
+		//	where +=" and ";
 		//where += "b.lab = '" + lab + "'";
 	} 
 
