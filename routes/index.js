@@ -236,7 +236,8 @@ module.exports = function(router) {
 	console.log("myemail: " + req.session.email);
     return op.email == req.session.email;
 });*/
-totalshares = results[5].counting;
+var t = results[5];
+totalshares = t[0].counting;
 
 						console.log("totalshares in booster: " + totalshares);
 						//totalshares = totalshares.length;
