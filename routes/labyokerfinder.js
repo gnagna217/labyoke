@@ -358,9 +358,9 @@ console.log("report on savings- dateto: " + labsindept);
 			params += "<div style='font-weight:bold'>Parameters</div>";
 		}
 		params += "<div><span style='font-weight:bold'>Lab: </span><span>" + lab + "</span></div>";
-		//if(where.length>0)
-		//	where +=" and ";
-		//where += "b.lab = '" + lab + "'";
+		if(where.length>0)
+			where +=" and ";
+		where += "b.lab = '" + lab + "'";
 	} 
 
 	if(agent != null && agent !=undefined && agent !=""){
