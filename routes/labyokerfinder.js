@@ -1993,7 +1993,7 @@ LabYokerChangeShare.prototype.cancelShare = function(callback) {
 	console.log("checked: " + checked);
 	var results;
 	var orderonly = "";
-	if(checked == "0" && requestoremail != undefined){
+	if(checked == "0" && requestor != undefined){
 		console.log("checking that it's insufficient: " + checked);
 		orderonly = " and requestoremail='" + requestor + "'";
 	}
