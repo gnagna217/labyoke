@@ -217,7 +217,7 @@ var labyokerLab = new LabyokerLab(this.mylab);
 	if(lab != null && lab !=undefined && lab !="all"){
 		if(where.length>0)
 			where +=" and ";
-		where += "b.lab = '" + lab + "'";
+		//where += "b.lab = '" + lab + "'";
 	} 
 
 	if(agent != null && agent !=undefined && agent !=""){
@@ -360,7 +360,7 @@ console.log("report on savings- dateto: " + labsindept);
 		params += "<div><span style='font-weight:bold'>Lab: </span><span>" + lab + "</span></div>";
 		if(where.length>0)
 			where +=" and ";
-		where += "b.lab = '" + lab + "'";
+		//where += "b.lab = '" + lab + "'";
 	} 
 
 	if(agent != null && agent !=undefined && agent !=""){
