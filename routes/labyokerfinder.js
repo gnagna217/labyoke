@@ -364,12 +364,12 @@ console.log("report on savings- dateto: " + labsindept);
 	} 
 
 	if(agent != null && agent !=undefined && agent !=""){
-		if(selected.length>0)
+		/*if(selected.length>0)
 			selected +=", ";
 		selected += "b.agent";
 		if(groupby.length>0)
 			groupby +=" , ";
-		groupby += "b.agent";
+		groupby += "b.agent";*/
 		columns+="<td>Reagent</td>";
 	} 
 	if(vendor != null && vendor !=undefined && vendor !=""){
