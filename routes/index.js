@@ -936,7 +936,7 @@ module.exports = function(router) {
 													if(lab == "all"){
 														labsavings = "<b><i>WORLD</i></b>";
 													} else {
-														labsavings = "<b><i>" + lab + "</i></b>";
+														labsavings = "<b><i>other labs</i></b>";
 													}
 													if(choosetime == "year"){
 														var date = new Date(), y = date.getFullYear(), m = date.getMonth();
