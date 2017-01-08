@@ -1336,7 +1336,7 @@ LabYokerGetOrder.prototype.getorders = function(callback) {
 			result6.addRow(row);
 		});
 		query6.on("end", function(result6) {
-			
+			console.log("getorders results6: " + select);
 
 			results.push(result5.rows);
 			results.push(result6.rows);
