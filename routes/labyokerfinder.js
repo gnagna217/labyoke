@@ -1990,9 +1990,11 @@ LabYokerChangeShare.prototype.cancelShare = function(callback) {
 	var date = this.date;
 	console.log("date2: " + date);
 	console.log("requestor: " + requestor);
+	console.log("checked: " + checked);
 	var results;
 	var orderonly = "";
-	if(table == lab + "_orders"){
+	if(checked == "0"){
+		console.log("checking that it's insufficient: " + checked);
 		orderonly = " and requestoremail='" + requestor + "'";
 	}
 
