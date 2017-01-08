@@ -1329,7 +1329,7 @@ LabYokerGetOrder.prototype.getorders = function(callback) {
 		query5.on("end", function(result5) {
 
 		
-		select = "SELECT agent, count(agent) as counting, email FROM " + mylab + "_orders where insufficient=1 group by agent, email";
+		select = "select sum(counting) counting from (SELECT agent, count(agent) as counting, email FROM " + mylab + "_orders where insufficient=1 group by agent, email) t";
 		var query6 = client.query(select);
 		//("SELECT b.category, count(b.category) FROM vm2016_orders a, vm2016_agentsshare b where a.agent = b.agent and a.lab='"+lab+"' group by b.category");
 		query6.on("row", function(row, result6) {

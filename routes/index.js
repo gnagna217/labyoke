@@ -230,12 +230,13 @@ module.exports = function(router) {
 					}
 					if(results != null && results.length > 1){
 						
-						totalshares = results[5].filter(function checkOrder(op) {
+						/*totalshares = results[5].filter(function checkOrder(op) {
 	console.log("op agent is: " + op.agent);
 	console.log("op email is: " + op.email);
 	console.log("myemail: " + req.session.email);
     return op.email == req.session.email;
-});
+});*/
+totalshares = results[5].counting;
 
 						console.log("totalshares in booster: " + totalshares);
 						totalshares = totalshares.length;
