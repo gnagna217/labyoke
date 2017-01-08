@@ -1,4 +1,5 @@
 var labyokeFinderClass = require('./labyokerfinder');
+var accounting = require('./accounting');
 var dates = require('../config/staticvariables');
 
 
@@ -987,10 +988,11 @@ module.exports = function(router) {
 														} 
 														if(savings > 0){
 														var text = "";
+														console.log("non-null savings: " + accounting.formatMoney(savings));
 														if(lab == "all"){
-															text = "<strong> Major Achievement!</strong> You are part of a " + labsavings + " savings for a total of <b>$" + savings + "</b> dollars " + timeframesavings + " in your department. " + cheer;
+															text = "<strong> Major Achievement!</strong> You are part of a " + labsavings + " savings for a total of <b>" + accounting.formatMoney(savings) + "</b> dollars " + timeframesavings + " in your department. " + cheer;
 														} else {
-															text = "<strong> Major Achievement!</strong> You have saved " + labsavings + " a total of <b>$" + savings + "</b> dollars " + timeframesavings + " in your lab. " + cheer;
+															text = "<strong> Major Achievement!</strong> You have saved " + labsavings + " a total of <b>$" + savings + "</b> dollars " + timeframesavings + ". " + cheer;
 														}
 														booster.push(text);
 														boostercolor.push("success");
