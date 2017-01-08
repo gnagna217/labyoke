@@ -939,7 +939,7 @@ module.exports = function(router) {
 													}
 													if(choosetime == "year"){
 														var date = new Date(), y = date.getFullYear(), m = date.getMonth();
-														datefromsavings = moment(new Date(y, 0, 2)).tz("America/New_York").format('MM-DD-YYYY');
+														datefromsavings = moment(new Date(y, 0, 1)).tz("America/New_York").format('MM-DD-YYYY');
 														datetosavings = moment(new Date(y, 12, 1)).tz("America/New_York").format('MM-DD-YYYY');
 														/*datefromsavings = "01-01-2016";
 														datetosavings = "12-31-2016";*/
@@ -988,9 +988,9 @@ module.exports = function(router) {
 														if(savings > 0){
 														var text = "";
 														if(lab == "all"){
-															text = "<strong> Major Achievement!</strong> You are part of a " + labsavings + " savings for a total of <b>$" + savings + "</b> dollars " + timeframesavings + ". " + cheer;
+															text = "<strong> Major Achievement!</strong> You are part of a " + labsavings + " savings for a total of <b>$" + savings + "</b> dollars " + timeframesavings + " in your department. " + cheer;
 														} else {
-															text = "<strong> Major Achievement!</strong> You have saved " + labsavings + " a total of <b>$" + savings + "</b> dollars " + timeframesavings + ". " + cheer;
+															text = "<strong> Major Achievement!</strong> You have saved " + labsavings + " a total of <b>$" + savings + "</b> dollars " + timeframesavings + " in your lab. " + cheer;
 														}
 														booster.push(text);
 														boostercolor.push("success");
