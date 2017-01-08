@@ -1330,7 +1330,7 @@ LabYokerGetOrder.prototype.getorders = function(callback) {
 
 		
 		select = "SELECT agent, count(agent) as counting, email FROM " + mylab + "_orders where insufficient=1 group by agent, email";
-		var query6 = client.query(select + " order by counting desc limit 10");
+		var query6 = client.query(select);
 		//("SELECT b.category, count(b.category) FROM vm2016_orders a, vm2016_agentsshare b where a.agent = b.agent and a.lab='"+lab+"' group by b.category");
 		query6.on("row", function(row, result6) {
 			result6.addRow(row);
