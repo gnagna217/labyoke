@@ -472,7 +472,7 @@ console.log("report on savings- dateto: " + labsindept);
 				}
 				var total = results[prop].counting * results[prop].price;
 				savings += total;
-				html += "<td style='font-size: 12px;'>" + total + "</td>";
+				html += "<td style='font-size: 12px;'>" + accounting.formatMoney(total) + "</td>";
 				html += " </tr>";
 		
 			}
