@@ -847,13 +847,13 @@ totalshares = t[0].counting;
 	router.post('/searchCatalog', function(req, res) {
 		if (req.session.user) {
 			var searchText = req.body.searchTextCatalog;
-			var labYokeSearch = new LabYokeSearch(searchTextCatalog, req.session.email);
+			var labYokeSearch = new LabYokeSearch(searchText, req.session.email);
 			var messageStr = "";
 			labYokeSearch.search(function(error, results) {
 				console.log("results " + results[0].length);	
-				if (searchTextCatalog != null && searchTextCatalog.length > 0){
+				if (searchText != null && searchText.length > 0){
 					if(results[0].length == 0){
-						messageStr = "Sorry we could not find any results with your search request: <b>" + searchTextCatalog + "</b>. Please try again.";
+						messageStr = "Sorry we could not find any results with your search request: <b>" + searchText + "</b>. Please try again.";
 					}
 					res.render('search', {mylab: req.session.lab, messageCatalog: messageStr, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, isLoggedInAdmin: req.session.admin, title: 'Search', fullname: req.session.fullname, sendemail: req.session.email, searchResults : results[0], agentsResults : results[1], searchformTextCatalog: searchText, loggedIn : true});
 				} else {
