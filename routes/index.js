@@ -994,7 +994,7 @@ totalshares = t[0].counting;
 														if(lab == "all"){
 															text = "<strong> Major Achievement!</strong> You are part of a " + labsavings + " savings for a total of <b>" + accounting.formatMoney(savings) + "</b> " + timeframesavings + " in your department. " + cheer;
 														} else {
-															text = "<strong> Major Achievement!</strong> You have saved " + labsavings + " a total of <b>$" + accounting.formatMoney(savings) + "</b> " + timeframesavings + ". " + cheer;
+															text = "<strong> Major Achievement!</strong> You have saved " + labsavings + " a total of <b>" + accounting.formatMoney(savings) + "</b> " + timeframesavings + ". " + cheer;
 														}
 														booster.push(text);
 														boostercolor.push("success");
