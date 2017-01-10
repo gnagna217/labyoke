@@ -321,6 +321,8 @@ block content
 
             var c = 0;
             
+            catTransform.pop();
+            console.log("catTransform pop: " + catTransform);
             
             for(var prop in rows){
               rowTransform.push(rows[prop]);
@@ -334,8 +336,7 @@ block content
                 }
               }
             }
-            catTransform.pop();
-            console.log("catTransform pop: " + catTransform);
+            
             console.log("last catTransform: " + catTransform);
 
             var values = "#{array_values}";
