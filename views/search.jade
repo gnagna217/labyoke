@@ -54,7 +54,7 @@ block content
                         div(class="alert alert-danger")!= messageCatalog
                     form(action="/searchCatalog" method="post" style="margin-top: 50px")
                         div(class="textentry")
-                            input(name="searchTextCatalog" list="agent-datalist" type="text" id="searchTextCatalog" class="form-control" placeholder=searchTextCatalog)
+                            input(name="searchTextCatalog" list="catalog-datalist" type="text" id="searchTextCatalog" class="form-control" placeholder=searchTextCatalog)
                             datalist(id="catalog-datalist")
                                 -var ob2 = agentsResults
                                 -for(var prop in ob2)
