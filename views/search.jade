@@ -27,12 +27,13 @@ block content
             - searchText = "Looking for reagent..."
             - searchTextCatalog = "Looking for catalog number..."
             - classButton = "btn-success"
+            - classButtonCatalog = "btn-success"
             if searchformText
                 - searchText = "Search: " + searchformText
                 - classButton = "btn-success-results"
             if searchformTextCatalog
                 - searchTextCatalog = "Search: " + searchformTextCatalog
-                - classButton = "btn-success-results"            
+                - classButtonCatalog = "btn-success-results"            
             div(id="ctl00_Div2" class="row")
                 div
                     if message
@@ -59,7 +60,7 @@ block content
                                 -for(var prop in ob2)
                                     option(value='#{ob2[prop].catalognumber}')
                         div(class="buttons")
-                            button(class="btn " + classButton + " btn-lg btn-block" type='submit') Find By Catalog
+                            button(class="btn " + classButtonCatalog + " btn-lg btn-block" type='submit') Find By Catalog
                             img(src="images/yoke5.png", alt="The Search", title="Search", style="border-width:0px; width: 50px; margin-top: -77px; margin-left: 300px;")
         
         if(searchResults != null && searchResults.length > 0)
