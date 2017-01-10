@@ -938,7 +938,7 @@ totalshares = t[0].counting;
 													if(lab == "all"){
 														labsavings = "<b><i>WORLD</i></b>";
 													} else {
-														labsavings = "<b><i>other labs</i></b>";
+														labsavings = "<b><i>Other Labs</i></b>";
 													}
 													if(choosetime == "year"){
 														var date = new Date(), y = date.getFullYear(), m = date.getMonth();
@@ -992,9 +992,9 @@ totalshares = t[0].counting;
 														var text = "";
 														console.log("non-null savings: " + accounting.formatMoney(savings));
 														if(lab == "all"){
-															text = "<strong> Major Achievement!</strong> You are part of a " + labsavings + " savings for a total of <b>" + accounting.formatMoney(savings) + "</b> dollars " + timeframesavings + " in your department. " + cheer;
+															text = "<strong> Major Achievement!</strong> You are part of a " + labsavings + " savings for a total of <b>" + accounting.formatMoney(savings) + "</b> " + timeframesavings + " in your department. " + cheer;
 														} else {
-															text = "<strong> Major Achievement!</strong> You have saved " + labsavings + " a total of <b>$" + savings + "</b> dollars " + timeframesavings + ". " + cheer;
+															text = "<strong> Major Achievement!</strong> You have saved " + labsavings + " a total of <b>$" + accounting.formatMoney(savings) + "</b> " + timeframesavings + ". " + cheer;
 														}
 														booster.push(text);
 														boostercolor.push("success");
