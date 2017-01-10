@@ -325,8 +325,8 @@ block content
             for(var prop in rows){
               rowTransform.push(rows[prop]);
 
-              if(catTransform.indexOf(rows[prop]) == -1){
-                console.log("rows[prop]: " + rows[prop] + ".");
+              if(catTransform.indexOf((rows[prop]).toLowerCase()) == -1){
+                console.log("rows[prop]: " + (rows[prop]).toLowerCase() + ".");
                 if((rows[prop]).length >0){
                 catTransform.push((rows[prop]).toLowerCase());
                 valTransform.push(0);
