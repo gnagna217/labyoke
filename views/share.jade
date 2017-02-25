@@ -310,7 +310,7 @@ block content
 
 						script.
 							var test = (#{JSON.stringify(venn)}).replace(/&quot;/g,'"');
-							console.log(test);
+							console.log(JSON.parse(test.replace(/&quot;/g,'"')));
 							console.log("filter department venn: " + "#{array_labs_venn}");
 							console.log("filter catalog venn: " + "#{array_catalogs_venn}");
 							console.log("filter venn: " + "#{venn}");
