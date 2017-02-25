@@ -1016,7 +1016,7 @@ LabYokeAgents.prototype.findmyshares = function(callback) {
 
 						var query = client
 								.query("select b.lab, a.catalognumber, c.department from vm2016_agentsshare a, vm2016_users b, labs c where c.department='"
-										+ dept + "' a.email = b.email and b.lab = c.labname");
+										+ department + "' a.email = b.email and b.lab = c.labname");
 	
 
 						console.log("q all reagents in current department: " + q);
