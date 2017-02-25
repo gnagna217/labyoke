@@ -268,6 +268,9 @@ block content
 				h4="A Venn chart of your all re-agents accross your department."
 				- if(report_venn != null && report_venn.length > 0)
 					p="This venn graph depicts the cross-reagent in the labs:"
+					div Find a reagent in diagram:
+						input(id="search-field" type="text" style="margin-top:8px" placeholder="enter an element name...")
+						span(id="search-status" class="label label-info" style="vertical-align: 16px; margin-left: -35px;")
 					div(class="ct-chart5 ct-perfect-five")
 						div(id="vennChart" style="margin: 0 auto; width: 430px; height: 300px")
 						- var array_labs_venn = " |"
@@ -320,7 +323,23 @@ block content
 							series: test,
 							searchInput: $("#search-field"),
 							searchStatus: $("#search-status"),
-							searchMinSize: 3
+							searchMinSize: 3,
+							fnClickCallback: function() {
+								var value = "";
+								if (this.listnames.length == 1) {
+									value += "Elements only in ";
+								} else {
+									value += "Common elements in ";
+								}
+								for (name in this.listnames) {
+									value += this.listnames[name] + " ";
+								}
+								value += ":\n";
+								for (val in this.list) {
+									value += this.list[val] + "\n";
+								}
+								$("#tooltips3").html(value);
+							}
 							});
 
 					div(id="tooltips3", class="labColor") &nbsp;
