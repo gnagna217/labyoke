@@ -18,10 +18,11 @@ LabYokeFinder = function(today) {
 	this.now = today
 };
 
-LabYokeAgents = function(email,mylab, labs) {
+LabYokeAgents = function(email,mylab,labs,dept) {
 	this.email = email;
 	this.mylab = mylab;
 	this.labs = labs;
+	this.dept = dept;
 };
 
 LabyokerLab = function(lab) {
@@ -904,7 +905,7 @@ LabYokeAgents.prototype.findmyshares = function(callback) {
 	var results = [];
 	var labs = this.labs;
 	var mylab = this.mylab;
-	var department = 'First Department';
+	var department = this.dept;
 	var mylabtable = mylab.replace(" ","").toLowerCase();
 	console.log("findmyshares: " + this.email);
 	var query = client
@@ -1015,7 +1016,7 @@ LabYokeAgents.prototype.findmyshares = function(callback) {
 						console.log("orders findmyshares result5: " + result5.rows)
 
 						var q = client
-								.query("select b.lab, a.catalognumber, c.department from vm2016_agentsshare a, vm2016_users b, labs c where c.department='"
+								.query("select b.lab, a.catalognumber, c.labname from vm2016_agentsshare a, vm2016_users b, labs c where c.department='"
 										+ department + "' and a.email = b.email and b.lab = c.labname");
 	
 

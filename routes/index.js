@@ -513,7 +513,7 @@ totalshares = t[0].counting;
 	});
 
 	router.get('/share', isLoggedIn, function(req, res) {
-		var labYokeAgents = new LabYokeAgents(req.session.email, req.session.lab, req.session.labs);
+		var labYokeAgents = new LabYokeAgents(req.session.email, req.session.lab, req.session.labs, req.session.dept);
 		labYokeAgents.findmyshares(function(error, results) {
 			//req.session.orders = results[2];
 			req.session.shares = 0;
