@@ -272,13 +272,34 @@ block content
 						div(id="vennChart" style="margin: 0 auto; width: 430px; height: 300px")
 						- var array_labs_venn = " |"
 						- var array_catalogs_venn = " |"
-						-var ob = report_venn
-						-for(var prop in ob)
+						- var ob = report_venn
+						- var venn = []
+						- var getlabs = []
+						- var labname = ""
+						- var seriesname = ""
+						- var seriesdata = []
+						- var vennportion = {name:'', data:[]}
+						- for(var prop in ob)
+							- getlabs.push(ob[prop].labname)
+						- for(var prop in ob)
+							- if (ob[prop].labname == labname)
+								- seriesname = ob[prop].labname
+								- seriesdata.push(ob[prop].catalognumber)
+							- else
+								- vennportion.name = seriesname
+								- vennportion.data = seriesdata
+								- venn.push(vennportion)
+								- seriesdata = []
+								- vennportion = {name:'', data:[]}
 							- array_labs_venn = array_labs_venn + ob[prop].labname + "|"
 							- array_catalogs_venn = array_catalogs_venn + ob[prop].catalognumber + "|"
+
 						script.
 							console.log("filter department venn: " + "#{array_labs_venn}");
 							console.log("filter catalog venn: " + "#{array_catalogs_venn}");
+							console.log("filter venn: " + "#{venn}");
+
+
 							$('#vennChart').jvenn({
 							series: [{
 							name: 'Lab1',
@@ -294,10 +315,6 @@ block content
 							searchStatus: $("#search-status"),
 							searchMinSize: 3
 							});
-
-
-
-
 
 					div(id="tooltips3", class="labColor") &nbsp;
 				- if(filteroutput2 != null && filteroutput2.length==0)
