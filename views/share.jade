@@ -285,6 +285,7 @@ block content
 							div!= "prop: " + prop
 							- if(seriesname == '')
 								- seriesname = ob[prop].labname
+							div!= "seriesname: " + seriesname
 							- if(labname == '')
 								- labname = ob[prop].labname
 							- if (ob[prop].labname == labname)
@@ -293,14 +294,15 @@ block content
 								div!= "feeding seriesdata: " + seriesdata
 							- else
 								- vennportion.name = seriesname
-								div!= "seriesname: " + seriesname
+								
 								- vennportion.data = seriesdata
 								- venn.push(vennportion)
 								- seriesdata = []
 								- seriesname = ""
 								- labname = ""
 								- vennportion = {name:'', data:[]}
-								div!= "venn: " + vennportion
+								div!= "vennportion: " + vennportion
+								div!= "venn: " + venn
 							- array_labs_venn = array_labs_venn + ob[prop].labname + "|"
 							- array_catalogs_venn = array_catalogs_venn + ob[prop].catalognumber + "|"
 
