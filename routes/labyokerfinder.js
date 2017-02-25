@@ -1014,7 +1014,7 @@ LabYokeAgents.prototype.findmyshares = function(callback) {
 						results.push(result5.rows);
 						console.log("orders findmyshares result5: " + result5.rows)
 
-						var query = client
+						var q = client
 								.query("select b.lab, a.catalognumber, c.department from vm2016_agentsshare a, vm2016_users b, labs c where c.department='"
 										+ department + "' a.email = b.email and b.lab = c.labname");
 	
