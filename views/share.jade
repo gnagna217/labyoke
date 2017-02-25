@@ -270,15 +270,15 @@ block content
 					p="This venn graph depicts the cross-reagent in the labs:"
 					div(class="ct-chart5 ct-perfect-five")
 						div(id="vennChart" style="margin: 0 auto; width: 430px; height: 300px")
-						- var array_department_venn = " |"
-						- var array_catalog_venn = " |"
+						- var array_labs_venn = " |"
+						- var array_catalogs_venn = " |"
 						-var ob = report_venn
 						-for(var prop in ob)
-							- array_department_venn = array_department_venn + ob[prop].department + "|"
-							- array_catalog_venn = array_catalog_venn + ob[prop].catalognumber + "|"
+							- array_labs_venn = array_labs_venn + ob[prop].labname + "|"
+							- array_catalogs_venn = array_catalogs_venn + ob[prop].catalognumber + "|"
 						script.
-							console.log("filter department venn: " + "#{array_department_venn}");
-							console.log("filter catalog venn: " + "#{array_catalog_venn}");
+							console.log("filter department venn: " + "#{array_labs_venn}");
+							console.log("filter catalog venn: " + "#{array_catalogs_venn}");
 							$('#vennChart').jvenn({
 							series: [{
 							name: 'Lab1',
