@@ -274,8 +274,8 @@ block content
 						- var array_catalog_venn = " |"
 						-var ob = report_venn
 						-for(var prop in ob)
-							- array_department_venn = array_rows + ob[prop].department + "|"
-							- array_catalog_venn = array_values + ob[prop].catalognumber + "|"
+							- array_department_venn = array_department_venn + ob[prop].department + "|"
+							- array_catalog_venn = array_catalog_venn + ob[prop].catalognumber + "|"
 						script.
 							console.log("filter department venn: " + "#{array_department_venn}");
 							console.log("filter catalog venn: " + "#{array_catalog_venn}");
