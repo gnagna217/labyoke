@@ -269,23 +269,32 @@ block content
 				- if(filteroutput2 != null && filteroutput2.length > 0)
 					p="This venn graph depicts the cross-reagent in the labs:"
 					div(class="ct-chart5 ct-perfect-five")
-						div(id="example" style="margin: 0 auto; width: 430px; height: 300px")
+						div(id="venn-demo" style="margin: 0 auto; width: 430px; height: 300px")
+						div(style="text-align: center") Active Regions:
+							span(id="region-list")
+						div(style="text-align: center")
+							input(type="button" class="new-venn" data-num-sets="2" value="Create 2 Set Venn Diagram")
+							input(type="button" class="new-venn" data-num-sets="3" value="Create 3 Set Venn Diagram")
+							input(type="button" class="new-venn" data-num-sets="4" value="Create 4 Set Venn Diagram")
 						script.
-							$('#example').jvenn({
-							series: [{
-							name: 'Genotoul',
-							data : ['Patrice Dehais','Didier Laborie','Marie-Stéphane Trotard','Anis Djari','Ibounyamine Nabihoudine','Jérôme Mariette','Céline Noirot','Claire Hoede','Christophe Klopp','Christine Gaspin','Olivier Rué','Frédéric Escudié','Anaïs Painset','Ignacio Gonzalez']
-							}, {
-							name: 'Sigenae',
-							data: ['Patrice Dehais','Sarah Maman','Cédric Cabau','Philippe Bardou','Christophe Klopp','Maria Bernard','François Moreews']
-							}, {
-							name: 'CDD',
-							data: ['Anis Djari','Ibounyamine Nabihoudine','Olivier Rué','Frédéric Escudié','Anaïs Painset','Ignacio Gonzalez']
-							}],
-							searchInput: $("#search-field"),
-							searchStatus: $("#search-status"),
-							searchMinSize: 3
-							});
+							( function($) { 
+								$(function() {
+									$('#venn-demo').venn({ numSets: 3 });
+									$('.new-venn').click(function() {
+										$('#venn-demo').html('').venn({ numSets : $(this).attr('data-num-sets') });
+										$('#region-list').html('');
+									});
+									$('#venn-demo').on('regionClicked.venn', function(e) {
+										var activeRegions = $('#venn-demo').venn('activeRegions'), arNames = [];
+
+										for ( var i in activeRegions ) {
+											arNames.push( activeRegions[i].getId() == "" ? "U" : activeRegions[i].getId() );
+										}
+
+										$('#region-list').html( arNames.join(', ') );
+									});
+								});
+							})(jQuery);
 
 
 
