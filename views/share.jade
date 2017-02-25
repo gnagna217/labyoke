@@ -282,6 +282,7 @@ block content
 						- for(var prop in ob)
 							- getlabs.push(ob[prop].labname)
 						- for(var prop in ob)
+							div!= "prop: " + prop
 							- if(seriesname == '')
 								- seriesname = ob[prop].labname
 							- if(labname == '')
