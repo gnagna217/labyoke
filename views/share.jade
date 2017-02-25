@@ -309,7 +309,7 @@ block content
 							- array_catalogs_venn = array_catalogs_venn + ob[prop].catalognumber + "|"
 
 						script.
-							console.log(#{JSON.stringify(venn)})
+							console.log(#{JSON.stringify(venn).replace(/&quot;/g, '"')})
 							console.log("filter department venn: " + "#{array_labs_venn}");
 							console.log("filter catalog venn: " + "#{array_catalogs_venn}");
 							console.log("filter venn: " + "#{venn}");
