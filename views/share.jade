@@ -316,21 +316,7 @@ block content
 							console.log("filter venn: " + "#{venn}");
 
 
-							$('#vennChart').jvenn({
-							series: [{
-							name: 'Lab1',
-							data : ['Patrice Dehais','Didier Laborie','Marie-Stephane Trotard','Anis Djari','Ibounyamine Nabihoudine','Jerome Mariette','Celine Noirot','Claire Hoede','Christophe Klopp','Christine Gaspin','Olivier Rue','Frederic Escudie','Anais Painset','Ignacio Gonzalez']
-							}, {
-							name: 'Lab2',
-							data: ['Patrice Dehais','Sarah Maman','Cedric Cabau','Philippe Bardou','Christophe Klopp','Maria Bernard','Francois Moreews']
-							}, {
-							name: 'Lab3',
-							data: ['Anis Djari','Ibounyamine Nabihoudine','Olivier Rue','Frederic Escudie','Anais Painset','Ignacio Gonzalez']
-							}],
-							searchInput: $("#search-field"),
-							searchStatus: $("#search-status"),
-							searchMinSize: 3
-							});
+							$('#vennChart').jvenn(series: data);
 
 					div(id="tooltips3", class="labColor") &nbsp;
 				- if(filteroutput2 != null && filteroutput2.length==0)
