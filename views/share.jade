@@ -288,7 +288,7 @@ block content
 							div!= "seriesname: " + seriesname
 							- if(labname == '')
 								- labname = ob[prop].labname
-							- if (ob[prop].labname == labname)
+							- if (ob[prop].labname == labname || prop == ob.length)
 								- seriesname = ob[prop].labname
 								- seriesdata.push(ob[prop].catalognumber)
 								div!= "feeding seriesdata: " + seriesdata
