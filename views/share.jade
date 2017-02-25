@@ -282,13 +282,13 @@ block content
 						- for(var prop in ob)
 							- getlabs.push(ob[prop].labname)
 						- for(var prop in ob)
-							div!= "prop: " + prop
+							div!= "prop: " + prop + " - " + ob.length
 							- if(seriesname == '')
 								- seriesname = ob[prop].labname
 							div!= "seriesname: " + seriesname
 							- if(labname == '')
 								- labname = ob[prop].labname
-							- if (ob[prop].labname == labname || prop == ob.length)
+							- if (ob[prop].labname == labname || prop == (ob.length - 1))
 								- seriesname = ob[prop].labname
 								- seriesdata.push(ob[prop].catalognumber)
 								div!= "feeding seriesdata: " + seriesdata
