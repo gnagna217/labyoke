@@ -290,6 +290,7 @@ block content
 							- if (ob[prop].labname == labname)
 								- seriesname = ob[prop].labname
 								- seriesdata.push(ob[prop].catalognumber)
+								div!= "feeding seriesdata: " + seriesdata
 							- else
 								- vennportion.name = seriesname
 								div!= "seriesname: " + seriesname
