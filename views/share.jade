@@ -294,16 +294,16 @@ block content
 								div!= "feeding seriesdata: " + seriesdata
 							- else
 								- vennportion.name = seriesname
-								
 								- vennportion.data = seriesdata
-								- venn.push(vennportion)
-								- seriesdata = []
-								- seriesname = ""
-								- labname = ""
-								- vennportion = {name:'', data:[]}
 								div!= "vennportion: " + vennportion
-								div!= "venn: " + venn
-								- console.log(venn)
+								- venn.push(vennportion)
+								- seriesdata.push(ob[prop].catalognumber)
+								- seriesname = ob[prop].labname
+								- labname = ob[prop].labname
+								- vennportion = {name:'', data:[]}
+								
+						div!= "venn: " + venn
+						- console.log(venn)
 							- array_labs_venn = array_labs_venn + ob[prop].labname + "|"
 							- array_catalogs_venn = array_catalogs_venn + ob[prop].catalognumber + "|"
 
