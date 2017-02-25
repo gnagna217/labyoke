@@ -316,7 +316,12 @@ block content
 							console.log("filter venn: " + "#{venn}");
 
 
-							$('#vennChart').jvenn(series: test);
+							$('#vennChart').jvenn({
+							series: test,
+							searchInput: $("#search-field"),
+							searchStatus: $("#search-status"),
+							searchMinSize: 3
+							});
 
 					div(id="tooltips3", class="labColor") &nbsp;
 				- if(filteroutput2 != null && filteroutput2.length==0)
