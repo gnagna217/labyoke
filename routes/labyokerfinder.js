@@ -904,6 +904,7 @@ LabYokeAgents.prototype.findmyshares = function(callback) {
 	var results = [];
 	var labs = this.labs;
 	var mylab = this.mylab;
+	var department = 'First Department';
 	var mylabtable = mylab.replace(" ","").toLowerCase();
 	console.log("findmyshares: " + this.email);
 	var query = client
@@ -1012,7 +1013,24 @@ LabYokeAgents.prototype.findmyshares = function(callback) {
 					query5.on("end", function(result5) {
 						results.push(result5.rows);
 						console.log("orders findmyshares result5: " + result5.rows)
-						callback(null, results)
+
+						var query = client
+								.query("select b.lab, a.catalognumber, c.department from vm2016_agentsshare a, vm2016_users b, labs c where c.department='"
+										+ dept + "' a.email = b.email and b.lab = c.labname");
+	
+
+						console.log("q all reagents in current department: " + q);
+						var query6 = client.query(q);
+						query6.on("row", function(row, result6) {
+							result6.addRow(row);
+						});
+						query6.on("end", function(result6) {
+							results.push(result6.rows);
+							console.log("getting all products loaded: " + result6.rows)
+							callback(null, results)
+						});
+
+						//callback(null, results)
 					});
 				});
 
