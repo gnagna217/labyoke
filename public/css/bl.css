@@ -379,6 +379,20 @@ border-top: 5px solid #8a6d3b;
     padding-right: 20px;
     margin-top: 20px;
 }
+
+#tooltipsvenn, .tooltipsvenn{
+    padding: 15px;
+    /* width: 50%; */
+    border-style: solid;
+    border-top: none;
+    border-bottom: none;
+    padding-left: 20px;
+    border-color: #8a6d3b;
+    margin-left: 0px;
+    border-radius: 8px;
+    padding-right: 20px;
+    margin-top: 20px;
+}
 #chartNotes{
     display:none;
     margin-top:20px;
