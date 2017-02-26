@@ -380,6 +380,11 @@ border-top: 5px solid #8a6d3b;
     margin-top: 20px;
 }
 
+.number-over{
+    color: #080808 !important;
+    text-decoration: none !important;
+    font-size: 12pt !important;
+}
 #tooltipsvenn, .tooltipsvenn{
     padding: 15px;
     width: 75%;
