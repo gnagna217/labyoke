@@ -372,9 +372,10 @@ block content
 										var displayvalues2 = "";
 										console.log("page is : " + page)
 										console.log("pageValues is : " + pageValues)
-										for (val in pageValues) {
-											if(val < (((page - 1)*3)-1) && val < (page*3 - 1)){
-												displayvalues2 += "<br/>" + pageValues[val];
+										for (oval in pageValues) {
+											console.log("oval is : " + oval)
+											if(oval < (((page - 1)*3)-1) && oval < (page*3 - 1)){
+												displayvalues2 += "<br/>" + pageValues[oval];
 												console.log("displayvalues2 is : " + displayvalues2)
 											}
 										}
