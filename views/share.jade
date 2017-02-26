@@ -354,10 +354,10 @@ block content
 										value += "<br/>" + this.list[val];
 									}
 								}
-								var total = this.list.length/10;
+								var total = this.list.length/3;
 								var displayvalues = "";
 								for (val in pageValues) {
-									if(val < 10){
+									if(val < 3){
 										displayvalues += "<br/>" + pageValues[val];
 									}
 								}
@@ -367,7 +367,7 @@ block content
 									onPageClick: function (event, page) {
 										var displayvalues2 = "";
 										for (val in pageValues) {
-											if(val < (page*10 - 1)){
+											if(val < (page*3 - 1)){
 												displayvalues2 += "<br/>" + pageValues[val];
 											}
 										}
