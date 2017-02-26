@@ -387,7 +387,7 @@ border-top: 5px solid #8a6d3b;
 }
 
 #tooltipsvenn, .tooltipsvenn{
-margin-top: -15px;
+margin-top: 5px;
 }
 #tooltipsvenn-container, .tooltipsvenn-container{
     padding: 15px;
