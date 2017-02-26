@@ -345,19 +345,44 @@ block content
 								}
 								value = "<b>" + value + "</b>";
 								value += ":";
+								var pageValues = [];
 								if(this.list.length == 0){
 									value += " None."
 								} else {
 									for (val in this.list) {
+										pageValues.push(val);
 										value += "<br/>" + this.list[val];
 									}
 								}
+								var total = this.list.length/10;
+								var displayvalues = "";
+								for (val in pageValues) {
+									if(val < page*10){
+										displayvalues += "<br/>" + pageValues[val];
+									}
+								}
+								$('#pagination-demo').twbsPagination({
+									totalPages: total,
+									visiblePages: 3,
+									onPageClick: function (event, page) {
+										var displayvalues2 = "";
+										for (val in pageValues) {
+											if(val < (page*10 - 1)){
+												displayvalues2 += "<br/>" + pageValues[val];
+											}
+										}
+										$('#tooltipsvenn').html(displayvalues2);
+									}
+								});
+
 								$("#tooltipsvenn").html(value);
 							}
 							});
 
 					div(style="margin-left: 20%;")
 						div(id="tooltipsvenn", class="labColor", style="margin-top: -15px;") Click on a diagram value to list reagents
+							div
+								ul(id="pagination-demo" class="pagination-sm")
 				- if(report_venn != null && report_venn.length==0)
 					h5="No products have been uploaded."
 					p(style="padding-top: 20px;")=" "
