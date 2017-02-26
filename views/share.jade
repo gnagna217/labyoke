@@ -375,7 +375,7 @@ block content
 										if(page == 1){
 											for (oval in pageValues) {
 												console.log("oval is : " + oval)
-												if(oval < (page*3 - 1)){
+												if(oval <= ((page*3) - 1)){
 													displayvalues2 += "<br/>" + pageValues[oval];
 													console.log("displayvalues2 is : " + displayvalues2)
 												}
@@ -384,7 +384,7 @@ block content
 										} else {
 											for (oval in pageValues) {
 												console.log("oval is : " + oval)
-												if(oval < (((page - 1)*3)-1) && oval < (page*3 - 1)){
+												if(oval < (((page - 1)*3)-1) && oval <= ((page*3) - 1)){
 													displayvalues2 += "<br/>" + pageValues[oval];
 													console.log("displayvalues2 is : " + displayvalues2)
 												}
