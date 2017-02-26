@@ -382,7 +382,7 @@ border-top: 5px solid #8a6d3b;
 
 #tooltipsvenn, .tooltipsvenn{
     padding: 15px;
-    /* width: 50%; */
+    width: 50%;
     border-style: solid;
     border-top: none;
     border-bottom: none;
