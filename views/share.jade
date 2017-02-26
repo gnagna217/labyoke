@@ -359,6 +359,7 @@ block content
 								for (val in pageValues) {
 									if(val < 3){
 										displayvalues += "<br/>" + pageValues[val];
+										console.log("displayvalues : " + displayvalues)
 									}
 								}
 								$('#pagination-demo').twbsPagination({
@@ -366,6 +367,7 @@ block content
 									visiblePages: 3,
 									onPageClick: function (event, page) {
 										var displayvalues2 = "";
+										console.log("page is : " + page)
 										for (val in pageValues) {
 											if(val < (page*3 - 1)){
 												displayvalues2 += "<br/>" + pageValues[val];
