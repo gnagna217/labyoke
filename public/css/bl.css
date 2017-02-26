@@ -385,13 +385,17 @@ border-top: 5px solid #8a6d3b;
     text-decoration: none !important;
     font-size: 12pt !important;
 }
+
+#tooltipsvenn, .tooltipsvenn{
+margin-top: -15px;
+}
 #tooltipsvenn-container, .tooltipsvenn-container{
     padding: 15px;
     width: 75%;
     border-style: solid;
     border-top: none;
     border-bottom: none;
-    padding-left: 20px;
+    padding-left: 15px;
     border-color: #8a6d3b;
     margin-left: 0px;
     border-radius: 8px;
