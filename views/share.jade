@@ -330,8 +330,10 @@ block content
 							searchStatus: $("#search-status"),
 							searchMinSize: 3,
 							fnClickCallback: function() {
+								$('#pagination-demo').twbsPagination('destroy');
 								var value = "";
 								var title = "";
+								var list = this.list;
 								if (this.listnames.length == 1) {
 									title += "Reagents in ";
 								} else {
