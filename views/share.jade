@@ -331,29 +331,31 @@ block content
 							searchMinSize: 3,
 							fnClickCallback: function() {
 								var value = "";
+								var title = "";
 								if (this.listnames.length == 1) {
-									value += "Reagents in ";
+									title += "Reagents in ";
 								} else {
-									value += "Common reagents in ";
+									title += "Common reagents in ";
 								}
 
 								for (name in this.listnames) {
-									value += this.listnames[name] 
+									title += this.listnames[name] 
 									if(name != (this.listnames.length - 1)){
-										value += " | ";
+										title += " | ";
 									}
 								}
-								value = "<b>" + value + "</b>";
-								value += ":";
+								title = "<b>" + title + "</b>";
+								title += ":";
 								var pageValues = [];
 								if(this.list.length == 0){
-									value += " None."
+									title += " None."
 								} else {
 									for (val in this.list) {
 										pageValues.push(this.list[val]);
 										value += "<br/>" + this.list[val];
 									}
 								}
+								value = title + value;
 								var total = this.list.length/3;
 								var displayvalues = "";
 								for (val in pageValues) {
@@ -371,13 +373,17 @@ block content
 										for (val in pageValues) {
 											if(val < (page*3 - 1)){
 												displayvalues2 += "<br/>" + pageValues[val];
+												console.log("displayvalues2 is : " + displayvalues2)
 											}
+										}
+										if(page == 1){
+											displayvalues2 = title + displayvalues2;
 										}
 										$('#tooltipsvenn').html(displayvalues2);
 									}
 								});
 
-								$("#tooltipsvenn").html(displayvalues);
+								$("#tooltipsvenn").html(title + displayvalues);
 							}
 							});
 
