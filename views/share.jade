@@ -371,6 +371,7 @@ block content
 									onPageClick: function (event, page) {
 										var displayvalues2 = "";
 										console.log("page is : " + page)
+										console.log("pageValues is : " + pageValues)
 										for (val in pageValues) {
 											if(val < (((page - 1)*3)-1) && val < (page*3 - 1)){
 												displayvalues2 += "<br/>" + pageValues[val];
