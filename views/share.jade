@@ -333,13 +333,14 @@ block content
 								} else {
 									value += "Common elements in ";
 								}
-								value = "<b>" + value + "</b>";
+
 								for (name in this.listnames) {
 									value += this.listnames[name] 
 									if(name != (this.listnames.length - 1)){
 										value += " | ";
 									}
 								}
+								value = "<b>" + value + "</b>";
 								value += ":\n";
 								for (val in this.list) {
 									value += "<br/>" + this.list[val];
