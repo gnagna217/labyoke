@@ -264,7 +264,7 @@ block content
 
 
 			div(style="margin-bottom: 30px; margin-top: 0px;")
-			div(id="sharesVenn")
+			div(id="sharesVenn", style="overflow:auto;")
 				h4="A Venn chart of your all re-agents accross your department."
 				- if(report_venn != null && report_venn.length > 0)
 					p!="This venn graph depicts the cross-reagent in the labs within your department. You can search for a particular re-agent from the search field below or print out "
