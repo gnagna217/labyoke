@@ -385,7 +385,7 @@ border-top: 5px solid #8a6d3b;
     text-decoration: none !important;
     font-size: 12pt !important;
 }
-#tooltipsvenn, .tooltipsvenn{
+#tooltipsvenn-container, .tooltipsvenn-container{
     padding: 15px;
     width: 75%;
     border-style: solid;
