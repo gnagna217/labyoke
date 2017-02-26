@@ -264,7 +264,7 @@ block content
 
 
 			div(style="margin-bottom: 30px; margin-top: 0px;")
-			div(id="sharesVenn", style="overflow:auto;")
+			div(id="sharesVenn")
 				h4="A Venn chart of your all re-agents accross your department."
 				- if(report_venn != null && report_venn.length > 0)
 					p!="This venn graph depicts the cross-reagent in the labs within your department. You can search for a particular re-agent from the search field below or print out "
@@ -275,7 +275,7 @@ block content
 					div(class="table-responsive") Find a reagent in diagram:
 						input(id="search-field" type="search" style="margin-top:8px; margin-left:10px" placeholder="Enter Catalog Number...")
 						span(id="search-status" class="label label-info" style="vertical-align: 10px; margin-left: 0px;" class="label label-success")
-					div(class="ct-chart5 ct-perfect-five")
+					div(class="ct-chart5 ct-perfect-five", style="overflow:auto;")
 						div(id="vennChart" style="margin: 0 auto; /*width: 430px; height: 300px*/")
 						- var array_labs_venn = " |"
 						- var array_catalogs_venn = " |"
