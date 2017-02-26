@@ -350,7 +350,7 @@ block content
 									value += " None."
 								} else {
 									for (val in this.list) {
-										pageValues.push(val);
+										pageValues.push(this.list[val]);
 										value += "<br/>" + this.list[val];
 									}
 								}
@@ -377,7 +377,7 @@ block content
 									}
 								});
 
-								$("#tooltipsvenn").html(value);
+								$("#tooltipsvenn").html(displayvalues);
 							}
 							});
 
