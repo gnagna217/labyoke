@@ -396,7 +396,6 @@ border-top: 5px solid #8a6d3b;
 
 #tooltipsvenn, .tooltipsvenn{
 padding-top: 5px;
-min-height: 80px;
 }
 #tooltipsvenn-container, .tooltipsvenn-container{
     text-align: center;

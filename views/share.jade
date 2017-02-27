@@ -367,6 +367,9 @@ block content
 										console.log("displayvalues : " + displayvalues)
 									}
 								}
+								if(this.list.length > 0){
+									$('#tooltipsvenn').css('min-height','80px');
+								}
 								if(this.list.length > 3){
 									$('#pagination-demo').twbsPagination({
 										totalPages: total,
