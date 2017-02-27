@@ -387,11 +387,11 @@ border-top: 5px solid #8a6d3b;
 }
 
 .page-item .first {
-    display:none;
+    display:none !important;
 }
 
 .page-item .last {
-    display:none;
+    display:none !important;
 }  
 
 #tooltipsvenn, .tooltipsvenn{
