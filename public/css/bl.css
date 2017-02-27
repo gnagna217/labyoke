@@ -399,6 +399,7 @@ padding-top: 5px;
 min-height: 80px;
 }
 #tooltipsvenn-container, .tooltipsvenn-container{
+    text-align: center;
     padding: 15px;
     width: 75%;
     border-style: solid;
