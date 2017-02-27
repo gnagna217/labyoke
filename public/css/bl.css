@@ -386,11 +386,11 @@ border-top: 5px solid #8a6d3b;
     font-size: 12pt !important;
 }
 
-.page-item .first {
+.page-item first {
     display:none !important;
 }
 
-.page-item {
+.page-item last {
     display:none !important;
 }  
 
