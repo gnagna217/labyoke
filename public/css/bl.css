@@ -390,7 +390,7 @@ border-top: 5px solid #8a6d3b;
     display:none !important;
 }
 
-.page-item .last {
+.page-item {
     display:none !important;
 }  
 
