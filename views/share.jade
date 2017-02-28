@@ -518,8 +518,8 @@ block content
 						}]
 					];
 
-					var chart0 = new Chartist.Bar('.ct-chart0', data2, responsiveOptions);
 
+					if(values != null && values != ""){
 					var chart = new Chartist.Line('.ct-chart', data, responsiveOptions);
 
 					// Let's put a sequence number aside so we can use it in the event callbacks
@@ -636,6 +636,7 @@ block content
 						}
 						window.__exampleAnimateTimeout = setTimeout(chart.update.bind(chart), 12000);
 					});*/
+					}
 					
 					var addedEvents = false;
 					chart.on('draw', function() {
@@ -649,17 +650,22 @@ block content
 							});
 						}
 					});
-					var addedEvents0 = false;
-					chart0.on('draw', function() {
-						if (!addedEvents0) {
-							$('.ct-bar').on('mouseover', function() {
-								$('#tooltips0').html('<b>Selected Quantity: </b>' + $(this).attr('ct:value'));
-							});
+					}
 
-							$('.ct-bar').on('mouseout', function() {
-								$('#tooltips0').html("&nbsp;")
-							});
-						}
-					});
+					if(values2 != null && values2 != ""){
+						var chart0 = new Chartist.Bar('.ct-chart0', data2, responsiveOptions);
+						var addedEvents0 = false;
+						chart0.on('draw', function() {
+							if (!addedEvents0) {
+								$('.ct-bar').on('mouseover', function() {
+									$('#tooltips0').html('<b>Selected Quantity: </b>' + $(this).attr('ct:value'));
+								});
+
+								$('.ct-bar').on('mouseout', function() {
+									$('#tooltips0').html("&nbsp;")
+								});
+							}
+						});
+					}
 
 						
