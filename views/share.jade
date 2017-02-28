@@ -337,7 +337,7 @@ block content
 								if (this.listnames.length == 1) {
 									title += "Reagents in ";
 								} else {
-									title += "Common reagents in ";
+									title += "Common reagents in <span class='yokeColor'>";
 								}
 
 								for (name in this.listnames) {
@@ -346,7 +346,7 @@ block content
 										title += " | ";
 									}
 								}
-								title = "<b>" + title + "</b>";
+								title = "<b>" + title + "</span></b>";
 								title += ":";
 								var pageValues = [];
 								if(this.list.length == 0){
