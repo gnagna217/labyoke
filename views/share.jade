@@ -302,6 +302,8 @@ block content
 									- vennportion = {name:'', data:[]}
 									- vennportion.name = seriesname
 									- vennportion.data = seriesdata
+									div!= "vennportion: " + vennportion
+									- venn.push(vennportion)
 								div!= "feeding seriesdata: " + seriesdata
 							- else
 								- vennportion.name = seriesname
