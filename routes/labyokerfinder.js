@@ -143,8 +143,10 @@ LabyokerPasswordChange = function(hash, password) {
 
 LabYokeUploader.prototype.upload = function(callback) {
 	var results = this.jsonResults;
+	var jsonnum = results;
 	console.log("location: " + location);
 	var values = "";
+	var checkvalues = "";
 	var now = moment(new Date).tz("America/New_York").format('MM-DD-YYYY');
 
 	if(results != null){
@@ -155,32 +157,83 @@ LabYokeUploader.prototype.upload = function(callback) {
 			var location = results[prop].location;
 			var email = results[prop].user;
 			var category = results[prop].category;
-			var price = results[prop].price;
-			values = values + "('" + agent
-		+ "', '" + vendor + "', '" + catalognumber + "', '" + location + "', '" + email + "','" + now + "','" + category + "','new',0,1,''," + price + ")";
+			var price = 100;//results[prop].price;
+
+			checkvalues = checkvalues + "(agent='" + agent + "' and vendor= '" + vendor + "' and catalognumber= '" + catalognumber + "' and location= '" + location + "' and email='" + email + "' and date='" + now + "' and category='" + category + "' and status='new' and quantity=0 and insufficient=1 and insuffdate='' and price=" + price + ")";
+			if(prop < (results.length-1)){
+				checkvalues = checkvalues + " or ";
+			}
+
+			values = values + "('" + agent + "', '" + vendor + "', '" + catalognumber + "', '" + location + "', '" + email + "','" + now + "','" + category + "','new',0,1,''," + price + ")";
 			if(prop < (results.length-1)){
 				values = values + ",";
 			}
 		}
+		console.log("checkvalues: " + checkvalues);
+		console.log("values: " + values);
 	}
-	console.log("values " + values);
+	console.log("All checkvalues " + checkvalues);
 
 	if(values!= null){
-		var query2 = client.query("INSERT INTO vm2016_agentsshare VALUES " + values);
+		var query3 = client.query("Select * from vm2016_agentsshare where " + checkvalues);
 
-		query2.on("row", function(row, result2) {
-			result2.addRow(row);
+		query3.on("row", function(row, result3) {
+			result3.addRow(row);
 		});
-		query2.on("end", function(result2) {
-			console.log("successfulUpload");
-			callback(null, "successfulUpload");
+		query3.on("end", function(result3) {
+			var l = result3.length;
+			console.log("results: " + l);
+			var existingReagents = "";
+			if (result3 != null && result3.length > 0) {
+				for(var i in result3){
+					if(i == 0){
+						existingReagents = existingReagents + "(";
+					}
+					existingReagents = existingReagents + "'" + agent + "'";
+					if(i < (result3.length -1)){
+						existingReagents = existingReagents + ",";
+					}
+					if(i == (result3.length -1)){
+						existingReagents = existingReagents + ")";
+					}
+				}
+				console.log("existingReagents: " + existingReagents);
+
+				/*var query5 = client.query("DELETE FROM vm2016_agentsshare WHERE rid in " + existingReagents);
+
+				query5.on("row", function(row, result5) {
+					result5.addRow(row);
+				});
+				query5.on("end", function(result5) {
+					var query2 = client.query("INSERT INTO vm2016_agentsshare VALUES " + values);
+					query2.on("row", function(row, result2) {
+						result2.addRow(row);
+					});
+					query2.on("end", function(result2) {
+						console.log("successfulUpload");
+						callback(null, "successfulUpload");
+					});
+					console.log("checking to be updated - rid: " + result3[i].rid);
+				});*/
+
+				
+			} else {
+					/*var query2 = client.query("INSERT INTO vm2016_agentsshare VALUES " + values);
+
+					query2.on("row", function(row, result2) {
+						result2.addRow(row);
+					});
+					query2.on("end", function(result2) {
+						console.log("successfulUpload in database");
+						callback(null, "successfulUpload");
+					});	*/					
+			}
 		});
-			
 	} else {
 		//Change Password already sent
 		console.log("cannotUploadMissingData.");
 		callback(null, "cannotUploadMissingData");
-	}
+	}	
 };
 
 LabYokeReporterSavings.prototype.dataMoney = function(callback) {

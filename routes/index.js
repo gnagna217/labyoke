@@ -87,6 +87,7 @@ module.exports = function(router) {
                     console.log("is admin? " + isLoggedInAdmin);
                     var labYokeUploader = new LabYokeUploader(result);
                     labYokeUploader.upload(function(error, done) {
+                    	console.log("is upload json: " + json);
                     res.render('share', {
                     currentlabname: req.session.lab, ordersnum: req.session.orders, sharesnum: req.session.shares, json: result, loggedIn : true, isLoggedInAdmin: isLoggedInAdmin, title: 'Share', spreadname: req.file.originalname, labyoker : req.session.user
                     });
