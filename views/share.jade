@@ -420,7 +420,7 @@ block content
 			div(id="sharesAll")
 				h4="A Line chart of your all time top 5 shares."
 				- if(filteroutput2 != null && filteroutput2.length > 0)
-					p="This line graph depicts your top 5 total number of shares per Reagent. Hover on top of a <span class='labColor'>dot</span> to display its value below."
+					p!="This line graph depicts your top 5 total number of shares per Reagent. Hover on top of a <span class='labColor'>dot</span> to display its value below."
 					div(class="ct-chart ct-perfect-fourth")
 					div(id="tooltips", class="labColor") &nbsp;
 				- if(filteroutput2 != null && filteroutput2.length==0)
