@@ -172,7 +172,7 @@ block content
                 span(class="yokeColor bold")=" top 10 number of orders "
                 span="and "
                 span(class="labColor bold")="number of requested shares "
-                span="per Reagent. Hover on top of a dot to display its value below."
+                span="per Reagent. Hover on top of a <span class='labColor'>dot</span> to display its value below."
               
               div(class="ct-chart1 ct-perfect-fourth")
               div(id="tooltips", class="labColor") &nbsp;
@@ -185,7 +185,7 @@ block content
             - // var filteroutput = test.filter(function(x){console.log("x.monthorder: "+x.monthorder); console.log("x.yearorder: "+x.yearorder); console.log("now.getFullYear(): "+ now.getFullYear()); console.log("now.getMonth(): "+ now.getMonth()); console.log("so: "+ (x.yearorder == now.getFullYear() && x.monthorder == now.getMonth())); return (x.yearorder == now.getFullYear() && x.monthorder == now.getMonth() + 1)});
             h4="A Bar chart of the monthly orders."
             - if(filteroutput != null && filteroutput.length > 0) 
-               p="This bar chart depicts your number of orders this month (so far) per Reagent. Hover on top of a bar to display its value below."
+               p="This bar chart depicts your number of orders this month (so far) per Reagent. Hover on top of a <span class='labColor'>bar</span> to display its value below."
                div(class="ct-chart0 ct-perfect-fourth")
                div(id="tooltips0", class="labColor") &nbsp;
             - if(filteroutput != null && filteroutput.length == 0) 
@@ -195,7 +195,7 @@ block content
             - if(filteroutput != null && filteroutput.length == 0) 
              h5="You have not ordered any reagent this month."
             h4="A Bar chart of all orders in each lab."
-            p="This bar chart depicts the number of orders (so far) per lab. Hover on top of a bar to display its value below."
+            p="This bar chart depicts the number of orders (so far) per lab. Hover on top of a <span class='labColor'>bar</span> to display its value below."
             - if(laborders != null && laborders.length > 0)
                div(class="ct-chart3 ct-perfect-fourth")
                div(id="tooltips3", class="labColor") &nbsp;
