@@ -289,10 +289,10 @@ block content
 						- for(var prop in ob)
 							- getlabs.push(ob[prop].labname)
 						- for(var prop in ob)
-							div!= "prop: " + prop + " - " + ob.length
+							//div!= "prop: " + prop + " - " + ob.length
 							- if(seriesname == '')
 								- seriesname = ob[prop].labname
-							div!= "seriesname: " + seriesname
+							//div!= "seriesname: " + seriesname
 							- if(labname == '')
 								- labname = ob[prop].labname
 							- if (ob[prop].labname == labname && prop < (ob.length))
@@ -302,20 +302,20 @@ block content
 									- vennportion = {name:'', data:[]}
 									- vennportion.name = seriesname
 									- vennportion.data = seriesdata
-									div!= "vennportion: " + vennportion
+									//div!= "vennportion: " + vennportion
 									- venn.push(vennportion)
-								div!= "feeding seriesdata: " + seriesdata
+								//div!= "feeding seriesdata: " + seriesdata
 							- else
 								- vennportion.name = seriesname
 								- vennportion.data = seriesdata
-								div!= "vennportion: " + vennportion
+								//div!= "vennportion: " + vennportion
 								- venn.push(vennportion)
 								- seriesdata = []
 								- seriesname = ob[prop].labname
 								- seriesdata.push(ob[prop].catalognumber)
 								- labname = ob[prop].labname
 								- vennportion = {name:'', data:[]}
-								div!= "venn: " + venn
+								//div!= "venn: " + venn
 							- array_labs_venn = array_labs_venn + ob[prop].labname + "|"
 							- array_catalogs_venn = array_catalogs_venn + ob[prop].catalognumber + "|"
 
