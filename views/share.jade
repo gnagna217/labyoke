@@ -298,11 +298,13 @@ block content
 							- if (ob[prop].labname == labname && prop < (ob.length))
 								- seriesname = ob[prop].labname
 								- seriesdata.push(ob[prop].catalognumber)
+								- if(prop == (ob.length - 1))
+									- vennportion = {name:'', data:[]}
+									- vennportion.name = seriesname
+									- vennportion.data = seriesdata
 								div!= "feeding seriesdata: " + seriesdata
 							- else
-								- if(prop == (ob.length - 1))
-									- seriesname = ob[prop].labname
-									- seriesdata.push(ob[prop].catalognumber)
+								
 								- vennportion.name = seriesname
 								
 								- vennportion.data = seriesdata
