@@ -11,6 +11,7 @@ var flash = require('connect-flash');
 var store  = new session.MemoryStore;
 var router = express.Router();
 var RedisStore = require('connect-redis')(session);
+var redis = require("redis").createClient();
 
 
 app.use(cookieParser());
@@ -28,9 +29,15 @@ app.use(cookieParser());
 */
 
 app.use(session({
-    store: new RedisStore(),
+    store: new RedisStore({ 
+        client: redis
+    }),
     secret: 'wearethebest'
 }));
+
+redis.on('error', function(err) {
+     console.log('Redis error: ' + err);
+});
 
 /*app.use(session({
 	  cookie: {
