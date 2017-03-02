@@ -58,28 +58,31 @@ module.exports = function(router) {
     router.post('/share', isLoggedIn, function(req, res) {
         var exceltojson;
         upload(req,res,function(err){
-        	var cont = true;
+        	var cont = 1;
             if(err){
-                 res.json({error_code:1,err_desc:err});
+                 //res.json({error_code:1,err_desc:err});
                  res.render('share', {
                    nosuccess: "generic", myshares: req.session.myshares, mysharesrequest: req.session.mysharesrequest, report_sharesbycategory: req.session.report_sharesbycategory, report_venn: req.session.report_venn, test: req.session.test, currentlabname: req.session.lab, ordersnum: req.session.orders, sharesnum: req.session.shares, loggedIn : true, isLoggedInAdmin: req.session.admin, title: 'Share', labyoker : req.session.user
                  });
-                 cont = false;
+                 cont = 0;
+                 console.log("generic error: "+cont);
                  //return;
             }
             /** Multer gives us file info in req.file object */
             if(!req.file){
-                res.json({error_code:1,err_desc:"No file passed"});
+                //res.json({error_code:1,err_desc:"No file passed"});
+                
                 res.render('share', {
                    nosuccess: "nofile", myshares: req.session.myshares, mysharesrequest: req.session.mysharesrequest, report_sharesbycategory: req.session.report_sharesbycategory, report_venn: req.session.report_venn, test: req.session.test, currentlabname: req.session.lab, ordersnum: req.session.orders, sharesnum: req.session.shares, loggedIn : true, isLoggedInAdmin: req.session.admin, title: 'Share', labyoker : req.session.user
                 });
-                cont = false;
+                cont = 0;
+                console.log("no file error: " + cont);
                 //return;
             }
             /** Check the extension of the incoming file and 
              *  use the appropriate module
              */
-            if(cont){
+            if(cont == 1){
             if(req.file.originalname.split('.')[req.file.originalname.split('.').length-1] === 'xlsx'){
                 exceltojson = xlsxtojson;
             } else {
@@ -93,12 +96,14 @@ module.exports = function(router) {
                 }, function(err,result){
                     if(err) {
                         //return res.json({error_code:1,err_desc:err, data: null});
+
                         res.render('share', {
                     	nosuccess: "nodata", myshares: req.session.myshares, mysharesrequest: req.session.mysharesrequest, report_sharesbycategory: req.session.report_sharesbycategory, report_venn: req.session.report_venn, test: req.session.test, currentlabname: req.session.lab, ordersnum: req.session.orders, sharesnum: req.session.shares, loggedIn : true, isLoggedInAdmin: req.session.admin, title: 'Share', spreadname: req.file.originalname, labyoker : req.session.user
                     	});
-                    	cont = false;
+                    	cont = 0;
+                    	console.log("no data error : " + cont);
                     }
-                    if(cont){
+                    if(cont == 1){
                     //var ob = { data:result};
                     console.log("inside upload ");
                     var labYokeUploader = new LabYokeUploader(result);
