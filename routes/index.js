@@ -62,7 +62,7 @@ module.exports = function(router) {
             if(err){
                  //res.json({error_code:1,err_desc:err});
                  res.render('share', {
-                   nosuccess: "generic", myshares: req.session.myshares, mysharesrequest: req.session.mysharesrequest, report_sharesbycategory: req.session.report_sharesbycategory, report_venn: req.session.report_venn, test: req.session.test, currentlabname: req.session.lab, ordersnum: req.session.orders, sharesnum: req.session.shares, loggedIn : true, isLoggedInAdmin: req.session.admin, title: 'Share', labyoker : req.session.user
+                   nosuccess: "generic", myshares: req.session.myshares, mysharesrequest: req.session.mysharesrequest, report_sharesbycategory: req.session.report_sharesbycategory, report_venn: req.session.report_venn, test: req.session.test, currentlabname: req.session.lab, ordersnum: req.session.orders, sharesnum: req.session.shares, loggedIn : true, isLoggedInAdmin: isLoggedInAdmin, title: 'Share', labyoker : req.session.user
                  });
                  cont = 0;
                  console.log("generic error: "+cont);
@@ -73,7 +73,7 @@ module.exports = function(router) {
                 //res.json({error_code:1,err_desc:"No file passed"});
                 
                 res.render('share', {
-                   nosuccess: "nofile", myshares: req.session.myshares, mysharesrequest: req.session.mysharesrequest, report_sharesbycategory: req.session.report_sharesbycategory, report_venn: req.session.report_venn, test: req.session.test, currentlabname: req.session.lab, ordersnum: req.session.orders, sharesnum: req.session.shares, loggedIn : true, isLoggedInAdmin: req.session.admin, title: 'Share', labyoker : req.session.user
+                   nosuccess: "nofile", myshares: req.session.myshares, mysharesrequest: req.session.mysharesrequest, report_sharesbycategory: req.session.report_sharesbycategory, report_venn: req.session.report_venn, test: req.session.test, currentlabname: req.session.lab, ordersnum: req.session.orders, sharesnum: req.session.shares, loggedIn : true, isLoggedInAdmin: isLoggedInAdmin, title: 'Share', labyoker : req.session.user
                 });
                 cont = 0;
                 console.log("no file error: " + cont);
@@ -98,7 +98,7 @@ module.exports = function(router) {
                         //return res.json({error_code:1,err_desc:err, data: null});
 
                         res.render('share', {
-                    	nosuccess: "nodata", myshares: req.session.myshares, mysharesrequest: req.session.mysharesrequest, report_sharesbycategory: req.session.report_sharesbycategory, report_venn: req.session.report_venn, test: req.session.test, currentlabname: req.session.lab, ordersnum: req.session.orders, sharesnum: req.session.shares, loggedIn : true, isLoggedInAdmin: req.session.admin, title: 'Share', spreadname: req.file.originalname, labyoker : req.session.user
+                    	nosuccess: "nodata", myshares: req.session.myshares, mysharesrequest: req.session.mysharesrequest, report_sharesbycategory: req.session.report_sharesbycategory, report_venn: req.session.report_venn, test: req.session.test, currentlabname: req.session.lab, ordersnum: req.session.orders, sharesnum: req.session.shares, loggedIn : true, isLoggedInAdmin: isLoggedInAdmin, title: 'Share', spreadname: req.file.originalname, labyoker : req.session.user
                     	});
                     	cont = 0;
                     	console.log("no data error : " + cont);
@@ -124,7 +124,7 @@ module.exports = function(router) {
                     });
                 	} else {
                 		console.log("inside not successful upload");
-                		res.render('share', {nosuccess: "databaserror", report_venn: req.session.report_venn, test: req.session.test, currentlabname: req.session.lab, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, myshares: req.session.myshares, mysharesrequest: req.session.mysharesrequest, report_sharesbycategory: req.session.report_sharesbycategory, loggedIn : true, isLoggedInAdmin: req.session.admin, title:'Share'});
+                		res.render('share', {nosuccess: "databaserror", report_venn: req.session.report_venn, test: req.session.test, currentlabname: req.session.lab, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, myshares: req.session.myshares, mysharesrequest: req.session.mysharesrequest, report_sharesbycategory: req.session.report_sharesbycategory, loggedIn : true, isLoggedInAdmin: isLoggedInAdmin, title:'Share'});
 						req.session.messages = null;
                 	}
                 });
