@@ -187,9 +187,9 @@ LabYokeUploader.prototype.upload = function(callback) {
 			if (result3 != null && result3.rows.length > 0) {
 				for(var i in result3.rows){
 					if(i == 0){
-						existingReagents = existingReagents + "(";
+						existingReagents = "(";
 					}
-					existingReagents = existingReagents + "'" + agent + "'";
+					existingReagents = existingReagents + "'" + result3[i].rid + "'";
 					if(i < (result3.length -1)){
 						existingReagents = existingReagents + ",";
 					}
