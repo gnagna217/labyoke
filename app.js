@@ -10,7 +10,7 @@ var passport = require('passport');
 var flash = require('connect-flash');
 var store  = new session.MemoryStore;
 var router = express.Router();
-var RedisStore = require('connect-redis')(express);
+var RedisStore = require('connect-redis')(session);
 
 
 app.use(cookieParser());
@@ -28,7 +28,7 @@ app.use(cookieParser());
 */
 
 app.use(session({
-    store: new RedisStore,
+    store: new RedisStore(),
     secret: 'wearethebest'
 }));
 
