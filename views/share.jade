@@ -50,7 +50,7 @@ block content
 									-var ob = mysharesrequest
 									-for(var prop in ob)
 										- var n = ob[prop].status
-										- var d = ob[prop].date
+										- var d = new Date(ob[prop].date)
 										- d = d.toLocaleDateString("en-US")
 										- var isnew = ""
 										- var checkedstr = false
