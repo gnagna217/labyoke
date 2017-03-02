@@ -12,6 +12,7 @@ var store  = new session.MemoryStore;
 var router = express.Router();
 var session = require('express-session');
 var RedisStore = require('connect-redis')(session);
+var redis = require("redis").createClient();
 
 app.use(cookieParser());
 
@@ -30,7 +31,7 @@ app.use(cookieParser());
 
 
 app.use(session({
-    store: new RedisStore,
+    store: new RedisStore({client: redis}),
     secret: 'wearethebest'
 }));
 
