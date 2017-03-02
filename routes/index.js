@@ -88,11 +88,11 @@ module.exports = function(router) {
                     console.log("inside upload ");
                     var labYokeUploader = new LabYokeUploader(result);
                     		var labYokeAgents = new LabYokeAgents(req.session.email, req.session.lab, req.session.labs, req.session.dept);
-		labYokeAgents.findmyshares(function(error, results) {
+		/*labYokeAgents.findmyshares(function(error, results) {
 			//req.session.orders = results[2];
 			req.session.shares = 0;
 			console.log("test ? " + results[3]);
-
+*/
                     labYokeUploader.upload(function(error, done) {
                     	//console.log("is upload json: " + json);
                     	console.log("is upload done?: " + done);
@@ -108,7 +108,7 @@ module.exports = function(router) {
                 	}
                 });
 
-		});
+		//});
 
                     //res.json({error_code:0,err_desc:null, data: result});
                 });
