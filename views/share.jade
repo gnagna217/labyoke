@@ -142,30 +142,26 @@ block content
 						button.btn.btn-success.btn-lg.btn-block(type="submit",value="Upload",name="submit") Upload File
 						img(src="images/yoke5.png", alt="The Lab", title="Lab", style="border-width:0px; width: 50px; margin-top: -77px; margin-left: 300px;")
 			if(nosuccess == "databaserror")
-				div(id="results")
-					div(id="ctl00_Div2" class="row rank")
-						div(class="table-responsive")
-							span(style="text-align: center")
-								h3(style="padding-bottom: 20px;")="A database error occurred during your upload. Please try again in a few minutes."
+				div
+					div(class="table-responsive alert alert-danger")
+						span(style="text-align: center")
+							h3(style="padding-bottom: 20px;")="A database error occurred during your upload. Please try again in a few minutes."
 			if(nosuccess == "nofile")
-				div(id="results")
-					div(id="ctl00_Div2" class="row rank")
-						div(class="table-responsive")
-							span(style="text-align: center")
-								h3(style="padding-bottom: 20px;")="Please select a valid Excel File."
+				div
+					div(class="table-responsive alert alert-danger")
+						span(style="text-align: center")
+							h3(style="padding-bottom: 20px;")="Please select a valid Excel File and try again."
 			if(nosuccess == "nodata")
-				div(id="results")
-					div(id="ctl00_Div2" class="row rank")
-						div(class="table-responsive")
-							span(style="text-align: center")
-								h3(style="padding-bottom: 20px;")="There is no data available in the file selected."
-									span(style="color: #3d9dcb;")=" " + spreadname
+				div
+					div(class="table-responsive alert alert-danger")
+						span(style="text-align: center")
+							h3(style="padding-bottom: 20px;")="There is no data available in the file selected."
+								span(style="color: #3d9dcb;")=" " + spreadname
 			if(nosuccess == "generic")
-				div(id="results")
-					div(id="ctl00_Div2" class="row rank")
-						div(class="table-responsive")
-							span(style="text-align: center")
-								h3(style="padding-bottom: 20px;")="A generic error has occurred. Please try again in a few minutes."
+				div
+					div(class="table-responsive alert alert-danger")
+						span(style="text-align: center")
+							h3(style="padding-bottom: 20px;")="A generic error has occurred. Please try again in a few minutes."
 			if json
 				div(id="results")
 					div(id="ctl00_Div2" class="row rank")
