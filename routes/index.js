@@ -60,12 +60,18 @@ module.exports = function(router) {
         upload(req,res,function(err){
             if(err){
                  res.json({error_code:1,err_desc:err});
-                 return;
+                 res.render('share', {
+                   nosuccess: "generic", myshares: req.session.myshares, mysharesrequest: req.session.mysharesrequest, report_sharesbycategory: req.session.report_sharesbycategory, report_venn: req.session.report_venn, test: req.session.test, currentlabname: req.session.lab, ordersnum: req.session.orders, sharesnum: req.session.shares, loggedIn : true, isLoggedInAdmin: req.session.admin, title: 'Share', spreadname: req.file.originalname, labyoker : req.session.user
+                 });
+                 //return;
             }
             /** Multer gives us file info in req.file object */
             if(!req.file){
                 res.json({error_code:1,err_desc:"No file passed"});
-                return;
+                res.render('share', {
+                   nosuccess: "nofile", myshares: req.session.myshares, mysharesrequest: req.session.mysharesrequest, report_sharesbycategory: req.session.report_sharesbycategory, report_venn: req.session.report_venn, test: req.session.test, currentlabname: req.session.lab, ordersnum: req.session.orders, sharesnum: req.session.shares, loggedIn : true, isLoggedInAdmin: req.session.admin, title: 'Share', spreadname: req.file.originalname, labyoker : req.session.user
+                });
+                //return;
             }
             /** Check the extension of the incoming file and 
              *  use the appropriate module
@@ -82,7 +88,10 @@ module.exports = function(router) {
                     lowerCaseHeaders:true
                 }, function(err,result){
                     if(err) {
-                        return res.json({error_code:1,err_desc:err, data: null});
+                        //return res.json({error_code:1,err_desc:err, data: null});
+                        res.render('share', {
+                    	nosuccess: "nodata", myshares: req.session.myshares, mysharesrequest: req.session.mysharesrequest, report_sharesbycategory: req.session.report_sharesbycategory, report_venn: req.session.report_venn, test: req.session.test, currentlabname: req.session.lab, ordersnum: req.session.orders, sharesnum: req.session.shares, loggedIn : true, isLoggedInAdmin: req.session.admin, title: 'Share', spreadname: req.file.originalname, labyoker : req.session.user
+                    	});
                     } 
                     //var ob = { data:result};
                     console.log("inside upload ");
@@ -104,7 +113,7 @@ module.exports = function(router) {
                     });
                 	} else {
                 		console.log("inside not successful upload");
-                		res.render('share', {report_venn: req.session.report_venn, test: req.session.test, currentlabname: req.session.lab, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, myshares: req.session.myshares, mysharesrequest: req.session.mysharesrequest, report_sharesbycategory: req.session.report_sharesbycategory, loggedIn : true, isLoggedInAdmin: req.session.admin, title:'Share'});
+                		res.render('share', {nosuccess: "databaserror", report_venn: req.session.report_venn, test: req.session.test, currentlabname: req.session.lab, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, myshares: req.session.myshares, mysharesrequest: req.session.mysharesrequest, report_sharesbycategory: req.session.report_sharesbycategory, loggedIn : true, isLoggedInAdmin: req.session.admin, title:'Share'});
 						req.session.messages = null;
                 	}
                 });
