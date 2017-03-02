@@ -213,14 +213,14 @@ module.exports = function(router) {
 	}
 
 	router.get('/login', function(req, res) {
-		if (req.session.key["user"]/*req.session.user*/) {
+		if (req.session.user) {
 			res.redirect('/search');
 		} else {
 			var labyokerLabs = new LabyokerLabs('','');
 			labyokerLabs.getlabs(function(error, labs) {
 				req.session.labs = labs;
 				console.log("loggin in labs: " + labs);
-				res.render('login', {ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.key["user"], title: 'Login',isLoggedInAdmin: req.session.key["admin"]});
+				res.render('login', {ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, title: 'Login',isLoggedInAdmin: req.session.admin});
 				req.session.messages = null;
 			});
 
