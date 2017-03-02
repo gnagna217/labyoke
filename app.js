@@ -10,6 +10,8 @@ var passport = require('passport');
 var flash = require('connect-flash');
 var store  = new session.MemoryStore;
 var router = express.Router();
+var session = require('express-session');
+var RedisStore = require('connect-redis')(session);
 
 app.use(cookieParser());
 
@@ -25,7 +27,14 @@ app.use(cookieParser());
 }));
 */
 
+
+
 app.use(session({
+    store: new RedisStore(options),
+    secret: 'wearethebest'
+}));
+
+/*app.use(session({
 	  cookie: {
 	    path    : '/',
 	    httpOnly: false,
@@ -33,7 +42,7 @@ app.use(session({
 	  },
 	  secret: 'wearethebest'
 	}));
-
+*/
 app.use(passport.initialize());
 app.use(passport.session()); // persistent login sessions
 app.use(flash()); // use connect-flash for flash messages stored in session
@@ -58,13 +67,18 @@ app.use(cookieParser());
 //app.use('/', routes);
 var routes = require('./routes/index')(app);
 
-// / catch 404 and forward to error handler
+// catch 404 and forward to error handler
 app.use(function(req, res, next) {
 	var err = new Error('Not Found');
 	err.status = 404;
 	next(err);
 });
-
+app.use(function (req, res, next) {
+  if (!req.session) {
+    return next(new Error('Ooooh Noooooo')) // handle error
+  }
+  next() // otherwise continue
+});
 // / error handlers
 
 // development error handler
