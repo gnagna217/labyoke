@@ -159,7 +159,7 @@ LabYokeUploader.prototype.upload = function(callback) {
 			var category = results[prop].category;
 			var price = 100;//results[prop].price;
 
-			checkvalues = checkvalues + "(agent='" + agent + "' and vendor= '" + vendor + "' and catalognumber= '" + catalognumber + "' and location= '" + location + "' and email='" + email + "' )";
+			checkvalues = checkvalues + "(agent='" + agent + "' and vendor= '" + vendor + "' and catalognumber= '" + catalognumber + "' and email='" + email + "' )";
 			if(prop < (results.length-1)){
 				checkvalues = checkvalues + " or ";
 			}
