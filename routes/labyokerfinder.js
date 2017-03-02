@@ -199,9 +199,9 @@ LabYokeUploader.prototype.upload = function(callback) {
 					}
 				}
 				console.log("existingReagents: " + existingReagents);
-				callback(null, "successfulUpload");
+				//callback(null, "successfulUpload");
 
-				/*var query5 = client.query("DELETE FROM vm2016_agentsshare WHERE rid in " + existingReagents);
+				var query5 = client.query("DELETE FROM vm2016_agentsshare WHERE rid in " + existingReagents);
 
 				query5.on("row", function(row, result5) {
 					result5.addRow(row);
@@ -215,12 +215,11 @@ LabYokeUploader.prototype.upload = function(callback) {
 						console.log("successfulUpload");
 						callback(null, "successfulUpload");
 					});
-					console.log("checking to be updated - rid: " + result3[i].rid);
-				});*/
+				});
 
 				
 			} else {
-					/*var query2 = client.query("INSERT INTO vm2016_agentsshare VALUES " + values);
+					var query2 = client.query("INSERT INTO vm2016_agentsshare VALUES " + values);
 
 					query2.on("row", function(row, result2) {
 						result2.addRow(row);
@@ -228,8 +227,7 @@ LabYokeUploader.prototype.upload = function(callback) {
 					query2.on("end", function(result2) {
 						console.log("successfulUpload in database");
 						callback(null, "successfulUpload");
-					});	*/		
-					callback(null, "cannotUploadMissingData");			
+					});		
 			}
 		});
 	} else {
