@@ -181,11 +181,11 @@ LabYokeUploader.prototype.upload = function(callback) {
 			result3.addRow(row);
 		});
 		query3.on("end", function(result3) {
-			var l = result3.length;
+			var l = result3.rows.length;
 			console.log("results: " + l);
 			var existingReagents = "";
-			if (result3 != null && result3.length > 0) {
-				for(var i in result3){
+			if (result3 != null && result3.rows.length > 0) {
+				for(var i in result3.rows){
 					if(i == 0){
 						existingReagents = existingReagents + "(";
 					}
