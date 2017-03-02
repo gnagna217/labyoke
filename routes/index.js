@@ -633,7 +633,7 @@ totalshares = t[0].counting;
 				res.render(
 					'forgot',
 					{
-						ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, isLoggedInAdmin: req.session.admin, title: 'Forgot Password', message : "Sorry. You must enter your current username. Please try again below.", usernotfound : true
+						ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, isLoggedInAdmin: req.session.admin, title: 'Forgot Password', message : "Sorry. You must enter your current <span class='labColor'>username</span>. Please try again below.", usernotfound : true
 					});
 
 			}
