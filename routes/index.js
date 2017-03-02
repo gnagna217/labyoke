@@ -87,8 +87,8 @@ module.exports = function(router) {
                     //var ob = { data:result};
                     console.log("inside upload ");
                     var labYokeUploader = new LabYokeUploader(result);
-                    		var labYokeAgents = new LabYokeAgents(req.session.email, req.session.lab, req.session.labs, req.session.dept);
-		/*labYokeAgents.findmyshares(function(error, results) {
+                    		/*var labYokeAgents = new LabYokeAgents(req.session.email, req.session.lab, req.session.labs, req.session.dept);
+		labYokeAgents.findmyshares(function(error, results) {
 			//req.session.orders = results[2];
 			req.session.shares = 0;
 			console.log("test ? " + results[3]);
@@ -99,11 +99,11 @@ module.exports = function(router) {
                     if(done == "successfulUpload"){
                     	console.log("inside successful upload");
                     	res.render('share', {
-                    	myshares: results[0], mysharesrequest: results[3], report_sharesbycategory: results[1], report_venn: results[5], test: results[4], currentlabname: req.session.lab, ordersnum: req.session.orders, sharesnum: req.session.shares, json: result, loggedIn : true, isLoggedInAdmin: isLoggedInAdmin, title: 'Share', spreadname: req.file.originalname, labyoker : req.session.user
+                    	myshares: req.session.myshares, mysharesrequest: req.session.mysharesrequest, report_sharesbycategory: req.session.report_sharesbycategory, report_venn: req.session.report_venn, test: req.session.test, currentlabname: req.session.lab, ordersnum: req.session.orders, sharesnum: req.session.shares, json: result, loggedIn : true, isLoggedInAdmin: isLoggedInAdmin, title: 'Share', spreadname: req.file.originalname, labyoker : req.session.user
                     });
                 	} else {
                 		console.log("inside not successful upload");
-                		res.render('share', {report_venn: results[5], test: results[4], currentlabname: req.session.lab, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, myshares: results[0], mysharesrequest: results[3], report_sharesbycategory: results[1], loggedIn : true, isLoggedInAdmin: req.session.admin, title:'Share'});
+                		res.render('share', {report_venn: req.session.report_venn, test: req.session.test, currentlabname: req.session.lab, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, myshares: req.session.myshares, mysharesrequest: req.session.mysharesrequest, report_sharesbycategory: req.session.report_sharesbycategory, loggedIn : true, isLoggedInAdmin: req.session.admin, title:'Share'});
 						req.session.messages = null;
                 	}
                 });
@@ -535,6 +535,11 @@ totalshares = t[0].counting;
 		var labYokeAgents = new LabYokeAgents(req.session.email, req.session.lab, req.session.labs, req.session.dept);
 		labYokeAgents.findmyshares(function(error, results) {
 			//req.session.orders = results[2];
+			req.session.myshares = results[0];
+			req.session.report_sharesbycategory = results[1];
+			req.session.mysharesrequest = results[3];
+			req.session.test = results[4];
+			req.session.report_venn = results[5];
 			req.session.shares = 0;
 			console.log("test ? " + results[3]);
 			res.render('share', {report_venn: results[5], test: results[4], currentlabname: req.session.lab, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, myshares: results[0], mysharesrequest: results[3], report_sharesbycategory: results[1], loggedIn : true, isLoggedInAdmin: req.session.admin, title:'Share'});
