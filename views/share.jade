@@ -51,8 +51,7 @@ block content
 									-for(var prop in ob)
 										- var n = ob[prop].status
 										- var d = ob[prop].date
-										- //if (d!=null && d!="undefined" && d.length > 0)
-											- //d = d.toLocaleDateString("en-US")
+										- d = d.toLocaleDateString("en-US")
 										- var isnew = ""
 										- var checkedstr = false
 										- if(n == "new")
