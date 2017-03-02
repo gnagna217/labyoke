@@ -198,6 +198,7 @@ LabYokeUploader.prototype.upload = function(callback) {
 					}
 				}
 				console.log("existingReagents: " + existingReagents);
+				callback(null, "successfulUpload");
 
 				/*var query5 = client.query("DELETE FROM vm2016_agentsshare WHERE rid in " + existingReagents);
 
@@ -226,7 +227,8 @@ LabYokeUploader.prototype.upload = function(callback) {
 					query2.on("end", function(result2) {
 						console.log("successfulUpload in database");
 						callback(null, "successfulUpload");
-					});	*/					
+					});	*/		
+					callback(null, "cannotUploadMissingData");			
 			}
 		});
 	} else {
