@@ -98,7 +98,7 @@ module.exports = function(router) {
                     	console.log("is upload done?: " + done);
                     if(done == "successfulUpload"){
                     	console.log("inside successful upload");
-                    	console.log("mysharesrequest " + req.session.mysharesrequest;
+                    	console.log("mysharesrequest " + req.session.mysharesrequest);
                     	res.render('share', {
                     	myshares: req.session.myshares, mysharesrequest: req.session.mysharesrequest, report_sharesbycategory: req.session.report_sharesbycategory, report_venn: req.session.report_venn, test: req.session.test, currentlabname: req.session.lab, ordersnum: req.session.orders, sharesnum: req.session.shares, json: result, loggedIn : true, isLoggedInAdmin: isLoggedInAdmin, title: 'Share', spreadname: req.file.originalname, labyoker : req.session.user
                     });
