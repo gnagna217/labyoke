@@ -10,9 +10,6 @@ var passport = require('passport');
 var flash = require('connect-flash');
 var store  = new session.MemoryStore;
 var router = express.Router();
-var RedisStore = require('connect-redis')(session);
-var redis = require("redis").createClient();
-
 
 app.use(cookieParser());
 
@@ -29,17 +26,6 @@ app.use(cookieParser());
 */
 
 app.use(session({
-    store: new RedisStore({ 
-        client: redis
-    }),
-    secret: 'wearethebest'
-}));
-
-redis.on('error', function(err) {
-     console.log('Redis error: ' + err);
-});
-
-/*app.use(session({
 	  cookie: {
 	    path    : '/',
 	    httpOnly: false,
@@ -47,10 +33,10 @@ redis.on('error', function(err) {
 	  },
 	  secret: 'wearethebest'
 	}));
-*/
+
 app.use(passport.initialize());
 app.use(passport.session()); // persistent login sessions
-//app.use(flash()); // use connect-flash for flash messages stored in session
+app.use(flash()); // use connect-flash for flash messages stored in session
 
 app.set('views', __dirname + '/views');
 app.set('view options', {
