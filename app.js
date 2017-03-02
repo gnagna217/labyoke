@@ -28,7 +28,7 @@ app.use(cookieParser());
 */
 
 app.use(session({
-    store: new RedisStore(),
+    store: new RedisStore,
     secret: 'wearethebest'
 }));
 
