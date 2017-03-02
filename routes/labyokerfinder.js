@@ -181,15 +181,16 @@ LabYokeUploader.prototype.upload = function(callback) {
 			result3.addRow(row);
 		});
 		query3.on("end", function(result3) {
-			var l = result3.rows.length;
+			var rows = result3.rows
+			var l = rows.length;
 			console.log("results: " + l);
 			var existingReagents = "";
-			if (result3 != null && result3.rows.length > 0) {
-				for(var i in result3.rows){
+			if (result3 != null && rows.length > 0) {
+				for(var i in rows){
 					if(i == 0){
 						existingReagents = "(";
 					}
-					existingReagents = existingReagents + "'" + result3[i].rid + "'";
+					existingReagents = existingReagents + "'" + rows[i].rid + "'";
 					if(i < (result3.length -1)){
 						existingReagents = existingReagents + ",";
 					}
