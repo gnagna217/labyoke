@@ -11,7 +11,7 @@ var flash = require('connect-flash');
 var store  = new session.MemoryStore;
 var router = express.Router();
 var RedisStore = require('connect-redis')(session);
-var redis = require("redis").createClient();
+var redis = require("redise").createClient();
 
 
 app.use(cookieParser());
