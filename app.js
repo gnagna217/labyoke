@@ -30,7 +30,7 @@ app.use(cookieParser());
 
 
 app.use(session({
-    store: new RedisStore(options),
+    store: new RedisStore,
     secret: 'wearethebest'
 }));
 
