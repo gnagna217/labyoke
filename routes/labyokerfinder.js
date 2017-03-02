@@ -1067,7 +1067,7 @@ LabYokeAgents.prototype.findmyshares = function(callback) {
 					});
 					query5.on("end", function(result5) {
 						results.push(result5.rows);
-						console.log("orders findmyshares result5: " + result5.rows)
+						console.log("orders findmyshares result5: " + result5.rows);
 
 						var q = client
 								.query("select b.lab, a.catalognumber, c.labname from vm2016_agentsshare a, vm2016_users b, labs c where c.department='"
@@ -1080,9 +1080,10 @@ LabYokeAgents.prototype.findmyshares = function(callback) {
 							result6.addRow(row);
 						});
 						query6.on("end", function(result6) {
+							console.log("finishing up getting share data");
 							results.push(result6.rows);
 							console.log("getting all products loaded: " + result6.rows)
-							callback(null, results)
+							callback(null, results);
 						});
 
 						//callback(null, results)
