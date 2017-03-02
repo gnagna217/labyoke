@@ -842,7 +842,7 @@ totalshares = t[0].counting;
 							{
 								ordersnum: req.session.orders,
 								sharesnum: req.session.shares, 
-								message : "Sorry. You cannot proceed. Please try again below.",
+								message : "Sorry you cannot proceed. Please fill out ALL fields and try again below.",
 								title: 'Register',
 								isLoggedInAdmin: req.session.admin,
 								labyoker : req.session.user,
@@ -860,7 +860,7 @@ totalshares = t[0].counting;
 				{
 					ordersnum: req.session.orders,
 					sharesnum: req.session.shares, 
-					message : "Sorry. You cannot proceed. Please try again below.",
+					message : "Sorry you cannot proceed. Please fill out ALL fields and try again below.",
 					title: 'Register',
 					isLoggedInAdmin: req.session.admin,
 					labyoker : req.session.user,
