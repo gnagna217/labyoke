@@ -84,7 +84,7 @@ module.exports = function(router) {
                         return res.json({error_code:1,err_desc:err, data: null});
                     } 
                     //var ob = { data:result};
-                    console.log("is admin? " + isLoggedInAdmin);
+                    console.log("inside upload ");
                     var labYokeUploader = new LabYokeUploader(result);
                     		var labYokeAgents = new LabYokeAgents(req.session.email, req.session.lab, req.session.labs, req.session.dept);
 		labYokeAgents.findmyshares(function(error, results) {
