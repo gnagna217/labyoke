@@ -146,23 +146,26 @@ block content
 					div(id="uploaderror", class="table-responsive alert alert-danger")
 						span(style="text-align: center")
 							h3(style="padding-bottom: 20px;")="A database error occurred during your upload. Please try again in a few minutes."
+				script="$(window).scrollTop($('#uploadForm').offset().top).scrollLeft($('#uploadForm').offset().left);"
 			if(nosuccess == "nofile")
 				div
 					div(id="uploaderror", class="table-responsive alert alert-danger")
 						span(style="text-align: center")
 							h3(style="padding-bottom: 20px;")="Please select a valid Excel File and try again."
+				script="$(window).scrollTop($('#uploadForm').offset().top).scrollLeft($('#uploadForm').offset().left);"
 			if(nosuccess == "nodata")
 				div
 					div(id="uploaderror", class="table-responsive alert alert-danger")
 						span(style="text-align: center")
 							h3(style="padding-bottom: 20px;")="There is no data available in the file selected."
 								span(style="color: #3d9dcb;")=" " + spreadname
+				script="$(window).scrollTop($('#uploadForm').offset().top).scrollLeft($('#uploadForm').offset().left);"
 			if(nosuccess == "generic")
 				div
 					div(id="uploaderror", class="table-responsive alert alert-danger")
 						span(style="text-align: center")
 							h3(style="padding-bottom: 20px;")="A generic error has occurred. Please try again in a few minutes."
-			script="$(window).scrollTop($('#uploaderror').offset().top).scrollLeft($('#uploaderror').offset().left);"
+				script="$(window).scrollTop($('#uploadForm').offset().top).scrollLeft($('#uploadForm').offset().left);"
 			if json
 				div(id="results")
 					div(id="ctl00_Div2" class="row rank")
@@ -191,6 +194,7 @@ block content
 								$(document).ready(function() {
 									$('#rankTblload').DataTable();
 								});
+				script="$(window).scrollTop($('#uploadForm').offset().top).scrollLeft($('#uploadForm').offset().left);"
 			div(style="background-color: #3d9dcb; height: 2px; margin-bottom: 0px; margin-top: 30px;")
 		div(style="float:right;", class="share-container " + adjust)
 			script(type="text/javascript" src="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.js")
