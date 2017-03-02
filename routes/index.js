@@ -38,15 +38,16 @@ var storage = multer.diskStorage({ //multers disk storage settings
             cb(null, file.fieldname + '-' + datetimestamp + '.' + file.originalname.split('.')[file.originalname.split('.').length -1])
         }
     });
-    var upload = multer({ //multer settings
-                    storage: storage,
-                    fileFilter : function(req, file, callback) { //file filter
-                        if (['xls', 'xlsx'].indexOf(file.originalname.split('.')[file.originalname.split('.').length-1]) === -1) {
-                            return callback(new Error('Wrong extension type'));
-                        }
-                        callback(null, true);
-                    }
-                }).single('file');
+var upload = multer({ //multer settings
+    storage: storage,
+    fileFilter : function(req, file, callback) { //file filter
+        if (['xls', 'xlsx'].indexOf(file.originalname.split('.')[file.originalname.split('.').length-1]) === -1) {
+            return callback(new Error('Wrong extension type'));
+        }
+        console.log("inside upload function");
+        callback(null, true);
+    }
+}).single('file');
 
 
 module.exports = function(router) {
