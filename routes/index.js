@@ -86,12 +86,27 @@ module.exports = function(router) {
                     //var ob = { data:result};
                     console.log("is admin? " + isLoggedInAdmin);
                     var labYokeUploader = new LabYokeUploader(result);
+                    		var labYokeAgents = new LabYokeAgents(req.session.email, req.session.lab, req.session.labs, req.session.dept);
+		labYokeAgents.findmyshares(function(error, results) {
+			//req.session.orders = results[2];
+			req.session.shares = 0;
+			console.log("test ? " + results[3]);
+
                     labYokeUploader.upload(function(error, done) {
                     	//console.log("is upload json: " + json);
-                    res.render('share', {
-                    currentlabname: req.session.lab, ordersnum: req.session.orders, sharesnum: req.session.shares, json: result, loggedIn : true, isLoggedInAdmin: isLoggedInAdmin, title: 'Share', spreadname: req.file.originalname, labyoker : req.session.user
+                    	console.log("is upload done?: " + done);
+                    if(done == "successfulUpload"){
+                    	res.render('share', {
+                    	currentlabname: req.session.lab, ordersnum: req.session.orders, sharesnum: req.session.shares, json: result, loggedIn : true, isLoggedInAdmin: isLoggedInAdmin, title: 'Share', spreadname: req.file.originalname, labyoker : req.session.user
                     });
+                	} else {
+                		res.render('share', {report_venn: results[5], test: results[4], currentlabname: req.session.lab, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, myshares: results[0], mysharesrequest: results[3], report_sharesbycategory: results[1], loggedIn : true, isLoggedInAdmin: req.session.admin, title:'Share'});
+						req.session.messages = null;
+                	}
                 });
+
+		});
+
                     //res.json({error_code:0,err_desc:null, data: result});
                 });
             } catch (e){

@@ -191,10 +191,10 @@ LabYokeUploader.prototype.upload = function(callback) {
 						existingReagents = "(";
 					}
 					existingReagents = existingReagents + "'" + rows[i].rid + "'";
-					if(i < (result3.length -1)){
+					if(i < (rows.length -1)){
 						existingReagents = existingReagents + ",";
 					}
-					if(i == (result3.length -1)){
+					if(i == (rows.length -1)){
 						existingReagents = existingReagents + ")";
 					}
 				}
