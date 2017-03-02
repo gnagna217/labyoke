@@ -61,7 +61,7 @@ module.exports = function(router) {
             if(err){
                  res.json({error_code:1,err_desc:err});
                  res.render('share', {
-                   nosuccess: "generic", myshares: req.session.myshares, mysharesrequest: req.session.mysharesrequest, report_sharesbycategory: req.session.report_sharesbycategory, report_venn: req.session.report_venn, test: req.session.test, currentlabname: req.session.lab, ordersnum: req.session.orders, sharesnum: req.session.shares, loggedIn : true, isLoggedInAdmin: req.session.admin, title: 'Share', spreadname: req.file.originalname, labyoker : req.session.user
+                   nosuccess: "generic", myshares: req.session.myshares, mysharesrequest: req.session.mysharesrequest, report_sharesbycategory: req.session.report_sharesbycategory, report_venn: req.session.report_venn, test: req.session.test, currentlabname: req.session.lab, ordersnum: req.session.orders, sharesnum: req.session.shares, loggedIn : true, isLoggedInAdmin: req.session.admin, title: 'Share', labyoker : req.session.user
                  });
                  //return;
             }
@@ -69,7 +69,7 @@ module.exports = function(router) {
             if(!req.file){
                 res.json({error_code:1,err_desc:"No file passed"});
                 res.render('share', {
-                   nosuccess: "nofile", myshares: req.session.myshares, mysharesrequest: req.session.mysharesrequest, report_sharesbycategory: req.session.report_sharesbycategory, report_venn: req.session.report_venn, test: req.session.test, currentlabname: req.session.lab, ordersnum: req.session.orders, sharesnum: req.session.shares, loggedIn : true, isLoggedInAdmin: req.session.admin, title: 'Share', spreadname: req.file.originalname, labyoker : req.session.user
+                   nosuccess: "nofile", myshares: req.session.myshares, mysharesrequest: req.session.mysharesrequest, report_sharesbycategory: req.session.report_sharesbycategory, report_venn: req.session.report_venn, test: req.session.test, currentlabname: req.session.lab, ordersnum: req.session.orders, sharesnum: req.session.shares, loggedIn : true, isLoggedInAdmin: req.session.admin, title: 'Share', labyoker : req.session.user
                 });
                 //return;
             }
