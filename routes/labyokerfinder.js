@@ -1602,7 +1602,7 @@ Labyoker.prototype.login = function(callback) {
 	var results2;
 	var resultsLogin = [];
 	var query = client.query("SELECT * FROM vm2016_users where id='" + username
-			+ "'"/* and password='"+password+"'" */);
+			+ "' and (disable <> 0 or disable is null)"/* and password='"+password+"'" */);
 	query.on("row", function(row, result) {
 		result.addRow(row);
 	});
