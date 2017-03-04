@@ -232,9 +232,9 @@ module.exports = function(router) {
 			var labYokeSearch = new LabYokeSearch("",req.session.email);
 			labYokeSearch.findagents(function(error, results) {			
 				if (results != null && results.length > 0){
-					res.render('search', {mylab: req.session.lab,ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, isLoggedInAdmin: req.session.admin, agentsResults : results, loggedIn : true, title: 'Search'});
+					res.render('search', {mylab: req.session.lab,ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, isLoggedInAdmin: req.session.admin, agentsResults : results, loggedIn : true, title: 'Reagent Search'});
 				} else {
-					res.render('search', {mylab: req.session.lab,ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, isLoggedInAdmin: req.session.admin, loggedIn : true, title: 'Search'});
+					res.render('search', {mylab: req.session.lab,ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, isLoggedInAdmin: req.session.admin, loggedIn : true, title: 'Reagent Search'});
 				}
 				req.session.messages = null;
 			});
