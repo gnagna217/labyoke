@@ -1433,7 +1433,7 @@ LabYokeSearch.prototype.search = function(callback) {
 	var query = client
 			.query("SELECT * FROM vm2016_agentsshare a, vm2016_users b where a.email = b.email and (lower(a.agent) like lower('%"
 					+ this.searchText + "%') or lower(a.catalognumber) like lower('%"
-					+ this.searchText + "%')) and a.insufficient = 1 and a.email != '" + this.email+ "' order by a.agent");
+					+ this.searchText + "%')) and a.insufficient = 1 and a.email != '" + this.email+ "' and (b.disable <> 0 or b.disable is null) order by a.agent");
 	query.on("row", function(row, result) {
 		result.addRow(row);
 	});
