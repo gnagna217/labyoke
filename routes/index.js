@@ -991,6 +991,8 @@ totalshares = t[0].counting;
 														req.session.useradmin = true;
 													if(c > 1)
 														req.session.usersuperadmin = true;
+													console.log("req.session.useradmin? " + req.session.useradmin);
+													console.log("req.session.usersuperadmin? " + req.session.usersuperadmin);
 													req.session.active = done[0].active;
 													req.session.email = done[0].email;
 													req.session.lab = done[0].lab;
