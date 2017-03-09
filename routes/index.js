@@ -192,6 +192,8 @@ module.exports = function(router) {
 		res.redirect('/login');
 	}
 	function isLoggedInAdmin(req, res, next) {
+		console.log("req.session.useradmin: " + req.session.useradmin);
+		console.log("req.session.usersuperadmin: " + req.session.usersuperadmin);
 		if (req.session.user && (req.session.useradmin || req.session.usersuperadmin))
 			return next();
 		console.log('requested url: '+req.originalUrl);
