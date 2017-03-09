@@ -982,7 +982,8 @@ totalshares = t[0].counting;
 													req.session.userid = done[0].id;
 													req.session.useradmin = false;
 													console.log("admin? " + done[0].admin);
-													req.session.admin = done[0].admin;
+													var c = parseInt(done[0].admin,10);
+													req.session.admin = c;
 													if(req.session.admin > 0)
 														req.session.useradmin = true;
 													if(req.session.admin > 1)
