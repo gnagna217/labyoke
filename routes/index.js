@@ -151,8 +151,12 @@ module.exports = function(router) {
 	});
 
 	router.get('/test', function(req, res) {
-		res.cookie('i18n', req.query.lang);
-		req.cookies.i18n = req.query.lang;
+		var lang = req.query.lang;
+		if(lang == null || lang == undefined){
+			lang = "en";
+		}
+		res.cookie('i18n', lang);
+		req.cookies.i18n = lang;
 		res.setLocale(req.cookies.i18n);
 		res.render('test',{i18n: res});
 	});
