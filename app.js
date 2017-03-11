@@ -19,7 +19,10 @@ i18next
   .use(i18nextMiddleware.LanguageDetector)
   .use(FilesystemBackend)
   .use(sprintf)
-  .init(options, callback);
+  .init({
+    saveMissing: true,
+    debug: true
+}, callback);
 
 app.use(cookieParser());
 
