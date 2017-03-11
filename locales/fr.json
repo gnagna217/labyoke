@@ -16,9 +16,17 @@
     "search.buttoncatalog" : "Recherche Catalogue",
     "search.buttonreagent": "Recherche Reagent",
     "search.resultstitle": "These Researchers and Labs can share your",
-    "search.resultssubtitle": "Commander dès maintenant!"
+    "search.resultssubtitle": "Commander dès maintenant!",
     "search.table.catalog": "Catalogue",
     "search.table.vendor": "Vendeur",
     "search.table.location": "Proprio",
-    "search.table.order": "Commander"
+    "search.table.order": "Commander",
+    "layout.Search": " Recherche",
+    "layout.Reports": " Rapports",
+    "layout.Admin": " Admin",
+    "layout.Shares": " Partages",
+    "layout.Orders": " Commandes",
+    "layout.Profile": " Profil",
+    "layout.Help": " Aide",
+    "layout.Us": " Nous"
 }

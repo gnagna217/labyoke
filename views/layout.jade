@@ -1,7 +1,8 @@
 doctype html
 html(lang='en')
    head
-     title= 'LabYoke - ' + title
+     - var a = "layout." + title
+     title!= 'LabYoke - ' + i18n.__(a)
      link(href='/css/animate.css', rel='stylesheet')
      link(rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.12/datatables.min.css")
      link(href='/css/popup.css', rel='stylesheet')
@@ -105,30 +106,30 @@ html(lang='en')
                             li(class=activateSearch)
                                 a(href="/search", class="nav-menu",id="menusearch", style=adjustWidth)
                                     span(class="fa fa-search colmenu")
-                                    span=" Search"
+                                    span #{i18n.__("layout.Search")}
                             if(isLoggedInAdmin == true)
                                 li(class=activateReports)
                                         a(href="/reports",class="nav-menu", id="menusearch", style="")
                                             span(class="fa fa-file-text colmenu")
-                                            span=" Reports"
+                                            span #{i18n.__("layout.Reports")}
                                 li(class=activateAdmin)
                                         a(href="/share#upload",class="nav-menu", id="menusearch", style="")
                                             span(class="fa fa-user-plus colmenu")
-                                            span=" Admin"
+                                            span #{i18n.__("layout.Admin")}
                             
                     div(class="paddingMobile")
                         ul.nav.navbar-nav(id="menumyshares", class="addMargin", style="border-left-color: white;border-left-style: solid;border-width: thick;")
                             li(class=activateShares)
                                 a(href="/share",class="nav-menu",id="menushare")
                                     span(class="fa fa-exchange colmenu")
-                                    span=" Shares"
+                                    span #{i18n.__("layout.Shares")}
                                    - if(sharesnumber>0) 
                                     span(class="fa fa-comment")
                                     span(class=sharesnumclass)!=sharesnumber
                             li(class=activateOrders)
                                 a(href="/orders",class="nav-menu",id="menushare")
                                     span(class="fa fa-ship colmenu")
-                                    span=" Orders"
+                                    span #{i18n.__("layout.Orders")}
                                   - if(ordersnumber>0) 
                                     span(class="fa fa-comment")
                                     span(class=ordersnumclass)!=ordersnumber
@@ -137,15 +138,15 @@ html(lang='en')
                                 a(href="/account",class="nav-menu myaccount", id="menumyaccounta")
                                     span(class="fa fa-cog colmenu")
                                     span(class="desktabonly2")=" " + user + "'s"
-                                    span=" Profile"
+                                    span #{i18n.__("layout.Profile")}
                             li(class=activateHelp)
                                 a(href='/help', class="nav-menu",id="menumyaccounta")
                                     span(class="fa fa-anchor colmenu")
-                                    span!=" Help "
+                                    span #{i18n.__("layout.Help")}
                             li(class=activateAbout)
                                 a(href='/about', class="nav-menu",id="menumyaccounta")
                                     span(class="fa fa-home colmenu")
-                                    span!=" Us "
+                                    span #{i18n.__("layout.Us")}
                     ul.nav.navbar-nav.navbar-right
                         li(class="nav-menu-logout", style="cursor:pointer")
                             a 

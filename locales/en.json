@@ -20,6 +20,14 @@
     "search.table.catalog": "Catalog#",
     "search.table.vendor": "Vendor",
     "search.table.location": "Owner",
-    "search.table.order": "Order"
+    "search.table.order": "Order",
+    "layout.Search": " Search",
+    "layout.Reports": " Reports",
+    "layout.Admin": " Admin",
+    "layout.Shares": " Shares",
+    "layout.Orders": " Orders",
+    "layout.Profile": " Profile",
+    "layout.Help": " Help",
+    "layout.Us": " Us"
 
 }
