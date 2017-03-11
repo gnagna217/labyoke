@@ -28,5 +28,13 @@
     "layout.Orders": " Commandes",
     "layout.Profile": " Profil",
     "layout.Help": " Aide",
-    "layout.Us": " Nous"
+    "layout.Us": " Nous",
+    "layout.About Us": " Sur Nous",
+    "layout.Logout": "Déconnexion",
+    "about.aboutus": "Qui Sommes Nous",
+    "about.desc1": "La Maison de la Fondation Konate-Schib est une fondation privée créée en 2017 par Gnagna Konate-Shaysh et Andria Schibler. La Fondation Gnagna est entièrement financée par les bénéfices et les redevances du logiciel de gestion de la recherche LabYoke. La fondation croit que grâce à la philanthropie, nous pouvons faire du monde un meilleur endroit. Nous avons deux missions.",
+    "about.desc2" : "Notre première initiative est de veiller à ce que les étudiants aient accès à un logement sûr, abordable et adéquat tout en fréquentant l'université. Nous croyons que fournir un financement pour aider les étudiants à obtenir des conditions de vie raisonnables tout au long de leurs études est un élément vital de l'éducation et ouvre la voie à la réussite future. Le logement des étudiants ne devrait pas être le facteur limitant pendant l'éducation et le développement d'une personne.",
+    "about.desc3" : "Notre deuxième initiative est de fournir du financement pour les étudiants qui sont capables et souhaitent poursuivre une carrière soit en informatique ou en biologie cellulaire.",
+    "about.desc4" : "<b>Nous croyons que fournir des fonds pour l'éducation est un excellent moyen de sécuriser les développements technologiques futurs qui permettront aux communautés de fonctionner de manière sûre, efficace et plus saine. </b>"
+
 }
