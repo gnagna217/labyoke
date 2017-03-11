@@ -65,7 +65,7 @@ app.use(cookieParser());
 //app.use('/', routes);
 var routes = require('./routes/index')(app);
 
-i18n.registerAppHelper(app);
+//i18n.registerAppHelper(app);
 
 // / catch 404 and forward to error handler
 app.use(function(req, res, next) {
