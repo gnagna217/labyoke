@@ -152,7 +152,7 @@ module.exports = function(router) {
 
 	router.get('/test', function(req, res) {
 		res.cookie('i18n', 'fr');
-		res.setLocale(req.cookies.i18n);
+		res.setLocale('fr');
 		res.render('test',{i18n: res});
 	});
 
