@@ -6,10 +6,13 @@
     "login.registerLink" : "S' Enregistrer",
     "login.forgotLink" : "Mot de passe oublié",
     "login.helpLink" : "Aide",
-    "order.layovertitle" : "Commande?",
-    "order.layovercancel" : "Annuler",
-    "order.title" : "Recherche.",
-    "order.description": "Commerncer votre recherche en entrant le nom du <span class='labColor'>reagent (produit chimique)</span> ou du <span class='labColor'>numéro de catalogue</span>. Vous pouvez aussi le séléctioner.",
-    "order.searchholder" : "Rechercher un reagent...",
-    "order.catalogholder" : "Rechercher un numéro de catalogue..."
+    "search.layovertitle" : "Commande?",
+    "search.layovercancel" : "Annuler",
+    "search.title" : "Recherche.",
+    "search.description": "Commerncer votre recherche en entrant le nom du <span class='labColor'>reagent (produit chimique)</span> ou du <span class='labColor'>numéro de catalogue</span>. Vous pouvez aussi le séléctioner.",
+    "search.searchholder" : "Rechercher un reagent...",
+    "search.catalogholder" : "Rechercher un numéro de catalogue...",
+    "search.results.text" : "Commande: ",
+    "search.buttoncatalog" : "Recherche Numéro de Catalogue",
+    "search.buttonreagent": "Recherche Reagent"
 }

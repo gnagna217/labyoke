@@ -6,10 +6,14 @@
     "login.registerLink" : "Register now",
     "login.forgotLink" : "Forgot password",
     "login.helpLink" : "Help",
-    "order.layovertitle" : "Ordering?",
-    "order.layovercancel" : "Cancel",
-    "order.title" : "Search.",
-    "order.description": "Start your search by typing in the name of the <span class='labColor'>reagent</span> or a <span class='labColor'>catalog number</span>. You can also select your keyword from the dropdown.",
-    "order.searchholder" : "Looking for reagent...",
-    "order.catalogholder" : "Looking for catalog number..."
+    "search.layovertitle" : "Ordering?",
+    "search.layovercancel" : "Cancel",
+    "search.title" : "Search.",
+    "search.description": "Start your search by typing in the name of the <span class='labColor'>reagent</span> or a <span class='labColor'>catalog number</span>. You can also select your keyword from the dropdown.",
+    "search.searchholder" : "Looking for reagent...",
+    "search.catalogholder" : "Looking for catalog number...",
+    "search.results.text" : "Search: ",
+    "search.buttoncatalog" : "Find By Catalog",
+    "search.buttonreagent": "Find By Reagent"
+
 }
