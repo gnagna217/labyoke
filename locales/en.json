@@ -14,6 +14,12 @@
     "search.catalogholder" : "Looking for catalog number...",
     "search.results.text" : "Search: ",
     "search.buttoncatalog" : "Find By Catalog",
-    "search.buttonreagent": "Find By Reagent"
+    "search.buttonreagent": "Find By Reagent",
+    "search.resultstitle": "These Researchers and Labs can share your",
+    "search.resultssubtitle": "Order now!"
+    "search.table.catalog": "Catalog#",
+    "search.table.vendor": "Vendor",
+    "search.table.location": "Owner",
+    "search.table.order": "Order"
 
 }

@@ -67,12 +67,12 @@ block content
             div.searchResults()
               div
                   span(style="text-align: center")
-                    h3="These Researchers and Labs can share your"
+                    h3 #{i18n.__("search.resultstitle")}
                         if searchformText
                             span(style="color: #3d9dcb;")=" " + searchText
                         if searchformTextCatalog
                             span(style="color: #3d9dcb;")=" " + searchformTextCatalog
-                    h4="Order now!"
+                    h4 #{i18n.__("search.resultssubtitle")}
               #labyokers.container.results(style="width:100%;")
                 div(id="ctl00_Div2" class="row rank").match
                    - i = 1
@@ -83,10 +83,10 @@ block content
                          tr(class="you info-best" style="font-weight: bold")
                           td(class="desktabonly")= 'id '
                           td(class="wrapped")!= 'Reagent'
-                          td(class="desktabonly")= 'Catalog#'
-                          td(class="desktabonly")= 'Vendor'
-                          td= 'Location'
-                          td= 'Order'
+                          td(class="desktabonly") #{i18n.__("search.table.catalog")}
+                          td(class="desktabonly") #{i18n.__("search.table.vendor")}
+                          td #{i18n.__("search.table.location")}
+                          td #{i18n.__("search.table.order")}
                         tbody
                          -var ob = searchResults
                          - var j = 1
