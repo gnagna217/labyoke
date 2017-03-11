@@ -9,7 +9,7 @@
     "order.layovertitle" : "Commande?",
     "order.layovercancel" : "Annuler",
     "order.title" : "Recherche.",
-    "order.description": "Start your search by typing in the name of the <span class='labColor'>reagent</span> or a <span class='labColor'>catalog number</span>. You can also select your keyword from the dropdown.",
+    "order.description": "Commerncer votre recherche en entrant le nom du <span class='labColor'>reagent (produit chimique)</span> ou du <span class='labColor'>numéro de catalogue</span>. Vous pouvez aussi le séléctioner.",
     "order.searchholder" : "Rechercher un reagent...",
     "order.catalogholder" : "Rechercher un numéro de catalogue..."
 }
