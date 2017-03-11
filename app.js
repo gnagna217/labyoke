@@ -10,6 +10,12 @@ var passport = require('passport');
 var flash = require('connect-flash');
 var store  = new session.MemoryStore;
 var router = express.Router();
+var i18n = require('i18next');
+
+i18n.init({
+    saveMissing: true,
+    debug: true
+});
 
 app.use(cookieParser());
 
@@ -54,9 +60,12 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded());
 app.use(cookieParser());
+app.use(i18n.handle);
 
 //app.use('/', routes);
 var routes = require('./routes/index')(app);
+
+i18n.registerAppHelper(app);
 
 // / catch 404 and forward to error handler
 app.use(function(req, res, next) {
