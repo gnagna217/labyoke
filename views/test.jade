@@ -1,4 +1,4 @@
-doctype
+doctype5
 html
   head
     title #{title}
@@ -11,12 +11,10 @@ html
     .navbar
       h1= t('app.selectlanguage')
       ul 
-        li 
-          a#de(href='/?setLng=de-DE')= t('app.german')
         li
-          a#de(href='/?setLng=en-US')= t('app.english')
+          a#de(href='/?setLng=en')= t('app.english')
         li
-          a#de(href='/?setLng=fr-FR')= t('app.french')
+          a#de(href='/?setLng=fr')= t('app.french')
     .container
       .main-content
         block content
