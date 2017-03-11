@@ -10,7 +10,8 @@ var passport = require('passport');
 var flash = require('connect-flash');
 var store  = new session.MemoryStore;
 var router = express.Router();
-var i18next = require('i18next'),
+i18n = require("i18n");
+/*var i18next = require('i18next'),
   FilesystemBackend = require('i18next-node-fs-backend'),
   sprintf = require('i18next-sprintf-postprocessor'),
   i18nextMiddleware = require('i18next-express-middleware');
@@ -23,12 +24,27 @@ i18next
     saveMissing: true,
     debug: true
 });
+*/
+i18n.configure({
+
+//define how many languages we would support in our application
+locales:['en', 'fr'],
+
+//define the path to language json files, default is /locales
+directory: __dirname + '/locales',
+
+//define the default language
+defaultLocale: 'en',
+
+// define a custom cookie name to parse locale settings from 
+cookie: 'i18n'
+});
 
 app.use(cookieParser());
 
-app.use(i18nextMiddleware.handle(i18next)); // expose req.t with fixed lng
+/*app.use(i18nextMiddleware.handle(i18next)); // expose req.t with fixed lng
 app.post('/locales/add/:lng/:ns', i18nextMiddleware.missingKeyHandler(i18next));
-
+*/
 /*app.use(session({
 	secret : 'keyboard cat',
 	name : 'sid',
@@ -71,6 +87,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded());
 app.use(cookieParser());
 
+app.use(i18n.init);
 
 //app.use('/', routes);
 var routes = require('./routes/index')(app);

@@ -151,7 +151,9 @@ module.exports = function(router) {
 	});
 
 	router.get('/test', function(req, res) {
-		res.render('test');
+		res.cookie('i18n', 'fr');
+		res.setLocale(req.cookies.i18n);
+		res.render('test',{i18n: res});
 	});
 
 	router.get('/help', function(req, res) {
