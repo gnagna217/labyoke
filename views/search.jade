@@ -12,21 +12,20 @@ block content
         input(name="labform" type="hidden" id="labform" value="")
         div(id="ios-light")
             center
-                h1="Ordering?"
+                h1 #{i18n.__("order.layovertitle")}
                 p(id="orderText")
                 div
                     div(id="actionorder" class="exit" style="width: 50%; float: left; background-color: rgba(138, 109, 59, 0.55);")="OK"
-                    div(class="exit" onclick="iosLightExit()")="Cancel"
+                    div(class="exit" onclick="iosLightExit()") #{i18n.__("order.layovercancel")}
         div(class="shade" id="shade")
         div(class="shade-light" id="shade-light")
 
     div(class="container login marginbottom")
         div(style="float: left;max-width: 400px;margin-right: 20px;")
-            h1= 'Search.'
-            p #{i18n.__("Welcome")}
-            p!="Start your search by typing in the name of the <span class='labColor'>reagent</span> or a <span class='labColor'>catalog number</span>. You can also select your keyword from the dropdown."
-            - searchText = "Looking for reagent..."
-            - searchTextCatalog = "Looking for catalog number..."
+            h1 #{i18n.__("order.title")}
+            p #{i18n.__("order.description")}
+            - searchText = i18n.__("order.searchholder")
+            - searchTextCatalog = i18n.__("order.catalogholder")
             - classButton = "btn-success"
             - classButtonCatalog = "btn-success"
             if searchformText

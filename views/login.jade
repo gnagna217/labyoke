@@ -6,8 +6,8 @@ block content
          div(style="text-align: center;position: relative;")
              a(href="/search")
                 img(src="/images/yoke4.png", alt="The Yoke",  title="Yoke", class="yokelogo")
-             h1 #{i18n.__("Hello")}
-             p #{i18n.__("Welcome")}
+             h1 #{i18n.__("login.hello")}
+             p #{i18n.__("login.welcome")}
          div(id="ctl00_Div2" class="frontdiv results")
            div
             if message
@@ -19,13 +19,13 @@ block content
                     input(name="pass" type="password" id="pass" class="form-control placeholderColor" placeholder="Password")
                 div(class="buttons")
                     //input(type="submit" class="button" value="Get in")
-                    button.btn.btn-success.btn-lg.btn-block(type='submit', style="width: 85%;") #{i18n.__("loginButton")}
+                    button.btn.btn-success.btn-lg.btn-block(type='submit', style="width: 85%;") #{i18n.__("login.button")}
                     img(src="images/lab.png", alt="The Lab", title="Lab", style="border-width:0px; width: 50px; margin-top: -50px; float: right;")
             div(style="max-width: 550px;margin-top: 10px;")
                 span(class="floatleft")
-                    a(href="/register", style="z-index:10") #{i18n.__("registerLink")}
+                    a(href="/register", style="z-index:10") #{i18n.__("login.registerLink")}
                 span(style="float:right;")
-                    a(href="/forgot", style="z-index:10") #{i18n.__("forgotLink")}
+                    a(href="/forgot", style="z-index:10") #{i18n.__("login.forgotLink")}
     div(class="help")
        a(href="/help" title="Help")
-        img(src="images/bouee3.png", alt="Help", title=i18n.__("helpLink"), class="helplogin")
+        img(src="images/bouee3.png", alt="Help", title=i18n.__("login.helpLink"), class="helplogin")

@@ -1,9 +1,15 @@
 
 {
-    "Hello": "Salut.",
-    "Welcome": "Bienvenue sur LabYoke. Vous êtes à un click de partager vos agents chimiques!",
-    "loginButton" : "Entrez",
-    "registerLink" : "S' Enregistrer",
-    "forgotLink" : "Mot de passe oublié",
-    "helpLink" : "Aide"
+    "login.hello": "Salut.",
+    "login.welcome": "Bienvenue sur LabYoke. Vous êtes à un click de partager vos agents chimiques!",
+    "login.button" : "Entrez",
+    "login.registerLink" : "S' Enregistrer",
+    "login.forgotLink" : "Mot de passe oublié",
+    "login.helpLink" : "Aide",
+    "order.layovertitle" : "Commande?",
+    "order.layovercancel" : "Annuler",
+    "order.title" : "Recherche.",
+    "order.description": "Start your search by typing in the name of the <span class='labColor'>reagent</span> or a <span class='labColor'>catalog number</span>. You can also select your keyword from the dropdown.",
+    "order.searchholder" : "Rechercher un reagent...",
+    "order.catalogholder" : "Rechercher un numéro de catalogue..."
 }
