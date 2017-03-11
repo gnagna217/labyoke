@@ -1,6 +1,9 @@
 
 {
-    "Welcome": "Salut, bienvenue sur notre site",
-    "Language": "Choisissez votre langue",
-    "Contact Information" : "Nos informations"
+    "Hello": "Salut.",
+    "Welcome": "Bienvenue sur LabYoke. Vous êtes à un click de partager vos agents chimiques!",
+    "loginButton" : "Entrez",
+    "registerLink" : "S' Enregistrer",
+    "forgotLink" : "Mot de passe oublié",
+    "helpLink" : "Aide"
 }
