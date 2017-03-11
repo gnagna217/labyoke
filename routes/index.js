@@ -228,6 +228,20 @@ module.exports = function(router) {
 	}
 
 	router.get('/login', function(req, res) {
+		var lang = req.query.lang;
+		console.log("lang is init from param: " + lang);
+		if(lang == null || lang == undefined){
+			lang = req.cookies.i18n;
+			console.log("lang is from cookies: " + lang);
+		}
+		if(lang == null || lang == undefined){
+			lang = "en";
+		}
+		console.log("lang is finally: " + lang);
+		res.cookie('i18n', lang);
+		req.cookies.i18n = lang;
+		res.setLocale(req.cookies.i18n);
+
 		if (req.session.user) {
 			res.redirect('/search');
 		} else {
@@ -235,7 +249,7 @@ module.exports = function(router) {
 			labyokerLabs.getlabs(function(error, labs) {
 				req.session.labs = labs;
 				console.log("loggin in labs: " + labs);
-				res.render('login', {ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, title: 'Login',isLoggedInAdmin: req.session.admin});
+				res.render('login', {i18n: res, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, title: 'Login',isLoggedInAdmin: req.session.admin});
 				req.session.messages = null;
 			});
 
@@ -243,13 +257,14 @@ module.exports = function(router) {
 	});
 
 	router.get('/search', isLoggedIn, function(req, res) {
+		res.setLocale(req.cookies.i18n);
 		if (req.session.user) {
 			var labYokeSearch = new LabYokeSearch("",req.session.email);
 			labYokeSearch.findagents(function(error, results) {			
 				if (results != null && results.length > 0){
-					res.render('search', {mylab: req.session.lab,ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, isLoggedInAdmin: req.session.admin, agentsResults : results, loggedIn : true, title: 'Reagent Search'});
+					res.render('search', {i18n:res, mylab: req.session.lab,ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, isLoggedInAdmin: req.session.admin, agentsResults : results, loggedIn : true, title: 'Reagent Search'});
 				} else {
-					res.render('search', {mylab: req.session.lab,ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, isLoggedInAdmin: req.session.admin, loggedIn : true, title: 'Reagent Search'});
+					res.render('search', {i18n:res, mylab: req.session.lab,ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, isLoggedInAdmin: req.session.admin, loggedIn : true, title: 'Reagent Search'});
 				}
 				req.session.messages = null;
 			});
@@ -886,6 +901,7 @@ totalshares = t[0].counting;
 
 	router.post('/search', function(req, res) {
 		if (req.session.user) {
+			res.setLocale(req.cookies.i18n);
 			var searchText = req.body.searchText;
 			var labYokeSearch = new LabYokeSearch(searchText, req.session.email);
 			var messageStr = "";
@@ -895,9 +911,9 @@ totalshares = t[0].counting;
 					if(results[0].length == 0){
 						messageStr = "Sorry we could not find any results with your reagent search request: <b>" + searchText + "</b>. Please try again.";
 					}
-					res.render('search', {mylab: req.session.lab, message: messageStr, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, isLoggedInAdmin: req.session.admin, title: 'Search', fullname: req.session.fullname, sendemail: req.session.email, searchResults : results[0], agentsResults : results[1], searchformText: searchText, loggedIn : true});
+					res.render('search', {i18n:res, mylab: req.session.lab, message: messageStr, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, isLoggedInAdmin: req.session.admin, title: 'Search', fullname: req.session.fullname, sendemail: req.session.email, searchResults : results[0], agentsResults : results[1], searchformText: searchText, loggedIn : true});
 				} else {
-					res.render('search', {message:'You entered an invalid reagent keyword. Please try again.',mylab: req.session.lab,ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, isLoggedInAdmin: req.session.admin, title: 'Search', loggedIn : true, agentsResults : results[1]});
+					res.render('search', {i18n:res, message:'You entered an invalid reagent keyword. Please try again.',mylab: req.session.lab,ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, isLoggedInAdmin: req.session.admin, title: 'Search', loggedIn : true, agentsResults : results[1]});
 				}
 				req.session.messages = null;
 			});
@@ -928,10 +944,7 @@ totalshares = t[0].counting;
 		}
 	});
 
-	router
-			.post(
-					'/login',
-					function(req, res) {
+	router.post('/login',function(req, res) {
 						var username = req.body.user;
 						var password = req.body.pass;
 						if (username != null && username.length > 0
