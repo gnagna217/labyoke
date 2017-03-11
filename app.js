@@ -22,7 +22,7 @@ i18next
   .init({
     saveMissing: true,
     debug: true
-}, callback);
+});
 
 app.use(cookieParser());
 
