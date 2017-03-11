@@ -150,6 +150,10 @@ module.exports = function(router) {
 		res.redirect('/share');
 	});
 
+	router.get('/test', function(req, res) {
+		res.render('test');
+	});
+
 	router.get('/help', function(req, res) {
 		res.render('help', {
 			ordersnum: req.session.orders,

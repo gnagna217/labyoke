@@ -60,7 +60,7 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded());
 app.use(cookieParser());
-app.use(i18n.handle);
+//app.use(i18n.handle);
 
 //app.use('/', routes);
 var routes = require('./routes/index')(app);
