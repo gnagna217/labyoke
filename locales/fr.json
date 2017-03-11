@@ -9,7 +9,7 @@
     "search.layovertitle" : "Commande?",
     "search.layovercancel" : "Annuler",
     "search.title" : "Recherche.",
-    "search.description": "Commerncer votre recherche en entrant le nom du <span class='labColor'>reagent (produit chimique)</span> ou du <span class='labColor'>numéro de catalogue</span>. Vous pouvez aussi le séléctioner.",
+    "search.description": "Commencer votre recherche en entrant le nom du <span class='labColor'>reagent (produit chimique)</span> ou du <span class='labColor'>numéro de catalogue</span>. Vous pouvez aussi le séléctioner.",
     "search.searchholder" : "Rechercher un reagent...",
     "search.catalogholder" : "Rechercher un numéro de catalogue...",
     "search.results.text" : "Commande: ",
