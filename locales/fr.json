@@ -37,7 +37,7 @@
     "about.desc3" : "Notre deuxième initiative est de fournir du financement pour les étudiants qui sont capables et souhaitent poursuivre une carrière soit en informatique ou en biologie cellulaire.",
     "about.desc4" : "<b>Nous croyons que fournir des fonds pour l'éducation est un excellent moyen de sécuriser les développements technologiques futurs qui permettront aux communautés de fonctionner de manière sûre, efficace et plus saine. </b>",
     "about.desc5" : "Nous avons deux missions.",
-    "help.title": "Aide",
+    "help.title": "Un Peu d'Aide",
     "help.subtitle": "Qu'est ce que LabYoke?!",
     "help.desc1": "LabYoke est une application logicielle basée sur le Web qui relie plusieurs laboratoires au sein d'un département pour partager des produits chimiques et des réactifs. L'utilisation de LabYoke permettra aux étudiants et aux stagiaires de partager des réactifs de laboratoire qui contribueront à réduire les coûts et à gagner du temps en rendant les expériences plus efficaces.",
     "help.desc2": "Comment utiliser LabYoke?!",
@@ -47,6 +47,10 @@
     "help.desc6": "Cela génère une base de données d'inventaire consultable liée à l'emplacement et les informations de contact qui peuvent être utilisés pour compléter et expérimenter ou procédure pendant que vous attendez sur un réactif ou un produit chimique à arriver ou si vous souhaitez essayer un produit avant de l'acheter. Cette base de données peut également être utilisée pour identifier les produits chimiques, les produits et les réactifs qui sont ordinairement commandés et pourraient éventuellement être commandés en vrac pour économiser de l'argent en achetant des commandes plus importantes et en réduisant les frais d'expédition.",
     "help.desc7": "Cette application Web permettra également de réduire les courriels à l'échelle de l'établissement en demandant un réactif ou une aide, permettant aux utilisateurs d'utiliser LabYoke comme interface sociale. La caractéristique la plus importante est qu'il peut être utilisé pour réduire les prix d'achat. Un certain nombre de produits chimiques de laboratoire et de réactifs ont une date d'expiration, ce qui permettra aux enzymes et aux produits périssables d'être utilisés à l'achèvement par le partage. Vous pouvez également utiliser cette application Web pour vous aider à identifier les articles que vous pourriez envisager d'acheter en vrac pour réduire les frais d'expédition, ou d'acheter une plus grande quantité et de partager le réactif ou produit chimique entre le département. Enfin, les équipes d'hygiène et de sécurité environnementale peuvent également utiliser une base de données téléchargeable pour identifier des produits chimiques potentiellement dangereux et des réactifs biologiques et lier ces achats à un emplacement.",
     "help.desc8": "Échantillon Résultats d'une recherche de réagents:",
-    "help.desc9": ", Vous pouvez bien sûr toujours nous joindre à:"
+    "help.desc9": ", Vous pouvez bien sûr toujours nous joindre sur:",
+    "help.table.reagent": "Réagent",
+    "help.table.vendor": "Vendeur",
+    "help.table.location": "Proprio",
+    "help.table.order": "Commander"
 
 }
