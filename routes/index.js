@@ -165,6 +165,18 @@ module.exports = function(router) {
 	});
 
 	router.get('/help', function(req, res) {
+		var lang = req.query.lang;
+		console.log("lang is init from param: " + lang);
+		if(lang == null || lang == undefined){
+			lang = req.cookies.i18n;
+			console.log("lang is from cookies: " + lang);
+		}
+		if(lang == null || lang == undefined){
+			lang = "en";
+		}
+		console.log("lang is finally: " + lang);
+		res.cookie('i18n', lang);
+		req.cookies.i18n = lang;
 		res.setLocale(req.cookies.i18n);
 		res.render('help', {
 			i18n:res,
