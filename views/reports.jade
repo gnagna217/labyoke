@@ -235,17 +235,17 @@ block content
 						$(window).scrollTop($('.reportMoney').offset().top).scrollLeft($('.reportMoney').offset().left);
 			div(class="reportOrders results", id="reportOrders")
 				div(style="/*background-color: #3d9dcb; height: 2px; margin-bottom: 30px; margin-top: 30px;*/")
-				h4="Orders report Upload."
-				p="You can now retrieve a report of all orders requested."
+				h4= i18n.__("reports.orders.title")
+				p= i18n.__("reports.orders.subtitle")
 				- var datefrom_orders = datefromOrders
 				- var dateto_orders = datetoOrders
 				- var file_orders = "reportOrders_" + datefrom_orders + "_to_" + dateto_orders + ".pdf"
-				- var message_fail_order = "Unfortunately we could not generate the report within the time frame chosen. Please try again with new dates."
-				- var message_success_order = "Success! Your report has been generated for orders between " + datefrom_orders + " and " + dateto_orders + " then automatically downloaded in your computer."
+				- var message_fail_order = i18n.__("reports.orders.message.fail")
+				- var message_success_order = i18n.__("reports.orders.message.success1") + datefrom_orders + i18n.__("reports.orders.message.success2") + dateto_orders + i18n.__("reports.orders.message.success3")
 				- if(datefromOrders == null || datefromOrders == undefined || datefromOrders == "")
-					- datefrom_orders = "all"
+					- datefrom_orders = i18n.__("reports.orders.lab.option")
 					- dateto_orders = ""
-					- message_success_order = "Success! Your report has been generated for ALL orders and automatically downloaded on your computer if you are logged in on a desktop/laptop."
+					- message_success_order = i18n.__("reports.orders.message.successorders")
 					- file_orders = "reportOrders_all.pdf" 
 				if (addMessageOrders == 'failure')
 					div(class="alert alert-danger")!= message_fail_order
@@ -254,15 +254,15 @@ block content
 				div
 					form(action="reportOrders", method="post")
 						div(class="buttons")
-							label(style="width: 100px;")="Date From"
+							label(style="width: 100px;")=i18n.__("reports.orders.datefrom")
 							input(name="reportDateFromOrders" style="margin-bottom:10px" type="text" id="reportDateFromOrders" class="form-control")
 							
-							label(style="width: 100px;")="Date To"
+							label(style="width: 100px;")=i18n.__("reports.orders.dateto")
 							input(name="reportDateToOrders" style="margin-bottom:10px" type="text" id="reportDateToOrders" class="form-control")
 							
-							label(style="width: 100%;")!="Lab in <span class='labColor'>" + dept + "</span>"
-							select(name="reportLabOrders" type="text" id="reportLabOrders" class="form-control" style="border-color:#3d9dcb;margin-bottom:10px" placeholder="Lab")
-								option(value="all")="all"
+							label(style="width: 100%;")!= i18n.__("reports.orders.lab.label") + dept + "</span>"
+							select(name="reportLabOrders" type="text" id="reportLabOrders" class="form-control" style="border-color:#3d9dcb;margin-bottom:10px" placeholder=i18n.__("reports.orders.labselect"))
+								option(value="all")= i18n.__("reports.orders.lab.option")
 								if(categories != undefined)
 									- var ob = categories
 									- for(var prop in ob)
@@ -272,7 +272,7 @@ block content
 								div(class="arrow-up")
 								div(class="arrow-down")
 							div(style="max-width:100%; margin-top: 20px;")
-								button.btn.btn-success.btn-lg.btn-block(type="submit",value="Report",name="submit", style="max-width: 80%;width: 80%;") Get Orders
+								button.btn.btn-success.btn-lg.btn-block(type="submit",value="Report",name="submit", style="max-width: 80%;width: 80%;") i18n.__("reports.orders.button")
 								img(src="images/ship.png", alt="The Lab", title="Lab", style="border-width:0px; width: 50px; margin-top: -50px; float:right")
 						span(id="triggerSafariOrder")
 						if(resultsOrders != null && resultsOrders !="")
@@ -364,18 +364,18 @@ block content
 					script.
 						$(window).scrollTop($('.reportOrders').offset().top).scrollLeft($('.reportOrders').offset().left);
 			div(class="reportShares results", id="reportShares")
-				div(style="/*background-color: #3d9dcb; height: 2px; margin-bottom: 30px; margin-top: 30px;*/")
-				h4="Inventory report Upload."
-				p="You can now retrieve a report of all shares uploaded."
+				div
+				h4= i18n.__("reports.shares.title")
+				p= i18n.__("reports.shares.subtitle")
 				- var datefrom_shares = datefromShares
 				- var dateto_shares = datetoShares
 				- var file_shares = "reportShares_" + datefrom_shares + "_to_" + dateto_shares + ".pdf"
-				- var message_fail_share = "Unfortunately we could not generate the report within the time frame chosen. Please try again with new dates."
-				- var message_success_share = "Success! Your report has been generated for inventory requested between " + datefrom_shares + " and " + dateto_shares + " then automatically downloaded on your computer if you are logged in on a desktop/laptop."
+				- var message_fail_share = i18n.__("reports.shares.message.fail")
+				- var message_success_share = i18n.__("reports.shares.message.success1") + datefrom_shares + i18n.__("reports.shares.message.success2") + dateto_shares + i18n.__("reports.shares.message.success3")
 				- if(datefromShares == null || datefromShares == undefined || datefromShares == "")
-					- datefrom_shares = "all"
+					- datefrom_shares = i18n.__("reports.shares.lab.option")
 					- dateto_shares = ""
-					- message_success_share = "Success! Your report has been generated for ALL inventory and automatically downloaded in your computer."
+					- message_success_share = i18n.__("reports.shares.message.successshares")
 					- file_shares = "reportShares_all.pdf" 
 				if (addMessageShares == 'failure')
 					div(class="alert alert-danger")!= message_fail_share
@@ -384,14 +384,14 @@ block content
 				div
 					form(action="reportShares", method="post")
 						div(class="buttons")
-							label(style="width: 100px;")="Date From"
+							label(style="width: 100px;")= i18n.__("reports.shares.datefrom")
 							input(name="reportDateFrom" style="margin-bottom:10px" type="text" id="reportDateFrom" class="form-control")
 							
-							label(style="width: 100px;")="Date To"
+							label(style="width: 100px;")= i18n.__("reports.shares.dateto")
 							input(name="reportDateTo" style="margin-bottom:10px" type="text" id="reportDateTo" class="form-control")
 							
 							div(style="max-width:100%; margin-top: 20px;")
-								button.btn.btn-success.btn-lg.btn-block(type="submit",value="Report",name="submit", style="max-width: 80%;width: 80%;") Get Shares
+								button.btn.btn-success.btn-lg.btn-block(type="submit",value="Report",name="submit", style="max-width: 80%;width: 80%;") i18n.__("reports.shares.button")
 								img(src="images/ship.png", alt="The Lab", title="Lab", style="border-width:0px; width: 50px; margin-top: -50px;float:right")
 						if(resultsShares != null && resultsShares !="")
 							script(type="text/javascript" src="/javascripts/jspdf.js")
@@ -502,13 +502,13 @@ block content
 						$("#reportDateToMoney").mask("99-99-9999",{placeholder:"mm-dd-yyyy"});
 						
 					});
-		div(style="/*float: left; width: 100%;*/")
+		div
 			div(class="reportInsuff results", id="reportInsuff")
 				div(style="/*background-color: #3d9dcb; height: 2px; margin-bottom: 30px; margin-top: 30px;*/")
-				h4="Insufficient Reagents report Upload."
-				p="You can now retrieve a report of the low inventories in each lab."
-				- var message_fail_insuff = "Unfortunately we could not generate the report as there is no data retrieved. Please try again with a new lab. Or better yet: <b>There are no insufficient inventory to report at the moment</b>."
-				- var message_success_insuff = "Success! Your report has been generated for low inventories. It has been automatically downloaded on your computer if you are logged in on a desktop/laptop."
+				h4= i18n.__("reports.insuff.title")
+				p=i18n.__("reports.insuff.subtitle")
+				- var message_fail_insuff = i18n.__("reports.insuff.message.fail")
+				- var message_success_insuff = i18n.__("reports.insuff.message.successinsuff")
 				if (addMessageInsuff == 'failure')
 					div(class="alert alert-danger")!= message_fail_insuff
 				if (addMessageInsuff == 'success')
@@ -516,9 +516,9 @@ block content
 				div
 					form(action="reportInsuff", method="post")
 						div(class="buttons")
-							label(style="width: 100%;")!="Lab in <span class='labColor'>" + dept + "</span>"
-							select(name="reportLabInsuff" type="text" id="reportLabInsuff" class="form-control" style="border-color:#3d9dcb;margin-bottom:10px" placeholder="Lab")
-								option(value="all")="all"
+							label(style="width: 100%;")!= i18n.__("reports.insuff.lab.label") + dept + "</span>"
+							select(name="reportLabInsuff" type="text" id="reportLabInsuff" class="form-control" style="border-color:#3d9dcb;margin-bottom:10px" placeholder=i18n.__("reports.insuff.labselect"))
+								option(value="all")= i18n.__("reports.insuff.lab.option")
 								if(categories != undefined)
 									- var ob = categories
 									- for(var prop in ob)
@@ -527,16 +527,16 @@ block content
 							div(style="top: -35px; position: relative; float: right; margin-right: 10px;")
 								div(class="arrow-up")
 								div(class="arrow-down")
-							label(style="width: 100px;")="Show:"
+							label(style="width: 100px;")= i18n.__("reports.insuff.show")
 							br
-							label(style="width: 65px;")="Reagent"
+							label(style="width: 65px;")= i18n.__("reports.insuff.reagent")
 							input(type="checkbox" name="reportAgentInsuff" id="reportAgentInsuff" value="agent")
-							label(style="width: 55px; margin-left: 20px;")="Vendor"
+							label(style="width: 55px; margin-left: 20px;")= i18n.__("reports.insuff.vendor")
 							input(type="checkbox" name="reportVendorInsuff" id="reportVendorInsuff" value="vendor")
-							label(style="width: 68px; margin-left: 20px;")="Catalog#"
+							label(style="width: 68px; margin-left: 20px;")= i18n.__("reports.insuff.catalog")
 							input(type="checkbox" name="reportCatalogInsuff" id="reportCatalogInsuff" value="catalogNumber")
 							div(style="max-width:100%; margin-top: 20px;")
-								button.btn.btn-success.btn-lg.btn-block(type="submit",value="Report",name="submit", style="max-width: 80%;width: 80%;") Get Insufficient Reagents
+								button.btn.btn-success.btn-lg.btn-block(type="submit",value="Report",name="submit", style="max-width: 80%;width: 80%;") i18n.__("reports.insuff.button")
 								img(src="images/ship.png", alt="The Lab", title="Lab", style="border-width:0px; width: 50px; margin-top: -50px;float:right")
 						if(resultsInsuff != null && resultsInsuff !="")
 							- var file_insuff = "reportInsufficient_"+labinsuff+".pdf" 

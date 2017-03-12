@@ -6,6 +6,7 @@
     "login.registerLink" : "Register now",
     "login.forgotLink" : "Forgot password",
     "login.helpLink" : "Help",
+    
     "search.layovertitle" : "Ordering?",
     "search.layovercancel" : "Cancel",
     "search.title" : "Search.",
@@ -21,6 +22,7 @@
     "search.table.vendor": "Vendor",
     "search.table.location": "Owner",
     "search.table.order": "Order",
+    
     "layout.Reagent Search": " Search",
     "layout.Reports": " Reports",
     "layout.Admin": " Admin",
@@ -30,12 +32,14 @@
     "layout.Help": " Help",
     "layout.Us": " Us",
     "layout.Logout": "Logout",
+    
     "about.aboutus": "Who Are We",
     "about.desc1": "The House Of Konate-Schib Foundation is a private foundation formed in 2017 by Gnagna Konate-Shaysh and Andria Schibler. Gnagna’s Foundation is funded entirely through profits and royalties from LabYoke research management software. The foundation believes that through philanthropy, we can make the world a better place. We have two missions.",
     "about.desc2" : "Our first initiative is to make sure students have safe, affordable, adequate housing while attending university. We believe providing funding to help students secure reasonable living arrangements throughout their studies is a vital part of education and paves the way for future success. Student housing should not be the limiting factor during a person’s education and development.",
     "about.desc3" : "Our second initiative is to provide funding for students who are capable and wish to pursue a career in either computer science or cell biology.",
     "about.desc4" : "<b>We believe providing educational funds is a great way to secure future technological developments which will allow communities to function in a safe, efficient, and healthier manner.</b>",
     "about.desc5" : "We have two missions.",
+    
     "help.title": "Help",
     "help.subtitle": "What is LabYoke?!",
     "help.desc1": "LabYoke is a web based software application that links multiple labs together within a department to share chemicals and reagents. Utilizing LabYoke will allow students and trainees to share lab reagents which will help lower costs and save time making experiments more efficient.",
@@ -51,6 +55,7 @@
     "help.table.vendor": "Vendor",
     "help.table.location": "Owner",
     "help.table.order": "Order",
+    
     "register.title": "Sign Up.",
     "register.desc1": "You are on your way to <a href='/login'>Lab Yoking</a> with fellow researchers.",
     "register.title2": " Registering ",
@@ -71,6 +76,7 @@
     "register.thanku.desc1": "We have sent you an email to <span class='labColor'>complete</span><span> your registration. </span>",
     "register.thanku2": "Thanks for registering",
     "register.thanku2.desc1": "You can now start <a href='/search'>searching</a><span> or <a href='/share'>sharing</a></span><span> your own chemicals.</span>",
+    
     "forgot.title": "We got You.",
     "forgot.subtitle": "<span>Please enter your </span><span class='labColor'>username</span><span> below and we shall send you an email to change your password and <a href='/login'>login</a> again.</span>",
     "forgot.username": "Username",
@@ -87,6 +93,7 @@
     "reports.form.option3": "Orders",
     "reports.form.option4": "Inventory",
     "reports.form.option5": "Insufficient Inventory",
+    
     "reports.money.title": "Shares Savings report Upload.",
     "reports.money.subtitle": "You can now retrieve a report of the savings each lab has made over a period of time per reagent.",
     "reports.money.message.fail": "Unfortunately we could not generate the report within the time frame chosen. Please try again with new dates.",
@@ -96,7 +103,7 @@
     "reports.money.message.datefrommoney": "all",
     "reports.money.message.successmoney": "Success! Your report has been generated for ALL savings and automatically downloaded in your computer.",
     "reports.money.datefrom": "Date From",
-    "reports.money.datefrom": "Date To",
+    "reports.money.dateto": "Date To",
     "reports.money.lab.label": "Lab in <span class='labColor'>",
     "reports.money.labselect": "Lab",
     "reports.money.lab.option": "all",
@@ -105,7 +112,52 @@
     "reports.money.vendor": "Vendor",
     "reports.money.catalog": "Catalog",
     "reports.money.button": "Get Savings",
-    "reports.orders.title": ""
+
+    "reports.orders.title": "Orders report Upload.",
+    "reports.orders.subtitle": "You can now retrieve a report of all orders requested.",
+    "reports.orders.message.fail": "Unfortunately we could not generate the report within the time frame chosen. Please try again with new dates.",
+    "reports.orders.message.success1": "Success! Your report has been generated for orders between ",
+    "reports.orders.message.success2": " and ",
+    "reports.orders.message.success3": " then automatically downloaded in your computer.",
+    "reports.orders.message.successorders": "Success! Your report has been generated for ALL orders and automatically downloaded on your computer if you are logged in on a desktop/laptop.",
+    "reports.orders.datefrom": "Date From",
+    "reports.orders.dateto": "Date To",
+    "reports.orders.lab.label": "Lab in <span class='labColor'>",
+    "reports.orders.labselect": "Lab",
+    "reports.orders.lab.option": "all",
+    "reports.orders.button": "Get Orders",
+
+    "reports.shares.title": "Inventory report Upload.",
+    "reports.shares.subtitle": "You can now retrieve a report of all shares uploaded.",
+    "reports.shares.message.fail": "Unfortunately we could not generate the report within the time frame chosen. Please try again with new dates.",
+    "reports.shares.message.success1": "Success! Your report has been generated for inventory requested between ",
+    "reports.shares.message.success2": " and ",
+    "reports.shares.message.success3": " then automatically downloaded in your computer.",
+    "reports.shares.message.successshares": "Success! Your report has been generated for ALL inventory and automatically downloaded in your computer.",
+    "reports.shares.datefrom": "Date From",
+    "reports.shares.dateto": "Date To",
+    "reports.shares.lab.label": "Lab in <span class='labColor'>",
+    "reports.shares.labselect": "Lab",
+    "reports.shares.lab.option": "all",
+    "reports.shares.button": "Get Shares",
+
+    "reports.insuff.title": "Insufficient Reagents report Upload.",
+    "reports.insuff.subtitle": "You can now retrieve a report of the low inventories in each lab.",
+    "reports.insuff.message.fail": "Unfortunately we could not generate the report as there is no data retrieved. Please try again with a new lab. Or better yet: <b>There are no insufficient inventory to report at the moment</b>.",
+    "reports.insuff.message.successinsuff": "Success! Your report has been generated for low inventories. It has been automatically downloaded on your computer if you are logged in on a desktop/laptop.",
+    "reports.insuff.datefrom": "Date From",
+    "reports.insuff.dateto": "Date To",
+    "reports.insuff.lab.label": "Lab in <span class='labColor'>",
+    "reports.insuff.labselect": "Lab",
+    "reports.insuff.lab.option": "all",
+    "reports.insuff.show": "Show:",
+    "reports.insuff.reagent": "Reagent",
+    "reports.insuff.vendor": "Vendor",
+    "reports.insuff.catalog": "Catalog",
+    "reports.insuff.button": "Get Insufficient Reagents",
+
+    "reports.orders.test": ""
+
 
 
 }
