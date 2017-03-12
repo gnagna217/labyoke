@@ -206,5 +206,8 @@
     "orders.success.title": "Génial! Vous avez commandé le réactif suivant ",
     "orders.success.reagent": "Réactif: ",
     "orders.success.catalog": "Catalogue: ",
-    "orders.success.vendor": "Vendeur: "
+    "orders.success.vendor": "Vendeur: ",
+
+    "dot.selected": "<b>Quantité: </b>",
+    "dot.reagent": " - <b>Réactif:</b> "
 }

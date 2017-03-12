@@ -207,6 +207,9 @@
     "orders.success.catalog": "Catalog: ",
     "orders.success.month": "Vendor: ",
 
+    "dot.selected": "<b>Selected Quantity: </b>",
+    "dot.reagent": " - <b>Reagent:</b> ",
+
 
     "shares.title": ""
 

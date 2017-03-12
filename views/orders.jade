@@ -271,7 +271,7 @@ block content
             chart3.on('draw', function() {
               if (!addedEvents3) {
                 $('.ct-chart3').find('.ct-bar').on('mouseover', function() {
-                  $('#tooltips3').html('<b>Selected Quantity: </b>' + $(this).attr('ct:value'));
+                  $('#tooltips3').html(i18n.__("dot.selected") + $(this).attr('ct:value'));
                 });
 
                 $('.ct-chart3').find('.ct-bar').on('mouseout', function() {
@@ -432,7 +432,7 @@ block content
             chart0.on('draw', function() {
               if (!addedEvents0) {
                 $('.ct-chart0').find('.ct-bar').on('mouseover', function() {
-                  $('#tooltips0').html('<b>Selected Quantity: </b>' + $(this).attr('ct:value'));
+                  $('#tooltips0').html(i18n.__("dot.selected") + $(this).attr('ct:value'));
                 });
 
                 $('.ct-chart0').find('.ct-bar').on('mouseout', function() {
@@ -465,7 +465,7 @@ block content
                   var label = findx.find('.ct-label').html();
                   console.log("label: " + label);
                   if(label != undefined && label.length > 0)
-                    $('#tooltips').html('<b>Selected Quantity: </b>' + $(this).attr('ct:value') + ' - <b>Reagent:</b> ' + label);
+                    $('#tooltips').html(i18n.__("dot.selected")  + $(this).attr('ct:value') + i18n.__("dot.reagent") + label);
                 });
 
                 $('.ct-point').on('mouseout', function() {
