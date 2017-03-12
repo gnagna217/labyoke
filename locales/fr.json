@@ -71,6 +71,12 @@
     "register.thanku": "Merci de vous être pré-inscris",
     "register.thanku.desc1": "Nous vous avons envoyé un email pour <span class='labColor'>completer</span><span> votre inscription. </span>",
     "register.thanku2": "Merci pour vptre inscription",
-    "register.thanku2.desc1": "Vous pouvez maintenant effectuer une <a href='/search'>recherche</a><span> ou <a href='/share'>partager</a></span><span> vos produits chimiques.</span>"
-
+    "register.thanku2.desc1": "Vous pouvez maintenant effectuer une <a href='/search'>recherche</a><span> ou <a href='/share'>partager</a></span><span> vos produits chimiques.</span>",
+    "forgot.title": "Vous êtes Couvert.",
+    "forgot.subtitle": "<span>Veuillez entrer votre </span><span class='labColor'>nom d'utilisateur</span><span> ci-dessous et nous vous enverrons un e-mail pour changer votre mot de passe et <a href='/login'>login</a> de nouveau.</span>",
+    "forgot.username": "Nom d'Utilisateur",
+    "forgot.button": "Emailez",
+    "forgot.desc1": "Re-bonjour ",
+    "forgot.desc2": "Oui, nous avons trouvé votre compte! Veuillez vérifier votre boîte de réception afin de changer votre mot de passe. Ensuite, <a href='/login'>login</a> à nouveau.",
+    "forgot.fail.desc": "Oops..."
 }
