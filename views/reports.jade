@@ -272,7 +272,7 @@ block content
 								div(class="arrow-up")
 								div(class="arrow-down")
 							div(style="max-width:100%; margin-top: 20px;")
-								button.btn.btn-success.btn-lg.btn-block(type="submit",value="Report",name="submit", style="max-width: 80%;width: 80%;") i18n.__("reports.orders.button")
+								button.btn.btn-success.btn-lg.btn-block(type="submit",value="Report",name="submit", style="max-width: 80%;width: 80%;")= i18n.__("reports.orders.button")
 								img(src="images/ship.png", alt="The Lab", title="Lab", style="border-width:0px; width: 50px; margin-top: -50px; float:right")
 						span(id="triggerSafariOrder")
 						if(resultsOrders != null && resultsOrders !="")
@@ -391,7 +391,7 @@ block content
 							input(name="reportDateTo" style="margin-bottom:10px" type="text" id="reportDateTo" class="form-control")
 							
 							div(style="max-width:100%; margin-top: 20px;")
-								button.btn.btn-success.btn-lg.btn-block(type="submit",value="Report",name="submit", style="max-width: 80%;width: 80%;") i18n.__("reports.shares.button")
+								button.btn.btn-success.btn-lg.btn-block(type="submit",value="Report",name="submit", style="max-width: 80%;width: 80%;")= i18n.__("reports.shares.button")
 								img(src="images/ship.png", alt="The Lab", title="Lab", style="border-width:0px; width: 50px; margin-top: -50px;float:right")
 						if(resultsShares != null && resultsShares !="")
 							script(type="text/javascript" src="/javascripts/jspdf.js")
@@ -536,7 +536,7 @@ block content
 							label(style="width: 68px; margin-left: 20px;")= i18n.__("reports.insuff.catalog")
 							input(type="checkbox" name="reportCatalogInsuff" id="reportCatalogInsuff" value="catalogNumber")
 							div(style="max-width:100%; margin-top: 20px;")
-								button.btn.btn-success.btn-lg.btn-block(type="submit",value="Report",name="submit", style="max-width: 80%;width: 80%;") i18n.__("reports.insuff.button")
+								button.btn.btn-success.btn-lg.btn-block(type="submit",value="Report",name="submit", style="max-width: 80%;width: 80%;")= i18n.__("reports.insuff.button")
 								img(src="images/ship.png", alt="The Lab", title="Lab", style="border-width:0px; width: 50px; margin-top: -50px;float:right")
 						if(resultsInsuff != null && resultsInsuff !="")
 							- var file_insuff = "reportInsufficient_"+labinsuff+".pdf" 
