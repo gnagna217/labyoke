@@ -192,7 +192,7 @@
     "orders.chart.option2": "Top 10 Commandes & Partages Comparaison",
     "orders.chart.option3": "Votre Top 5 des Commandes Mensuelles",
     "orders.chart.option4": "Comparaison Commandes entre Laboratoires",
-    "orders.chart.notes": "<span class='labColor'>Sélectionnez un graphique</span> ci-dessus et commencez à explorer!",
+    "orders.chart.notes": "Les données générées par tous les ordres dans les différents laboratoires de votre département nous permettent de construire ces graphiques cool et informatif que vous pourriez être intéressé. <span class='labColor'>Sélectionnez un graphique</span> ci-dessus et commencez à explorer!",
     "orders.qty.title1": "Une comparaison de quantités entre <i>",
     "orders.qty.title2": "</i> top 10 commandes et partages.",
     "orders.qty.subtitle": "Ce graphique représente la tendance actuelle de votre laboratoire du <span class='yokeColor bold'>nombre de commandes</span> et <span class='labColor bold'>nombre de commandes pourvues</span> par réactif. Passez la souris au-dessus d'une <span class='labColor'>intersection</span> pour afficher sa valeur ci-dessous.",
