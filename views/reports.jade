@@ -2,11 +2,8 @@ extends layout
 
 block content
 	div(class="container login marginbottom")
-		h1= 'Reports.'
-		p Here are the reports that an administrator can generate and build a portfolio with. Please note that reports can only be generated using 
-			span
-				b="Chrome or Firefox "
-			span browsers.
+		h1= i18n.__("reports.title")
+		p!= i18n.__("reports.subtitle")
 
 			- var now = (new Date())
 			- now = (now.getMonth() + 1) + "/" + now.getDate() + "/" + now.getFullYear()
@@ -28,12 +25,12 @@ block content
 			- checkedstrInsuff = true
 		form(action="reportSelect", method="post")
 			div(class="buttons")
-				select(name="reportSelect" type="text" id="reportSelect" class="form-control" style="border-color:#3d9dcb;margin-bottom:10px" placeholder="Select Report")
-					option(value="reportNone",style="font-weight:bold")="Select A Report..."
-					option(value="reportMoney" selected=(checkedstrMoney===true ? "selected" : undefined))="Savings"
-					option(value="reportOrders" selected=(checkedstrOrders===true ? "selected" : undefined))="Orders"
-					option(value="reportShares" selected=(checkedstrShares===true ? "selected" : undefined))="Inventory"
-					option(value="reportInsuff" selected=(checkedstrInsuff===true ? "selected" : undefined))="Insufficient Inventory"
+				select(name="reportSelect" type="text" id="reportSelect" class="form-control" style="border-color:#3d9dcb;margin-bottom:10px" placeholder=i18n.__("reports.form.select"))
+					option(value="reportNone",style="font-weight:bold")=i18n.__("reports.form.option1")
+					option(value="reportMoney" selected=(checkedstrMoney===true ? "selected" : undefined))=i18n.__("reports.form.option2")
+					option(value="reportOrders" selected=(checkedstrOrders===true ? "selected" : undefined))=i18n.__("reports.form.option3")
+					option(value="reportShares" selected=(checkedstrShares===true ? "selected" : undefined))=i18n.__("reports.form.option4")
+					option(value="reportInsuff" selected=(checkedstrInsuff===true ? "selected" : undefined))=i18n.__("reports.form.option5")
 				div(style="top: -35px; position: relative; float: right; margin-right: 10px;")
 					div(class="arrow-up")
 					div(class="arrow-down")
@@ -52,6 +49,7 @@ block content
 			console.log("resultsShares: " + resultsShares.length);
 			console.log("resultsMoney: " + resultsMoney.length);
 			console.log("resultsInsuff: " + resultsInsuff.length);*/
+
 			var eSelect = document.getElementById('reportSelect');
 			console.debug("selected: " + $('#reportSelect').val());
 
@@ -124,18 +122,18 @@ block content
 		div(class="reportSlot") &nbsp;
 		div
 			div(class="reportMoney results", id="reportMoney")
-				div(style="/*background-color: #3d9dcb; height: 2px; margin-bottom: 30px; margin-top: 30px;*/")
-				h4="Shares Savings report Upload."
-				p="You can now retrieve a report of the savings each lab has made over a period of time per reagent."
+				div
+				h4= i18n.__("reports.money.title")
+				p= i18n.__("reports.money.subtitle")
 				- var datefrom_money = datefromMoney
 				- var dateto_money = datetoMoney
 				- var file_money = "reportMoney_" + datefrom_money + "_to_" + dateto_money + ".pdf"
-				- var message_fail_share = "Unfortunately we could not generate the report within the time frame chosen. Please try again with new dates."
-				- var message_success_money = "Success! Your report has been generated for savings requested between " + datefrom_money + " and " + dateto_money + " then automatically downloaded on your computer if you are logged in on a desktop/laptop."
+				- var message_fail_share = i18n.__("reports.money.message.fail")
+				- var message_success_money = i18n.__("reports.money.message.success1") + datefrom_money + i18n.__("reports.money.message.success2") + dateto_money + i18n.__("reports.money.message.success3")
 				- if(datefromMoney == null || datefromMoney == undefined || datefromMoney == "")
-					- datefrom_money = "all"
+					- datefrom_money = i18n.__("reports.money.message.datefrommoney")
 					- dateto_money = ""
-					- message_success_money = "Success! Your report has been generated for ALL savings and automatically downloaded in your computer."
+					- message_success_money = i18n.__("reports.money.message.successmoney")
 					- file_money = "reportMoney_all.pdf" 
 				if (addMessageMoney == 'failure')
 					div(class="alert alert-danger")!= message_fail_share
@@ -144,15 +142,15 @@ block content
 				div
 					form(action="reportMoney", method="post")
 						div(class="buttons")
-							label(style="width: 100px;")="Date From"
+							label(style="width: 100px;")= i18n.__("reports.money.datefrom")
 							input(name="reportDateFromMoney" style="margin-bottom:10px" type="text" id="reportDateFromMoney" class="form-control")
 							
-							label(style="width: 100px;")="Date To"
+							label(style="width: 100px;")= i18n.__("reports.money.dateto")
 							input(name="reportDateToMoney" style="margin-bottom:10px" type="text" id="reportDateToMoney" class="form-control")
 
-							label(style="width: 100%;")!="Lab in <span class='labColor'>" + dept + "</span>"
-							select(name="reportLabMoney" type="text" id="reportLabMoney" class="form-control" style="border-color:#3d9dcb;margin-bottom:10px" placeholder="Lab")
-								option(value="all")="all"
+							label(style="width: 100%;")!= i18n.__("reports.money.lab.label") + dept + "</span>"
+							select(name="reportLabMoney" type="text" id="reportLabMoney" class="form-control" style="border-color:#3d9dcb;margin-bottom:10px" placeholder=i18n.__("reports.money.labselect"))
+								option(value="all")=i18n.__("reports.money.lab.option")
 								if(categories != undefined)
 									- var ob = categories
 									- for(var prop in ob)
@@ -161,16 +159,16 @@ block content
 							div(style="top: -35px; position: relative; float: right; margin-right: 10px;")
 								div(class="arrow-up")
 								div(class="arrow-down")
-							label(style="width: 100px;")="Show:"
+							label(style="width: 100px;")=i18n.__("reports.money.show")
 							br
 							label(style="width: 65px;")="Reagent"
-							input(type="checkbox" name="reportAgentMoney" id="reportAgentMoney" value="agent")
-							label(style="width: 55px; margin-left: 20px;")="Vendor"
+							input(type="checkbox" name="reportAgentMoney" id="reportAgentMoney" value="reagent")
+							label(style="width: 55px; margin-left: 20px;")=i18n.__("reports.money.vendor")
 							input(type="checkbox" name="reportVendorMoney" id="reportVendorMoney" value="vendor")
-							label(style="width: 68px; margin-left: 20px;")="Catalog#"
+							label(style="width: 68px; margin-left: 20px;")=i18n.__("reports.money.catalog")
 							input(type="checkbox" name="reportCatalogMoney" id="reportCatalogMoney" value="catalogNumber")
 							div(style="max-width:100%; margin-top: 20px;")
-								button.btn.btn-success.btn-lg.btn-block(type="submit",value="Report",name="submit", style="max-width: 80%;width: 80%;") Get Savings
+								button.btn.btn-success.btn-lg.btn-block(type="submit",value="Report",name="submit", style="max-width: 80%;width: 80%;")= i18n.__("reports.money.button")
 								img(src="images/ship.png", alt="The Lab", title="Lab", style="border-width:0px; width: 50px; margin-top: -50px;float:right")
 						if(resultsMoney != null && resultsMoney !="")
 							script(type="text/javascript" src="/javascripts/jspdf.js")

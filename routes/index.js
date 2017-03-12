@@ -189,7 +189,6 @@ module.exports = function(router) {
 			menu : 'help',
 			title: 'Help'
 		});
-
 	});
 
 	router.get('/about', isLoggedIn, function(req, res) {
@@ -204,7 +203,6 @@ module.exports = function(router) {
 			isLoggedInAdmin: req.session.admin,
 			menu : 'about'
 		});
-
 	});
 
 	router.get('/logout', function(req, res) {

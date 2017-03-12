@@ -77,6 +77,35 @@
     "forgot.button": "Email me",
     "forgot.desc1": "Hello again ",
     "forgot.desc2": "Yes we indeed found your account! Please check your inbox in order to change your password. Then <a href='/login'>login</a> again.",
-    "forgot.fail.desc": "Oops..."
+    "forgot.fail.desc": "Oops...",
+
+    "reports.title": "Reports.",
+    "reports.subtitle": "Here are the reports that an administrator can generate and build a portfolio with. Please note that reports can only be generated using <b>Chrome or Firefox</b> browsers.",
+    "reports.form.select": "Select Report",
+    "reports.form.option1": "Select A Report...",
+    "reports.form.option2": "Savings",
+    "reports.form.option3": "Orders",
+    "reports.form.option4": "Inventory",
+    "reports.form.option5": "Insufficient Inventory",
+    "reports.money.title": "Shares Savings report Upload.",
+    "reports.money.subtitle": "You can now retrieve a report of the savings each lab has made over a period of time per reagent.",
+    "reports.money.message.fail": "Unfortunately we could not generate the report within the time frame chosen. Please try again with new dates.",
+    "reports.money.message.success1": "Success! Your report has been generated for savings requested between ",
+    "reports.money.message.success2": " and ",
+    "reports.money.message.success3": " then automatically downloaded on your computer if you are logged in on a desktop/laptop.",
+    "reports.money.message.datefrommoney": "all",
+    "reports.money.message.successmoney": "Success! Your report has been generated for ALL savings and automatically downloaded in your computer.",
+    "reports.money.datefrom": "Date From",
+    "reports.money.datefrom": "Date To",
+    "reports.money.lab.label": "Lab in <span class='labColor'>",
+    "reports.money.labselect": "Lab",
+    "reports.money.lab.option": "all",
+    "reports.money.show": "Show:",
+    "reports.money.reagent": "Reagent",
+    "reports.money.vendor": "Vendor",
+    "reports.money.catalog": "Catalog",
+    "reports.money.button": "Get Savings",
+    "reports.orders.title": ""
+
 
 }
