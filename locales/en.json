@@ -169,6 +169,7 @@
     "account.form.tel": "Tel",
     "account.form.lab": "Lab",
     "account.button": "Who's in your team?",
+    "account.hide": "Hide",
     "account.team.desc1": "Your <i>",
     "account.team.desc2": "</i> Team.",
     "account.team.subdesc1": "Your department is <span class='labColor'>",

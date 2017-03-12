@@ -170,6 +170,7 @@
     "account.form.tel": "Tel",
     "account.form.lab": "Labo",
     "account.button": "Votre Équipe?",
+    "account.hide": "Cacher",
     "account.team.desc1": "Votre <i>",
     "account.team.desc2": "</i> Équipe.",
     "account.team.subdesc1": "Vous faîtes parti(e) du départment <span class='labColor'>",
