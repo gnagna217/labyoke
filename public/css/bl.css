@@ -1138,8 +1138,9 @@ input::-webkit-inner-spin-button {
     border-width: 0px;
     width: 50px;
     margin-top: 7px;
-    margin-left: -80px;
+    margin-left: -75px;
     position: relative;
+    float: left;
 }
     .marginbottom{
     /*min-height: 450px;*/
