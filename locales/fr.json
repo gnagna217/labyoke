@@ -9,7 +9,7 @@
     
     "search.layovertitle" : "Commande?",
     "search.layovercancel" : "Annuler",
-    "search.title" : "Recherche.",
+    "search.title" : "Cherche.",
     "search.description": "Commencer votre recherche en entrant le nom du <span class='labColor'>réagent (produit chimique)</span> ou du <span class='labColor'>numéro de catalogue</span>. Vous pouvez aussi le séléctioner.",
     "search.searchholder" : "Rechercher un réagent...",
     "search.catalogholder" : "Rechercher un numéro de catalogue...",
@@ -155,5 +155,25 @@
     "reports.insuff.reagent": "Réagent",
     "reports.insuff.vendor": "Vendeur",
     "reports.insuff.catalog": "Catalogue",
-    "reports.insuff.button": "Générer Réagents"    
+    "reports.insuff.button": "Générer Réagents",
+
+    "account.title": "Salut ",
+    "account.subtitle": "<span>Cette page </span><span style='color: #3d9dcb;'>vous </span> est dediée. <span>Si vous souhaitez modifier vos données personnelles telles que votre numéro de Téléphone ou laboratoire.</span>",
+    "account.success": "Génial! Vous venez de modifier votre ",
+    "account.admin1": "En effet! Votre Administrateur de laboratoire est ",
+    "account.admin2": "Vous pouvez contacter votre administrateur à n'importe quel moment.",
+    "account.admin3": "Oui! Vous êtes l'Administrateur du Laboratoire ",
+    "account.admin4": "Vous inspirez la sérénité!",
+    "account.form.firstname": "Prénom",
+    "account.form.lastname": "Nom de Famille",
+    "account.form.email": "Email",
+    "account.form.tel": "Tel",
+    "account.form.lab": "Labo",
+    "account.button": "Votre Équipe?",
+    "account.team.desc1": "Votre <i>",
+    "account.team.desc2": "</i> Équipe.",
+    "account.team.subdesc1": "Vous faîtes parti(e) du départment <span class='labColor'>",
+    "account.team.subdesc2": "</span>. Voici la liste de tous vos collègues qui utilisent Labyoke et partagent leurs réagents pour un environement tous les jours plus écologique et sociable:",
+    "account.team.name": "Nom",
+    "account.team.email": "Email"
 }
