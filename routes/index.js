@@ -646,6 +646,18 @@ totalshares = t[0].counting;
 	
 
 	router.get('/forgot', function(req, res) {
+		var lang = req.query.lang;
+		console.log("lang is init from param: " + lang);
+		if(lang == null || lang == undefined){
+			lang = req.cookies.i18n;
+			console.log("lang is from cookies: " + lang);
+		}
+		if(lang == null || lang == undefined){
+			lang = "en";
+		}
+		console.log("lang is finally: " + lang);
+		res.cookie('i18n', lang);
+		req.cookies.i18n = lang;
 		res.setLocale(req.cookies.i18n);
 		res.render('forgot', {i18n:res, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, isLoggedInAdmin: req.session.admin, title: 'Forgot Password'});
 		req.session.messages = null;
@@ -690,6 +702,18 @@ totalshares = t[0].counting;
 	});
 
 	router.get('/register', function(req, res) {
+		var lang = req.query.lang;
+		console.log("lang is init from param: " + lang);
+		if(lang == null || lang == undefined){
+			lang = req.cookies.i18n;
+			console.log("lang is from cookies: " + lang);
+		}
+		if(lang == null || lang == undefined){
+			lang = "en";
+		}
+		console.log("lang is finally: " + lang);
+		res.cookie('i18n', lang);
+		req.cookies.i18n = lang;
 		res.setLocale(req.cookies.i18n);
 			console.log("register labs: " + req.session.labs);
 			if(req.session.labs == undefined){
