@@ -8,47 +8,47 @@ block content
         img(src="/images/yoke4.png", alt="The Yoke",  title="Yoke", class="yokelogo")
        div
         if !labentered && !regsuccess && !confirmReset
-            h1= 'Sign Up.'
+            h1 '#{i18n.__("register.title")}
             p 
-                span!="You are on your way to <a href='/login'>Lab Yoking</a> with fellow researchers. "
-                span(class="labColor")="Registering "
-                span!="is a breeze! <span class='labColor'><b>All</b></span> fields are <span class='yokeColor'><b>required</b></span>."
+                span!= i18n.__("register.desc1")
+                span(class="labColor")= i18n.__("register.title")
+                span!= i18n.__("register.subtitle")
             div(id="ctl00_Div2" class="frontdiv")
                 if message
                     div(class="alert alert-danger")!= message
                 form(action="/register" method="post")
                     div(style="margin-bottom: 20px;")
                         div(class="textentry")
-                            input(name="regfirstname" type="text" id="regfirstname" class="form-control" placeholder="First Name")
+                            input(name="regfirstname" type="text" id="regfirstname" class="form-control" placeholder=i18n.__("register.form.name"))
                         div(class="textentry")
-                            input(name="reglastname" type="text" id="lastname" class="form-control" placeholder="Last Name")
+                            input(name="reglastname" type="text" id="lastname" class="form-control" placeholder=i18n.__("register.form.lastname"))
                     div(style="margin-bottom: 20px;")
                         div(class="textentry")
-                            input(name="regemail" type="text" id="regemail" class="form-control" placeholder="Email Address")
+                            input(name="regemail" type="text" id="regemail" class="form-control" placeholder=i18n.__("register.form.email"))
                         div(class="textentry")
-                            input(name="regtel" type="text" id="tel" class="form-control" placeholder="Telephone")
+                            input(name="regtel" type="text" id="tel" class="form-control" placeholder=i18n.__("register.form.tel"))
                     div(class="buttons")
-                        button.btn.btn-success.btn-lg.btn-block(type='submit',style='width:85%') Next
+                        button.btn.btn-success.btn-lg.btn-block(type='submit',style='width:85%') #{i18n.__("register.form.button1")}
                         img(src="/images/add.png", alt="The Lab", title="Lab", style="border-width:0px; width: 50px; height:57px; margin-top: -45px; float: right;")  
 
         if labentered
-            h1= 'Almost there.'
-            p Now... Tell us more about yourself!
+            h1= i18n.__("register.form2.desc")
+            p= i18n.__("register.form2.subdesc")
             div(id="ctl00_Div2" class="frontdiv")
                 if message
                     div(class="alert alert-danger")!= message
                 form(action="/register" method="post")
                     div(style="margin-bottom: 20px;")
                         div(class="textentry")
-                            input(name="reguser" type="text" id="reguser" class="form-control" placeholder="Username" style="border-color:#8a6d3b")
+                            input(name="reguser" type="text" id="reguser" class="form-control" placeholder=i18n.__("register.form2.username") style="border-color:#8a6d3b")
                         div(class="textentry")
-                            input(name="regpass" type="password" id="regpass" class="form-control" placeholder="Password" style="border-color:#8a6d3b")
+                            input(name="regpass" type="password" id="regpass" class="form-control" placeholder=i18n.__("register.form2.pwd") style="border-color:#8a6d3b")
                         div(class="textentry")
-                            input(name="regverpass" type="password" id="regverpass" class="form-control" placeholder="Verify Password" style="border-color:#8a6d3b")
+                            input(name="regverpass" type="password" id="regverpass" class="form-control" placeholder=i18n.__("register.form2.verifypwd") style="border-color:#8a6d3b")
 
                     div(style="margin-bottom: 20px;")
                         div(class="textentry")
-                            select(name="reglab" type="text" id="reglab" class="form-control" style="border-color:#3d9dcb" placeholder="Lab")
+                            select(name="reglab" type="text" id="reglab" class="form-control" style="border-color:#3d9dcb" placeholder=i18n.__("register.form2.lab"))
                              if(labs != undefined)
                                  - var ob = labs
                                  - for(var prop in ob)
@@ -63,27 +63,21 @@ block content
                         input(name="regtel" type="hidden" id="regtel" value=tel)
                     div(class="buttons")
                         //input(type="submit" class="button" value="Register")
-                        button.btn.btn-success.btn-lg.btn-block(type='submit',style='width:85%') Start Lab Yoking
+                        button.btn.btn-success.btn-lg.btn-block(type='submit',style='width:85%')= i18n.__("register.form2.button2")
                         img(src="/images/add.png", alt="The Lab", title="Lab", style="border-width:0px; width: 50px; margin-top: -45px; float: right;")
             
         if regsuccess && !labentered
                 div(id="ctl00_Div2" class="frontdiv")
                     span(style="text-align: center")
-                        h3="Thanks for pre-registering"
+                        h3= i18n.__("register.thanku")
                             span(style="color: #3d9dcb;")=" " + regsuccess + "!"
-                        h4="We have sent you an email to "
-                            span(class="labColor")="complete"
-                            span=" your registration. "
+                        h4!= i18n.__("register.thanku.desc1")
         if confirmReset
                 div(id="ctl00_Div2" class="frontdiv")
                     span(style="text-align: center")
-                        h3="Thanks for registering"
+                        h3= i18n.__("register.thanku2")
                             span(style="color: #3d9dcb;")=" " + regsuccess + "!"
-                        h4="You can now start "
-                            a(href="/search")="searching"
-                            span=" or "
-                            a(href="/share")="sharing"
-                            span=" your own chemicals."        
+                        h4!= i18n.__("register.thanku2.desc1")        
     script.
       $(document).ready(function(){
         $('#tel').mask("(999) 999-9999");

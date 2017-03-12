@@ -51,6 +51,26 @@
     "help.table.reagent": "Réagent",
     "help.table.vendor": "Vendeur",
     "help.table.location": "Proprio",
-    "help.table.order": "Commander"
+    "help.table.order": "Commander",
+    "register.title": "Inscrivez-vous",
+    "register.desc1": "Vous êtes en route pour <a href='/login'> LabYoker </a> avec d'autres chercheurs.",
+    "register.title": "L'inscription ",
+    "register.subtitle": "est rapide! <span class='labColor'><b>Tous les champs</ b></span> sont <span class = 'yokeColor'><b> requis</b></span>.",
+    "register.form.name": "Prénom",
+    "register.form.lastname": "Nom de Famille",
+    "register.form.email": "Addresse Email",
+    "register.form.tel": "Téléphone",
+    "register.form.button1": "Prochain",
+    "register.form2.desc": "Vous y êtes presque.",
+    "register.form2.subdesc": "Parfait... Dites nous en un peu plus!",
+    "register.form2.username": "Utilisateur",
+    "register.form2.pwd": "Mot de Passe",
+    "register.form2.verifypwd": "Verifier le Mot de Passe",
+    "register.form2.lab": "Laboratoire",
+    "register.form2.button2": "Allez-y",
+    "register.thanku": "Merci de vous être pré-inscris",
+    "register.thanku.desc1": "Nous vous avons envoyé un email pour <span class='labColor'>completer</span><span> votre inscription. </span>",
+    "register.thanku2": "Merci pour vptre inscription",
+    "register.thanku2.desc1": "Vous pouvez maintenant effectuer une <a href='/search'>recherche</a><span> ou <a href='/share'>partager</a></span><span> vos produits chimiques.</span>"
 
 }

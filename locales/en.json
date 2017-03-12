@@ -50,6 +50,25 @@
     "help.table.reagent": "Reagent",
     "help.table.vendor": "Vendor",
     "help.table.location": "Owner",
-    "help.table.order": "Order"
-
+    "help.table.order": "Order",
+    "register.title": "Sign Up",
+    "register.desc1": "You are on your way to <a href='/login'>Lab Yoking</a> with fellow researchers.",
+    "register.title": "Registering ",
+    "register.subtitle": "is a breeze! <span class='labColor'><b>All</b></span> fields are <span class='yokeColor'><b>required</b></span>.",
+    "register.form.name": "First Name",
+    "register.form.lastname": "Last Name",
+    "register.form.email": "Email Address",
+    "register.form.tel": "Telephone",
+    "register.form.button1": "Next",
+    "register.form2.desc": "Almost there.",
+    "register.form2.subdesc": "Now... Tell us more about yourself!",
+    "register.form2.username": "Username",
+    "register.form2.pwd": "Password",
+    "register.form2.verifypwd": "Verify Password",
+    "register.form2.lab": "Lab",
+    "register.form2.button2": "Start Lab Yoking",
+    "register.thanku": "Thanks for pre-registering",
+    "register.thanku.desc1": "We have sent you an email to <span class='labColor'>complete</span><span> your registration. </span>",
+    "register.thanku2": "Thanks for registering",
+    "register.thanku2.desc1": "You can now start <a href='/search'>searching</a><span> or <a href='/share'>sharing</a></span><span> your own chemicals.</span>"
 }
