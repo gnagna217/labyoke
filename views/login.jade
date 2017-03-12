@@ -27,11 +27,11 @@ block content
                 span(style="float:right;")
                     a(href="/forgot", style="z-index:10") #{i18n.__("login.forgotLink")}
     div(class="help")
+       a(href="/help" title="Help")
+        img(src="images/bouee3.png", alt="Help", title=i18n.__("login.helpLink"), class="helplogin")
        span
          a(href="/login?lang=en")
             img(src="images/en.png", alt="English", title="English", class="enlogin")
-       a(href="/help" title="Help")
-        img(src="images/bouee3.png", alt="Help", title=i18n.__("login.helpLink"), class="helplogin")
        span
          a(href="/login?lang=fr")
             img(src="images/fr.png", alt="Français", title="Français", class="frlogin")
