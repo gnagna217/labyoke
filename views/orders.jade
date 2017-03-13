@@ -294,7 +294,7 @@ block content
             chart3.on('draw', function() {
               if (!addedEvents3) {
                 $('.ct-chart3').find('.ct-bar').on('mouseover', function() {
-                  $('#tooltips3').html("#{i18n.__("dot.selected")}" + $(this).attr('ct:value'));
+                  $('#tooltips3').html(("#{i18n.__("dot.selected")}").replace(/&lt;/g, '<').replace(/&gt;/g, '>') + $(this).attr('ct:value'));
                 });
 
                 $('.ct-chart3').find('.ct-bar').on('mouseout', function() {
@@ -455,7 +455,7 @@ block content
             chart0.on('draw', function() {
               if (!addedEvents0) {
                 $('.ct-chart0').find('.ct-bar').on('mouseover', function() {
-                  $('#tooltips0').html("#{i18n.__("dot.selected")}" + $(this).attr('ct:value'));
+                  $('#tooltips0').html(("#{i18n.__("dot.selected")}").replace(/&lt;/g, '<').replace(/&gt;/g, '>') + $(this).attr('ct:value'));
                 });
 
                 $('.ct-chart0').find('.ct-bar').on('mouseout', function() {
@@ -488,7 +488,7 @@ block content
                   var label = findx.find('.ct-label').html();
                   console.log("label: " + label);
                   if(label != undefined && label.length > 0)
-                    $('#tooltips').html("#{i18n.__("dot.selected")}"  + $(this).attr('ct:value') + "#{i18n.__("dot.reagent")}" + label);
+                    $('#tooltips').html(("#{i18n.__("dot.selected")}").replace(/&lt;/g, '<').replace(/&gt;/g, '>')  + $(this).attr('ct:value') + ("#{i18n.__("dot.reagent")}").replace(/&lt;/g, '<').replace(/&gt;/g, '>') + label);
                 });
 
                 $('.ct-point').on('mouseout', function() {
