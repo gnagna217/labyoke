@@ -1046,7 +1046,7 @@ totalshares = t[0].counting;
 														.render(
 															'login',
 															{
-																message : "You have not completed your registration. Please check your emails and click on the link.", title: 'Login'
+																message : (res.__("index.login.message1")).replace(/&lt;/g, '<').replace(/&gt;/g, '>') /*"You have not completed your registration. Please check your emails and click on the link."*/, title: 'Login'
 															});
 											}
 											if (done[0].disable == 0) {
@@ -1055,7 +1055,7 @@ totalshares = t[0].counting;
 														.render(
 															'login',
 															{
-																message : "Your account has been disabled. Please contact your lab administrator.", title: 'Login'
+																message : (res.__("index.login.message2")).replace(/&lt;/g, '<').replace(/&gt;/g, '>')/*"Your account has been disabled. Please contact your lab administrator."*/, title: 'Login'
 															});
 											}
 
@@ -1109,7 +1109,7 @@ totalshares = t[0].counting;
 													var datetosavings = "";
 													var lab = "";
 													var labsavings = "";
-
+//(res.__("index.login.message2")).replace(/&lt;/g, '<').replace(/&gt;/g, '>')
 													var t = Math.floor((Math.random() * timearr.length-1) + 1);
 													var l = Math.floor((Math.random() * labarr.length-1) + 1);
 													console.log("random int time: " + t);
@@ -1121,9 +1121,11 @@ totalshares = t[0].counting;
 													console.log("choosetime: " + choosetime);
 
 													if(lab == "all"){
-														labsavings = "<b><i>WORLD</i></b>";
+														//labsavings = "<b><i>WORLD</i></b>";
+														labsavings = (res.__("index.login.all1")).replace(/&lt;/g, '<').replace(/&gt;/g, '>');
 													} else {
-														labsavings = "<b><i>Other Labs</i></b>";
+														//labsavings = "<b><i>Other Labs</i></b>";
+														labsavings = (res.__("index.login.all2")).replace(/&lt;/g, '<').replace(/&gt;/g, '>');
 													}
 													if(choosetime == "year"){
 														var date = new Date(), y = date.getFullYear(), m = date.getMonth();
@@ -1139,11 +1141,12 @@ totalshares = t[0].counting;
 														/*datefromsavings = "12-01-2016";
 														datetosavings = "12-31-2016";*/
 													}
-													timeframesavings = "this past <b>" + choosetime + "</b>";
+													timeframesavings = (res.__("index.login.time1"), {choosetime: choosetime}).replace(/&lt;/g, '<').replace(/&gt;/g, '>'); //"this past <b>" + choosetime + "</b>";
 													if(choosetime == "all"){
 														datefromsavings = undefined;
 														datetosavings = undefined;
-														timeframesavings = "over time";
+														//timeframesavings = "over time";
+														timeframesavings = res.__("index.login.time2");
 													}
 													
 													console.log("timeframesavings datefromsavings: " + datefromsavings);
@@ -1152,11 +1155,13 @@ totalshares = t[0].counting;
 													var booster = [];
 													var boostercolor = [];
 													if(orders > 0){
-														booster.push("<strong> Notification!</strong> You have <b>" + orders + " new order(s)</b> pending completion.");
+														//booster.push("<strong> Notification!</strong> You have <b>" + orders + " new order(s)</b> pending completion.");
+														booster.push((res.__("index.login.booster1"), {orders: orders}).replace(/&lt;/g, '<').replace(/&gt;/g, '>'));
 														boostercolor.push("warning");
 													}
 													if(shares > 0){
-														booster.push("<strong> Notification!</strong> You have <b>" + shares + " new share(s)</b> pending completion. <a href='/share'>Check it out</a> promptly and fulfill the request. Way to contribute to your lab's savings!");
+														//booster.push("<strong> Notification!</strong> You have <b>" + shares + " new share(s)</b> pending completion. <a href='/share'>Check it out</a> promptly and fulfill the request. Way to contribute to your lab's savings!");
+														booster.push((res.__("index.login.booster2"), {orders: orders}).replace(/&lt;/g, '<').replace(/&gt;/g, '>'));
 														boostercolor.push("warning");
 													}
 
@@ -1165,21 +1170,23 @@ totalshares = t[0].counting;
 														console.log("savings: " + savings);
 
 														req.session.savings = savings;
-														var cheer = "Keep searching, ordering, and sharing!";
+														var cheer = res.__("index.login.cheer1");//"Keep searching, ordering, and sharing!";
 														if (savings > 10000){
-															cheer = "Amazing! You are a rock star!";
+															cheer = res.__("index.login.cheer2"); //"Amazing! You are a rock star!";
 														} else if (savings > 1000){
-															cheer = "Incredible!";
+															cheer = res.__("index.login.cheer3"); //"Incredible!";
 														} else if(savings > 100){
-															cheer = "Keep it up!";
+															cheer = res.__("index.login.cheer4"); //"Keep it up!";
 														} 
 														if(savings > 0){
 														var text = "";
 														console.log("non-null savings: " + accounting.formatMoney(savings));
 														if(lab == "all"){
-															text = "<strong> Major Achievement!</strong> You are part of a " + labsavings + " savings for a total of <b>" + accounting.formatMoney(savings) + "</b> " + timeframesavings + " in your department. " + cheer;
+															//text = "<strong> Major Achievement!</strong> You are part of a " + labsavings + " savings for a total of <b>" + accounting.formatMoney(savings) + "</b> " + timeframesavings + " in your department. " + cheer;
+															text = (res.__("index.login.text1"), {labsavings: labsavings, accountingsavings: accounting.formatMoney(savings), timeframesavings: timeframesavings, cheer: cheer}).replace(/&lt;/g, '<').replace(/&gt;/g, '>');
 														} else {
-															text = "<strong> Major Achievement!</strong> You have saved " + labsavings + " a total of <b>" + accounting.formatMoney(savings) + "</b> " + timeframesavings + ". " + cheer;
+															//text = "<strong> Major Achievement!</strong> You have saved " + labsavings + " a total of <b>" + accounting.formatMoney(savings) + "</b> " + timeframesavings + ". " + cheer;
+															text = (res.__("index.login.text2"), {labsavings: labsavings, accountingsavings: accounting.formatMoney(savings), timeframesavings: timeframesavings, cheer: cheer}).replace(/&lt;/g, '<').replace(/&gt;/g, '>');
 														}
 														booster.push(text);
 														boostercolor.push("success");
@@ -1187,7 +1194,8 @@ totalshares = t[0].counting;
 
 														var b = Math.floor((Math.random() * booster.length-1) + 1);
 														if(booster[b] == undefined){
-															booster[b] = "Using LabyYoke reduces purchasing prices for <strong>You</strong> and your <strong>Lab</strong>. Use it as a social platform. Have fun and Keep it Up!";
+															//booster[b] = "Using LabyYoke reduces purchasing prices for <strong>You</strong> and your <strong>Lab</strong>. Use it as a social platform. Have fun and Keep it Up!";
+															booster[b] = (res.__("index.login.booster3")).replace(/&lt;/g, '<').replace(/&gt;/g, '>');
 															boostercolor[b] = "success"
 														}
 														req.session.savingsTextInitial = booster[b];
@@ -1209,7 +1217,7 @@ totalshares = t[0].counting;
 													.render(
 															'login',
 															{
-																message : "Your username and/or password is wrong. Please try again.", title: 'Login'
+																message : res.__("index.login.message3") /*"Your username and/or password is wrong. Please try again."*/, title: 'Login'
 															});
 										}
 									});
@@ -1218,7 +1226,7 @@ totalshares = t[0].counting;
 									.render(
 											'login',
 											{
-												message : "Your username and/or password is wrong. Please try again.", title: 'Login'
+												message : res.__("index.login.message3") /*"Your username and/or password is wrong. Please try again."*/, title: 'Login'
 											});
 						}
 
