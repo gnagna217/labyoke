@@ -14,6 +14,7 @@ block content
                  h1 #{i18n.__("login.afternoon")}
              - if(n > 17)
                  h1 #{i18n.__("login.evening")}
+             p!= n + " hours"
              p #{i18n.__("login.welcome")}
          div(id="ctl00_Div2" class="frontdiv results")
            div
