@@ -357,6 +357,7 @@ totalshares = t[0].counting;
 			       	if(req.session.admin == 1){
 			       	nonadmin = (res.__("index.orders.nonadmin2")).replace(/&lt;/g, '<').replace(/&gt;/g, '>'); //" You can do so with the <a href='/share#upload'>upload tool</a> to add more reagents under your name."
 			       	}
+			       	console.log("nonadmin is: " + nonadmin);
 					//booster.push("<strong> Self Kudos!</strong> You have ordered a total of <b>" + totalorders + " order(s)</b> and received a total of <b>" + totalshares + " requested share(s)</b>. Keep it up!");
 					booster.push((res.__("index.orders.booster1", { totalorders: totalorders, totalshares: totalshares })).replace(/&lt;/g, '<').replace(/&gt;/g, '>'));
 					boostercolor.push("success");

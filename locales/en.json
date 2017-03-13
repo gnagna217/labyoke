@@ -294,9 +294,9 @@
     
     "index.login.message1" : "You have not completed your registration. Please check your emails and click on the link.",
     "index.login.message2" : "Your account has been disabled. Please contact your lab administrator.",
-    "index.login.all1" : "<b><i>WORLD</i></b>",
-    "index.login.all2" : "<b><i>Other Labs</i></b>",
-    "index.login.time1" : "this past <b>{{ choosetime }}</b>",
+    "index.login.all1" : "WORLD",
+    "index.login.all2" : "Other Labs",
+    "index.login.time1" : "this past {{ choosetime }}",
     "index.login.time2" : "over time",
     "index.login.booster1" : "<strong> Notification!</strong> You have <b>{{ orders }} new order(s)</b> pending completion.",
     "index.login.booster2" : "<strong> Notification!</strong> You have <b>{{ shares }} new share(s)</b> pending completion. <a href='/share'>Check it out</a> promptly and fulfill the request. Way to contribute to your lab's savings!",
