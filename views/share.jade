@@ -141,7 +141,30 @@ block content
 													input(type="hidden" name="table" value="vm2016_agentsshare")
 							script.
 								$(document).ready(function() {
-									$('#rankTblshares').DataTable();
+									$('#rankTblshares').DataTable({
+										language:{
+										processing: "#{i18n.__("datatable.processing")}",
+										search: "#{i18n.__("datatable.search")}",
+										lengthMenu: "#{i18n.__("datatable.lengthMenu")}",
+										info: "#{i18n.__("datatable.info")}",
+										infoEmpty: "#{i18n.__("datatable.infoEmpty")}",
+										infoFiltered: "#{i18n.__("datatable.infoFiltered")}",
+										infoPostFix: "#{i18n.__("datatable.infoPostFix")}",
+										loadingRecords: "#{i18n.__("datatable.loadingRecords")}",
+										zeroRecords: "#{i18n.__("datatable.zeroRecords")}",
+										emptyTable: "#{i18n.__("datatable.emptyTable")}",
+										paginate: {
+										first: "#{i18n.__("datatable.first")}",
+										previous: "#{i18n.__("datatable.previous")}",
+										next: "#{i18n.__("datatable.next")}",
+										last: "#{i18n.__("datatable.last")}"
+										},
+										aria: {
+										sortAscending: "#{i18n.__("datatable.sortAscending")}",
+										sortDescending: "#{i18n.__("datatable.sortDescending")}"
+										}
+									}
+										});
 								});
 		div(class="share-container adjustpadding" style="float:right;")
 			if(isLoggedInAdmin > 0)
@@ -209,7 +232,30 @@ block content
 											td #{ob[prop].location}
 							script.
 								$(document).ready(function() {
-									$('#rankTblload').DataTable();
+									$('#rankTblload').DataTable({
+										language:{
+										processing: "#{i18n.__("datatable.processing")}",
+										search: "#{i18n.__("datatable.search")}",
+										lengthMenu: "#{i18n.__("datatable.lengthMenu")}",
+										info: "#{i18n.__("datatable.info")}",
+										infoEmpty: "#{i18n.__("datatable.infoEmpty")}",
+										infoFiltered: "#{i18n.__("datatable.infoFiltered")}",
+										infoPostFix: "#{i18n.__("datatable.infoPostFix")}",
+										loadingRecords: "#{i18n.__("datatable.loadingRecords")}",
+										zeroRecords: "#{i18n.__("datatable.zeroRecords")}",
+										emptyTable: "#{i18n.__("datatable.emptyTable")}",
+										paginate: {
+										first: "#{i18n.__("datatable.first")}",
+										previous: "#{i18n.__("datatable.previous")}",
+										next: "#{i18n.__("datatable.next")}",
+										last: "#{i18n.__("datatable.last")}"
+										},
+										aria: {
+										sortAscending: "#{i18n.__("datatable.sortAscending")}",
+										sortDescending: "#{i18n.__("datatable.sortDescending")}"
+										}
+									}
+										});
 								});
 				script="$(window).scrollTop($('#uploadForm').offset().top).scrollLeft($('#uploadForm').offset().left);"
 			div(style="background-color: #3d9dcb; height: 2px; margin-bottom: 0px; margin-top: 30px;")
