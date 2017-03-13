@@ -1122,15 +1122,17 @@ totalshares = t[0].counting;
 
 													if(lab == "all"){
 														//labsavings = "<b><i>WORLD</i></b>";
-														labsavings = (res.__("index.login.all1")).replace(/&lt;/g, '<').replace(/&gt;/g, '>');
+														labsavings = (res.__("index.login.all1")).replaceAll("&lt;", "<").replaceAll("&gt;", ">");
 													} else {
 														//labsavings = "<b><i>Other Labs</i></b>";
-														labsavings = (res.__("index.login.all2")).replace(/&lt;/g, '<').replace(/&gt;/g, '>');
+														labsavings = (res.__("index.login.all2")).replaceAll("&lt;", "<").replaceAll("&gt;", ">");
 													}
+													var choose = "";
 													if(choosetime == "year"){
 														var date = new Date(), y = date.getFullYear(), m = date.getMonth();
 														datefromsavings = moment(new Date(y, 0, 1)).tz("America/New_York").format('MM-DD-YYYY');
 														datetosavings = moment(new Date(y, 12, 1)).tz("America/New_York").format('MM-DD-YYYY');
+														choose = (res.__("index.login.time1.year",{choosetime: choosetime})).replaceAll("&lt;", "<").replaceAll("&gt;", ">");
 														/*datefromsavings = "01-01-2016";
 														datetosavings = "12-31-2016";*/
 													}
@@ -1138,10 +1140,11 @@ totalshares = t[0].counting;
 														var date = new Date(), y = date.getFullYear(), m = date.getMonth();
 														datefromsavings = moment(new Date(y, m, 1)).tz("America/New_York").format('MM-DD-YYYY');
 														datetosavings = moment(new Date(y, m + 1, 0)).tz("America/New_York").format('MM-DD-YYYY');
+														choose = (res.__("index.login.time1.month",{choosetime: choosetime})).replaceAll("&lt;", "<").replaceAll("&gt;", ">");
 														/*datefromsavings = "12-01-2016";
 														datetosavings = "12-31-2016";*/
 													}
-													timeframesavings = (res.__("index.login.time1",{choosetime: choosetime})).replace(/&lt;/g, '<').replace(/&gt;/g, '>'); //"this past <b>" + choosetime + "</b>";
+													timeframesavings = choose; //"this past <b>" + choosetime + "</b>";
 													if(choosetime == "all"){
 														datefromsavings = undefined;
 														datetosavings = undefined;
@@ -1156,12 +1159,12 @@ totalshares = t[0].counting;
 													var boostercolor = [];
 													if(orders > 0){
 														//booster.push("<strong> Notification!</strong> You have <b>" + orders + " new order(s)</b> pending completion.");
-														booster.push((res.__("index.login.booster1",{orders: orders})).replace(/&lt;/g, '<').replace(/&gt;/g, '>'));
+														booster.push((res.__("index.login.booster1",{orders: orders})).replaceAll("&lt;", "<").replaceAll("&gt;", ">"));
 														boostercolor.push("warning");
 													}
 													if(shares > 0){
 														//booster.push("<strong> Notification!</strong> You have <b>" + shares + " new share(s)</b> pending completion. <a href='/share'>Check it out</a> promptly and fulfill the request. Way to contribute to your lab's savings!");
-														booster.push((res.__("index.login.booster2", {orders: orders})).replace(/&lt;/g, '<').replace(/&gt;/g, '>'));
+														booster.push((res.__("index.login.booster2", {orders: orders})).replaceAll("&lt;", "<").replaceAll("&gt;", ">"));
 														boostercolor.push("warning");
 													}
 
@@ -1195,7 +1198,7 @@ totalshares = t[0].counting;
 														var b = Math.floor((Math.random() * booster.length-1) + 1);
 														if(booster[b] == undefined){
 															//booster[b] = "Using LabyYoke reduces purchasing prices for <strong>You</strong> and your <strong>Lab</strong>. Use it as a social platform. Have fun and Keep it Up!";
-															booster[b] = (res.__("index.login.booster3")).replace(/&lt;/g, '<').replace(/&gt;/g, '>');
+															booster[b] = (res.__("index.login.booster3")).replaceAll("&lt;", "<").replaceAll("&gt;", ">");
 															boostercolor[b] = "success"
 														}
 														req.session.savingsTextInitial = booster[b];

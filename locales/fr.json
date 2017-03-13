@@ -292,8 +292,9 @@
 
     "index.login.message2" : "Votre compte a été désactivé. Veuillez contacter votre administrateur de laboratoire.",
     "index.login.all1" : "<b><i>MONDE</i></b>",
-    "index.login.all2" : "<b><i>dce' Autres Laboratoires</i></b>",
-    "index.login.time1" : "ce <b>{{ choosetime }}</b>",
+    "index.login.all2" : "<b><i>d'Autres Laboratoires</i></b>",
+    "index.login.time1.month" : "ce <b>{{ choosetime }}</b>",
+    "index.login.time1.year" : "cette <b>{{ choosetime }}</b>",
     "index.login.time2" : "en plus",
     "index.login.booster1" : "<strong> Notification!</strong> Vous avez <b>{{ orders }} nouvelles commande(s)</b> en attente.",
     "index.login.booster2" : "<strong> Notification!</strong> Vous avez <b>{{ shares }} nouveaux partage(s)</b> en attente. <a href='/share'>Vérifiez-le(s)</a> rapidement et répondez à la demande. Merci de contribuer aux économies de votre laboratoire!",
