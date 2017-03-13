@@ -1141,7 +1141,7 @@ totalshares = t[0].counting;
 														/*datefromsavings = "12-01-2016";
 														datetosavings = "12-31-2016";*/
 													}
-													timeframesavings = (res.__("index.login.time1"), {choosetime: choosetime}).replace(/&lt;/g, '<').replace(/&gt;/g, '>'); //"this past <b>" + choosetime + "</b>";
+													timeframesavings = (res.__("index.login.time1",{choosetime: choosetime})).replace(/&lt;/g, '<').replace(/&gt;/g, '>'); //"this past <b>" + choosetime + "</b>";
 													if(choosetime == "all"){
 														datefromsavings = undefined;
 														datetosavings = undefined;
@@ -1156,12 +1156,12 @@ totalshares = t[0].counting;
 													var boostercolor = [];
 													if(orders > 0){
 														//booster.push("<strong> Notification!</strong> You have <b>" + orders + " new order(s)</b> pending completion.");
-														booster.push((res.__("index.login.booster1"), {orders: orders}).replace(/&lt;/g, '<').replace(/&gt;/g, '>'));
+														booster.push((res.__("index.login.booster1",{orders: orders})).replace(/&lt;/g, '<').replace(/&gt;/g, '>'));
 														boostercolor.push("warning");
 													}
 													if(shares > 0){
 														//booster.push("<strong> Notification!</strong> You have <b>" + shares + " new share(s)</b> pending completion. <a href='/share'>Check it out</a> promptly and fulfill the request. Way to contribute to your lab's savings!");
-														booster.push((res.__("index.login.booster2"), {orders: orders}).replace(/&lt;/g, '<').replace(/&gt;/g, '>'));
+														booster.push((res.__("index.login.booster2", {orders: orders})).replace(/&lt;/g, '<').replace(/&gt;/g, '>'));
 														boostercolor.push("warning");
 													}
 
@@ -1183,10 +1183,10 @@ totalshares = t[0].counting;
 														console.log("non-null savings: " + accounting.formatMoney(savings));
 														if(lab == "all"){
 															//text = "<strong> Major Achievement!</strong> You are part of a " + labsavings + " savings for a total of <b>" + accounting.formatMoney(savings) + "</b> " + timeframesavings + " in your department. " + cheer;
-															text = (res.__("index.login.text1"), {labsavings: labsavings, accountingsavings: accounting.formatMoney(savings), timeframesavings: timeframesavings, cheer: cheer}).replace(/&lt;/g, '<').replace(/&gt;/g, '>');
+															text = (res.__("index.login.text1", {labsavings: labsavings, accountingsavings: accounting.formatMoney(savings), timeframesavings: timeframesavings, cheer: cheer})).replace(/&lt;/g, '<').replace(/&gt;/g, '>');
 														} else {
 															//text = "<strong> Major Achievement!</strong> You have saved " + labsavings + " a total of <b>" + accounting.formatMoney(savings) + "</b> " + timeframesavings + ". " + cheer;
-															text = (res.__("index.login.text2"), {labsavings: labsavings, accountingsavings: accounting.formatMoney(savings), timeframesavings: timeframesavings, cheer: cheer}).replace(/&lt;/g, '<').replace(/&gt;/g, '>');
+															text = (res.__("index.login.text2", {labsavings: labsavings, accountingsavings: accounting.formatMoney(savings), timeframesavings: timeframesavings, cheer: cheer})).replace(/&lt;/g, '<').replace(/&gt;/g, '>');
 														}
 														booster.push(text);
 														boostercolor.push("success");
