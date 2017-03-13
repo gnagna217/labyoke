@@ -207,8 +207,8 @@
     "orders.success.catalog": "Catalog: ",
     "orders.success.month": "Vendor: ",
 
-    "dot.selected": "<b>Selected Quantity: </b>",
-    "dot.reagent": " - <b>Reagent:</b> ",
+    "dot.selected": "\"<b>Selected Quantity: </b>\"",
+    "dot.reagent": "\" - <b>Reagent:</b> \"",
 
     "shares.pop.title": "Sharing?",
     "shares.pop.subtitle": "<div id='actionorder' class='exit' style='width: 50%; float: left; background-color: rgba(138, 109, 59, 0.55);'')>OK</div><div class='exit' id='actioncancel'>Cancel</div>",
@@ -260,9 +260,9 @@
     "shares.month.subtitle2": " (so far) per Reagent. Hover on top of a <span class='labColor'>bar</span> to display its value below.",
     "shares.month.none": "You have not shared any reagent this month. If you have new chems to share, have your <span class='labColor'>administrator</span> upload them on your behalf and start saving money for your lab.",
     "shares.venn.chart.table": "Click on a diagram value to list reagents",
-    "shares.venn.chart.titlenone": " None.",
-    "shares.venn.chart.title1": "Reagents in ",
-    "shares.venn.chart.title2": "Common reagents in ",
+    "shares.venn.chart.titlenone": "\" None.\"",
+    "shares.venn.chart.title1": "\"Reagents in \"",
+    "shares.venn.chart.title2": "\"Common reagents in \"",
     "key.title": ""
 
 

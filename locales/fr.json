@@ -258,10 +258,10 @@
     "shares.month.subtitle2": " par Réactif. Passez la souris au-dessus d'une <span class='labColor'>intersection</span> pour afficher sa valeur ci-dessous.",
     "shares.month.none": "Vous n'avez pas partagé de réactif ce mois-ci. Si vous avez de nouveaux chems à partager, demandez à votre <span class='labColor'>administrateur</span> de les télécharger en votre nom et commencez à économiser de l'argent pour votre laboratoire.",
     "shares.venn.chart.table": "Cliquez sur une valeur pour découvrir la liste de réactifs",
-    "shares.venn.chart.titlenone": " Aucun.",
-    "shares.venn.chart.title1": "Réactifs dans ",
-    "shares.venn.chart.title2": "Réactifs en commun dans ",
+    "shares.venn.chart.titlenone": "\" Aucun.\"",
+    "shares.venn.chart.title1": "\"Réactifs dans \"",
+    "shares.venn.chart.title2": "\"Réactifs en commun dans \"",
 
-    "dot.selected": "<b>Quantité: </b>",
-    "dot.reagent": " - <b>Réactif:</b> "
+    "dot.selected": "\"<b>Quantité: </b>\"",
+    "dot.reagent": "\" - <b>Réactif:</b> \""
 }
