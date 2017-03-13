@@ -363,7 +363,7 @@ totalshares = t[0].counting;
 					boostercolor.push("success");
 					if(totalorders > totalshares){
 						//booster.push("<strong> Caution.</strong> You are ordering <b>more</b> than you are sharing. Did you replenish your inventory?" + nonadmin);
-						booster.push((res.__("index.orders.booster2", { nonadmin: nonadmin })).replace(/&lt;/g, '<').replace(/&gt;/g, '>'));
+						booster.push((res.__("index.orders.booster2", { nonadmin: nonadmin })).replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&#x3d;/g, ‘=‘).replace(/&quot;/g, ‘“‘).replace(/&#x2f;/g, ‘/‘));
 						boostercolor.push("warning");
 					} else if(totalshares > totalorders){
 						//booster.push("<strong> Major Achievement!</strong>  You are sharing <b>more</b> than you are ordering. Way to contribute to your lab's savings!");
