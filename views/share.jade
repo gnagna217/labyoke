@@ -358,9 +358,9 @@ block content
 								var title = "";
 								var list = this.list;
 								if (this.listnames.length == 1) {
-									title += "Reagents in <span class='yokeColor'>";
+									title += #{i18n.__("shares.venn.chart.title1")} + "<span class='yokeColor'>";
 								} else {
-									title += "Common reagents in <span class='yokeColor'>";
+									title +=  #{i18n.__("shares.venn.chart.title2")} + "<span class='yokeColor'>";
 								}
 
 								for (name in this.listnames) {
@@ -373,7 +373,7 @@ block content
 								title += ":";
 								var pageValues = [];
 								if(this.list.length == 0){
-									title += " None."
+									title +=  #{i18n.__("shares.venn.chart.titlenone")}
 								} else {
 									for (val in this.list) {
 										pageValues.push(this.list[val]);
@@ -434,7 +434,7 @@ block content
 
 					div(style="margin-left: 20%;")
 						div(id="tooltipsvenn-container")
-							div(id="tooltipsvenn", class="labColor", style="margin-top:-15px")!= "Click on a diagram value to list reagents"
+							div(id="tooltipsvenn", class="labColor", style="margin-top:-15px")!= i18n.__("shares.venn.chart.table")
 							div
 								ul(id="pagination-demo" class="pagination-sm")
 				- if(report_venn != null && report_venn.length==0)
@@ -663,7 +663,7 @@ block content
 					chart.on('draw', function() {
 						if (!addedEvents) {
 							$('.ct-point').on('mouseover', function() {
-								$('#tooltips').html(i18n.__("dot.selected") + $(this).attr('ct:value'));
+								$('#tooltips').html(#{i18n.__("dot.selected")} + $(this).attr('ct:value'));
 							});
 
 							$('.ct-point').on('mouseout', function() {
@@ -679,7 +679,7 @@ block content
 						chart0.on('draw', function() {
 							if (!addedEvents0) {
 								$('.ct-bar').on('mouseover', function() {
-									$('#tooltips0').html(i18n.__("dot.selected") + $(this).attr('ct:value'));
+									$('#tooltips0').html(#{i18n.__("dot.selected")} + $(this).attr('ct:value'));
 								});
 
 								$('.ct-bar').on('mouseout', function() {
