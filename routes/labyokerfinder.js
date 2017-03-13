@@ -1508,7 +1508,7 @@ LabYokeTest.prototype.test = function(callback) {
 	var results;
 	var resp = this.resp;
 	console.log("resp is: " + resp);
-	var test = i18n.__("hello.morning")
+	var test = i18n.__("login.morning")
 	console.log("a translation: " + test)
 	callback(null, test);
 	
