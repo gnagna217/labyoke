@@ -1290,6 +1290,8 @@ LabYokerGetOrder.prototype.getorders = function(callback) {
 	var date = "";
 	var select = "";
 
+	console.log("getorders labs: " + labs.length);
+
 	for(var prop in labs){
 		a = "a" + i;
 		labsstr = (labs[prop].labname).replace(" ","").toLowerCase() + "_orders " + a + " ";
