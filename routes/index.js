@@ -152,6 +152,7 @@ module.exports = function(router) {
 	});
 
 	router.get('/test', function(req, res) {
+
 		var lang = req.query.lang;
 		console.log("lang is init: " + lang);
 		if(lang == null || lang == undefined){
@@ -161,7 +162,11 @@ module.exports = function(router) {
 		res.cookie('i18n', lang);
 		req.cookies.i18n = lang;
 		res.setLocale(req.cookies.i18n);
+		var labYokeTest = new LabYokeTest(res);
+		labYokeTest.test(function(error, done) {
+
 		res.render('test',{i18n: res});
+	});
 	});
 
 	router.get('/help', function(req, res) {

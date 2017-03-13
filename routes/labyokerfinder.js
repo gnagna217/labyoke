@@ -141,6 +141,10 @@ LabyokerPasswordChange = function(hash, password) {
 
 };
 
+LabYokeTest = function(resp) {
+	this.resp = resp;
+};
+
 LabYokeUploader.prototype.upload = function(callback) {
 	var results = this.jsonResults;
 	var jsonnum = results;
@@ -1500,6 +1504,18 @@ LabYokeFinder.prototype.test = function(callback) {
 	// return false;
 };
 
+LabYokeTest.prototype.test = function(callback) {
+	var results;
+	var resp = this.resp;
+	console.log("resp is: " + resp);
+	var test = i18n.__("hello.morning")
+	console.log("a translation: " + test)
+	callback(null, test);
+	
+	// return false;
+};
+
+
 LabyokerInit.prototype.initialShares = function(callback) {
 	var email = this.email;
 console.log("shares email: " + email);
@@ -2213,3 +2229,4 @@ exports.LabYokeReporterSavings = LabYokeReporterSavings;
 exports.LabYokeReporterShares = LabYokeReporterShares;
 exports.LabyokerTeam = LabyokerTeam;
 exports.LabyokerLab = LabyokerLab;
+exports.LabYokeTest = LabYokeTest;
