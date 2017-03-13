@@ -1161,7 +1161,7 @@ totalshares = t[0].counting;
 													var boostercolor = [];
 													if(orders > 0){
 														//booster.push("<strong> Notification!</strong> You have <b>" + orders + " new order(s)</b> pending completion.");
-														booster.push((res.__("index.login.booster1",{orders: orders})).replace(/&lt;/g, '<').replace(/&gt;/g, '>');
+														booster.push((res.__("index.login.booster1",{orders: orders})).replace(/&lt;/g, '<').replace(/&gt;/g, '>'));
 														boostercolor.push("warning");
 													}
 													if(shares > 0){
