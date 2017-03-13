@@ -733,7 +733,7 @@ block content
 					chart.on('draw', function() {
 						if (!addedEvents) {
 							$('.ct-point').on('mouseover', function() {
-								$('#tooltips').html("#{i18n.__("dot.selected")}" + $(this).attr('ct:value'));
+								$('#tooltips').html(("#{i18n.__("dot.selected")}").replace(/&lt;/g, '<').replace(/&gt;/g, '>') + $(this).attr('ct:value'));
 							});
 
 							$('.ct-point').on('mouseout', function() {
@@ -749,7 +749,7 @@ block content
 						chart0.on('draw', function() {
 							if (!addedEvents0) {
 								$('.ct-bar').on('mouseover', function() {
-									$('#tooltips0').html("#{i18n.__("dot.selected")}" + $(this).attr('ct:value'));
+									$('#tooltips0').html(("#{i18n.__("dot.selected")}").replace(/&lt;/g, '<').replace(/&gt;/g, '>')  + $(this).attr('ct:value'));
 								});
 
 								$('.ct-bar').on('mouseout', function() {
