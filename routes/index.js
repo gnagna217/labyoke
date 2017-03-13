@@ -339,7 +339,7 @@ totalshares = t[0].counting;
 
 					var labs = req.session.labs;
 					var labadmin;
-					var nonadmin = res.__("index.orders.nonadmin1", { labadmin: labadmin }); //" Email your <a href='mailto:"+labadmin+"'>administrator</a> if needed.";
+					var nonadmin = (res.__("index.orders.nonadmin1", { labadmin: labadmin })).replace(/&lt;/g, '<').replace(/&gt;/g, '>'); //" Email your <a href='mailto:"+labadmin+"'>administrator</a> if needed.";
 					console.log("booster labs "+ labs);
 					for(var i in labs){
 						//var labrow = util.inspect(labs[i], false, null);
@@ -353,22 +353,22 @@ totalshares = t[0].counting;
 			       		//console.log("lab is: "+ lab);
 			       	}
 			       	if(req.session.admin == 1){
-			       	nonadmin = res.__("index.orders.nonadmin2"); //" You can do so with the <a href='/share#upload'>upload tool</a> to add more reagents under your name."
+			       	nonadmin = (res.__("index.orders.nonadmin2")).replace(/&lt;/g, '<').replace(/&gt;/g, '>'); //" You can do so with the <a href='/share#upload'>upload tool</a> to add more reagents under your name."
 			       	}
 					//booster.push("<strong> Self Kudos!</strong> You have ordered a total of <b>" + totalorders + " order(s)</b> and received a total of <b>" + totalshares + " requested share(s)</b>. Keep it up!");
-					booster.push(res.__("index.orders.booster1", { totalorders: totalorders, totalshares: totalshares }));
+					booster.push((res.__("index.orders.booster1", { totalorders: totalorders, totalshares: totalshares })).replace(/&lt;/g, '<').replace(/&gt;/g, '>'));
 					boostercolor.push("success");
 					if(totalorders > totalshares){
 						//booster.push("<strong> Caution.</strong> You are ordering <b>more</b> than you are sharing. Did you replenish your inventory?" + nonadmin);
-						booster.push(res.__("index.orders.booster2", { nonadmin: nonadmin }));
+						booster.push((res.__("index.orders.booster2", { nonadmin: nonadmin })).replace(/&lt;/g, '<').replace(/&gt;/g, '>'));
 						boostercolor.push("warning");
 					} else if(totalshares > totalorders){
 						//booster.push("<strong> Major Achievement!</strong>  You are sharing <b>more</b> than you are ordering. Way to contribute to your lab's savings!");
-						booster.push(res.__("index.orders.booster3"));
+						booster.push((res.__("index.orders.booster3")).replace(/&lt;/g, '<').replace(/&gt;/g, '>'));
 						boostercolor.push("success");
 					} else if(totalshares == totalorders){
 						//booster.push("<strong> Strong and Steady!</strong> You are perfectly <b>balanced</b>! You are sharing as many reagents as you are ordering. Way to go!");
-						booster.push(res.__("index.orders.booster4"));
+						booster.push((res.__("index.orders.booster4")).replace(/&lt;/g, '<').replace(/&gt;/g, '>'));
 						boostercolor.push("success");
 					}
 					var b = Math.floor((Math.random() * booster.length-1) + 1);
