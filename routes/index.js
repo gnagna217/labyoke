@@ -1014,10 +1014,6 @@ totalshares = t[0].counting;
 		}
 	});
 
-String.prototype.replaceAll = function(target, replacement) {
-  return this.split(target).join(replacement);
-};
-
 	router.post('/login',function(req, res) {
 		res.setLocale(req.cookies.i18n);
 						var username = req.body.user;
@@ -1128,17 +1124,17 @@ String.prototype.replaceAll = function(target, replacement) {
 
 													if(lab == "all"){
 														//labsavings = "<b><i>WORLD</i></b>";
-														labsavings = (res.__("index.login.all1")).replaceAll("&lt;", "<").replaceAll("&gt;", ">");
+														labsavings = (res.__("index.login.all1")).replace(/&lt;/g, '<').replace(/&gt;/g, '>');
 													} else {
 														//labsavings = "<b><i>Other Labs</i></b>";
-														labsavings = (res.__("index.login.all2")).replaceAll("&lt;", "<").replaceAll("&gt;", ">");
+														labsavings = (res.__("index.login.all2")).replace(/&lt;/g, '<').replace(/&gt;/g, '>');
 													}
 													var choose = "";
 													if(choosetime == "year"){
 														var date = new Date(), y = date.getFullYear(), m = date.getMonth();
 														datefromsavings = moment(new Date(y, 0, 1)).tz("America/New_York").format('MM-DD-YYYY');
 														datetosavings = moment(new Date(y, 12, 1)).tz("America/New_York").format('MM-DD-YYYY');
-														choose = (res.__("index.login.time1.year",{choosetime: choosetime})).replaceAll("&lt;", "<").replaceAll("&gt;", ">");
+														choose = (res.__("index.login.time1.year",{choosetime: choosetime})).replace(/&lt;/g, '<').replace(/&gt;/g, '>');
 														/*datefromsavings = "01-01-2016";
 														datetosavings = "12-31-2016";*/
 													}
@@ -1146,7 +1142,7 @@ String.prototype.replaceAll = function(target, replacement) {
 														var date = new Date(), y = date.getFullYear(), m = date.getMonth();
 														datefromsavings = moment(new Date(y, m, 1)).tz("America/New_York").format('MM-DD-YYYY');
 														datetosavings = moment(new Date(y, m + 1, 0)).tz("America/New_York").format('MM-DD-YYYY');
-														choose = (res.__("index.login.time1.month",{choosetime: choosetime})).replaceAll("&lt;", "<").replaceAll("&gt;", ">");
+														choose = (res.__("index.login.time1.month",{choosetime: choosetime})).replace(/&lt;/g, '<').replace(/&gt;/g, '>');
 														/*datefromsavings = "12-01-2016";
 														datetosavings = "12-31-2016";*/
 													}
@@ -1165,12 +1161,12 @@ String.prototype.replaceAll = function(target, replacement) {
 													var boostercolor = [];
 													if(orders > 0){
 														//booster.push("<strong> Notification!</strong> You have <b>" + orders + " new order(s)</b> pending completion.");
-														booster.push((res.__("index.login.booster1",{orders: orders})).replaceAll("&lt;", "<").replaceAll("&gt;", ">"));
+														booster.push((res.__("index.login.booster1",{orders: orders})).replace(/&lt;/g, '<').replace(/&gt;/g, '>');
 														boostercolor.push("warning");
 													}
 													if(shares > 0){
 														//booster.push("<strong> Notification!</strong> You have <b>" + shares + " new share(s)</b> pending completion. <a href='/share'>Check it out</a> promptly and fulfill the request. Way to contribute to your lab's savings!");
-														booster.push((res.__("index.login.booster2", {orders: orders})).replaceAll("&lt;", "<").replaceAll("&gt;", ">"));
+														booster.push((res.__("index.login.booster2", {orders: orders})).replace(/&lt;/g, '<').replace(/&gt;/g, '>'));
 														boostercolor.push("warning");
 													}
 
@@ -1206,7 +1202,8 @@ String.prototype.replaceAll = function(target, replacement) {
 														var b = Math.floor((Math.random() * booster.length-1) + 1);
 														if(booster[b] == undefined){
 															//booster[b] = "Using LabyYoke reduces purchasing prices for <strong>You</strong> and your <strong>Lab</strong>. Use it as a social platform. Have fun and Keep it Up!";
-															booster[b] = (res.__("index.login.booster3")).replaceAll("&lt;", "<").replaceAll("&gt;", ">");
+															booster[b] = (res.__("index.login.booster3")).replace(/&lt;/g, '<').replace(/&gt;/g, '>');
+															console.log(booster[b]);
 															boostercolor[b] = "success"
 														}
 														req.session.savingsTextInitial = booster[b];
@@ -1258,7 +1255,7 @@ String.prototype.replaceAll = function(target, replacement) {
 														var b = Math.floor((Math.random() * booster.length-1) + 1);
 														if(booster[b] == undefined){
 															//booster[b] = "Using LabyYoke reduces purchasing prices for <strong>You</strong> and your <strong>Lab</strong>. Use it as a social platform. Have fun and Keep it Up!";
-															booster[b] = (res.__("index.login.booster3")).replaceAll("&lt;", "<").replaceAll("&gt;", ">");
+															booster[b] = (res.__("index.login.booster3")).replace(/&lt;/g, '<').replace(/&gt;/g, '>');
 															boostercolor[b] = "success"
 														}
 														req.session.savingsTextInitial = booster[b];
