@@ -248,7 +248,6 @@ module.exports = function(router) {
 	}
 
 	router.get('/login', function(req, res) {
-		var mom = moment().format();
 		var lang = req.query.lang;
 		console.log("lang is init from param: " + lang);
 		if(lang == null || lang == undefined){
@@ -272,7 +271,7 @@ module.exports = function(router) {
 				req.session.labs = labs;
 				console.log("in LOGIN: GET LABS now " + req.session.labs);
 				console.log("loggin in labs: " + labs);
-				res.render('login', {mom:mom, i18n: res, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, title: 'Login',isLoggedInAdmin: req.session.admin});
+				res.render('login', {i18n: res, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, title: 'Login',isLoggedInAdmin: req.session.admin});
 				req.session.messages = null;
 			});
 
@@ -1017,7 +1016,6 @@ totalshares = t[0].counting;
 	});
 
 	router.post('/login',function(req, res) {
-		var mom = moment().format();
 		res.setLocale(req.cookies.i18n);
 						var username = req.body.user;
 						var password = req.body.pass;
