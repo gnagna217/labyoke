@@ -249,7 +249,7 @@ module.exports = function(router) {
 	}
 
 	router.get('/login', function(req, res) {
-		var mom = moment.tz(jstz.determine().name()).format;
+		var mom = moment().tz(jstz.determine().name()).format;
 		console.log("moment.tz(jstz.determine().name()): " + jstz.determine().name());
 		var lang = req.query.lang;
 		console.log("lang is init from param: " + lang);
@@ -1019,7 +1019,7 @@ totalshares = t[0].counting;
 	});
 
 	router.post('/login',function(req, res) {
-		var mom = moment.tz(jstz.determine().name()).format;
+		var mom = moment().tz(jstz.determine().name()).format;
 		console.log("moment.tz(jstz.determine().name()): " + jstz.determine().name());
 		res.setLocale(req.cookies.i18n);
 						var username = req.body.user;
