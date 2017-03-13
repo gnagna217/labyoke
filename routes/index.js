@@ -1134,7 +1134,7 @@ totalshares = t[0].counting;
 														var date = new Date(), y = date.getFullYear(), m = date.getMonth();
 														datefromsavings = moment(new Date(y, 0, 1)).tz("America/New_York").format('MM-DD-YYYY');
 														datetosavings = moment(new Date(y, 12, 1)).tz("America/New_York").format('MM-DD-YYYY');
-														choose = (res.__("index.login.time1.year",{choosetime: choosetime})).replace(/&lt;/g, '<').replace(/&gt;/g, '>');
+														choose = (res.__("index.login.time1.year",{choosetime: "année"})).replace(/&lt;/g, '<').replace(/&gt;/g, '>');
 														/*datefromsavings = "01-01-2016";
 														datetosavings = "12-31-2016";*/
 													}
@@ -1142,7 +1142,7 @@ totalshares = t[0].counting;
 														var date = new Date(), y = date.getFullYear(), m = date.getMonth();
 														datefromsavings = moment(new Date(y, m, 1)).tz("America/New_York").format('MM-DD-YYYY');
 														datetosavings = moment(new Date(y, m + 1, 0)).tz("America/New_York").format('MM-DD-YYYY');
-														choose = (res.__("index.login.time1.month",{choosetime: choosetime})).replace(/&lt;/g, '<').replace(/&gt;/g, '>');
+														choose = (res.__("index.login.time1.month",{choosetime: "mois"})).replace(/&lt;/g, '<').replace(/&gt;/g, '>');
 														/*datefromsavings = "12-01-2016";
 														datetosavings = "12-31-2016";*/
 													}
