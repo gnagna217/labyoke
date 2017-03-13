@@ -284,7 +284,7 @@
     "datatable.infoThousands": "",
 
     "index.orders.nonadmin1" : " Envoyez un e-mail à votre <a href='mailto:{{labadmin}}'>administrateur</a> si nécessaire.",
-    "index.orders.nonadmin2" : " Vous pouvez le faire avec l'outil <a href='/share#upload'>Télécharger</a> pour ajouter d'autres réactifs sous votre nom.",
+    "index.orders.nonadmin2" : " Vous pouvez le faire avec l'outil <a href=\"/share#upload\">Télécharger</a> pour ajouter d'autres réactifs sous votre nom.",
     "index.orders.booster1" : "<strong> Félicitations!</strong> Vous avez commandé un total de <b> {{ totalorders }} réactif(s)</b> et reçu un total de <b>{{ totalshares }} commande(s)</b>. Continuez!",
     "index.orders.booster2" : "<strong> Attention.</strong> Vous commandez <b>plus</b> que vous partagez. Avez-vous réapprovisionné votre inventaire? {{ nonadmin }}",
     "index.orders.booster3" : "<strong> Succès Majeur!</strong> Vous partagez <b>plus</b> que vous commandez. Une super façon de contribuer aux économies de votre laboratoire!",
