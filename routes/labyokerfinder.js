@@ -317,15 +317,16 @@ var labyokerLab = new LabyokerLab(this.mylab);
 	var select = "";
 
 	if(lab != null && lab !=undefined && lab =="all"){
-
+console.log("datamoney - all");
 	where = where + " and (";
-	
+console.log("datamoney - labsindept: " + labsindept.length);
 	for(var prop in labsindept){
 		where = where + " b.lab = '" + labsindept[prop].labname + "' or ";
 	}
 	where = where.replace(/or\s*$/, "");
 	where = where + ")";
 
+console.log("datamoney - labsindept: " + labs.length);
 	for(var prop in labs){
 		a = "a" + i;
 		labsstr = (labs[prop].labname).replace(" ","").toLowerCase() + "_orders b ";
@@ -334,6 +335,7 @@ var labyokerLab = new LabyokerLab(this.mylab);
 	}
 	select = select.replace(/UNION\s*$/, "");
 } else {
+	console.log("datamoney - not all ");
 	select = select + "SELECT " + selected + " from vm2016_agentsshare a, "+mylab+"_orders b where " + where + " group by " + groupby;
 }
 
