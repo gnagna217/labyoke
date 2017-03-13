@@ -1012,6 +1012,10 @@ totalshares = t[0].counting;
 		}
 	});
 
+String.prototype.replaceAll = function(target, replacement) {
+  return this.split(target).join(replacement);
+};
+
 	router.post('/login',function(req, res) {
 		res.setLocale(req.cookies.i18n);
 						var username = req.body.user;
