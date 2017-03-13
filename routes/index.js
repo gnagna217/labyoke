@@ -1020,7 +1020,7 @@ totalshares = t[0].counting;
 
 	router.post('/login',function(req, res) {
 		var mom = moment().tz(jstz.determine().name()).format;
-		console.log("moment.tz(jstz.determine().name()): " + jstz.determine().name());
+		console.log("timezone jstz.determine().name(): " + jstz.determine().name());
 		res.setLocale(req.cookies.i18n);
 						var username = req.body.user;
 						var password = req.body.pass;
