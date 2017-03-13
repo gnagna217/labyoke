@@ -15,6 +15,7 @@ block content
              - if(n > 17)
                  h1 #{i18n.__("login.evening")}
              p!= n + " hours"
+             p!= d.toLocaleDateString()
              p #{i18n.__("login.welcome")}
          div(id="ctl00_Div2" class="frontdiv results")
            div
