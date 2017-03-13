@@ -12,7 +12,7 @@
     
     "search.layovertitle" : "Commande?",
     "search.layovercancel" : "Annuler",
-    "search.title" : "Cherche.",
+    "search.title" : "Recherche.",
     "search.description": "Commencer votre recherche en entrant le nom du <span class='labColor'>Réactif (produit chimique)</span> ou du <span class='labColor'>numéro de catalogue</span>. Vous pouvez aussi le séléctioner.",
     "search.searchholder" : "Rechercher un Réactif...",
     "search.catalogholder" : "Rechercher un numéro de catalogue...",
