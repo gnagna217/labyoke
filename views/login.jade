@@ -6,7 +6,14 @@ block content
          div(style="text-align: center;position: relative;")
              a(href="/search")
                 img(src="/images/yoke4.png", alt="The Yoke",  title="Yoke", class="yokelogo")
-             h1 #{i18n.__("login.hello")}
+             - var d = new Date();
+             - var n = d.getHours();
+             - if(n < 11)
+                 h1 #{i18n.__("login.morning")}
+             - if(n >= 11 && n <= 17)
+                 h1 #{i18n.__("login.afternoon")}
+             - if(n > 17)
+                 h1 #{i18n.__("login.evening")}
              p #{i18n.__("login.welcome")}
          div(id="ctl00_Div2" class="frontdiv results")
            div
