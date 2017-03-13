@@ -262,6 +262,24 @@
     "shares.venn.chart.title1": "Réactifs ",
     "shares.venn.chart.title2": "Réactifs en commun ",
 
+    "datatable.processing": "Traitement en cours...",
+    "datatable.search": "Rechercher&nbsp;:",
+    "datatable.lengthMenu": "Afficher _MENU_ &eacute;l&eacute;ments",
+    "datatable.info": "Affichage de l'&eacute;lement _START_ &agrave; _END_ sur _TOTAL_ &eacute;l&eacute;ments",
+    "datatable.infoEmpty": "Affichage de l'&eacute;lement 0 &agrave; 0 sur 0 &eacute;l&eacute;ments",
+    "datatable.infoFiltered": "(filtr&eacute; de _MAX_ &eacute;l&eacute;ments au total)",
+    "datatable.loadingRecords": "Chargement en cours...",
+    "datatable.zeroRecords": "Aucun &eacute;l&eacute;ment &agrave; afficher",
+    "datatable.emptyTable": "Aucune donnée disponible dans le tableau",
+    "datatable.first": "Premier",
+    "datatable.previous": "Pr&eacute;c&eacute;dent",
+    "datatable.next": "Suivant",
+    "datatable.last": "Dernier",
+    "datatable.sortAscending": ": activer pour trier la colonne par ordre croissant",
+    "datatable.sortDescending": ": activer pour trier la colonne par ordre décroissant",
+    "datatable.infoPostFix": "",
+    "datatable.infoThousands": "",
+
     "dot.selected": "<b>Quantité: </b>",
     "dot.reagent": " - <b>Réactif:</b> "
 }

@@ -78,25 +78,25 @@ block content
 									$('#rankTblreqshares').DataTable({order: [[ 4, "desc" ]],
 										
 									language:{
-										processing: "Traitement en cours...",
-										search: "Rechercher&nbsp;:",
-										lengthMenu: "Afficher _MENU_ &eacute;l&eacute;ments",
-										info: "Affichage de l'&eacute;lement _START_ &agrave; _END_ sur _TOTAL_ &eacute;l&eacute;ments",
-										infoEmpty: "Affichage de l'&eacute;lement 0 &agrave; 0 sur 0 &eacute;l&eacute;ments",
-										infoFiltered: "(filtr&eacute; de _MAX_ &eacute;l&eacute;ments au total)",
-										infoPostFix: "",
-										loadingRecords: "Chargement en cours...",
-										zeroRecords: "Aucun &eacute;l&eacute;ment &agrave; afficher",
-										emptyTable: "Aucune donnée disponible dans le tableau",
+										processing: "#{i18n.__("datatable.processing")}",
+										search: "#{i18n.__("datatable.search")}",
+										lengthMenu: "#{i18n.__("datatable.lengthMenu")}",
+										info: "#{i18n.__("datatable.info")}",
+										infoEmpty: "#{i18n.__("datatable.infoEmpty")}",
+										infoFiltered: "#{i18n.__("datatable.infoFiltered")}",
+										infoPostFix: "#{i18n.__("datatable.infoPostFix")}",
+										loadingRecords: "#{i18n.__("datatable.loadingRecords")}",
+										zeroRecords: "#{i18n.__("datatable.zeroRecords")}",
+										emptyTable: "#{i18n.__("datatable.emptyTable")}",
 										paginate: {
-										first: "Premier",
-										previous: "Pr&eacute;c&eacute;dent",
-										next: "Suivant",
-										last: "Dernier"
+										first: "#{i18n.__("datatable.first")}",
+										previous: "#{i18n.__("datatable.previous")}",
+										next: "#{i18n.__("datatable.next")}",
+										last: "#{i18n.__("datatable.last")}"
 										},
 										aria: {
-										sortAscending: ": activer pour trier la colonne par ordre croissant",
-										sortDescending: ": activer pour trier la colonne par ordre décroissant"
+										sortAscending: "#{i18n.__("datatable.sortAscending")}",
+										sortDescending: "#{i18n.__("datatable.sortDescending")}"
 										}
 									}
 									});
