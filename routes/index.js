@@ -265,9 +265,11 @@ module.exports = function(router) {
 		if (req.session.user) {
 			res.redirect('/search');
 		} else {
+			console.log("in LOGIN: GET LABS");
 			var labyokerLabs = new LabyokerLabs('','');
 			labyokerLabs.getlabs(function(error, labs) {
 				req.session.labs = labs;
+				console.log("in LOGIN: GET LABS now " + req.session.labs);
 				console.log("loggin in labs: " + labs);
 				res.render('login', {i18n: res, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, title: 'Login',isLoggedInAdmin: req.session.admin});
 				req.session.messages = null;
