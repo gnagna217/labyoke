@@ -358,9 +358,10 @@ block content
 								var title = "";
 								var list = this.list;
 								if (this.listnames.length == 1) {
-									title += "'" + #{i18n.__("shares.venn.chart.title1")} + "'" + "<span class='yokeColor'>";
+									var t = #{i18n.__("shares.venn.chart.title1")} + "";
+									title += t + "<span class='yokeColor'>";
 								} else {
-									title += "'" + #{i18n.__("shares.venn.chart.title2")} + "'" + "<span class='yokeColor'>";
+									title +=  #{i18n.__("shares.venn.chart.title2")} + "<span class='yokeColor'>";
 								}
 
 								for (name in this.listnames) {
@@ -373,7 +374,7 @@ block content
 								title += ":";
 								var pageValues = [];
 								if(this.list.length == 0){
-									title +=  "'" + #{i18n.__("shares.venn.chart.titlenone")} + "'";
+									title +=  #{i18n.__("shares.venn.chart.titlenone")}
 								} else {
 									for (val in this.list) {
 										pageValues.push(this.list[val]);
@@ -663,7 +664,7 @@ block content
 					chart.on('draw', function() {
 						if (!addedEvents) {
 							$('.ct-point').on('mouseover', function() {
-								$('#tooltips').html("'" + #{i18n.__("dot.selected")} + "'" + $(this).attr('ct:value'));
+								$('#tooltips').html(#{i18n.__("dot.selected")} + $(this).attr('ct:value'));
 							});
 
 							$('.ct-point').on('mouseout', function() {
@@ -679,7 +680,7 @@ block content
 						chart0.on('draw', function() {
 							if (!addedEvents0) {
 								$('.ct-bar').on('mouseover', function() {
-									$('#tooltips0').html("'" + #{i18n.__("dot.selected")} + "'" + $(this).attr('ct:value'));
+									$('#tooltips0').html(#{i18n.__("dot.selected")} + $(this).attr('ct:value'));
 								});
 
 								$('.ct-bar').on('mouseout', function() {
