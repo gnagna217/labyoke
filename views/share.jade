@@ -373,7 +373,7 @@ block content
 								title += ":";
 								var pageValues = [];
 								if(this.list.length == 0){
-									title +=  "#{i18n.__("shares.venn.chart.titlenone")}"
+									title +=  "#{i18n.__("shares.venn.chart.titlenone")}" + "";
 								} else {
 									for (val in this.list) {
 										pageValues.push(this.list[val]);
