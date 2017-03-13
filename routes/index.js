@@ -1174,6 +1174,8 @@ String.prototype.replaceAll = function(target, replacement) {
 														boostercolor.push("warning");
 													}
 
+									console.log("in LOGIN: GET LABS - " + req.session.labs);
+			if(req.session.labs != null && req.session.labs != undefined){
 													var labYokereporterSavings = new LabYokeReporterSavings(datefromsavings,datetosavings,undefined,undefined,undefined,lab, req.session.lab,req.session.labs);
 													labYokereporterSavings.dataMoney(function(error, savings) {
 														console.log("savings: " + savings);
@@ -1219,6 +1221,62 @@ String.prototype.replaceAll = function(target, replacement) {
 														res.redirect('/search');
 													}
 													});
+			} else {
+				var labyokerLabs = new LabyokerLabs('','');
+				labyokerLabs.getlabs(function(error, labs) {
+					req.session.labs = labs;
+					console.log("in LOGIN: GET LABS now " + req.session.labs);
+					console.log("loggin in labs: " + labs);
+
+														var labYokereporterSavings = new LabYokeReporterSavings(datefromsavings,datetosavings,undefined,undefined,undefined,lab, req.session.lab,req.session.labs);
+													labYokereporterSavings.dataMoney(function(error, savings) {
+														console.log("savings: " + savings);
+
+														req.session.savings = savings;
+														var cheer = res.__("index.login.cheer1");//"Keep searching, ordering, and sharing!";
+														if (savings > 10000){
+															cheer = res.__("index.login.cheer2"); //"Amazing! You are a rock star!";
+														} else if (savings > 1000){
+															cheer = res.__("index.login.cheer3"); //"Incredible!";
+														} else if(savings > 100){
+															cheer = res.__("index.login.cheer4"); //"Keep it up!";
+														} 
+														if(savings > 0){
+														var text = "";
+														console.log("non-null savings: " + accounting.formatMoney(savings));
+														if(lab == "all"){
+															//text = "<strong> Major Achievement!</strong> You are part of a " + labsavings + " savings for a total of <b>" + accounting.formatMoney(savings) + "</b> " + timeframesavings + " in your department. " + cheer;
+															text = (res.__("index.login.text1", {labsavings: labsavings, accountingsavings: accounting.formatMoney(savings), timeframesavings: timeframesavings, cheer: cheer})).replace(/&lt;/g, '<').replace(/&gt;/g, '>');
+														} else {
+															//text = "<strong> Major Achievement!</strong> You have saved " + labsavings + " a total of <b>" + accounting.formatMoney(savings) + "</b> " + timeframesavings + ". " + cheer;
+															text = (res.__("index.login.text2", {labsavings: labsavings, accountingsavings: accounting.formatMoney(savings), timeframesavings: timeframesavings, cheer: cheer})).replace(/&lt;/g, '<').replace(/&gt;/g, '>');
+														}
+														booster.push(text);
+														boostercolor.push("success");
+														}
+
+														var b = Math.floor((Math.random() * booster.length-1) + 1);
+														if(booster[b] == undefined){
+															//booster[b] = "Using LabyYoke reduces purchasing prices for <strong>You</strong> and your <strong>Lab</strong>. Use it as a social platform. Have fun and Keep it Up!";
+															booster[b] = (res.__("index.login.booster3")).replaceAll("&lt;", "<").replaceAll("&gt;", ">");
+															boostercolor[b] = "success"
+														}
+														req.session.savingsTextInitial = booster[b];
+														req.session.savingsColorInitial = boostercolor[b];
+														console.log("req.session.savingsText: " + req.session.savingsTextInitial);
+													
+
+													if(req.session.to != null && req.session.to.length > 0){
+														res.redirect(req.session.to);
+														req.session.to = null;
+													} else {
+														res.redirect('/search');
+													}
+													});
+				});
+			}
+
+
 												});
 											});
 										} else {
