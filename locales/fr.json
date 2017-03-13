@@ -243,7 +243,7 @@
     "shares.chart.option2": "Diagramme de Venn de votre Département",
     "shares.chart.option3": "Votre Top 5 Partages",
     "shares.chart.option4": "Votre Top 5 Partages ce mois-ci",
-    "shares.chart.notes": "<span class='labColor'>Sélectionnez un graphique</span> ci-dessus et commencez à explorer! <span class='labColor'>Sélectionnez un graphique</span> ci-dessus et commencez à explorer! Restez à l'écoute ... D'autres graphiques à venir.",
+    "shares.chart.notes": "Les données générées par toutes les actions à travers les différents laboratoires de votre département nous permettent de construire ces graphiques cool et informatif que vous pourriez être intéressé. <span class='labColor'>Sélectionnez un graphique</span> ci-dessus et commencez à explorer! Restez à l'écoute ... D'autres graphiques à venir.",
     "shares.venn.title": "Un diagramme de Venn de tous vos ré-agents à travers votre département.",
     "shares.venn.subtitle1": "Ce graphique venn représente le réactif croisé dans les laboratoires de votre département. Vous pouvez rechercher un ré-agent particulier dans le champ de recherche ci-dessous ou imprimer ",
     "shares.venn.subtitle2": " une feuille de calcul CVS / Excel contenant toutes les données.",
