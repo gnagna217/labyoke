@@ -21,10 +21,13 @@ $('.cancel').click(function() {
   var langText = document.getElementById("langText");
   var checkedtext = "Do you want to mark this reagent as insufficient?";
   var uncheckedtext = "Do you want to mark this reagent as replenished and in sufficient quantities?";
+  console.log("lang is " + langText );
   if(langText == "fr"){
     checkedtext = "Voulez-vous marquer ce réactif: insuffisant??";
    uncheckedtext = "Voulez-vous marquer ce réactif: réapprovisioné?";
   }
+  console.log("checkedtext is " + checkedtext );
+  console.log("uncheckedtext is " + uncheckedtext );
   if(checked){
     orderText.innerHTML = checkedtext;
   } else {
