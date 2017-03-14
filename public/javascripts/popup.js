@@ -18,7 +18,7 @@ $('.cancel').click(function() {
   var cancel = $(this);
   var checked = cancel.is(':checked');
   var orderText = document.getElementById("orderText");
-  var langText = document.getElementById("langText");
+  var langText = document.getElementById("langText").innerHTML;
   var checkedtext = "Do you want to mark this reagent as insufficient?";
   var uncheckedtext = "Do you want to mark this reagent as replenished and in sufficient quantities?";
   console.log("lang is " + langText );
