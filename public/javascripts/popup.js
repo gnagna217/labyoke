@@ -18,10 +18,17 @@ $('.cancel').click(function() {
   var cancel = $(this);
   var checked = cancel.is(':checked');
   var orderText = document.getElementById("orderText");
+  var langText = document.getElementById("langText");
+  var checkedtext = "Do you want to mark this reagent as insufficient?";
+  var uncheckedtext = "Do you want to mark this reagent as replenished and in sufficient quantities?";
+  if(langText == "fr"){
+    checkedtext = "Voulez-vous marquer ce réactif: insuffisant??";
+   uncheckedtext = "Voulez-vous marquer ce réactif: réapprovisioné?";
+  }
   if(checked){
-    orderText.innerHTML = "Do you want to mark this reagent as insufficient?";
+    orderText.innerHTML = checkedtext;
   } else {
-    orderText.innerHTML = "Do you want to mark this reagent as replenished and in sufficient quantities?";
+    orderText.innerHTML = uncheckedtext;
   }
   var pop = document.getElementById("ios-light");
   pop.style.display = "block";
@@ -164,7 +171,7 @@ function iosLight(){
   pop.style.display = "block";
   shade.style.display = "block";
 }
-function iosLight(agent,vendor,catalognumber,reqemail,location,category,qty,lab){
+function iosLight(agent,vendor,catalognumber,reqemail,location,category,qty,lab, lang){
   var actionorder = document.getElementById("actionorder");
   var orderText = document.getElementById("orderText");
   var emailform = document.getElementById("emailform");
@@ -175,15 +182,21 @@ function iosLight(agent,vendor,catalognumber,reqemail,location,category,qty,lab)
   var categoryform = document.getElementById("categoryform");
   var qtyform = document.getElementById("qtyform");
   var labform = document.getElementById("labform");
+
   emailform.value = reqemail;
   agentform.value = agent;
   vendorform.value = vendor;
   catalogform.value = catalognumber;
   locationform.value = location;
   categoryform.value = category;
+
   qtyform.value = qty;
   labform.value = lab;
-  orderText.innerHTML = "You are about to order <br/>Reagent: " + agent + "<br/>Vendor: "+vendor+"<br/>Catalog#: "+catalognumber;
+  var trans = "You are about to order <br/>Reagent: " + agent + "<br/>Vendor: "+vendor+"<br/>Catalog#: "+catalognumber;
+  if(lang == "fr"){
+    trans = "Vous êtes sur le point de commander <br/>Réactif: " + agent + "<br/>Vendeur: "+vendor+"<br/>Catalogue: "+catalognumber;
+  }
+  orderText.innerHTML = trans;
   var pop = document.getElementById("ios-light");
   pop.style.display = "block";
   var shade = document.getElementById("shade");
