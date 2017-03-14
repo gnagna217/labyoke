@@ -83,7 +83,7 @@
     "register.thanku2": "Merci pour votre inscription",
     "register.thanku2.desc1": "Vous pouvez maintenant effectuer une <a href='/search'>recherche</a><span> ou <a href='/share'>partager</a></span><span> vos produits chimiques et réactifs.</span>",
     
-    "forgot.title": "Vous êtes Entre de Bonnes Mains.",
+    "forgot.title": "Pas de Soucis.",
     "forgot.subtitle": "<span>Veuillez entrer votre </span><span class='labColor'>nom d'utilisateur</span><span> ci-dessous et nous vous enverrons un e-mail pour changer votre mot de passe et vous <a href='/login'>connecter</a> de nouveau.</span>",
     "forgot.username": "Nom d'Utilisateur",
     "forgot.button": "Emailez",
