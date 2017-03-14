@@ -225,7 +225,7 @@
     "shares.intro1": " currently being requested by your colleagues. In total, ",
     "shares.intro2": " request(s)",
     "shares.intro3": "No request",
-    "shares.intro4": "<span> registered for your lab. </span><span class='yokeColor'>Cancelled orders</span> <span>are highlighted.</span>",
+    "shares.intro4": " registered for your lab. <span class='yokeColor'>Cancelled orders</span> are highlighted.",
     "shares.table.reagent": "Reagent",
     "shares.table.vendor": "Vendor",
     "shares.table.catalog": "Catalog",

@@ -26,10 +26,10 @@ block content
 						- requestIntro = i18n.__("shares.intro")
 					span(class="labColor")!= requestIntro
 					span= i18n.__("shares.intro1")
-					- var totalrequestIntro = mysharesrequest.length + i18n.__("shares.intro2")
+					- var totalrequestIntro = "<span class='labColor'>" + mysharesrequest.length + i18n.__("shares.intro2") + "</span>"
 					- if(mysharesrequest.length == 0)
 						- totalrequestIntro = i18n.__("shares.intro3")
-					span(class="labColor")!= totalrequestIntro + i18n.__("shares.intro4")
+					span!= totalrequestIntro + i18n.__("shares.intro4")
 				div(id="results")
 					div(id="ctl00_Div2" class="row rank")
 						div(class="table-responsive")               
