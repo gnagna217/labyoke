@@ -23,8 +23,8 @@ $('.cancel').click(function() {
   var uncheckedtext = "Do you want to mark this reagent as replenished and in sufficient quantities?";
   console.log("lang is " + langText );
   if(langText == "fr"){
-    checkedtext = "Voulez-vous marquer ce réactif: insuffisant??";
-   uncheckedtext = "Voulez-vous marquer ce réactif: réapprovisioné?";
+    checkedtext = "Voulez-vous marquer ce réactif comme insuffisant?";
+   uncheckedtext = "Voulez-vous marquer ce réactif comme réapprovisioné et en quantité suffisante?";
   }
   console.log("checkedtext is " + checkedtext );
   console.log("uncheckedtext is " + uncheckedtext );
