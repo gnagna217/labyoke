@@ -34,7 +34,7 @@ LabyokerLabs = function(lab,adminemail) {
 	this.lab = lab;
 };
 
-LabYokerChangeShare = function(table, agent, vendor,catalognumber,email,requestor,checked,datenow,date,lab) {
+LabYokerChangeShare = function(table, agent, vendor,catalognumber,email,requestor,checked,datenow,date,lab, res) {
 	this.agent = agent;
 	this.vendor = vendor;
 	this.catalognumber = catalognumber;
@@ -45,6 +45,7 @@ LabYokerChangeShare = function(table, agent, vendor,catalognumber,email,requesto
 	this.datenow = datenow;
 	this.requestor = requestor;
 	this.lab = lab;
+	this.res = res;
 };
 
 LabyokerUserDetails = function(column, value, email,curname,cursurname) {
@@ -55,24 +56,26 @@ LabyokerUserDetails = function(column, value, email,curname,cursurname) {
 	this.cursurname = cursurname;
 }
 
-LabYokeReporterOrders = function(datefrom, dateto, lab, labs, mylab) {
+LabYokeReporterOrders = function(datefrom, dateto, lab, labs, mylab, res) {
 	this.datefrom = datefrom;
 	this.dateto = dateto;
 	this.lab = lab;
 	this.labs = labs;
 	this.mylab = mylab;
+	this.res = res;
 	//this.category = category;
 };
 
-LabYokeReporterShares = function(datefrom, dateto, mylab, labs) {
+LabYokeReporterShares = function(datefrom, dateto, mylab, labs, res) {
 	this.datefrom = datefrom;
 	this.dateto = dateto;
 	this.mylab = mylab;
 	this.labs = labs;
+	this.res = res;
 	//this.category = category;
 };
 
-LabYokeReporterSavings = function(datefrom,dateto,agent,vendor,catalognumber,lab, mylab,labs) {
+LabYokeReporterSavings = function(datefrom,dateto,agent,vendor,catalognumber,lab, mylab,labs,res) {
 	this.datefrom = datefrom;
 	this.dateto = dateto;
 	this.vendor = vendor;
@@ -81,6 +84,7 @@ LabYokeReporterSavings = function(datefrom,dateto,agent,vendor,catalognumber,lab
 	this.catalognumber = catalognumber;
 	this.mylab = mylab;
 	this.labs = labs;
+	this.res = res;
 };
 
 LabyokerInit = function(email, mylab) {
@@ -101,7 +105,7 @@ LabyokerConfirm = function(registerid) {
 	this.registerid = registerid;
 };
 
-LabYokerOrder = function(lab,agent,vendor,catalognumber,email,location,sendemail,category,quantity,mylab) {
+LabYokerOrder = function(lab,agent,vendor,catalognumber,email,location,sendemail,category,quantity,mylab, res) {
 	this.agent = agent;
 	this.vendor = vendor;
 	this.catalognumber = catalognumber;
@@ -112,6 +116,7 @@ LabYokerOrder = function(lab,agent,vendor,catalognumber,email,location,sendemail
 	this.lab = lab;
 	this.quantity = quantity;
 	this.mylab = mylab;
+	this.res = res;
 };
 
 LabyokerTeam = function(lab) {
@@ -125,7 +130,7 @@ LabYokerGetOrder = function(sendemail,lab,labs) {
 	this.labs = labs;
 };
 
-LabyokerRegister = function(user, password,lab,firstname,lastname,email,tel) {
+LabyokerRegister = function(user, password,lab,firstname,lastname,email,tel, res) {
 	this.username = user;
 	this.password = password;
 	this.lab = lab;
@@ -133,6 +138,7 @@ LabyokerRegister = function(user, password,lab,firstname,lastname,email,tel) {
 	this.lastname = lastname;
 	this.email = email;
 	this.tel = tel;
+	this.res = res;
 };
 
 LabyokerPasswordChange = function(hash, password) {
@@ -669,6 +675,7 @@ if(lab != null && lab !=undefined && lab =="all"){
 
 LabYokeReporterShares.prototype.reportShares = function(callback) {
 	var results;
+	var i18n = this.res;
 	var datefrom = this.datefrom;
 	var dateto = this.dateto;
 	//var category = this.category;
@@ -687,10 +694,10 @@ console.log("report on shares: " + labsindept);
 console.log("report on shares my lab: " + mylab);
 	if(datefrom != null && dateto != null && datefrom !=undefined && dateto !=undefined && datefrom !="" && dateto !=""){
 		if(params == ""){
-			params += "<div style='font-weight:bold'>Parameters</div>";
+			params += i18n.__("index.reportsShares.params");//"<div style='font-weight:bold'>Parameters</div>";
 		}
-		params += "<div><span style='font-weight:bold'>Date From: </span><span>" + datefrom + "</span></div>";
-		params += "<div><span style='font-weight:bold'>Date To: </span><span>" + dateto + "</span></div>";
+		params += i18n.__("index.reportsShares.params1", {datefrom: datefrom}); //"<div><span style='font-weight:bold'>Date From: </span><span>" + datefrom + "</span></div>";
+		params += i18n.__("index.reportsShares.params2", {dateto: dateto}); //"<div><span style='font-weight:bold'>Date To: </span><span>" + dateto + "</span></div>";
 		if(where == "")
 			where =" where ";
 		where += "date between '" + datefrom + "' and '" + dateto + "'";
@@ -738,15 +745,17 @@ console.log("report on shares my lab: " + mylab);
 		console.log("results : " + results);
 		var html = "";
 		if(results != null && results != ""){
-		html = "<div><span style='font-weight:bold;font-size:36pt;margin-bottom:20px;float:left'>Inventory.</span></div><div style=\"font-family:'calibri'; font-size:11pt;padding: 20px; width:50%;float:left\">";
+		html = i18n.__("index.reportsShares.html1", {dateto: dateto}); //"<div><span style='font-weight:bold;font-size:36pt;margin-bottom:20px;float:left'>Inventory.</span></div><div style=\"font-family:'calibri'; font-size:11pt;padding: 20px; width:50%;float:left\">";
 
 		if(datefrom == 'all'){
-			html += "<p>This report is listing all the inventory uploaded:</p></div>"
+			html += i18n.__("index.reportsShares.html2"); //"<p>This report is listing all the inventory uploaded:</p></div>"
 		} else {
-			html += "<p>This report is listing the inventory uploaded between " + moment(datefrom).tz("America/New_York").format('MM-DD-YYYY') + " and " + moment(dateto).tz("America/New_York").format('MM-DD-YYYY') + "</p></div>"
+			html += i18n.__("index.reportsShares.html3") + moment(datefrom).tz("America/New_York").format('MM-DD-YYYY') + i18n.__("index.reportsShares.html4") + moment(dateto).tz("America/New_York").format('MM-DD-YYYY') + i18n.__("index.reportsShares.html5");
+			//"<p>This report is listing the inventory uploaded between " + moment(datefrom).tz("America/New_York").format('MM-DD-YYYY') + " and " + moment(dateto).tz("America/New_York").format('MM-DD-YYYY') + "</p></div>"
 		}
 		html += params;
-		html +="<table><tbody><tr style='color: white;background-color: #3d9dcb;'><td style='font-size: 12px;'>Reagent</td><td style='font-size: 12px;'>Vendor</td><td style='font-size: 12px;'>Catalog#</td><td style='font-size: 12px;'>Location</td><td style='font-size: 12px;'>User</td><td>Date</td></tr>"
+		html += i18n.__("index.reportsShares.html6");
+		//"<table><tbody><tr style='color: white;background-color: #3d9dcb;'><td style='font-size: 12px;'>Reagent</td><td style='font-size: 12px;'>Vendor</td><td style='font-size: 12px;'>Catalog#</td><td style='font-size: 12px;'>Location</td><td style='font-size: 12px;'>User</td><td>Date</td></tr>"
 		
 			for(var prop in results){
 				isempty = false;
@@ -767,7 +776,8 @@ console.log("report on shares my lab: " + mylab);
 				html += " <td style='font-size: 12px;'>" + moment(date).tz("America/New_York").format('MM-DD-YYYY') + "</td></tr>";
 		
 			}
-			html += "</tbody></table><p><i><b>The LabYoke Team.</b></i></p><img style='width: 141px; margin: 0 20px;float:left' src='https:\/\/team-labyoke.herokuapp.com\/images\/yoke4.png', alt='The Yoke',  title='Yoke', class='yokelogo'/>";
+			html += "</tbody></table><p><i><b>" + i18n.__("index.reportsShares.html7") + "</b></i></p><img style='width: 141px; margin: 0 20px;float:left' src='https:\/\/team-labyoke.herokuapp.com\/images\/yoke4.png', alt='The Yoke',  title='Yoke', class='yokelogo'/>";
+			//html += "</tbody></table><p><i><b>The LabYoke Team.</b></i></p><img style='width: 141px; margin: 0 20px;float:left' src='https:\/\/team-labyoke.herokuapp.com\/images\/yoke4.png', alt='The Yoke',  title='Yoke', class='yokelogo'/>";
 		}
 		if(!isempty){
 			callback(null, html);
@@ -779,6 +789,7 @@ console.log("report on shares my lab: " + mylab);
 };
 
 LabYokeReporterOrders.prototype.reportOrders = function(callback) {
+	var i18n = this.res;
 	var results;
 	var datefrom = this.datefrom;
 	var dateto = this.dateto;
@@ -801,10 +812,10 @@ console.log("report on orders: " + labsindept);
 
 	if(datefrom != null && dateto != null && datefrom !=undefined && dateto !=undefined && datefrom !="" && dateto !=""){
 		if(params == ""){
-			params += "<div style='font-weight:bold'>Parameters</div>";
+			params += i18n.__("index.reportsShares.params"); //"<div style='font-weight:bold'>Parameters</div>";
 		}
-		params += "<div><span style='font-weight:bold'>Date From: </span><span>" + datefrom + "</span></div>";
-		params += "<div><span style='font-weight:bold'>Date To: </span><span>" + dateto + "</span></div>";
+		params += i18n.__("index.reportsShares.params1", {datefrom: datefrom}); // "<div><span style='font-weight:bold'>Date From: </span><span>" + datefrom + "</span></div>";
+		params += i18n.__("index.reportsShares.params1", {dateto: dateto}); // "<div><span style='font-weight:bold'>Date To: </span><span>" + dateto + "</span></div>";
 		if(where == "")
 			where =" where ";
 		where += "date between '" + datefrom + "' and '" + dateto + "'";
@@ -813,9 +824,9 @@ console.log("report on orders: " + labsindept);
 	}
 	if(lab != null && lab !=undefined && lab !="all"){
 		if(params == ""){
-			params += "<div style='font-weight:bold'>Parameters</div>";
+			params += i18n.__("index.reportsShares.params"); //"<div style='font-weight:bold'>Parameters</div>";
 		}
-		params += "<div><span style='font-weight:bold'>Lab: </span><span>" + lab + "</span></div>";
+		params += "<div><span style='font-weight:bold'>" + i18n.__("index.reportsOrders.html1") + "</span><span>" + lab + "</span></div>";
 		if(where == "")
 			where =" where ";
 		if(where.trim() != "where")
@@ -884,14 +895,16 @@ console.log("report on orders: " + labsindept);
 		console.log("results : " + results);
 		var html = "";
 		if(results != null && results != ""){
-		html = "<div><span style='font-weight:bold;font-size:36pt;margin-bottom:20px;float:left'>Orders.</span></div><div style=\"font-family:'calibri'; font-size:11pt;padding: 20px; width:50%;float:left\">";
+		html = "<div><span style='font-weight:bold;font-size:36pt;margin-bottom:20px;float:left'>" + i18n.__("index.reportsOrders.html2") + "</span></div><div style=\"font-family:'calibri'; font-size:11pt;padding: 20px; width:50%;float:left\">";
 		if(datefrom == 'all'){
-			html += "<p>This report is listing all the orders requested:</p></div>"
+			html += i18n.__("index.reportsOrders.html3"); //"<p>This report is listing all the orders requested:</p></div>"
 		} else {
-			html += "<p>This report is listing the orders requested between " + moment(datefrom).tz("America/New_York").format('MM-DD-YYYY') + " and " + moment(dateto).tz("America/New_York").format('MM-DD-YYYY') + "</p></div>"
+			html += i18n.__("index.reportsOrders.html4") + moment(datefrom).tz("America/New_York").format('MM-DD-YYYY') + i18n.__("index.reportsShares.html4") + moment(dateto).tz("America/New_York").format('MM-DD-YYYY') + "</p></div>"
+			//html += "<p>This report is listing the orders requested between " + moment(datefrom).tz("America/New_York").format('MM-DD-YYYY') + " and " + moment(dateto).tz("America/New_York").format('MM-DD-YYYY') + "</p></div>"
 		}
 		html += params;
-		html +="<table><tbody><tr style='color: white;background-color: #3d9dcb;'><td style='font-size: 12px;'>Reagent</td><td style='font-size: 12px;'>Vendor</td><td style='font-size: 12px;'>Catalog#</td><td style='font-size: 12px;'>Owner</td><td style='font-size: 12px;'>Requestor</td><td>Date</td></tr>"
+		html += i18n.__("index.reportsOrders.html5");
+		//html +="<table><tbody><tr style='color: white;background-color: #3d9dcb;'><td style='font-size: 12px;'>Reagent</td><td style='font-size: 12px;'>Vendor</td><td style='font-size: 12px;'>Catalog#</td><td style='font-size: 12px;'>Owner</td><td style='font-size: 12px;'>Requestor</td><td>Date</td></tr>"
 		
 			for(var prop in results){
 				isempty = false;
@@ -911,7 +924,7 @@ console.log("report on orders: " + labsindept);
 				html += " <td style='font-size: 12px;'>" + moment(date).tz("America/New_York").format('MM-DD-YYYY') + "</td></tr>";
 		
 			}
-			html += "</tbody></table><p><i><b>The LabYoke Team.</b></i></p><img style='width: 141px; margin: 0 20px;float:left' src='https:\/\/team-labyoke.herokuapp.com\/images\/yoke4.png', alt='The Yoke',  title='Yoke', class='yokelogo'/>";
+			html += "</tbody></table><p><i><b>" + i18n.__("index.reportsShares.html7") + "</b></i></p><img style='width: 141px; margin: 0 20px;float:left' src='https:\/\/team-labyoke.herokuapp.com\/images\/yoke4.png', alt='The Yoke',  title='Yoke', class='yokelogo'/>";
 		}
 		
 		if(!isempty){
@@ -1134,6 +1147,7 @@ LabyokerLab.prototype.getLabsInDept = function(callback) {
 
 
 LabYokerOrder.prototype.order = function(callback) {
+	var i18n = this.res;
 	var results;
 	var agent = this.agent;
 	var vendor = this.vendor;
@@ -1158,28 +1172,28 @@ LabYokerOrder.prototype.order = function(callback) {
 	query.on("end", function(result) {
 		results = result.rows;
 
-		var subject = "LabYoke - Pending Order for " + agent;
-		var subjectReq = "LabYoke - Your Request to order " + agent;
-		var body = "<div style='text-align:center'><img style='width: 141px; margin: 0 20px;' src='https:\/\/team-labyoke.herokuapp.com\/images\/yoke4.png', alt='The Yoke',  title='Yoke', class='yokelogo'/></div><div style=\"font-family:'calibri'; font-size:11pt;padding: 20px;float:left\">Hello " + location
+		var subject = /*"LabYoke - Pending Order for "*/ i18n.__("index.orders.subject") + agent;
+		var subjectReq = /*"LabYoke - Your Request to order "*/ i18n.__("index.orders.resubject") + agent;
+		var body = "<div style='text-align:center'><img style='width: 141px; margin: 0 20px;' src='https:\/\/team-labyoke.herokuapp.com\/images\/yoke4.png', alt='The Yoke',  title='Yoke', class='yokelogo'/></div><div style=\"font-family:'calibri'; font-size:11pt;padding: 20px;float:left\">" + i18n.__("index.orders.hello")  + " " location
 				+ ",<br/><br/>";
-		var bodyReq = "<div style='text-align:center'><img style='width: 141px; margin: 0 20px;' src='https:\/\/team-labyoke.herokuapp.com\/images\/yoke4.png', alt='The Yoke',  title='Yoke', class='yokelogo'/></div><div style=\"font-family:'calibri'; font-size:11pt;padding: 20px;float:left\">Hello,<br/><br/>";
-		body += "This is a kind request to share 100 units from the following inventory:";
-		bodyReq += "You have requested 100 units from the following inventory:";
-		body += "<br><b>Reagent: </b> " + agent;
-		bodyReq += "<br><b>Reagent: </b> " + agent;
-		body += "<br><b>Vendor: </b> " + vendor;
-		bodyReq += "<br><b>Vendor: </b> " + vendor;
-		body += "<br><b>Catalog#: </b> " + catalognumber;
-		bodyReq += "<br><b>Catalog#: </b> " + catalognumber;
-		body += "<br><b>Owner: </b> " + email;
-		body += "<br><b>Requestor: </b> " + sendemail;
-		bodyReq += "<br><b>Owner: </b> " + email;
-		body += "<br><b>Requestor Lab: </b> " + lab;
-		bodyReq += "<br><b>Requestor Lab: </b> " + lab;
-		body += "<p>Best regards,";
-		bodyReq += "<p>Best regards,";
-		body += "</p><b><i>The LabYoke Team.</i></b></div>";
-		bodyReq += "</p><b><i>The LabYoke Team.</i></b></div>";
+		var bodyReq = "<div style='text-align:center'><img style='width: 141px; margin: 0 20px;' src='https:\/\/team-labyoke.herokuapp.com\/images\/yoke4.png', alt='The Yoke',  title='Yoke', class='yokelogo'/></div><div style=\"font-family:'calibri'; font-size:11pt;padding: 20px;float:left\">" + i18n.__("index.orders.hello") + ",<br/><br/>";
+		body += i18n.__("index.orders.body1"); //"This is a kind request to share 100 units from the following inventory:";
+		bodyReq += i18n.__("index.orders.body2"); //"You have requested 100 units from the following inventory:";
+		body += "<br><b>" + i18n.__("index.orders.reagent") + ": </b> " + agent;
+		bodyReq += "<br><b>" + i18n.__("index.orders.reagent") + ": </b> " + agent;
+		body += "<br><b>" + i18n.__("index.orders.vendor") + ": </b> " + vendor;
+		bodyReq += "<br><b>" + i18n.__("index.orders.vendor") + ": </b> " + vendor;
+		body += "<br><b>" + i18n.__("index.orders.catalog") + ": </b> " + catalognumber;
+		bodyReq += "<br><b>" + i18n.__("index.orders.catalog") + "#: </b> " + catalognumber;
+		body += "<br><b>" + i18n.__("index.orders.email") + ": </b> " + email;
+		body += "<br><b>" + i18n.__("index.orders.sendemail") + ": </b> " + sendemail;
+		bodyReq += "<br><b>" + i18n.__("index.orders.email") + ": </b> " + email;
+		body += "<br><b>" + i18n.__("index.orders.lab") + ": </b> " + lab;
+		bodyReq += "<br><b>" + i18n.__("index.orders.lab") + ": </b> " + lab;
+		body += "<p>" + i18n.__("index.orders.best");
+		bodyReq += "<p>" + i18n.__("index.orders.best");
+		body += "</p><b><i>" + i18n.__("index.reportsShares.html7") + "</i></b></div>";
+		bodyReq += "</p><b><i>" + i18n.__("index.reportsShares.html7") + "</i></b></div>";
 		console.log("order body: " + body);
 		var tes = "UPDATE vm2016_agentsshare SET quantity = " + quantity + " WHERE agent='" + agent + "' AND vendor='" + vendor + "' AND catalognumber='" + catalognumber + "' AND email='" + email + "'";
 		console.log("order tes: " + tes);
@@ -1476,9 +1490,10 @@ LabYokeSearch.prototype.findagents = function(callback) {
 //var crypt = require('bcrypt-nodejs');
 var salt = crypt.genSaltSync(1);
 
-Labyoker = function(username, password) {
+Labyoker = function(username, password, res) {
 	this.username = username;
 	this.password = password;
+	this.res = res;
 
 };
 
@@ -1767,6 +1782,7 @@ LabyokerPasswordChange.prototype.checkIfChangePassword = function(callback) {
 }
 
 LabyokerRegister.prototype.register = function(callback) {
+	var i18n = this.res;
 	var username = this.username;
 	var password = this.password;
 	var lab = this.lab;
@@ -1826,17 +1842,17 @@ LabyokerRegister.prototype.register = function(callback) {
 					/*if (email.length == 4 || email.length == 2) {
 						email += "@netlight.com";
 					}*/
-					var subject = "Labyoke - Start Labyoking";
-					var body = "<div style='text-align:center'><img style='width: 141px; margin: 0 20px;' src='https:\/\/team-labyoke.herokuapp.com\/images\/yoke4.png', alt='The Yoke',  title='Yoke', class='yokelogo'/></div><div style=\"font-family:'calibri'; font-size:11pt;padding: 20px;float:left\">Hello " + firstname
+					var subject = i18n.__("index.register.subject"); //"Labyoke - Start Labyoking";
+					var body = "<div style='text-align:center'><img style='width: 141px; margin: 0 20px;' src='https:\/\/team-labyoke.herokuapp.com\/images\/yoke4.png', alt='The Yoke',  title='Yoke', class='yokelogo'/></div><div style=\"font-family:'calibri'; font-size:11pt;padding: 20px;float:left\">" + i18n.__("index.orders.hello") + " " + firstname
 							+ ",<br/><br/>";
-					body += "Thanks for registering with @LabYoke.";
-					body += "You are one step away from labyoking! Please click on this link:<br/>";
+					body += i18n.__("index.register.body1"); //"Thanks for registering with @LabYoke.";
+					body += i18n.__("index.register.body2"); //"You are one step away from labyoking! Please click on this link:<br/>";
 					body += "<p style=\"text-align:center\"><span style=''><b><a href='https:\/\/team-labyoke.herokuapp.com\/confirmreg/"
 							+ hash_register_id + "'>https:\/\/team-labyoke.herokuapp.com\/confirmreg?id="
 							+ hash_register_id
 							+ "</a></b></span></p>";
-					body += "<p>[PS: Start <a href=\"https:\/\/team-labyoke.herokuapp.com\/share\">sharing</a> some chemicals today?]";
-					body += "</p><b><i>The LabYoke Team.</i></b></div>";
+					body += i18n.__("index.register.body3") + "<a href=\"https:\/\/team-labyoke.herokuapp.com\/share\"> " + i18n.__("index.register.body2") + "</a>" + i18n.__("index.register.body4");
+					body += "</p><b><i>" + i18n.__("index.reportsShares.html7") + "</i></b></div>";
 					console.log("body: " + body);
 
 					var mailOptions = new MailOptions(email, subject, body);
@@ -1883,6 +1899,7 @@ LabyokerRegister.prototype.register = function(callback) {
 };
 
 Labyoker.prototype.requestChangePassword = function(callback) {
+	var i18n = this.res;
 	var username = this.username;
 	var dateStripped = this.password;
 
@@ -1923,18 +1940,19 @@ Labyoker.prototype.requestChangePassword = function(callback) {
 					/*if (email.length == 4 || email.length == 2) {
 						email += "@netlight.com";
 					}*/
-					var subject = "Labyoke - Change Password Request";
-					var body = "<div style='text-align:center'><img style='width: 141px; margin: 0 20px;' src='https:\/\/team-labyoke.herokuapp.com\/images\/yoke4.png', alt='The Yoke',  title='Yoke', class='yokelogo'/></div><div style=\"font-family:'calibri'; font-size:11pt;padding: 20px;float:left\">Hello " + name
+					var subject = i18n.__("index.change.subject"); //"Labyoke - Change Password Request";
+					var body = "<div style='text-align:center'><img style='width: 141px; margin: 0 20px;' src='https:\/\/team-labyoke.herokuapp.com\/images\/yoke4.png', alt='The Yoke',  title='Yoke', class='yokelogo'/></div><div style=\"font-family:'calibri'; font-size:11pt;padding: 20px;float:left\">" + i18n.__("index.orders.hello") + " " + name
 							+ ",<br/><br/>";
-					body += "You have requested to change your password @LabYoke. Please click on this link:<br/>";
+					body += i18n.__("index.change.body1"); //"You have requested to change your password @LabYoke. Please click on this link:<br/>";
 					body += "<p style=\"text-align:center\"><span style=''><b><a href='https:\/\/team-labyoke.herokuapp.com\/changepassword/"
 							+ hash + "'>https:\/\/team-labyoke.herokuapp.com\/changepassword?id="
 							+ hash
 							+ "</a></b></span></p>";
-					body += "<p><span>You have <b><span style='color:red;'>1 day</span>"
-							+ "</b> to change your password. But don't worry you can always send us another <a href=\"https:\/\/team-labyoke.herokuapp.com\/forgot\">request</a> once this one has expired.</span> </p>";
-					body += "<p>[PS: Have you <a href=\"https:\/\/team-labyoke.herokuapp.com\/share\">shared</a> some chemicals today?]";
-					body += "</p><b><i>The LabYoke Team.</i></b></div>";
+					//body += "<p><span>You have <b><span style='color:red;'>1 day</span></b> to change your password. But don't worry you can always send us another " + "<a href=\"https:\/\/team-labyoke.herokuapp.com\/forgot\">" + "request" + "</a>" + " once this one has expired." + "</span> </p>";
+					body += i18n.__("index.change.body2") + "<a href=\"https:\/\/team-labyoke.herokuapp.com\/forgot\">" + i18n.__("index.change.body3") + "</a>" + i18n.__("index.change.body4") + "</span> </p>";
+					//body += "<p>[PS: Have you " + "<a href=\"https:\/\/team-labyoke.herokuapp.com\/share\">" + "shared" + "</a>" + " some chemicals today?]";
+					body += i18n.__("index.change.body5")  + "<a href=\"https:\/\/team-labyoke.herokuapp.com\/share\">" + i18n.__("index.change.body6")  + "</a>" + i18n.__("index.change.body7") ;
+					body += "</p><b><i>" + i18n.__("index.reportsShares.html7")  + "</i></b></div>";
 					console.log("body: " + body);
 
 					var mailOptions = new MailOptions(email, subject, body);
@@ -2080,6 +2098,7 @@ LabYokerChangeShare.prototype.cancelShare = function(callback) {
 	var email = this.email;
 	var datenow = this.datenow;
 	var requestor = this.requestor;
+	var i18n = this.res;
 	
 	var date = this.date;
 	console.log("date2: " + date);
@@ -2103,14 +2122,15 @@ LabYokerChangeShare.prototype.cancelShare = function(callback) {
 		results = "success";
 
 		if(table == lab+"_orders" && checked == 0){
-			var subject = "LabYoke Order - Cancelled for " + agent;
-			var body = "<div style='text-align:center'><img style='width: 141px; margin: 0 20px;' src='https:\/\/team-labyoke.herokuapp.com\/images\/yoke4.png', alt='The Yoke',  title='Yoke', class='yokelogo'/></div><div style=\"font-family:'calibri'; font-size:11pt;padding: 20px;float:left\">Hello,<br/><br/>";
-			body += "Unfortunately your order has been cancelled due to insufficient quantities from the following inventory: <br><b>Reagent: </b> " + agent;
-			body += "<br><b>Vendor: </b> " + vendor;
-			body += "<br><b>Catalog#: </b> " + catalognumber;
-			body += "<br><b>Owner: </b> " + email;
-			body += "<p>Best regards,";
-			body += "</p><b><i>The LabYoke Team.</i></b></div>";
+			var subject = i18n.__("index.cancelled.subject");//"LabYoke Order - Cancelled for " + agent;
+			var body = "<div style='text-align:center'><img style='width: 141px; margin: 0 20px;' src='https:\/\/team-labyoke.herokuapp.com\/images\/yoke4.png', alt='The Yoke',  title='Yoke', class='yokelogo'/></div><div style=\"font-family:'calibri'; font-size:11pt;padding: 20px;float:left\">" + i18n.__("index.orders.hello") + ",<br/><br/>";
+			//body += "Unfortunately your order has been cancelled due to insufficient quantities from the following inventory:" + " <br><b>Reagent: </b> " + agent;
+			body += i18n.__("index.cancelled.body1") + " <br><b>" + i18n.__("index.orders.reagent") + ": </b> " + agent;
+			body += "<br><b>" + i18n.__("index.orders.vendor") + ": </b> " + vendor;
+			body += "<br><b>" + i18n.__("index.orders.catalog") + ": </b> " + catalognumber;
+			body += "<br><b>" + i18n.__("index.orders.email") + ": </b> " + email;
+			body += "<p>" + i18n.__("index.orders.best");
+			body += "</p><b><i>" + i18n.__("index.reportsShares.html7") + "</i></b></div>";
 			console.log("order body: " + body);
 			var mailOptions = new MailOptionsWithCC(requestor, subject, body, email);
 			mailOptions.sendAllEmails();

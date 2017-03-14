@@ -408,7 +408,7 @@ totalshares = t[0].counting;
 			var reqemail = req.session.email;
 			var reqcategory = req.body.categoryform;
 			var quantity = req.body.qtyform;
-			var labYokerorder = new LabYokerOrder(lab, agent, vendor, catalognumber,email,location,reqemail,reqcategory,quantity, req.session.lab);
+			var labYokerorder = new LabYokerOrder(lab, agent, vendor, catalognumber,email,location,reqemail,reqcategory,quantity, req.session.lab, res);
 			labYokerorder.order(function(error, results) {
 				if(results != null && results=="successfulOrder"){
 					console.log("ordering agentform: " + agent);
@@ -453,7 +453,7 @@ totalshares = t[0].counting;
 			console.log("table: " + table);
 			console.log("email: " + email);
 			console.log("requestoremail: " + requestor);
-			var labYokechange = new LabYokerChangeShare(table,agent, vendor, catalognumber,email,requestor,checked,datenow,date, lab);
+			var labYokechange = new LabYokerChangeShare(table,agent, vendor, catalognumber,email,requestor,checked,datenow,date, lab, res);
 			labYokechange.cancelShare(function(error, results) {
 				if(results != null && results.length > 0){
 					res.redirect('/share');			
@@ -476,17 +476,16 @@ totalshares = t[0].counting;
 			if(req.session.labs == undefined){
 				var labyokerLabs = new LabyokerLabs('','');
 				labyokerLabs.getlabs(function(error, labs) {
-						req.session.labs = labs;
-						console.log("load labs in reports : " + labs);
-						res.render('reports', {lang:req.cookies.i18n, i18n:res,dept: req.session.dept, categories: categories, labs: req.session.labs, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, isLoggedInAdmin: req.session.admin, loggedIn : true, title: 'Reports', isLoggedInAdmin: req.session.admin});
-						req.session.messages = null;
+					req.session.labs = labs;
+					console.log("load labs in reports : " + labs);
+					res.render('reports', {lang:req.cookies.i18n, i18n:res,dept: req.session.dept, categories: categories, labs: req.session.labs, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, isLoggedInAdmin: req.session.admin, loggedIn : true, title: 'Reports', isLoggedInAdmin: req.session.admin});
+					req.session.messages = null;
 				});
 			} else {
 				res.render('reports', {lang:req.cookies.i18n, i18n:res,dept: req.session.dept, categories: categories, labs: req.session.labs, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, isLoggedInAdmin: req.session.admin, loggedIn : true, title: 'Reports', isLoggedInAdmin: req.session.admin});
 				req.session.messages = null;
 			}
 		});
-
 	});
 
 	router.post('/reportShares', isLoggedInAdmin, function(req, res) {
@@ -495,7 +494,7 @@ totalshares = t[0].counting;
 		var dateto = req.body.reportDateTo;
 		var category = req.body.reportCategory;
 		console.log("reportSomething " + req.body.reportDateFrom);
-		var labYokereporter = new LabYokeReporterShares(datefrom, dateto, req.session.lab, req.session.labs);
+		var labYokereporter = new LabYokeReporterShares(datefrom, dateto, req.session.lab, req.session.labs,res);
 		labYokereporter.reportShares(function(error, results) {
 			if(results != null){
 				console.log("res " + results);
@@ -606,7 +605,7 @@ totalshares = t[0].counting;
 		console.log("reportOrders reportDateFromOrders: " + req.body.reportDateFromOrders);
 		console.log("reportOrders lab: " + lab);
 		console.log("reportOrders category: " + category);
-		var labYokereporter = new LabYokeReporterOrders(datefrom, dateto, lab, req.session.labs, req.session.lab);
+		var labYokereporter = new LabYokeReporterOrders(datefrom, dateto, lab, req.session.labs, req.session.lab, res);
 		labYokereporter.reportOrders(function(error, results) {
 			if(results != null){
 				console.log("res " + results);
@@ -697,7 +696,7 @@ totalshares = t[0].counting;
 				var dateStripped = moment(new Date).tz("America/New_York").format(
 				'MM-DD-YYYY');
 				console.log("dateStripped2: " + dateStripped);
-				var labyoker = new Labyoker(forgotuser,dateStripped);
+				var labyoker = new Labyoker(forgotuser,dateStripped, res);
 				labyoker.requestChangePassword(function(error, done) {
 					console.log("done: " + (done != null && done.length > 0 && done == 'alreadySent'));
 					console.log("done2: " + (done != null && done == 'alreadySent'));
@@ -823,7 +822,7 @@ totalshares = t[0].counting;
 			console.log("user_surname: " + user_surname);
 			console.log("user_email: " + user_email);
 			console.log("user_tel: " + user_tel);
-			var labyokerRegister = new LabyokerRegister(user,user_pwd,lab,user_name,user_surname,user_email,user_tel);
+			var labyokerRegister = new LabyokerRegister(user,user_pwd,lab,user_name,user_surname,user_email,user_tel, res);
 			/*var regfirstname = req.body.regfirstname;
 			console.log("regfirstname entered " + regfirstname);
 			if (regfirstname != null && regfirstname.length > 0){
@@ -894,7 +893,7 @@ totalshares = t[0].counting;
 			rendered = true;
 		} else if (user_name && user_surname && user_email && user_tel) {
 				console.log("first section processing...");
-				var labyokerRegister = new LabyokerRegister(null,null,null,user_name,user_surname,user_email,user_tel);;
+				var labyokerRegister = new LabyokerRegister(null,null,null,user_name,user_surname,user_email,user_tel, res);;
 				req.session.firstname = user_name;
 				req.session.lastname = user_surname;
 				req.session.email = user_email;
@@ -995,11 +994,13 @@ totalshares = t[0].counting;
 				console.log("results " + results[0].length);	
 				if (searchText != null && searchText.length > 0){
 					if(results[0].length == 0){
-						messageStr = "Sorry we could not find any results with your reagent search request: <b>" + searchText + "</b>. Please try again.";
+						messageStr = (res.__("index.search.message1", {searchText:searchText})).replace(/&lt;/g, '<').replace(/&gt;/g, '>');
+						//messageStr = "Sorry we could not find any results with your reagent search request: <b>" + searchText + "</b>. Please try again.";
 					}
 					res.render('search', {lang:req.cookies.i18n, i18n:res, mylab: req.session.lab, message: messageStr, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, isLoggedInAdmin: req.session.admin, title: 'Search', fullname: req.session.fullname, sendemail: req.session.email, searchResults : results[0], agentsResults : results[1], searchformText: searchText, loggedIn : true});
 				} else {
-					res.render('search', {lang:req.cookies.i18n, i18n:res, message:'You entered an invalid reagent keyword. Please try again.',mylab: req.session.lab,ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, isLoggedInAdmin: req.session.admin, title: 'Search', loggedIn : true, agentsResults : results[1]});
+					messageStr = "You entered an invalid reagent keyword. Please try again.";
+					res.render('search', {lang:req.cookies.i18n, i18n:res, message: res.__("index.search.message2"), mylab: req.session.lab,ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, isLoggedInAdmin: req.session.admin, title: 'Search', loggedIn : true, agentsResults : results[1]});
 				}
 				req.session.messages = null;
 			});
@@ -1018,11 +1019,13 @@ totalshares = t[0].counting;
 				console.log("results " + results[0].length);	
 				if (searchText != null && searchText.length > 0){
 					if(results[0].length == 0){
-						messageStr = "Sorry we could not find any results with your catalog search request: <b>" + searchText + "</b>. Please try again.";
+						messageStr = (res.__("index.search.message1", {searchText:searchText})).replace(/&lt;/g, '<').replace(/&gt;/g, '>');
+						//messageStr = "Sorry we could not find any results with your catalog search request: <b>" + searchText + "</b>. Please try again.";
 					}
 					res.render('search', {lang:req.cookies.i18n, i18n:res, mylab: req.session.lab, messageCatalog: messageStr, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, isLoggedInAdmin: req.session.admin, title: 'Search', fullname: req.session.fullname, sendemail: req.session.email, searchResults : results[0], agentsResults : results[1], searchformTextCatalog: searchText, loggedIn : true});
 				} else {
-					res.render('search', {lang:req.cookies.i18n, i18n:res, messageCatalog:'You entered an invalid catalog keyword. Please try again.',mylab: req.session.lab,ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, isLoggedInAdmin: req.session.admin, title: 'Search', loggedIn : true, agentsResults : results[1]});
+					messageStr = "You entered an invalid catalog keyword. Please try again.";
+					res.render('search', {lang:req.cookies.i18n, i18n:res, messageCatalog: res.__("index.searchcatalog.message"),mylab: req.session.lab,ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, isLoggedInAdmin: req.session.admin, title: 'Search', loggedIn : true, agentsResults : results[1]});
 				}
 				req.session.messages = null;
 			});
