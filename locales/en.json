@@ -34,7 +34,8 @@
     "layout.Orders": " Orders",
     "layout.Profile": "'s Profile",
     "layout.Help": " Help",
-    "layout.About Us": " Us",
+    "layout.Us": " Us",
+    "layout.About Us": " About Us",
     "layout.Logout": "Logout",
     
     "about.aboutus": "Who Are We",
