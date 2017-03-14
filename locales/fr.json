@@ -61,10 +61,10 @@
     "help.table.location": "Proprio",
     "help.table.order": "Commander",
     
-    "register.desc1": "Vous êtes en route pour <a href='/login'> LabYoker </a> avec d'autres chercheurs.",
+    "register.desc1": "En route pour <a href='/login'> LabYoker </a> avec d'autres chercheurs.",
     "register.title": "Inscription.",
     "register.title2": " L'inscription ",
-    "register.subtitle": "est rapide! <span class='labColor'><b>Tous les champs</b></span> sont <span class='yokeColor'><b> requis</b></span>.",
+    "register.subtitle": "est rapide! <span class='labColor'><b>Tous les champs</b></span> sont <span class='yokeColor'><b>obligatoires</b></span>.",
     "register.form.name": "Prénom",
     "register.form.lastname": "Nom de Famille",
     "register.form.email": "Addresse Email",

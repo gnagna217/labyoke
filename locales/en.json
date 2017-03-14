@@ -62,7 +62,7 @@
     "help.table.order": "Order",
     
     "register.title": "Sign Up.",
-    "register.desc1": "You are on your way to <a href='/login'>Lab Yoking</a> with fellow researchers.",
+    "register.desc1": "On your way to <a href='/login'>Lab Yoking</a> with fellow researchers.",
     "register.title2": " Registering ",
     "register.subtitle": "is a breeze! <span class='labColor'><b>All</b></span> fields are <span class='yokeColor'><b>required</b></span>.",
     "register.form.name": "First Name",
