@@ -1174,7 +1174,7 @@ LabYokerOrder.prototype.order = function(callback) {
 
 		var subject = /*"LabYoke - Pending Order for "*/ i18n.__("index.orders.subject") + agent;
 		var subjectReq = /*"LabYoke - Your Request to order "*/ i18n.__("index.orders.resubject") + agent;
-		var body = "<div style='text-align:center'><img style='width: 141px; margin: 0 20px;' src='https:\/\/team-labyoke.herokuapp.com\/images\/yoke4.png', alt='The Yoke',  title='Yoke', class='yokelogo'/></div><div style=\"font-family:'calibri'; font-size:11pt;padding: 20px;float:left\">" + i18n.__("index.orders.hello")  + " " location
+		var body = "<div style='text-align:center'><img style='width: 141px; margin: 0 20px;' src='https:\/\/team-labyoke.herokuapp.com\/images\/yoke4.png', alt='The Yoke',  title='Yoke', class='yokelogo'/></div><div style=\"font-family:'calibri'; font-size:11pt;padding: 20px;float:left\">" + i18n.__("index.orders.hello")  + " " + location
 				+ ",<br/><br/>";
 		var bodyReq = "<div style='text-align:center'><img style='width: 141px; margin: 0 20px;' src='https:\/\/team-labyoke.herokuapp.com\/images\/yoke4.png', alt='The Yoke',  title='Yoke', class='yokelogo'/></div><div style=\"font-family:'calibri'; font-size:11pt;padding: 20px;float:left\">" + i18n.__("index.orders.hello") + ",<br/><br/>";
 		body += i18n.__("index.orders.body1"); //"This is a kind request to share 100 units from the following inventory:";
