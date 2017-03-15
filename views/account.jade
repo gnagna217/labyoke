@@ -93,8 +93,20 @@ block content
                                   div(style="top: -35px; position: relative; float: right; margin-right: 10px;")
                                     div(class="arrow-up")
                                     div(class="arrow-down")
-                                  input(name="column" type="hidden" id="column" value="lang")
+                                  input(name="columnlang" type="hidden" id="columnlang" value="lang")
                                   input(name="formemail" type="hidden" id="formemail" value=email)
+                                script.
+                                  window.onload = function() {
+                                    $('#monthAll').hide();
+                                    $('#sharesAll').hide();
+
+                                    lang.onchange = function() {
+                                      console.log("changing language " + $('#lang').val());
+                                      $('#columnlang').val($('#lang').val());
+                                      
+                                      //$('#changelang').submit();      
+                                    };
+                                  };
         - if(!resultsAccount || resultsAccount == undefined)
           div
             span(class="yokeColor")!=adminIntro + " <span id='showteam' class='labColor' style='cursor:pointer;font-weight:bold'><div class='buttons'><button type='submit' class='btn btn-success btn-lg btn-block' id='teamTitle'>" + i18n.__("account.button") + "</button></div></span>"
