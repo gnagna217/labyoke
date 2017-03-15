@@ -162,6 +162,16 @@
     "reports.insuff.catalog": "Catalogue",
     "reports.insuff.button": "Générer Réactifs",
 
+    "reports.file.to": " a ",
+    "reports.orders.file": "Rapport Commandes",
+    "reports.orders.file_all": "Rapport Toutes Commandes",
+    "reports.money.file": "Rapport Economies",
+    "reports.money.file_all": "Rapport Toutes Economies",
+    "reports.shares.file": "Rapport Partages",
+    "reports.shares.file_all": "Rapport Tous Partages",
+    "reports.insuff.file": "Rapport Reactifs Insuffisants",
+    "reports.insuff.file_all": "Rapport Tous Reactifs Insuffisants",
+
     "account.title": "Salut ",
     "account.subtitle": "<span>Cette page </span><span style='color: #3d9dcb;'>vous</span> est dediée. <span>Si vous souhaitez modifier vos données personnelles telles que votre numéro de Téléphone.</span>",
     "account.success": "Génial! Vous venez de modifier votre ",

@@ -162,6 +162,16 @@
     "reports.insuff.catalog": "Catalog",
     "reports.insuff.button": "Get Insufficient Reagents",
 
+    "reports.file.to": " to ",
+    "reports.orders.file": "Report Orders",
+    "reports.orders.file_all": "Report All Orders",
+    "reports.money.file": "Report Savings",
+    "reports.money.file_all": "Report All Savings",
+    "reports.shares.file": "Report Shares",
+    "reports.shares.file_all": "Report All Shares",
+    "reports.insuff.file": "Report Insufficient Reagents",
+    "reports.insuff.file_all": "Report All Insufficient Reagents",
+
     "account.title": "Hello ",
     "account.subtitle": "<span>This page is dedicated to </span><span style='color: #3d9dcb;'>you. </span><span>If you wish to change your personal details such as your telephone number or names information.</span>",
     "account.success": "Great! You have successfully changed your ",

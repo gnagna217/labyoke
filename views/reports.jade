@@ -127,14 +127,14 @@ block content
 				p= i18n.__("reports.money.subtitle")
 				- var datefrom_money = datefromMoney
 				- var dateto_money = datetoMoney
-				- var file_money = "reportMoney_" + datefrom_money + "_to_" + dateto_money + ".pdf"
+				- var file_money = i18n.__("reports.money.file") + datefrom_money + i18n.__("reports.file.to") + dateto_money + ".pdf"
 				- var message_fail_share = i18n.__("reports.money.message.fail")
 				- var message_success_money = i18n.__("reports.money.message.success1") + datefrom_money + i18n.__("reports.money.message.success2") + dateto_money + i18n.__("reports.money.message.success3")
 				- if(datefromMoney == null || datefromMoney == undefined || datefromMoney == "")
 					- datefrom_money = i18n.__("reports.money.message.datefrommoney")
 					- dateto_money = ""
 					- message_success_money = i18n.__("reports.money.message.successmoney")
-					- file_money = "reportMoney_all.pdf" 
+					- file_money = i18n.__("reports.money.file_all") + ".pdf" 
 				if (addMessageMoney == 'failure')
 					div(class="alert alert-danger")!= message_fail_share
 				if (addMessageMoney == 'success')
@@ -239,14 +239,14 @@ block content
 				p= i18n.__("reports.orders.subtitle")
 				- var datefrom_orders = datefromOrders
 				- var dateto_orders = datetoOrders
-				- var file_orders = "reportOrders_" + datefrom_orders + "_to_" + dateto_orders + ".pdf"
+				- var file_orders = i18n.__("reports.orders.file") + datefrom_orders + i18n.__("reports.file.to") + dateto_orders + ".pdf"
 				- var message_fail_order = i18n.__("reports.orders.message.fail")
 				- var message_success_order = i18n.__("reports.orders.message.success1") + datefrom_orders + i18n.__("reports.orders.message.success2") + dateto_orders + i18n.__("reports.orders.message.success3")
 				- if(datefromOrders == null || datefromOrders == undefined || datefromOrders == "")
 					- datefrom_orders = i18n.__("reports.orders.lab.option")
 					- dateto_orders = ""
 					- message_success_order = i18n.__("reports.orders.message.successorders")
-					- file_orders = "reportOrders_all.pdf" 
+					- file_orders = i18n.__("reports.orders.file_all") + ".pdf" 
 				if (addMessageOrders == 'failure')
 					div(class="alert alert-danger")!= message_fail_order
 				if (addMessageOrders == 'success')
@@ -369,14 +369,14 @@ block content
 				p= i18n.__("reports.shares.subtitle")
 				- var datefrom_shares = datefromShares
 				- var dateto_shares = datetoShares
-				- var file_shares = "reportShares_" + datefrom_shares + "_to_" + dateto_shares + ".pdf"
+				- var file_shares = i18n.__("reports.shares.file") + datefrom_shares + i18n.__("reports.file.to") + dateto_shares + ".pdf"
 				- var message_fail_share = i18n.__("reports.shares.message.fail")
 				- var message_success_share = i18n.__("reports.shares.message.success1") + datefrom_shares + i18n.__("reports.shares.message.success2") + dateto_shares + i18n.__("reports.shares.message.success3")
 				- if(datefromShares == null || datefromShares == undefined || datefromShares == "")
 					- datefrom_shares = i18n.__("reports.shares.lab.option")
 					- dateto_shares = ""
 					- message_success_share = i18n.__("reports.shares.message.successshares")
-					- file_shares = "reportShares_all.pdf" 
+					- file_shares = i18n.__("reports.shares.file_all") + ".pdf" 
 				if (addMessageShares == 'failure')
 					div(class="alert alert-danger")!= message_fail_share
 				if (addMessageShares == 'success')
@@ -539,7 +539,7 @@ block content
 								button.btn.btn-success.btn-lg.btn-block(type="submit",value="Report",name="submit", style="max-width: 80%;width: 80%;")= i18n.__("reports.insuff.button")
 								img(src="images/ship.png", alt="The Lab", title="Lab", style="border-width:0px; width: 50px; margin-top: -50px;float:right")
 						if(resultsInsuff != null && resultsInsuff !="")
-							- var file_insuff = "reportInsufficient_"+labinsuff+".pdf" 
+							- var file_insuff = i18n.__("reports.insuff.file") + labinsuff + ".pdf" 
 							script(type="text/javascript" src="/javascripts/jspdf.js")
 							script(type="text/javascript" src="/javascripts/FileSaver.js")
 							script.
