@@ -347,7 +347,7 @@
     "index.orders.body2": "You have requested 100 units from the following inventory:",
     "index.orders.reagent": "Reagent",
     "index.orders.vendor": "Vendor",
-    "index.orders.catalognumber": "Catalog#",
+    "index.orders.catalog": "Catalog#",
     "index.orders.email": "Owner",
     "index.orders.sendemail": "Requestor",
     "index.orders.lab": "Requestor Lab:",
