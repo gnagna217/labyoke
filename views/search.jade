@@ -10,6 +10,7 @@ block content
         input(name="categoryform" type="hidden" id="categoryform" value="")
         input(name="qtyform" type="hidden" id="qtyform" value="")
         input(name="labform" type="hidden" id="labform" value="")
+        input(name="langform" type="hidden" id="langform" value="")
         div(id="ios-light")
             center
                 h1 #{i18n.__("search.layovertitle")}
@@ -104,7 +105,8 @@ block content
                             - var location = ob[prop].location  
                             - var category = ob[prop].category  
                             - var qty = ob[prop].quantity
-                            - var lab = ob[prop].lab                    
+                            - var lab = ob[prop].lab 
+                            - var userlang = ob[prop].lang                    
                             tr(class=classname)
                                 td(class="desktabonly")= j
                                 td(class="wrapped") #{ob[prop].agent}
@@ -112,7 +114,7 @@ block content
                                 td(class="desktabonly") #{ob[prop].vendor}
                                 td #{ob[prop].location}
                                 td
-                                  span(onclick="iosLight('#{agent}','#{vendor}','#{catalognumber}','#{reqemail}','#{location}','#{category}','#{qty}','#{lab}','#{lang}')", style="cursor:pointer")
+                                  span(onclick="iosLight('#{agent}','#{vendor}','#{catalognumber}','#{reqemail}','#{location}','#{category}','#{qty}','#{lab}','#{lang}','#{userlang}')", style="cursor:pointer")
                                         img(src="images/ship2.png", alt="Order now", title="Order now", style="border-width:0px; width: 24px; margin-top: 0px;")
                             - j = j + 1
                       script.

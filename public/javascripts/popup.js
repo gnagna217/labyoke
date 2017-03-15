@@ -174,7 +174,7 @@ function iosLight(){
   pop.style.display = "block";
   shade.style.display = "block";
 }
-function iosLight(agent,vendor,catalognumber,reqemail,location,category,qty,lab, lang){
+function iosLight(agent,vendor,catalognumber,reqemail,location,category,qty,lab,lang,userlang){
   var actionorder = document.getElementById("actionorder");
   var orderText = document.getElementById("orderText");
   var emailform = document.getElementById("emailform");
@@ -185,6 +185,7 @@ function iosLight(agent,vendor,catalognumber,reqemail,location,category,qty,lab,
   var categoryform = document.getElementById("categoryform");
   var qtyform = document.getElementById("qtyform");
   var labform = document.getElementById("labform");
+  var langform = document.getElementById("langform");
 
   emailform.value = reqemail;
   agentform.value = agent;
@@ -192,6 +193,9 @@ function iosLight(agent,vendor,catalognumber,reqemail,location,category,qty,lab,
   catalogform.value = catalognumber;
   locationform.value = location;
   categoryform.value = category;
+  langform.value = userlang;
+  console.log("user language is: " + userlang);
+  console.log("language is: " + lang);
 
   qtyform.value = qty;
   labform.value = lab;
