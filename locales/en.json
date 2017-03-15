@@ -394,6 +394,7 @@
     "index.account.name": "name",
     "index.account.surname": "last name",
     "index.account.tel": "telephone number",
+    "index.account.lang": "language",
 
     "key.title": ""
 

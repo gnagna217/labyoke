@@ -184,7 +184,7 @@
     "account.form.email": "Email",
     "account.form.tel": "Tel",
     "account.form.lab": "Labo",
-    "account.form.lang": "Language",
+    "account.form.lang": "Langue",
     "account.button": "Votre Équipe?",
     "account.hide": "Cacher",
     "account.team.desc1": "Votre Équipe <i>",
@@ -391,6 +391,7 @@
     "index.account.name": "prénom",
     "index.account.surname": "nom de famille",
     "index.account.tel": "numéro de téléphone",
+    "index.account.lang": "langue",
 
     "dot.selected": "<b>Quantité: </b>",
     "dot.reagent": " - <b>Réactif:</b> "
