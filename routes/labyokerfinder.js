@@ -571,12 +571,13 @@ LabYokeReporterSavings.prototype.reportInsuff = function(callback) {
 	var lab = this.lab;
 	var agent = this.agent;
 	var catalognumber = this.catalognumber;
+	var i18n = this.res;
 	var selected = "a.agent, b.lab";
 	var where = "a.email = b.email and a.insufficient = 0";
 	//var groupby = "a.category, b.lab, a.price";
 	var params = "";
 	var columns ="<td>" + i18n.__("index.reportsMoney.param9") + "</td><td>Lab</td>";
-	var html = "<div><span style='font-weight:bold;font-size:36pt;margin-bottom:20px;float:left'>Insufficient Reagent Shares.</span></div><div style=\"font-family:'calibri'; font-size:11pt;padding: 20px; width:50%;float:left\">"
+	var html = "<div><span style='font-weight:bold;font-size:36pt;margin-bottom:20px;float:left'>" + i18n.__("index.reportsInsuff.param1") + ".</span></div><div style=\"font-family:'calibri'; font-size:11pt;padding: 20px; width:50%;float:left\">"
 				+ "";
 	console.log("report on savings- datefrom: " + datefrom);
 	console.log("report on savings- dateto: " + dateto);
@@ -591,7 +592,7 @@ console.log("report on insuff: " + labsindept);
 		}
 		params += "<div><span style='font-weight:bold'>" + i18n.__("index.reportsMoney.param1") + ": </span><span>" + lab + "</span></div>";
 		if(where.length>0)
-			where +=" and ";
+			where += i18n.__("index.reportsMoney.param7") ;
 		where += "b.lab = '" + lab + "'";
 	} 
 
