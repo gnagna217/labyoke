@@ -48,12 +48,13 @@ LabYokerChangeShare = function(table, agent, vendor,catalognumber,email,requesto
 	this.res = res;
 };
 
-LabyokerUserDetails = function(column, value, email,curname,cursurname) {
+LabyokerUserDetails = function(column, value, email,curname,cursurname,res) {
 	this.column = column;
 	this.value = value;
 	this.email = email;
 	this.curname = curname;
 	this.cursurname = cursurname;
+	this.res = res;
 }
 
 LabYokeReporterOrders = function(datefrom, dateto, lab, labs, mylab, res) {
@@ -2039,6 +2040,7 @@ LabyokerUserDetails.prototype.changeDetails = function(callback) {
 	var email = this.email;
 	var curname = this.curname;
 	var cursurname = this.cursurname;
+	var i18n = this.res;
 	var results;
 	var query = client.query("UPDATE vm2016_users SET " + column + "='" + value
 			+ "' where email='" + email + "'");
@@ -2084,7 +2086,7 @@ LabyokerUserDetails.prototype.changeDetails = function(callback) {
 			});
 
 		}
-		results = column + " to " + value;
+		results = i18n.__("index.account." + column) + " " +  i18n.__("index.account.to")  + " " + value;
 		callback(null, results);
 	});
 };

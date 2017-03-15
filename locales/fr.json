@@ -382,6 +382,10 @@
     "index.reportsMoney.param14": "Les économies <span style='font-weight:bold'>Totales</span> sont d'un montant de ",
     "index.reportsInsuff.param1": "Réactifs Partagés en Quantité Insduffisante",
 
+    "index.account.to": ":",
+    "index.account.name": "prénom",
+    "index.account.surname": "nom de famille",
+    "index.account.tel": "numéro de téléphone",
 
     "dot.selected": "<b>Quantité: </b>",
     "dot.reagent": " - <b>Réactif:</b> "

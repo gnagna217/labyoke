@@ -385,8 +385,10 @@
     "index.reportsMoney.param14": "The <span style='font-weight:bold'>Total</span> savings are ",
     "index.reportsInsuff.param1": "Insufficient Reagents Shared",
 
-
-
+    "index.account.to": "to",
+    "index.account.name": "name",
+    "index.account.surname": "last name",
+    "index.account.tel": "telephone number",
 
     "key.title": ""
 
