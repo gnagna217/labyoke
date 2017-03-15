@@ -94,12 +94,13 @@ block content
                                     div(class="arrow-up")
                                     div(class="arrow-down")
                                   input(name="column" type="hidden" id="column" value="lang")
+                                  input(name="valuedetail" type="hidden" id="valuedetail" value="")
                                   input(name="formemail" type="hidden" id="formemail" value=email)
                                 script.
                                   window.onload = function() {
                                     document.getElementById("selectlang").onchange = function() {
                                       console.log("changing language " + $('#selectlang').val());
-                                      $('#changelang').find($('input#column')).val($('#selectlang').val());
+                                      $('#changelang').find($('input#valuedetail')).val($('#selectlang').val());
                                       $('#changelang').submit();      
                                     };
                                   };
