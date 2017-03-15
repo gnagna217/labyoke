@@ -1073,8 +1073,7 @@ input::-webkit-inner-spin-button {
 }
 }
 
-@media (min-width: 1051px){
-/*@media (min-width: 768px){*/
+@media (min-width: 768px){
 .center{
     text-align:center;
 }
