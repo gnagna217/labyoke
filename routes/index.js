@@ -580,7 +580,7 @@ totalshares = t[0].counting;
 		console.log("changeDetails col: " + col);
 		console.log("changeDetails val: " + val);
 		console.log("changeDetails email: " + email);
-		var labYokedetails = new LabyokerUserDetails(col, val, email,req.session.user,req.session.surname);
+		var labYokedetails = new LabyokerUserDetails(col, val, email,req.session.user,req.session.surname,res);
 		labYokedetails.changeDetails(function(error, results) {
 			if(results){
 				if(col == 'name'){
