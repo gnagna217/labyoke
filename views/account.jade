@@ -88,7 +88,7 @@ block content
               $('#showteam').click(function() {
                   if($('#team').is(":visible")){
                     $('#team').hide();
-                    $('#teamTitle').html(#{i18n.__("account.button")});
+                    $('#teamTitle').html("#{i18n.__("account.button")}");
                     $('#teamTitle').css('background-color','#8a6d3b');
                     $("#teamTitle").mouseenter(function() {
                     $(this).css("background", "#2975b4");
@@ -97,7 +97,7 @@ block content
                     });
                   } else {
                     $('#team').show();
-                    $('#teamTitle').html(#{i18n.__("account.hide")});
+                    $('#teamTitle').html("#{i18n.__("account.hide")}");
                     $('#teamTitle').css('background-color','#2975b4');
                     $("#teamTitle").mouseenter(function() {
                     $(this).css("background", "#8a6d3b");
