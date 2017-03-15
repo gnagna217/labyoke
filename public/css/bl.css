@@ -1077,6 +1077,10 @@ input::-webkit-inner-spin-button {
 }
 
 @media (min-width: 768px){
+.accountdetailWidth{
+    margin-right: 10px;
+    
+}
 .center{
     text-align:center;
 }
