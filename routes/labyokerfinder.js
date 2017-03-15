@@ -576,7 +576,7 @@ LabYokeReporterSavings.prototype.reportInsuff = function(callback) {
 	var where = "a.email = b.email and a.insufficient = 0";
 	//var groupby = "a.category, b.lab, a.price";
 	var params = "";
-	var columns ="<td>" + i18n.__("index.reportsMoney.param9") + "</td><td>Lab</td>";
+	var columns ="<td>" + i18n.__("index.reportsMoney.param9") + "</td><td>" + i18n.__("reports.insuff.labselect") + "</td>";
 	var html = "<div><span style='font-weight:bold;font-size:36pt;margin-bottom:20px;float:left'>" + i18n.__("index.reportsInsuff.param1") + ".</span></div><div style=\"font-family:'calibri'; font-size:11pt;padding: 20px; width:50%;float:left\">"
 				+ "";
 	console.log("report on savings- datefrom: " + datefrom);
