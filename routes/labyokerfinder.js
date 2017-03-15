@@ -1539,7 +1539,7 @@ LabYokeTest.prototype.test = function(callback) {
 	console.log("resp is: " + i18n);
 	var test = i18n.__("login.morning")
 	console.log("a translation1: " + test)
-	test = i18n.__({phrase: i18n.__("login.morning"), locale: 'en'});
+	test = i18n.__({phrase: "login.morning", locale: 'en'});
 	console.log("a translation2: " + test)
 	callback(null, test);
 	
