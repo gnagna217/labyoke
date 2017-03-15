@@ -321,7 +321,7 @@
 
     "index.search.message1": "Désolé, nous n'avons pas trouvé de résultat pour votre recherche de réactif: <b>{{ searchText }}</b>. Veuillez réessayer.",
     "index.search.message2": "Vous avez entré un mot-clé de réactif invalide. Veuillez réessayer.",
-    "index.search.message": "Vous avez entré un numéro de catalogue invalide. Veuillez réessayer.",
+    "index.searchcatalog.message": "Vous avez entré un numéro de catalogue invalide. Veuillez réessayer.",
     "index.reportsShares.params": "<div style='font-weight:bold'>Paramètres</div>",
     "index.reportsShares.params1": "<div><span style='font-weight:bold'>De: </span><span>{{ datefrom }}</span></div>",
     "index.reportsShares.params2": "<div><span style='font-weight:bold'>À: </span><span>{{ dateto }}</span></div>",
