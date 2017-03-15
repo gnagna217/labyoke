@@ -392,9 +392,11 @@ LabYokeReporterSavings.prototype.reportMoney = function(callback) {
 	var catalognumber = this.catalognumber;
 	var mylab = this.mylab.replace(" ","").toLowerCase();
 	var labs = this.labs;
-	var selected = "a.agent, count(a.agent) as counting, b.lab, a.price";
+	//var selected = "a.agent, sum(a.agent) as counting, b.lab, a.price";
+		var selected = "a.agent, sum(a.price) as counting, b.lab";
+
 	var where = "a.agent = b.agent and a.catalognumber = b.catalognumber ";
-	var groupby = "a.agent, b.lab, a.price";
+	var groupby = "a.agent, b.lab";
 	var params = "";
 	var columns ="<td>" + i18n.__("index.reportsMoney.param1") + "</td>";
 	var html = "<div><span style='font-weight:bold;font-size:36pt;margin-bottom:20px;float:left'>" + i18n.__("index.reportsMoney.param2") + ".</span></div><div style=\"font-family:'calibri'; font-size:11pt;padding: 20px; width:50%;float:left\">"
@@ -538,12 +540,6 @@ console.log("report on savings- dateto: " + labsindept);
 	query.on("end", function(result) {
 		results = result.rows;
 		console.log("results : " + results);
-
-var grouped = _.groupBy(results, function(result) {
-  return result.agent + "-" + result.vendor + "-" + result.catalog + "-" +  result.lab;
-});
-//JSON.parse('#{JSON.stringify(venn)}'.replace(/&quot;/g, '"'))
-console.log("grouped : " + JSON.stringify(grouped));
 
 		html += params;
 		var savings = 0;
