@@ -98,8 +98,8 @@ block content
                                 script.
                                   window.onload = function() {
                                     document.getElementById("selectlang").onchange = function() {
-                                      console.log("changing language " + $('#lang').val());
-                                      $('#columnlang').val($('#lang').val());
+                                      console.log("changing language " + $('#selectlang').val());
+                                      $('#columnlang').val($('#selectlang').val());
                                       
                                       //$('#changelang').submit();      
                                     };
