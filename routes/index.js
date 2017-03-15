@@ -285,6 +285,7 @@ module.exports = function(router) {
 
 	router.get('/search', isLoggedIn, function(req, res) {
 		res.setLocale(req.cookies.i18n);
+		console.log("getsearch - userlang: " + req.session.userlang);
 		if (req.session.user) {
 			var labYokeSearch = new LabYokeSearch("",req.session.email);
 			labYokeSearch.findagents(function(error, results) {			
@@ -995,6 +996,7 @@ totalshares = t[0].counting;
 			var searchText = req.body.searchText;
 			var labYokeSearch = new LabYokeSearch(searchText, req.session.email);
 			var messageStr = "";
+			console.log("search - userlang: " + req.session.userlang);
 			labYokeSearch.search(function(error, results) {
 				console.log("results " + results[0].length);	
 				if (searchText != null && searchText.length > 0){
