@@ -28,6 +28,7 @@ block content
                             - var admin = ob[prop].admin
                             - var adminIntro = ""
                             - var lab = ob[prop].lab
+                            - var lang = ob[prop].lang
                             - var ob = labs
                             - for(var prop in ob)
                                - if(lab == ob[prop].labname)
@@ -54,6 +55,7 @@ block content
                               div(class="labColor accountdetail accountdetail-header", style="font-weight:bold;")=i18n.__("account.form.email")
                               div(class="labColor accountdetail accountdetail-header", style="font-weight:bold;")=i18n.__("account.form.tel")
                               div(class="labColor accountdetail accountdetail-header", style="font-weight:bold;")=i18n.__("account.form.lab")
+                              div(class="labColor accountdetail accountdetail-header", style="font-weight:bold;")=i18n.__("account.form.lang")
                             div(class="wrapped accountdetailMargin")
                               div(style="margin-bottom:25px;", class="accountdetail")
                                 span(id="name")!=name + " "
@@ -81,6 +83,16 @@ block content
                                 span(onclick="penciltel()", id="penciltel" class="fa fa-pencil labColor")
                                 span(onclick="updatetelform()", id="checktel" class="fa fa-check labColor")
                               div(style="margin-bottom:25px;", class="accountdetail accountdetailRowMargin") #{lab}
+                              div(style="margin-bottom:25px;", class="accountdetail accountdetailRowMargin")
+                                span(id="lang")
+                                form(action="/changeDetails" id="changelang" method="post" class="telform" style="top: -5px; position: relative;")
+                                  select(name="valuedetail" type="text" id="valuedetail" class="form-control" style="border-color:#3d9dcb;margin-bottom:10px" placeholder="")
+                                    option(value="en",style="font-weight:bold")= "en"
+                                    option(value="fr",style="font-weight:bold")= "fr"
+                                  input(name="column" type="hidden" id="column" value="tel")
+                                  input(name="formemail" type="hidden" id="formemail" value=email)
+                                span(onclick="penciltel()", id="penciltel" class="fa fa-pencil labColor")
+                                span(onclick="updatetelform()", id="checktel" class="fa fa-check labColor")
         - if(!resultsAccount || resultsAccount == undefined)
           div
             span(class="yokeColor")!=adminIntro + " <span id='showteam' class='labColor' style='cursor:pointer;font-weight:bold'><div class='buttons'><button type='submit' class='btn btn-success btn-lg btn-block' id='teamTitle'>" + i18n.__("account.button") + "</button></div></span>"
