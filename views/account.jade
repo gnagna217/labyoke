@@ -99,7 +99,7 @@ block content
                                   window.onload = function() {
                                     document.getElementById("selectlang").onchange = function() {
                                       console.log("changing language " + $('#selectlang').val());
-                                      $(this).find($('#column')).val($('#selectlang').val());
+                                      $('#lang').find($('#column')).val($('#selectlang').val());
                                       
                                       //$('#changelang').submit();      
                                     };
