@@ -93,13 +93,13 @@ block content
                                   div(style="top: -35px; position: relative; float: right; margin-right: 10px;")
                                     div(class="arrow-up")
                                     div(class="arrow-down")
-                                  input(name="columnlang" type="hidden" id="columnlang" value="lang")
+                                  input(name="column" type="hidden" id="column" value="lang")
                                   input(name="formemail" type="hidden" id="formemail" value=email)
                                 script.
                                   window.onload = function() {
                                     document.getElementById("selectlang").onchange = function() {
                                       console.log("changing language " + $('#selectlang').val());
-                                      $('#columnlang').val($('#selectlang').val());
+                                      $(this).find($('#column')).val($('#selectlang').val());
                                       
                                       //$('#changelang').submit();      
                                     };
