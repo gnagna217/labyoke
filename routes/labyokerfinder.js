@@ -13,6 +13,7 @@ var client = new pg.Client(conString);
 client.connect();
 var crypt = require('bcrypt-nodejs');
 var accounting = require('./accounting');
+var _ = require('lodash');
 
 LabYokeFinder = function(today) {
 	this.now = today
