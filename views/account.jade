@@ -97,10 +97,7 @@ block content
                                   input(name="formemail" type="hidden" id="formemail" value=email)
                                 script.
                                   window.onload = function() {
-                                    $('#monthAll').hide();
-                                    $('#sharesAll').hide();
-
-                                    lang.onchange = function() {
+                                    document.getElementById("lang").onchange = function() {
                                       console.log("changing language " + $('#lang').val());
                                       $('#columnlang').val($('#lang').val());
                                       
