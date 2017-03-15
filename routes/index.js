@@ -438,6 +438,7 @@ totalshares = t[0].counting;
 			var email = req.body.email;
 			var requestor = req.body.requestoremail;
 			var checked = req.body.cancel;
+			var userlang = req.session.lang;
 			var date = moment(req.body.date).add(1, 'day').tz("America/New_York").format(
 				'MM-DD-YYYY');
 			var datenow = moment(new Date).tz("America/New_York").format(
@@ -455,7 +456,7 @@ totalshares = t[0].counting;
 			console.log("table: " + table);
 			console.log("email: " + email);
 			console.log("requestoremail: " + requestor);
-			var labYokechange = new LabYokerChangeShare(table,agent, vendor, catalognumber,email,requestor,checked,datenow,date, lab, res);
+			var labYokechange = new LabYokerChangeShare(table,agent, vendor, catalognumber,email,requestor,checked,datenow,date, lab, res,userlang);
 			labYokechange.cancelShare(function(error, results) {
 				if(results != null && results.length > 0){
 					res.redirect('/share');			
@@ -698,7 +699,7 @@ totalshares = t[0].counting;
 				var dateStripped = moment(new Date).tz("America/New_York").format(
 				'MM-DD-YYYY');
 				console.log("dateStripped2: " + dateStripped);
-				var labyoker = new Labyoker(forgotuser,dateStripped, res);
+				var labyoker = new Labyoker(forgotuser,dateStripped,res,req.session.userlang);
 				labyoker.requestChangePassword(function(error, done) {
 					console.log("done: " + (done != null && done.length > 0 && done == 'alreadySent'));
 					console.log("done2: " + (done != null && done == 'alreadySent'));
@@ -800,6 +801,7 @@ totalshares = t[0].counting;
 		var user_surname = req.body.reglastname;
 		var user_email = req.body.regemail;
 		var user_tel = req.body.regtel;
+		var userlang = req.cookies.i18n;
 
 		if(req.session.labs == undefined){
 			res.redirect('/register');
@@ -824,7 +826,8 @@ totalshares = t[0].counting;
 			console.log("user_surname: " + user_surname);
 			console.log("user_email: " + user_email);
 			console.log("user_tel: " + user_tel);
-			var labyokerRegister = new LabyokerRegister(user,user_pwd,lab,user_name,user_surname,user_email,user_tel,res,req.cookies.i18n);
+			console.log("user_tel: " + userlang);
+			var labyokerRegister = new LabyokerRegister(user,user_pwd,lab,user_name,user_surname,user_email,user_tel,res,userlang);
 			/*var regfirstname = req.body.regfirstname;
 			console.log("regfirstname entered " + regfirstname);
 			if (regfirstname != null && regfirstname.length > 0){
@@ -857,7 +860,7 @@ totalshares = t[0].counting;
 						});
 				} else if (done != null && done.length > 0 && done != 'success') {
 					console.log("status = status1");
-					res.render('register', {lang:req.cookies.i18n, i18n:res, labs: req.session.labs, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, isLoggedInAdmin: req.session.admin, title: 'Register', message : "Sorry. We could not register you. Please try again below."});
+					res.render('register', {lang:req.cookies.i18n, i18n:res, labs: req.session.labs, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, isLoggedInAdmin: req.session.admin, title: 'Register', message : res.__("index.register.message3")});
 				} else if(done != null && done.length > 0 && done == 'success') {
 					console.log("status = success1");
 					rendered = true;
@@ -884,7 +887,7 @@ totalshares = t[0].counting;
 							i18n:res,
 							ordersnum: req.session.orders,
 							sharesnum: req.session.shares,
-							message : "Sorry you cannot proceed. Please fill out ALL fields and try again below.",
+							message : res.__("index.register.message2"),
 							title: 'Register',
 							isLoggedInAdmin: req.session.admin,
 							labyoker : req.session.user,
@@ -895,7 +898,7 @@ totalshares = t[0].counting;
 			rendered = true;
 		} else if (user_name && user_surname && user_email && user_tel) {
 				console.log("first section processing...");
-				var labyokerRegister = new LabyokerRegister(null,null,null,user_name,user_surname,user_email,user_tel,res,req.cookies.i18n);;
+				var labyokerRegister = new LabyokerRegister(null,null,null,user_name,user_surname,user_email,user_tel,res,userlang);
 				req.session.firstname = user_name;
 				req.session.lastname = user_surname;
 				req.session.email = user_email;
@@ -905,7 +908,7 @@ totalshares = t[0].counting;
 					if(done != null && done.length > 0 && done == 'alreadyInUse') {
 						console.log("status = alreadyInUse");
 						rendered = true;
-						res.render('register', {lang:req.cookies.i18n, i18n:res, labs: req.session.labs, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, isLoggedInAdmin: req.session.admin, title: 'Register', message : "Sorry. This email address is already in use. Please use a different one and try again below."});
+						res.render('register', {lang:req.cookies.i18n, i18n:res, labs: req.session.labs, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, isLoggedInAdmin: req.session.admin, title: 'Register', message : res.__("index.register.message1")});
 					} else if(done != null && done.length > 0 && done == 'firstsection') {
 						console.log("status = firstsection");
 						rendered = true;
@@ -929,7 +932,7 @@ totalshares = t[0].counting;
 					} else if(done != null && done.length > 0 && done != 'success') {
 						console.log("status = not successful");
 						rendered = true;
-						res.render('register', {i18n:res, labs: req.session.labs, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, isLoggedInAdmin: req.session.admin, title: 'Register', message : "Sorry. We could not register you. Please try again below."});
+						res.render('register', {i18n:res, labs: req.session.labs, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, isLoggedInAdmin: req.session.admin, title: 'Register', message : res.__("index.register.message3")});
 					} else if(done != null && done.length > 0 && done == 'success') {
 						console.log("status = success");
 						rendered = true;
@@ -957,7 +960,7 @@ totalshares = t[0].counting;
 								i18n: res,
 								ordersnum: req.session.orders,
 								sharesnum: req.session.shares, 
-								message : "Sorry you cannot proceed. Please fill out ALL fields and try again below.",
+								message : res.__("index.register.message2"),
 								title: 'Register',
 								isLoggedInAdmin: req.session.admin,
 								labyoker : req.session.user,
@@ -966,7 +969,7 @@ totalshares = t[0].counting;
 					}
 					if(!rendered){
 						console.log("nothing entered");
-						res.render('register', {lang:req.cookies.i18n, i18n:res, labs: req.session.labs, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, isLoggedInAdmin: req.session.admin, message : "Sorry. We could not register you. Please fill out all fields below.", title: 'Register'});
+						res.render('register', {lang:req.cookies.i18n, i18n:res, labs: req.session.labs, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, isLoggedInAdmin: req.session.admin, message : res.__("index.register.message4"), title: 'Register'});
 					}
 				});
 			} else {
@@ -977,7 +980,7 @@ totalshares = t[0].counting;
 					i18n:res,
 					ordersnum: req.session.orders,
 					sharesnum: req.session.shares, 
-					message : "Sorry you cannot proceed. Please fill out ALL fields and try again below.",
+					message : res.__("index.register.message2"),
 					title: 'Register',
 					isLoggedInAdmin: req.session.admin,
 					labyoker : req.session.user,
