@@ -14,6 +14,7 @@ block content
             div(class="table-responsive center")
                          -var ob = userDetails
                          - var j = 1
+                         - var selectedlang = ""
                          -for(var prop in ob)
                             - var i = prop % 2
                             - var classname = "";
@@ -28,7 +29,7 @@ block content
                             - var admin = ob[prop].admin
                             - var adminIntro = ""
                             - var lab = ob[prop].lab
-                            - var lang = ob[prop].lang
+                            - selectedlang = ob[prop].lang
                             - var ob = labs
                             - for(var prop in ob)
                                - if(lab == ob[prop].labname)
@@ -87,8 +88,8 @@ block content
                                 span(id="lang")
                                 form(action="/changeDetails" id="changelang" method="post" class="telform" style="top: -5px; position: relative;")
                                   select(name="valuedetail" type="text" id="valuedetail" class="form-control" style="border-color:#3d9dcb;margin-bottom:10px" placeholder="")
-                                    option(value="en",style="font-weight:bold")= "en"
-                                    option(value="fr",style="font-weight:bold")= "fr"
+                                    option(value="en",style="font-weight:bold",selected=(selectedlang==="en" ? "selected" : undefined))= "en"
+                                    option(value="fr",style="font-weight:bold,selected=(selectedlang==="fr" ? "selected" : undefined)")= "fr"
                                   input(name="column" type="hidden" id="column" value="tel")
                                   input(name="formemail" type="hidden" id="formemail" value=email)
                                 span(onclick="penciltel()", id="penciltel" class="fa fa-pencil labColor")
