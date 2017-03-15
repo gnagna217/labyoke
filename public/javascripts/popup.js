@@ -174,7 +174,7 @@ function iosLight(){
   pop.style.display = "block";
   shade.style.display = "block";
 }
-function iosLight(agent,vendor,catalognumber,reqemail,location,category,qty,lab,lang,userlang){
+function iosLight(agent,vendor,catalognumber,reqemail,location,category,qty,lab,browserlang,ownerlang){
   var actionorder = document.getElementById("actionorder");
   var orderText = document.getElementById("orderText");
   var emailform = document.getElementById("emailform");
@@ -193,14 +193,15 @@ function iosLight(agent,vendor,catalognumber,reqemail,location,category,qty,lab,
   catalogform.value = catalognumber;
   locationform.value = location;
   categoryform.value = category;
-  langform.value = userlang;
-  console.log("user language is: " + userlang);
-  console.log("language is: " + lang);
+  langform.value = ownerlang;
+
+  console.log("owner language is: " + ownerlang);
+  console.log("browser language is: " + browserlang);
 
   qtyform.value = qty;
   labform.value = lab;
   var trans = "You are about to order <br/>Reagent: " + agent + "<br/>Vendor: "+vendor+"<br/>Catalog#: "+catalognumber;
-  if(lang == "fr"){
+  if(browserlang == "fr"){
     trans = "Vous êtes sur le point de commander <br/>Réactif: " + agent + "<br/>Vendeur: "+vendor+"<br/>Catalogue: "+catalognumber;
   }
   orderText.innerHTML = trans;
