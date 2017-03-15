@@ -408,7 +408,9 @@ totalshares = t[0].counting;
 			var reqemail = req.session.email;
 			var reqcategory = req.body.categoryform;
 			var quantity = req.body.qtyform;
-			var labYokerorder = new LabYokerOrder(lab, agent, vendor, catalognumber,email,location,reqemail,reqcategory,quantity, req.session.lab, res);
+			var userlang = req.session.userlang;
+			var ownerlang = req.body.langform;
+			var labYokerorder = new LabYokerOrder(lab, agent, vendor, catalognumber,email,location,reqemail,reqcategory,quantity, req.session.lab,res,userlang,ownerlang);
 			labYokerorder.order(function(error, results) {
 				if(results != null && results=="successfulOrder"){
 					console.log("ordering agentform: " + agent);
@@ -822,7 +824,7 @@ totalshares = t[0].counting;
 			console.log("user_surname: " + user_surname);
 			console.log("user_email: " + user_email);
 			console.log("user_tel: " + user_tel);
-			var labyokerRegister = new LabyokerRegister(user,user_pwd,lab,user_name,user_surname,user_email,user_tel, res);
+			var labyokerRegister = new LabyokerRegister(user,user_pwd,lab,user_name,user_surname,user_email,user_tel,res,req.cookies.i18n);
 			/*var regfirstname = req.body.regfirstname;
 			console.log("regfirstname entered " + regfirstname);
 			if (regfirstname != null && regfirstname.length > 0){
@@ -893,7 +895,7 @@ totalshares = t[0].counting;
 			rendered = true;
 		} else if (user_name && user_surname && user_email && user_tel) {
 				console.log("first section processing...");
-				var labyokerRegister = new LabyokerRegister(null,null,null,user_name,user_surname,user_email,user_tel, res);;
+				var labyokerRegister = new LabyokerRegister(null,null,null,user_name,user_surname,user_email,user_tel,res,req.cookies.i18n);;
 				req.session.firstname = user_name;
 				req.session.lastname = user_surname;
 				req.session.email = user_email;
@@ -1101,11 +1103,13 @@ totalshares = t[0].counting;
 													req.session.user = done[0].name;
 													req.session.dept = dept[0].department;
 													req.session.userid = done[0].id;
+													req.session.userlang = done[0].lang;
 													req.session.useradmin = false;
-													console.log("admin? " + done[0].admin);
+													console.log("user language: " + req.session.userlang);
+													console.log("admin: " + done[0].admin);
 													var c = parseInt(done[0].admin,10);
 													req.session.admin = c;
-													console.log("c? " + c);
+													console.log("c: " + c);
 													if(c > 0 ){
 														req.session.admin = 1;
 														req.session.useradmin = true;

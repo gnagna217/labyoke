@@ -106,7 +106,7 @@ LabyokerConfirm = function(registerid) {
 	this.registerid = registerid;
 };
 
-LabYokerOrder = function(lab,agent,vendor,catalognumber,email,location,sendemail,category,quantity,mylab, res) {
+LabYokerOrder = function(lab,agent,vendor,catalognumber,email,location,sendemail,category,quantity,mylab,res,userlang,ownerlang) {
 	this.agent = agent;
 	this.vendor = vendor;
 	this.catalognumber = catalognumber;
@@ -118,6 +118,8 @@ LabYokerOrder = function(lab,agent,vendor,catalognumber,email,location,sendemail
 	this.quantity = quantity;
 	this.mylab = mylab;
 	this.res = res;
+	this.userlang = userlang;
+	this.ownerlang = ownerlang;
 };
 
 LabyokerTeam = function(lab) {
@@ -131,7 +133,7 @@ LabYokerGetOrder = function(sendemail,lab,labs) {
 	this.labs = labs;
 };
 
-LabyokerRegister = function(user, password,lab,firstname,lastname,email,tel, res) {
+LabyokerRegister = function(user, password,lab,firstname,lastname,email,tel,res,lang) {
 	this.username = user;
 	this.password = password;
 	this.lab = lab;
@@ -140,6 +142,7 @@ LabyokerRegister = function(user, password,lab,firstname,lastname,email,tel, res
 	this.email = email;
 	this.tel = tel;
 	this.res = res;
+	this.lang = lang;
 };
 
 LabyokerPasswordChange = function(hash, password) {
@@ -1161,6 +1164,9 @@ LabYokerOrder.prototype.order = function(callback) {
 	var lab = this.lab;
 	var quantity = this.quantity;
 	var mylab = this.mylab; //.replace(" ","").toLowerCase();
+	var userlang = this.userlang;
+	var ownerlang = this.ownerlang;
+
 	console.log("quantity: " + quantity);
 	quantity = parseInt(quantity) + 100;
 	console.log("currentquantity2: " + quantity);
@@ -1173,6 +1179,8 @@ LabYokerOrder.prototype.order = function(callback) {
 	});
 	query.on("end", function(result) {
 		results = result.rows;
+
+
 
 		var subject = /*"LabYoke - Pending Order for "*/ i18n.__("index.orders.subject") + agent;
 		var subjectReq = /*"LabYoke - Your Request to order "*/ i18n.__("index.orders.resubject") + agent;
@@ -1527,10 +1535,12 @@ LabYokeFinder.prototype.test = function(callback) {
 
 LabYokeTest.prototype.test = function(callback) {
 	var results;
-	var resp = this.resp;
-	console.log("resp is: " + resp);
+	var i18n = this.resp;
+	console.log("resp is: " + i18n);
 	var test = i18n.__("login.morning")
-	console.log("a translation: " + test)
+	console.log("a translation1: " + test)
+	test = i18n.__({phrase: i18n.__("login.morning"), locale: 'fr'});
+	console.log("a translation2: " + test)
 	callback(null, test);
 	
 	// return false;
@@ -1792,6 +1802,7 @@ LabyokerRegister.prototype.register = function(callback) {
 	var lastname = this.lastname;
 	var email = this.email;
 	var tel = this.tel;
+	var lang = this.lang;
 
 	var results;
 	//var check = 
@@ -1803,6 +1814,7 @@ LabyokerRegister.prototype.register = function(callback) {
 			console.log("labyoker lastname: " + lastname);
 			console.log("labyoker email: " + email);
 			console.log("labyoker tel: " + tel);
+			console.log("labyoker lang: " + lang);
 
 	if(tel != null && tel.length>0 && username != null && username.length>0 && firstname != null && firstname.length>0 && lastname != null && lastname.length>0 && email != null && email.length>0 && password != null && password.length>0 && lab != null && lab.length>0 ){
 	console.log("processing registration2...");
@@ -1831,7 +1843,7 @@ LabyokerRegister.prototype.register = function(callback) {
 				console.log("registerid: " + hash_register_id);
 			var hash = crypt.hashSync(password);
 			var query2 = client.query("INSERT INTO vm2016_users VALUES ('" + username
-				+ "', '" + hash + "', '" + firstname + "',  0, null, null, '" + email + "', null, '" + lab + "', '" + lastname + "', '" + tel + "', 0, '','" + hash_register_id + "')");
+				+ "', '" + hash + "', '" + firstname + "',  0, null, null, '" + email + "', null, '" + lab + "', '" + lastname + "', '" + tel + "', 0, '','" + hash_register_id + "','" + lang + "')");
 
 				query2.on("row", function(row, result2) {
 					result2.addRow(row);
