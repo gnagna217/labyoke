@@ -1541,6 +1541,8 @@ LabYokeTest.prototype.test = function(callback) {
 	console.log("a translation1: " + test)
 	var test2 = i18n.__({phrase: "login.morning", locale: 'fr'});
 	console.log("a translation2: " + test2)
+	var test3 = i18n.__({phrase: test, locale: 'fr'});
+	console.log("a translation3: " + test3)
 	callback(null, test);
 	
 	// return false;
