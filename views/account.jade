@@ -89,7 +89,7 @@ block content
                                 form(action="/changeDetails" id="changelang" method="post" class="telform" style="top: -5px; position: relative;")
                                   select(name="valuedetail" type="text" id="valuedetail" class="form-control" style="border-color:#3d9dcb;margin-bottom:10px" placeholder="")
                                     option(value="en",style="font-weight:bold",selected=(selectedlang==="en" ? "selected" : undefined))= "en"
-                                    option(value="fr",style="font-weight:bold,selected=(selectedlang==="fr" ? "selected" : undefined)")= "fr"
+                                    option(value="fr",style="font-weight:bold",selected=(selectedlang==="fr" ? "selected" : undefined))= "fr"
                                   input(name="column" type="hidden" id="column" value="tel")
                                   input(name="formemail" type="hidden" id="formemail" value=email)
                                 span(onclick="penciltel()", id="penciltel" class="fa fa-pencil labColor")
