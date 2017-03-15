@@ -542,7 +542,8 @@ console.log("report on savings- dateto: " + labsindept);
 var grouped = _.groupBy(results, function(result) {
   return result.agent;
 });
-console.log("grouped : " + grouped);
+//JSON.parse('#{JSON.stringify(venn)}'.replace(/&quot;/g, '"'))
+console.log("grouped : " + JSON.stringify(grouped));
 
 		html += params;
 		var savings = 0;
