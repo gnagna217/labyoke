@@ -368,7 +368,8 @@
     "index.reportsMoney.param10": "Vendeur",
     "index.reportsMoney.param11": "Catalogue",
     "index.reportsMoney.param12": "Date",
-    "index.reportsMoney.param13": "Économies de Partages",
+    "index.reportsMoney.param13": "Économies Faites",
+    "index.reportsMoney.param14": "Les économies <span style='font-weight:bold'>Totales</span> sont de ",
     "index.reportsInsuff.param1": "Réactifs Partagés en Quantité Insduffisante",
 
 
