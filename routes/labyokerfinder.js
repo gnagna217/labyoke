@@ -563,7 +563,7 @@ console.log("report on savings- dateto: " + labsindept);
 				if(datefrom != null && datefrom !=undefined && datefrom !="" && dateto != null && dateto !=undefined && dateto !="" ){
 				html += "<td style='font-size: 12px;'>" + moment(results[prop].date).tz("America/New_York").format('MM-DD-YYYY')+ "</td>";
 				}
-				var total = results[prop].counting * results[prop].price;
+				var total = results[prop].counting /** results[prop].price*/;
 				savings += total;
 				html += "<td style='font-size: 12px;'>" + accounting.formatMoney(total) + "</td>";
 				html += " </tr>";
