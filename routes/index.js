@@ -525,7 +525,7 @@ totalshares = t[0].counting;
 		console.log("reportMoney catalognumber: " + catalognumber);
 		console.log("reportMoney lab: " + lab);
 
-		var labYokereporterSavings = new LabYokeReporterSavings(datefrom,dateto,agent,vendor,catalognumber,lab, req.session.lab,req.session.labs);
+		var labYokereporterSavings = new LabYokeReporterSavings(datefrom,dateto,agent,vendor,catalognumber,lab, req.session.lab,req.session.labs,res);
 		labYokereporterSavings.reportMoney(function(error, results) {
 			if(results != null){
 				console.log("res " + results);
@@ -558,7 +558,7 @@ totalshares = t[0].counting;
 		console.log("reportInsuff catalognumber: " + catalognumber);
 		console.log("reportInsuff lab: " + lab);
 
-		var labYokereporterSavings = new LabYokeReporterSavings(datefrom,dateto,agent,vendor,catalognumber,lab, req.session.lab,req.session.labs);
+		var labYokereporterSavings = new LabYokeReporterSavings(datefrom,dateto,agent,vendor,catalognumber,lab, req.session.lab,req.session.labs,res);
 		labYokereporterSavings.reportInsuff(function(error, results) {
 			if(results != null){
 				console.log("res " + results);
@@ -1194,7 +1194,7 @@ totalshares = t[0].counting;
 
 									console.log("in LOGIN: GET LABS - " + req.session.labs);
 			if(req.session.labs != null && req.session.labs != undefined){
-													var labYokereporterSavings = new LabYokeReporterSavings(datefromsavings,datetosavings,undefined,undefined,undefined,lab, req.session.lab,req.session.labs);
+													var labYokereporterSavings = new LabYokeReporterSavings(datefromsavings,datetosavings,undefined,undefined,undefined,lab, req.session.lab,req.session.labs,res);
 													labYokereporterSavings.dataMoney(function(error, savings) {
 														console.log("savings: " + savings);
 
@@ -1247,7 +1247,7 @@ totalshares = t[0].counting;
 					console.log("in LOGIN: GET LABS now " + req.session.labs);
 					console.log("loggin in labs: " + labs);
 
-														var labYokereporterSavings = new LabYokeReporterSavings(datefromsavings,datetosavings,undefined,undefined,undefined,lab, req.session.lab,req.session.labs);
+														var labYokereporterSavings = new LabYokeReporterSavings(datefromsavings,datetosavings,undefined,undefined,undefined,lab, req.session.lab,req.session.labs,res);
 													labYokereporterSavings.dataMoney(function(error, savings) {
 														console.log("savings: " + savings);
 
