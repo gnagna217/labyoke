@@ -100,8 +100,7 @@ block content
                                     document.getElementById("selectlang").onchange = function() {
                                       console.log("changing language " + $('#selectlang').val());
                                       $('#changelang').find($('input#column')).val($('#selectlang').val());
-                                      
-                                      //$('#changelang').submit();      
+                                      $('#changelang').submit();      
                                     };
                                   };
         - if(!resultsAccount || resultsAccount == undefined)
