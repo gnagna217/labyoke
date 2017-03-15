@@ -86,14 +86,17 @@ block content
                               div(style="margin-bottom:25px;", class="accountdetail accountdetailRowMargin") #{lab}
                               div(style="margin-bottom:25px;", class="accountdetail accountdetailRowMargin")
                                 span(id="lang")
-                                form(action="/changeDetails" id="changelang" method="post" class="telform" style="top: -5px; position: relative;")
-                                  select(name="valuedetail" type="text" id="valuedetail" class="form-control" style="border-color:#3d9dcb;margin-bottom:10px" placeholder="")
+                                form(action="/changeDetails" id="changelang" method="post" class="langform" style="top: -5px; position: relative;")
+                                  select(name="lang" type="text" id="lang" class="form-control" style="border-color:#3d9dcb;margin-bottom:10px" placeholder="")
                                     option(value="en",style="font-weight:bold",selected=(selectedlang==="en" ? "selected" : undefined))= "en"
                                     option(value="fr",style="font-weight:bold",selected=(selectedlang==="fr" ? "selected" : undefined))= "fr"
-                                  input(name="column" type="hidden" id="column" value="tel")
+                                  div(style="top: -35px; position: relative; float: right; margin-right: 10px;")
+                                    div(class="arrow-up")
+                                    div(class="arrow-down")
+                                  input(name="column" type="hidden" id="column" value="lang")
                                   input(name="formemail" type="hidden" id="formemail" value=email)
-                                span(onclick="penciltel()", id="penciltel" class="fa fa-pencil labColor")
-                                span(onclick="updatetelform()", id="checktel" class="fa fa-check labColor")
+                                span(onclick="pencillang()", id="pencillang" class="fa fa-pencil labColor")
+                                span(onclick="updatelangform()", id="checktlang" class="fa fa-check labColor")
         - if(!resultsAccount || resultsAccount == undefined)
           div
             span(class="yokeColor")!=adminIntro + " <span id='showteam' class='labColor' style='cursor:pointer;font-weight:bold'><div class='buttons'><button type='submit' class='btn btn-success btn-lg btn-block' id='teamTitle'>" + i18n.__("account.button") + "</button></div></span>"
