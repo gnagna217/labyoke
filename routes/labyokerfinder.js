@@ -495,7 +495,21 @@ console.log("report on savings- dateto: " + labsindept);
 	}
 	select = select.replace(/UNION\s*$/, "");
 } else {
-	select = select + "SELECT " + selected + " from vm2016_agentsshare a, "+mylab+"_orders b where " + where + " group by " + groupby;
+	//select = select + "SELECT " + selected + " from vm2016_agentsshare a, "+mylab+"_orders b where " + where + " group by " + groupby;
+
+	where = where + " and (";
+	
+		where = where + " b.lab = '" + lab + "' ";
+	for(var prop in labs){
+		a = "a" + i;
+		labsstr = (labs[prop].labname).replace(" ","").toLowerCase() + "_orders b ";
+		select = select + "SELECT " + selected + " from vm2016_agentsshare a, "+labsstr+" where " + where + " group by " + groupby + " UNION ";
+		i++;
+	}
+	select = select.replace(/UNION\s*$/, "");
+
+//select = select + "SELECT " + selected + " from vm2016_agentsshare a, "+mylab+"_orders b where " + where + " group by " + groupby;
+
 }
 
 	//labsstr = labsstr.replace(/,\s*$/, "");
