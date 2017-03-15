@@ -381,6 +381,7 @@ LabYokeReporterSavings.prototype.reportMoney = function(callback) {
 	var dateto = this.dateto;
 	var vendor = this.vendor;
 	var lab = this.lab;
+	var i18n = this.res;
 	var agent = this.agent;
 	var catalognumber = this.catalognumber;
 	var mylab = this.mylab.replace(" ","").toLowerCase();
@@ -389,8 +390,8 @@ LabYokeReporterSavings.prototype.reportMoney = function(callback) {
 	var where = "a.agent = b.agent and a.catalognumber = b.catalognumber ";
 	var groupby = "a.agent, b.lab, a.price";
 	var params = "";
-	var columns ="<td>Lab</td>";
-	var html = "<div><span style='font-weight:bold;font-size:36pt;margin-bottom:20px;float:left'>Savings.</span></div><div style=\"font-family:'calibri'; font-size:11pt;padding: 20px; width:50%;float:left\">"
+	var columns ="<td>" + i18n.__("index.reportsMoney.param1") + "</td>";
+	var html = "<div><span style='font-weight:bold;font-size:36pt;margin-bottom:20px;float:left'>" + i18n.__("index.reportsMoney.param2") + ".</span></div><div style=\"font-family:'calibri'; font-size:11pt;padding: 20px; width:50%;float:left\">"
 				+ "";
 	console.log("report on savings- datefrom: " + datefrom);
 	console.log("report on savings- dateto: " + dateto);
@@ -402,10 +403,10 @@ console.log("report on savings- dateto: " + labsindept);
 
 	if(datefrom != null && dateto != null && datefrom !=undefined && dateto !=undefined && datefrom !="" && dateto !=""){
 		if(params == ""){
-			params += "<div style='font-weight:bold'>Parameters</div>";
+			params += "<div style='font-weight:bold'>" + i18n.__("index.reportsMoney.param3") + "</div>";
 		}
-		params += "<div><span style='font-weight:bold'>Date From: </span><span>" + moment(datefrom).tz("America/New_York").format('MM-DD-YYYY')  + "</span></div>";
-		params += "<div><span style='font-weight:bold'>Date To: </span><span>" + moment(dateto).tz("America/New_York").format('MM-DD-YYYY')  + "</span></div>";
+		params += "<div><span style='font-weight:bold'>" + i18n.__("index.reportsMoney.param4") + ": </span><span>" + moment(datefrom).tz("America/New_York").format('MM-DD-YYYY')  + "</span></div>";
+		params += "<div><span style='font-weight:bold'>" + i18n.__("index.reportsMoney.param5") + ": </span><span>" + moment(dateto).tz("America/New_York").format('MM-DD-YYYY')  + "</span></div>";
 		if(selected.length>0)
 			selected +=", ";
 		selected += "b.date";
@@ -415,17 +416,17 @@ console.log("report on savings- dateto: " + labsindept);
 		if(groupby.length>0)
 			groupby +=" , ";
 		groupby += "b.date";
-		html += "<p'>This report is listing savings between " + moment(datefrom).tz("America/New_York").format('MM-DD-YYYY') + " and " + moment(dateto).tz("America/New_York").format('MM-DD-YYYY') + "</p></div>"
+		html += "<p>" + i18n.__("index.reportsMoney.param6") + " " + moment(datefrom).tz("America/New_York").format('MM-DD-YYYY') + i18n.__("index.reportsMoney.param7") + moment(dateto).tz("America/New_York").format('MM-DD-YYYY') + "</p></div>"
 	} else {
 		datefrom = "all";
-		html += "<p>This report is listing all savings:</p></div>"
+		html += "<p>" + i18n.__("index.reportsMoney.param8") + ":</p></div>"
 	}
 
 	if(lab != null && lab !=undefined && lab !="all"){
 		if(params == ""){
-			params += "<div style='font-weight:bold'>Parameters</div>";
+			params += "<div style='font-weight:bold'>" + i18n.__("index.reportsMoney.param3") + "</div>";
 		}
-		params += "<div><span style='font-weight:bold'>Lab: </span><span>" + lab + "</span></div>";
+		params += "<div><span style='font-weight:bold'>" + i18n.__("index.reportsMoney.param1") + ": </span><span>" + lab + "</span></div>";
 		//if(where.length>0)
 		//	where +=" and ";
 		//where += "b.lab = '" + lab + "'";
@@ -438,7 +439,7 @@ console.log("report on savings- dateto: " + labsindept);
 		if(groupby.length>0)
 			groupby +=" , ";
 		groupby += "b.agent";*/
-		columns+="<td>Reagent</td>";
+		columns+="<td>" + i18n.__("index.reportsMoney.param9") + "</td>";
 	} 
 	if(vendor != null && vendor !=undefined && vendor !=""){
 		if(selected.length>0)
@@ -447,7 +448,7 @@ console.log("report on savings- dateto: " + labsindept);
 		if(groupby.length>0)
 			groupby +=" , ";
 		groupby += "b.vendor";
-		columns+="<td>Vendor</td>";
+		columns+="<td>" + i18n.__("index.reportsMoney.param10") + "</td>";
 	}
 	if(catalognumber != null && catalognumber !=undefined && catalognumber !=""){
 		if(selected.length>0)
@@ -456,10 +457,10 @@ console.log("report on savings- dateto: " + labsindept);
 		if(groupby.length>0)
 			groupby +=" , ";
 		groupby += "b.catalognumber";
-		columns+="<td>Catalog#</td>";
+		columns+="<td>" + i18n.__("index.reportsMoney.param11") + "</td>";
 	}
 	if(datefrom != null && dateto != null && datefrom !=undefined && dateto !=undefined && datefrom !="" && dateto !=""){
-		columns+="<td>Date</td>";
+		columns+="<td>" + i18n.__("index.reportsMoney.param12") + "</td>";
 	}
 
 
@@ -503,7 +504,7 @@ console.log("report on savings- dateto: " + labsindept);
 	/*if(selected.length>0)
 		selected +=", ";
 	selected +="count(a.category)";*/
-	columns+="<td>Shares Savings</td>";
+	columns+="<td>" + i18n.__("index.reportsMoney.param13") + "</td>";
 	//var qrstr = "SELECT " + selected + " from vm2016_agentsshare a, "+mylab+"_orders b where " + where + " group by " + groupby + " order by a.agent asc";
 	var qrstr = select + " order by agent asc";
 	console.log("qrstr = " + qrstr);
@@ -543,7 +544,7 @@ console.log("report on savings- dateto: " + labsindept);
 				html += " </tr>";
 		
 			}
-			html += "</tbody></table><div>The <span style='font-weight:bold'>Total</span> savings are <span style='font-size:30pt'>" + accounting.formatMoney(savings) + ".</span></div><br/><p style='margin-top:50px'><i><b>The LabYoke Team.</b></i></p><img style='width: 141px; margin: 0 20px;float:left' src='https:\/\/team-labyoke.herokuapp.com\/images\/yoke4.png', alt='The Yoke',  title='Yoke', class='yokelogo'/>";
+			html += "</tbody></table><div>The <span style='font-weight:bold'>Total</span> savings are <span style='font-size:30pt'>" + accounting.formatMoney(savings) + ".</span></div><br/><p style='margin-top:50px'><i><b>" + i18n.__("index.reportsShares.html7") + "</b></i></p><img style='width: 141px; margin: 0 20px;float:left' src='https:\/\/team-labyoke.herokuapp.com\/images\/yoke4.png', alt='The Yoke',  title='Yoke', class='yokelogo'/>";
 			console.log("html money: " + html);
 		}
 		if(!isempty){
@@ -569,7 +570,7 @@ LabYokeReporterSavings.prototype.reportInsuff = function(callback) {
 	var where = "a.email = b.email and a.insufficient = 0";
 	//var groupby = "a.category, b.lab, a.price";
 	var params = "";
-	var columns ="<td>Reagent</td><td>Lab</td>";
+	var columns ="<td>" + i18n.__("index.reportsMoney.param9") + "</td><td>Lab</td>";
 	var html = "<div><span style='font-weight:bold;font-size:36pt;margin-bottom:20px;float:left'>Insufficient Reagent Shares.</span></div><div style=\"font-family:'calibri'; font-size:11pt;padding: 20px; width:50%;float:left\">"
 				+ "";
 	console.log("report on savings- datefrom: " + datefrom);
@@ -581,9 +582,9 @@ var labyokerLab = new LabyokerLab(this.mylab);
 console.log("report on insuff: " + labsindept);
 	if(lab != null && lab !=undefined && lab !="all"){
 		if(params == ""){
-			params += "<div style='font-weight:bold'>Parameters</div>";
+			params += "<div style='font-weight:bold'>" + i18n.__("index.reportsMoney.param3") + "</div>";
 		}
-		params += "<div><span style='font-weight:bold'>Lab: </span><span>" + lab + "</span></div>";
+		params += "<div><span style='font-weight:bold'>" + i18n.__("index.reportsMoney.param1") + ": </span><span>" + lab + "</span></div>";
 		if(where.length>0)
 			where +=" and ";
 		where += "b.lab = '" + lab + "'";
@@ -593,25 +594,25 @@ console.log("report on insuff: " + labsindept);
 		if(selected.length>0)
 			selected +=", ";
 		selected += "a.agent";
-		columns+="<td>Reagent</td>";
+		columns+="<td>" + i18n.__("index.reportsMoney.param9") + "</td>";
 	} 
 	if(vendor != null && vendor !=undefined && vendor !=""){
 		if(selected.length>0)
 			selected +=", ";
 		selected += "a.vendor";
-		columns+="<td>Vendor</td>";
+		columns+="<td>" + i18n.__("index.reportsMoney.param10") + "</td>";
 	}
 	if(catalognumber != null && catalognumber !=undefined && catalognumber !=""){
 		if(selected.length>0)
 			selected +=", ";
 		selected += "a.catalognumber";
-		columns+="<td>Catalog#</td>";
+		columns+="<td>" + i18n.__("index.reportsMoney.param11") + "</td>";
 	}
 
 	/*if(selected.length>0)
 		selected +=", ";
 	selected +="count(a.category)";*/
-	columns+="<td>Insufficient Reagents Shared</td>";
+	columns+="<td>" + i18n.__("index.reportsInsuff.param1") + "</td>";
 
 
 
@@ -659,7 +660,7 @@ if(lab != null && lab !=undefined && lab =="all"){
 				html += " </tr>";
 		
 			}
-			html += "</tbody></table><br/><p style='margin-top:50px'><i><b>The LabYoke Team.</b></i></p><img style='width: 141px; margin: 0 20px;float:left' src='https:\/\/team-labyoke.herokuapp.com\/images\/yoke4.png', alt='The Yoke',  title='Yoke', class='yokelogo'/>";
+			html += "</tbody></table><br/><p style='margin-top:50px'><i><b>" + i18n.__("index.reportsShares.html7") + "</b></i></p><img style='width: 141px; margin: 0 20px;float:left' src='https:\/\/team-labyoke.herokuapp.com\/images\/yoke4.png', alt='The Yoke',  title='Yoke', class='yokelogo'/>";
 			console.log("html insuff: " + html);
 		}
 		if(!isempty){

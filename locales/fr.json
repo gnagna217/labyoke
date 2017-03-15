@@ -355,6 +355,21 @@
     "index.change.body7": " des produits chimiques aujourd'hui?]",
     "index.cancelled.subject": "LabYoke Commande - Annulation de ",
     "index.cancelled.body1": "Malheureusement, votre commande a été annulée en raison de quantités insuffisantes de l'inventaire suivant:",
+    
+    "index.reportsMoney.param1": "Laboratoire",
+    "index.reportsMoney.param2": "Économies",
+    "index.reportsMoney.param3": "Parametrères",
+    "index.reportsMoney.param4": "De",
+    "index.reportsMoney.param5": "À",
+    "index.reportsMoney.param6": "Ce rapport fait état des économies réalisées entre le ",
+    "index.reportsMoney.param7": " et le ",
+    "index.reportsMoney.param8": "Ce rapport fait état des économies réalisées",
+    "index.reportsMoney.param9": "Réactif",
+    "index.reportsMoney.param10": "Vendeur",
+    "index.reportsMoney.param11": "Catalogue",
+    "index.reportsMoney.param12": "Date",
+    "index.reportsMoney.param13": "Économies de Partages",
+    "index.reportsInsuff.param1": "Réactifs Partagés en Quantité Insduffisante",
 
 
     "dot.selected": "<b>Quantité: </b>",

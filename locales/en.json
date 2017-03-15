@@ -358,12 +358,21 @@
     "index.change.body7": " some chemicals today?]",
     "index.cancelled.subject": "LabYoke Order - Cancelled for ",
     "index.cancelled.body1": "Unfortunately your order has been cancelled due to insufficient quantities from the following inventory:",
-    "index.cancelled.subject": "",
-    "index.cancelled.subject": "",
-    "index.cancelled.subject": "",
-    "index.cancelled.subject": "",
-    "index.cancelled.subject": "",
-    "index.cancelled.subject": "",
+
+    "index.reportsMoney.param1": "Lab",
+    "index.reportsMoney.param2": "Savings",
+    "index.reportsMoney.param3": "Parameters",
+    "index.reportsMoney.param4": "Date From",
+    "index.reportsMoney.param5": "Date To",
+    "index.reportsMoney.param6": "This report is listing savings between ",
+    "index.reportsMoney.param7": " and ",
+    "index.reportsMoney.param8": "This report is listing all savings",
+    "index.reportsMoney.param9": "Reagent",
+    "index.reportsMoney.param10": "Vendor",
+    "index.reportsMoney.param11": "Catalog#",
+    "index.reportsMoney.param12": "Date",
+    "index.reportsMoney.param13": "Shares Savings",
+    "index.reportsInsuff.param1": "Insufficient Reagents Shared",
 
 
 
