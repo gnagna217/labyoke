@@ -497,6 +497,7 @@ console.log("report on savings- dateto: " + labsindept);
 } else {
 	//select = select + "SELECT " + selected + " from vm2016_agentsshare a, "+mylab+"_orders b where " + where + " group by " + groupby;
 
+	console.log("select query for " + lab + ": " + select);
 	where = where + " and (";
 	
 		where = where + " b.lab = '" + lab + "' ";
