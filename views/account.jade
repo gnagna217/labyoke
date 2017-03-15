@@ -87,7 +87,7 @@ block content
                               div(style="margin-bottom:25px;", class="accountdetail accountdetailRowMargin")
                                 span(id="lang")
                                 form(action="/changeDetails" id="changelang" method="post" class="langform" style="top: -5px; position: relative;")
-                                  select(name="lang" type="text" id="lang" class="form-control" style="border-color:#3d9dcb;margin-bottom:10px" placeholder="")
+                                  select(name="selectlang" type="text" id="selectlang" class="form-control" style="border-color:#3d9dcb;margin-bottom:10px" placeholder="")
                                     option(value="en",style="font-weight:bold",selected=(selectedlang==="en" ? "selected" : undefined))= "en"
                                     option(value="fr",style="font-weight:bold",selected=(selectedlang==="fr" ? "selected" : undefined))= "fr"
                                   div(style="top: -35px; position: relative; float: right; margin-right: 10px;")
@@ -97,7 +97,7 @@ block content
                                   input(name="formemail" type="hidden" id="formemail" value=email)
                                 script.
                                   window.onload = function() {
-                                    document.getElementById("lang").onchange = function() {
+                                    document.getElementById("selectlang").onchange = function() {
                                       console.log("changing language " + $('#lang').val());
                                       $('#columnlang').val($('#lang').val());
                                       
