@@ -289,9 +289,9 @@ module.exports = function(router) {
 			var labYokeSearch = new LabYokeSearch("",req.session.email);
 			labYokeSearch.findagents(function(error, results) {			
 				if (results != null && results.length > 0){
-					res.render('search', {lang:req.cookies.i18n, i18n:res, mylab: req.session.lab,ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, isLoggedInAdmin: req.session.admin, agentsResults : results, loggedIn : true, title: 'Reagent Search'});
+					res.render('search', {userlang:req.session.userlang,lang:req.cookies.i18n, i18n:res, mylab: req.session.lab,ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, isLoggedInAdmin: req.session.admin, agentsResults : results, loggedIn : true, title: 'Reagent Search'});
 				} else {
-					res.render('search', {lang:req.cookies.i18n, i18n:res, mylab: req.session.lab,ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, isLoggedInAdmin: req.session.admin, loggedIn : true, title: 'Reagent Search'});
+					res.render('search', {userlang:req.session.userlang,lang:req.cookies.i18n, i18n:res, mylab: req.session.lab,ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, isLoggedInAdmin: req.session.admin, loggedIn : true, title: 'Reagent Search'});
 				}
 				req.session.messages = null;
 			});
@@ -1002,10 +1002,10 @@ totalshares = t[0].counting;
 						messageStr = (res.__("index.search.message1", {searchText:searchText})).replace(/&lt;/g, '<').replace(/&gt;/g, '>');
 						//messageStr = "Sorry we could not find any results with your reagent search request: <b>" + searchText + "</b>. Please try again.";
 					}
-					res.render('search', {lang:req.cookies.i18n, i18n:res, mylab: req.session.lab, message: messageStr, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, isLoggedInAdmin: req.session.admin, title: 'Search', fullname: req.session.fullname, sendemail: req.session.email, searchResults : results[0], agentsResults : results[1], searchformText: searchText, loggedIn : true});
+					res.render('search', {userlang:req.session.userlang,lang:req.cookies.i18n, i18n:res, mylab: req.session.lab, message: messageStr, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, isLoggedInAdmin: req.session.admin, title: 'Search', fullname: req.session.fullname, sendemail: req.session.email, searchResults : results[0], agentsResults : results[1], searchformText: searchText, loggedIn : true});
 				} else {
 					messageStr = "You entered an invalid reagent keyword. Please try again.";
-					res.render('search', {lang:req.cookies.i18n, i18n:res, message: res.__("index.search.message2"), mylab: req.session.lab,ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, isLoggedInAdmin: req.session.admin, title: 'Search', loggedIn : true, agentsResults : results[1]});
+					res.render('search', {userlang:req.session.userlang,lang:req.cookies.i18n, i18n:res, message: res.__("index.search.message2"), mylab: req.session.lab,ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, isLoggedInAdmin: req.session.admin, title: 'Search', loggedIn : true, agentsResults : results[1]});
 				}
 				req.session.messages = null;
 			});
@@ -1027,10 +1027,10 @@ totalshares = t[0].counting;
 						messageStr = (res.__("index.search.message1", {searchText:searchText})).replace(/&lt;/g, '<').replace(/&gt;/g, '>');
 						//messageStr = "Sorry we could not find any results with your catalog search request: <b>" + searchText + "</b>. Please try again.";
 					}
-					res.render('search', {lang:req.cookies.i18n, i18n:res, mylab: req.session.lab, messageCatalog: messageStr, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, isLoggedInAdmin: req.session.admin, title: 'Search', fullname: req.session.fullname, sendemail: req.session.email, searchResults : results[0], agentsResults : results[1], searchformTextCatalog: searchText, loggedIn : true});
+					res.render('search', {userlang:req.session.userlang,lang:req.cookies.i18n, i18n:res, mylab: req.session.lab, messageCatalog: messageStr, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, isLoggedInAdmin: req.session.admin, title: 'Search', fullname: req.session.fullname, sendemail: req.session.email, searchResults : results[0], agentsResults : results[1], searchformTextCatalog: searchText, loggedIn : true});
 				} else {
 					messageStr = "You entered an invalid catalog keyword. Please try again.";
-					res.render('search', {lang:req.cookies.i18n, i18n:res, messageCatalog: res.__("index.searchcatalog.message"),mylab: req.session.lab,ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, isLoggedInAdmin: req.session.admin, title: 'Search', loggedIn : true, agentsResults : results[1]});
+					res.render('search', {userlang:req.session.userlang,lang:req.cookies.i18n, i18n:res, messageCatalog: res.__("index.searchcatalog.message"),mylab: req.session.lab,ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, isLoggedInAdmin: req.session.admin, title: 'Search', loggedIn : true, agentsResults : results[1]});
 				}
 				req.session.messages = null;
 			});
