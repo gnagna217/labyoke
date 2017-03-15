@@ -537,6 +537,12 @@ console.log("report on savings- dateto: " + labsindept);
 	query.on("end", function(result) {
 		results = result.rows;
 		console.log("results : " + results);
+
+var grouped = _.groupBy(results, function(result) {
+  return result.agent;
+});
+console.log("grouped : " + grouped);
+
 		html += params;
 		var savings = 0;
 		var isempty = true;
