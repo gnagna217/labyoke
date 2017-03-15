@@ -13,7 +13,6 @@ var client = new pg.Client(conString);
 client.connect();
 var crypt = require('bcrypt-nodejs');
 var accounting = require('./accounting');
-var _ = require('lodash');
 
 LabYokeFinder = function(today) {
 	this.now = today
@@ -255,7 +254,7 @@ LabYokeUploader.prototype.upload = function(callback) {
 
 LabYokeReporterSavings.prototype.dataMoney = function(callback) {
 	var results;
-	var mylab = this.mylab.replace(" ","").toLowerCase();
+	var mylab = this.mylab.replace(/ /g,"").toLowerCase();
 	var datefrom = this.datefrom;
 	var dateto = this.dateto;
 	var vendor = this.vendor;
@@ -341,7 +340,7 @@ console.log("datamoney - labsindept: " + labsindept.length);
 console.log("datamoney - labsindept: " + labs.length);
 	for(var prop in labs){
 		a = "a" + i;
-		labsstr = (labs[prop].labname).replace(" ","").toLowerCase() + "_orders b ";
+		labsstr = (labs[prop].labname).replace(/ /g,"").toLowerCase() + "_orders b ";
 		select = select + "SELECT " + selected + " from vm2016_agentsshare a, "+labsstr+" where " + where + " group by " + groupby + " UNION ";
 		i++;
 	}
@@ -390,7 +389,7 @@ LabYokeReporterSavings.prototype.reportMoney = function(callback) {
 	var i18n = this.res;
 	var agent = this.agent;
 	var catalognumber = this.catalognumber;
-	var mylab = this.mylab.replace(" ","").toLowerCase();
+	var mylab = this.mylab.replace(/ /g,"").toLowerCase();
 	var labs = this.labs;
 	//var selected = "a.agent, sum(a.agent) as counting, b.lab, a.price";
 		var selected = "a.agent, sum(a.price) as counting, b.lab";
@@ -492,7 +491,7 @@ console.log("report on savings- dateto: " + labsindept);
 
 	for(var prop in labs){
 		a = "a" + i;
-		labsstr = (labs[prop].labname).replace(" ","").toLowerCase() + "_orders b ";
+		labsstr = (labs[prop].labname).replace(/ /g,"").toLowerCase() + "_orders b ";
 		select = select + "SELECT " + selected + " from vm2016_agentsshare a, "+labsstr+" where " + where + " group by " + groupby + " UNION ";
 		i++;
 	}
@@ -506,7 +505,7 @@ console.log("report on savings- dateto: " + labsindept);
 		where = where + " b.lab = '" + lab + "' ";
 	for(var prop in labs){
 		a = "a" + i;
-		labsstr = (labs[prop].labname).replace(" ","").toLowerCase() + "_orders b ";
+		labsstr = (labs[prop].labname).replace(/ /g,"").toLowerCase() + "_orders b ";
 		select = select + "SELECT " + selected + " from vm2016_agentsshare a, "+labsstr+" where " + where + " group by " + groupby + " UNION ";
 		i++;
 		console.log("select query for " + lab + ": " + select);
@@ -567,6 +566,7 @@ console.log("report on savings- dateto: " + labsindept);
 				savings += total;
 				html += "<td style='font-size: 12px;'>" + accounting.formatMoney(total) + "</td>";
 				html += " </tr>";
+				console.log("savings is: " + savings);
 		
 			}
 			html += "</tbody></table><div>" + i18n.__("index.reportsMoney.param14") + "<span style='font-size:30pt'>" + accounting.formatMoney(savings) + ".</span></div><br/><p style='margin-top:50px'><i><b>" + i18n.__("index.reportsShares.html7") + "</b></i></p><img style='width: 141px; margin: 0 20px;float:left' src='https:\/\/team-labyoke.herokuapp.com\/images\/yoke4.png', alt='The Yoke',  title='Yoke', class='yokelogo'/>";
@@ -583,7 +583,7 @@ console.log("report on savings- dateto: " + labsindept);
 
 LabYokeReporterSavings.prototype.reportInsuff = function(callback) {
 	var results;
-	var mylab = this.mylab.replace(" ","").toLowerCase();
+	var mylab = this.mylab.replace(/ /g,"").toLowerCase();
 	var labs = this.labs;
 	var datefrom = this.datefrom;
 	var dateto = this.dateto;
@@ -822,7 +822,7 @@ LabYokeReporterOrders.prototype.reportOrders = function(callback) {
 	var dateto = this.dateto;
 	var lab = this.lab;
 	var labs = this.labs;
-	var mylab = this.mylab.replace(" ","").toLowerCase();
+	var mylab = this.mylab.replace(/ /g,"").toLowerCase();
 	//var category = this.category;
 	var params = "";
 	var where = "";
@@ -891,13 +891,13 @@ console.log("report on orders: " + labsindept);
 
 	for(var prop in labs){
 		a = "a" + i;
-		labsstr = (labs[prop].labname).replace(" ","").toLowerCase() + "_orders ";
+		labsstr = (labs[prop].labname).replace(/ /g,"").toLowerCase() + "_orders ";
 		select = select + "SELECT * FROM " + labsstr + where + " UNION ";
 		i++;
 	}
 	select = select.replace(/UNION\s*$/, "");
 } else {
-	select = "SELECT * FROM " + lab.replace(" ","").toLowerCase() + "_orders " + where;
+	select = "SELECT * FROM " + lab.replace(/ /g,"").toLowerCase() + "_orders " + where;
 }
 	console.log("get orders labsstr: " + labsstr);
 	console.log("full query: " + select);
@@ -1006,7 +1006,7 @@ LabYokeAgents.prototype.findmyshares = function(callback) {
 	var labs = this.labs;
 	var mylab = this.mylab;
 	var department = this.dept;
-	var mylabtable = mylab.replace(" ","").toLowerCase();
+	var mylabtable = mylab.replace(/ /g,"").toLowerCase();
 	console.log("findmyshares: " + this.email);
 	var query = client
 			.query("SELECT * FROM vm2016_agentsshare where email='"
@@ -1145,7 +1145,7 @@ LabYokeAgents.prototype.findmyshares = function(callback) {
 LabYokeAgents.prototype.reportAllSharesByCategory = function(callback) {
 	var results;
 	console.log("reportAllSharesByCategory: " + this.email);
-	var mylab = this.mylab.replace(" ","").toLowerCase();
+	var mylab = this.mylab.replace(/ /g,"").toLowerCase();
 	var query = client
 			.query("SELECT b.agent, count(b.agent) FROM " + mylab + "_orders a, vm2016_agentsshare b where a.agent = b.agent group by b.agent");
 	query.on("row", function(row, result) {
@@ -1194,7 +1194,7 @@ LabYokerOrder.prototype.order = function(callback) {
 	console.log("currentquantity2: " + quantity);
 	var now = moment(new Date).tz("America/New_York").format('MM-DD-YYYY');
 	console.log("order location: " + location);
-	var query = client.query("INSERT INTO " + lab.replace(" ","").toLowerCase() + "_orders VALUES ('" + agent + "', '" + vendor + "', '" + catalognumber + "','" + email + "', '" + sendemail + "', '" + now + "', 'new', '" + category + "','" + mylab + "',1 )");
+	var query = client.query("INSERT INTO " + lab.replace(/ /g,"").toLowerCase() + "_orders VALUES ('" + agent + "', '" + vendor + "', '" + catalognumber + "','" + email + "', '" + sendemail + "', '" + now + "', 'new', '" + category + "','" + mylab + "',1 )");
 
 	query.on("row", function(row, result) {
 		result.addRow(row);
@@ -1247,7 +1247,7 @@ LabYokerOrder.prototype.order = function(callback) {
 LabYokerGetOrder.prototype.getLabOrders = function(callback) {
 	var results = [];
 	console.log("getLabOrders");
-	var mylab = this.lab.replace(" ","").toLowerCase();
+	var mylab = this.lab.replace(/ /g,"").toLowerCase();
 	var query = client.query("SELECT lab, count(lab) as counting FROM samalab_orders where lab='Sama Lab' group by lab");
 	query.on("row", function(row, result) {
 		result.addRow(row);
@@ -1284,7 +1284,7 @@ LabYokerGetOrder.prototype.getLabOrders_2 = function(callback) {
 
 	for(var prop in labs){
 		a = "a" + i;
-		labsstr = (labs[prop].labname).replace(" ","").toLowerCase() + "_orders "; //+ a + " ";
+		labsstr = (labs[prop].labname).replace(/ /g,"").toLowerCase() + "_orders "; //+ a + " ";
 		select = select + "SELECT agent, count(agent) as counting, lab FROM " + labsstr + " group by agent,lab UNION ";
 		i++;
 	}
@@ -1324,7 +1324,7 @@ LabYokerGetOrder.prototype.getorders = function(callback) {
 	var results = [];
 	var email = this.sendemail;
 	var lab = this.lab;
-	var mylab = this.lab.replace(" ","").toLowerCase();
+	var mylab = this.lab.replace(/ /g,"").toLowerCase();
 	console.log("getorders: " + email);
 	var labs = this.labs;
 	var labsstr = "";
@@ -1338,7 +1338,7 @@ LabYokerGetOrder.prototype.getorders = function(callback) {
 
 	for(var prop in labs){
 		a = "a" + i;
-		labsstr = (labs[prop].labname).replace(" ","").toLowerCase() + "_orders " + a + " ";
+		labsstr = (labs[prop].labname).replace(/ /g,"").toLowerCase() + "_orders " + a + " ";
 		requestor = a + ".requestoremail = '"+ email + "' ";
 		date = a + ".date ";
 		select = select + "SELECT * FROM " + labsstr + " where " + requestor + " UNION ";
@@ -1404,7 +1404,7 @@ LabYokerGetOrder.prototype.getorders = function(callback) {
 
 	for(var prop in labs){
 		a = "a" + i;
-		labsstr = (labs[prop].labname).replace(" ","").toLowerCase() + "_orders " + a + " ";
+		labsstr = (labs[prop].labname).replace(/ /g,"").toLowerCase() + "_orders " + a + " ";
 		select = select + "SELECT agent, count(agent) as counting, EXTRACT(MONTH FROM date_trunc( 'month', date )) as monthorder, EXTRACT(year FROM date_trunc( 'year', date )) as yearorder from " + labsstr + " where insufficient = 1 and requestoremail='" + email
 			+ "' group by agent, date_trunc( 'month', date ), date_trunc( 'year', date ) UNION ";
 		i++;
@@ -1439,7 +1439,7 @@ LabYokerGetOrder.prototype.getorders = function(callback) {
 
 	for(var prop in labs){
 		//a = "a" + i;
-		labsstr = (labs[prop].labname).replace(" ","").toLowerCase() + "_orders" ; //+ a + " ";
+		labsstr = (labs[prop].labname).replace(/ /g,"").toLowerCase() + "_orders" ; //+ a + " ";
 		select = select + "SELECT a.agent, count(a.agent) counting FROM " + labsstr + " a, vm2016_users b where b.lab='"+lab+"' and a.insufficient=1 and a.requestoremail=b.email group by a.agent UNION ";
 		i++;
 	}
@@ -1587,7 +1587,7 @@ var labyokerLabs = new LabyokerLabs('','');
 
 	for(var prop in labs){
 		a = "a" + i;
-		labsstr = (labs[prop].labname).replace(" ","").toLowerCase() + "_orders " + a + " ";
+		labsstr = (labs[prop].labname).replace(/ /g,"").toLowerCase() + "_orders " + a + " ";
 		requested = a + ".email = '"+ email + "' ";
 		select = select + "SELECT * FROM " + labsstr + " where " + requested + " and status='new' UNION ";
 		i++;
@@ -1633,7 +1633,7 @@ var labyokerLabs = new LabyokerLabs('','');
 
 	for(var prop in labs){
 		a = "a" + i;
-		labsstr = (labs[prop].labname).replace(" ","").toLowerCase() + "_orders " + a + " ";
+		labsstr = (labs[prop].labname).replace(/ /g,"").toLowerCase() + "_orders " + a + " ";
 		requestor = a + ".requestoremail = '"+ email + "' ";
 		select = select + "SELECT * FROM " + labsstr + " where " + requestor + " and status='new' UNION ";
 		i++;
@@ -2135,7 +2135,7 @@ LabYokerChangeShare.prototype.cancelShare = function(callback) {
 	var vendor = this.vendor;
 	var catalognumber = this.catalognumber;
 	var checked = this.checked;
-	var lab = this.lab.replace(" ","").toLowerCase();
+	var lab = this.lab.replace(/ /g,"").toLowerCase();
 	var table = this.table;
 	var email = this.email;
 	var datenow = this.datenow;
