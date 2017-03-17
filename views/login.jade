@@ -37,6 +37,7 @@ block content
     div(class="test", style="text-align:center;font-weight:bold")
         span(style="color:#3d9dcb")!= "Orders currently made for: "
         span!="bamhi-hf | Cell 189 | Bamhi | Exosome multiplastic."
+    div(class="test2") &nbsp;
     div(class="help")
        a(href="/help" title="Help")
         img(src="images/bouee3.png", alt="Help", title=i18n.__("login.helpLink"), class="helplogin")
@@ -52,4 +53,5 @@ block content
     script.
         $(function () {
         $('.test').textillate({loop:true, in:{effect:'fadeInLeftbig'}, out:{effect:'hinge'}});
+        $('.test2').textillate({loop:true, in:{effect:'fadeInLeftbig'}, out:{effect:'hinge'}});
         });
