@@ -52,8 +52,7 @@ block content
     script(type="text/javascript" src="/javascripts/jquery.textillate.js")
     script.
         $(function () {
-        $('.test').textillate({loop:true, in:{effect:'fadeInLeftbig', callback: function() {
-            $('.myclass').textillate('out');
-        }}, out:{effect:'hinge'}});
-        $('.test2').textillate({loop:true, in:{effect:'fadeInLeftbig'}, out:{effect:'hinge'}});
+            $('.test').textillate({loop:true, in:{effect:'fadeInLeftbig', callback: function() {
+                $('.test').textillate('out');
+            }}, out:{effect:'hinge'}});
         });
