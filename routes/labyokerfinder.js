@@ -1416,10 +1416,11 @@ LabYokerGetOrder.prototype.getorders = function(callback) {
 
 	console.log("get orders for month orders labsstr: " + labsstr);
 
-	console.log("full for month orders query: " + select + " order by agent asc limit 5");
+	console.log("full for month orders query: " + select + " order by agent asc");
 
 
-		var query4 = client.query(select + " order by agent asc limit 5");
+		var query4 = client.query(select + " order by agent asc");
+		//var query4 = client.query(select + " order by agent asc limit 5");
 		query4.on("row", function(row, result4) {
 			result4.addRow(row);
 		});
