@@ -1152,7 +1152,6 @@ input::-webkit-inner-spin-button {
 .searchcatalog{
     float:left;
     max-width: 400px;
-    margin-left: 0px;
 }
 .enlogin{
     border-width: 0px;
