@@ -137,7 +137,7 @@ html(lang='en')
                             li(class=activateAccount)
                                 a(href="/account",class="nav-menu myaccount", id="menumyaccounta")
                                     span(class="fa fa-cog colmenu")
-                                    span(class="desktabonly2")=" " + user + #{i18n.__("layout.Profile.apos")}
+                                    span(class="desktabonly2")!=" " + user + #{i18n.__("layout.Profile.apos")}
                                     span #{i18n.__("layout.Profile")}
                             li(class=activateHelp)
                                 a(href='/help', class="nav-menu",id="menumyaccounta")
