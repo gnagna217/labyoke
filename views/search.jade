@@ -89,8 +89,8 @@ block content
                   span= order_vendor
           script="$(window).scrollTop($('#ordered').offset().top).scrollLeft($('#ordered').offset().left);"
 
-    if(searchResults != null && searchResults.length > 0)
-        div.searchResults()
+        if(searchResults != null && searchResults.length > 0)
+          div(style="float:left")
               div
                   span(style="text-align: center")
                     h3 #{i18n.__("search.resultstitle")}
