@@ -34,7 +34,8 @@ block content
                     a(href="/register", style="z-index:10") #{i18n.__("login.registerLink")}
                 span(style="float:right;")
                     a(href="/forgot", style="z-index:10") #{i18n.__("login.forgotLink")}
-    div(id="test", style="text-align: center;color:#3d9dcb;font-weight:bold")
+    div(id="test", style="text-align:center;color:#3d9dcb;font-weight:bold")!= "Orders currently made for: "
+        span!="bamhi-hf | Cell 189 | Bamhi | Exosome multiplastic."
     div(class="help")
        a(href="/help" title="Help")
         img(src="images/bouee3.png", alt="Help", title=i18n.__("login.helpLink"), class="helplogin")
@@ -44,8 +45,19 @@ block content
        span
          a(href="/login?lang=fr")
             img(src="images/fr.png", alt="Français", title="Français", class="frlogin")
+    script(type="text/javascript" src="/javascripts/jquery.textillate.js")
     script.
-        msg = "Orders currently made for";
+        $('#test').textillate({ in: { effect: 'fadeInLeftbig' },
+        out: {
+    effect: 'hinge',
+    delayScale: 1.5,
+    delay: 50,
+    sync: true,
+    shuffle: false,
+    reverse: false,
+    callback: function () {}
+  } });
+        /*msg = "Orders currently made for";
         msg = " ..... bamhi-hf | Cell 189 | Bamhi | Exosome multiplastic. " + msg;
         position = 0;
         function scrolltitle() {
@@ -53,4 +65,4 @@ block content
         if (position > msg.length) position = 0
         window.setTimeout("scrolltitle()",200);
         }
-        scrolltitle();
+        scrolltitle();*/
