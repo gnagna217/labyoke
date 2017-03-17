@@ -102,7 +102,8 @@ block content
           - var find1 = test
           - var find2 = laborders
           - var now = new Date()
-          - var filteroutput = test.filter(function(x){console.log("x.monthorder: "+x.monthorder); console.log("x.yearorder: "+x.yearorder); console.log("now.getFullYear(): "+ now.getFullYear()); console.log("now.getMonth(): "+ now.getMonth()); console.log("so: "+ (x.yearorder == now.getFullYear() && x.monthorder == (now.getMonth() + 1))); return (x.yearorder == now.getFullYear() && x.monthorder == (now.getMonth() + 1))});
+          - var count = 0;
+          - var filteroutput = test.filter(function(x){console.log("x.monthorder: "+x.monthorder); console.log("x.yearorder: "+x.yearorder); console.log("now.getFullYear(): "+ now.getFullYear()); console.log("now.getMonth(): "+ now.getMonth()); console.log("so: "+ (x.yearorder == now.getFullYear() && x.monthorder == (now.getMonth() + 1))); if(x.yearorder == now.getFullYear() && x.monthorder == (now.getMonth() + 1)){count++;} console.log("count is: "+count); if(count<6){return (x.yearorder == now.getFullYear() && x.monthorder == (now.getMonth() + 1))}});
           script.
             console.log("find0: " + ("#{find0}" != null && "#{find0}" != undefined && ("#{find0}").length > 0));
             window.onload = function() {
