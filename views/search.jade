@@ -65,21 +65,22 @@ block content
                             img(src="images/yoke6.png", alt="The Search", title="Search", style="border-width:0px; width: 40px; margin-top: -75px; margin-left: 300px;")
         
         if email != undefined
-          div.searchResults()
+          div.searchResults(id="ordered", style="margin-top: 25px;float:right;")
             div(class="alert alert-success")
-                h3(style="margin-top: 100px;")= i18n.__("orders.success.title")
-                  span(style="color: #3d9dcb;")=" " + location
+                h3= i18n.__("orders.success.title")
+                  span(style="color: #3d9dcb;")=" " + order_location
                   span="!"
                 p=" "
                 p
                   b= i18n.__("orders.success.reagent")
-                  span= agent
+                  span= order_agent
                   br
                   b= i18n.__("orders.success.catalog")
-                  span= catalog
+                  span= order_catalog
                   br
                   b= i18n.__("orders.success.vendor")
-                  span= vendor
+                  span= order_vendor
+          script="$(window).scrollTop($('#ordered').offset().top).scrollLeft($('#ordered').offset().left);"
 
         if(searchResults != null && searchResults.length > 0)
             div.searchResults()
