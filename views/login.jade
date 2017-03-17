@@ -52,7 +52,15 @@ block content
     script(type="text/javascript" src="/javascripts/jquery.textillate.js")
     script.
         $(function () {
-            $('.test').textillate({loop:true, in:{effect:'fadeInLeftBig', callback: function() {
-                $('.test').textillate('out');
-            }}, out:{effect:'hinge'}});
+        $('.test').textillate({ in : {
+                shuffle: false,
+                sync: true
+            },
+            out: {
+                effect: 'fadeOutRightBig',
+                shuffle: false,
+                sync: true
+            },
+            loop: true
+        });
         });
