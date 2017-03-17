@@ -10,6 +10,7 @@ block content
             - if(resultsAccount)
               div(id="changed", style="margin-bottom: 45px;")
                 div(class="alert alert-success")
+                  a(href="#", class="close", data-dismiss="alert", aria-label="close", title="close")="x"
                   h4= i18n.__("account.success")
                      span!=" " + resultsAccount
                      span="!"                 
