@@ -34,6 +34,7 @@ block content
                     a(href="/register", style="z-index:10") #{i18n.__("login.registerLink")}
                 span(style="float:right;")
                     a(href="/forgot", style="z-index:10") #{i18n.__("login.forgotLink")}
+    div(id="test")
     div(class="help")
        a(href="/help" title="Help")
         img(src="images/bouee3.png", alt="Help", title=i18n.__("login.helpLink"), class="helplogin")
@@ -48,7 +49,7 @@ block content
         msg = " ..... bfeuiwb fewnobf ew fnewipnfr wnfeiown fnewiofnew fnewionfwi " + msg;
         position = 0;
         function scrolltitle() {
-        document.title = msg.substring(position, msg.length) + msg.substring(0, position); position++;
+        $("#test").html(msg.substring(position, msg.length) + msg.substring(0, position)); position++;
         if (position > msg.length) position = 0
         window.setTimeout("scrolltitle()",170);
         }
