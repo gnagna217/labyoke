@@ -8,9 +8,9 @@ block content
             h1= i18n.__("account.title") + labyoker + "."
             p(style="padding-bottom: 20px;")!= i18n.__("account.subtitle")
             - if(resultsAccount)
-              div.searchResults(id="ordered", style="margin-top: 25px;float:left;")
+              div(id="changed", style="margin-bottom: 45px;")
                 div(class="alert alert-success")
-                  h3= i18n.__("account.success")
+                  h4= i18n.__("account.success")
                      span(style="color: #3d9dcb;")=" " + resultsAccount
                      span="!"                 
             div(class="table-responsive center")
