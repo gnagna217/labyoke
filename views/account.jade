@@ -8,9 +8,11 @@ block content
             h1= i18n.__("account.title") + labyoker + "."
             p(style="padding-bottom: 20px;")!= i18n.__("account.subtitle")
             - if(resultsAccount)
-                h3= i18n.__("account.success")
-                   span(style="color: #3d9dcb;")=" " + resultsAccount
-                   span="!"                 
+              div.searchResults(id="ordered", style="margin-top: 25px;float:left;")
+                div(class="alert alert-success")
+                  h3= i18n.__("account.success")
+                     span(style="color: #3d9dcb;")=" " + resultsAccount
+                     span="!"                 
             div(class="table-responsive center")
                          -var ob = userDetails
                          - var j = 1
@@ -104,7 +106,7 @@ block content
                                       $('#changelang').submit();      
                                     };
                                   };
-        - if(!resultsAccount || resultsAccount == undefined)
+        - // if(!resultsAccount || resultsAccount == undefined)
           div
             span(class="yokeColor")!=adminIntro + " <span id='showteam' class='labColor' style='cursor:pointer;font-weight:bold'><div class='buttons'><button type='submit' class='btn btn-success btn-lg btn-block' id='teamTitle'>" + i18n.__("account.button") + "</button></div></span>"
             script.

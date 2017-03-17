@@ -594,7 +594,33 @@ totalshares = t[0].counting;
 					req.session.surname = val;
 				}
 				console.log("res changeDetails " + results);
-				res.render('account', {lang:req.cookies.i18n, i18n:res,labs: req.session.labs, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, title:'Account',loggedIn : true, resultsAccount: results, isLoggedInAdmin: req.session.admin});
+
+
+		var labyokerTeam = new LabyokerTeam(req.session.lab);
+		labyokerTeam.getTeam(function(error, team) {
+		if(req.session.labs == undefined){
+			var labyokerLabs = new LabyokerLabs('','');
+			labyokerLabs.getlabs(function(error, labs) {
+				req.session.labs = labs;
+				console.log("load labs in account : " + labs);
+				var labYokeAgents = new LabYokeAgents(req.session.email, req.session.lab, req.session.labs);
+				labYokeAgents.getLabyoker(function(error, userresults) {
+				res.render('account', {lang:req.cookies.i18n, i18n:res, userDetails: userresults, labname: req.session.lab, team:team, labs: req.session.labs, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, title:'Account',loggedIn : true, resultsAccount: results, isLoggedInAdmin: req.session.admin});
+					req.session.messages = null;
+				});
+			});
+		} else {
+			var labYokeAgents = new LabYokeAgents(req.session.email, req.session.lab, req.session.labs);
+			labYokeAgents.getLabyoker(function(error, userresults) {
+				res.render('account', {lang:req.cookies.i18n, i18n:res, userDetails: userresults, labname: req.session.lab, team:team, labs: req.session.labs, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, title:'Account',loggedIn : true, resultsAccount: results, isLoggedInAdmin: req.session.admin});
+				req.session.messages = null;
+			});
+		}
+		});
+
+
+
+				//res.render('account', {lang:req.cookies.i18n, i18n:res, userDetails: userresults, labname: req.session.lab, team:team, labs: req.session.labs, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, title:'Account',loggedIn : true, resultsAccount: results, isLoggedInAdmin: req.session.admin});
 				req.session.messages = null;
 			}
 		});
