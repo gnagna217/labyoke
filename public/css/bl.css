@@ -253,6 +253,11 @@ position: absolute;
     z-index: 10;
 }
 
+.searchcatalog{
+    float:left;
+    max-width: 400px;
+    margin-left: 50px;
+}
 #valuedetail{
     display:none;
 }
@@ -1138,6 +1143,11 @@ input::-webkit-inner-spin-button {
 }
 
  @media (max-width: 440px) {
+.searchcatalog{
+    float:left;
+    max-width: 400px;
+    margin-left: 0px;
+}
 .enlogin{
     border-width: 0px;
     width: 50px;

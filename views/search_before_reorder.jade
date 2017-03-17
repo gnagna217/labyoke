@@ -26,10 +26,16 @@ block content
             h1 #{i18n.__("search.title")}
             p!= i18n.__("search.description")
             - searchText = i18n.__("search.searchholder")
+            - searchTextCatalog = i18n.__("search.catalogholder")
             - classButton = "btn-success"
+            - classButtonCatalog = "btn-success"
             if searchformText
                 - searchText = i18n.__("search.results.text") + searchformText
-                - classButton = "btn-success-results"          
+                - classButton = "btn-success-results"
+            if searchformTextCatalog
+                - searchTextCatalog = i18n.__("search.results.text") + searchformTextCatalog
+                - searchformTextCatalog = i18n.__("search.results.text")  + searchformTextCatalog
+                - classButtonCatalog = "btn-success-results"            
             div(id="ctl00_Div2" class="row")
                 div
                     if message
@@ -44,18 +50,7 @@ block content
                         div(class="buttons")
                             button(class="btn " + classButton + " btn-lg btn-block" type='submit') #{i18n.__("search.buttonreagent")}
                             img(src="images/yoke5.png", alt="The Search", title="Search", style="border-width:0px; width: 40px; margin-top: -76px; margin-left: 300px;")
-
-        div(style="float: left;max-width: 400px;margin-right: 20px;")
-            h1 #{i18n.__("search.title")}
-            p!= i18n.__("search.description")
-            - searchTextCatalog = i18n.__("search.catalogholder")
-            - classButtonCatalog = "btn-success"
-            if searchformTextCatalog
-                - searchTextCatalog = i18n.__("search.results.text") + searchformTextCatalog
-                - searchformTextCatalog = i18n.__("search.results.text")  + searchformTextCatalog
-                - classButtonCatalog = "btn-success-results"            
-            div(id="ctl00_Div2" class="row")
-                div
+                    div(style="background-color: #3d9dcb; height: 2px; margin-bottom: 40px; margin-top: 30px;")
                     if messageCatalog
                         div(class="alert alert-danger")!= messageCatalog
                     form(action="/searchCatalog" method="post")
@@ -68,8 +63,7 @@ block content
                         div(class="buttons")
                             button(class="btn " + classButtonCatalog + " btn-lg btn-block" type='submit') #{i18n.__("search.buttoncatalog")}
                             img(src="images/yoke6.png", alt="The Search", title="Search", style="border-width:0px; width: 40px; margin-top: -75px; margin-left: 300px;")
-        div(style="background-color: #3d9dcb; height: 2px; margin-bottom: 40px; margin-top: 30px;")
-
+        
         if email != undefined
           div.searchResults(id="ordered")
             div(class="alert alert-success", style="margin-top: 25px;float:right;")
@@ -89,8 +83,8 @@ block content
                   span= order_vendor
           script="$(window).scrollTop($('#ordered').offset().top).scrollLeft($('#ordered').offset().left);"
 
-    if(searchResults != null && searchResults.length > 0)
-        div.searchResults()
+        if(searchResults != null && searchResults.length > 0)
+            div.searchResults()
               div
                   span(style="text-align: center")
                     h3 #{i18n.__("search.resultstitle")}
@@ -168,8 +162,8 @@ block content
                                     }
                            });
                         });
-    if(searchResults != undefined && searchResults.length == 0 && searchformText)
-        div.searchResults(id="results")
+        if(searchResults != undefined && searchResults.length == 0 && searchformText)
+            div.searchResults(id="results")
                 div(id="ctl00_Div2" class="row rank")
                    div(class="table-responsive")
                       span(style="text-align: center")
