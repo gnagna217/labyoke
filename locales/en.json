@@ -222,7 +222,7 @@
     "orders.success.title": "Great! You have ordered the following reagent from ",
     "orders.success.reagent": "Reagent: ",
     "orders.success.catalog": "Catalog: ",
-    "orders.success.month": "Vendor: ",
+    "orders.success.vendor": "Vendor: ",
 
     "dot.selected": "<b>Selected Quantity: </b>",
     "dot.reagent": " - <b>Reagent:</b> ",

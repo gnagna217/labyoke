@@ -562,6 +562,7 @@ console.log("report on savings- dateto: " + labsindept);
 				html += "<td style='font-size: 12px;'>" + moment(results[prop].date).tz("America/New_York").format('MM-DD-YYYY')+ "</td>";
 				}
 				var total = results[prop].counting /** results[prop].price*/;
+				console.log("counting is: " + total);
 				savings += total;
 				html += "<td style='font-size: 12px;'>" + accounting.formatMoney(total) + "</td>";
 				html += " </tr>";
