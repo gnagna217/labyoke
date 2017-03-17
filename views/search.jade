@@ -45,7 +45,7 @@ block content
                             button(class="btn " + classButton + " btn-lg btn-block" type='submit') #{i18n.__("search.buttonreagent")}
                             img(src="images/yoke5.png", alt="The Search", title="Search", style="border-width:0px; width: 40px; margin-top: -76px; margin-left: 300px;")
 
-        div(style="float: left;max-width: 400px;margin-right: 20px;")
+        div(class="searchcatalog")
             h1 #{i18n.__("search.title")}
             p!= i18n.__("search.description")
             - searchTextCatalog = i18n.__("search.catalogholder")
@@ -68,7 +68,7 @@ block content
                         div(class="buttons")
                             button(class="btn " + classButtonCatalog + " btn-lg btn-block" type='submit') #{i18n.__("search.buttoncatalog")}
                             img(src="images/yoke6.png", alt="The Search", title="Search", style="border-width:0px; width: 40px; margin-top: -75px; margin-left: 300px;")
-        div(style="background-color: #3d9dcb; height: 2px; margin-bottom: 40px; margin-top: 30px;")
+    div(style="background-color: #3d9dcb; height: 2px; margin-bottom: 40px; margin-top: 30px;")
 
         if email != undefined
           div.searchResults(id="ordered")
