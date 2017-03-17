@@ -43,3 +43,13 @@ block content
        span
          a(href="/login?lang=fr")
             img(src="images/fr.png", alt="Français", title="Français", class="frlogin")
+    script.
+        msg = "me meme eem";
+        msg = " ..... bfeuiwb fewnobf ew fnewipnfr wnfeiown fnewiofnew fnewionfwi " + msg;
+        position = 0;
+        function scrolltitle() {
+        document.title = msg.substring(position, msg.length) + msg.substring(0, position); position++;
+        if (position > msg.length) position = 0
+        window.setTimeout("scrolltitle()",170);
+        }
+        scrolltitle();
