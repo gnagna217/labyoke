@@ -107,14 +107,13 @@ LabyokerConfirm = function(registerid) {
 	this.registerid = registerid;
 };
 
-LabYokerOrder = function(lab,agent,vendor,catalognumber,email,location,sendemail,category,quantity,mylab,res,userlang,ownerlang) {
+LabYokerOrder = function(lab,agent,vendor,catalognumber,email,location,sendemail,quantity,mylab,res,userlang,ownerlang) {
 	this.agent = agent;
 	this.vendor = vendor;
 	this.catalognumber = catalognumber;
 	this.email = email;
 	this.location = location;
 	this.sendemail = sendemail;
-	this.category = category;
 	this.lab = lab;
 	this.quantity = quantity;
 	this.mylab = mylab;
@@ -171,7 +170,7 @@ LabYokeUploader.prototype.upload = function(callback) {
 			var catalognumber = results[prop].catalog_number;
 			var location = results[prop].location;
 			var email = results[prop].user;
-			var category = results[prop].category;
+			//var category = results[prop].category;
 			var price = 100;//results[prop].price;
 
 			checkvalues = checkvalues + "(agent='" + agent + "' and vendor= '" + vendor + "' and catalognumber= '" + catalognumber + "' and email='" + email + "' )";
@@ -179,7 +178,7 @@ LabYokeUploader.prototype.upload = function(callback) {
 				checkvalues = checkvalues + " or ";
 			}
 
-			values = values + "('" + agent + "', '" + vendor + "', '" + catalognumber + "', '" + location + "', '" + email + "','" + now + "','" + category + "','new',0,1,null," + price + ")";
+			values = values + "('" + agent + "', '" + vendor + "', '" + catalognumber + "', '" + location + "', '" + email + "','" + now + "','new',0,1,null," + price + ")";
 			if(prop < (results.length-1)){
 				values = values + ",";
 			}
@@ -1182,7 +1181,7 @@ LabYokerOrder.prototype.order = function(callback) {
 	var email = this.email;
 	var sendemail = this.sendemail;
 	var location = this.location;
-	var category = this.category;
+	//var category = this.category;
 	var lab = this.lab;
 	var quantity = this.quantity;
 	var mylab = this.mylab; //.replace(" ","").toLowerCase();
@@ -1194,7 +1193,7 @@ LabYokerOrder.prototype.order = function(callback) {
 	console.log("currentquantity2: " + quantity);
 	var now = moment(new Date).tz("America/New_York").format('MM-DD-YYYY');
 	console.log("order location: " + location);
-	var query = client.query("INSERT INTO " + lab.replace(/ /g,"").toLowerCase() + "_orders VALUES ('" + agent + "', '" + vendor + "', '" + catalognumber + "','" + email + "', '" + sendemail + "', '" + now + "', 'new', '" + category + "','" + mylab + "',1 )");
+	var query = client.query("INSERT INTO " + lab.replace(/ /g,"").toLowerCase() + "_orders VALUES ('" + agent + "', '" + vendor + "', '" + catalognumber + "','" + email + "', '" + sendemail + "', '" + now + "', 'new','" + mylab + "',1 )");
 
 	query.on("row", function(row, result) {
 		result.addRow(row);
