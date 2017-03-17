@@ -64,6 +64,23 @@ block content
                             button(class="btn " + classButtonCatalog + " btn-lg btn-block" type='submit') #{i18n.__("search.buttoncatalog")}
                             img(src="images/yoke6.png", alt="The Search", title="Search", style="border-width:0px; width: 40px; margin-top: -77px; margin-left: 300px;")
         
+        if email != undefined
+          div.searchResults()
+            div(class="alert alert-success")
+                h3(style="margin-top: 100px;")= i18n.__("orders.success.title")
+                  span(style="color: #3d9dcb;")=" " + location
+                  span="!"
+                p=" "
+                p
+                  b= i18n.__("orders.success.reagent")
+                  span= agent
+                  br
+                  b= i18n.__("orders.success.catalog")
+                  span= catalog
+                  br
+                  b= i18n.__("orders.success.vendor")
+                  span= vendor
+
         if(searchResults != null && searchResults.length > 0)
             div.searchResults()
               div
