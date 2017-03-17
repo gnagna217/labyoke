@@ -326,8 +326,9 @@
     "index.login.message3": "Your username and/or password is wrong. Please try again.",
     
     "index.search.message1": "Sorry we could not find any results with your reagent search request: <b>{{ searchText }}</b>. Please try again.",
+    "index.searchcatalog.message1": "Sorry we could not find any results with your catalog number request: <b>{{ searchText }}</b>. Please try again.",
     "index.search.message2": "You entered an invalid reagent keyword. Please try again.",
-    "index.searchcatalog.message": "You entered an invalid catalog keyword. Please try again.",
+    "index.searchcatalog.message2": "You entered an invalid catalog keyword. Please try again.",
     "index.reportsShares.params": "<div style='font-weight:bold'>Parameters</div>",
     "index.reportsShares.params1": "<div><span style='font-weight:bold'>Date From: </span><span>{{ datefrom }}</span></div>",
     "index.reportsShares.params2": "<div><span style='font-weight:bold'>Date To: </span><span>{{ dateto }}</span></div>",
