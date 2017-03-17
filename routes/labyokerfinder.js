@@ -563,7 +563,7 @@ console.log("report on savings- dateto: " + labsindept);
 				}
 				var total = results[prop].counting /** results[prop].price*/;
 				console.log("counting is: " + total);
-				savings += total;
+				savings += parseInt(total);
 				html += "<td style='font-size: 12px;'>" + accounting.formatMoney(total) + "</td>";
 				html += " </tr>";
 				console.log("savings is: " + savings);
