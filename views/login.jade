@@ -53,13 +53,14 @@ block content
     script.
         $(function () {
         $('.test').textillate({ in : {
+                effect: 'fadeInLeftBig',
                 shuffle: false,
-                sync: true
+                sync: false
             },
             out: {
                 effect: 'hinge',
                 shuffle: true,
-                sync: true
+                sync: false
             },
             loop: true
         });
