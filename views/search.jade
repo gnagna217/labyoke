@@ -91,7 +91,7 @@ block content
           script="$(window).scrollTop($('#ordered').offset().top).scrollLeft($('#ordered').offset().left);"
 
         if(searchResults != null && searchResults.length > 0)
-          div(style="float:left;width: 100%;")
+          div(class="results", style="float:left;width: 100%;")
               div
                   span(style="text-align: center")
                     h3 #{i18n.__("search.resultstitle")}
@@ -169,6 +169,7 @@ block content
                                     }
                            });
                         });
+              script="$(window).scrollTop($('.results').offset().top).scrollLeft($('.results').offset().left);"          
     if(searchResults != undefined && searchResults.length == 0 && searchformText)
         div.searchResults(id="results")
                 div(id="ctl00_Div2" class="row rank")
