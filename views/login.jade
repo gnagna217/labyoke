@@ -34,7 +34,8 @@ block content
                     a(href="/register", style="z-index:10") #{i18n.__("login.registerLink")}
                 span(style="float:right;")
                     a(href="/forgot", style="z-index:10") #{i18n.__("login.forgotLink")}
-    div(id="test", style="text-align:center;color:#3d9dcb;font-weight:bold")!= "Orders currently made for: "
+    div(class="test", style="text-align:center;font-weight:bold")
+        span(style="color:#3d9dcb")!= "Orders currently made for: "
         span!="bamhi-hf | Cell 189 | Bamhi | Exosome multiplastic."
     div(class="help")
        a(href="/help" title="Help")
@@ -49,4 +50,4 @@ block content
     script(type="text/javascript" src="/javascripts/assets/jquery.lettering.js")
     script(type="text/javascript" src="/javascripts/jquery.textillate.js")
     script.
-        $('#test').textillate({loop:true, in:{effect:'fadeInLeftbig'}, out:{effect:'hinge'}});
+        $('.test').textillate({loop:true, in:{effect:'fadeInLeftbig'}, out:{effect:'hinge'}});
