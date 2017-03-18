@@ -9,8 +9,8 @@
     "login.registerLink" : "S'inscrire",
     "login.forgotLink" : "Mot de passe oublié",
     "login.helpLink" : "Aide",
-    "login.texting": "Bah Oui! Voici les dernières commandes ",
-    "login.texting1": " et plus encore!",
+    "login.texting1": "Bah Oui! Voici les dernières commandes ",
+    "login.texting2": " et plus encore!",
     
     "search.layovertitle" : "Commande?",
     "search.layovercancel" : "Annuler",

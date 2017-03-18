@@ -9,8 +9,8 @@
     "login.registerLink" : "Register now",
     "login.forgotLink" : "Forgot password",
     "login.helpLink" : "Help",
-    "login.texting": "Oh yeah! The latest orders are ",
-    "login.texting1": " and counting!",
+    "login.texting1": "Oh yeah! The latest orders are ",
+    "login.texting2": " and counting!",
     
     "search.layovertitle" : "Ordering?",
     "search.layovercancel" : "Cancel",
