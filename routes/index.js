@@ -274,10 +274,15 @@ module.exports = function(router) {
 			var labyokerLabs = new LabyokerLabs('','');
 			labyokerLabs.getlabs(function(error, labs) {
 				req.session.labs = labs;
+				var labYokeGlobal = new LabYokeGlobal(labs);
+			labYokeGlobal.getlatestshares(function(error, latest) {
+				LabYokerGetOrder
 				console.log("in LOGIN: GET LABS now " + req.session.labs);
 				console.log("loggin in labs: " + labs);
-				res.render('login', {mom: mom, lang:req.cookies.i18n, i18n: res, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, title: 'Login',isLoggedInAdmin: req.session.admin});
+				console.log("loggin in latest: " + latest);
+				res.render('login', {latestshares:latest, mom: mom, lang:req.cookies.i18n, i18n: res, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, title: 'Login',isLoggedInAdmin: req.session.admin});
 				req.session.messages = null;
+			});
 			});
 
 		}

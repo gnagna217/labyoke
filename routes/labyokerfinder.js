@@ -18,6 +18,10 @@ LabYokeFinder = function(today) {
 	this.now = today
 };
 
+LabYokeGlobal = function(param) {
+	this.param = param;
+};
+
 LabYokeAgents = function(email,mylab,labs,dept) {
 	this.email = email;
 	this.mylab = mylab;
@@ -998,6 +1002,43 @@ LabyokerLabs.prototype.getlabs = function(callback) {
 		results = result.rows;
 		console.log("get labs results" + results);
 		callback(null, results);
+	});
+};
+
+LabYokeGlobal.prototype.getlatestshares = function(callback) {
+	var results;
+	var labs = this.param;
+
+	var labsstr = "";
+	var i = 0;
+	var a = "a";
+	var select = "select agent,lab from (";
+
+	for(var prop in labs){
+		a = "a" + i;
+		labsstr = (labs[prop].labname).replace(/ /g,"").toLowerCase() + "_orders "; //+ a + " ";
+		select = select + "SELECT agent, lab FROM " + labsstr + " group by agent,lab UNION ";
+		i++;
+	}
+
+	select = select.replace(/UNION\s*$/, "");
+	select = select + ") t group by agent,lab order by date desc";
+
+	console.log("get getlatestshares labsstr: " + labsstr);
+	console.log("full getlatestshares query: " + select);
+
+	var query = client
+			.query(select);
+	query.on("row", function(row, result) {
+		result.addRow(row);
+	});
+
+
+	console.log("getlatestshares");
+	query.on("end", function(result) {
+		results = result.rows;
+		console.log("getlatestshares results: " + results);
+		callback(null, results)
 	});
 };
 
@@ -2299,4 +2340,5 @@ exports.LabYokeReporterSavings = LabYokeReporterSavings;
 exports.LabYokeReporterShares = LabYokeReporterShares;
 exports.LabyokerTeam = LabyokerTeam;
 exports.LabyokerLab = LabyokerLab;
+exports.LabYokeGlobal = LabYokeGlobal;
 exports.LabYokeTest = LabYokeTest;
