@@ -1017,12 +1017,12 @@ LabYokeGlobal.prototype.getlatestshares = function(callback) {
 	for(var prop in labs){
 		a = "a" + i;
 		labsstr = (labs[prop].labname).replace(/ /g,"").toLowerCase() + "_orders "; //+ a + " ";
-		select = select + "SELECT agent, lab FROM " + labsstr + " group by agent,lab UNION ";
+		select = select + "SELECT agent, lab, date FROM " + labsstr + " group by agent,lab,date UNION ";
 		i++;
 	}
 
 	select = select.replace(/UNION\s*$/, "");
-	select = select + ") t group by agent,lab order by date desc";
+	select = select + ") t group by agent,lab,date order by date desc";
 
 	console.log("get getlatestshares labsstr: " + labsstr);
 	console.log("full getlatestshares query: " + select);
