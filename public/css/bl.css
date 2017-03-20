@@ -1310,6 +1310,10 @@ font-size:75pt !important;text-align: left; position: relative; width: initial;
     display: initial;
 }
 
+.mobileonly{
+    display: none;
+}
+
 span.fa-comment {
     right: 5px !important;
 }
