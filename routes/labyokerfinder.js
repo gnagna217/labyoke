@@ -1022,7 +1022,7 @@ LabYokeGlobal.prototype.getlatestshares = function(callback) {
 	}
 
 	select = select.replace(/UNION\s*$/, "");
-	select = select + ") t group by agent,lab,date order by date desc limit 5";
+	select = select + ") t group by agent,lab,date order by date desc limit 4";
 
 	console.log("get getlatestshares labsstr: " + labsstr);
 	console.log("full getlatestshares query: " + select);
