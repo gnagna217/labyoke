@@ -1055,7 +1055,9 @@ input::-webkit-inner-spin-button {
 .desktabonly2{
     display: none;
 }
-
+.desktabonly3{
+    display: none;
+}
 
 
     .desktabonly{
@@ -1162,9 +1164,7 @@ input::-webkit-inner-spin-button {
 .mobileonly{
     display: block;
 }
-.desktabonly2{
 
-}
 }
  @media (max-width: 440px) {
 .searchcatalog{
@@ -1212,6 +1212,8 @@ input::-webkit-inner-spin-button {
 .desktabonly2{
     display: none !important;
 }
+
+
 .rankTbl td
 {
     /*text-align: center;*/
@@ -1315,6 +1317,10 @@ font-size:75pt !important;text-align: left; position: relative; width: initial;
     float:none;
 }
 .desktabonly2{
+    display: initial;
+}
+
+.desktabonly3{
     display: initial;
 }
 
