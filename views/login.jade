@@ -16,6 +16,16 @@ block content
                  h1 #{i18n.__("login.evening")}
              p(style="display:none")!= mom + " - " + n + " hours"
              p #{i18n.__("login.welcome")}
+             div(class="desktabonly", style="text-align:center;font-weight:bold;min-height:100px;")
+                span!= i18n.__("login.texting1")
+                span()
+                    -var ob = latestshares
+                    -for(var prop in ob)
+                        - var n = ob[prop].agent
+                        span(style="color:#8a6d3b;")!="-|- " 
+                        span(class="test",style="color:#3d9dcb;")!= n + " "
+                span!= i18n.__("login.texting2")
+
          div(id="ctl00_Div2" class="frontdiv results")
            div
             if message
@@ -34,15 +44,6 @@ block content
                     a(href="/register", style="z-index:10") #{i18n.__("login.registerLink")}
                 span(style="float:right;")
                     a(href="/forgot", style="z-index:10") #{i18n.__("login.forgotLink")}
-    div(class="desktabonly", style="text-align:center;font-weight:bold;min-height:100px;")
-        span!= i18n.__("login.texting1")
-        span()
-            -var ob = latestshares
-            -for(var prop in ob)
-                - var n = ob[prop].agent
-                span(style="color:#8a6d3b;")!="-|- " 
-                span(class="test",style="color:#3d9dcb;")!= n + " "
-        span!= i18n.__("login.texting2")
     div(class="help")
        a(href="/help" title="Help")
         img(src="images/bouee3.png", alt="Help", title=i18n.__("login.helpLink"), class="helplogin")
