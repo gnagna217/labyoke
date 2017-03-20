@@ -72,8 +72,8 @@ block content
                     div(style="background-color: #3d9dcb; height: 2px; margin-bottom: 40px;")
 
         if email != undefined
-          div.searchResults(id="ordered")
-            div(class="alert alert-success", style="margin-top: 25px;float:right;")
+          div(id="ordered",style="float:left;width: 100%;")
+            div(class="alert alert-success")
                 a(href="#", class="close", data-dismiss="alert", aria-label="close", title="close")="x"
                 h4= i18n.__("orders.success.title")
                   span(style="color: #3d9dcb;")=" " + order_location
@@ -88,7 +88,7 @@ block content
                   br
                   b= i18n.__("orders.success.vendor")
                   span= order_vendor
-          script="$(window).scrollTop($('#ordered').offset().top).scrollLeft($('#ordered').offset().left);"
+          script="$(window).scrollTop($('#ordered').offset().top * 10).scrollLeft($('#ordered').offset().left);"
 
         if(searchResults != null && searchResults.length > 0)
           div(class="results", style="float:left;width: 100%;")
