@@ -1158,6 +1158,14 @@ input::-webkit-inner-spin-button {
 }
 }
 
+ @media (min-width: 1380px) {
+.mobileonly{
+    display: block;
+}
+.desktabonly2{
+
+}
+}
  @media (max-width: 440px) {
 .searchcatalog{
     float:left;
