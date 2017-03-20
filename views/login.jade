@@ -22,11 +22,11 @@ block content
             var n = t.getHours();
             var text = "";
             if(n < 11){
-                text = "i18n.__('login.morning')"
-            } else if if(n >= 11 && n <= 19){
-                text = "i18n.__('login.afternoon')"
+                text = "#{i18n.__("login.morning")}"
+            } else if(n >= 11 && n <= 19){
+                text = "#{i18n.__("login.afternoon")}"
             } else {
-                text = "i18n.__('login.evening')"
+                text = "#{i18n.__("login.evening")}"
             }
             $("#hour").html = text;
 
