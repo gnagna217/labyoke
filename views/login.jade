@@ -15,7 +15,7 @@ block content
                  //h1 #{i18n.__("login.afternoon")}
              - //if(n > 17)
                  //h1 #{i18n.__("login.evening")}
-             p(style="display:none")!= mom + " - " + n + " hours"
+             //p(style="display:none")!= mom + " - " + n + " hours"
              p #{i18n.__("login.welcome")}
          script.
             var t = new Date();
@@ -28,7 +28,7 @@ block content
             } else {
                 text = "#{i18n.__("login.evening")}"
             }
-            $("#hour").html = text;
+            $('#hour').html(text);
 
             console.log("t.getHours() = " + t.getHours());
          - if(latestshares != null && latestshares != undefined)
