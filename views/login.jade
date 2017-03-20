@@ -36,12 +36,12 @@ block content
                     a(href="/forgot", style="z-index:10") #{i18n.__("login.forgotLink")}
     div(class="desktabonly", style="text-align:center;font-weight:bold;min-height:100px;")
         span!= i18n.__("login.texting1")
-        span()
+        span(class="test")
             -var ob = latestshares
             -for(var prop in ob)
                 - var n = ob[prop].agent
                 span(style="color:#8a6d3b;")!="-|- " 
-                span(class="test",style="color:#3d9dcb;")!= n + " "
+                span(class="test2",style="color:#3d9dcb;")!= n + " "
         span!= i18n.__("login.texting2")
     div(class="help")
        a(href="/help" title="Help")
