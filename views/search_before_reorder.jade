@@ -65,7 +65,7 @@ block content
                             img(src="images/yoke6.png", alt="The Search", title="Search", style="border-width:0px; width: 40px; margin-top: -75px; margin-left: 300px;")
         
         if email != undefined
-          div(id="ordered",style="float:left:width: 100%;")
+          div(id="ordered",style="float:left;width: 100%;")
             div(class="alert alert-success")
                 a(href="#", class="close", data-dismiss="alert", aria-label="close", title="close")="x"
                 h4= i18n.__("orders.success.title")
@@ -84,7 +84,7 @@ block content
           script="$(window).scrollTop($('#ordered').offset().top).scrollLeft($('#ordered').offset().left);"
 
         if(searchResults != null && searchResults.length > 0)
-            div.searchResults()
+            div.searchResults
               div
                   span(style="text-align: center")
                     h3 #{i18n.__("search.resultstitle")}
