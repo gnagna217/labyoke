@@ -10,12 +10,15 @@ block content
              - var n = d.getHours();
              - if(n < 11)
                  h1 #{i18n.__("login.morning")}
-             - if(n >= 11 && n <= 15)
+             - if(n >= 11 && n <= 17)
                  h1 #{i18n.__("login.afternoon")}
              - if(n > 17)
                  h1 #{i18n.__("login.evening")}
-             p(style="display:none")!= mom + " - " + n + " hours"
+             p(style="display:block")!= mom + " - " + n + " hours"
              p #{i18n.__("login.welcome")}
+         script.
+            var t = new Date();
+            console.log("t.getHours() = " + t.getHours());
          - if(latestshares != null && latestshares != undefined)
              div(class="desktabonly", style="text-align:center;font-weight:bold;min-height:35px;background-color: rgba(138, 109, 59, 0.42);padding-top: 6px;margin-bottom: 15px;")
                 span!= i18n.__("login.texting1")
