@@ -1008,6 +1008,7 @@ LabyokerLabs.prototype.getlabs = function(callback) {
 LabYokeGlobal.prototype.getlatestshares = function(callback) {
 	var results;
 	var labs = this.param;
+	var LATEST_SHARES_NUM = 3;
 
 	var labsstr = "";
 	var i = 0;
@@ -1022,7 +1023,7 @@ LabYokeGlobal.prototype.getlatestshares = function(callback) {
 	}
 
 	select = select.replace(/UNION\s*$/, "");
-	select = select + ") t group by agent,lab,date order by date desc limit 4";
+	select = select + ") t group by agent,lab,date order by date desc limit " + LATEST_SHARES_NUM;
 
 	console.log("get getlatestshares labsstr: " + labsstr);
 	console.log("full getlatestshares query: " + select);
