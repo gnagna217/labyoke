@@ -109,7 +109,7 @@ block content
                                   };
         - // if(!resultsAccount || resultsAccount == undefined)
           div
-            span(class="yokeColor")!=adminIntro + " <span id='showteam' class='labColor' style='cursor:pointer;font-weight:bold'><div class='buttons'><button type='submit' class='btn btn-success btn-lg btn-block' id='teamTitle'>" + i18n.__("account.button") + "</button></div></span>"
+            span!=adminIntro + " <span id='showteam' class='labColor' style='cursor:pointer;font-weight:bold'><div class='buttons'><button type='submit' class='btn btn-success btn-lg btn-block' id='teamTitle'>" + i18n.__("account.button") + "</button></div></span>"
             script.
               $('#showteam').click(function() {
                   if($('#team').is(":visible")){
