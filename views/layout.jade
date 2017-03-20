@@ -152,7 +152,8 @@ html(lang='en')
                     ul.nav.navbar-nav.navbar-right
                         li(class="nav-menu-logout", style="cursor:pointer")
                             a 
-                                span(style="margin-left: 5px;") #{i18n.__("layout.Logout")}
+                                span(class="desktabonly2",style="margin-left: 5px;") #{i18n.__("layout.Logout")}
+                                span(class="mobileonly",style="margin-left: 5px;") #{i18n.__("layout.Logout2")}
 
      block content
      script(type="text/javascript" src="/javascripts/bootstrap.min.js")
