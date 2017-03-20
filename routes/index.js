@@ -276,7 +276,6 @@ module.exports = function(router) {
 				req.session.labs = labs;
 				var labYokeGlobal = new LabYokeGlobal(labs);
 			labYokeGlobal.getlatestshares(function(error, latest) {
-				LabYokerGetOrder
 				console.log("in LOGIN: GET LABS now " + req.session.labs);
 				console.log("loggin in labs: " + labs);
 				console.log("loggin in latest: " + latest);
