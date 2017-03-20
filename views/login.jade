@@ -34,7 +34,7 @@ block content
                     a(href="/register", style="z-index:10") #{i18n.__("login.registerLink")}
                 span(style="float:right;")
                     a(href="/forgot", style="z-index:10") #{i18n.__("login.forgotLink")}
-    div(class="test desktabonly", style="text-align:center;font-weight:bold;color:#3d9dcb")
+    div(class="test desktabonly", style="text-align:center;font-weight:bold;color:#3d9dcb;min-height:100px;")
         span!= i18n.__("login.texting1")
         span!="bamhi-hf -|- Cell 189 -|- Bamhi -|- Exosome multiplastic -|-"
         span!= i18n.__("login.texting2")
@@ -53,7 +53,7 @@ block content
     script.
         $(function () {
         $('.test').textillate({ in : {
-                effect: 'fadeInLeftBig',
+                effect: 'fadeInUpBig',
                 shuffle: true,
                 sync: false
             },
