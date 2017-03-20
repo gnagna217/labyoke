@@ -182,7 +182,7 @@
     "account.success": "Génial! Vous venez de modifier votre ",
     "account.admin1": "En effet! Votre Administrateur de laboratoire est ",
     "account.admin2": "Vous pouvez contacter votre administrateur à n'importe quel moment.",
-    "account.admin3": "Oui! Vous êtes l'Administrateur du Laboratoire ",
+    "account.admin3": "Oui! Vous êtes l'<span style='color:#8a6d3b'>Administrateur</span> du Laboratoire ",
     "account.admin4": "Vous inspirez la sérénité!",
     "account.form.firstname": "Prénom",
     "account.form.lastname": "N. de Famille",

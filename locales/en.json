@@ -182,7 +182,7 @@
     "account.success": "Great! You have successfully changed your ",
     "account.admin1": "Indeed! Your Lab Administrator is ",
     "account.admin2": "You can contact your admin anytime.",
-    "account.admin3": "Yes! You are a Lab Administrator for ",
+    "account.admin3": "Yes! You are a Lab <span style='color:#8a6d3b'>Administrator</span> for ",
     "account.admin4": "Way to have responsabilities!",
     "account.form.firstname": "First Name",
     "account.form.lastname": "Last Name",
