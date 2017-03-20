@@ -106,7 +106,7 @@ body {
 }
 
 .mobileonly{
-    display: block;
+    display: none;
 }
 
 .navbar-brand
