@@ -34,9 +34,9 @@ block content
                     a(href="/register", style="z-index:10") #{i18n.__("login.registerLink")}
                 span(style="float:right;")
                     a(href="/forgot", style="z-index:10") #{i18n.__("login.forgotLink")}
-    div(class="test desktabonly", style="text-align:center;font-weight:bold;color:#3d9dcb;min-height:100px;")
+    div(class="desktabonly", style="text-align:center;font-weight:bold;min-height:100px;")
         span!= i18n.__("login.texting1")
-        span!="bamhi-hf -|- Cell 189 -|- Bamhi -|- Exosome multiplastic -|-"
+        span(class="test",style="color:#3d9dcb;")!="bamhi-hf -|- Cell 189 -|- Bamhi -|- Exosome multiplastic -|-"
         span!= i18n.__("login.texting2")
     div(class="help")
        a(href="/help" title="Help")
