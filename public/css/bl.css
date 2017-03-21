@@ -222,7 +222,7 @@ line.ct-point{
 .help{
     padding-right: 100px;
     position: fixed;
-    bottom: 20px;
+    bottom: 40px;
     width: 100%;
 }
 
@@ -1173,6 +1173,7 @@ input::-webkit-inner-spin-button {
 .help{
     padding-right: 0px;
     width: initial !important;
+    bottom: 20px;
 }
 .searchcatalog{
     float:left;
