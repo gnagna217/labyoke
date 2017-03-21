@@ -9,7 +9,7 @@
     "login.registerLink" : "Register now",
     "login.forgotLink" : "Forgot password",
     "login.helpLink" : "Help",
-    "login.texting1": "Just ordered ",
+    "login.texting1": "Last three transactions ",
     "login.texting2": " and counting!",
     
     "search.layovertitle" : "Ordering?",
