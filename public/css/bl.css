@@ -1158,6 +1158,9 @@ input::-webkit-inner-spin-button {
 #checktel{
     margin-left: 200px;
 }
+.mobileonly{
+    display: none;
+}
 }
 
  @media (min-width: 1380px) {
