@@ -52,6 +52,7 @@ block content
                     a(href="/forgot", style="z-index:10") #{i18n.__("login.forgotLink")}
      - if(latestshares != null && latestshares != undefined)
         div(class="alert alert-success fade in alert-dismissable desktabonly" , style="text-align: center;margin-top: 40px;background-color: rgba(138, 109, 59, 0.42);position: fixed; bottom: 55px;color: black;font-weight: bold;width: 100%; border-color: white;")
+            a(href="#", class="close", data-dismiss="alert", aria-label="close", title="close")="x"
             span!= i18n.__("login.texting1")
             span()
                 -var ob = latestshares
