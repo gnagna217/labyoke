@@ -51,7 +51,7 @@ block content
                 span(style="float:right;")
                     a(href="/forgot", style="z-index:10") #{i18n.__("login.forgotLink")}
      - if(latestshares != null && latestshares != undefined)
-        div(class="desktabonly", style="text-align:center;font-weight:bold;min-height:35px;background-color: rgba(138, 109, 59, 0.42);padding-top: 6px;padding-right: 100px;position: fixed;bottom: 75px;width: 100%;")
+        div(class="alert alert-success fade in alert-dismissable desktabonly" , style="text-align: center;margin-top: 40px;background-color: rgba(138, 109, 59, 0.42);position: fixed; bottom: 55px;color: black;font-weight: bold;width: 100%; border-color: white;")
             span!= i18n.__("login.texting1")
             span()
                 -var ob = latestshares
