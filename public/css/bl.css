@@ -1006,7 +1006,7 @@ input::-webkit-inner-spin-button {
 }
 
 .mobileonly{
-    display: block;
+    display: none;
 }
 
 .fronthelp{
@@ -1152,6 +1152,9 @@ input::-webkit-inner-spin-button {
 
 
  @media (min-width: 1380px) {
+.mobileonly{
+    display: none;
+}
 #checkname{
     margin-left: 200px;
 }
@@ -1161,10 +1164,6 @@ input::-webkit-inner-spin-button {
 }
 #checktel{
     margin-left: 200px;
-}
-
-.mobileonly{
-    display: none;
 }
 
 }
