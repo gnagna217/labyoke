@@ -1062,7 +1062,9 @@ input::-webkit-inner-spin-button {
 .desktabonly3{
     display: none;
 }
-
+.mobileonly{
+    display: none;
+}
 
     .desktabonly{
     display: none;
