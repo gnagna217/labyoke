@@ -1172,7 +1172,7 @@ input::-webkit-inner-spin-button {
  @media (max-width: 440px) {
 .help{
     padding-right: 0px;
-    width: 100% !important;
+    width: initial !important;
 }
 .searchcatalog{
     float:left;
