@@ -1005,6 +1005,10 @@ input::-webkit-inner-spin-button {
     text-align: center;
 }
 
+.mobileonly{
+    display: block;
+}
+
 .fronthelp{
     text-align: center;
 }
