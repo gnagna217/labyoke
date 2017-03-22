@@ -84,7 +84,9 @@
         //set calculated css
         if(settings.tabLocation === 'top' || settings.tabLocation === 'bottom') {
             obj.css({'left' : settings.leftPos});
-            settings.tabHandle.css({'right' : 0});
+            // settings.tabHandle.css({'right' : 0});
+            settings.tabHandle.css({'right' : 200});
+            console.log("here3");
         }
         
         if(settings.tabLocation === 'top') {
@@ -94,8 +96,9 @@
 
         if(settings.tabLocation === 'bottom') {
             obj.css({'bottom' : '-' + properties.containerHeight, 'position' : 'fixed'});
-            settings.tabHandle.css({'top' : '-' + properties.tabHeight});
-            
+            settings.tabHandle.css({'top' : '-' + 85});
+            //settings.tabHandle.css({'top' : '-' + properties.tabHeight});
+            console.log("here2");
         }
         
         if(settings.tabLocation === 'left' || settings.tabLocation === 'right') {
@@ -104,13 +107,13 @@
                 'top' : settings.topPos
             });
             
-            settings.tabHandle.css({'top' : 55});
+            settings.tabHandle.css({'top' : 55}); // top:0
         }
         
         if(settings.tabLocation === 'left') {
             obj.css({ 'left': '-' + properties.containerWidth});
             settings.tabHandle.css({'right' : '-' + properties.tabWidth + 10});
-            console.log("here");
+            console.log("here0");
         }
 
         if(settings.tabLocation === 'right') {
