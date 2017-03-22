@@ -51,7 +51,7 @@ block content
                 span(style="float:right;")
                     a(href="/forgot", style="z-index:10") #{i18n.__("login.forgotLink")}
      - if(latestshares != null && latestshares != undefined)
-        div(class="slide-out-div desktabonly")
+        div(class="slide-out-div desktabonly", style="position: fixed;bottom: 6px;")
             a(class="handle" href="http://link-for-non-js-users", style="right: -70px;")!=Content
             div(style="text-align: center;padding: 1px;color:black")
                 span!= i18n.__("login.texting1")
