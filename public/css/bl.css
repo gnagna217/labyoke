@@ -185,6 +185,7 @@ a {
           width: 250px;
           background: rgba(138, 109, 59, 0.42);
           border: none;
+          border-radius: 10px;
 } 
 
 .bold{
