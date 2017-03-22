@@ -104,7 +104,7 @@
                 'top' : settings.topPos
             });
             
-            settings.tabHandle.css({'top' : 0});
+            settings.tabHandle.css({'top' : 8});
         }
         
         if(settings.tabLocation === 'left') {
