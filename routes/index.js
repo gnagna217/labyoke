@@ -1107,7 +1107,7 @@ totalshares = t[0].counting;
 														.render(
 															'login',
 															{
-																message : (res.__("index.login.message1")).replace(/&lt;/g, '<').replace(/&gt;/g, '>') /*"You have not completed your registration. Please check your emails and click on the link."*/, title: 'Login'
+																i18n:res,lang:req.cookies.i18n,message : (res.__("index.login.message1")).replace(/&lt;/g, '<').replace(/&gt;/g, '>') /*"You have not completed your registration. Please check your emails and click on the link."*/, title: 'Login'
 															});
 											}
 											if (done[0].disable == 0) {
@@ -1116,7 +1116,7 @@ totalshares = t[0].counting;
 														.render(
 															'login',
 															{
-																message : (res.__("index.login.message2")).replace(/&lt;/g, '<').replace(/&gt;/g, '>')/*"Your account has been disabled. Please contact your lab administrator."*/, title: 'Login'
+																i18n:res,lang:req.cookies.i18n,message : (res.__("index.login.message2")).replace(/&lt;/g, '<').replace(/&gt;/g, '>')/*"Your account has been disabled. Please contact your lab administrator."*/, title: 'Login'
 															});
 											}
 
@@ -1342,7 +1342,7 @@ totalshares = t[0].counting;
 													.render(
 															'login',
 															{
-																message : res.__("index.login.message3") /*"Your username and/or password is wrong. Please try again."*/, title: 'Login'
+																i18n:res,lang:req.cookies.i18n,message : res.__("index.login.message3") /*"Your username and/or password is wrong. Please try again."*/, title: 'Login'
 															});
 										}
 									});
@@ -1351,7 +1351,7 @@ totalshares = t[0].counting;
 									.render(
 											'login',
 											{
-												message : res.__("index.login.message3") /*"Your username and/or password is wrong. Please try again."*/, title: 'Login'
+												i18n:res,lang:req.cookies.i18n,message : res.__("index.login.message3") /*"Your username and/or password is wrong. Please try again."*/, title: 'Login'
 											});
 						}
 
