@@ -52,8 +52,7 @@ block content
                     a(href="/forgot", style="z-index:10") #{i18n.__("login.forgotLink")}
      - if(latestshares != null && latestshares != undefined)
         div(class="slide-out-div desktabonly", style="position: fixed;bottom: 6px;")
-            span
-                img(src="images/movarrow.gif" width="50px")
+            img(src="images/movarrow.gif" width="20px" style="right: -40px;outline: none; position: relative; top: -80px;")
             a(class="handle" href="last-transactions", style="right: -60px;")!=Content
             div(style="text-align: center;padding: 1px;color:white")
                 p!= i18n.__("login.texting1")
