@@ -104,12 +104,13 @@
                 'top' : settings.topPos
             });
             
-            settings.tabHandle.css({'top' : 8});
+            settings.tabHandle.css({'top' : 55});
         }
         
         if(settings.tabLocation === 'left') {
             obj.css({ 'left': '-' + properties.containerWidth});
-            settings.tabHandle.css({'right' : '-' + properties.tabWidth});
+            settings.tabHandle.css({'right' : '-' + properties.tabWidth + 10});
+            console.log("here");
         }
 
         if(settings.tabLocation === 'right') {
