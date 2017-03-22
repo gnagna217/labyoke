@@ -180,6 +180,13 @@ a {
     outline:none
 }
 
+.slide-out-div {
+          padding: 20px;
+          width: 250px;
+          background: #ccc;
+          border: #29216d 1px solid;
+} 
+
 .bold{
     font-weight: bold;
 }
