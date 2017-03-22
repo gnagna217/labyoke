@@ -183,8 +183,8 @@ a {
 .slide-out-div {
           padding: 20px;
           width: 250px;
-          background: #ccc;
-          border: #29216d 1px solid;
+          background: rgba(138, 109, 59, 0.42);
+          border: none;
 } 
 
 .bold{
