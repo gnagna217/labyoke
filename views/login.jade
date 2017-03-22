@@ -52,7 +52,7 @@ block content
                     a(href="/forgot", style="z-index:10") #{i18n.__("login.forgotLink")}
      - if(latestshares != null && latestshares != undefined)
         div(class="slide-out-div desktabonly", style="position: fixed;bottom: 6px;")
-            a(class="handle" href="http://link-for-non-js-users", style="right: -70px;top:8px")!=Content
+            a(class="handle" href="http://link-for-non-js-users", style="right: -70px;top:8px !important")!=Content
             div(style="text-align: center;padding: 1px;color:white")
                 p!= i18n.__("login.texting1")
                 span
@@ -84,7 +84,7 @@ block content
                  tabLocation: 'left',                               //side of screen where tab lives, top, right, bottom, or left
                  speed: 300,                                        //speed of animation
                  action: 'click',                                   //options: 'click' or 'hover', action to trigger animation
-                 topPos: '8px',                                   //position from the top
+                 topPos: 'initial',                                   //position from the top
                  fixedPosition: false                               //options: true makes it stick(fixed position) on scroll
              });
          });
