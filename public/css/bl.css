@@ -229,9 +229,9 @@ line.ct-point{
     padding-bottom: 0 !important;
 }
 .help{
-    padding-right: 70px;
+    padding-right: 40px;
     position: fixed;
-    bottom: 20px;
+    bottom: 35px;
     width: 100%;
 }
 
