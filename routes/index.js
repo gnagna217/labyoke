@@ -724,7 +724,12 @@ totalshares = t[0].counting;
 	});
 
 	router.post('/forgot', function(req, res) {
-			res.setLocale(req.cookies.i18n);
+			var lang = req.query.lang;
+			console.log("lang is forgot user: " + lang);
+			if(lang == null || lang == undefined){
+				lang = "en";
+			}
+			res.setLocale(lang);
 			var forgotuser = req.body.forgotuser;
 			if (forgotuser != null && forgotuser.length > 0){
 				var dateStripped = moment(new Date).tz("America/New_York").format(
@@ -1368,7 +1373,11 @@ totalshares = t[0].counting;
 	}); 
 
 	router.get('/confirmreg/:id', function(req, res) {
-		res.setLocale(req.cookies.i18n);
+		var lang = req.query.lang;
+		console.log("lang is forgot user: " + lang);
+		if(lang == null || lang == undefined){
+			lang = "en";
+		}
 		var id = req.params.id;
 		console.log("confirm register id is: " + id);
 
