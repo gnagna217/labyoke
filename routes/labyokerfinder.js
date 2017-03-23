@@ -1884,25 +1884,25 @@ LabyokerRegister.prototype.register = function(callback) {
 
 	if(tel != null && tel.length>0 && username != null && username.length>0 && firstname != null && firstname.length>0 && lastname != null && lastname.length>0 && email != null && email.length>0 && password != null && password.length>0 && lab != null && lab.length>0 ){
 	console.log("processing registration2...");
-	//var query = client.query("SELECT * FROM vm2016_users where id='" + username
-	//		+ "'"/* and password='"+password+"'" */);
-	/*query.on("row", function(row, result) {
+	var query = client.query("SELECT * FROM vm2016_users where id='" + username
+			+ "'"/* and password='"+password+"'" */);
+	query.on("row", function(row, result) {
 		result.addRow(row);
 	});
 	query.on("end", function(result) {
 		results = result.rows;
-		console.log("email entered: " + email);
+		console.log("id entered: " + username);
 		if (results != null && results.length > 0) {
 			
-			for (i = 0; i < results.length; i++) { 
+			/*for (i = 0; i < results.length; i++) { 
 				console.log("results[i].email: " + results[i].email);
-				if(results[i].email == email){
-					console.log("in use?: alreadyInUse");
-					callback(null, "alreadyInUse");
-				}
-			}
+				if(results[i].email == email){*/
+					console.log("in use?: idalreadyInUse");
+					callback(null, "idalreadyInUse");
+			/*	}
+			}*/
 
-		} else {*/
+		} else {
 				var hash_register_id = crypt.hashSync(username);
 				console.log("before registerid: " + hash_register_id);
 				hash_register_id = hash_register_id.replace(/\//g, "");
@@ -1939,14 +1939,14 @@ LabyokerRegister.prototype.register = function(callback) {
 					console.log("body: " + body);
 
 					var mailOptions = new MailOptions(email, subject, body);
-					mailOptions.sendAllEmails();
+					//mailOptions.sendAllEmails();
 
 					callback(null, "success");
 
 				});
 				
-		//}
-	//});
+		}
+	});
 } else if(tel != null && tel.length>0 && firstname != null && firstname.length>0 && lastname != null && lastname.length>0 && email != null && email.length>0 ){
 	var rendered = false;
 	console.log("processing registration...");

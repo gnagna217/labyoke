@@ -871,7 +871,11 @@ totalshares = t[0].counting;
 			}*/
 			labyokerRegister.register(function(error, done) {
 				console.log("done: " + done);
-				if(done != null && done.length > 0 && done == 'firstsection') {
+				if(done != null && done.length > 0 && done == 'idalreadyInUse') {
+						console.log("status = idalreadyInUse");
+						rendered = true;
+						res.render('register', {lang:req.cookies.i18n, i18n:res, labs: req.session.labs, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, isLoggedInAdmin: req.session.admin, title: 'Register', message : res.__("index.register.message11")});
+				} else if(done != null && done.length > 0 && done == 'firstsection') {
 					console.log("status = firstsection1");
 					rendered = true;
 					res.render(

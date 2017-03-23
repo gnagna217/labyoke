@@ -373,6 +373,7 @@
     "index.register.message8": "Malheureusement vous ne pouvez pas continuer. Assurez-vous d'avoir rempli le champ: Nom de Famille.",
     "index.register.message9": "Malheureusement vous ne pouvez pas continuer. Assurez-vous d'avoir rempli le champ: Addresse Email.",
     "index.register.message10": "Malheureusement vous ne pouvez pas continuer. Assurez-vous d'avoir rempli le champ: Téléphone.",
+    "index.register.message11": "Désolé. Ce Nom d'Utilisateur est déjà utilisé. Veuillez en choisir un autre et réessayez de vous inscrire.",
     "index.change.subject": "Labyoke - Demande de Modification Mot de Passe",
     "index.change.body1": "Vous avez demandé à changer votre mot de passe @LabYoke. Veuillez cliquer sur le lien suivant:<br/>",
     "index.change.body2": "<p><span>Vous avez <b><span style='color:red;'>1 jour</span></b> pour modifier votre mot de passe. Mais ne vous inquiétez pas, vous pouvez toujours nous envoyer une autre ",
