@@ -70,12 +70,12 @@ block content
                     $('#regbutton2').click(function() {
                         console.log("regverpass: " + $('#regverpass').val());
                         console.log("regpass: " + $('#regpass').val());
-                        if($('#regverpass').val() == $('#regpass').val()){
+                        if($('#regverpass').val() != "" && $('#regverpass').val() == $('#regpass').val()){
                             console.log("go on!");
-                            $('#regform2').submit(i18n.__("index.register.message5") );
+                            $('#regform2').submit();
                         } else {
                             console.log("stop!");
-                            $('#messagejs').html();
+                            $('#messagejs').html(i18n.__("index.register.message5") );
                             $('#messagejs').show();
                         } 
                       });
