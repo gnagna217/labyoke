@@ -1391,7 +1391,6 @@ totalshares = t[0].counting;
 			
 			if (results != null && results.length > 0 && results == 'confirmReset') {
 					res.render('register', {
-						confirmReset: true,
 						lang:req.cookies.i18n,
 						i18n:res,
 						ordersnum: req.session.orders,
@@ -1402,12 +1401,11 @@ totalshares = t[0].counting;
 						hashid: id,
 						isLoggedInAdmin: req.session.admin,
 						labyoker : req.session.user,
-						regsuccess : res.__("index.confirmpwd.message1").replace(/&lt;/g, '<').replace(/&gt;/g, '>'),
+						confirmReset : res.__("index.confirmpwd.message1").replace(/&lt;/g, '<').replace(/&gt;/g, '>'),
 						scripts : [ '/javascripts/utils.js' ]
 					});
 			} else if(results != null && results.length > 0 && results == 'errorFound') {
 					res.render('register', {
-						confirmReset: true,
 						lang:req.cookies.i18n,
 						i18n:res,
 						ordersnum: req.session.orders,
@@ -1418,12 +1416,11 @@ totalshares = t[0].counting;
 						hashid: id,
 						isLoggedInAdmin: req.session.admin,
 						labyoker : req.session.user,
-						regsuccess : (res.__("index.confirmpwd.message2", { id: id })).replace(/&lt;/g, '<').replace(/&gt;/g, '>'),
+						confirmReset : (res.__("index.confirmpwd.message2", { id: id })).replace(/&lt;/g, '<').replace(/&gt;/g, '>'),
 						scripts : [ '/javascripts/utils.js' ]
 					});
 			} else if(results != null && results.length > 0 && results == 'cannotFindRequest') {
 				res.render('register', {
-					confirmReset: true,
 					lang:req.cookies.i18n,
 					i18n:res,
 					ordersnum: req.session.orders,
@@ -1434,12 +1431,11 @@ totalshares = t[0].counting;
 					hashid: id,
 					isLoggedInAdmin: req.session.admin,
 					labyoker : req.session.user,
-					regsuccess : res.__("index.confirmpwd.message3").replace(/&lt;/g, '<').replace(/&gt;/g, '>'),
+					confirmReset : res.__("index.confirmpwd.message3").replace(/&lt;/g, '<').replace(/&gt;/g, '>'),
 					scripts : [ '/javascripts/utils.js' ]
 				});
 			} else {
 					res.render('register', {
-						confirmReset: true,
 						lang:req.cookies.i18n,
 						i18n:res,
 						ordersnum: req.session.orders,
@@ -1450,7 +1446,7 @@ totalshares = t[0].counting;
 						hashid: id,
 						isLoggedInAdmin: req.session.admin,
 						labyoker : req.session.user,
-						regsuccess : (res.__("index.confirmpwd.message2", { id: id })).replace(/&lt;/g, '<').replace(/&gt;/g, '>'),
+						confirmReset : (res.__("index.confirmpwd.message2", { id: id })).replace(/&lt;/g, '<').replace(/&gt;/g, '>'),
 						scripts : [ '/javascripts/utils.js' ]
 					});
 			}
