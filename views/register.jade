@@ -14,9 +14,11 @@ block content
                 span(class="labColor")= i18n.__("register.title2")
                 span!= i18n.__("register.subtitle")
             div(id="ctl00_Div2" class="frontdiv")
+                div(class="alert alert-danger", id="messagejs1", style="display:none")
                 if message
                     div(class="alert alert-danger")!= message
-                div(class="alert alert-danger", id="messagejs1", style="display:none")
+                    script.
+                        $('#messagejs1').hide();
                 form(action="/register" method="post" id="regform1")
                     div(style="margin-bottom: 20px;")
                         div(class="textentry")
@@ -67,9 +69,11 @@ block content
             h1= i18n.__("register.form2.desc")
             p= i18n.__("register.form2.subdesc")
             div(id="ctl00_Div2" class="frontdiv")
+                div(class="alert alert-danger", id="messagejs", style="display:none")
                 if message
                     div(class="alert alert-danger")!= message
-                div(class="alert alert-danger", id="messagejs", style="display:none")
+                    script.
+                        $('#messagejs').hide();
                 form(action="/register" method="post" id="regform2")
                     div(style="margin-bottom: 20px;")
                         div(class="textentry")
