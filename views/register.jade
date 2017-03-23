@@ -36,10 +36,10 @@ block content
                 script.
                     $('#regbutton1').click(function() {
                         console.log("regfirstname: " + $('#regfirstname').val());
-                        console.log("reglastname: " + $('#reglastname').val());
+                        console.log("reglastname: " + $('#lastname').val());
                         console.log("regemail: " + $('#regemail').val());
-                        console.log("regtel: " + $('#regtel').val());
-                        if($('#regfirstname').val() != "" && $('#reglastname').val() != "" && $('#regemail').val() != "" && $('#regtel').val() != "" ){
+                        console.log("regtel: " + $('#tel').val());
+                        if($('#regfirstname').val() != "" && $('#lastname').val() != "" && $('#regemail').val() != "" && $('#tel').val() != "" ){
                             console.log("go on!");
                             $('#regform1').submit();
                         } else if($('#regfirstname').val() == "" || $('#regfirstname').val() == undefined){
@@ -47,7 +47,7 @@ block content
                             $('#messagejs1').html("#{i18n.__("index.register.message7")}");
                             $('#messagejs1').show();
                             return false;
-                        } else if($('#reglastname').val() == "" || $('#reglastname').val() == undefined){
+                        } else if($('#lastname').val() == "" || $('#lastname').val() == undefined){
                             console.log("stop!");
                             $('#messagejs1').html("#{i18n.__("index.register.message8")}");
                             $('#messagejs1').show();
@@ -57,7 +57,7 @@ block content
                             $('#messagejs1').html("#{i18n.__("index.register.message9")}");
                             $('#messagejs1').show();
                             return false;
-                        } else if($('#regtel').val() == "" || $('#regtel').val() == undefined){
+                        } else if($('#tel').val() == "" || $('#tel').val() == undefined){
                             console.log("stop!");
                             $('#messagejs1').html("#{i18n.__("index.register.message10")}");
                             $('#messagejs1').show();
