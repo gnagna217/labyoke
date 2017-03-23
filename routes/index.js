@@ -735,7 +735,7 @@ totalshares = t[0].counting;
 					console.log("done: " + (done != null && done.length > 0 && done == 'alreadySent'));
 					console.log("done2: " + (done != null && done == 'alreadySent'));
 					if (done != null && done.length > 0 && done != 'alreadySent') {
-						res.render('forgot', {lang:req.cookies.i18n, i18n:res, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, isLoggedInAdmin: req.session.admin, userfound : forgotuser, title: 'Forgot Password'});
+						res.render('forgot', {lang:req.cookies.i18n, i18n:res, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, isLoggedInAdmin: req.session.admin, userfound : forgotuser});
 					} else if(done != null && done.length > 0 && done == 'alreadySent') {
 						res.render(
 							'forgot',
@@ -827,7 +827,7 @@ totalshares = t[0].counting;
 		var lab = req.body.reglab;
 		var user = req.body.reguser;
 		var user_pwd = req.body.regpass;
-		var user_verpwd = req.body.regverpass;
+
 		var user_name = req.body.regfirstname;
 		var user_surname = req.body.reglastname;
 		var user_email = req.body.regemail;
@@ -848,12 +848,10 @@ totalshares = t[0].counting;
        		//console.log("lab is: "+ lab);
        	}*/
 
-
 		if (user && user_name && user_pwd && lab && user_surname && user_email && user_tel) {
 			console.log("second section processing...");
 			console.log("user: " + user);
 			console.log("user_pwd: " + user_pwd);
-			console.log("user_verpwd: " + user_verpwd);
 			console.log("lab: " + lab);
 			console.log("user_name: " + user_name);
 			console.log("user_surname: " + user_surname);
@@ -871,11 +869,7 @@ totalshares = t[0].counting;
 			}*/
 			labyokerRegister.register(function(error, done) {
 				console.log("done: " + done);
-				if(done != null && done.length > 0 && done == 'idalreadyInUse') {
-						console.log("status = idalreadyInUse");
-						rendered = true;
-						res.render('register', {lang:req.cookies.i18n, i18n:res, labs: req.session.labs, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, isLoggedInAdmin: req.session.admin, title: 'Register', message : res.__("index.register.message11")});
-				} else if(done != null && done.length > 0 && done == 'firstsection') {
+				if(done != null && done.length > 0 && done == 'firstsection') {
 					console.log("status = firstsection1");
 					rendered = true;
 					res.render(
@@ -1113,7 +1107,7 @@ totalshares = t[0].counting;
 														.render(
 															'login',
 															{
-																i18n:res,lang:req.cookies.i18n,message : (res.__("index.login.message1")).replace(/&lt;/g, '<').replace(/&gt;/g, '>') /*"You have not completed your registration. Please check your emails and click on the link."*/, title: 'Login'
+																message : (res.__("index.login.message1")).replace(/&lt;/g, '<').replace(/&gt;/g, '>') /*"You have not completed your registration. Please check your emails and click on the link."*/, title: 'Login'
 															});
 											}
 											if (done[0].disable == 0) {
@@ -1122,7 +1116,7 @@ totalshares = t[0].counting;
 														.render(
 															'login',
 															{
-																i18n:res,lang:req.cookies.i18n,message : (res.__("index.login.message2")).replace(/&lt;/g, '<').replace(/&gt;/g, '>')/*"Your account has been disabled. Please contact your lab administrator."*/, title: 'Login'
+																message : (res.__("index.login.message2")).replace(/&lt;/g, '<').replace(/&gt;/g, '>')/*"Your account has been disabled. Please contact your lab administrator."*/, title: 'Login'
 															});
 											}
 
@@ -1348,7 +1342,7 @@ totalshares = t[0].counting;
 													.render(
 															'login',
 															{
-																i18n:res,lang:req.cookies.i18n,message : res.__("index.login.message3") /*"Your username and/or password is wrong. Please try again."*/, title: 'Login'
+																message : res.__("index.login.message3") /*"Your username and/or password is wrong. Please try again."*/, title: 'Login'
 															});
 										}
 									});
@@ -1357,7 +1351,7 @@ totalshares = t[0].counting;
 									.render(
 											'login',
 											{
-												i18n:res,lang:req.cookies.i18n,message : res.__("index.login.message3") /*"Your username and/or password is wrong. Please try again."*/, title: 'Login'
+												message : res.__("index.login.message3") /*"Your username and/or password is wrong. Please try again."*/, title: 'Login'
 											});
 						}
 
