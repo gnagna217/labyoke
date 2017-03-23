@@ -1,5 +1,7 @@
 
 {
+    "Welcome": "Salut",
+    "Language": "Langue",
     "login.hello": "Salut.",
     "login.morning": "Bonjour.",
     "login.afternoon": "Bon après-midi.",
