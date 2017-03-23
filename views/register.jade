@@ -16,7 +16,7 @@ block content
             div(id="ctl00_Div2" class="frontdiv")
                 if message
                     div(class="alert alert-danger")!= message
-                form(action="/register" method="post")
+                form(action="/register" method="post" id="regform1")
                     div(style="margin-bottom: 20px;")
                         div(class="textentry")
                             input(name="regfirstname" type="text" id="regfirstname" class="form-control" placeholder=i18n.__("register.form.name"))
@@ -27,9 +27,40 @@ block content
                             input(name="regemail" type="text" id="regemail" class="form-control" placeholder=i18n.__("register.form.email"))
                         div(class="textentry")
                             input(name="regtel" type="text" id="tel" class="form-control" placeholder=i18n.__("register.form.tel"))
-                    div(class="buttons")
-                        button.btn.btn-success.btn-lg.btn-block(type='submit',style='width:85%') #{i18n.__("register.form.button1")}
-                        img(src="/images/add.png", alt="The Lab", title="Lab", style="border-width:0px; width: 50px; height:57px; margin-top: -45px; float: right;")  
+                    div(class="buttons", id="regbutton1")
+                        button.btn.btn-success.btn-lg.btn-block(type='button',style='width:85%') #{i18n.__("register.form.button1")}
+                        img(src="/images/add.png", alt="The Lab", title="Lab", style="border-width:0px; width: 50px; height:57px; margin-top: -45px; float: right;")
+                script.
+                    $('#regbutton1').click(function() {
+                        console.log("regfirstname: " + $('#regfirstname').val());
+                        console.log("reglastname: " + $('#reglastname').val());
+                        console.log("regemail: " + $('#regemail').val());
+                        console.log("regtel: " + $('#regtel').val());
+                        if($('#regfirstname').val() != "" && $('#reglastname').val() != "" && $('#regemail').val() != "" && $('#regtel').val() != "" ){
+                            console.log("go on!");
+                            $('#regform1').submit();
+                        } else if($('#regfirstname').val() == ""){
+                            console.log("stop!");
+                            $('#messagejs').html("#{i18n.__("index.register.message6")}");
+                            $('#messagejs').show();
+                            return false;
+                        } else if($('#reglastname').val() == ""){
+                            console.log("stop!");
+                            $('#messagejs').html("#{i18n.__("index.register.message6")}");
+                            $('#messagejs').show();
+                            return false;
+                        } else if($('#regemail').val() == ""){
+                            console.log("stop!");
+                            $('#messagejs').html("#{i18n.__("index.register.message6")}");
+                            $('#messagejs').show();
+                            return false;
+                        } else if($('#regtel').val() == ""){
+                            console.log("stop!");
+                            $('#messagejs').html("#{i18n.__("index.register.message6")}");
+                            $('#messagejs').show();
+                            return false;
+                        } 
+                      }); 
 
         if labentered
             h1= i18n.__("register.form2.desc")
