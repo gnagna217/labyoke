@@ -54,7 +54,6 @@ block content
                     a(href="/forgot", style="z-index:10") #{i18n.__("login.forgotLink")}
      - if(latestshares != null && latestshares != undefined)
         div(class="slide-out-div desktabonly", style="position: fixed;bottom: 6px;")
-            img(src="images/movarrow.gif" width="20px" style="right: -40px;outline: none; position: relative; top: -80px;")
             a(class="handle" href="last-transactions", style="right: -60px;")!=Content
             div(style="text-align: center;padding: 1px;color:white; margin-top: -20px;")
                 p!= i18n.__("login.texting1")
@@ -82,7 +81,7 @@ block content
          $(function(){
              $('.slide-out-div').tabSlideOut({
                  tabHandle: '.handle',                              //class of the element that will be your tab
-                 pathToTabImage: 'images/lab.png',          //path to the image for the tab (optionaly can be set using css)
+                 pathToTabImage: 'images/movarrow.gif',          //path to the image for the tab (optionaly can be set using css)
                  imageHeight: '53px',                               //height of tab image
                  imageWidth: '50px',                               //width of tab image    
                  tabLocation: 'bottom',                               //side of screen where tab lives, top, right, bottom, or left
