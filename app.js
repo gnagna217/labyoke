@@ -37,7 +37,11 @@ directory: __dirname + '/locales',
 defaultLocale: 'en',
 
 // define a custom cookie name to parse locale settings from 
-cookie: 'i18n'
+cookie: 'i18n',
+
+logDebugFn: function (msg) {
+        console.log('debug', msg);
+    }
 });
 
 app.use(cookieParser());
