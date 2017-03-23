@@ -1378,6 +1378,7 @@ totalshares = t[0].counting;
 		if(lang == null || lang == undefined){
 			lang = "en";
 		}
+		res.setLocale(lang);
 		var id = req.params.id;
 		console.log("confirm register id is: " + id);
 
@@ -1389,6 +1390,7 @@ totalshares = t[0].counting;
 			
 			if (results != null && results.length > 0 && results == 'confirmReset') {
 					res.render('register', {
+						confirmReset: true,
 						lang:req.cookies.i18n,
 						i18n:res,
 						ordersnum: req.session.orders,
@@ -1399,11 +1401,12 @@ totalshares = t[0].counting;
 						hashid: id,
 						isLoggedInAdmin: req.session.admin,
 						labyoker : req.session.user,
-						messageSuccess : "Congratulations you have successfully registered. You can now start searching to the <a href='/search'>search</a> page.",
+						regsuccess : res.__("index.confirmpwd.message1").replace(/&lt;/g, '<').replace(/&gt;/g, '>'),
 						scripts : [ '/javascripts/utils.js' ]
 					});
 			} else if(results != null && results.length > 0 && results == 'errorFound') {
 					res.render('register', {
+						confirmReset: true,
 						lang:req.cookies.i18n,
 						i18n:res,
 						ordersnum: req.session.orders,
@@ -1414,12 +1417,12 @@ totalshares = t[0].counting;
 						hashid: id,
 						isLoggedInAdmin: req.session.admin,
 						labyoker : req.session.user,
-						message : "An error was found while processing your confirmation. Please try again or <a href='mailto:labyoke@gmail.com?Subject="
-																		+ "Change Password - " + id + "' target='_top'>Contact us</a>.",
+						regsuccess : (res.__("index.confirmpwd.message2", { id: id })).replace(/&lt;/g, '<').replace(/&gt;/g, '>'),
 						scripts : [ '/javascripts/utils.js' ]
 					});
 			} else if(results != null && results.length > 0 && results == 'cannotFindRequest') {
 				res.render('register', {
+					confirmReset: true,
 					lang:req.cookies.i18n,
 					i18n:res,
 					ordersnum: req.session.orders,
@@ -1430,11 +1433,12 @@ totalshares = t[0].counting;
 					hashid: id,
 					isLoggedInAdmin: req.session.admin,
 					labyoker : req.session.user,
-					message : "Sorry we could not find your Pre-Registration. Please Register.",
+					regsuccess : res.__("index.confirmpwd.message3").replace(/&lt;/g, '<').replace(/&gt;/g, '>'),
 					scripts : [ '/javascripts/utils.js' ]
 				});
 			} else {
 					res.render('register', {
+						confirmReset: true,
 						lang:req.cookies.i18n,
 						i18n:res,
 						ordersnum: req.session.orders,
@@ -1445,8 +1449,7 @@ totalshares = t[0].counting;
 						hashid: id,
 						isLoggedInAdmin: req.session.admin,
 						labyoker : req.session.user,
-						message : "An error was found while processing your registration. Please try again or <a href='mailto:labyoke@gmail.com?Subject="
-																		+ "Change Password - " + id + "' target='_top'>Contact us</a>.",
+						regsuccess : (res.__("index.confirmpwd.message2", { id: id })).replace(/&lt;/g, '<').replace(/&gt;/g, '>'),
 						scripts : [ '/javascripts/utils.js' ]
 					});
 			}
@@ -1455,6 +1458,11 @@ totalshares = t[0].counting;
 });
 
 	router.get('/changepassword/:id', /*isLoggedInAndNotActive,*/ function(req, res) {
+		var lang = req.query.lang;
+		console.log("lang is forgot user: " + lang);
+		if(lang == null || lang == undefined){
+			lang = "en";
+		}
 		res.setLocale(req.cookies.i18n);
 		res.render('changepassword', {
 			lang:req.cookies.i18n,
@@ -1476,7 +1484,11 @@ totalshares = t[0].counting;
 	});
 
 	router.post('/changepassword', /*isLoggedIn,*/ function(req, res) {
-		res.setLocale(req.cookies.i18n);
+		var lang = req.query.lang;
+		console.log("lang is forgot user: " + lang);
+		if(lang == null || lang == undefined){
+			lang = "en";
+		}
 		/*labyoker.changepassword(function(error, done) {
 			if (done != null) {
 				res.redirect('/');
@@ -1496,7 +1508,7 @@ totalshares = t[0].counting;
 			
 			if (results != null && results.length > 0 && results == 'passwordReset') {
 					res.render('changepassword', {
-						lang:req.cookies.i18n,
+						lang:lang,
 						i18n:res,
 						ordersnum: req.session.orders,
 						sharesnum: req.session.shares,
@@ -1509,7 +1521,7 @@ totalshares = t[0].counting;
 					});
 			} else if(results != null && results.length > 0 && results == 'errorFound') {
 					res.render('changepassword', {
-						lang:req.cookies.i18n,
+						lang:lang,
 						i18n:res,
 						ordersnum: req.session.orders,
 						sharesnum: req.session.shares, 
@@ -1524,7 +1536,7 @@ totalshares = t[0].counting;
 					});
 			} else if(results != null && results.length > 0 && results == 'dateExpired') {
 						res.render('forgot', {
-						lang:req.cookies.i18n,
+						lang:lang,
 						i18n:res,
 						ordersnum: req.session.orders,
 						sharesnum: req.session.shares, 
@@ -1538,7 +1550,7 @@ totalshares = t[0].counting;
 					});
 			} else if(results != null && results.length > 0 && results == 'cannotFindRequest') {
 					res.render('forgot', {
-						lang:req.cookies.i18n,
+						lang:lang,
 						i18n:res,
 						ordersnum: req.session.orders,
 						sharesnum: req.session.shares, 
@@ -1552,7 +1564,7 @@ totalshares = t[0].counting;
 					});
 			} else {
 					res.render('changepassword', {
-						lang:req.cookies.i18n,
+						lang:lang,
 						i18n:res,
 						ordersnum: req.session.orders,
 						sharesnum: req.session.shares,
