@@ -40,22 +40,22 @@ block content
                         if($('#regfirstname').val() != "" && $('#reglastname').val() != "" && $('#regemail').val() != "" && $('#regtel').val() != "" ){
                             console.log("go on!");
                             $('#regform1').submit();
-                        } else if($('#regfirstname').val() == ""){
+                        } else if($('#regfirstname').val() == "" || $('#regfirstname').val() == undefined){
                             console.log("stop!");
                             $('#messagejs1').html("#{i18n.__("index.register.message7")}");
                             $('#messagejs1').show();
                             return false;
-                        } else if($('#reglastname').val() == ""){
+                        } else if($('#reglastname').val() == "" || $('#reglastname').val() == undefined){
                             console.log("stop!");
                             $('#messagejs1').html("#{i18n.__("index.register.message8")}");
                             $('#messagejs1').show();
                             return false;
-                        } else if($('#regemail').val() == ""){
+                        } else if($('#regemail').val() == "" || $('#regemail').val() == undefined){
                             console.log("stop!");
                             $('#messagejs1').html("#{i18n.__("index.register.message9")}");
                             $('#messagejs1').show();
                             return false;
-                        } else if($('#regtel').val() == ""){
+                        } else if($('#regtel').val() == "" || $('#regtel').val() == undefined){
                             console.log("stop!");
                             $('#messagejs1').html("#{i18n.__("index.register.message10")}");
                             $('#messagejs1').show();
@@ -105,12 +105,12 @@ block content
                         if($('#reguser').val() != "" && $('#regverpass').val() != "" && $('#regverpass').val() == $('#regpass').val()){
                             console.log("go on!");
                             $('#regform2').submit();
-                        } else if($('#regverpass').val() == ""){
+                        } else if($('#reguser').val() == ""  || $('#reguser').val() == undefined){
                             console.log("stop!");
                             $('#messagejs').html("#{i18n.__("index.register.message6")}");
                             $('#messagejs').show();
                             return false;
-                        } else if($('#regpass').val() == "" || $('#regverpass').val() == "" || $('#regverpass').val() != $('#regpass').val()){
+                        } else if($('#regverpass').val() == undefined || $('#regpass').val() == undefined || $('#regpass').val() == "" || $('#regverpass').val() == "" || $('#regverpass').val() != $('#regpass').val()){
                             console.log("stop!");
                             $('#messagejs').html("#{i18n.__("index.register.message5")}");
                             $('#messagejs').show();
