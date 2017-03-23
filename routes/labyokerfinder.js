@@ -1939,7 +1939,7 @@ LabyokerRegister.prototype.register = function(callback) {
 					console.log("body: " + body);
 
 					var mailOptions = new MailOptions(email, subject, body);
-					//mailOptions.sendAllEmails();
+					mailOptions.sendAllEmails();
 
 					callback(null, "success");
 
