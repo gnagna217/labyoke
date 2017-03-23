@@ -1909,7 +1909,8 @@ LabyokerRegister.prototype.register = function(callback) {
 				console.log("registerid: " + hash_register_id);
 			var hash = crypt.hashSync(password);
 			var query2 = client.query("INSERT INTO vm2016_users VALUES ('" + username
-				+ "', '" + hash + "', '" + firstname + "',  0, null, null, '" + email + "', null, '" + lab + "', '" + lastname + "', '" + tel + "', 0, '','" + hash_register_id + "','" + userlang + "')");
+				+ "', '" + hash + "', '" + firstname + "',  0, null, null, '" + email + "', null, '" + lab + "', '" + lastname + "', '" + tel + "', 0, '','" + hash_register_id + "', null,'" + userlang + "')");
+
 
 				query2.on("row", function(row, result2) {
 					result2.addRow(row);

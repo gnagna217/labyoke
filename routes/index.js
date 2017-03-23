@@ -827,7 +827,7 @@ totalshares = t[0].counting;
 		var lab = req.body.reglab;
 		var user = req.body.reguser;
 		var user_pwd = req.body.regpass;
-
+		var user_verpwd = req.body.regverpass;
 		var user_name = req.body.regfirstname;
 		var user_surname = req.body.reglastname;
 		var user_email = req.body.regemail;
@@ -848,10 +848,12 @@ totalshares = t[0].counting;
        		//console.log("lab is: "+ lab);
        	}*/
 
+
 		if (user && user_name && user_pwd && lab && user_surname && user_email && user_tel) {
 			console.log("second section processing...");
 			console.log("user: " + user);
 			console.log("user_pwd: " + user_pwd);
+			console.log("user_verpwd: " + user_verpwd);
 			console.log("lab: " + lab);
 			console.log("user_name: " + user_name);
 			console.log("user_surname: " + user_surname);
