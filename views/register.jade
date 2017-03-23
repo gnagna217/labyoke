@@ -16,6 +16,7 @@ block content
             div(id="ctl00_Div2" class="frontdiv")
                 if message
                     div(class="alert alert-danger")!= message
+                div(class="alert alert-danger", id="messagejs1", style="display:none")
                 form(action="/register" method="post" id="regform1")
                     div(style="margin-bottom: 20px;")
                         div(class="textentry")
@@ -41,23 +42,23 @@ block content
                             $('#regform1').submit();
                         } else if($('#regfirstname').val() == ""){
                             console.log("stop!");
-                            $('#messagejs').html("#{i18n.__("index.register.message6")}");
-                            $('#messagejs').show();
+                            $('#messagejs1').html("#{i18n.__("index.register.message6")}");
+                            $('#messagejs1').show();
                             return false;
                         } else if($('#reglastname').val() == ""){
                             console.log("stop!");
-                            $('#messagejs').html("#{i18n.__("index.register.message6")}");
-                            $('#messagejs').show();
+                            $('#messagejs1').html("#{i18n.__("index.register.message6")}");
+                            $('#messagejs1').show();
                             return false;
                         } else if($('#regemail').val() == ""){
                             console.log("stop!");
-                            $('#messagejs').html("#{i18n.__("index.register.message6")}");
-                            $('#messagejs').show();
+                            $('#messagejs1').html("#{i18n.__("index.register.message6")}");
+                            $('#messagejs1').show();
                             return false;
                         } else if($('#regtel').val() == ""){
                             console.log("stop!");
-                            $('#messagejs').html("#{i18n.__("index.register.message6")}");
-                            $('#messagejs').show();
+                            $('#messagejs1').html("#{i18n.__("index.register.message6")}");
+                            $('#messagejs1').show();
                             return false;
                         } 
                       }); 
