@@ -1998,6 +1998,7 @@ Labyoker.prototype.requestChangePassword = function(callback) {
 		console.log("dateStripped: " + dateStripped);
 		if (results != null && results.length == 1 && dateStripped != null) {
 			var changepwd_status = results[0].changepwd_status;
+			userlang = results[0].lang;
 			var now = moment(new Date).tz("America/New_York").format(
 				'MM-DD-YYYY');
 			var changepwd_date = results[0].changepwd_date;

@@ -1374,10 +1374,11 @@ totalshares = t[0].counting;
 
 	router.get('/confirmreg/:id', function(req, res) {
 		var lang = req.query.lang;
-		console.log("lang is forgot user: " + lang);
+		console.log("lang is confirm user: " + lang);
 		if(lang == null || lang == undefined){
 			lang = "en";
 		}
+		req.cookies.i18n = lang;
 		res.setLocale(lang);
 		var id = req.params.id;
 		console.log("confirm register id is: " + id);
@@ -1463,7 +1464,8 @@ totalshares = t[0].counting;
 		if(lang == null || lang == undefined){
 			lang = "en";
 		}
-		res.setLocale(req.cookies.i18n);
+		req.cookies.i18n = lang;
+		res.setLocale(lang);
 		res.render('changepassword', {
 			lang:req.cookies.i18n,
 			i18n:res,
@@ -1489,6 +1491,7 @@ totalshares = t[0].counting;
 		if(lang == null || lang == undefined){
 			lang = "en";
 		}
+		req.cookies.i18n = lang;
 		/*labyoker.changepassword(function(error, done) {
 			if (done != null) {
 				res.redirect('/');
@@ -1516,7 +1519,7 @@ totalshares = t[0].counting;
 						isLoggedInAdmin: req.session.admin,
 						labyoker : req.session.user,
 						/*loggedIn : true,*/
-						messageSuccess : "Congratulations you have successfully changed your Password. Please head to the <a href='/login'>login</a> page.", 
+						messageSuccess : res.__("index.changepwd.message1").replace(/&lt;/g, '<').replace(/&gt;/g, '>'), 
 						scripts : [ '/javascripts/utils.js' ]
 					});
 			} else if(results != null && results.length > 0 && results == 'errorFound') {
@@ -1530,8 +1533,7 @@ totalshares = t[0].counting;
 						displayForm: true,
 						labyoker : req.session.user,
 						isLoggedInAdmin: req.session.admin,
-						message : "An error was found while processing your change password. Please try again or <a href='mailto:labyoke@gmail.com?Subject="
-																		+ "Change Password - " + id + "' target='_top'>Contact us</a>.", 
+						message : (res.__("index.changepwd.message2", { id: id })).replace(/&lt;/g, '<').replace(/&gt;/g, '>'), 
 						scripts : [ '/javascripts/utils.js' ]
 					});
 			} else if(results != null && results.length > 0 && results == 'dateExpired') {
@@ -1544,7 +1546,7 @@ totalshares = t[0].counting;
 						isLoggedInAdmin: req.session.admin,
 						labyoker : req.session.user,
 						/*loggedIn : true,*/
-						message : "Unfortunately your Change Password request has expired. Please make a new request.", 
+						message : res.__("index.changepwd.message3").replace(/&lt;/g, '<').replace(/&gt;/g, '>'), 
 						displayForm: true,
 						scripts : [ '/javascripts/utils.js' ]
 					});
@@ -1559,7 +1561,7 @@ totalshares = t[0].counting;
 						labyoker : req.session.user,
 						/*loggedIn : true,*/
 						displayForm: true,
-						message : "Sorry we could not find your Change Password request. Please make a new request.", 
+						message : res.__("index.changepwd.message4").replace(/&lt;/g, '<').replace(/&gt;/g, '>'), 
 						scripts : [ '/javascripts/utils.js' ]
 					});
 			} else {
@@ -1573,8 +1575,7 @@ totalshares = t[0].counting;
 						labyoker : req.session.user,
 						/*loggedIn : true,*/
 						displayForm: true,
-						message : "An error was found while processing your change password. Please try again or <a href='mailto:labyoke@gmail.com?Subject="
-																		+ "Change Password - " + id + "' target='_top'>Contact us</a>.", 
+						message : (res.__("index.changepwd.message5", { id: id })).replace(/&lt;/g, '<').replace(/&gt;/g, '>'), 
 						scripts : [ '/javascripts/utils.js' ]
 					});
 			}

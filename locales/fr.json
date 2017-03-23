@@ -420,5 +420,11 @@
     "index.confirmpwd.message1": "Félicitations! Vous êtes maintenant inscrit. Vous pouvez commencer vos <a href='/search'>recherches</a> de réactifs.",
     "index.confirmpwd.message2": "Une erreur est survenue lors de votre confirmation. Veuillez réessayer ou <a href='mailto:labyoke@gmail.com?Subject=Change Password - {{id}}' target='_top'>Contactez Nous</a>.",
     "index.confirmpwd.message3": "Nous n'avons pas trouvé votre Pré-inscription. Veuillez vous inscrire.",
+
+    "index.changepwd.message1": "Félicitations! Vous avez changé votre mot de passe. Vous pouvez vous <a href='/login'>connecter</a> dès à présent.",
+    "index.changepwd.message2": "Une erreur est survenue lors de votre changement de mot de passe. Veuillez réesssayer ou <a href='mailto:labyoke@gmail.com?Subject=Change Password - {{id}}' target='_top'>Contactez Nous</a>.",
+    "index.changepwd.message3": "Malheureusement votre requête de Changement de Mot de Passe a expiré. Veuillez faire une autre <a href='/forgot'>demande</a>.",
+    "index.changepwd.message4": "Nous n'avons pas trouvé votre requête. Veuillez faire une autre <a href='/forgot'>demande</a>.",
+    "index.changepwd.message5": "Une erreur est survenue lors de votre changement de mot de passe. Veuillez réesssayer ou <a href='mailto:labyoke@gmail.com?Subject=Change Password - {{id}}' target='_top'>Contactez Nous</a>.",
     
 }

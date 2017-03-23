@@ -419,6 +419,13 @@
     "index.confirmpwd.message1": "Congratulations you have successfully registered. You can now start searching to the <a href='/search'>search</a> page.",
     "index.confirmpwd.message2": "An error was found while processing your confirmation. Please try again or <a href='mailto:labyoke@gmail.com?Subject=Change Password - {{id}}' target='_top'>Contact us</a>.",
     "index.confirmpwd.message3": "Sorry we could not find your Pre-Registration. Please Register.",
+    
+    "index.changepwd.message1": "Congratulations you have successfully changed your Password. Please head to the <a href='/login'>login</a> page.",
+    "index.changepwd.message2": "An error was found while processing your change password. Please try again or <a href='mailto:labyoke@gmail.com?Subject=Change Password - {{id}}' target='_top'>Contact us</a>.",
+    "index.changepwd.message3": "Unfortunately your Change Password request has expired. Please make a new request.",
+    "index.changepwd.message4": "Sorry we could not find your Change Password request. Please make a new request.",
+    "index.changepwd.message5": "An error was found while processing your change password. Please try again or <a href='mailto:labyoke@gmail.com?Subject=Change Password - {{id}}' target='_top'>Contact us</a>.",
+
     "key.title": ""
 
 
