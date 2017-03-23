@@ -414,8 +414,8 @@
 
     "index.changepass.message1": "Please change your password then <a href='/login'>login</a> again.",
     "index.changepass.button": "Change",
-    "index.change.placeholder1": "Re-enter Password",
-    "index.change.placeholder2": "Password",
+    "index.change.placeholder2": "Re-enter Password",
+    "index.change.placeholder1": "Password",
     "index.confirmpwd.message1": "Congratulations you have successfully registered. You can now start searching to the <a href='/search'>search</a> page.",
     "index.confirmpwd.message2": "An error was found while processing your confirmation. Please try again or <a href='mailto:labyoke@gmail.com?Subject=Change Password - {{id}}' target='_top'>Contact us</a>.",
     "index.confirmpwd.message3": "Sorry we could not find your Pre-Registration. Please Register.",

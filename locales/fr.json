@@ -411,5 +411,14 @@
     "index.account.lang": "langue",
 
     "dot.selected": "<b>Quantité: </b>",
-    "dot.reagent": " - <b>Réactif:</b> "
+    "dot.reagent": " - <b>Réactif:</b> ",
+
+    "index.changepass.message1": "Veuillez changer votre mot de passe et <a href='/login'>connectez-vous</a> de nouveau.",
+    "index.changepass.button": "Changer",
+    "index.change.placeholder2": "Verifier le Mot de Passe",
+    "index.change.placeholder1": "Mot de Passe",
+    "index.confirmpwd.message1": "Félicitations! Vous êtes maintenant inscrit. Vous pouvez commencer vos <a href='/search'>recherches</a> de réactifs.",
+    "index.confirmpwd.message2": "Une erreur est survenue lors de votre confirmation. Veuillez réessayer ou <a href='mailto:labyoke@gmail.com?Subject=Change Password - {{id}}' target='_top'>Contactez Nous</a>.",
+    "index.confirmpwd.message3": "Nous n'avons pas trouvé votre Pré-inscription. Veuillez vous inscrire.",
+    
 }
