@@ -371,6 +371,7 @@
     "index.register.message3": "Sorry. We could not register you. Please try again below.",
     "index.register.message4": "Sorry. We could not register you. Please fill out all fields below.",
     "index.register.message5": "Sorry you cannot proceed. Please make sure that your password entries match.",
+    "index.register.message6": "Sorry you cannot proceed. Please make sure that you have entered a username.",
     "index.change.subject": "Labyoke - Change Password Request",
     "index.change.body1": "You have requested to change your password @LabYoke. Please click on this link:<br/>",
     "index.change.body2": "<p><span>You have <b><span style='color:red;'>1 day</span></b> to change your password. But don't worry you can always send us another ",
