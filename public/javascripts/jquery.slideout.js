@@ -86,7 +86,7 @@
         if(settings.tabLocation === 'top' || settings.tabLocation === 'bottom') {
             obj.css({'left' : settings.leftPos});
             // settings.tabHandle.css({'right' : 0});
-            settings.tabHandle.css({'right' : 215});
+            settings.tabHandle.css({'right' : 200});
         }
         
         if(settings.tabLocation === 'top') {
@@ -96,7 +96,7 @@
 
         if(settings.tabLocation === 'bottom') {
             obj.css({'bottom' : '-' + properties.containerHeight, 'position' : 'fixed'});
-            settings.tabHandle.css({'top' : -60});
+            settings.tabHandle.css({'top' : -70});
             //settings.tabHandle.css({'top' : '-' + properties.tabHeight});
         }
         
