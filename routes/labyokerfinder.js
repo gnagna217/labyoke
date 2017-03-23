@@ -1985,7 +1985,7 @@ Labyoker.prototype.requestChangePassword = function(callback) {
 	var i18n = this.res;
 	var username = this.username;
 	var dateStripped = this.password;
-	var userlang = userlang;
+	var userlang = this.userlang;
 
 	var results;
 	var query = client.query("SELECT * FROM vm2016_users where id='" + username
