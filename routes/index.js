@@ -747,13 +747,13 @@ totalshares = t[0].counting;
 						res.render(
 							'forgot',
 							{
-								lang:req.cookies.i18n, i18n:res, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, isLoggedInAdmin: req.session.admin, title: 'Forgot Password', message : "Ah. We have already sent you an email today to change your password. Please check your inbox.", usernotfound : true, noforgotform: true
+								lang:req.cookies.i18n, i18n:res, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, isLoggedInAdmin: req.session.admin, title: 'Forgot Password', message : res.__("index.forgot.message1"), usernotfound : true, noforgotform: true
 							});
 					} else {
 						res.render(
 							'forgot',
 							{
-								lang:req.cookies.i18n, i18n:res, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, isLoggedInAdmin: req.session.admin, title: 'Forgot Password', message : "Sorry. We could not find an account with this username. Please try again below.", usernotfound : true
+								lang:req.cookies.i18n, i18n:res, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, isLoggedInAdmin: req.session.admin, title: 'Forgot Password', message : res.__("index.forgot.message2"), usernotfound : true
 							});
 					}
 				});
@@ -761,7 +761,7 @@ totalshares = t[0].counting;
 				res.render(
 					'forgot',
 					{
-						lang:req.cookies.i18n, i18n:res, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, isLoggedInAdmin: req.session.admin, title: 'Forgot Password', message : "Sorry. You must enter your current <span class='labColor'>username</span>. Please try again below.", usernotfound : true
+						lang:req.cookies.i18n, i18n:res, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, isLoggedInAdmin: req.session.admin, title: 'Forgot Password', message : res.__("index.forgot.message3"), usernotfound : true
 					});
 
 			}

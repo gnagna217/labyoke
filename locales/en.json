@@ -429,6 +429,10 @@
     "index.changepwd.message4": "Sorry we could not find your Change Password request. Please make a new request.",
     "index.changepwd.message5": "An error was found while processing your change password. Please try again or <a href='mailto:labyoke@gmail.com?Subject=Change Password - {{id}}' target='_top'>Contact us</a>.",
 
+    "index.forgot.message1": "Ah. We have already sent you an email today to change your password. Please check your inbox.",
+    "index.forgot.message2": "Sorry. We could not find an account with this username. Please try again below.",
+    "index.forgot.message3": "Sorry. You must enter your current <span class='labColor'>username</span>. Please try again below.",
+
     "key.title": ""
 
 
