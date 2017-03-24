@@ -1008,6 +1008,7 @@ LabyokerLabs.prototype.getlabs = function(callback) {
 LabYokeGlobal.prototype.getlatestshares = function(callback) {
 	var results;
 	var labs = this.param;
+	var LATEST_SHARES_NUM = 3;
 
 	var labsstr = "";
 	var i = 0;
@@ -1022,7 +1023,7 @@ LabYokeGlobal.prototype.getlatestshares = function(callback) {
 	}
 
 	select = select.replace(/UNION\s*$/, "");
-	select = select + ") t group by agent,lab,date order by date desc limit 3";
+	select = select + ") t group by agent,lab,date order by date desc limit " + LATEST_SHARES_NUM;
 
 	console.log("get getlatestshares labsstr: " + labsstr);
 	console.log("full getlatestshares query: " + select);
@@ -1883,32 +1884,33 @@ LabyokerRegister.prototype.register = function(callback) {
 
 	if(tel != null && tel.length>0 && username != null && username.length>0 && firstname != null && firstname.length>0 && lastname != null && lastname.length>0 && email != null && email.length>0 && password != null && password.length>0 && lab != null && lab.length>0 ){
 	console.log("processing registration2...");
-	//var query = client.query("SELECT * FROM vm2016_users where id='" + username
-	//		+ "'"/* and password='"+password+"'" */);
-	/*query.on("row", function(row, result) {
+	var query = client.query("SELECT * FROM vm2016_users where id='" + username
+			+ "'"/* and password='"+password+"'" */);
+	query.on("row", function(row, result) {
 		result.addRow(row);
 	});
 	query.on("end", function(result) {
 		results = result.rows;
-		console.log("email entered: " + email);
+		console.log("id entered: " + username);
 		if (results != null && results.length > 0) {
 			
-			for (i = 0; i < results.length; i++) { 
+			/*for (i = 0; i < results.length; i++) { 
 				console.log("results[i].email: " + results[i].email);
-				if(results[i].email == email){
-					console.log("in use?: alreadyInUse");
-					callback(null, "alreadyInUse");
-				}
-			}
+				if(results[i].email == email){*/
+					console.log("in use?: idalreadyInUse");
+					callback(null, "idalreadyInUse");
+			/*	}
+			}*/
 
-		} else {*/
+		} else {
 				var hash_register_id = crypt.hashSync(username);
 				console.log("before registerid: " + hash_register_id);
 				hash_register_id = hash_register_id.replace(/\//g, "");
 				console.log("registerid: " + hash_register_id);
 			var hash = crypt.hashSync(password);
 			var query2 = client.query("INSERT INTO vm2016_users VALUES ('" + username
-				+ "', '" + hash + "', '" + firstname + "',  0, null, null, '" + email + "', null, '" + lab + "', '" + lastname + "', '" + tel + "', 0, '','" + hash_register_id + "','" + userlang + "')");
+				+ "', '" + hash + "', '" + firstname + "',  0, null, null, '" + email + "', null, '" + lab + "', '" + lastname + "', '" + tel + "', 0, '','" + hash_register_id + "', null,'" + userlang + "')");
+
 
 				query2.on("row", function(row, result2) {
 					result2.addRow(row);
@@ -1929,9 +1931,9 @@ LabyokerRegister.prototype.register = function(callback) {
 					body += i18n.__({phrase: "index.register.body1", locale: userlang}); //"Thanks for registering with @LabYoke.";
 					body += i18n.__({phrase: "index.register.body2", locale: userlang}); //"You are one step away from labyoking! Please click on this link:<br/>";
 					body += "<p style=\"text-align:center\"><span style=''><b><a href='https:\/\/team-labyoke.herokuapp.com\/confirmreg/"
-							+ hash_register_id + "'>https:\/\/team-labyoke.herokuapp.com\/confirmreg?id="
+							+ hash_register_id + "?lang=" + userlang + "'>https:\/\/team-labyoke.herokuapp.com\/confirmreg?id="
 							+ hash_register_id
-							+ "</a></b></span></p>";
+							+ "?lang=" + userlang + "</a></b></span></p>";
 					body += i18n.__({phrase: "index.register.body3", locale: userlang}) + "<a href=\"https:\/\/team-labyoke.herokuapp.com\/share\"> " + i18n.__({phrase: "index.register.body2", locale: userlang}) + "</a>" + i18n.__({phrase: "index.register.body4", locale: userlang});
 					body += "</p><b><i>" + i18n.__({phrase: "index.reportsShares.html7", locale: userlang}) + "</i></b></div>";
 					console.log("body: " + body);
@@ -1943,8 +1945,8 @@ LabyokerRegister.prototype.register = function(callback) {
 
 				});
 				
-		//}
-	//});
+		}
+	});
 } else if(tel != null && tel.length>0 && firstname != null && firstname.length>0 && lastname != null && lastname.length>0 && email != null && email.length>0 ){
 	var rendered = false;
 	console.log("processing registration...");
@@ -1983,7 +1985,7 @@ Labyoker.prototype.requestChangePassword = function(callback) {
 	var i18n = this.res;
 	var username = this.username;
 	var dateStripped = this.password;
-	var userlang = userlang;
+	var userlang = this.userlang;
 
 	var results;
 	var query = client.query("SELECT * FROM vm2016_users where id='" + username
@@ -1996,6 +1998,7 @@ Labyoker.prototype.requestChangePassword = function(callback) {
 		console.log("dateStripped: " + dateStripped);
 		if (results != null && results.length == 1 && dateStripped != null) {
 			var changepwd_status = results[0].changepwd_status;
+			userlang = results[0].lang;
 			var now = moment(new Date).tz("America/New_York").format(
 				'MM-DD-YYYY');
 			var changepwd_date = results[0].changepwd_date;
@@ -2029,9 +2032,9 @@ Labyoker.prototype.requestChangePassword = function(callback) {
 							+ ",<br/><br/>";
 					body += i18n.__({phrase: "index.change.body1", locale: userlang}); //"You have requested to change your password @LabYoke. Please click on this link:<br/>";
 					body += "<p style=\"text-align:center\"><span style=''><b><a href='https:\/\/team-labyoke.herokuapp.com\/changepassword/"
-							+ hash + "'>https:\/\/team-labyoke.herokuapp.com\/changepassword?id="
+							+ hash + "?lang="+userlang+"'>https:\/\/team-labyoke.herokuapp.com\/changepassword?id="
 							+ hash
-							+ "</a></b></span></p>";
+							+ "?lang=" + userlang + "</a></b></span></p>";
 					//body += "<p><span>You have <b><span style='color:red;'>1 day</span></b> to change your password. But don't worry you can always send us another " + "<a href=\"https:\/\/team-labyoke.herokuapp.com\/forgot\">" + "request" + "</a>" + " once this one has expired." + "</span> </p>";
 					body +=  i18n.__({phrase: "index.change.body2", locale: userlang}) + "<a href=\"https:\/\/team-labyoke.herokuapp.com\/forgot\">" + i18n.__({phrase: "index.change.body3", locale: userlang}) + "</a>" + i18n.__({phrase: "index.change.body4", locale: userlang}) + "</span> </p>";
 					//body += "<p>[PS: Have you " + "<a href=\"https:\/\/team-labyoke.herokuapp.com\/share\">" + "shared" + "</a>" + " some chemicals today?]";
