@@ -46,7 +46,7 @@ $(document).ready(function() {
         if($('.pass').val()!=null && $('.repass').val()!=null && $('.pass').val()!='' && $('.pass').val()==$('.repass').val()){
         	return true;
         }
-        alert('Incorrect Password. Try again or Get to Predicting!');
+        //alert('Incorrect Password. Try again or Get to Predicting!');
         return false;
     });
     
