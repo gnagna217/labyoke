@@ -1087,6 +1087,9 @@ totalshares = t[0].counting;
 	router.post('/login',function(req, res) {
 		var mom = moment().tz(jstz.determine().name()).format;
 		console.log("timezone jstz.determine().name(): " + jstz.determine().name());
+		if(req.cookies.i18n == null || req.cookies.i18n == undefined){
+			req.cookies.i18n = "en";
+		}
 		res.setLocale(req.cookies.i18n);
 						var username = req.body.user;
 						var password = req.body.pass;
@@ -1101,6 +1104,7 @@ totalshares = t[0].counting;
 										if(results != null && results.length > 0){
 											done = results[0];
 											dept = results[1];
+											res.setLocale(done[0].lang);
 										}
 										
 										/*if(results != null && results.length > 2){
