@@ -708,13 +708,13 @@ totalshares = t[0].counting;
 	router.get('/forgot', function(req, res) {
 		var lang = req.query.lang;
 		console.log("lang is init from param: " + lang);
-		if(lang == null || lang == undefined){
-			lang = req.cookies.i18n;
-			console.log("lang is from cookies: " + lang);
-		}
-		if(lang == null || lang == undefined){
+		if(req.cookies.i18n != undefined && req.cookies.i18n!=null){
+				lang = req.cookies.i18n;
+		} else if(lang == null || lang == undefined){
 			lang = "en";
 		}
+		req.cookies.i18n = lang;
+		res.setLocale(lang);
 		console.log("lang is finally: " + lang);
 		res.cookie('i18n', lang);
 		req.cookies.i18n = lang;
@@ -726,7 +726,9 @@ totalshares = t[0].counting;
 	router.post('/forgot', function(req, res) {
 			var lang = req.query.lang;
 			console.log("lang is forgot user: " + lang);
-			if(lang == null || lang == undefined){
+			if(req.cookies.i18n != undefined && req.cookies.i18n!=null){
+				lang = req.cookies.i18n;
+			} else if(lang == null || lang == undefined){
 				lang = "en";
 			}
 			res.setLocale(lang);
