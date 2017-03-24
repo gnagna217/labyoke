@@ -1462,6 +1462,7 @@ totalshares = t[0].counting;
 		if(lang == null || lang == undefined){
 			lang = "en";
 		}
+		console.log("lang is forgot user: " + lang);
 		req.cookies.i18n = lang;
 		res.setLocale(lang);
 		res.render('changepassword', {

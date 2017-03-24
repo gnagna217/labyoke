@@ -416,6 +416,7 @@
     "dot.selected": "<b>Quantité: </b>",
     "dot.reagent": " - <b>Réactif:</b> ",
 
+    "index.changepass.message3": "Presque.",
     "index.changepass.message1": "Veuillez changer votre mot de passe et <a href='/login'>connectez-vous</a> de nouveau.",
     "index.changepass.button": "Changer",
     "index.change.placeholder2": "Verifier le Mot de Passe",
