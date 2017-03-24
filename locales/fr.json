@@ -13,6 +13,9 @@
     "login.forgotLink" : "Mot de passe oublié",
     "login.helpLink" : "Aide",
     "login.texting1": "Dernières transactions ",
+    "login.username": "Nom d'Utilisateur",
+    "login.password": "Mot de Passe",
+
     
     "search.layovertitle" : "Commande?",
     "search.layovercancel" : "Annuler",
