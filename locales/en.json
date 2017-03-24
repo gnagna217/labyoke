@@ -415,6 +415,8 @@
     "index.account.tel": "telephone number",
     "index.account.lang": "language",
 
+    "index.changepass.message2": "Please enter a valid password. Try again below.",
+    "index.changepass.message4": "Your passwords do not match. Try again below.",
     "index.changepass.message3": "Almost there.",
     "index.changepass.message1": "Please change your password then <a href='/login'>login</a> again.",
     "index.changepass.button": "Change",
