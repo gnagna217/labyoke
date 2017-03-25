@@ -253,6 +253,13 @@ span.fa-comment {
     right: -9px;
 }
 
+.sun {
+    position: relative;top: 86px; left: 0px; width: 50px; z-index: -1;
+}
+.sunlogo{
+    left: 25px; position: relative;
+}
+
 .isnew{
     background-color: #a4d2e8 !important;
 }
@@ -1179,6 +1186,13 @@ input::-webkit-inner-spin-button {
 
 }
  @media (max-width: 440px) {
+.sun {
+    position: relative;top: 70px; left: 0px; width: 40px; z-index: -1;
+}
+.sunlogo{
+    left: 20px; position: relative;
+}
+
 .help{
     padding-right: 0px;
     width: initial !important;
