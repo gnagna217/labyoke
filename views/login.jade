@@ -4,8 +4,10 @@ block content
 
     div(class="container login front", style="margin-top: 8%;")
          div(style="text-align: center;position: relative;")
-             a(href="/search")
+             a(href="/search", style="left: 25px; position: relative;")
                 img(src="/images/yoke4.png", alt="The Yoke",  title="Yoke", class="yokelogo")
+             span
+                img(src="/images/morning_sun.png", alt="Sun",  title="Sun", class="", id="sun", style="position: relative;top: 86px; left: 0px; width: 50px; z-index: -1;")
              - // var d = new Date();
              - // var n = d.getHours();
              h1(id="hour")
@@ -16,8 +18,6 @@ block content
              - //if(n > 17)
                  //h1 #{i18n.__("login.evening")}
              //p(style="display:none")!= mom + " - " + n + " hours"
-             span
-                img(src="/images/morning_sun.png", alt="Sun",  title="Sun", class="", id="sun")
              p #{i18n.__("login.welcome")}
          script.
             var t = new Date();
@@ -29,7 +29,7 @@ block content
                 im = "morning_sun.png";
             } else if(n >= 12 && n <= 17){
                 text = "#{i18n.__("login.afternoon")}";
-                im = "afternoon_sun.png";
+                im = "morning2_sun.png";
             } else if(n >= 17 && n <= 20){
                 text = "#{i18n.__("login.evening")}";
                 im = "evening_sun.png";
@@ -38,7 +38,7 @@ block content
                 im = "night_sun.png";
             }
             $('#hour').html(text);
-            $('#sun').src("/images/" + im);
+            $('#sun').attr("src","/images/" + im);
 
             //console.log("t.getHours() = " + t.getHours());
 
