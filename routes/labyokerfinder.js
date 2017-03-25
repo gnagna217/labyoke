@@ -1734,7 +1734,7 @@ Labyoker.prototype.login = function(callback) {
 		query2.on("end", function(result2) {
 			results2 = result2.rows;
 			resultsLogin.push(results2);
-			console.log("dept is: " + results2[0].email);
+			//console.log("dept is: " + results2[0].email);
 			// var hash = crypt.hashSync(pass, salt);
 			//if (active == 1) {
 				var c = crypt.compareSync(password, pass);
