@@ -26,16 +26,16 @@ block content
             var im = "";
             if(n >= 6 && n < 12){
                 text = "#{i18n.__("login.morning")}";
-                im = "morning_sun.png";
+                im = "sun_morning.png";
             } else if(n >= 12 && n <= 17){
                 text = "#{i18n.__("login.afternoon")}";
-                im = "morning2_sun.png";
+                im = "sun_afternoon.png";
             } else if(n >= 17 && n <= 20){
                 text = "#{i18n.__("login.evening")}";
-                im = "evening_sun.png";
+                im = "sun_evening.png";
             } else {
                 text = "#{i18n.__("login.night")}";
-                im = "night_sun.png";
+                im = "sun_night.png";
             }
             $('#hour').html(text);
             $('#sun').attr("src","/images/" + im);
