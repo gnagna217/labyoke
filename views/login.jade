@@ -7,7 +7,7 @@ block content
              a(href="/search", class="sunlogos")
                 img(src="/images/yoke4.png", alt="The Yoke",  title="Yoke", class="yokelogo")
              p(style="margin-bottom: -45px;margin-top: 10px;")
-                img(src="/images/arc_morning_1.png", alt="Sun",  title="Sun", class="suns", id="sun")
+                img(src="/images/arc_morning-1.png", alt="Sun",  title="Sun", class="suns", id="sun")
              - // var d = new Date();
              - // var n = d.getHours();
              h1(id="hour")
@@ -34,21 +34,21 @@ block content
                 text = "#{i18n.__("login.night")}";
             }
             if(n >= 6 && n < 8){
-                im = "arc_morning_1.png";
+                im = "arc_morning-1.png";
             } else if(n >= 8 && n < 12){
-                im = "arc_morning_2.png";
+                im = "arc_morning-2.png";
             } else if(n >= 12 && n < 15){
-                im = "arc_afternoon_1.png";
+                im = "arc_afternoon-1.png";
             } else if(n >= 15 && n < 17){
-                im = "arc_afternoon_2.png";
+                im = "arc_afternoon-2.png";
             } else if(n >= 17 && n < 19){
-                im = "arc_evening_1.png";
+                im = "arc_evening-1.png";
             } else if(n >= 19 && n < 20){
-                im = "arc_evening_2.png";
+                im = "arc_evening-2.png";
             } else if(n >= 20 && n < 22){
-                im = "arc_night_1.png";
+                im = "arc_night-1.png";
             } else {
-                im = "arc_night_2.png";
+                im = "arc_night-2.png";
             }
             $('#hour').html(text);
             $('#sun').attr("src","/images/" + im);
