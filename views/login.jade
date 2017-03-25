@@ -6,7 +6,8 @@ block content
          div(style="text-align: center;position: relative;")
              a(href="/search", class="sunlogos")
                 img(src="/images/yoke4.png", alt="The Yoke",  title="Yoke", class="yokelogo")
-             img(src="/images/arc_morning.png", alt="Sun",  title="Sun", class="suns", id="sun")
+             p
+                img(src="/images/arc_morning.png", alt="Sun",  title="Sun", class="suns", id="sun")
              - // var d = new Date();
              - // var n = d.getHours();
              h1(id="hour")
@@ -25,16 +26,29 @@ block content
             var im = "";
             if(n >= 6 && n < 12){
                 text = "#{i18n.__("login.morning")}";
-                im = "arc_morning.png";
             } else if(n >= 12 && n <= 17){
                 text = "#{i18n.__("login.afternoon")}";
-                im = "arc_afternoon.png";
             } else if(n >= 17 && n <= 20){
                 text = "#{i18n.__("login.evening")}";
-                im = "arc_evening.png";
             } else {
                 text = "#{i18n.__("login.night")}";
-                im = "arc_night.png";
+            }
+            if(n >= 6 && n < 8){
+                im = "arc_morning_1.png";
+            } else if(n >= 8 && n < 12){
+                im = "arc_morning_2.png";
+            } else if(n >= 12 && n < 15){
+                im = "arc_afternoon_1.png";
+            } else if(n >= 15 && n < 17){
+                im = "arc_afternoon_2.png";
+            } else if(n >= 17 && n < 19){
+                im = "arc_evening_1.png";
+            } else if(n >= 19 && n < 20){
+                im = "arc_evening_2.png";
+            } else if(n >= 20 && n < 22){
+                im = "arc_night_1.png";
+            } else {
+                im = "arc_night_2.png";
             }
             $('#hour').html(text);
             $('#sun').attr("src","/images/" + im);
