@@ -1211,9 +1211,12 @@ input::-webkit-inner-spin-button {
 }
 .enlogin{
     border-width: 0px;
-    width: 50px;
+    /*width: 50px;
     margin-top: -45px;
-    margin-left: -75px;
+    margin-left: -75px;*/
+    width: 40px;
+    margin-top: -40px;
+    margin-left: -62px;
     position: relative;
     float: left;
 }
