@@ -410,7 +410,7 @@
     "index.reportsMoney.param11": "Catalog#",
     "index.reportsMoney.param12": "Date",
     "index.reportsMoney.param13": "Reagents Shares Savings",
-    "index.reportsMoney.param14": "The <span style='font-weight:bold'>Total</span> savings are ",
+    "index.reportsMoney.param14": "The <span style='font-weight:bold'>Total</span> number of Reagents saved is ",
     "index.reportsInsuff.param1": "Insufficient Reagents Shared",
 
     "index.account.to": "to",
