@@ -568,12 +568,12 @@ console.log("report on savings- dateto: " + labsindept);
 				var total = results[prop].counting /* * results[prop].price*/;
 				console.log("counting is: " + total);
 				savings += parseInt(total);
-				html += "<td style='font-size: 12px;'>" + accounting.formatMoney(total, { symbol: " ",  format: "%v %s" }) /*accounting.formatMoney(total)*/ + "</td>";
+				html += "<td style='font-size: 12px;'>" + accounting.formatMoney(total, { symbol: " ",  format: "%v %s", precision : 0 }) /*accounting.formatMoney(total)*/ + "</td>";
 				html += " </tr>";
 				console.log("savings is: " + savings);
 		
 			}
-			html += "</tbody></table><div>" + i18n.__("index.reportsMoney.param14") + "<span style='font-size:30pt'>" + accounting.formatMoney(savings, { symbol: " ",  format: "%v %s" }) /*accounting.formatMoney(savings)*/ + ".</span></div><br/><p style='margin-top:50px'><i><b>" + i18n.__("index.reportsShares.html7") + "</b></i></p><img style='width: 141px; margin: 0 20px;float:left' src='https:\/\/team-labyoke.herokuapp.com\/images\/yoke4.png', alt='The Yoke',  title='Yoke', class='yokelogo'/>";
+			html += "</tbody></table><div>" + i18n.__("index.reportsMoney.param14") + "<span style='font-size:30pt'>" + accounting.formatMoney(savings, { symbol: " ",  format: "%v %s", precision : 0 }) /*accounting.formatMoney(savings)*/ + ".</span></div><br/><p style='margin-top:50px'><i><b>" + i18n.__("index.reportsShares.html7") + "</b></i></p><img style='width: 141px; margin: 0 20px;float:left' src='https:\/\/team-labyoke.herokuapp.com\/images\/yoke4.png', alt='The Yoke',  title='Yoke', class='yokelogo'/>";
 			console.log("html money: " + html);
 		}
 		if(!isempty){
