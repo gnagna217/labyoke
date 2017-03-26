@@ -1087,9 +1087,11 @@ totalshares = t[0].counting;
 	router.post('/login',function(req, res) {
 		var mom = moment().tz(jstz.determine().name()).format;
 		console.log("timezone jstz.determine().name(): " + jstz.determine().name());
+		console.log("req.cookies.i18n: " + req.cookies.i18n);
 		if(req.cookies.i18n == null || req.cookies.i18n == undefined){
 			req.cookies.i18n = "en";
 		}
+		console.log("req.cookies.i18n after setup: " + req.cookies.i18n);
 		res.setLocale(req.cookies.i18n);
 						var username = req.body.user;
 						var password = req.body.pass;
