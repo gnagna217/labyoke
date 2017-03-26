@@ -1247,7 +1247,7 @@ input::-webkit-inner-spin-button {
     .help{
     z-index: 9;
     width: 100px;
-    left: 37%;
+    /*left: 37%;*/
     }
 #checkname{
     margin-left: 200px;
@@ -1412,7 +1412,7 @@ span.num.greatherthanninetynine {
 }
 .help{
     padding-right: 0px;
-    width: 94%;
+    /*width: 94%;*/
     /*margin-top: 0px;
     z-index: -4;*/
 }
