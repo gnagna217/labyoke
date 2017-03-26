@@ -1089,6 +1089,9 @@ totalshares = t[0].counting;
 	});
 
 	router.post('/login',function(req, res) {
+		if (req.session.user) {
+			res.redirect('/search');
+		} else {
 		var mom = moment().tz(jstz.determine().name()).format;
 		console.log("timezone jstz.determine().name(): " + jstz.determine().name());
 		console.log("req.cookies.i18n: " + req.cookies.i18n);
@@ -1377,6 +1380,7 @@ totalshares = t[0].counting;
 												i18n:res,lang:req.cookies.i18n,message : res.__("index.login.message3") /*"Your username and/or password is wrong. Please try again."*/, title: 'Login'
 											});
 						}
+					}
 
 					});
 
