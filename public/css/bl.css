@@ -236,7 +236,7 @@ line.ct-point{
 }
 .help{
     padding-right: 40px;
-    position: relative;
+    position: absolute;
     bottom: 25px;
     width: 100%;
 }
