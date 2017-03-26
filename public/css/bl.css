@@ -1206,7 +1206,8 @@ input::-webkit-inner-spin-button {
 
 .help{
     padding-right: 0px;
-    width: initial !important;
+    /*width: initial !important;*/
+    margin-left: 168px;
     bottom: 20px;
 }
 .searchcatalog{
@@ -1221,9 +1222,17 @@ input::-webkit-inner-spin-button {
     margin-left: -75px;*/
     width: 30px;
     margin-top: -30px;
-    margin-left: -50px;
+    margin-left: -35px;
     position: relative;
     float: left;
+}
+
+.frlogin{
+    border-width: 0px;
+    float: right;
+    width: 30px;
+    margin-top: -35px;
+    margin-right: 5px;
 }
     .marginbottom{
     /*min-height: 450px;*/
