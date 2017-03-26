@@ -1249,7 +1249,8 @@ input::-webkit-inner-spin-button {
 }
     .help{
     z-index: 9;
-    width: 100px;
+    /*width: 100px;*/
+    width: 30%;
     /*left: 37%;*/
     }
 #checkname{
