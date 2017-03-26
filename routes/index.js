@@ -1089,9 +1089,7 @@ totalshares = t[0].counting;
 	});
 
 	router.post('/login',function(req, res) {
-		if (req.session.user) {
-			res.redirect('/search');
-		} else {
+
 		var mom = moment().tz(jstz.determine().name()).format;
 		console.log("timezone jstz.determine().name(): " + jstz.determine().name());
 		console.log("req.cookies.i18n: " + req.cookies.i18n);
@@ -1100,6 +1098,9 @@ totalshares = t[0].counting;
 		}
 		console.log("req.cookies.i18n after setup: " + req.cookies.i18n);
 		res.setLocale(req.cookies.i18n);
+		if (req.session.user) {
+			res.redirect('/search');
+		} else {
 						var username = req.body.user;
 						var password = req.body.pass;
 						if (username != null && username.length > 0
