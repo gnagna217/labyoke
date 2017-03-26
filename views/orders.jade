@@ -327,11 +327,15 @@ block content
             var rowsOrders = "#{array_rows3}";
             rowsOrders = rowsOrders.split("|");
             var rowTransformOrders = [];
+            var i = 10;
             for(var prop in rowsOrders){
-              rowTransformOrders.push(rowsOrders[prop]);
-              catTransform.push((rowsOrders[prop]).toLowerCase());
-              valTransform.push(0);
-              valTransformOrders.push(0);
+              if(i > 0){
+                rowTransformOrders.push(rowsOrders[prop]);
+                catTransform.push((rowsOrders[prop]).toLowerCase());
+                valTransform.push(0);
+                valTransformOrders.push(0);
+                i--;
+              }
             }
             console.log("previous catTransform: " + catTransform);
 
