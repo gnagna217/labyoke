@@ -288,6 +288,7 @@ module.exports = function(router) {
 	});
 
 	router.get('/search', isLoggedIn, function(req, res) {
+		console.log("getsearch - i18n: " + req.cookies.i18n);
 		res.setLocale(req.cookies.i18n);
 		console.log("getsearch - userlang: " + req.session.userlang);
 		if (req.session.user) {
