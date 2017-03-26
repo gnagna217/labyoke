@@ -1130,6 +1130,9 @@ input::-webkit-inner-spin-button {
 .floatleft{
     float:left;
 }
+.help{
+    width: 97%;
+}
 }
 @media (min-width: 768px){
 
