@@ -1128,6 +1128,9 @@ input::-webkit-inner-spin-button {
 }
 
 @media (min-width: 768px){
+.floatleft{
+    float:left;
+}
 .center{
     text-align:center;
 }
