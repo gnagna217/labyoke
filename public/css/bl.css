@@ -1211,7 +1211,7 @@ input::-webkit-inner-spin-button {
     padding-right: 0px;
     /*width: initial !important;*/
     margin-left: 155px;
-    bottom: 10px;
+    bottom: 20px;
 }
 .searchcatalog{
     float:left;
