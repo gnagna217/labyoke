@@ -329,13 +329,12 @@ block content
             var rowTransformOrders = [];
             var i = 10;
             for(var prop in rowsOrders){
-              if(i > 0){
+              
                 rowTransformOrders.push(rowsOrders[prop]);
                 catTransform.push((rowsOrders[prop]).toLowerCase());
                 valTransform.push(0);
                 valTransformOrders.push(0);
-                i--;
-              }
+                
             }
             console.log("previous catTransform: " + catTransform);
 
@@ -348,11 +347,14 @@ block content
               rowTransform.push(rows[prop]);
 
               if(catTransform.indexOf((rows[prop]).toLowerCase()) == -1){
-                console.log("rows[prop]: " + (rows[prop]).toLowerCase() + ".");
-                if((rows[prop]).length >0){
-                catTransform.push((rows[prop]).toLowerCase());
-                valTransform.push(0);
-                valTransformOrders.push(0);
+                if(i > 0){
+                  console.log("rows[prop]: " + (rows[prop]).toLowerCase() + ".");
+                  if((rows[prop]).length >0){
+                  catTransform.push((rows[prop]).toLowerCase());
+                  valTransform.push(0);
+                  valTransformOrders.push(0);
+                  i--;
+                }
                 }
               }
             }
