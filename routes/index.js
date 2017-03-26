@@ -57,6 +57,9 @@ module.exports = function(router) {
 	var competitionEnds = dates.competitionEnds;
 
     router.post('/share', isLoggedIn, function(req, res) {
+    	if(req.cookies.i18n == null || req.cookies.i18n == undefined){
+			req.cookies.i18n = "en";
+		}
     	res.setLocale(req.cookies.i18n);
         var exceltojson;
         upload(req,res,function(err){
@@ -199,6 +202,9 @@ module.exports = function(router) {
 	});
 
 	router.get('/about', isLoggedIn, function(req, res) {
+		if(req.cookies.i18n == null || req.cookies.i18n == undefined){
+			req.cookies.i18n = "en";
+		}
 		res.setLocale(req.cookies.i18n);
 		res.render('about', {
 			lang:req.cookies.i18n,
@@ -312,6 +318,9 @@ module.exports = function(router) {
 
 
 	router.get('/orders', isLoggedIn, function(req, res) {
+		if(req.cookies.i18n == null || req.cookies.i18n == undefined){
+			req.cookies.i18n = "en";
+		}
 		res.setLocale(req.cookies.i18n);
 		if (req.session.user) {
 			var labyokerLab = new LabyokerLab(req.session.lab);
@@ -406,6 +415,9 @@ totalshares = t[0].counting;
 	});
 
 	router.post('/orders', isLoggedIn, function(req, res) {
+		if(req.cookies.i18n == null || req.cookies.i18n == undefined){
+			req.cookies.i18n = "en";
+		}
 		res.setLocale(req.cookies.i18n);
 		if (req.session.user) {
 			var agent = req.body.agentform;
@@ -437,6 +449,9 @@ totalshares = t[0].counting;
 	});
 
 	router.post('/cancelshare', isLoggedIn, function(req, res) {
+		if(req.cookies.i18n == null || req.cookies.i18n == undefined){
+			req.cookies.i18n = "en";
+		}
 		res.setLocale(req.cookies.i18n);
 		if (req.session.user) {
 			var agent = req.body.agent;
@@ -480,6 +495,9 @@ totalshares = t[0].counting;
 
 
 	router.get('/reports', isLoggedInAdmin, function(req, res) {
+		if(req.cookies.i18n == null || req.cookies.i18n == undefined){
+			req.cookies.i18n = "en";
+		}
 		res.setLocale(req.cookies.i18n);
 		var labyokerLab = new LabyokerLab(req.session.lab);
 		labyokerLab.getLabsInDept(function(error, categories) {
@@ -501,6 +519,9 @@ totalshares = t[0].counting;
 	});
 
 	router.post('/reportShares', isLoggedInAdmin, function(req, res) {
+		if(req.cookies.i18n == null || req.cookies.i18n == undefined){
+			req.cookies.i18n = "en";
+		}
 		res.setLocale(req.cookies.i18n);
 		var datefrom = req.body.reportDateFrom;
 		var dateto = req.body.reportDateTo;
@@ -521,6 +542,9 @@ totalshares = t[0].counting;
 	});
 
 	router.post('/reportMoney', isLoggedInAdmin, function(req, res) {
+		if(req.cookies.i18n == null || req.cookies.i18n == undefined){
+			req.cookies.i18n = "en";
+		}
 		res.setLocale(req.cookies.i18n);
 		var datefrom = req.body.reportDateFromMoney;
 		var dateto = req.body.reportDateToMoney;
@@ -554,6 +578,9 @@ totalshares = t[0].counting;
 	});
 
 	router.post('/reportInsuff', isLoggedInAdmin, function(req, res) {
+		if(req.cookies.i18n == null || req.cookies.i18n == undefined){
+			req.cookies.i18n = "en";
+		}
 		res.setLocale(req.cookies.i18n);
 		var datefrom = undefined;
 		var dateto = undefined;
@@ -585,6 +612,9 @@ totalshares = t[0].counting;
 	});
 
 	router.post('/changeDetails', isLoggedIn, function(req, res) {
+		if(req.cookies.i18n == null || req.cookies.i18n == undefined){
+			req.cookies.i18n = "en";
+		}
 		res.setLocale(req.cookies.i18n);
 		var col = req.body.column;
 		var val = req.body.valuedetail.replace("'","");
@@ -635,6 +665,9 @@ totalshares = t[0].counting;
 	});
 
 	router.post('/reportOrders', isLoggedInAdmin, function(req, res) {
+		if(req.cookies.i18n == null || req.cookies.i18n == undefined){
+			req.cookies.i18n = "en";
+		}
 		res.setLocale(req.cookies.i18n);
 		var datefrom = req.body.reportDateFromOrders;
 		var dateto = req.body.reportDateToOrders;
@@ -658,12 +691,18 @@ totalshares = t[0].counting;
 	});
 
 	router.get('/play', function(req, res) {
+		if(req.cookies.i18n == null || req.cookies.i18n == undefined){
+			req.cookies.i18n = "en";
+		}
 		res.setLocale(req.cookies.i18n);
 		res.render('play', {lang:req.cookies.i18n, i18n:res,ordersnum: req.session.orders, sharesnum: req.session.shares, title: 'Play',labyoker : req.session.user});
 		req.session.messages = null;
 	});
 
 	router.get('/share', isLoggedIn, function(req, res) {
+		if(req.cookies.i18n == null || req.cookies.i18n == undefined){
+			req.cookies.i18n = "en";
+		}
 		res.setLocale(req.cookies.i18n);
 		var labYokeAgents = new LabYokeAgents(req.session.email, req.session.lab, req.session.labs, req.session.dept);
 		labYokeAgents.findmyshares(function(error, results) {
@@ -681,6 +720,9 @@ totalshares = t[0].counting;
 	});
 
 	router.get('/account', isLoggedIn, function(req, res) {
+		if(req.cookies.i18n == null || req.cookies.i18n == undefined){
+			req.cookies.i18n = "en";
+		}
 		res.setLocale(req.cookies.i18n);
 		console.log("inside accounnt: " + req.session.email);
 		console.log("account labs: " + req.session.labs);
@@ -833,6 +875,9 @@ totalshares = t[0].counting;
 	});
 
 	router.post('/register', function(req, res) {
+		if(req.cookies.i18n == null || req.cookies.i18n == undefined){
+			req.cookies.i18n = "en";
+		}
 		res.setLocale(req.cookies.i18n);
 		var rendered = false;
 		var lab = req.body.reglab;
@@ -1038,6 +1083,9 @@ totalshares = t[0].counting;
 	});
 
 	router.post('/search', function(req, res) {
+		if(req.cookies.i18n == null || req.cookies.i18n == undefined){
+			req.cookies.i18n = "en";
+		}
 		if (req.session.user) {
 			res.setLocale(req.cookies.i18n);
 			var searchText = req.body.searchText;
@@ -1064,6 +1112,9 @@ totalshares = t[0].counting;
 	});
 
 	router.post('/searchCatalog', function(req, res) {
+		if(req.cookies.i18n == null || req.cookies.i18n == undefined){
+			req.cookies.i18n = "en";
+		}
 		res.setLocale(req.cookies.i18n);
 		if (req.session.user) {
 			var searchText = req.body.searchTextCatalog;
