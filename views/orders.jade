@@ -327,7 +327,7 @@ block content
             var rowsOrders = "#{array_rows3}";
             rowsOrders = rowsOrders.split("|");
             var rowTransformOrders = [];
-            var i = 10;
+            
             for(var prop in rowsOrders){
               
                 rowTransformOrders.push(rowsOrders[prop]);
@@ -343,6 +343,7 @@ block content
             catTransform.pop();
             console.log("catTransform pop: " + catTransform);
             
+            var i = 10;
             for(var prop in rows){
             if(i > 0){
               rowTransform.push(rows[prop]);
@@ -354,8 +355,9 @@ block content
                   catTransform.push((rows[prop]).toLowerCase());
                   valTransform.push(0);
                   valTransformOrders.push(0);
-                  i--;
+                  
                 }
+                i--;
                 }
               }
             }
