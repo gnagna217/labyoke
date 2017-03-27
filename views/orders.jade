@@ -344,10 +344,11 @@ block content
             console.log("catTransform pop: " + catTransform);
             
             for(var prop in rows){
+            if(i > 0){
               rowTransform.push(rows[prop]);
 
               if(catTransform.indexOf((rows[prop]).toLowerCase()) == -1){
-                if(i > 0){
+                
                   console.log("rows[prop]: " + (rows[prop]).toLowerCase() + ".");
                   if((rows[prop]).length >0){
                   catTransform.push((rows[prop]).toLowerCase());
