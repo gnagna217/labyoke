@@ -82,11 +82,11 @@ block content
 			scene = new THREE.Scene();
 			scene.background = textureCube;
 
-			var dynamicTexture  = new THREEx.DynamicTexture(512,512);
+			var dynamicTexture  = new THREEx.DynamicTexture(712,712);
 			dynamicTexture.drawText('Hello', 32, 256, 'blue');
 
 			var geometry = new THREE.SphereBufferGeometry( 0.1, 32, 16 );
-			var material = new THREE.MeshBasicMaterial( { color: 0x9966FF, /*envMap: textureCube,*/ map : dynamicTexture.texture } );
+			var material = new THREE.MeshBasicMaterial( { color: 'red', /*envMap: textureCube,*/ map : dynamicTexture.texture } );
 			// map: THREE.ImageUtils.loadTexture('/images/three/px.png') 
 			// var material = new THREE.MeshBasicMaterial( { color: 0xffffff, envMap: textureCube, map : dynamicTexture.texture } );
 
