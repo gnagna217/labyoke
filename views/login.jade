@@ -84,7 +84,8 @@ block content
                         - var n = ob[prop].agent
                             //span(class="test2",style="color:white;")!="-|- " 
                             span(class="test",style="color:#ddd")!= n + " "
-                            span(class="test2", style="color:white;")!="-|- "
+                            - if(prop < (ob.length -1))
+                                span(class="test2", style="color:white;")!="-|- "
     div(class="help")
        a(href="/help" title="Help")
         img(src="images/bouee3.png", alt="Help", title=i18n.__("login.helpLink"), class="helplogin")
