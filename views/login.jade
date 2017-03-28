@@ -78,14 +78,13 @@ block content
             a(class="handle" href="last-transactions", style="right: -60px;")!=Content
             div(style="text-align: center;padding: 1px;color:white;")
                 p!= i18n.__("login.texting1")
-                span
+                p
                     -var ob = latestshares
                     -for(var prop in ob)
                         - var n = ob[prop].agent
-                        p
                             span(class="test2",style="color:white;")!="-|- " 
                             span(class="test",style="color:#ddd")!= n + " "
-                            span(class="test2", style="color:white;")!="-|-"
+                            span(class="test2", style="color:white;")!="-|- "
     div(class="help")
        a(href="/help" title="Help")
         img(src="images/bouee3.png", alt="Help", title=i18n.__("login.helpLink"), class="helplogin")
