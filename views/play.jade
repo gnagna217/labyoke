@@ -91,6 +91,8 @@ block content
 			// map: THREE.ImageUtils.loadTexture('/images/three/px.png') 
 			// var material = new THREE.MeshBasicMaterial( { color: 0xffffff, envMap: textureCube, map : dynamicTexture.texture } );
 
+			var sphere = new THREE.Mesh( geometry, material );
+
 			for ( var i = 0; i < 75; i ++ ) {
 
 				var mesh = new THREE.Mesh( geometry, material );
@@ -146,6 +148,27 @@ block content
 
 		//
 
+		var rotWorldMatrix;
+		function rotateAroundWorldAxis(object, axis, radians) {
+			rotWorldMatrix = new THREE.Matrix4();
+			rotWorldMatrix.makeRotationAxis(axis.normalize(), radians);
+			rotWorldMatrix.multiplySelf(object.matrix);
+			object.matrix = rotWorldMatrix;
+			object.rotation.setEulerFromRotationMatrix(object.matrix);
+		}
+		var xAxis = new THREE.Vector3(1, 0, 0);
+		var yAxis = new THREE.Vector3(0, 1, 0);
+		var zAxis = new THREE.Vector3(0, 0, 1);
+		var angle = distance / (2 * Math.PI * object.boundRadius) * Math.PI;
+		sphere.roll_z = function(distance) {
+			this.position.z += distance;
+			var xAxis = new THREE.Vector3(1, 0, 0);
+			var angle = distance / (2 * Math.PI * this.boundRadius) * Math.PI;
+			rotateAroundWorldAxis(this, xAxis, angle);
+		}
+
+		//
+
 		function animate() {
 
 			requestAnimationFrame( animate );
@@ -171,6 +194,8 @@ block content
 				sphere.position.y = 5 * Math.sin( timer + i * 1.1 );
 
 			}
+
+			sphere.roll_z(100);
 
 			effect.render( scene, camera );
 
