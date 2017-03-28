@@ -85,8 +85,9 @@ block content
 			var dynamicTexture  = new THREEx.DynamicTexture(512,512);
 			dynamicTexture.drawText('Hello', 22, 256, 'white');
 
-			var geometry = new THREE.SphereBufferGeometry( 0.1, 64, 32 );
-			var material = new THREE.MeshBasicMaterial( { color: 0xffffff, /*envMap: textureCube,*/ map : dynamicTexture.texture } );
+			var geometry = new THREE.SphereBufferGeometry( 5, 32, 32);
+			//var geometry = new THREE.SphereBufferGeometry( 0.1, 32, 16 );
+			var material = new THREE.MeshBasicMaterial( { color: 0xffff00, /*envMap: textureCube,*/ map : dynamicTexture.texture } );
 			// map: THREE.ImageUtils.loadTexture('/images/three/px.png') 
 			// var material = new THREE.MeshBasicMaterial( { color: 0xffffff, envMap: textureCube, map : dynamicTexture.texture } );
 
