@@ -96,7 +96,7 @@
 
         if(settings.tabLocation === 'bottom') {
             obj.css({'bottom' : '-' + properties.containerHeight, 'position' : 'fixed'});
-            settings.tabHandle.css({'top' : -110});
+            settings.tabHandle.css({'top' : -65});
             //settings.tabHandle.css({'top' : '-' + properties.tabHeight});
         }
         
