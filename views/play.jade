@@ -85,7 +85,7 @@ block content
 			var dynamicTexture  = new THREEx.DynamicTexture(512,512);
 			dynamicTexture.drawText('Hello', 48, 256, 'white');
 
-			var geometry = new THREE.SphereBufferGeometry( 0.2, 32, 32);
+			var geometry = new THREE.SphereBufferGeometry( 0, 32, 32);
 			//var geometry = new THREE.SphereBufferGeometry( 0.1, 32, 16 );
 			var material = new THREE.MeshBasicMaterial( { color: 0xffff00, /*envMap: textureCube,*/ map : dynamicTexture.texture } );
 			// map: THREE.ImageUtils.loadTexture('/images/three/px.png') 
@@ -168,8 +168,7 @@ block content
 				var sphere = spheres[ i ];
 
 				sphere.position.x = 5 * Math.cos( timer + i );
-				sphere.position.y = 5 * Math.cos( timer + i );
-									//5 * Math.sin( timer + i * 1.1 );
+				sphere.position.y = 5 * Math.sin( timer + i * 1.1 );
 
 			}
 
