@@ -188,7 +188,8 @@ a {
 
 .slide-out-div {
           padding: 20px;
-          width: 250px;
+          /*width: 250px;*/
+          width:80%;
           background: rgba(138, 109, 59, 0.74);
           border: none;
           border-radius: 10px;
