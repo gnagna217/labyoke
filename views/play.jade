@@ -81,7 +81,7 @@ block content
 			scene.background = textureCube;
 
 			var geometry = new THREE.SphereBufferGeometry( 0.1, 32, 16 );
-			var material = new THREE.MeshBasicMaterial( { color: 0xffffff, envMap: textureCube } );
+			var material = new THREE.MeshBasicMaterial( { color: 0xffffff, envMap: textureCube, map: THREE.ImageUtils.loadTexture('/images/three/px.png') } );
 
 			for ( var i = 0; i < 500; i ++ ) {
 
