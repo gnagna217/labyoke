@@ -86,7 +86,7 @@ block content
 
 			var dynamicTexture  = new THREEx.DynamicTexture(256,256);
 			//var t = new THREE.TextGeometry('bamhi');
-			dynamicTexture.context.font	= "bolder 25px Verdana"
+			dynamicTexture.context.font	= "bolder 15px Verdana"
 			dynamicTexture.drawText('Last Transactions', 48, 128, 'white');
 
 			var dynamicTexture1  = new THREEx.DynamicTexture(256,256);
@@ -139,7 +139,8 @@ block content
 
 			//
 
-			renderer = new THREE.WebGLRenderer( { antialias: false } );
+			renderer = new THREE.WebGLRenderer( { /*antialias: false,*/ alpha: true } );
+			renderer.setClearColorHex( 0xffffff, 1 );
 			renderer.setPixelRatio( window.devicePixelRatio );
 			container.appendChild( renderer.domElement );
 
