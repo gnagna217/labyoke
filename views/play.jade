@@ -214,11 +214,12 @@ block content
 
 		var renderer = new THREE.WebGLRenderer();
 		renderer.setSize(window.innerWidth, window.innerHeight);
+		renderer.setClearColor( 0xffffff );
 		document.body.appendChild(renderer.domElement);
 
 		var geometry = /*new THREE.BoxGeometry(700, 700, 700, 10, 10, 10)*/ new THREE.SphereBufferGeometry( 400, 32, 32);
 
-		var dynamicTexture  = new THREEx.DynamicTexture(256,256);
+		var dynamicTexture  = new THREEx.DynamicTexture(128,128);
 		// var t = new THREE.TextGeometry('bamhi');
 		dynamicTexture.context.font	= "bolder 5px Verdana"
 		dynamicTexture.drawText('Last Transactions', 48, 128, 'white');
