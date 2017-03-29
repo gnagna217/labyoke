@@ -104,7 +104,7 @@ block content
 				console.log("prop: " + data[prop]);
 				dynamicTexture.clear().drawText(data[prop], 48, 128, 'white');
 				prop++;
-				material.map = dynamicTexture.texture;
+				material = new THREE.MeshBasicMaterial( { color: 0xffffff, map : dynamicTexture.texture } );
 
 				var mesh = new THREE.Mesh( geometry, material );
 
