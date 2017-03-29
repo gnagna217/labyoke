@@ -102,7 +102,7 @@ block content
 					prop = 0;
 				}
 				console.log("prop: " + data[prop]);
-				dynamicTexture.drawText(data[prop], 48, 128, 'white');
+				dynamicTexture.clear().drawText(data[prop], 48, 128, 'white');
 				prop++;
 				material.map = dynamicTexture.texture;
 
