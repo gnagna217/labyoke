@@ -145,11 +145,11 @@ block content
 			renderer.setPixelRatio( window.devicePixelRatio );
 			container.appendChild( renderer.domElement );
 
-			var width = window.innerWidth || 2;
-			var height = window.innerHeight || 2;
+			var width = /*window.innerWidth ||*/ 2;
+			var height = /*window.innerHeight ||*/ 2;
 
-			//effect = new THREE.AnaglyphEffect( renderer );
-			//effect.setSize( width, height );
+			effect = new THREE.AnaglyphEffect( renderer );
+			effect.setSize( width, height );
 
 			//
 
@@ -165,7 +165,7 @@ block content
 			camera.aspect = window.innerWidth / window.innerHeight;
 			camera.updateProjectionMatrix();
 
-			//effect.setSize( window.innerWidth, window.innerHeight );
+			effect.setSize( window.innerWidth, window.innerHeight );
 
 		}
 
@@ -204,6 +204,6 @@ block content
 
 			}
 
-			//effect.render( scene, camera );
+			effect.render( scene, camera );
 
 		}
