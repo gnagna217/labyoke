@@ -212,19 +212,19 @@ block content
 		scene.background = new THREE.Color( "white" );
 		var camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 1, 10000);
 
-		var renderer = new THREE.WebGLRenderer();
+		var renderer = new THREE.WebGLRenderer( { antialias: false } );
 		renderer.setSize(window.innerWidth, window.innerHeight);
 		renderer.setClearColor( 0xffffff );
 		document.body.appendChild(renderer.domElement);
 
 		var geometry = /*new THREE.BoxGeometry(700, 700, 700, 10, 10, 10)*/ new THREE.SphereBufferGeometry( 400, 32, 32);
 
-		var dynamicTexture  = new THREEx.DynamicTexture(128,128);
+		var dynamicTexture  = new THREEx.DynamicTexture(256,256);
 		// var t = new THREE.TextGeometry('bamhi');
-		dynamicTexture.context.font	= "bolder 5px Verdana"
+		dynamicTexture.context.font	= "bolder 10px Verdana"
 		dynamicTexture.drawText('Last Transactions', 48, 128, 'white');
 
-		var material = new THREE.MeshBasicMaterial({color: 0x8a6d3b, wireframe: false, map: dynamicTexture.texture});
+		var material = new THREE.MeshBasicMaterial({color: 0xffffff, wireframe: false, map: dynamicTexture.texture});
 		var cube = new THREE.Mesh(geometry, material);
 		scene.add(cube);
 
