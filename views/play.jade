@@ -82,7 +82,8 @@ block content
 			var textureCube = new THREE.CubeTextureLoader().load( urls );
 
 			scene = new THREE.Scene();
-			scene.background = textureCube;
+			//scene.background = textureCube;
+			scene.background = new THREE.Color( 0xffffff )
 
 			var dynamicTexture  = new THREEx.DynamicTexture(256,256);
 			//var t = new THREE.TextGeometry('bamhi');
