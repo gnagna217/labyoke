@@ -97,6 +97,7 @@ block content
 
 			var prop = 0;
 			for ( var i = 0; i < 3; i ++ ) {
+				dynamicTexture.texture.needsUpdate  = true
 				if(prop > (data.length - 1)){
 					prop = 0;
 				}
@@ -116,8 +117,6 @@ block content
 				scene.add( mesh );
 
 				spheres.push( mesh );
-
-				dynamicTexture.texture.needsUpdate	= true;
 
 			}
 
