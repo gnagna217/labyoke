@@ -83,7 +83,7 @@ block content
 
 			scene = new THREE.Scene();
 			// scene.background = textureCube;
-			scene.background = new THREE.Color( 'white' )
+			scene.background = new THREE.Color( "white" )
 
 			var dynamicTexture  = new THREEx.DynamicTexture(256,256);
 			// var t = new THREE.TextGeometry('bamhi');
@@ -140,8 +140,9 @@ block content
 
 			//
 
-			renderer = new THREE.WebGLRenderer( { antialias: false } );
-			renderer.setClearColor( 0xffffff );
+			renderer = new THREE.WebGLRenderer( { /*antialias: false*/, alpha: true } );
+			renderer.setClearColor( 0x000000, 0 ); // the default
+			//renderer.setClearColor( 0xffffff );
 			renderer.setPixelRatio( window.devicePixelRatio );
 			container.appendChild( renderer.domElement );
 
