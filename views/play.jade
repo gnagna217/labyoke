@@ -42,6 +42,8 @@ block content
 
 		var container;
 
+		var data = ["Hello", "There", "Hi", "Again","Welcome", "Back"];
+
 		var camera, scene, renderer, effect;
 
 		var mesh, lightMesh, geometry;
@@ -93,7 +95,14 @@ block content
 			// map: THREE.ImageUtils.loadTexture('/images/three/px.png') 
 			// var material = new THREE.MeshBasicMaterial( { color: 0xffffff, envMap: textureCube, map : dynamicTexture.texture } );
 
+			var prop = 0;
 			for ( var i = 0; i < 75; i ++ ) {
+				if(prop > (data.length - 1)){
+					prop = 0;
+				}
+				dynamicTexture.drawText(data[prop], 48, 128, 'white');
+				prop++;
+				material = new THREE.MeshBasicMaterial( { color: 0xffffff, map : dynamicTexture.texture } );
 
 				var mesh = new THREE.Mesh( geometry, material );
 
