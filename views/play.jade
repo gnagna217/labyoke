@@ -140,17 +140,16 @@ block content
 
 			//
 
-			renderer = new THREE.WebGLRenderer( { /*antialias: false*/ alpha: true } );
-			renderer.setClearColor( 0x000000, 0 ); // the default
-			//renderer.setClearColor( 0xffffff );
+			renderer = new THREE.WebGLRenderer( { antialias: false } );
+			renderer.setClearColor( 0xffffff );
 			renderer.setPixelRatio( window.devicePixelRatio );
 			container.appendChild( renderer.domElement );
 
 			var width = window.innerWidth || 2;
 			var height = window.innerHeight || 2;
 
-			effect = new THREE.AnaglyphEffect( renderer );
-			effect.setSize( width, height );
+			//effect = new THREE.AnaglyphEffect( renderer );
+			//effect.setSize( width, height );
 
 			//
 
@@ -166,7 +165,7 @@ block content
 			camera.aspect = window.innerWidth / window.innerHeight;
 			camera.updateProjectionMatrix();
 
-			effect.setSize( window.innerWidth, window.innerHeight );
+			//effect.setSize( window.innerWidth, window.innerHeight );
 
 		}
 
@@ -205,6 +204,6 @@ block content
 
 			}
 
-			effect.render( scene, camera );
+			//effect.render( scene, camera );
 
 		}
