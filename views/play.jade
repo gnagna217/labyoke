@@ -95,6 +95,8 @@ block content
 			// map: THREE.ImageUtils.loadTexture('/images/three/px.png') 
 			// var material = new THREE.MeshBasicMaterial( { color: 0xffffff, envMap: textureCube, map : dynamicTexture.texture } );
 
+			dynamicTexture.texture.needsUpdate	= true;
+			
 			var prop = 0;
 			for ( var i = 0; i < 75; i ++ ) {
 				if(prop > (data.length - 1)){
@@ -103,7 +105,7 @@ block content
 				console.log("prop: " + data[prop]);
 				dynamicTexture.drawText(data[prop], 48, 128, 'white');
 				prop++;
-				material = new THREE.MeshBasicMaterial( { color: 0xffffff, map : dynamicTexture.texture } );
+				material.map = dynamicTexture.texture;
 
 				var mesh = new THREE.Mesh( geometry, material );
 
@@ -116,8 +118,8 @@ block content
 				scene.add( mesh );
 
 				spheres.push( mesh );
+
 				
-				dynamicTexture.texture.needsUpdate	= true
 
 			}
 
