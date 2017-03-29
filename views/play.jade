@@ -100,6 +100,7 @@ block content
 				if(prop > (data.length - 1)){
 					prop = 0;
 				}
+				console.log("prop: " + data[prop]);
 				dynamicTexture.drawText(data[prop], 48, 128, 'white');
 				prop++;
 				material = new THREE.MeshBasicMaterial( { color: 0xffffff, map : dynamicTexture.texture } );
@@ -115,6 +116,8 @@ block content
 				scene.add( mesh );
 
 				spheres.push( mesh );
+				
+				dynamicTexture.texture.needsUpdate	= true
 
 			}
 
