@@ -220,7 +220,7 @@ block content
 
 		var dynamicTexture  = new THREEx.DynamicTexture(256,256);
 		// var t = new THREE.TextGeometry('bamhi');
-		dynamicTexture.context.font	= "bolder 15px Verdana"
+		dynamicTexture.context.font	= "bolder 5px Verdana"
 		dynamicTexture.drawText('Last Transactions', 48, 128, 'white');
 
 		var material = new THREE.MeshBasicMaterial({color: 0x8a6d3b, wireframe: false, map: dynamicTexture.texture});
