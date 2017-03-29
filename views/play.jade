@@ -82,11 +82,11 @@ block content
 			var textureCube = new THREE.CubeTextureLoader().load( urls );
 
 			scene = new THREE.Scene();
-			//scene.background = textureCube;
-			scene.background = new THREE.Color( 0xffffff )
+			// scene.background = textureCube;
+			scene.background = new THREE.Color( 0x000000 )
 
 			var dynamicTexture  = new THREEx.DynamicTexture(256,256);
-			//var t = new THREE.TextGeometry('bamhi');
+			// var t = new THREE.TextGeometry('bamhi');
 			dynamicTexture.context.font	= "bolder 15px Verdana"
 			dynamicTexture.drawText('Last Transactions', 48, 128, 'white');
 
