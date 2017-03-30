@@ -218,6 +218,7 @@ block content
 		document.body.appendChild(renderer.domElement);
 
 		var geometry = new THREE.BoxGeometry(300, 300, 300, 10, 10, 10) /*new THREE.SphereBufferGeometry( 300, 32, 32)*/;
+		var geometry1 = new THREE.BoxGeometry(100, 100, 100, 10, 10, 10);
 
 		var dynamicTexture  = new THREEx.DynamicTexture(64,64);
 		dynamicTexture.context.font	= "normal 3px Verdana"
@@ -226,11 +227,11 @@ block content
 		var material = new THREE.MeshBasicMaterial({color: 0x8a6d3b, wireframe: true /*, map: dynamicTexture.texture*/ });
 		var material1 = new THREE.MeshBasicMaterial({color: 0xfffff, wireframe: true /*, map: dynamicTexture.texture*/ });
 		var cube = new THREE.Mesh(geometry, material);
-		var cube1 = new THREE.Mesh(geometry, material1);
+		var cube1 = new THREE.Mesh(geometry1, material1);
 		var cube2 = new THREE.Mesh(geometry, material);
 		scene.add(cube);
 		scene.add(cube1);
-		scene.add(cube2);
+		//scene.add(cube2);
 
 		camera.position.z = 1000;			
 
@@ -239,6 +240,9 @@ block content
 
 		cube.rotation.x += 0.01;
 		cube.rotation.y += 0.01;
+
+		cube1.rotation.x += 0.005;
+		cube1.rotation.y += 0.005;
 
 		renderer.render(scene, camera);
 		};
