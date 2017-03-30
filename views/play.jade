@@ -218,7 +218,7 @@ block content
 		var camera = new THREE.PerspectiveCamera(400, 250/window.innerHeight, 1, 10000);
 
 		var renderer = new THREE.WebGLRenderer( { antialias: true } );
-		renderer.setSize(window.innerWidth, window.innerHeight);
+		renderer.setSize(250, window.innerHeight * 98/100);
 		renderer.setClearColor( 0xffffff );
 		document.body.appendChild(renderer.domElement);
 
