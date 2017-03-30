@@ -217,11 +217,11 @@ block content
 		renderer.setClearColor( 0xffffff );
 		document.body.appendChild(renderer.domElement);
 
-		var geometry = /*new THREE.BoxGeometry(700, 700, 700, 10, 10, 10)*/ new THREE.SphereBufferGeometry( 200, 32, 32);
+		var geometry = /*new THREE.BoxGeometry(700, 700, 700, 10, 10, 10)*/ new THREE.SphereBufferGeometry( 300, 32, 32);
 
-		var dynamicTexture  = new THREEx.DynamicTexture(256,256);
+		var dynamicTexture  = new THREEx.DynamicTexture(128,128);
 		dynamicTexture.context.font	= "normal 10px Verdana"
-		dynamicTexture.drawText('Last Transactions', 16, 128, 'white');
+		dynamicTexture.drawText('Last Transactions', 16, 64, 'white');
 
 		var material = new THREE.MeshBasicMaterial({color: 0xffffff, wireframe: false, map: dynamicTexture.texture});
 		var cube = new THREE.Mesh(geometry, material);
