@@ -220,7 +220,7 @@ block content
 		var geometry = new THREE.BoxGeometry(300, 300, 300, 10, 10, 10) /*new THREE.SphereBufferGeometry( 300, 32, 32)*/;
 
 		var dynamicTexture  = new THREEx.DynamicTexture(64,64);
-		dynamicTexture.context.font	= "normal 15px Verdana"
+		dynamicTexture.context.font	= "normal 10px Verdana"
 		dynamicTexture.drawText('Last Transactions', 8, 32, 'white');
 
 		var material = new THREE.MeshBasicMaterial({color: 0xfffff, wireframe: false, map: dynamicTexture.texture});
