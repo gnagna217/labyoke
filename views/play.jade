@@ -36,6 +36,8 @@ block content
 
 	script(src="/javascripts/threejs/threex.dynamictexture.js")
 
+	div(id="test", style="width:500px;height:90%;")
+
 	script.
 
 		/*if ( ! Detector.webgl ) Detector.addGetWebGLMessage();
@@ -210,10 +212,11 @@ block content
 
 		var scene = new THREE.Scene();
 		scene.background = new THREE.Color( "white" );
-		var camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 1, 10000);
+		var windows = $( "#test" );
+		var camera = new THREE.PerspectiveCamera(75, windows.innerWidth/windows.innerHeight, 1, 10000);
 
 		var renderer = new THREE.WebGLRenderer( { antialias: true } );
-		renderer.setSize(window.innerWidth, window.innerHeight);
+		renderer.setSize(windows.innerWidth, windows.innerHeight);
 		renderer.setClearColor( 0xffffff );
 		document.body.appendChild(renderer.domElement);
 
