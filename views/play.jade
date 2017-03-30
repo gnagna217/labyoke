@@ -215,10 +215,10 @@ block content
 
 		var scene = new THREE.Scene();
 		scene.background = new THREE.Color( "white" );
-		var camera = new THREE.PerspectiveCamera(400, 220/window.innerHeight, 1, 10000);
+		var camera = new THREE.PerspectiveCamera(400, 220/(window.innerHeight * 0.8), 1, 10000);
 
 		var renderer = new THREE.WebGLRenderer( { antialias: true } );
-		renderer.setSize(220, window.innerHeight);
+		renderer.setSize(220, window.innerHeight * 0.8);
 		renderer.setClearColor( 0xffffff );
 		document.body.appendChild(renderer.domElement);
 
