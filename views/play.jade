@@ -225,7 +225,11 @@ block content
 
 		var material = new THREE.MeshBasicMaterial({color: 0x8a6d3b, wireframe: true /*, map: dynamicTexture.texture*/ });
 		var cube = new THREE.Mesh(geometry, material);
+		var cube1 = new THREE.Mesh(geometry, material);
+		var cube2 = new THREE.Mesh(geometry, material);
 		scene.add(cube);
+		scene.add(cube1);
+		scene.add(cube2);
 
 		camera.position.z = 1000;			
 
