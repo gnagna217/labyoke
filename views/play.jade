@@ -215,7 +215,8 @@ block content
 		var windows = $( "#test" );
 		console.log("windows width is: " + windows.innerWidth());
 		console.log("windows height is: " + windows.innerHeight());
-		var camera = new THREE.PerspectiveCamera(75, windows.innerWidth()/windows.innerHeight(), 1, 10000);
+		var camera1 = new THREE.PerspectiveCamera(75, windows.innerWidth()/windows.innerHeight(), 1, 10000);
+		var camera = new THREE.PerspectiveCamera(75, windows.innerWidth()/windows.innerHeight(), 1, 100);
 
 		var renderer = new THREE.WebGLRenderer( { antialias: true } );
 		renderer.setSize(windows.innerWidth(), windows.innerHeight());
