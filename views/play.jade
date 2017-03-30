@@ -221,7 +221,7 @@ block content
 
 		var dynamicTexture  = new THREEx.DynamicTexture(64,64);
 		dynamicTexture.context.font	= "normal 10px Verdana"
-		dynamicTexture.drawText('Last Transactions', 8, 8, 'white');
+		dynamicTexture.drawText('Last Transactions', 8, 32, 'white');
 
 		var material = new THREE.MeshBasicMaterial({color: 0xfffff, wireframe: false, map: dynamicTexture.texture});
 		var cube = new THREE.Mesh(geometry, material);
