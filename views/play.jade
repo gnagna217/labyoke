@@ -223,7 +223,7 @@ block content
 		dynamicTexture.context.font	= "normal 5px Verdana"
 		dynamicTexture.drawText('Last Transactions', 8, 32, 'white');
 
-		var material = new THREE.MeshBasicMaterial({color: 0xfffff, wireframe: true, map: dynamicTexture.texture});
+		var material = new THREE.MeshBasicMaterial({color: 0xfffff, wireframe: false, map: dynamicTexture.texture});
 		var cube = new THREE.Mesh(geometry, material);
 		scene.add(cube);
 
