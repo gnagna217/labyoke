@@ -223,7 +223,7 @@ block content
 		document.body.appendChild(renderer.domElement);
 
 		var geometry = new THREE.BoxGeometry(100, 100, 100, 10, 10, 10) /*new THREE.SphereBufferGeometry( 300, 32, 32)*/;
-		var geometry1 = new THREE.BoxGeometry(50, 50, 50, 10, 10, 10);
+		var geometry1 = /*new THREE.BoxGeometry(50, 50, 50, 10, 10, 10)*/ new THREE.SphereBufferGeometry( 100, 32, 32);
 
 		var dynamicTexture  = new THREEx.DynamicTexture(64,64);
 		dynamicTexture.context.font	= "normal 3px Verdana"
@@ -245,7 +245,7 @@ block content
 		function render() {
 		requestAnimationFrame(render);
 
-		var timer = 0.0001 * Date.now();
+		var timer = 0.000001 * Date.now();
 		//cube.position.x = 5 * Math.cos( timer );
 		//cube.position.y = 5 * Math.sin( timer * 1.1 );
 
