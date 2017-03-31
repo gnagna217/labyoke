@@ -233,7 +233,7 @@ block content
 		var material1 = new THREE.MeshBasicMaterial({color: 0x3d9dcb, wireframe: true /*, map: dynamicTexture.texture*/ });
 		var cube = new THREE.Mesh(geometry, material);
 		var cube1 = new THREE.Mesh(geometry1, material1);
-		var cube2 = new THREE.Mesh(geometry, material);
+		var cube2 = new THREE.Mesh(geometry1, material);
 		scene.add(cube);
 		scene.add(cube1);
 		scene.add(cube2);
@@ -252,8 +252,8 @@ block content
 		//cube1.position.x = 50 * Math.cos( timer);
 		cube1.position.y = (window.innerHeight / 2) * Math.cos( timer );
 
-		cube2.position.y = (window.innerHeight / 2) * Math.cos( timer );
-		cube2.position.x = 50;
+		cube2.position.y = 0.1*(window.innerHeight / 2) * Math.cos( timer );
+		cube2.position.x = 10;
 
 		//cube1.position.z = 50 * Math.cos( timer);
 
