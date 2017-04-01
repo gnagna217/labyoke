@@ -2,6 +2,9 @@ doctype html
 html(lang='en')
    head
      - var a = "layout." + title
+     - var language = "en"
+     - if(lang != null && lang != undefined)
+        - language = lang
      title!= 'LabYoke - ' + i18n.__(a)
      link(href='/css/animate.css', rel='stylesheet')
      link(rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.12/datatables.min.css")
@@ -167,16 +170,13 @@ html(lang='en')
      - if (title!='Forgot Password' && title!='Register' && title!='About Us' && title!='Help' && title!='Login' && title!='Change Password')
        div(style="position: relative;width: 100%;text-align: center;z-index: -1;")
             img(src="/images/yoke4.png", alt="The Yoke", title="Yoke", class="yokelogofooter")
-       - var language = "en"
-       - if(lang != null && lang != undefined)
-          - language = lang
 
        script.
           var h = $(window).height() - 125;
           $(".marginbottom").css("min-height",h);
      div(style="margin-top: 40px; background-color: #8a6d3b; position: fixed;bottom: 0;width: 100%;")
             div(style="color:white; text-align:center; font-size:11px;")="@labyoke"
-              img(src="/images/"+#{language}+".png" alt="Language" title="Language" style="width: 15px;margin-left: 9px;")
+              img(src="/images/"+language+".png" alt="Language" title="Language" style="width: 15px;margin-left: 9px;")
     script.
         $(".nav-menu-logout").click(function() {
                     $( this ).addClass( "animated hinge" );
