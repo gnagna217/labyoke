@@ -27,7 +27,7 @@ block content
 		}
 
 		canvas{
-			width: 300px !important;
+			width: 350px !important;
 			height: 95% !important;
 		}
 
@@ -232,7 +232,7 @@ block content
 
 		var material = new THREE.MeshBasicMaterial({color: 0x8a6d3b, wireframe: true /*, map: dynamicTexture.texture*/ });
 		var material1 = new THREE.MeshBasicMaterial({color: 0x3d9dcb, wireframe: true });
-		var material2 = new THREE.MeshBasicMaterial({color: 'cyan', wireframe: true });
+		var material2 = new THREE.MeshBasicMaterial({color: 0x337ab7, wireframe: true });
 		var cube = new THREE.Mesh(geometry, material);
 		var cube1 = new THREE.Mesh(geometry1, material1);
 		var cube2 = new THREE.Mesh(geometry1, material);
@@ -259,8 +259,8 @@ block content
 		cube2.position.y = /*0.8**/ (window.innerHeight / 2) * Math.cos( timer * 1.1 );
 		cube2.position.x = 110;
 
-		cube4.position.y = /*0.8**/ (window.innerHeight / 2) * Math.cos( timer * 1.1 );
-		cube4.position.x = 10;
+		cube4.position.y = 0.8* (window.innerHeight / 2) * Math.cos( timer * 1.1 );
+		cube4.position.x = -110;
 
 		//console.log("cube1.position.y: " + cube1.position.y);
 
