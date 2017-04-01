@@ -312,10 +312,9 @@ block content
 		var textMaterial = new THREE.MeshPhongMaterial( { color: 0xff0000 } );
 
 		var mesh = new THREE.Mesh( textGeo, textMaterial );
-		mesh.position.set( x, y, z );
+		mesh.position.set( cube1.position.x, cube1.position.y, cube1.position.z );
 
-		mesh.position.x = cube1.position.x;
-		mesh.position.y = cube1.position.y;
+
 
 		scene.add( mesh );
 
