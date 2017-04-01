@@ -291,38 +291,36 @@ block content
 
 
 
-var loader = new THREE.FontLoader();
+		var loader = new THREE.FontLoader();
 
-loader.load( '/javascripts/threejs/fonts/helvetiker_bold.typeface.json', function ( font ) {
+		loader.load( '/javascripts/threejs/fonts/helvetiker_bold.typeface.json', function ( font ) {
 
-    var textGeo = new THREE.TextGeometry( "Exosome", {
+		var textGeo = new THREE.TextGeometry( "Exosome", {
 
-        font: font,
+		font: font,
 
-        size: 200,
-        height: 50,
-        curveSegments: 12,
+		size: 200,
+		height: 50,
+		curveSegments: 12,
 
-        bevelThickness: 2,
-        bevelSize: 5,
-        bevelEnabled: true
+		bevelThickness: 2,
+		bevelSize: 5,
+		bevelEnabled: true
 
-    } );
+		} );
 
-    var textMaterial = new THREE.MeshPhongMaterial( { color: 0xff0000 } );
+		var textMaterial = new THREE.MeshPhongMaterial( { color: 0xff0000 } );
 
-    var mesh = new THREE.Mesh( textGeo, textMaterial );
-    mesh.position.set( x, y, z );
+		var mesh = new THREE.Mesh( textGeo, textMaterial );
+		mesh.position.set( x, y, z );
 
-    mesh.position.x = cube1.position.x;
-    mesh.position.y = cube1.position.y;
+		mesh.position.x = cube1.position.x;
+		mesh.position.y = cube1.position.y;
 
-    scene.add( mesh );
+		scene.add( mesh );
 
-} );
-
-
-
+		} );
+		
 		renderer.render(scene, camera);
 		};
 
