@@ -41,8 +41,6 @@ block content
 
 	script(src="/javascripts/threejs/threex.dynamictexture.js")
 
-	script(src="https://mrdoob.github.com/three.js/examples/fonts/helvetiker_regular.typeface.js")
-
 
 	script.
 
@@ -291,13 +289,39 @@ block content
 		cube2.rotation.y += 0.02;
 		cube2.rotation.y += 0.02;
 
-		var shape = new THREE.TextGeometry("Game Over", {font: 'helvetiker'});
-		var wrapper = new THREE.MeshNormalMaterial({color: 'black'});
-		var words = new THREE.Mesh(shape, wrapper);
-		words.position.x = cube1.position.x;
-		words.position.y = cube1.position.y;
 
-		scene.add(words);
+
+var loader = new THREE.FontLoader();
+
+loader.load( '/javascripts/threejs/fonts/helvetiker_bold.typeface.json', function ( font ) {
+
+    var textGeo = new THREE.TextGeometry( "Exosome", {
+
+        font: font,
+
+        size: 200,
+        height: 50,
+        curveSegments: 12,
+
+        bevelThickness: 2,
+        bevelSize: 5,
+        bevelEnabled: true
+
+    } );
+
+    var textMaterial = new THREE.MeshPhongMaterial( { color: 0xff0000 } );
+
+    var mesh = new THREE.Mesh( textGeo, textMaterial );
+    mesh.position.set( x, y, z );
+
+    mesh.position.x = cube1.position.x;
+    mesh.position.y = cube1.position.y;
+
+    scene.add( mesh );
+
+} );
+
+
 
 		renderer.render(scene, camera);
 		};
