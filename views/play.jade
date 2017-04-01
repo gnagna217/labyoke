@@ -230,9 +230,9 @@ block content
 		dynamicTexture.context.font	= "normal 3px Verdana"
 		dynamicTexture.drawText('Last Transactions', 16, 32, 'white');
 
-		var material = new THREE.MeshBasicMaterial({color: 0x8a6d3b, wireframe: true /*, map: dynamicTexture.texture*/ });
-		var material1 = new THREE.MeshBasicMaterial({color: 0x3d9dcb, wireframe: true });
-		var material2 = new THREE.MeshBasicMaterial({color: 0x337ab7, wireframe: true });
+		var material = new THREE.MeshBasicMaterial({color: 0x8a6d3b, wireframe: true /*, map: dynamicTexture.texture*/ }); // yoke color
+		var material1 = new THREE.MeshBasicMaterial({color: 0x3d9dcb, wireframe: true }); // lab color
+		var material2 = new THREE.MeshBasicMaterial({color: 0x337ab7, wireframe: true }); // logo color
 		var cube = new THREE.Mesh(geometry, material);
 		var cube1 = new THREE.Mesh(geometry1, material1);
 		var cube2 = new THREE.Mesh(geometry1, material);
@@ -254,14 +254,14 @@ block content
 		//cube.position.y = 5 * Math.sin( timer * 1.1 );
 
 		//cube1.position.x = 50 * Math.cos( timer);
-		cube1.position.y = (window.innerHeight / 2) * Math.cos( timer );
+		cube1.position.y = (window.innerHeight / 2) * Math.cos( timer * 2.1);
 
 
 
-		cube2.position.y = (window.innerHeight / 2) * Math.cos(timer);
+		cube2.position.y = 0.8 * (window.innerHeight / 2) * Math.cos(timer * 3.1);
 		cube2.position.x = 105;
 
-		cube4.position.y = 0.8 * (window.innerHeight / 2) * Math.cos( timer * 1.1 );
+		cube4.position.y = (window.innerHeight / 2) * Math.cos( timer * 3.1 );
 		cube4.position.x = -105;
 
 		//console.log("cube1.position.y: " + cube1.position.y);
