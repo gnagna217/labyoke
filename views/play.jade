@@ -41,6 +41,9 @@ block content
 
 	script(src="/javascripts/threejs/threex.dynamictexture.js")
 
+	script(src="https://mrdoob.github.com/three.js/examples/fonts/helvetiker_regular.typeface.js")
+
+
 	script.
 
 		/*if ( ! Detector.webgl ) Detector.addGetWebGLMessage();
@@ -288,7 +291,13 @@ block content
 		cube2.rotation.y += 0.02;
 		cube2.rotation.y += 0.02;
 
+		var shape = new THREE.TextGeometry("Game Over", {font: 'helvetiker'});
+		var wrapper = new THREE.MeshNormalMaterial({color: 'black'});
+		var words = new THREE.Mesh(shape, wrapper);
+		words.position.x = cube1.position.x;
+		words.position.y = cube1.position.y;
 
+		scene.add(words);
 
 		renderer.render(scene, camera);
 		};
