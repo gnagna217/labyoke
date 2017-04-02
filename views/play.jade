@@ -320,7 +320,11 @@ block content
 			if ( intersects.length > 0 ) {
 				var col = intersects[ 0 ].object.material.color.getHex();
 				console.log(col);
-				intersects[ 0 ].object.material.color.setHex( Math.random() * col );
+				var rand = Math.random() ;
+				if(rand == 0){
+					rand = 2;
+				}
+				intersects[ 0 ].object.material.color.setHex( rand * col );
 
 				/*var particle = new THREE.Sprite( particleMaterial );
 				particle.position.copy( intersects[ 0 ].point );
@@ -358,8 +362,6 @@ block content
 
 		cube4.position.y = (window.innerHeight / 2) * Math.cos( timer * 3.1 );
 		cube4.position.x = -105;
-
-		console.log("pos error: " + cube1.position.y);
 
 		mesh.position.set( -25, cube1.position.y + 60, 0);
 		mesh2.position.set( cube2.position.x - 15, cube2.position.y + 60, 0);
