@@ -322,7 +322,7 @@ block content
 			if ( intersects.length > 0 ) {
 				var col = intersects[ 0 ].object.material.color.getHex();
 				console.log(col);
-				var rand = Math.random(3);
+				var rand = Math.floor((Math.random() * 3));
 				console.log("rand: "+rand);
 				intersects[ 0 ].object.material.color.setHex( colors[rand]);
 
