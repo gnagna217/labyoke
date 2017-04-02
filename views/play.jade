@@ -249,6 +249,8 @@ block content
 		renderer.setClearColor( 0xffffff );
 		document.body.appendChild(renderer.domElement);
 
+		var colors = [0x8a6d3b,0x3d9dcb,0x337ab7];
+
 		var geometry = new THREE.BoxGeometry(100, 100, 100, 10, 10, 10) /*new THREE.SphereBufferGeometry( 300, 32, 32)*/;
 		var geometry1 = /*new THREE.BoxGeometry(50, 50, 50, 10, 10, 10)*/ new THREE.SphereBufferGeometry( 50, 32, 32);
 		var geometry2 = new THREE.BoxGeometry(300, 100, 100, 10, 10, 10)
@@ -320,12 +322,9 @@ block content
 			if ( intersects.length > 0 ) {
 				var col = intersects[ 0 ].object.material.color.getHex();
 				console.log(col);
-				var rand = Math.random();
-				if(rand < 0.2){
-					rand = 0.3;
-				}
+				var rand = Math.random(3);
 				console.log("rand: "+rand);
-				intersects[ 0 ].object.material.color.setHex( rand * col );
+				intersects[ 0 ].object.material.color.setHex( colors[rand]);
 
 				/*var particle = new THREE.Sprite( particleMaterial );
 				particle.position.copy( intersects[ 0 ].point );
