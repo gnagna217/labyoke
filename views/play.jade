@@ -346,17 +346,14 @@ block content
 
 
 		function render() {
-		requestAnimationFrame(render);
+		//requestAnimationFrame(render);
 
 		var timer = 0.00007 * Date.now();
 		//cube.position.x = 5 * Math.cos( timer );
 		//cube.position.y = 5 * Math.sin( timer * 1.1 );
 
 		//cube1.position.x = 50 * Math.cos( timer);
-		var pos1y = (window.innerHeight / 2) * Math.cos( timer * 2.1);
-		cube1.position.y = pos1y;
-
-
+		cube1.position.y = (window.innerHeight / 2) * Math.cos( timer * 2.1);
 
 		cube2.position.y = 0.8 * (window.innerHeight / 2) * Math.cos(timer * 3.1);
 		cube2.position.x = 105;
