@@ -320,10 +320,11 @@ block content
 			if ( intersects.length > 0 ) {
 				var col = intersects[ 0 ].object.material.color.getHex();
 				console.log(col);
-				var rand = Math.random() ;
+				var rand = Math.random();
 				if(rand == 0){
-					rand = 2;
+					rand = 1;
 				}
+				console.log("rand: "+rand);
 				intersects[ 0 ].object.material.color.setHex( rand * col );
 
 				/*var particle = new THREE.Sprite( particleMaterial );
