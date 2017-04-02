@@ -237,8 +237,9 @@ block content
 
 		var objects = [];
 		var raycaster = new THREE.Raycaster();
+		var mouse = new THREE.Vector2();
 		document.addEventListener( 'mousedown', onDocumentMouseDown, false );
-		
+
 		var scene = new THREE.Scene();
 		scene.background = new THREE.Color( "white" );
 		var camera = new THREE.PerspectiveCamera(400, 300/(window.innerHeight * 0.95), 1, 10000);
