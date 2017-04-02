@@ -320,7 +320,7 @@ block content
 			var intersects = raycaster.intersectObjects( objects );
 
 			if ( intersects.length > 0 ) {
-				var col = intersects[ 0 ].object.material.color.getHex;
+				var col = intersects[ 0 ].object.material.color.getHex();
 				console.log(col);
 				intersects[ 0 ].object.material.color.setHex( Math.random() * col );
 
