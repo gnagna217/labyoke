@@ -320,13 +320,15 @@ block content
 			var intersects = raycaster.intersectObjects( objects );
 
 			if ( intersects.length > 0 ) {
+				var col = intersects[ 0 ].object.material.color;
+				console.log(col);
+				intersects[ 0 ].object.material.color.setHex( Math.random() * col );
 
-				intersects[ 0 ].object.material.color.setHex( Math.random() * 0xffffff );
-
-				var particle = new THREE.Sprite( particleMaterial );
+				/*var particle = new THREE.Sprite( particleMaterial );
 				particle.position.copy( intersects[ 0 ].point );
 				particle.scale.x = particle.scale.y = 16;
 				scene.add( particle );
+				*/
 
 			}
 
