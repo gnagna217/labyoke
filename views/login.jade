@@ -215,14 +215,17 @@ block content
 
             var t = "Exosome";
 
+            //for(var prop in obj)
+            //    console.log(obj[prop].agent);
+
             var test_string = "this is a long string that should be word wrapped, hopefully";
             console.log(wordwrap(test_string, 5));
 
-            var textGeo = new THREE.TextGeometry( wordwrap(t, 20), {font: font, size: 10,height: 3} );
+            var textGeo = new THREE.TextGeometry( wordwrap(obj[0].agent, 20), {font: font, size: 10,height: 3} );
 
-            var textGeo2 = new THREE.TextGeometry( wordwrap("Bamhi", 20), {font: font, size: 10,height: 3} );
+            var textGeo2 = new THREE.TextGeometry( wordwrap(obj[1].agent, 20), {font: font, size: 10,height: 3} );
 
-            var textGeo3 = new THREE.TextGeometry( wordwrap("Reactif", 20), {font: font, size: 10,height: 3} );
+            var textGeo3 = new THREE.TextGeometry( wordwrap(obj[2].agent, 20), {font: font, size: 10,height: 3} );
 
             var textMaterial = new THREE.MeshPhongMaterial( { color: 0xff0000 } );
 
