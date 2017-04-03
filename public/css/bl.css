@@ -1167,6 +1167,9 @@ input::-webkit-inner-spin-button {
 }
 
  @media (max-width: 1200px) {
+canvas {
+    display:none;
+}
     .deskfullonly{
     display: none;
 }
@@ -1176,6 +1179,7 @@ input::-webkit-inner-spin-button {
     }
 }
  @media (min-width: 1200px) {
+
     .searchResults{
         float: left;
         width: 60%;
@@ -1201,9 +1205,7 @@ input::-webkit-inner-spin-button {
 
 }
  @media (max-width: 440px) {
-canvas {
-    display:none;
-}
+
 .sun {
     position: relative;top: 70px; left: 0px; width: 40px; z-index: -1;
 }
