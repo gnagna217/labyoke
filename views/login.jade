@@ -131,7 +131,7 @@ block content
 
 
         script.
-            var obj = #{latestshares};
+            var obj = JSON.parse('#{JSON.stringify(latestshares)}'.replace(/&quot;/g, '"'));
             console.log(obj);
             for(var prop in obj)
                 console.log(obj[prop].agent);
