@@ -59,6 +59,7 @@ block content
                 };
 
                 var objects = [];
+                var meshes = [];
                 var raycaster = new THREE.Raycaster();
                 var mouse = new THREE.Vector2();
                 document.addEventListener( 'mousedown', onDocumentMouseDown, false );
@@ -95,9 +96,6 @@ block content
                     }
                     scene.add(cube);
                     objects.push( cube );
-                    var text = new THREE.TextGeometry( wordwrap(obj[prop].agent, 20), {font: font, size: 10,height: 3} );
-                    var mesh = new THREE.Mesh( text, textMaterial );
-                    scene.add( mesh );
                 }
 
                 
@@ -142,6 +140,13 @@ block content
                 scene.add( mesh1 );
                 scene.add( mesh2 );
                 scene.add( mesh3 );
+
+                for(var prop in obj){
+                    var text = new THREE.TextGeometry( wordwrap(obj[prop].agent, 20), {font: font, size: 10,height: 3} );
+                    var mesh = new THREE.Mesh( text, textMaterial );
+                    scene.add( mesh );
+                    meshes.push(mesh);
+                }
 
                 } );
 
@@ -198,6 +203,11 @@ block content
                     cube.position.y = 0.8 * y;
                     cube.position.x = x;
                     x = x + 150;
+                }
+
+                for(var prop in meshes){
+                    var m = meshes[prop];
+                    m.position.set = (objects[prop].position.x - 25, objects[prop].position.y + 60, 0);
                 }
 
                 //cube.position.x = 5 * Math.cos( timer );
