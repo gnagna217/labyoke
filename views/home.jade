@@ -74,18 +74,33 @@ block content
 
                 var colors = [0x8a6d3b,0x3d9dcb,0x337ab7];
 
-                var geometry = new THREE.BoxGeometry(100, 100, 100, 10, 10, 10) /*new THREE.SphereBufferGeometry( 300, 32, 32)*/;
-                var geometry1 = /*new THREE.BoxGeometry(50, 50, 50, 10, 10, 10)*/ new THREE.SphereBufferGeometry( 50, 32, 32);
+                var geometry = new THREE.BoxGeometry(100, 100, 100, 10, 10, 10);
+                var geometry1 = new THREE.SphereBufferGeometry( 50, 32, 32);
                 var geometry2 = new THREE.BoxGeometry(300, 100, 100, 10, 10, 10)
 
-                var dynamicTexture  = new THREEx.DynamicTexture(64,64);
-                dynamicTexture.context.font = "normal 3px Verdana"
-                dynamicTexture.drawText('Last Transactions', 16, 32, 'white');
-
-                var material = new THREE.MeshBasicMaterial({color: 0x8a6d3b, wireframe: true /*, map: dynamicTexture.texture*/ }); // yoke color
+                var material = new THREE.MeshBasicMaterial({color: 0x8a6d3b, wireframe: true }); // yoke color
                 var material1 = new THREE.MeshBasicMaterial({color: 0x3d9dcb, wireframe: true }); // lab color
                 var material2 = new THREE.MeshBasicMaterial({color: 0x337ab7, wireframe: true }); // logo color
-                var cube = new THREE.Mesh(geometry, material);
+
+                var materials = [material, material1, material2];
+
+                var textMaterial = new THREE.MeshPhongMaterial( { color: 0xff0000 } );
+
+                var i = 0;
+                for(var prop in obj){
+                    var cube = new THREE.Mesh(geometry1, materials[i]);
+                    i++;
+                    if(i > 3){
+                        i = 0;
+                    }
+                    scene.add(cube);
+                    objects.push( cube );
+                    var text = new THREE.TextGeometry( wordwrap(obj[prop].agent, 20), {font: font, size: 10,height: 3} );
+                    var mesh = new THREE.Mesh( text, textMaterial );
+                    scene.add( mesh );
+                }
+
+                
                 var cube1 = new THREE.Mesh(geometry1, material1);
                 var cube2 = new THREE.Mesh(geometry1, material);
                 var cube3 = new THREE.Mesh(geometry2, material);
@@ -118,7 +133,7 @@ block content
 
                 var textGeo3 = new THREE.TextGeometry( wordwrap(obj[2].agent, 20), {font: font, size: 10,height: 3} );
 
-                var textMaterial = new THREE.MeshPhongMaterial( { color: 0xff0000 } );
+                
 
                 mesh1 = new THREE.Mesh( textGeo, textMaterial );
                 mesh2 = new THREE.Mesh( textGeo2, textMaterial );
@@ -175,6 +190,16 @@ block content
                 requestAnimationFrame(render);
 
                 var timer = 0.00007 * Date.now();
+                var x = 305;
+                var y = (window.innerHeight / 2) * Math.cos( timer * 2.1);
+
+                for(var prop in objects){
+                    var cube = objects[prop];
+                    cube.position.y = 0.8 * y;
+                    cube.position.x = x;
+                    x = x + 150;
+                }
+
                 //cube.position.x = 5 * Math.cos( timer );
                 //cube.position.y = 5 * Math.sin( timer * 1.1 );
 

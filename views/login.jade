@@ -80,7 +80,8 @@ block content
                 p!= i18n.__("login.texting1")
                 p
                     -var ob = latestshares
-                    -for(var prop in ob)
+                    - var i = 0
+                    -for(var prop in ob.slice(0, 3))
                         - var n = ob[prop].agent
                             //span(class="test2",style="color:white;")!="-|- " 
                             span(class="test",style="color:#ddd")!= n + " "
