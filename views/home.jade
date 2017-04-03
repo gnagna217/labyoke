@@ -202,18 +202,18 @@ block content
 
                 for(var prop in objects){
                     var cube = objects[prop];
+                    cube.rotation.x += 0.02;
+                    cube.rotation.y += 0.02;
                     cube.position.y = y;
                     cube.position.x = x;
+                    var m = meshes[prop];
+                    m.position.set = (cube.position.x - 25, cube.position.y + 60, 0);
+
                     x = x + (150 * prop * diff[j]);
                     y = 0.8 * y;
                     j++;
                     if(j>1)
                         j = 0;
-                }
-
-                for(var prop in meshes){
-                    var m = meshes[prop];
-                    m.position.set = (objects[prop].position.x - 25, objects[prop].position.y + 60, 0);
                 }
 
                 //cube.position.x = 5 * Math.cos( timer );
