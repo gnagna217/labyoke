@@ -3,14 +3,14 @@ extends layout
 block content
 		div(style="text-align: center;position: relative;")
              a(href="/search", class="sunlogos")
-                img(src="/images/yoke4.png", alt="The Yoke",  title="Yoke", class="yokelogo")
+                img(src="/images/yoke4.png", alt="The Yoke",  title="Yoke", class="yokelogo", style="z-index: 2")
     - if(latestshares != null && latestshares != undefined)
         style.
             canvas{
-                width: 350px !important;
-                height: 85% !important;
-                position: relative;
-                margin-top: -450px;
+                //width: 100% !important;
+                height: 90% !important;
+                //position: relative;
+                //margin-top: -450px;
             }
 
         script(src="/javascripts/threejs/build/more/three.min.js")
