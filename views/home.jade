@@ -146,6 +146,7 @@ block content
                     var mesh = new THREE.Mesh( text, textMaterial );
                     scene.add( mesh );
                     meshes.push(mesh);
+                    console.log("pushing mesh: " + meshes);
                 }
 
                 } );
@@ -155,7 +156,7 @@ block content
                 var y = (window.innerHeight / 2) * Math.cos( timer0 * 2.1);
                 var diff = [1, -1];
                 var j = 0;
-
+                console.log("meshes: " + meshes)
                 for(var prop in objects){
                     var cube = objects[prop];
                     cube.rotation.x += 0.02;
