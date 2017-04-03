@@ -197,12 +197,18 @@ block content
                 var timer = 0.00007 * Date.now();
                 var x = 305;
                 var y = (window.innerHeight / 2) * Math.cos( timer * 2.1);
+                var diff = [1, -1];
+                var j = 0;
 
                 for(var prop in objects){
                     var cube = objects[prop];
-                    cube.position.y = 0.8 * y;
+                    cube.position.y = y;
                     cube.position.x = x;
-                    x = x + 150;
+                    x = x + (150 * prop * diff[j]);
+                    y = 0.8 * y;
+                    j++;
+                    if(j>1)
+                        j = 0;
                 }
 
                 for(var prop in meshes){
