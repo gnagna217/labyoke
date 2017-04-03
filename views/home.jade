@@ -180,12 +180,13 @@ block content
 
                 //cube1.position.x = 50 * Math.cos( timer);
                 cube1.position.y = (window.innerHeight / 2) * Math.cos( timer * 2.1);
+                cube1.position.x = 205;
 
                 cube2.position.y = 0.8 * (window.innerHeight / 2) * Math.cos(timer * 3.1);
-                cube2.position.x = 105;
+                cube2.position.x = 305;
 
                 cube4.position.y = (window.innerHeight / 2) * Math.cos( timer * 3.1 );
-                cube4.position.x = -105;
+                cube4.position.x = -305;
 
                 mesh2.position.set( cube2.position.x - 25, cube2.position.y + 60, 0);
                 mesh3.position.set( cube4.position.x - 25, cube4.position.y + 60, 0);
@@ -223,7 +224,7 @@ block content
                 };
 
                 render();
-                
+
     div(style="text-align: center;position: relative;")
         a(href="/search", class="sunlogos")
-            img(src="/images/yoke4.png", alt="The Yoke",  title="Yoke", class="yokelogo", style="z-index: 2")
+            img(src="/images/yoke4.png", alt="The Yoke",  title="Yoke", class="yokelogo", style="z-index: 2;position: relative;margin-top: -370px;")
