@@ -1201,6 +1201,9 @@ input::-webkit-inner-spin-button {
 
 }
  @media (max-width: 440px) {
+canvas {
+    display:none;
+}
 .sun {
     position: relative;top: 70px; left: 0px; width: 40px; z-index: -1;
 }
