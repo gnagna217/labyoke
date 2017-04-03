@@ -4,7 +4,7 @@ block content
     div(style="text-align: center;position: relative;")
          a(href="/search", class="sunlogos")
             img(src="/images/yoke4.png", alt="The Yoke",  title="Yoke", class="yokelogo", style="z-index: 2")
-    - if(latestshares != null && latestshares != undefined)
+     - if(latestshares != null && latestshares != undefined)
         style.
             canvas{
                 //width: 100% !important;
@@ -67,7 +67,7 @@ block content
 
             var scene = new THREE.Scene();
             scene.background = new THREE.Color( "white" );
-            var camera = new THREE.PerspectiveCamera(400, window.innerWidth/(window.innerHeight * 0.95), 1, 10000);
+            var camera = new THREE.PerspectiveCamera(400, window.innerWidth * 0.98 /(window.innerHeight * 0.95), 1, 10000);
 
             var renderer = new THREE.WebGLRenderer( { antialias: true } );
             renderer.setSize(window.innerWidth * 0.98, window.innerHeight * 0.9);
