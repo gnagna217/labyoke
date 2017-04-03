@@ -66,10 +66,10 @@ block content
 
                 var scene = new THREE.Scene();
                 scene.background = new THREE.Color( "white" );
-                var camera = new THREE.PerspectiveCamera(400, window.innerWidth * 0.98 /(window.innerHeight), 1, 10000);
+                var camera = new THREE.PerspectiveCamera(400, window.innerWidth /(window.innerHeight), 1, 10000);
 
                 var renderer = new THREE.WebGLRenderer( { antialias: true } );
-                renderer.setSize(window.innerWidth * 0.98, window.innerHeight);
+                renderer.setSize(window.innerWidth, window.innerHeight);
                 renderer.setClearColor( 0xffffff );
                 document.body.appendChild(renderer.domElement);
 
