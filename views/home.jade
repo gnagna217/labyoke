@@ -152,7 +152,7 @@ block content
                 var y = (window.innerHeight / 2) * Math.cos( timer0 * 3.1);
                 var diff = [1, -1];
                 var j = 0;
-                
+
                 for(var prop in meshes){
                     var text = new THREE.TextGeometry( wordwrap(obj[prop].agent, 20), {font: font, size: 10,height: 3} );
                     meshes[prop] = new THREE.Mesh( text, textMaterial );
@@ -161,10 +161,10 @@ block content
                 //console.log("meshes: " + meshes);
                
                     
-                    meshes[prop].position.set = (x - 25, y + 60, 0);
-                    //meshes[prop].position.x = x - 25;
-                    //meshes[prop].position.y = y + 60;
-                    //meshes[prop].position.z = 0;
+                    //meshes[prop].position.set = (x - 25, y + 60, 0);
+                    meshes[prop].position.x = x - 25;
+                    meshes[prop].position.y = y + 60;
+                    meshes[prop].position.z = 0;
                     x = x + (window.innerWidth/objects.length * prop * diff[j]);
                     //y = y + 0.8 * y;
 
