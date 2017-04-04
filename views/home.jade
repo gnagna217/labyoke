@@ -35,7 +35,9 @@ block content
                 var cube2 = new THREE.Mesh(geometry1, material);
                 var cube3 = new THREE.Mesh(geometry2, material);
                 var cube4 = new THREE.Mesh(geometry1, material2);
-                
+
+                var mesh1, mesh2, mesh3;
+
                 var obj = JSON.parse('#{JSON.stringify(latestshares)}'.replace(/&quot;/g, '"'));
                 console.log(obj);
                 for(var prop in obj)
@@ -121,7 +123,7 @@ block content
                 objects.push( cube1 );
                 objects.push( cube2 );
 
-                var mesh1, mesh2, mesh3;
+                
 
                 for(var prop in obj){
                     var mesh;
@@ -229,7 +231,7 @@ block content
                     cube.position.x = x;
                     var m = meshes[prop];
                     //console.debug(m);
-                    //meshes[prop].position.set = (x - 25, y + 60, 0);
+                    meshes[prop].position.set = (x - 25, y + 60, 0);
                     //meshes[prop].position.x = x - 25;
                     //meshes[prop].position.y = y + 60;
                     //meshes[prop].position.z = 0;
