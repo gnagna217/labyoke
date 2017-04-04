@@ -211,7 +211,7 @@ block content
                 var y = (window.innerHeight / 2) * Math.cos( timer0 * 2.1);
                 var diff = [1, -1];
                 var j = 0;
-                console.log("meshes: " + meshes)
+                //console.log("meshes: " + meshes);
                 for(var prop in objects){
                     var cube = objects[prop];
                     cube.rotation.x += 0.02;
@@ -219,14 +219,14 @@ block content
                     cube.position.y = y;
                     cube.position.x = x;
                     var m = meshes[prop];
-                    console.debug(m);
+                    //console.debug(m);
                     //m.position.set = (x - 25, y + 60, 0);
-
                     x = x + (150 * prop * diff[j]);
                     y = 0.8 * y;
                     j++;
-                    if(j>1)
+                    if(j>1){
                         j = 0;
+                    }
                 }
 
                 //cube.position.x = 5 * Math.cos( timer );
