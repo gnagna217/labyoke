@@ -221,9 +221,9 @@ block content
                     var m = meshes[prop];
                     //console.debug(m);
                     //m.position.set = (x - 25, y + 60, 0);
-                    meshes[prop].position.x = x - 25;
-                    meshes[prop].position.y = y + 60;
-                    meshes[prop].position.z = 0;
+                    //meshes[prop].position.x = x - 25;
+                    //meshes[prop].position.y = y + 60;
+                    //meshes[prop].position.z = 0;
                     x = x + (150 * prop * diff[j]);
                     y = 0.8 * y;
                     j++;
@@ -272,10 +272,6 @@ block content
                 cube2.rotation.x += 0.02;
                 cube2.rotation.y += 0.02;
                 cube2.rotation.y += 0.02;
-
-
-
-
 
                 renderer.render(scene, camera);
                 };
