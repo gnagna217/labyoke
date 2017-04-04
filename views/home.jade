@@ -113,6 +113,12 @@ block content
 
                 var mesh1, mesh2, mesh3;
 
+                for(var prop in obj){
+                    var mesh;
+                    meshes.push(mesh);
+                }
+                console.log("pushing mesh: " + meshes);
+
                 var loader = new THREE.FontLoader();
 
                 loader.load( '/javascripts/threejs/fonts/helvetiker_regular.typeface.json', function ( font ) {
@@ -141,13 +147,14 @@ block content
                 scene.add( mesh2 );
                 scene.add( mesh3 );
 
-                for(var prop in obj){
+                for(var prop in meshes){
                     var text = new THREE.TextGeometry( wordwrap(obj[prop].agent, 20), {font: font, size: 10,height: 3} );
-                    var mesh = new THREE.Mesh( text, textMaterial );
-                    scene.add( mesh );
-                    meshes.push(mesh);
-                    console.log("pushing mesh: " + meshes);
+                    meshes[prop] = new THREE.Mesh( text, textMaterial );
+                    scene.add( meshes[prop] );
+                    //meshes.push(mesh);
+                    
                 }
+                console.log("meshes done: " + meshes);
 
                 } );
 
@@ -221,7 +228,7 @@ block content
                     if(j>1)
                         j = 0;
                 }
-                
+
                 //cube.position.x = 5 * Math.cos( timer );
                 //cube.position.y = 5 * Math.sin( timer * 1.1 );
 
