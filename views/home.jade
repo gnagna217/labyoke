@@ -23,7 +23,6 @@ block content
 
             script.
                 var obj = JSON.parse('#{JSON.stringify(latestshares)}'.replace(/&quot;/g, '"'));
-                var groups = [];
                 console.log(obj);
                 for(var prop in obj)
                     console.log(obj[prop].agent);
@@ -65,8 +64,6 @@ block content
                 var mouse = new THREE.Vector2();
                 document.addEventListener( 'mousedown', onDocumentMouseDown, false );
 
-
-
                 var scene = new THREE.Scene();
                 scene.background = new THREE.Color( "white" );
                 var camera = new THREE.PerspectiveCamera(400, window.innerWidth /(window.innerHeight), 1, 10000);
@@ -75,14 +72,6 @@ block content
                 renderer.setSize(window.innerWidth, window.innerHeight);
                 renderer.setClearColor( 0xffffff );
                 document.body.appendChild(renderer.domElement);
-
-                for(var prop in obj){
-                    var gr;
-                    var group = new THREE.Group();
-                    scene.add(group);
-                    groups.push(group);
-                }
-                console.log("pushing groups: " + groups);
 
                 var colors = [0x8a6d3b,0x3d9dcb,0x337ab7];
 
@@ -105,7 +94,7 @@ block content
                     if(i > 2){
                         i = 0;
                     }
-                    groups[prop].add(cube);
+                    scene.add(cube);
                     objects.push( cube );
                 }
 
@@ -124,7 +113,11 @@ block content
 
                 var mesh1, mesh2, mesh3;
 
-                
+                for(var prop in obj){
+                    var mesh;
+                    meshes.push(mesh);
+                }
+                console.log("pushing mesh: " + meshes);
 
                 var loader = new THREE.FontLoader();
 
@@ -156,8 +149,8 @@ block content
 
                 for(var prop in meshes){
                     var text = new THREE.TextGeometry( wordwrap(obj[prop].agent, 20), {font: font, size: 10,height: 3} );
-                    groups[prop].add(new THREE.Mesh( text, textMaterial ));
-                    //scene.add( meshes[prop] );
+                    meshes[prop] = new THREE.Mesh( text, textMaterial );
+                    scene.add( meshes[prop] );
                     //meshes.push(mesh);
                     
                 }
@@ -223,8 +216,8 @@ block content
                     var cube = objects[prop];
                     cube.rotation.x += 0.02;
                     cube.rotation.y += 0.02;
-                    groups[prop].position.y = y;
-                    groups[prop].position.x = x;
+                    cube.position.y = y;
+                    cube.position.x = x;
                     var m = meshes[prop];
                     //console.debug(m);
                     //meshes[prop].position.set = (x - 25, y + 60, 0);
