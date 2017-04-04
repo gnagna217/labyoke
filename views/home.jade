@@ -23,6 +23,7 @@ block content
 
             script.
                 var obj = JSON.parse('#{JSON.stringify(latestshares)}'.replace(/&quot;/g, '"'));
+                var groups = [];
                 console.log(obj);
                 for(var prop in obj)
                     console.log(obj[prop].agent);
@@ -94,7 +95,7 @@ block content
                     if(i > 2){
                         i = 0;
                     }
-                    scene.add(cube);
+                    groups[prop].add(cube);
                     objects.push( cube );
                 }
 
@@ -114,10 +115,12 @@ block content
                 var mesh1, mesh2, mesh3;
 
                 for(var prop in obj){
-                    var mesh;
-                    meshes.push(mesh);
+                    var gr;
+                    var group = new THREE.Group();
+                    scene.add(group);
+                    groups.push(group);
                 }
-                console.log("pushing mesh: " + meshes);
+                console.log("pushing groups: " + groups);
 
                 var loader = new THREE.FontLoader();
 
@@ -149,8 +152,8 @@ block content
 
                 for(var prop in meshes){
                     var text = new THREE.TextGeometry( wordwrap(obj[prop].agent, 20), {font: font, size: 10,height: 3} );
-                    meshes[prop] = new THREE.Mesh( text, textMaterial );
-                    scene.add( meshes[prop] );
+                    groups[prop].add(new THREE.Mesh( text, textMaterial ));
+                    //scene.add( meshes[prop] );
                     //meshes.push(mesh);
                     
                 }
@@ -216,11 +219,11 @@ block content
                     var cube = objects[prop];
                     cube.rotation.x += 0.02;
                     cube.rotation.y += 0.02;
-                    cube.position.y = y;
-                    cube.position.x = x;
+                    groups[prop].position.y = y;
+                    groups[prop].position.x = x;
                     var m = meshes[prop];
                     //console.debug(m);
-                    meshes[prop].position.set = (x - 25, y + 60, 0);
+                    //meshes[prop].position.set = (x - 25, y + 60, 0);
                     //meshes[prop].position.x = x - 25;
                     //meshes[prop].position.y = y + 60;
                     //meshes[prop].position.z = 0;
