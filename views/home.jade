@@ -208,14 +208,14 @@ block content
 
                 var timer0 = 0.00007 * Date.now();
                 var x = 305;
-                var y = (window.innerHeight / 2) * Math.cos( timer0 * 2.1);
+                var y = (window.innerHeight / 2) * Math.cos( timer0 * 3.1);
                 var diff = [1, -1];
                 var j = 0;
                 //console.log("meshes: " + meshes);
                 for(var prop in objects){
                     var cube = objects[prop];
-                    cube.rotation.x += 0.02;
-                    cube.rotation.y += 0.02;
+                    cube.rotation.x += 0.02 * prop;
+                    cube.rotation.y += 0.02 * prop;
                     cube.position.y = y;
                     cube.position.x = x;
                     var m = meshes[prop];
