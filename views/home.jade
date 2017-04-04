@@ -26,6 +26,13 @@ block content
                 var cube2 = new THREE.Mesh(geometry1, material);
                 var cube3 = new THREE.Mesh(geometry2, material);
                 var cube4 = new THREE.Mesh(geometry1, material2);
+                var geometry = new THREE.BoxGeometry(100, 100, 100, 10, 10, 10);
+                var geometry1 = new THREE.SphereBufferGeometry( 50, 16, 16);
+                var geometry2 = new THREE.BoxGeometry(300, 100, 100, 10, 10, 10)
+
+                var material = new THREE.MeshBasicMaterial({color: 0x8a6d3b, wireframe: true }); // yoke color
+                var material1 = new THREE.MeshBasicMaterial({color: 0x3d9dcb, wireframe: true }); // lab color
+                var material2 = new THREE.MeshBasicMaterial({color: 0x337ab7, wireframe: true }); // logo color
                 var obj = JSON.parse('#{JSON.stringify(latestshares)}'.replace(/&quot;/g, '"'));
                 console.log(obj);
                 for(var prop in obj)
@@ -84,13 +91,7 @@ block content
 
                 var colors = [0x8a6d3b,0x3d9dcb,0x337ab7];
 
-                var geometry = new THREE.BoxGeometry(100, 100, 100, 10, 10, 10);
-                var geometry1 = new THREE.SphereBufferGeometry( 50, 16, 16);
-                var geometry2 = new THREE.BoxGeometry(300, 100, 100, 10, 10, 10)
-
-                var material = new THREE.MeshBasicMaterial({color: 0x8a6d3b, wireframe: true }); // yoke color
-                var material1 = new THREE.MeshBasicMaterial({color: 0x3d9dcb, wireframe: true }); // lab color
-                var material2 = new THREE.MeshBasicMaterial({color: 0x337ab7, wireframe: true }); // logo color
+                
 
                 var materials = [material, material1, material2];
 
