@@ -22,6 +22,10 @@ block content
 
 
             script.
+                var cube1 = new THREE.Mesh(geometry1, material1);
+                var cube2 = new THREE.Mesh(geometry1, material);
+                var cube3 = new THREE.Mesh(geometry2, material);
+                var cube4 = new THREE.Mesh(geometry1, material2);
                 var obj = JSON.parse('#{JSON.stringify(latestshares)}'.replace(/&quot;/g, '"'));
                 console.log(obj);
                 for(var prop in obj)
@@ -104,10 +108,7 @@ block content
                 }
 
                 
-                var cube1 = new THREE.Mesh(geometry1, material1);
-                var cube2 = new THREE.Mesh(geometry1, material);
-                var cube3 = new THREE.Mesh(geometry2, material);
-                var cube4 = new THREE.Mesh(geometry1, material2);
+
                 scene.add(cube4);
                 scene.add(cube1);
                 scene.add(cube2);
