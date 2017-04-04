@@ -22,22 +22,6 @@ block content
 
 
             script.
-                
-                var geometry = new THREE.BoxGeometry(100, 100, 100, 10, 10, 10);
-                var geometry1 = new THREE.SphereBufferGeometry( 50, 16, 16);
-                var geometry2 = new THREE.BoxGeometry(300, 100, 100, 10, 10, 10)
-
-                var material = new THREE.MeshBasicMaterial({color: 0x8a6d3b, wireframe: true }); // yoke color
-                var material1 = new THREE.MeshBasicMaterial({color: 0x3d9dcb, wireframe: true }); // lab color
-                var material2 = new THREE.MeshBasicMaterial({color: 0x337ab7, wireframe: true }); // logo color
-
-                var cube1 = new THREE.Mesh(geometry1, material1);
-                var cube2 = new THREE.Mesh(geometry1, material);
-                var cube3 = new THREE.Mesh(geometry2, material);
-                var cube4 = new THREE.Mesh(geometry1, material2);
-
-                var mesh1, mesh2, mesh3;
-
                 var obj = JSON.parse('#{JSON.stringify(latestshares)}'.replace(/&quot;/g, '"'));
                 console.log(obj);
                 for(var prop in obj)
@@ -89,14 +73,15 @@ block content
                 renderer.setClearColor( 0xffffff );
                 document.body.appendChild(renderer.domElement);
 
-                
-                var loader = new THREE.FontLoader();
-
-                loader.load( '/javascripts/threejs/fonts/helvetiker_regular.typeface.json', function ( font ) {
-
                 var colors = [0x8a6d3b,0x3d9dcb,0x337ab7];
 
-                
+                var geometry = new THREE.BoxGeometry(100, 100, 100, 10, 10, 10);
+                var geometry1 = new THREE.SphereBufferGeometry( 50, 16, 16);
+                var geometry2 = new THREE.BoxGeometry(300, 100, 100, 10, 10, 10)
+
+                var material = new THREE.MeshBasicMaterial({color: 0x8a6d3b, wireframe: true }); // yoke color
+                var material1 = new THREE.MeshBasicMaterial({color: 0x3d9dcb, wireframe: true }); // lab color
+                var material2 = new THREE.MeshBasicMaterial({color: 0x337ab7, wireframe: true }); // logo color
 
                 var materials = [material, material1, material2];
 
@@ -114,7 +99,10 @@ block content
                 }
 
                 
-
+                var cube1 = new THREE.Mesh(geometry1, material1);
+                var cube2 = new THREE.Mesh(geometry1, material);
+                var cube3 = new THREE.Mesh(geometry2, material);
+                var cube4 = new THREE.Mesh(geometry1, material2);
                 scene.add(cube4);
                 scene.add(cube1);
                 scene.add(cube2);
@@ -123,7 +111,7 @@ block content
                 objects.push( cube1 );
                 objects.push( cube2 );
 
-                
+                var mesh1, mesh2, mesh3;
 
                 for(var prop in obj){
                     var mesh;
@@ -131,6 +119,9 @@ block content
                 }
                 console.log("pushing mesh: " + meshes);
 
+                var loader = new THREE.FontLoader();
+
+                loader.load( '/javascripts/threejs/fonts/helvetiker_regular.typeface.json', function ( font ) {
 
                 var t = "Exosome";
 
@@ -156,24 +147,50 @@ block content
                 scene.add( mesh2 );
                 scene.add( mesh3 );
 
+                var timer0 = 0.00007 * Date.now();
+                var x = 0;
+                var y = (window.innerHeight / 2) * Math.cos( timer0 * 3.1);
+                var diff = [1, -1];
+                var j = 0;
+                
                 for(var prop in meshes){
                     var text = new THREE.TextGeometry( wordwrap(obj[prop].agent, 20), {font: font, size: 10,height: 3} );
                     meshes[prop] = new THREE.Mesh( text, textMaterial );
+
+
+                //console.log("meshes: " + meshes);
+               
+                    
+                    meshes[prop].position.set = (x - 25, y + 60, 0);
+                    //meshes[prop].position.x = x - 25;
+                    //meshes[prop].position.y = y + 60;
+                    //meshes[prop].position.z = 0;
+                    x = x + (window.innerWidth/objects.length * prop * diff[j]);
+                    //y = y + 0.8 * y;
+
+                    y = (window.innerHeight / 2) * Math.cos( timer0 * prop * diff[j]);
+                    //y + (window.innerHeight/objects.length * prop * diff[j]);
+
+                    j++;
+                    if(j>1){
+                        j = 0;
+                    }
+                
+
+
                     scene.add( meshes[prop] );
                     //meshes.push(mesh);
                     
                 }
                 console.debug(meshes);
 
-                camera.position.z = 1000;
-                camera.position.y = window.innerHeight * 0.3;
-                console.log("height camera: " + window.innerHeight * 0.3);
-
-
                 } );
 
 
 
+                camera.position.z = 1000;
+                camera.position.y = window.innerHeight * 0.3;
+                console.log("height camera: " + window.innerHeight * 0.3);
 
                 function onDocumentMouseDown( event ) {
 
@@ -231,7 +248,7 @@ block content
                     cube.position.x = x;
                     var m = meshes[prop];
                     //console.debug(m);
-                    meshes[prop].position.set = (x - 25, y + 60, 0);
+                    //m.position.set = (x - 25, y + 60, 0);
                     //meshes[prop].position.x = x - 25;
                     //meshes[prop].position.y = y + 60;
                     //meshes[prop].position.z = 0;
