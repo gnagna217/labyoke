@@ -65,13 +65,7 @@ block content
                 var mouse = new THREE.Vector2();
                 document.addEventListener( 'mousedown', onDocumentMouseDown, false );
 
-                for(var prop in obj){
-                    var gr;
-                    var group = new THREE.Group();
-                    scene.add(group);
-                    groups.push(group);
-                }
-                console.log("pushing groups: " + groups);
+
 
                 var scene = new THREE.Scene();
                 scene.background = new THREE.Color( "white" );
@@ -81,6 +75,14 @@ block content
                 renderer.setSize(window.innerWidth, window.innerHeight);
                 renderer.setClearColor( 0xffffff );
                 document.body.appendChild(renderer.domElement);
+
+                for(var prop in obj){
+                    var gr;
+                    var group = new THREE.Group();
+                    scene.add(group);
+                    groups.push(group);
+                }
+                console.log("pushing groups: " + groups);
 
                 var colors = [0x8a6d3b,0x3d9dcb,0x337ab7];
 
