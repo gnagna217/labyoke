@@ -260,13 +260,13 @@ block content
                 var timer0 = 0.00007 * Date.now();
                 var x = 0;
                 var y = (window.innerHeight / 2) * Math.cos( timer0 * 3.1);
-                var diff = [1.5, -1.5];
+                var diff = [1, -1];
                 var j = 0;
                 //console.log("meshes: " + meshes);
                 for(var prop in objects){
                     var cube = objects[prop];
-                    cube.rotation.x += 0.01;
-                    cube.rotation.y += 0.01;
+                    cube.rotation.x += 0.02;
+                    cube.rotation.y += 0.02;
                     cube.position.y = y;
                     //cube.position.x = x;
                     var m = meshes[prop];
@@ -302,12 +302,11 @@ block content
                 cube4.position.x = -305;
 
                 if ( mesh2 ) {
-                //mesh2.position.set( cube2.position.x - 25, cube2.position.y + 60, 0);
+                mesh2.position.set( cube2.position.x - 25, cube2.position.y + 60, 0);
                 }
                 if ( mesh3 ) {
-                //mesh3.position.set( cube4.position.x - 25, cube4.position.y + 60, 0);
-                } if ( mesh1 ) { 
-                //mesh1.position.set( cube1.position.x - 25, cube1.position.y + 60, 0);
+                mesh3.position.set( cube4.position.x - 25, cube4.position.y + 60, 0);
+                } if ( mesh1 ) { mesh1.position.set( cube1.position.x - 25, cube1.position.y + 60, 0);
                 }
 
                 //console.log("cube1.position.y: " + cube1.position.y);
