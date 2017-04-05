@@ -150,6 +150,7 @@ block content
                 //var timer0 = 0.00007 * Date.now();
                 var timer0 = 0.00007 * 123456789;
                 var x = 0;
+                var x1 = 0;
                 //var y = (window.innerHeight / 2) * Math.cos( timer0 * 3.1);
                 var y = (window.innerHeight/2) * Math.cos( timer0 * 3.1);
                 var diff = [1, -1];
@@ -170,10 +171,17 @@ block content
                     meshes[prop].position.x = x - 25;
                     meshes[prop].position.y = y + 60;
                     meshes[prop].position.z = 0;
-                    x = /*diff[j] * */((prop/objects.length + 1) * window.innerWidth/(2*objects.length) + 300);
+                    //x = diff[j] * ((prop/objects.length + 1) * window.innerWidth/(2*objects.length) + 300);
+                    if(prop < objects.length/2){
+                        x += 300;
+                    } else {
+                        x1 -= 300;
+                        x = x1;
+                    }
+                    
                     //y = y + 0.8 * y;
 
-                    y = (prop/objects.length + 1) * ((window.innerHeight/(2*objects.length))) /** diff[j]*/;
+                    y = (prop/objects.length + 1) * ((window.innerHeight/(2*objects.length))) * diff[j];
                     // y = (window.innerHeight / 2) * Math.cos( timer0  * diff[j]) + y;
                     
 
