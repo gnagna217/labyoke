@@ -228,6 +228,9 @@ block content
 
                     var intersects = raycaster.intersectObjects( objects );
 
+                    var particleMaterial = new THREE.PointCloudMaterial({
+                      color: 0xffffcc
+                    });
                     if ( intersects.length > 0 ) {
                         var col = intersects[ 0 ].object.material.color.getHex();
                         console.log(col);
