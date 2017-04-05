@@ -76,7 +76,7 @@ block content
                 var colors = [0x8a6d3b,0x3d9dcb,0x337ab7];
 
                 var geometry = new THREE.BoxGeometry(100, 100, 100, 10, 10, 10);
-                var geometry1 = new THREE.SphereBufferGeometry( 45, 16, 16);
+                var geometry1 = new THREE.SphereBufferGeometry( 50, 16, 16);
                 var geometry2 = new THREE.BoxGeometry(300, 100, 100, 10, 10, 10)
 
                 var material = new THREE.MeshBasicMaterial({color: 0x8a6d3b, wireframe: true }); // yoke color
@@ -153,6 +153,7 @@ block content
                 var x1 = 0;
                 //var y = (window.innerHeight / 2) * Math.cos( timer0 * 3.1);
                 var y = (window.innerHeight/2) * Math.cos( timer0 * 3.1);
+                var y1 = 0;
                 var diff = [1, -1];
                 var j = 0;
 
@@ -173,10 +174,13 @@ block content
                     meshes[prop].position.z = 0;
                     //x = diff[j] * ((prop/objects.length + 1) * window.innerWidth/(2*objects.length) + 300);
                     if(prop < objects.length/2){
-                        x += 300;
+                        x += 100;
+                        y += 100;
                     } else {
-                        x1 -= 300;
+                        x1 -= 100;
                         x = x1;
+                        y1 -= 100;
+                        y = y1;
                     }
                     
                     //y = y + 0.8 * y;
