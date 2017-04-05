@@ -175,9 +175,11 @@ block content
                     meshes[prop].position.z = 0;
                     //x = diff[j] * ((prop/objects.length + 1) * window.innerWidth/(2*objects.length) + 300);
                     if(prop < (objects.length/2 - 2)){
+                        console.log("y_0: " + y);
                         console.log("positive " + offset);
                         x += offset;
                         y += offset;
+                        console.log("y_1: " + y);
                     } else {
                         console.log("negative");
                         x1 = x1 - offset;
