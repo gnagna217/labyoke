@@ -273,9 +273,7 @@ block content
                     //cube.position.x = x;
                     var m = meshes[prop];
                     console.debug("agent is: " + obj[prop].agent);
-                    if(obj[prop].agent == "anti-H3" ){
-                        console.debug("y h3 is: " + y);
-                    }
+
                     //
                     //m.position.set = (x - 25, y + 60, 0);
                     //meshes[prop].position.x = x - 25;
@@ -283,6 +281,10 @@ block content
                     meshes[prop].position.y = y + 60;
                     }
                     //meshes[prop].position.z = 0;
+                    if(prop == 1){
+                        prop = 1.5;
+                        //console.debug("y h3 is: " + y);
+                    }
                     x = x + (window.innerWidth/objects.length * prop * diff[j]);
                     //y = y + 0.8 * y;
 
