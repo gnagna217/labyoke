@@ -161,7 +161,7 @@ block content
                 for(var prop in meshes){
                     console.log("y: " + y);
                     console.log("x: " + x);
-                    var text = new THREE.TextGeometry( wordwrap(obj[prop].agent, 20), {font: font, size: 10,height: 3} );
+                    var text = new THREE.TextGeometry( wordwrap(obj[prop].agent, 10), {font: font, size: 10,height: 3} );
                     meshes[prop] = new THREE.Mesh( text, textMaterial );
 
 
