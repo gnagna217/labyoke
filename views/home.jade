@@ -270,14 +270,15 @@ block content
                     cube.rotation.x += 0.02;
                     cube.rotation.y += 0.02;
                     cube.position.y = y;
-                    //cube.position.x = x;
+                    cube.position.x = x;
                     var m = meshes[prop];
                     //console.debug("agent is: " + obj[prop].agent);
 
                     //
                     //m.position.set = (x - 25, y + 60, 0);
-                    //meshes[prop].position.x = x - 25;
+                    
                     if ( meshes[prop] ) {
+                    meshes[prop].position.x = x - 25;
                     meshes[prop].position.y = y + 60;
                     }
                     //meshes[prop].position.z = 0;
