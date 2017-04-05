@@ -161,6 +161,8 @@ block content
                 for(var prop in meshes){
                     console.log("y: " + y);
                     console.log("x: " + x);
+                    console.log("prop: " + prop);
+                    console.log("obj[prop].agent: " + obj[prop].agent);
                     var text = new THREE.TextGeometry( wordwrap(obj[prop].agent, 10), {font: font, size: 10,height: 3} );
                     meshes[prop] = new THREE.Mesh( text, textMaterial );
 
@@ -262,7 +264,7 @@ block content
                 var y = (window.innerHeight / 2) * Math.cos( timer0 * 3.1);
                 var diff = [1, -1];
                 var j = 0;
-                console.log("cubey: " + y);
+                //console.log("cubey: " + y);
                 for(var prop in objects){
                     var cube = objects[prop];
                     cube.rotation.x += 0.02;
