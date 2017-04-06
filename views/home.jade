@@ -106,9 +106,9 @@ block content
                 //scene.add(cube1);
                 //scene.add(cube2);
 
-                objects.push( cube4 );
-                objects.push( cube1 );
-                objects.push( cube2 );
+                //objects.push( cube4 );
+                //objects.push( cube1 );
+                //objects.push( cube2 );
 
                 var mesh1, mesh2, mesh3;
 
@@ -270,6 +270,7 @@ block content
                 //console.log("cubey: " + y);
                 for(var prop in objects){
                     var cube = objects[prop];
+                    cube.name = obj[prop].lab;
                     cube.rotation.x += 0.02;
                     cube.rotation.y += 0.02;
                     cube.position.y = y;
