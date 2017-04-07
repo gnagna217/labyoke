@@ -249,10 +249,10 @@ block content
                         console.log("savefont: " + savefont);
                         var text = new THREE.TextGeometry( wordwrap(intersects[ 0 ].object.name, 10), {font:savefont, size:10, height:3} );
                         var t = new THREE.Mesh( text, textMaterial );
-                        if(intersects[ 0 ]){
-                        //t.position.x = intersects[ 0 ].position.x - 30;
-                        //t.position.y = intersects[ 0 ].position.y - 70;
-                        }
+                        
+                        //t.position.x = window.innerWidth / 2;
+                        t.position.y = window.innerheight / 2;
+                        
                         scene.add( t );
                         
                         }
