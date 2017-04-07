@@ -243,7 +243,8 @@ block content
                         console.log(intersects[ 0 ].object.name);
                         console.debug(savefont);
                         var rand = Math.floor((Math.random() * 3));
-                        intersects[ 0 ].object.material.color.setHex( colors[rand]);
+                        var color = colors[rand];
+                        intersects[ 0 ].object.material.color.setHex( color );
                         intersects[ 0 ].object.geometry = geometry;
 
                         if(savefont){
@@ -252,9 +253,13 @@ block content
                         var text = new THREE.TextGeometry( wordwrap(intersects[ 0 ].object.name, 10), {font:savefont, size:10, height:3} );
                         var t = new THREE.Mesh( text, textMaterial );
                         
-                        t.position.x = (window.innerWidth / 1.5) + countts * 25;
-                        t.position.y = (window.innerHeight / 1.5) + countts * 25;
-                        countts ++;
+                        countts +=0.01;
+                        t.position.x = 20*Math.cos(countts) + 0;
+                        t.position.z = 20*Math.sin(countts) + 0;
+
+                        //t.position.x = (window.innerWidth / 1.5) + countts * 25;
+                        //t.position.y = (window.innerHeight / 1.5) + countts * 25;
+                        
                         
                         scene.add( t );
                         console.log("tpositiony: " + t.position.y);
