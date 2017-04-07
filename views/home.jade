@@ -245,7 +245,7 @@ block content
                         intersects[ 0 ].object.geometry = geometry;
 
                         if(savefont){
-                        var text = new THREE.TextGeometry( intersects[ 0 ].object.name, 10), {font: savefont, size: 10,height: 3} );
+                        var text = new THREE.TextGeometry( "'" + intersects[ 0 ].object.name + "'", 10), {font: savefont, size: 10,height: 3} );
                         var t = new THREE.Mesh( text, textMaterial );
                         t.position.x = intersects[ 0 ].position.x - 30;
                         t.position.y = intersects[ 0 ].position.y - 70;
