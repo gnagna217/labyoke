@@ -220,6 +220,8 @@ block content
                 camera.position.y = window.innerHeight * 0.15;
                 console.log("height camera: " + window.innerHeight * 0.1);
 
+                var countts = 0;
+
                 function onDocumentMouseDown( event ) {
 
                     event.preventDefault();
@@ -250,12 +252,14 @@ block content
                         var text = new THREE.TextGeometry( wordwrap(intersects[ 0 ].object.name, 10), {font:savefont, size:10, height:3} );
                         var t = new THREE.Mesh( text, textMaterial );
                         
-                        t.position.x = (window.innerWidth / 2) - 25;
-                        t.position.y = (window.innerHeight / 2) - 25;
-
+                        t.position.x = (window.innerWidth / 1.5) + countts * 25;
+                        t.position.y = (window.innerHeight / 1.5) + countts * 25;
+                        countts ++;
                         
                         scene.add( t );
-                        console.log("position: " + t.position.y);
+                        console.log("tpositiony: " + t.position.y);
+                        console.log("tpositionx: " + t.position.x);
+                        console.log("tcountts: " + countts);
                         
                         }
 
