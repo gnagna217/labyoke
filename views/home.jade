@@ -242,8 +242,10 @@ block content
 
                         var text = new THREE.TextGeometry( int.object.name, 10), {font: font, size: 10,height: 3} );
                         var t = new THREE.Mesh( text, textMaterial );
-                        t.position 
+                        t.position.x = int.position.x - 30;
+                        t.position.y = int.position.y - 70;
                         scene.add( t );
+
                        /* var particle = new THREE.Sprite( particleMaterial );
                         particle.position.copy( intersects[ 0 ].point );
                         particle.scale.x = particle.scale.y = 100;
