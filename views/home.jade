@@ -252,6 +252,7 @@ block content
                         console.log("savefont: " + savefont);
                         var text = new THREE.TextGeometry( wordwrap(intersects[ 0 ].object.name, 10), {font:savefont, size:10, height:3} );
                         var t = new THREE.Mesh( text, textMaterial );
+                        console.debug(t);
                         
                         countts +=6.2832/9;
                         t.position.x = 300*Math.sin(countts); //200*Math.cos(countts) + 0;
