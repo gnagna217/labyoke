@@ -276,7 +276,7 @@ block content
                     cube.rotation.x += 0.02;
                     cube.rotation.y += 0.02;
                     cube.position.y = y;
-                    cube.position.x = x;
+                    //cube.position.x = x;
                     var m = meshes[prop];
                     //console.debug("agent is: " + obj[prop].agent);
 
@@ -285,7 +285,7 @@ block content
                     //meshes[prop].position.x = x - 30;
                     if ( meshes[prop] ) {
                     meshes[prop].position.y = y - 70;
-                    meshes[prop].position.x = x - 30;
+                    //meshes[prop].position.x = x - 30;
                     }
                     //meshes[prop].position.z = 0;
                     if(prop == 0){
@@ -301,14 +301,14 @@ block content
                         j = 0;
                     }
 
-                    if(prop < (objects.length/2 - 1)){
+                    /*if(prop < (objects.length/2 - 1)){
                         console.log("y_0: " + x);
                         x += 100;
                     } else {
                         console.log("negative");
                         x1 = x1 - 100;
                         x = x1;
-                    }
+                    }*/
                 }
 
                 //cube.position.x = 5 * Math.cos( timer );
