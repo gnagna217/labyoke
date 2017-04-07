@@ -76,7 +76,7 @@ block content
 
                 var colors = [0x8a6d3b,0x3d9dcb,0x337ab7];
 
-                var geometry = new THREE.BoxGeometry(100, 100, 100, 10, 10, 10);
+                var geometry = new THREE.BoxGeometry(50, 50, 50, 10, 10, 10);
                 var geometry1 = new THREE.SphereBufferGeometry( 50, 16, 16);
                 var geometry2 = new THREE.BoxGeometry(300, 100, 100, 10, 10, 10)
 
@@ -237,6 +237,7 @@ block content
                         console.log(intersects[ 0 ].object.name);
                         var rand = Math.floor((Math.random() * 3));
                         intersects[ 0 ].object.material.color.setHex( colors[rand]);
+                        intersects[ 0 ].object.geometry = geometry;
 
                         var particle = new THREE.Sprite( particleMaterial );
                         particle.position.copy( intersects[ 0 ].point );
