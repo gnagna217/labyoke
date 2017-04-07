@@ -235,15 +235,15 @@ block content
                         var col = intersects[ 0 ].object.material.color.getHex();
                         var int = intersects[ 0 ];
                         console.debug(intersects[ 0 ].object);
-                        console.log(int.object.name);
+                        console.log(intersects[ 0 ].object.name);
                         var rand = Math.floor((Math.random() * 3));
                         intersects[ 0 ].object.material.color.setHex( colors[rand]);
                         intersects[ 0 ].object.geometry = geometry;
 
-                        var text = new THREE.TextGeometry( int.object.name, 10), {font: font, size: 10,height: 3} );
+                        var text = new THREE.TextGeometry( intersects[ 0 ].object.name, 10), {font: font, size: 10,height: 3} );
                         var t = new THREE.Mesh( text, textMaterial );
-                        t.position.x = int.position.x - 30;
-                        t.position.y = int.position.y - 70;
+                        t.position.x = intersects[ 0 ].position.x - 30;
+                        t.position.y = intersects[ 0 ].position.y - 70;
                         scene.add( t );
 
                        /* var particle = new THREE.Sprite( particleMaterial );
