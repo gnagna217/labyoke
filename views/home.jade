@@ -268,6 +268,7 @@ block content
                 var y = (window.innerHeight / 2) * Math.cos( timer0 * 3.1);
                 var diff = [1, -1];
                 var j = 0;
+                var x1 = 0;
                 //console.log("cubey: " + y);
                 for(var prop in objects){
                     var cube = objects[prop];
@@ -290,7 +291,7 @@ block content
                     if(prop == 0){
                         prop = 1.5;
                     }
-                    x = x + 200;//(window.innerWidth/objects.length * prop * diff[j]);
+                    //x = x + (window.innerWidth/objects.length * prop * diff[j]);
                     //y = y + 0.8 * y;
 
                     y = (window.innerHeight / 2) * Math.cos( timer0 * prop * diff[j]);
@@ -298,6 +299,15 @@ block content
                     j++;
                     if(j>1){
                         j = 0;
+                    }
+
+                    if(prop < (objects.length/2 - 1)){
+                        console.log("y_0: " + x);
+                        x += 200;
+                    } else {
+                        console.log("negative");
+                        x1 = x1 - 200;
+                        x = x1;
                     }
                 }
 
