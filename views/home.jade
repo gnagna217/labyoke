@@ -233,17 +233,22 @@ block content
                     });
                     if ( intersects.length > 0 ) {
                         var col = intersects[ 0 ].object.material.color.getHex();
+                        var int = intersects[ 0 ];
                         console.debug(intersects[ 0 ].object);
-                        console.log(intersects[ 0 ].object.name);
+                        console.log(int.object.name);
                         var rand = Math.floor((Math.random() * 3));
                         intersects[ 0 ].object.material.color.setHex( colors[rand]);
                         intersects[ 0 ].object.geometry = geometry;
 
-                        var particle = new THREE.Sprite( particleMaterial );
+                        var text = new THREE.TextGeometry( int.object.name, 10), {font: font, size: 10,height: 3} );
+                        var t = new THREE.Mesh( text, textMaterial );
+                        t.position 
+                        scene.add( t );
+                       /* var particle = new THREE.Sprite( particleMaterial );
                         particle.position.copy( intersects[ 0 ].point );
                         particle.scale.x = particle.scale.y = 100;
-                        scene.add( particle );
-                        
+                        scene.add( t );
+                        */
 
                     }
 
