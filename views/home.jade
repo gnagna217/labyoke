@@ -64,6 +64,7 @@ block content
                 var raycaster = new THREE.Raycaster();
                 var mouse = new THREE.Vector2();
                 document.addEventListener( 'mousedown', onDocumentMouseDown, false );
+                document.addEventListener( 'touchstart', onDocumentMouseDown, false );
 
                 var scene = new THREE.Scene();
                 scene.background = new THREE.Color( "white" );
