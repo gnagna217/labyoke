@@ -65,7 +65,7 @@ block content
                 var meshes = [];
                 var raycaster = new THREE.Raycaster();
                 var mouse = new THREE.Vector2();
-                document.addEventListener( 'touchstart', onDocumentMouseDown, false );
+                //document.addEventListener( 'touchstart', onDocumentMouseDown, false );
                 document.addEventListener( 'mousedown', onDocumentMouseDown, false );
 
                 
@@ -265,7 +265,7 @@ block content
                         
                         //console.log("name: " + intersects[ 0 ].object.name);
                         //console.log("savefont: " + savefont);
-                        var text = new THREE.TextGeometry( wordwrap(intersects[ 0 ].object.name, 10), {font:savefont, weight: 'bold', size:10, height:3} );
+                        var text = new THREE.TextGeometry( wordwrap(intersects[ 0 ].object.name, 5), {font:savefont, weight: 'bold', size:10, height:3} );
                         var textMaterial1 = new THREE.MeshBasicMaterial( { color: colors[rand] } );
                         var t = new THREE.Mesh( text, textMaterial1 );
                         //console.log("coloring: " + colors[rand]);
