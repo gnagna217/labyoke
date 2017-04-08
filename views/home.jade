@@ -65,9 +65,9 @@ block content
                 var meshes = [];
                 var raycaster = new THREE.Raycaster();
                 var mouse = new THREE.Vector2();
-                document.addEventListener( 'touchstart', onDocumentMouseDown, false );
-                document.addEventListener( 'mousedown', onDocumentMouseDown, false );
-                document.addEventListener( 'click', onDocumentMouseDown, false );
+                //document.addEventListener( 'touchstart', onDocumentMouseDown, false );
+                //document.addEventListener( 'mousedown', onDocumentMouseDown, false );
+
                 
 
                 var scene = new THREE.Scene();
@@ -101,6 +101,8 @@ block content
                     if(i > 2){
                         i = 0;
                     }
+                    cube.addEventListener( 'click', onDocumentMouseDown, false );
+                    cube.addEventListener( 'touchstart', onDocumentMouseDown, false );
                     scene.add(cube);
                     objects.push( cube );
                 }
