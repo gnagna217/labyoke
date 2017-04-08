@@ -250,8 +250,8 @@ block content
                         intersects[ 0 ].object.geometry = geometry;
 
                         
-                        if(count <= objects.length){
-                        count++;
+                        if(count < objects.length){
+                        
                         console.log("name: " + intersects[ 0 ].object.name);
                         console.log("savefont: " + savefont);
                         var text = new THREE.TextGeometry( wordwrap(intersects[ 0 ].object.name, 10), {font:savefont, size:10, height:3} );
@@ -273,7 +273,7 @@ block content
                         console.log("tpositionx: " + t.position.x);
                         console.log("count: " + count);
                         console.log("height: " + window.innerHeight);
-                        
+                        count++;
                         }
 
                        /* var particle = new THREE.Sprite( particleMaterial );
