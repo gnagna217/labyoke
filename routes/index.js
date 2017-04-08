@@ -148,7 +148,7 @@ module.exports = function(router) {
 
 
 	router.get('/', function(req, res) {
-		res.redirect('/search');
+		res.redirect('/home');
 	});
 
 	router.get('/admin', function(req, res) {
