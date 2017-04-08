@@ -324,6 +324,7 @@ block content
                     cube.rotation.x += 0.02;
                     cube.rotation.y += 0.02;
                     cube.position.y = y;
+                    cube.addEventListener( 'touchstart', onDocumentMouseDown, false );
                     //cube.position.x = x;
                     var m = meshes[prop];
                     //console.debug("agent is: " + obj[prop].agent);
