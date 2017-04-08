@@ -65,8 +65,8 @@ block content
                 var meshes = [];
                 var raycaster = new THREE.Raycaster();
                 var mouse = new THREE.Vector2();
-                //document.addEventListener( 'touchstart', onDocumentMouseDown, false );
-                //document.addEventListener( 'mousedown', onDocumentMouseDown, false );
+                document.addEventListener( 'touchstart', onDocumentMouseDown, false );
+                document.addEventListener( 'mousedown', onDocumentMouseDown, false );
 
                 
 
@@ -101,8 +101,6 @@ block content
                     if(i > 2){
                         i = 0;
                     }
-                    cube.addEventListener( 'click', onDocumentMouseDown, false );
-                    cube.addEventListener( 'touchstart', onDocumentMouseDown, false );
                     scene.add(cube);
                     objects.push( cube );
                 }
@@ -233,6 +231,7 @@ block content
                 function onDocumentMouseDown( event ) {
 
                     event.preventDefault();
+                    console.debug(event);
 
                     mouse.x = ( event.clientX / renderer.domElement.clientWidth ) * 2 - 1;
                     mouse.y = - ( event.clientY / renderer.domElement.clientHeight ) * 2 + 1;
@@ -248,9 +247,9 @@ block content
                     if ( intersects.length > 0 ) {
                         var col = intersects[ 0 ].object.material.color.getHex();
                         var int = intersects[ 0 ];
-                        console.debug(intersects[ 0 ].object);
-                        console.log(intersects[ 0 ].object.name);
-                        console.debug(savefont);
+                        //console.debug(intersects[ 0 ].object);
+                        //console.log(intersects[ 0 ].object.name);
+                        //console.debug(savefont);
                         var rand = Math.floor((Math.random() * 3));
                         var coloring = colors[rand];
                         intersects[ 0 ].object.material.color.setHex( colors[rand] );
@@ -259,12 +258,12 @@ block content
                         
                         if(count < objects.length){
                         
-                        console.log("name: " + intersects[ 0 ].object.name);
-                        console.log("savefont: " + savefont);
+                        //console.log("name: " + intersects[ 0 ].object.name);
+                        //console.log("savefont: " + savefont);
                         var text = new THREE.TextGeometry( wordwrap(intersects[ 0 ].object.name, 10), {font:savefont, weight: 'bold', size:10, height:3} );
                         var textMaterial1 = new THREE.MeshBasicMaterial( { color: colors[rand] } );
                         var t = new THREE.Mesh( text, textMaterial1 );
-                        console.log("coloring: " + colors[rand]);
+                        //console.log("coloring: " + colors[rand]);
                         
                         countts +=6.2832/objects.length;
                         t.position.x = 200*Math.sin(countts) - 35; //- window.innerWidth/18; //200*Math.cos(countts) + 0; // -35
@@ -275,11 +274,11 @@ block content
                         
                         
                         scene.add( t );
-                        console.log("tpositiony: " + t.position.y);
-                        console.log("tpositionx: " + t.position.x);
-                        console.log("count: " + count);
-                        console.log("height: " + window.innerHeight);
-                        console.log("width: " + window.innerWidth);
+                        //console.log("tpositiony: " + t.position.y);
+                        //console.log("tpositionx: " + t.position.x);
+                        //console.log("count: " + count);
+                        //console.log("height: " + window.innerHeight);
+                        //console.log("width: " + window.innerWidth);
                         count++;
                         }
 
