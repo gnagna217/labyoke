@@ -1008,7 +1008,7 @@ LabyokerLabs.prototype.getlabs = function(callback) {
 LabYokeGlobal.prototype.getlatestshares = function(callback) {
 	var results;
 	var labs = this.param;
-	var LATEST_SHARES_NUM = 5;
+	var LATEST_SHARES_NUM = 9;
 
 	var labsstr = "";
 	var i = 0;
