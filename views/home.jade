@@ -85,6 +85,7 @@ block content
                 var colors = [0x8a6d3b,0x3d9dcb,0x337ab7];
 
                 var geometry = new THREE.BoxGeometry(50, 50, 50, 10, 10, 10);
+                var geometry3 = new THREE.BoxGeometry(400, 5, 5, 5, 5, 5);
                 var geometry1 = new THREE.SphereBufferGeometry( 48, 16, 16);
                 var geometry2 = new THREE.BoxGeometry(300, 100, 100, 10, 10, 10)
 
@@ -106,7 +107,9 @@ block content
                     scene.add(cube);
                     objects.push( cube );
                 }
-                
+                var bar = new THREE.Mesh(geometry3, material1);
+                scene.add(bar);
+
                 var cube1 = new THREE.Mesh(geometry1, material1);
                 var cube2 = new THREE.Mesh(geometry1, material);
                 var cube3 = new THREE.Mesh(geometry2, material);
@@ -354,6 +357,10 @@ block content
                         x1 = x1 - 100;
                         x = x1;
                     }*/
+                }
+                if(bar){
+                    var lineAngle = (60 * Math.PI * timer) / 180;
+                    bar.rotation.z = lineAngle;
                 }
 
                 //cube.position.x = 5 * Math.cos( timer );
