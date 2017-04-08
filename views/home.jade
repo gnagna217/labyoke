@@ -251,7 +251,8 @@ block content
                         console.log("name: " + intersects[ 0 ].object.name);
                         console.log("savefont: " + savefont);
                         var text = new THREE.TextGeometry( wordwrap(intersects[ 0 ].object.name, 10), {font:savefont, size:10, height:3} );
-                        var t = new THREE.Mesh( text, textMaterial );
+                        var textMaterial1 = new THREE.MeshPhongMaterial( { color: color } );
+                        var t = new THREE.Mesh( text, textMaterial1 );
                         //t.color.setHex(color);
                         console.debug(t);
                         
