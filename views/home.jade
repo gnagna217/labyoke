@@ -85,7 +85,7 @@ block content
                 var colors = [0x8a6d3b,0x3d9dcb,0x337ab7];
 
                 var geometry = new THREE.BoxGeometry(50, 50, 50, 10, 10, 10);
-                var geometry3 = new THREE.BoxGeometry(window.innerHeight/3, 2, 2, 2, 2, 2);
+                var geometry3 = new THREE.BoxGeometry(window.innerHeight/2.5, 2, 2, 2, 2, 2);
                 var geometry1 = new THREE.SphereBufferGeometry( 48, 16, 16);
                 var geometry2 = new THREE.BoxGeometry(300, 100, 100, 10, 10, 10)
 
@@ -107,7 +107,7 @@ block content
                     scene.add(cube);
                     objects.push( cube );
                 }
-                var bar = new THREE.Mesh(geometry3, material1);
+                var bar = new THREE.Mesh(geometry3, material);
                 scene.add(bar);
 
                 var cube1 = new THREE.Mesh(geometry1, material1);
