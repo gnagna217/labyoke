@@ -85,7 +85,7 @@ block content
                 var colors = [0x8a6d3b,0x3d9dcb,0x337ab7];
 
                 var geometry = new THREE.BoxGeometry(50, 50, 50, 10, 10, 10);
-                var geometry3 = new THREE.BoxGeometry(400, 5, 5, 5, 5, 5);
+                var geometry3 = new THREE.BoxGeometry(200, 5, 5, 5, 5, 5);
                 var geometry1 = new THREE.SphereBufferGeometry( 48, 16, 16);
                 var geometry2 = new THREE.BoxGeometry(300, 100, 100, 10, 10, 10)
 
@@ -361,6 +361,7 @@ block content
                 if(bar){
                     var lineAngle = (60 * Math.PI * timer) / 180;
                     bar.rotation.z = lineAngle;
+                    bar.position.y = window.innerHeight / 2;
                 }
 
                 //cube.position.x = 5 * Math.cos( timer );
