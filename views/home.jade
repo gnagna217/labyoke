@@ -75,7 +75,7 @@ block content
                 renderer.setClearColor( 0xffffff );
                 document.body.appendChild(renderer.domElement);
 
-                var colors = ["0x8a6d3b","0x3d9dcb","0x337ab7"];
+                var colors = [0x8a6d3b,0x3d9dcb,0x337ab7];
 
                 var geometry = new THREE.BoxGeometry(50, 50, 50, 10, 10, 10);
                 var geometry1 = new THREE.SphereBufferGeometry( 50, 16, 16);
@@ -255,7 +255,7 @@ block content
                         console.log("name: " + intersects[ 0 ].object.name);
                         console.log("savefont: " + savefont);
                         var text = new THREE.TextGeometry( wordwrap(intersects[ 0 ].object.name, 10), {font:savefont, size:10, height:3} );
-                        var textMaterial1 = new THREE.MeshPhongMaterial( { color: colors[rand] } );
+                        var textMaterial1 = new THREE.MeshPhongMaterial( { color: 0x8a6d3b } );
                         var t = new THREE.Mesh( text, textMaterial1 );
                         console.log("coloring: " + colors[rand]);
                         
