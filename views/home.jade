@@ -75,6 +75,8 @@ block content
                 //var camera = new THREE.PerspectiveCamera(400, window.innerWidth /(window.innerHeight), 1, 10000);
                 var camera = new THREE.PerspectiveCamera(400, window.innerWidth /(window.innerHeight), 1, 10000);
 
+                console.log("camera: " + window.innerWidth);
+
                 var renderer = new THREE.WebGLRenderer( { antialias: true } );
                 renderer.setSize(window.innerWidth, window.innerHeight);
                 renderer.setClearColor( 0xffffff );
@@ -229,7 +231,7 @@ block content
                 var count = 0;
 
                 function onDocumentMouseDown( event ) {
-                    console.debug(event);
+                    //console.debug(event);
                     //event.preventDefault();
                     
 
