@@ -249,6 +249,8 @@ block content
                 function onDocumentMouseDown( event ) {
                     //console.debug(event);
                     //event.preventDefault();
+                    event.stopPropagation();
+                    event.preventDefault();
                     
 
                     mouse.x = ( event.clientX / renderer.domElement.clientWidth ) * 2 - 1;
