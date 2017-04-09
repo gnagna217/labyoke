@@ -119,7 +119,7 @@ block content
                     //new THREE.Vector3( 400, 0, 0 )
                 );
                 var bar = new THREE.Line( geometry4, material4 );
-                var geometry5 = new THREE.SphereBufferGeometry( 10, 16, 16);
+                var geometry5 = new THREE.SphereBufferGeometry( 5, 16, 16);
                 var circle = new THREE.Mesh(geometry5, material1);
                 //scene.add(bar);
 
@@ -380,6 +380,9 @@ block content
                     var lineAngle = (60 * Math.PI * timer) / 180;
                     bar.rotation.z = lineAngle;
                     bar.position.y = window.innerHeight / 5;
+                }
+                if(circle){
+                    circle.position.y = window.innerHeight / 5;
                 }
 
                 //cube.position.x = 5 * Math.cos( timer );
