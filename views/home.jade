@@ -115,7 +115,7 @@ block content
                 var geometry4 = new THREE.Geometry();
                 geometry4.vertices.push(
                     new THREE.Vector3( 0, 0, 0 ),
-                    new THREE.Vector3( window.innerHeight/2.5, 0, 0 )//,
+                    new THREE.Vector3( window.innerHeight/5, 0, 0 )//,
                     //new THREE.Vector3( 400, 0, 0 )
                 );
                 var bar = new THREE.Line( geometry4, material4 );
@@ -376,6 +376,7 @@ block content
                 if(bar){
                     var lineAngle = (60 * Math.PI * timer) / 180;
                     bar.rotation.z = lineAngle;
+                    bar.position.y = window.innerHeight / 5;
                 }
 
                 //cube.position.x = 5 * Math.cos( timer );
