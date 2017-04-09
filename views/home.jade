@@ -65,20 +65,8 @@ block content
                 var meshes = [];
                 var raycaster = new THREE.Raycaster();
                 var mouse = new THREE.Vector2();
-                //document.addEventListener( 'touchstart', onDocumentMouseDown, false );
+                document.addEventListener( 'touchstart', onDocumentMouseDown, false );
                 document.addEventListener( 'mousedown', onDocumentMouseDown, false );
-
-                var currPos;
-                '$document'.bind('mousedown touchstart', function (e) {
-                    if (e.type == "touchstart") {
-                        currPos = window.event.touches[0].pageX;
-                        alert("touched0: " + currPos);
-                    } else {
-                        currPos = e.pageX;
-                    }
-                    clicked = true;
-
-                });
 
                 var scene = new THREE.Scene();
                 scene.background = new THREE.Color( "white" );
@@ -362,7 +350,7 @@ block content
                     cube.rotation.x += 0.02;
                     cube.rotation.y += 0.02;
                     cube.position.y = y;
-                    cube.addEventListener( 'touchstart', onDocumentMouseDown, false );
+                    //cube.addEventListener( 'touchstart', onDocumentMouseDown, false );
                     //cube.position.x = x;
                     var m = meshes[prop];
                     //console.debug("agent is: " + obj[prop].agent);
