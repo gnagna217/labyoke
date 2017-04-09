@@ -107,7 +107,18 @@ block content
                     scene.add(cube);
                     objects.push( cube );
                 }
-                var bar = new THREE.Mesh(geometry3, material);
+
+                var material4 = new THREE.LineBasicMaterial({
+                    color: 0x8a6d3b
+                });
+
+                var geometry4 = new THREE.Geometry();
+                geometry4.vertices.push(
+                    new THREE.Vector3( 0, 0, 0 ),
+                    new THREE.Vector3( window.innerHeight/2.5, 0, 0 )//,
+                    //new THREE.Vector3( 400, 0, 0 )
+                );
+                var bar = new THREE.Line( geometry4, material4 );
                 //scene.add(bar);
 
                 var cube1 = new THREE.Mesh(geometry1, material1);
@@ -365,7 +376,6 @@ block content
                 if(bar){
                     var lineAngle = (60 * Math.PI * timer) / 180;
                     bar.rotation.z = lineAngle;
-                    bar.position.y = window.innerHeight / 5;
                 }
 
                 //cube.position.x = 5 * Math.cos( timer );
