@@ -271,7 +271,11 @@ block content
                         var rand = Math.floor((Math.random() * 3));
                         var coloring = colors[rand];
                         intersects[ 0 ].object.material.color.setHex( colors[rand] );
+                        if(intersects[ 0 ].object.geometry == geometry){
                         intersects[ 0 ].object.geometry = geometry;
+                        } else {
+                        intersects[ 0 ].object.geometry = geometry1;
+                        }
 
                         if(count == objects.length - 1 && bar){
                             scene.add(bar);
