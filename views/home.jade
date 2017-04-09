@@ -68,6 +68,7 @@ block content
                 //document.addEventListener( 'touchstart', onDocumentMouseDown, false );
                 document.addEventListener( 'mousedown', onDocumentMouseDown, false );
 
+                var currPos;
                 $document.bind('mousedown touchstart', function (e) {
                     if (e.type == "touchstart") {
                         currPos = window.event.touches[0].pageX;
