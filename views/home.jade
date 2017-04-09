@@ -272,9 +272,9 @@ block content
                         var coloring = colors[rand];
                         intersects[ 0 ].object.material.color.setHex( colors[rand] );
                         if(intersects[ 0 ].object.geometry == geometry){
-                        intersects[ 0 ].object.geometry = geometry;
-                        } else {
                         intersects[ 0 ].object.geometry = geometry1;
+                        } else {
+                        intersects[ 0 ].object.geometry = geometry;
                         }
 
                         if(count == objects.length - 1 && bar){
