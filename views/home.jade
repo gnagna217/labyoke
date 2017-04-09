@@ -119,6 +119,8 @@ block content
                     //new THREE.Vector3( 400, 0, 0 )
                 );
                 var bar = new THREE.Line( geometry4, material4 );
+                var geometry5 = new THREE.SphereBufferGeometry( 10, 16, 16);
+                var circle = new THREE.Mesh(geometry5, material1);
                 //scene.add(bar);
 
                 var cube1 = new THREE.Mesh(geometry1, material1);
@@ -273,6 +275,7 @@ block content
 
                         if(count == objects.length - 1 && bar){
                             scene.add(bar);
+                            scene.add(circle);
                         }
                         
                         if(count < objects.length){
