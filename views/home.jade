@@ -249,8 +249,6 @@ block content
                 function onDocumentMouseDown( event ) {
                     //console.debug(event);
                     //event.preventDefault();
-                    event.stopPropagation();
-                    event.preventDefault();
                     
 
                     mouse.x = ( event.clientX / renderer.domElement.clientWidth ) * 2 - 1;
@@ -265,6 +263,7 @@ block content
                       color: 0x000000
                     });
                     if ( intersects.length > 0 ) {
+                        alert("touched");
                         var col = intersects[ 0 ].object.material.color.getHex();
                         var int = intersects[ 0 ];
                         //console.debug(intersects[ 0 ].object);
