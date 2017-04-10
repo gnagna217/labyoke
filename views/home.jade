@@ -274,11 +274,11 @@ block content
                     mouse.x = +(event.targetTouches[0].pageX / window.innerwidth) * 2 +-1;
                     mouse.y = -(event.targetTouches[0].pageY / window.innerHeight) * 2 + 1;
                     }
-                    //alert("touched00: " + window.event.touches);
-                    if(window.event.touches){
+                    alert("touched00: " + window.event.targetTouches);
+                    if(window.event.targetTouches){
                     //alert("touched02: " + window.event);
-                    mouse.x = +(window.event.touches[0].pageX / window.innerwidth) * 2 +-1;
-                    mouse.y = -(window.event.touches[0].pageY / window.innerHeight) * 2 + 1;
+                    mouse.x = +(window.event.targetTouches[0].pageX / window.innerwidth) * 2 +-1;
+                    mouse.y = -(window.event.targetTouches[0].pageY / window.innerHeight) * 2 + 1;
                     }
 
                     raycaster.setFromCamera( mouse, camera );
