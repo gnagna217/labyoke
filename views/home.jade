@@ -293,10 +293,10 @@ block content
                     });
                     console.log("int length: " + intersects.length);
                     if ( intersects.length > 0 ) {
-                        
+                        console.log("inside intersect");
                         var col = intersects[ 0 ].object.material.color.getHex();
                         var int = intersects[ 0 ];
-                        //console.debug(intersects[ 0 ].object);
+                        console.debug(intersects[ 0 ].object);
                         //console.log(intersects[ 0 ].object.name);
                         //console.debug(savefont);
                         var rand = Math.floor((Math.random() * 3));
