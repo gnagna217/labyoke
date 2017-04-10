@@ -65,8 +65,20 @@ block content
                 var meshes = [];
                 var raycaster = new THREE.Raycaster();
                 var mouse = new THREE.Vector2();
-                document.addEventListener( 'touchstart', onDocumentMouseDown, false );
+                //document.addEventListener( 'touchstart', onDocumentMouseDown, false );
                 document.addEventListener( 'mousedown', onDocumentMouseDown, false );
+
+                var currPos;
+                $('canvas').bind('mousedown touchstart', function (e) {
+                    if (e.type == "touchstart") {
+                        currPos = window.event.touches[0].pageX;
+                        alert("touched0: " + currPos);
+                    } else {
+                        currPos = e.pageX;
+                    }
+                    clicked = true;
+
+                });
 
                 var scene = new THREE.Scene();
                 scene.background = new THREE.Color( "white" );
