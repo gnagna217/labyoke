@@ -69,6 +69,7 @@ block content
                 document.addEventListener( 'mousedown', onDocumentMouseDown, false );
 
                 var currPos;
+                if($('canvas')){
                 $('canvas')[0].bind('mousedown touchstart', function (e) {
                     if (e.type == "touchstart") {
                         currPos = window.event.touches[0].pageX;
@@ -80,6 +81,7 @@ block content
                     clicked = true;
 
                 });
+                }
 
                 var scene = new THREE.Scene();
                 scene.background = new THREE.Color( "white" );
