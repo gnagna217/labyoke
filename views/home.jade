@@ -73,6 +73,7 @@ block content
                     if (e.type == "touchstart") {
                         currPos = window.event.touches[0].pageX;
                         alert("touched0: " + currPos);
+                        onDocumentMouseDown(e);
                     } else {
                         currPos = e.pageX;
                         console.log("touched1: " + currPos);
