@@ -275,10 +275,10 @@ block content
                     mouse.y = -(event.targetTouches[0].pageY / window.innerHeight) * 2 + 1;
                     }
                     console.log("touched00: " + window.event.targetTouches);
-                    if(window.event.targetTouches){
-                    //alert("touched02: " + window.event);
-                    mouse.x = +(window.event.targetTouches[0].pageX / window.innerwidth) * 2 +-1;
-                    mouse.y = -(window.event.targetTouches[0].pageY / window.innerHeight) * 2 + 1;
+                    if(window.event.touches){
+                    alert("touched02: " + window.event);
+                    mouse.x = +(window.event.touches[0].pageX / window.innerwidth) * 2 +-1;
+                    mouse.y = -(window.event.touches[0].pageY / window.innerHeight) * 2 + 1;
                     }
 
                     raycaster.setFromCamera( mouse, camera );
