@@ -70,7 +70,7 @@ block content
 
                 var currPos;
                 if($('canvas')){
-                $('canvas')[0].bind('mousedown touchstart', function (e) {
+                $('canvas').bind('mousedown touchstart', function (e) {
                     if (e.type == "touchstart") {
                         currPos = window.event.touches[0].pageX;
                         alert("touched0: " + currPos);
