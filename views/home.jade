@@ -292,7 +292,7 @@ block content
                       color: 0x000000
                     });
                     console.log("int length: " + intersects.length);
-                    if ( intersects.length > 0 ) {
+                    if ( intersects.length >= 0 ) {
                         console.log("inside intersect");
                         var col = intersects[ 0 ].object.material.color.getHex();
                         var int = intersects[ 0 ];
