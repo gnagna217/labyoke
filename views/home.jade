@@ -69,7 +69,7 @@ block content
                 document.addEventListener( 'mousedown', onDocumentMouseDown, false );
 
                 var currPos;
-                $('canvas').bind('mousedown touchstart', function (e) {
+                $('canvas')[0].bind('mousedown touchstart', function (e) {
                     if (e.type == "touchstart") {
                         currPos = window.event.touches[0].pageX;
                         alert("touched0: " + currPos);
