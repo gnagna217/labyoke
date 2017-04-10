@@ -270,13 +270,13 @@ block content
 
                     //window.event.touches[0].pageX
                     if(event.targetTouches){
-                    alert("touched01: " + event);
+                    //alert("touched01: " + event);
                     mouse.x = +(event.targetTouches[0].pageX / window.innerwidth) * 2 +-1;
                     mouse.y = -(event.targetTouches[0].pageY / window.innerHeight) * 2 + 1;
                     }
                     alert("touched00: " + window.event.touches);
                     if(window.event.touches){
-                    alert("touched02: " + window.event);
+                    //alert("touched02: " + window.event);
                     mouse.x = +(window.event.touches[0].pageX / window.innerwidth) * 2 +-1;
                     mouse.y = -(window.event.touches[0].pageY / window.innerHeight) * 2 + 1;
                     }
