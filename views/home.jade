@@ -274,13 +274,13 @@ block content
                     if(window.event.targetTouches){
                     console.debug(window.event);
                     console.log("targetTouch: " + window.event.targetTouches[0].pageX);
-                    mouse.x = +(window.event.targetTouches[0].pageX / window.innerwidth) * 2 +-1;
+                    mouse.x = +(window.event.targetTouches[0].pageX / window.innerwidth) * 2 - 1;
                     mouse.y = -(window.event.targetTouches[0].clientY / window.innerHeight) * 2 + 1;
                     }
                     /*if(window.event.touches){
                     alert("touched02: " + window.event);
-                    mouse.x = +(window.event.touches[0].pageX / window.innerwidth) * 2 +-1;
-                    mouse.y = -(window.event.touches[0].pageY / window.innerHeight) * 2 + 1;
+                    mouse.x = +(window.event.touches[0].pageX / renderer.domElement.clientWidth) * 2 +-1;
+                    mouse.y = -(window.event.touches[0].pageY / renderer.domElement.clientHeight) * 2 + 1;
                     }*/
 
                     raycaster.setFromCamera( mouse, camera );
@@ -292,7 +292,7 @@ block content
                       color: 0x000000
                     });
                     console.log("int length: " + intersects.length);
-                    if ( intersects.length >= 0 ) {
+                    if ( intersects.length > 0 ) {
                         console.log("inside intersect");
                         var col = intersects[ 0 ].object.material.color.getHex();
                         var int = intersects[ 0 ];
