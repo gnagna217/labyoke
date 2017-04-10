@@ -286,7 +286,7 @@ block content
                     raycaster.setFromCamera( mouse, camera );
 
                     var intersects = raycaster.intersectObjects( objects );
-                    
+                    console.debug(intersects);
 
                     var particleMaterial = new THREE.PointsMaterial({
                       color: 0x000000
