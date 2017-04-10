@@ -133,7 +133,8 @@ block content
                 );
                 var bar = new THREE.Line( geometry4, material4 );
                 var geometry5 = new THREE.SphereBufferGeometry( 5, 16, 16);
-                var circle = new THREE.Mesh(geometry5, material1);
+                var material5 = new THREE.MeshBasicMaterial({color: 0x3d9dcb, wireframe: true }); 
+                var circle = new THREE.Mesh(geometry5, material5);
                 //scene.add(bar);
 
                 var cube1 = new THREE.Mesh(geometry1, material1);
