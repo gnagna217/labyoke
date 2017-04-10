@@ -269,14 +269,11 @@ block content
                     mouse.y = - ( event.clientY / renderer.domElement.clientHeight ) * 2 + 1;
 
                     //window.event.touches[0].pageX
-                    if(event.targetTouches){
-                    //alert("touched01: " + event);
-                    mouse.x = +(event.targetTouches[0].pageX / window.innerwidth) * 2 +-1;
-                    mouse.y = -(event.targetTouches[0].pageY / window.innerHeight) * 2 + 1;
-                    }
+
                     console.log("touched00: " + window.event.targetTouches);
                     if(window.event.targetTouches){
-                    //alert("touched02: " + window.event);
+                    console.debug(window.event);
+                    console.log("targetTouch: " + window.event.targetTouches[0].pageX);
                     mouse.x = +(window.event.targetTouches[0].pageX / window.innerwidth) * 2 +-1;
                     mouse.y = -(window.event.targetTouches[0].pageY / window.innerHeight) * 2 + 1;
                     }
