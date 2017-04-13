@@ -1105,7 +1105,7 @@ LabYokeAgents.prototype.findmyshares = function(callback) {
 			var select = "";
 			for(var prop in labs){
 				var labsstr = (labs[prop].labname).replace(/ /g,"").toLowerCase() + "_orders ";
-				select = select + "SELECT * FROM " + labsstr + where + " UNION ";
+				select = select + "SELECT * FROM " + labsstr + " UNION ";
 			}
 			select = select.replace(/UNION\s*$/, "") + " where email='" + email + "'  order by date desc";
 			console.log("Partages select: " + select);
