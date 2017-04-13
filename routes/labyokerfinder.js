@@ -1102,7 +1102,15 @@ LabYokeAgents.prototype.findmyshares = function(callback) {
 	}
 	select = select.replace(/UNION\s*$/, "");
 	*/
-			var query4 = client.query("SELECT * from " + mylabtable + "_orders where email='" + email + "'  order by date desc");
+			var select = "";
+			for(var prop in labs){
+				var labsstr = (labs[prop].labname).replace(/ /g,"").toLowerCase() + "_orders ";
+				select = select + "SELECT * FROM " + labsstr + where + " UNION ";
+			}
+			select = select.replace(/UNION\s*$/, "") + " where email='" + email + "'  order by date desc";
+			console.log("Partages select: " + select);
+			//var query4 = client.query("SELECT * from " + mylabtable + "_orders where email='" + email + "'  order by date desc");
+			var query4 = client.query(select);
 			query4.on("row", function(row, result4) {
 				result4.addRow(row);
 			});
