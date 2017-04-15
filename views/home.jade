@@ -319,7 +319,7 @@ block content
                             scene.add(circle);
                         }
                         if(count > objects.length/2 - 2){
-                            $('.textintro').css( "top", (-0.5 * window.innerHeight + 85) );
+                            $('.textintro').css( "top", (-0.5 * window.innerHeight - 15) );
                             console.log("move textintro");
                         }
                         if(count < objects.length){
@@ -485,8 +485,8 @@ block content
         p(class="textintro", style="z-index: 1;position: relative;margin-top:50px;background-color: white;")
             i!="Hello There. Welcome to LabYoke!<br/>These spheres represent the <b>last transactions</b> processed!<br/>Click on a <b>sphere</b> and you shall enveil its lab.<br/>Meanwhile our logo always leads you to <b>LabYoke</b>."
     script.
-        $('.yokelogo').css( "margin-top", (-1.2 * window.innerHeight) );
-        $('.textintro').css( "top", (-0.5 * window.innerHeight) );
+        $('.yokelogo').css( "margin-top", (-1.2 * window.innerHeight - 100) );
+        $('.textintro').css( "top", (-0.5 * window.innerHeight - 100) );
         //$('body').css( "background-color", "#8a6d3b" );
         //$('canvas').css( "opacity", "0.6" );
         console.log("top: " + window.innerHeight);
