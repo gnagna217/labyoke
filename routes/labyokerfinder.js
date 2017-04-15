@@ -1018,7 +1018,7 @@ LabYokeGlobal.prototype.getlatestshares = function(callback) {
 	for(var prop in labs){
 		a = "a" + i;
 		labsstr = (labs[prop].labname).replace(/ /g,"").toLowerCase() + "_orders "; //+ a + " ";
-		select = select + "SELECT agent, lab, date FROM " + labsstr + " group by agent,lab,date UNION ";
+		select = select + "SELECT distinct agent, lab, date FROM " + labsstr + " group by agent,lab,date UNION ";
 		i++;
 	}
 
