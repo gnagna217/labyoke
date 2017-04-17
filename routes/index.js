@@ -148,7 +148,7 @@ module.exports = function(router) {
 
 
 	router.get('/', function(req, res) {
-		res.redirect('/home');
+		res.redirect('/pop');
 	});
 
 	router.get('/admin', function(req, res) {
@@ -699,7 +699,7 @@ totalshares = t[0].counting;
 		req.session.messages = null;
 	});
 
-	router.get('/home', function(req, res) {
+	router.get('/pop', function(req, res) {
 		if(req.cookies.i18n == null || req.cookies.i18n == undefined){
 			req.cookies.i18n = "en";
 		}
