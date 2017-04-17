@@ -299,12 +299,6 @@ block content
                     console.log("int length: " + intersects.length);
                     if ( intersects.length > 0 ) {
 
-                        if(count == 1){
-                            //$('.textintro').css( "top", (-0.5 * window.innerHeight) + 80 );
-                            $('.textintro').css( "display", "none");
-                            console.log("move textintro");
-                        }
-                        
                         console.log("inside intersect");
                         var col = intersects[ 0 ].object.material.color.getHex();
                         var int = intersects[ 0 ];
@@ -351,6 +345,13 @@ block content
                         //console.log("height: " + window.innerHeight);
                         //console.log("width: " + window.innerWidth);
                         count++;
+
+                        if(count == 1){
+                            //$('.textintro').css( "top", (-0.5 * window.innerHeight) + 80 );
+                            $('.textintro').css( "display", "none");
+                            console.log("move textintro");
+                        }
+                        
                         }
 
                        /* var particle = new THREE.Sprite( particleMaterial );
