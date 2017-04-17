@@ -318,8 +318,10 @@ block content
                             scene.add(bar);
                             scene.add(circle);
                         }
-                        if(count > objects.length/2 - 2){
-                            $('.textintro').css( "top", (-0.5 * window.innerHeight) + 80 );
+                        //if(count > objects.length/2 - 2){
+                        if(count == 1){
+                            //$('.textintro').css( "top", (-0.5 * window.innerHeight) + 80 );
+                            $('.textintro').css( "display", "none");
                             console.log("move textintro");
                         }
                         if(count < objects.length){
