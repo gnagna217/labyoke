@@ -704,16 +704,16 @@ totalshares = t[0].counting;
 			req.cookies.i18n = "en";
 		}
 		res.setLocale(req.cookies.i18n);
-			console.log("in home: GET LABS");
+			console.log("in pop: GET LABS");
 			var labyokerLabs = new LabyokerLabs('','');
 			labyokerLabs.getlabs(function(error, labs) {
 				req.session.labs = labs;
 				var labYokeGlobal = new LabYokeGlobal(labs);
 				labYokeGlobal.getlatestshares(function(error, latest) {
-					console.log("in home: GET LABS now " + req.session.labs);
-					console.log("home in labs: " + labs);
-					console.log("home in latest: " + latest);
-					res.render('home', {latestshares:latest,lang:req.cookies.i18n, i18n:res, title: 'Home'});
+					console.log("in pop: GET LABS now " + req.session.labs);
+					console.log("pop in labs: " + labs);
+					console.log("pop in latest: " + latest);
+					res.render('pop', {latestshares:latest,lang:req.cookies.i18n, i18n:res, title: 'Pop'});
 				});
 			});
 		req.session.messages = null;
