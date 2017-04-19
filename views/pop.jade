@@ -385,14 +385,31 @@ block content
                     bar.rotation.z = lineAngle;
                     bar.position.y = window.innerHeight/4;
 
-                    var findx = meshes.filter(function( index ) {
+                    var findx = meshes.filter(function(x) {
                         countfilter++;
                         if(countfilter < 30){
-                        console.log('filter this: ' + $(this).position.z);
-                        console.debug($(this));
+                        console.log('filter this: ' + x.position.z);
+                        console.debug(x);
                         }
-                        return ($( this ).position.z  == lineAngle );
+                        return (x.position.z  == lineAngle );
                     }); 
+
+                    var filteroutput = test.filter(function(x){
+                    console.log("x.monthorder: "+x.monthorder); console.log("x.yearorder: "+x.yearorder); 
+                    console.log("now.getFullYear(): "+ now.getFullYear()); 
+                    console.log("now.getMonth(): "+ now.getMonth()); 
+                    console.log("so: "+ (x.yearorder == now.getFullYear() && x.monthorder == (now.getMonth() + 1))); 
+
+                    if(x.yearorder == now.getFullYear() && x.monthorder == (now.getMonth() + 1)){
+                    count++;}
+
+                    console.log("count is: "+count); 
+                    if(count<6){
+                    return (x.yearorder == now.getFullYear() && x.monthorder == (now.getMonth() + 1))
+                    }
+
+                    });
+
                     //console.log("countfilter: " + countfilter);
                     if(countfilter < 30){
                         console.log("findx: " + findx);
