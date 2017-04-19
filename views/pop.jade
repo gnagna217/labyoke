@@ -340,6 +340,8 @@ block content
                     renderer.setSize( window.innerWidth, window.innerHeight );
                 }
 
+                var countfilter = 0;
+
                 function render() {
                 requestAnimationFrame(render);
 
@@ -383,11 +385,17 @@ block content
                     bar.position.y = window.innerHeight/4;
 
                     var findx = meshes.filter(function( index ) {
-                        //console.log('filter this: ' + $(this).position.z);
-                        //console.debug($(this));
+                        countfilter++;
+                        if(countfilter < 30){
+                        console.log('filter this: ' + $(this).position.z);
+                        console.debug($(this));
+                        }
                         return ($( this ).position.z  == lineAngle );
                     }); 
-                    //console.log("findx: " + findx);
+                    if(countfilter < 30){
+                        console.log("findx: " + findx);
+                        }
+                    
 
                 }
                 if(circle){
