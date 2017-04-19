@@ -388,8 +388,8 @@ block content
                     var findx = meshes.filter(function(x) {
                         countfilter++;
                         if(countfilter < 30){
-                        console.log('filter this: ' + x.position.z);
-                        console.debug(x);
+                        //console.log('filter this: ' + x.position.z);
+                        //console.debug(x);
                         }
                         return (x.position.z  == lineAngle );
                     }); 
@@ -411,9 +411,11 @@ block content
                     });*/
 
                     //console.log("countfilter: " + countfilter);
-                    if(countfilter < 30){
+                    if(findx){
                         console.log("findx: " + findx);
-                        }
+                        console.debug(findx);
+
+                    }
                     
 
                 }
