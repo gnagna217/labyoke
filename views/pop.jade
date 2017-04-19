@@ -134,8 +134,6 @@ block content
                 var geometry5 = new THREE.SphereBufferGeometry( 5, 16, 16);
                 var material5 = new THREE.MeshBasicMaterial({color: 0x3d9dcb, wireframe: true }); 
                 var circle = new THREE.Mesh(geometry5, material5);
-                
-                var cube3 = new THREE.Mesh(geometry2, material);
 
                 for(var prop in obj){
                     var mesh;
@@ -385,8 +383,8 @@ block content
                     bar.position.y = window.innerHeight/4;
 
                     var findx = meshes.filter(function( index ) {
-                        console.log('filter this: ' + $(this));
-                        console.debug($(this));
+                        //console.log('filter this: ' + $(this).position.z);
+                        //console.debug($(this));
                         return ($( this ).position.z  == lineAngle );
                     }); 
                     console.log("findx: " + findx);
@@ -404,10 +402,6 @@ block content
                 cube.rotation.x += 0.01;
                 cube.rotation.y += 0.01;
                 cube.rotation.z += 0.01;
-
-                cube3.rotation.y = 10;
-                //cube3.rotation.y = 20;
-                //cube3.rotation.z = 0.01;
 
                 renderer.render(scene, camera);
                 };
