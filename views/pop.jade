@@ -26,6 +26,7 @@ block content
             script.
                 var obj = JSON.parse('#{JSON.stringify(latestshares)}'.replace(/&quot;/g, '"'));
                 var savefont;
+                var countfilter = 0;
                 console.log(obj);
                 for(var prop in obj)
                     console.log(obj[prop].agent);
@@ -340,7 +341,7 @@ block content
                     renderer.setSize( window.innerWidth, window.innerHeight );
                 }
 
-                var countfilter = 0;
+                
 
                 function render() {
                 requestAnimationFrame(render);
@@ -392,6 +393,7 @@ block content
                         }
                         return ($( this ).position.z  == lineAngle );
                     }); 
+                    console.log("countfilter: " + countfilter);
                     if(countfilter < 30){
                         console.log("findx: " + findx);
                         }
