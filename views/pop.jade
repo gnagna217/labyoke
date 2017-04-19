@@ -388,10 +388,10 @@ block content
                     var findx = meshes.filter(function(x) {
                         countfilter++;
                         if(countfilter < 30){
-                        console.log('filter this: ' + x.position.z + " - " + lineAngle);
+                        console.log('filter this: ' + x.position.y + " - " + lineAngle);
                         //console.debug(x);
                         }
-                        return (x.position.z  == lineAngle );
+                        return (x.position.y  == lineAngle );
                     }); 
 
                     /*var filteroutput = test.filter(function(x){
