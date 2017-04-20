@@ -106,7 +106,10 @@ block content
                         console.log("find canvas for img");
                         console.debug($('canvas')[0]);
                         if($('canvas')[0]){
-                        var context = $('canvas')[0].getContext('2d');
+                        var img = new Image();
+                        img.src = "/images/logo_clear.png"
+                        var context = $('canvas')[0].getContext('webgl');
+                        context.texImage2D(context.TEXTURE_2D, 0, context.RGBA, context.RGBA, context.UNSIGNED_BYTE, img);
                         console.debug(context);
                         context.drawImage( image, 100, 100 );
                         }
@@ -121,10 +124,10 @@ block content
                     }
                 );
 
-                var imgtexture = THREE.ImageUtils.loadTexture('/images/logo_clear.png');
-                var imgmaterial = new THREE.MeshBasicMaterial({map: imgtexture});
-                var img = new THREE.Mesh(geometry, imgmaterial);
-                scene.add( img );
+                //var imgtexture = THREE.ImageUtils.loadTexture('/images/logo_clear.png');
+                //var imgmaterial = new THREE.MeshBasicMaterial({map: imgtexture});
+                //var img = new THREE.Mesh(geometry, imgmaterial);
+                //scene.add( img );
 
                 var renderer = new THREE.WebGLRenderer( { antialias: true } );
                 renderer.setSize(window.innerWidth, window.innerHeight);
@@ -458,9 +461,9 @@ block content
                     circle.position.y = window.innerHeight/4;
                 }
 
-                if(img){
-                    img.position.y = window.innerHeight/4;
-                }
+                //if(img){
+                 //   img.position.y = window.innerHeight/4;
+                //}
 
                 //console.log("cube1.position.y: " + cube1.position.y);
 
