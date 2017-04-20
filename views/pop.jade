@@ -342,6 +342,9 @@ block content
                     $('.yokelogo').css( "margin-top", (-1.2 * window.innerHeight - 50) );
                     $('.textintro').css( "top", (-0.5 * window.innerHeight - 10) );
                     console.log("w: "+window.innerWidth +" - h: "+window.innerHeight);
+                    if(circle){
+                        circle.position.y = window.innerHeight/4;
+                    }
                 }
 
                 
