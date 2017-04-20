@@ -91,6 +91,12 @@ block content
 
                 console.log("camera: " + window.innerWidth);
 
+                var img = new THREE.MeshBasicMaterial({ //CHANGED to MeshBasicMaterial
+                    map:THREE.ImageUtils.loadTexture('/images/logo_clear.png')
+                });
+                img.map.needsUpdate = true;
+                scene(img);
+
                 var renderer = new THREE.WebGLRenderer( { antialias: true } );
                 renderer.setSize(window.innerWidth, window.innerHeight);
                 renderer.setClearColor( 0xffffff );
@@ -421,6 +427,10 @@ block content
                 }
                 if(circle){
                     circle.position.y = window.innerHeight/4;
+                }
+
+                if(img){
+                    img.position.y = window.innerHeight/4;
                 }
 
                 //console.log("cube1.position.y: " + cube1.position.y);
