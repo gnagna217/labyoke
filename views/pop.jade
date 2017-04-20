@@ -341,8 +341,6 @@ block content
                     renderer.setSize( window.innerWidth, window.innerHeight );
                     $('.yokelogo').css( "margin-top", (-1.2 * window.innerHeight - 50) );
                     $('.textintro').css( "top", (-0.5 * window.innerHeight - 10) );
-                    //$('#yokelogo').css("width", window.innerWidth);
-                    //$('#yokelogo').css("height", window.innerHeight);
                     console.log("w: "+window.innerWidth +" - h: "+window.innerHeight);
                 }
 
@@ -390,7 +388,7 @@ block content
                     bar.rotation.z = lineAngle;
                     bar.position.y = window.innerHeight/4;
 
-                    var findx = meshes.filter(function(x) {
+                    /*var findx = meshes.filter(function(x) {
                         countfilter++;
                         if(countfilter < 3000){
                         //console.log('filter this: ' + x.position.y + " - " + bar.rotation.z);
@@ -399,29 +397,12 @@ block content
                         return (x.position.y  == lineAngle );
                     }); 
 
-                    /*var filteroutput = test.filter(function(x){
-                    console.log("x.monthorder: "+x.monthorder); console.log("x.yearorder: "+x.yearorder); 
-                    console.log("now.getFullYear(): "+ now.getFullYear()); 
-                    console.log("now.getMonth(): "+ now.getMonth()); 
-                    console.log("so: "+ (x.yearorder == now.getFullYear() && x.monthorder == (now.getMonth() + 1))); 
-
-                    if(x.yearorder == now.getFullYear() && x.monthorder == (now.getMonth() + 1)){
-                    count++;}
-
-                    console.log("count is: "+count); 
-                    if(count<6){
-                    return (x.yearorder == now.getFullYear() && x.monthorder == (now.getMonth() + 1))
-                    }
-
-                    });*/
-
-                    //console.log("countfilter: " + countfilter);
                     if(findx.length > 0){
                         //console.log("findx: " + findx);
                         //console.debug(findx);
 
                     }
-                    
+                    */
 
                 }
                 if(circle){
