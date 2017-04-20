@@ -383,7 +383,7 @@ block content
                     var lineAngle = - 1 * (60 * Math.PI * timer) / 180;
                     bar.rotation.z = lineAngle;
                     bar.position.y = window.innerHeight/4;
-
+                    
                 }
                 if(circle){
                     circle.position.y = window.innerHeight/4;
@@ -416,7 +416,7 @@ block content
             i(style="background-color: white;")!="Hello There!<br/>These spheres represent the <span style='color:#8a6d3b'><b>lastest transactions</b></span>!<br/>Click on a <span style='color:#3d9dcb'>sp</span><span style='color:#8a6d3b'>he</span><span style='color:#337ab7'>re</span>!<br/>Meanwhile our logo always leads you to <a href='/search'><span style='color:#3d9dcb'><b>LabYoke</b></span></a>."
     script.
         $('.yokelogo').css( "margin-top", (-1.2 * window.innerHeight - 50) );
-        //$('.textintro').css( "top", (-0.5 * window.innerHeight - 10) );
+        $('.textintro').css( "top", (-0.5 * window.innerHeight - 10) );
         //$('body').css( "background-color", "#8a6d3b" );
         //$('canvas').css( "opacity", "0.6" );
         console.log("top: " + window.innerHeight);
