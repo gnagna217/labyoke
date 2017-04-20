@@ -91,9 +91,9 @@ block content
 
                 console.log("camera: " + window.innerWidth);
 
-                var map = new THREE.TextureLoader().load( "/images/logo_clear.png" );
-                var imgmaterial = new THREE.SpriteMaterial( { map: map, color: 0xffffff, fog: true } );
-                var img = new THREE.Sprite( imgmaterial );
+                var imgtexture = THREE.ImageUtils.loadTexture('/images/logo_clear.png');
+                var imgmaterial = new THREE.MeshBasicMaterial({map: imgtexture});
+                var img = new THREE.Mesh(geometry, imgmaterial);
                 scene.add( img );
 
                 var renderer = new THREE.WebGLRenderer( { antialias: true } );
