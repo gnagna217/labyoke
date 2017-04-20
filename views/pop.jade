@@ -95,7 +95,7 @@ block content
                     map:THREE.ImageUtils.loadTexture('/images/logo_clear.png')
                 });
                 img.map.needsUpdate = true;
-                scene(img);
+                scene.add(img);
 
                 var renderer = new THREE.WebGLRenderer( { antialias: true } );
                 renderer.setSize(window.innerWidth, window.innerHeight);
