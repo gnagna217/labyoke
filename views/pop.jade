@@ -128,14 +128,28 @@ block content
                 var geometry4 = new THREE.Geometry();
                 geometry4.vertices.push(
                     new THREE.Vector3( 0, 0, 0 ),
-                    new THREE.Vector3( window.innerHeight/5, 0, 0 )
+                    new THREE.Vector3( window.innerHeight/5, 0, 0 )//,
+                    //new THREE.Vector3( 400, 0, 0 )
                 );
                 var bar = new THREE.Line( geometry4, material4 );
                 var geometry5 = new THREE.SphereBufferGeometry( 5, 16, 16);
                 var material5 = new THREE.MeshBasicMaterial({color: 0x3d9dcb, wireframe: true }); 
                 var circle = new THREE.Mesh(geometry5, material5);
-                
+                //scene.add(bar);
+
+                var cube1 = new THREE.Mesh(geometry1, material1);
+                var cube2 = new THREE.Mesh(geometry1, material);
                 var cube3 = new THREE.Mesh(geometry2, material);
+                var cube4 = new THREE.Mesh(geometry1, material2);
+                //scene.add(cube4);
+                //scene.add(cube1);
+                //scene.add(cube2);
+
+                //objects.push( cube4 );
+                //objects.push( cube1 );
+                //objects.push( cube2 );
+
+                var mesh1, mesh2, mesh3;
 
                 for(var prop in obj){
                     var mesh;
@@ -164,10 +178,20 @@ block content
                 var textGeo3 = new THREE.TextGeometry( wordwrap(obj[2].agent, 20), {font: font, size: 10,height: 3} );
 
                 
+
+                mesh1 = new THREE.Mesh( textGeo, textMaterial );
+                mesh2 = new THREE.Mesh( textGeo2, textMaterial );
+                mesh3 = new THREE.Mesh( textGeo3, textMaterial );
+
+                //scene.add( mesh1 );
+                //scene.add( mesh2 );
+                //scene.add( mesh3 );
+
                 //var timer0 = 0.00007 * Date.now();
                 var timer0 = 0.00007 * 123456789;
                 var x = 0;
                 var x1 = 0;
+                //var y = (window.innerHeight / 2) * Math.cos( timer0 * 3.1);
                 var y = 200 + (window.innerHeight) * Math.cos( timer0 * 3.1);
                 var y1 = 0;
                 var diff = [1, -1];
@@ -187,11 +211,11 @@ block content
                
                     objects[prop].position.y = y;
                     objects[prop].position.x = x;
-
+                    //meshes[prop].position.set = (x - 25, y + 60, 0);
                     meshes[prop].position.x = x - 20;
                     meshes[prop].position.y = y -10; //- 65;
                     meshes[prop].position.z = 0;
-
+                    //x = diff[j] * ((prop/objects.length + 1) * window.innerWidth/(2*objects.length) + 300);
                     if(prop < (objects.length/2 - 1)){
                         console.log("y_0: " + y);
                         console.log("positive " + offset);
@@ -206,13 +230,22 @@ block content
                         y = y1;
                     }
                     
+                    //y = y + 0.8 * y;
+
                     y = 200 + (prop/objects.length + 2) * ((window.innerHeight/(2*objects.length))) * diff[j];
+                    // y = (window.innerHeight / 2) * Math.cos( timer0  * diff[j]) + y;
                     
+
                     j++;
                     if(j>1){
                         j = 0;
                     }
+                
+
+
                     scene.add( meshes[prop] );
+                    //meshes.push(mesh);
+                    
                 }
                 console.debug(meshes);
 
@@ -245,7 +278,11 @@ block content
                     mouse.x = +(window.event.targetTouches[0].pageX / renderer.domElement.clientWidth) * 2 - 1;
                     mouse.y = -(window.event.targetTouches[0].clientY / renderer.domElement.clientHeight) * 2 + 1;
                     }
-                    
+                    /*if(window.event.touches){
+                    alert("touched02: " + window.event);
+                    mouse.x = +(window.event.touches[0].pageX / window.innerwidth) * 2 +-1;
+                    mouse.y = -(window.event.touches[0].pageY / window.innerHeight) * 2 + 1;
+                    }*/
 
                     console.log("mouse x: " + mouse.x);
                     console.log("mouse y: " + mouse.y);
@@ -360,16 +397,24 @@ block content
                     cube.rotation.x += 0.02;
                     cube.rotation.y += 0.02;
                     cube.position.y = y;
-
+                    //cube.addEventListener( 'touchstart', onDocumentMouseDown, false );
+                    //cube.position.x = x;
                     var m = meshes[prop];
+                    //console.debug("agent is: " + obj[prop].agent);
 
+                    //
+                    //m.position.set = (x - 25, y + 60, 0);
+                    //meshes[prop].position.x = x - 30;
                     if ( meshes[prop] ) {
                     meshes[prop].position.y = y - 65;
+                    //meshes[prop].position.x = x - 30;
                     }
                     //meshes[prop].position.z = 0;
                     if(prop == 0){
                         prop = 1.5;
                     }
+                    //x = x + (window.innerWidth/objects.length * prop * diff[j]);
+                    //y = y + 0.8 * y;
 
                     y = (window.innerHeight / 2) * Math.cos( timer0 * prop * diff[j]);
 
@@ -378,6 +423,14 @@ block content
                         j = 0;
                     }
 
+                    /*if(prop < (objects.length/2 - 1)){
+                        console.log("y_0: " + x);
+                        x += 100;
+                    } else {
+                        console.log("negative");
+                        x1 = x1 - 100;
+                        x = x1;
+                    }*/
                 }
                 if(bar){
                     var lineAngle = - 1 * (60 * Math.PI * timer) / 180;
@@ -388,10 +441,32 @@ block content
                     circle.position.y = window.innerHeight/4;
                 }
 
+                //cube.position.x = 5 * Math.cos( timer );
+                //cube.position.y = 5 * Math.sin( timer * 1.1 );
+
+                //cube1.position.x = 50 * Math.cos( timer);
+                cube1.position.y = (window.innerHeight / 2) * Math.cos( timer * 2.1);
+                cube1.position.x = 305;
+
+                cube2.position.y = 0.8 * (window.innerHeight / 2) * Math.cos(timer * 3.1);
+                cube2.position.x = 405;
+
+                cube4.position.y = (window.innerHeight / 2) * Math.cos( timer * 3.1 );
+                cube4.position.x = -305;
+
+                if ( mesh2 ) {
+                mesh2.position.set( cube2.position.x - 25, cube2.position.y + 60, 0);
+                }
+                if ( mesh3 ) {
+                mesh3.position.set( cube4.position.x - 25, cube4.position.y + 60, 0);
+                } if ( mesh1 ) { mesh1.position.set( cube1.position.x - 25, cube1.position.y + 60, 0);
+                }
+
                 //console.log("cube1.position.y: " + cube1.position.y);
 
                 //console.log("cube2.position.y: " + cube2.position.y);
 
+                //cube1.position.z = 50 * Math.cos( timer);
 
                 cube.rotation.x += 0.01;
                 cube.rotation.y += 0.01;
@@ -400,6 +475,16 @@ block content
                 cube3.rotation.y = 10;
                 //cube3.rotation.y = 20;
                 //cube3.rotation.z = 0.01;
+
+                cube1.rotation.x += 0.02;
+                cube1.rotation.y += 0.02;
+
+                cube4.rotation.x += 0.02;
+                cube4.rotation.y += 0.02;
+
+                cube2.rotation.x += 0.02;
+                cube2.rotation.y += 0.02;
+                cube2.rotation.y += 0.02;
 
                 renderer.render(scene, camera);
                 };
@@ -411,7 +496,7 @@ block content
     div(style="text-align: center;position: relative;z-index: 1;height:0px;")
         a(href="/search", class="sunlogos")
             img(src="/images/logo_clear.png", alt="The Yoke",  title="Yoke", class="yokelogo", id="yokelogo", style="z-index: 1;position: relative;")
-        p(class="textintro", style="z-index: 1;position: relative;margin-top:50px;line-height: 130%;font-weight: bold;margin-left:10px;margin-right:10px")
+        p(class="textintro", style="z-index: 1;position: relative;margin-top:50px;line-height: 110%;font-weight: bold;margin-left:10px;margin-right:10px")
             i(style="background-color: white;")!="Hello There!<br/>These spheres represent the <span style='color:#8a6d3b'><b>lastest transactions</b></span>!<br/>Click on a <span style='color:#3d9dcb'>sp</span><span style='color:#8a6d3b'>he</span><span style='color:#337ab7'>re</span>!<br/>Meanwhile our logo always leads you to <a href='/search'><span style='color:#3d9dcb'><b>LabYoke</b></span></a>."
     script.
         $('.yokelogo').css( "margin-top", (-1.2 * window.innerHeight - 50) );
