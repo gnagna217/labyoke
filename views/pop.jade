@@ -26,7 +26,6 @@ block content
             script.
                 var obj = JSON.parse('#{JSON.stringify(latestshares)}'.replace(/&quot;/g, '"'));
                 var savefont;
-                var countfilter = 0;
                 console.log(obj);
                 for(var prop in obj)
                     console.log(obj[prop].agent);
@@ -91,11 +90,6 @@ block content
 
                 console.log("camera: " + window.innerWidth);
 
-                var map = new THREE.TextureLoader().load( "/images/logo_clear.png" );
-                var imgmaterial = new THREE.SpriteMaterial( { map: map, color: 0xffffff, fog: true } );
-                var img = new THREE.Sprite( imgmaterial );
-                scene.add( img );
-
                 var renderer = new THREE.WebGLRenderer( { antialias: true } );
                 renderer.setSize(window.innerWidth, window.innerHeight);
                 renderer.setClearColor( 0xffffff );
@@ -140,6 +134,8 @@ block content
                 var geometry5 = new THREE.SphereBufferGeometry( 5, 16, 16);
                 var material5 = new THREE.MeshBasicMaterial({color: 0x3d9dcb, wireframe: true }); 
                 var circle = new THREE.Mesh(geometry5, material5);
+                
+                var cube3 = new THREE.Mesh(geometry2, material);
 
                 for(var prop in obj){
                     var mesh;
@@ -346,8 +342,6 @@ block content
                     renderer.setSize( window.innerWidth, window.innerHeight );
                 }
 
-                
-
                 function render() {
                 requestAnimationFrame(render);
 
@@ -389,47 +383,9 @@ block content
                     var lineAngle = - 1 * (60 * Math.PI * timer) / 180;
                     bar.rotation.z = lineAngle;
                     bar.position.y = window.innerHeight/4;
-
-                    var findx = meshes.filter(function(x) {
-                        countfilter++;
-                        if(countfilter < 3000){
-                        console.log('filter this: ' + x.position.y + " - " + bar.rotation.z);
-                        //console.debug(x);
-                        }
-                        return (x.position.y  == lineAngle );
-                    }); 
-
-                    /*var filteroutput = test.filter(function(x){
-                    console.log("x.monthorder: "+x.monthorder); console.log("x.yearorder: "+x.yearorder); 
-                    console.log("now.getFullYear(): "+ now.getFullYear()); 
-                    console.log("now.getMonth(): "+ now.getMonth()); 
-                    console.log("so: "+ (x.yearorder == now.getFullYear() && x.monthorder == (now.getMonth() + 1))); 
-
-                    if(x.yearorder == now.getFullYear() && x.monthorder == (now.getMonth() + 1)){
-                    count++;}
-
-                    console.log("count is: "+count); 
-                    if(count<6){
-                    return (x.yearorder == now.getFullYear() && x.monthorder == (now.getMonth() + 1))
-                    }
-
-                    });*/
-
-                    //console.log("countfilter: " + countfilter);
-                    if(findx.length > 0){
-                        //console.log("findx: " + findx);
-                        //console.debug(findx);
-
-                    }
-                    
-
                 }
                 if(circle){
                     circle.position.y = window.innerHeight/4;
-                }
-
-                if(img){
-                    img.position.y = window.innerHeight/4;
                 }
 
                 //console.log("cube1.position.y: " + cube1.position.y);
@@ -440,6 +396,10 @@ block content
                 cube.rotation.x += 0.01;
                 cube.rotation.y += 0.01;
                 cube.rotation.z += 0.01;
+
+                cube3.rotation.y = 10;
+                //cube3.rotation.y = 20;
+                //cube3.rotation.z = 0.01;
 
                 renderer.render(scene, camera);
                 };
