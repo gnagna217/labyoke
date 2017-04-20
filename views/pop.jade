@@ -91,11 +91,10 @@ block content
 
                 console.log("camera: " + window.innerWidth);
 
-                var img = new THREE.MeshBasicMaterial({ //CHANGED to MeshBasicMaterial
-                    map:THREE.ImageUtils.loadTexture('/images/logo_clear.png')
-                });
-                img.map.needsUpdate = true;
-                scene.add(img);
+                var map = new THREE.TextureLoader().load( "/images/logo_clear.png" );
+                var imgmaterial = new THREE.SpriteMaterial( { map: map, color: 0xffffff, fog: true } );
+                var img = new THREE.Sprite( imgmaterial );
+                scene.add( img );
 
                 var renderer = new THREE.WebGLRenderer( { antialias: true } );
                 renderer.setSize(window.innerWidth, window.innerHeight);
