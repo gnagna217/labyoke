@@ -91,6 +91,11 @@ block content
 
                 console.log("camera: " + window.innerWidth);
 
+                var map = new THREE.TextureLoader().load( "/images/logo_clear.png" );
+                var imgmaterial = new THREE.SpriteMaterial( { map: map, color: 0xffffff, fog: true } );
+                var img = new THREE.Sprite( imgmaterial );
+                scene.add( img );
+
                 var renderer = new THREE.WebGLRenderer( { antialias: true } );
                 renderer.setSize(window.innerWidth, window.innerHeight);
                 renderer.setClearColor( 0xffffff );
@@ -339,9 +344,6 @@ block content
                     camera.aspect = window.innerWidth / window.innerHeight;
                     camera.updateProjectionMatrix();
                     renderer.setSize( window.innerWidth, window.innerHeight );
-                    $('.yokelogo').css( "margin-top", (-1.2 * window.innerHeight - 50) );
-                    $('.textintro').css( "top", (-0.5 * window.innerHeight - 10) );
-                    console.log("w: "+window.innerWidth +" - h: "+window.innerHeight);
                 }
 
                 
@@ -388,30 +390,47 @@ block content
                     bar.rotation.z = lineAngle;
                     bar.position.y = window.innerHeight/4;
 
-                    /*var findx = meshes.filter(function(x) {
+                    var findx = meshes.filter(function(x) {
                         countfilter++;
                         if(countfilter < 3000){
-                        //console.log('filter this: ' + x.position.y + " - " + bar.rotation.z);
+                        console.log('filter this: ' + x.position.y + " - " + bar.rotation.z);
                         //console.debug(x);
                         }
                         return (x.position.y  == lineAngle );
                     }); 
 
+                    /*var filteroutput = test.filter(function(x){
+                    console.log("x.monthorder: "+x.monthorder); console.log("x.yearorder: "+x.yearorder); 
+                    console.log("now.getFullYear(): "+ now.getFullYear()); 
+                    console.log("now.getMonth(): "+ now.getMonth()); 
+                    console.log("so: "+ (x.yearorder == now.getFullYear() && x.monthorder == (now.getMonth() + 1))); 
+
+                    if(x.yearorder == now.getFullYear() && x.monthorder == (now.getMonth() + 1)){
+                    count++;}
+
+                    console.log("count is: "+count); 
+                    if(count<6){
+                    return (x.yearorder == now.getFullYear() && x.monthorder == (now.getMonth() + 1))
+                    }
+
+                    });*/
+
+                    //console.log("countfilter: " + countfilter);
                     if(findx.length > 0){
                         //console.log("findx: " + findx);
                         //console.debug(findx);
 
                     }
-                    */
+                    
 
                 }
                 if(circle){
                     circle.position.y = window.innerHeight/4;
                 }
 
-                //if(img){
-                 //   img.position.y = window.innerHeight/4;
-                //}
+                if(img){
+                    img.position.y = window.innerHeight/4;
+                }
 
                 //console.log("cube1.position.y: " + cube1.position.y);
 
@@ -433,7 +452,7 @@ block content
         a(href="/search", class="sunlogos")
             img(src="/images/logo_clear.png", alt="The Yoke",  title="Yoke", class="yokelogo", id="yokelogo", style="z-index: 1;position: relative;")
         p(class="textintro", style="z-index: 1;position: relative;margin-top:50px;line-height: 130%;font-weight: bold;margin-left:10px;margin-right:10px")
-            i(style="/*background-color: white;*/")!="Hello There!<br/>These spheres represent the <span style='color:#8a6d3b'><b>lastest transactions</b></span>!<br/>Click on a <span style='color:#3d9dcb'>sp</span><span style='color:#8a6d3b'>he</span><span style='color:#337ab7'>re</span>!<br/>Meanwhile our logo always leads you to <a href='/search'><span style='color:#3d9dcb'><b>LabYoke</b></span></a>."
+            i(style="background-color: white;")!="Hello There!<br/>These spheres represent the <span style='color:#8a6d3b'><b>lastest transactions</b></span>!<br/>Click on a <span style='color:#3d9dcb'>sp</span><span style='color:#8a6d3b'>he</span><span style='color:#337ab7'>re</span>!<br/>Meanwhile our logo always leads you to <a href='/search'><span style='color:#3d9dcb'><b>LabYoke</b></span></a>."
     script.
         $('.yokelogo').css( "margin-top", (-1.2 * window.innerHeight - 50) );
         $('.textintro').css( "top", (-0.5 * window.innerHeight - 10) );
