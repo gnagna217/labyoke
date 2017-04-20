@@ -91,6 +91,33 @@ block content
 
                 console.log("camera: " + window.innerWidth);
 
+                var imgloader = new THREE.ImageLoader();
+
+                // load a image resource
+                imgloader.load(
+                    // resource URL
+                    '/images/logo_clear.png',
+                    // Function when resource is loaded
+                    function ( image ) {
+                        // do something with it
+
+                        // like drawing a part of it on a canvas
+                        var canvas = document.createElement( 'canvas' );
+                        console.log("find canvas for img");
+                        console.debug($('canvas')[0]);
+                        var context = $('canvas')[0].getContext('2d');
+                        context.drawImage( image, 100, 100 );
+                    },
+                    // Function called when download progresses
+                    function ( xhr ) {
+                        console.log( (xhr.loaded / xhr.total * 100) + '% loaded' );
+                    },
+                    // Function called when download errors
+                    function ( xhr ) {
+                        console.log( 'An error happened' );
+                    }
+                );
+
                 var imgtexture = THREE.ImageUtils.loadTexture('/images/logo_clear.png');
                 var imgmaterial = new THREE.MeshBasicMaterial({map: imgtexture});
                 var img = new THREE.Mesh(geometry, imgmaterial);
