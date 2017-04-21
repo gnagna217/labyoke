@@ -350,9 +350,10 @@ block content
                         .load(function() {
                             pic_real_width = this.width;   // Note: $(this).width() will not
                             pic_real_height = this.height; // work for in memory images.
-                            console.log("pic_real_width: " + pic_real_width);
-                            console.log("pic_real_height: " + pic_real_height);       
+                            //console.log("pic_real_width: " + pic_real_width);
+                            //console.log("pic_real_height: " + pic_real_height);       
                         });
+                    console.log("pic_real_width: " + pic_real_width/2.93);
                    $('.yokelogo').css( "width", (pic_real_width/2.93) );
                     //$('.yokelogo').css( "height", (window.innerHeight/3) );
                 }
