@@ -397,13 +397,14 @@ block content
                 }
                 if(bar){
                     var lineAngle = - 1 * (60 * Math.PI * timer) / 180;
+                    var angle = lineAngle * 180 / 9
                     bar.rotation.z = lineAngle;
                     bar.position.y = window.innerHeight/4;
 
                     var findx = meshes.filter(function(x) {
-                        //console.log('filter this: x:' + x.position.x + " - y: " + x.position.y + " - z: " + x.position.z + " - barz: " + bar.position.z + " - bary: " + bar.position.y + " - barx: " + bar.position.x + " - barrotz: " + bar.rotation.z + " - barroty: " + bar.rotation.y + " - barrottx: " + bar.rotation.x);
+                        console.log('filter this: winy: ' + window.innerHeight/4 + ' - angle: ' + angle + ' - x:' + x.position.x + " - y: " + x.position.y + " - z: " + x.position.z + " - barz: " + bar.position.z + " - bary: " + bar.position.y + " - barx: " + bar.position.x + " - barrotz: " + bar.rotation.z );
                         //console.debug(x);
-                        return (x.position.y  == lineAngle );
+                        return (x.position.y  == angle );
                     });
 
                 }
