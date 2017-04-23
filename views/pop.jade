@@ -397,7 +397,7 @@ block content
                 }
                 if(bar){
                     var lineAngle = - 1 * (60 * Math.PI * timer) / 180;
-                    var angle = lineAngle * 180 / 9 * timer
+                    var angle = (lineAngle * 180) / (9 * timer)
                     bar.rotation.z = lineAngle;
                     bar.position.y = window.innerHeight/4;
 
