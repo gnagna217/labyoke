@@ -26,7 +26,7 @@ block content
             script.
                 var obj = JSON.parse('#{JSON.stringify(latestshares)}'.replace(/&quot;/g, '"'));
                 var savefont;
-                var timer0 = 1;
+                var timer1 = 1;
                 console.log(obj);
                 for(var prop in obj)
                     console.log(obj[prop].agent);
@@ -397,13 +397,13 @@ block content
 
                 }
                 if(bar){
-                    var lineAngle = - 1 * (/*60 * */ Math.PI * timer0) / 180;
-                    var angle = (lineAngle * 180) / (timer0)
+                    var lineAngle = - 1 * (/*60 * */ Math.PI * timer1) / 180;
+                    var angle = (lineAngle * 180) / (timer1)
                     bar.rotation.z = lineAngle;
                     bar.position.y = window.innerHeight/4;
 
-                    console.log("timer0: " + timer0);
-                    timer0 = timer0 + 400;
+                    console.log("timer1: " + timer1);
+                    timer1 = timer1 + 400;
 
                     var findx = meshes.filter(function(x) {
                         var rad = Math.atan2(x.position.y, x.position.x);
