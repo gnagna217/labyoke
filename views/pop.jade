@@ -401,6 +401,8 @@ block content
                     bar.rotation.z = lineAngle;
                     bar.position.y = window.innerHeight/4;
 
+                    console.log("timer: " + timer);
+
                     var findx = meshes.filter(function(x) {
                         var rad = Math.atan2(x.position.y, x.position.x);
                         var deg = rad * (180 / Math.PI);
