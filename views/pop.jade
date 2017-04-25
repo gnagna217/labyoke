@@ -26,6 +26,7 @@ block content
             script.
                 var obj = JSON.parse('#{JSON.stringify(latestshares)}'.replace(/&quot;/g, '"'));
                 var savefont;
+                var timer0 = 1;
                 console.log(obj);
                 for(var prop in obj)
                     console.log(obj[prop].agent);
@@ -396,19 +397,24 @@ block content
 
                 }
                 if(bar){
-                    var lineAngle = - 1 * (/*60 * */ Math.PI * timer) / 180;
-                    var angle = (lineAngle * 180) / (timer)
+                    var lineAngle = - 1 * (/*60 * */ Math.PI * timer0) / 180;
+                    var angle = (lineAngle * 180) / (timer0)
                     bar.rotation.z = lineAngle;
                     bar.position.y = window.innerHeight/4;
 
                     //console.log("timer: " + timer);
+                    timer ++;
 
                     var findx = meshes.filter(function(x) {
                         var rad = Math.atan2(x.position.y, x.position.x);
                         var deg = rad * (180 / Math.PI);
                         if(angle  < (deg + 40) &&  angle  > (deg - 40)){
                         //console.log('filter this: rad: ' + rad + ' - deg: ' + deg + ' - angle: ' + angle + ' - x:' + x.position.x + " - y: " + x.position.y + " - z: " + x.position.z + " - barz: " + bar.position.z + " - bary: " + bar.position.y + " - barx: " + bar.position.x + " - barrotz: " + bar.rotation.z );
-                        //console.log('filter this: rad: ' + rad + ' - deg: ' + deg + ' - angle: ' + angle);
+                        console.log('filter this: rad: ' + rad + ' - deg: ' + deg + ' - angle: ' + angle);
+
+                        //timer: 104516120.24398999
+                        //pop:387 timer: 104516120.24510999
+                        //pop:387 timer: 104516120.2463
 
 
                         }
