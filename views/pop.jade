@@ -410,7 +410,7 @@ block content
                     var findx = objects.filter(function(x) {
                         var rad = Math.atan2(x.position.y, x.position.x);
                         var deg = rad * (180 / Math.PI);
-                        if(angle  < (deg + 40) &&  angle  > (deg - 40)){
+                        //if(angle  < (deg + 40) &&  angle  > (deg - 40)){
                         //console.log('filter this: rad: ' + rad + ' - deg: ' + deg + ' - angle: ' + angle + ' - x:' + x.position.x + " - y: " + x.position.y + " - z: " + x.position.z + " - barz: " + bar.position.z + " - bary: " + bar.position.y + " - barx: " + bar.position.x + " - barrotz: " + bar.rotation.z );
                         console.log('filter this: name: ' + x.name + ' - rad: ' + rad + ' - deg: ' + deg + ' - angle: ' + angle);
                         console.debug(x);
@@ -420,7 +420,7 @@ block content
                         //pop:387 timer: 104516120.2463
 
 
-                        }
+                        //}
                         //console.debug(x);
                         return (angle1  < (deg + 40) &&  angle1  > (deg - 40));
                     });
