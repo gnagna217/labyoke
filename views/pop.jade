@@ -407,12 +407,12 @@ block content
                     var angle1 = ((timer1/360)%1) * 360
                     console.log("angle1: " + angle1);
 
-                    var findx = meshes.filter(function(x) {
+                    var findx = objects.filter(function(x) {
                         var rad = Math.atan2(x.position.y, x.position.x);
                         var deg = rad * (180 / Math.PI);
                         if(angle  < (deg + 40) &&  angle  > (deg - 40)){
                         //console.log('filter this: rad: ' + rad + ' - deg: ' + deg + ' - angle: ' + angle + ' - x:' + x.position.x + " - y: " + x.position.y + " - z: " + x.position.z + " - barz: " + bar.position.z + " - bary: " + bar.position.y + " - barx: " + bar.position.x + " - barrotz: " + bar.rotation.z );
-                        console.log('filter this: rad: ' + rad + ' - deg: ' + deg + ' - angle: ' + angle);
+                        console.log('filter this: name: ' + x.name + ' - rad: ' + rad + ' - deg: ' + deg + ' - angle: ' + angle);
                         console.debug(x);
 
                         //timer: 104516120.24398999
