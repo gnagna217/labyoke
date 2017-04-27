@@ -396,7 +396,7 @@ block content
                     }
 
                 }
-                if(bar){
+                if(bar && count > 8){
                     var lineAngle = - 1 * (/*60 * */ Math.PI * timer1) / 180;
                     var angle = (lineAngle * 180) / (timer1)
                     bar.rotation.z = lineAngle;
