@@ -397,12 +397,12 @@ block content
                     }
 
                 }
-                if(bar && count == 9){
+                if(bar && count >= 9){
                     var lineAngle = - 1 * (/*60 * */ Math.PI * timer1) / 180;
                     if(count == 9){
                         lineAngle = 0;
                     }
-                    
+                    count++;
                     var angle = (lineAngle * 180) / (timer1)
                     bar.rotation.z = lineAngle;
                     bar.position.y = window.innerHeight/4;
