@@ -412,6 +412,8 @@ block content
                     var angle1 = ((timer1/360)%1) * 360
                     console.log("angle1: " + angle1);
 
+                    var applyonce = false;
+
                     var findx = objects.filter(function(x) {
                         var rad = Math.atan2(x.position.y, x.position.x);
                         var deg = rad * (180 / Math.PI);
@@ -424,30 +426,39 @@ block content
 
                         if(angle1>0 && angle1<30 && x.pos == 2){
                             console.log("pos: 2");
+                            applyonce = true;
                             return x;
                         } else if(angle1>30 && angle1<70 && x.pos == 3){
                         console.log("pos: 3");
+                        applyonce = true;
                             return x;
                         } else if(angle1>70 && angle1<110 && x.pos == 4){
                         console.log("pos: 4");
+                        applyonce = true;
                             return x;
                         } else if(angle1>110 && angle1<150 && x.pos == 5){
                         console.log("pos: 5");
+                        applyonce = true;
                             return x;
                         } else if(angle1>150 && angle1<190 && x.pos == 6){
                         console.log("pos: 6");
+                        applyonce = true;
                             return x;
                         } else if(angle1>190 && angle1<230 && x.pos == 7){
                         console.log("pos: 7");
+                        applyonce = true;
                             return x;
                         } else if(angle1>230 && angle1<270 && x.pos == 8){
                         console.log("pos: 8");
+                        applyonce = true;
                             return x;
                         } else if(angle1>270 && angle1<310 && x.pos == 0){
                         console.log("pos: 0");
+                        applyonce = true;
                             return x;
                         } else if(angle1>310 && angle1<350 && x.pos == 1){
                         console.log("pos: 1");
+                        applyonce = true;
                             return x;
                         }
 
@@ -477,16 +488,21 @@ block content
                     findx[0].material.color.setHex( 0xff0000 );
 
                     var findpreviousx = objects.filter(function(x) {
-                        if(x.pos == findx[0].pos - 1){
+                        if(x.pos == 8 && findx[0].pos == 0){
+                            return x;
+                        } else if(x.pos == findx[0].pos - 1){
                             return x;
                         }
                     });
                     
+                    if(applyonce){
+                    applyonce = false;
                     var rand = Math.floor((Math.random() * 3));
                     var coloring = colors[rand];
                     findpreviousx[0].material.color.setHex( coloring );
                     
                     console.log(findpreviousx[0]);
+                    }
                     
 
                 }
