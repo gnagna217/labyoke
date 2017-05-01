@@ -109,14 +109,14 @@ block content
                 var material = new THREE.MeshBasicMaterial({color: 0x8a6d3b, wireframe: true }); // yoke color
                 var material1 = new THREE.MeshBasicMaterial({color: 0x3d9dcb, wireframe: true }); // lab color
                 var material2 = new THREE.MeshBasicMaterial({color: 0x337ab7, wireframe: true });
-                var material3 = new THREE.MeshBasicMaterial({color: 0x8a6d3b, wireframe: true });
-                var material4 = new THREE.MeshBasicMaterial({color: 0x3d9dcb, wireframe: true });
-                var material5 = new THREE.MeshBasicMaterial({color: 0x337ab7, wireframe: true });
-                var material6 = new THREE.MeshBasicMaterial({color: 0x8a6d3b, wireframe: true });
-                var material7 = new THREE.MeshBasicMaterial({color: 0x3d9dcb, wireframe: true });
-                var material8 = new THREE.MeshBasicMaterial({color: 0x337ab7, wireframe: true });
+                var material13 = new THREE.MeshBasicMaterial({color: 0x8a6d3b, wireframe: true });
+                var material14 = new THREE.MeshBasicMaterial({color: 0x3d9dcb, wireframe: true });
+                var material15 = new THREE.MeshBasicMaterial({color: 0x337ab7, wireframe: true });
+                var material16 = new THREE.MeshBasicMaterial({color: 0x8a6d3b, wireframe: true });
+                var material17 = new THREE.MeshBasicMaterial({color: 0x3d9dcb, wireframe: true });
+                var material18 = new THREE.MeshBasicMaterial({color: 0x337ab7, wireframe: true });
 
-                var materials = [material, material1, material2, material3, material4, material5, material6, material7, material8];
+                var materials = [material, material1, material2, material13, material14, material15, material16, material17, material18];
 
                 var textMaterial = new THREE.MeshPhongMaterial( { color: 0xff0000 } );
 
@@ -129,6 +129,7 @@ block content
                     }
                     scene.add(cube);
                     objects.push( cube );
+                    console.log(cube);
                 }
 
                 var material4 = new THREE.LineBasicMaterial({
