@@ -418,8 +418,39 @@ block content
                         //if(angle  < (deg + 40) &&  angle  > (deg - 40)){
                         //console.log('filter this: rad: ' + rad + ' - deg: ' + deg + ' - angle: ' + angle + ' - x:' + x.position.x + " - y: " + x.position.y + " - z: " + x.position.z + " - barz: " + bar.position.z + " - bary: " + bar.position.y + " - barx: " + bar.position.x + " - barrotz: " + bar.rotation.z );
                         
-                        console.log('pos: '+x.pos+' - posx: ' + x.position.x + ' - posy: ' + x.position.y + ' - name: ' + x.name + ' - rad: ' + rad + ' - deg: ' + deg + ' - angle1: ' + angle1 + ' - timer1: ' + timer1);
-                        console.debug(x);
+                        //console.log('pos: '+x.pos+' - posx: ' + x.position.x + ' - posy: ' + x.position.y + ' - name: ' + x.name + ' - rad: ' + rad + ' - deg: ' + deg + ' - angle1: ' + angle1 + ' - timer1: ' + timer1);
+                        //console.debug(x);
+                        
+
+                        if(angle1>0 && angle1<30){
+                            return x.pos == 2;
+                        } else if(angle1>30 and angle1<70){
+                            return x.pos == 3;
+                        } else if(angle1>3=70 and angle1<110){
+                            return x.pos == 4;
+                        } else if(angle1>110 and angle1<150){
+                            return x.pos == 5;
+                        } else if(angle1>150 and angle1<190){
+                            return x.pos == 6;
+                        } else if(angle1>190 and angle1<230){
+                            return x.pos == 7;
+                        } else if(angle1>230 and angle1<270){
+                            return x.pos == 8;
+                        } else if(angle1>270 and angle1<310){
+                            return x.pos == 0;
+                        } else if(angle1>310 and angle1<350){
+                            return x.pos == 1;
+                        }
+
+                        //pos 2: entre 80 et 120, angle1>0 && angle1<40-10
+                        //pos 3: entre 120 et 160, angle1>40*(3-2)-10 and angle1<40-10+40
+                        //pos 4: entre 160 et 200, angle1>40 * (4-2)-10 and angle1<40-10+40+40
+                        //pos 5: entre 200 et 240, angle1>40*(5-2)-10 and angle1<40-10+40+40+40
+                        //pos 6: entre 240 et 280, angle1>40*(6-2)-10 and angle1<40-10+40+40+40+40
+                        //pos 7: entre 280 et 320, angle1>40*(7-2)-10 and angle1<40-10+40+40+40+40+40
+                        //pos 8: entre 320 et 360, angle1>40*(8-2)-10 and angle1<40-10+40+40+40+40+40+40
+                        //pos 0: entre 0 et 40, angle1>40*(pos+7)-10 and angle1<40-10+40+40+40+40+40+40+40
+                        //pos 1: entre 40 et 80, angle1>40*(pos+7)-10 and angle1<40-10+40+40+40+40+40+40+40+40
 
                         //timer: 104516120.24398999
                         //pop:387 timer: 104516120.24510999
@@ -429,10 +460,14 @@ block content
 
                         //}
                         //console.debug(x);
-                        return (angle1  < (deg + 40) &&  angle1  > (deg - 40));
+                        //return (angle1  < (deg + 40) &&  angle1  > (deg - 40));
                     });
 
+                    console.log('findx: ' + findx + ' - pos: ' + findx.pos);
+                    console.debug(findx);
+
                 }
+
                 if(circle){
                     circle.position.y = window.innerHeight/4;
                 }
