@@ -103,7 +103,16 @@ block content
 
                 var geometry = new THREE.BoxGeometry(50, 50, 50, 10, 10, 10);
                 var geometry3 = new THREE.BoxGeometry(window.innerHeight/2.5, 2, 2, 2, 2, 2);
-                var geometry1 = new THREE.SphereBufferGeometry( 48, 16, 16);
+                var geometry10 = new THREE.SphereBufferGeometry( 48, 16, 16);
+                var geometry11 = new THREE.SphereBufferGeometry( 48, 16, 16);
+                var geometry12 = new THREE.SphereBufferGeometry( 48, 16, 16);
+                var geometry13 = new THREE.SphereBufferGeometry( 48, 16, 16);
+                var geometry14 = new THREE.SphereBufferGeometry( 48, 16, 16);
+                var geometry15 = new THREE.SphereBufferGeometry( 48, 16, 16);
+                var geometry16 = new THREE.SphereBufferGeometry( 48, 16, 16);
+                var geometry17 = new THREE.SphereBufferGeometry( 48, 16, 16);
+                var geometry18 = new THREE.SphereBufferGeometry( 48, 16, 16);
+
                 var geometry2 = new THREE.BoxGeometry(300, 100, 100, 10, 10, 10)
 
                 var material = new THREE.MeshBasicMaterial({color: 0x8a6d3b, wireframe: true }); // yoke color
@@ -117,12 +126,13 @@ block content
                 var material8 = new THREE.MeshBasicMaterial({color: 0x337ab7, wireframe: true });
 
                 var materials = [material, material1, material2, material3, material4, material5, material6, material7, material8];
+                var geometries = [geometry10, geometry11, geometry12, geometry13, geometry14, geometry15, geometry16, geometry17, geometry18];
 
                 var textMaterial = new THREE.MeshPhongMaterial( { color: 0xff0000 } );
 
                 var i = 0;
                 for(var prop in obj){
-                    var cube = new THREE.Mesh(geometry1, materials[i]);
+                    var cube = new THREE.Mesh(geometries[i], materials[i]);
                     i++;
                     if(i > 2){
                         i = 0;
