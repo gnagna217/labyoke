@@ -27,6 +27,8 @@ block content
                 var obj = JSON.parse('#{JSON.stringify(latestshares)}'.replace(/&quot;/g, '"'));
                 var savefont;
                 var timer1 = 1;
+                var applyonce = false;
+                var bef = -1;
                 console.log(obj);
                 for(var prop in obj)
                     console.log(obj[prop].agent);
@@ -412,8 +414,7 @@ block content
                     var angle1 = ((timer1/360)%1) * 360
                     console.log("angle1: " + angle1);
 
-                    var applyonce = false;
-                    var bef = -1;
+                    
 
                     var findx = objects.filter(function(x) {
                         var rad = Math.atan2(x.position.y, x.position.x);
