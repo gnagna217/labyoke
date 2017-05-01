@@ -485,7 +485,7 @@ block content
                         //return (angle1  < (deg + 40) &&  angle1  > (deg - 40));
                     });
 
-                    //if(count >9 && count <29){
+                    if(findx.length > 0){
                     console.log(' - pos: ' + findx[0].pos);
                     findx[0].material.color.setHex( 0xe60000 );
                     //findx[0].material.color.setHex( 0xff0000 );
@@ -500,7 +500,7 @@ block content
                     
                     
                     
-                    if(bef != findpreviousx[0].pos){
+                    if(findpreviousx.length > 0 && bef != findpreviousx[0].pos){
                         bef = findpreviousx[0].pos;
                         applyonce = true;
                         console.log("applyonce for " + bef);
@@ -512,6 +512,7 @@ block content
                     findpreviousx[0].material.color.setHex( coloring );
                     
                     console.log(findpreviousx[0]);
+                    }
                     }
                     
 
