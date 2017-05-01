@@ -29,6 +29,7 @@ block content
                 var timer1 = 1;
                 var applyonce = false;
                 var bef = -1;
+                var objectlabs = [];
                 console.log(obj);
                 for(var prop in obj)
                     console.log(obj[prop].agent);
@@ -303,9 +304,10 @@ block content
 
                         //t.position.x = (window.innerWidth / 1.5) + countts * 25;
                         //t.position.y = (window.innerHeight / 1.5) + countts * 25;
-                        
+                        t.pos = intersects[ 0 ].object.pos;
                         
                         scene.add( t );
+                        objectlabs.push(t);
                         //console.log("tpositiony: " + t.position.y);
                         //console.log("tpositionx: " + t.position.x);
                         //console.log("count: " + count);
@@ -486,9 +488,19 @@ block content
                     });
 
                     if(findx.length > 0){
+
+                    var findlabx = objectlabs.filter(function(x) {
+                        if(x.pos == findx[0].pos){
+                            return x;
+                        }
+                    });
+
                     console.log(' - pos: ' + findx[0].pos);
                     findx[0].material.color.setHex( 0xe60000 );
+                    findlabx[0].material.color.setHex( 0xe60000 );
                     //findx[0].material.color.setHex( 0xff0000 );
+
+                    
 
                     var findpreviousx = objects.filter(function(x) {
                         if(x.pos == 8 && findx[0].pos == 0){
@@ -497,6 +509,17 @@ block content
                             return x;
                         }
                     });
+
+                    var findlabpreviousx = objectlabs.filter(function(x) {
+                        if(x.pos == 8 && findx[0].pos == 0){
+                            return x;
+                        } else if(x.pos == findx[0].pos - 1){
+                            return x;
+                        }
+                    });
+
+                    
+                    
                     
                     
                     
@@ -510,8 +533,10 @@ block content
                     var rand = Math.floor((Math.random() * 3));
                     var coloring = colors[rand];
                     findpreviousx[0].material.color.setHex( coloring );
+                    findlabpreviousx[0].material.color.setHex( coloring );
+
                     
-                    console.log(findpreviousx[0]);
+                    console.log(findlabpreviousx[0]);
                     }
                     }
                     
