@@ -413,6 +413,8 @@ block content
                     console.log("angle1: " + angle1);
 
                     var findx = objects.filter(function(x) {
+                        var previous = 0;
+                        var toreturn = [];
                         var rad = Math.atan2(x.position.y, x.position.x);
                         var deg = rad * (180 / Math.PI);
                         //if(angle  < (deg + 40) &&  angle  > (deg - 40)){
@@ -422,33 +424,60 @@ block content
                         //console.debug(x);
                         
 
-                        if(angle1>0 && angle1<30 && x.pos == 2){
-                            console.log("pos: 2");
-                            return x;
-                        } else if(angle1>30 && angle1<70 && x.pos == 3){
-                        console.log("pos: 3");
-                            return x;
-                        } else if(angle1>70 && angle1<110 && x.pos == 4){
-                        console.log("pos: 4");
-                            return x;
-                        } else if(angle1>110 && angle1<150 && x.pos == 5){
-                        console.log("pos: 5");
-                            return x;
-                        } else if(angle1>150 && angle1<190 && x.pos == 6){
-                        console.log("pos: 6");
-                            return x;
-                        } else if(angle1>190 && angle1<230 && x.pos == 7){
-                        console.log("pos: 7");
-                            return x;
-                        } else if(angle1>230 && angle1<270 && x.pos == 8){
-                        console.log("pos: 8");
-                            return x;
-                        } else if(angle1>270 && angle1<310 && x.pos == 0){
-                        console.log("pos: 0");
-                            return x;
-                        } else if(angle1>310 && angle1<350 && x.pos == 1){
-                        console.log("pos: 1");
-                            return x;
+                        if(angle1>0 && angle1<30 && (x.pos == 2 || x.pos == 1)){
+                            console.log("pos2: " + x.pos);
+                            toreturn.push(x);
+                            if(toreturn.length > 1){
+                                return toreturn;
+                            }
+                        } else if(angle1>30 && angle1<70 && (x.pos == 3 || x.pos == 2)){
+                        console.log("pos3: " + x.pos);
+                            toreturn.push(x);
+                            if(toreturn.length > 1){
+                                return toreturn;
+                            }
+                        } else if(angle1>70 && angle1<110 && (x.pos == 4 || x.pos == 3)){
+                        console.log("pos4: " + x.pos);
+                            toreturn.push(x);
+                            if(toreturn.length > 1){
+                                return toreturn;
+                            }
+                        } else if(angle1>110 && angle1<150 && (x.pos == 5 || x.pos == 4)){
+                        console.log("pos5: " + x.pos);
+                            toreturn.push(x);
+                            if(toreturn.length > 1){
+                                return toreturn;
+                            }
+                        } else if(angle1>150 && angle1<190 && (x.pos == 6 || x.pos == 5)){
+                        console.log("pos6: " + x.pos);
+                            toreturn.push(x);
+                            if(toreturn.length > 1){
+                                return toreturn;
+                            }
+                        } else if(angle1>190 && angle1<230 && (x.pos == 7 || x.pos == 6)){
+                        console.log("pos7: " + x.pos);
+                            toreturn.push(x);
+                            if(toreturn.length > 1){
+                                return toreturn;
+                            }
+                        } else if(angle1>230 && angle1<270 && (x.pos == 8 || x.pos == 7)){
+                        console.log("pos8: " + x.pos);
+                            toreturn.push(x);
+                            if(toreturn.length > 1){
+                                return toreturn;
+                            }
+                        } else if(angle1>270 && angle1<310 && (x.pos == 0 || x.pos == 8)){
+                        console.log("pos0: " + x.pos);
+                            toreturn.push(x);
+                            if(toreturn.length > 1){
+                                return toreturn;
+                            }
+                        } else if(angle1>310 && angle1<350 && (x.pos == 1 || x.pos == 0)){
+                        console.log("pos1: " + x.pos);
+                            toreturn.push(x);
+                            if(toreturn.length > 1){
+                                return toreturn;
+                            }
                         }
 
                         //pos 2: entre 80 et 120, angle1>0 && angle1<40-10
@@ -473,8 +502,11 @@ block content
                     });
 
                     //if(count >9 && count <29){
-                    console.log(' - pos: ' + findx[0].pos);
-                    findx[0].material.color.setHex( 0xff0000 );
+                    console.log(' - pos: ' + findx[0][0].pos + ' - pos_bef: ' + findx[0][1].pos);
+                    findx[0][0].material.color.setHex( 0xff0000 );
+                    var rand = Math.floor((Math.random() * 3));
+                    var coloring = colors[rand];
+                    findx[0][1].material.color.setHex( coloring );
                     //console.log(findx[0]);
                     //}
 
