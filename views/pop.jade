@@ -107,22 +107,21 @@ block content
 
                 var textureloader = new THREE.TextureLoader();
                   textureloader.load("/images/water1.jpg", function(texture){
-                    var material = new THREE.MeshLambertMaterial({map: texture,
+                    var img = new THREE.MeshBasicMaterial({map: texture,
                     opacity: 0.25, 
                     transparent: true, 
                     side: THREE.DoubleSide, 
                     depthWrite: false
                     });
-                    img = new THREE.Mesh(geometry, material);
-                    scene.add(img);
+                    // plane
+                    var plane = new THREE.Mesh(new THREE.PlaneBufferGeometry(window.innerWidth +150, window.innerHeight + 50),img);
+                    //plane.overdraw = true;
+                    scene.add(plane);
                   });
 
                 //img.map.needsUpdate = true; //ADDED
 
-                // plane
-                var plane = new THREE.Mesh(new THREE.PlaneBufferGeometry(window.innerWidth +150, window.innerHeight + 50),img);
-                //plane.overdraw = true;
-                scene.add(plane);
+                
 
                 
 
