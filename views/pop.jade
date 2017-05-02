@@ -277,7 +277,9 @@ block content
                         console.log("inside intersect");
                         var col = intersects[ 0 ].object.material.color.getHex();
                         var int = intersects[ 0 ];
+                        if(!intersects[ 0 ].object.pos || intersects[ 0 ].object.pos == undefined){
                         intersects[ 0 ].object.pos = count;
+                        }
                         console.debug(intersects[ 0 ].object);
                         //console.log(intersects[ 0 ].object.name);
                         //console.debug(savefont);
