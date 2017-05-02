@@ -95,15 +95,15 @@ block content
 
                 console.log("camera: " + window.innerWidth);
 
-                
+
 
                 var img = new THREE.MeshBasicMaterial({ //CHANGED to MeshBasicMaterial
                 map:THREE.ImageUtils.loadTexture('/images/ink2.jpg')
                 });
-                img.map.needsUpdate = true; //ADDED
+                //img.map.needsUpdate = true; //ADDED
 
                 // plane
-                var plane = new THREE.Mesh(new THREE.PlaneGeometry(200, 200),img);
+                var plane = new THREE.Mesh(new THREE.PlaneGeometry(window.innerWidth, window.innerHeight),img);
                 plane.overdraw = true;
                 scene.add(plane);
 
