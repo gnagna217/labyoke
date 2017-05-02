@@ -278,8 +278,8 @@ block content
                         var col = intersects[ 0 ].object.material.color.getHex();
                         var int = intersects[ 0 ];
                         console.log("inter: " + intersects[ 0 ].object.pos);
-                        console.log("interlength: " + intersects[ 0 ].object.pos.length);
-                        if(!intersects[ 0 ].object.pos || intersects[ 0 ].object.pos == undefined){
+                        console.log("interlength: " + intersects[ 0 ].object.pos == undefined);
+                        if(intersects[ 0 ].object.pos == undefined){
                         intersects[ 0 ].object.pos = count;
                         }
                         console.debug(intersects[ 0 ].object);
