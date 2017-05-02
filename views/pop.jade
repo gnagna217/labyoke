@@ -111,8 +111,9 @@ block content
                     opacity: 0.25, 
                     transparent: true, 
                     side: THREE.DoubleSide, 
-                    depthWrite: false
+                    depthWrite: false,
                     });
+                    img.map.minFilter = THREE.LinearFilter;
                     // plane
                     var plane = new THREE.Mesh(new THREE.PlaneBufferGeometry(window.innerWidth +150, window.innerHeight + 50),img);
                     //plane.overdraw = true;
