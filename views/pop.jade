@@ -96,13 +96,27 @@ block content
 
 
 
-                var img = new THREE.MeshBasicMaterial({ //CHANGED to MeshBasicMaterial
+                /*var img = new THREE.MeshBasicMaterial({
                 map:THREE.ImageUtils.loadTexture('/images/water1.jpg'),
                 opacity: 0.25, 
                 transparent: true, 
                 side: THREE.DoubleSide, 
                 depthWrite: false
                 });
+                */
+
+                var textureloader = new THREE.TextureLoader();
+                  loader.load("/images/water1.jpg", function(texture){
+                    var material = new THREE.MeshLambertMaterial({map: texture,
+                    opacity: 0.25, 
+                    transparent: true, 
+                    side: THREE.DoubleSide, 
+                    depthWrite: false
+                    });
+                    img = new THREE.Mesh(geometry, material);
+                    scene.add(img);
+                  });
+
                 //img.map.needsUpdate = true; //ADDED
 
                 // plane
