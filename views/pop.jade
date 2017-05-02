@@ -277,6 +277,8 @@ block content
                         console.log("inside intersect");
                         var col = intersects[ 0 ].object.material.color.getHex();
                         var int = intersects[ 0 ];
+                        console.log("inter: " + intersects[ 0 ].object.pos);
+                        console.log("interlength: " + intersects[ 0 ].object.pos.length);
                         if(!intersects[ 0 ].object.pos || intersects[ 0 ].object.pos == undefined){
                         intersects[ 0 ].object.pos = count;
                         }
@@ -434,44 +436,44 @@ block content
                         //if(angle  < (deg + 40) &&  angle  > (deg - 40)){
                         //console.log('filter this: rad: ' + rad + ' - deg: ' + deg + ' - angle: ' + angle + ' - x:' + x.position.x + " - y: " + x.position.y + " - z: " + x.position.z + " - barz: " + bar.position.z + " - bary: " + bar.position.y + " - barx: " + bar.position.x + " - barrotz: " + bar.rotation.z );
                         
-                        console.log('pos: '+x.pos+' - posx: ' + x.position.x + ' - posy: ' + x.position.y + ' - name: ' + x.name + ' - rad: ' + rad + ' - deg: ' + deg + ' - angle1: ' + angle1 + ' - timer1: ' + timer1);
+                        //console.log('pos: '+x.pos+' - posx: ' + x.position.x + ' - posy: ' + x.position.y + ' - name: ' + x.name + ' - rad: ' + rad + ' - deg: ' + deg + ' - angle1: ' + angle1 + ' - timer1: ' + timer1);
                         //console.debug(x);
                         
 
                         if(angle1>0 && angle1<30 && x.pos == 2){
-                            console.log("pos: 2");
+                            //console.log("pos: 2");
                             
                             return x;
                         } else if(angle1>30 && angle1<70 && x.pos == 3){
-                        console.log("pos: 3");
+                        //console.log("pos: 3");
                         
                             return x;
                         } else if(angle1>70 && angle1<110 && x.pos == 4){
-                        console.log("pos: 4");
+                        //console.log("pos: 4");
                         
                             return x;
                         } else if(angle1>110 && angle1<150 && x.pos == 5){
-                        console.log("pos: 5");
+                        //console.log("pos: 5");
                         
                             return x;
                         } else if(angle1>150 && angle1<190 && x.pos == 6){
-                        console.log("pos: 6");
+                        //console.log("pos: 6");
                         
                             return x;
                         } else if(angle1>190 && angle1<230 && x.pos == 7){
-                        console.log("pos: 7");
+                        //console.log("pos: 7");
                         
                             return x;
                         } else if(angle1>230 && angle1<270 && x.pos == 8){
-                        console.log("pos: 8");
+                        //console.log("pos: 8");
                         
                             return x;
                         } else if(angle1>270 && angle1<310 && x.pos == 0){
-                        console.log("pos: 0");
+                        //console.log("pos: 0");
                         
                             return x;
                         } else if(angle1>310 && angle1<350 && x.pos == 1){
-                        console.log("pos: 1");
+                        //console.log("pos: 1");
                         
                             return x;
                         }
@@ -505,7 +507,7 @@ block content
                         }
                     });
 
-                    console.log(' - pos: ' + findx[0].pos);
+                    //console.log(' - pos: ' + findx[0].pos);
                     findx[0].material.color.setHex( 0xcc3300 );
                     findlabx[0].material.color.setHex( 0xcc3300 );
                     //findx[0].material.color.setHex( 0xff0000 );
@@ -536,7 +538,7 @@ block content
                     if(findpreviousx.length > 0 && bef != findpreviousx[0].pos){
                         bef = findpreviousx[0].pos;
                         applyonce = true;
-                        console.log("applyonce for " + bef);
+                        //console.log("applyonce for " + bef);
                     }
                     if(applyonce){
                     applyonce = false;
@@ -546,7 +548,7 @@ block content
                     findlabpreviousx[0].material.color.setHex( coloring );
 
                     
-                    console.log(findlabpreviousx[0]);
+                    //console.log(findlabpreviousx[0]);
                     }
                     }
                     
