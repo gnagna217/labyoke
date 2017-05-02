@@ -90,7 +90,6 @@ block content
 
                 var scene = new THREE.Scene();
                 scene.background = new THREE.Color( "white" );
-                var overlayScene = new THREE.Scene();
                 //var camera = new THREE.PerspectiveCamera(400, window.innerWidth /(window.innerHeight), 1, 10000);
                 var camera = new THREE.PerspectiveCamera(400, window.innerWidth /(window.innerHeight), 1, 10000);
 
@@ -106,7 +105,7 @@ block content
                 // plane
                 var plane = new THREE.Mesh(new THREE.PlaneBufferGeometry(window.innerWidth, window.innerHeight),img);
                 //plane.overdraw = true;
-                overlayScene.add(plane);
+                scene.add(plane);
 
                 
 
@@ -590,7 +589,6 @@ block content
                 //cube3.rotation.z = 0.01;
 
                 renderer.render(scene, camera);
-                renderer.render(overlayScene, camera);
                 };
 
                 render();
