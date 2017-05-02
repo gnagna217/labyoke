@@ -98,7 +98,7 @@ block content
 
 
                 var img = new THREE.MeshBasicMaterial({ //CHANGED to MeshBasicMaterial
-                map:THREE.ImageUtils.loadTexture('/images/ink7.png'),
+                map:THREE.ImageUtils.loadTexture('/images/ink6.jpg'),
                 opacity: 0.25, 
                 transparent: true, 
                 side: THREE.DoubleSide, 
@@ -107,7 +107,7 @@ block content
                 //img.map.needsUpdate = true; //ADDED
 
                 // plane
-                var plane = new THREE.Mesh(new THREE.PlaneBufferGeometry(window.innerWidth, window.innerHeight - 30),img);
+                var plane = new THREE.Mesh(new THREE.PlaneBufferGeometry(window.innerWidth, window.innerHeight),img);
                 //plane.overdraw = true;
                 scene.add(plane);
 
