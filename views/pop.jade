@@ -106,7 +106,7 @@ block content
                 */
 
                 var textureloader = new THREE.TextureLoader();
-                  loader.load("/images/water1.jpg", function(texture){
+                  textureloader.load("/images/water1.jpg", function(texture){
                     var material = new THREE.MeshLambertMaterial({map: texture,
                     opacity: 0.25, 
                     transparent: true, 
