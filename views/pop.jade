@@ -30,6 +30,7 @@ block content
                 var applyonce = false;
                 var bef = -1;
                 var objectlabs = [];
+                var keepPos = [];
                 console.log(obj);
                 for(var prop in obj)
                     console.log(obj[prop].agent);
@@ -306,8 +307,8 @@ block content
                     });
                     console.log("int length: " + intersects.length);
                     if ( intersects.length > 0 ) {
+                        
 
-                        console.log("inside intersect");
                         var col = intersects[ 0 ].object.material.color.getHex();
                         var int = intersects[ 0 ];
                         console.log("inter: " + intersects[ 0 ].object.pos);
@@ -337,6 +338,9 @@ block content
                         
                         //console.log("name: " + intersects[ 0 ].object.name);
                         //console.log("savefont: " + savefont);
+                        console.log("inside intersect: " + intersects[ 0 ].object.uuid);
+                        if(keepPos.indexOf(intersects[ 0 ].object.uuid) != 0){
+                        keepPos.push(intersects[ 0 ].object.uuid);
                         var text = new THREE.TextGeometry( wordwrap(intersects[ 0 ].object.name, 10), {font:savefont, weight: "bold", size:10, height:3} );
                         var textMaterial1 = new THREE.MeshBasicMaterial( { color: colors[rand] } );
                         var t = new THREE.Mesh( text, textMaterial1 );
@@ -353,6 +357,7 @@ block content
                         
                         scene.add( t );
                         objectlabs.push(t);
+                        }
                         //console.log("tpositiony: " + t.position.y);
                         //console.log("tpositionx: " + t.position.x);
                         //console.log("count: " + count);
