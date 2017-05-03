@@ -328,10 +328,7 @@ block content
                         intersects[ 0 ].object.geometry = geometry;
                         }
 
-                        if(count == objects.length - 1 && bar){
-                            scene.add(bar);
-                            scene.add(circle);
-                        }
+                        
                         //if(count > objects.length/2 - 2){
 
                         if(count < objects.length){
@@ -359,6 +356,10 @@ block content
                         objectlabs.push(t);
                         count++;
                         console.log("added: " + intersects[ 0 ].object.uuid + " - "+JSON.stringify(keepPos));
+                        if(count == objects.length - 1 && bar){
+                            scene.add(bar);
+                            scene.add(circle);
+                        }
                         }
                         //console.log("tpositiony: " + t.position.y);
                         //console.log("tpositionx: " + t.position.x);
