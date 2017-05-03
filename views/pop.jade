@@ -366,7 +366,7 @@ block content
                                 .attr("src", $(img).attr("src"))
                                 .load(function() {
                                     pic_real_width = this.width/5.86;
-                                    pic_real_height = this.height/5.86;
+                                    pic_real_height = pic_real_width * *0.6866;
                                     console.log("pic_real_width: " + pic_real_width);
                                     console.log("pic_real_height: " + pic_real_height);
 
@@ -374,7 +374,7 @@ block content
                                         to: { width: pic_real_width, height: pic_real_height }
                                       }, 1000 );*/
                                     $('.yokelogo').css( "width", (pic_real_width) );  
-                                    $('.yokelogo').css( "height", (pic_real_height) );     
+                                    $('.yokelogo').css( "height", (pic_real_width * *0.6866) );     
                                 });
 
                         }
