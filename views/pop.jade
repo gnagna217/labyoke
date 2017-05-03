@@ -357,13 +357,15 @@ block content
                         
                         scene.add( t );
                         objectlabs.push(t);
+                        count++;
+                        console.log("added: " + intersects[ 0 ].object.uuid);
                         }
                         //console.log("tpositiony: " + t.position.y);
                         //console.log("tpositionx: " + t.position.x);
                         //console.log("count: " + count);
                         //console.log("height: " + window.innerHeight);
                         //console.log("width: " + window.innerWidth);
-                        count++;
+                        
 
                         if(count == 1){
                             //$('.textintro').css( "top", (-0.5 * window.innerHeight) + 80 );
