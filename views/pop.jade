@@ -369,8 +369,11 @@ block content
                                     pic_real_height = this.height/5.86;
                                     console.log("pic_real_width: " + pic_real_width);
                                     console.log("pic_real_height: " + pic_real_height)
-                                    $('.yokelogo').css( "width", (pic_real_width) );  
-                                    $('.yokelogo').css( "height", (pic_real_height) );     
+                                    $( ".yokelogo" ).effect( "size", {
+                                        to: { width: pic_real_width, height: pic_real_height }
+                                      }, 1000 );
+                                    //$('.yokelogo').css( "width", (pic_real_width) );  
+                                    //$('.yokelogo').css( "height", (pic_real_height) );     
                                 });
 
                         }
