@@ -339,7 +339,7 @@ block content
                         //console.log("name: " + intersects[ 0 ].object.name);
                         //console.log("savefont: " + savefont);
                         console.log("inside intersect: " + intersects[ 0 ].object.uuid);
-                        if(keepPos.indexOf(intersects[ 0 ].object.uuid) != 0){
+                        if(keepPos.indexOf(intersects[ 0 ].object.uuid) == -1){
                         keepPos.push(intersects[ 0 ].object.uuid);
                         var text = new THREE.TextGeometry( wordwrap(intersects[ 0 ].object.name, 10), {font:savefont, weight: "bold", size:10, height:3} );
                         var textMaterial1 = new THREE.MeshBasicMaterial( { color: colors[rand] } );
