@@ -1291,8 +1291,6 @@ input::-webkit-inner-spin-button {
 .yokelogo{
     width: 200px;
     height: 137.59px !important;
-    /*margin-left: 75px;*/
-    height:110px;
     text-align: center;
     position: relative;
 
@@ -1301,8 +1299,6 @@ input::-webkit-inner-spin-button {
 .yokelogopop{
     width: 200px;
     height: 137.59px;
-    /*margin-left: 75px;*/
-    height:110px;
     text-align: center;
     position: relative;
 
