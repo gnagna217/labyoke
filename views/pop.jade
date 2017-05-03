@@ -359,6 +359,20 @@ block content
                         if(count == objects.length && bar){
                             scene.add(bar);
                             scene.add(circle);
+
+                            var pic_real_width, pic_real_height;
+                            var img = $(".yokelogo")[0];
+                            $("<img/>")
+                                .attr("src", $(img).attr("src"))
+                                .load(function() {
+                                    pic_real_width = this.width/2;
+                                    pic_real_height = this.height/2;
+                                    console.log("pic_real_width: " + pic_real_width);
+                                    console.log("pic_real_height: " + pic_real_height)
+                                    $('.yokelogo').css( "width", (pic_real_width) );  
+                                    $('.yokelogo').css( "height", (pic_real_height) );     
+                                });
+
                         }
                         }
                         //console.log("tpositiony: " + t.position.y);
@@ -411,7 +425,7 @@ block content
                             pic_real_height = this.height; // work for in memory images.
                             //console.log("pic_real_width: " + pic_real_width);
                             //console.log("pic_real_height: " + pic_real_height)
-                            //$('.yokelogo').css( "width", (pic_real_width/2.93) );;       
+                            //$('.yokelogo').css( "width", (pic_real_width/2.93) );     
                         });
                     
                     //$('.yokelogo').css( "height", (window.innerHeight/3) );
