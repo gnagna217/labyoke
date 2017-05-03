@@ -361,7 +361,7 @@ block content
                             scene.add(circle);
 
                             var pic_real_width, pic_real_height;
-                            var img = $(".yokelogo")[0];
+                            var img = $(".yokelogopop")[0];
                             $("<img/>")
                                 .attr("src", $(img).attr("src"))
                                 .load(function() {
@@ -370,12 +370,11 @@ block content
                                     console.log("pic_real_width: " + pic_real_width);
                                     console.log("pic_real_height: " + pic_real_height);
 
-                                    /*$( ".yokelogo" ).effect( "size", {
+                                    /*$( ".yokelogopop" ).effect( "size", {
                                         to: { width: pic_real_width, height: pic_real_height }
                                       }, 1000 );*/
-                                    $('.yokelogo').css( "width", (pic_real_width) );
-                                    $( '.yokelogo' ).each(function () { this.style.setProperty( 'height', pic_real_width * 0.6866, 'important' ); });
-                                        
+                                    $('.yokelogopop').css( "width", (pic_real_width) );  
+                                    $('.yokelogopop').css( "height", (pic_real_width * 0.6866) );     
                                 });
 
                         }
@@ -418,11 +417,11 @@ block content
                     camera.aspect = window.innerWidth / window.innerHeight;
                     camera.updateProjectionMatrix();
                     renderer.setSize( window.innerWidth, window.innerHeight );
-                    $('.yokelogo').css( "margin-top", (-1.2 * window.innerHeight - 50) );
+                    $('.yokelogopop').css( "margin-top", (-1.2 * window.innerHeight - 50) );
                     $('.textintro').css( "top", (-0.5 * window.innerHeight - 10) );
 
                     var pic_real_width, pic_real_height;
-                    var img = $(".yokelogo")[0];
+                    var img = $(".yokelogopop")[0];
                     $("<img/>")
                         .attr("src", $(img).attr("src"))
                         .load(function() {
@@ -430,10 +429,10 @@ block content
                             pic_real_height = this.height; // work for in memory images.
                             //console.log("pic_real_width: " + pic_real_width);
                             //console.log("pic_real_height: " + pic_real_height)
-                            //$('.yokelogo').css( "width", (pic_real_width/2.93) );     
+                            //$('.yokelogopop').css( "width", (pic_real_width/2.93) );     
                         });
                     
-                    //$('.yokelogo').css( "height", (window.innerHeight/3) );
+                    //$('.yokelogopop').css( "height", (window.innerHeight/3) );
                 }
 
                 function render() {
@@ -641,11 +640,11 @@ block content
 
     div(style="text-align: center;position: relative;z-index: 1;height:0px;")
         a(href="/search", class="sunlogos")
-            img(src="/images/logo_clear.png", alt="The Yoke",  title="Go to LabYoke", class="yokelogo", id="yokelogo", style="z-index: 1;position: relative;")
+            img(src="/images/logo_clear.png", alt="The Yoke",  title="Go to LabYoke", class="yokelogopop", id="yokelogopop", style="z-index: 1;position: relative;")
         p(class="textintro", style="z-index: 1;position: relative;line-height: 130%;font-weight: bold;margin-left:10px;margin-right:10px;margin-bottom: -100px;")
             i(style="/*background-color: white;*/")!="Hello There!<br/>These spheres represent the <span style='color:#8a6d3b'><b>lastest transactions</b></span>!<br/>Click on a <span style='color:#3d9dcb'>sp</span><span style='color:#8a6d3b'>he</span><span style='color:#337ab7'>re</span>!<br/>Meanwhile our logo always leads you to <a href='/search'><span style='color:#3d9dcb'><b>LabYoke</b></span></a>."
     script.
-        $('.yokelogo').css( "margin-top", (-1.2 * window.innerHeight - 50) );
+        $('.yokelogopop').css( "margin-top", (-1.2 * window.innerHeight - 50) );
         $('.textintro').css( "top", (-0.5 * window.innerHeight - 10 + 50) );
         $('body').css( "background-color", "#e6f5fa" );
         $('body').css( "padding-top", "0px" );

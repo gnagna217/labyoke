@@ -698,6 +698,11 @@ margin-right: 15px !important;
     width: 282px;
     height: 189px;
 }
+.yokelogopop{
+    border:none;
+    width: 282px;
+    height: 189px;
+}
 .yokelogofooter{
     border:none;
     width: 70.5px;
@@ -1284,6 +1289,16 @@ input::-webkit-inner-spin-button {
 .yokelogo{
     width: 200px;
     height: 137.59px !important;
+    /*margin-left: 75px;*/
+    height:110px;
+    text-align: center;
+    position: relative;
+
+}
+
+.yokelogopop{
+    width: 200px;
+    height: 137.59px;
     /*margin-left: 75px;*/
     height:110px;
     text-align: center;
