@@ -212,6 +212,15 @@ a {
         top: initial !important;
 } 
 
+.slide-out-tip-div {
+          padding: 20px;
+          width:initial;
+          background: rgba(9, 117, 255, 0.34);
+          border: none;
+          border-radius: 10px;
+        top: initial !important;
+} 
+
 .bold{
     font-weight: bold;
 }
