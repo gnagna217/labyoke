@@ -639,6 +639,12 @@ table.dataTable tbody tr.odd{
 table.dataTable tbody tr.even{
     background-color: rgba(255, 255, 255, 0.14) !important;
 }
+table.dataTable tbody tr.isnew.odd{
+    background-color: #a4d2e8 !important;
+}
+table.dataTable tbody tr.isnew.even{
+    background-color: #a4d2e8 !important;
+}
 table.dataTable tbody tr.yokeBackColor.odd{
     background-color: rgba(138, 109, 59, 0.43) !important;
 }
