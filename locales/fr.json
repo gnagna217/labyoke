@@ -233,7 +233,7 @@
     "orders.month.title": "Un diagramme à barres des commandes mensuelles.",
     "orders.month.subtitle1": "Ce graphique à barres représente votre nombre de commandes ce mois-ci (à ce jour) par réactif. Placez le curseur sur une <span class='labColor'>barre</span> pour afficher sa valeur ci-dessous.",
     "orders.month.subtitle2": "Vous n'avez commandé aucun réactif ce mois-ci.",
-    "orders.month.subtitle3": "Vous n'avez commandé aucun réactif ce mois-ci.",
+    "orders.month.subtitle3": "Graphique à barres des commandes de chaque laboratoire.",
     "orders.month.subtitle4": "Ce graphique à barres représente le nombre de commandes (à ce jour) par laboratoire. Placez le curseur sur une <span class='labColor'>barre</span> pour afficher sa valeur ci-dessous.",
     "orders.month.subtitle5": "Aucun réactif n'a été commandé dans un laboratoire.",
     "orders.success.title": "Génial! Vous avez commandé le réactif suivant appartenant à ",
