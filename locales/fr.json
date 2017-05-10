@@ -34,7 +34,7 @@
     "search.table.vendor": "Vendeur",
     "search.table.location": "Proprio",
     "search.table.order": "Commander",
-    "search.tip.header":"Aide Recherche?",
+    "search.tip.header":"<b>Aide Recherche?</b>",
     "search.tip.desc": "Écrire aide. Écrire aide.Écrire aide.Écrire aide. Écrire aide. Écrire aide. Écrire aide. Écrire aide. Écrire aide. Écrire aide. Écrire aide. Écrire aide. Écrire aide. Écrire aide. Écrire aide. Écrire aide. Écrire aide.",
     
     "layout.Reagent Search": " Chercher",
@@ -118,6 +118,9 @@
     "reports.form.option3": "Commandes",
     "reports.form.option4": "Inventaires",
     "reports.form.option5": "Inventaires Insuffisants",
+    "reports.tip.header":"<b>Aide Rapports?</b>",
+    "reports.tip.desc": "Écrire aide. Écrire aide.Écrire aide.Écrire aide. Écrire aide. Écrire aide. Écrire aide. Écrire aide. Écrire aide. Écrire aide. Écrire aide. Écrire aide. Écrire aide. Écrire aide. Écrire aide. Écrire aide. Écrire aide.",
+
     
     "reports.money.title": "Rapport sur les Économies de Partage.",
     "reports.money.subtitle": "Télécharger le rapport sur les économies de partage de chaque laboratoire sur une période déterminée par Réactif.",

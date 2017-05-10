@@ -117,6 +117,9 @@
     "reports.form.option3": "Orders",
     "reports.form.option4": "Inventory",
     "reports.form.option5": "Insufficient Inventory",
+    "reports.tip.header":"How To Report?",
+    "reports.tip.desc": "Write a tip here. Write a tip here. Write a tip here. Write a tip here. Write a tip here. Write a tip here. Write a tip here. Write a tip here. Write a tip here. Write a tip here. Write a tip here. Write a tip here. Write a tip here. Write a tip here. Write a tip here.",
+
     
     "reports.money.title": "Shares Savings report Upload.",
     "reports.money.subtitle": "You can now retrieve a report of the savings each lab has made over a period of time per reagent.",
