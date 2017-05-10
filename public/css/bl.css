@@ -11,6 +11,7 @@ input::-webkit-inner-spin-button {
 
 body {
     padding-top:5px;
+    -webkit-font-smoothing: antialiased!important;
 }
 
 .footer2{
