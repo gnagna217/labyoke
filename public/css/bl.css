@@ -1034,7 +1034,8 @@ input::-webkit-inner-spin-button {
 }
  @media (min-width: 767px) {
 .hamburger{
-    display:none;
+    display:none !important;
+    -webkit-appearance: none;
 }
 .front{
     text-align: center;
