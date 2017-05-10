@@ -301,6 +301,9 @@
     "shares.venn.chart.titlenone": " None.",
     "shares.venn.chart.title1": "Reagents in ",
     "shares.venn.chart.title2": "Common reagents in ",
+    "shares.tip.header":"How To Share?",
+    "shares.tip.desc": "Write a tip here. Write a tip here. Write a tip here. Write a tip here. Write a tip here. Write a tip here. Write a tip here. Write a tip here. Write a tip here. Write a tip here. Write a tip here. Write a tip here. Write a tip here. Write a tip here. Write a tip here.",
+
 
     "datatable.processing": "Processing...",
     "datatable.search": "Search:",
