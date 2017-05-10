@@ -167,8 +167,10 @@ body {
     color: white;
 }
 .nav-menu:hover{
-    background-color: #3d9dcb !important;
+    background-color: rgba(61, 157, 203, 0.78) !important;
+    /*#3d9dcb*/
 }
+
 .menu{
     font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
     margin-left: 5px;
@@ -685,6 +687,11 @@ table.dataTable thead .sorting {
 .labColorBackground{
     background-color: #3d9dcb !important;
 }
+
+.labColorBackgroundHover{
+    background-color: rgba(61, 157, 203, 0.78) !important;
+}
+
 .yokeColor{
     color: #8a6d3b;
 }
