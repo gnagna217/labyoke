@@ -71,6 +71,27 @@ block content
                             img(src="images/yoke6.png", alt="The Search", title="Search", style="border-width:0px; width: 40px; margin-top: -75px; margin-left: 300px;")
                     div(style="background-color: #3d9dcb; height: 2px; margin-bottom: 40px;")
 
+        div(class="slide-out-div desktabonly", style="position: fixed;bottom: 6px;")
+            a(class="handle" href="last-transactions", style="right: -60px;")!=Content
+            div(style="text-align: center;padding: 1px;color:white;")
+                p!= i18n.__("login.texting1")
+                div(style="margin-top: 30px;position: relative;float: right;width: 250px;background-color: rgba(9, 117, 255, 0.34);font-size: 10pt;border-radius: 4px;padding: 17px;")
+                  span="Write a tip here. Write a tip here. Write a tip here. Write a tip here. Write a tip here. Write a tip here. Write a tip here. Write a tip here. Write a tip here. Write a tip here. Write a tip here. Write a tip here. Write a tip here. Write a tip here. Write a tip here. "
+        script.
+         $(function(){
+             $('.slide-out-div').tabSlideOut({
+                 tabHandle: '.handle',                              //class of the element that will be your tab
+                 pathToTabImage: 'images/movarrow2.gif',          //path to the image for the tab (optionaly can be set using css)
+                 imageHeight: '40px',                               //height of tab image
+                 imageWidth: '40px',                               //width of tab image    
+                 tabLocation: 'right',                               //side of screen where tab lives, top, right, bottom, or left
+                 speed: 300,                                        //speed of animation
+                 action: 'click',                                   //options: 'click' or 'hover', action to trigger animation
+                 topPos: 'initial',                                   //position from the top
+                 fixedPosition: false                               //options: true makes it stick(fixed position) on scroll
+             });
+         });
+
         if email != undefined
           div(id="ordered",style="float:left;width: 100%;")
             div(class="alert alert-success")
