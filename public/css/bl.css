@@ -621,6 +621,7 @@ table.dataTable thead .sorting_asc {
     padding-right: 20px;
 }
 table.dataTable thead .sorting {
+    background-image: url(/images/sort_both.png);
     padding-right: 20px;
 }
 .dataTables_wrapper .dataTables_paginate .paginate_button:hover {
