@@ -245,6 +245,8 @@
     "orders.success.reagent": "Réactif: ",
     "orders.success.catalog": "Catalogue: ",
     "orders.success.vendor": "Vendeur: ",
+    "orders.tip.header":"<b>Aide Commandes?</b>",
+    "orders.tip.desc": "Écrire aide. Écrire aide.Écrire aide.Écrire aide. Écrire aide. Écrire aide. Écrire aide. Écrire aide. Écrire aide. Écrire aide. Écrire aide. Écrire aide. Écrire aide. Écrire aide. Écrire aide. Écrire aide. Écrire aide.",
 
     "shares.pop.title": "Partagez?",
     "shares.pop.subtitle": "<div id='actionorder' class='exit' style='width: 50%; float: left; background-color: rgba(138, 109, 59, 0.55);'')>OK</div><div class='exit' id='actioncancel'>Annuler</div>",

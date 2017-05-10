@@ -244,6 +244,9 @@
     "orders.success.reagent": "Reagent: ",
     "orders.success.catalog": "Catalog: ",
     "orders.success.vendor": "Vendor: ",
+    "orders.tip.header":"How To Order?",
+    "orders.tip.desc": "Write a tip here. Write a tip here. Write a tip here. Write a tip here. Write a tip here. Write a tip here. Write a tip here. Write a tip here. Write a tip here. Write a tip here. Write a tip here. Write a tip here. Write a tip here. Write a tip here. Write a tip here.",
+
 
     "dot.selected": "<b>Selected Quantity: </b>",
     "dot.reagent": " - <b>Reagent:</b> ",
