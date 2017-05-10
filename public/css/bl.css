@@ -85,6 +85,9 @@ body {
 
 .navbar-nav {
     margin: 0px -15px;
+}
+
+.navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form {
     border: none;
 }
 
