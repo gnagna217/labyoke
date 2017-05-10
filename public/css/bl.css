@@ -83,6 +83,10 @@ body {
     border:0;
 }
 
+.navbar-nav {
+    margin: 0px -15px !important;
+}
+
 .navbar-toggle{
     background-color:#8a6d3b !important;
 }
