@@ -1033,7 +1033,9 @@ input::-webkit-inner-spin-button {
 
 }
  @media (min-width: 767px) {
-
+.hamburger{
+    display:none;
+}
 .front{
     text-align: center;
 }
@@ -1166,9 +1168,6 @@ input::-webkit-inner-spin-button {
 }
 }
 @media (min-width: 768px){
-.hamburger{
-    display:none;
-}
 .center{
     text-align:center;
 }
