@@ -14,6 +14,7 @@ html(lang='en')
      link(href='/css/fontello.css', rel='stylesheet')
      link(href='/css/font-awesome.css', rel='stylesheet')
      link(href='/css/animation.css', rel='stylesheet')
+     link(href='/css/hamburgers.css" rel="stylesheet')
      if (title=='Login')
        link(href='/javascripts/assets/animate.css', rel='stylesheet')
      if (title=='Share')
@@ -80,6 +81,9 @@ html(lang='en')
                         span.icon-bar
                         span.icon-bar
                         span.icon-bar
+                    button(class="hamburger hamburger--spring" type="button")
+                      span(class="hamburger-box")
+                        span(class="hamburger-inner")
 
                     - activateReports = "addMargin "
                     - activateShares = "addMargin "
