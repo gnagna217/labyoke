@@ -83,10 +83,6 @@ body {
     border:0;
 }
 
-.navbar-nav {
-    margin: 0px -15px;
-}
-
 .navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form {
     border: none;
 }
@@ -1374,6 +1370,9 @@ input::-webkit-inner-spin-button {
 }
 
 @media (max-width: 767px){
+.navbar-nav {
+    margin: 0px -15px;
+}
 .aboutplus{
     font-size: 55pt !important;
 }
