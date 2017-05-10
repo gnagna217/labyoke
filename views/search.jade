@@ -70,7 +70,7 @@ block content
                             button(class="btn " + classButtonCatalog + " btn-lg btn-block" type='submit') #{i18n.__("search.buttoncatalog")}
                             img(src="images/yoke6.png", alt="The Search", title="Search", style="border-width:0px; width: 40px; margin-top: -75px; margin-left: 300px;")
                     div(style="background-color: #3d9dcb; height: 2px; margin-bottom: 40px;")
-        div(class="slide-out-div desktabonly", style="position: fixed;top: 25% !important;")
+        div(class="slide-out-tip-div desktabonly", style="position: fixed;top: 25% !important;")
             a(class="handle" href="last-transactions", style="right: -60px;,left:-47px;top:25px;")!=Content
             div(style="padding: 1px;color:white;")
                 p!= i18n.__("search.tip.header")
@@ -78,7 +78,7 @@ block content
                   span!= i18n.__("search.tip.desc")
         script.
          $(function(){
-             $('.slide-out-div').tabSlideOut({
+             $('.slide-out-tip-div').tabSlideOut({
                  tabHandle: '.handle',                              //class of the element that will be your tab
                  pathToTabImage: 'images/tip3.png',          //path to the image for the tab (optionaly can be set using css)
                  imageHeight: '100px',                               //height of tab image
