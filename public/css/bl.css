@@ -621,8 +621,14 @@ table.dataTable thead .sorting_desc {
     background-image: url(/images/sort_desc.png);
     padding-right: 20px;
 }
-table.dataTable tbody tr{
+table.dataTable tbody tr .odd{
     background-color: rgba(255, 255, 255, 0.14) !important;
+}
+table.dataTable tbody tr .even{
+    background-color: rgba(255, 255, 255, 0.14) !important;
+}
+table.dataTable tbody tr .yokeBackColor.odd{
+    background-color: rgba(138, 109, 59, 0.43) !important;
 }
 table.dataTable thead .sorting_asc {
     background-image: url(/images/sort_asc.png);
