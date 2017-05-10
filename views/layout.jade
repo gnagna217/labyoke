@@ -76,12 +76,11 @@ html(lang='en')
         .navbar.navbar-inverse.navbar-fixed-top.adjustnav(role='navigation',style="font-size: 10pt;")
             .container.nobottom
                 .navbar-header(style="float:left; margin-left:auto;")
-                    button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-collapse', style="border-color:#8a6d3b")
-                        
-                        span.icon-bar
-                        span.icon-bar
-                        span.icon-bar
-                    button(class="hamburger hamburger--spring" type="button")
+                    //button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-collapse', style="border-color:#8a6d3b")
+                      //  span.icon-bar
+                      //  span.icon-bar
+                      //  span.icon-bar
+                    button(class="hamburger hamburger--spring" data-toggle="collapse" data-target=".navbar-collapse" type="button" style="outline:none")
                       span(class="hamburger-box")
                         span(class="hamburger-inner")
 
@@ -190,3 +189,11 @@ html(lang='en')
                       window.location.href = "/logout";
                     }, 2000);
                     });
+        // Look for .hamburger
+        var hamburger = document.querySelector(".hamburger");
+        // On click
+        hamburger.addEventListener("click", function() {
+          // Toggle class "is-active"
+          hamburger.classList.toggle("is-active");
+          // Do something else, like open/close menu
+        });
