@@ -215,6 +215,9 @@
     "account.team.subdesc2": "</span>. Voici la liste de tous vos collègues qui utilisent Labyoke et partagent leurs Réactifs pour un environement tous les jours plus écologique et sociable:",
     "account.team.name": "Nom",
     "account.team.email": "Email",
+    "account.tip.header":"<b>Aide Profil?</b>",
+    "account.tip.desc": "Écrire aide. Écrire aide.Écrire aide.Écrire aide. Écrire aide. Écrire aide. Écrire aide. Écrire aide. Écrire aide. Écrire aide. Écrire aide. Écrire aide. Écrire aide. Écrire aide. Écrire aide. Écrire aide. Écrire aide.",
+
 
     "orders.title": "Commandes.",
     "orders.subtitle": "Vous n'avez commandé aucun Réactif! Cliquez sur <a href='/search'>Chercher</a><span> et commencez à labyoker!</span>",

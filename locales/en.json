@@ -214,6 +214,8 @@
     "account.team.subdesc2": "</span>. Here's a list of all your registered colleagues labyoking along with you and rising the amount of savings everyday:",
     "account.team.name": "Name",
     "account.team.email": "Email",
+    "account.tip.header":"How To Update Account?",
+    "account.tip.desc": "Write a tip here. Write a tip here. Write a tip here. Write a tip here. Write a tip here. Write a tip here. Write a tip here. Write a tip here. Write a tip here. Write a tip here. Write a tip here. Write a tip here. Write a tip here. Write a tip here. Write a tip here.",
 
     "orders.title": "Orders.",
     "orders.subtitle": "You have not ordered any reagent yet! Click on the <a href='/search'>Search</a><span> button and start labyoking!</span>",
