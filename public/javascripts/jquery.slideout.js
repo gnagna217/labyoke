@@ -56,7 +56,7 @@
         if (settings.pathToTabImage != null) {
             settings.tabHandle.css({
             'background' : 'url('+settings.pathToTabImage+') no-repeat',
-            'background-size' : '40px 40px',
+            'background-size' : /*'40px 40px'*/ settings.imageWidth + " " + settings.imageHeight,
             'width' : settings.imageWidth,
             'height': settings.imageHeight
             });
