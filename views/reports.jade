@@ -600,7 +600,7 @@ block content
 							- resultsInsuff = ""
 					script.
 						$(window).scrollTop($('.reportInsuff').offset().top).scrollLeft($('.reportInsuff').offset().left);
-		div(class="slide-out-div desktabonly", style="position: fixed;top: 25% !important;")
+		div(class="slide-out-tip-div desktabonly", style="position: fixed;top: 25% !important;")
 			a(class="handle" href="last-transactions", style="right: -60px;,left:-47px;top:25px;")!=Content
 			div(style="padding: 1px;color:white;")
 				p!= i18n.__("reports.tip.header")
@@ -608,7 +608,7 @@ block content
 					span!= i18n.__("reports.tip.desc")
 			script.
 				$(function(){
-				$('.slide-out-div').tabSlideOut({
+				$('.slide-out-tip-div').tabSlideOut({
 				tabHandle: '.handle',                              //class of the element that will be your tab
 				pathToTabImage: 'images/tip3.png',          //path to the image for the tab (optionaly can be set using css)
 				imageHeight: '100px',                               //height of tab image
