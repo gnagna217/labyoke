@@ -33,6 +33,8 @@
     "search.table.vendor": "Vendor",
     "search.table.location": "Owner",
     "search.table.order": "Order",
+    "search.tip.header":"How To Search?",
+    "search.tip.desc": "Write a tip here. Write a tip here. Write a tip here. Write a tip here. Write a tip here. Write a tip here. Write a tip here. Write a tip here. Write a tip here. Write a tip here. Write a tip here. Write a tip here. Write a tip here. Write a tip here. Write a tip here.",
     
     "layout.Reagent Search": " Search",
     "layout.Reports": " Reports",

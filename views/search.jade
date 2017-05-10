@@ -73,9 +73,9 @@ block content
         div(class="slide-out-div desktabonly", style="position: fixed;top: 25% !important;")
             a(class="handle" href="last-transactions", style="right: -60px;,left:-47px")!=Content
             div(style="padding: 1px;color:white;")
-                p!= i18n.__("login.texting1")
+                p!= i18n.__("search.tip.header")
                 div(style="position: relative;float: right;width: 250px;font-size: 9pt;line-height: 1.3;border-radius: 4px;")
-                  span="Write a tip here. Write a tip here. Write a tip here. Write a tip here. Write a tip here. Write a tip here. Write a tip here. Write a tip here. Write a tip here. Write a tip here. Write a tip here. Write a tip here. Write a tip here. Write a tip here. Write a tip here. "
+                  span!= i18n.__("search.tip.desc")
         script.
          $(function(){
              $('.slide-out-div').tabSlideOut({
