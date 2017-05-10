@@ -66,6 +66,10 @@ body {
     -webkit-font-smoothing: antialiased!important;
 }
 
+.hamburger{
+        padding: 0px !important;
+        padding-top: 15px !important;
+}
 .search{
     text-align: center;
     float: left;
