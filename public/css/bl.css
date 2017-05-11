@@ -242,8 +242,10 @@ a {
           border: none;
           border-radius: 10px;
         top: initial !important;
-        visibility: hidden;
 } 
+.tiptext{
+    visibility: hidden;
+}
 
 .bold{
     font-weight: bold;
