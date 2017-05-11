@@ -242,6 +242,7 @@ a {
           border: none;
           border-radius: 10px;
         top: initial !important;
+        visibility: hidden;
 } 
 
 .bold{
