@@ -34,8 +34,8 @@
     "search.table.location": "Owner",
     "search.table.order": "Order",
     "search.tip.header":"How To Search?",
-    "search.tip.desc": "Write a tip here. Write a tip here. Write a tip here. Write a tip here. Write a tip here. Write a tip here. Write a tip here. Write a tip here. Write a tip here. Write a tip here. Write a tip here. Write a tip here. Write a tip here. Write a tip here. Write a tip here.",
     "search.tip.title": "Need A Tip?",
+    "search.tip.desc": "You can either search by keyword or by catalog number.<br/><b>By Keyword</b><br/>You can either type the entirety or part of a reagent Or you can select a reagent from the drop down list available to you by clicking on the triangle inside the field. The list can be shortened if you start typing the name of the reagent you are looking for.<br/>Click on <i><b>Search</b></i> to retrieve a list of reagents that you can order.<br/><br/><br/><b>By Catalog Number</b><br/>You can either type the entirety or part of a reagent Or you can select a reagent from the drop down list available to you by clicking on the triangle inside the field. The list can be shortened if you start typing the name of the reagent you are looking for.<br/>Click on <b><i>Search</i></b> to retrieve a list of reagents that you can order.<br/><br/><b>Order</b><br/>Once you have decided on a reagent and location, click on the cart icon to order the reagent. An email will be sent to you and the owner of the reagent to fulfill the order.",
     
     "layout.Reagent Search": " Search",
     "layout.Reports": " Reports",
@@ -216,7 +216,7 @@
     "account.team.name": "Name",
     "account.team.email": "Email",
     "account.tip.header":"How To Update Account?",
-    "account.tip.desc": "Write a tip here. Write a tip here. Write a tip here. Write a tip here. Write a tip here. Write a tip here. Write a tip here. Write a tip here. Write a tip here. Write a tip here. Write a tip here. Write a tip here. Write a tip here. Write a tip here. Write a tip here.",
+    "account.tip.desc": "Click on the pencil icon to open the field in edit mode. Make your desired change (or not) then click on the check icon to save.<br/>Each field is individually saved.<br/>Click on the <b><i>Show your team</i></b> button for a list of all the researchers in your department.",
 
     "orders.title": "Orders.",
     "orders.subtitle": "You have not ordered any reagent yet! Click on the <a href='/search'>Search</a><span> button and start labyoking!</span>",
