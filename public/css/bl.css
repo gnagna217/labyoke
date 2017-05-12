@@ -244,6 +244,10 @@ a {
     z-index: -1;
 }
 
+.reportbutton{
+    border-width:0px;width: 35px;margin-top: -47px;margin-right: 50px;float:right;
+}
+
 .accountlogo{
     position: absolute;width: 400px;top: 350px;left: 50%;
 }
@@ -1345,7 +1349,9 @@ input::-webkit-inner-spin-button {
 
 }
  @media (max-width: 440px) {
-
+.reportbutton{
+    margin-top: -47px;margin-right: 10px;
+}
 .sun {
     position: relative;top: 70px; left: 0px; width: 40px; z-index: -1;
 }
