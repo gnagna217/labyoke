@@ -158,7 +158,7 @@ block content
             $(document).ready(function(){
               $('#changetel input[id="valuedetail"]').mask("(999) 999-9999");
             }); 
-        div(class="slide-out-tip-div desktabonly", style="position: fixed;top: 25% !important;max-height:400px;z-index: 1;")
+        div(class="slide-out-tip-div desktabonly", style="z-index:1;position: fixed;top: 25% !important;max-height:400px;z-index: 1;")
             a(class="handle" href="last-transactions", title='#{i18n.__("search.tip.title")}', style="right: -60px;,left:-47px;top:25px;")!=Content
             div(style="padding: 4px;color:white;")
                 p(style="font-size: 12pt;")!= i18n.__("account.tip.header")
