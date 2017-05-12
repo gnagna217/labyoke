@@ -199,7 +199,7 @@ block content
                         h3="Sorry we could not find any location for your"
                             span(style="color: #3d9dcb;")=" " + searchText
                         h4="Try another chemical reagent!"
-    if(searchResults == undefined) 
+    if(searchResults == undefined || (searchResults != null && searchResults.length == 0)) 
       div(class="searchlogo desktabonly")
         img(src="/images/tip5.png", style="height:75%;width:75%;")              
     //script="$(window).scrollTop($('#results').offset().top).scrollLeft($('#results').offset().left);"
