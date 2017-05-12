@@ -266,7 +266,9 @@ a {
     border-color: transparent transparent rgba(61, 157, 203, 0.78) rgba(61, 157, 203, 0.78);
     
     transform-origin: 0 0;
-    transform: rotate(0deg);
+    transform: rotate(45deg);
+    top: 50%;
+    left: 2.5%;
     
     /*box-shadow: -3px 3px 3px 0 rgba(0, 0, 0, 0.4);*/
   }
