@@ -262,7 +262,7 @@ a {
     left: 50%;
     box-sizing: border-box;
     
-    border: 1em solid black;
+    border: 0.51em solid black;
     border-color: transparent transparent rgba(61, 157, 203, 0.78) rgba(61, 157, 203, 0.78);
     
     transform-origin: 0 0;
