@@ -1218,7 +1218,7 @@ input::-webkit-inner-spin-button {
         position: relative;
     }
 }
-@media (min-width: 1102px){
+@media (min-width: 1103px){
 .searchcatalog {
     margin-left: 20px;
 }
