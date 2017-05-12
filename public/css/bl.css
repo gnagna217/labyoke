@@ -244,6 +244,10 @@ a {
     z-index: -1;
 }
 
+.accountlogo{
+    position: absolute;width: 400px;top: 350px;left: 50%;
+}
+
 .slide-out-tip-div {
           padding: 23px;
           width:initial;

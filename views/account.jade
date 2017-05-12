@@ -4,6 +4,7 @@ block content
 
 
     div(class="container login marginbottom")
+        img(src="/images/team.png" class="accountlogo desktabonly")
         div(style="float: left; width: 100%;margin-bottom: -30px;")
             h1= i18n.__("account.title") + labyoker + "."
             p(style="padding-bottom: 20px;")!= i18n.__("account.subtitle")
@@ -113,6 +114,7 @@ block content
             script.
               $('#showteam').click(function() {
                   if($('#team').is(":visible")){
+                    $('.accountlogo').show();
                     $('#team').hide();
                     $('#teamTitle').html("#{i18n.__("account.button")}");
                     $('#teamTitle').css('background-color','#8a6d3b');
@@ -122,6 +124,7 @@ block content
                          $(this).css("background", "#8a6d3b");
                     });
                   } else {
+                    $('.accountlogo').hide();
                     $('#team').show();
                     $('#teamTitle').html("#{i18n.__("account.hide")}");
                     $('#teamTitle').css('background-color','#2975b4');
