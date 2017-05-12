@@ -266,7 +266,7 @@ a {
     border-color: transparent transparent rgba(61, 157, 203, 0.78) rgba(61, 157, 203, 0.78);
     
     transform-origin: 0 0;
-    transform: rotate(-90deg);
+    transform: rotate(0deg);
     
     /*box-shadow: -3px 3px 3px 0 rgba(0, 0, 0, 0.4);*/
   }
