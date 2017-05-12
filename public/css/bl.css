@@ -1218,6 +1218,11 @@ input::-webkit-inner-spin-button {
         position: relative;
     }
 }
+@media (min-width: 1102px){
+.searchcatalog {
+    margin-left: 20px;
+}
+}
  @media (min-width: 1132px) {
     .searchcatalog{
         margin-left: 50px;
