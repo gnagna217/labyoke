@@ -274,7 +274,7 @@ block content
 								div(class="arrow-down")
 							div(style="max-width:100%; margin-top: 20px;")
 								button.btn.btn-success.btn-lg.btn-block(type="submit",value="Report",name="submit", style="max-width: 85%;width: 85%;")= i18n.__("reports.orders.button")
-								img(src="images/logo_one_bottle_R.png", alt="The Lab", title="Lab", style="border-width:0px; width: 35px;margin-top: -45px;margin-right: 50px; float:right")
+								img(src="images/logo_one_bottle_R.png", alt="The Lab", title="Lab", class="reportbutton")
 						span(id="triggerSafariOrder")
 						if(resultsOrders != null && resultsOrders !="")
 							script(type="text/javascript" src="/javascripts/jspdf.js")
@@ -393,7 +393,7 @@ block content
 							
 							div(style="max-width:100%; margin-top: 20px;")
 								button.btn.btn-success.btn-lg.btn-block(type="submit",value="Report",name="submit", style="max-width: 85%;width: 85%;")= i18n.__("reports.shares.button")
-								img(src="images/logo_one_bottle_L.png", alt="The Lab", title="Lab", style="border-width:0px; width: 35px;margin-top: -45px;margin-right: 50px;float:right")
+								img(src="images/logo_one_bottle_L.png", alt="The Lab", title="Lab", class="reportbutton")
 						if(resultsShares != null && resultsShares !="")
 							script(type="text/javascript" src="/javascripts/jspdf.js")
 							script(type="text/javascript" src="/javascripts/FileSaver.js")
@@ -536,7 +536,7 @@ block content
 							input(type="checkbox" name="reportCatalogInsuff" id="reportCatalogInsuff" value="catalogNumber")
 							div(style="max-width:100%; margin-top: 20px;")
 								button.btn.btn-success.btn-lg.btn-block(type="submit",value="Report",name="submit", style="max-width: 85%;width: 85%;")= i18n.__("reports.insuff.button")
-								img(src="images/logo_one_bottle_R.png", alt="The Lab", title="Lab", style="border-width:0px;width: 35px;margin-top: -45px;margin-right: 50px;float:right")
+								img(src="images/logo_one_bottle_R.png", alt="The Lab", title="Lab", class="reportbutton")
 						if(resultsInsuff != null && resultsInsuff !="")
 							- var file_insuff = i18n.__("reports.insuff.file") + labinsuff + ".pdf" 
 							script(type="text/javascript" src="/javascripts/jspdf.js")
