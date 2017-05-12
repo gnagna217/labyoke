@@ -214,3 +214,12 @@ html(lang='en')
           // Do something else, like open/close menu
         });
         }
+        // Look for .menushare
+        var menushare = document.querySelector("#menushare");
+        if(menushare != undefined && menushare != null){
+        menushare.addEventListener("click", function() {
+          console.log("clicked this " + menushare);
+          //menushare.classList.toggle("is-active");
+        });
+        }
+
