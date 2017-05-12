@@ -99,14 +99,14 @@ html(lang='en')
                       span(class="hamburger-box")
                         span(class="hamburger-inner")
 
-                    - activateReports = "addMargin navmenu "
-                    - activateShares = "addMargin navmenu "
-                    - activateSearch = "addMargin navmenu "
-                    - activateHelp = "addMargin navmenu "
-                    - activateAbout = "addMargin navmenu "
-                    - activateOrders = "addMargin navmenu "
-                    - activateAccount = "account-border addMargin navmenu "
-                    - activateAdmin = "addMargin navmenu "
+                    - activateReports = "addMargin "
+                    - activateShares = "addMargin "
+                    - activateSearch = "addMargin "
+                    - activateHelp = "addMargin "
+                    - activateAbout = "addMargin "
+                    - activateOrders = "addMargin "
+                    - activateAccount = "account-border addMargin "
+                    - activateAdmin = "addMargin "
                     - if (title == 'Reports')
                         - activateReports = activateShares + "labColorBackgroundHover"
                     - if (title == 'Share')
@@ -212,14 +212,6 @@ html(lang='en')
           // Toggle class "is-active"
           hamburger.classList.toggle("is-active");
           // Do something else, like open/close menu
-        });
-        }
-        // Look for .navmenu
-        var navmenu = document.querySelector(".navmenu");
-        if(navmenu != undefined && navmenu != null){
-        navmenu.addEventListener("click", function() {
-          console.log("clicked this " + navmenu);
-          navmenu.style.backgroundColor = 'rgba(61, 157, 203, 0.78)';
         });
         }
 
