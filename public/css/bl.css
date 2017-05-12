@@ -363,7 +363,7 @@ position: absolute;
 .searchcatalog{
     float:left;
     max-width: 400px;
-    margin-left: 50px;
+    /*margin-left: 50px;*/
 }
 #valuedetail{
     display:none;
@@ -1214,8 +1214,19 @@ input::-webkit-inner-spin-button {
 
  @media (max-width: 880px) {
     .searchcatalog{
-        left: -50px;
+        /*left: -50px;*/
         position: relative;
+    }
+}
+ @media (min-width: 880px) {
+    .searchcatalog{
+        margin-left: 50px;
+    }
+}
+
+@media (max-width: 826px) {
+    .searchcatalog{
+        margin-left: 0px;
     }
 }
 
