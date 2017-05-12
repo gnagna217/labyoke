@@ -263,12 +263,12 @@ a {
     box-sizing: border-box;
     
     border: 1em solid black;
-    border-color: transparent transparent #bada55 #bada55;
+    border-color: transparent transparent rgba(61, 157, 203, 0.78) rgba(61, 157, 203, 0.78);
     
     transform-origin: 0 0;
-    transform: rotate(-45deg);
+    transform: rotate(-90deg);
     
-    box-shadow: -3px 3px 3px 0 rgba(0, 0, 0, 0.4);
+    /*box-shadow: -3px 3px 3px 0 rgba(0, 0, 0, 0.4);*/
   }
 .tiptext{
     visibility: hidden;
