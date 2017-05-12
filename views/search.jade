@@ -112,6 +112,7 @@ block content
           script="$(window).scrollTop($('#ordered').offset().top * 10).scrollLeft($('#ordered').offset().left);"
 
         if(searchResults != null && searchResults.length > 0)
+          script="$('.searchlogo').hide();console.log('here no logo')" 
           div(class="results", style="float:left;width: 75%;")
               div
                   span(style="text-align: center")
