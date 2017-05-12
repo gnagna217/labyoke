@@ -814,7 +814,18 @@ margin-right: 15px !important;
     width: 282px;
     height: 189px;
     border: none;
+    outline: none;
 }
+
+.helplogo{
+    border:none;
+    width: 20%;
+    height: 20%;
+    border: none;
+    outline: none;
+}
+
+
 .yokelogopop{
     border:none;
     width: 282px;
@@ -1436,6 +1447,11 @@ input::-webkit-inner-spin-button {
     text-align: center;
     position: relative;
 
+}
+
+.helplogo{
+    text-align: center;
+    position: relative;
 }
 
 .yokelogopop{
