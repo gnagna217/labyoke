@@ -99,14 +99,14 @@ html(lang='en')
                       span(class="hamburger-box")
                         span(class="hamburger-inner")
 
-                    - activateReports = "addMargin "
-                    - activateShares = "addMargin "
-                    - activateSearch = "addMargin "
-                    - activateHelp = "addMargin "
-                    - activateAbout = "addMargin "
-                    - activateOrders = "addMargin "
-                    - activateAccount = "account-border addMargin "
-                    - activateAdmin = "addMargin "
+                    - activateReports = "addMargin navmenu"
+                    - activateShares = "addMargin navmenu"
+                    - activateSearch = "addMargin navmenu"
+                    - activateHelp = "addMargin navmenu"
+                    - activateAbout = "addMargin navmenu"
+                    - activateOrders = "addMargin navmenu"
+                    - activateAccount = "account-border addMargin navmenu"
+                    - activateAdmin = "addMargin navmenu"
                     - if (title == 'Reports')
                         - activateReports = activateShares + "labColorBackgroundHover"
                     - if (title == 'Share')
@@ -214,12 +214,12 @@ html(lang='en')
           // Do something else, like open/close menu
         });
         }
-        // Look for .menushare
-        var menushare = document.querySelector("#menushare");
-        if(menushare != undefined && menushare != null){
-        menushare.addEventListener("click", function() {
-          console.log("clicked this " + menushare);
-          menushare.style.backgroundColor = 'rgba(61, 157, 203, 0.78)';
+        // Look for .navmenu
+        var navmenu = document.querySelector(".navmenu");
+        if(navmenu != undefined && navmenu != null){
+        navmenu.addEventListener("click", function() {
+          console.log("clicked this " + navmenu);
+          navmenu.style.backgroundColor = 'rgba(61, 157, 203, 0.78)';
         });
         }
 
