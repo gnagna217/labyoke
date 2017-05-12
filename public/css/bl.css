@@ -240,7 +240,7 @@ a {
     float: right;
     /*top: -80%;*/
     /*margin-top: -310px;*/
-    right: 8%;
+    right: 10%;
     z-index: -1;
 }
 
@@ -1218,7 +1218,7 @@ input::-webkit-inner-spin-button {
         position: relative;
     }
 }
- @media (min-width: 880px) {
+ @media (min-width: 1132px) {
     .searchcatalog{
         margin-left: 50px;
     }
