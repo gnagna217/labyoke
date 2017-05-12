@@ -238,7 +238,7 @@ a {
 .searchlogo{
     position: relative;
     float: right;
-    top: -85%;
+    top: -50%;
     right: 140px;
     z-index: -1;
 }
