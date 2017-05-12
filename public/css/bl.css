@@ -235,6 +235,14 @@ a {
         top: initial !important;
 } 
 
+.searchlogo{
+    position: relative;
+    float: right;
+    top: -85%;
+    right: 140px;
+    z-index: -1;
+}
+
 .slide-out-tip-div {
           padding: 20px;
           width:initial;
