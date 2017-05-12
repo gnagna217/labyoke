@@ -112,7 +112,6 @@ block content
           script="$(window).scrollTop($('#ordered').offset().top * 10).scrollLeft($('#ordered').offset().left);"
 
         if(searchResults != null && searchResults.length > 0)
-          script="$('.searchlogo').hide();console.log('here no logo')" 
           div(class="results", style="float:left;width: 75%;")
               div
                   span(style="text-align: center")
@@ -200,8 +199,9 @@ block content
                         h3="Sorry we could not find any location for your"
                             span(style="color: #3d9dcb;")=" " + searchText
                         h4="Try another chemical reagent!"
-    div(class="searchlogo desktabonly")
-      img(src="/images/tip5.png", style="height:75%;width:75%;")                     
+    if(searchResults == undefined) 
+      div(class="searchlogo desktabonly")
+        img(src="/images/tip5.png", style="height:75%;width:75%;")              
     //script="$(window).scrollTop($('#results').offset().top).scrollLeft($('#results').offset().left);"
 
         
