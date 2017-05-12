@@ -1343,7 +1343,7 @@ input::-webkit-inner-spin-button {
 .searchcatalog{
     float:left;
     /*max-width: 400px;*/
-    width: 380px;
+    /*width: 380px;*/
 }
 .enlogin{
     border-width: 0px;
