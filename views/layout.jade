@@ -214,12 +214,12 @@ html(lang='en')
           // Do something else, like open/close menu
         });
         }
-        // Look for .menushare
-        var menushare = document.querySelector("#menushare");
-        if(menushare != undefined && menushare != null){
-        menushare.addEventListener("click", function() {
-          console.log("clicked this " + menushare);
-          //menushare.classList.toggle("is-active");
+        // Look for .addMargin
+        var addMargin = document.querySelector(".addMargin");
+        if(addMargin != undefined && addMargin != null){
+        addMargin.addEventListener("click", function() {
+          console.log("clicked this " + addMargin);
+          addMargin.style.background = rgba(61, 157, 203, 0.78);
         });
         }
 
