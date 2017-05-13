@@ -18,9 +18,9 @@
     
     "search.layovertitle" : "Ordering?",
     "search.layovercancel" : "Cancel",
-    "search.title" : "Search.",
+    "search.title" : " Search.",
     "search.description": "Start your search by typing in the name of the <span class='labColor'>reagent</span>. You can also select your keyword from the dropdown.",
-    "search.catalogtitle" : "Search Catalog.",
+    "search.catalogtitle" : " Search Catalog.",
     "search.catalogdescription": "Start your search by typing in the <span class='labColor'>catalog number</span>. You can also select your keyword from the dropdown.",
     "search.searchholder" : "Looking for reagent...",
     "search.catalogholder" : "Looking for catalog number...",
