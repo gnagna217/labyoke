@@ -133,6 +133,16 @@ block content
           console.log("catalogradio: " + "#{catalogradio}");
           console.log("searchradio: " + "#{searchradio}");
           $('input[name=search][value=keysearch]').prop('checked', 'checked');
+          var existscatalog = "#{catalogradio}";
+          var existskey = "#{searchradio}";
+          if(existskey.length > 0){
+            $("#keysearch").show();
+            $("#catalogsearch").hide();
+          } else if(existscatalog.length > 0){
+            $("#keysearch").hide();
+            $("#catalogsearch").show();
+          }
+          
           $("#keysearch").show();
           $("#catalogsearch").hide();
           $("input[name=search]").on( "change", function() {
