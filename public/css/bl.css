@@ -1158,6 +1158,14 @@ input::-webkit-inner-spin-button {
 }
 }
 
+@media (min-width: 993px) {
+    .positioning{
+    top: -100px;
+    position: relative;
+    }
+}
+
+
  @media (min-width: 993px) {
 .front{
     text-align: center;
