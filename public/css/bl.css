@@ -1263,6 +1263,12 @@ input::-webkit-inner-spin-button {
         margin-left: 0px;
     }
 }
+@media (min-width: 835px) {
+    .searchcatalog{
+    position: relative;
+    float: right;
+}
+}
 
  @media (max-width: 800px) {
 .reportOrders{
