@@ -81,7 +81,7 @@ block content
           span #{i18n.__("search.title")}
           input(type="radio" name="search" value="catalogsearch" style="margin-left: 15px;")
           span #{i18n.__("search.catalogtitle")}
-        div(class="keysearch", style="")
+        div(class="keysearch", style="display:none", id="keysearch")
             - searchText = i18n.__("search.searchholder")
             - classButton = "btn-success"
             if searchformText
@@ -104,7 +104,7 @@ block content
                     div(style="background-color: #3d9dcb; height: 1px; margin-bottom: 40px;")
                     span(class="fa fa-search colmenu" style="position: relative;top: -199px;left: 102%;")
 
-        div(class="keysearch")
+        div(class="keysearch", id="catalogsearch", style="display:none")
             - searchTextCatalog = i18n.__("search.catalogholder")
             - classButtonCatalog = "btn-success"
             if searchformTextCatalog
@@ -127,7 +127,23 @@ block content
                             img(src="images/yoke6.png", alt="The Search", title="Search", style="border-width:0px; width: 35px; margin-top: -99px; margin-left: 300px;")
                     div(class="searchcatalogbar")
                     span(class="fa fa-search colmenu" style="position: relative;top: -199px;left: 102%;")
-
+        - var catalogradio = searchformTextCatalog
+        - var searchradio = searchformText
+        script.
+          $("#keysearch").show();
+          $("#catalogsearch").hide();
+          $("input[name=search]").on( "change", function() {
+               var test = $(this).val();
+               if(test == "catalogsearch"){
+                  $("#keysearch").hide();
+                  $("#catalogsearch").show();
+               } else {
+                  $("#keysearch").show();
+                  $("#catalogsearch").hide();
+               }
+               
+               
+          } );
         div(class="slide-out-tip-div desktabonly", style="z-index:1;position: fixed;top: 25% !important;max-height:400px;")
             a(class="handle" href="last-transactions", title='#{i18n.__("search.tip.title")}', style="right: -60px;left:-60px;")!=Content
             div(style="padding: 1px;color:white;")
