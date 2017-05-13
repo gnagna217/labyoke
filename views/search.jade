@@ -76,6 +76,32 @@ block content
                             button(class="btn " + classButtonCatalog + " btn-lg btn-block" type='submit') #{i18n.__("search.buttoncatalog")}
                             img(src="images/yoke6.png", alt="The Search", title="Search", style="border-width:0px; width: 35px; margin-top: -67px; margin-left: 300px;")
                     div(class="searchcatalogbar")
+
+        div(class="keysearch", style="left:20%;width: 60%;position:relative;font-size:24pt")
+            h1 #{i18n.__("search.title")}
+            p!= i18n.__("search.description")
+            - searchText = i18n.__("search.searchholder")
+            - classButton = "btn-success"
+            if searchformText
+                - searchText = i18n.__("search.results.text") + searchformText
+                - classButton = "btn-success-results"          
+            div(id="ctl00_Div2" class="row")
+                div
+                    if message
+                        div(class="alert alert-danger")!= message
+                    form(action="/search" method="post")
+                        div(class="textentry")
+                            input(name="searchText" list="agent-datalist" type="text" id="searchText" class="form-control" placeholder=searchText style="font-size: 15pt;height: 40px;")
+                            datalist(id="agent-datalist")
+                                -var ob2 = agentsResults
+                                -for(var prop in ob2)
+                                    option(value='#{ob2[prop].agent}')
+                        div(class="buttons")
+                            button(class="btn " + classButton + " btn-lg btn-block" type='submit') #{i18n.__("search.buttonreagent")}
+                            img(src="images/yoke5.png", alt="The Search", title="Search", style="border-width:0px; width: 35px; margin-top: -99px; margin-left: 300px;")
+                    div(style="background-color: #3d9dcb; height: 1px; margin-bottom: 40px;")
+                    span(class="fa fa-search colmenu" style="position: relative;top: -199px;left: 102%;")
+
         div(class="slide-out-tip-div desktabonly", style="z-index:1;position: fixed;top: 25% !important;max-height:400px;")
             a(class="handle" href="last-transactions", title='#{i18n.__("search.tip.title")}', style="right: -60px;left:-60px;")!=Content
             div(style="padding: 1px;color:white;")
