@@ -76,8 +76,12 @@ block content
                             button(class="btn " + classButtonCatalog + " btn-lg btn-block" type='submit') #{i18n.__("search.buttoncatalog")}
                             img(src="images/yoke6.png", alt="The Search", title="Search", style="border-width:0px; width: 35px; margin-top: -67px; margin-left: 300px;")
                     div(class="searchcatalogbar")
-
-        div(class="keysearch", style="left:20%;width: 60%;position:relative;font-size:24pt")
+        div(class="keysearch")
+          input(type="radio" name="search" value="keysearch")
+          span #{i18n.__("search.title")}
+          input(type="radio" name="search" value="catalogsearch" style="margin-left: 15px;")
+          span #{i18n.__("search.catalogtitle")}
+        div(class="keysearch", style="")
             - searchText = i18n.__("search.searchholder")
             - classButton = "btn-success"
             if searchformText
@@ -98,6 +102,30 @@ block content
                             button(class="btn " + classButton + " btn-lg btn-block" type='submit') #{i18n.__("search.buttonreagent")}
                             img(src="images/yoke5.png", alt="The Search", title="Search", style="border-width:0px; width: 35px; margin-top: -99px; margin-left: 300px;")
                     div(style="background-color: #3d9dcb; height: 1px; margin-bottom: 40px;")
+                    span(class="fa fa-search colmenu" style="position: relative;top: -199px;left: 102%;")
+
+        div(class="keysearch")
+            - searchTextCatalog = i18n.__("search.catalogholder")
+            - classButtonCatalog = "btn-success"
+            if searchformTextCatalog
+                - searchTextCatalog = i18n.__("search.results.text") + searchformTextCatalog
+                - searchformTextCatalog = i18n.__("search.results.text")  + searchformTextCatalog
+                - classButtonCatalog = "btn-success-results"            
+            div(id="ctl00_Div2" class="row")
+                div
+                    if messageCatalog
+                        div(class="alert alert-danger")!= messageCatalog
+                    form(action="/searchCatalog" method="post")
+                        div(class="textentry")
+                            input(name="searchTextCatalog" list="catalog-datalist" type="text" id="searchTextCatalog" class="form-control" placeholder=searchTextCatalog style="font-size: 15pt;height: 40px;")
+                            datalist(id="catalog-datalist")
+                                -var ob2 = agentsResults
+                                -for(var prop in ob2)
+                                    option(value='#{ob2[prop].catalognumber}')
+                        div(class="buttons")
+                            button(class="btn " + classButtonCatalog + " btn-lg btn-block" type='submit') #{i18n.__("search.buttoncatalog")}
+                            img(src="images/yoke6.png", alt="The Search", title="Search", style="border-width:0px; width: 35px; margin-top: -99px; margin-left: 300px;")
+                    div(class="searchcatalogbar")
                     span(class="fa fa-search colmenu" style="position: relative;top: -199px;left: 102%;")
 
         div(class="slide-out-tip-div desktabonly", style="z-index:1;position: fixed;top: 25% !important;max-height:400px;")
