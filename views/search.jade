@@ -130,6 +130,9 @@ block content
         - var catalogradio = searchformTextCatalog
         - var searchradio = searchformText
         script.
+          console.log("catalogradio: " + catalogradio);
+          console.log("searchradio: " + searchradio);
+          $('input[name=search][value=keysearch]').prop('checked', 'checked');
           $("#keysearch").show();
           $("#catalogsearch").hide();
           $("input[name=search]").on( "change", function() {
