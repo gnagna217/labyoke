@@ -374,7 +374,7 @@ position: absolute;
     /*margin-left: 50px;*/
 }
 .searchcatalogbar{
-        /*display: none;*/
+       background-color: #3d9dcb; height: 1px;display: block;
 }
 
 #valuedetail{
