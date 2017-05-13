@@ -369,8 +369,10 @@ position: absolute;
 }
 
 .searchcatalog{
-    float:left;
-    max-width: 400px;
+    text-align: center;
+    position: relative;
+    text-align: center;
+    z-index: -1;
     /*margin-left: 50px;*/
 }
 .searchcatalogbar{
