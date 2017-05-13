@@ -133,6 +133,7 @@ block content
           console.log("catalogradio: " + "#{catalogradio}");
           console.log("searchradio: " + "#{searchradio}");
           $('input[name=search][value=keysearch]').prop('checked', 'checked');
+
           var existscatalog = "#{catalogradio}";
           var existskey = "#{searchradio}";
           console.log(" length catalogradio: " + existscatalog.length);
@@ -143,10 +144,12 @@ block content
           } else if(existscatalog.length > 0){
             $("#keysearch").hide();
             $("#catalogsearch").show();
+          } else {
+            $("#keysearch").show();
+            $("#catalogsearch").hide();
           }
           
-          $("#keysearch").show();
-          $("#catalogsearch").hide();
+          
           $("input[name=search]").on( "change", function() {
                var test = $(this).val();
                if(test == "catalogsearch"){
