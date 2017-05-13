@@ -257,6 +257,11 @@ a {
     text-align: center;
 }
 
+.positionbutton{
+    left: 30%;
+    position: relative;
+}
+
 .reportbutton{
     border-width:0px;width: 35px;margin-top: -47px;margin-right: 50px;float:right;
 }
@@ -384,6 +389,7 @@ position: absolute;
 .searchcatalog{
     float:left;
     max-width: 400px;
+    position: relative;top: -25px;
     /*margin-left: 50px;*/
 }
 .searchcatalogbar{
@@ -1214,6 +1220,11 @@ input::-webkit-inner-spin-button {
     font-size:14pt;
     margin: 15px;
     text-align: none;
+}
+
+.positionbutton{
+    left: 0;
+    position: relative;
 }
 
 }
