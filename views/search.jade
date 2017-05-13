@@ -135,6 +135,8 @@ block content
           $('input[name=search][value=keysearch]').prop('checked', 'checked');
           var existscatalog = "#{catalogradio}";
           var existskey = "#{searchradio}";
+          console.log(" length catalogradio: " + existscatalog.length);
+          console.log("length searchradio: " + existskey.length);
           if(existskey.length > 0){
             $("#keysearch").show();
             $("#catalogsearch").hide();
