@@ -236,10 +236,13 @@ a {
 } 
 
 .searchlogo{
-    text-align: center;
     position: relative;
     text-align: center;
     z-index: -1;
+}
+
+.searchlogoimg{
+    width: 10%;margin-top:10px;
 }
 
 .keysearch{
@@ -1260,6 +1263,10 @@ input::-webkit-inner-spin-button {
  @media (max-width: 992px) {
 .desktabonly2{
     display: none;
+}
+
+.searchlogoimg{
+    width: 5%;margin-top:5px;
 }
 .desktabonly3{
     display: none;
