@@ -39,7 +39,7 @@ block content
             div(id="ctl00_Div2" class="row")
                 div
                     if message
-                        div(class="alert alert-danger")!= message
+                        div(class="alert alert-danger ")!= message
                     form(action="/search" method="post")
                         div(class="textentry")
                             input(name="searchText" list="agent-datalist" type="text" id="searchText" class="form-control" placeholder=searchText)
@@ -90,7 +90,7 @@ block content
             div(id="ctl00_Div2" class="row")
                 div
                     if message
-                        div(class="alert alert-danger")!= message
+                        div(class="alert alert-danger messagesearch")!= message
                     form(action="/search" method="post")
                         div(class="textentry")
                             input(name="searchText" list="agent-datalist" type="text" id="searchText" class="form-control" placeholder=searchText style="font-size: 15pt;height: 40px;")
@@ -114,7 +114,7 @@ block content
             div(id="ctl00_Div2" class="row")
                 div
                     if messageCatalog
-                        div(class="alert alert-danger")!= messageCatalog
+                        div(class="alert alert-danger messagesearch")!= messageCatalog
                     form(action="/searchCatalog" method="post")
                         div(class="textentry")
                             input(name="searchTextCatalog" list="catalog-datalist" type="text" id="searchTextCatalog" class="form-control" placeholder=searchTextCatalog style="font-size: 15pt;height: 40px;")
