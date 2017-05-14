@@ -24,7 +24,7 @@ block content
 		- var checkedstrInsuff = false;
 		- if(section !=null && section.length>0 && section == "insuff")
 			- checkedstrInsuff = true
-		form(action="reportSelect", method="post")
+		form(action="reportSelect", method="post", class="adjustwidthreports")
 			div(class="buttons")
 				select(name="reportSelect" type="text" id="reportSelect" class="form-control" style="border-color:#3d9dcb;margin-bottom:10px" placeholder=i18n.__("reports.form.select"))
 					option(value="reportNone",style="font-weight:bold")=i18n.__("reports.form.option1")

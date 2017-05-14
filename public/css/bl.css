@@ -241,6 +241,10 @@ a {
     z-index: -1;
 }
 
+.adjustwidthreports{
+    width:97%;
+}
+
 .searchlogoimg{
     width: 138px;margin-top:20px;
 }
@@ -1283,6 +1287,10 @@ input::-webkit-inner-spin-button {
 
 .searchlogoimg{
     width: 103px;margin-top:10px;
+}
+
+.adjustwidthreports{
+    width:100%;
 }
 .desktabonly3{
     display: none;
