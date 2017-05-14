@@ -1218,6 +1218,12 @@ input::-webkit-inner-spin-button {
     left:0;width: 90%;
 }
 
+.messagesearch{
+    left: 0;
+    width: 100%;
+    font-size: 11pt;
+}
+
 .radiosearch{
     font-size:14pt;
     margin: 15px;
