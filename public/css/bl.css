@@ -852,6 +852,12 @@ margin-right: 15px !important;
     outline: none;
 }
 
+.yokelogohelp{
+    height: 189px;
+    border: none;
+    outline: none;
+}
+
 .helplogo{
     border:none;
     width: 50px;
@@ -1533,6 +1539,12 @@ input::-webkit-inner-spin-button {
     text-align: center;
     position: relative;
 
+}
+
+.yokelogohelp{
+    height: 137.59px !important;
+    text-align: center;
+    position: relative;
 }
 
 .helplogo{
