@@ -1411,6 +1411,13 @@ input::-webkit-inner-spin-button {
 
  @media (max-width: 1202px) {
 .adjustpaddingrightandwidth {
+    margin-right: 35px;
+    width: 47%;
+}
+}
+
+@media (max-width: 883px) {
+.adjustpaddingrightandwidth {
     margin-right: 0px;
     width: 50%;
 }
