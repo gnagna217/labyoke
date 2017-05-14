@@ -1302,7 +1302,7 @@ input::-webkit-inner-spin-button {
 }
  @media (min-width: 1082px) {
     .searchcatalogbar{
-        background-color: #3d9dcb; height: 1px; margin-bottom: 40px;display: block;
+        background-color: #3d9dcb; height: 1px; /*margin-bottom: 40px;*/ display: block;
     }
 }
 
