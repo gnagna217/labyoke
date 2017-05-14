@@ -149,6 +149,7 @@ block content
             $("#catalogsearch").hide();
             $('input[name=search][value=keysearch]').prop('checked', 'checked');
             if(existssearchType == "key"){
+              console.log("existssearchType is key");
               $("#loopkey").removeClass( "colmenu" );
               $("#loopkey").addClass( "activecolmenu" );
               $("#loopcatalog").removeClass( "activecolmenu" );
@@ -159,6 +160,7 @@ block content
             $("#catalogsearch").show();
             $('input[name=search][value=catalogsearch]').prop('checked', 'checked');
             if(existssearchType == "catalog"){
+              console.log("existssearchType is cat");
               $("#loopcatalog").removeClass( "colmenu" );
               $("#loopcatalog").addClass( "activecolmenu" );
               $("#loopkey").removeClass( "activecolmenu" );
