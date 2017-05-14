@@ -148,24 +148,24 @@ block content
             $("#keysearch").show();
             $("#catalogsearch").hide();
             $('input[name=search][value=keysearch]').prop('checked', 'checked');
-            if(existssearchType == "key"){
-              console.log("existssearchType is key");
+            //if(existssearchType == "key"){
+              console.log("existssearchType is key: "+existssearchType);
               $("#loopkey").removeClass( "colmenu" );
               $("#loopkey").addClass( "activecolmenu" );
               $("#loopcatalog").removeClass( "activecolmenu" );
               $("#loopcatalog").addClass( "colmenu" );
-            }
+            //}
           } else if(existscatalog.length > 0 || existssearchType == "catalog"){
             $("#keysearch").hide();
             $("#catalogsearch").show();
             $('input[name=search][value=catalogsearch]').prop('checked', 'checked');
-            if(existssearchType == "catalog"){
-              console.log("existssearchType is cat");
+            //if(existssearchType == "catalog"){
+              console.log("existssearchType is cat: "+existssearchType);
               $("#loopcatalog").removeClass( "colmenu" );
               $("#loopcatalog").addClass( "activecolmenu" );
               $("#loopkey").removeClass( "activecolmenu" );
               $("#loopkey").addClass( "colmenu" );
-            }
+            //}
           } else {
             $("#keysearch").show();
             $("#catalogsearch").hide();
