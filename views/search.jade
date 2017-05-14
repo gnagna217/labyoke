@@ -318,10 +318,15 @@ block content
                             span(style="color: #3d9dcb;")=" " + searchText
                         h4="Try another chemical reagent!"              
     //script="$(window).scrollTop($('#results').offset().top).scrollLeft($('#results').offset().left);"
+    span(class="desktabonly", id="checkdisplay")
     script.
       $( document ).ready(function() {
         console.log( "search document loaded" );
-        $('.slide-out-tip-div').show();
+        if ($("#checkdisplay").css("display") == "none" ){
+          $('.slide-out-tip-div').hide();
+        } else {
+          $('.slide-out-tip-div').show();
+        }
       });
 
         

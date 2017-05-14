@@ -182,8 +182,13 @@ block content
                  fixedPosition: true                               //options: true makes it stick(fixed position) on scroll
              });
          });
+        span(class="desktabonly", id="checkdisplay")
         script.
           $( document ).ready(function() {
             console.log( "account document loaded" );
-            $('.slide-out-tip-div').show();
+            if ($("#checkdisplay").css("display") == "none" ){
+              $('.slide-out-tip-div').hide();
+            } else {
+              $('.slide-out-tip-div').show();
+            }
           });
