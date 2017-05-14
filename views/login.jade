@@ -74,7 +74,7 @@ block content
                     span(style="float:right;")
                         a(href="/forgot", style="z-index:10") #{i18n.__("login.forgotLink")}
      - if(latestshares != null && latestshares != undefined)
-        div(class="slide-out-div desktabonly", style="position: fixed;bottom: 6px;")
+        div(class="slide-out-div desktabonly", style="display:none;position: fixed;bottom: 6px;")
             a(class="handle" href="last-transactions", style="right: -60px;")!=Content
             div(style="text-align: center;padding: 1px;color:white;")
                 p!= i18n.__("login.texting1")
@@ -114,3 +114,8 @@ block content
                  fixedPosition: false                               //options: true makes it stick(fixed position) on scroll
              });
          });
+    script.
+        $( document ).ready(function() {
+        console.log( "login document loaded" );
+        $('.slide-out-div').show();
+        });

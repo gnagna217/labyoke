@@ -274,7 +274,7 @@ block content
 					div(style="top: -35px; position: relative; float: right; margin-right: 10px;")
 						div(class="arrow-up")
 						div(class="arrow-down")
-			div(id="chartNotes")
+			div(id="chartNotes", style="display:none")
 				p!= i18n.__("shares.chart.notes")
 			- var find0 = filteroutput2
 			- var now = new Date()
@@ -353,7 +353,7 @@ block content
 
 
 			div(style="margin-bottom: 30px; margin-top: 0px;")
-			div(id="sharesVenn")
+			div(id="sharesVenn", style="display:none")
 				h4= i18n.__("shares.venn.title")
 				- if(report_venn != null && report_venn.length > 0)
 					p!=i18n.__("shares.venn.subtitle1")
@@ -511,7 +511,7 @@ block content
 				- if(report_venn != null && report_venn.length==0)
 					h5=i18n.__("shares.venn.none")
 					p(style="padding-top: 20px;")=" "
-			div(id="sharesAll")
+			div(id="sharesAll", style="display:none")
 				h4= i18n.__("shares.all.title")
 				- if(filteroutput2 != null && filteroutput2.length > 0)
 					p!=i18n.__("shares.all.subtitle")
@@ -520,7 +520,7 @@ block content
 				- if(filteroutput2 != null && filteroutput2.length==0)
 					h5= i18n.__("shares.all.none")
 					p(style="padding-top: 20px;")=" "
-			div(id="monthAll")
+			div(id="monthAll", style="display:none")
 				h4= i18n.__("shares.month.title")
 				- // var now = new Date()
 				- var month = "month";
@@ -784,5 +784,9 @@ block content
 		script.
 			$( document ).ready(function() {
 			console.log( "share document loaded" );
-			$('.slide-out-tip-div').show();
+				$('.slide-out-tip-div').show();
+				$('#chartNotes').show();
+				$('#sharesVenn').show();
+				$('#sharesAll').show();
+				$('#monthAll').show();
 			});				

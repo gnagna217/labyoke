@@ -118,7 +118,7 @@ block content
               div(style="top: -35px; position: relative; float: right; margin-right: 10px;")
                 div(class="arrow-up")
                 div(class="arrow-down")
-          div(id="chartNotes")
+          div(id="chartNotes", style="display:none")
             p!= i18n.__("orders.chart.notes")
           - var find0 = report_sharesbycategory
           - var find1 = test
@@ -207,7 +207,7 @@ block content
 
 
 
-          div(id="qtyComp")
+          div(id="qtyComp", style="display:none")
             h4!= i18n.__("orders.qty.title1") + currentlabname + i18n.__("orders.qty.title2")
             - if(report_sharesbycategory != null && report_sharesbycategory.length >0)
               p!= i18n.__("orders.qty.subtitle")
@@ -216,7 +216,7 @@ block content
               div(id="tooltips", class="labColor") &nbsp;
             - if(report_sharesbycategory != null && report_sharesbycategory.length==0)
               h5!= i18n.__("orders.qty.subtitle1")
-          div(id="monthComp")
+          div(id="monthComp", style="display:none")
             - // var now = new Date()
             - // var filteroutput = test.filter(function(x){console.log("x.monthorder: "+x.monthorder); console.log("x.yearorder: "+x.yearorder); console.log("now.getFullYear(): "+ now.getFullYear()); console.log("now.getMonth(): "+ now.getMonth()); console.log("so: "+ (x.yearorder == now.getFullYear() && x.monthorder == now.getMonth())); return (x.yearorder == now.getFullYear() && x.monthorder == now.getMonth() + 1)});
             h4= i18n.__("orders.month.title")
@@ -227,7 +227,7 @@ block content
             - if(filteroutput != null && filteroutput.length == 0) 
                h5
                  span= i18n.__("orders.month.subtitle2")
-          div(id="labsComp")
+          div(id="labsComp", style="display:none")
             //- if(filteroutput != null && filteroutput.length == 0) 
             // h5= i18n.__("orders.month.subtitle2")
             h4= i18n.__("orders.month.subtitle3")
@@ -642,4 +642,8 @@ block content
         $( document ).ready(function() {
           console.log( "orders document loaded" );
           $('.slide-out-tip-div').show();
+          $('#chartNotes').show();
+          $('#qtyComp').show();
+          $('#monthComp').show();
+          $('#labsComp').show();
         });
