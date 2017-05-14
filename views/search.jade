@@ -189,7 +189,7 @@ block content
                
                
           } );
-        div(class="slide-out-tip-div desktabonly", style="z-index:1;position: fixed;top: 25% !important;max-height:400px;")
+        div(class="slide-out-tip-div desktabonly", style="display:none;z-index:1;position: fixed;top: 25% !important;max-height:400px;")
             a(class="handle" href="last-transactions", title='#{i18n.__("search.tip.title")}', style="right: -60px;left:-60px;")!=Content
             div(style="padding: 1px;color:white;")
                 p(style="font-size: 12pt;")!= i18n.__("search.tip.header")
@@ -319,6 +319,11 @@ block content
                             span(style="color: #3d9dcb;")=" " + searchText
                         h4="Try another chemical reagent!"              
     //script="$(window).scrollTop($('#results').offset().top).scrollLeft($('#results').offset().left);"
+    script.
+      $( document ).ready(function() {
+        console.log( "document loaded" );
+        $('.slide-out-tip-div').show();
+      });
 
         
 
