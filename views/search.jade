@@ -132,6 +132,7 @@ block content
                     span(class="fa fa-search colmenu" style="position: relative;top: -199px;left: 102%;")
         - var catalogradio = searchformTextCatalog
         - var searchradio = searchformText
+        - var searchType = searchType
         script.
           console.log("catalogradio: " + "#{catalogradio}");
           console.log("searchradio: " + "#{searchradio}");
@@ -139,13 +140,14 @@ block content
 
           var existscatalog = "#{catalogradio}";
           var existskey = "#{searchradio}";
+          var existssearchType = "#{searchType}";
           console.log(" length catalogradio: " + existscatalog.length);
           console.log("length searchradio: " + existskey.length);
-          if(existskey.length > 0){
+          if(existskey.length > 0 || existssearchType == "key"){
             $("#keysearch").show();
             $("#catalogsearch").hide();
             $('input[name=search][value=keysearch]').prop('checked', 'checked');
-          } else if(existscatalog.length > 0){
+          } else if(existscatalog.length > 0 || existssearchType == "catalog"){
             $("#keysearch").hide();
             $("#catalogsearch").show();
             $('input[name=search][value=catalogsearch]').prop('checked', 'checked');
