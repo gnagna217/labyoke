@@ -1403,6 +1403,13 @@ input::-webkit-inner-spin-button {
 }
 }
 
+ @media (max-width: 1202px) {
+.adjustpaddingrightandwidth {
+    margin-right: 0px;
+    width: 50%;
+}
+}
+
  @media (max-width: 1200px) {
     .deskfullonly{
     display: none;
