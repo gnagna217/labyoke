@@ -167,7 +167,7 @@ block content
 									}
 										});
 								});
-		div(class="share-container adjustpadding" style="float:right;")
+		div(class="share-container adjustpadding adjustpaddingright" style="float:right;")
 			if(isLoggedInAdmin > 0)
 				a(name="upload")
 				div(class="admin")
@@ -259,8 +259,8 @@ block content
 										});
 								});
 				script="$(window).scrollTop($('#uploadForm').offset().top).scrollLeft($('#uploadForm').offset().left);"
-			div(style="background-color: #3d9dcb; height: 1px; margin-bottom: 0px; margin-top: 30px;width: 90%;")
-		div(style="float:right;", class="share-container " + adjust)
+			div(style="background-color: #3d9dcb; height: 1px; margin-bottom: 0px; margin-top: 30px;")
+		div(style="float:right;", class="share-container " + adjust + " adjustpaddingrightandwidth")
 			script(type="text/javascript" src="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.js")
 
 			h3= i18n.__("shares.chart.title")

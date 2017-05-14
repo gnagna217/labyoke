@@ -708,6 +708,13 @@ input:-webkit-autofill:hover {
 .activecolmenu{
     color: #337ab7;
 }
+.adjustpaddingrightandwidth{
+    margin-right: 35px;
+    width: 47%;
+}
+.adjustpaddingright{
+    margin-right: 50px;
+}
 .navbar{
     margin-bottom: 0px !important;
 }
@@ -1706,6 +1713,13 @@ span.num.greatherthanninetynine {
 }
 .adjustpadding{
     padding-left: 0px !important;
+}
+.adjustpaddingrightandwidth{
+    margin-right: 0px;
+    width: 50%;
+}
+.adjustpaddingright{
+    margin-right: 0px;
 }
 }
 
