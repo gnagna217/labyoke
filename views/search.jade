@@ -105,7 +105,7 @@ block content
                             button(class="btn " + classButton + " btn-lg btn-block" type='submit') #{i18n.__("search.buttonreagent")}
                             img(src="images/yoke5.png", alt="The Search", title="Search", style="border-width:0px; width: 35px; margin-top: -99px; margin-left: 300px;")
                     div(class="desktabonly" , style="background-color: #3d9dcb; height: 1px; /*margin-bottom: 40px;*/position: relative;top: -25px;")
-                    span(class="fa fa-search colmenu" style="position: relative;top: -160px;left: 102%;")
+                    span(id="loopkey", class="fa fa-search colmenu" style="position: relative;top: -160px;left: 102%;")
 
         div(class="keysearch", id="catalogsearch", style="display:none")
             - searchTextCatalog = i18n.__("search.catalogholder")
@@ -130,7 +130,7 @@ block content
                             button(class="btn " + classButtonCatalog + " btn-lg btn-block" type='submit') #{i18n.__("search.buttoncatalog")}
                             img(src="images/yoke6.png", alt="The Search", title="Search", style="border-width:0px; width: 35px; margin-top: -99px; margin-left: 300px;")
                     div(class="searchcatalogbar desktabonly")
-                    span(class="fa fa-search colmenu" style="position: relative;top: -160px;left: 102%;")
+                    span(id="loopcatalog", class="fa fa-search colmenu" style="position: relative;top: -160px;left: 102%;")
         - var catalogradio = searchformTextCatalog
         - var searchradio = searchformText
         - var searchType = searchType
@@ -148,14 +148,30 @@ block content
             $("#keysearch").show();
             $("#catalogsearch").hide();
             $('input[name=search][value=keysearch]').prop('checked', 'checked');
+            if(existssearchType == "key"){
+              $("#loopkey").removeClass( "colmenu" );
+              $("#loopkey").addClass( "activecolmenu" );
+              $("#loopcatalog").removeClass( "activecolmenu" );
+              $("#loopcatalog").addClass( "colmenu" );
+            }
           } else if(existscatalog.length > 0 || existssearchType == "catalog"){
             $("#keysearch").hide();
             $("#catalogsearch").show();
             $('input[name=search][value=catalogsearch]').prop('checked', 'checked');
+            if(existssearchType == "catalog"){
+              $("#loopcatalog").removeClass( "colmenu" );
+              $("#loopcatalog").addClass( "activecolmenu" );
+              $("#loopkey").removeClass( "activecolmenu" );
+              $("#loopkey").addClass( "colmenu" );
+            }
           } else {
             $("#keysearch").show();
             $("#catalogsearch").hide();
             $('input[name=search][value=keysearch]').prop('checked', 'checked');
+              $("#loopcatalog").removeClass( "activecolmenu" );
+              $("#loopcatalog").addClass( "colmenu" );
+              $("#loopkey").removeClass( "activecolmenu" );
+              $("#loopkey").addClass( "colmenu" );
           }
           
           
