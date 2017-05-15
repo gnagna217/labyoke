@@ -1302,7 +1302,7 @@ input::-webkit-inner-spin-button {
         position: relative;
     }
     .positionbutton{
-    left: 25%;
+    left: 22%;
     }
 }
 
@@ -1614,6 +1614,9 @@ input::-webkit-inner-spin-button {
 }
 
 @media (max-width: 767px){
+.positionbutton{
+    left: 20%;
+}
 .mobileonlybar{
     display:block;
 }
