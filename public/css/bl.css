@@ -1474,135 +1474,7 @@ input::-webkit-inner-spin-button {
 }
 
 }
- @media (max-width: 440px) {
-.reportbutton{
-    margin-top: -47px;margin-right: 3%;
-}
-.sun {
-    position: relative;top: 70px; left: 0px; width: 40px; z-index: -1;
-}
-.sunlogo{
-    left: 20px; position: relative;
-}
 
-.help{
-    padding-right: 0px;
-    /*width: initial !important;*/
-    margin-left: 155px;
-    bottom: 20px;
-}
-.searchcatalog{
-    float:left;
-    /*max-width: 400px;*/
-    /*width: 380px;*/
-}
-.enlogin{
-    border-width: 0px;
-    /*width: 50px;
-    margin-top: -45px;
-    margin-left: -75px;*/
-    width: 30px;
-    margin-top: -30px;
-    margin-left: -35px;
-    position: relative;
-    float: left;
-}
-
-.frlogin{
-    border-width: 0px;
-    float: right;
-    width: 30px;
-    margin-top: -35px;
-    margin-right: 5px;
-}
-    .marginbottom{
-    /*min-height: 450px;*/
-}
-.reportSlot{
-    float:none;
-    width:0;
-}
-.adjustnav{
-    width: 98%;
-}
-    .help{
-    z-index: 9;
-    /*width: 100px;*/
-    width: 30%;
-    /*left: 37%;*/
-    }
-#checkname{
-    margin-left: 200px;
-    float:none;
-}
-
-#checksurname{
-    margin-left: 200px;
-    float:none;
-}
-#checktel{
-    margin-left: 200px;
-    float:none;
-}
-
-.desktabonly2{
-    display: none !important;
-}
-
-
-.rankTbl td
-{
-    /*text-align: center;*/
-    font-size:13px;
-}
-
-.yokelogo{
-    width: 200px;
-    height: 137.59px !important;
-    text-align: center;
-    position: relative;
-
-}
-
-.yokelogohelp{
-    height: 137.59px !important;
-    text-align: center;
-    position: relative;
-}
-
-.helplogo{
-    text-align: center;
-    position: relative;
-}
-
-.yokelogopop{
-    width: 200px;
-    height: 137.59px;
-    text-align: center;
-    position: relative;
-
-}
-
-.centerText{
-    text-align: center;
-}
-
-.desktabonly{
-    display: none;
-}
-
-#ios-light{
-    width:70% !important;
-}
-
-.helplogin{
-    border-width: 0px;
-    width: 50px;
-    margin-top: 0px;
-    margin-right: 45%;
-}
-  
-}
 
 @media (max-width: 849px){
 .nav > li > a {
@@ -1798,6 +1670,135 @@ span.num.greatherthanninetynine {
 }
 }
 
+ @media (max-width: 440px) {
+.reportbutton{
+    margin-top: -47px;margin-right: 3%;
+}
+.sun {
+    position: relative;top: 70px; left: 0px; width: 40px; z-index: -1;
+}
+.sunlogo{
+    left: 20px; position: relative;
+}
+
+.help{
+    padding-right: 0px;
+    /*width: initial !important;*/
+    margin-left: 155px;
+    bottom: 20px;
+}
+.searchcatalog{
+    float:left;
+    /*max-width: 400px;*/
+    /*width: 380px;*/
+}
+.enlogin{
+    border-width: 0px;
+    /*width: 50px;
+    margin-top: -45px;
+    margin-left: -75px;*/
+    width: 30px;
+    margin-top: -30px;
+    margin-left: -35px;
+    position: relative;
+    float: left;
+}
+
+.frlogin{
+    border-width: 0px;
+    float: right;
+    width: 30px;
+    margin-top: -35px;
+    margin-right: 5px;
+}
+    .marginbottom{
+    /*min-height: 450px;*/
+}
+.reportSlot{
+    float:none;
+    width:0;
+}
+.adjustnav{
+    width: 98%;
+}
+    .help{
+    z-index: 9;
+    /*width: 100px;*/
+    width: 30%;
+    /*left: 37%;*/
+    }
+#checkname{
+    margin-left: 200px;
+    float:none;
+}
+
+#checksurname{
+    margin-left: 200px;
+    float:none;
+}
+#checktel{
+    margin-left: 200px;
+    float:none;
+}
+
+.desktabonly2{
+    display: none !important;
+}
+
+
+.rankTbl td
+{
+    /*text-align: center;*/
+    font-size:13px;
+}
+
+.yokelogo{
+    width: 200px;
+    height: 137.59px !important;
+    text-align: center;
+    position: relative;
+
+}
+
+.yokelogohelp{
+    height: 137.59px !important;
+    text-align: center;
+    position: relative;
+}
+
+.helplogo{
+    text-align: center;
+    position: relative;
+}
+
+.yokelogopop{
+    width: 200px;
+    height: 137.59px;
+    text-align: center;
+    position: relative;
+
+}
+
+.centerText{
+    text-align: center;
+}
+
+.desktabonly{
+    display: none;
+}
+
+#ios-light{
+    width:70% !important;
+}
+
+.helplogin{
+    border-width: 0px;
+    width: 50px;
+    margin-top: 0px;
+    margin-right: 45%;
+}
+  
+}
 .pastdate {
 	color:#460077;
 }
