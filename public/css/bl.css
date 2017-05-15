@@ -1608,7 +1608,7 @@ input::-webkit-inner-spin-button {
     display:block;
 }
 .navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form{
-    background-color:white;
+    /*background-color:white;*/
 }
 
 .addMargin{
