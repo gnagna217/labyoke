@@ -245,6 +245,9 @@ a {
     width:97%;
 }
 
+.mobileonly{
+    display:none;
+}
 .searchlogoimg{
     width: 138px;margin-top:20px;
 }
@@ -1600,6 +1603,9 @@ input::-webkit-inner-spin-button {
 }
 
 @media (max-width: 767px){
+.mobileonly{
+    display:block;
+}
 .navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form{
     background-color:white;
 }
