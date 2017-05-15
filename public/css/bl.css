@@ -1242,6 +1242,10 @@ input::-webkit-inner-spin-button {
     left:0;width: 90%;
 }
 
+.positionbutton{
+    left: 0;
+    }
+
 .messagesearch{
     left: 0;
     width: 110%;
@@ -1325,7 +1329,7 @@ input::-webkit-inner-spin-button {
         position: relative;
     }
     .positionbutton{
-    left: 20%;
+    left: 25%;
     }
 }
 @media (min-width: 1103px){
