@@ -273,6 +273,9 @@ a {
     position: relative;
 }
 
+.mobilenavlogo{
+    width: 70.5px;
+}
 .reportbutton{
     border-width:0px;width: 35px;margin-top: -47px;margin-right: 4%;float:right;
 }
@@ -1673,6 +1676,9 @@ span.num.greatherthanninetynine {
  @media (max-width: 440px) {
 .positionbutton{
     left: 0;
+}
+.mobilenavlogo{
+    width: 55.5px;
 }
 .reportbutton{
     margin-top: -47px;margin-right: 3%;
