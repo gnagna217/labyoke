@@ -181,10 +181,11 @@ html(lang='en')
                             a 
                                 span(class="desktabonly3",style="margin-left: 5px;") #{i18n.__("layout.Logout")}
                                 span(class="mobileonly",style="margin-left: 5px;") #{i18n.__("layout.Logout2")}
-     div(style="position: relative;left: -5px;float: right;top: -48px;", class="mobileonlybar")
+
+     block content
+     div(style="position: relative;left: -5px;float: right;bottom: 483px;", class="mobileonlybar")
         a(href="/search")
           img(src="/images/lab copy.png" alt="The Yoke" title="Yoke" class="" style="width: 70.5px;")
-     block content
      script(type="text/javascript" src="/javascripts/bootstrap.min.js")
      script(type="text/javascript" src="/javascripts/popup.js")
      if (title=='Share')
