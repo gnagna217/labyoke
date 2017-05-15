@@ -1324,6 +1324,9 @@ input::-webkit-inner-spin-button {
         /*left: -50px;*/
         position: relative;
     }
+    .positionbutton{
+    left: 20%;
+    }
 }
 @media (min-width: 1103px){
 .searchcatalog {
