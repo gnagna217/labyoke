@@ -270,7 +270,7 @@ a {
 }
 
 .reportbutton{
-    border-width:0px;width: 35px;margin-top: -47px;margin-right: 50px;float:right;
+    border-width:0px;width: 35px;margin-top: -47px;margin-right: 4%;float:right;
 }
 
 .accountlogo{
@@ -1461,7 +1461,7 @@ input::-webkit-inner-spin-button {
 }
  @media (max-width: 440px) {
 .reportbutton{
-    margin-top: -47px;margin-right: 10px;
+    margin-top: -47px;margin-right: 3%;
 }
 .sun {
     position: relative;top: 70px; left: 0px; width: 40px; z-index: -1;
