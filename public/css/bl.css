@@ -1248,6 +1248,7 @@ input::-webkit-inner-spin-button {
     font-size:12pt;
     margin: 15px;
     text-align: none;
+    margin-top: 25px;
 }
 
 .positionbutton{
