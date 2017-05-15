@@ -1272,6 +1272,10 @@ input::-webkit-inner-spin-button {
 
 }
  @media (max-width: 992px) {
+
+.positionbutton{
+    left: 27%;
+}
 .desktabonly2{
     display: none;
 }
@@ -1310,6 +1314,10 @@ input::-webkit-inner-spin-button {
 }
 
  @media (max-width: 715px) {
+
+.positionbutton{
+    left: 35%;
+}
 .keysearch{
     left:0;width: 90%;
 }
@@ -1427,6 +1435,11 @@ input::-webkit-inner-spin-button {
 }
 }
 
+ @media (max-width: 1100px) {
+.positionbutton{
+    left: 25%;
+}
+}
  @media (max-width: 1202px) {
 .adjustpaddingrightandwidth {
     margin-right: 35px;
@@ -1448,6 +1461,9 @@ input::-webkit-inner-spin-button {
 }
 }
  @media (max-width: 1200px) {
+.positionbutton{
+    left: 30%;
+}
     .deskfullonly{
     display: none;
 }
@@ -1666,7 +1682,28 @@ span.num.greatherthanninetynine {
 }
 }
 
+@media (max-width: 667px){
+.positionbutton{
+    left: 32%;
+}
+}
+
+@media (max-width: 600px){
+.positionbutton{
+    left: 30%;
+}
+}
+
+@media (max-width: 580px){
+.positionbutton{
+    left: 28%;
+}
+}
+
 @media (max-width: 520px) {
+.positionbutton{
+    left: 0;
+}
 #menumyshares {
     width: 56.50% !important;
 }
@@ -1679,9 +1716,7 @@ span.num.greatherthanninetynine {
 }
 
  @media (max-width: 440px) {
-.positionbutton{
-    left: 0;
-}
+
 .mobilenavlogo{
     width: 55.5px;
 }
