@@ -269,7 +269,7 @@ a {
 }
 
 .positionbutton{
-    left: 35%;
+    left: 25%;
     position: relative;
 }
 
@@ -1441,7 +1441,12 @@ input::-webkit-inner-spin-button {
 }
 }
 
-
+ @media (min-width: 1400px) {
+.positionbutton{
+    left: 35%;
+    position: relative;
+}
+}
  @media (max-width: 1200px) {
     .deskfullonly{
     display: none;
