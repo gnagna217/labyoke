@@ -1237,34 +1237,7 @@ input::-webkit-inner-spin-button {
 }
 }
 
- @media (max-width: 715px) {
-.keysearch{
-    left:0;width: 90%;
-}
 
-.positionbutton{
-    left: 0;
-    }
-
-.messagesearch{
-    left: 0;
-    width: 110%;
-    font-size: 11pt;
-}
-
-.radiosearch{
-    font-size:12pt;
-    margin: 15px;
-    text-align: none;
-    margin-top: 25px;
-}
-
-.positionbutton{
-    left: 0;
-    position: relative;
-}
-
-}
  @media (min-width: 715px) {
     .searchResults{
     float: left;
@@ -1332,6 +1305,36 @@ input::-webkit-inner-spin-button {
     left: 25%;
     }
 }
+
+ @media (max-width: 715px) {
+.keysearch{
+    left:0;width: 90%;
+}
+
+.positionbutton{
+    left: 0;
+    }
+
+.messagesearch{
+    left: 0;
+    width: 110%;
+    font-size: 11pt;
+}
+
+.radiosearch{
+    font-size:12pt;
+    margin: 15px;
+    text-align: none;
+    margin-top: 25px;
+}
+
+.positionbutton{
+    left: 0;
+    position: relative;
+}
+
+}
+
 @media (min-width: 1103px){
 .searchcatalog {
     margin-left: 20px;
