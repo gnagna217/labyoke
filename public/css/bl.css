@@ -229,17 +229,6 @@ a {
     background: rgba(61, 157, 203, 0.78); 
 }
 
-.sg-replace-icons input[type=checkbox].sg-input-checkbox + label:before {
-/* unchecked checkbox */
-/* content: "\f096"; - Default icon */
-    content: "\25cb";
-}
-.sg-replace-icons input[type=checkbox].sg-input-checkbox:checked + label:before{
-/* checked checkbox */
-/* content: "\f046"; - Default icon */
-    content: "\f058";
-}
-
 .slide-out-div {
           padding: 20px;
           /*width: 250px;*/
