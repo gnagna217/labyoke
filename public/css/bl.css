@@ -1671,6 +1671,9 @@ span.num.greatherthanninetynine {
 }
 
  @media (max-width: 440px) {
+.positionbutton{
+    left: 0;
+}
 .reportbutton{
     margin-top: -47px;margin-right: 3%;
 }
