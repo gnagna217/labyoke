@@ -1612,7 +1612,7 @@ input::-webkit-inner-spin-button {
 }
 
 .addMargin{
-    background-color: rgba(138, 109, 59, 0.62);
+    /*background-color: rgba(138, 109, 59, 0.62);*/
 }
 .navbar-nav {
     margin: 0px -15px;
