@@ -1908,8 +1908,10 @@ span.num.greatherthanninetynine {
     text-align: center;
     cursor: pointer;
     width: 100%;
+    border-radius: 10px;
+    background: #8a6d3b;
 }
 
 .teambutton:hover {
-    background-color: #555;
+    background-color: #337ab7;
 }

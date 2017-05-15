@@ -32,7 +32,7 @@ block content
         div(class="teamcard")
           img(src="/images/card1.jpg" alt="Jane" style="width:100%")
           div(class="teamcontainer")
-          h2!="Andria Schibler"
+          h3!="Andria Schibler"
           p(class="teamtitle")!= "CEO &amp; Founder"
           p!="Some text that describes me lorem ipsum ipsum lorem."
           p!="example@example.com"
@@ -42,19 +42,19 @@ block content
         div(class="teamcard")
           img(src="images/card2.jpg" alt="Jane" style="width:100%")
           div(class="teamcontainer")
-          h2!="Eran Shaysh"
+          h3!="Eran Shaysh"
           p(class="teamtitle")!= "CEO &amp; Founder"
           p!="Some text that describes me lorem ipsum ipsum lorem."
-          p!="example@example.com"
           p
-            button(class="teambutton")!= "Contact"
+            button(class="teambutton")
+              a(href="example@example.com")!= "Contact"
       div(class="teamcolumn")
         div(class="teamcard")
           img(src="images/card1.jpg" alt="Jane" style="width:100%")
           div(class="teamcontainer")
-          h2!="Gnagna Konaté"
+          h3!="Gnagna Konaté"
           p(class="teamtitle")!= "CEO &amp; Founder"
           p!="Some text that describes me lorem ipsum ipsum lorem."
-          p!="example@example.com"
           p
-            button(class="teambutton")!= "Contact"
+            button(class="teambutton")
+              a(href="example@example.com")!= "Contact"
