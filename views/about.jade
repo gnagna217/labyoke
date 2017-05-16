@@ -87,9 +87,9 @@ block content
             var classname = $(btn).parent().attr("class");
             console.log("classname: " + classname);
             if(classname == "frontbutton"){
-              $otherbutton = $(btn).parent().closest('.backbutton');
+              $otherbutton = $(btn).parent().next('.backbutton');
             } else {
-              $otherbutton = $(btn).parent().closest('.frontbutton');
+              $otherbutton = $(btn).parent().prev('.frontbutton');
             }
             console.log($otherbutton);
             var $front = $card.find('.front');
