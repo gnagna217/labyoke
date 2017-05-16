@@ -1915,13 +1915,19 @@ a.mailto:hover{
     text-decoration:none;
     color:white;
 }
-a:visited { 
+a.mailto:visited { 
     outline: none;
     text-decoration:none;
     color:white;
 }
 
-a:active { 
+a.mailto:active { 
+    outline: none;
+    text-decoration:none;
+    color:white;
+}
+
+a.mailto:link { 
     outline: none;
     text-decoration:none;
     color:white;
