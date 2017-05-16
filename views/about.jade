@@ -84,7 +84,7 @@ block content
         function rotateCard(btn){
             var $otherbutton;
             var $card = $(btn).closest('.teamcolumn');
-            var classname = $(btn).attr("class");
+            var classname = $(btn).parent().attr("class");
             console.log("classname: " + classname);
             if(classname == "frontbutton"){
               $otherbutton = $(btn).parent().closest('.backbutton');
