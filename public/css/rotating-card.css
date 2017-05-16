@@ -189,15 +189,15 @@ body {
     width: 100%;
 }
 
-.card .content{
+.card .teamcontent{
     background-color: rgba(0, 0, 0, 0);
     box-shadow: none;
     padding: 10px 20px 20px;
 }
-.card .content .main {
+.card .teamcontent .main {
     min-height: 160px;
 }
-.card .back .content .main {
+.card .back .teamcontent .main {
     height: 215px;
 }
 .card .name {
