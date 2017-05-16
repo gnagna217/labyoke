@@ -1904,7 +1904,17 @@ span.num.greatherthanninetynine {
     color:white;
 }
 
+.mailto:hover{
+    outline: none;
+    text-decoration:none;
+    color:white;
+}
 
+a.mailto:hover{
+    outline: none;
+    text-decoration:none;
+    color:white;
+}
 
 .teambutton {
     border: none;
