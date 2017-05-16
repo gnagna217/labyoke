@@ -66,8 +66,10 @@ block content
                          h4!="35"
                          p!="Projects"
                 
-          p(style="position: relative;bottom: -341px;z-index: 4")
+          p(style="position: relative;bottom: -341px;z-index: 4",class="frontbutton")
             button(class="teambutton", onclick="rotateCard(this)") #{i18n.__("card.contact")}
+          p(style="position: relative;bottom: -341px;z-index: 4;display:none", class="backbutton")
+            button(class="teambutton", onclick="rotateCard(this)") #{i18n.__("card.back")}
       div(class="teamcolumn manual-flip")
         div(class="teamcard")
           img(src="images/card1.jpg" alt="Jane" style="width:100%")
@@ -80,14 +82,25 @@ block content
               a(class="mailto" href="mailto:contact@test.com") #{i18n.__("card.contact")}
       script.
         function rotateCard(btn){
+            var $otherbutton;
             var $card = $(btn).closest('.teamcolumn');
+            var classname = $(btn).attr("class");
+            if(classname == "frontbutton"){
+              $otherbutton = $(btn).closest('.backbutton');
+            } else {
+              $otherbutton = $(btn).closest('.frontbutton');
+            }
             var $front = $card.find('.front');
             console.log($front);
             if($card.hasClass('hover')){
                 $card.removeClass('hover');
                 $front.show();
+                $btn.hide();
+                $otherbutton.show();
             } else {
                 $card.addClass('hover');
                 $front.hide();
+                $btn.hide();
+                $otherbutton.show();
             }
         }
