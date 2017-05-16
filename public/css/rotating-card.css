@@ -76,6 +76,7 @@ body {
     position: absolute;
     top: 0;
     left: 0;
+    padding: 25px;
     /*background-color: #FFF;
     box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.14);*/
 }
@@ -190,7 +191,7 @@ body {
 }
 
 .teamcard {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);padding: 25px;height: 438px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);height: 438px;
 }
 .teamcard .teamcontent{
     background-color: rgba(0, 0, 0, 0);
