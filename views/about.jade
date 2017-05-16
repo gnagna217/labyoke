@@ -97,12 +97,12 @@ block content
             if($card.hasClass('hover')){
                 $card.removeClass('hover');
                 $front.show();
-                $(btn).hide();
+                $(btn).parent().hide();
                 $otherbutton.show();
             } else {
                 $card.addClass('hover');
                 $front.hide();
-                $(btn).hide();
+                $(btn).parent().hide();
                 $otherbutton.show();
             }
         }
