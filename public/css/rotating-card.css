@@ -189,8 +189,8 @@ body {
     width: 100%;
 }
 
-.teamcard{
-    height: 438px;
+.teamcard {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);padding: 25px;height: 438px;
 }
 .teamcard .teamcontent{
     background-color: rgba(0, 0, 0, 0);
