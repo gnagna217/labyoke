@@ -157,7 +157,10 @@ body {
 }
 /*        Style       */
 
-
+.cardtext-center{
+    font-size: 10pt;
+    text-align: center;
+}
 .card{
     background: none repeat scroll 0 0 #FFFFFF;
     border-radius: 4px;
@@ -199,7 +202,7 @@ body {
 .teamcard .teamcontent{
     background-color: rgba(0, 0, 0, 0);
     box-shadow: none;
-    padding: 10px 20px 20px;
+    /*padding: 10px 20px 20px;*/
 }
 .teamcard .teamcontent .main {
     min-height: 160px;
