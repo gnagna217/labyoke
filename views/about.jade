@@ -50,7 +50,7 @@ block content
           div(class="back")
             p(class="teamdesc") #{i18n.__("card2.desc")}
           p(style="position: relative;bottom: -290px;z-index: 4")
-            button(class="teambutton")
+            button(class="teambutton", onclick="rotateCard(this))
               a(class="mailto" href="mailto:contact@test.com") #{i18n.__("card.contact")}
       div(class="teamcolumn")
         div(class="teamcard")
@@ -62,3 +62,13 @@ block content
           p
             button(class="teambutton")
               a(class="mailto" href="mailto:contact@test.com") #{i18n.__("card.contact")}
+      script.
+        function rotateCard(btn){
+            var $card = $(btn).closest('.team-container');
+            console.log($card);
+            if($card.hasClass('hover')){
+                $card.removeClass('hover');
+            } else {
+                $card.addClass('hover');
+            }
+        }
