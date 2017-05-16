@@ -30,7 +30,7 @@ block content
       div.pointsLayout.alert.results
           span #{i18n.__("about.desc6")}
     div(class="teamrow")
-      div(class="teamcolumn")
+      div(class="teamcolumn manual-flip")
         div(class="teamcard")
           img(src="/images/card1.jpg" alt="Jane" style="width:100%")
           div(class="teamcontainer")
@@ -40,19 +40,19 @@ block content
           p
             button(class="teambutton") 
               a(class="mailto" href="mailto:contact@test.com") #{i18n.__("card.contact")}
-      div(class="teamcolumn")
+      div(class="teamcolumn manual-flip")
         div(class="teamcard")
           div(class="front")
             img(src="images/card2.jpg" alt="Jane" style="width:100%")
             div(class="teamcontainer")
             h3!="Eran Shaysh"
             p(class="teamtitle") #{i18n.__("card2.title")}
-          div(class="back")
+          div(class="back teamcard")
             p(class="teamdesc") #{i18n.__("card2.desc")}
           p(style="position: relative;bottom: -290px;z-index: 4")
             button(class="teambutton", onclick="rotateCard(this)")
               a(class="mailto" href="mailto:contact@test.com") #{i18n.__("card.contact")}
-      div(class="teamcolumn")
+      div(class="teamcolumn manual-flip")
         div(class="teamcard")
           img(src="images/card1.jpg" alt="Jane" style="width:100%")
           div(class="teamcontainer")
