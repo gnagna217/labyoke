@@ -32,12 +32,13 @@ block content
     div(class="teamrow")
       div(class="teamcolumn manual-flip")
         div(class="teamcard")
-          img(src="/images/card1.jpg" alt="Jane" style="width:100%")
-          div(class="teamcontainer")
-          h3!="Andria Schibler"
-                      p(class="teamtitle") #{i18n.__("card1.title")}
-            p(style="z-index: 4",class="frontbutton")
-              button(class="teambutton", onclick="rotateCard(this)") #{i18n.__("card.contact")}
+          div(class="front")
+            img(src="/images/card1.jpg" alt="Jane" style="width:100%")
+            div(class="teamcontainer")
+            h3!="Andria Schibler"
+              p(class="teamtitle") #{i18n.__("card1.title")}
+              p(style="z-index: 4",class="frontbutton")
+                button(class="teambutton", onclick="rotateCard(this)") #{i18n.__("card.contact")}
           div(class="back", style="z-index: 5;")
             div(class="header")
               h5(class="motto")!= "My motto"
@@ -87,12 +88,13 @@ block content
               button(class="teambutton", onclick="rotateCard(this)") #{i18n.__("card.back")}
       div(class="teamcolumn manual-flip")
         div(class="teamcard")
-          img(src="images/card1.jpg" alt="Jane" style="width:100%")
-          div(class="teamcontainer")
-          h3!="Gnagna Konaté"
-            p(class="teamtitle") #{i18n.__("card3.title")}
-            p(style="z-index: 4",class="frontbutton")
-              button(class="teambutton", onclick="rotateCard(this)") #{i18n.__("card.contact")}
+          div(class="front")
+            img(src="images/card1.jpg" alt="Jane" style="width:100%")
+            div(class="teamcontainer")
+            h3!="Gnagna Konaté"
+              p(class="teamtitle") #{i18n.__("card3.title")}
+              p(style="z-index: 4",class="frontbutton")
+                button(class="teambutton", onclick="rotateCard(this)") #{i18n.__("card.contact")}
           div(class="back", style="z-index: 5;")
             div(class="header")
               h5(class="motto")!= "My motto"
