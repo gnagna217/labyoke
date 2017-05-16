@@ -47,8 +47,10 @@ block content
             div(class="teamcontainer")
             h3!="Eran Shaysh"
             p(class="teamtitle") #{i18n.__("card2.title")}
-          div(class="back teamcard")
-            p(class="teamdesc") #{i18n.__("card2.desc")}
+          div(class="back")
+            div(class="content")
+              div(class="main")
+                p(class="teamdesc") #{i18n.__("card2.desc")}
           p(style="position: relative;bottom: -290px;z-index: 4")
             button(class="teambutton", onclick="rotateCard(this)")
               a(class="mailto" href="mailto:contact@test.com") #{i18n.__("card.contact")}
