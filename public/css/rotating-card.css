@@ -206,10 +206,10 @@ body {
     /*padding: 10px 20px 20px;*/
 }
 .teamcard .teamcontent .main {
-    min-height: 160px;
+   /* min-height: 160px;*/
 }
 .teamcard .back .teamcontent .main {
-    height: 215px;
+    /*height: 215px;*/
 }
 .teamcard .name {
     font-size: 22px;
