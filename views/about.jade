@@ -86,12 +86,13 @@ block content
             var $card = $(btn).closest('.teamcolumn');
             var classname = $(btn).attr("class");
             if(classname == "frontbutton"){
-              $otherbutton = $(btn).closest('.backbutton');
+              $otherbutton = $(btn).next('.backbutton');
             } else {
-              $otherbutton = $(btn).closest('.frontbutton');
+              $otherbutton = $(btn).prev('.frontbutton');
             }
+            console.log($otherbutton);
             var $front = $card.find('.front');
-            console.log($front);
+            //console.log($front);
             if($card.hasClass('hover')){
                 $card.removeClass('hover');
                 $front.show();
