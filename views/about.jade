@@ -80,8 +80,8 @@ block content
       script.
         function rotateCard(btn){
             var $card = $(btn).closest('.teamcolumn');
-            var $front = $(btn).closest('.front');
-            console.log($card);
+            var $front = $(btn).prev('.front');
+            console.log($front);
             if($card.hasClass('hover')){
                 $card.removeClass('hover');
                 $front.show();

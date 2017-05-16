@@ -189,55 +189,55 @@ body {
     width: 100%;
 }
 
-.card .teamcontent{
+.teamcard .teamcontent{
     background-color: rgba(0, 0, 0, 0);
     box-shadow: none;
     padding: 10px 20px 20px;
 }
-.card .teamcontent .main {
+.teamcard .teamcontent .main {
     min-height: 160px;
 }
-.card .back .teamcontent .main {
+.teamcard .back .teamcontent .main {
     height: 215px;
 }
-.card .name {
+.teamcard .name {
     font-size: 22px;
     line-height: 28px;
     margin: 10px 0 0;
     text-align: center;
     text-transform: capitalize;
 }
-.card h5{
+.teamcard h5{
     margin: 5px 0;
     font-weight: 400;
     line-height: 20px;
 }
-.card .profession{
+.teamcard .profession{
     color: #999999;
     text-align: center;
     margin-bottom: 20px;
 }
-.card .footer {
+.teamcard .footer {
     border-top: 1px solid #EEEEEE;
     color: #999999;
     margin: 30px 0 0;
     padding: 10px 0 0;
     text-align: center;
 }
-.card .footer .social-links{
+.teamcard .footer .social-links{
     font-size: 18px;
 }
-.card .footer .social-links a{
+.teamcard .footer .social-links a{
     margin: 0 7px;
 }
-.card .footer .btn-simple{
+.teamcard .footer .btn-simple{
     margin-top: -6px;
 }
-.card .header {
+.teamcard .header {
     padding: 15px 20px;
     height: 90px;
 }
-.card .motto{
+.teamcard .motto{
     border-bottom: 1px solid #EEEEEE;
     color: #999999;
     font-size: 14px;
@@ -246,28 +246,28 @@ body {
     text-align: center;
 }
 
-.card .stats-container{
+.teamcard .stats-container{
     width: 100%;
     margin-top: 50px;
 }
-.card .stats{
+.teamcard .stats{
     display: block;
     float: left;
     width: 33.333333%;
     text-align: center;
 }
 
-.card .stats:first-child{
+.teamcard .stats:first-child{
     border-right: 1px solid #EEEEEE;
 }
-.card .stats:last-child{
+.teamcard .stats:last-child{
     border-left: 1px solid #EEEEEE;
 }
-.card .stats h4{
+.teamcard .stats h4{
     font-weight: 300;
     margin-bottom: 5px;
 }
-.card .stats p{
+.teamcard .stats p{
     color: #777777;
 }
 /*      Just for presentation        */
