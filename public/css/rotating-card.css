@@ -263,7 +263,7 @@ body {
 .teamcard .stats{
     display: block;
     float: left;
-    width: 33.333333%;
+    width: 48%;
     text-align: center;
 }
 
