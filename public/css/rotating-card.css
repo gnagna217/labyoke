@@ -23,15 +23,15 @@ body {
 
 
 
-.team-container {
+.teamcolumn {
       -webkit-perspective: 800px;
    -moz-perspective: 800px;
      -o-perspective: 800px;
         perspective: 800px;
         /*margin-bottom: 30px;*/
 }
-.team-container:not(.manual-flip):hover .teamcard,
-.team-container.hover.manual-flip .teamcard{
+.teamcolumn:not(.manual-flip):hover .teamcard,
+.teamcolumn.hover.manual-flip .teamcard{
     -webkit-transform: rotateY( 180deg );
 -moz-transform: rotateY( 180deg );
  -o-transform: rotateY( 180deg );
@@ -39,16 +39,16 @@ body {
 }
 
 /* flip the pane when hovered */
-.teamcard-container:not(.manual-flip):hover .teamcard,
-.teamcard-container.hover.manual-flip .teamcard{
+.teamcolumn:not(.manual-flip):hover .teamcard,
+.teamcolumn.hover.manual-flip .teamcard{
     -webkit-transform: rotateY( 180deg );
 -moz-transform: rotateY( 180deg );
  -o-transform: rotateY( 180deg );
     transform: rotateY( 180deg );
 }
 
-.teamcard-container.static:hover .teamcard,
-.teamcard-container.static.hover .teamcard {
+.teamcolumn.static:hover .teamcard,
+.teamcolumn.static.hover .teamcard {
     -webkit-transform: none;
 -moz-transform: none;
  -o-transform: none;

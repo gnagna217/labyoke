@@ -64,7 +64,7 @@ block content
               a(class="mailto" href="mailto:contact@test.com") #{i18n.__("card.contact")}
       script.
         function rotateCard(btn){
-            var $card = $(btn).closest('.team-container');
+            var $card = $(btn).closest('.teamcolumn');
             console.log($card);
             if($card.hasClass('hover')){
                 $card.removeClass('hover');
