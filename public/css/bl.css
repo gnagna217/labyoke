@@ -1915,7 +1915,7 @@ a.mailto:hover{
     text-decoration:none;
     color:white;
 }
-a.mailto:visited { 
+a:visited { 
     outline: none;
     text-decoration:none;
     color:white;
