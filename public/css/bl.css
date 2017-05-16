@@ -1921,6 +1921,12 @@ a:visited {
     color:white;
 }
 
+a:active { 
+    outline: none;
+    text-decoration:none;
+    color:white;
+}
+
 .teambutton {
     border: none;
     outline: 0;
