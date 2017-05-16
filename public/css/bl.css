@@ -1898,6 +1898,14 @@ span.num.greatherthanninetynine {
     color: grey;
 }
 
+.mailto{
+    outline: none;
+    text-decoration:none;
+    color:white;
+}
+
+
+
 .teambutton {
     border: none;
     outline: 0;

@@ -38,7 +38,8 @@ block content
           p(class="teamtitle") #{i18n.__("card1.title")}
           p #{i18n.__("card1.desc")}
           p
-            button(class="teambutton") #{i18n.__("card.contact")}
+            button(class="teambutton") 
+              a(class="mailto" href="mailto:contact@test.com") #{i18n.__("card.contact")}
       div(class="teamcolumn")
         div(class="teamcard")
           img(src="images/card2.jpg" alt="Jane" style="width:100%")
@@ -47,7 +48,8 @@ block content
           p(class="teamtitle") #{i18n.__("card2.title")}
           p #{i18n.__("card2.desc")}
           p
-            button(class="teambutton") #{i18n.__("card.contact")}
+            button(class="teambutton")
+              a(class="mailto" href="mailto:contact@test.com") #{i18n.__("card.contact")}
       div(class="teamcolumn")
         div(class="teamcard")
           img(src="images/card1.jpg" alt="Jane" style="width:100%")
@@ -56,4 +58,5 @@ block content
           p(class="teamtitle") #{i18n.__("card3.title")}
           p #{i18n.__("card3.desc")}
           p
-            button(class="teambutton") #{i18n.__("card.contact")}
+            button(class="teambutton")
+              a(class="mailto" href="mailto:contact@test.com") #{i18n.__("card.contact")}
