@@ -28,7 +28,7 @@ body {
    -moz-perspective: 800px;
      -o-perspective: 800px;
         perspective: 800px;
-        min-height:450px;
+        min-height:407px;
         /*margin-bottom: 30px;*/
 }
 .teamcolumn:not(.manual-flip):hover .teamcard,
