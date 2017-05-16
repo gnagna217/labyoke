@@ -47,7 +47,7 @@ block content
             div(class="teamcontainer")
             h3!="Eran Shaysh"
             p(class="teamtitle") #{i18n.__("card2.title")}
-          div(class="back")
+          div(class="back", style="z-index: 5;")
             div(class="content")
               div(class="main")
                  h4(class="text-center")!= "What do I do?"
@@ -64,7 +64,7 @@ block content
                          h4!="35"
                          p!="Projects"
                 
-          p(style="position: relative;bottom: -290px;z-index: 4")
+          p(style="position: relative;bottom: -320px;z-index: 4")
             button(class="teambutton", onclick="rotateCard(this)")
               a(class="mailto" href="mailto:contact@test.com") #{i18n.__("card.contact")}
       div(class="teamcolumn manual-flip")
@@ -80,10 +80,13 @@ block content
       script.
         function rotateCard(btn){
             var $card = $(btn).closest('.teamcolumn');
+            var $front = $(btn).closest('.front');
             console.log($card);
             if($card.hasClass('hover')){
                 $card.removeClass('hover');
+                $front.show();
             } else {
                 $card.addClass('hover');
+                $front.hide();
             }
         }
