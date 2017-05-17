@@ -32,8 +32,6 @@ body {
 }
 
 @media (max-width: 480px) {
-
-
 .teamcolumn2{
     position: relative;
     margin-top: 88%;
@@ -42,6 +40,9 @@ body {
 
 @media (max-width: 410px) {
 
+.teamrow{
+    min-height:1500px;
+}
 
 .teamcolumn1{
         position: relative;
@@ -207,7 +208,7 @@ body {
     height: 500px;
     border-radius: 4px;*/
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    margin-bottom: 100px;
+    margin-bottom: 50px;
 }
 .card .cover{
     height: 105px;
