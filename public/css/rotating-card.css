@@ -19,8 +19,40 @@ body {
 }
 
 
+@media (max-width: 650px) {
+.teamcolumn1{
+        position: relative;
+    margin-top: 141%;
+}
+
+.teamcolumn2{
+    position: relative;
+    margin-top: 85%;
+}
+}
+
+@media (max-width: 480px) {
 
 
+.teamcolumn2{
+    position: relative;
+    margin-top: 88%;
+}
+}
+
+@media (max-width: 410px) {
+
+
+.teamcolumn1{
+        position: relative;
+    margin-top: 145%;
+}
+
+.teamcolumn2{
+    position: relative;
+    margin-top: 93%;
+}
+}
 
 
 .teamcolumn {
