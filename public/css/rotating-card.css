@@ -74,7 +74,7 @@ body {
    -moz-backface-visibility: hidden;
      -o-backface-visibility: hidden;
         backface-visibility: hidden;
-    position: relative;
+    position: absolute;
     top: 0;
     left: 0;
     padding: 25px;
@@ -87,7 +87,7 @@ body {
    -moz-backface-visibility: hidden;
      -o-backface-visibility: hidden;
         backface-visibility: hidden;
-    position: relative;
+    position: absolute;
     top: 0;
     left: 0;
     padding: 25px;
