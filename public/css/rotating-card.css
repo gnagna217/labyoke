@@ -138,17 +138,7 @@ body {
 }
 
 /* hide back of pane during swap */
-.front, .back {
-    -webkit-backface-visibility: hidden;
-   -moz-backface-visibility: hidden;
-     -o-backface-visibility: hidden;
-        backface-visibility: hidden;
-    position: absolute;
-    top: 0;
-    left: 0;
-    background-color: #FFF;
-    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.14);
-}
+
 
 /* front pane, placed above back */
 .front {
