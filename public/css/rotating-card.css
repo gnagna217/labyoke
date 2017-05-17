@@ -28,7 +28,6 @@ body {
 .teamcolumn2{
     position: relative;
     margin-top: 85%;
-    margin-bottom: 25px;
 }
 }
 
@@ -208,7 +207,7 @@ body {
     height: 500px;
     border-radius: 4px;*/
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    margin-bottom: 50px;
+    margin-bottom: 100px;
 }
 .card .cover{
     height: 105px;
