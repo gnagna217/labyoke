@@ -199,63 +199,6 @@ body {
     margin-right: -10px;
 }
 
-#cloud {
-    width: 350px; height: 120px;
-    
-    background: #f2f9fe;
-    background: linear-gradient(top, #f2f9fe 5%, #d6f0fd 100%);
-    background: -webkit-linear-gradient(top, #f2f9fe 5%, #d6f0fd 100%);
-    background: -moz-linear-gradient(top, #f2f9fe 5%, #d6f0fd 100%);
-    background: -ms-linear-gradient(top, #f2f9fe 5%, #d6f0fd 100%);
-    background: -o-linear-gradient(top, #f2f9fe 5%, #d6f0fd 100%);
-    
-    border-radius: 100px;
-    -webkit-border-radius: 100px;
-    -moz-border-radius: 100px;
-    
-    position: relative;
-    margin: 120px auto 20px;
-}
-
-#cloud:after, #cloud:before {
-    content: '';
-    position: absolute;
-    background: #f2f9fe;
-    z-index: -1
-}
-
-#cloud:after {
-    width: 100px; height: 100px;
-    top: -50px; left: 50px;
-    
-    border-radius: 100px;
-    -webkit-border-radius: 100px;
-    -moz-border-radius: 100px;
-}
-
-#cloud:before {
-    width: 180px; height: 180px;
-    top: -90px; right: 50px;
-    
-    border-radius: 200px;
-    -webkit-border-radius: 200px;
-    -moz-border-radius: 200px;
-}
-
-.shadow {
-    width: 350px;
-    position: absolute; bottom: -10px; 
-    background: #000;
-    z-index: -1;
-    
-    box-shadow: 0 0 25px 8px rgba(0, 0, 0, 0.4);
-    -moz-box-shadow: 0 0 25px 8px rgba(0, 0, 0, 0.4);
-    -webkit-box-shadow: 0 0 25px 8px rgba(0, 0, 0, 0.4);
-    
-    border-radius: 50%;
-    -moz-border-radius: 50%;
-    -webkit-border-radius: 50%;
-}
 
 .order-container{
     width: 49%;
@@ -1239,20 +1182,46 @@ input::-webkit-inner-spin-button {
     float: right;
 }
 
- @media (max-width: 700px) {
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ @media (min-width: 715px) {
     .searchResults{
-    float: none;
-    width: auto;
-    margin-left: 0;
+    float: left;
+    width: 100%;
+    margin-left: 0px;
     }
-    #results, .results{
-    border:none;
-    padding: 0px;
-    }
-
-
 }
- @media (min-width: 767px) {
+
+@media (min-width: 767px) {
 .hamburger{
     display:none !important;
     -webkit-appearance: none;
@@ -1276,18 +1245,57 @@ input::-webkit-inner-spin-button {
 }
 }
 
-@media (max-width: 993px) {
-    .positionbutton{
-    left: 23%;
+@media (min-width: 768px){
+.center{
+    text-align:center;
+}
+.container {
+    width: 99% !important;
+    /*width: 97% !important;*/
+}
+.accountdetail{
+    float: left; 
+    width: 16%;
+    margin-bottom:15px;
+    /*font-weight:bold;*/
+}
+.accountdetailWidth{
+    width: 100%;
+    margin-right: 10px !important;
+    
+}
+.accountdetailMargin{
+    margin-left: 0px;
+}
+.accountdetail-header{
+    border-bottom-color:#8a6d3b;border-bottom-style:solid;margin-right: 5px;
+}
+.accountdetailRowMargin{
+    margin-left: 5px;
+}
 }
 
+@media (min-width: 835px) {
+    .searchcatalog{
+    position: relative;
+    float: right;
+}
 }
 
-@media (max-width: 900px) {
-    .positionbutton{
-    left: 21%;
+ @media (min-width: 879px) {
+.searchResults{
+    float: left;
+    width: 100%;
+    margin-left: 0px;
+}
 }
 
+ @media (min-width: 991px) {
+    .searchResults{
+        float: left;
+        width: 50%;
+        /*margin-left: 85px;*/
+    }
 }
 
  @media (min-width: 993px) {
@@ -1318,37 +1326,105 @@ input::-webkit-inner-spin-button {
 }
 }
 
-
- @media (min-width: 715px) {
-    .searchResults{
-    float: left;
-    width: 100%;
-    margin-left: 0px;
+ @media (min-width: 1082px) {
+    .searchcatalogbar{
+        background-color: #3d9dcb; height: 1px; /*margin-bottom: 40px;*/ display: block;
     }
 }
 
- @media (min-width: 879px) {
-.searchResults{
-    float: left;
-    width: 100%;
-    margin-left: 0px;
+@media (min-width: 1103px){
+.searchcatalog {
+    margin-left: 20px;
 }
 }
 
- @media (min-width: 991px) {
+ @media (min-width: 1132px) {
+    .searchcatalog{
+        margin-left: 50px;
+    }
+}
+
+ @media (min-width: 1200px) {
+
     .searchResults{
         float: left;
-        width: 50%;
-        /*margin-left: 85px;*/
+        width: 60%;
+        margin-left: 40px;
     }
 }
 
- @media (max-width: 908px) {
+ @media (min-width: 1380px) {
 .mobileonly{
-    display: block;
+    display: none;
+}
+#checkname{
+    margin-left: 200px;
+}
+
+#checksurname{
+    margin-left: 200px;
+}
+#checktel{
+    margin-left: 200px;
 }
 
 }
+ @media (min-width: 1400px) {
+.positionbutton{
+    left: 32.5%;
+    position: relative;
+}
+}
+
+
+
+
+
+
+
+
+ @media (max-width: 1202px) {
+.adjustpaddingrightandwidth {
+    margin-right: 35px;
+    width: 46%;
+}
+}
+ @media (max-width: 1200px) {
+.positionbutton{
+    left: 28%;
+}
+    .deskfullonly{
+    display: none;
+}
+    .rankTbl td {
+        /* text-align: center; */
+        font-size: 13px;
+    }
+}
+ @media (max-width: 1100px) {
+.positionbutton{
+    left: 25%;
+}
+}
+
+
+
+@media (max-width: 908px) {
+.adjustpaddingrightandwidth {
+    margin-right: 0px;
+    width: 50%;
+}
+    .mobileonly{
+        display: block;
+    }
+}
+
+@media (max-width: 993px) {
+    .positionbutton{
+        left: 23%;
+    }
+}
+
  @media (max-width: 992px) {
 
 .positionbutton{
@@ -1381,6 +1457,14 @@ input::-webkit-inner-spin-button {
     }
 }
 
+
+
+@media (max-width: 900px) {
+    .positionbutton{
+        left: 21%;
+    }
+}
+
  @media (max-width: 880px) {
     .searchcatalog{
         /*left: -50px;*/
@@ -1391,66 +1475,19 @@ input::-webkit-inner-spin-button {
     }
 }
 
- @media (max-width: 715px) {
-
-.positionbutton{
-    left: 35%;
-}
-.keysearch{
-    left:0;width: 90%;
-}
-
-.positionbutton{
-    left: 0;
-    }
-
-.messagesearch{
-    left: 0;
-    width: 110%;
-    font-size: 11pt;
-}
-
-.radiosearch{
-    font-size:12pt;
-    margin: 15px;
-    text-align: none;
-    margin-top: 25px;
-}
-
-.positionbutton{
-    left: 0;
+@media (max-width: 849px){
+.nav > li > a {
     position: relative;
-}
+    display: block;
+    padding: 15px 10.7px;
 
 }
-
-@media (min-width: 1103px){
-.searchcatalog {
-    margin-left: 20px;
 }
-}
- @media (min-width: 1132px) {
-    .searchcatalog{
-        margin-left: 50px;
-    }
-}
- @media (min-width: 1082px) {
-    .searchcatalogbar{
-        background-color: #3d9dcb; height: 1px; /*margin-bottom: 40px;*/ display: block;
-    }
-}
-
 
 @media (max-width: 826px) {
     .searchcatalog{
         margin-left: 0px;
     }
-}
-@media (min-width: 835px) {
-    .searchcatalog{
-    position: relative;
-    float: right;
-}
 }
 
  @media (max-width: 800px) {
@@ -1475,115 +1512,13 @@ input::-webkit-inner-spin-button {
     background-color: #3d9dcb; height: 1px; margin-bottom: 30px; margin-top: 30px;
 }
 }
+
 @media (max-width: 768px){
 .floatleft{
     float:left;
 }
 .help{
     width: 97%;
-}
-}
-@media (min-width: 768px){
-.center{
-    text-align:center;
-}
-.container {
-    width: 99% !important;
-    /*width: 97% !important;*/
-}
-.accountdetail{
-    float: left; 
-    width: 16%;
-    margin-bottom:15px;
-    /*font-weight:bold;*/
-}
-.accountdetailWidth{
-    width: 100%;
-    margin-right: 10px !important;
-    
-}
-.accountdetailMargin{
-    margin-left: 0px;
-}
-.accountdetail-header{
-    border-bottom-color:#8a6d3b;border-bottom-style:solid;margin-right: 5px;
-}
-.accountdetailRowMargin{
-    margin-left: 5px;
-}
-}
-
- @media (max-width: 1100px) {
-.positionbutton{
-    left: 25%;
-}
-}
- @media (max-width: 1202px) {
-.adjustpaddingrightandwidth {
-    margin-right: 35px;
-    width: 46%;
-}
-}
-
-@media (max-width: 908px) {
-.adjustpaddingrightandwidth {
-    margin-right: 0px;
-    width: 50%;
-}
-}
-
- @media (min-width: 1400px) {
-.positionbutton{
-    left: 32.5%;
-    position: relative;
-}
-}
- @media (max-width: 1200px) {
-.positionbutton{
-    left: 28%;
-}
-    .deskfullonly{
-    display: none;
-}
-    .rankTbl td {
-        /* text-align: center; */
-        font-size: 13px;
-    }
-}
- @media (min-width: 1200px) {
-
-    .searchResults{
-        float: left;
-        width: 60%;
-        margin-left: 40px;
-    }
-}
-
-
- @media (min-width: 1380px) {
-.mobileonly{
-    display: none;
-}
-#checkname{
-    margin-left: 200px;
-}
-
-#checksurname{
-    margin-left: 200px;
-}
-#checktel{
-    margin-left: 200px;
-}
-
-}
-
-
-@media (max-width: 849px){
-.nav > li > a {
-    position: relative;
-    display: block;
-    padding: 15px 10.7px;
-
 }
 }
 
@@ -1760,6 +1695,51 @@ span.num.greatherthanninetynine {
 }
 }
 
+ @media (max-width: 715px) {
+
+.positionbutton{
+    left: 35%;
+}
+.keysearch{
+    left:0;width: 90%;
+}
+
+.positionbutton{
+    left: 0;
+    }
+
+.messagesearch{
+    left: 0;
+    width: 110%;
+    font-size: 11pt;
+}
+
+.radiosearch{
+    font-size:12pt;
+    margin: 15px;
+    text-align: none;
+    margin-top: 25px;
+}
+
+.positionbutton{
+    left: 0;
+    position: relative;
+}
+
+}
+
+ @media (max-width: 700px) {
+    .searchResults{
+        float: none;
+        width: auto;
+        margin-left: 0;
+    }
+    #results, .results{
+        border:none;
+        padding: 0px;
+    }
+}
+
 @media (max-width: 667px){
 .positionbutton{
     left: 30%;
@@ -1767,6 +1747,14 @@ span.num.greatherthanninetynine {
 .mobilenavlogo{
     width: 55.5px;
 }
+}
+
+/* Display the columns below each other instead of side by side on small screens */
+@media (max-width: 650px) {
+    .teamcolumn {
+        width: 100%;
+        display: block;
+    }
 }
 
 @media (max-width: 600px){
@@ -1928,6 +1916,8 @@ span.num.greatherthanninetynine {
 }
   
 }
+
+
 .pastdate {
 	color:#460077;
 }
@@ -1949,13 +1939,7 @@ span.num.greatherthanninetynine {
     padding: 0 8px;
 }
 
-/* Display the columns below each other instead of side by side on small screens */
-@media (max-width: 650px) {
-    .teamcolumn {
-        width: 100%;
-        display: block;
-    }
-}
+
 
 /* Add some shadows to create a card effect */
 .teamcard {
