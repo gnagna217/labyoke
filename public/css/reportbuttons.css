@@ -66,6 +66,8 @@ body .containerreport h2 {
   text-align: center;
 }
 body .containerreport_button {
+  color: #8a6d3b;
+  background-color: #3d9dcb;
   border: 2px solid #3d9dcb;
   width: 200px;
   text-align: center;
@@ -99,7 +101,7 @@ body .containerreport_button__bar {
   height: 8px;
   top: 4px;
   border-radius: 100px;
-  background: -webkit-linear-gradient(left, #3d9dcb 0%, #0BC9A1 100%);
+  background: -webkit-linear-gradient(left, #3d9dcb 0%, #8a6d3b 100%);
 }
 body .containerreport input {
   display: none;
