@@ -522,25 +522,25 @@ body .containerreport label span .large {
     border: none;
   }
   75% {
-    background: rgba(0, 0, 0, 0.34);
+    background: #3d9dcb;
     border: none;
   }
   76% {
     width: 405px;
     height: 16px;
-    background: rgba(0, 0, 0, 0.34);
+    background: #3d9dcb;
     border: none;
   }
   88% {
     width: 384px;
     height: 16px;
-    background: rgba(0, 0, 0, 0.34);
+    background: #3d9dcb;
     border: none;
   }
   100% {
     width: 400px;
     height: 16px;
-    background: rgba(0, 0, 0, 0.34);
+    background: #3d9dcb;
     border: none;
   }
 }
@@ -557,25 +557,25 @@ body .containerreport label span .large {
     border: none;
   }
   75% {
-    background: rgba(0, 0, 0, 0.34);
+    background: #3d9dcb;
     border: none;
   }
   76% {
     width: 405px;
     height: 16px;
-    background: rgba(0, 0, 0, 0.34);
+    background: #3d9dcb;
     border: none;
   }
   88% {
     width: 384px;
     height: 16px;
-    background: rgba(0, 0, 0, 0.34);
+    background: #3d9dcb;
     border: none;
   }
   100% {
     width: 400px;
     height: 16px;
-    background: rgba(0, 0, 0, 0.34);
+    background: #3d9dcb; /*rgba(0, 0, 0, 0.34);*/
     border: none;
   }
 }
