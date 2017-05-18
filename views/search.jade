@@ -29,7 +29,7 @@ block content
     //if(searchResults == undefined || (searchResults != null && searchResults.length == 0)) 
     //  div(class="searchlogo")
     //    img(src="/images/logo_one_bottle_L.png", alt="The Yoke",  title="Yoke", class="searchlogoimg")
-    div(class="container login marginbottom positionings")
+    div(class="container login marginbottom positionings searchmargin")
         //h1 #{i18n.__("search.title")}
         //div(style="float: left;max-width: 400px;margin-bottom: -30px;")
         //    h1 #{i18n.__("search.title")}
@@ -97,7 +97,7 @@ block content
                     form(action="/search" method="post")
                         div(class="textentry")
                             input(type="hidden" name="searchtype" value="key")
-                            input(name="searchText" list="agent-datalist" type="text" id="searchText" class="form-control" placeholder=searchText style="font-size: 15pt;height: 40px;")
+                            input(name="searchText" list="agent-datalist" type="text" id="searchText" class="form-control searchinput" placeholder=searchText)
                             datalist(id="agent-datalist")
                                 -var ob2 = agentsResults
                                 -for(var prop in ob2)

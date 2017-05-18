@@ -254,6 +254,13 @@ a {
     width: 138px;margin-top:20px;
 }
 
+.searchinput{
+    font-size: 15pt;
+    height: 40px;
+}
+.searchmargin{
+    margin: 15px;
+}
 .keysearch{
     left:20%;width: 60%;position:relative;font-size:24pt;
 }
@@ -270,7 +277,7 @@ a {
 }
 
 .positionbutton{
-    left: 25%;
+    left: 31.5%;
     position: relative;
 }
 
@@ -1209,15 +1216,25 @@ input::-webkit-inner-spin-button {
 }
 }
 
-@media (min-width: 993px) {
+@media (max-width: 993px) {
+    .positionbutton{
+    left: 23%;
+}
+
+}
+
+@media (max-width: 900px) {
+    .positionbutton{
+    left: 21%;
+}
+
+}
+
+ @media (min-width: 993px) {
     .positioning{
     top: -100px;
     position: relative;
     }
-}
-
-
- @media (min-width: 993px) {
 .front{
     text-align: center;
 }
@@ -1457,13 +1474,13 @@ input::-webkit-inner-spin-button {
 
  @media (min-width: 1400px) {
 .positionbutton{
-    left: 35%;
+    left: 32.5%;
     position: relative;
 }
 }
  @media (max-width: 1200px) {
 .positionbutton{
-    left: 30%;
+    left: 28%;
 }
     .deskfullonly{
     display: none;
@@ -1512,7 +1529,7 @@ input::-webkit-inner-spin-button {
 
 @media (max-width: 767px){
 .positionbutton{
-    left: 20%;
+    left: 17%;
 }
 .mobileonlybar{
     display:block;
@@ -1685,7 +1702,7 @@ span.num.greatherthanninetynine {
 
 @media (max-width: 667px){
 .positionbutton{
-    left: 32%;
+    left: 30%;
 }
 .mobilenavlogo{
     width: 55.5px;
@@ -1720,6 +1737,9 @@ span.num.greatherthanninetynine {
 }
 
  @media (max-width: 440px) {
+.searchinput{
+    font-size: 13pt;
+}
 .reportbutton{
     margin-top: -47px;margin-right: 3%;
 }
