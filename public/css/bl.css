@@ -260,6 +260,7 @@ a {
 .searchinput{
     font-size: 15pt;
     height: 46px;
+    border-color: #8a6d3b;
 }
 .searchmargin{
     margin: 15px;
