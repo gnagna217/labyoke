@@ -102,7 +102,7 @@ body .containerreport_button:active {
   box-shadow: 0px 0px 0px 0px #3d9dcb; /*rgba(0, 0, 0, 0.2);*/
 }
 body .containerreport_button__bar {
-  width: 0%;
+  width: 70px;
   position: absolute;
   height: 8px;
   top: 4px;
