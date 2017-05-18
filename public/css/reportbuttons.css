@@ -67,7 +67,7 @@ body .containerreport h2 {
   text-align: center;
 }
 body .containerreport_button {
-  color: #8a6d3b;
+  color: #8a6d3b !important;
   background-color: #3d9dcb;
   border: 2px solid #3d9dcb;
   width: 200px;
