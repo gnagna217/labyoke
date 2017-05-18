@@ -1792,6 +1792,9 @@ span.num.greatherthanninetynine {
 }
 
  @media (max-width: 440px) {
+.paddingrightnav{
+    padding-right: 10px !important;
+}
 .searchinput{
     font-size: 13pt;
 }
