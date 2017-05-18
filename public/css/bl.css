@@ -1539,6 +1539,9 @@ input::-webkit-inner-spin-button {
 }
 
 @media (max-width: 767px){
+.paddingrightnav{
+    padding-right: 10px !important;
+}
 .positionbutton{
     left: 17%;
 }
@@ -1801,9 +1804,7 @@ span.num.greatherthanninetynine {
 }
 
  @media (max-width: 440px) {
-.paddingrightnav{
-    padding-right: 10px !important;
-}
+
 .searchinput{
     font-size: 13pt;
 }
