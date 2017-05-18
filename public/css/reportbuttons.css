@@ -14,14 +14,16 @@ body {
 }
 body .containerreport {
   position: relative;
-  left: 0;
+  /*left: 0;
   right: 0;
-  top: 50%;
+  top: 50%;*/
+  text-align: center;
+
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
-  width: 660px;
+  /*width: 660px;*/
   /*margin: auto;*/
-  margin-top: 100px;
+  margin-top: 200px;
 }
 body .containerreport a.download, body .containerreport a.follow {
   text-align: center;
@@ -581,12 +583,12 @@ body .containerreport label span .large {
 }
 @-webkit-keyframes bar {
   100% {
-    width: 50%; /*98%;*/
+    width: 98%;
   }
 }
 @keyframes bar {
   100% {
-    width: 50%; /*98%;*/
+    width: 98%;
   }
 }
 @-webkit-keyframes pulse {
