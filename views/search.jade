@@ -235,7 +235,7 @@ block content
           div(class="results", style="float:left;width: 100%;")
               div
                   span(style="text-align: center")
-                    h3 #{i18n.__("search.resultstitle")}
+                    h3(style="font-weight: 400;") #{i18n.__("search.resultstitle")}
                         if searchformText
                             span(style="color: #3d9dcb;")=" " + searchText
                         if searchformTextCatalog
@@ -316,7 +316,7 @@ block content
                 div(id="ctl00_Div2" class="row rank")
                    div(class="table-responsive")
                       span(style="text-align: center")
-                        h3="Sorry we could not find any location for your"
+                        h3(style="font-weight: 400;")="Sorry we could not find any location for your"
                             span(style="color: #3d9dcb;")=" " + searchText
                         h4="Try another chemical reagent!"              
     //script="$(window).scrollTop($('#results').offset().top).scrollLeft($('#results').offset().left);"
