@@ -68,7 +68,6 @@ body .containerreport h2 {
 }
 body .containerreport_button {
 
-  color: #8a6d3b !important;
   background-color: #3d9dcb;
   border: 2px solid #3d9dcb;
   width: 150px;
@@ -499,6 +498,7 @@ body .containerreport label span span {
   top: 0px;
   -webkit-transition: all .2s;
   transition: all .2s;
+  top: 53px;
 }
 body .containerreport label span .large {
   position: absolute;
