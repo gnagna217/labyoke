@@ -727,9 +727,8 @@ input:-webkit-autofill:hover {
 .container {
     padding-right: 10px !important;
     padding-left: 10px !important;
-    /*sticky nav*/
-    margin-top: 50px;
 }
+
 .colmenu{
     color: #a4d2e8;
 }
