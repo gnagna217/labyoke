@@ -144,7 +144,8 @@
     "reports.form.option5": "Inventaires Insuffisants",
     "reports.tip.header":"Aide Rapports?",
     "reports.tip.desc": "Sélectionnez un rapport dans le menu déroulant. Les champs sont facultatifs sauf indication contraire.<br/><br/>Les paramètres sous <i><b>Afficher</b></i> ajouteront des colonnes supplémentaires à la table de rapport.<br/><br/>Tous Les rapports (à l'exception du téléchargement du rapport d'inventaire) sont toujours limités uniquement aux données de votre département.",
-
+    "reports.download":"Téléchargement",
+    "reports.download.title":"Économies de la Semaine",
     
     "reports.money.title": "Rapport sur les Économies de Partage.",
     "reports.money.subtitle": "Télécharger le rapport sur les économies de partage de chaque laboratoire sur une période déterminée par Réactif.",

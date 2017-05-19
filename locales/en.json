@@ -143,7 +143,8 @@
     "reports.form.option5": "Insufficient Inventory",
     "reports.tip.header":"How To Report?",
     "reports.tip.desc": "Select a report from the drop down menu. Fields are optional unless otherwise noted.<br/><br/>Parameters under <i><b>Show</b></i> will add additional columns to the report table.<br/><br/>All reports (except the Inventory Report Upload) are always restricted to your department data only.",
-
+    "reports.download":"Downloading",
+    "reports.download.title":"Weekly Savings",
     
     "reports.money.title": "Shares Savings report Upload.",
     "reports.money.subtitle": "You can now retrieve a report of the savings each lab has made over a period of time per reagent.",
