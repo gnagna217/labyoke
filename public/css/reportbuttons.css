@@ -79,7 +79,7 @@ body .containerreport_button {
   border-radius: 100px;
   color: white;
   margin: 0 auto;
-  margin-left: 50px;
+  /*margin-left: 50px;*/
   -webkit-transition: all .3s;
   transition: all .3s;
   position: relative;
