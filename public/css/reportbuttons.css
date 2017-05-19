@@ -24,6 +24,7 @@ body .containerreport {
   /*width: 660px;*/
   /*margin: auto;*/
   /*margin-top: 200px;*/
+  width:150px;
 }
 
 .reportpaddingleft{
@@ -947,6 +948,7 @@ body .containerreport1 {
   /*width: 660px;*/
   /*margin: auto;*/
   /*margin-top: 200px;*/
+  width:150px;
 }
 
 body .containerreport1 a.download, body .containerreport1 a.follow {
