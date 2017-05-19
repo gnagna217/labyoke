@@ -32,6 +32,12 @@ body .containerreport {
 }
 }
 
+@media (max-width: 440px) {
+body .containerreport {
+  margin-top: 125px;
+}
+}
+
 body .containerreport a.download, body .containerreport a.follow {
   text-align: center;
   margin-top: 80px;
