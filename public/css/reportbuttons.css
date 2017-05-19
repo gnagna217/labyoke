@@ -41,7 +41,7 @@ body .containerreport {
 body .containerreport a.download, body .containerreport a.follow {
   text-align: center;
   margin-top: 80px;
-  width: 300px;
+  width: 175px;
   float: left;
   display: inline-block;
   padding: 16px 30px;
@@ -541,19 +541,22 @@ body .containerreport label span .large {
     border: none;
   }
   76% {
-    width: 405px;
+    /*width: 405px;*/
+    width: 202px;
     height: 16px;
     background: #3d9dcb;
     border: none;
   }
   88% {
-    width: 384px;
+    /*width: 384px;*/
+    width: 192px;
     height: 16px;
     background: #3d9dcb;
     border: none;
   }
   100% {
-    width: 400px;
+    width: 200px;
+    /*width: 400px;*/
     height: 16px;
     background: #3d9dcb;
     border: none;
@@ -576,19 +579,22 @@ body .containerreport label span .large {
     border: none;
   }
   76% {
-    width: 405px;
+    /*width: 405px;*/
+    width: 202px;
     height: 16px;
     background: #3d9dcb;
     border: none;
   }
   88% {
-    width: 384px;
+    /*width: 384px;*/
+    width: 192px;
     height: 16px;
     background: #3d9dcb;
     border: none;
   }
   100% {
-    width: 400px;
+    /*width: 400px;*/
+    width: 200px;
     height: 16px;
     background: #3d9dcb; /*rgba(0, 0, 0, 0.34);*/
     border: none;
