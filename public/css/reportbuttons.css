@@ -96,6 +96,7 @@ body .containerreport_button {
     -moz-border-radius: 50px;
     -webkit-border-radius: 50px;
     border-radius: 75px;
+    line-height:2;
 }
 body .containerreport_button:hover {
   box-shadow: 0px 0px 0px 6px rgba(138, 109, 59, 0.6); /*rgba(0, 0, 0, 0.2);*/
