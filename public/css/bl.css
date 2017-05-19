@@ -1,6 +1,4 @@
-/*@import url(https://fonts.googleapis.com/css?family=Nunito:400,700,300);*/
-
-@import url(/css/nunito.ttf);
+@import url(https://fonts.googleapis.com/css?family=Nunito:400,700,300);
 * {
   box-sizing: border-box;
   -webkit-touch-callout: none;
