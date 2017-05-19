@@ -23,10 +23,16 @@ body .containerreport {
           transform: translateY(-50%);
   /*width: 660px;*/
   /*margin: auto;*/
-  margin-top: 200px;
+  /*margin-top: 200px;*/
 }
 
+.reportpaddingleft{
+  top: 155px;padding-left: 30%;
+}
 
+.reportpaddingright{
+  padding-right: 30%;
+}
 
 body .containerreport a.download, body .containerreport a.follow {
   text-align: center;
@@ -824,6 +830,14 @@ body .containerreport {
 }
 
 @media (max-width: 440px) {
+
+.reportpaddingleft{
+  top: 0px;padding-left: 0px;
+}
+
+.reportpaddingright{
+  padding-right: 0px;
+}
 body .containerreport {
   margin-top: 125px;
 }
