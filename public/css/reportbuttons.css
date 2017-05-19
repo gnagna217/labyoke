@@ -823,9 +823,13 @@ body .containerreport label span .large {
   }
 }
 
-@media (max-width: 767px) {
-body .containerreport {
-  margin-top: 150px;
+@media (max-width: 667px) {
+.reportpaddingleft{
+  padding-left: 40%;
+}
+
+.reportpaddingright{
+  padding-right: 40%;
 }
 }
 
