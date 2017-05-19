@@ -26,22 +26,12 @@ body .containerreport {
   margin-top: 200px;
 }
 
-@media (max-width: 767px) {
-body .containerreport {
-  margin-top: 150px;
-}
-}
 
-@media (max-width: 440px) {
-body .containerreport {
-  margin-top: 125px;
-}
-}
 
 body .containerreport a.download, body .containerreport a.follow {
   text-align: center;
   margin-top: 80px;
-  width: 175px;
+  width: 300px;
   float: left;
   display: inline-block;
   padding: 16px 30px;
@@ -53,6 +43,23 @@ body .containerreport a.download, body .containerreport a.follow {
   border-radius: 4px;
   margin-right: 12px;
 }
+
+@media (max-width: 767px) {
+body .containerreport {
+  margin-top: 150px;
+}
+}
+
+@media (max-width: 440px) {
+body .containerreport {
+  margin-top: 125px;
+}
+
+body .containerreport a.download, body .containerreport a.follow {
+  width: 175px;
+}
+}
+
 body .containerreport a.download i, body .containerreport a.follow i {
   margin-right: 10px;
 }
