@@ -393,7 +393,7 @@ block content
 				if (addMessageShares == 'success')
 					div(class="alert alert-success fade in alert-dismissable")!= message_success_share
 				div
-					form(action="reportShares", method="post")
+					form(action="reportShares", method="post", id="formreportShares")
 						div(class="buttons")
 							label(style="width: 100px;")= i18n.__("reports.shares.datefrom")
 							input(name="reportDateFrom" style="margin-bottom:10px" type="text" id="reportDateFrom" class="form-control")
@@ -690,3 +690,12 @@ block content
 					div(class='point')
 					div(class='point')
 					div(class='containerreport_button__bar')
+		script.
+			$(".containerreport_button").click(function() {
+				console.log("clicked");
+	            var oFormObject = document.forms['formreportShares'];
+				oFormObject.elements["reportDateFrom"].value = '01-01-2016';
+				oFormObject.elements["reportDateTo"].value = '01-01-2017';
+				document.formreportShares.submit();
+            });
+			
