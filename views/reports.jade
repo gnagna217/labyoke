@@ -695,7 +695,8 @@ block content
 			script(type="text/javascript" src="/javascripts/FileSaver.js")
 			script.
 				$(".containerreport_button").click(function() {
-				if($('.fa-check').is(":visible")){
+				
+				if($('.fa-check:visible').size() > 0){
 				console.log("clicked");
 
 				var ob = "#{resultsMoneyIntro}"
