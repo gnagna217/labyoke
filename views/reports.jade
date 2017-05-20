@@ -690,12 +690,70 @@ block content
 					div(class='point')
 					div(class='point')
 					div(class='containerreport_button__bar')
-		script.
-			$(".containerreport_button").click(function() {
-			console.log("clicked");
-			$('input[name="reportDateFromMoney"]').val("01-01-2016");
-			$('input[name="reportDateToMoney"]').val("01-01-2017");
-			console.log($("#formreportMoney"));
-			$("#formreportMoney").submit();
+		if(resultsMoneyIntro != null && resultsMoneyIntro !="")
+			script(type="text/javascript" src="/javascripts/jspdf.js")
+			script(type="text/javascript" src="/javascripts/FileSaver.js")
+			script.
+				$(".containerreport_button").click(function() {
+				if($('.fa-check').is(":visible")){
+				console.log("clicked");
+
+				var ob = "#{resultsMoneyIntro}"
+				ob = ob.replace(/&lt;/g,"<");
+				ob = ob.replace(/&gt;/g,">");
+				var pdf = new jsPDF('l', 'pt', 'ledger');
+				var pdf2 = new jsPDF('l', 'pt', 'ledger');
+				source = ob;
+				specialElementHandlers = {
+					'#bypassme': function(element, renderer) {
+					return true;
+				}
+				};
+				margins = {
+					top: 30,
+					bottom: 30,
+					left: 40,
+					right: 40,
+					width: 622
+				};
+				pdf.fromHTML(
+					source, // HTML string or DOM elem ref.
+					margins.left, // x coord
+					margins.top, {// y coord
+					'width': margins.width, // max width of content on PDF
+					'elementHandlers': specialElementHandlers
+				},
+				function(dispose) {
+				
+				if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent))
+				{
+					pdf.output('dataurlnewwindow');
+				}
+				else
+				{
+					pdf.output('dataurlnewwindow');
+				}
+
+				}
+				, margins);	
+				pdf2.fromHTML(
+					source, // HTML string or DOM elem ref.
+					margins.left, // x coord
+					margins.top, {// y coord
+					'width': margins.width, // max width of content on PDF
+					'elementHandlers': specialElementHandlers
+				},
+				function(dispose) {
+				if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent))
+				{
+					pdf.output('dataurlnewwindow');
+				}
+				else
+				{
+					pdf2.save("#{file_money}");
+				}
+				}
+				, margins);
+				}
 			});
 			

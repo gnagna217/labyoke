@@ -499,6 +499,15 @@ totalshares = t[0].counting;
 			req.cookies.i18n = "en";
 		}
 		res.setLocale(req.cookies.i18n);
+
+		var datefrom = "01-01-2016";
+		var dateto = "01-01-2017";
+		//var category = req.body.reportCategory;
+		console.log("reportSomething intro");
+		var labYokereporter = new LabYokeReporterShares(datefrom, dateto, req.session.lab, req.session.labs,res);
+		labYokereporter.reportShares(function(error, results) {
+		
+
 		var labyokerLab = new LabyokerLab(req.session.lab);
 		labyokerLab.getLabsInDept(function(error, categories) {
 			console.log("load labs in dept in reports : " + categories);
@@ -508,14 +517,16 @@ totalshares = t[0].counting;
 				labyokerLabs.getlabs(function(error, labs) {
 					req.session.labs = labs;
 					console.log("load labs in reports : " + labs);
-					res.render('reports', {lang:req.cookies.i18n, i18n:res,dept: req.session.dept, categories: categories, labs: req.session.labs, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, isLoggedInAdmin: req.session.admin, loggedIn : true, title: 'Reports', isLoggedInAdmin: req.session.admin});
+					res.render('reports', {lang:req.cookies.i18n, i18n:res, resultsMoneyIntro:results,dept: req.session.dept, categories: categories, labs: req.session.labs, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, isLoggedInAdmin: req.session.admin, loggedIn : true, title: 'Reports', isLoggedInAdmin: req.session.admin});
 					req.session.messages = null;
 				});
 			} else {
-				res.render('reports', {lang:req.cookies.i18n, i18n:res,dept: req.session.dept, categories: categories, labs: req.session.labs, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, isLoggedInAdmin: req.session.admin, loggedIn : true, title: 'Reports', isLoggedInAdmin: req.session.admin});
+				res.render('reports', {lang:req.cookies.i18n, i18n:res, resultsMoneyIntro:results, dept: req.session.dept, categories: categories, labs: req.session.labs, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, isLoggedInAdmin: req.session.admin, loggedIn : true, title: 'Reports', isLoggedInAdmin: req.session.admin});
 				req.session.messages = null;
 			}
 		});
+
+});
 	});
 
 	router.post('/reportShares', isLoggedInAdmin, function(req, res) {
