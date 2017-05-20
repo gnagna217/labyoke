@@ -151,7 +151,7 @@ block content
 				if (addMessageMoney == 'success')
 					div(class="alert alert-success fade in alert-dismissable")!= message_success_money
 				div
-					form(action="reportMoney", method="post")
+					form(action="reportMoney", method="post", id="formreportMoney")
 						div(class="buttons")
 							label(style="width: 100px;")= i18n.__("reports.money.datefrom")
 							input(name="reportDateFromMoney" style="margin-bottom:10px" type="text" id="reportDateFromMoney" class="form-control")
@@ -693,9 +693,9 @@ block content
 		script.
 			$(".containerreport_button").click(function() {
 			console.log("clicked");
-			$('input[name="reportDateFrom"]').val("01-01-2016");
-			$('input[name="reportDateTo"]').val("01-01-2017");
-			console.log($("#formreportShares"));
-			$("#formreportShares").submit();
+			$('input[name="reportDateFromMoney"]').val("01-01-2016");
+			$('input[name="reportDateToMoney"]').val("01-01-2017");
+			console.log($("#formreportMoney"));
+			$("#formreportMoney").submit();
 			});
 			
