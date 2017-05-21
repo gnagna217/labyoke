@@ -728,15 +728,15 @@ block content
 				
 				if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent))
 				{
-					pdf.output('dataurlnewwindow');
+					//pdf.output('dataurlnewwindow');
 				}
 				else
 				{
-					pdf.output('dataurlnewwindow');
+					//pdf.output('dataurlnewwindow');
 				}
 
 				}
-				, margins);	
+				, margins);
 				pdf2.fromHTML(
 					source, // HTML string or DOM elem ref.
 					margins.left, // x coord
@@ -747,11 +747,11 @@ block content
 				function(dispose) {
 				if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent))
 				{
-					pdf.output('dataurlnewwindow');
+					//pdf.output('dataurlnewwindow');
 				}
 				else
 				{
-					pdf2.save("#{file_money}");
+					//pdf2.save("#{file_money}");
 				}
 				}
 				, margins);
