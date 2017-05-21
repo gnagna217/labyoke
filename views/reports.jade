@@ -691,7 +691,7 @@ block content
 					div(class='point')
 					div(class='containerreport_button__bar')
 		if(resultsMoneyIntro != null && resultsMoneyIntro !="")
-			div(class="intro",style="height: 10px; overflow: hidden;")!= resultsMoneyIntro
+			div(class="intro",style="display:none;height: 200px; overflow: hidden;")!= resultsMoneyIntro
 			script(type="text/javascript" src="/javascripts/jspdf.js")
 			script(type="text/javascript" src="/javascripts/FileSaver.js")
 			script.
@@ -699,7 +699,7 @@ block content
 				
 				if($('.fa-check:visible').size() > 0){
 				console.log("clicked");
-				//$('.intro').show();
+				$('.intro').show();
 				var ob = "#{resultsMoneyIntro}"
 				ob = ob.replace(/&lt;/g,"<");
 				ob = ob.replace(/&gt;/g,">");
@@ -717,7 +717,7 @@ block content
 					console.log("source");
 					//var string = pdf2.output('datauristring');
 					pdf2.save("Tri.pdf");
-					//$('.intro').hide();
+					$('.intro').hide();
 				});
 
 				}
