@@ -705,12 +705,12 @@ block content
 				ob = ob.replace(/&lt;/g,"<");
 				ob = ob.replace(/&gt;/g,">");
 				var pdf = new jsPDF('l', 'pt', 'ledger');
-				var pdf2 = new jsPDF('l', 'pt', 'ledger');
+				var pdf2 = new jsPDF('p', 'pt', 'ledger');
 				pdf2.setFont("courier", "normal");
 				pdf2.setFontSize(10);
 				source = ob;
 				
-				console.log(source);
+				console.debug(source);
 				var options = {
 				background: '#fff' //background is transparent if you don't set it, which turns it black for some reason.
 				};
