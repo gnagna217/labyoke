@@ -691,6 +691,7 @@ block content
 					div(class='point')
 					div(class='containerreport_button__bar')
 		if(resultsMoneyIntro != null && resultsMoneyIntro !="")
+			div(class="intro") #{resultsMoneyIntro}
 			script(type="text/javascript" src="/javascripts/jspdf.js")
 			script(type="text/javascript" src="/javascripts/FileSaver.js")
 			script.
@@ -720,7 +721,7 @@ block content
 					width: 722
 				};
 				//console.log(source);
-				pdf2.addHTML(source,function() {
+				pdf2.addHTML($(".intro"),function() {
 				var string = pdf2.output('datauristring');
 				//$('.preview-pane').attr('src', string);
 				});
