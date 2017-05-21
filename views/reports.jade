@@ -718,26 +718,6 @@ block content
 					width: 622
 				};
 				//console.log(source);
-				pdf.fromHTML(
-					source, // HTML string or DOM elem ref.
-					margins.left, // x coord
-					margins.top, {// y coord
-					'width': margins.width, // max width of content on PDF
-					'elementHandlers': specialElementHandlers
-				},
-				function(dispose) {
-				
-				if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent))
-				{
-					//pdf.output('dataurlnewwindow');
-				}
-				else
-				{
-					//pdf.output('dataurlnewwindow');
-				}
-
-				}
-				, margins);
 
 				console.log("source:");
 				console.debug(source);
