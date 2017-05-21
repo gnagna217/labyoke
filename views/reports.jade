@@ -748,8 +748,8 @@ block content
 
 				var pdf3 = new jsPDF('p', 'pt', 'letter');
 				var canvas = pdf3.canvas;
-				canvas.height = 72 * 11;
-				canvas.width= 72 * 8.5;;
+				canvas.height = 72 * 10;
+				canvas.width= 72 * 10;;
 				// can also be document.body
 				html2pdf(source, pdf3, function(pdf) {
 				pdf3.output('dataurlnewwindow');
