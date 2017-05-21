@@ -704,7 +704,8 @@ block content
 				ob = ob.replace(/&gt;/g,">");
 				var pdf = new jsPDF('l', 'pt', 'ledger');
 				var pdf2 = new jsPDF('l', 'pt', 'ledger');
-				source = "<html><head><link rel='stylesheet' type='text/css' href='https://team-labyoke.herokuapp.com/css/datatables.min.css'><link href='https://team-labyoke.herokuapp.com/css/popup.css' rel='stylesheet'><link href='https://team-labyoke.herokuapp.com/css/bootstrap.css' rel='stylesheet'><link href='https://team-labyoke.herokuapp.com/css/bl.css' rel='stylesheet'><link href='https://team-labyoke.herokuapp.com/css/fontello.css' rel='stylesheet'></head><body>" + ob + "</body></html>";
+				source = ob;
+				//"<html><head><link rel='stylesheet' type='text/css' href='https://team-labyoke.herokuapp.com/css/datatables.min.css'><link href='https://team-labyoke.herokuapp.com/css/popup.css' rel='stylesheet'><link href='https://team-labyoke.herokuapp.com/css/bootstrap.css' rel='stylesheet'><link href='https://team-labyoke.herokuapp.com/css/bl.css' rel='stylesheet'><link href='https://team-labyoke.herokuapp.com/css/fontello.css' rel='stylesheet'></head><body>" + ob + "</body></html>";
 				specialElementHandlers = {
 					'#bypassme': function(element, renderer) {
 					return true;
@@ -745,6 +746,10 @@ block content
 				var canvas = pdf3.canvas;
 				canvas.height = 72 * 9.6;
 				canvas.width= 72 * 8.26;
+				var pdfConf = {
+				pagesplit: true,
+				background: '#fff'
+				};
 				// can also be document.body
 				html2pdf(source, pdf3, function(pdf) {
 				pdf3.output('dataurlnewwindow');
