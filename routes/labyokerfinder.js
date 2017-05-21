@@ -823,14 +823,15 @@ console.log("report on shares my lab: " + mylab);
 LabYokeReporterShares.prototype.reportSharesIntro = function(callback) {
 	var results;
 	var i18n = this.res;
-	var datefrom = this.datefrom;
-	var dateto = this.dateto;
+	//var datefrom = this.datefrom;
+	//var dateto = this.dateto;
 	//var category = this.category;
 	var params = "";
 	var where = "";
 	var isempty = true;
 	var mylab = this.mylab;
-	var now = moment(new Date).tz("America/New_York").format('MM-DD-YYYY');
+	var dateto = moment(new Date).tz("America/New_York").format('MM-DD-YYYY');
+	var datefrom = moment(new Date).weekday(-7).format('MM-DD-YYYY');
 	console.log('prev start', moment(new Date).weekday(-7).format('MM-DD-YYYY'));
 	console.log("now: " + now);
 
