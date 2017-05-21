@@ -934,7 +934,7 @@ console.log("report on shares my lab: " + mylab);
 		if(!isempty){
 			callback(null, html + "</div>");
 		} else {
-			callback(null, html + i18n.__("index.reportsShares.nodataIntro" + "<p style='margin-top: 20px;'><i><b>" + i18n.__("index.reportsShares.html7") + "</b></i></p>"));
+			callback(null, html + i18n.__("index.reportsShares.nodataIntro") + "<p style='margin-top: 20px;'><i><b>" + i18n.__("index.reportsShares.html7") + "</b></i></p>");
 		}
 	});
 });
