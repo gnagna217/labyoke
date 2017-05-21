@@ -704,7 +704,7 @@ block content
 				ob = ob.replace(/&gt;/g,">");
 				var pdf = new jsPDF('l', 'pt', 'ledger');
 				var pdf2 = new jsPDF('l', 'pt', 'ledger');
-				source = "<html><head><link href='https://team-labyoke.herokuapp.com/css/bl.css' rel='stylesheet'></head><body>"+ob+"</body></html>";
+				source = ob;
 				specialElementHandlers = {
 					'#bypassme': function(element, renderer) {
 					return true;
@@ -738,24 +738,27 @@ block content
 
 				}
 				, margins);
-				pdf2.fromHTML(
-					source, // HTML string or DOM elem ref.
-					margins.left, // x coord
-					margins.top, {// y coord
-					'width': margins.width, // max width of content on PDF
-					'elementHandlers': specialElementHandlers
-				},
-				function(dispose) {
-				if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent))
-				{
-					//pdf.output('dataurlnewwindow');
-				}
-				else
-				{
-					pdf2.save("#{file_money}");
-				}
-				}
-				, margins);
+				pdf2.addHTML(source, function() {
+            		pdf2.save('Test.pdf');
+       	 		});
+				//pdf2.fromHTML(
+				//	source, // HTML string or DOM elem ref.
+				//	margins.left, // x coord
+				//	margins.top, {// y coord
+				//	'width': margins.width, // max width of content on PDF
+				//	'elementHandlers': specialElementHandlers
+				//},
+				//function(dispose) {
+				//if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent))
+				//{
+				//	pdf.output('dataurlnewwindow');
+				//}
+				//else
+				//{
+				//	pdf2.save("#{file_money}");
+				//}
+				//}
+				//, margins);
 				}
 				});
 			
