@@ -833,7 +833,7 @@ LabYokeReporterShares.prototype.reportSharesIntro = function(callback) {
 	var dateto = moment(new Date).tz("America/New_York").format('MM-DD-YYYY');
 	var datefrom = moment(new Date).weekday(-7).format('MM-DD-YYYY');
 	console.log('prev start', moment(new Date).weekday(-7).format('MM-DD-YYYY'));
-	console.log("now: " + now);
+	console.log("now: " + dateto);
 
 	//var mylab = this.mylab.replace(" ","").toLowerCase();
 	console.log("report on something: datefrom: " + datefrom);
