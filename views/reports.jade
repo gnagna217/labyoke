@@ -741,8 +741,9 @@ block content
 
 				console.log("parser");
 				var parser = new DOMParser();
-				var src0 = parser.parseFromString(source, "text/xml");
-				console.debug(src0);
+				var src0 = parser.parseFromString(source, "text/html");
+				console.debug(source);
+				console.debug(parser);
 				/*pdf2.addHTML(src0, function() {
 				pdf2.save('Test.pdf');
 				});*/
