@@ -643,7 +643,7 @@ block content
 				}
 			});
 
-
+		span(class="checkintro")
 		div(class='containerreport')
 			input(id='funky' type='checkbox')
 			label(for='funky')
@@ -697,7 +697,8 @@ block content
 			script.
 				$(".containerreport_button").click(function() {
 				
-				if($('.fa-check:visible').size() > 0){
+				if ( !$( ".checkintro" ).hasClass( "noshow" ) ) {
+				//if($('.fa-check:visible').size() > 0){
 				console.log("clicked");
 				$('.intro').show();
 				var ob = "#{resultsMoneyIntro}"
@@ -718,8 +719,11 @@ block content
 					//var string = pdf2.output('datauristring');
 					pdf2.save("Tri.pdf");
 					$('.intro').hide();
+					$('.checkintro').addClass("noshow");
 				});
 
+				} else {
+					$('.checkintro').removeClass("noshow");
 				}
 				});
 			
