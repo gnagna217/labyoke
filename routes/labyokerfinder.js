@@ -798,13 +798,13 @@ console.log("report on shares my lab: " + mylab);
 				//var category = results[prop].category;
 				var date = results[prop].date;
 
-				html += " <tr><td style='font-size: 12px;'>" + agent + "</td>";
-				html += " <td style='font-size: 12px;'>" + vendor + "</td>";
-				html += " <td style='font-size: 12px;'>" + catalognumber + "</td>";
-				html += " <td style='font-size: 12px;'>" + location + "</td>";
-				html += " <td style='font-size: 12px;'>" + email + "</td>";
+				html += " <tr style='border-bottom-style: solid;border-bottom-width: thin;'><td style='font-size: 12px;'>" + agent + "</td>";
+				html += " <td style='font-size: 12px;padding-top: 10px;padding-bottom: 10px;padding-right: 10px;'>" + vendor + "</td>";
+				html += " <td style='font-size: 12px;padding-top: 10px;padding-bottom: 10px;padding-right: 10px;'>" + catalognumber + "</td>";
+				html += " <td style='font-size: 12px;padding-top: 10px;padding-bottom: 10px;padding-right: 10px;'>" + location + "</td>";
+				html += " <td style='font-size: 12px;padding-top: 10px;padding-bottom: 10px;padding-right: 10px;'>" + email + "</td>";
 				//html += " <td style='font-size: 12px;'>" + category + "</td>";
-				html += " <td style='font-size: 12px;'>" + moment(date).tz("America/New_York").format('MM-DD-YYYY') + "</td></tr>";
+				html += " <td style='font-size: 12px;padding-top: 10px;padding-bottom: 10px;padding-right: 10px;'>" + moment(date).tz("America/New_York").format('MM-DD-YYYY') + "</td></tr>";
 		
 			}
 			html += "</tbody></table><p><i><b>" + i18n.__("index.reportsShares.html7") + "</b></i></p>";
