@@ -697,7 +697,7 @@ block content
 				$(".containerreport_button").click(function() {
 				
 				if($('.fa-check:visible').size() > 0){
-				//console.log("clicked");
+				console.log("clicked");
 
 				var ob = "#{resultsMoneyIntro}"
 				ob = ob.replace(/&lt;/g,"<");
@@ -742,9 +742,9 @@ block content
 				var parser = new DOMParser();
 				var src0 = parser.parseFromString(source, "text/xml");
 				console.debug(src0);
-				/*pdf2.addHTML(src0, function() {
+				pdf2.addHTML(src0, function() {
 				pdf2.save('Test.pdf');
-				});*/
+				});
 				//pdf2.fromHTML(
 				//	source, // HTML string or DOM elem ref.
 				//	margins.left, // x coord
