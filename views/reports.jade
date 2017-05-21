@@ -756,7 +756,7 @@ block content
 				width: 522
 				};
 				var pdf3 = new jsPDF('p', 'pt', 'letter');
-				pdf3.addHTML(src0, margins.top, margins.left, {splitpage:true}, function () {
+				pdf3.addHTML(src0[0], margins.top, margins.left, {splitpage:true}, function () {
 				pdf3.save('Testing.pdf');
 				});
 				
