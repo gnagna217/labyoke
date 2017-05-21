@@ -711,7 +711,10 @@ block content
 				source = ob;
 				
 				console.log(source);
-				pdf2.addHTML($(".intro"),function() {
+				var options = {
+				background: '#fff' //background is transparent if you don't set it, which turns it black for some reason.
+				};
+				pdf2.addHTML($(".intro"),options,function() {
 				console.log("source");
 				var string = pdf2.output('datauristring');
 				pdf2.save("Tri.pdf");
