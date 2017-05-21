@@ -746,25 +746,13 @@ block content
 				console.log(src0[0]);
 				console.log("src is: " + src0 + ".");
 
-				var pdf3 = require('phantom-html2pdf');
-				var options = {
-				"html" : source,
-				"paperSize" : {format: 'A4', orientation: 'portrait', border: '1cm'},
-				"deleteOnAction" : false
-				}
-				pdf3.convert(options, function(err, result) {
-
-				/* Using a buffer and callback */
-				result.toBuffer(function(returnedBuffer) {});
-
-				/* Using a readable stream */
-				var stream = result.toStream();
-
-				/* Using the temp file path */
-				var tmpPath = result.getTmpPath();
-
-				/* Using the file writer and callback */
-				result.toFile("Tester.pdf", function() {});
+				var pdf3 = new jsPDF('p', 'pt', 'letter');
+				var canvas = pdf3.canvas;
+				canvas.height = 72 * 11;
+				canvas.width= 72 * 8.5;;
+				// can also be document.body
+				html2pdf(source, pdf3, function(pdf) {
+				pdf3.output('dataurlnewwindow');
 				});
 				
 				//pdf2.fromHTML(
