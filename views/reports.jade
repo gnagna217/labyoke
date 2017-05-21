@@ -704,7 +704,7 @@ block content
 				ob = ob.replace(/&gt;/g,">");
 				var pdf = new jsPDF('l', 'pt', 'ledger');
 				var pdf2 = new jsPDF('l', 'pt', 'ledger');
-				source = "<html><head><link href='/css/bl.css' rel='stylesheet'></head><body>"+ob+"</body></html>";
+				source = "<html><head><link href='https://team-labyoke.herokuapp.com/css/bl.css' rel='stylesheet'></head><body>"+ob+"</body></html>";
 				specialElementHandlers = {
 					'#bypassme': function(element, renderer) {
 					return true;
