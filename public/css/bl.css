@@ -184,6 +184,10 @@ p{
     /*#3d9dcb*/
 }
 
+.nav-menu:focus{
+    background-color: rgba(61, 157, 203, 0.78) !important;
+}
+
 .menu{
     font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
     margin-left: 5px;
