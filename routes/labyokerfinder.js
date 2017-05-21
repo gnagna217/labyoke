@@ -906,10 +906,10 @@ console.log("report on shares my lab: " + mylab);
 			//"<p>This report is listing the inventory uploaded between " + moment(datefrom).tz("America/New_York").format('MM-DD-YYYY') + " and " + moment(dateto).tz("America/New_York").format('MM-DD-YYYY') + "</p></div>"
 		}
 		html += params;
-		html += i18n.__("index.reportsShares.html6");
+		
 		if(results != null && results != ""){
 		//"<table><tbody><tr style='color: white;background-color: #3d9dcb;'><td style='font-size: 12px;'>Reagent</td><td style='font-size: 12px;'>Vendor</td><td style='font-size: 12px;'>Catalog#</td><td style='font-size: 12px;'>Location</td><td style='font-size: 12px;'>User</td><td>Date</td></tr>"
-		
+			html += i18n.__("index.reportsShares.html6");
 			for(var prop in results){
 				isempty = false;
 				var agent = results[prop].agent;
