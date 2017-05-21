@@ -146,6 +146,7 @@
     "reports.download":"Downloading",
     "reports.download.title":"Today Savings",
     "reports.download2.title":"Weekly Savings",
+    "reports.download.today.file":"Week_Savings.pdf",
     
     "reports.money.title": "Shares Savings report Upload.",
     "reports.money.subtitle": "You can now retrieve a report of the savings each lab has made over a period of time per reagent.",

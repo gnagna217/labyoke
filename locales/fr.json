@@ -147,7 +147,8 @@
     "reports.download":"Téléchargement",
     "reports.download.title":"Économies Sem.",
     "reports.download2.title":"Économies Jr.",
-    
+    "reports.download.today.file":"Semaine_Economies.pdf",
+
     "reports.money.title": "Rapport sur les Économies de Partage.",
     "reports.money.subtitle": "Télécharger le rapport sur les économies de partage de chaque laboratoire sur une période déterminée par Réactif.",
     "reports.money.message.fail": "Malheureusement nous n'avons pas pu générer le rapport souhaité. Essayez avec de nouveaux paramètres.",

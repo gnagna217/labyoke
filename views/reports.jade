@@ -716,8 +716,9 @@ block content
 				};
 				pdf2.addHTML($(".intro"),options,function() {
 					console.log("source");
+					var filetext = i18n.__("reports.download.today.file");
 					//var string = pdf2.output('datauristring');
-					pdf2.save("Tri.pdf");
+					pdf2.save(filetext);
 					$('.intro').hide();
 					$('.checkintro').addClass("noshow");
 				});
