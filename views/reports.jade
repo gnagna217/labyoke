@@ -709,20 +709,10 @@ block content
 				pdf2.setFont("courier", "normal");
 				pdf2.setFontSize(10);
 				source = ob;
-				specialElementHandlers = {
-					'#bypassme': function(element, renderer) {
-					return true;
-				}
-				};
-				margins = {
-					top: 30,
-					bottom: 30,
-					left: 40,
-					right: 0,
-					width: 722
-				};
-				//console.log(source);
+				
+				console.log(source);
 				pdf2.addHTML($(".intro"),function() {
+				console.log("source");
 				var string = pdf2.output('datauristring');
 				//$('.preview-pane').attr('src', string);
 				});
