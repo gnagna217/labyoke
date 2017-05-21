@@ -807,7 +807,7 @@ console.log("report on shares my lab: " + mylab);
 				html += " <td style='font-size: 12px;'>" + moment(date).tz("America/New_York").format('MM-DD-YYYY') + "</td></tr>";
 		
 			}
-			html += "</tbody></table><p><i><b>" + i18n.__("index.reportsShares.html7") + "</b></i></p>";
+			html += "</tbody></table><p><i><b>" + i18n.__("index.reportsShares.html7") + "</b></i></p><img style='width: 141px; margin: 0 20px;float:left' src='https:\/\/team-labyoke.herokuapp.com\/images\/yoke4.png', alt='The Yoke',  title='Yoke', class='yokelogo'/>";
 			//html += "</tbody></table><p><i><b>The LabYoke Team.</b></i></p><img style='width: 141px; margin: 0 20px;float:left' src='https:\/\/team-labyoke.herokuapp.com\/images\/yoke4.png', alt='The Yoke',  title='Yoke', class='yokelogo'/>";
 		}
 		if(!isempty){

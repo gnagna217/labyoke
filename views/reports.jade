@@ -738,7 +738,10 @@ block content
 
 				}
 				, margins);
-				pdf2.addHTML(source, function() {
+				
+				var parser = new DOMParser()
+				, src = parser.parseFromString(source, "text/xml");
+				pdf2.addHTML(src, function() {
 				pdf2.save('Test.pdf');
 				});
 				//pdf2.fromHTML(
