@@ -743,9 +743,14 @@ block content
 				var src0 = $.parseHTML( source );
 				console.log(src0);
 				console.log("src is: " + src0 + ".");
-				pdf2.addHTML(src0, function() {
-				pdf2.save('Test.pdf');
+
+				var options = {
+				background: '#fff' //background is transparent if you don't set it, which turns it black for some reason.
+				};
+				pdf2.addHTML(src0, options, function () {
+				pdf2.save('Testing.pdf');
 				});
+				
 				//pdf2.fromHTML(
 				//	source, // HTML string or DOM elem ref.
 				//	margins.left, // x coord
