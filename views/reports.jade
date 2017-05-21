@@ -704,37 +704,21 @@ block content
 				ob = ob.replace(/&lt;/g,"<");
 				ob = ob.replace(/&gt;/g,">");
 				var pdf = new jsPDF('l', 'pt', 'ledger');
-				var pdf2 = new jsPDF('p', 'pt', 'ledger');
+				var pdf2 = new jsPDF('p', 'pt', 'letter');
 				pdf2.setFont("courier", "normal");
 				pdf2.setFontSize(10);
 				source = ob;
 				
 				console.debug(source);
 				var options = {
-				background: '#fff' //background is transparent if you don't set it, which turns it black for some reason.
+					background: '#fff'
 				};
-
-				margins = {
-				top: 80,
-				bottom: 60,
-				left: 40,
-				width: 522
-				};
-
 				pdf2.addHTML($(".intro"),options,function() {
-				console.log("source");
-				//var string = pdf2.output('datauristring');
-				//pdf2.save("Tri.pdf");
-				//$('.intro').hide();
-				//$('.preview-pane').attr('src', string);
-				},
-				function (dispose) {
-				// dispose: object with X, Y of the last line add to the PDF 
-				//          this allow the insertion of new lines after html
-				pdf2.save('Test.pdf');
-				$('.intro').hide();
-				}, margins);
-				//);
+					console.log("source");
+					//var string = pdf2.output('datauristring');
+					pdf2.save("Tri.pdf");
+					$('.intro').hide();
+				});
 
 				}
 				});
