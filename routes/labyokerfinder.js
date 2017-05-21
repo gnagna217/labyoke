@@ -896,7 +896,7 @@ console.log("report on shares my lab: " + mylab);
 		results = result.rows;
 		console.log("results : " + results);
 		var html = "<div style='padding-top:75px;margin-left:50px;margin-right:20px;margin-bottom:25px;'>";
-		if(results != null && results != ""){
+
 		html += i18n.__("index.reportsShares.html1", {dateto: dateto}); //"<div><span style='font-weight:bold;font-size:36pt;margin-bottom:20px;float:left'>Inventory.</span></div><div style=\"font-family:'calibri'; font-size:11pt;padding: 20px; width:50%;float:left\">";
 
 		if(datefrom == 'all'){
@@ -907,6 +907,7 @@ console.log("report on shares my lab: " + mylab);
 		}
 		html += params;
 		html += i18n.__("index.reportsShares.html6");
+		if(results != null && results != ""){
 		//"<table><tbody><tr style='color: white;background-color: #3d9dcb;'><td style='font-size: 12px;'>Reagent</td><td style='font-size: 12px;'>Vendor</td><td style='font-size: 12px;'>Catalog#</td><td style='font-size: 12px;'>Location</td><td style='font-size: 12px;'>User</td><td>Date</td></tr>"
 		
 			for(var prop in results){
