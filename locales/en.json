@@ -390,6 +390,7 @@
     "index.reportsShares.html5": "</p></div>",
     "index.reportsShares.html6": "<table><tbody><tr style='color: white;background-color: #3d9dcb;'><td style='font-size: 12px;'>Reagent</td><td style='font-size: 12px;'>Vendor</td><td style='font-size: 12px;'>Catalog#</td><td style='font-size: 12px;'>Location</td><td style='font-size: 12px;'>User</td><td>Date</td></tr>",
     "index.reportsShares.html7": "The LabYoke Team.",
+    "index.reportsShares.nodataIntro": "<div style='font-size:20pt;font-weight:bold;'>There is no data available. Start sharing today!</div>",
     "index.reportsOrders.html1": "Lab: ",
     "index.reportsOrders.html2": "Orders.",
     "index.reportsOrders.html3": "<p>This report is listing all the orders requested:</p></div>",

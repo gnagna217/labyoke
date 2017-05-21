@@ -819,6 +819,128 @@ console.log("report on shares my lab: " + mylab);
 });
 };
 
+
+LabYokeReporterShares.prototype.reportSharesIntro = function(callback) {
+	var results;
+	var i18n = this.res;
+	var datefrom = this.datefrom;
+	var dateto = this.dateto;
+	//var category = this.category;
+	var params = "";
+	var where = "";
+	var isempty = true;
+	var mylab = this.mylab;
+	var now = moment(new Date).tz("America/New_York").format('MM-DD-YYYY');
+	console.log("start of week: " + moment().startOf('isoWeek'));
+	console.log("end of week: " + moment().endOf('isoWeek'));
+
+	//var mylab = this.mylab.replace(" ","").toLowerCase();
+	console.log("report on something: datefrom: " + datefrom);
+	console.log("report on something: dateto: " + dateto);
+	//console.log("report on something: agent: " + agent);
+	var query;
+	var labyokerLab = new LabyokerLab(mylab);
+		labyokerLab.getLabsInDept(function(error, labsindept) {
+console.log("report on shares: " + labsindept);
+console.log("report on shares my lab: " + mylab);
+	if(datefrom != null && dateto != null && datefrom !=undefined && dateto !=undefined && datefrom !="" && dateto !=""){
+		if(params == ""){
+			params += i18n.__("index.reportsShares.params");//"<div style='font-weight:bold'>Parameters</div>";
+		}
+		params += i18n.__("index.reportsShares.params1", {datefrom: datefrom}); //"<div><span style='font-weight:bold'>Date From: </span><span>" + datefrom + "</span></div>";
+		params += i18n.__("index.reportsShares.params2", {dateto: dateto}); //"<div><span style='font-weight:bold'>Date To: </span><span>" + dateto + "</span></div>";
+		if(where == "")
+			where =" where ";
+		where += "date between '" + datefrom + "' and '" + dateto + "'";
+	} else {
+		datefrom = "all";
+	}
+	/*if(category != null && category !=undefined && category !="all"){
+		if(params == ""){
+			params += "<div style='font-weight:bold'>Parameters</div>";
+		}
+		params += "<div><span style='font-weight:bold'>Category: </span><span>" + category + "</span></div>";
+		if(where == ""){
+			where =" where ";
+		}
+		if(where.trim() != "where")
+			where +=" and ";
+		where += " lower(category) like '%" + category.toLowerCase() + "%'";
+	} */
+	console.log("where: " +  where);
+	if(where == "")
+		where = " where ";
+	else
+		where = where + " and ";
+	where = where + " b.email = a.email and (";
+	console.log("where0: " +  where);
+	for(var prop in labsindept){
+		where = where + " b.lab = '" + labsindept[prop].labname + "' or ";
+	}
+	
+	console.log("where1: " +  where);
+	where = where.replace(/or\s*$/, "");
+	where = where + ")";
+
+	console.log("where2: " +  where);
+
+	var qryStr = "SELECT * FROM vm2016_agentsshare a, vm2016_users b" + where + " order by a.date desc";
+	console.log("query report shares: " + qryStr);
+	query = client.query(qryStr);
+
+	query.on("row", function(row, result) {
+		result.addRow(row);
+	});
+	query.on("end", function(result) {
+		results = result.rows;
+		console.log("results : " + results);
+		var html = "<div style='padding-top:75px;margin-left:50px;margin-right:20px;margin-bottom:25px;'>";
+		if(results != null && results != ""){
+		html += i18n.__("index.reportsShares.html1", {dateto: dateto}); //"<div><span style='font-weight:bold;font-size:36pt;margin-bottom:20px;float:left'>Inventory.</span></div><div style=\"font-family:'calibri'; font-size:11pt;padding: 20px; width:50%;float:left\">";
+
+		if(datefrom == 'all'){
+			html += i18n.__("index.reportsShares.html2"); //"<p>This report is listing all the inventory uploaded:</p></div>"
+		} else {
+			html += i18n.__("index.reportsShares.html3") + moment(datefrom).tz("America/New_York").format('MM-DD-YYYY') + i18n.__("index.reportsShares.html4") + moment(dateto).tz("America/New_York").format('MM-DD-YYYY') + i18n.__("index.reportsShares.html5");
+			//"<p>This report is listing the inventory uploaded between " + moment(datefrom).tz("America/New_York").format('MM-DD-YYYY') + " and " + moment(dateto).tz("America/New_York").format('MM-DD-YYYY') + "</p></div>"
+		}
+		html += params;
+		html += i18n.__("index.reportsShares.html6");
+		//"<table><tbody><tr style='color: white;background-color: #3d9dcb;'><td style='font-size: 12px;'>Reagent</td><td style='font-size: 12px;'>Vendor</td><td style='font-size: 12px;'>Catalog#</td><td style='font-size: 12px;'>Location</td><td style='font-size: 12px;'>User</td><td>Date</td></tr>"
+		
+			for(var prop in results){
+				isempty = false;
+				var agent = results[prop].agent;
+				var vendor = results[prop].vendor;
+				var catalognumber = results[prop].catalognumber;
+				var location = results[prop].location;
+				var email = results[prop].email;
+				//var category = results[prop].category;
+				var date = results[prop].date;
+
+				html += " <tr style='border-bottom-style: solid;border-bottom-width: thin;'><td style='font-size: 12px;'>" + agent + "</td>";
+				html += " <td style='font-size: 12px;padding-top: 10px;padding-bottom: 10px;padding-right: 10px;'>" + vendor + "</td>";
+				html += " <td style='font-size: 12px;padding-top: 10px;padding-bottom: 10px;padding-right: 10px;'>" + catalognumber + "</td>";
+				html += " <td style='font-size: 12px;padding-top: 10px;padding-bottom: 10px;padding-right: 10px;'>" + location + "</td>";
+				html += " <td style='font-size: 12px;padding-top: 10px;padding-bottom: 10px;padding-right: 10px;'>" + email + "</td>";
+				//html += " <td style='font-size: 12px;'>" + category + "</td>";
+				html += " <td style='font-size: 12px;padding-top: 10px;padding-bottom: 10px;padding-right: 10px;'>" + moment(date).tz("America/New_York").format('MM-DD-YYYY') + "</td></tr>";
+		
+			}
+			html += "</tbody></table><p style='margin-top: 20px;'><i><b>" + i18n.__("index.reportsShares.html7") + "</b></i></p>";
+			//html += "</tbody></table><p><i><b>The LabYoke Team.</b></i></p><img style='width: 141px; margin: 0 20px;float:left' src='https:\/\/team-labyoke.herokuapp.com\/images\/yoke4.png', alt='The Yoke',  title='Yoke', class='yokelogo'/>";
+		}
+		if(!isempty){
+			callback(null, html + "</div>");
+		} else {
+			callback(null, i18n.__("index.reportsShares.nodataIntro"));
+		}
+	});
+});
+};
+
+
+
 LabYokeReporterOrders.prototype.reportOrders = function(callback) {
 	var i18n = this.res;
 	var results;

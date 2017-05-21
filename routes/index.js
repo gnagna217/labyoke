@@ -505,7 +505,7 @@ totalshares = t[0].counting;
 		//var category = req.body.reportCategory;
 		console.log("reportSomething intro");
 		var labYokereporter = new LabYokeReporterShares(datefrom, dateto, req.session.lab, req.session.labs,res);
-		labYokereporter.reportShares(function(error, results) {
+		labYokereporter.reportSharesIntro(function(error, results) {
 		
 
 		var labyokerLab = new LabyokerLab(req.session.lab);
