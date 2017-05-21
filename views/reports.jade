@@ -740,10 +740,8 @@ block content
 				, margins);
 
 				console.log("parser");
-				var parser = new DOMParser();
-				var src0 = parser.parseFromString(source, "text/html");
-				console.debug(source);
-				console.debug(parser);
+				var src0 = $.parseHTML( source );
+				console.debug(src0);
 				/*pdf2.addHTML(src0, function() {
 				pdf2.save('Test.pdf');
 				});*/
