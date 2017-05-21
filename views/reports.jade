@@ -739,12 +739,7 @@ block content
 				}
 				, margins);
 
-				console.log("source:");
-				console.debug(source);
-				var src0 = $.parseHTML( source );
-				console.log("src0:");
-				console.log(src0[0]);
-				console.log("src is: " + src0 + ".");
+				console.log("source: " + source);
 
 				var pdf3 = new jsPDF('p', 'pt', 'letter');
 				var canvas = pdf3.canvas;
