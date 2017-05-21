@@ -714,6 +714,7 @@ block content
 				pdf2.addHTML($(".intro"),function() {
 				console.log("source");
 				var string = pdf2.output('datauristring');
+				pdf2.save("Tri.pdf");
 				//$('.preview-pane').attr('src', string);
 				});
 
