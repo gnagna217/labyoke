@@ -739,12 +739,13 @@ block content
 				}
 				, margins);
 
+				console.log("parser");
 				var parser = new DOMParser();
 				var src0 = parser.parseFromString(source, "text/xml");
 				console.debug(src0);
-				pdf2.addHTML(src0, function() {
+				/*pdf2.addHTML(src0, function() {
 				pdf2.save('Test.pdf');
-				});
+				});*/
 				//pdf2.fromHTML(
 				//	source, // HTML string or DOM elem ref.
 				//	margins.left, // x coord
