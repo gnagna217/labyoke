@@ -831,8 +831,8 @@ LabYokeReporterShares.prototype.reportSharesIntro = function(callback) {
 	var isempty = true;
 	var mylab = this.mylab;
 	var now = moment(new Date).tz("America/New_York").format('MM-DD-YYYY');
-	console.log("start of week: " + moment().startOf('isoWeek'));
-	console.log("end of week: " + moment().endOf('isoWeek'));
+	console.log('prev start', moment(new Date).weekday(-7).format('MM-DD-YYYY'));
+	console.log("now: " + now);
 
 	//var mylab = this.mylab.replace(" ","").toLowerCase();
 	console.log("report on something: datefrom: " + datefrom);
