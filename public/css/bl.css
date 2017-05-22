@@ -1824,6 +1824,9 @@ span.num.greatherthanninetynine {
 }
 
 @media (max-width: 600px){
+.uploadh{
+    padding-left: 18px !important;
+}
 .positionbutton{
     left: 30%;
 }
@@ -1836,6 +1839,9 @@ span.num.greatherthanninetynine {
 }
 
 @media (max-width: 520px) {
+.uploadh{
+    padding-left: 12px !important;
+}
 .positionbutton{
     left: 0;
 }
@@ -1851,6 +1857,9 @@ span.num.greatherthanninetynine {
 }
 
  @media (max-width: 440px) {
+.uploadh{
+    padding-left: 8px !important;
+}
 .searchinput{
     font-size: 13pt;
 }
