@@ -454,6 +454,8 @@ a.fa-globe {
 }
 .searchmob{
     margin-top: -100px;left: 25%;background-color:#8a6d3b;
+    padding: 30px;
+    width: 80px;
 }
 .roundaccountmob:hover, .roundaccountmob:active, .roundaccountmob:focus{
     background-color: #3d9dcb;
