@@ -247,10 +247,13 @@ html(lang='en')
         });
         }
         //Set sizes for roundaccout
-          var w = $(".roundaccount").width();
-          $(".navplaceholder").css("width",w);
-          var l = 161 + w;
-          $(".roundaccount").css("left",l * -1);
-          console.log("roundaccount left: " + l);
-          console.log("navpl width: " + w);
+          $( document ).ready(function() {
+              var w = $(".roundaccount").width();
+              $(".navplaceholder").css("width",w);
+              var l = 161 + w;
+              $(".roundaccount").css("left",l * -1);
+              console.log("roundaccount left: " + l);
+              console.log("navpl width: " + w);
+          });
+          
 
