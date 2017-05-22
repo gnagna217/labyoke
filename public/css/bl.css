@@ -440,6 +440,7 @@ position: absolute;
     box-sizing: content-box; 
     width: 42%; 
     padding-right: 15px;
+    margin-top: 25px;
 }
 
 .searchcatalog{
