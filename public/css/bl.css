@@ -436,7 +436,7 @@ a.fa-globe {
     width: 100px;
     text-align: center;
     color: white;
-    background-color: #2975b4;
+    background-color: rgba(41, 117, 180, 0.91); /*#2975b4*/
     display: none;
     margin-top: -70px;
 
@@ -453,7 +453,7 @@ a.fa-globe {
     display:none;*/
 }
 .searchmob{
-    margin-top: -100px;left: 25%;background-color:#8a6d3b;
+    margin-top: -100px;left: 30%;background-color: rgba(138, 109, 59, 0.91); /*#8a6d3b;*/
     padding: 30px;
     width: 80px;
 }
@@ -1331,9 +1331,6 @@ input::-webkit-inner-spin-button {
 }
 
 @media (min-width: 767px) {
-.navbar-collapse{
-    width: 104%;
-}
 .hamburger{
     display:none !important;
     -webkit-appearance: none;
@@ -1655,6 +1652,9 @@ input::-webkit-inner-spin-button {
 }
 
 @media (max-width: 767px){
+.navbar-collapse{
+    width: 104%;
+}
 .share-container{
     margin-top: 30px;
 }
