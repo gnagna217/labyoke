@@ -120,7 +120,7 @@ html(lang='en')
                     - activateHelp = "addMargin "
                     - activateAbout = "addMargin "
                     - activateOrders = "addMargin "
-                    - activateAccount = "account-border addMargin desktabonly "
+                    - activateAccount = "account-border addMargin "
                     - activateAdmin = "addMargin "
                     - if (title == 'Reports')
                         - activateReports = activateShares + "labColorBackgroundHover"
@@ -140,7 +140,7 @@ html(lang='en')
                         - activateAbout = activateAbout + "labColorBackgroundHover"
                 span(class="roundaccountmob")
                   a(href="/account", style="color: white;text-decoration: none;")!= user_surname + "" + surname
-                span(class="roundaccountmob", style="margin-top: -100px;left: 28%;")
+                span(class="roundaccountmob", style="margin-top: -100px;left: 25%;")
                   a(href="/account", style="color: white;text-decoration: none;")
                     span(class="fa fa-search colmenu", style="color: white;font-size: 11pt;")
                 .collapse.navbar-collapse

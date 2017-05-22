@@ -430,7 +430,7 @@ a.fa-globe {
 
     position: relative;
     top: 68px;
-    left: 50%;
+    left: 53%;
     border-radius: 550px;
     padding: 40px;
     width: 100px;
@@ -1322,6 +1322,9 @@ input::-webkit-inner-spin-button {
 }
 
 @media (min-width: 767px) {
+.navbar-collapse{
+    width: 104%;
+}
 .hamburger{
     display:none !important;
     -webkit-appearance: none;
@@ -1916,12 +1919,18 @@ span.num.greatherthanninetynine {
 }
 
 @media (max-width: 580px){
+.navbar-collapse{
+    width: 105%;
+}
 .positionbutton{
     left: 28%;
 }
 }
 
 @media (max-width: 520px) {
+.navbar-collapse{
+    width: 108%;
+}
 .uploadh{
     padding-left: 12px !important;
 }
