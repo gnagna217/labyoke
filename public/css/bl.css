@@ -1567,9 +1567,9 @@ input::-webkit-inner-spin-button {
 
 @media (max-width: 767px){
 input{
-    border-top: none;
-    border-left: none;
-    border-right: none;
+    border-top: none !important;
+    border-left: none !important;
+    border-right: none !important;
 }
 .adjustpadding{
     padding-left: 0px !important;
