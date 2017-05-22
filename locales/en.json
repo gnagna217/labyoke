@@ -352,6 +352,7 @@
     "datatable.sortDescending": ": activate to sort column descending",
     "datatable.infoPostFix": "",
     "datatable.infoThousands": ",",
+    "datatable.searchplaceholder": "Reagent",
 
     "index.orders.nonadmin1": " Email your <a href='mailto:{{labadmin}}'>administrator</a> if needed.",
     "index.orders.nonadmin2": " You can do so with the <a href='/share#upload'>upload tool</a> to add more reagents under your name.",
