@@ -122,6 +122,8 @@ html(lang='en')
                     - activateOrders = "addMargin "
                     - activateAccount = "account-border addMargin "
                     - activateAdmin = "addMargin "
+                    - activeSearchMob = ""
+                    - activeAccountMob = ""
                     - if (title == 'Reports')
                         - activateReports = activateShares + "labColorBackgroundHover"
                     - if (title == 'Share')
@@ -130,18 +132,20 @@ html(lang='en')
                         - activateSearch = activateSearch + "labColorBackgroundHover"
                     - if (title == 'Search')
                         - activateSearch = activateSearch + "labColorBackgroundHover"
+                        - activeSearchMob = "labColorBackgroundHover"
                     - if (title == 'Help')
                         - activateHelp = activateHelp + "labColorBackgroundHover"
                     - if (title == 'Orders')
                         - activateOrders = activateOrders + "labColorBackgroundHover"
                     - if (title == 'Account')
                         - activateAccount = activateAccount + "labColorBackgroundHover"
+                        - activeAccountMob = "labColorBackgroundHover"
                     - if (title == 'About Us')
                         - activateAbout = activateAbout + "labColorBackgroundHover"
-                span(class="roundaccountmob")
+                span(class="roundaccountmob " + activeAccountMob)
                   a(href="/account", style="color: white;text-decoration: none;")!= user_surname + "" + surname
-                span(class="roundaccountmob searchmob")
-                  a(href="/account", style="color: white;text-decoration: none;")
+                span(class="roundaccountmob searchmob " + activeSearchMob)
+                  a(href="/search", style="color: white;text-decoration: none;")
                     span(class="fa fa-search colmenu", style="color: white;font-size: 11pt;")
                 .collapse.navbar-collapse
                     div.adjustWidthSearch(style="float:left")
