@@ -128,6 +128,9 @@ p{
 
 }
 
+.navbackground{
+    height: initial;
+}
 .mobileonly{
     display: none;
 }
@@ -1547,6 +1550,9 @@ input::-webkit-inner-spin-button {
 }
 
 @media (max-width: 767px){
+.navbackground{
+    height: 65px;
+}
 .paddingrightnav{
     padding-right: 10px !important;
 }
@@ -1812,7 +1818,6 @@ span.num.greatherthanninetynine {
 }
 
  @media (max-width: 440px) {
-
 .searchinput{
     font-size: 13pt;
 }
