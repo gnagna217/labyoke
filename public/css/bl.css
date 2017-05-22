@@ -426,7 +426,7 @@ a.fa-globe {
 
     top: 42px;
     position: relative;
-    left: -286px;
+    left: -281px;
     border-radius: 80px;
     background-color: #2975b4;
     padding: 50px;
@@ -437,7 +437,7 @@ a.fa-globe {
 }
 
 .navplaceholder{
-    width: 125px;
+    width: 145px;
 }
 
 .roundaccountmob{
@@ -573,9 +573,9 @@ position: absolute;
     float: right;
 }
 
-input:-webkit-autofill {
+/*input:-webkit-autofill {
     -webkit-box-shadow: 0 0 0 30px white inset !important;
-}
+}*/
 
 .greatherthannine{
     right: -2px !important;      
@@ -1560,7 +1560,7 @@ input::-webkit-inner-spin-button {
 }
 .roundaccount{
     top: 25px;
-    left: -253px;
+    left: -237px;
     border-radius: 60px;
     padding: 34px;
 }
