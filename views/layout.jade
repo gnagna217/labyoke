@@ -246,4 +246,9 @@ html(lang='en')
           // Do something else, like open/close menu
         });
         }
+        //Set sizes for roundaccout
+          var h = $(".roundaccount").height();
+          $(".navplaceholder").css("height",h);
+          $(".roundaccount").css("height",(161 + h)*-1);
+          console.log("roundaccount: " + 161 + h);
 
