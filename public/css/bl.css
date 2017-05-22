@@ -436,6 +436,10 @@ a.fa-globe {
 
 }
 
+.navplaceholder{
+    width: 125px;
+}
+
 .roundaccountmob{
 
     position: relative;
@@ -1551,9 +1555,12 @@ input::-webkit-inner-spin-button {
 }
 
  @media (max-width: 992px) {
+.navplaceholder{
+    width: 90px;
+}
 .roundaccount{
     top: 25px;
-    left: -243px;
+    left: -253px;
     border-radius: 60px;
     padding: 34px;
 }
