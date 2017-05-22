@@ -416,12 +416,12 @@ a.fa-globe {
 }
 .roundaccount{
 
-    top: 39px;
+    top: 42px;
     position: relative;
-    left: -273px;
+    left: -292px;
     border-radius: 60px;
     background-color: #2975b4;
-    padding: 49px;
+    padding: 52px;
     color: white;
 
 }
@@ -748,7 +748,7 @@ input:-webkit-autofill:hover {
     /*border-left-color: #3d9dcb;border-left-style: solid;*/border-width: thick; border-right-color: white;border-right-style: solid;
 }
 .account-border{
-    border-color: #3d9dcb;border-right-style: solid;border-width: thick;border-left-style: solid;
+    border-color: white;border-right-style: solid;border-width: thick;border-left-style: solid;
     background-color: white;
 }
 .btn{
@@ -1648,6 +1648,7 @@ input{
 }
 .account-border{
     border-color: #3d9dcb;border-right-style: solid;border-width: thick;border-left-style: none;
+    background-color: transparent;
 }
 .fronthelp {
     text-align: center;
