@@ -6,7 +6,7 @@ block content
       - var classContainer = ""
       if email == undefined
          - classContainer = "/*min-height: 1000px;*/"
-      div(style="float: left;" + classContainer class="order-container" id="order-container")
+      div(style="float: left;" + classContainer class="order-container" id="order-container share-container")
             h1= i18n.__("orders.title")
             if(orderresults == "")
               p!= i18n.__("orders.subtitle")
