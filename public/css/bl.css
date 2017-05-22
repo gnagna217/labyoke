@@ -436,6 +436,7 @@ a.fa-globe {
     text-align: center;
     color: white;
     background-color: #2975b4;
+    margin-top: 5px;
     display:none;
 }
 .roundaccountmob:hover, .roundaccountmob:active, .roundaccountmob:focus{
@@ -1781,7 +1782,7 @@ span.num.greatherthanninetynine {
     border: none !important;
 }
 .navbar-collapse{
-    margin-top:50px !important;
+    /*margin-top:50px !important;*/
 }
 .nav-menu{
     /*width: 135px !important;*/
