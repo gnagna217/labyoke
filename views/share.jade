@@ -17,7 +17,6 @@ block content
 	div(class="container login marginbottom margintop")
 		div(style="float: left;" class="share-container")
 			h1= i18n.__("shares.title")
-			p!= shadow
 			if(myshares == "")
 				//- adjust = ""
 				h4= i18n.__("shares.subtitle")
@@ -171,7 +170,7 @@ block content
 									}
 										});
 								});
-		div(class="share-container adjustpadding adjustpaddingrightandwidth" style="float:right;")
+		div(class="share-container adjustpadding adjustpaddingrightandwidth" style="float:right;"+ shadow)
 			if(isLoggedInAdmin > 0)
 				a(name="upload")
 				div(class="admin")
@@ -185,7 +184,7 @@ block content
 						span= i18n.__("shares.admin.file")
 					div(class="buttons")
 						button.btn.btn-success.btn-lg.btn-block(type="submit",value="Upload",name="submit")= i18n.__("shares.admin.button")
-						img(src="images/yoke5.png", alt="The Lab", title="Lab", style="border-width:0px; width: 35px; margin-top: -67px; margin-left: 300px;")
+						img(src="/images/yoke5.png", alt="The Lab", title="Lab", style="border-width:0px; width: 35px; margin-top: -67px; margin-left: 300px;")
 			if(nosuccess == "databaserror")
 				div
 					div(id="uploaderror", class="table-responsive alert alert-danger")
@@ -265,7 +264,7 @@ block content
 				script="$(window).scrollTop($('#uploadForm').offset().top).scrollLeft($('#uploadForm').offset().left);"
 			div(style="background-color: #3d9dcb; height: 1px; margin-bottom: 0px; margin-top: 30px;")
 		
-		div(style="float:right;" + shadow, class="share-container " + adjust + " adjustpaddingrightandwidth")
+		div(style="float:right;", class="share-container " + adjust + " adjustpaddingrightandwidth")
 			script(type="text/javascript" src="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.js")
 
 			h3= i18n.__("shares.chart.title")
@@ -363,7 +362,7 @@ block content
 				- if(report_venn != null && report_venn.length > 0)
 					p!=i18n.__("shares.venn.subtitle1")
 						span
-							img(src='images/venn.png' width='16px' height='16px')
+							img(src='/images/venn.png' width='16px' height='16px')
 						span= i18n.__("shares.venn.subtitle2")
 
 					div= i18n.__("shares.venn.desc")
@@ -776,7 +775,7 @@ block content
 				$('.slide-out-tip-div').tabSlideOut({
 				imgPos: 115,
 				tabHandle: '.handle',                              //class of the element that will be your tab
-				pathToTabImage: 'images/bouee3.png',          //path to the image for the tab (optionaly can be set using css)
+				pathToTabImage: '/images/bouee3.png',          //path to the image for the tab (optionaly can be set using css)
 				imageHeight: '50px',                               //height of tab image
 				imageWidth: '50px',                               //width of tab image    
 				tabLocation: 'right',                               //side of screen where tab lives, top, right, bottom, or left
