@@ -1565,8 +1565,11 @@ input::-webkit-inner-spin-button {
 }
 
 @media (max-width: 767px){
+.adjustpadding{
+    padding-left: 0px !important;
+}
 .uploadh{
-    width: 94%;
+    width: 94% !important;
     padding-right: 15px;
     padding-left: 25px !important;
     margin-top: 30px;
@@ -1737,9 +1740,7 @@ span.num.greatherthanninetynine {
 .share-container{
     width: 100%;
 }
-.adjustpadding{
-    padding-left: 0px !important;
-}
+
 .adjustpaddingrightandwidth{
     margin-right: 0px;
     width: 100%;
