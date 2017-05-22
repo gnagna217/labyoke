@@ -1566,6 +1566,11 @@ input::-webkit-inner-spin-button {
 }
 
 @media (max-width: 767px){
+input{
+    border-top: none;
+    border-left: none;
+    border-right: none;
+}
 .adjustpadding{
     padding-left: 0px !important;
 }
