@@ -138,7 +138,7 @@ html(lang='en')
                     - if (title == 'Orders')
                         - activateOrders = activateOrders + "labColorBackgroundHover"
                     - if (title == 'Account')
-                        - activateAccount = activateAccount + "labColorBackgroundHover"
+                        - activateAccount = activateAccount //+ "labColorBackgroundHover"
                         - activeAccountMob = "labColorBackgroundHover"
                     - if (title == 'About Us')
                         - activateAbout = activateAbout + "labColorBackgroundHover"
@@ -199,7 +199,7 @@ html(lang='en')
                                 a(href='/about', class="nav-menu",id="menumyaccounta")
                                     span(class="fa fa-home colmenu")
                                     span #{i18n.__("layout.Us")}
-                    span(class="roundaccount")
+                    span(class="roundaccount " + activateAccountMob)
                       a(href="/account", style="color: white;text-decoration: none;")!=user_surname + "" + surname
                     ul.nav.navbar-nav.navbar-right
                         li(class="nav-menu-logout", style="cursor:pointer")
