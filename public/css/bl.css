@@ -416,13 +416,23 @@ a.fa-globe {
 }
 .roundaccount{
 
-    top: 42px;
+    /*top: 42px;
     position: relative;
     left: -292px;
     border-radius: 60px;
     background-color: #2975b4;
     padding: 52px;
+    color: white;*/
+
+    top: 42px;
+    position: relative;
+    left: -286px;
+    border-radius: 80px;
+    background-color: #2975b4;
+    padding: 50px;
     color: white;
+    border-color: rgb(173, 153, 117);
+    border-style: solid;
 
 }
 
