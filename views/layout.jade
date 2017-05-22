@@ -253,11 +253,14 @@ html(lang='en')
               
               
               var pad = $(".roundaccount").css("padding");
-              par = pad.substring(0,2);
+              if(pad != undefined){
+              var par = pad.substring(0,2);
               $(".navplaceholder").css("width",par + par + w + 6);
               var l =  161 + (par + par + w + 6);
               $(".roundaccount").css("left",l * -1);
               console.log("roundaccount left: " + l);
+              
+              }
               console.log("navpl width: " + w);
           });
           
