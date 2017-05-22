@@ -1502,6 +1502,12 @@ input::-webkit-inner-spin-button {
 }
 
  @media (max-width: 992px) {
+.roundaccount{
+    top: 25px;
+    left: -243px;
+    border-radius: 60px;
+    padding: 34px;
+}
 .uploadh{
     width: 39% !important;
 }
