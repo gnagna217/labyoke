@@ -183,16 +183,16 @@ p{
     color: white;
 }
 .nav-menu:hover{
-    background-color: rgba(61, 157, 203, 0.78) !important;
+    background-color: rgba(61, 157, 203, 0.78) !important; cursor:pointer;
     /*#3d9dcb*/
 }
 
 .nav-menu:focus{
-    background-color: rgba(61, 157, 203, 0.78) !important;
+    background-color: rgba(61, 157, 203, 0.78) !important; cursor:pointer;
 }
 
 .nav-menu:active{
-    background-color: rgba(61, 157, 203, 0.78) !important;
+    background-color: rgba(61, 157, 203, 0.78) !important; cursor:pointer;
 }
 
 .menu{
@@ -428,6 +428,7 @@ a.fa-globe {
 
 .roundaccount:hover, .roundaccount:active, .roundaccount:focus{
     background-color: #3d9dcb;
+    cursor:pointer;
 }
 span.fa-comment {
     position: absolute;
