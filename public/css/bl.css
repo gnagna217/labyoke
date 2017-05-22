@@ -428,10 +428,10 @@ a.fa-globe {
 
 .roundaccountmob{
     position: relative;
-    top: -8px;
-    left: 5px;
-    border-radius: 72px;
-    padding: 22px;
+    top: 15px;
+    left: 43%;
+    border-radius: 100px;
+    padding: 20px;
     width: 60px;
     text-align: center;
     color: white;
