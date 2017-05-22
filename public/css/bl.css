@@ -427,7 +427,20 @@ a.fa-globe {
 }
 
 .roundaccountmob{
+
     position: relative;
+    top: 68px;
+    left: 50%;
+    border-radius: 550px;
+    padding: 40px;
+    width: 100px;
+    text-align: center;
+    color: white;
+    background-color: #2975b4;
+    display: none;
+    margin-top: -70px;
+
+    /*position: relative;
     top: 15px;
     left: 43%;
     border-radius: 100px;
@@ -437,7 +450,7 @@ a.fa-globe {
     color: white;
     background-color: #2975b4;
     margin-top: 5px;
-    display:none;
+    display:none;*/
 }
 .roundaccountmob:hover, .roundaccountmob:active, .roundaccountmob:focus{
     background-color: #3d9dcb;

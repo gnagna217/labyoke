@@ -116,7 +116,7 @@ html(lang='en')
 
                     - activateReports = "addMargin "
                     - activateShares = "addMargin "
-                    - activateSearch = "addMargin "
+                    - activateSearch = "addMargin desktabonly "
                     - activateHelp = "addMargin "
                     - activateAbout = "addMargin "
                     - activateOrders = "addMargin "
@@ -140,6 +140,9 @@ html(lang='en')
                         - activateAbout = activateAbout + "labColorBackgroundHover"
                 span(class="roundaccountmob")
                   a(href="/account", style="color: white;text-decoration: none;")!= user_surname + "" + surname
+                span(class="roundaccountmob", style="margin-top: -100px;left: 28%;")
+                  a(href="/account", style="color: white;text-decoration: none;")
+                    span(class="fa fa-search colmenu", style="color: white;font-size: 11pt;")
                 .collapse.navbar-collapse
                     div.adjustWidthSearch(style="float:left")
                         - adjustWidth = ""
