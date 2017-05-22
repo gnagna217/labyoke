@@ -452,11 +452,18 @@ a.fa-globe {
     margin-top: 5px;
     display:none;*/
 }
+.searchmob{
+    margin-top: -100px;left: 25%;background-color:#8a6d3b;
+}
 .roundaccountmob:hover, .roundaccountmob:active, .roundaccountmob:focus{
     background-color: #3d9dcb;
     cursor:pointer;
 }
 .roundaccount:hover, .roundaccount:active, .roundaccount:focus{
+    background-color: #3d9dcb;
+    cursor:pointer;
+}
+.searchmob:hover, .searchmob:active, .searchmob:focus{
     background-color: #3d9dcb;
     cursor:pointer;
 }
@@ -1949,6 +1956,11 @@ span.num.greatherthanninetynine {
 }
 
  @media (max-width: 440px) {
+.searchmob{
+    padding: 30px;
+    width: 80px;
+    margin-top: -80px;
+}
 .uploadh{
     padding-left: 8px !important;
 }
