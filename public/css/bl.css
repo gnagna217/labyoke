@@ -467,7 +467,7 @@ a.fa-globe {
     display:none;*/
 }
 .searchmob{
-    margin-top: -100px;left: 28%;background-color: rgba(138, 109, 59, 0.91); /*#8a6d3b;*/
+    margin-top: -88px;left: 28%;background-color: rgba(138, 109, 59, 0.91); /*#8a6d3b;*/
     padding: 30px;
     width: 80px;
 }
@@ -1684,6 +1684,9 @@ input::-webkit-inner-spin-button {
 }
 
 @media (max-width: 767px){
+.searchlogo{
+    margin-top: 20%;
+}
 .navbar-collapse{
     width: 104%;
 }
@@ -1990,10 +1993,13 @@ span.num.greatherthanninetynine {
 }
 
  @media (max-width: 440px) {
+.searchlogo{
+    margin-top: 30%;
+}
 .searchmob{
     padding: 30px;
     width: 80px;
-    margin-top: -80px;
+    margin-top: -88px;
 }
 .uploadh{
     padding-left: 8px !important;
