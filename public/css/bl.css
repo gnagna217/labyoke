@@ -867,6 +867,12 @@ table.dataTable thead .sorting {
 input{
     outline: none;
 }
+input{
+    border-top: none !important;
+    border-left: none !important;
+    border-right: none !important;
+    box-shadow: none !important;
+}
 .aboutplus{
     margin-left: 40px;
     font-size: 75pt !important;
