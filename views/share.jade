@@ -5,7 +5,7 @@ block content
 	- var nobar = ""
 	- if(doing == "upload")
 		- var nobar = "display:none;"
-		- shadow = "box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); box-sizing: content-box; width: 42%; padding-right: 15px;"
+		- shadow = "uploadh"
 	- var adjust = "adjustpadding"
 	- var filteroutput2 = report_sharesbycategory.filter(function(x){console.log("filter2: " + x.insuff); return (x.insuff == 1)});
 	div(id="langText", style="display:none")!= lang
@@ -172,10 +172,10 @@ block content
 									}
 										});
 								});
-		div(class="share-container adjustpadding adjustpaddingrightandwidth" style="float:right;"+ shadow)
+		div(class="share-container adjustpadding adjustpaddingrightandwidth " + shadow, style="float:right;")
 			if(isLoggedInAdmin > 0)
 				a(name="upload")
-				div(class="admin")
+				div(class="admin", style=nobar)
 				h4= i18n.__("shares.admin.title")
 				p= i18n.__("shares.admin.subtitle")
 				form(id="uploadForm", enctype="multipart/form-data", action="share", method="post")

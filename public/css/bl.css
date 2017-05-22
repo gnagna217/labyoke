@@ -435,6 +435,13 @@ position: absolute;
     z-index: 10;
 }
 
+.uploadh{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); 
+    box-sizing: content-box; 
+    width: 42%; 
+    padding-right: 15px;
+}
+
 .searchcatalog{
     float:left;
     max-width: 400px;
@@ -1417,6 +1424,9 @@ input::-webkit-inner-spin-button {
 }
 }
  @media (max-width: 1200px) {
+.uploadh{
+    width: 40%;
+}
 .positionbutton{
     left: 28%;
 }
@@ -1437,6 +1447,9 @@ input::-webkit-inner-spin-button {
 
 
 @media (max-width: 908px) {
+.uploadh{
+    width: 42%;
+}
 .adjustpaddingrightandwidth {
     margin-right: 0px;
     width: 50%;
@@ -1453,7 +1466,9 @@ input::-webkit-inner-spin-button {
 }
 
  @media (max-width: 992px) {
-
+.uploadh{
+    width: 39%;
+}
 .positionbutton{
     left: 22%;
 }
@@ -1550,6 +1565,11 @@ input::-webkit-inner-spin-button {
 }
 
 @media (max-width: 767px){
+.uploadh{
+    width: 94%;
+    padding-right: 15px;
+    padding-left: 25px !important;
+}
 .navbackground{
     height: initial;
 }
