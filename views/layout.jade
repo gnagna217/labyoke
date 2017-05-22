@@ -191,7 +191,8 @@ html(lang='en')
                                 a(href='/about', class="nav-menu",id="menumyaccounta")
                                     span(class="fa fa-home colmenu")
                                     span #{i18n.__("layout.Us")}
-                    span(class="roundaccount")!= user_surname + "" + surname
+                    span(class="roundaccount")
+                      a(href="/account")!=user_surname + "" + surname
                     ul.nav.navbar-nav.navbar-right
                         li(class="nav-menu-logout", style="cursor:pointer")
                             a 
