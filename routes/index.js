@@ -730,7 +730,7 @@ totalshares = t[0].counting;
 		req.session.messages = null;
 	});
 
-	router.get('/share#:doing', isLoggedIn, function(req, res) {
+	router.get('/share/:doing', isLoggedIn, function(req, res) {
 		if(req.cookies.i18n == null || req.cookies.i18n == undefined){
 			req.cookies.i18n = "en";
 		}
