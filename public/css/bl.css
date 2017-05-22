@@ -129,7 +129,7 @@ p{
 }
 
 .navbackground{
-    height: initial;
+    height: 65px;
 }
 .mobileonly{
     display: none;
@@ -1551,7 +1551,7 @@ input::-webkit-inner-spin-button {
 
 @media (max-width: 767px){
 .navbackground{
-    height: 65px;
+    height: initial;
 }
 .paddingrightnav{
     padding-right: 10px !important;
