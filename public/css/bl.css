@@ -1756,7 +1756,7 @@ span.num.greatherthanninetynine {
     right: 13px !important;
 }
 .desktabonly{
-    display: none;
+    display: none !important;
 }
 #menumyshares{
     width: 54%;
