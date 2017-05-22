@@ -1,8 +1,10 @@
 extends layout
 
 block content
+	- var page = window.location
+	- var hash = page.substring(page.indexOf("#")+1);
 	- var shadow = ""
-	- if(title == "Admin")
+	- if(hash == "upload")
 		- shadow = "box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); box-sizing: content-box; width: 42%; padding-right: 15px;"
 	- var adjust = "adjustpadding"
 	- var filteroutput2 = report_sharesbycategory.filter(function(x){console.log("filter2: " + x.insuff); return (x.insuff == 1)});
@@ -17,6 +19,8 @@ block content
 	div(class="container login marginbottom margintop")
 		div(style="float: left;" class="share-container")
 			h1= i18n.__("shares.title")
+			p!= hash
+			p!= shadow
 			if(myshares == "")
 				//- adjust = ""
 				h4= i18n.__("shares.subtitle")
