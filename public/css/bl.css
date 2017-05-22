@@ -1653,6 +1653,9 @@ input::-webkit-inner-spin-button {
 }
 
 @media (max-width: 767px){
+.share-container{
+    margin-top: 30px;
+}
 .roundaccountmob{
     display:block;
 }
