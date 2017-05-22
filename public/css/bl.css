@@ -438,7 +438,7 @@ position: absolute;
 .uploadh{
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); 
     box-sizing: content-box; 
-    width: 42%; 
+    width: 42% !important; 
     padding-right: 15px;
     margin-top: 25px;
 }
@@ -1436,7 +1436,7 @@ input::-webkit-inner-spin-button {
 }
  @media (max-width: 1200px) {
 .uploadh{
-    width: 40%;
+    width: 40% !important;
 }
 .positionbutton{
     left: 28%;
@@ -1459,7 +1459,7 @@ input::-webkit-inner-spin-button {
 
 @media (max-width: 908px) {
 .uploadh{
-    width: 42%;
+    width: 42% !important;
 }
 .adjustpaddingrightandwidth {
     margin-right: 0px;
@@ -1478,7 +1478,7 @@ input::-webkit-inner-spin-button {
 
  @media (max-width: 992px) {
 .uploadh{
-    width: 39%;
+    width: 39% !important;
 }
 .positionbutton{
     left: 22%;
