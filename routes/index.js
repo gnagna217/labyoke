@@ -70,7 +70,7 @@ module.exports = function(router) {
             if(err){
                  //res.json({error_code:1,err_desc:err});
                  res.render('share', {
-                   doing:"upload",lang:req.cookies.i18n, i18n:res, nosuccess: "generic", myshares: req.session.myshares, mysharesrequest: req.session.mysharesrequest, report_sharesbycategory: req.session.report_sharesbycategory, report_venn: req.session.report_venn, test: req.session.test, currentlabname: req.session.lab, ordersnum: req.session.orders, sharesnum: req.session.shares, loggedIn : true, isLoggedInAdmin: req.session.admin, title: 'Share', labyoker : req.session.user
+                   doing:"upload",lang:req.cookies.i18n, i18n:res, nosuccess: "generic", myshares: req.session.myshares, mysharesrequest: req.session.mysharesrequest, report_sharesbycategory: req.session.report_sharesbycategory, report_venn: req.session.report_venn, test: req.session.test, currentlabname: req.session.lab, ordersnum: req.session.orders, sharesnum: req.session.shares, loggedIn : true, isLoggedInAdmin: req.session.admin, title: 'Share', labyoker : req.session.user, labyokersurname : req.session.surname
                  });
                  cont = 0;
                  console.log("generic error: "+cont);
@@ -81,7 +81,7 @@ module.exports = function(router) {
                 //res.json({error_code:1,err_desc:"No file passed"});
                 
                 res.render('share', {
-                   doing:"upload",lang:req.cookies.i18n, i18n:res, nosuccess: "nofile", myshares: req.session.myshares, mysharesrequest: req.session.mysharesrequest, report_sharesbycategory: req.session.report_sharesbycategory, report_venn: req.session.report_venn, test: req.session.test, currentlabname: req.session.lab, ordersnum: req.session.orders, sharesnum: req.session.shares, loggedIn : true, isLoggedInAdmin: req.session.admin, title: 'Share', labyoker : req.session.user
+                   doing:"upload",lang:req.cookies.i18n, i18n:res, nosuccess: "nofile", myshares: req.session.myshares, mysharesrequest: req.session.mysharesrequest, report_sharesbycategory: req.session.report_sharesbycategory, report_venn: req.session.report_venn, test: req.session.test, currentlabname: req.session.lab, ordersnum: req.session.orders, sharesnum: req.session.shares, loggedIn : true, isLoggedInAdmin: req.session.admin, title: 'Share', labyoker : req.session.user, labyokersurname : req.session.surname
                 });
                 cont = 0;
                 console.log("no file error: " + cont);
@@ -106,7 +106,7 @@ module.exports = function(router) {
                         //return res.json({error_code:1,err_desc:err, data: null});
 
                         res.render('share', {
-                    	doing:"upload",lang:req.cookies.i18n, i18n:res, nosuccess: "nodata", myshares: req.session.myshares, mysharesrequest: req.session.mysharesrequest, report_sharesbycategory: req.session.report_sharesbycategory, report_venn: req.session.report_venn, test: req.session.test, currentlabname: req.session.lab, ordersnum: req.session.orders, sharesnum: req.session.shares, loggedIn : true, isLoggedInAdmin: req.session.admin, title: 'Share', spreadname: req.file.originalname, labyoker : req.session.user
+                    	doing:"upload",lang:req.cookies.i18n, i18n:res, nosuccess: "nodata", myshares: req.session.myshares, mysharesrequest: req.session.mysharesrequest, report_sharesbycategory: req.session.report_sharesbycategory, report_venn: req.session.report_venn, test: req.session.test, currentlabname: req.session.lab, ordersnum: req.session.orders, sharesnum: req.session.shares, loggedIn : true, isLoggedInAdmin: req.session.admin, title: 'Share', spreadname: req.file.originalname, labyoker : req.session.user, labyokersurname : req.session.surname
                     	});
                     	cont = 0;
                     	console.log("no data error : " + cont);
@@ -128,11 +128,11 @@ module.exports = function(router) {
                     	console.log("inside successful upload");
                     	console.log("mysharesrequest " + req.session.mysharesrequest);
                     	res.render('share', {
-                    	doing:"upload",lang:req.cookies.i18n, i18n:res, myshares: req.session.myshares, mysharesrequest: req.session.mysharesrequest, report_sharesbycategory: req.session.report_sharesbycategory, report_venn: req.session.report_venn, test: req.session.test, currentlabname: req.session.lab, ordersnum: req.session.orders, sharesnum: req.session.shares, json: result, loggedIn : true, isLoggedInAdmin: req.session.admin, title: 'Share', spreadname: req.file.originalname, labyoker : req.session.user
+                    	doing:"upload",lang:req.cookies.i18n, i18n:res, myshares: req.session.myshares, mysharesrequest: req.session.mysharesrequest, report_sharesbycategory: req.session.report_sharesbycategory, report_venn: req.session.report_venn, test: req.session.test, currentlabname: req.session.lab, ordersnum: req.session.orders, sharesnum: req.session.shares, json: result, loggedIn : true, isLoggedInAdmin: req.session.admin, title: 'Share', spreadname: req.file.originalname, labyoker : req.session.user, labyokersurname : req.session.surname
                     });
                 	} else {
                 		console.log("inside not successful upload");
-                		res.render('share', {doing:"upload",lang:req.cookies.i18n, i18n:res, nosuccess: "databaserror", report_venn: req.session.report_venn, test: req.session.test, currentlabname: req.session.lab, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, myshares: req.session.myshares, mysharesrequest: req.session.mysharesrequest, report_sharesbycategory: req.session.report_sharesbycategory, loggedIn : true, isLoggedInAdmin: req.session.admin, title:'Share'});
+                		res.render('share', {doing:"upload",lang:req.cookies.i18n, i18n:res, nosuccess: "databaserror", report_venn: req.session.report_venn, test: req.session.test, currentlabname: req.session.lab, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, labyokersurname : req.session.surname, myshares: req.session.myshares, mysharesrequest: req.session.mysharesrequest, report_sharesbycategory: req.session.report_sharesbycategory, loggedIn : true, isLoggedInAdmin: req.session.admin, title:'Share'});
 						req.session.messages = null;
                 	}
                 });
@@ -160,7 +160,7 @@ module.exports = function(router) {
             if(err){
                  //res.json({error_code:1,err_desc:err});
                  res.render('share', {
-                   lang:req.cookies.i18n, i18n:res, nosuccess: "generic", myshares: req.session.myshares, mysharesrequest: req.session.mysharesrequest, report_sharesbycategory: req.session.report_sharesbycategory, report_venn: req.session.report_venn, test: req.session.test, currentlabname: req.session.lab, ordersnum: req.session.orders, sharesnum: req.session.shares, loggedIn : true, isLoggedInAdmin: req.session.admin, title: 'Share', labyoker : req.session.user
+                   lang:req.cookies.i18n, i18n:res, nosuccess: "generic", myshares: req.session.myshares, mysharesrequest: req.session.mysharesrequest, report_sharesbycategory: req.session.report_sharesbycategory, report_venn: req.session.report_venn, test: req.session.test, currentlabname: req.session.lab, ordersnum: req.session.orders, sharesnum: req.session.shares, loggedIn : true, isLoggedInAdmin: req.session.admin, title: 'Share', labyoker : req.session.user, labyokersurname : req.session.surname
                  });
                  cont = 0;
                  console.log("generic error: "+cont);
@@ -171,7 +171,7 @@ module.exports = function(router) {
                 //res.json({error_code:1,err_desc:"No file passed"});
                 
                 res.render('share', {
-                   lang:req.cookies.i18n, i18n:res, nosuccess: "nofile", myshares: req.session.myshares, mysharesrequest: req.session.mysharesrequest, report_sharesbycategory: req.session.report_sharesbycategory, report_venn: req.session.report_venn, test: req.session.test, currentlabname: req.session.lab, ordersnum: req.session.orders, sharesnum: req.session.shares, loggedIn : true, isLoggedInAdmin: req.session.admin, title: 'Share', labyoker : req.session.user
+                   lang:req.cookies.i18n, i18n:res, nosuccess: "nofile", myshares: req.session.myshares, mysharesrequest: req.session.mysharesrequest, report_sharesbycategory: req.session.report_sharesbycategory, report_venn: req.session.report_venn, test: req.session.test, currentlabname: req.session.lab, ordersnum: req.session.orders, sharesnum: req.session.shares, loggedIn : true, isLoggedInAdmin: req.session.admin, title: 'Share', labyoker : req.session.user, labyokersurname : req.session.surname
                 });
                 cont = 0;
                 console.log("no file error: " + cont);
@@ -196,7 +196,7 @@ module.exports = function(router) {
                         //return res.json({error_code:1,err_desc:err, data: null});
 
                         res.render('share', {
-                    	lang:req.cookies.i18n, i18n:res, nosuccess: "nodata", myshares: req.session.myshares, mysharesrequest: req.session.mysharesrequest, report_sharesbycategory: req.session.report_sharesbycategory, report_venn: req.session.report_venn, test: req.session.test, currentlabname: req.session.lab, ordersnum: req.session.orders, sharesnum: req.session.shares, loggedIn : true, isLoggedInAdmin: req.session.admin, title: 'Share', spreadname: req.file.originalname, labyoker : req.session.user
+                    	lang:req.cookies.i18n, i18n:res, nosuccess: "nodata", myshares: req.session.myshares, mysharesrequest: req.session.mysharesrequest, report_sharesbycategory: req.session.report_sharesbycategory, report_venn: req.session.report_venn, test: req.session.test, currentlabname: req.session.lab, ordersnum: req.session.orders, sharesnum: req.session.shares, loggedIn : true, isLoggedInAdmin: req.session.admin, title: 'Share', spreadname: req.file.originalname, labyoker : req.session.user, labyokersurname : req.session.surname
                     	});
                     	cont = 0;
                     	console.log("no data error : " + cont);
@@ -218,11 +218,11 @@ module.exports = function(router) {
                     	console.log("inside successful upload");
                     	console.log("mysharesrequest " + req.session.mysharesrequest);
                     	res.render('share', {
-                    	lang:req.cookies.i18n, i18n:res, myshares: req.session.myshares, mysharesrequest: req.session.mysharesrequest, report_sharesbycategory: req.session.report_sharesbycategory, report_venn: req.session.report_venn, test: req.session.test, currentlabname: req.session.lab, ordersnum: req.session.orders, sharesnum: req.session.shares, json: result, loggedIn : true, isLoggedInAdmin: req.session.admin, title: 'Share', spreadname: req.file.originalname, labyoker : req.session.user
+                    	lang:req.cookies.i18n, i18n:res, myshares: req.session.myshares, mysharesrequest: req.session.mysharesrequest, report_sharesbycategory: req.session.report_sharesbycategory, report_venn: req.session.report_venn, test: req.session.test, currentlabname: req.session.lab, ordersnum: req.session.orders, sharesnum: req.session.shares, json: result, loggedIn : true, isLoggedInAdmin: req.session.admin, title: 'Share', spreadname: req.file.originalname, labyoker : req.session.user, labyokersurname : req.session.surname
                     });
                 	} else {
                 		console.log("inside not successful upload");
-                		res.render('share', {lang:req.cookies.i18n, i18n:res, nosuccess: "databaserror", report_venn: req.session.report_venn, test: req.session.test, currentlabname: req.session.lab, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, myshares: req.session.myshares, mysharesrequest: req.session.mysharesrequest, report_sharesbycategory: req.session.report_sharesbycategory, loggedIn : true, isLoggedInAdmin: req.session.admin, title:'Share'});
+                		res.render('share', {lang:req.cookies.i18n, i18n:res, nosuccess: "databaserror", report_venn: req.session.report_venn, test: req.session.test, currentlabname: req.session.lab, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, labyokersurname : req.session.surname, myshares: req.session.myshares, mysharesrequest: req.session.mysharesrequest, report_sharesbycategory: req.session.report_sharesbycategory, loggedIn : true, isLoggedInAdmin: req.session.admin, title:'Share'});
 						req.session.messages = null;
                 	}
                 });
@@ -288,6 +288,7 @@ module.exports = function(router) {
 			title : 'Help',
 			loggedIn : req.session.loggedin,
 			labyoker : req.session.user,
+            labyokersurname : req.session.surname,
 			isLoggedInAdmin: req.session.admin,
 			menu : 'help',
 			title: 'Help'
@@ -307,6 +308,7 @@ module.exports = function(router) {
 			title : 'About Us',
 			loggedIn : req.session.loggedin,
 			labyoker : req.session.user,
+            labyokersurname : req.session.surname,
 			isLoggedInAdmin: req.session.admin,
 			menu : 'about'
 		});
@@ -315,6 +317,7 @@ module.exports = function(router) {
 	router.get('/logout', function(req, res) {
 		req.logout();
 		req.session.user = null;
+        req.session.surname = null;
 		req.session.loggedin = false;
 		res.redirect('/login');
 	});
@@ -378,7 +381,7 @@ module.exports = function(router) {
 				console.log("in LOGIN: GET LABS now " + req.session.labs);
 				console.log("loggin in labs: " + labs);
 				console.log("loggin in latest: " + latest);
-				res.render('login', {latestshares:latest, mom: mom, lang:req.cookies.i18n, i18n: res, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, title: 'Login',isLoggedInAdmin: req.session.admin});
+				res.render('login', {latestshares:latest, mom: mom, lang:req.cookies.i18n, i18n: res, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, labyokersurname : req.session.surname, title: 'Login',isLoggedInAdmin: req.session.admin});
 				req.session.messages = null;
 			});
 			});
@@ -397,9 +400,9 @@ module.exports = function(router) {
 			var labYokeSearch = new LabYokeSearch("",req.session.email);
 			labYokeSearch.findagents(function(error, results) {			
 				if (results != null && results.length > 0){
-					res.render('search', {userlang:req.session.userlang,lang:req.cookies.i18n, i18n:res, mylab: req.session.lab,ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, isLoggedInAdmin: req.session.admin, agentsResults : results, loggedIn : true, title: 'Reagent Search'});
+					res.render('search', {userlang:req.session.userlang,lang:req.cookies.i18n, i18n:res, mylab: req.session.lab,ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, labyokersurname : req.session.surname, isLoggedInAdmin: req.session.admin, agentsResults : results, loggedIn : true, title: 'Reagent Search'});
 				} else {
-					res.render('search', {userlang:req.session.userlang,lang:req.cookies.i18n, i18n:res, mylab: req.session.lab,ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, isLoggedInAdmin: req.session.admin, loggedIn : true, title: 'Reagent Search'});
+					res.render('search', {userlang:req.session.userlang,lang:req.cookies.i18n, i18n:res, mylab: req.session.lab,ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, labyokersurname : req.session.surname, isLoggedInAdmin: req.session.admin, loggedIn : true, title: 'Reagent Search'});
 				}
 				req.session.messages = null;
 			});
@@ -497,7 +500,7 @@ totalshares = t[0].counting;
 					req.session.savingsColor = boostercolor[b];
 					//console.log("lab orders results1: " + results2[1]);				
 					//res.render('orders', {test: results[3], laborders: results2[0],lab1orders: results2[1], ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, isLoggedInAdmin: req.session.admin, title:'Orders', loggedIn : true, orderresults: results[0], report_sharesbycategory: results[1]});
-					res.render('orders', {lang:req.cookies.i18n, i18n:res,booster:req.session.savingsText, boostercolor:req.session.savingsColor,currentlabname:req.session.lab, categories: req.session.categories, test: results[3], laborders: results2, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, isLoggedInAdmin: req.session.admin, title:'Orders', loggedIn : true, orderresults: results[0], report_sharesbycategory: results[1], report_ordersbycategory: results[4]});
+					res.render('orders', {lang:req.cookies.i18n, i18n:res,booster:req.session.savingsText, boostercolor:req.session.savingsColor,currentlabname:req.session.lab, categories: req.session.categories, test: results[3], laborders: results2, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, labyokersurname : req.session.surname, isLoggedInAdmin: req.session.admin, title:'Orders', loggedIn : true, orderresults: results[0], report_sharesbycategory: results[1], report_ordersbycategory: results[4]});
 				}
 			});
 				});
@@ -532,7 +535,7 @@ totalshares = t[0].counting;
 					//console.log("ordering reqcategory: " + reqcategory);
 					console.log("booster",req.session.savingsText);
 				
-					res.render('search', {lang:req.cookies.i18n, i18n:res,booster:req.session.savingsText, boostercolor:req.session.savingsColor, currentlabname:req.session.lab, categories: req.session.categories, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, isLoggedInAdmin: req.session.admin, title:'Search',loggedIn : true, order_location: location, order_agent: agent, order_vendor: vendor, order_catalog: catalognumber, email: email});
+					res.render('search', {lang:req.cookies.i18n, i18n:res,booster:req.session.savingsText, boostercolor:req.session.savingsColor, currentlabname:req.session.lab, categories: req.session.categories, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, labyokersurname : req.session.surname, isLoggedInAdmin: req.session.admin, title:'Search',loggedIn : true, order_location: location, order_agent: agent, order_vendor: vendor, order_catalog: catalognumber, email: email});
 					req.session.messages = null;
 				}
 			});
@@ -610,11 +613,11 @@ totalshares = t[0].counting;
 				labyokerLabs.getlabs(function(error, labs) {
 					req.session.labs = labs;
 					console.log("load labs in reports : " + labs);
-					res.render('reports', {lang:req.cookies.i18n, i18n:res, resultsMoneyIntro:results,dept: req.session.dept, categories: categories, labs: req.session.labs, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, isLoggedInAdmin: req.session.admin, loggedIn : true, title: 'Reports', isLoggedInAdmin: req.session.admin});
+					res.render('reports', {lang:req.cookies.i18n, i18n:res, resultsMoneyIntro:results,dept: req.session.dept, categories: categories, labs: req.session.labs, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, labyokersurname : req.session.surname, isLoggedInAdmin: req.session.admin, loggedIn : true, title: 'Reports', isLoggedInAdmin: req.session.admin});
 					req.session.messages = null;
 				});
 			} else {
-				res.render('reports', {lang:req.cookies.i18n, i18n:res, resultsMoneyIntro:results, dept: req.session.dept, categories: categories, labs: req.session.labs, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, isLoggedInAdmin: req.session.admin, loggedIn : true, title: 'Reports', isLoggedInAdmin: req.session.admin});
+				res.render('reports', {lang:req.cookies.i18n, i18n:res, resultsMoneyIntro:results, dept: req.session.dept, categories: categories, labs: req.session.labs, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, labyokersurname : req.session.surname, isLoggedInAdmin: req.session.admin, loggedIn : true, title: 'Reports', isLoggedInAdmin: req.session.admin});
 				req.session.messages = null;
 			}
 		});
@@ -636,9 +639,9 @@ totalshares = t[0].counting;
 			if(results != null){
 				console.log("res " + results);
 				if(results != ""){
-					res.render('reports', {lang:req.cookies.i18n, i18n:res,section: "shares", dept: req.session.dept, categories: req.session.categories, labs: req.session.labs, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, datefromShares: datefrom, datetoShares: dateto, title:'Reports',loggedIn : true, resultsShares: results, isLoggedInAdmin: req.session.admin, addMessageShares: "success"});
+					res.render('reports', {lang:req.cookies.i18n, i18n:res,section: "shares", dept: req.session.dept, categories: req.session.categories, labs: req.session.labs, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, labyokersurname : req.session.surname, datefromShares: datefrom, datetoShares: dateto, title:'Reports',loggedIn : true, resultsShares: results, isLoggedInAdmin: req.session.admin, addMessageShares: "success"});
 				} else {
-					res.render('reports', {lang:req.cookies.i18n, i18n:res,section: "shares", dept: req.session.dept, categories: req.session.categories, labs: req.session.labs, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, datefromShares: datefrom, datetoShares: dateto, title:'Reports',loggedIn : true, isLoggedInAdmin: req.session.admin, addMessageShares: "failure"});
+					res.render('reports', {lang:req.cookies.i18n, i18n:res,section: "shares", dept: req.session.dept, categories: req.session.categories, labs: req.session.labs, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, labyokersurname : req.session.surname, datefromShares: datefrom, datetoShares: dateto, title:'Reports',loggedIn : true, isLoggedInAdmin: req.session.admin, addMessageShares: "failure"});
 				}
 				req.session.messages = null;
 			}
@@ -671,10 +674,10 @@ totalshares = t[0].counting;
 				console.log("res " + results);
 				if(results!=undefined && results != ""){
 					console.log("successful money report");
-					res.render('reports', {lang:req.cookies.i18n, i18n:res,dept: req.session.dept, categories: req.session.categories, labs: req.session.labs, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, datefromMoney: datefrom, datetoMoney: dateto, title:'Reports',loggedIn : true, resultsMoney: results, isLoggedInAdmin: req.session.admin, addMessageMoney: "success", section: "money"});
+					res.render('reports', {lang:req.cookies.i18n, i18n:res,dept: req.session.dept, categories: req.session.categories, labs: req.session.labs, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, labyokersurname : req.session.surname, datefromMoney: datefrom, datetoMoney: dateto, title:'Reports',loggedIn : true, resultsMoney: results, isLoggedInAdmin: req.session.admin, addMessageMoney: "success", section: "money"});
 				} else {
 					console.log("failed money report");
-					res.render('reports', {lang:req.cookies.i18n, i18n:res,dept: req.session.dept, categories: req.session.categories, labs: req.session.labs, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, datefromMoney: datefrom, datetoMoney: dateto, title:'Reports',loggedIn : true, isLoggedInAdmin: req.session.admin, addMessageMoney: "failure", section: "money"});
+					res.render('reports', {lang:req.cookies.i18n, i18n:res,dept: req.session.dept, categories: req.session.categories, labs: req.session.labs, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, labyokersurname : req.session.surname, datefromMoney: datefrom, datetoMoney: dateto, title:'Reports',loggedIn : true, isLoggedInAdmin: req.session.admin, addMessageMoney: "failure", section: "money"});
 				}
 				req.session.messages = null;
 			}
@@ -706,9 +709,9 @@ totalshares = t[0].counting;
 			if(results != null){
 				console.log("res " + results);
 				if(results!=null && results != ""){
-					res.render('reports', {lang:req.cookies.i18n, i18n:res,section: "insuff", dept: req.session.dept, categories: req.session.categories, labs: req.session.labs, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, title:'Reports',loggedIn : true, resultsInsuff: results, isLoggedInAdmin: req.session.admin, addMessageInsuff: "success"});
+					res.render('reports', {lang:req.cookies.i18n, i18n:res,section: "insuff", dept: req.session.dept, categories: req.session.categories, labs: req.session.labs, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, labyokersurname : req.session.surname, title:'Reports',loggedIn : true, resultsInsuff: results, isLoggedInAdmin: req.session.admin, addMessageInsuff: "success"});
 				} else {
-					res.render('reports', {lang:req.cookies.i18n, i18n:res,section: "insuff", dept: req.session.dept, categories: req.session.categories, labs: req.session.labs, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, title:'Reports',loggedIn : true, isLoggedInAdmin: req.session.admin, addMessageInsuff: "failure"});
+					res.render('reports', {lang:req.cookies.i18n, i18n:res,section: "insuff", dept: req.session.dept, categories: req.session.categories, labs: req.session.labs, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, labyokersurname : req.session.surname, title:'Reports',loggedIn : true, isLoggedInAdmin: req.session.admin, addMessageInsuff: "failure"});
 				}
 				req.session.messages = null;
 			}
@@ -726,7 +729,7 @@ totalshares = t[0].counting;
 		console.log("changeDetails col: " + col);
 		console.log("changeDetails val: " + val);
 		console.log("changeDetails email: " + email);
-		var labYokedetails = new LabyokerUserDetails(col, val, email,req.session.user,req.session.surname,res);
+		var labYokedetails = new LabyokerUserDetails(col, val, email,req.session.user, labyokersurname : req.session.surname, req.session.surname,res);
 		labYokedetails.changeDetails(function(error, results) {
 			if(results){
 				if(col == 'name'){
@@ -747,14 +750,14 @@ totalshares = t[0].counting;
 				console.log("load labs in account : " + labs);
 				var labYokeAgents = new LabYokeAgents(req.session.email, req.session.lab, req.session.labs);
 				labYokeAgents.getLabyoker(function(error, userresults) {
-				res.render('account', {lang:req.cookies.i18n, i18n:res, userDetails: userresults, labname: req.session.lab, team:team, labs: req.session.labs, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, title:'Account',loggedIn : true, resultsAccount: results, isLoggedInAdmin: req.session.admin});
+				res.render('account', {lang:req.cookies.i18n, i18n:res, userDetails: userresults, labname: req.session.lab, team:team, labs: req.session.labs, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, labyokersurname : req.session.surname, title:'Account',loggedIn : true, resultsAccount: results, isLoggedInAdmin: req.session.admin});
 					req.session.messages = null;
 				});
 			});
 		} else {
 			var labYokeAgents = new LabYokeAgents(req.session.email, req.session.lab, req.session.labs);
 			labYokeAgents.getLabyoker(function(error, userresults) {
-				res.render('account', {lang:req.cookies.i18n, i18n:res, userDetails: userresults, labname: req.session.lab, team:team, labs: req.session.labs, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, title:'Account',loggedIn : true, resultsAccount: results, isLoggedInAdmin: req.session.admin});
+				res.render('account', {lang:req.cookies.i18n, i18n:res, userDetails: userresults, labname: req.session.lab, team:team, labs: req.session.labs, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, labyokersurname : req.session.surname, title:'Account',loggedIn : true, resultsAccount: results, isLoggedInAdmin: req.session.admin});
 				req.session.messages = null;
 			});
 		}
@@ -785,9 +788,9 @@ totalshares = t[0].counting;
 			if(results != null){
 				console.log("res " + results);
 				if(results != ""){
-					res.render('reports', {lang:req.cookies.i18n, i18n:res,section: "orders", dept: req.session.dept, categories: req.session.categories, labs: req.session.labs, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, datefromOrders: datefrom, datetoOrders: dateto, title:'Reports',loggedIn : true, resultsOrders: results, isLoggedInAdmin: req.session.admin, addMessageOrders: "success"});
+					res.render('reports', {lang:req.cookies.i18n, i18n:res,section: "orders", dept: req.session.dept, categories: req.session.categories, labs: req.session.labs, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, labyokersurname : req.session.surname, datefromOrders: datefrom, datetoOrders: dateto, title:'Reports',loggedIn : true, resultsOrders: results, isLoggedInAdmin: req.session.admin, addMessageOrders: "success"});
 				} else {
-					res.render('reports', {lang:req.cookies.i18n, i18n:res,section: "orders", dept: req.session.dept, categories: req.session.categories, labs: req.session.labs, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, datefromOrders: datefrom, datetoOrders: dateto, title:'Reports',loggedIn : true, isLoggedInAdmin: req.session.admin, addMessageOrders: "failure"});
+					res.render('reports', {lang:req.cookies.i18n, i18n:res,section: "orders", dept: req.session.dept, categories: req.session.categories, labs: req.session.labs, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, labyokersurname : req.session.surname, datefromOrders: datefrom, datetoOrders: dateto, title:'Reports',loggedIn : true, isLoggedInAdmin: req.session.admin, addMessageOrders: "failure"});
 				}
 				req.session.messages = null;
 			}
@@ -799,7 +802,7 @@ totalshares = t[0].counting;
 			req.cookies.i18n = "en";
 		}
 		res.setLocale(req.cookies.i18n);
-		res.render('play', {lang:req.cookies.i18n, i18n:res,ordersnum: req.session.orders, sharesnum: req.session.shares, title: 'Play',labyoker : req.session.user});
+		res.render('play', {lang:req.cookies.i18n, i18n:res,ordersnum: req.session.orders, sharesnum: req.session.shares, title: 'Play',labyoker : req.session.user, labyokersurname : req.session.surname});
 		req.session.messages = null;
 	});
 
@@ -840,7 +843,7 @@ totalshares = t[0].counting;
 			req.session.report_venn = results[5];
 			req.session.shares = 0;
 			console.log("test ? " + results[3]);
-			res.render('share', {doing:"upload",lang:req.cookies.i18n, i18n:res,report_venn: results[5], test: results[4], currentlabname: req.session.lab, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, myshares: results[0], mysharesrequest: results[3], report_sharesbycategory: results[1], loggedIn : true, isLoggedInAdmin: req.session.admin, title:'Share'});
+			res.render('share', {doing:"upload",lang:req.cookies.i18n, i18n:res,report_venn: results[5], test: results[4], currentlabname: req.session.lab, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, labyokersurname : req.session.surname, myshares: results[0], mysharesrequest: results[3], report_sharesbycategory: results[1], loggedIn : true, isLoggedInAdmin: req.session.admin, title:'Share'});
 			req.session.messages = null;
 		});
 	});
@@ -860,7 +863,7 @@ totalshares = t[0].counting;
 			req.session.report_venn = results[5];
 			req.session.shares = 0;
 			console.log("test ? " + results[3]);
-			res.render('share', {lang:req.cookies.i18n, i18n:res,report_venn: results[5], test: results[4], currentlabname: req.session.lab, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, myshares: results[0], mysharesrequest: results[3], report_sharesbycategory: results[1], loggedIn : true, isLoggedInAdmin: req.session.admin, title:'Share'});
+			res.render('share', {lang:req.cookies.i18n, i18n:res,report_venn: results[5], test: results[4], currentlabname: req.session.lab, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, labyokersurname : req.session.surname, myshares: results[0], mysharesrequest: results[3], report_sharesbycategory: results[1], loggedIn : true, isLoggedInAdmin: req.session.admin, title:'Share'});
 			req.session.messages = null;
 		});
 	});
@@ -882,14 +885,14 @@ totalshares = t[0].counting;
 				console.log("load labs in account : " + labs);
 				var labYokeAgents = new LabYokeAgents(req.session.email, req.session.lab, req.session.labs);
 				labYokeAgents.getLabyoker(function(error, results) {
-					res.render('account', {lang:req.cookies.i18n, i18n:res, dept: req.session.dept, labname: req.session.lab, team:team, labs: req.session.labs, userDetails: results, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, loggedIn : true, isLoggedInAdmin: req.session.admin, title:'Account'});
+					res.render('account', {lang:req.cookies.i18n, i18n:res, dept: req.session.dept, labname: req.session.lab, team:team, labs: req.session.labs, userDetails: results, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, labyokersurname : req.session.surname, loggedIn : true, isLoggedInAdmin: req.session.admin, title:'Account'});
 					req.session.messages = null;
 				});
 			});
 		} else {
 			var labYokeAgents = new LabYokeAgents(req.session.email, req.session.lab, req.session.labs);
 			labYokeAgents.getLabyoker(function(error, results) {
-				res.render('account', {lang:req.cookies.i18n, i18n:res, dept: req.session.dept, labname: req.session.lab, team:team, labs: req.session.labs, userDetails: results, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, loggedIn : true, isLoggedInAdmin: req.session.admin, title:'Account'});
+				res.render('account', {lang:req.cookies.i18n, i18n:res, dept: req.session.dept, labname: req.session.lab, team:team, labs: req.session.labs, userDetails: results, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, labyokersurname : req.session.surname, loggedIn : true, isLoggedInAdmin: req.session.admin, title:'Account'});
 				req.session.messages = null;
 			});
 		}
@@ -911,7 +914,7 @@ totalshares = t[0].counting;
 		res.cookie('i18n', lang);
 		req.cookies.i18n = lang;
 		res.setLocale(req.cookies.i18n);
-		res.render('forgot', {lang:req.cookies.i18n, i18n:res, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, isLoggedInAdmin: req.session.admin, title: 'Forgot Password'});
+		res.render('forgot', {lang:req.cookies.i18n, i18n:res, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, labyokersurname : req.session.surname, isLoggedInAdmin: req.session.admin, title: 'Forgot Password'});
 		req.session.messages = null;
 	});
 
@@ -934,18 +937,18 @@ totalshares = t[0].counting;
 					console.log("done: " + (done != null && done.length > 0 && done == 'alreadySent'));
 					console.log("done2: " + (done != null && done == 'alreadySent'));
 					if (done != null && done.length > 0 && done != 'alreadySent') {
-						res.render('forgot', {lang:req.cookies.i18n, i18n:res, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, isLoggedInAdmin: req.session.admin, userfound : forgotuser, title: 'Forgot Password'});
+						res.render('forgot', {lang:req.cookies.i18n, i18n:res, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, labyokersurname : req.session.surname, isLoggedInAdmin: req.session.admin, userfound : forgotuser, title: 'Forgot Password'});
 					} else if(done != null && done.length > 0 && done == 'alreadySent') {
 						res.render(
 							'forgot',
 							{
-								lang:req.cookies.i18n, i18n:res, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, isLoggedInAdmin: req.session.admin, title: 'Forgot Password', message : res.__("index.forgot.message1"), usernotfound : true, noforgotform: true
+								lang:req.cookies.i18n, i18n:res, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, labyokersurname : req.session.surname, isLoggedInAdmin: req.session.admin, title: 'Forgot Password', message : res.__("index.forgot.message1"), usernotfound : true, noforgotform: true
 							});
 					} else {
 						res.render(
 							'forgot',
 							{
-								lang:req.cookies.i18n, i18n:res, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, isLoggedInAdmin: req.session.admin, title: 'Forgot Password', message : res.__("index.forgot.message2"), usernotfound : true
+								lang:req.cookies.i18n, i18n:res, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user,  labyokersurname : req.session.surname, isLoggedInAdmin: req.session.admin, title: 'Forgot Password', message : res.__("index.forgot.message2"), usernotfound : true
 							});
 					}
 				});
@@ -953,7 +956,7 @@ totalshares = t[0].counting;
 				res.render(
 					'forgot',
 					{
-						lang:req.cookies.i18n, i18n:res, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, isLoggedInAdmin: req.session.admin, title: 'Forgot Password', message : res.__("index.forgot.message3"), usernotfound : true
+						lang:req.cookies.i18n, i18n:res, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user,  labyokersurname : req.session.surname, isLoggedInAdmin: req.session.admin, title: 'Forgot Password', message : res.__("index.forgot.message3"), usernotfound : true
 					});
 
 			}
@@ -980,12 +983,12 @@ totalshares = t[0].counting;
 				labyokerLabs.getlabs(function(error, labs) {
 					req.session.labs = labs;
 					console.log("load labs in register : " + labs);
-					res.render('register', {lang:req.cookies.i18n, i18n:res, ordersnum: req.session.orders, labs: req.session.labs, sharesnum: req.session.shares, labyoker : req.session.user, isLoggedInAdmin: req.session.admin, title: 'Register'});
+					res.render('register', {lang:req.cookies.i18n, i18n:res, ordersnum: req.session.orders, labs: req.session.labs, sharesnum: req.session.shares, labyoker : req.session.user, labyokersurname : req.session.surname, isLoggedInAdmin: req.session.admin, title: 'Register'});
 					req.session.messages = null;
 					req.body.reglab = null;
 				});
 			} else {
-				res.render('register', {lang:req.cookies.i18n, i18n:res, ordersnum: req.session.orders, labs: req.session.labs, sharesnum: req.session.shares, labyoker : req.session.user, isLoggedInAdmin: req.session.admin, title: 'Register'});
+				res.render('register', {lang:req.cookies.i18n, i18n:res, ordersnum: req.session.orders, labs: req.session.labs, sharesnum: req.session.shares, labyoker : req.session.user, labyokersurname : req.session.surname, isLoggedInAdmin: req.session.admin, title: 'Register'});
 				req.session.messages = null;
 				req.body.reglab = null;
 			}
@@ -1076,7 +1079,7 @@ totalshares = t[0].counting;
 				if(done != null && done.length > 0 && done == 'idalreadyInUse') {
 						console.log("status = idalreadyInUse");
 						rendered = true;
-						res.render('register', {lang:req.cookies.i18n, i18n:res, labs: req.session.labs, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, isLoggedInAdmin: req.session.admin, title: 'Register', message : res.__("index.register.message11")});
+						res.render('register', {lang:req.cookies.i18n, i18n:res, labs: req.session.labs, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, labyokersurname : req.session.surname, isLoggedInAdmin: req.session.admin, title: 'Register', message : res.__("index.register.message11")});
 				} else if(done != null && done.length > 0 && done == 'firstsection') {
 					console.log("status = firstsection1");
 					rendered = true;
@@ -1095,11 +1098,12 @@ totalshares = t[0].counting;
 							title: 'Register',
 							isLoggedInAdmin: req.session.admin,
 							labyoker : req.session.user,
+                            labyokersurname : req.session.surname,
 							labs: req.session.labs
 						});
 				} else if (done != null && done.length > 0 && done != 'success') {
 					console.log("status = status1");
-					res.render('register', {lang:req.cookies.i18n, i18n:res, labs: req.session.labs, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, isLoggedInAdmin: req.session.admin, title: 'Register', message : res.__("index.register.message3")});
+					res.render('register', {lang:req.cookies.i18n, i18n:res, labs: req.session.labs, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, labyokersurname : req.session.surname,isLoggedInAdmin: req.session.admin, title: 'Register', message : res.__("index.register.message3")});
 				} else if(done != null && done.length > 0 && done == 'success') {
 					console.log("status = success1");
 					rendered = true;
@@ -1116,6 +1120,7 @@ totalshares = t[0].counting;
 							title: 'Register',
 							isLoggedInAdmin: req.session.admin,
 							labyoker : req.session.user,
+                            labyokersurname : req.session.surname,
 							labs: req.session.labs
 						});
 				} else {
@@ -1130,6 +1135,7 @@ totalshares = t[0].counting;
 							title: 'Register',
 							isLoggedInAdmin: req.session.admin,
 							labyoker : req.session.user,
+                            labyokersurname : req.session.surname,
 							labs: req.session.labs
 						});
 				}
@@ -1147,7 +1153,7 @@ totalshares = t[0].counting;
 					if(done != null && done.length > 0 && done == 'alreadyInUse') {
 						console.log("status = alreadyInUse");
 						rendered = true;
-						res.render('register', {lang:req.cookies.i18n, i18n:res, labs: req.session.labs, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, isLoggedInAdmin: req.session.admin, title: 'Register', message : res.__("index.register.message1")});
+						res.render('register', {lang:req.cookies.i18n, i18n:res, labs: req.session.labs, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, labyokersurname : req.session.surname,isLoggedInAdmin: req.session.admin, title: 'Register', message : res.__("index.register.message1")});
 					} else if(done != null && done.length > 0 && done == 'firstsection') {
 						console.log("status = firstsection");
 						rendered = true;
@@ -1166,12 +1172,13 @@ totalshares = t[0].counting;
 								title: 'Register',
 								isLoggedInAdmin: req.session.admin,
 								labyoker : req.session.user,
+                                labyokersurname : req.session.surname,
 								labs: req.session.labs
 							});
 					} else if(done != null && done.length > 0 && done != 'success') {
 						console.log("status = not successful");
 						rendered = true;
-						res.render('register', {i18n:res, labs: req.session.labs, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, isLoggedInAdmin: req.session.admin, title: 'Register', message : res.__("index.register.message3")});
+						res.render('register', {i18n:res, labs: req.session.labs, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user,labyokersurname : req.session.surname, isLoggedInAdmin: req.session.admin, title: 'Register', message : res.__("index.register.message3")});
 					} else if(done != null && done.length > 0 && done == 'success') {
 						console.log("status = success");
 						rendered = true;
@@ -1187,6 +1194,7 @@ totalshares = t[0].counting;
 								title: 'Register',
 								isLoggedInAdmin: req.session.admin,
 								labyoker : req.session.user,
+                                labyokersurname : req.session.surname,
 								labs: req.session.labs
 							});
 					} else {
@@ -1203,12 +1211,13 @@ totalshares = t[0].counting;
 								title: 'Register',
 								isLoggedInAdmin: req.session.admin,
 								labyoker : req.session.user,
+                                labyokersurname : req.session.surname,
 								labs: req.session.labs,
 							});
 					}
 					if(!rendered){
 						console.log("nothing entered");
-						res.render('register', {lang:req.cookies.i18n, i18n:res, labs: req.session.labs, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, isLoggedInAdmin: req.session.admin, message : res.__("index.register.message4"), title: 'Register'});
+						res.render('register', {lang:req.cookies.i18n, i18n:res, labs: req.session.labs, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, labyokersurname : req.session.surname,isLoggedInAdmin: req.session.admin, message : res.__("index.register.message4"), title: 'Register'});
 					}
 				});
 			} else {
@@ -1223,6 +1232,7 @@ totalshares = t[0].counting;
 					title: 'Register',
 					isLoggedInAdmin: req.session.admin,
 					labyoker : req.session.user,
+                    labyokersurname : req.session.surname,
 					labs: req.session.labs
 				});
 			}
@@ -1246,10 +1256,10 @@ totalshares = t[0].counting;
 						messageStr = (res.__("index.search.message1", {searchText:searchText})).replace(/&lt;/g, '<').replace(/&gt;/g, '>');
 						//messageStr = "Sorry we could not find any results with your reagent search request: <b>" + searchText + "</b>. Please try again.";
 					}
-					res.render('search', {searchType:searchType,userlang:req.session.userlang,lang:req.cookies.i18n, i18n:res, mylab: req.session.lab, message: messageStr, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, isLoggedInAdmin: req.session.admin, title: 'Search', fullname: req.session.fullname, sendemail: req.session.email, searchResults : results[0], agentsResults : results[1], searchformText: searchText, loggedIn : true});
+					res.render('search', {searchType:searchType,userlang:req.session.userlang,lang:req.cookies.i18n, i18n:res, mylab: req.session.lab, message: messageStr, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user,labyokersurname : req.session.surname, isLoggedInAdmin: req.session.admin, title: 'Search', fullname: req.session.fullname, sendemail: req.session.email, searchResults : results[0], agentsResults : results[1], searchformText: searchText, loggedIn : true});
 				} else {
 					messageStr = "You entered an invalid reagent keyword. Please try again.";
-					res.render('search', {searchType:searchType,userlang:req.session.userlang,lang:req.cookies.i18n, i18n:res, message: res.__("index.search.message2"), mylab: req.session.lab,ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, isLoggedInAdmin: req.session.admin, title: 'Search', loggedIn : true, agentsResults : results[1]});
+					res.render('search', {searchType:searchType,userlang:req.session.userlang,lang:req.cookies.i18n, i18n:res, message: res.__("index.search.message2"), mylab: req.session.lab,ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, labyokersurname : req.session.surname,isLoggedInAdmin: req.session.admin, title: 'Search', loggedIn : true, agentsResults : results[1]});
 				}
 				req.session.messages = null;
 			});
@@ -1275,10 +1285,10 @@ totalshares = t[0].counting;
 						messageStr = (res.__("index.searchcatalog.message1", {searchText:searchText})).replace(/&lt;/g, '<').replace(/&gt;/g, '>');
 						//messageStr = "Sorry we could not find any results with your catalog search request: <b>" + searchText + "</b>. Please try again.";
 					}
-					res.render('search', {searchType: searchType,userlang:req.session.userlang,lang:req.cookies.i18n, i18n:res, mylab: req.session.lab, messageCatalog: messageStr, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, isLoggedInAdmin: req.session.admin, title: 'Reagent Search', fullname: req.session.fullname, sendemail: req.session.email, searchResults : results[0], agentsResults : results[1], searchformTextCatalog: searchText, loggedIn : true});
+					res.render('search', {searchType: searchType,userlang:req.session.userlang,lang:req.cookies.i18n, i18n:res, mylab: req.session.lab, messageCatalog: messageStr, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, labyokersurname : req.session.surname, isLoggedInAdmin: req.session.admin, title: 'Reagent Search', fullname: req.session.fullname, sendemail: req.session.email, searchResults : results[0], agentsResults : results[1], searchformTextCatalog: searchText, loggedIn : true});
 				} else {
 					messageStr = "You entered an invalid catalog keyword. Please try again.";
-					res.render('search', {searchType: searchType,userlang:req.session.userlang,lang:req.cookies.i18n, i18n:res, messageCatalog: res.__("index.searchcatalog.message2"),mylab: req.session.lab,ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, isLoggedInAdmin: req.session.admin, title: 'Reagent Search', loggedIn : true, agentsResults : results[1]});
+					res.render('search', {searchType: searchType,userlang:req.session.userlang,lang:req.cookies.i18n, i18n:res, messageCatalog: res.__("index.searchcatalog.message2"),mylab: req.session.lab,ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, labyokersurname : req.session.surname,isLoggedInAdmin: req.session.admin, title: 'Reagent Search', loggedIn : true, agentsResults : results[1]});
 				}
 				req.session.messages = null;
 			});
@@ -1362,10 +1372,12 @@ totalshares = t[0].counting;
 														req.session.orders = orders;
 													}
 													req.session.user = done[0].name;
+                                                    req.session.surname = done[0].surname;
 													req.session.dept = dept[0].department;
 													req.session.userid = done[0].id;
 													req.session.userlang = done[0].lang;
 													req.session.useradmin = false;
+                                                    console.log("user surname (NEW): " + req.session.surname);
 													console.log("user language: " + req.session.userlang);
 													console.log("admin: " + done[0].admin);
 													var c = parseInt(done[0].admin,10);
@@ -1617,6 +1629,7 @@ totalshares = t[0].counting;
 						hashid: id,
 						isLoggedInAdmin: req.session.admin,
 						labyoker : req.session.user,
+                        labyokersurname : req.session.surname,
 						confirmReset : res.__("index.confirmpwd.message1").replace(/&lt;/g, '<').replace(/&gt;/g, '>'),
 						scripts : [ '/javascripts/utils.js' ]
 					});
@@ -1632,6 +1645,7 @@ totalshares = t[0].counting;
 						hashid: id,
 						isLoggedInAdmin: req.session.admin,
 						labyoker : req.session.user,
+                        labyokersurname : req.session.surname,
 						confirmReset : (res.__("index.confirmpwd.message2", { id: id })).replace(/&lt;/g, '<').replace(/&gt;/g, '>'),
 						scripts : [ '/javascripts/utils.js' ]
 					});
@@ -1647,6 +1661,7 @@ totalshares = t[0].counting;
 					hashid: id,
 					isLoggedInAdmin: req.session.admin,
 					labyoker : req.session.user,
+                    labyokersurname : req.session.surname,
 					confirmReset : res.__("index.confirmpwd.message3").replace(/&lt;/g, '<').replace(/&gt;/g, '>'),
 					scripts : [ '/javascripts/utils.js' ]
 				});
@@ -1662,6 +1677,7 @@ totalshares = t[0].counting;
 						hashid: id,
 						isLoggedInAdmin: req.session.admin,
 						labyoker : req.session.user,
+                        labyokersurname : req.session.surname,
 						confirmReset : (res.__("index.confirmpwd.message2", { id: id })).replace(/&lt;/g, '<').replace(/&gt;/g, '>'),
 						scripts : [ '/javascripts/utils.js' ]
 					});
@@ -1690,6 +1706,7 @@ totalshares = t[0].counting;
 			hashid: req.params.id,
 			isLoggedInAdmin: req.session.admin,
 			labyoker : req.session.user,
+            labyokersurname : req.session.surname,
 			scripts : [ '/javascripts/utils.js' ]
 		});
 	});
@@ -1731,6 +1748,7 @@ totalshares = t[0].counting;
 						title : 'Change Password',
 						isLoggedInAdmin: req.session.admin,
 						labyoker : req.session.user,
+                        labyokersurname : req.session.surname,
 						/*loggedIn : true,*/
 						messageSuccess : res.__("index.changepwd.message1").replace(/&lt;/g, '<').replace(/&gt;/g, '>'), 
 						scripts : [ '/javascripts/utils.js' ]
@@ -1745,6 +1763,7 @@ totalshares = t[0].counting;
 						/*loggedIn : true,*/
 						displayForm: true,
 						labyoker : req.session.user,
+                        labyokersurname : req.session.surname,
 						isLoggedInAdmin: req.session.admin,
 						message : (res.__("index.changepwd.message2", { id: id })).replace(/&lt;/g, '<').replace(/&gt;/g, '>'), 
 						scripts : [ '/javascripts/utils.js' ]
@@ -1758,6 +1777,7 @@ totalshares = t[0].counting;
 						title : 'Change Password',
 						isLoggedInAdmin: req.session.admin,
 						labyoker : req.session.user,
+                        labyokersurname : req.session.surname,
 						/*loggedIn : true,*/
 						message : res.__("index.changepwd.message3").replace(/&lt;/g, '<').replace(/&gt;/g, '>'), 
 						displayForm: true,
@@ -1772,6 +1792,7 @@ totalshares = t[0].counting;
 						title : 'Change Password',
 						isLoggedInAdmin: req.session.admin,
 						labyoker : req.session.user,
+                        labyokersurname : req.session.surname,
 						/*loggedIn : true,*/
 						displayForm: true,
 						message : res.__("index.changepwd.message4").replace(/&lt;/g, '<').replace(/&gt;/g, '>'), 
@@ -1786,6 +1807,7 @@ totalshares = t[0].counting;
 						title : 'Change Password',
 						isLoggedInAdmin: req.session.admin,
 						labyoker : req.session.user,
+                        labyokersurname : req.session.surname,
 						/*loggedIn : true,*/
 						displayForm: true,
 						message : (res.__("index.changepwd.message5", { id: id })).replace(/&lt;/g, '<').replace(/&gt;/g, '>'), 

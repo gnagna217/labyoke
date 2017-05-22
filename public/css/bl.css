@@ -414,12 +414,28 @@ a.fa-globe {
   color: grey;
   cursor: pointer;
 }
+.roundaccount{
+
+    top: 39px;
+    position: relative;
+    left: -273px;
+    border-radius: 60px;
+    background-color: #2975b4;
+    padding: 49px;
+    color: white;
+
+}
+
+.roundaccount:hover, .roundaccount:active, .roundaccount:focus{
+    background-color: #3d9dcb;
+}
 span.fa-comment {
     position: absolute;
     font-size: 2.0em;
     top: -8px;
     color: #3d9dcb;
     right: -9px;
+    z-index: 1;
 }
 
 .sun {
@@ -733,6 +749,7 @@ input:-webkit-autofill:hover {
 }
 .account-border{
     border-color: #3d9dcb;border-right-style: solid;border-width: thick;border-left-style: solid;
+    background-color: white;
 }
 .btn{
     outline: none !important;
@@ -749,7 +766,7 @@ input:-webkit-autofill:hover {
 }
 
 .myaccount{
-    background-color: #2975b4;
+    background-color: transparent;
     color: white !important;
 }
 
@@ -1583,6 +1600,12 @@ input::-webkit-inner-spin-button {
 }
 
 @media (max-width: 767px){
+.roundaccount{
+    display:none;
+}
+.myaccount{
+    background-color: #2975b4;
+}
 input{
     border-top: none !important;
     border-left: none !important;
