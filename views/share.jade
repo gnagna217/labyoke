@@ -2,7 +2,9 @@ extends layout
 
 block content
 	- var shadow = ""
+	- var nobar = ""
 	- if(doing == "upload")
+		- var nobar = "display:none;"
 		- shadow = "box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); box-sizing: content-box; width: 42%; padding-right: 15px;"
 	- var adjust = "adjustpadding"
 	- var filteroutput2 = report_sharesbycategory.filter(function(x){console.log("filter2: " + x.insuff); return (x.insuff == 1)});
@@ -262,7 +264,7 @@ block content
 										});
 								});
 				script="$(window).scrollTop($('#uploadForm').offset().top).scrollLeft($('#uploadForm').offset().left);"
-			div(style="background-color: #3d9dcb; height: 1px; margin-bottom: 0px; margin-top: 30px;")
+			div(style="background-color: #3d9dcb; height: 1px; margin-bottom: 0px; margin-top: 30px;" + nobar)
 		
 		div(style="float:right;", class="share-container " + adjust + " adjustpaddingrightandwidth")
 			script(type="text/javascript" src="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.js")
