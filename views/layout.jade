@@ -105,7 +105,6 @@ html(lang='en')
      if (loggedIn==true)
         .navbar.navbar-inverse.navbar-fixed-top.adjustnav.navbackground(role='navigation',style="background-color: white;font-size: 10pt;position:fixed !important;padding-top:5px")
             .container.nobottom(style="margin-top: 5px;")
-                span(class="roundaccountmob")!= user_surname + "" + surname
                 .navbar-header.paddingrightnav(style="float:right; margin-left:auto;margin-right: -10px;")
                     //button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-collapse', style="border-color:#8a6d3b")
                       //  span.icon-bar
@@ -139,7 +138,7 @@ html(lang='en')
                         - activateAccount = activateAccount + "labColorBackgroundHover"
                     - if (title == 'About Us')
                         - activateAbout = activateAbout + "labColorBackgroundHover"
-
+                span(class="roundaccountmob")!= user_surname + "" + surname
                 .collapse.navbar-collapse
                     div.adjustWidthSearch(style="float:left")
                         - adjustWidth = ""
