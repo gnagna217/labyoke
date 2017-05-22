@@ -139,7 +139,7 @@ html(lang='en')
                     - if (title == 'About Us')
                         - activateAbout = activateAbout + "labColorBackgroundHover"
                 span(class="roundaccountmob")
-                  a(href="/account")!= user_surname + "" + surname
+                  a(href="/account", style="color: white;text-decoration: none;")!= user_surname + "" + surname
                 .collapse.navbar-collapse
                     div.adjustWidthSearch(style="float:left")
                         - adjustWidth = ""
@@ -193,7 +193,7 @@ html(lang='en')
                                     span(class="fa fa-home colmenu")
                                     span #{i18n.__("layout.Us")}
                     span(class="roundaccount")
-                      a(href="/account")!=user_surname + "" + surname
+                      a(href="/account", style="color: white;text-decoration: none;")!=user_surname + "" + surname
                     ul.nav.navbar-nav.navbar-right
                         li(class="nav-menu-logout", style="cursor:pointer")
                             a 
