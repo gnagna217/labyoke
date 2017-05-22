@@ -138,7 +138,8 @@ html(lang='en')
                         - activateAccount = activateAccount + "labColorBackgroundHover"
                     - if (title == 'About Us')
                         - activateAbout = activateAbout + "labColorBackgroundHover"
-                span(class="roundaccountmob")!= user_surname + "" + surname
+                span(class="roundaccountmob")
+                  a(href="/account")!= user_surname + "" + surname
                 .collapse.navbar-collapse
                     div.adjustWidthSearch(style="float:left")
                         - adjustWidth = ""
