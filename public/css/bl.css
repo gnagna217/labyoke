@@ -415,7 +415,7 @@ a.fa-globe {
   cursor: pointer;
 }
 
-input[type=radio]:checked ~ .check {
+input[type=radio]:checked {
   border: 5px solid #0DFF92;
 }
 
