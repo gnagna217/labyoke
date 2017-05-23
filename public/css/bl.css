@@ -446,7 +446,7 @@ label{
     width: 30px;
     /* top: 30px; */
     left: -30px;
-    margin-top: 0px;
+    margin-top: -4px;
     z-index: 5;
     transition: border .25s linear;
     -webkit-transition: border .25s linear;
@@ -461,7 +461,7 @@ label{
     width: 30px;
     top: 31px;
     right: -35px;
-    margin-top: -31px;
+    margin-top: -35px;
     z-index: 5;
     transition: border .25s linear;
     -webkit-transition: border .25s linear;
@@ -2011,6 +2011,7 @@ span.num.greatherthanninetynine {
     margin: 15px;
     text-align: none;
     margin-top: 25px;
+    margin-bottom:70px;
 }
 
 .positionbutton{
