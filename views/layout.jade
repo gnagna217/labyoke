@@ -143,10 +143,10 @@ html(lang='en')
                         - activeAccountMob = "labColorBackgroundHover"
                     - if (title == 'About Us')
                         - activateAbout = activateAbout + "labColorBackgroundHover"
-                span(class="roundaccountmob " + activeAccountMob)
-                  a(href="/account", style="color: white;text-decoration: none;")!= user_surname + "" + surname
-                span(class="roundaccountmob searchmob " + activeSearchMob)
-                  a(href="/search", style="color: white;text-decoration: none;")
+                span
+                  a(href="/account", class="roundaccountmob " + activeAccountMob, style="color: white;text-decoration: none;")!= user_surname + "" + surname
+                span
+                  a(href="/search", class="roundaccountmob searchmob " + activeSearchMob, style="color: white;text-decoration: none;")
                     span(class="fa fa-search colmenu " + activeSearchMob, style="color: white;font-size: 11pt;")
                 .collapse.navbar-collapse
                     div.adjustWidthSearch(style="float:left")
@@ -200,8 +200,8 @@ html(lang='en')
                                 a(href='/about', class="nav-menu",id="menumyaccounta")
                                     span(class="fa fa-home colmenu")
                                     span #{i18n.__("layout.Us")}
-                    span(class="roundaccount " + activeAccountMob)
-                      a(href="/account", style="color: white;text-decoration: none;")!=user_surname + "" + surname
+                    span
+                      a(href="/account", class="roundaccount " + activeAccountMob, style="color: white;text-decoration: none;")!=user_surname + "" + surname
                     ul.nav.navbar-nav.navbar-right
                         li(class="nav-menu-logout", style="cursor:pointer")
                             a 
