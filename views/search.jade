@@ -31,12 +31,12 @@ block content
           img(src="/images/logo_one_bottle_L_2.png", alt="The Yoke",  title="Yoke", class="searchlogoimg")
           img(src="/images/logo_one_bottle_R.png", alt="The Yoke",  title="Yoke", class="searchlogoimg")
         div(class="radiosearch keysearch")
-          div(style="float:left")
+          div(style="float:left;margin-left: 15px;")
             input(type="radio" name="search" value="keysearch" id="keyradio")
             label(for="keyradio", style="float: left;")
               span(style="z-index: 9; cursor: pointer; -webkit-transition: all 0.25s linear;") #{i18n.__("search.radio.key")}
             div(class="checking")
-          div(style="float:right")
+          div(style="float:right;margin-right: 7px;")
             input(type="radio" name="search" value="catalogsearch" id="catalogradio" style="margin-left: 15px;")
             label(for="catalogradio", style="margin-left: 22px;")
               span(style="z-index: 9; cursor: pointer; -webkit-transition: all 0.25s linear;") #{i18n.__("search.radio.catalog")}
