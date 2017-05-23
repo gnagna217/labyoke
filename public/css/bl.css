@@ -415,28 +415,17 @@ a.fa-globe {
   cursor: pointer;
 }
 
-
-input[type="radio"] + label span {
-  display: inline-block;
-  width: 19px;
-  height: 19px;
-  margin: -1px 4px 0 0;
-  vertical-align: middle;
-  cursor: pointer;
-  -moz-border-radius: 50%;
-  border-radius: 50%;
+label{
+    font-weight: 400;
 }
 
-input[type="radio"] + label span {
-  background-color: #292321;
-}
 
-input[type="radio"]:checked + label span {
+input[type="radio"]:checked {
   background-color: #CC3300;
 }
 
-input[type="radio"] + label span,
-input[type="radio"]:checked + label span {
+input[type="radio"],
+input[type="radio"]:checked {
   -webkit-transition: background-color 0.4s linear;
   -o-transition: background-color 0.4s linear;
   -moz-transition: background-color 0.4s linear;
