@@ -34,9 +34,11 @@ block content
           input(type="radio" name="search" value="keysearch" id="keyradio")
           label(for="keyradio")
             span(style="z-index: 9; cursor: pointer; -webkit-transition: all 0.25s linear;") #{i18n.__("search.radio.key")}
+          div(class="checking")
           input(type="radio" name="search" value="catalogsearch" id="catalogradio" style="margin-left: 15px;")
           label(for="catalogradio")
             span(style="z-index: 9; cursor: pointer; -webkit-transition: all 0.25s linear;") #{i18n.__("search.radio.catalog")}
+          div(class="checking")
         div(class="keysearch", style="display:none", id="keysearch")
             - searchText = i18n.__("search.searchholder")
             - classButton = "btn-success"
