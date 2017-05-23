@@ -32,9 +32,9 @@ block content
           img(src="/images/logo_one_bottle_R.png", alt="The Yoke",  title="Yoke", class="searchlogoimg")
         div(class="radiosearch")
           input(type="radio" name="search" value="keysearch")
-          span #{i18n.__("search.radio.key")}
+          span(style="z-index: 9; cursor: pointer; -webkit-transition: all 0.25s linear;") #{i18n.__("search.radio.key")}
           input(type="radio" name="search" value="catalogsearch" style="margin-left: 15px;")
-          span #{i18n.__("search.radio.catalog")}
+          span(style="z-index: 9; cursor: pointer; -webkit-transition: all 0.25s linear;") #{i18n.__("search.radio.catalog")}
         div(class="keysearch", style="display:none", id="keysearch")
             - searchText = i18n.__("search.searchholder")
             - classButton = "btn-success"
