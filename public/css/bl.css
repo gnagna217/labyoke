@@ -301,6 +301,7 @@ a {
     margin: 15px;
     text-align: center;
     font-weight: 400;
+    margin-bottom: 50px;
 }
 
 .positionbutton{
@@ -459,7 +460,7 @@ label{
     height: 30px;
     width: 30px;
     top: 31px;
-    right: 6px;
+    right: -35px;
     margin-top: -31px;
     z-index: 5;
     transition: border .25s linear;
