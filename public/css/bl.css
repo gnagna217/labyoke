@@ -2105,14 +2105,17 @@ span.num.greatherthanninetynine {
 }
 
  @media (max-width: 440px) {
+.catalogradio{
+    margin-right: 5px;
+}
 .checking{
-    height: 25px;
-    width: 25px;
+    height: 26px;
+    width: 26px;
 }
 
 .checkingcatalog{
-    height: 25px;
-    width: 25px;
+    height: 26px;
+    width: 26px;
     right: -15px;
 }
 
