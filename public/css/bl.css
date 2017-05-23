@@ -1634,7 +1634,14 @@ input::-webkit-inner-spin-button {
 }
 }
 
-
+ @media (max-width: 1026px) {
+.desktabonly4{
+    display: none;
+}
+.mobileonly2{
+    display: block;
+}
+}
 
 @media (max-width: 908px) {
 .uploadh{
