@@ -475,7 +475,7 @@ label{
     height: 14px;
     width: 14px;
     top: 3px;
-    left: 3px;
+    left: 9px;
     margin: auto;
     margin-left: -6px;
     transition: background 0.25s linear;
@@ -2109,6 +2109,8 @@ span.num.greatherthanninetynine {
     height: 10px;
     width: 10px;
     margin-left: 0px;
+    top: 3px;
+    left: 3px;
 }
 
 .checkingcatalog::before {
