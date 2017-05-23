@@ -135,6 +135,9 @@ p{
     display: none;
 }
 
+.mobileonly2{
+    display: none;
+}
 .mobileonlybar{
     display:none;
 }
