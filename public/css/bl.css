@@ -1517,6 +1517,20 @@ input::-webkit-inner-spin-button {
     margin-left: 5px;
 }
 }
+@media (min-width: 800px) {
+.reportOrders{
+    margin-top:20px;
+}
+.reportShares{
+    margin-top:20px;
+}
+.reportMoney{
+    margin-top:20px;
+}
+.reportInsuff{
+    margin-top:20px;
+}
+}
 
 @media (min-width: 835px) {
     .searchcatalog{
