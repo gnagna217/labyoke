@@ -65,7 +65,7 @@ p{
 .login form input{
 
     /*max-width: 400px;*/
-    max-width: 100%;
+    max-width: 95%;
 
 }
 
@@ -2037,6 +2037,9 @@ span.num.greatherthanninetynine {
 }
 
  @media (max-width: 700px) {
+.login form input {
+    max-width: 94%;
+}
     .searchResults{
         float: none;
         width: auto;
@@ -2081,6 +2084,9 @@ span.num.greatherthanninetynine {
 .positionbutton{
     left: 25%;
 }
+.login form input {
+    max-width: 92%;
+}
 }
 
 @media (max-width: 520px) {
@@ -2105,6 +2111,9 @@ span.num.greatherthanninetynine {
 }
 
  @media (max-width: 440px) {
+.login form input {
+    max-width: 90%;
+}
 .catalogradio{
     margin-right: 5px;
 }
