@@ -264,13 +264,15 @@ html(lang='en')
                 l = 139 + p + 5.5;
                 console.log("changing left: " + l);
               }
+              //$(".roundaccount").css("left",l * -1);
+              //console.log("roundaccount left: " + l);
               var a = $('#menumyaccountadmin').offset().left;
               var b = $('.roundaccount').offset().left;
               var d = $('#menumyaccountadmin').width();
               console.log("a: " + a);
               console.log("b: " + b);
               console.log("d: " + d);
-              //var c = parseInt(a) - parseInt(b) + 5.5;
+              //var c = parseInt(a) - parseInt(b) - parseInt(d) + 5.5;
               var c = parseInt(d) * -1;
               $(".roundaccount").css("left", c);
               console.log("roundaccount left: " + c);
@@ -279,8 +281,7 @@ html(lang='en')
               console.log("navpl width: " + w);
               console.log("============================");
           });
-          $( window ).resize(function() {
-              var w = $(".roundaccount").width();
+          $( window ).resize(function() {              var w = $(".roundaccount").width();
               var pad = $(".roundaccount").css("padding");
               if(pad != undefined){
               var par = pad.substring(0,2);
@@ -296,13 +297,15 @@ html(lang='en')
                 l = 139 + p + 5.5;
                 console.log("changing left: " + l);
               }
+              //$(".roundaccount").css("left",l * -1);
+              //console.log("roundaccount left: " + l);
               var a = $('#menumyaccountadmin').offset().left;
               var b = $('.roundaccount').offset().left;
               var d = $('#menumyaccountadmin').width();
               console.log("a: " + a);
               console.log("b: " + b);
               console.log("d: " + d);
-              //var c = parseInt(a) - parseInt(b) + 5.5;
+              //var c = parseInt(a) - parseInt(b) - parseInt(d) + 5.5;
               var c = parseInt(d) * -1;
               $(".roundaccount").css("left", c);
               console.log("roundaccount left: " + c);
@@ -310,6 +313,6 @@ html(lang='en')
               }
               console.log("navpl width: " + w);
               console.log("============================");
-          });
+              });
           
 
