@@ -715,7 +715,7 @@ input:-webkit-autofill {
     float:left;
     margin-right:0px;
     display:none;
-    margin-top: 20px;
+    /*margin-top: 20px;*/
 }
 
 .form-control{
@@ -863,7 +863,7 @@ padding-top: 5px;
     float:left;
     margin-right:0px;
     display:none;
-    margin-top: 20px;
+    /*margin-top: 20px;*/
 }
 
 .reportOrders{
@@ -871,13 +871,13 @@ padding-top: 5px;
     float:left;
     margin-right:0px;
     display:none;
-    margin-top: 20px;
+    /*margin-top: 20px;*/
 }
 .reportShares{
     float: left; 
     width: 60%;
     display:none;
-    margin-top: 20px;
+    /*margin-top: 20px;*/
 }
 .labColor{
     color: #3d9dcb;
@@ -1773,19 +1773,19 @@ input::-webkit-inner-spin-button {
  @media (max-width: 800px) {
 .reportOrders{
     width: 100%;
-    float:none;
+    float:left;
     margin-right:0px
 }
 .reportShares{
-    float: none; 
+    float: left; 
     width: 100%;
 }
 .reportMoney{
-    float: none; 
+    float: left; 
     width: 100%;
 }
 .reportInsuff{
-    float: none; 
+    float: left; 
     width: 100%;
 }
 .admin{
