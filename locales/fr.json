@@ -21,7 +21,7 @@
     "search.layovercancel" : "Annuler",
     "search.title" : "Recherche.",
     "search.radio.key": "Réactif",
-    "search.radio.catalog": "Numéro de Catalogue",
+    "search.radio.catalog": "Catalogue",
     "search.description": "Commencer votre recherche en entrant le nom du <span class='labColor'>Réactif (produit chimique)</span>. Vous pouvez aussi le séléctioner.",
     "search.catalogtitle" : "REMOVE Cherche Catalogue.",
     "search.catalogdescription": "Commencer votre recherche en entrant le <span class='labColor'>Numéro de Catalogue</span>. Vous pouvez aussi le séléctioner.",
