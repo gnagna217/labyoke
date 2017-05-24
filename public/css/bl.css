@@ -56,7 +56,9 @@ p{
 .uppercase {text-transform:uppercase;}
 
 /*login*/
-
+.fa-pencil:hover{
+    color:#8a6d3b;
+}
 .login form div{
 
     margin-bottom: 5px;
