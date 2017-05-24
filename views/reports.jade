@@ -155,13 +155,13 @@ block content
 						div(class="buttons")
 							label(style="top: 23px; position: relative;font-weight: bold;")= i18n.__("reports.money.datefrom")
 							span(class="fa fa-calendar" style="top: 23px;position: relative;float: right;color: #3d9dcb;")
-							input(name="reportDateFromMoney" style="margin-left: 10px;margin-top: -13px;margin-bottom:10px;margin-top: -13px;" type="text" id="reportDateFromMoney" class="form-control")
+							input(name="reportDateFromMoney" style="margin-left: 40px;margin-top: -13px;margin-bottom:10px;margin-top: -13px;" type="text" id="reportDateFromMoney" class="form-control")
 							
 							label(style="top: 23px; position: relative;font-weight: bold;")= i18n.__("reports.money.dateto")
 							span(class="fa fa-calendar" style="top: 23px;position: relative;float: right;color: #3d9dcb;")
-							input(name="reportDateToMoney" style="margin-left: 10px;margin-top: -13px;margin-bottom:10px;margin-top: -13px;" type="text" id="reportDateToMoney" class="form-control")
+							input(name="reportDateToMoney" style="margin-left: 40px;margin-top: -13px;margin-bottom:10px;margin-top: -13px;" type="text" id="reportDateToMoney" class="form-control")
 
-							label(style="width: 100%;font-weight: bold;")!= i18n.__("reports.money.lab.label") + dept + "</span>"
+							label(style="width: 100%;font-weight: bold;margin-top:10px;")!= i18n.__("reports.money.lab.label") + dept + "</span>"
 							select(name="reportLabMoney" type="text" id="reportLabMoney" class="form-control" style="border-color:#3d9dcb;margin-bottom:10px" placeholder=i18n.__("reports.money.labselect"))
 								option(value="all")=i18n.__("reports.money.lab.option")
 								if(categories != undefined)
@@ -172,7 +172,7 @@ block content
 							div(style="top: -35px; position: relative; float: right; margin-right: 10px;")
 								div(class="arrow-up")
 								div(class="arrow-down")
-							label(style="width: 100px;font-weight: bold;")=i18n.__("reports.money.show")
+							label(style="width: 100px;font-weight: bold;margin-top:10px;")=i18n.__("reports.money.show")
 							br
 							label(style="width: 65px;font-weight: bold;")=i18n.__("reports.money.reagent")
 							input(type="checkbox" name="reportAgentMoney" id="reportAgentMoney" value="reagent" style="margin-top: -13px;")
@@ -269,13 +269,13 @@ block content
 						div(class="buttons")
 							label(style="top: 23px; position: relative;font-weight: bold;")=i18n.__("reports.orders.datefrom")
 							span(class="fa fa-calendar" style="top: 23px;position: relative;float: right;color: #3d9dcb;")
-							input(name="reportDateFromOrders" style="margin-left: 10px;;margin-bottom:10px;margin-top: -13px;" type="text" id="reportDateFromOrders" class="form-control")
+							input(name="reportDateFromOrders" style="margin-left: 40px;;margin-bottom:10px;margin-top: -13px;" type="text" id="reportDateFromOrders" class="form-control")
 							
 							label(style="top: 23px; position: relative;font-weight: bold;")=i18n.__("reports.orders.dateto")
 							span(class="fa fa-calendar" style="top: 23px;position: relative;float: right;color: #3d9dcb;")
-							input(name="reportDateToOrders" style="margin-left: 10px;margin-bottom:10px; margin-top: -13px;" type="text" id="reportDateToOrders" class="form-control")
+							input(name="reportDateToOrders" style="margin-left: 40px;margin-bottom:10px; margin-top: -13px;" type="text" id="reportDateToOrders" class="form-control")
 							
-							label(style="width: 100%;font-weight: bold;")!= i18n.__("reports.orders.lab.label") + dept + "</span>"
+							label(style="width: 100%;font-weight: bold;margin-top:10px;")!= i18n.__("reports.orders.lab.label") + dept + "</span>"
 							select(name="reportLabOrders" type="text" id="reportLabOrders" class="form-control" style="border-color:#3d9dcb;margin-bottom:10px" placeholder=i18n.__("reports.orders.labselect"))
 								option(value="all")= i18n.__("reports.orders.lab.option")
 								if(categories != undefined)
@@ -401,11 +401,11 @@ block content
 						div(class="buttons")
 							label(style="top: 23px; position: relative;font-weight: bold;")= i18n.__("reports.shares.datefrom")
 							span(class="fa fa-calendar" style="top: 23px;position: relative;float: right;color: #3d9dcb;")
-							input(name="reportDateFrom" style="margin-left: 10px;margin-bottom:10px;margin-top: -13px;" type="text" id="reportDateFrom" class="form-control")
+							input(name="reportDateFrom" style="margin-left: 40px;margin-bottom:10px;margin-top: -13px;" type="text" id="reportDateFrom" class="form-control")
 							
 							label(style="top: 23px; position: relative;font-weight: bold;")= i18n.__("reports.shares.dateto")
 							span(class="fa fa-calendar" style="top: 23px;position: relative;float: right;color: #3d9dcb;")
-							input(name="reportDateTo" style="margin-left: 10px;margin-bottom:10px;margin-top: -13px;" type="text" id="reportDateTo" class="form-control")
+							input(name="reportDateTo" style="margin-left: 40px;margin-bottom:10px;margin-top: -13px;" type="text" id="reportDateTo" class="form-control")
 							
 							div(style="max-width:100%; margin-top: 20px;")
 								button.btn.btn-success.btn-lg.btn-block(type="submit",value="Report",name="submit", style="max-width: 85%;width: 85%;")= i18n.__("reports.shares.button")
@@ -533,7 +533,7 @@ block content
 				div
 					form(action="reportInsuff", method="post")
 						div(class="buttons")
-							label(style="width: 100%;font-weight: bold;")!= i18n.__("reports.insuff.lab.label") + dept + "</span>"
+							label(style="width: 100%;font-weight: bold;margin-top:10px;")!= i18n.__("reports.insuff.lab.label") + dept + "</span>"
 							select(name="reportLabInsuff" type="text" id="reportLabInsuff" class="form-control" style="border-color:#3d9dcb;margin-bottom:10px" placeholder=i18n.__("reports.insuff.labselect"))
 								option(value="all")= i18n.__("reports.insuff.lab.option")
 								if(categories != undefined)
@@ -544,7 +544,7 @@ block content
 							div(style="top: -35px; position: relative; float: right; margin-right: 10px;")
 								div(class="arrow-up")
 								div(class="arrow-down")
-							label(style="width: 100px;font-weight: bold;")= i18n.__("reports.insuff.show")
+							label(style="width: 100px;font-weight: bold;margin-top:10px;")= i18n.__("reports.insuff.show")
 							br
 							label(style="width: 60px;font-weight: bold;")= i18n.__("reports.insuff.vendor")
 							input(type="checkbox" name="reportVendorInsuff" id="reportVendorInsuff" value="vendor" style="margin-top: -13px;")
