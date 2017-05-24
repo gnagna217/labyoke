@@ -58,6 +58,7 @@ p{
 /*login*/
 .fa-pencil:hover{
     color:#8a6d3b;
+    cursor:pointer;
 }
 .fa-pencil:active{
     color:#8a6d3b;
