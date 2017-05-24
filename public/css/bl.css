@@ -1695,6 +1695,9 @@ input::-webkit-inner-spin-button {
 .isadminroundaccountLeft{
     left: -211px;
 }
+.isregroundaccountLeft {
+    left: -211px;
+}
 .login2 form input {
     max-width: 93%;
 }
