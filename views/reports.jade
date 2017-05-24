@@ -25,7 +25,7 @@ block content
 		- if(section !=null && section.length>0 && section == "insuff")
 			- checkedstrInsuff = true
 		form(action="reportSelect", method="post", class="adjustwidthreports")
-			div(class="buttons")
+			div(class="buttonss")
 				select(name="reportSelect" type="text" id="reportSelect" class="form-control" style="border-color:#3d9dcb;margin-bottom:10px" placeholder=i18n.__("reports.form.select"))
 					option(value="reportNone",style="font-weight:bold")=i18n.__("reports.form.option1")
 					option(value="reportMoney" selected=(checkedstrMoney===true ? "selected" : undefined))=i18n.__("reports.form.option2")
@@ -152,7 +152,7 @@ block content
 					div(class="alert alert-success fade in alert-dismissable")!= message_success_money
 				div
 					form(action="reportMoney", method="post", id="formreportMoney")
-						div(class="buttons")
+						div(class="buttonss")
 							label(style="top: 23px; position: relative;font-weight: bold;")= i18n.__("reports.money.datefrom")
 							span(class="fa fa-calendar" style="top: 23px;position: relative;float: right;color: #3d9dcb;")
 							input(name="reportDateFromMoney" style="margin-left: 40px;margin-top: -13px;margin-bottom:10px;margin-top: -13px;" type="text" id="reportDateFromMoney" class="form-control")
@@ -266,7 +266,7 @@ block content
 					div(class="alert alert-success fade in alert-dismissable")!= message_success_order
 				div
 					form(action="reportOrders", method="post")
-						div(class="buttons")
+						div(class="buttonss")
 							label(style="top: 23px; position: relative;font-weight: bold;")=i18n.__("reports.orders.datefrom")
 							span(class="fa fa-calendar" style="top: 23px;position: relative;float: right;color: #3d9dcb;")
 							input(name="reportDateFromOrders" style="margin-left: 40px;;margin-bottom:10px;margin-top: -13px;" type="text" id="reportDateFromOrders" class="form-control")
@@ -398,7 +398,7 @@ block content
 					div(class="alert alert-success fade in alert-dismissable")!= message_success_share
 				div
 					form(action="reportShares", method="post", id="formreportShares")
-						div(class="buttons")
+						div(class="buttonss")
 							label(style="top: 23px; position: relative;font-weight: bold;")= i18n.__("reports.shares.datefrom")
 							span(class="fa fa-calendar" style="top: 23px;position: relative;float: right;color: #3d9dcb;")
 							input(name="reportDateFrom" style="margin-left: 40px;margin-bottom:10px;margin-top: -13px;" type="text" id="reportDateFrom" class="form-control")
@@ -532,7 +532,7 @@ block content
 					div(class="alert alert-success fade in alert-dismissable")!= message_success_insuff
 				div
 					form(action="reportInsuff", method="post")
-						div(class="buttons")
+						div(class="buttonss")
 							label(style="width: 100%;font-weight: bold;margin-top:10px;")!= i18n.__("reports.insuff.lab.label") + dept + "</span>"
 							select(name="reportLabInsuff" type="text" id="reportLabInsuff" class="form-control" style="border-color:#3d9dcb;margin-bottom:10px" placeholder=i18n.__("reports.insuff.labselect"))
 								option(value="all")= i18n.__("reports.insuff.lab.option")
