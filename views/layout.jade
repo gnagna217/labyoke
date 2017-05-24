@@ -187,8 +187,8 @@ html(lang='en')
                                     span(class="fa fa-comment")
                                     span(class=ordersnumclass)!=ordersnumber
                         ul.nav.navbar-nav(id=menuaccount, class="addMargin menu-border")
-                            li(class=activateAccount)
-                                a(href="/account",class="nav-menus myaccount navplaceholder", id="menumyaccounta")
+                            li(class=activateAccount, style="width: 122px;padding-top:50px;padding-right:40px;background-color:white", id="test")
+                                //a(href="/account",class="nav-menus myaccount navplaceholder", id="menumyaccounta")
                                     //span #{i18n.__("layout.Profile")}
                             li(class=activateHelp)
                                 a(href='/help', class="nav-menu",id="menumyaccounta")
@@ -273,6 +273,7 @@ html(lang='en')
               //var c = parseInt(a) - parseInt(b) - parseInt(d) + 5.5;
               var c = parseInt(d) * -1;
               $(".roundaccount").css("left", c);
+              $("#test").css("width", p);
               console.log("roundaccount left: " + c);
               
               }
@@ -305,6 +306,7 @@ html(lang='en')
               //var c = parseInt(a) - parseInt(b) + 5.5;
               var c = parseInt(d) * -1;
               $(".roundaccount").css("left", c);
+              $("#test").css("width", p);
               console.log("roundaccount left: " + c);
               
               }
