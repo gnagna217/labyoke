@@ -540,7 +540,7 @@ input[type=radio]:checked ~ .checkingcatalog::before{
 }
 
 .isregroundaccountLeft{
-    left: -263px;
+    left: -263.5px;
 }
 
 .roundaccount{
@@ -1763,6 +1763,11 @@ input::-webkit-inner-spin-button {
 }
 }
 
+@media (max-width: 925px) {
+.isregroundaccountLeft{
+    left: -212px;
+}
+}
 @media (max-width: 908px) {
 .uploadh{
     width: 42% !important;
@@ -1782,7 +1787,11 @@ input::-webkit-inner-spin-button {
     }
 }
 
-
+@media (max-width: 881px) {
+.isregroundaccountLeft{
+    left: -211px;
+}
+}
 
  @media (max-width: 880px) {
     .searchcatalog{
