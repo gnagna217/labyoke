@@ -1696,6 +1696,9 @@ input::-webkit-inner-spin-button {
 }
 
  @media (max-width: 992px) {
+.login2 form input {
+    max-width: 93%;
+}
 .navplaceholder{
     width: 90px;
 }
