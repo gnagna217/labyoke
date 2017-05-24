@@ -536,7 +536,7 @@ input[type=radio]:checked ~ .checkingcatalog::before{
 /* ====== */
 
 .isadminroundaccountLeft{
-    left: -265px;
+    left: -266px;
 }
 
 .isregroundaccountLeft{
@@ -1744,7 +1744,10 @@ input::-webkit-inner-spin-button {
 }
 
 
-
+ @media (max-width: 956px) {
+.isadminroundaccountLeft{
+    left: -214px;
+}
 
 @media (max-width: 953px) {
 
