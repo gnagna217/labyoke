@@ -264,8 +264,13 @@ html(lang='en')
                 l = 139 + p + 5.5;
                 console.log("changing left: " + l);
               }
-              $(".roundaccount").css("left",l * -1);
-              console.log("roundaccount left: " + l);
+              //$(".roundaccount").css("left",l * -1);
+              //console.log("roundaccount left: " + l);
+              var a = $('#menumyaccountadmin').offset().left;
+              var b = $('.roundaccount').offset().left;
+              var c = parseInt(c) - parseInt(b) + 5.5;
+              $(".roundaccount").css("left",c);
+              console.log("roundaccount left: " c);
               
               }
               console.log("navpl width: " + w);
@@ -288,8 +293,11 @@ html(lang='en')
                 l = 139 + p + 5.5;
                 console.log("changing left: " + l);
               }
-              $(".roundaccount").css("left",l * -1);
-              console.log("roundaccount left: " + l);
+              var a = $('#menumyaccountadmin').offset().left;
+              var b = $('.roundaccount').offset().left;
+              var c = parseInt(c) - parseInt(b) + 5.5;
+              $(".roundaccount").css("left",c);
+              console.log("roundaccount left: " c);
               
               }
               console.log("navpl width: " + w);
