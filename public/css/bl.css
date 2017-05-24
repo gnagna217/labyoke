@@ -535,7 +535,13 @@ input[type=radio]:checked ~ .checkingcatalog::before{
 
 /* ====== */
 
+.isadminroundaccountLeft{
+    left: -263px;
+}
 
+.isregroundaccountLeft{
+    left: -278px;
+}
 
 .roundaccount{
 
@@ -549,7 +555,7 @@ input[type=radio]:checked ~ .checkingcatalog::before{
 
     top: 42px;
     position: relative;
-    left: -278px;
+    
     border-radius: 80px;
     background-color: rgba(41, 117, 180, 0.91);
     padding: 50px;
@@ -1679,19 +1685,6 @@ input::-webkit-inner-spin-button {
 }
 }
 
-@media (max-width: 908px) {
-.uploadh{
-    width: 42% !important;
-}
-.adjustpaddingrightandwidth {
-    margin-right: 0px;
-    width: 50%;
-}
-    .mobileonly{
-        display: block;
-    }
-}
-
 @media (max-width: 993px) {
     .positionbutton{
         left: 23%;
@@ -1699,6 +1692,9 @@ input::-webkit-inner-spin-button {
 }
 
  @media (max-width: 992px) {
+.isadminroundaccountLeft{
+    left: -211px;
+}
 .login2 form input {
     max-width: 93%;
 }
@@ -1707,7 +1703,7 @@ input::-webkit-inner-spin-button {
 }
 .roundaccount{
     top: 25px;
-    left: -237px;
+    /*left: -237px;*/
     border-radius: 60px;
     padding: 24px;
 }
@@ -1744,13 +1740,34 @@ input::-webkit-inner-spin-button {
     }
 }
 
-@media (max-width: 796px){
-.roundaccount{
-    top: 25px;
-    left: -251px;
-    border-radius: 60px;
-    padding: 33px;
+
+
+
+@media (max-width: 953px) {
+
+.isregroundaccountLeft{
+    left: -225px;
 }
+}
+
+@media (max-width: 931px) {
+
+.isregroundaccountLeft{
+    left: -226px;
+}
+}
+
+@media (max-width: 908px) {
+.uploadh{
+    width: 42% !important;
+}
+.adjustpaddingrightandwidth {
+    margin-right: 0px;
+    width: 50%;
+}
+    .mobileonly{
+        display: block;
+    }
 }
 
 @media (max-width: 900px) {
@@ -1758,6 +1775,8 @@ input::-webkit-inner-spin-button {
         left: 21%;
     }
 }
+
+
 
  @media (max-width: 880px) {
     .searchcatalog{
@@ -1770,9 +1789,16 @@ input::-webkit-inner-spin-button {
 }
 
 @media (max-width: 849px){
+.isadminroundaccountLeft{
+    left: -176px;
+}
+
+.isregroundaccountLeft{
+    left: -190px;
+}
 .roundaccount{
     top: 18px;
-    left: -216px;
+    /*left: -216px;*/
     border-radius: 60px;
     padding: 15px;
 }
@@ -1813,14 +1839,42 @@ input::-webkit-inner-spin-button {
 }
 }
 
+
+
 @media (max-width: 796px){
 .roundaccount{
+    top: 25px;
+    /*left: -251px;*/
+    border-radius: 60px;
+    padding: 33px;
+}
+
+.isadminroundaccountLeft{
+    left: -174px;
+}
+
+.isregroundaccountLeft{
+    left: -188.5px;
+}
+
+.roundaccount{
     top: 18px;
-    left: -214px;
+    /*left: -214px;*/
     border-radius: 60px;
     padding: 14px;
 }
 }
+
+@media (max-width: 780px){
+.isadminroundaccountLeft{
+    left: -173.5px;
+}
+
+.isregroundaccountLeft{
+    left: -189.5px;
+}
+}
+
 @media (max-width: 768px){
 .floatleft{
     float:left;

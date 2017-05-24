@@ -5,6 +5,11 @@ html(lang='en')
      - var language = "en"
      - if(lang != null && lang != undefined)
         - language = lang
+     - var isadminroundaccountLeft = " isadminroundaccountLeft ";
+     - var isregroundaccountLeft = " isregroundaccountLeft ";
+     - var roundaccountLeft = isregroundaccountLeft
+     - if(isLoggedInAdmin == true)
+        - roundaccountLeft = isadminroundaccountLeft
      title!= 'LabYoke - ' + i18n.__(a)
      link(href='/css/animate.css', rel='stylesheet')
      link(rel="stylesheet" type="text/css" href="/css/datatables.min.css")
@@ -199,7 +204,7 @@ html(lang='en')
                                     span(class="fa fa-home colmenu")
                                     span #{i18n.__("layout.Us")}
                     span
-                      a(href="/account", class="roundaccount " + activeAccountMob, style="color: white;text-decoration: none;")!=user_surname + "" + surname
+                      a(href="/account", class="roundaccount " + roundaccountLeft + activeAccountMob, style="color: white;text-decoration: none;")!=user_surname + "" + surname
                     ul.nav.navbar-nav.navbar-right
                         li(class="nav-menu-logout", style="cursor:pointer")
                             a 
