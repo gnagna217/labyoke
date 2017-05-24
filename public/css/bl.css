@@ -1517,7 +1517,7 @@ input::-webkit-inner-spin-button {
     margin-left: 5px;
 }
 }
-@media (min-width: 800px) {
+@media (min-width: 801px) {
 .reportOrders{
     margin-top:20px;
 }
