@@ -1749,14 +1749,14 @@ input::-webkit-inner-spin-button {
 @media (max-width: 953px) {
 
 .isregroundaccountLeft{
-    left: -225px;
+    left: -211px;
 }
 }
 
 @media (max-width: 931px) {
 
 .isregroundaccountLeft{
-    left: -226px;
+    left: -211px;
 }
 }
 
@@ -1797,7 +1797,7 @@ input::-webkit-inner-spin-button {
 }
 
 .isregroundaccountLeft{
-    left: -190px;
+    left: -176px;
 }
 .roundaccount{
     top: 18px;
