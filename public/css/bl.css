@@ -486,6 +486,9 @@ label{
     -webkit-transition: border .25s linear;
 }
 
+.margincatalogradio{
+    margin-right: 50px;
+}
 .checking::before {
     display: block;
     position: absolute;
@@ -2144,6 +2147,9 @@ span.num.greatherthanninetynine {
 }
 
  @media (max-width: 440px) {
+.margincatalogradio{
+    margin-right: 11px;
+}
 .login2 form input {
     max-width: 90%;
 }
