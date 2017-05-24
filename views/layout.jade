@@ -252,7 +252,7 @@ html(lang='en')
         //Set sizes for roundaccout
           $( document ).ready(function() {
               var w = $(".roundaccount").width();
-              var pad = $(".roundaccount").css("padding");
+              var pad = $(".roundaccount").css("padding-right");
               if(pad != undefined){
               var par = pad.substring(0,2);
               console.log("roundaccount padding: " + par);
@@ -287,7 +287,7 @@ html(lang='en')
           });
           $( window ).resize(function() {
               var w = $(".roundaccount").width();
-              var pad = $(".roundaccount").css("padding");
+              var pad = $(".roundaccount").css("padding-right");
               if(pad != undefined){
               var par = pad.substring(0,2);
               console.log("roundaccount padding: " + par);
