@@ -153,13 +153,13 @@ block content
 				div
 					form(action="reportMoney", method="post", id="formreportMoney")
 						div(class="buttons")
-							label(style="width: 100px;")= i18n.__("reports.money.datefrom")
+							label(style="width: 100px;font-weight: bold;")= i18n.__("reports.money.datefrom")
 							input(name="reportDateFromMoney" style="margin-top: -13px;margin-bottom:10px;margin-top: -13px;" type="text" id="reportDateFromMoney" class="form-control")
 							
-							label(style="width: 100px;")= i18n.__("reports.money.dateto")
+							label(style="width: 100px;font-weight: bold;")= i18n.__("reports.money.dateto")
 							input(name="reportDateToMoney" style="margin-top: -13px;margin-bottom:10px;margin-top: -13px;" type="text" id="reportDateToMoney" class="form-control")
 
-							label(style="width: 100%;")!= i18n.__("reports.money.lab.label") + dept + "</span>"
+							label(style="width: 100%;font-weight: bold;")!= i18n.__("reports.money.lab.label") + dept + "</span>"
 							select(name="reportLabMoney" type="text" id="reportLabMoney" class="form-control" style="border-color:#3d9dcb;margin-bottom:10px" placeholder=i18n.__("reports.money.labselect"))
 								option(value="all")=i18n.__("reports.money.lab.option")
 								if(categories != undefined)
@@ -170,13 +170,13 @@ block content
 							div(style="top: -35px; position: relative; float: right; margin-right: 10px;")
 								div(class="arrow-up")
 								div(class="arrow-down")
-							label(style="width: 100px;")=i18n.__("reports.money.show")
+							label(style="width: 100px;font-weight: bold;")=i18n.__("reports.money.show")
 							br
-							label(style="width: 65px;")=i18n.__("reports.money.reagent")
+							label(style="width: 65px;font-weight: bold;")=i18n.__("reports.money.reagent")
 							input(type="checkbox" name="reportAgentMoney" id="reportAgentMoney" value="reagent" style="margin-top: -13px;")
-							label(style="width: 60px; margin-left: 20px;")=i18n.__("reports.money.vendor")
+							label(style="width: 60px; margin-left: 20px;font-weight: bold;")=i18n.__("reports.money.vendor")
 							input(type="checkbox" name="reportVendorMoney" id="reportVendorMoney" value="vendor" style="margin-top: -13px;")
-							label(style="width: 75px; margin-left: 20px;")=i18n.__("reports.money.catalog")
+							label(style="width: 75px; margin-left: 20px;font-weight: bold;")=i18n.__("reports.money.catalog")
 							input(type="checkbox" name="reportCatalogMoney" id="reportCatalogMoney" value="catalogNumber" style="margin-top: -13px;")
 							div(style="max-width:100%; margin-top: 20px;")
 								button.btn.btn-success.btn-lg.btn-block(type="submit",value="Report",name="submit", style="max-width: 85%;width: 85%;")= i18n.__("reports.money.button")
@@ -265,13 +265,13 @@ block content
 				div
 					form(action="reportOrders", method="post")
 						div(class="buttons")
-							label(style="width: 100px;")=i18n.__("reports.orders.datefrom")
+							label(style="width: 100px;font-weight: bold;")=i18n.__("reports.orders.datefrom")
 							input(name="reportDateFromOrders" style="margin-bottom:10px;margin-top: -13px;" type="text" id="reportDateFromOrders" class="form-control")
 							
-							label(style="width: 100px;")=i18n.__("reports.orders.dateto")
+							label(style="width: 100px;font-weight: bold;")=i18n.__("reports.orders.dateto")
 							input(name="reportDateToOrders" style="margin-bottom:10px; margin-top: -13px;" type="text" id="reportDateToOrders" class="form-control")
 							
-							label(style="width: 100%;")!= i18n.__("reports.orders.lab.label") + dept + "</span>"
+							label(style="width: 100%;font-weight: bold;")!= i18n.__("reports.orders.lab.label") + dept + "</span>"
 							select(name="reportLabOrders" type="text" id="reportLabOrders" class="form-control" style="border-color:#3d9dcb;margin-bottom:10px" placeholder=i18n.__("reports.orders.labselect"))
 								option(value="all")= i18n.__("reports.orders.lab.option")
 								if(categories != undefined)
@@ -395,10 +395,10 @@ block content
 				div
 					form(action="reportShares", method="post", id="formreportShares")
 						div(class="buttons")
-							label(style="width: 100px;")= i18n.__("reports.shares.datefrom")
+							label(style="width: 100px;font-weight: bold;")= i18n.__("reports.shares.datefrom")
 							input(name="reportDateFrom" style="margin-bottom:10px;margin-top: -13px;" type="text" id="reportDateFrom" class="form-control")
 							
-							label(style="width: 100px;")= i18n.__("reports.shares.dateto")
+							label(style="width: 100px;font-weight: bold;")= i18n.__("reports.shares.dateto")
 							input(name="reportDateTo" style="margin-bottom:10px;margin-top: -13px;" type="text" id="reportDateTo" class="form-control")
 							
 							div(style="max-width:100%; margin-top: 20px;")
@@ -527,7 +527,7 @@ block content
 				div
 					form(action="reportInsuff", method="post")
 						div(class="buttons")
-							label(style="width: 100%;")!= i18n.__("reports.insuff.lab.label") + dept + "</span>"
+							label(style="width: 100%;font-weight: bold;")!= i18n.__("reports.insuff.lab.label") + dept + "</span>"
 							select(name="reportLabInsuff" type="text" id="reportLabInsuff" class="form-control" style="border-color:#3d9dcb;margin-bottom:10px" placeholder=i18n.__("reports.insuff.labselect"))
 								option(value="all")= i18n.__("reports.insuff.lab.option")
 								if(categories != undefined)
@@ -538,11 +538,11 @@ block content
 							div(style="top: -35px; position: relative; float: right; margin-right: 10px;")
 								div(class="arrow-up")
 								div(class="arrow-down")
-							label(style="width: 100px;")= i18n.__("reports.insuff.show")
+							label(style="width: 100px;font-weight: bold;")= i18n.__("reports.insuff.show")
 							br
-							label(style="width: 60px;")= i18n.__("reports.insuff.vendor")
+							label(style="width: 60px;font-weight: bold;")= i18n.__("reports.insuff.vendor")
 							input(type="checkbox" name="reportVendorInsuff" id="reportVendorInsuff" value="vendor" style="margin-top: -13px;")
-							label(style="width: 75px; margin-left: 20px;")= i18n.__("reports.insuff.catalog")
+							label(style="width: 75px; margin-left: 20px;font-weight: bold;")= i18n.__("reports.insuff.catalog")
 							input(type="checkbox" name="reportCatalogInsuff" id="reportCatalogInsuff" value="catalogNumber" style="margin-top: -13px;")
 							div(style="max-width:100%; margin-top: 20px;")
 								button.btn.btn-success.btn-lg.btn-block(type="submit",value="Report",name="submit", style="max-width: 85%;width: 85%;")= i18n.__("reports.insuff.button")
