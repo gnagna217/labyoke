@@ -20,7 +20,7 @@
     "search.layovercancel" : "Cancel",
     "search.title" : "Search.",
     "search.radio.key": " by Reagent",
-    "search.radio.catalog": " by Catalog Number",
+    "search.radio.catalog": " by Catalog",
     "search.description": "Start your search by typing in the name of the <span class='labColor'>reagent</span>. You can also select your keyword from the dropdown.",
     "search.catalogtitle" : "REMOVE Search Catalog.",
     "search.catalogdescription": "Start your search by typing in the <span class='labColor'>catalog number</span>. You can also select your keyword from the dropdown.",
