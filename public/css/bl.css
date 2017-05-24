@@ -59,6 +59,12 @@ p{
 .fa-pencil:hover{
     color:#8a6d3b;
 }
+.fa-pencil:active{
+    color:#8a6d3b;
+}
+.fa-pencil:focus{
+    color:#8a6d3b;
+}
 .login form div{
 
     margin-bottom: 5px;
