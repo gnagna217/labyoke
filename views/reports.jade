@@ -154,10 +154,10 @@ block content
 					form(action="reportMoney", method="post", id="formreportMoney")
 						div(class="buttons")
 							label(style="width: 100px;")= i18n.__("reports.money.datefrom")
-							input(name="reportDateFromMoney" style="margin-bottom:10px" type="text" id="reportDateFromMoney" class="form-control")
+							input(name="reportDateFromMoney" style="margin-top: -13px;margin-bottom:10px;margin-top: -13px;" type="text" id="reportDateFromMoney" class="form-control")
 							
 							label(style="width: 100px;")= i18n.__("reports.money.dateto")
-							input(name="reportDateToMoney" style="margin-bottom:10px" type="text" id="reportDateToMoney" class="form-control")
+							input(name="reportDateToMoney" style="margin-top: -13px;margin-bottom:10px;margin-top: -13px;" type="text" id="reportDateToMoney" class="form-control")
 
 							label(style="width: 100%;")!= i18n.__("reports.money.lab.label") + dept + "</span>"
 							select(name="reportLabMoney" type="text" id="reportLabMoney" class="form-control" style="border-color:#3d9dcb;margin-bottom:10px" placeholder=i18n.__("reports.money.labselect"))
@@ -173,11 +173,11 @@ block content
 							label(style="width: 100px;")=i18n.__("reports.money.show")
 							br
 							label(style="width: 65px;")=i18n.__("reports.money.reagent")
-							input(type="checkbox" name="reportAgentMoney" id="reportAgentMoney" value="reagent")
+							input(type="checkbox" name="reportAgentMoney" id="reportAgentMoney" value="reagent" style="margin-top: -13px;")
 							label(style="width: 60px; margin-left: 20px;")=i18n.__("reports.money.vendor")
-							input(type="checkbox" name="reportVendorMoney" id="reportVendorMoney" value="vendor")
+							input(type="checkbox" name="reportVendorMoney" id="reportVendorMoney" value="vendor" style="margin-top: -13px;")
 							label(style="width: 75px; margin-left: 20px;")=i18n.__("reports.money.catalog")
-							input(type="checkbox" name="reportCatalogMoney" id="reportCatalogMoney" value="catalogNumber")
+							input(type="checkbox" name="reportCatalogMoney" id="reportCatalogMoney" value="catalogNumber" style="margin-top: -13px;")
 							div(style="max-width:100%; margin-top: 20px;")
 								button.btn.btn-success.btn-lg.btn-block(type="submit",value="Report",name="submit", style="max-width: 85%;width: 85%;")= i18n.__("reports.money.button")
 								img(src="images/logo_one_bottle_L.png", alt="The Lab", title="Lab", class="reportbutton")
@@ -266,10 +266,10 @@ block content
 					form(action="reportOrders", method="post")
 						div(class="buttons")
 							label(style="width: 100px;")=i18n.__("reports.orders.datefrom")
-							input(name="reportDateFromOrders" style="margin-bottom:10px" type="text" id="reportDateFromOrders" class="form-control")
+							input(name="reportDateFromOrders" style="margin-bottom:10px;margin-top: -13px;" type="text" id="reportDateFromOrders" class="form-control" style="margin-top: -13px;")
 							
 							label(style="width: 100px;")=i18n.__("reports.orders.dateto")
-							input(name="reportDateToOrders" style="margin-bottom:10px" type="text" id="reportDateToOrders" class="form-control")
+							input(name="reportDateToOrders" style="margin-bottom:10px; margin-top: -13px;" type="text" id="reportDateToOrders" class="form-control")
 							
 							label(style="width: 100%;")!= i18n.__("reports.orders.lab.label") + dept + "</span>"
 							select(name="reportLabOrders" type="text" id="reportLabOrders" class="form-control" style="border-color:#3d9dcb;margin-bottom:10px" placeholder=i18n.__("reports.orders.labselect"))
@@ -396,10 +396,10 @@ block content
 					form(action="reportShares", method="post", id="formreportShares")
 						div(class="buttons")
 							label(style="width: 100px;")= i18n.__("reports.shares.datefrom")
-							input(name="reportDateFrom" style="margin-bottom:10px" type="text" id="reportDateFrom" class="form-control")
+							input(name="reportDateFrom" style="margin-bottom:10px;margin-top: -13px;" type="text" id="reportDateFrom" class="form-control")
 							
 							label(style="width: 100px;")= i18n.__("reports.shares.dateto")
-							input(name="reportDateTo" style="margin-bottom:10px" type="text" id="reportDateTo" class="form-control")
+							input(name="reportDateTo" style="margin-bottom:10px;margin-top: -13px;" type="text" id="reportDateTo" class="form-control")
 							
 							div(style="max-width:100%; margin-top: 20px;")
 								button.btn.btn-success.btn-lg.btn-block(type="submit",value="Report",name="submit", style="max-width: 85%;width: 85%;")= i18n.__("reports.shares.button")
@@ -541,9 +541,9 @@ block content
 							label(style="width: 100px;")= i18n.__("reports.insuff.show")
 							br
 							label(style="width: 60px;")= i18n.__("reports.insuff.vendor")
-							input(type="checkbox" name="reportVendorInsuff" id="reportVendorInsuff" value="vendor")
+							input(type="checkbox" name="reportVendorInsuff" id="reportVendorInsuff" value="vendor" style="margin-top: -13px;")
 							label(style="width: 75px; margin-left: 20px;")= i18n.__("reports.insuff.catalog")
-							input(type="checkbox" name="reportCatalogInsuff" id="reportCatalogInsuff" value="catalogNumber")
+							input(type="checkbox" name="reportCatalogInsuff" id="reportCatalogInsuff" value="catalogNumber" style="margin-top: -13px;")
 							div(style="max-width:100%; margin-top: 20px;")
 								button.btn.btn-success.btn-lg.btn-block(type="submit",value="Report",name="submit", style="max-width: 85%;width: 85%;")= i18n.__("reports.insuff.button")
 								img(src="images/logo_one_bottle_R.png", alt="The Lab", title="Lab", class="reportbutton")
