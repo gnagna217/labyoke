@@ -2051,7 +2051,7 @@ span.num.greatherthanninetynine {
 #menumyshares{
     width: 54%;
 }
-#menumyshares2{
+.menumyshares2{
     width: 52.5%;
 }
 #menumysearch{
@@ -2161,7 +2161,7 @@ span.num.greatherthanninetynine {
 }
 
  @media (max-width: 700px) {
-#menumyshares2 {
+.menumyshares2 {
     width: 52.5%;
 }
 .login2 form input {
@@ -2189,7 +2189,7 @@ span.num.greatherthanninetynine {
 
 /* Display the columns below each other instead of side by side on small screens */
 @media (max-width: 650px) {
-#menumyshares2 {
+.menumyshares2 {
     width: 53%;
 }
 #menushare{
@@ -2238,7 +2238,7 @@ span.num.greatherthanninetynine {
 #menumyshares {
     width: 56.50% !important;
 }
-#menumyshares2 {
+.menumyshares2 {
     width: 53.5% !important;
 }
 #menumyaccounta{
@@ -2250,7 +2250,7 @@ span.num.greatherthanninetynine {
 }
 
  @media (max-width: 440px) {
-#menumyshares2 {
+.menumyshares2 {
     width: 54.5% !important;
 }
 #menushare{
