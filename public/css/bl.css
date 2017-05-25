@@ -2049,7 +2049,7 @@ span.num.greatherthanninetynine {
     display: none !important;
 }
 #menumyshares{
-    width: 52%;
+    width: 52.5%;
 }
 #menumysearch{
     /*width: 111px;*/
@@ -2158,6 +2158,9 @@ span.num.greatherthanninetynine {
 }
 
  @media (max-width: 700px) {
+#menumyshares {
+    width: 52.5%;
+}
 .login2 form input {
     max-width: 94%;
 }
@@ -2183,6 +2186,9 @@ span.num.greatherthanninetynine {
 
 /* Display the columns below each other instead of side by side on small screens */
 @media (max-width: 650px) {
+#menumyshares {
+    width: 53%;
+}
 #menushare{
     width: 99% !important;
 }
@@ -2227,7 +2233,7 @@ span.num.greatherthanninetynine {
     left: 0;
 }
 #menumyshares {
-    width: 56.50% !important;
+    width: 53.5% !important;
 }
 #menumyaccounta{
     width: 99%;
@@ -2238,6 +2244,9 @@ span.num.greatherthanninetynine {
 }
 
  @media (max-width: 440px) {
+#menumyshares {
+    width: 54.5% !important;
+}
 #menushare{
     width: 97% !important;
 }
