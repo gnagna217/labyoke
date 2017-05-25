@@ -2223,9 +2223,6 @@ span.num.greatherthanninetynine {
 }
 
 @media (max-width: 520px) {
-#menumyshares2 {
-    width: 53.5% !important;
-}
 #menushare{
     width: 95% !important;
 }
@@ -2240,6 +2237,9 @@ span.num.greatherthanninetynine {
 }
 #menumyshares {
     width: 56.50% !important;
+}
+#menumyshares2 {
+    width: 53.5% !important;
 }
 #menumyaccounta{
     width: 99%;
