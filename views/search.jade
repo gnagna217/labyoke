@@ -54,7 +54,7 @@ block content
                     form(action="/search" method="post")
                         div(class="textentry")
                             input(type="hidden" name="searchtype" value="key")
-                            input(name="searchText" list="agent-datalist" type="text" id="searchText" class="form-control searchinput" placeholder=searchText)
+                            input(name="searchText" list="agent-datalist" style="margin-left: 20px;" type="text" id="searchText" class="form-control searchinput" placeholder=searchText)
                             datalist(id="agent-datalist")
                                 -var ob2 = agentsResults
                                 -for(var prop in ob2)
