@@ -63,7 +63,7 @@ block content
                             button(class="btn " + classButton + " btn-lg btn-block btnsearch" type='submit' style="display: block; text-align: center; width: 100%;") #{i18n.__("search.buttonreagent")}
                             img(src="images/yoke5.png", alt="The Search", title="Search", style="border-width:0px; width: 35px; margin-top: -99px; margin-left: 300px;" class="desktabonly")
                     div(class="desktabonly" , style="background-color: #3d9dcb; height: 1px; /*margin-bottom: 40px;*/position: relative;top: -25px;")
-                    span(id="loopkey", class="fa fa-search colmenu" style="position: relative;top: -143px;right: -4px;    font-size: 20pt;")
+                    span(id="loopkey", class="fa fa-search colmenu desktabonly" style="position: relative;top: -143px;right: -4px;    font-size: 20pt;")
 
         div(class="keysearch", id="catalogsearch", style="display:none")
             - searchTextCatalog = i18n.__("search.catalogholder")
@@ -88,7 +88,7 @@ block content
                             button(class="btn " + classButtonCatalog + " btn-lg btn-block btnsearch" type='submit' style="display: block; text-align: center; width: 100%;") #{i18n.__("search.buttoncatalog")}
                             img(src="images/yoke6.png", alt="The Search", title="Search", style="border-width:0px; width: 35px; margin-top: -99px; margin-left: 300px;", class="desktabonly")
                     div(class="searchcatalogbar desktabonly")
-                    span(id="loopcatalog", class="fa fa-search colmenu" style="position: relative;top: -143px;right: -4px;font-size: 20pt;")
+                    span(id="loopcatalog", class="fa fa-search colmenu desktabonly" style="position: relative;top: -143px;right: -4px;font-size: 20pt;")
         - var catalogradio = searchformTextCatalog
         - var searchradio = searchformText
         - var searchType = searchType
