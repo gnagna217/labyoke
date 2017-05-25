@@ -2122,6 +2122,9 @@ span.num.greatherthanninetynine {
 
  @media (max-width: 715px) {
 
+.checkingcatalog {
+    margin-left: 87px;
+}
 .positionbutton{
     left: 35%;
 }
@@ -2239,7 +2242,7 @@ span.num.greatherthanninetynine {
     width: 97% !important;
 }
 .margincatalogradio{
-    margin-right: 11px;
+    /*margin-right: 11px;*/
 }
 .login2 form input {
     max-width: 90%;
@@ -2255,7 +2258,7 @@ span.num.greatherthanninetynine {
 .checkingcatalog{
     height: 26px;
     width: 26px;
-    right: -15px;
+    /*right: -15px;*/
 }
 
 .checking::before {
