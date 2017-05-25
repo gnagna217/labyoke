@@ -63,7 +63,7 @@ block content
                             button(class="btn " + classButton + " btn-lg btn-block" type='submit') #{i18n.__("search.buttonreagent")}
                             img(src="images/yoke5.png", alt="The Search", title="Search", style="border-width:0px; width: 35px; margin-top: -99px; margin-left: 300px;")
                     div(class="desktabonly" , style="background-color: #3d9dcb; height: 1px; /*margin-bottom: 40px;*/position: relative;top: -25px;")
-                    span(id="loopkey", class="fa fa-search colmenu" style="position: relative;top: -160px;left: 102%;    font-size: 20pt;")
+                    span(id="loopkey", class="fa fa-search colmenu" style="position: relative;top: -160px;right: -4px;    font-size: 20pt;")
 
         div(class="keysearch", id="catalogsearch", style="display:none")
             - searchTextCatalog = i18n.__("search.catalogholder")
@@ -79,7 +79,7 @@ block content
                     form(action="/searchCatalog" method="post")
                         div(class="textentry")
                             input(type="hidden" name="searchtype" value="catalog")
-                            input(name="searchTextCatalog" list="catalog-datalist" type="text" id="searchTextCatalog" class="form-control searchinput" placeholder=searchTextCatalog)
+                            input(name="searchTextCatalog" style="margin-left: 20px;" list="catalog-datalist" type="text" id="searchTextCatalog" class="form-control searchinput" placeholder=searchTextCatalog)
                             datalist(id="catalog-datalist")
                                 -var ob2 = agentsResults
                                 -for(var prop in ob2)
@@ -88,7 +88,7 @@ block content
                             button(class="btn " + classButtonCatalog + " btn-lg btn-block" type='submit') #{i18n.__("search.buttoncatalog")}
                             img(src="images/yoke6.png", alt="The Search", title="Search", style="border-width:0px; width: 35px; margin-top: -99px; margin-left: 300px;")
                     div(class="searchcatalogbar desktabonly")
-                    span(id="loopcatalog", class="fa fa-search colmenu" style="position: relative;top: -160px;left: 102%;font-size: 20pt;")
+                    span(id="loopcatalog", class="fa fa-search colmenu" style="position: relative;top: -160px;right: -4px;font-size: 20pt;")
         - var catalogradio = searchformTextCatalog
         - var searchradio = searchformText
         - var searchType = searchType
