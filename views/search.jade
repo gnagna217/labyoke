@@ -30,8 +30,8 @@ block content
         div(class="searchlogo")
           img(src="/images/logo_one_bottle_L_2.png", alt="The Yoke",  title="Yoke", class="searchlogoimg")
           img(src="/images/logo_one_bottle_R.png", alt="The Yoke",  title="Yoke", class="searchlogoimg")
-        div(class="radiosearch keysearch")
-          div(style="float:left;margin-left: 15px;")
+        div(class="radiosearch keysearchs" style="display: block; text-align: center; padding-left: 15%; padding-right: 15%;")
+          div(style="float:left;")
             input(type="radio" name="search" value="keysearch" id="keyradio")
             label(for="keyradio", style="float: left;")
               span #{i18n.__("search.radio.key")}
@@ -51,17 +51,17 @@ block content
                 div
                     if message
                         div(class="alert alert-danger messagesearch")!= message
-                    form(action="/search" method="post")
+                    form(action="/search" method="post" style="padding-left: 15%; padding-right: 15%; display: block; text-align: center;")
                         div(class="textentry")
                             input(type="hidden" name="searchtype" value="key")
-                            input(name="searchText" list="agent-datalist" style="margin-left: 20px;" type="text" id="searchText" class="form-control searchinput" placeholder=searchText)
+                            input(name="searchText" list="agent-datalist"  type="text" id="searchText" class="form-control searchinput" placeholder=searchText)
                             datalist(id="agent-datalist")
                                 -var ob2 = agentsResults
                                 -for(var prop in ob2)
                                     option(value='#{ob2[prop].agent}')
-                        div(class="buttons positionbutton")
-                            button(class="btn " + classButton + " btn-lg btn-block" type='submit') #{i18n.__("search.buttonreagent")}
-                            img(src="images/yoke5.png", alt="The Search", title="Search", style="border-width:0px; width: 35px; margin-top: -99px; margin-left: 300px;")
+                        div(class="buttons positionbuttons", style="display: block; text-align: center; ")
+                            button(class="btn " + classButton + " btn-lg btn-block btnsearch" type='submit' style="display: block; text-align: center; width: 100%;") #{i18n.__("search.buttonreagent")}
+                            img(src="images/yoke5.png", alt="The Search", title="Search", style="border-width:0px; width: 35px; margin-top: -99px; margin-left: 300px;" class="desktabonly")
                     div(class="desktabonly" , style="background-color: #3d9dcb; height: 1px; /*margin-bottom: 40px;*/position: relative;top: -25px;")
                     span(id="loopkey", class="fa fa-search colmenu" style="position: relative;top: -143px;right: -4px;    font-size: 20pt;")
 
@@ -76,17 +76,17 @@ block content
                 div
                     if messageCatalog
                         div(class="alert alert-danger messagesearch")!= messageCatalog
-                    form(action="/searchCatalog" method="post")
+                    form(action="/searchCatalog" method="post" style="padding-left: 15%; padding-right: 15%; display: block; text-align: center;")
                         div(class="textentry")
                             input(type="hidden" name="searchtype" value="catalog")
-                            input(name="searchTextCatalog" style="margin-left: 20px;" list="catalog-datalist" type="text" id="searchTextCatalog" class="form-control searchinput" placeholder=searchTextCatalog)
+                            input(name="searchTextCatalog" list="catalog-datalist" type="text" id="searchTextCatalog" class="form-control searchinput" placeholder=searchTextCatalog)
                             datalist(id="catalog-datalist")
                                 -var ob2 = agentsResults
                                 -for(var prop in ob2)
                                     option(value='#{ob2[prop].catalognumber}')
-                        div(class="buttons positionbutton")
-                            button(class="btn " + classButtonCatalog + " btn-lg btn-block" type='submit') #{i18n.__("search.buttoncatalog")}
-                            img(src="images/yoke6.png", alt="The Search", title="Search", style="border-width:0px; width: 35px; margin-top: -99px; margin-left: 300px;")
+                        div(class="buttons positionbuttons", style="display: block; text-align: center;")
+                            button(class="btn " + classButtonCatalog + " btn-lg btn-block btnsearch" type='submit' style="display: block; text-align: center; width: 100%;") #{i18n.__("search.buttoncatalog")}
+                            img(src="images/yoke6.png", alt="The Search", title="Search", style="border-width:0px; width: 35px; margin-top: -99px; margin-left: 300px;", class="desktabonly")
                     div(class="searchcatalogbar desktabonly")
                     span(id="loopcatalog", class="fa fa-search colmenu" style="position: relative;top: -143px;right: -4px;font-size: 20pt;")
         - var catalogradio = searchformTextCatalog

@@ -307,7 +307,7 @@ a {
     margin: 15px;
 }
 .keysearch{
-    left:18%;width: 70%;position:relative;font-size:24pt;
+    /*left:18%;width: 70%;*/position:relative;font-size:24pt;
 }
 .messagesearch{
     left: 20%;
@@ -317,11 +317,11 @@ a {
 }
 .radiosearch{
     font-size:15pt;
-    margin: 15px;
-    text-align: center;
+    /*margin: 15px;
+    text-align: center;*/
     font-weight: 400;
     margin-bottom: 60px;
-    margin-left: 32px;
+    /*margin-left: 32px;*/
 }
 
 .positionbutton{
@@ -1901,6 +1901,9 @@ input::-webkit-inner-spin-button {
 }
 
 @media (max-width: 767px){
+.btnsearch{
+    width:100%;
+}
 .isreghide{
     display:none !important;
 }
@@ -2121,7 +2124,7 @@ span.num.greatherthanninetynine {
     left: 35%;
 }
 .keysearch{
-    left:0;width: 92%;
+    /*left:0;width: 92%;*/
 }
 
 .positionbutton{
@@ -2136,8 +2139,8 @@ span.num.greatherthanninetynine {
 
 .radiosearch{
     font-size:12pt;
-    margin: 15px;
-    text-align: none;
+    /*margin: 15px;
+    text-align: none;*/
     margin-top: 25px;
     margin-bottom:70px;
 }
