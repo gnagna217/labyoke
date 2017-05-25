@@ -1474,12 +1474,6 @@ input::-webkit-inner-spin-button {
 }
 
 @media (min-width: 767px) {
-.isreghide{
-    display:none;
-}
-.isregpadding{
-    padding-left: 0;
-}
 .hamburger{
     display:none !important;
     -webkit-appearance: none;
@@ -1906,6 +1900,12 @@ input::-webkit-inner-spin-button {
 }
 
 @media (max-width: 767px){
+.isreghide{
+    display:none;
+}
+.isregpadding{
+    padding-left: 0;
+}
 .searchlogo{
     margin-top: 20%;
 }
