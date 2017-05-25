@@ -8,6 +8,7 @@ html(lang='en')
      - var isreghide = "isreghide"
      - var isregpadding = "isregpadding"
      - var menushare = "menushare"
+     - var menumyshares = "menumyshares2"
      - var isadminroundaccountLeft = " isadminroundaccountLeft "
      - var isregroundaccountLeft = " isregroundaccountLeft "
      - var roundaccountLeft = isregroundaccountLeft
@@ -16,6 +17,7 @@ html(lang='en')
         - isreghide = ""
         - isregpadding = ""
         - menushare = ""
+        - menumyshares = ""
      title!= 'LabYoke - ' + i18n.__(a)
      link(href='/css/animate.css', rel='stylesheet')
      link(rel="stylesheet" type="text/css" href="/css/datatables.min.css")
@@ -182,7 +184,7 @@ html(lang='en')
                                             span #{i18n.__("layout.Admin")}
                             
                     div(class="paddingMobile " + isregpadding)
-                        ul.nav.navbar-nav(id="menumyshares", class="addMargin", style="border-left-color: white;border-left-style: solid;border-width: thick;")
+                        ul.nav.navbar-nav(id="menumyshares", class="addMargin " + menumyshares, style="border-left-color: white;border-left-style: solid;border-width: thick;")
                             li(class=activateShares)
                                 a(href="/share",class="nav-menu",id=menusharess)
                                     span(class="fa fa-exchange colmenu")
