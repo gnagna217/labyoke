@@ -1905,6 +1905,7 @@ input::-webkit-inner-spin-button {
 }
 .isregpadding{
     padding-left: 0 !important;
+    margin-bottom: -10px;
 }
 .searchlogo{
     margin-top: 20%;
