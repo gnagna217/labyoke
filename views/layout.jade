@@ -259,6 +259,12 @@ html(lang='en')
         }
         //Set sizes for roundaccout
           $( document ).ready(function() {
+
+            $(".nav-menu-logout").addEventListener("click", function() {
+              $(".menu-border").css("border-left-color", "transparent");
+              $("#menumyshares").css("border-left-color", "transparent");
+            });
+
               var w = $(".roundaccount").width();
               var pad = $(".roundaccount").css("padding-right");
               if(pad != undefined){
