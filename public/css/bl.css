@@ -2208,6 +2208,9 @@ span.num.greatherthanninetynine {
 .positionbutton{
     left: 30%;
 }
+.menumyshares {
+    width: 55% !important;
+}
 }
 
 @media (max-width: 580px){
