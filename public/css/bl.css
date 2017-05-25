@@ -321,6 +321,7 @@ a {
     text-align: center;
     font-weight: 400;
     margin-bottom: 60px;
+    margin-left: 32px;
 }
 
 .positionbutton{
@@ -2120,7 +2121,7 @@ span.num.greatherthanninetynine {
     left: 35%;
 }
 .keysearch{
-    left:0;width: 90%;
+    left:0;width: 92%;
 }
 
 .positionbutton{
