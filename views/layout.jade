@@ -5,11 +5,15 @@ html(lang='en')
      - var language = "en"
      - if(lang != null && lang != undefined)
         - language = lang
-     - var isadminroundaccountLeft = " isadminroundaccountLeft ";
-     - var isregroundaccountLeft = " isregroundaccountLeft ";
+     - var isreghide = "isreghide"
+     - var isregpadding = "isregpadding"
+     - var isadminroundaccountLeft = " isadminroundaccountLeft "
+     - var isregroundaccountLeft = " isregroundaccountLeft "
      - var roundaccountLeft = isregroundaccountLeft
      - if(isLoggedInAdmin == true)
         - roundaccountLeft = isadminroundaccountLeft
+        - isreghide = ""
+        - isregpadding = ""
      title!= 'LabYoke - ' + i18n.__(a)
      link(href='/css/animate.css', rel='stylesheet')
      link(rel="stylesheet" type="text/css" href="/css/datatables.min.css")
@@ -125,7 +129,7 @@ html(lang='en')
                     - activateHelp = "addMargin "
                     - activateAbout = "addMargin "
                     - activateOrders = "addMargin "
-                    - activateAccount = "account-borders addMargin "
+                    - activateAccount = "account-borders addMargin " + isreghide
                     - activateAdmin = "addMargin "
                     - activeSearchMob = ""
                     - activeAccountMob = ""
@@ -154,7 +158,7 @@ html(lang='en')
                   a(href="/search", class="roundaccountmob searchmob " + activeSearchMob, style="color: white;text-decoration: none;")
                     span(class="fa fa-search colmenu " + activeSearchMob, style="color: white;font-size: 11pt;")
                 .collapse.navbar-collapse
-                    div.adjustWidthSearch(style="float:left")
+                    div.adjustWidthSearch(style="float:left", class=isreghide)
                         - adjustWidth = ""
                         - menuaccount = "menumyaccountadmin"
                         if(isLoggedInAdmin == false)
@@ -175,7 +179,7 @@ html(lang='en')
                                             span(class="fa fa-user-plus colmenu")
                                             span #{i18n.__("layout.Admin")}
                             
-                    div(class="paddingMobile")
+                    div(class="paddingMobile " + isregpadding)
                         ul.nav.navbar-nav(id="menumyshares", class="addMargin", style="border-left-color: white;border-left-style: solid;border-width: thick;")
                             li(class=activateShares)
                                 a(href="/share",class="nav-menu",id="menushare")

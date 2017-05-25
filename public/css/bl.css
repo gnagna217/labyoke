@@ -140,9 +140,7 @@ p{
 
 .navbar-inverse .navbar-nav>.active>a{
 
-
     background-color: #460077;
-
 
 }
 
@@ -1476,6 +1474,12 @@ input::-webkit-inner-spin-button {
 }
 
 @media (min-width: 767px) {
+.isreghide{
+    display:none;
+}
+.isregpadding{
+    padding-left: 0;
+}
 .hamburger{
     display:none !important;
     -webkit-appearance: none;
