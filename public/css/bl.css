@@ -1901,10 +1901,10 @@ input::-webkit-inner-spin-button {
 
 @media (max-width: 767px){
 .isreghide{
-    display:none;
+    display:none !important;
 }
 .isregpadding{
-    padding-left: 0;
+    padding-left: 0 !important;
 }
 .searchlogo{
     margin-top: 20%;
