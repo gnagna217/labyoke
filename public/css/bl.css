@@ -2233,7 +2233,7 @@ span.num.greatherthanninetynine {
     width: 99%;
 }
 .adjustWidthSearchUL {
-    width: 98.5%;
+    width: 98%;
 }
 }
 
@@ -2258,7 +2258,7 @@ span.num.greatherthanninetynine {
 .checkingcatalog{
     height: 26px;
     width: 26px;
-    right: 41px;
+    right: 35px;
 }
 
 .checking::before {
