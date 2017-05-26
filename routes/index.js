@@ -1288,11 +1288,11 @@ totalshares = t[0].counting;
 						messageStr = (res.__("index.searchcatalog.message1", {searchText:searchText})).replace(/&lt;/g, '<').replace(/&gt;/g, '>');
 						//messageStr = "Sorry we could not find any results with your catalog search request: <b>" + searchText + "</b>. Please try again.";
 					}
-					res.render('search', {searchType: searchType,userlang:req.session.userlang,lang:req.cookies.i18n, i18n:res, mylab: req.session.lab, messageCatalog: messageStr, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, labyokersurname : req.session.surname, isLoggedInAdmin: req.session.admin, title: 'Reagent Search', fullname: req.session.fullname, sendemail: req.session.email, searchResults : results[0], agentsResults : results[1], searchformTextCatalog: searchText, loggedIn : true});
+					res.render('search', {searchType: "catalog",userlang:req.session.userlang,lang:req.cookies.i18n, i18n:res, mylab: req.session.lab, messageCatalog: messageStr, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, labyokersurname : req.session.surname, isLoggedInAdmin: req.session.admin, title: 'Reagent Search', fullname: req.session.fullname, sendemail: req.session.email, searchResults : results[0], agentsResults : results[1], searchformTextCatalog: searchText, loggedIn : true});
 				} else {
                     console.log("searchType catalog 1 " + searchType);
 					messageStr = "You entered an invalid catalog keyword. Please try again.";
-					res.render('search', {searchType: searchType,userlang:req.session.userlang,lang:req.cookies.i18n, i18n:res, messageCatalog: res.__("index.searchcatalog.message2"),mylab: req.session.lab,ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, labyokersurname : req.session.surname,isLoggedInAdmin: req.session.admin, title: 'Reagent Search', loggedIn : true, agentsResults : results[1]});
+					res.render('search', {searchType: "catalog",userlang:req.session.userlang,lang:req.cookies.i18n, i18n:res, messageCatalog: res.__("index.searchcatalog.message2"),mylab: req.session.lab,ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, labyokersurname : req.session.surname,isLoggedInAdmin: req.session.admin, title: 'Reagent Search', loggedIn : true, agentsResults : results[1]});
 				}
 				req.session.messages = null;
 			});

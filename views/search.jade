@@ -1,6 +1,9 @@
 extends layout
 
 block content
+    - var catalogradio = searchformTextCatalog
+    - var searchradio = searchformText
+    - var searchType = searchType
     img(src="/images/yoke5.png" style="display:none;")
     img(src="/images/yoke6.png" style="display:none;") 
     img(src="/images/logo_one_bottle_L_2.png" style="display:none;") 
@@ -89,9 +92,6 @@ block content
                             button(class="btn " + classButtonCatalog + " btn-lg btn-block btnsearch" type='submit' style="margin: 0 auto;") #{i18n.__("search.buttoncatalog")}
                             img(src="images/yoke6.png", alt="The Search", title="Search", style="border-width:0px; width: 35px; margin-top: -99px; margin-left: 335px;", class="desktabonly")
                     div(class="searchcatalogbar desktabonly")
-        - var catalogradio = searchformTextCatalog
-        - var searchradio = searchformText
-        - var searchType = searchType
         script.
           console.log("catalogradio: " + "#{catalogradio}");
           console.log("searchradio: " + "#{searchradio}");
