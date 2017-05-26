@@ -2335,7 +2335,6 @@ LabYokerChangeShare.prototype.cancelShare = function(callback) {
 	var lab = this.lab.replace(/ /g,"").toLowerCase();
 	var table = this.table;
 	var email = this.email;
-	email = "gnagna217@gmail.com";
 	var datenow = this.datenow;
 	var requestor = this.requestor;
 	var i18n = this.res;
