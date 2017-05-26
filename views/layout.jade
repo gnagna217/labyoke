@@ -255,7 +255,8 @@ html(lang='en')
           // Toggle class "is-active"
           hamburger.classList.toggle("is-active");
 
-              if($(".bubble1") != null && $(".bubble1").size() > 0 && $("#bubblenum1").offset().left > 0){
+              if($("#bubblenum1") != null && $("#bubblenum1").size() > 0 && $("#bubblenum1").offset().left > 0){
+              if ( $(".navbar-collapse").hasClass( "in" ) ) {
                 console.log("inside hamburger");
                 var bubblenum1left = $("#bubblenum1").offset().left;
                 var bubblenum1top = $("#bubblenum1").offset().top;
@@ -264,6 +265,7 @@ html(lang='en')
                 bubblenum1top = parseInt(bubblenum1top) - 3;
                 $(".bubble1").css("top", bubblenum1top);
                 $(".bubble1").css("position", "fixed");
+                }
               }
 
           // Do something else, like open/close menu
