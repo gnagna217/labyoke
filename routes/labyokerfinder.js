@@ -2348,8 +2348,8 @@ LabYokerChangeShare.prototype.cancelShare = function(callback) {
 
 		if(/*table == lab+"_orders" && */checked == 0){
 			
-			var subject = i18n.__({phrase: "indindex.cancelled.subjectex", locale: userlang});//"LabYoke Order - Cancelled for " + agent;
-			var body="<div style='box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); box-sizing: content-box; width: 42% !important; padding-right: 15px; margin-top: 20px;'>"
+			var subject = i18n.__({phrase: "index.cancelled.subjectex", locale: userlang});//"LabYoke Order - Cancelled for " + agent;
+			var body="<div style='box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); box-sizing: content-box; padding-right: 15px; margin-top: 20px;'>"
 			body += "<div style='text-align:center;padding-top: 20px;'><img style='width: 141px; margin: 0 20px;' src='https:\/\/team-labyoke.herokuapp.com\/images\/yoke4.png', alt='The Yoke',  title='Yoke', class='yokelogo'/></div><div style=\"font-family:'calibri'; font-size:11pt;padding: 20px;\">" + i18n.__({phrase: "index.orders.hello", locale: userlang}) + ",<br/><br/>";
 			//body += "Unfortunately your order has been cancelled due to insufficient quantities from the following inventory:" + " <br><b>Reagent: </b> " + agent;
 			body += i18n.__({phrase: "index.cancelled.body1", locale: userlang}) + " <br><b>" + i18n.__({phrase: "index.orders.reagent", locale: userlang}) + ": </b> " + agent;
