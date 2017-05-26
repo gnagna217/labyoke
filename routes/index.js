@@ -558,7 +558,7 @@ totalshares = t[0].counting;
 			var email = req.body.email;
 			var requestor = req.body.requestoremail;
 			var checked = req.body.cancel;
-			var userlang = req.session.lang;
+			var userlang = req.cookies.i18n;
 			var date = moment(req.body.date).add(1, 'day').tz("America/New_York").format(
 				'MM-DD-YYYY');
 			var datenow = moment(new Date).tz("America/New_York").format(
