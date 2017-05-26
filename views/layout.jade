@@ -256,7 +256,7 @@ html(lang='en')
           hamburger.classList.toggle("is-active");
           // Do something else, like open/close menu
         
-               console.log("clicked hamburger");
+               console.log("clicked hamburger: " + $("[aria-expanded*='true']").size());
         });
         }
 
