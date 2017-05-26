@@ -973,6 +973,9 @@ input:-webkit-autofill:hover {
 .margintop{
     margin-top:100px !important;
 }
+.margintop2{
+    margin-top:80px !important;
+}
 .colmenu{
     color: #a4d2e8;
 }
