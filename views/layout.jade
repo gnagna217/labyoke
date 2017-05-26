@@ -161,7 +161,7 @@ html(lang='en')
                 span
                   a(href="/search", class="roundaccountmob searchmob " + activeSearchMob, style="color: white;text-decoration: none;")
                     span(class="fa fa-search colmenu " + activeSearchMob, style="color: white;font-size: 11pt;")
-                .collapse.navbar-collapse
+                .collapse.navbar-collapse(id="navburger")
                     div.adjustWidthSearch(style="float:left", class=isreghide)
                         - adjustWidth = ""
                         - menuaccount = "menumyaccountadmin"
@@ -260,8 +260,9 @@ html(lang='en')
         });
         }
 
-        $( ".navbar-collapse" ).change(function() {
-            if ( $(".navbar-collapse").hasClass( "in" ) ) {
+        $( "#navburger" ).change(function() {
+            console.log("navbar-collapse class = " + $( "#navburger" ).hasClass("in"));
+            if ( $("#navburger").hasClass( "in" ) ) {
               console.log("navbar-collapse is now opened");
                 if($("#bubblenum1") != null && $("#bubblenum1").size() > 0 && $("#bubblenum1").offset().left > 0){
                   console.log("inside hamburger");
