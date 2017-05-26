@@ -310,7 +310,7 @@ a {
     /*left:18%;width: 70%;*/position:relative;font-size:24pt;
 }
 .messagesearch{
-    left: 20%;
+    margin: 0 auto;
     width: 65%;
     position: relative;
     font-size: 12pt;
@@ -2136,8 +2136,8 @@ span.num.greatherthanninetynine {
     }
 
 .messagesearch{
-    left: 0;
-    width: 100%;
+    /*left: 0;*/
+    width: 86%;
     font-size: 11pt;
 }
 
