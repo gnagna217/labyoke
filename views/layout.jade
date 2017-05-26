@@ -259,6 +259,7 @@ html(lang='en')
         }
 
               if ( $(".navbar-collapse").hasClass( "in" ) ) {
+              console.log("navbar-collapse is now opened");
                 if($("#bubblenum1") != null && $("#bubblenum1").size() > 0 && $("#bubblenum1").offset().left > 0){
                   console.log("inside hamburger");
                   var bubblenum1left = $("#bubblenum1").offset().left;
