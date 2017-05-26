@@ -2362,7 +2362,7 @@ LabYokerChangeShare.prototype.cancelShare = function(callback) {
 			body += "</div>";
 			console.log("order body: " + body);
 			var mailOptions = new MailOptionsWithCC(requestor, subject, body, email);
-			//mailOptions.sendAllEmails();
+			mailOptions.sendAllEmails();
 		}
 
 		callback(null, results);
