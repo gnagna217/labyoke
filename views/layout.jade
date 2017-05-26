@@ -260,8 +260,8 @@ html(lang='en')
         });
         }
 
-        $( "#navburger" ).change(function() {
-            console.log("navbar-collapse class = " + $( "#navburger" ).hasClass("in"));
+        
+            console.log("navbar-collapse class = " + $("[aria-expanded*='true']").size());
             if ( $("#navburger").hasClass( "in" ) ) {
               console.log("navbar-collapse is now opened");
                 if($("#bubblenum1") != null && $("#bubblenum1").size() > 0 && $("#bubblenum1").offset().left > 0){
@@ -275,7 +275,7 @@ html(lang='en')
                   $(".bubble1").css("position", "fixed");
                 }
               }
-        });
+        
 
 
         var logout = document.querySelector(".nav-menu-logout");
