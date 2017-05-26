@@ -2325,6 +2325,8 @@ LabYokerChangeShare.prototype.cancelShare = function(callback) {
 	console.log("date2: " + date);
 	console.log("requestor: " + requestor);
 	console.log("checked: " + checked);
+	console.log("lab: " + lab);
+	console.log("table: " + table);
 	var results;
 	var orderonly = "";
 	if(checked == "0" && requestor != undefined){
