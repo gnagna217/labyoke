@@ -575,6 +575,7 @@ totalshares = t[0].counting;
 			console.log("checked: " + checked);
 			console.log("table: " + table);
 			console.log("email: " + email);
+            console.log("userlang: " + userlang);
 			console.log("requestoremail: " + requestor);
 			var labYokechange = new LabYokerChangeShare(table,agent, vendor, catalognumber,email,requestor,checked,datenow,date, lab, res,userlang);
 			labYokechange.cancelShare(function(error, results) {
