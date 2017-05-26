@@ -2327,6 +2327,7 @@ LabYokerChangeShare.prototype.cancelShare = function(callback) {
 	console.log("checked: " + checked);
 	console.log("lab: " + lab);
 	console.log("table: " + table);
+	console.log("userlang: " + userlang);
 	var results;
 	var orderonly = "";
 	if(checked == "0" && requestor != undefined){
