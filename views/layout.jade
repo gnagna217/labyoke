@@ -270,7 +270,7 @@ html(lang='en')
 
               if($("#bubblenum1") != null && $("#bubblenum1").size() > 0){
               var bubblenum1left = $("#bubblenum1").offset().left;
-              var bubblenum1top = $("#bubblenum1").offset().left;
+              var bubblenum1top = $("#bubblenum1").offset().top;
               bubblenum1left = parseInt(bubblenum1left) - 10;
               $(".bubble1").css("left", bubblenum1left);
               bubblenum1top = parseInt(bubblenum1top) - 3;
@@ -315,7 +315,7 @@ html(lang='en')
           $( window ).resize(function() {
             if($("#bubblenum1") != null && $("#bubblenum1").size() > 0){
               var bubblenum1left = $("#bubblenum1").offset().left;
-              var bubblenum1top = $("#bubblenum1").offset().left;
+              var bubblenum1top = $("#bubblenum1").offset().top;
               bubblenum1left = parseInt(bubblenum1left) - 10;
               $(".bubble1").css("left", bubblenum1left);
               bubblenum1top = parseInt(bubblenum1top) - 3;
