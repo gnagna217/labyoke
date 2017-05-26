@@ -190,8 +190,8 @@ html(lang='en')
                                     span(class="fa fa-exchange colmenu")
                                     span #{i18n.__("layout.Share")}
                                    - if(sharesnumber>0) 
-                                    span(class="fa fa-comment")
-                                    span(class=sharesnumclass)!=sharesnumber
+                                    span(class="fa fa-comment", id="bubble1")
+                                    span(class=sharesnumclass, id="bubblenum1")!=sharesnumber
                             li(class=activateOrders)
                                 a(href="/orders",class="nav-menu",id=menusharess)
                                     span(class="fa fa-ship colmenu")
@@ -268,6 +268,14 @@ html(lang='en')
         //Set sizes for roundaccout
           $( document ).ready(function() {
 
+              var bubblenum1left = $("#bubblenum1").offset().left;
+              var bubblenum1top = $("#bubblenum1").offset().left;
+              bubblenum1left = parseInt(bubblenum1left) - 10;
+              $(".bubble1").css("left", bubblenum1left);
+              bubblenum1top = parseInt(bubblenum1top) - 3;
+              $(".bubble1").css("top", bubblenum1top);
+              $(".bubble1").css("position", "fixed");
+
               var w = $(".roundaccount").width();
               var pad = $(".roundaccount").css("padding-right");
               if(pad != undefined){
@@ -303,6 +311,14 @@ html(lang='en')
               console.log("============================");
           });
           $( window ).resize(function() {
+              var bubblenum1left = $("#bubblenum1").offset().left;
+              var bubblenum1top = $("#bubblenum1").offset().left;
+              bubblenum1left = parseInt(bubblenum1left) - 10;
+              $(".bubble1").css("left", bubblenum1left);
+              bubblenum1top = parseInt(bubblenum1top) - 3;
+              $(".bubble1").css("top", bubblenum1top);
+              $(".bubble1").css("position", "fixed");
+
               var w = $(".roundaccount").width();
               var pad = $(".roundaccount").css("padding-right");
               if(pad != undefined){
