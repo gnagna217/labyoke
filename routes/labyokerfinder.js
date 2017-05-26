@@ -1378,9 +1378,13 @@ LabYokerOrder.prototype.order = function(callback) {
 
 		var subject = /*"LabYoke - Pending Order for "*/ i18n.__({phrase: "index.orders.subject", locale: ownerlang}) + agent;
 		var subjectReq = /*"LabYoke - Your Request to order "*/ i18n.__({phrase: "index.orders.resubject", locale: userlang}) + agent;
-		var body = "<div style='text-align:center'><img style='width: 141px; margin: 0 20px;' src='https:\/\/team-labyoke.herokuapp.com\/images\/yoke4.png', alt='The Yoke',  title='Yoke', class='yokelogo'/></div><div style=\"font-family:'calibri'; font-size:11pt;padding: 20px;float:left\">" + i18n.__({phrase: "index.orders.hello", locale: ownerlang}) + " " + location
+		var body="<div style='box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); box-sizing: content-box; padding-right: 15px; margin-top: 20px;'>"
+			
+		body += "<div style='text-align:center'><img style='width: 141px; margin: 0 20px;' src='https:\/\/team-labyoke.herokuapp.com\/images\/yoke4.png', alt='The Yoke',  title='Yoke', class='yokelogo'/></div><div style=\"font-family:'calibri'; font-size:11pt;padding: 20px;float:left\">" + i18n.__({phrase: "index.orders.hello", locale: ownerlang}) + " " + location
 				+ ",<br/><br/>";
-		var bodyReq = "<div style='text-align:center'><img style='width: 141px; margin: 0 20px;' src='https:\/\/team-labyoke.herokuapp.com\/images\/yoke4.png', alt='The Yoke',  title='Yoke', class='yokelogo'/></div><div style=\"font-family:'calibri'; font-size:11pt;padding: 20px;float:left\">" + i18n.__({phrase: "index.orders.hello", locale: userlang}) + ",<br/><br/>";
+		var bodyReq = "<div style='box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); box-sizing: content-box; padding-right: 15px; margin-top: 20px;'>"
+			
+		bodyReq += "<div style='text-align:center'><img style='width: 141px; margin: 0 20px;' src='https:\/\/team-labyoke.herokuapp.com\/images\/yoke4.png', alt='The Yoke',  title='Yoke', class='yokelogo'/></div><div style=\"font-family:'calibri'; font-size:11pt;padding: 20px;float:left\">" + i18n.__({phrase: "index.orders.hello", locale: userlang}) + ",<br/><br/>";
 		body += i18n.__({phrase: "index.orders.body1", locale: ownerlang}); //"This is a kind request to share 100 units from the following inventory:";
 		bodyReq += i18n.__({phrase: "index.orders.body2", locale: userlang}); //"You have requested 100 units from the following inventory:";
 		body += "<br><b>" + i18n.__({phrase: "index.orders.reagent", locale: ownerlang}) + ": </b> " + agent;
@@ -1398,6 +1402,8 @@ LabYokerOrder.prototype.order = function(callback) {
 		bodyReq += "<p>" + i18n.__({phrase: "index.orders.best", locale: userlang});
 		body += "</p><b><i>" + i18n.__({phrase: "index.reportsShares.html7", locale: ownerlang}) + "</i></b></div>";
 		bodyReq += "</p><b><i>" + i18n.__({phrase: "index.reportsShares.html7", locale: userlang}) + "</i></b></div>";
+		body += "</div>";
+		bodyReq += "</div>";
 		console.log("order body: " + body);
 		var tes = "UPDATE vm2016_agentsshare SET quantity = " + quantity + " WHERE agent='" + agent + "' AND vendor='" + vendor + "' AND catalognumber='" + catalognumber + "' AND email='" + email + "'";
 		console.log("order tes: " + tes);
@@ -2058,16 +2064,23 @@ LabyokerRegister.prototype.register = function(callback) {
 					// HERE i18n.__({phrase: "login", locale: userlang})
 
 					var subject = i18n.__({phrase: "index.register.subject", locale: userlang}); //"Labyoke - Start Labyoking";
-					var body = "<div style='text-align:center'><img style='width: 141px; margin: 0 20px;' src='https:\/\/team-labyoke.herokuapp.com\/images\/yoke4.png', alt='The Yoke',  title='Yoke', class='yokelogo'/></div><div style=\"font-family:'calibri'; font-size:11pt;padding: 20px;float:left\">" + i18n.__({phrase: "index.orders.hello", locale: userlang}) + " " + firstname
+					var body="<div style='box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); box-sizing: content-box; padding-right: 15px; margin-top: 20px;'>"
+					body = "<div style='text-align:center'><img style='width: 141px; margin: 0 20px;' src='https:\/\/team-labyoke.herokuapp.com\/images\/yoke4.png', alt='The Yoke',  title='Yoke', class='yokelogo'/></div><div style=\"font-family:'calibri'; font-size:11pt;padding: 20px;float:left\">" + i18n.__({phrase: "index.orders.hello", locale: userlang}) + " " + firstname
 							+ ",<br/><br/>";
 					body += i18n.__({phrase: "index.register.body1", locale: userlang}); //"Thanks for registering with @LabYoke.";
 					body += i18n.__({phrase: "index.register.body2", locale: userlang}); //"You are one step away from labyoking! Please click on this link:<br/>";
-					body += "<p style=\"text-align:center\"><span style=''><b><a href='https:\/\/team-labyoke.herokuapp.com\/confirmreg/"
-							+ hash_register_id + "?lang=" + userlang + "'>https:\/\/team-labyoke.herokuapp.com\/confirmreg?id="
-							+ hash_register_id
-							+ "?lang=" + userlang + "</a></b></span></p>";
+					body += "<p style=\"text-align:center\"><span style=''><br/>";
+					body += "<form action='https:\/\/team-labyoke.herokuapp.com\/confirmreg/"
+							+ hash_register_id + "?lang=" + userlang + "'><button type='submit' value='Confirm Registration' name='submit' style='margin: 20px;color: #fff;background-color: #8a6d3b;border-color: #8a6d3b;padding: 10px 16px;font-size: 18px;line-height: 1.3333333;border-radius: 6px;width: 278px;border: 0;-webkit-appearance: button;cursor: pointer;'>Confirm Registration</button></form>";
+
+					//body +="<a href='https:\/\/team-labyoke.herokuapp.com\/confirmreg/"
+					//		+ hash_register_id + "?lang=" + userlang + "'>https:\/\/team-labyoke.herokuapp.com\/confirmreg?id="
+					//		+ hash_register_id
+					//		+ "?lang=" + userlang + "</a>";
+					body += "</span></p>";
 					body += i18n.__({phrase: "index.register.body3", locale: userlang}) + "<a href=\"https:\/\/team-labyoke.herokuapp.com\/share\"> " + i18n.__({phrase: "index.register.body2", locale: userlang}) + "</a>" + i18n.__({phrase: "index.register.body4", locale: userlang});
 					body += "</p><b><i>" + i18n.__({phrase: "index.reportsShares.html7", locale: userlang}) + "</i></b></div>";
+					body += "</div>";
 					console.log("body: " + body);
 
 					var mailOptions = new MailOptions(email, subject, body);
@@ -2160,18 +2173,24 @@ Labyoker.prototype.requestChangePassword = function(callback) {
 
 
 					var subject = i18n.__({phrase: "index.change.subject", locale: userlang}); //"Labyoke - Change Password Request";
-					var body = "<div style='text-align:center'><img style='width: 141px; margin: 0 20px;' src='https:\/\/team-labyoke.herokuapp.com\/images\/yoke4.png', alt='The Yoke',  title='Yoke', class='yokelogo'/></div><div style=\"font-family:'calibri'; font-size:11pt;padding: 20px;float:left\">" + i18n.__({phrase: "index.orders.hello", locale: userlang}) + " " + name
+					var body = "<div style='box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); box-sizing: content-box; padding-right: 15px; margin-top: 20px;'>"
+					body += "<div style='text-align:center'><img style='width: 141px; margin: 0 20px;' src='https:\/\/team-labyoke.herokuapp.com\/images\/yoke4.png', alt='The Yoke',  title='Yoke', class='yokelogo'/></div><div style=\"font-family:'calibri'; font-size:11pt;padding: 20px;float:left\">" + i18n.__({phrase: "index.orders.hello", locale: userlang}) + " " + name
 							+ ",<br/><br/>";
 					body += i18n.__({phrase: "index.change.body1", locale: userlang}); //"You have requested to change your password @LabYoke. Please click on this link:<br/>";
-					body += "<p style=\"text-align:center\"><span style=''><b><a href='https:\/\/team-labyoke.herokuapp.com\/changepassword/"
-							+ hash + "?lang="+userlang+"'>https:\/\/team-labyoke.herokuapp.com\/changepassword?id="
-							+ hash
-							+ "?lang=" + userlang + "</a></b></span></p>";
+					body += "<p style=\"text-align:center\"><span><br/>";
+					//<a href='https:\/\/team-labyoke.herokuapp.com\/changepassword/"
+					//		+ hash + "?lang="+userlang+"'>https:\/\/team-labyoke.herokuapp.com\/changepassword?id="
+					//		+ hash
+					//		+ "?lang=" + userlang + "</a>";
+					body += "<form action='https:\/\/team-labyoke.herokuapp.com\/changepassword/"
+							+ hash + "?lang="+userlang+"'><button type='submit' value='Change Password' name='submit' style='margin: 20px;color: #fff;background-color: #8a6d3b;border-color: #8a6d3b;padding: 10px 16px;font-size: 18px;line-height: 1.3333333;border-radius: 6px;width: 278px;border: 0;-webkit-appearance: button;cursor: pointer;'>Change Password</button></form>";
+					body += "</span></p>";
 					//body += "<p><span>You have <b><span style='color:red;'>1 day</span></b> to change your password. But don't worry you can always send us another " + "<a href=\"https:\/\/team-labyoke.herokuapp.com\/forgot\">" + "request" + "</a>" + " once this one has expired." + "</span> </p>";
 					body +=  i18n.__({phrase: "index.change.body2", locale: userlang}) + "<a href=\"https:\/\/team-labyoke.herokuapp.com\/forgot\">" + i18n.__({phrase: "index.change.body3", locale: userlang}) + "</a>" + i18n.__({phrase: "index.change.body4", locale: userlang}) + "</span> </p>";
 					//body += "<p>[PS: Have you " + "<a href=\"https:\/\/team-labyoke.herokuapp.com\/share\">" + "shared" + "</a>" + " some chemicals today?]";
 					body += i18n.__({phrase: "index.change.body5", locale: userlang}) + "<a href=\"https:\/\/team-labyoke.herokuapp.com\/share\">" + i18n.__({phrase: "index.change.body6", locale: userlang}) + "</a>" + i18n.__({phrase: "index.change.body7", locale: userlang});
 					body += "</p><b><i>" + i18n.__({phrase: "index.reportsShares.html7", locale: userlang}) + "</i></b></div>";
+					body += "</div>";
 					console.log("body: " + body);
 
 					var mailOptions = new MailOptions(email, subject, body);
@@ -2348,7 +2367,7 @@ LabYokerChangeShare.prototype.cancelShare = function(callback) {
 
 		if(/*table == lab+"_orders" && */checked == 0){
 			
-			var subject = i18n.__({phrase: "index.cancelled.subjectex", locale: userlang});//"LabYoke Order - Cancelled for " + agent;
+			var subject = i18n.__({phrase: "index.cancelled.subject", locale: userlang});//"LabYoke Order - Cancelled for " + agent;
 			var body="<div style='box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); box-sizing: content-box; padding-right: 15px; margin-top: 20px;'>"
 			body += "<div style='text-align:center;padding-top: 20px;'><img style='width: 141px; margin: 0 20px;' src='https:\/\/team-labyoke.herokuapp.com\/images\/yoke4.png', alt='The Yoke',  title='Yoke', class='yokelogo'/></div><div style=\"font-family:'calibri'; font-size:11pt;padding: 20px;\">" + i18n.__({phrase: "index.orders.hello", locale: userlang}) + ",<br/><br/>";
 			//body += "Unfortunately your order has been cancelled due to insufficient quantities from the following inventory:" + " <br><b>Reagent: </b> " + agent;
@@ -2356,7 +2375,6 @@ LabYokerChangeShare.prototype.cancelShare = function(callback) {
 			body += "<br><b>" + i18n.__({phrase: "index.orders.vendor", locale: userlang}) + ": </b> " + vendor;
 			body += "<br><b>" + i18n.__({phrase: "index.orders.catalog", locale: userlang}) + ": </b> " + catalognumber;
 			body += "<br><b>" + i18n.__({phrase: "index.orders.email", locale: userlang}) + ": </b> " + email;
-			body += "<form action='http://google.com'><button type='submit' value='Upload' name='submit' style='margin: 20px;color: #fff;background-color: #8a6d3b;border-color: #8a6d3b;padding: 10px 16px;font-size: 18px;line-height: 1.3333333;border-radius: 6px;width: 278px;border: 0;-webkit-appearance: button;cursor: pointer;'>Upload File</button></form>";
 			body += "<p>" + i18n.__({phrase: "index.orders.best", locale: userlang});
 			body += "</p><b><i>" + i18n.__({phrase: "index.reportsShares.html7", locale: userlang}) + "</i></b></div>";
 			body += "</div>";
