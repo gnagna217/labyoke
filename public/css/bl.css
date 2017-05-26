@@ -658,7 +658,7 @@ position: absolute;
     /*margin-left: 50px;*/
 }
 .searchcatalogbar{
-       background-color: #3d9dcb; height: 1px;display: block;position: relative;top: -25px;
+       background-color: #3d9dcb; height: 1px;display: block;position: relative;top: -25px;width: 50%;text-align: center;margin: 0 auto;
 }
 
 #valuedetail{
@@ -1597,7 +1597,7 @@ input::-webkit-inner-spin-button {
 
  @media (min-width: 1082px) {
     .searchcatalogbar{
-        background-color: #3d9dcb; height: 1px; /*margin-bottom: 40px;*/ display: block;
+        background-color: #3d9dcb; height: 1px; display: block;width: 50%;text-align: center;margin: 0 auto;
     }
 }
 
