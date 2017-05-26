@@ -53,7 +53,7 @@ block content
                         div(class="alert alert-danger messagesearch")!= message
                     form(action="/search" method="post" style="padding-left: 15%; padding-right: 15%; display: block; text-align: center;")
                         div(class="textentry")
-                            input(type="hidden" name="searchtype" value="key")
+                            input(type="hidden" name="searchType" value="key")
                             input(name="searchText" list="agent-datalist"  type="text" id="searchText" class="form-control searchinput" placeholder=searchText)
                             datalist(id="agent-datalist")
                                 -var ob2 = agentsResults
@@ -78,7 +78,7 @@ block content
                         div(class="alert alert-danger messagesearch")!= messageCatalog
                     form(action="/searchCatalog" method="post" style="padding-left: 15%; padding-right: 15%; display: block; text-align: center;")
                         div(class="textentry")
-                            input(type="hidden" name="searchtype" value="catalog")
+                            input(type="hidden" name="searchType" value="catalog")
                             input(name="searchTextCatalog" list="catalog-datalist" type="text" id="searchTextCatalog" class="form-control searchinput" placeholder=searchTextCatalog)
                             datalist(id="catalog-datalist")
                                 -var ob2 = agentsResults
