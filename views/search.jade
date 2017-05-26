@@ -3,7 +3,7 @@ extends layout
 block content
     - var catalogradio = searchformTextCatalog
     - var searchradio = searchformText
-    - var searchType = searchType
+    - var searchradioType = searchType
     img(src="/images/yoke5.png" style="display:none;")
     img(src="/images/yoke6.png" style="display:none;") 
     img(src="/images/logo_one_bottle_L_2.png" style="display:none;") 
@@ -95,12 +95,12 @@ block content
         script.
           console.log("catalogradio: " + "#{catalogradio}");
           console.log("searchradio: " + "#{searchradio}");
-          console.log("searchType: " + "#{searchType}");
+          console.log("searchType: " + "#{searchradioType}");
           
 
           var existscatalog = "#{catalogradio}";
           var existskey = "#{searchradio}";
-          var existssearchType = "#{searchType}";
+          var existssearchType = "#{searchradioType}";
           console.log(" length catalogradio: " + existscatalog.length);
           console.log("length searchradio: " + existskey.length);
           if(existskey.length > 0 || existssearchType == "key"){
