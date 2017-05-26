@@ -2272,7 +2272,7 @@ span.num.greatherthanninetynine {
 .checkingcatalog{
     height: 26px;
     width: 26px;
-    right: 35px;
+    /*right: 35px;*/
 }
 
 .checking::before {
