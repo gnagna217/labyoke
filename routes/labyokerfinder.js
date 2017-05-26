@@ -2356,7 +2356,7 @@ LabYokerChangeShare.prototype.cancelShare = function(callback) {
 			body += "<br><b>" + i18n.__({phrase: "index.orders.vendor", locale: userlang}) + ": </b> " + vendor;
 			body += "<br><b>" + i18n.__({phrase: "index.orders.catalog", locale: userlang}) + ": </b> " + catalognumber;
 			body += "<br><b>" + i18n.__({phrase: "index.orders.email", locale: userlang}) + ": </b> " + email;
-			body += "<form action='http://google.com'><button type='submit' value='Upload' name='submit' class='btn btn-success btn-lg btn-block' style='margin: 20px;'>Upload File</button></form>";
+			body += "<form action='http://google.com'><button type='submit' value='Upload' name='submit' style='margin: 20px;color: #fff;background-color: #8a6d3b;border-color: #8a6d3b;padding: 10px 16px;font-size: 18px;line-height: 1.3333333;border-radius: 6px;width: 278px;border: 0;-webkit-appearance: button;cursor: pointer;'>Upload File</button></form>";
 			body += "<p>" + i18n.__({phrase: "index.orders.best", locale: userlang});
 			body += "</p><b><i>" + i18n.__({phrase: "index.reportsShares.html7", locale: userlang}) + "</i></b></div>";
 			body += "</div>";
