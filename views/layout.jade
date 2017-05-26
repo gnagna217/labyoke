@@ -255,8 +255,7 @@ html(lang='en')
           // Toggle class "is-active"
           hamburger.classList.toggle("is-active");
           // Do something else, like open/close menu
-        });
-        }
+        
 
               if ( $(".navbar-collapse").hasClass( "in" ) ) {
               console.log("navbar-collapse is now opened");
@@ -271,7 +270,9 @@ html(lang='en')
                   $(".bubble1").css("position", "fixed");
                 }
               }
-
+        });
+        }
+        
         var logout = document.querySelector(".nav-menu-logout");
         // On click
         if(logout != undefined && logout != null){
