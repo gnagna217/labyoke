@@ -29,6 +29,42 @@ p{
     -webkit-font-smoothing: antialiased !important;
 }
 
+.teambutton {
+    border: none;
+    outline: 0;
+    display: inline-block;
+    padding: 8px;
+    color: white;
+    background-color: #000;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+    border-radius: 10px;
+    background: #8a6d3b;
+}
+
+.teambutton:hover {
+    background-color: #337ab7;
+}
+
+.teambuttonback {
+    border: none;
+    outline: 0;
+    display: inline-block;
+    padding: 8px;
+    color: white;
+    background-color: #000;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+    border-radius: 10px;
+    background: #3d9dcb;
+}
+
+.teambuttontback:hover {
+    background-color: #337ab7;
+}
+
 .footer2{
     margin-top:60px;
     padding:20px 0px;
@@ -2543,20 +2579,4 @@ a.mailto:link {
     color:white;
 }
 
-.teambutton {
-    border: none;
-    outline: 0;
-    display: inline-block;
-    padding: 8px;
-    color: white;
-    background-color: #000;
-    text-align: center;
-    cursor: pointer;
-    width: 100%;
-    border-radius: 10px;
-    background: #8a6d3b;
-}
 
-.teambutton:hover {
-    background-color: #337ab7;
-}

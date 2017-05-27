@@ -53,7 +53,7 @@ block content
                          h4!="14"
                          p #{i18n.__("card1.stats2")}
             p(class="backbutton")
-              button(class="teambutton", onclick="rotateCard(this)") #{i18n.__("card.back")}
+              button(class="teambuttonback", onclick="rotateCard(this)") #{i18n.__("card.back")}
       div(class="teamcolumn manual-flip teamcolumn1")
         div(class="teamcard")
           div(class="front")
@@ -78,7 +78,7 @@ block content
                          h4!="114"
                          p #{i18n.__("card2.stats2")}
             p(class="backbutton")
-              button(class="teambutton", onclick="rotateCard(this)") #{i18n.__("card.back")}
+              button(class="teambuttonback", onclick="rotateCard(this)") #{i18n.__("card.back")}
       div(class="teamcolumn manual-flip teamcolumn2")
         div(class="teamcard")
           div(class="front")
@@ -103,7 +103,7 @@ block content
                          h4!="54"
                          p #{i18n.__("card3.stats2")}
             p(class="backbutton")
-              button(class="teambutton", onclick="rotateCard(this)") #{i18n.__("card.back")}
+              button(class="teambuttonback", onclick="rotateCard(this)") #{i18n.__("card.back")}
       script.
         function rotateCard(btn){
             var $otherbutton;
