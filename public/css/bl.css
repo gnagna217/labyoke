@@ -989,7 +989,7 @@ input:-webkit-autofill:hover {
     margin-top:80px !important;
 }
 .colmenu{
-    color: #a4d2e8;
+    color: white; /*#a4d2e8*/
 }
 .activecolmenu{
     color: #337ab7;
