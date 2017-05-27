@@ -1530,9 +1530,6 @@ input::-webkit-inner-spin-button {
 }
 
 @media (min-width: 767px) {
-.padnum{
-    padding-top:5px;background-color: white;width: 30%;margin: 0 auto;
-}
 .labColorBackgroundHover {
     background-color: #3d9dcb !important;
 }
@@ -1971,6 +1968,9 @@ input::-webkit-inner-spin-button {
 }
 
 @media (max-width: 767px){
+.padnum{
+    padding-top:5px;background-color: white;width: 30%;margin: 0 auto;
+}
 .desktabonly5{
     display: none !important;
 }
