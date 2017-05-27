@@ -1492,6 +1492,9 @@ input::-webkit-inner-spin-button {
 }
 
 @media (min-width: 767px) {
+.searchinput {
+    font-size: 13pt;
+}
 .searchradios{
     width: 70%;
 }
