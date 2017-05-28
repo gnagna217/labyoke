@@ -167,7 +167,7 @@ p{
 }
 
 .navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form {
-    background-color: rgba(138, 109, 59, 0.70);
+    background-color: transparent;
 }
 
 .activeNav
@@ -1530,6 +1530,9 @@ input::-webkit-inner-spin-button {
 }
 
 @media (min-width: 767px) {
+.navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form{
+        background-color: rgba(138, 109, 59, 0.70) !important;
+}
 .labColorBackgroundHover {
     background-color: #3d9dcb !important;
 }
@@ -2033,8 +2036,6 @@ input{
     display:block;
 }
 .navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form{
-    /*background-color:white;*/
-        background-color: white !important;
         padding-top: 5px;
 }
 
