@@ -5,6 +5,7 @@ html(lang='en')
      - var language = "en"
      - if(lang != null && lang != undefined)
         - language = lang
+     - var testing = ""
      - var isreghide = "isreghide"
      - var isregpadding = "isregpadding"
      - var menushare = "menushare"
@@ -13,6 +14,7 @@ html(lang='en')
      - var isregroundaccountLeft = " isregroundaccountLeft "
      - var roundaccountLeft = isregroundaccountLeft
      - if(isLoggedInAdmin == true)
+        - testing = "test"
         - roundaccountLeft = isadminroundaccountLeft
         - isreghide = ""
         - isregpadding = ""
@@ -133,7 +135,7 @@ html(lang='en')
                     - activateHelp = "addMargin "
                     - activateAbout = "addMargin "
                     - activateOrders = "addMargin "
-                    - activateAccount = "account-borders addMargin " + isreghide
+                    - activateAccount = "account-borders addMargin movetoleft " + isreghide
                     - activateAdmin = "addMargin "
                     - activeSearchMob = ""
                     - activeAccountMob = ""
@@ -200,7 +202,7 @@ html(lang='en')
                                     span(class="fa fa-comment")
                                     span(class=ordersnumclass)!=ordersnumber
                         ul.nav.navbar-nav(id=menuaccount, class="addMargin menu-border padnum")
-                            li(class=activateAccount, style="width: 122px;padding-top:50px;padding-right:40px;background-color:rgb(173, 153, 117)", id="test")
+                            li(class=activateAccount, style="width: 122px;padding-top:50px;padding-right:40px;background-color:rgb(173, 153, 117)", id=testing)
                                 //a(href="/account",class="nav-menus myaccount navplaceholder", id="menumyaccounta")
                                     //span #{i18n.__("layout.Profile")}
                             li(class=activateHelp)
@@ -326,7 +328,7 @@ html(lang='en')
               //var c = parseInt(a) - parseInt(b) - parseInt(d) + 5.5;
               //var c = parseInt(d) * -1;
               //$(".roundaccount").css("left", c);
-              $("#test").css("width", p);
+              $(".movetoleft").css("width", p);
               //console.log("roundaccount left: " + c);
               
               }
@@ -372,7 +374,7 @@ html(lang='en')
               //var c = parseInt(a) - parseInt(b) + 5.5;
               //var c = parseInt(d) * -1;
               //$(".roundaccount").css("left", c);
-              $("#test").css("width", p);
+              $(".movetoleft").css("width", p);
               //console.log("roundaccount left: " + c);
               
               }
