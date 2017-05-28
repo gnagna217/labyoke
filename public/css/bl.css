@@ -680,6 +680,9 @@ span.fa-comment {
     z-index: 1;
 }
 
+.lineheight{
+        line-height: 1.5 !important;
+}
 .sun {
     position: relative;top: 86px; left: 0px; width: 50px; z-index: -1;
 }
