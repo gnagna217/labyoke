@@ -1974,6 +1974,15 @@ input::-webkit-inner-spin-button {
 #menumyaccount{
     background-color: rgba(138, 109, 59, 0.70) !important;
 }
+
+#menumyaccounta{
+    background-color: rgba(138, 109, 59, 0.70) !important;
+}
+
+#menumyaccountadmin{
+    background-color: rgba(138, 109, 59, 0.70) !important;
+}
+
 #menumyshares{
     background-color: rgba(138, 109, 59, 0.70) !important;
 }
