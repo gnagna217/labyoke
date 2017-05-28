@@ -16,6 +16,7 @@ block content
                 form(action="/forgot" method="post")
                     div(style="margin-bottom: 20px;")
                         div(class="textentry")
+                            span(class="fa fa-user" style="top: 23px;position: relative;float: right;color: #3d9dcb;")
                             input(name="forgotuser" type="text" id="forgotuser" class="form-control" placeholder=i18n.__("forgot.username") style="border-color:#8a6d3b")
                         div(class="buttons")
                         button.btn.btn-success.btn-lg.btn-block(type='submit',style='width:85%')= i18n.__("forgot.button")
