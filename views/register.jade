@@ -89,15 +89,13 @@ block content
 
                     div(style="margin-bottom: 20px;")
                         div(class="textentry")
+                            span(class="fa fa-sort" style="color: #8a6d3b; float: right; top: 25px; left: -10px; position: relative; font-size: 14pt; ")
                             select(name="reglab" type="text" id="reglab" class="form-control" style="border-color:#3d9dcb" placeholder=i18n.__("register.form2.lab"))
                              if(labs != undefined)
                                  - var ob = labs
                                  - for(var prop in ob)
                                    - var lab = ob[prop].labname
                                    option(value=lab) #{lab}
-                            div(style="top: -25px; position: relative; float: right; margin-right: 10px;")
-                                div(class="arrow-up")
-                                div(class="arrow-down")
                         input(name="regfirstname" type="hidden" id="regfirstname" value=firstname)
                         input(name="reglastname" type="hidden" id="reglastname" value=lastname)
                         input(name="regemail" type="hidden" id="regemail" value=email)

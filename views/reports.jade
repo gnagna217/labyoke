@@ -160,6 +160,7 @@ block content
 							input(name="reportDateToMoney" style="margin-left: 40px;margin-top: -13px;margin-bottom:10px;margin-top: -13px;" type="text" id="reportDateToMoney" class="form-control")
 
 							label(style="width: 100%;font-weight: bold;margin-top:10px;")!= i18n.__("reports.money.lab.label") + dept + "</span>"
+							span(class="fa fa-sort" style="color: #8a6d3b; float: right; top: 25px; left: -10px; position: relative; font-size: 14pt; ")
 							select(name="reportLabMoney" type="text" id="reportLabMoney" class="form-control" style="border-color:#3d9dcb;margin-bottom:10px" placeholder=i18n.__("reports.money.labselect"))
 								option(value="all")=i18n.__("reports.money.lab.option")
 								if(categories != undefined)
@@ -167,9 +168,6 @@ block content
 									- for(var prop in ob)
 										- var lab = ob[prop].labname
 										option(value=lab) #{lab}
-							div(style="top: -35px; position: relative; float: right; margin-right: 10px;")
-								div(class="arrow-up")
-								div(class="arrow-down")
 							label(style="width: 100px;font-weight: bold;margin-top:10px;")=i18n.__("reports.money.show")
 							br
 							label(style="width: 65px;font-weight: bold;")=i18n.__("reports.money.reagent")
@@ -274,6 +272,7 @@ block content
 							input(name="reportDateToOrders" style="margin-left: 40px;margin-bottom:10px; margin-top: -13px;" type="text" id="reportDateToOrders" class="form-control")
 							
 							label(style="width: 100%;font-weight: bold;margin-top:10px;")!= i18n.__("reports.orders.lab.label") + dept + "</span>"
+							span(class="fa fa-sort" style="color: #8a6d3b; float: right; top: 25px; left: -10px; position: relative; font-size: 14pt; ")
 							select(name="reportLabOrders" type="text" id="reportLabOrders" class="form-control" style="border-color:#3d9dcb;margin-bottom:10px" placeholder=i18n.__("reports.orders.labselect"))
 								option(value="all")= i18n.__("reports.orders.lab.option")
 								if(categories != undefined)
@@ -281,9 +280,6 @@ block content
 									- for(var prop in ob)
 										- var lab = ob[prop].labname
 										option(value=lab) #{lab}
-							div(style="top: -35px; position: relative; float: right; margin-right: 10px;")
-								div(class="arrow-up")
-								div(class="arrow-down")
 							div(style="max-width:100%; margin-top: 20px;")
 								button.btn.btn-success.btn-lg.btn-block(type="submit",value="Report",name="submit", style="max-width: 85%;width: 85%;")= i18n.__("reports.orders.button")
 								img(src="images/logo_one_bottle_R.png", alt="The Lab", title="Lab", class="reportbutton")
@@ -532,6 +528,7 @@ block content
 					form(action="reportInsuff", method="post")
 						div(class="buttonss")
 							label(style="width: 100%;font-weight: bold;margin-top:10px;")!= i18n.__("reports.insuff.lab.label") + dept + "</span>"
+							span(class="fa fa-sort" style="color: #8a6d3b; float: right; top: 25px; left: -10px; position: relative; font-size: 14pt; ")
 							select(name="reportLabInsuff" type="text" id="reportLabInsuff" class="form-control" style="border-color:#3d9dcb;margin-bottom:10px" placeholder=i18n.__("reports.insuff.labselect"))
 								option(value="all")= i18n.__("reports.insuff.lab.option")
 								if(categories != undefined)
@@ -539,9 +536,6 @@ block content
 									- for(var prop in ob)
 										- var lab = ob[prop].labname
 										option(value=lab) #{lab}
-							div(style="top: -35px; position: relative; float: right; margin-right: 10px;")
-								div(class="arrow-up")
-								div(class="arrow-down")
 							label(style="width: 100px;font-weight: bold;margin-top:10px;")= i18n.__("reports.insuff.show")
 							br
 							label(style="width: 60px;font-weight: bold;")= i18n.__("reports.insuff.vendor")
