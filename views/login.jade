@@ -75,9 +75,9 @@ block content
                     span(style="float:right;")
                         a(href="/forgot", style="z-index:10") #{i18n.__("login.forgotLink")}
      - if(latestshares != null && latestshares != undefined)
-        div(class="slide-out-div desktabonly", style="display:none;position: fixed;bottom: 6px;")
+        div(class="slide-out-div desktabonly", style="display:none;position: fixed;bottom: 6px;top:-75px;")
             a(class="handle" href="last-transactions", style="right: -60px;")!=Content
-            div(style="text-align: center;padding: 1px;color:white;")
+            div(style="text-align: center;padding: 1px;color:white;top: -45px;position: relative;")
                 p!= i18n.__("login.texting1")
                 p
                     -var ob = latestshares
@@ -103,7 +103,7 @@ block content
     script.
          $(function(){
              $('.slide-out-div').tabSlideOut({
-                 imgpos: 55,
+                 imgpos: 75,
                  tabHandle: '.handle',                              //class of the element that will be your tab
                  pathToTabImage: 'images/movarrow2.gif',          //path to the image for the tab (optionaly can be set using css)
                  imageHeight: '40px',                               //height of tab image
