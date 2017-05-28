@@ -66,7 +66,7 @@
             'display': 'block',
             'textIndent' : '-99999px',
             'outline' : 'none',
-            'position' : 'absolute'
+            'position' : 'relative'
         });
         
         obj.css({
