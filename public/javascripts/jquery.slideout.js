@@ -116,7 +116,7 @@
 
         if(settings.tabLocation === 'right') {
             obj.css({ 'right': '-' + properties.containerWidth});
-            settings.tabHandle.css({'left' : '-85' /*+ properties.tabWidth*/});
+            settings.tabHandle.css({'left' : '-85px' /*+ properties.tabWidth*/});
             
             $('html').css('overflow-x', 'hidden');
         }
