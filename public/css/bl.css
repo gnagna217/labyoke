@@ -2034,7 +2034,8 @@ input{
 }
 .navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form{
     /*background-color:white;*/
-        background-color: none;
+        background-color: none !important;
+        padding-top: 5px;
 }
 
 .addMargin{
