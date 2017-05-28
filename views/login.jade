@@ -17,7 +17,7 @@ block content
              - //if(n > 17)
                  //h1 #{i18n.__("login.evening")}
              //p(style="display:none")!= mom + " - " + n + " hours"
-             p #{i18n.__("login.welcome")}
+             p(class="centralize") #{i18n.__("login.welcome")}
              script.
                 var t = new Date();
                 var n = t.getHours();

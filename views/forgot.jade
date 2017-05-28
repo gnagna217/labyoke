@@ -9,7 +9,7 @@ block content
        div
         if !userfound && !usernotfound
             h1= i18n.__("forgot.title")
-            p!= i18n.__("forgot.subtitle")
+            p(class="centralize")!= i18n.__("forgot.subtitle")
             div(id="ctl00_Div2" class="frontdiv")
                 if message
                     div(class="alert alert-danger")!= message

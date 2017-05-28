@@ -9,7 +9,7 @@ block content
        div
         if !labentered && !regsuccess && !confirmReset
             h1 #{i18n.__("register.title")}
-            p 
+            p(class="centralize") 
                 span!= i18n.__("register.desc1")
                 span(class="labColor")= i18n.__("register.title2")
                 span!= i18n.__("register.subtitle")

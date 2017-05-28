@@ -29,6 +29,10 @@ p{
     -webkit-font-smoothing: antialiased !important;
 }
 
+.centralize{
+    margin: 0 auto;
+}
+
 .teambutton {
     border: none;
     outline: 0;
@@ -1763,6 +1767,9 @@ input::-webkit-inner-spin-button {
 }
 
  @media (max-width: 992px) {
+.centralize{
+    width: 50%;
+}
 .isadminroundaccountLeft{
     left: -213px;
 }
@@ -1971,6 +1978,9 @@ input::-webkit-inner-spin-button {
 }
 
 @media (max-width: 767px){
+.centralize{
+    width: 75%;
+}
 #menumyaccount{
     background-color: rgba(138, 109, 59, 0.70) !important;
 }
@@ -2264,6 +2274,9 @@ span.num.greatherthanninetynine {
 }
 
 @media (max-width: 667px){
+.centralize{
+    width: 100%;
+}
 .positionbutton{
     left: 30%;
 }
