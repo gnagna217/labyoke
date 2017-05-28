@@ -26,15 +26,13 @@ block content
 			- checkedstrInsuff = true
 		form(action="reportSelect", method="post", class="adjustwidthreports")
 			div(class="buttonss")
+				span(class="fa fa-sort" style="color: #8a6d3b; float: right; top: 25px; left: -10px; position: relative; font-size: 14pt; ")
 				select(name="reportSelect" type="text" id="reportSelect" class="form-control" style="border-color:#3d9dcb;margin-bottom:10px" placeholder=i18n.__("reports.form.select"))
 					option(value="reportNone",style="font-weight:bold")=i18n.__("reports.form.option1")
 					option(value="reportMoney" selected=(checkedstrMoney===true ? "selected" : undefined))=i18n.__("reports.form.option2")
 					option(value="reportOrders" selected=(checkedstrOrders===true ? "selected" : undefined))=i18n.__("reports.form.option3")
 					option(value="reportShares" selected=(checkedstrShares===true ? "selected" : undefined))=i18n.__("reports.form.option4")
 					option(value="reportInsuff" selected=(checkedstrInsuff===true ? "selected" : undefined))=i18n.__("reports.form.option5")
-				div(style="top: -35px; position: relative; float: right; margin-right: 10px;")
-					div(class="arrow-up")
-					div(class="arrow-down")
 		script.
 			window.onload = function() {
 			$('#reportMoney').hide();
