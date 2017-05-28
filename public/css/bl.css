@@ -1968,8 +1968,14 @@ input::-webkit-inner-spin-button {
 }
 
 @media (max-width: 767px){
+#menumyaccount{
+    background-color: rgba(138, 109, 59, 0.70) !important;
+}
+#menumyshares{
+    background-color: rgba(138, 109, 59, 0.70) !important;
+}
 .padnum{
-    padding-top:5px;background-color: white;width: 30%;margin: 0 auto;
+    padding-top:5px;background-color: rgba(61, 157, 203, 0.78) !important;width: 70%;margin: 0 auto;
 }
 .desktabonly5{
     display: none !important;
@@ -2028,6 +2034,7 @@ input{
 }
 .navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form{
     /*background-color:white;*/
+        background-color: none;
 }
 
 .addMargin{
