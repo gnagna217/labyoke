@@ -848,7 +848,7 @@ border-top: 5px solid #8a6d3b;
     border-radius: 4px;
 }*/
 
-#results, .results{
+#results, .results, .results2{
     border-style: solid;
     border-top: none;
     border-bottom: none;
@@ -859,6 +859,10 @@ border-top: 5px solid #8a6d3b;
     border-radius: 8px;
     padding-right: 20px;
     /*margin-top: 20px;*/
+}
+
+.results2{
+    border-color: #3d9dcb;
 }
 
 .number-over{

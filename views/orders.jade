@@ -107,12 +107,12 @@ block content
             div(class="alert alert-orders alert-" + boostercolor + " fade in alert-dismissable order-container",style="margin-top:18px;width:100%/*float: right;*/")
               a(href="#", class="close", data-dismiss="alert", aria-label="close", title="close")="x"
               span!= booster          
-          div(style="background-color: #3d9dcb; height: 1px; margin-bottom: 30px; margin-top: 30px;")
+          div(style="background-color: #3d9dcb; height: 1px; margin-bottom: 30px; margin-top: 30px;width: 97%;")
           h3= i18n.__("orders.chart.title")
           form(action="chartSelect", method="post")
             div(class="buttons")
-              span(class="fa fa-sort" style="color: #8a6d3b; float: right; top: 25px; left: -10px; position: relative; font-size: 14pt; ")
-              select(name="chartSelect" type="text" id="chartSelect" class="form-control" style="border-color:#3d9dcb;margin-bottom:10px" placeholder=i18n.__("orders.chart.select"))
+              span(class="fa fa-sort" style="color: #8a6d3b; float: right; top: 10px; left: -25px; position: relative; font-size: 14pt; ")
+              select(name="chartSelect" type="text" id="chartSelect" class="form-control" style="border-color:#3d9dcb;margin-bottom:10px;width: 97%;" placeholder=i18n.__("orders.chart.select"))
                 option(value="chartNone",style="font-weight:bold")= i18n.__("orders.chart.option1")
                 option(value="chartQty")= i18n.__("orders.chart.option2")
                 option(value="chartOrders")= i18n.__("orders.chart.option3")
