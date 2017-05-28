@@ -1979,15 +1979,11 @@ input::-webkit-inner-spin-button {
     background-color: rgba(138, 109, 59, 0.70) !important;
 }
 
-#menumyaccountadmin{
-    background-color: rgba(138, 109, 59, 0.70) !important;
-}
-
 #menumyshares{
     background-color: rgba(138, 109, 59, 0.70) !important;
 }
 .padnum{
-    padding-top:5px;background-color: rgba(61, 157, 203, 0.78) !important;width: 70%;margin: 0 auto;
+    background-color: rgba(138, 109, 59, 0.70) !important;
 }
 .desktabonly5{
     display: none !important;
