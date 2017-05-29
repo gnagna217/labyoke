@@ -27,6 +27,8 @@
     "search.searchholder" : "Looking for reagent...",
     "search.catalogholder" : "Looking for catalog number...",
     "search.results.text" : "Search: ",
+    "search.resultsnone.text": "Sorry we could not find any location for your",
+    "search.resultsnone.desc": "Try another chemical reagent!",
     "search.buttoncatalog" : "Find By Catalog",
     "search.buttonreagent": "Find By Reagent",
     "search.resultstitle": "These Researchers and Labs can share your",

@@ -28,6 +28,8 @@
     "search.searchholder" : "Rechercher un Réactif...",
     "search.catalogholder" : "Rechercher un Numéro de Catalogue...",
     "search.results.text" : "Recherche: ",
+    "search.resultsnone.text": "Désolé nous n'avons pu trouver aucun réactif pour votre",
+    "search.resultsnone.desc": "Essayez un autre réactif chimique!",
     "search.buttoncatalog" : "Recherche Catalogue",
     "search.buttonreagent": "Recherche Réactif",
     "search.resultstitle": "Ces Chercheurs et Laboratoires sont à jour pour votre",
