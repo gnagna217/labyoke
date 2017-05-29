@@ -170,12 +170,17 @@ block content
 										option(value=lab) #{lab}
 							label(style="width: 100px;font-weight: bold;margin-top:10px;")=i18n.__("reports.money.show")
 							br
-							label(style="width: 65px;font-weight: bold;")=i18n.__("reports.money.reagent")
+							
 							input(type="checkbox" name="reportAgentMoney" id="reportAgentMoney" value="reagent" style="margin-top: -13px;")
-							label(style="width: 60px; margin-left: 20px;font-weight: bold;")=i18n.__("reports.money.vendor")
+							label(style="width: 65px;font-weight: bold;")=i18n.__("reports.money.reagent")
+							
 							input(type="checkbox" name="reportVendorMoney" id="reportVendorMoney" value="vendor" style="margin-top: -13px;")
+							label(style="width: 60px; margin-left: 20px;font-weight: bold;")=i18n.__("reports.money.vendor")
+							
+							input(type="checkbox" name="reportCatalogMoney" id="reportCatalogMoney" 
+							value="catalogNumber" style="margin-top: -13px;")
 							label(style="width: 75px; margin-left: 20px;font-weight: bold;")=i18n.__("reports.money.catalog")
-							input(type="checkbox" name="reportCatalogMoney" id="reportCatalogMoney" value="catalogNumber" style="margin-top: -13px;")
+							
 							div(style="max-width:100%; margin-top: 20px;")
 								button.btn.btn-success.btn-lg.btn-block(type="submit",value="Report",name="submit", style="max-width: 85%;width: 85%;")= i18n.__("reports.money.button")
 								img(src="images/logo_one_bottle_L_3.png", alt="The Lab", title="Lab", class="reportbutton")
