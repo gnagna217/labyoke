@@ -9,6 +9,16 @@
   -webkit-font-smoothing: antialiased;
 }
 
+.reportMoneys{
+    display:none;
+}
+.reportOrderss{
+    display:none;
+}
+.reportInsuffs{
+    display:none;
+}
+
 select::-ms-expand {
     display: none;
 }
@@ -20,7 +30,9 @@ select
   -o-appearance:none;
    appearance:none; 
     background: white;
-    padding: 10px;
+    padding: 5px;
+    padding-left: 15px;
+    margin-bottom: 10px;
 }
 /*select {
     -moz-appearance: window;
