@@ -9,16 +9,25 @@
   -webkit-font-smoothing: antialiased;
 }
 
-/*select::-ms-expand {
+select::-ms-expand {
     display: none;
-}*/
+}
 
-select {
+select 
+{
+  -webkit-appearance:none;
+  -moz-appearance:none;
+  -o-appearance:none;
+   appearance:none; 
+    background: white;
+    padding: 10px;
+}
+/*select {
     -moz-appearance: window;
     -webkit-appearance: none;
     background: white;
     padding: 10px;
-}
+}*/
 
 body {
   font-family: 'Nunito', sans-serif;
