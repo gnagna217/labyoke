@@ -18,6 +18,9 @@
 .reportInsuffs{
     display:none;
 }
+.reportSharess{
+    display:none;
+}
 
 select::-ms-expand {
     display: none;
