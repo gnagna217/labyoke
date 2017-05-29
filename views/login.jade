@@ -78,7 +78,7 @@ block content
         div(class="slide-out-div desktabonly lineheight", style="display:none;position: fixed;bottom: 6px;top:-75px;")
             a(class="handle" href="last-transactions", style="right: -60px;")!=Content
             div(style="text-align: center;padding: 1px;color:white;top: -25px;position: relative;")
-                p!= i18n.__("login.texting1")
+                p(style="font-weight: bold;")!= i18n.__("login.texting1")
                 p
                     -var ob = latestshares
                     - var i = 0
