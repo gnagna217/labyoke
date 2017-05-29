@@ -111,12 +111,12 @@ block content
           h3= i18n.__("orders.chart.title")
           form(action="chartSelect", method="post")
             div(class="buttons")
-              span(class="fa fa-sort" style="color: #8a6d3b; float: right; top: 10px; left: -25px; position: relative; font-size: 14pt; ")
               select(name="chartSelect" type="text" id="chartSelect" class="form-control" style="border-color:#3d9dcb;margin-bottom:10px;width: 97%;" placeholder=i18n.__("orders.chart.select"))
                 option(value="chartNone",style="font-weight:bold")= i18n.__("orders.chart.option1")
                 option(value="chartQty")= i18n.__("orders.chart.option2")
                 option(value="chartOrders")= i18n.__("orders.chart.option3")
                 option(value="chartLabs")= i18n.__("orders.chart.option4")
+              span(class="fa fa-sort" style="color: #8a6d3b; float: right; top: -35px; left: -25px; position: relative; font-size: 14pt; ")
           div(id="chartNotes", style="display:none")
             p!= i18n.__("orders.chart.notes")
           - var find0 = report_sharesbycategory
