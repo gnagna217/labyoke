@@ -428,6 +428,10 @@ a {
     position: relative;
     font-size: 12pt;
 }
+
+.accountlang{
+    right: 0px;
+}
 .radiosearch{
     font-size:15pt;
     /*margin: 15px;
@@ -2051,6 +2055,9 @@ input::-webkit-inner-spin-button {
 }
 
 @media (max-width: 767px){
+.accountlang{
+    left: 31px;
+}
 .centralize{
     width: 75%;
 }
