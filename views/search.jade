@@ -190,7 +190,7 @@ block content
           script="$(window).scrollTop($('#ordered').offset().top * 10).scrollLeft($('#ordered').offset().left);"
 
         if(searchResults != null && searchResults.length > 0)
-          div(class="results", style="float:left;width: 100%;")
+          div(class="results resultsshadow", style="float:left;width: 96%;")
               div
                   span(style="text-align: center")
                     h3(style="font-weight: 400;") #{i18n.__("search.resultstitle")}
@@ -199,7 +199,7 @@ block content
                         if searchformTextCatalog
                             span(style="color: #3d9dcb;")=" " + searchformTextCatalog
                     h4 #{i18n.__("search.resultssubtitle")}
-              #labyokers.container.results(style="width:100%;")
+              #labyokers.container(style="width:100%;")
                 div(id="ctl00_Div2" class="row rank").match
                    - i = 1
                    - className = ""
@@ -270,7 +270,7 @@ block content
                         });
               script="$(window).scrollTop($('.results').offset().top).scrollLeft($('.results').offset().left);"          
         if(searchResults != undefined && searchResults.length == 0 && searchformText)
-          div.container.searchResults(id="results2")
+          div.container.searchResults(id="results")
                 div(id="ctl00_Div2" class="row rank")
                    div(class="table-responsive")
                       span(style="text-align: center")
