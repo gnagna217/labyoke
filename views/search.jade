@@ -190,7 +190,7 @@ block content
           script="$(window).scrollTop($('#ordered').offset().top * 10).scrollLeft($('#ordered').offset().left);"
 
         if(searchResults != null && searchResults.length > 0)
-          div(class="results resultsshadow", style="float:left;width: 96%;")
+          div(class="results resultsshadow")
               div
                   span(style="text-align: center")
                     h3(style="font-weight: 400;") #{i18n.__("search.resultstitle")}
