@@ -848,7 +848,7 @@ border-top: 5px solid #8a6d3b;
     border-radius: 4px;
 }*/
 
-#results, .results, .results2{
+#results, .results, #results2{
     border-style: solid;
     border-top: none;
     border-bottom: none;
