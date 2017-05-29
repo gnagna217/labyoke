@@ -130,7 +130,7 @@ block content
 			}
 		div(class="reportSlot") &nbsp;
 		div
-			div(class="reportMoney results2 resultsshadow", id="reportMoney")
+			div(class="reportMoneys results2 resultsshadow", id="reportMoney")
 				div
 				h4= i18n.__("reports.money.title")
 				p= i18n.__("reports.money.subtitle")
@@ -242,7 +242,7 @@ block content
 							- resultsMoney = ""
 					script.
 						$(window).scrollTop($('.reportMoney').offset().top).scrollLeft($('.reportMoney').offset().left);
-			div(class="reportOrders results", id="reportOrders")
+			div(class="reportOrderss results resultsshadow", id="reportOrders")
 				div(style="/*background-color: #3d9dcb; height: 2px; margin-bottom: 30px; margin-top: 30px;*/")
 				h4= i18n.__("reports.orders.title")
 				p= i18n.__("reports.orders.subtitle")
@@ -372,7 +372,7 @@ block content
 							- resultsOrders = ""
 					script.
 						$(window).scrollTop($('.reportOrders').offset().top).scrollLeft($('.reportOrders').offset().left);
-			div(class="reportShares results", id="reportShares")
+			div(class="reportSharess results resultsshadow", id="reportShares")
 				div
 				h4= i18n.__("reports.shares.title")
 				p= i18n.__("reports.shares.subtitle")
@@ -514,7 +514,7 @@ block content
 						
 					});
 		div
-			div(class="reportInsuff results", id="reportInsuff")
+			div(class="reportInsuffs results resultsshadow", id="reportInsuff")
 				div(style="/*background-color: #3d9dcb; height: 2px; margin-bottom: 30px; margin-top: 30px;*/")
 				h4= i18n.__("reports.insuff.title")
 				p=i18n.__("reports.insuff.subtitle")
