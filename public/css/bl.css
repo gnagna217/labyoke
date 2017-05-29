@@ -9,6 +9,10 @@
   -webkit-font-smoothing: antialiased;
 }
 
+select::-ms-expand {
+    display: none;
+}
+
 body {
   font-family: 'Nunito', sans-serif;
   padding-top:5px;
