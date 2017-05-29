@@ -241,7 +241,7 @@ block content
 								, margins);
 							- resultsMoney = ""
 					script.
-						$(window).scrollTop($('.reportMoney').offset().top).scrollLeft($('.reportMoney').offset().left);
+						$(window).scrollTop($('#reportMoney').offset().top).scrollLeft($('#reportMoney').offset().left);
 			div(class="reportOrderss results resultsshadow", id="reportOrders")
 				div(style="/*background-color: #3d9dcb; height: 2px; margin-bottom: 30px; margin-top: 30px;*/")
 				h4= i18n.__("reports.orders.title")
@@ -371,7 +371,7 @@ block content
 								, margins);						
 							- resultsOrders = ""
 					script.
-						$(window).scrollTop($('.reportOrders').offset().top).scrollLeft($('.reportOrders').offset().left);
+						$(window).scrollTop($('#reportOrders').offset().top).scrollLeft($('#reportOrders').offset().left);
 			div(class="reportSharess results resultsshadow", id="reportShares")
 				div
 				h4= i18n.__("reports.shares.title")
@@ -500,7 +500,7 @@ block content
 								, margins);
 							- resultsShares = ""
 					script.
-						$(window).scrollTop($('.reportShares').offset().top).scrollLeft($('.reportShares').offset().left);
+						$(window).scrollTop($('#reportShares').offset().top).scrollLeft($('#reportShares').offset().left);
 				script.
 					$(document).ready(function(){
 						//$.mask.definitions['~']='[+-]';
@@ -608,7 +608,7 @@ block content
 								, margins);
 							- resultsInsuff = ""
 					script.
-						$(window).scrollTop($('.reportInsuff').offset().top).scrollLeft($('.reportInsuff').offset().left);
+						$(window).scrollTop($('#reportInsuff').offset().top).scrollLeft($('#reportInsuff').offset().left);
 		div(class="slide-out-tip-div desktabonly", style="display:none;z-index:1;position: fixed;top: 25% !important;max-height:400px;")
 			a(class="handle" href="last-transactions", title='#{i18n.__("search.tip.title")}', style="right: -60px;,left:-60px;top:25px;")!=Content
 			div(style="padding: 4px;color:white;top: -45px;position: relative;")
