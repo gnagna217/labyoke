@@ -27,7 +27,7 @@
     "search.catalogdescription": "Commencer votre recherche en entrant le <span class='labColor'>Numéro de Catalogue</span>. Vous pouvez aussi le séléctioner.",
     "search.searchholder" : "Rechercher un Réactif...",
     "search.catalogholder" : "Rechercher un Numéro de Catalogue...",
-    "search.results.text" : "Commande: ",
+    "search.results.text" : "Recherche: ",
     "search.buttoncatalog" : "Recherche Catalogue",
     "search.buttonreagent": "Recherche Réactif",
     "search.resultstitle": "Ces Chercheurs et Laboratoires sont à jour pour votre",
