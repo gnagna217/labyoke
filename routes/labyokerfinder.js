@@ -98,9 +98,10 @@ LabyokerInit = function(email, mylab) {
 	this.mylab = mylab;
 };
 
-LabYokeSearch = function(searchText, email) {
+LabYokeSearch = function(searchText, email, searchType) {
 	this.searchText = searchText;
 	this.email = email;
+	this.searchType = searchType;
 };
 
 LabYokeUploader = function(jsonResults) {
@@ -1664,10 +1665,18 @@ LabYokerGetOrder.prototype.getorders = function(callback) {
 LabYokeSearch.prototype.search = function(callback) {
 	var results = [];
 	console.log("searchText: " + this.searchText);
-	var query = client
-			.query("SELECT * FROM vm2016_agentsshare a, vm2016_users b where a.email = b.email and (lower(a.agent) like lower('%"
-					+ this.searchText + "%') or lower(a.catalognumber) like lower('%"
+	console.log("searchType: " + this.searchType);
+	var query;
+	if(this.searchType == "catalog") {
+		query = client
+			.query("SELECT * FROM vm2016_agentsshare a, vm2016_users b where a.email = b.email and (lower(a.catalognumber) like lower('%"
 					+ this.searchText + "%')) and a.insufficient = 1 and a.email != '" + this.email+ "' and (b.disable <> 0 or b.disable is null) order by a.agent");
+	} else {
+		query = client
+			.query("SELECT * FROM vm2016_agentsshare a, vm2016_users b where a.email = b.email and (lower(a.agent) like lower('%"
+					+ this.searchText + "%')) and a.insufficient = 1 and a.email != '" + this.email+ "' and (b.disable <> 0 or b.disable is null) order by a.agent");
+
+	}
 	query.on("row", function(row, result) {
 		result.addRow(row);
 	});

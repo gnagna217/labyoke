@@ -397,7 +397,7 @@ module.exports = function(router) {
 		res.setLocale(req.cookies.i18n);
 		console.log("getsearch - userlang: " + req.session.userlang);
 		if (req.session.user) {
-			var labYokeSearch = new LabYokeSearch("",req.session.email);
+			var labYokeSearch = new LabYokeSearch("",req.session.email,"");
 			labYokeSearch.findagents(function(error, results) {			
 				if (results != null && results.length > 0){
 					res.render('search', {userlang:req.session.userlang,lang:req.cookies.i18n, i18n:res, mylab: req.session.lab,ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, labyokersurname : req.session.surname, isLoggedInAdmin: req.session.admin, agentsResults : results, loggedIn : true, title: 'Reagent Search'});
@@ -1247,7 +1247,7 @@ totalshares = t[0].counting;
 			res.setLocale(req.cookies.i18n);
 			var searchText = req.body.searchText;
 			var searchType = req.body.searchType;
-			var labYokeSearch = new LabYokeSearch(searchText, req.session.email);
+			var labYokeSearch = new LabYokeSearch(searchText, req.session.email, searchType);
 			var messageStr = "";
 			console.log("search - userlang: " + req.session.userlang);
             console.log("search - searchType: " + searchType);
