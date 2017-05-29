@@ -1278,7 +1278,7 @@ totalshares = t[0].counting;
 		if (req.session.user) {
 			var searchText = req.body.searchTextCatalog;
 			var searchType = req.body.searchType;
-			var labYokeSearch = new LabYokeSearch(searchText, req.session.email);
+			var labYokeSearch = new LabYokeSearch(searchText, req.session.email, searchType);
 			var messageStr = "";
 			labYokeSearch.search(function(error, results) {
 				console.log("results " + results[0].length);
