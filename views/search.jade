@@ -41,7 +41,7 @@ block content
             div(class="checking")
           div(style="/*float:right;*/", class="margincatalogradio")
             input(type="radio" name="search" value="catalogsearch" id="catalogradio" style="margin-left: 15px;")
-            label(for="catalogradio", style="float: right;", class="catalogradio")
+            label(for="catalogradio", style="float: right;margin-right: 5px;", class="catalogradio")
               span #{i18n.__("search.radio.catalog")}
             div(class="checkingcatalog")
         div(class="keysearch", style="display:none", id="keysearch")
@@ -91,7 +91,7 @@ block content
                         div(class="buttons positionbuttons", style="display: block; text-align: center;")
                             button(class="btn " + classButtonCatalog + " btn-lg btn-block btnsearch" type='submit' style="margin: 0 auto;") #{i18n.__("search.buttoncatalog")}
                             img(src="images/yoke6.png", alt="The Search", title="Search", style="border-width:0px; width: 35px; margin-top: -99px; margin-left: 335px;", class="desktabonly")
-                    div(class="searchcatalogbar desktabonly")
+                    //div(class="searchcatalogbar desktabonly")
         script.
           console.log("catalogradio: " + "#{catalogradio}");
           console.log("searchradio: " + "#{searchradio}");

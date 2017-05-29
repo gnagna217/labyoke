@@ -534,11 +534,10 @@ label{
   border-radius: 100%;
     height: 30px;
     width: 30px;
-    right: 25px;
+    left: 100%;
     /*top: 31px;
     right: 15px;
     margin-top: -35px;*/
-    margin-left: 106%;
     z-index: 1;
     transition: border .25s linear;
     -webkit-transition: border .25s linear;
