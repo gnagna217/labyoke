@@ -22,6 +22,30 @@
     display:none;
 }
 
+#qtyComp{
+    display:none;
+}
+
+#monthComp{
+display:none;
+}
+
+#labsComp{
+display:none;
+}
+
+#sharesVenn{
+display:none;
+}
+
+#sharesAll{
+display:none;
+}
+
+#monthAll{
+    display:none;
+}
+
 select::-ms-expand {
     display: none;
 }
