@@ -14,8 +14,8 @@
 .checkboxThree {
     width: 120px;
     height: 40px;
-    background: #333;
-    margin: 20px 60px;
+    /*background: #333;
+    margin: 20px 60px;*/
 
     border-radius: 50px;
     position: relative;
@@ -27,7 +27,7 @@
     top: 12px;
     left: 13px;
     height: 2px;
-    color: #26ca28;
+    color: #8a6d3b;
     font-size: 16px;
 }
 .checkboxThree:after {
@@ -51,7 +51,7 @@
     top: 9px;
     z-index: 1;
     left: 12px;
-    background: #ddd;
+    background: #8a6d3b;
 }
 
 /**
