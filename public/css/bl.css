@@ -12,38 +12,40 @@
 
 
 .checkboxThree {
-    width: 130px;
-    height: 40px;
+    width: 60px;
+    height: 20px;
     /*background: #333;
     margin: 20px 60px;*/
-    background: rgba(0, 0, 0, .075);
-
+    background: rgba(255,255,255,0.9);
     border-radius: 50px;
     position: relative;
+    border-color: #8a6d3b;
+    border-style: solid;
+    border-width: thin;
 }
 
 .checkboxThree:before {
     content: 'On';
     position: absolute;
-    top: 12px;
-    left: 13px;
+    top: 3px;
+    left: 10px;
     height: 2px;
     color: #3d9dcb;
-    font-size: 16px;
+    font-size: 10px;
 }
 .checkboxThree:after {
     content: 'Off';
     position: absolute;
-    top: 12px;
-    left: 84px;
+    top: 3px;
+    left: 39px;
     height: 2px;
     color: #111;
-    font-size: 16px;
+    font-size: 10px;
 }
 .checkboxThree label {
     display: block;
-    width: 52px;
-    height: 22px;
+    width: 19px;
+    height: 11px;
     border-radius: 50px;
 
     transition: all .5s ease;
@@ -51,7 +53,7 @@
     position: absolute;
     top: 9px;
     z-index: 1;
-    left: 6px;
+    left: 2px;
     background: #8a6d3b;
 }
 
@@ -59,8 +61,12 @@
  * Create the checkbox event for the label
  */
 .checkboxThree input[type=checkbox]:checked + label {
-    left: 60px;
+    left: 40px;
     background: #3d9dcb;
+}
+#checkboxThreeInput{
+position: absolute;
+  left: -9999px;
 }
 
 
