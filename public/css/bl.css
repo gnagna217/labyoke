@@ -19,7 +19,7 @@
     background: rgba(255,255,255,0.9);
     border-radius: 50px;
     position: relative;
-    border-color: #8a6d3b;
+    border-color: rgba(138, 109, 59, 0.64);
     border-style: solid;
     border-width: thin;
 }
