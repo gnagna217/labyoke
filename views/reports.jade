@@ -159,7 +159,7 @@ block content
 							span(class="fa fa-calendar" style="top: 23px;position: relative;float: right;color: #3d9dcb;")
 							input(name="reportDateToMoney" style="margin-left: 40px;margin-top: -13px;margin-bottom:10px;margin-top: -13px;" type="text" id="reportDateToMoney" class="form-control")
 
-							label(style="width: 100%;font-weight: bold;margin-top:10px;")!= i18n.__("reports.money.lab.label") + dept + "</span>"
+							label(style="width: 100%;font-weight: bold;margin-top:10px;margin-bottom: 0px;")!= i18n.__("reports.money.lab.label") + dept + "</span>:"
 							span(class="fa fa-sort" style="color: #8a6d3b; float: right; top: 25px; left: -10px; position: relative; font-size: 14pt; ")
 							select(name="reportLabMoney" type="text" id="reportLabMoney" class="form-control" style="border-color:#3d9dcb;margin-bottom:10px" placeholder=i18n.__("reports.money.labselect"))
 								option(value="all")=i18n.__("reports.money.lab.option")
@@ -284,7 +284,7 @@ block content
 							span(class="fa fa-calendar" style="top: 23px;position: relative;float: right;color: #3d9dcb;")
 							input(name="reportDateToOrders" style="margin-left: 40px;margin-bottom:10px; margin-top: -13px;" type="text" id="reportDateToOrders" class="form-control")
 							
-							label(style="width: 100%;font-weight: bold;margin-top:10px;")!= i18n.__("reports.orders.lab.label") + dept + "</span>"
+							label(style="width: 100%;font-weight: bold;margin-top:10px;margin-bottom: 0px;")!= i18n.__("reports.orders.lab.label") + dept + "</span>:"
 							span(class="fa fa-sort" style="color: #8a6d3b; float: right; top: 25px; left: -10px; position: relative; font-size: 14pt; ")
 							select(name="reportLabOrders" type="text" id="reportLabOrders" class="form-control" style="border-color:#3d9dcb;margin-bottom:10px" placeholder=i18n.__("reports.orders.labselect"))
 								option(value="all")= i18n.__("reports.orders.lab.option")
@@ -540,7 +540,7 @@ block content
 				div
 					form(action="reportInsuff", method="post")
 						div(class="buttonss")
-							label(style="width: 100%;font-weight: bold;margin-top:10px;")!= i18n.__("reports.insuff.lab.label") + dept + "</span>"
+							label(style="width: 100%;font-weight: bold;margin-top:10px;margin-bottom: 0px;")!= i18n.__("reports.insuff.lab.label") + dept + "</span>:"
 							span(class="fa fa-sort" style="color: #8a6d3b; float: right; top: 25px; left: -10px; position: relative; font-size: 14pt; ")
 							select(name="reportLabInsuff" type="text" id="reportLabInsuff" class="form-control" style="border-color:#3d9dcb;margin-bottom:10px" placeholder=i18n.__("reports.insuff.labselect"))
 								option(value="all")= i18n.__("reports.insuff.lab.option")

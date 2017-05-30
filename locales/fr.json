@@ -179,7 +179,7 @@
     "reports.orders.message.successorders": "Parfait! Votre document sur TOUTES les commandes a été automatiquement téléchargé sur votre ordinateur. Nous ne sommes pas encore en mesure de télécharger les rapports sur un téléphone portable.",
     "reports.orders.datefrom": "De",
     "reports.orders.dateto": "À",
-    "reports.orders.lab.label": "Laboratoire de <span class='labColor'>",
+    "reports.orders.lab.label": "Sélectionner Lab dans <span class='labColor'>",
     "reports.orders.labselect": "Laboratoire",
     "reports.orders.lab.option": "tous",
     "reports.orders.button": "Générer Commandes",

@@ -178,7 +178,7 @@
     "reports.orders.message.successorders": "Success! Your report has been generated for ALL orders and automatically downloaded on your computer if you are logged in on a desktop/laptop.",
     "reports.orders.datefrom": "From",
     "reports.orders.dateto": "To",
-    "reports.orders.lab.label": "Lab in <span class='labColor'>",
+    "reports.orders.lab.label": "Select Lab in <span class='labColor'>",
     "reports.orders.labselect": "Lab",
     "reports.orders.lab.option": "all",
     "reports.orders.button": "Get Orders",
