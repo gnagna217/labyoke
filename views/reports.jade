@@ -551,16 +551,12 @@ block content
 										option(value=lab) #{lab}
 							label(style="width: 100px;font-weight: bold;margin-top:10px;")= i18n.__("reports.insuff.show")
 							br
-							div
+							div(style="width:10%; position:relative; float:left;")
 								label(style="width: 60px;font-weight: bold;")= i18n.__("reports.insuff.vendor")
 								div(class="checkboxThree")
 									input(type="checkbox" name="reportVendorInsuff" id="reportVendorInsuff" value="vendor")
 									label(for="reportVendorInsuff")
-							div	
-								label(style="width: 75px;font-weight: bold;")= i18n.__("reports.insuff.catalog")
-								div(class="checkboxThree")
-									input(type="checkbox" name="reportCatalogInsuff" id="reportCatalogInsuff" value="catalogNumber")
-									label(for="reportCatalogInsuff")
+							
 							div(style="max-width:100%; margin-top: 40px;")
 								button.btn.btn-success.btn-lg.btn-block(type="submit",value="Report",name="submit", style="max-width: 85%;width: 85%;")= i18n.__("reports.insuff.button")
 								img(src="images/logo_one_bottle_R_3.png", alt="The Lab", title="Lab", class="reportbutton")
