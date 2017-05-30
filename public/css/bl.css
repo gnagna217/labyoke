@@ -63,6 +63,10 @@
 .checkboxThree input[type=checkbox]:checked + label {
     left: 30px;
     background: #3d9dcb;
+
+    .checkboxThree {
+        border-color:#3d9dcb;
+    }
 }
 #checkboxThreeInput{
 position: absolute;
