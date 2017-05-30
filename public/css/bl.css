@@ -74,6 +74,16 @@ position: absolute;
   left: -9999px;  
 }
 
+#reportVendorMoney{
+  position: absolute;
+  left: -9999px;  
+}
+
+#reportCatalogMoney{
+  position: absolute;
+  left: -9999px;  
+}
+
 
 
 
