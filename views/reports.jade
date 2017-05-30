@@ -161,16 +161,15 @@ block content
 
 							label(style="width: 100%;font-weight: bold;margin-top:10px;margin-bottom: 0px;")!= i18n.__("reports.money.lab.label") + dept + "</span>:"
 							span(class="fa fa-sort" style="color: #8a6d3b; float: right; top: 25px; left: -10px; position: relative; font-size: 14pt; ")
-							select(name="reportLabMoney" type="text" id="reportLabMoney" class="form-control" style="border-color:#3d9dcb;margin-bottom:10px" placeholder=i18n.__("reports.money.labselect"))
+							select(name="reportLabMoney" type="text" id="reportLabMoney" class="form-control" style="border-color:#3d9dcb;margin-bottom:20px" placeholder=i18n.__("reports.money.labselect"))
 								option(value="all")=i18n.__("reports.money.lab.option")
 								if(categories != undefined)
 									- var ob = categories
 									- for(var prop in ob)
 										- var lab = ob[prop].labname
 										option(value=lab) #{lab}
-
-							label(style="width: 100px;font-weight: bold;margin-top:10px;")=i18n.__("reports.money.show")
-							br
+							div(class="reportlabelwidth")
+								label(style="width: 100px;font-weight: bold;margin-top:10px;")=i18n.__("reports.money.show")
 							div(class="reportlabelwidth")
 								label(for="reportAgentMoney", style="width: 65px;font-weight: bold;")=i18n.__("reports.money.reagent")
 								div(class="checkboxThree")
@@ -189,7 +188,7 @@ block content
 									input(type="checkbox" name="reportCatalogMoney" id="reportCatalogMoney" value="catalogNumber")
 									label(class="labelcheck",for="reportCatalogMoney")
 							//input(type="checkbox" name="reportCatalogMoney" id="reportCatalogMoney" value="catalogNumber" style="margin-top: -13px;")
-							div(style="max-width:100%; margin-top: 65px;margin-bottom:10px")
+							div(style="max-width:100%; margin-top: 90px;margin-bottom:10px")
 								button.btn.btn-success.btn-lg.btn-block(type="submit",value="Report",name="submit", style="max-width: 85%;width: 85%;")= i18n.__("reports.money.button")
 								img(src="images/logo_one_bottle_L_3.png", alt="The Lab", title="Lab", class="reportbutton")
 						if(resultsMoney != null && resultsMoney !="")
@@ -542,15 +541,15 @@ block content
 						div(class="buttonss")
 							label(style="width: 100%;font-weight: bold;margin-top:10px;margin-bottom: 0px;")!= i18n.__("reports.insuff.lab.label") + dept + "</span>:"
 							span(class="fa fa-sort" style="color: #8a6d3b; float: right; top: 25px; left: -10px; position: relative; font-size: 14pt; ")
-							select(name="reportLabInsuff" type="text" id="reportLabInsuff" class="form-control" style="border-color:#3d9dcb;margin-bottom:10px" placeholder=i18n.__("reports.insuff.labselect"))
+							select(name="reportLabInsuff" type="text" id="reportLabInsuff" class="form-control" style="border-color:#3d9dcb;margin-bottom:20px" placeholder=i18n.__("reports.insuff.labselect"))
 								option(value="all")= i18n.__("reports.insuff.lab.option")
 								if(categories != undefined)
 									- var ob = categories
 									- for(var prop in ob)
 										- var lab = ob[prop].labname
 										option(value=lab) #{lab}
-							label(style="width: 100px;font-weight: bold;margin-top:10px;")= i18n.__("reports.insuff.show")
-							br
+							div(class="reportlabelwidth")
+								label(style="width: 100px;font-weight: bold;margin-top:10px;")= i18n.__("reports.insuff.show")
 							div(class="reportlabelwidth")
 								label(for="reportVendorInsuff",style="width: 60px;font-weight: bold;")= i18n.__("reports.insuff.vendor")
 								div(class="checkboxThree")
@@ -561,7 +560,7 @@ block content
 								div(class="checkboxThree")
 									input(type="checkbox" name="reportCatalogInsuff" id="reportCatalogInsuff" value="catalogNumber")
 									label(class="labelcheck",for="reportCatalogInsuff")
-							div(style="max-width:100%; margin-top: 65px;margin-bottom:10px")
+							div(style="max-width:100%; margin-top: 90px;margin-bottom:10px")
 								button.btn.btn-success.btn-lg.btn-block(type="submit",value="Report",name="submit", style="max-width: 85%;width: 85%;")= i18n.__("reports.insuff.button")
 								img(src="images/logo_one_bottle_R_3.png", alt="The Lab", title="Lab", class="reportbutton")
 						if(resultsInsuff != null && resultsInsuff !="")
