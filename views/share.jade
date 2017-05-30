@@ -109,7 +109,7 @@ block content
 									}
 									});
 								});
-				div(style="background-color: #3d9dcb; height: 1px; margin-bottom: 30px; margin-top: 30px;")
+				div(class="threepointssep")
 			if(myshares != "")
 				h4= i18n.__("shares.none.title")
 				p!= i18n.__("shares.none.subtitle")
@@ -270,7 +270,7 @@ block content
 										});
 								});
 				script="$(window).scrollTop($('#uploadForm').offset().top).scrollLeft($('#uploadForm').offset().left);"
-			div(style="background-color: #3d9dcb; height: 1px; margin-bottom: 0px; margin-top: 30px;width: 96%;" + nobar)
+			div(style=nobar, class="threepointssep")
 		
 		div(style="float:right;", class="share-container " + adjust + " adjustpaddingrightandwidth")
 			script(type="text/javascript" src="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.js")

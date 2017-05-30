@@ -32,6 +32,23 @@
     background-color: #3d9dcb;
 }
 
+.threepointssep{
+    display: block;
+    position: relative;
+    top: 5px;
+    content: '';
+    bottom: 20px;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    background: #3d9dcb;
+    box-shadow: 30px 0 #2072a7, -30px 0 #2072a7;
+    background-color: #3d9dcb;
+}
+
 .checkboxThree {
     width: 63px;
     height: 25px;
