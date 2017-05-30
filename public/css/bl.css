@@ -51,7 +51,7 @@
     transition: all .5s ease;
     cursor: pointer;
     position: absolute;
-    top: 9px;
+    top: 3px;
     z-index: 1;
     left: 2px;
     background: #8a6d3b;
@@ -61,7 +61,7 @@
  * Create the checkbox event for the label
  */
 .checkboxThree input[type=checkbox]:checked + label {
-    left: 40px;
+    left: 30px;
     background: #3d9dcb;
 }
 #checkboxThreeInput{
