@@ -168,6 +168,10 @@ block content
 									- for(var prop in ob)
 										- var lab = ob[prop].labname
 										option(value=lab) #{lab}
+							div(class="checkboxThree")
+								input(type="checkbox" value="1" id="checkboxThreeInput" name="")
+								label(for="checkboxThreeInput")
+
 							label(style="width: 100px;font-weight: bold;margin-top:10px;")=i18n.__("reports.money.show")
 							br
 							label(style="width: 65px;font-weight: bold;")=i18n.__("reports.money.reagent")
