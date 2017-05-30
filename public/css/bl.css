@@ -28,19 +28,21 @@
     content: 'On';
     position: absolute;
     top: 3px;
-    left: 10px;
+    left: 8px;
     height: 2px;
     color: #3d9dcb;
     font-size: 10px;
+    font-weight:bold;
 }
 .checkboxThree:after {
     content: 'Off';
     position: absolute;
     top: 3px;
-    left: 39px;
+    left: 36px;
     height: 2px;
     color: #8a6d3b;
     font-size: 10px;
+    font-weight:bold;
 }
 .checkboxThree label {
     display: block;
@@ -53,7 +55,7 @@
     position: absolute;
     top: 3px;
     z-index: 1;
-    left: 2px;
+    left: 0px;
     background: #8a6d3b;
 }
 
