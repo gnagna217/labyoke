@@ -3,9 +3,9 @@ extends layout
 block content
 	- var shadow = ""
 	- var nobar = ""
-	- if(doing == "upload")
-		- var nobar = "display:none;"
-		- shadow = "uploadh"
+	//- if(doing == "upload")
+		//- var nobar = "display:none;"
+		//- shadow = "uploadh"
 	- var adjust = "adjustpadding"
 	- var filteroutput2 = report_sharesbycategory.filter(function(x){console.log("filter2: " + x.insuff); return (x.insuff == 1)});
 	div(id="langText", style="display:none")!= lang
@@ -794,6 +794,16 @@ block content
 		span(class="desktabonly", id="checkdisplay")
 		script.
 			$( document ).ready(function() {
+				$('body').click(function() {
+					// jQuery selector to get an element
+					var query = $('#focusadmin');
+					// check if element is Visible
+					var isVisible = query.is(':visible');
+					if (isVisible === true) {
+						console.log("hide admin focus");
+						query.hide();
+					}
+				});
 			console.log( "share document loaded" );
 				if ($("#checkdisplay").css("display") == "none" ){
 					$('.slide-out-tip-div').hide();
@@ -804,5 +814,6 @@ block content
 				$('#sharesVenn').show();
 				$('#sharesAll').show();
 				$('#monthAll').show();
-			});	
-		img(src="/images/arrowhand1.png", style="display:none")			
+			});
+		- if(doing == "upload")
+			img(src="/images/arrowhand1.png", id="focusadmin", style="width: 49%;position: relative;top: -538px;left: -111px;")			
