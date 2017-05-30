@@ -108,9 +108,9 @@ block content
                                   };
         - // if(!resultsAccount || resultsAccount == undefined)
           div
-            span!=adminIntro + " <span id='showteam' class='labColor' style='cursor:pointer;font-weight:bold'><div class='buttons'><button type='submit' class='btn btn-success btn-lg btn-block' id='teamTitle'>" + i18n.__("account.button") + "</button></div></span>"
+            span!=adminIntro + " <span id='showteam' class='labColor' style='font-weight:bold'><div class='buttons'><button type='submit' class='btn btn-success btn-lg btn-block' id='teamTitle'>" + i18n.__("account.button") + "</button></div></span>"
             script.
-              $('#showteam').click(function() {
+              $('#teamTitle').click(function() {
                   if($('#team').is(":visible")){
                     $('.accountlogo').show();
                     $('#team').hide();
