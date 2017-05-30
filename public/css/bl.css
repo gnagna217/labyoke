@@ -59,6 +59,12 @@
     background: #8a6d3b;
 }
 
+.reportlabelwidth{
+    width:10%;
+    position:relative; 
+    float:left;
+}
+
 /**
  * Create the checkbox event for the label
  */
@@ -2149,6 +2155,9 @@ input::-webkit-inner-spin-button {
 }
 
 @media (max-width: 767px){
+.reportlabelwidth{
+    width:20%;
+}
 .accountlang{
     left: 31px;
 }
@@ -2529,6 +2538,9 @@ span.num.greatherthanninetynine {
 }
 
  @media (max-width: 440px) {
+.reportlabelwidth{
+    width:25%;
+}
 .searchradios{
     width: 100%;
 }
