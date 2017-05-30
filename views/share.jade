@@ -193,26 +193,26 @@ block content
 						img(src="/images/yoke5.png", alt="The Lab", title="Lab", style="border-width:0px; width: 35px; margin-top: -67px; margin-left: 300px;")
 			if(nosuccess == "databaserror")
 				div
-					div(id="uploaderror", class="table-responsive alert alert-danger")
+					div(id="uploaderror", class="table-responsive alert alert-danger alertshadow")
 						span(style="text-align: center")
 							h3(style="padding-bottom: 20px;")= i18n.__("shares.admin.error1")
 				script="$(window).scrollTop($('#uploadForm').offset().top).scrollLeft($('#uploadForm').offset().left);"
 			if(nosuccess == "nofile")
 				div
-					div(id="uploaderror", class="table-responsive alert alert-danger")
+					div(id="uploaderror", class="table-responsive alert alert-danger alertshadow")
 						span(style="text-align: center")
 							h3(style="padding-bottom: 20px;")= i18n.__("shares.admin.error2")
 				script="$(window).scrollTop($('#uploadForm').offset().top).scrollLeft($('#uploadForm').offset().left);"
 			if(nosuccess == "nodata")
 				div
-					div(id="uploaderror", class="table-responsive alert alert-danger")
+					div(id="uploaderror", class="table-responsive alert alert-danger alertshadow")
 						span(style="text-align: center")
 							h3(style="padding-bottom: 20px;")= i18n.__("shares.admin.error3")
 								span(style="color: #3d9dcb;")=" " + spreadname
 				script="$(window).scrollTop($('#uploadForm').offset().top).scrollLeft($('#uploadForm').offset().left);"
 			if(nosuccess == "generic")
 				div
-					div(id="uploaderror", class="table-responsive alert alert-danger")
+					div(id="uploaderror", class="table-responsive alert alert-danger alertshadow")
 						span(style="text-align: center")
 							h3(style="padding-bottom: 20px;")= i18n.__("shares.admin.error4")
 				script="$(window).scrollTop($('#uploadForm').offset().top).scrollLeft($('#uploadForm').offset().left);"

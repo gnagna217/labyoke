@@ -54,7 +54,7 @@ block content
             div(id="ctl00_Div2" class="row")
                 div
                     if message
-                        div(class="alert alert-danger messagesearch")!= message
+                        div(class="alert alert-danger messagesearch alertshadow")!= message
                     form(action="/search" method="post" style="padding-left: 15%; padding-right: 15%; display: block; text-align: center;")
                         div(class="textentry")
                             input(type="hidden" name="searchType" value="key")
@@ -79,7 +79,7 @@ block content
             div(id="ctl00_Div2" class="row")
                 div
                     if messageCatalog
-                        div(class="alert alert-danger messagesearch")!= messageCatalog
+                        div(class="alert alert-danger messagesearch alertshadow")!= messageCatalog
                     form(action="/searchCatalog" method="post" style="padding-left: 15%; padding-right: 15%; display: block; text-align: center;")
                         div(class="textentry")
                             input(type="hidden" name="searchType" value="catalog")
@@ -172,7 +172,7 @@ block content
 
         if email != undefined
           div(id="ordered",style="float:left;width: 100%;margin-top: 20px;")
-            div(class="alert alert-success")
+            div(class="alert alert-success alertshadow")
                 a(href="#", class="close", data-dismiss="alert", aria-label="close", title="close")="x"
                 h4= i18n.__("orders.success.title")
                   span(style="color: #3d9dcb;")=" " + order_location
