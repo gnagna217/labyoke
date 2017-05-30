@@ -84,6 +84,16 @@ position: absolute;
   left: -9999px;  
 }
 
+#reportVendorInsuff{
+    position: absolute;
+    left: -9999px;  
+}
+
+#reportCatalogInsuff{
+    position: absolute;
+    left: -9999px;  
+}
+
 
 
 
