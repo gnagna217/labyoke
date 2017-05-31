@@ -3,9 +3,12 @@ extends layout
 block content
 	- var shadow = ""
 	- var nobar = ""
+	- fadesections = ""
 	- if(doing == "upload")
 		- var nobar = "display:none;"
-		- shadow = "uploadh"
+		//- shadow = "uploadh"
+		- fadesections = "fadesections"
+
 	- var adjust = "adjustpadding"
 	- var filteroutput2 = report_sharesbycategory.filter(function(x){console.log("filter2: " + x.insuff); return (x.insuff == 1)});
 	div(id="langText", style="display:none")!= lang
@@ -16,7 +19,7 @@ block content
 			div!= i18n.__("shares.pop.subtitle")
 	div(class="shade" id="shade")
 	div(class="shade-light" id="shade-light")
-	div(class="container login marginbottom margintop container2")
+	div(class="container login marginbottom margintop container2 " + fadesections)
 		div(style="float: left;" class="share-container")
 			h1= i18n.__("shares.title")
 			if(myshares == "")
