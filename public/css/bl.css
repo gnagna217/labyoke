@@ -595,6 +595,10 @@ a {
     float: right;
 }
 
+.restrictreport{
+    width: 95%;
+}
+
 .reportbutton2{
     max-width: 50%;
     width: 85%;
@@ -1992,6 +1996,9 @@ input::-webkit-inner-spin-button {
 }
 
  @media (max-width: 992px) {
+.restrictreport{
+    width: 100%;
+}
 .centralize{
     width: 50%;
 }
