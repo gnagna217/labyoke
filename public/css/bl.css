@@ -592,6 +592,11 @@ a {
     border-width:0px;width: 35px;margin-top: -47px;margin-right: 4%;float:right;
 }
 
+.reportbutton2{
+    max-width: 50%;
+    width: 85%;
+    margin: 0 auto;
+}
 .accountlogo{
     position: absolute;width: 400px;top: 350px;left: 50%;
 }
@@ -2598,6 +2603,11 @@ span.num.greatherthanninetynine {
 }
 
  @media (max-width: 440px) {
+.reportbutton2{
+    max-width: 100%;
+    width: 100%;
+    margin: 0 auto;
+}
 .reportlabelwidth{
     width:25%;
 }
