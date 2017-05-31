@@ -27,6 +27,10 @@
   transition: opacity .5s ease-in-out;
 }
 
+.uploadtext{
+    font-weight: bold;
+    font-size: 25pt;
+}
 .hidefadesections{
 display: none;
 }

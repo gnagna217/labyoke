@@ -3,13 +3,15 @@ extends layout
 block content
 	- var shadow = ""
 	- var nobar = ""
-	- fadesections = ""
-	- hidefadesections = ""
+	- var fadesections = ""
+	- var hidefadesections = ""
+	- var uploadtext = ""
 	- if(doing == "upload")
 		//- var nobar = "display:none;"
 		- shadow = "uploadh"
 		- fadesections = "fadesections"
 		- hidefadesections = "hidefadesections"
+		- uploadtext = "uploadtext"
 
 	- var adjust = "adjustpadding"
 	- var filteroutput2 = report_sharesbycategory.filter(function(x){console.log("filter2: " + x.insuff); return (x.insuff == 1)});
@@ -186,7 +188,7 @@ block content
 				a(name="upload")
 				div(class="threepointsmobile", style=nobar)
 				h4(style="margin-top: 69px;")= i18n.__("shares.admin.title")
-				p= i18n.__("shares.admin.subtitle")
+				p(class=uploadtext)= i18n.__("shares.admin.subtitle")
 				form(id="uploadForm", enctype="multipart/form-data", action="share", method="post")
 					input(style="display:none", type="file" name="file",id="file", class="inputfile inputfile-1", data-multiple-caption="{count} files selected")
 					label(for="file", class=shadow style="width: 50%;text-align: center;border-radius: 6px;")
@@ -799,6 +801,7 @@ block content
 		span(class="desktabonly", id="checkdisplay")
 		script.
 			$( document ).ready(function() {
+				$( ".uploadtext" ).addClass( "bounce" );
 				$('body').click(function() {
 					// jQuery selector to get an element
 					var query = $('#focusadmin');
