@@ -588,8 +588,11 @@ a {
 .mobilenavlogo{
     width: 70.5px;
 }
-.reportbutton{
-    border-width:0px;width: 35px;margin-top: -47px;margin-right: 4%;float:right;
+.reportbutton{ 
+    border-width: 0px;
+    width: 35px;
+    margin-top: -3px;
+    float: right;
 }
 
 .reportbutton2{
