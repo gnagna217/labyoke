@@ -38,12 +38,12 @@ block content
             input(type="radio" name="search" value="keysearch" id="keyradio")
             label(for="keyradio", style="float: left;")
               span #{i18n.__("search.radio.key")}
-            div(class="checking")
+            div(class="checking shadow")
           div(style="/*float:right;*/", class="margincatalogradio")
             input(type="radio" name="search" value="catalogsearch" id="catalogradio" style="margin-left: 15px;")
             label(for="catalogradio", style="float: right;margin-right: 5px;", class="catalogradio")
               span #{i18n.__("search.radio.catalog")}
-            div(class="checkingcatalog")
+            div(class="checkingcatalog shadow")
         div(class="keysearch", style="display:none", id="keysearch")
             span(id="loopkey", class="fa fa-search colmenu desktabonly" style="position: relative;to;font-size: 15pt;top: -150px;margin: 0 auto;text-align: center;display: block;")
             - searchText = i18n.__("search.searchholder")
@@ -89,8 +89,8 @@ block content
                                 -for(var prop in ob2)
                                     option(value='#{ob2[prop].catalognumber}')
                         div(class="buttons positionbuttons", style="display: block; text-align: center;")
-                            button(class="btn " + classButtonCatalog + " btn-lg btn-block btnsearch" type='submit' style="margin: 0 auto;") #{i18n.__("search.buttoncatalog")}
-                            img(src="images/yoke6.png", alt="The Search", title="Search", style="border-width:0px; width: 35px; margin-top: -99px; margin-left: 335px;", class="desktabonly")
+                            button(class="btn " + classButtonCatalog + " btn-lg btn-block btnsearch shadow" type='submit' style="margin: 0 auto;") #{i18n.__("search.buttoncatalog")}
+                            img(src="images/yoke6.png", alt="The Search", title="Search", style="border-width:0px; width: 35px; margin-top: -99px; margin-left: 370px;", class="desktabonly")
                     //div(class="searchcatalogbar desktabonly")
         script.
           console.log("catalogradio: " + "#{catalogradio}");
