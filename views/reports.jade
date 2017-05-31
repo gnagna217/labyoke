@@ -190,7 +190,7 @@ block content
 							//input(type="checkbox" name="reportCatalogMoney" id="reportCatalogMoney" value="catalogNumber" style="margin-top: -13px;")
 							div(style="max-width:100%; margin-top: 90px;margin-bottom:10px")
 								img(src="images/logo_one_bottle_L_3.png", alt="The Lab", title="Lab", class="reportbutton")
-								button.btn.btn-success.btn-lg.btn-block(type="submit",value="Report",name="submit", style="max-width: 85%;width: 85%;")= i18n.__("reports.money.button")
+								button.btn.btn-success.btn-lg.btn-block.reportbutton2(type="submit",value="Report",name="submit", style="max-width: 85%;width: 85%;")= i18n.__("reports.money.button")
 						if(resultsMoney != null && resultsMoney !="")
 							script(type="text/javascript" src="/javascripts/jspdf.js")
 							script(type="text/javascript" src="/javascripts/FileSaver.js")
