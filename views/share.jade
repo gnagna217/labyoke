@@ -3,9 +3,9 @@ extends layout
 block content
 	- var shadow = ""
 	- var nobar = ""
-	//- if(doing == "upload")
-		//- var nobar = "display:none;"
-		//- shadow = "uploadh"
+	- if(doing == "upload")
+		- var nobar = "display:none;"
+		- shadow = "uploadh"
 	- var adjust = "adjustpadding"
 	- var filteroutput2 = report_sharesbycategory.filter(function(x){console.log("filter2: " + x.insuff); return (x.insuff == 1)});
 	div(id="langText", style="display:none")!= lang
@@ -815,5 +815,3 @@ block content
 				$('#sharesAll').show();
 				$('#monthAll').show();
 			});
-		- if(doing == "upload")
-			img(src="/images/arrowhand2.png", id="focusadmin", style="position: relative;top: -538px;left: -111px;")			
