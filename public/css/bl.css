@@ -2664,6 +2664,7 @@ span.num.greatherthanninetynine {
 }
 .reportbutton{
     margin-top: -47px;margin-right: 3%;
+    display:none;
 }
 .sun {
     position: relative;top: 70px; left: 0px; width: 40px; z-index: -1;
