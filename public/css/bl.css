@@ -36,7 +36,7 @@ box-shadow: 3px 3px 15px #666;
   
   /*Opacity*/
   zoom: 1;
-  filter: alpha(opacity=100);
+  filter: alpha(opacity=100) !important;
   opacity: 1;
 }
 
