@@ -181,7 +181,7 @@ block content
 									}
 										});
 								});
-		div(class="share-container adjustpadding adjustpaddingrightandwidth " + fadesections, style="float:right;")
+		div(class="share-container adjustpadding adjustpaddingrightandwidth", style="float:right;")
 			if(isLoggedInAdmin > 0)
 				a(name="upload")
 				div(class="threepointsmobile", style=nobar)
@@ -277,7 +277,7 @@ block content
 				script="$(window).scrollTop($('#uploadForm').offset().top).scrollLeft($('#uploadForm').offset().left);"
 			div(style=nobar, class="threepointssep")
 		
-		div(style="float:right;", class="share-container " + adjust + " adjustpaddingrightandwidth")
+		div(style="float:right;", class="share-container " + adjust + " adjustpaddingrightandwidth " + fadesections)
 			script(type="text/javascript" src="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.js")
 
 			h3= i18n.__("shares.chart.title")
