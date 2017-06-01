@@ -722,6 +722,9 @@ line.ct-point{
     padding-bottom: 20px !important;
     float: right;
     margin-right: 10px;
+    position: fixed;
+    bottom: 5px;
+    right: 0px;
 }
 
 .us{
@@ -2248,6 +2251,7 @@ input::-webkit-inner-spin-button {
     margin: 0 auto;
     text-align: center;
     margin-right: 0px;
+    right: 35%;
 }
 .resizebutton{
     width: 100%;
