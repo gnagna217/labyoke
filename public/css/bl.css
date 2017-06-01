@@ -1791,9 +1791,6 @@ input::-webkit-inner-spin-button {
 }
 
 @media (min-width: 767px) {
-.noshowmobile767{
-    display:none;
-}
 .navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form{
         background-color: rgba(138, 109, 59, 0.70) !important;
 }
@@ -2241,6 +2238,9 @@ input::-webkit-inner-spin-button {
 }
 
 @media (max-width: 767px){
+.noshowmobile767{
+    display:none;
+}
 .threepointsmobile{
     display: block;
     position: relative;
