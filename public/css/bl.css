@@ -40,8 +40,8 @@
 }
 
 .moveFromLeft {
-    -webkit-animation: moveFromLeft; /*.6s ease both*/
-    animation: moveFromLeft; /*.6s ease both;*/
+    -webkit-animation: moveFromLeft .3s ease both;
+    animation: moveFromLeft .3s ease both;
 }
 
 .alertshadow{
