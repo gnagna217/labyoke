@@ -75,6 +75,15 @@ block content
                         a(href="/register", style="z-index:10") #{i18n.__("login.registerLink")}
                     span(style="float:right;")
                         a(href="/forgot", style="z-index:10") #{i18n.__("login.forgotLink")}
+        div(class="help")
+           span
+             a(href="/login?lang=en")
+                img(src="images/en0.png", alt="English", title="English", class="enlogin")
+           a(href="/help" title="Help")
+            img(src="images/bouee3.png", alt="Help", title=i18n.__("login.helpLink"))
+           span
+             a(href="/login?lang=fr")
+                img(src="images/fr0.png", alt="Français", title="Français", class="frlogin")                
      - if(latestshares != null && latestshares != undefined)
         div(class="slide-out-div desktabonly lineheight", style="display:none;position: fixed;bottom: 6px;top:-75px;")
             a(class="handle" href="last-transactions", style="right: -60px;")!=Content
@@ -89,15 +98,6 @@ block content
                             span(class="test",style="color:#ddd")!= n + " "
                             - if(prop < 2)
                                 span(class="test2", style="color:white;")!="-|- "
-    div(class="help")
-       span
-         a(href="/login?lang=en")
-            img(src="images/en0.png", alt="English", title="English", class="enlogin")
-       a(href="/help" title="Help")
-        img(src="images/bouee3.png", alt="Help", title=i18n.__("login.helpLink"))
-       span
-         a(href="/login?lang=fr")
-            img(src="images/fr0.png", alt="Français", title="Français", class="frlogin")
     //script(type="text/javascript" src="/javascripts/assets/jquery.fittext.js")
     //script(type="text/javascript" src="/javascripts/assets/jquery.lettering.js")
     //script(type="text/javascript" src="/javascripts/jquery.textillate.js")
