@@ -2865,18 +2865,18 @@ span.num.greatherthanninetynine {
 }
 }
 
-
+@media (max-width: 360px){
+.menumyshares{
+    width:58.25%;
+}
+}
 
 @media (max-width: 342px){
 .reducefont{
     font-size:12px;
 }
 }
-@media (max-width: 340px){
-.menumyshares{
-    width:58.25%;
-}
-}
+
 
 .pastdate {
 	color:#460077;
