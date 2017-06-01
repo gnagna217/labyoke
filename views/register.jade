@@ -33,7 +33,7 @@ block content
                             span(class="fa fa-phone" style="top: 23px;position: relative;float: right;color: #3d9dcb;")
                             input(name="regtel" type="text" id="tel" class="form-control" placeholder=i18n.__("register.form.tel"))
                     div(class="buttons", id="regbutton1")
-                        button.btn.btn-success.btn-lg.btn-block(type='button',style='width:85%') #{i18n.__("register.form.button1")}
+                        button.btn.btn-success.btn-lg.btn-block.shadow(type='button',style='width:85%') #{i18n.__("register.form.button1")}
                         img(src="/images/add.png", alt="The Lab", title="Lab", style="border-width:0px; width: 50px; height:57px; margin-top: -45px; float: right;")
                 script.
                     $('#regbutton1').click(function() {
@@ -102,7 +102,7 @@ block content
                         input(name="regtel" type="hidden" id="regtel" value=tel)
                     div(class="buttons", id="regbutton2")
                         //input(type="submit" class="button" value="Register")
-                        button.btn.btn-success.btn-lg.btn-block(type='button',style='width:85%')= i18n.__("register.form2.button2")
+                        button.btn.btn-success.btn-lg.btn-block.shadow(type='button',style='width:85%')= i18n.__("register.form2.button2")
                         img(src="/images/add.png", alt="The Lab", title="Lab", style="border-width:0px; width: 50px; margin-top: -45px; float: right;")
                 script.
                     $('#regbutton2').click(function() {
