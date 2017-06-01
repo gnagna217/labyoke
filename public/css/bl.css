@@ -1791,6 +1791,9 @@ input::-webkit-inner-spin-button {
 }
 
 @media (min-width: 767px) {
+.noshowmobile767{
+    display:none;
+}
 .navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form{
         background-color: rgba(138, 109, 59, 0.70) !important;
 }
@@ -2642,9 +2645,6 @@ span.num.greatherthanninetynine {
 }
 
  @media (max-width: 440px) {
-.noshowmobile{
-    display:none;
-}
 .reportbutton2{
     max-width: 100%;
     width: 100%;
