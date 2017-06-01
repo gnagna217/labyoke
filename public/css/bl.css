@@ -719,12 +719,9 @@ line.ct-point{
     padding-bottom: 0 !important;
 }
 .help{
-
-    margin: 0 auto;
-    text-align: center;
     margin-bottom: 20px;
-    /* float: right; */
-
+    float: right;
+    margin-right: 10px;
 }
 
 .us{
@@ -2240,15 +2237,16 @@ input::-webkit-inner-spin-button {
 .floatleft{
     float:left;
 }
-.help{
+/*.help{
     width: 97%;
-}
+}*/
 }
 
 @media (max-width: 767px){
 .help{
-    float:right;
-    margin-right: 10px;
+    float:none;
+    margin: 0 auto;
+    text-align: center;
 }
 .resizebutton{
     width: 100%;
