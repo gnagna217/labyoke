@@ -2247,6 +2247,7 @@ input::-webkit-inner-spin-button {
     float:none;
     margin: 0 auto;
     text-align: center;
+    margin-right: 0px;
 }
 .resizebutton{
     width: 100%;
