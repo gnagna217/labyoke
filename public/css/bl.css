@@ -39,10 +39,7 @@
     from { -webkit-transform: translateX(-100%); transform: translateX(-100%); }
 }
 
-.moveFromLeft {
-    -webkit-animation: moveFromLeft .3s ease both;
-    animation: moveFromLeft .3s ease both;
-}
+
 
 .alertshadow{
     border: none; 
@@ -2281,6 +2278,10 @@ input::-webkit-inner-spin-button {
 }
 
 @media (max-width: 767px){
+.moveFromLeft {
+    -webkit-animation: moveFromLeft .3s ease both;
+    animation: moveFromLeft .3s ease both;
+}
 .help{
     float:none;
     margin: 0 auto;
