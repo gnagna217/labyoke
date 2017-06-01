@@ -32,9 +32,9 @@ block content
                         div(class="textentry")
                             span(class="fa fa-phone" style="top: 23px;position: relative;float: right;color: #3d9dcb;")
                             input(name="regtel" type="text" id="tel" class="form-control" placeholder=i18n.__("register.form.tel"))
-                    div(class="buttons", id="regbutton1", style="margin:0 auto;")
-                        button.btn.btn-success.btn-lg.btn-block.shadow(type='button',style='width:85%') #{i18n.__("register.form.button1")}
-                        img(src="/images/add.png", alt="The Lab", title="Lab", style="border-width:0px; width: 45px; height:57px; margin-top: -45px; float: right;", class="noshowmobile")
+                    div(class="buttons", id="regbutton1")
+                        button.btn.btn-success.btn-lg.btn-block.shadow(type='button',style='width:85%;margin:0 auto;') #{i18n.__("register.form.button1")}
+                        img(src="/images/add.png", alt="The Lab", title="Lab", style="border-width:0px; width: 45px; height:57px; margin-top: -45px; float: right;position:relative;left:25px;", class="noshowmobile")
                 script.
                     $('#regbutton1').click(function() {
                         console.log("regfirstname: " + $('#regfirstname').val());
@@ -100,10 +100,10 @@ block content
                         input(name="reglastname" type="hidden" id="reglastname" value=lastname)
                         input(name="regemail" type="hidden" id="regemail" value=email)
                         input(name="regtel" type="hidden" id="regtel" value=tel)
-                    div(class="buttons", id="regbutton2", style="margin:0 auto;")
+                    div(class="buttons", id="regbutton2")
                         //input(type="submit" class="button" value="Register")
-                        button.btn.btn-success.btn-lg.btn-block.shadow(type='button',style='width:85%')= i18n.__("register.form2.button2")
-                        img(src="/images/add.png", alt="The Lab", title="Lab", style="border-width:0px; width: 45px; margin-top: -45px; float: right;", class="noshowmobile")
+                        button.btn.btn-success.btn-lg.btn-block.shadow(type='button',style='width:85%;margin:0 auto;')= i18n.__("register.form2.button2")
+                        img(src="/images/add.png", alt="The Lab", title="Lab", style="border-width:0px; width: 45px; margin-top: -45px; float: right;position:relative;left:25px;", class="noshowmobile")
                 script.
                     $('#regbutton2').click(function() {
                         console.log("regverpass: " + $('#regverpass').val());
