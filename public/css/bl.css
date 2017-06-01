@@ -9,6 +9,20 @@
   -webkit-font-smoothing: antialiased;
 }
 
+@keyframes bounceIn {
+  0% {
+    transform: scale(0.1);
+    opacity: 0;
+  }
+  60% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
 @-webkit-keyframes moveToLeft {
     from { }
     to { -webkit-transform: translateX(-100%); }
@@ -18,9 +32,16 @@
     to { -webkit-transform: translateX(-100%); transform: translateX(-100%); }
 }
 
-.page-moveToLeftEasing {
-    -webkit-animation: moveToLeft .7s ease-in-out both;
-    animation: moveToLeft .7s ease-in-out both;
+@-webkit-keyframes moveFromLeft {
+    from { -webkit-transform: translateX(-100%); }
+}
+@keyframes moveFromLeft {
+    from { -webkit-transform: translateX(-100%); transform: translateX(-100%); }
+}
+
+.moveFromLeft {
+    -webkit-animation: moveFromLeft .6s ease both;
+    animation: moveFromLeft .6s ease both;
 }
 
 .alertshadow{
