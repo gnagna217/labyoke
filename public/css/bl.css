@@ -508,16 +508,18 @@ p{
 }
 
 .enlogin{
-    border-width: 0px;/*width: 50px;margin-top: -40px;margin-right: 90px;*/float: right;
+    /*border-width: 0px;width: 50px;margin-top: -40px;margin-right: 90px;float: right;
     width: 30px;
     margin-top: -30px;
-    margin-right: 90px;
+    margin-right: 90px;*/
+    margin-right: 5px;
 }
 .frlogin{
-    border-width: 0px;/*width: 50px;margin-top: -50px;margin-right: -30px;*/float: right;
+    /*border-width: 0px;width: 50px;margin-top: -50px;margin-right: -30px;float: right;
     width: 30px;
     margin-top: -35px;
-    margin-right: -10px;
+    margin-right: -10px;*/
+    margin-left: 5px;
 }
 
 
@@ -717,10 +719,12 @@ line.ct-point{
     padding-bottom: 0 !important;
 }
 .help{
-    padding-right: 40px;
-    position: fixed;
-    bottom: 25px;
-    width: 100%;
+
+    margin: 0 auto;
+    text-align: center;
+    margin-bottom: 20px;
+    /* float: right; */
+
 }
 
 .us{
@@ -2242,6 +2246,10 @@ input::-webkit-inner-spin-button {
 }
 
 @media (max-width: 767px){
+.help{
+    float:right;
+    margin-right: 10px;
+}
 .resizebutton{
     width: 100%;
 }
@@ -2454,7 +2462,7 @@ span.num.greatherthanninetynine {
     margin-top: -2px;
 }
 .help{
-    padding-right: 0px;
+    /*padding-right: 0px;*/
     /*width: 94%;*/
     /*margin-top: 0px;
     z-index: -4;*/
@@ -2733,10 +2741,10 @@ span.num.greatherthanninetynine {
 }
 
 .help{
-    padding-right: 0px;
-    /*width: initial !important;*/
+   /* padding-right: 0px;
+    width: initial !important;
     margin-left: 155px;
-    bottom: 20px;
+    bottom: 20px;*/
 }
 .searchcatalog{
     float:left;
@@ -2744,23 +2752,23 @@ span.num.greatherthanninetynine {
     /*width: 380px;*/
 }
 .enlogin{
-    border-width: 0px;
-    /*width: 50px;
+    /*border-width: 0px;
+    width: 50px;
     margin-top: -45px;
-    margin-left: -75px;*/
+    margin-left: -75px;
     width: 30px;
     margin-top: -30px;
     margin-left: -35px;
     position: relative;
-    float: left;
+    float: left;*/
 }
 
 .frlogin{
-    border-width: 0px;
+    /*border-width: 0px;
     float: right;
     width: 30px;
     margin-top: -35px;
-    margin-right: 5px;
+    margin-right: 5px;*/
 }
     .marginbottom{
     /*min-height: 450px;*/
@@ -2773,9 +2781,9 @@ span.num.greatherthanninetynine {
     width: 98%;
 }
     .help{
-    z-index: 9;
+    /*z-index: 9;*/
     /*width: 100px;*/
-    width: 30%;
+    /*width: 30%;*/
     /*left: 37%;*/
     }
 #checkname{
