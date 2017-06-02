@@ -3023,6 +3023,10 @@ span.num.greatherthanninetynine {
 .reportappmargin{
     margin-top: 80px !important;
 }
+
+.hideinapp{
+    display: none !important;
+}
 }
 
 
