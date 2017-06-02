@@ -2278,6 +2278,9 @@ input::-webkit-inner-spin-button {
 }
 
 @media (max-width: 767px){
+h1{
+    margin-top:40px;
+}
 .moveFromLeft {
     -webkit-animation: moveFromLeft .3s ease both;
     animation: moveFromLeft .3s ease both;
