@@ -821,7 +821,7 @@ line.ct-point{
     float: right;
     margin-right: 10px;
     position: fixed;
-    bottom: 5px;
+    bottom: 0px;
     right: 0px;
 }
 
