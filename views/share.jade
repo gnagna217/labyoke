@@ -1,11 +1,12 @@
 extends layout
 
 block content
-	div(id="pageloader")
-		div(class="spinner")
-			div(class="bounce1")
-			div(class="bounce2")
-			div(class="bounce3")
+	if !doing
+		div(id="pageloader")
+			div(class="spinner")
+				div(class="bounce1")
+				div(class="bounce2")
+				div(class="bounce3")
 	//- var shadow = ""
 	- var nobar = ""
 	- var fadesections = ""
