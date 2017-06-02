@@ -3027,6 +3027,11 @@ span.num.greatherthanninetynine {
 .hideinapp{
     display: none !important;
 }
+
+.reportlabelwidth {
+    width: 33%;
+}
+
 }
 
 
