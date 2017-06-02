@@ -3021,7 +3021,7 @@ span.num.greatherthanninetynine {
 }
 
 .reportappmargin{
-    margin-top: 100px;
+    margin-top: 100px !important;
 }
 }
 
