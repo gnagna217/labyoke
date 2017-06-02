@@ -12,8 +12,6 @@ block content
 	- var hidefadesections = ""
 	- var uploadtext = ""
 	- if(doing == "upload")
-		script="$(window).scrollTop($('#uploadadminhere').offset().top).scrollLeft($('#uploadadminhere').offset().left);"
-
 		//- var nobar = "display:none;"
 		//- shadow = "uploadh"
 		- fadesections = "fadesections"
@@ -191,8 +189,7 @@ block content
 										});
 								});
 		div(class="share-container adjustpadding adjustpaddingrightandwidth", style="float:right;")
-			div(id="uploadadminhere")
-				a(name="upload")
+			a(name="upload")
 			if(isLoggedInAdmin > 0)
 				div(class="threepointsmobile", style=nobar)
 				h4(style="margin-top: 69px;", class=uploadtext)= i18n.__("shares.admin.title")
@@ -830,7 +827,4 @@ block content
 				$('#sharesVenn').show();
 				$('#sharesAll').show();
 				$('#monthAll').show();
-
-				$(window).scrollTop($('#uploadadminhere').offset().top).scrollLeft($('#uploadadminhere').offset().left);
-
 			});
