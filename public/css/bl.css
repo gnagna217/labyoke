@@ -3007,6 +3007,15 @@ span.num.greatherthanninetynine {
 	font-size: 16px;
 }
 
+@media (max-width: 330px){
+.roundaccountmob{
+    left: 48%;
+}
+
+.searchmob{
+    left: 17%;
+}
+}
 
 
 
