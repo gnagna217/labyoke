@@ -9,6 +9,10 @@
   -webkit-font-smoothing: antialiased;
 }
 
+.fa{
+    background-color: transparent !important;
+}
+
 #pageloader{
     position: fixed;
     left: 0;
