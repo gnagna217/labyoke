@@ -4,6 +4,9 @@ block content
     - var catalogradio = searchformTextCatalog
     - var searchradio = searchformText
     - var searchradioType = searchType
+    - var slide = "moveFromLeft"
+    - if searchradioType != null && searchradioType != undefined
+      - slide = ""
     img(src="/images/yoke5.png" style="display:none;")
     img(src="/images/yoke6.png" style="display:none;") 
     img(src="/images/logo_one_bottle_L_2.png" style="display:none;") 
@@ -29,7 +32,7 @@ block content
     //if(searchResults == undefined || (searchResults != null && searchResults.length == 0)) 
     //  div(class="searchlogo")
     //    img(src="/images/logo_one_bottle_L.png", alt="The Yoke",  title="Yoke", class="searchlogoimg")
-    div(class="container login marginbottom positionings searchmargins container2 moveFromLeft")
+    div(class="container login marginbottom positionings searchmargins container2 " + slide)
         div(class="searchlogo")
           img(src="/images/logo_one_bottle_L_2.png", alt="The Yoke",  title="Yoke", class="searchlogoimg")
           img(src="/images/logo_one_bottle_R_2.png", alt="The Yoke",  title="Yoke", class="searchlogoimg")
