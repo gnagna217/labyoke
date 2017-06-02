@@ -11,7 +11,9 @@ block content
 	- var fadesections = ""
 	- var hidefadesections = ""
 	- var uploadtext = ""
+	- var slide = "moveFromLeft"
 	- if(doing == "upload")
+		- slide = ""
 		//- var nobar = "display:none;"
 		//- shadow = "uploadh"
 		- fadesections = "fadesections"
@@ -28,7 +30,7 @@ block content
 			div!= i18n.__("shares.pop.subtitle")
 	div(class="shade" id="shade")
 	div(class="shade-light" id="shade-light")
-	div(class="container login marginbottom margintop container2 moveFromLeft ")
+	div(class="container login marginbottom margintop container2 " + slide)
 		div(style="float: left;" class="share-container " + fadesections)
 			h1= i18n.__("shares.title")
 			if(myshares == "")

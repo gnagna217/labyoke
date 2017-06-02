@@ -228,6 +228,8 @@ html(lang='en')
        script(type="text/javascript" src="/javascripts/jquery.maskedinput.min.js")
        script(type="text/javascript" src="/javascripts/jsPDF-master/dist/jspdf.min.js")
        script(type="text/javascript" src="/javascripts/jsPDF-master/libs/html2pdf.js")
+     if (title=='Reports' || title=='Account' || title=='Register' || title=='About Us' || title=='Change Password' || title=='Forgot Password' || title=='Register' || title=='Help' || title=='Orders' || title=='Shares' || (title=='Search' && !searchradioType) )
+       script(type="text/javascript" src="/javascripts/spinner.js")
      //- if (title!='Forgot Password' && title!='Register' && title!='About Us' && title!='Help' && title!='Login' && title!='Change Password' && title != 'Home' && title != 'Pop' && title != 'Reagent Search' && title !='Search' && title !='Reports')
        //div(style="position: relative;width: 100%;text-align: center;z-index: -1;")
        //     img(src="/images/yoke4.png", alt="The Yoke", title="Yoke", class="yokelogofooter")
@@ -377,71 +379,5 @@ html(lang='en')
               console.log("navpl width: " + w);
               console.log("============================");
           });
-
-
-          ;(function(){ // Final page transition code
-         
-            var animation = false,
-            animationstring = 'animation',
-            keyframeprefix = '',
-            domPrefixes = 'Webkit Moz O ms Khtml'.split(' '),
-            pfx = '',
-            elm = document.createElement('div');
-             
-            if( elm.style.animationName !== undefined ) { animation = true; } 
-             
-            if( animation === false ) {
-                for( var i = 0; i < domPrefixes.length; i++ ) {
-                    if( elm.style[ domPrefixes[i] + 'AnimationName' ] !== undefined ) {
-                        pfx = domPrefixes[ i ];
-                        animationstring = pfx + 'Animation';
-                        keyframeprefix = '-' + pfx.toLowerCase() + '-';
-                        animation = true;
-                        break;
-                    }
-                }
-            }
-             
-            var minloadingtime = 100
-            var maxloadingtime = 3000
-             
-            var startTime = new Date()
-            var elapsedTime
-            var dismissonloadfunc, maxloadingtimer
-             
-            if (animation && document.documentElement && document.documentElement.classList){
-                document.documentElement.classList.add('hidescrollbar')
-                 
-                window.addEventListener('load', dismissonloadfunc = function(){ // when page loads
-                    clearTimeout(maxloadingtimer) // cancel dismissal of transition after maxloadingtime time
-                    elapsedTime = new Date() - startTime // get time elapsed once page has loaded
-                    var hidepageloadertimer = (elapsedTime > minloadingtime)? 0 : minloadingtime - elapsedTime
-                     
-                    setTimeout(function(){
-                        document.getElementById('pageloader').classList.add('dimissloader') // dismiss transition
-                    }, hidepageloadertimer)
-                     
-                    setTimeout(function(){
-                        document.documentElement.classList.remove('hidescrollbar')
-                    }, hidepageloadertimer + 100) // 100 is the duration of the fade out effect
-                 
-                }, false)
-                 
-                maxloadingtimer = setTimeout(function(){ // force dismissal of page transition after maxloadingtime time
-                    window.removeEventListener('load', dismissonloadfunc, false) // cancel onload event function call
-                        document.getElementById('pageloader').classList.add('dimissloader') // dismiss transition
-                     
-                    setTimeout(function(){
-                        document.documentElement.classList.remove('hidescrollbar')
-                    }, 100) // 100 is the duration of the fade out effect
-                }, maxloadingtime)
-             
-             
-            }
-            else{
-                document.getElementById('pageloader').style.display = 'none'
-            }
-         
-        })();
           
 
