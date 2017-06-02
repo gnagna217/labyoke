@@ -2768,6 +2768,9 @@ span.num.greatherthanninetynine {
 }
 
  @media (max-width: 440px) {
+.noshowmobile{
+    display:none;
+}
 .reportbutton2{
     max-width: 100%;
     width: 100%;
