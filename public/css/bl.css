@@ -17,6 +17,10 @@
     border-radius: 0px !important;
 }
 
+.dataTables_filter input{
+    border-radius: 0px !important;
+}
+
 table{
     width: 100% !important;
 }
