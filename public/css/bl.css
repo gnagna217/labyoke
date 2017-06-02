@@ -13,6 +13,10 @@
     background-color: transparent !important;
 }
 
+.form-control {
+    border-radius: 0px !important;
+}
+
 table{
     width: 100% !important;
 }
