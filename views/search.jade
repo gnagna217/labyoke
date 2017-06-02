@@ -1,12 +1,11 @@
 extends layout
 
 block content
-    if !searchradioType
-      div(id="pageloader")
-        div(class="spinner")
-          div(class="bounce1")
-          div(class="bounce2")
-          div(class="bounce3")
+    div(id="pageloader")
+      div(class="spinner")
+        div(class="bounce1")
+        div(class="bounce2")
+        div(class="bounce3")
     - var catalogradio = searchformTextCatalog
     - var searchradio = searchformText
     - var searchradioType = searchType
