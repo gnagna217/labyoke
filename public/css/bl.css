@@ -32,7 +32,7 @@
 .spinner > div {
     width: 18px;
     height: 18px;
-    background-color: #333;
+    background-color: #3d9dcb;
     border-radius: 100%;
     display: inline-block;
     -webkit-animation: sk-bouncedelay 1.4s infinite ease-in-out both;
@@ -57,6 +57,20 @@
     -webkit-transform: scale(1.0);
     transform: scale(1.0);
 }
+}
+
+#pageloader.dimissloader{
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 1s, visibility 0s 1s;
+}
+
+html.hidescrollbar{
+    overflow: hidden;
+}
+ 
+html.hidescrollbar body{
+    overflow: hidden;
 }
 
 
