@@ -2768,6 +2768,9 @@ span.num.greatherthanninetynine {
 }
 
  @media (max-width: 440px) {
+.teamaccountbuttonwidth{
+    width: 100%;
+}
 .noshowmobile{
     display:none;
 }
