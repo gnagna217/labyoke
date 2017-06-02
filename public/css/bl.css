@@ -13,6 +13,10 @@
     background-color: transparent !important;
 }
 
+table{
+    width: 100% !important;
+}
+
 #pageloader{
     position: fixed;
     left: 0;
