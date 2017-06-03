@@ -636,18 +636,30 @@ totalshares = t[0].counting;
 		var dateto = req.body.reportDateTo;
 		var category = req.body.reportCategory;
 		console.log("reportSomething " + req.body.reportDateFrom);
-		var labYokereporter = new LabYokeReporterShares(datefrom, dateto, req.session.lab, req.session.labs,res);
-		labYokereporter.reportShares(function(error, results) {
-			if(results != null){
-				console.log("res " + results);
-				if(results != ""){
-					res.render('reports', {lang:req.cookies.i18n, i18n:res,section: "shares", dept: req.session.dept, categories: req.session.categories, labs: req.session.labs, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, labyokersurname : req.session.surname, datefromShares: datefrom, datetoShares: dateto, title:'Reports',loggedIn : true, resultsShares: results, isLoggedInAdmin: req.session.admin, addMessageShares: "success"});
-				} else {
-					res.render('reports', {lang:req.cookies.i18n, i18n:res,section: "shares", dept: req.session.dept, categories: req.session.categories, labs: req.session.labs, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, labyokersurname : req.session.surname, datefromShares: datefrom, datetoShares: dateto, title:'Reports',loggedIn : true, isLoggedInAdmin: req.session.admin, addMessageShares: "failure"});
-				}
-				req.session.messages = null;
-			}
-		});
+
+        var verifyfrom = Date.parse(datefrom);
+        var verifyto = Date.parse(dateto);
+        var iserror = true;
+
+        if(verifyfrom >= 0 && verifyto >= 0){
+            iserror = false;
+        }
+        if(!iserror){
+    		var labYokereporter = new LabYokeReporterShares(datefrom, dateto, req.session.lab, req.session.labs,res);
+    		labYokereporter.reportShares(function(error, results) {
+    			if(results != null){
+    				console.log("res " + results);
+    				if(results != ""){
+    					res.render('reports', {lang:req.cookies.i18n, i18n:res,section: "shares", dept: req.session.dept, categories: req.session.categories, labs: req.session.labs, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, labyokersurname : req.session.surname, datefromShares: datefrom, datetoShares: dateto, title:'Reports',loggedIn : true, resultsShares: results, isLoggedInAdmin: req.session.admin, addMessageShares: "success"});
+    				} else {
+    					res.render('reports', {lang:req.cookies.i18n, i18n:res,section: "shares", dept: req.session.dept, categories: req.session.categories, labs: req.session.labs, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, labyokersurname : req.session.surname, datefromShares: datefrom, datetoShares: dateto, title:'Reports',loggedIn : true, isLoggedInAdmin: req.session.admin, addMessageShares: "failure"});
+    				}
+    				req.session.messages = null;
+    			}
+    		});
+        } else {
+            res.render('reports', {lang:req.cookies.i18n, i18n:res,section: "shares", dept: req.session.dept, categories: req.session.categories, labs: req.session.labs, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, labyokersurname : req.session.surname, datefromShares: datefrom, datetoShares: dateto, title:'Reports',loggedIn : true, isLoggedInAdmin: req.session.admin, addMessageShares: "failure"});
+        }
 	});
 
 	router.post('/reportMoney', isLoggedInAdmin, function(req, res) {
@@ -670,6 +682,14 @@ totalshares = t[0].counting;
 		console.log("reportMoney catalognumber: " + catalognumber);
 		console.log("reportMoney lab: " + lab);
 
+        var verifyfrom = Date.parse(datefrom);
+        var verifyto = Date.parse(dateto);
+        var iserror = true;
+
+        if(verifyfrom >= 0 && verifyto >= 0){
+            iserror = false;
+        }
+        if(!iserror){
 		var labYokereporterSavings = new LabYokeReporterSavings(datefrom,dateto,agent,vendor,catalognumber,lab, req.session.lab,req.session.labs,res);
 		labYokereporterSavings.reportMoney(function(error, results) {
 			if(results != null){
@@ -684,6 +704,9 @@ totalshares = t[0].counting;
 				req.session.messages = null;
 			}
 		});
+        } else {
+            res.render('reports', {lang:req.cookies.i18n, i18n:res,dept: req.session.dept, categories: req.session.categories, labs: req.session.labs, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, labyokersurname : req.session.surname, datefromMoney: datefrom, datetoMoney: dateto, title:'Reports',loggedIn : true, isLoggedInAdmin: req.session.admin, addMessageMoney: "failure", section: "money"});
+        }
 	});
 
 	router.post('/reportInsuff', isLoggedInAdmin, function(req, res) {
@@ -706,6 +729,14 @@ totalshares = t[0].counting;
 		console.log("reportInsuff catalognumber: " + catalognumber);
 		console.log("reportInsuff lab: " + lab);
 
+        var verifyfrom = Date.parse(datefrom);
+        var verifyto = Date.parse(dateto);
+        var iserror = true;
+
+        if(verifyfrom >= 0 && verifyto >= 0){
+            iserror = false;
+        }
+        if(!iserror){
 		var labYokereporterSavings = new LabYokeReporterSavings(datefrom,dateto,agent,vendor,catalognumber,lab, req.session.lab,req.session.labs,res);
 		labYokereporterSavings.reportInsuff(function(error, results) {
 			if(results != null){
@@ -718,6 +749,9 @@ totalshares = t[0].counting;
 				req.session.messages = null;
 			}
 		});
+        } else {
+            res.render('reports', {lang:req.cookies.i18n, i18n:res,section: "insuff", dept: req.session.dept, categories: req.session.categories, labs: req.session.labs, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, labyokersurname : req.session.surname, title:'Reports',loggedIn : true, isLoggedInAdmin: req.session.admin, addMessageInsuff: "failure"});
+        }
 	});
 
 	router.post('/changeDetails', isLoggedIn, function(req, res) {
@@ -785,6 +819,15 @@ totalshares = t[0].counting;
 		console.log("reportOrders reportDateFromOrders: " + req.body.reportDateFromOrders);
 		console.log("reportOrders lab: " + lab);
 		console.log("reportOrders category: " + category);
+
+        var verifyfrom = Date.parse(datefrom);
+        var verifyto = Date.parse(dateto);
+        var iserror = true;
+
+        if(verifyfrom >= 0 && verifyto >= 0){
+            iserror = false;
+        }
+        if(!iserror){
 		var labYokereporter = new LabYokeReporterOrders(datefrom, dateto, lab, req.session.labs, req.session.lab, res);
 		labYokereporter.reportOrders(function(error, results) {
 			if(results != null){
@@ -797,6 +840,9 @@ totalshares = t[0].counting;
 				req.session.messages = null;
 			}
 		});
+        } else {
+            res.render('reports', {lang:req.cookies.i18n, i18n:res,section: "orders", dept: req.session.dept, categories: req.session.categories, labs: req.session.labs, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, labyokersurname : req.session.surname, datefromOrders: datefrom, datetoOrders: dateto, title:'Reports',loggedIn : true, isLoggedInAdmin: req.session.admin, addMessageOrders: "failure"});            
+        }
 	});
 
 	router.get('/play', function(req, res) {
