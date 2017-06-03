@@ -2729,6 +2729,11 @@ span.num.greatherthanninetynine {
         width: 100%;
         display: block;
     }
+
+.teamcolumn2 {
+    margin-top: 69% !important;
+}
+
 }
 
 @media (max-width: 600px){
