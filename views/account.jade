@@ -86,7 +86,7 @@ block content
                               div(style="margin-bottom:25px;", class="accountdetail accountdetailRowMargin")
                                 span(id="tel")!= tel + " "
                                 form(action="/changeDetails" id="changetel" method="post" class="telform" style="top: -5px; position: relative;")
-                                  input(name="valuedetail" type="text" id="valuedetail" placeholder=tel)
+                                  input(name="valuedetail" type="tel" id="valuedetail" placeholder=tel)
                                   input(name="column" type="hidden" id="column" value="tel")
                                   input(name="formemail" type="hidden" id="formemail" value=email)
                                 span(onclick="penciltel()", id="penciltel" class="fa fa-pencil labColor")
