@@ -143,6 +143,7 @@ block content
 				- var dateto_money = datetoMoney
 				- var file_money = i18n.__("reports.money.file") + datefrom_money + i18n.__("reports.file.to") + dateto_money + ".pdf"
 				- var message_fail_share = i18n.__("reports.money.message.fail")
+				- var message_fail_date_share = i18n.__("reports.money.message.date.fail")
 				- var message_success_money = i18n.__("reports.money.message.success1") + datefrom_money + i18n.__("reports.money.message.success2") + dateto_money + i18n.__("reports.money.message.success3")
 				- if(datefromMoney == null || datefromMoney == undefined || datefromMoney == "")
 					- datefrom_money = i18n.__("reports.money.message.datefrommoney")
@@ -151,6 +152,8 @@ block content
 					- file_money = i18n.__("reports.money.file_all") + ".pdf" 
 				if (addMessageMoney == 'failure')
 					div(class="alert alert-danger alertshadow")!= message_fail_share
+				if (addMessageMoney == 'wrongdate')
+					div(class="alert alert-danger alertshadow")!= message_fail_date_share
 				if (addMessageMoney == 'success')
 					div(class="alert alert-success fade in alert-dismissable alertshadow")!= message_success_money
 				div
@@ -400,6 +403,7 @@ block content
 				- var dateto_shares = datetoShares
 				- var file_shares = i18n.__("reports.shares.file") + datefrom_shares + i18n.__("reports.file.to") + dateto_shares + ".pdf"
 				- var message_fail_share = i18n.__("reports.shares.message.fail")
+				- var message_fail_date_share = i18n.__("reports.shares.message.date.fail")
 				- var message_success_share = i18n.__("reports.shares.message.success1") + datefrom_shares + i18n.__("reports.shares.message.success2") + dateto_shares + i18n.__("reports.shares.message.success3")
 				- if(datefromShares == null || datefromShares == undefined || datefromShares == "")
 					- datefrom_shares = i18n.__("reports.shares.lab.option")
@@ -408,6 +412,8 @@ block content
 					- file_shares = i18n.__("reports.shares.file_all") + ".pdf" 
 				if (addMessageShares == 'failure')
 					div(class="alert alert-danger alertshadow")!= message_fail_share
+				if (addMessageShares == 'wrongdate')
+					div(class="alert alert-danger alertshadow")!= message_fail_date_share
 				if (addMessageShares == 'success')
 					div(class="alert alert-success fade in alert-dismissable alertshadow")!= message_success_share
 				div
@@ -539,9 +545,12 @@ block content
 				h4= i18n.__("reports.insuff.title")
 				p=i18n.__("reports.insuff.subtitle")
 				- var message_fail_insuff = i18n.__("reports.insuff.message.fail")
+				- var message_fail_date_insuff = i18n.__("reports.insuff.message.date.fail")
 				- var message_success_insuff = i18n.__("reports.insuff.message.successinsuff")
 				if (addMessageInsuff == 'failure')
 					div(class="alert alert-danger alertshadow")!= message_fail_insuff
+				if (addMessageInsuff == 'wrongdate')
+					div(class="alert alert-danger alertshadow")!= message_fail_date_insuff
 				if (addMessageInsuff == 'success')
 					div(class="alert alert-success fade in alert-dismissable alertshadow")!= message_success_insuff
 				div
