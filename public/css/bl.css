@@ -2374,7 +2374,7 @@ h1{
     margin: 0 auto;
     text-align: center;
     margin-right: 0px;
-    right: 35%;
+    right: 42%;
 }
 .resizebutton{
     width: 100%;
@@ -2741,7 +2741,13 @@ span.num.greatherthanninetynine {
 .menumyshares {
     width: 55% !important;
 }
+.help{
+    right: 40%;
 }
+}
+
+
+
 
 @media (max-width: 580px){
 .searchradios{
@@ -2784,6 +2790,13 @@ span.num.greatherthanninetynine {
     width: 98%;
 }
 }
+
+@media (max-width: 500px){
+.help{
+    right: 38%;
+}
+}
+
 
  @media (max-width: 440px) {
 .teamaccountbuttonwidth{
@@ -2874,6 +2887,7 @@ span.num.greatherthanninetynine {
 }
 
 .help{
+    right:36%;
    /* padding-right: 0px;
     width: initial !important;
     margin-left: 155px;
@@ -2997,6 +3011,7 @@ span.num.greatherthanninetynine {
 
 
 
+
 @media (max-width: 342px){
 .reducefont{
     font-size:12px;
@@ -3022,6 +3037,9 @@ span.num.greatherthanninetynine {
 }
 
 @media (max-width: 330px){
+.help{
+    right: 32%;
+}
 .roundaccountmob{
     left: 48%;
 }
