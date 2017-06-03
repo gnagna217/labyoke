@@ -1330,7 +1330,10 @@ totalshares = t[0].counting;
 											done = results[0];
 											dept = results[1];
                                             labadmin = results[2];
+                                            console.log("dept: " + dept);
+                                            console.log("labadmin: " + labadmin);
                                             req.session.labadmin = labadmin;
+                                            req.session.dept = dept;
 											res.setLocale(done[0].lang);
 										}
 										
@@ -1381,7 +1384,7 @@ totalshares = t[0].counting;
 													}
 													req.session.user = done[0].name;
                                                     req.session.surname = done[0].surname;
-													req.session.dept = dept[0].department;
+													//req.session.dept = dept[0].department;
 													req.session.userid = done[0].id;
 													req.session.userlang = done[0].lang;
 													req.session.useradmin = false;
