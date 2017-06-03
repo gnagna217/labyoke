@@ -160,20 +160,20 @@ block content
               $("#keysearch").show();
               $("#catalogsearch").hide();
               $('input[name=search][value=keysearch]').prop('checked', 'checked');
-              $("#loopcatalog").removeClass( "activecolmenu" );
-              $("#loopcatalog").addClass( "colmenu" );
-              $("#loopkey").removeClass( "activecolmenu" );
-              $("#loopkey").addClass( "colmenu" );
+              //$("#loopcatalog").removeClass( "activecolmenu" );
+              //$("#loopcatalog").addClass( "colmenu" );
+              //$("#loopkey").removeClass( "activecolmenu" );
+              //$("#loopkey").addClass( "colmenu" );
           }
           function radiocatclick() {
               $("#keysearch").hide();
               $("#catalogsearch").show();
               $('input[name=search][value=catalogsearch]').prop('checked', 'checked');
-              console.log("existssearchType is cat: "+existssearchType);
-              $("#loopcatalog").removeClass( "colmenu" );
-              $("#loopcatalog").addClass( "activecolmenu" );
-              $("#loopkey").removeClass( "activecolmenu" );
-              $("#loopkey").addClass( "colmenu" );
+              //console.log("existssearchType is cat: "+existssearchType);
+              //$("#loopcatalog").removeClass( "colmenu" );
+              //$("#loopcatalog").addClass( "activecolmenu" );
+              //$("#loopkey").removeClass( "activecolmenu" );
+              //$("#loopkey").addClass( "colmenu" );
           }
         div(class="slide-out-tip-div desktabonly", style="display:none;z-index:1;position: fixed;top: 25% !important;max-height:400px;")
             a(class="handle" href="last-transactions", title='#{i18n.__("search.tip.title")}', style="right: -60px;left:-60px;")!=Content
