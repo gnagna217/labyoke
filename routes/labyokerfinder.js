@@ -1877,12 +1877,14 @@ Labyoker.prototype.login = function(callback) {
 			var active = results[0].active;
 			var email = results[0].email;
 			var lab = results[0].lab;
-			var query2 = client.query("SELECT department,admin from labs where labname='" + lab + "'");
+			var query2 = client.query("SELECT * from labs where labname='" + lab + "'");
 		query2.on("row", function(row, result2) {
 			result2.addRow(row);
 		});
 		query2.on("end", function(result2) {
 			results2 = result2.rows;
+			console.log("LOGIN DEPT: " + results2[0].department);
+			console.log("LOGIN ADMIN: " + results2[0].admin);
 			resultsLogin.push(results2[0].department);
 			resultsLogin.push(results2[0].admin);
 			//console.log("dept is: " + results2[0].email);
