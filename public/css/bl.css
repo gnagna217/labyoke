@@ -3073,6 +3073,13 @@ span.num.greatherthanninetynine {
 .teamcard {
     /*box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);*/
     padding: 25px;
+    padding-top: 105px;
+}
+
+.teamcard2 {
+    /*box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);*/
+    padding: 25px;
+    padding-top: 85px;
 }
 
 /* Some left and right padding inside the container */
