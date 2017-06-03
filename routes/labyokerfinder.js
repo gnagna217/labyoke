@@ -22,11 +22,12 @@ LabYokeGlobal = function(param) {
 	this.param = param;
 };
 
-LabYokeAgents = function(email,mylab,labs,dept) {
+LabYokeAgents = function(email,mylab,labs,dept,labadmin) {
 	this.email = email;
 	this.mylab = mylab;
 	this.labs = labs;
 	this.dept = dept;
+	this.labadmin = labadmin;
 };
 
 LabyokerLab = function(lab) {
@@ -112,7 +113,7 @@ LabyokerConfirm = function(registerid) {
 	this.registerid = registerid;
 };
 
-LabYokerOrder = function(lab,agent,vendor,catalognumber,email,location,sendemail,quantity,mylab,res,userlang,ownerlang) {
+LabYokerOrder = function(lab,agent,vendor,catalognumber,email,location,sendemail,quantity,mylab,res,userlang,ownerlang,labadmin) {
 	this.agent = agent;
 	this.vendor = vendor;
 	this.catalognumber = catalognumber;
@@ -125,6 +126,7 @@ LabYokerOrder = function(lab,agent,vendor,catalognumber,email,location,sendemail
 	this.res = res;
 	this.userlang = userlang;
 	this.ownerlang = ownerlang;
+	this.labadmin = labadmin;
 };
 
 LabyokerTeam = function(lab) {
@@ -1357,6 +1359,7 @@ LabYokerOrder.prototype.order = function(callback) {
 	var email = this.email;
 	var sendemail = this.sendemail;
 	var location = this.location;
+	var labadmin = this.labadmin;
 	//var category = this.category;
 	var lab = this.lab;
 	var quantity = this.quantity;
@@ -1416,7 +1419,7 @@ LabYokerOrder.prototype.order = function(callback) {
 		query2.on("end", function(result2) {
 
 			var mailOptions = new MailOptionsWithCC(email, subject, body);
-			var mailOptionsReq = new MailOptionsWithCC(sendemail, subjectReq, bodyReq);
+			var mailOptionsReq = new MailOptionsWithCC(sendemail, subjectReq, bodyReq,labadmin);
 			mailOptions.sendAllEmails();
 			mailOptionsReq.sendAllEmails();
 
@@ -1874,13 +1877,14 @@ Labyoker.prototype.login = function(callback) {
 			var active = results[0].active;
 			var email = results[0].email;
 			var lab = results[0].lab;
-			var query2 = client.query("SELECT department from labs where labname='" + lab + "'");
+			var query2 = client.query("SELECT department,admin from labs where labname='" + lab + "'");
 		query2.on("row", function(row, result2) {
 			result2.addRow(row);
 		});
 		query2.on("end", function(result2) {
 			results2 = result2.rows;
-			resultsLogin.push(results2);
+			resultsLogin.push(results2[0].department);
+			resultsLogin.push(results2[0].admin);
 			//console.log("dept is: " + results2[0].email);
 			// var hash = crypt.hashSync(pass, salt);
 			//if (active == 1) {
