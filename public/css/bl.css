@@ -9,6 +9,10 @@
   -webkit-font-smoothing: antialiased;
 }
 
+.addMargin{
+    outline:none;
+}
+
 .fa{
     background-color: transparent !important;
 }
