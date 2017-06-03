@@ -877,6 +877,7 @@ label{
   position: absolute;
   border: 5px solid #8a6d3b;
   border-radius: 100%;
+  cursor: pointer;
 
     height: 30px;
     width: 30px;
@@ -894,6 +895,7 @@ label{
   position: relative;
   border: 5px solid #8a6d3b;
   border-radius: 100%;
+  cursor: pointer;
     height: 30px;
     width: 30px;
     left: 100%;
