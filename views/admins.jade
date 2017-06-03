@@ -291,7 +291,504 @@ block content
 			div(style=nobar, class="threepointssep")
 			- if(doing == "upload")
 					div(class="threepointsmobile", style=nobar)
-		
+		div(style="float:right;", class="share-container " + adjust + " adjustpaddingrightandwidth " + fadesections)
+			script(type="text/javascript" src="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.js")
+
+			h3= i18n.__("shares.chart.title")
+			form(action="chartSelect", method="post")
+				div(class="buttons")
+					select(name="chartSelect" type="text" id="chartSelect" class="form-control" style="width: 97%;border-color:#3d9dcb;margin-bottom:10px" placeholder=i18n.__("shares.chart.select"))
+						option(value="chartNone",style="font-weight:bold")=i18n.__("shares.chart.option1")
+						option(value="chartVenn")= i18n.__("shares.chart.option2")
+						option(value="chartAll")= i18n.__("shares.chart.option3")
+						option(value="chartMonth")= i18n.__("shares.chart.option4")
+					span(class="fa fa-sort" style="color: #8a6d3b; float: right; top: -35px; left: -27px; position: relative; font-size: 14pt; ")
+			div(id="chartNotes", style="display:none")
+				p!= i18n.__("shares.chart.notes")
+			- var find0 = filteroutput2
+			- var now = new Date()
+			- var filteroutput = test.filter(function(x){console.log("x.monthorder: "+x.monthorder); console.log("x.yearorder: "+x.yearorder); console.log("now.getFullYear(): "+ now.getFullYear()); console.log("now.getMonth(): "+ now.getMonth()); console.log("so: "+ (x.yearorder == now.getFullYear() && x.monthorder == now.getMonth())); return (x.yearorder == now.getFullYear() && x.monthorder == now.getMonth() + 1)});
+			script.
+				window.onload = function() {
+				$('#monthAll').hide();
+				$('#sharesAll').hide();
+
+				var eSelect = document.getElementById('chartSelect');
+				console.debug("selected: " + $('#chartSelect').val());
+
+				if(chartSelect.selectedIndex === 1 || $('#chartSelect').val() == 'chartVenn') {
+				console.log("sharesVenn inside");
+				$('#chartNotes').hide();
+				$('#sharesVenn').show();
+				$('#monthAll').hide();
+				$('#sharesAll').hide();
+				} if(chartSelect.selectedIndex === 2 || $('#chartSelect').val() == 'chartAll') {
+				console.log("sharesAll inside");
+				$('#chartNotes').hide();
+				$('#sharesAll').show();
+				if("#{find0}" != null && "#{find0}" != undefined && ("#{find0}").length > 0)
+					document.querySelector('.ct-chart').__chartist__.update();
+				$('#monthAll').hide();
+				$('#sharesVenn').hide();
+				} else if(chartSelect.selectedIndex === 3 || $('#reportSelect').val() == 'chartMonth') {
+				console.log("chartOrders inside");
+				$('#chartNotes').hide();
+				$('#sharesAll').hide();
+				$('#monthAll').show();
+				$('#sharesVenn').hide();
+				if("#{filteroutput}" != null && "#{filteroutput}" != undefined && ("#{filteroutput}").length > 0)
+					document.querySelector('.ct-chart0').__chartist__.update();
+				} else if(eSelect.selectedIndex === 0 || $('#reportSelect').val() == 'chartNone') {
+				console.log("result None inside");
+				$('#monthAll').hide();
+				$('#sharesAll').hide();
+				$('#sharesVenn').hide();
+				$('#chartNotes').show();
+				}
+
+				chartSelect.onchange = function() {
+				if(chartSelect.selectedIndex === 1 || $('#chartSelect').val() == 'chartVenn') {
+				console.log("sharesAll inside");
+				$('#chartNotes').hide();
+				$('#sharesAll').hide();
+				$('#sharesVenn').show();
+				$('#monthAll').hide();
+				} if(chartSelect.selectedIndex === 2 || $('#chartSelect').val() == 'chartAll') {
+				console.log("sharesAll inside");
+				$('#chartNotes').hide();
+				$('#sharesAll').show();
+				$('#sharesVenn').hide();
+				if("#{find0}" != null && "#{find0}" != undefined && ("#{find0}").length > 0)
+					document.querySelector('.ct-chart').__chartist__.update();
+				$('#monthAll').hide();
+				}  else if(chartSelect.selectedIndex === 3 || $('#reportSelect').val() == 'chartMonth') {
+				console.log("chartOrders inside");
+				$('#chartNotes').hide();
+				$('#sharesAll').hide();
+				$('#sharesVenn').hide();
+				$('#monthAll').show();
+				if("#{filteroutput}" != null && "#{filteroutput}" != undefined && ("#{filteroutput}").length > 0)
+					document.querySelector('.ct-chart0').__chartist__.update();
+				} else if(eSelect.selectedIndex === 0 || $('#reportSelect').val() == 'chartNone') {
+				console.log("result None inside");
+				$('#monthAll').hide();
+				$('#sharesAll').hide();
+				$('#sharesVenn').hide();
+				$('#chartNotes').show();
+				}           
+				};
+
+				};
+
+
+			div(style="margin-bottom: 30px; margin-top: 0px;")
+			div(id="sharesVenn", style="display:none")
+				h4= i18n.__("shares.venn.title")
+				- if(report_venn != null && report_venn.length > 0)
+					p!=i18n.__("shares.venn.subtitle1")
+						span
+							img(src='/images/venn.png' width='16px' height='16px')
+						span= i18n.__("shares.venn.subtitle2")
+
+					div= i18n.__("shares.venn.desc")
+						input(id="search-field" type="search" style="margin-top:8px; margin-left:10px; font-size: 14px;padding: 4px 10px;line-height: 1.42857143; border: 1px solid #ccc; border-radius: 4px;" placeholder=i18n.__("shares.venn.select"))
+						span(id="search-status" class="label label-info" style="vertical-align: 10px; margin-left: 0px;" class="label label-success")
+					div(class="ct-chart5 ct-perfect-five", style="overflow:auto;")
+						div(id="vennChart" style="margin: 0 auto; /*width: 430px; height: 300px*/")
+						- var array_labs_venn = " |"
+						- var array_catalogs_venn = " |"
+						- var ob = report_venn
+						- var venn = []
+						- var getlabs = []
+						- var labname = ""
+						- var seriesname = ""
+						- var seriesdata = []
+						- var vennportion = {name:'', data:[]}
+						- for(var prop in ob)
+							- getlabs.push(ob[prop].labname)
+						- for(var prop in ob)
+							//div!= "prop: " + prop + " - " + ob.length
+							- if(seriesname == '')
+								- seriesname = ob[prop].labname
+							//div!= "seriesname: " + seriesname
+							- if(labname == '')
+								- labname = ob[prop].labname
+							- if (ob[prop].labname == labname && prop < (ob.length))
+								- seriesname = ob[prop].labname
+								- seriesdata.push(ob[prop].catalognumber)
+								- if(prop == (ob.length - 1))
+									- vennportion = {name:'', data:[]}
+									- vennportion.name = seriesname
+									- vennportion.data = seriesdata
+									//div!= "vennportion: " + vennportion
+									- venn.push(vennportion)
+								//div!= "feeding seriesdata: " + seriesdata
+							- else
+								- vennportion.name = seriesname
+								- vennportion.data = seriesdata
+								//div!= "vennportion: " + vennportion
+								- venn.push(vennportion)
+								- seriesdata = []
+								- seriesname = ob[prop].labname
+								- seriesdata.push(ob[prop].catalognumber)
+								- labname = ob[prop].labname
+								- vennportion = {name:'', data:[]}
+								//div!= "venn: " + venn
+							- array_labs_venn = array_labs_venn + ob[prop].labname + "|"
+							- array_catalogs_venn = array_catalogs_venn + ob[prop].catalognumber + "|"
+
+						script.
+							var test = JSON.parse('#{JSON.stringify(venn)}'.replace(/&quot;/g, '"'));
+							var colorDefault = ["rgb(61,157,203)", "rgb(138,109,59)", "rgb(0,102,0)", "rgb(90,155,212)", "rgb(241,90,96)", "rgb(207,207,27)", "rgb(255,117,0)", "rgb(192,152,83)"];
+							console.log(test);
+							console.log("filter department venn: " + "#{array_labs_venn}");
+							console.log("filter catalog venn: " + "#{array_catalogs_venn}");
+							console.log("filter venn: " + "#{venn}");
+
+
+							$('#vennChart').jvenn({
+							series: test,
+							colors: colorDefault,
+							searchInput: $("#search-field"),
+							searchStatus: $("#search-status"),
+							searchMinSize: 3,
+							fnClickCallback: function() {
+								$('#pagination-demo').twbsPagination('destroy');
+								var value = "";
+								var title = "";
+								var list = this.list;
+								if (this.listnames.length == 1) {
+									title += "#{i18n.__("shares.venn.chart.title1")}" + "<span class='yokeColor'>";
+								} else {
+									title += "#{i18n.__("shares.venn.chart.title2")}" + "<span class='yokeColor'>";
+								}
+
+								for (name in this.listnames) {
+									title += this.listnames[name] 
+									if(name != (this.listnames.length - 1)){
+										title += " | ";
+									}
+								}
+								title = "<b>" + title + "</span></b>";
+								title += ":";
+								var pageValues = [];
+								if(this.list.length == 0){
+									title +=  "#{i18n.__("shares.venn.chart.titlenone")}" + "";
+								} else {
+									for (val in this.list) {
+										pageValues.push(this.list[val]);
+										value += "<br/>" + this.list[val];
+									}
+								}
+								value = title + value;
+								var total = Math.ceil(this.list.length/3);
+								console.log("total : " + total)
+								var displayvalues = "";
+								for (val in pageValues) {
+									if(val < 3){
+										displayvalues += "<br/>" + pageValues[val];
+										console.log("displayvalues : " + displayvalues)
+									}
+								}
+								if(this.list.length > 1){
+									$('#tooltipsvenn').css('min-height','80px');
+								} else {
+									$('#tooltipsvenn').css('min-height','0px');
+								}
+								if(this.list.length > 3){
+									$('#pagination-demo').twbsPagination({
+										totalPages: total,
+										visiblePages: 3,
+										prev: '<',
+										next: '>',
+										onPageClick: function (event, page) {
+											var displayvalues2 = "";
+											console.log("page is : " + page)
+											console.log("pageValues is : " + pageValues)
+											if(page == 1){
+												for (oval in pageValues) {
+													console.log("oval is : " + oval)
+													if(oval <= ((page*3) - 1)){
+														displayvalues2 += "<br/>" + pageValues[oval];
+														console.log("displayvalues2 is : " + displayvalues2)
+													}
+												}
+												displayvalues2 = title + displayvalues2;
+											} else {
+												for (oval in pageValues) {
+													console.log("oval is : " + oval)
+													if(oval > (((page - 1)*3)-1) && oval <= ((page*3) - 1)){
+														displayvalues2 += "<br/>" + pageValues[oval];
+														console.log("displayvalues2 is : " + displayvalues2)
+													}
+												}
+											}
+											$('#tooltipsvenn').html(displayvalues2);
+										}
+									});
+								}
+
+								$("#tooltipsvenn").html(title + displayvalues);
+							}
+							});
+
+					div(style="margin-left: 20%;")
+						div(id="tooltipsvenn-container")
+							div(id="tooltipsvenn", class="labColor", style="margin-top:-15px")!= i18n.__("shares.venn.chart.table")
+							div
+								ul(id="pagination-demo" class="pagination-sm")
+				- if(report_venn != null && report_venn.length==0)
+					h5=i18n.__("shares.venn.none")
+					p(style="padding-top: 20px;")=" "
+			div(id="sharesAll", style="display:none")
+				h4= i18n.__("shares.all.title")
+				- if(filteroutput2 != null && filteroutput2.length > 0)
+					p!=i18n.__("shares.all.subtitle")
+					div(class="ct-chart ct-perfect-fourth")
+					div(id="tooltips", class="labColor") &nbsp;
+				- if(filteroutput2 != null && filteroutput2.length==0)
+					h5= i18n.__("shares.all.none")
+					p(style="padding-top: 20px;")=" "
+			div(id="monthAll", style="display:none")
+				h4= i18n.__("shares.month.title")
+				- // var now = new Date()
+				- var month = "month";
+				- //var filteroutput = test.filter(function(x){console.log("x.monthorder: "+x.monthorder); console.log("x.yearorder: "+x.yearorder); console.log("now.getFullYear(): "+ now.getFullYear()); console.log("now.getMonth(): "+ now.getMonth()); console.log("so: "+ (x.yearorder == now.getFullYear() && x.monthorder == now.getMonth())); return (x.yearorder == now.getFullYear() && x.monthorder == now.getMonth() + 1)});
+				- if(filteroutput != null && filteroutput.length > 0) 
+					p!=i18n.__("shares.month.subtitle1") + month + i18n.__("shares.month.subtitle2")
+					div(class="ct-chart0 ct-perfect-fourth")
+					div(id="tooltips0", class="labColor") &nbsp;
+				- if(filteroutput != null && filteroutput.length == 0) 
+					h5
+						span!=i18n.__("shares.month.none")
+			div(style="padding-top:25px;", class="") &nbsp;
+			- var array_rows = " |"
+			- var array_values = "0|"
+			- var array_rows2 = []
+			- var array_values2 = ""
+			- if(filteroutput2 != null && filteroutput2.length > 0) 
+				-var ob = filteroutput2
+				-for(var prop in ob)
+					- array_rows = array_rows + ob[prop].agent + "|"
+					- array_values = array_values + ob[prop].count + "|"
+				-var ob2 = filteroutput
+				-for(var prop in ob2)
+					- array_rows2 = array_rows2 + ob2[prop].agent + "|"
+					- array_values2 = array_values2 + ob2[prop].counting + "|"
+
+				script.
+					console.log("filter: " + "#{filteroutput}");
+					var values = "#{array_values}";
+					values = values.split("|");
+					var valTransform = [];
+					for(var prop in values){
+						valTransform.push(values[prop]);
+					}
+					var rows = "#{array_rows}";
+					rows = rows.split("|");
+					var rowTransform = [];
+					for(var prop in rows){
+						rowTransform.push(rows[prop]);
+					}
+					console.log("more rowTransform trans: " + rowTransform)
+					var data = {
+						labels: rowTransform,
+						series: [
+							valTransform
+						]
+					};
+
+					var values2 = "#{array_values2}";
+					values2 = values2.split("|");
+					var valTransform2 = [];
+					for(var prop in values2){
+						valTransform2.push(values2[prop]);
+					}
+					var rows2 = "#{array_rows2}";
+					rows2 = rows2.split("|");
+					var rowTransform2 = [];
+					for(var prop in rows2){
+						rowTransform2.push(rows2[prop]);
+					}
+					console.log("more valTransform2 trans: " + valTransform2)
+					console.log("more rowTransform2 trans: " + rowTransform2)
+					var data2 = {
+						labels: rowTransform2,
+						series: [
+							valTransform2
+						]
+					};
+					/*
+					var options = {
+						width: 300,
+						height: 200
+					};*/
+
+					var responsiveOptions = [
+						['(max-width: 440px)', {
+							width: 300,
+							height: 200
+						}],
+						['(max-width: 767px)', {
+							width: 500,
+							height: 200
+						}],
+						['(min-width: 990px)', {
+							width: 300,
+							height: 200
+						}]
+					];
+
+
+					if(values != null && values != ""){
+					var chart = new Chartist.Line('.ct-chart', data, responsiveOptions);
+
+					// Let's put a sequence number aside so we can use it in the event callbacks
+					var seq = 0,
+					delays = 50,
+					durations = 300;
+
+					// Once the chart is fully created we reset the sequence
+					chart.on('created', function() {
+						seq = 0;
+					});
+
+					// On each drawn element by Chartist we use the Chartist.Svg API to trigger SMIL animations
+					chart.on('draw', function(data) {
+						seq++;
+
+						if(data.type === 'line') {
+							// If the drawn element is a line we do a simple opacity fade in. This could also be achieved using CSS3 animations.
+							data.element.animate({
+								opacity: {
+									// The delay when we like to start the animation
+									begin: seq * delays + 1000,
+									// Duration of the animation
+									dur: durations,
+									// The value where the animation should start
+									from: 0,
+									// The value where it should end
+									to: 1
+								}
+							});
+						} else if(data.type === 'label' && data.axis === 'x') {
+							data.element.animate({
+								y: {
+									begin: seq * delays,
+									dur: durations,
+									from: data.y + 100,
+									to: data.y,
+									// We can specify an easing function from Chartist.Svg.Easing
+									easing: 'easeOutQuart'
+								}
+							});
+						} else if(data.type === 'label' && data.axis === 'y') {
+							data.element.animate({
+								x: {
+									begin: seq * delays,
+									dur: durations,
+									from: data.x - 100,
+									to: data.x,
+									easing: 'easeOutQuart'
+								}
+							});
+						} else if(data.type === 'point') {
+							data.element.animate({
+								x1: {
+									begin: seq * delays,
+									dur: durations,
+									from: data.x - 10,
+									to: data.x,
+									easing: 'easeOutQuart'
+								},
+								x2: {
+									begin: seq * delays,
+									dur: durations,
+									from: data.x - 10,
+									to: data.x,
+									easing: 'easeOutQuart'
+								},
+								opacity: {
+									begin: seq * delays,
+									dur: durations,
+									from: 0,
+									to: 1,
+									easing: 'easeOutQuart'
+								}
+							});
+						} else if(data.type === 'grid') {
+						// Using data.axis we get x or y which we can use to construct our animation definition objects
+							var pos1Animation = {
+								begin: seq * delays,
+								dur: durations,
+								from: data[data.axis.units.pos + '1'] - 30,
+								to: data[data.axis.units.pos + '1'],
+								easing: 'easeOutQuart'
+							};
+
+							var pos2Animation = {
+								begin: seq * delays,
+								dur: durations,
+								from: data[data.axis.units.pos + '2'] - 100,
+								to: data[data.axis.units.pos + '2'],
+								easing: 'easeOutQuart'
+							};
+
+							var animations = {};
+							animations[data.axis.units.pos + '1'] = pos1Animation;
+							animations[data.axis.units.pos + '2'] = pos2Animation;
+							animations['opacity'] = {
+								begin: seq * delays,
+								dur: durations,
+								from: 0,
+								to: 1,
+								easing: 'easeOutQuart'
+							};
+
+							data.element.animate(animations);
+						}
+					});
+
+					// For the sake of the example we update the chart every time it's created with a delay of 10 seconds
+					/*chart.on('created', function() {
+						if(window.__exampleAnimateTimeout) {
+							clearTimeout(window.__exampleAnimateTimeout);
+							window.__exampleAnimateTimeout = null;
+						}
+						window.__exampleAnimateTimeout = setTimeout(chart.update.bind(chart), 12000);
+					});*/
+
+					
+					var addedEvents = false;
+					chart.on('draw', function() {
+						if (!addedEvents) {
+							$('.ct-point').on('mouseover', function() {
+								$('#tooltips').html(("#{i18n.__("dot.selected")}").replace(/&lt;/g, '<').replace(/&gt;/g, '>') + $(this).attr('ct:value'));
+							});
+
+							$('.ct-point').on('mouseout', function() {
+								$('#tooltips').html("&nbsp;")
+							});
+						}
+					});
+					}
+
+					if(values2 != null && values2 != ""){
+						var chart0 = new Chartist.Bar('.ct-chart0', data2, responsiveOptions);
+						var addedEvents0 = false;
+						chart0.on('draw', function() {
+							if (!addedEvents0) {
+								$('.ct-bar').on('mouseover', function() {
+									$('#tooltips0').html(("#{i18n.__("dot.selected")}").replace(/&lt;/g, '<').replace(/&gt;/g, '>')  + $(this).attr('ct:value'));
+								});
+
+								$('.ct-bar').on('mouseout', function() {
+									$('#tooltips0').html("&nbsp;")
+								});
+							}
+						});
+					}
+
 		div(class="slide-out-tip-div desktabonly", style="display:none;z-index:1;position: fixed;top: 25% !important;max-height:400px;")
 			a(class="handle" href="last-transactions", title='#{i18n.__("search.tip.title")}', style="right: -60px;,left:-60px;top:25px;")!=Content
 			div(style="padding: 4px;color:white;top: -45px;position: relative;")
@@ -333,4 +830,8 @@ block content
 				} else {
 					$('.slide-out-tip-div').show();
 				}
+				$('#chartNotes').show();
+				$('#sharesVenn').show();
+				$('#sharesAll').show();
+				$('#monthAll').show();
 			});
