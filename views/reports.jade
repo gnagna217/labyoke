@@ -267,6 +267,7 @@ block content
 				- var dateto_orders = datetoOrders
 				- var file_orders = i18n.__("reports.orders.file") + datefrom_orders + i18n.__("reports.file.to") + dateto_orders + ".pdf"
 				- var message_fail_order = i18n.__("reports.orders.message.fail")
+				- var message_fail_date_order = i18n.__("reports.orders.message.date.fail")
 				- var message_success_order = i18n.__("reports.orders.message.success1") + datefrom_orders + i18n.__("reports.orders.message.success2") + dateto_orders + i18n.__("reports.orders.message.success3")
 				- if(datefromOrders == null || datefromOrders == undefined || datefromOrders == "")
 					- datefrom_orders = i18n.__("reports.orders.lab.option")
@@ -275,6 +276,8 @@ block content
 					- file_orders = i18n.__("reports.orders.file_all") + ".pdf" 
 				if (addMessageOrders == 'failure')
 					div(class="alert alert-danger alertshadow")!= message_fail_order
+				if (addMessageOrders == 'wrongdate')
+					div(class="alert alert-danger alertshadow")!= message_fail_date_order
 				if (addMessageOrders == 'success')
 					div(class="alert alert-success fade in alert-dismissable alertshadow")!= message_success_order
 				div

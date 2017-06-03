@@ -173,6 +173,7 @@
     "reports.orders.title": "Rapport sur le Nombre de Commandes.",
     "reports.orders.subtitle": "Télécharger le rapport sur les commandes pourvues.",
     "reports.orders.message.fail": "Malheureusement nous n'avons pas pu générer le rapport souhaité. Essayez avec de nouveaux paramètres.",
+    "reports.orders.message.date.fail":"Malheureusement nous n'avons pas pu générer le rapport car vos dates souhaitées sont invalides. Essayez avec de nouvelles dates.",    
     "reports.orders.message.success1": "Parfait! Votre document sur le nombre de commandes a été généré entre le ",
     "reports.orders.message.success2": " et le ",
     "reports.orders.message.success3": " et automatiquement téléchargé sur votre ordinateur is vous êtes connecté sur votre ordinateur.",

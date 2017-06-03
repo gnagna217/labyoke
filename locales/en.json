@@ -171,7 +171,8 @@
 
     "reports.orders.title": "Orders report Upload.",
     "reports.orders.subtitle": "You can now retrieve a report of all orders requested.",
-    "reports.orders.message.fail": "Unfortunately we could not generate the report within the time frame chosen. Please try again with new dates.",
+    "reports.orders.message.fail": "Unfortunately we could not generate the report within the time frame chosen. Please try again with new parameters.",
+    "reports.orders.message.date.fail":"Unfortunately we could not generate the report as the dates provided were out of range. Please try again with new dates.",
     "reports.orders.message.success1": "Success! Your report has been generated for orders between ",
     "reports.orders.message.success2": " and ",
     "reports.orders.message.success3": " then automatically downloaded in your computer.",
