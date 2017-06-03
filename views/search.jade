@@ -46,12 +46,12 @@ block content
             input(type="radio" name="search" value="keysearch" id="keyradio")
             label(for="keyradio", style="float: left;")
               span #{i18n.__("search.radio.key")}
-            div(class="checking shadow")
+            div(class="checking shadow", onClick="radioclick()")
           div(style="/*float:right;*/", class="margincatalogradio")
             input(type="radio" name="search" value="catalogsearch" id="catalogradio" style="margin-left: 15px;")
             label(for="catalogradio", style="float: right;margin-right: 5px;", class="catalogradio")
               span #{i18n.__("search.radio.catalog")}
-            div(class="checkingcatalog shadow")
+            div(class="checkingcatalog shadow", onClick="radiocatclick()")
         div(class="keysearch", style="display:none", id="keysearch")
             span(id="loopkey", class="fa fa-search colmenu desktabonly" style="position: relative;to;font-size: 15pt;top: -150px;margin: 0 auto;text-align: center;display: block;")
             - searchText = i18n.__("search.searchholder")
@@ -156,6 +156,25 @@ block content
                
                
           } );
+          function radioclick() {
+              $("#keysearch").show();
+              $("#catalogsearch").hide();
+              $('input[name=search][value=keysearch]').prop('checked', 'checked');
+              $("#loopcatalog").removeClass( "activecolmenu" );
+              $("#loopcatalog").addClass( "colmenu" );
+              $("#loopkey").removeClass( "activecolmenu" );
+              $("#loopkey").addClass( "colmenu" );
+          }
+          function radiocatclick() {
+              $("#keysearch").hide();
+              $("#catalogsearch").show();
+              $('input[name=search][value=catalogsearch]').prop('checked', 'checked');
+              console.log("existssearchType is cat: "+existssearchType);
+              $("#loopcatalog").removeClass( "colmenu" );
+              $("#loopcatalog").addClass( "activecolmenu" );
+              $("#loopkey").removeClass( "activecolmenu" );
+              $("#loopkey").addClass( "colmenu" );
+          }
         div(class="slide-out-tip-div desktabonly", style="display:none;z-index:1;position: fixed;top: 25% !important;max-height:400px;")
             a(class="handle" href="last-transactions", title='#{i18n.__("search.tip.title")}', style="right: -60px;left:-60px;")!=Content
             div(style="padding: 1px;color:white;top: -45px;position: relative;")
