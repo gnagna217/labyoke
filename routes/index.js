@@ -248,6 +248,26 @@ module.exports = function(router) {
 		res.redirect('/share');
 	});
 
+    router.get('/admins', function(req, res) {
+        if(req.cookies.i18n == null || req.cookies.i18n == undefined){
+            req.cookies.i18n = "en";
+        }
+        res.setLocale(req.cookies.i18n);
+        var labYokeAgents = new LabYokeAgents(req.session.email, req.session.lab, req.session.labs, req.session.dept,req.session.labadmin);
+        labYokeAgents.findmyshares(function(error, results) {
+            //req.session.orders = results[2];
+            req.session.myshares = results[0];
+            req.session.report_sharesbycategory = results[1];
+            req.session.mysharesrequest = results[3];
+            req.session.test = results[4];
+            req.session.report_venn = results[5];
+            req.session.shares = 0;
+            console.log("test ? " + results[3]);
+            res.render('admins', {lang:req.cookies.i18n, i18n:res, test: results[4], currentlabname: req.session.lab, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, labyokersurname : req.session.surname, myshares: results[0], mysharesrequest: results[3], report_sharesbycategory: results[1], loggedIn : true, isLoggedInAdmin: req.session.admin, title:'Admins'});
+            req.session.messages = null;
+        });
+    });
+
 	router.get('/test', function(req, res) {
 
 		var lang = req.query.lang;
