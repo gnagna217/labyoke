@@ -2248,6 +2248,9 @@ input::-webkit-inner-spin-button {
 }
 
 @media (max-width: 925px) {
+.share-container2{
+    width: 100%;
+}
 
 .isregroundaccountLeft{
     left: -212px;
