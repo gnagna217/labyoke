@@ -135,203 +135,219 @@ block content
 					div(class="threepointsmobile", style=nobar)
 
 		div(style="" class="share-container2 admintop" + fadesections)
-			if(myshares == "")
-				//- adjust = ""
-				h3= i18n.__("admins.subtitle")
-			if(mysharesrequest != null && mysharesrequest.length>0)
-				- var output = mysharesrequest.filter(function(x){return x.status!="fulfilled"});
-				h3= i18n.__("admins.subtitle1")
-				p
-					- var requestIntro = output.length + i18n.__("admins.intro5")
-					- if(output.length == 0)
-						- requestIntro = i18n.__("admins.intro")
-					span(class="labColor")!= requestIntro
-					span= i18n.__("admins.intro1")
-					- var totalrequestIntro = "<span class='labColor'>" + mysharesrequest.length + i18n.__("admins.intro2") + "</span>"
-					- if(mysharesrequest.length == 0)
-						- totalrequestIntro = i18n.__("admins.intro3")
-					span!= totalrequestIntro + i18n.__("admins.intro4")
-				div(id="results2", class="resultsshadow")
-					div(id="ctl00_Div2" class="row rank")
-						div(class="table-responsive")               
-							table(id="rankTblreqshares" class="table rankTbl")
-								thead
-									tr(class="you info-best" style="font-weight: bold")
-										th(class="wrapped")!= i18n.__("shares.table.reagent")
-										th(class="")= i18n.__("shares.table.vendor")
-										th(class="")= i18n.__("shares.table.catalog")
-										th(class="")= i18n.__("shares.table.requestor")
-										th(class="")= i18n.__("shares.table.email")
-										th= i18n.__("shares.table.date")
-										th= i18n.__("shares.table.delete")
-										th= i18n.__("shares.table.fulfill")
-								tbody
-									-var ob = mysharesrequest
-									-for(var prop in ob)
-										- var n = ob[prop].status
-										- var d = new Date(ob[prop].date)
-										- d = d.toLocaleDateString("en-US")
-										- var isnew = ""
-										- var checkedstr = false
-										- var checkedfilledstr = false
-										- if(n != "fulfilled")
-											- isnew = "isnew"
-										- var insuff = parseInt(ob[prop].insufficient)
-										- if(insuff == 0)
-											- isnew = "yokeBackColor"
-											- checkedstr = true
-										//- var status = parseInt(ob[prop].status)
-										- var status = ob[prop].status
-										- var showcancel = ""
-										- if(status == 'fulfilled')
-											- checkedfilledstr = true
-											- showcancel = "display:none;"
-										- var lab = (ob[prop].lab).replace(" ","").toLowerCase();
-										- var f = "fulfill" + prop
-										- var c = "cancel" + prop
-										- var showfulfill = ""
-										- if(checkedstr===true)
-											- showfulfill = "display:none;"
-										tr(class=isnew)
-											td(class="wrapped2") #{ob[prop].agent}
-											td(class="wrapped2") #{ob[prop].vendor}
-											td(class="wrapped2") #{ob[prop].catalognumber}
-											td(class="wrapped2") #{ob[prop].requestoremail}
-											td(class="wrapped2") #{ob[prop].email}
-											td #{d}
-											td
-												form(action="/admincancelshare" method="post")
-													div(class="checkboxThree1", style=showcancel)
-														input(style="position:absolute;left: -9999px;" type="checkbox" id=c name="cancel" value="cancel" class="cancel" checked=(checkedstr===true ? "checked" : undefined))
-														label(class="labelcheck1 shadow" for=c)
-													//input(type="checkbox" name="cancel" value="cancel" class="cancel" checked=(checkedstr===true ? "checked" : undefined))
-													input(type="hidden" name="agent" value=ob[prop].agent)
-													input(type="hidden" name="lab" value=ob[prop].lab)
-													input(type="hidden" name="vendor" value=ob[prop].vendor)
-													input(type="hidden" name="catalognumber" value=ob[prop].catalognumber)
-													input(type="hidden" name="email" value=ob[prop].email)
-													input(type="hidden" name="requestoremail" value=ob[prop].requestoremail)
-													input(type="hidden" name="date" value=ob[prop].date)
-													input(type="hidden" name="table" value=currentlabname.replace(" ","").toLowerCase() + "_orders")
-											td
-												form(action="/fulfillshare" method="post")
-													
-													div(class="checkboxThree1", style=showfulfill)
-														input(style="position:absolute;left: -9999px;" type="checkbox" id=f name="fulfill" value="fulfill" class="fulfill" checked=(checkedfilledstr===true ? "checked" : undefined))
-														label(class="labelcheck1 shadow" for=f)
-													input(type="hidden" name="agent" value=ob[prop].agent)
-													input(type="hidden" name="lab" value=ob[prop].lab)
-													input(type="hidden" name="owneremail" value=ob[prop].email)
-													input(type="hidden" name="vendor" value=ob[prop].vendor)
-													input(type="hidden" name="catalognumber" value=ob[prop].catalognumber)
-													input(type="hidden" name="email" value=ob[prop].email)
-													input(type="hidden" name="requestoremail" value=ob[prop].requestoremail)
-													input(type="hidden" name="date" value=ob[prop].date)
-													input(type="hidden" name="table" value=currentlabname.replace(" ","").toLowerCase() + "_orders")
-							script.
-								$(document).ready(function() {
-									$('#rankTblreqshares').DataTable({order: [[ 5, "desc" ]],
-										
-									language:{
-										processing: "#{i18n.__("datatable.processing")}",
-										search: "#{i18n.__("datatable.search")}",
-										lengthMenu: "#{i18n.__("datatable.lengthMenu")}",
-										info: "#{i18n.__("datatable.info")}",
-										infoEmpty: "#{i18n.__("datatable.infoEmpty")}",
-										infoFiltered: "#{i18n.__("datatable.infoFiltered")}",
-										infoPostFix: "",
-										loadingRecords: "#{i18n.__("datatable.loadingRecords")}",
-										zeroRecords: "#{i18n.__("datatable.zeroRecords")}",
-										emptyTable: "#{i18n.__("datatable.emptyTable")}",
-										paginate: {
-										first: "#{i18n.__("datatable.first")}",
-										previous: "#{i18n.__("datatable.previous")}",
-										next: "#{i18n.__("datatable.next")}",
-										last: "#{i18n.__("datatable.last")}",
-										//search: "_INPUT_",
-										searchPlaceholder: "#{i18n.__("datatable.searchplaceholder")}"
-										},
-										aria: {
-										sortAscending: "#{i18n.__("datatable.sortAscending")}",
-										sortDescending: "#{i18n.__("datatable.sortDescending")}"
-										}
-									}
-									});
-								});
-				div(class="threepointssep")
-			if(myshares != "")
-				h3(style="padding-top: 25px;")= i18n.__("admins.none.title")
-				p!= i18n.__("admins.none.subtitle")
-				div(id="results2", class="resultsshadow")
-					div(id="ctl00_Div2" class="row rank")
-						div(class="table-responsive")               
-							table(id="rankTblshares" class="table rankTbl")
-								thead
-									tr(class="you info-best" style="font-weight: bold")
-										th(class="wrapped")!= i18n.__("shares.table.reagent")
-										th(class="desktabonly")= i18n.__("shares.table.location")
-										th= i18n.__("shares.table.email")
-										th= i18n.__("shares.table.vendor")
-										th= i18n.__("shares.table.catalog")
-										th= i18n.__("shares.table.delete")
-								tbody
-									-var ob = myshares
-									-for(var prop in ob)
-										- var c = "cancelr" + prop
-										- var currentqtyint = parseInt(ob[prop].currentquantity)
-										- var qtyinsufficient = ""
-										- var checkedstr = false
-										- var insuff = parseInt(ob[prop].insufficient)
-										- if(insuff == 0)
-											- qtyinsufficient = "yokeBackColor"
-											- checkedstr = true
-										tr(class=qtyinsufficient)
-											td(class="wrapped2") #{ob[prop].agent}
-											td(class="wrapped2 desktabonly")  #{ob[prop].location}
-											td(class="wrapped2")  #{ob[prop].email}
-											td(class="wrapped2")  #{ob[prop].vendor}
-											td(class="wrapped2")  #{ob[prop].catalognumber}
-											td
-												form(action="/admincancelshare" method="post")
-													div(class="checkboxThree1", style=showfulfill)
-														input(style="position:absolute;left: -9999px;" type="checkbox" id=c name="cancel" value="cancel" class="cancel" checked=(checkedstr===true ? "checked" : undefined))
-														label(class="labelcheck1 shadow" for=c)
-													input(type="hidden" name="agent" value=ob[prop].agent)
-													input(type="hidden" name="vendor" value=ob[prop].vendor)
-													input(type="hidden" name="lab" value=ob[prop].lab)
-													input(type="hidden" name="catalognumber" value=ob[prop].catalognumber)
-													input(type="hidden" name="email" value=ob[prop].email)
-													input(type="hidden" name="date" value=ob[prop].date)
-													input(type="hidden" name="table" value="vm2016_agentsshare")
-							script.
-								$(document).ready(function() {
-									$('#rankTblshares').DataTable({
+			div(class="radiosearch keysearchs searchradios")
+				div(style="float:left;")
+					input(type="radio" name="search" value="keysearch" id="keyradio")
+					label(for="keyradio", style="float: left;")
+						span
+							h3 #{i18n.__("admins.subtitle")}
+					div(class="checking shadow", onClick="radioclick()")
+				div(style="/*float:right;*/", class="margincatalogradio")
+					input(type="radio" name="search" value="catalogsearch" id="catalogradio" style="margin-left: 15px;")
+					label(for="catalogradio", style="float: right;margin-right: 5px;", class="catalogradio")
+						span
+							h3 #{i18n.__("admins.none.title")}
+					div(class="checkingcatalog shadow", onClick="radiocatclick()")
+
+			div(id="table1")
+				if(myshares == "")
+					//- adjust = ""
+					h3= i18n.__("admins.subtitle")
+				if(mysharesrequest != null && mysharesrequest.length>0)
+					- var output = mysharesrequest.filter(function(x){return x.status!="fulfilled"});
+					h3= i18n.__("admins.subtitle1")
+					p
+						- var requestIntro = output.length + i18n.__("admins.intro5")
+						- if(output.length == 0)
+							- requestIntro = i18n.__("admins.intro")
+						span(class="labColor")!= requestIntro
+						span= i18n.__("admins.intro1")
+						- var totalrequestIntro = "<span class='labColor'>" + mysharesrequest.length + i18n.__("admins.intro2") + "</span>"
+						- if(mysharesrequest.length == 0)
+							- totalrequestIntro = i18n.__("admins.intro3")
+						span!= totalrequestIntro + i18n.__("admins.intro4")
+					div(id="results2", class="resultsshadow")
+						div(id="ctl00_Div2" class="row rank")
+							div(class="table-responsive")               
+								table(id="rankTblreqshares" class="table rankTbl")
+									thead
+										tr(class="you info-best" style="font-weight: bold")
+											th(class="wrapped")!= i18n.__("shares.table.reagent")
+											th(class="")= i18n.__("shares.table.vendor")
+											th(class="")= i18n.__("shares.table.catalog")
+											th(class="")= i18n.__("shares.table.requestor")
+											th(class="")= i18n.__("shares.table.email")
+											th= i18n.__("shares.table.date")
+											th= i18n.__("shares.table.delete")
+											th= i18n.__("shares.table.fulfill")
+									tbody
+										-var ob = mysharesrequest
+										-for(var prop in ob)
+											- var n = ob[prop].status
+											- var d = new Date(ob[prop].date)
+											- d = d.toLocaleDateString("en-US")
+											- var isnew = ""
+											- var checkedstr = false
+											- var checkedfilledstr = false
+											- if(n != "fulfilled")
+												- isnew = "isnew"
+											- var insuff = parseInt(ob[prop].insufficient)
+											- if(insuff == 0)
+												- isnew = "yokeBackColor"
+												- checkedstr = true
+											//- var status = parseInt(ob[prop].status)
+											- var status = ob[prop].status
+											- var showcancel = ""
+											- if(status == 'fulfilled')
+												- checkedfilledstr = true
+												- showcancel = "display:none;"
+											- var lab = (ob[prop].lab).replace(" ","").toLowerCase();
+											- var f = "fulfill" + prop
+											- var c = "cancel" + prop
+											- var showfulfill = ""
+											- if(checkedstr===true)
+												- showfulfill = "display:none;"
+											tr(class=isnew)
+												td(class="wrapped2") #{ob[prop].agent}
+												td(class="wrapped2") #{ob[prop].vendor}
+												td(class="wrapped2") #{ob[prop].catalognumber}
+												td(class="wrapped2") #{ob[prop].requestoremail}
+												td(class="wrapped2") #{ob[prop].email}
+												td #{d}
+												td
+													form(action="/admincancelshare" method="post")
+														div(class="checkboxThree1", style=showcancel)
+															input(style="position:absolute;left: -9999px;" type="checkbox" id=c name="cancel" value="cancel" class="cancel" checked=(checkedstr===true ? "checked" : undefined))
+															label(class="labelcheck1 shadow" for=c)
+														//input(type="checkbox" name="cancel" value="cancel" class="cancel" checked=(checkedstr===true ? "checked" : undefined))
+														input(type="hidden" name="agent" value=ob[prop].agent)
+														input(type="hidden" name="lab" value=ob[prop].lab)
+														input(type="hidden" name="vendor" value=ob[prop].vendor)
+														input(type="hidden" name="catalognumber" value=ob[prop].catalognumber)
+														input(type="hidden" name="email" value=ob[prop].email)
+														input(type="hidden" name="requestoremail" value=ob[prop].requestoremail)
+														input(type="hidden" name="date" value=ob[prop].date)
+														input(type="hidden" name="table" value=currentlabname.replace(" ","").toLowerCase() + "_orders")
+												td
+													form(action="/fulfillshare" method="post")
+														
+														div(class="checkboxThree1", style=showfulfill)
+															input(style="position:absolute;left: -9999px;" type="checkbox" id=f name="fulfill" value="fulfill" class="fulfill" checked=(checkedfilledstr===true ? "checked" : undefined))
+															label(class="labelcheck1 shadow" for=f)
+														input(type="hidden" name="agent" value=ob[prop].agent)
+														input(type="hidden" name="lab" value=ob[prop].lab)
+														input(type="hidden" name="owneremail" value=ob[prop].email)
+														input(type="hidden" name="vendor" value=ob[prop].vendor)
+														input(type="hidden" name="catalognumber" value=ob[prop].catalognumber)
+														input(type="hidden" name="email" value=ob[prop].email)
+														input(type="hidden" name="requestoremail" value=ob[prop].requestoremail)
+														input(type="hidden" name="date" value=ob[prop].date)
+														input(type="hidden" name="table" value=currentlabname.replace(" ","").toLowerCase() + "_orders")
+								script.
+									$(document).ready(function() {
+										$('#rankTblreqshares').DataTable({order: [[ 5, "desc" ]],
+											
 										language:{
-										processing: "#{i18n.__("datatable.processing")}",
-										search: "#{i18n.__("datatable.search")}",
-										lengthMenu: "#{i18n.__("datatable.lengthMenu")}",
-										info: "#{i18n.__("datatable.info")}",
-										infoEmpty: "#{i18n.__("datatable.infoEmpty")}",
-										infoFiltered: "#{i18n.__("datatable.infoFiltered")}",
-										infoPostFix: "",
-										loadingRecords: "#{i18n.__("datatable.loadingRecords")}",
-										zeroRecords: "#{i18n.__("datatable.zeroRecords")}",
-										emptyTable: "#{i18n.__("datatable.emptyTable")}",
-										paginate: {
-										first: "#{i18n.__("datatable.first")}",
-										previous: "#{i18n.__("datatable.previous")}",
-										next: "#{i18n.__("datatable.next")}",
-										last: "#{i18n.__("datatable.last")}",
-										//search: "_INPUT_",
-										searchPlaceholder: "#{i18n.__("datatable.searchplaceholder")}"
-										},
-										aria: {
-										sortAscending: "#{i18n.__("datatable.sortAscending")}",
-										sortDescending: "#{i18n.__("datatable.sortDescending")}",
+											processing: "#{i18n.__("datatable.processing")}",
+											search: "#{i18n.__("datatable.search")}",
+											lengthMenu: "#{i18n.__("datatable.lengthMenu")}",
+											info: "#{i18n.__("datatable.info")}",
+											infoEmpty: "#{i18n.__("datatable.infoEmpty")}",
+											infoFiltered: "#{i18n.__("datatable.infoFiltered")}",
+											infoPostFix: "",
+											loadingRecords: "#{i18n.__("datatable.loadingRecords")}",
+											zeroRecords: "#{i18n.__("datatable.zeroRecords")}",
+											emptyTable: "#{i18n.__("datatable.emptyTable")}",
+											paginate: {
+											first: "#{i18n.__("datatable.first")}",
+											previous: "#{i18n.__("datatable.previous")}",
+											next: "#{i18n.__("datatable.next")}",
+											last: "#{i18n.__("datatable.last")}",
+											//search: "_INPUT_",
+											searchPlaceholder: "#{i18n.__("datatable.searchplaceholder")}"
+											},
+											aria: {
+											sortAscending: "#{i18n.__("datatable.sortAscending")}",
+											sortDescending: "#{i18n.__("datatable.sortDescending")}"
+											}
 										}
-									}
 										});
-								});
+									});
+					div(class="threepointssep")
+			div(id="table2")
+				if(myshares != "")
+					h3(style="padding-top: 25px;")= i18n.__("admins.none.title")
+					p!= i18n.__("admins.none.subtitle")
+					div(id="results2", class="resultsshadow")
+						div(id="ctl00_Div2" class="row rank")
+							div(class="table-responsive")               
+								table(id="rankTblshares" class="table rankTbl")
+									thead
+										tr(class="you info-best" style="font-weight: bold")
+											th(class="wrapped")!= i18n.__("shares.table.reagent")
+											th(class="desktabonly")= i18n.__("shares.table.location")
+											th= i18n.__("shares.table.email")
+											th= i18n.__("shares.table.vendor")
+											th= i18n.__("shares.table.catalog")
+											th= i18n.__("shares.table.delete")
+									tbody
+										-var ob = myshares
+										-for(var prop in ob)
+											- var c = "cancelr" + prop
+											- var currentqtyint = parseInt(ob[prop].currentquantity)
+											- var qtyinsufficient = ""
+											- var checkedstr = false
+											- var insuff = parseInt(ob[prop].insufficient)
+											- if(insuff == 0)
+												- qtyinsufficient = "yokeBackColor"
+												- checkedstr = true
+											tr(class=qtyinsufficient)
+												td(class="wrapped2") #{ob[prop].agent}
+												td(class="wrapped2 desktabonly")  #{ob[prop].location}
+												td(class="wrapped2")  #{ob[prop].email}
+												td(class="wrapped2")  #{ob[prop].vendor}
+												td(class="wrapped2")  #{ob[prop].catalognumber}
+												td
+													form(action="/admincancelshare" method="post")
+														div(class="checkboxThree1", style=showfulfill)
+															input(style="position:absolute;left: -9999px;" type="checkbox" id=c name="cancel" value="cancel" class="cancel" checked=(checkedstr===true ? "checked" : undefined))
+															label(class="labelcheck1 shadow" for=c)
+														input(type="hidden" name="agent" value=ob[prop].agent)
+														input(type="hidden" name="vendor" value=ob[prop].vendor)
+														input(type="hidden" name="lab" value=ob[prop].lab)
+														input(type="hidden" name="catalognumber" value=ob[prop].catalognumber)
+														input(type="hidden" name="email" value=ob[prop].email)
+														input(type="hidden" name="date" value=ob[prop].date)
+														input(type="hidden" name="table" value="vm2016_agentsshare")
+								script.
+									$(document).ready(function() {
+										$('#rankTblshares').DataTable({
+											language:{
+											processing: "#{i18n.__("datatable.processing")}",
+											search: "#{i18n.__("datatable.search")}",
+											lengthMenu: "#{i18n.__("datatable.lengthMenu")}",
+											info: "#{i18n.__("datatable.info")}",
+											infoEmpty: "#{i18n.__("datatable.infoEmpty")}",
+											infoFiltered: "#{i18n.__("datatable.infoFiltered")}",
+											infoPostFix: "",
+											loadingRecords: "#{i18n.__("datatable.loadingRecords")}",
+											zeroRecords: "#{i18n.__("datatable.zeroRecords")}",
+											emptyTable: "#{i18n.__("datatable.emptyTable")}",
+											paginate: {
+											first: "#{i18n.__("datatable.first")}",
+											previous: "#{i18n.__("datatable.previous")}",
+											next: "#{i18n.__("datatable.next")}",
+											last: "#{i18n.__("datatable.last")}",
+											//search: "_INPUT_",
+											searchPlaceholder: "#{i18n.__("datatable.searchplaceholder")}"
+											},
+											aria: {
+											sortAscending: "#{i18n.__("datatable.sortAscending")}",
+											sortDescending: "#{i18n.__("datatable.sortDescending")}",
+											}
+										}
+											});
+									});
 		
 
 		div(class="slide-out-tip-div desktabonly", style="display:none;z-index:1;position: fixed;top: 25% !important;max-height:400px;")
@@ -376,3 +392,14 @@ block content
 					$('.slide-out-tip-div').show();
 				}
 			});
+
+			function radioclick() {
+			$("#table1").show();
+			$("#table2").hide();
+			$('input[name=search][value=keysearch]').prop('checked', 'checked');
+			}
+			function radiocatclick() {
+			$("#table1").hide();
+			$("#table2").show();
+			$('input[name=search][value=catalogsearch]').prop('checked', 'checked');
+			}
