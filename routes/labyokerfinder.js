@@ -2513,7 +2513,6 @@ LabYokerChangeShare.prototype.cancelShare = function(callback) {
 	var lab = this.lab.replace(/ /g,"").toLowerCase();
 	var table = this.table;
 	var email = this.email;
-	email = "metsnake217@gmail.com";
 	var datenow = this.datenow;
 	var requestor = this.requestor;
 	var i18n = this.res;
@@ -2565,6 +2564,75 @@ LabYokerChangeShare.prototype.cancelShare = function(callback) {
 	});
 //callback(null, results);
 };
+
+LabYokerChangeShare.prototype.fulfillShare = function(callback) {
+	var agent = this.agent;
+	var vendor = this.vendor;
+	var catalognumber = this.catalognumber;
+	var checked = this.checked;
+	var lab = this.lab.replace(/ /g,"").toLowerCase();
+	var table = this.table;
+	var email = this.email;
+	var datenow = this.datenow;
+	var requestor = this.requestor;
+	var i18n = this.res;
+	var userlang = this.userlang;
+	
+	var date = this.date;
+	console.log("fulfill shares");
+	console.log("date2: " + date);
+	console.log("requestor: " + requestor);
+	console.log("checked: " + checked);
+	console.log("lab: " + lab);
+	console.log("table: " + table);
+	console.log("userlang: " + userlang);
+	console.log("email: " + userlang);
+	email = "metsnake316@hotmail.com";
+	requestor = "metsnake217@gmail.com";
+	var results;
+	var status = "";
+	var orderonly = "";
+	if(checked == "0" && requestor != undefined){
+		console.log("checking status: " + checked);
+		orderonly = " and requestoremail='" + requestor + "'";
+	}
+	if(checked != "0"){
+		status = "fulfilled";
+	}
+	var str = "select * from labs";
+	//"UPDATE " + table + " SET status='" + status
+	//		+ "' where date between '" + date + "' and '" + date + "' and agent='" + agent + "' and vendor='" + vendor + "' and catalognumber='" + catalognumber + "'" + orderonly;
+	console.log("str: " + str);
+	var query = client.query(str);
+	query.on("row", function(row, result) {
+		result.addRow(row);
+	});
+	query.on("end", function(result) {
+		results = "success";
+
+		if(/*table == lab+"_orders" && */checked == 0){
+			
+			var subject = i18n.__({phrase: "index.fulfilled.subject", locale: userlang}) + agent;//"LabYoke Order - Cancelled for " + agent;
+			var body="<div style='box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); box-sizing: content-box; padding-right: 15px; margin-top: 20px;'>"
+			body += "<div style='text-align:center;padding-top: 20px;'><img style='width: 141px; margin: 0 20px;' src='https:\/\/team-labyoke.herokuapp.com\/images\/yoke4.png', alt='The Yoke',  title='Yoke', class='yokelogo'/></div><div style=\"font-family:'calibri'; font-size:11pt;padding: 20px;\">" + i18n.__({phrase: "index.orders.hello", locale: userlang}) + ",<br/><br/>";
+			//body += "Unfortunately your order has been cancelled due to insufficient quantities from the following inventory:" + " <br><b>Reagent: </b> " + agent;
+			body += i18n.__({phrase: "index.fulfilled.body1", locale: userlang}) + " <br><b>" + i18n.__({phrase: "index.orders.reagent", locale: userlang}) + ": </b> " + agent;
+			body += "<br><b>" + i18n.__({phrase: "index.orders.vendor", locale: userlang}) + ": </b> " + vendor;
+			body += "<br><b>" + i18n.__({phrase: "index.orders.catalog", locale: userlang}) + ": </b> " + catalognumber;
+			body += "<br><b>" + i18n.__({phrase: "index.orders.email", locale: userlang}) + ": </b> " + email;
+			body += "<p>" + i18n.__({phrase: "index.orders.best", locale: userlang});
+			body += "</p><b><i>" + i18n.__({phrase: "index.reportsShares.html7", locale: userlang}) + "</i></b></div>";
+			body += "</div>";
+			console.log("fulfill body: " + body);
+			var mailOptions = new MailOptionsWithCC(requestor, subject, body, email);
+			mailOptions.sendAllEmails();
+		}
+
+		callback(null, results);
+	});
+//callback(null, results);
+};
+
 
 /*LabyokerUserDetails.prototype.changesurname = function(callback) {
 	var surname = this.placeholder;

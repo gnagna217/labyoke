@@ -62,6 +62,54 @@ $('.cancel').click(function() {
 
 });
 
+$('.fulfill').click(function() {
+  var fulfill = $(this);
+  var checked = fulfill.is(':checked');
+  var orderText = document.getElementById("orderText");
+  var langText = document.getElementById("langText").innerHTML;
+  var checkedtext = "Have you fulfilled this order?";
+  var uncheckedtext = "Do you want to revert this order fulfillment?";
+  console.log("lang is " + langText );
+  if(langText == "fr"){
+    checkedtext = "Avez-vous rempli cette commande de réactif?";
+   uncheckedtext = "Voulez-vous marquer cette commande de réactif comme non-remplie?";
+  }
+  console.log("checkedtext is " + checkedtext );
+  console.log("uncheckedtext is " + uncheckedtext );
+  if(checked){
+    orderText.innerHTML = checkedtext;
+  } else {
+    orderText.innerHTML = uncheckedtext;
+  }
+  var pop = document.getElementById("ios-light");
+  pop.style.display = "block";
+  var shade = document.getElementById("shade");
+  shade.style.display = "block";
+
+  actionorder.onclick = function(){
+  var parenttr = fulfill.closest('tr');
+  var currentbackgroundColor = parenttr.css('backgroundColor');
+  
+  console.log("currentbackgroundColor: " + currentbackgroundColor);
+  if(currentbackgroundColor == 'rgb(255, 255, 255)'){
+    parenttr.css('background-color', 'rgba(138, 109, 59, 0.66)');
+  } else {
+    parenttr.css('background-color', 'rgb(255, 255, 255');
+  }
+  fulfill.closest('form').submit();
+}
+
+  actioncancel.onclick = function(){
+    if(checked){
+      fulfill.prop('checked', false);
+    } else {
+      fulfill.prop('checked', true);
+    }
+    iosLightExit();
+}
+
+});
+
 function materialLight(){
   var pop = document.getElementById("material-light");
   pop.style.display = "block";
