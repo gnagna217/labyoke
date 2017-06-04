@@ -38,7 +38,7 @@ block content
 				//- adjust = ""
 				h4= i18n.__("shares.subtitle")
 			if(mysharesrequest != null && mysharesrequest.length>0)
-				- var output = mysharesrequest.filter(function(x){return x.status=="new"});
+				- var output = mysharesrequest.filter(function(x){return x.status!="fulfilled"});
 				h4= i18n.__("shares.subtitle1")
 				p
 					- var requestIntro = output.length + i18n.__("shares.intro5")
