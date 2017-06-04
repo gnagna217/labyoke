@@ -26,7 +26,7 @@ padding-right: 50px;
 }
 .adjustpaddingrightandwidth2{
     margin-right: 35px;
-    width: 30%;
+    width: 35%;
 }
 
 .form-control {
@@ -901,7 +901,7 @@ line.ct-point{
     width: 50%;
 }
 .share-container2{
-    width: 65%;
+    width: 60%;
 }
 .ct-series-a .ct-line {
   stroke: #3d9dcb !important;
@@ -1517,7 +1517,7 @@ input:-webkit-autofill:hover {
 }
 .adjustpaddingrightandwidth2{
     margin-right: 35px;
-    width: 30%;
+    width: 35%;
 }
 .adjustpaddingright{
     margin-right: 50px;
@@ -2210,7 +2210,7 @@ input::-webkit-inner-spin-button {
 }
 .adjustpaddingrightandwidth2 {
     margin-right: 35px;
-    width: 30%;
+    width: 35%;
 }
 }
  @media (max-width: 1200px) {
