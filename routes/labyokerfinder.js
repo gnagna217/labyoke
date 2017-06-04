@@ -1358,7 +1358,7 @@ LabYokeAgents.prototype.findallshares = function(callback) {
 
 	//labsstr = labsstr.replace(/,\s*$/, "");
 	//date = date.replace(/,\s*$/, "");
-	//select = select.replace(/UNION\s*$/, "");
+	select = select.replace(/UNION\s*$/, "");
 
 	
 
@@ -1438,7 +1438,7 @@ LabYokeAgents.prototype.findallshares = function(callback) {
 		select = select + "SELECT agent, count(agent) as counting, EXTRACT(MONTH FROM date_trunc( 'month', date )) as monthorder, EXTRACT(year FROM date_trunc( 'year', date )) as yearorder from " + labsstr + "_orders where insufficient=1 group by agent, date_trunc( 'month', date ), date_trunc( 'year', date ) UNION ";
 		i++;
 	}
-
+	select = select.replace(/UNION\s*$/, "");
 	var q = select;//"SELECT agent, count(agent) as counting, EXTRACT(MONTH FROM date_trunc( 'month', date )) as monthorder, EXTRACT(year FROM date_trunc( 'year', date )) as yearorder from " + mylabtable + "_orders where email='" + email + "' and insufficient=1 group by agent, date_trunc( 'month', date ), date_trunc( 'year', date )";
 	console.log("q allshares monthly: " + q);
 	var query5 = client.query(q);
