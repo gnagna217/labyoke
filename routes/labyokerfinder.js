@@ -2761,9 +2761,9 @@ LabYokerChangeShare.prototype.fulfillShare = function(callback) {
 	if(checked != "0"){
 		status = "fulfilled";
 	}
-	var str = "select * from labs";
-	//"UPDATE " + table + " SET status='" + status
-	//		+ "' where email='" + email + "'date between '" + date + "' and '" + date + "' and agent='" + agent + "' and vendor='" + vendor + "' and catalognumber='" + catalognumber + "'" + orderonly;
+	//var str = "select * from labs";
+	var str ="UPDATE " + table + " SET status='" + status
+			+ "' where email='" + email + "'date between '" + date + "' and '" + date + "' and agent='" + agent + "' and vendor='" + vendor + "' and catalognumber='" + catalognumber + "'" + orderonly;
 	console.log("str: " + str);
 	var query = client.query(str);
 	query.on("row", function(row, result) {
