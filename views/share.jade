@@ -87,7 +87,7 @@ block content
 											td
 												form(action="/cancelshare" method="post")
 													div(class="checkboxThree1")
-														input(type="checkbox" id=c name="cancel" value="cancel" class="cancel" checked=(checkedstr===true ? "checked" : undefined))
+														input(style="position:absolute;left: -9999px;" type="checkbox" id=c name="cancel" value="cancel" class="cancel" checked=(checkedstr===true ? "checked" : undefined))
 														label(class="labelcheck1 shadow" for=c)
 													input(type="hidden" name="agent" value=ob[prop].agent)
 													input(type="hidden" name="lab" value=ob[prop].lab)
@@ -159,7 +159,7 @@ block content
 											td
 												form(action="/cancelshare" method="post")
 													div(class="checkboxThree1")
-														input(type="checkbox" id=c name="cancel" value="cancel" class="cancel" checked=(checkedstr===true ? "checked" : undefined))
+														input(style="position:absolute;left: -9999px;" type="checkbox" id=c name="cancel" value="cancel" class="cancel" checked=(checkedstr===true ? "checked" : undefined))
 														label(class="labelcheck1 shadow" for=c)
 													input(type="hidden" name="agent" value=ob[prop].agent)
 													input(type="hidden" name="vendor" value=ob[prop].vendor)
