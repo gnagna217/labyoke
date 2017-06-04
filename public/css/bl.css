@@ -13,6 +13,9 @@
     outline:none;
 }
 
+#ios-light h1 {
+    padding-top: 0px;
+}
 .fa{
     background-color: transparent !important;
 }
