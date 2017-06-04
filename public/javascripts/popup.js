@@ -17,6 +17,8 @@ $('html').click(function() {
 $('.cancel').click(function() {
   var cancel = $(this);
   var checked = cancel.is(':checked');
+  console.log("checked is: " + checked);
+  console.debug(checked);
   var orderText = document.getElementById("orderText");
   var langText = document.getElementById("langText").innerHTML;
   var checkedtext = "Do you want to mark this reagent as insufficient?";
