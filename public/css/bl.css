@@ -19,6 +19,10 @@
 .fa{
     background-color: transparent !important;
 }
+.adjustpaddingrightandwidth2{
+    margin-right: 35px;
+    width: 30%;
+}
 
 .form-control {
     border-radius: 0px !important;
@@ -816,6 +820,9 @@ line.ct-point{
 .share-container{
     width: 50%;
 }
+.share-container2{
+    width: 65%;
+}
 .ct-series-a .ct-line {
   stroke: #3d9dcb !important;
 }
@@ -1427,6 +1434,10 @@ input:-webkit-autofill:hover {
 .adjustpaddingrightandwidth{
     margin-right: 35px;
     width: 47%;
+}
+.adjustpaddingrightandwidth2{
+    margin-right: 35px;
+    width: 30%;
 }
 .adjustpaddingright{
     margin-right: 50px;
@@ -2117,6 +2128,10 @@ input::-webkit-inner-spin-button {
     margin-right: 35px;
     width: 46%;
 }
+.adjustpaddingrightandwidth2 {
+    margin-right: 35px;
+    width: 30%;
+}
 }
  @media (max-width: 1200px) {
 .uploadh{
@@ -2244,6 +2259,10 @@ input::-webkit-inner-spin-button {
 .adjustpaddingrightandwidth {
     margin-right: 0px;
     width: 50%;
+}
+.adjustpaddingrightandwidth2 {
+    margin-right: 0px;
+    width: 30%;
 }
     .mobileonly{
         display: block;
@@ -2648,8 +2667,15 @@ span.num.greatherthanninetynine {
 .share-container{
     width: 100%;
 }
+.share-container2{
+    width: 100%;
+}
 
 .adjustpaddingrightandwidth{
+    margin-right: 0px;
+    width: 100%;
+}
+.adjustpaddingrightandwidth2{
     margin-right: 0px;
     width: 100%;
 }
