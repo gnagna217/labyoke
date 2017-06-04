@@ -31,8 +31,6 @@ block content
 			div!= i18n.__("shares.pop.subtitle")
 	div(class="shade" id="shade")
 	div(class="shade-light" id="shade-light")
-	div(class="shade" id="shadef")
-	div(class="shade-light" id="shadef-light")
 	div(class="container login marginbottom margintop container2 " + slide)
 		div(style="float: left;" class="share-container " + fadesections)
 			h1= i18n.__("shares.title")
@@ -72,7 +70,7 @@ block content
 										- d = d.toLocaleDateString("en-US")
 										- var isnew = ""
 										- var checkedstr = false
-										- if(n == "new")
+										- if(n != "fulfilled")
 											- isnew = "isnew"
 										- var insuff = parseInt(ob[prop].insufficient)
 										- if(insuff == 0)
