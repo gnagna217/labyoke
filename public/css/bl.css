@@ -16,6 +16,7 @@
 .admintop{
 float: right;
 margin-top:59px;
+padding-right: 50px;
 }
 #ios-light h1 {
     padding-top: 0px;
@@ -2174,6 +2175,9 @@ input::-webkit-inner-spin-button {
 }
 
  @media (max-width: 992px) {
+.admintop{
+padding-right: 0px;
+}
 .restrictreport{
     width: 100%;
 }
