@@ -211,7 +211,7 @@ display: none;
 }
 
 .checkboxThree1 {
-    width: 63px;
+    /*width: 63px;*/
     height: 25px;
     /*background: #333;
     margin: 20px 60px;*/
@@ -246,20 +246,20 @@ display: none;
 }
 .checkboxThree1 label {
     display: block;
-    width: 22px;
-    height: 15px;
-    border-radius: 50px;
+    width: 17px;
+    height: 17px;
+    border-radius: 17px;
 
     /*transition: all .5s ease;*/
     cursor: pointer;
     position: absolute;
-    top: 4px;
+    left: -8px;
+    top: 2px;
     z-index: 1;
-    left: 0px;
     background: #8a6d3b;
 }
 .checkboxThree1 input[type=checkbox]:checked + label {
-    /*left: 30px;*/
+    left: 30px;
     background: #2975b4;
 }
 

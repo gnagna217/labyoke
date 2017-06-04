@@ -204,7 +204,7 @@ block content
 												form(action="/fulfillshare" method="post")
 													
 													div(class="checkboxThree1")
-														input(type="checkbox" name="fulfill" value="fulfill" class="fulfill" checked=(checkedfilledstr===true ? "checked" : undefined))
+														input(type="checkbox" id="fulfill" name="fulfill" value="fulfill" class="fulfill" checked=(checkedfilledstr===true ? "checked" : undefined))
 														//input(type="checkbox" name="reportVendorInsuff" id="reportVendorInsuff" value="vendor")
 														label(class="labelcheck1 shadow")
 													input(type="hidden" name="agent" value=ob[prop].agent)
