@@ -184,6 +184,7 @@ block content
 											- checkedfilledstr = true
 										- var lab = (ob[prop].lab).replace(" ","").toLowerCase();
 										- var f = "fulfill" + prop
+										- var c = "cancel" + prop
 										tr(class=isnew)
 											td(class="wrapped") #{ob[prop].agent}
 											td(class="") #{ob[prop].vendor}
@@ -192,7 +193,10 @@ block content
 											td #{d}
 											td
 												form(action="/cancelshare" method="post")
-													input(type="checkbox" name="cancel" value="cancel" class="cancel" checked=(checkedstr===true ? "checked" : undefined))
+													div(class="checkboxThree1")
+														input(type="checkbox" id=c name="cancel" value="cancel" class="cancel" checked=(checkedstr===true ? "checked" : undefined))
+														label(class="labelcheck1 shadow" for=c)
+													//input(type="checkbox" name="cancel" value="cancel" class="cancel" checked=(checkedstr===true ? "checked" : undefined))
 													input(type="hidden" name="agent" value=ob[prop].agent)
 													input(type="hidden" name="lab" value=ob[prop].lab)
 													input(type="hidden" name="vendor" value=ob[prop].vendor)
@@ -206,7 +210,6 @@ block content
 													
 													div(class="checkboxThree1")
 														input(type="checkbox" id=f name="fulfill" value="fulfill" class="fulfill" checked=(checkedfilledstr===true ? "checked" : undefined))
-														//input(type="checkbox" name="reportVendorInsuff" id="reportVendorInsuff" value="vendor")
 														label(class="labelcheck1 shadow" for=f)
 													input(type="hidden" name="agent" value=ob[prop].agent)
 													input(type="hidden" name="lab" value=ob[prop].lab)
