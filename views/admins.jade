@@ -71,12 +71,16 @@ block content
 										- d = d.toLocaleDateString("en-US")
 										- var isnew = ""
 										- var checkedstr = false
+										- var checkedfilledstr = false
 										- if(n == "new")
 											- isnew = "isnew"
 										- var insuff = parseInt(ob[prop].insufficient)
 										- if(insuff == 0)
 											- isnew = "yokeBackColor"
 											- checkedstr = true
+										- var status = parseInt(ob[prop].status)
+										- if(status == 'fulfilled')
+											- checkedfilledstr = true
 										- var lab = (ob[prop].lab).replace(" ","").toLowerCase();
 										tr(class=isnew)
 											td(class="wrapped") #{ob[prop].agent}
@@ -97,7 +101,7 @@ block content
 													input(type="hidden" name="table" value=currentlabname.replace(" ","").toLowerCase() + "_orders")
 											td
 												form(action="/fulfillshare" method="post")
-													input(type="checkbox" name="fulfill" value="fulfill" class="cancel" checked=(checkedstr===true ? "checked" : undefined))
+													input(type="checkbox" name="fulfill" value="fulfill" class="cancel" checked=(checkedfilledstr===true ? "checked" : undefined))
 													input(type="hidden" name="agent" value=ob[prop].agent)
 													input(type="hidden" name="lab" value=ob[prop].lab)
 													input(type="hidden" name="vendor" value=ob[prop].vendor)
