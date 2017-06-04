@@ -1344,16 +1344,16 @@ LabYokeAgents.prototype.findallshares = function(callback) {
 
 	for(var prop in labs){
 		var lb = labs[prop].labname;
-		if(checklab.indexOf(lb)<0){
-			checklab.push(lb);
+		//if(checklab.indexOf(lb)<0){
+		//	checklab.push(lb);
 
 		a = "a" + i;
-		labsstr = lb.replace(" ","").toLowerCase() + "_orders "; //+ a + " ";
+		labsstr = lb.replace(/ /g,"").toLowerCase() + "_orders "; //+ a + " ";
 		console.log("get all labs shares labsstr: " + labsstr);
 		select = select + "SELECT a.agent, count(a.agent), b.insufficient as insuff from vm2016_agentsshare a, " + labsstr + " b where a.agent = b.agent and a.catalognumber = b.catalognumber and b.email='"
 					+ email + "' and b.lab='" + mylab + "' group by a.agent, b.insufficient UNION ";
 		i++;
-		}
+		//}
 	}
 
 	//labsstr = labsstr.replace(/,\s*$/, "");
@@ -1434,7 +1434,7 @@ LabYokeAgents.prototype.findallshares = function(callback) {
 
 	for(var prop in labs){
 		a = "a" + i;
-		labsstr = (labs[prop].labname).replace(" ","").toLowerCase() + "_orders "; //+ a + " ";
+		labsstr = (labs[prop].labname).replace(/ /g,"").toLowerCase() + "_orders "; //+ a + " ";
 		select = select + "SELECT agent, count(agent) as counting, EXTRACT(MONTH FROM date_trunc( 'month', date )) as monthorder, EXTRACT(year FROM date_trunc( 'year', date )) as yearorder from " + labsstr + "_orders where insufficient=1 group by agent, date_trunc( 'month', date ), date_trunc( 'year', date ) UNION ";
 		i++;
 	}
