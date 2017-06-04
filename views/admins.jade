@@ -96,10 +96,10 @@ block content
 									-for(var prop in ob)
 										tr(class="")
 											td(class="desktabonly") #{prop}
-											td(class="wrapped") #{ob[prop].name_of_reagent}
-											td #{ob[prop].vendor}
-											td #{ob[prop].catalog_number}
-											td #{ob[prop].location}
+											td(class="wrapped2") #{ob[prop].name_of_reagent}
+											td(class="wrapped2") #{ob[prop].vendor}
+											td(class="wrapped2") #{ob[prop].catalog_number}
+											td(class="wrapped2") #{ob[prop].location}
 							script.
 								$(document).ready(function() {
 									$('#rankTblload').DataTable({
@@ -157,11 +157,11 @@ block content
 							table(id="rankTblreqshares" class="table rankTbl")
 								thead
 									tr(class="you info-best" style="font-weight: bold")
-										th(class="wrapped")!= i18n.__("shares.table.reagent")
-										th(class="")= i18n.__("shares.table.vendor")
-										th(class="")= i18n.__("shares.table.catalog")
-										th(class="wrapped")= i18n.__("shares.table.requestor")
-										th(class="wrapped")= i18n.__("shares.table.email")
+										th(class="wrapped2")!= i18n.__("shares.table.reagent")
+										th(class="wrapped2")= i18n.__("shares.table.vendor")
+										th(class="wrapped2")= i18n.__("shares.table.catalog")
+										th(class="wrapped2")= i18n.__("shares.table.requestor")
+										th(class="wrapped2")= i18n.__("shares.table.email")
 										th= i18n.__("shares.table.date")
 										th= i18n.__("shares.table.delete")
 										th= i18n.__("shares.table.fulfill")
