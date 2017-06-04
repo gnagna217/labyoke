@@ -254,7 +254,7 @@ module.exports = function(router) {
         }
         res.setLocale(req.cookies.i18n);
         var labYokeAgents = new LabYokeAgents(req.session.email, req.session.lab, req.session.labs, req.session.dept,req.session.labadmin);
-        labYokeAgents.findmyshares(function(error, results) {
+        labYokeAgents.findallshares(function(error, results) {
             //req.session.orders = results[2];
             req.session.myshares = results[0];
             req.session.report_sharesbycategory = results[1];
