@@ -77,15 +77,18 @@ block content
 											- isnew = "yokeBackColor"
 											- checkedstr = true
 										- var lab = (ob[prop].lab).replace(" ","").toLowerCase();
+										- var c = "cancel" + prop
 										tr(class=isnew)
-											td(class="wrapped") #{ob[prop].agent}
-											td(class="desktabonly") #{ob[prop].vendor}
-											td(class="deskfullonly") #{ob[prop].catalognumber}
-											td(class="desktabonly") #{ob[prop].requestoremail}
+											td(class="wrapped2") #{ob[prop].agent}
+											td(class="wrapped2 desktabonly") #{ob[prop].vendor}
+											td(class="wrapped2 deskfullonly") #{ob[prop].catalognumber}
+											td(class="wrapped2 desktabonly") #{ob[prop].requestoremail}
 											td #{d}
 											td
 												form(action="/cancelshare" method="post")
-													input(type="checkbox" name="cancel" value="cancel" class="cancel" checked=(checkedstr===true ? "checked" : undefined))
+													div(class="checkboxThree1")
+														input(type="checkbox" id=c name="cancel" value="cancel" class="cancel" checked=(checkedstr===true ? "checked" : undefined))
+														label(class="labelcheck1 shadow" for=c)
 													input(type="hidden" name="agent" value=ob[prop].agent)
 													input(type="hidden" name="lab" value=ob[prop].lab)
 													input(type="hidden" name="vendor" value=ob[prop].vendor)
@@ -148,13 +151,16 @@ block content
 										- if(insuff == 0)
 											- qtyinsufficient = "yokeBackColor"
 											- checkedstr = true
+										- var c = "cancelr" + prop
 										tr(class=qtyinsufficient)
-											td(class="wrapped") #{ob[prop].agent}
-											td #{ob[prop].vendor}
-											td #{ob[prop].catalognumber}
+											td(class="wrapped2") #{ob[prop].agent}
+											td(class="wrapped2") #{ob[prop].vendor}
+											td(class="wrapped2") #{ob[prop].catalognumber}
 											td
 												form(action="/cancelshare" method="post")
-													input(type="checkbox" name="cancel" value="cancel" class="cancel" checked=(checkedstr===true ? "checked" : undefined))
+													div(class="checkboxThree1")
+														input(type="checkbox" id=c name="cancel" value="cancel" class="cancel" checked=(checkedstr===true ? "checked" : undefined))
+														label(class="labelcheck1 shadow" for=c)
 													input(type="hidden" name="agent" value=ob[prop].agent)
 													input(type="hidden" name="vendor" value=ob[prop].vendor)
 													input(type="hidden" name="lab" value=ob[prop].lab)
