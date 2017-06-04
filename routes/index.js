@@ -878,7 +878,7 @@ totalshares = t[0].counting;
             var labYokechange = new LabYokerChangeShare(table,agent, vendor, catalognumber,email,requestor,checked,datenow,date, lab, res,userlang);
             labYokechange.fulfillShare(function(error, results) {
                 if(results != null && results.length > 0){
-                    res.redirect('/share');         
+                    res.redirect('/admins');         
                     //res.render('share', {ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, isLoggedInAdmin: req.session.admin, title:'Shares',loggedIn : true});
                     req.session.messages = null;
                 }
