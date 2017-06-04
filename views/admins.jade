@@ -135,7 +135,7 @@ block content
 					div(class="threepointsmobile", style=nobar)
 
 		div(style="" class="share-container2 admintop" + fadesections)
-			div(class="radiosearch keysearchs")
+			div(class="radiosearch keysearchs", style="margin-bottom: 30px;")
 				div(style="float:left;")
 					input(type="radio" name="search" value="keysearch" id="keyradio")
 					label(for="keyradio", style="float: left;")
@@ -155,7 +155,7 @@ block content
 					h3= i18n.__("admins.subtitle")
 				if(mysharesrequest != null && mysharesrequest.length>0)
 					- var output = mysharesrequest.filter(function(x){return x.status!="fulfilled"});
-					h3= i18n.__("admins.subtitle1")
+					//h3= i18n.__("admins.subtitle1")
 					p
 						- var requestIntro = output.length + i18n.__("admins.intro5")
 						- if(output.length == 0)
@@ -276,7 +276,7 @@ block content
 					div(class="threepointssep")
 			div(id="table2")
 				if(myshares != "")
-					h3(style="padding-top: 25px;")= i18n.__("admins.none.title")
+					//h3(style="padding-top: 25px;")= i18n.__("admins.none.title")
 					p!= i18n.__("admins.none.subtitle")
 					div(id="results2", class="resultsshadow")
 						div(id="ctl00_Div2" class="row rank")
