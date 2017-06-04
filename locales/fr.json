@@ -500,16 +500,16 @@
 
     "admins.pop.title": "Admin.",
     "admins.pop.subtitle": "<div id='actionorder' class='exit' style='width: 50%; float: left; background-color: rgba(138, 109, 59, 0.55);'')>OK</div><div class='exit' id='actioncancel'>Annuler</div>",
-    "admins.title":"Admin.",
+    "admins.title":"Admin Téléchargement.",
     "admins.subtitle":"Votre laboratoire n'a reçu aucune commande de réactifs",
-    "admins.subtitle1": "Commandes du Laboratoire.",
+    "admins.subtitle1": "Admin Commandes Laboratoire.",
     "admins.intro5": " nouveau(x) produit(s) chimique(s)",
     "admins.intro": "No new chem",
     "admins.intro1": " actuellement commandé(s) dans l'inventaire du laboratoire. Au total, ",
     "admins.intro2": " requêtes(s)",
     "admins.intro3": "Pas de requête",
     "admins.intro4": " enregistré pour votre laboratoire. <span class='yokeColor'>Les commandes annulées</span> sont mises en souligné.",
-    "admins.none.title": "Vous partagez actuellement.",
+    "admins.none.title": "Admin Réactifs Laboratoire.",
     "admins.none.subtitle": "Un administrateur a téléchargé les réactifs suivants au nom des membres du laboratoire. Si certains produits sont en <span class='yokeColorBold'>quantités insuffisantes</span><span>, veuillez actualiser votre inventaire en utlisant l'outil de téléchargement.</span>",
 
 }

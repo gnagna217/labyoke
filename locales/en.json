@@ -496,16 +496,16 @@
 
     "admins.pop.title": "Admin.",
     "admins.pop.subtitle": "<div id='actionorder' class='exit' style='width: 50%; float: left; background-color: rgba(138, 109, 59, 0.55);'')>OK</div><div class='exit' id='actioncancel'>Cancel</div>",
-    "admins.title":"Admin.",
+    "admins.title":"Admin Upload.",
     "admins.subtitle":"Your lab has not received any order for reagents.",
-    "admins.subtitle1": "Orders in Lab.",
+    "admins.subtitle1": "Admin Lab Orders.",
     "admins.intro5": " new chem(s)",
     "admins.intro": "No new chem",
     "admins.intro1": " currently being requested by your lab members. In total, ",
     "admins.intro2": " request(s)",
     "shares.intro3": "No request",
     "shares.intro4": " registered for your lab. <span class='yokeColor'>Cancelled orders</span> are highlighted.",
-    "admins.none.title": "Your lab members are currently sharing.",
+    "admins.none.title": "Admin Lab Reagents.",
     "admins.none.subtitle": "An administrator has uploaded the following reagents for your lab members. If <span class='yokeColorBold'>Insufficient quantities</span><span> are listed, please refresh the quantities by uploading the excel file from the Upload section.</span>",
     
 
