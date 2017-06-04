@@ -2253,7 +2253,7 @@ input::-webkit-inner-spin-button {
 
 @media (max-width: 925px) {
 .admintop{
-margin-top:25px;
+margin-top:0px;
 }
 .share-container2{
     width: 100%;
