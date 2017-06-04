@@ -156,6 +156,8 @@ html(lang='en')
                         - activeAccountMob = "labColorBackgroundHover"
                     - if (title == 'About Us')
                         - activateAbout = activateAbout + "labColorBackgroundHover"
+                    - if (title == 'Admins')
+                        - activateAdmin = activateAdmin + "labColorBackgroundHover"
                 span
                   a(href="/account", class="roundaccountmob " + activeAccountMob, style="color: white;text-decoration: none;")!= user_surname + "" + surname
                 span
@@ -179,7 +181,8 @@ html(lang='en')
                                             span(class="fa fa-file-text colmenu")
                                             span #{i18n.__("layout.Reports")}
                                 li(class=activateAdmin)
-                                        a(href="/share/do#upload",class="nav-menu", id="menusearch", style="")
+                                        //a(href="/share/do#upload",class="nav-menu", id="menusearch", style="")
+                                        a(href="/admins",class="nav-menu", id="menusearch", style="")
                                             span(class="fa fa-user-plus colmenu")
                                             span #{i18n.__("layout.Admin")}
                             
