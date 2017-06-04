@@ -183,6 +183,7 @@ block content
 										- if(status == 'fulfilled')
 											- checkedfilledstr = true
 										- var lab = (ob[prop].lab).replace(" ","").toLowerCase();
+										- var f = "fulfill" + prop
 										tr(class=isnew)
 											td(class="wrapped") #{ob[prop].agent}
 											td(class="") #{ob[prop].vendor}
@@ -204,9 +205,9 @@ block content
 												form(action="/fulfillshare" method="post")
 													
 													div(class="checkboxThree1")
-														input(type="checkbox" id="fulfill" name="fulfill" value="fulfill" class="fulfill" checked=(checkedfilledstr===true ? "checked" : undefined))
+														input(type="checkbox" id=f name="fulfill" value="fulfill" class="fulfill" checked=(checkedfilledstr===true ? "checked" : undefined))
 														//input(type="checkbox" name="reportVendorInsuff" id="reportVendorInsuff" value="vendor")
-														label(class="labelcheck1 shadow" for="fulfill")
+														label(class="labelcheck1 shadow" for=f)
 													input(type="hidden" name="agent" value=ob[prop].agent)
 													input(type="hidden" name="lab" value=ob[prop].lab)
 													input(type="hidden" name="owneremail" value=ob[prop].email)
