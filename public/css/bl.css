@@ -13,6 +13,10 @@
     outline:none;
 }
 
+.admintop{
+float: right;
+margin-top:59px;
+}
 #ios-light h1 {
     padding-top: 0px;
 }
@@ -2248,6 +2252,9 @@ input::-webkit-inner-spin-button {
 }
 
 @media (max-width: 925px) {
+.admintop{
+margin-top:25px;
+}
 .share-container2{
     width: 100%;
 }
