@@ -750,6 +750,52 @@ totalshares = t[0].counting;
 		}
 	});
 
+    router.post('/admincancelshare', isLoggedIn, function(req, res) {
+        if(req.cookies.i18n == null || req.cookies.i18n == undefined){
+            req.cookies.i18n = "en";
+        }
+        res.setLocale(req.cookies.i18n);
+        if (req.session.user) {
+            var agent = req.body.agent;
+            var lab = req.body.lab;
+            var vendor = req.body.vendor;
+            var catalognumber = req.body.catalognumber;
+            var table = req.body.table;
+            var email = req.body.email;
+            var requestor = req.body.requestoremail;
+            var checked = req.body.cancel;
+            var userlang = req.cookies.i18n;
+            var date = moment(req.body.date).add(1, 'day').tz("America/New_York").format(
+                'MM-DD-YYYY');
+            var datenow = moment(new Date).tz("America/New_York").format(
+                'MM-DD-YYYY');
+            if(checked != null)
+                checked = 0;
+            if(checked == undefined)
+                checked = 1;
+            console.log("date: " + date);
+            console.log("laab: " + lab);
+            console.log("agent: " + agent);
+            console.log("vendor: " + vendor);
+            console.log("catalognumber: " + catalognumber);
+            console.log("checked: " + checked);
+            console.log("table: " + table);
+            console.log("email: " + email);
+            console.log("userlang: " + userlang);
+            console.log("requestoremail: " + requestor);
+            var labYokechange = new LabYokerChangeShare(table,agent, vendor, catalognumber,email,requestor,checked,datenow,date, lab, res,userlang);
+            labYokechange.cancelShare(function(error, results) {
+                if(results != null && results.length > 0){
+                    res.redirect('/admins');         
+                    //res.render('share', {ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, isLoggedInAdmin: req.session.admin, title:'Shares',loggedIn : true});
+                    req.session.messages = null;
+                }
+            });
+        } else {
+            res.redirect('/login');
+        }
+    });
+
 	router.post('/cancelshare', isLoggedIn, function(req, res) {
 		if(req.cookies.i18n == null || req.cookies.i18n == undefined){
 			req.cookies.i18n = "en";

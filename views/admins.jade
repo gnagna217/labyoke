@@ -197,7 +197,7 @@ block content
 											td(class="wrapped2") #{ob[prop].email}
 											td #{d}
 											td
-												form(action="/cancelshare" method="post")
+												form(action="/admincancelshare" method="post")
 													div(class="checkboxThree1")
 														input(type="checkbox" id=c name="cancel" value="cancel" class="cancel" checked=(checkedstr===true ? "checked" : undefined))
 														label(class="labelcheck1 shadow" for=c)
@@ -289,7 +289,7 @@ block content
 											td(class="wrapped2")  #{ob[prop].vendor}
 											td(class="wrapped2")  #{ob[prop].catalognumber}
 											td
-												form(action="/cancelshare" method="post")
+												form(action="/admincancelshare" method="post")
 													div(class="checkboxThree1", style=showfulfill)
 														input(type="checkbox" id=c name="cancel" value="cancel" class="cancel" checked=(checkedstr===true ? "checked" : undefined))
 														label(class="labelcheck1 shadow" for=c)
