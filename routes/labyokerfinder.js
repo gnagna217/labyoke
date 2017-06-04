@@ -1343,7 +1343,7 @@ LabYokeAgents.prototype.findallshares = function(callback) {
 	var checklab = [];
 
 	//for(var prop in labs){
-		var lb = labs[prop].labname;
+		//var lb = labs[prop].labname;
 		//if(checklab.indexOf(lb)<0){
 		//	checklab.push(lb);
 
