@@ -33,23 +33,23 @@ block content
 	div(class="shade-light" id="shade-light")
 	div(class="container login marginbottom margintop container2 " + slide)
 		div(style="float: left;" class="share-container " + fadesections)
-			h1= i18n.__("shares.title")
+			h1= i18n.__("admins.title")
 			if(myshares == "")
 				//- adjust = ""
-				h4= i18n.__("shares.subtitle")
+				h4= i18n.__("admins.subtitle")
 			if(mysharesrequest != null && mysharesrequest.length>0)
 				- var output = mysharesrequest.filter(function(x){return x.status=="new"});
-				h4= i18n.__("shares.subtitle1")
+				h4= i18n.__("admins.subtitle1")
 				p
-					- var requestIntro = output.length + i18n.__("shares.intro5")
+					- var requestIntro = output.length + i18n.__("admins.intro5")
 					- if(output.length == 0)
-						- requestIntro = i18n.__("shares.intro")
+						- requestIntro = i18n.__("admins.intro")
 					span(class="labColor")!= requestIntro
-					span= i18n.__("shares.intro1")
-					- var totalrequestIntro = "<span class='labColor'>" + mysharesrequest.length + i18n.__("shares.intro2") + "</span>"
+					span= i18n.__("admins.intro1")
+					- var totalrequestIntro = "<span class='labColor'>" + mysharesrequest.length + i18n.__("admins.intro2") + "</span>"
 					- if(mysharesrequest.length == 0)
-						- totalrequestIntro = i18n.__("shares.intro3")
-					span!= totalrequestIntro + i18n.__("shares.intro4")
+						- totalrequestIntro = i18n.__("admins.intro3")
+					span!= totalrequestIntro + i18n.__("admins.intro4")
 				div(id="results2", class="resultsshadow")
 					div(id="ctl00_Div2" class="row rank")
 						div(class="table-responsive")               
@@ -143,8 +143,8 @@ block content
 								});
 				div(class="threepointssep")
 			if(myshares != "")
-				h4= i18n.__("shares.none.title")
-				p!= i18n.__("shares.none.subtitle")
+				h4= i18n.__("admins.none.title")
+				p!= i18n.__("admins.none.subtitle")
 				div(id="results2", class="resultsshadow")
 					div(id="ctl00_Div2" class="row rank")
 						div(class="table-responsive")               
