@@ -202,7 +202,11 @@ block content
 													input(type="hidden" name="table" value=currentlabname.replace(" ","").toLowerCase() + "_orders")
 											td
 												form(action="/fulfillshare" method="post")
-													input(type="checkbox" name="fulfill" value="fulfill" class="fulfill" checked=(checkedfilledstr===true ? "checked" : undefined))
+													
+													div(class="checkboxThree1")
+														input(type="checkbox" name="fulfill" value="fulfill" class="fulfill" checked=(checkedfilledstr===true ? "checked" : undefined))
+														//input(type="checkbox" name="reportVendorInsuff" id="reportVendorInsuff" value="vendor")
+														label(class="labelcheck1 shadow")
 													input(type="hidden" name="agent" value=ob[prop].agent)
 													input(type="hidden" name="lab" value=ob[prop].lab)
 													input(type="hidden" name="owneremail" value=ob[prop].email)
