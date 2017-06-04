@@ -1255,17 +1255,17 @@ LabYokeAgents.prototype.findmyshares = function(callback) {
 	}
 	var q = "BEGIN TRANSACTION; " + select + " COMMIT;";
 	*/
-	var q = "update "+ mylabtable + "_orders set status='' where status='new' and email='" + email+ "'";
-	console.log("q update: " + q);
-			var query3 = client.query(q);
+	//var q = "update "+ mylabtable + "_orders set status='' where status='new' and email='" + email+ "'";
+	//console.log("q update: " + q);
+	//		var query3 = client.query(q);
 
 
 				//var query3 = client.query("update " + mylabtable + "_orders set status='' where status='new' and email='" + email+ "'");
 
-				query3.on("row", function(row, result3) {
+	/*			query3.on("row", function(row, result3) {
 					result3.addRow(row);
 				});
-				query3.on("end", function(result3) {
+				query3.on("end", function(result3) {*/
 
 	labsstr = "";
 	select = "";
@@ -1311,7 +1311,7 @@ LabYokeAgents.prototype.findmyshares = function(callback) {
 
 						//callback(null, results)
 					});
-				});
+				//});
 
 			});
 			//callback(null, results)
