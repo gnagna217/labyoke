@@ -180,7 +180,8 @@ block content
 										- if(insuff == 0)
 											- isnew = "yokeBackColor"
 											- checkedstr = true
-										- var status = parseInt(ob[prop].status)
+										//- var status = parseInt(ob[prop].status)
+										- var status = ob[prop].status
 										- if(status == 'fulfilled')
 											- checkedfilledstr = true
 										- var lab = (ob[prop].lab).replace(" ","").toLowerCase();
