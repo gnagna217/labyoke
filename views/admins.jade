@@ -187,7 +187,7 @@ block content
 										- var c = "cancel" + prop
 										- var showfulfill = ""
 										- if(checkedstr===true)
-											- showfulfill = " style='display:none;'"
+											- showfulfill = "display:none;"
 										tr(class=isnew)
 											td(class="wrapped") #{ob[prop].agent}
 											td(class="") #{ob[prop].vendor}
@@ -211,7 +211,7 @@ block content
 											td
 												form(action="/fulfillshare" method="post")
 													
-													div(class="checkboxThree1", showfulfill)
+													div(class="checkboxThree1", style=showfulfill)
 														input(type="checkbox" id=f name="fulfill" value="fulfill" class="fulfill" checked=(checkedfilledstr===true ? "checked" : undefined))
 														label(class="labelcheck1 shadow" for=f)
 													input(type="hidden" name="agent" value=ob[prop].agent)
