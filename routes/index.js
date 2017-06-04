@@ -56,7 +56,7 @@ module.exports = function(router) {
 	var competitionStarts = dates.competitionStarts;
 	var competitionEnds = dates.competitionEnds;
 
-    router.post('/admins/:doing', isLoggedIn, function(req, res) {
+    router.post('/admins/:doing', isLoggedInAdmin, function(req, res) {
         if(req.cookies.i18n == null || req.cookies.i18n == undefined){
             req.cookies.i18n = "en";
         }
@@ -148,7 +148,7 @@ module.exports = function(router) {
         })
     });
 
-    router.post('/admins', isLoggedIn, function(req, res) {
+    router.post('/admins', isLoggedInAdmin, function(req, res) {
         if(req.cookies.i18n == null || req.cookies.i18n == undefined){
             req.cookies.i18n = "en";
         }
@@ -429,7 +429,7 @@ module.exports = function(router) {
 		res.redirect('/share');
 	});
 
-    router.get('/admins', function(req, res) {
+    router.get('/admins', isLoggedInAdmin, function(req, res) {
         if(req.cookies.i18n == null || req.cookies.i18n == undefined){
             req.cookies.i18n = "en";
         }
@@ -796,7 +796,7 @@ totalshares = t[0].counting;
 		}
 	});
 
-    router.post('/fulfillshare', isLoggedIn, function(req, res) {
+    router.post('/fulfillshare', isLoggedInAdmin, function(req, res) {
         if(req.cookies.i18n == null || req.cookies.i18n == undefined){
             req.cookies.i18n = "en";
         }
