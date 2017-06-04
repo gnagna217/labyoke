@@ -303,6 +303,7 @@
     "shares.table.location": "Proprio",
     "shares.table.requestor": "Demandeur",
     "shares.table.delete": "X",
+    "shares.table.fulfill": "F",
     "shares.none.title": "Vous partagez actuellement.",
     "shares.none.subtitle": "Un administrateur a téléchargé les réactifs suivants en votre nom. Si certains produits sont en <span class='yokeColorBold'>quantités insuffisantes</span><span>, demandez à votre administrateur d'actualiser votre inventaire.</span>",
     "shares.admin.title": "Téléchargement de Réactifs.",
