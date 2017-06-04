@@ -56,6 +56,187 @@ module.exports = function(router) {
 	var competitionStarts = dates.competitionStarts;
 	var competitionEnds = dates.competitionEnds;
 
+    router.post('/admins/:doing', isLoggedIn, function(req, res) {
+        if(req.cookies.i18n == null || req.cookies.i18n == undefined){
+            req.cookies.i18n = "en";
+        }
+        var doing = req.params.doing;
+        console.log("do: " + doing);
+        res.setLocale(req.cookies.i18n);
+        var exceltojson;
+        upload(req,res,function(err){
+            var cont = 1;
+            if(err){
+                 //res.json({error_code:1,err_desc:err});
+                 res.render('admins', {
+                   doing:"upload",lang:req.cookies.i18n, i18n:res, nosuccess: "generic", myshares: req.session.myshares, mysharesrequest: req.session.mysharesrequest, report_sharesbycategory: req.session.report_sharesbycategory, report_venn: req.session.report_venn, test: req.session.test, currentlabname: req.session.lab, ordersnum: req.session.orders, sharesnum: req.session.shares, loggedIn : true, isLoggedInAdmin: req.session.admin, title: 'Admins', labyoker : req.session.user, labyokersurname : req.session.surname
+                 });
+                 cont = 0;
+                 console.log("generic error: "+cont);
+                 //return;
+            }
+            /** Multer gives us file info in req.file object */
+            if(!req.file){
+                //res.json({error_code:1,err_desc:"No file passed"});
+                
+                res.render('admins', {
+                   doing:"upload",lang:req.cookies.i18n, i18n:res, nosuccess: "nofile", myshares: req.session.myshares, mysharesrequest: req.session.mysharesrequest, report_sharesbycategory: req.session.report_sharesbycategory, report_venn: req.session.report_venn, test: req.session.test, currentlabname: req.session.lab, ordersnum: req.session.orders, sharesnum: req.session.shares, loggedIn : true, isLoggedInAdmin: req.session.admin, title: 'Admins', labyoker : req.session.user, labyokersurname : req.session.surname
+                });
+                cont = 0;
+                console.log("no file error: " + cont);
+                //return;
+            }
+            /** Check the extension of the incoming file and 
+             *  use the appropriate module
+             */
+            if(cont == 1){
+            if(req.file.originalname.split('.')[req.file.originalname.split('.').length-1] === 'xlsx'){
+                exceltojson = xlsxtojson;
+            } else {
+                exceltojson = xlstojson;
+            }
+            try {
+                exceltojson({
+                    input: req.file.path,
+                    output: null, //since we don't need output.json
+                    lowerCaseHeaders:true
+                }, function(err,result){
+                    if(err) {
+                        //return res.json({error_code:1,err_desc:err, data: null});
+
+                        res.render('admins', {
+                        doing:"upload",lang:req.cookies.i18n, i18n:res, nosuccess: "nodata", myshares: req.session.myshares, mysharesrequest: req.session.mysharesrequest, report_sharesbycategory: req.session.report_sharesbycategory, report_venn: req.session.report_venn, test: req.session.test, currentlabname: req.session.lab, ordersnum: req.session.orders, sharesnum: req.session.shares, loggedIn : true, isLoggedInAdmin: req.session.admin, title: 'Admins', spreadname: req.file.originalname, labyoker : req.session.user, labyokersurname : req.session.surname
+                        });
+                        cont = 0;
+                        console.log("no data error : " + cont);
+                    }
+                    if(cont == 1){
+                    //var ob = { data:result};
+                    console.log("inside upload ");
+                    var labYokeUploader = new LabYokeUploader(result);
+                            /*var labYokeAgents = new LabYokeAgents(req.session.email, req.session.lab, req.session.labs, req.session.dept);
+        labYokeAgents.findmyshares(function(error, results) {
+            //req.session.orders = results[2];
+            req.session.shares = 0;
+            console.log("test ? " + results[3]);
+*/
+                    labYokeUploader.upload(function(error, done) {
+                        //console.log("is upload json: " + json);
+                        console.log("is upload done?: " + done);
+                    if(done == "successfulUpload"){
+                        console.log("inside successful upload");
+                        console.log("mysharesrequest " + req.session.mysharesrequest);
+                        res.render('admins', {
+                        doing:"upload",lang:req.cookies.i18n, i18n:res, myshares: req.session.myshares, mysharesrequest: req.session.mysharesrequest, report_sharesbycategory: req.session.report_sharesbycategory, report_venn: req.session.report_venn, test: req.session.test, currentlabname: req.session.lab, ordersnum: req.session.orders, sharesnum: req.session.shares, json: result, loggedIn : true, isLoggedInAdmin: req.session.admin, title: 'Admins', spreadname: req.file.originalname, labyoker : req.session.user, labyokersurname : req.session.surname
+                    });
+                    } else {
+                        console.log("inside not successful upload");
+                        res.render('admins', {doing:"upload",lang:req.cookies.i18n, i18n:res, nosuccess: "databaserror", report_venn: req.session.report_venn, test: req.session.test, currentlabname: req.session.lab, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, labyokersurname : req.session.surname, myshares: req.session.myshares, mysharesrequest: req.session.mysharesrequest, report_sharesbycategory: req.session.report_sharesbycategory, loggedIn : true, isLoggedInAdmin: req.session.admin, title:'Admins'});
+                        req.session.messages = null;
+                    }
+                });
+}
+
+        //});
+
+                    //res.json({error_code:0,err_desc:null, data: result});
+                });
+            } catch (e){
+                res.json({error_code:1,err_desc:"Corrupted excel file"});
+            }
+        }
+        })
+    });
+
+    router.post('/admins', isLoggedIn, function(req, res) {
+        if(req.cookies.i18n == null || req.cookies.i18n == undefined){
+            req.cookies.i18n = "en";
+        }
+        res.setLocale(req.cookies.i18n);
+        var exceltojson;
+        upload(req,res,function(err){
+            var cont = 1;
+            if(err){
+                 //res.json({error_code:1,err_desc:err});
+                 res.render('admins', {
+                   lang:req.cookies.i18n, i18n:res, nosuccess: "generic", myshares: req.session.myshares, mysharesrequest: req.session.mysharesrequest, report_sharesbycategory: req.session.report_sharesbycategory, report_venn: req.session.report_venn, test: req.session.test, currentlabname: req.session.lab, ordersnum: req.session.orders, sharesnum: req.session.shares, loggedIn : true, isLoggedInAdmin: req.session.admin, title: 'Admins', labyoker : req.session.user, labyokersurname : req.session.surname
+                 });
+                 cont = 0;
+                 console.log("generic error: "+cont);
+                 //return;
+            }
+            /** Multer gives us file info in req.file object */
+            if(!req.file){
+                //res.json({error_code:1,err_desc:"No file passed"});
+                
+                res.render('admins', {
+                   lang:req.cookies.i18n, i18n:res, nosuccess: "nofile", myshares: req.session.myshares, mysharesrequest: req.session.mysharesrequest, report_sharesbycategory: req.session.report_sharesbycategory, report_venn: req.session.report_venn, test: req.session.test, currentlabname: req.session.lab, ordersnum: req.session.orders, sharesnum: req.session.shares, loggedIn : true, isLoggedInAdmin: req.session.admin, title: 'Admins', labyoker : req.session.user, labyokersurname : req.session.surname
+                });
+                cont = 0;
+                console.log("no file error: " + cont);
+                //return;
+            }
+            /** Check the extension of the incoming file and 
+             *  use the appropriate module
+             */
+            if(cont == 1){
+            if(req.file.originalname.split('.')[req.file.originalname.split('.').length-1] === 'xlsx'){
+                exceltojson = xlsxtojson;
+            } else {
+                exceltojson = xlstojson;
+            }
+            try {
+                exceltojson({
+                    input: req.file.path,
+                    output: null, //since we don't need output.json
+                    lowerCaseHeaders:true
+                }, function(err,result){
+                    if(err) {
+                        //return res.json({error_code:1,err_desc:err, data: null});
+
+                        res.render('admins', {
+                        lang:req.cookies.i18n, i18n:res, nosuccess: "nodata", myshares: req.session.myshares, mysharesrequest: req.session.mysharesrequest, report_sharesbycategory: req.session.report_sharesbycategory, report_venn: req.session.report_venn, test: req.session.test, currentlabname: req.session.lab, ordersnum: req.session.orders, sharesnum: req.session.shares, loggedIn : true, isLoggedInAdmin: req.session.admin, title: 'Admins', spreadname: req.file.originalname, labyoker : req.session.user, labyokersurname : req.session.surname
+                        });
+                        cont = 0;
+                        console.log("no data error : " + cont);
+                    }
+                    if(cont == 1){
+                    //var ob = { data:result};
+                    console.log("inside upload ");
+                    var labYokeUploader = new LabYokeUploader(result);
+                            /*var labYokeAgents = new LabYokeAgents(req.session.email, req.session.lab, req.session.labs, req.session.dept);
+        labYokeAgents.findmyshares(function(error, results) {
+            //req.session.orders = results[2];
+            req.session.shares = 0;
+            console.log("test ? " + results[3]);
+*/
+                    labYokeUploader.upload(function(error, done) {
+                        //console.log("is upload json: " + json);
+                        console.log("is upload done?: " + done);
+                    if(done == "successfulUpload"){
+                        console.log("inside successful upload");
+                        console.log("mysharesrequest " + req.session.mysharesrequest);
+                        res.render('admins', {
+                        lang:req.cookies.i18n, i18n:res, myshares: req.session.myshares, mysharesrequest: req.session.mysharesrequest, report_sharesbycategory: req.session.report_sharesbycategory, report_venn: req.session.report_venn, test: req.session.test, currentlabname: req.session.lab, ordersnum: req.session.orders, sharesnum: req.session.shares, json: result, loggedIn : true, isLoggedInAdmin: req.session.admin, title: 'Admins', spreadname: req.file.originalname, labyoker : req.session.user, labyokersurname : req.session.surname
+                    });
+                    } else {
+                        console.log("inside not successful upload");
+                        res.render('admins', {lang:req.cookies.i18n, i18n:res, nosuccess: "databaserror", report_venn: req.session.report_venn, test: req.session.test, currentlabname: req.session.lab, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, labyokersurname : req.session.surname, myshares: req.session.myshares, mysharesrequest: req.session.mysharesrequest, report_sharesbycategory: req.session.report_sharesbycategory, loggedIn : true, isLoggedInAdmin: req.session.admin, title:'Admins'});
+                        req.session.messages = null;
+                    }
+                });
+}
+
+        //});
+
+                    //res.json({error_code:0,err_desc:null, data: result});
+                });
+            } catch (e){
+                res.json({error_code:1,err_desc:"Corrupted excel file"});
+            }
+        }
+        })
+    });
 
     router.post('/share/:doing', isLoggedIn, function(req, res) {
     	if(req.cookies.i18n == null || req.cookies.i18n == undefined){
