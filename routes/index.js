@@ -1133,9 +1133,17 @@ totalshares = t[0].counting;
 		res.redirect('/share');
 	});
 
+    router.get('/fulfillshare', function(req, res) {
+        res.redirect('/admins');
+    });
+
 	router.get('/searchCatalog', function(req, res) {
 		res.redirect('/search');
 	});
+
+    router.get('/admins', function(req, res) {
+        res.redirect('/search');
+    });
 
 	router.post('/register', function(req, res) {
 		if(req.cookies.i18n == null || req.cookies.i18n == undefined){
