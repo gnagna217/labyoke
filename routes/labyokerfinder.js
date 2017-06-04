@@ -2695,7 +2695,7 @@ LabYokerChangeShare.prototype.cancelShare = function(callback) {
 	}
 
 	var str = "UPDATE " + table + " SET insufficient=" + checked
-			+ ", insuffdate='" + datenow + "' where date between '" + date + "' and '" + date + "' and agent='" + agent + "' and vendor='" + vendor + "' and catalognumber='" + catalognumber + "'" + orderonly;
+			+ ", insuffdate='" + datenow + "' where email='" + email + "' and date between '" + date + "' and '" + date + "' and agent='" + agent + "' and vendor='" + vendor + "' and catalognumber='" + catalognumber + "'" + orderonly;
 	console.log("str: " + str);
 	var query = client.query(str);
 	query.on("row", function(row, result) {
