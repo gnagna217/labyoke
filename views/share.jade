@@ -78,6 +78,10 @@ block content
 											- checkedstr = true
 										- var lab = (ob[prop].lab).replace(" ","").toLowerCase();
 										- var c = "cancel" + prop
+										- var status = ob[prop].status
+										- var showcancel = ""
+										- if(status == 'fulfilled')
+											- showcancel = "display:none;"
 										tr(class=isnew)
 											td(class="wrapped2") #{ob[prop].agent}
 											td(class="wrapped2 desktabonly") #{ob[prop].vendor}
@@ -86,7 +90,7 @@ block content
 											td #{d}
 											td
 												form(action="/cancelshare" method="post")
-													div(class="checkboxThree1")
+													div(class="checkboxThree1", style=showcancel)
 														input(style="position:absolute;left: -9999px;" type="checkbox" id=c name="cancel" value="cancel" class="cancel" checked=(checkedstr===true ? "checked" : undefined))
 														label(class="labelcheck1 shadow" for=c)
 													input(type="hidden" name="agent" value=ob[prop].agent)
