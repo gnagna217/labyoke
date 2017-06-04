@@ -160,7 +160,8 @@ block content
 										th(class="wrapped")!= i18n.__("shares.table.reagent")
 										th(class="")= i18n.__("shares.table.vendor")
 										th(class="")= i18n.__("shares.table.catalog")
-										th(class="")= i18n.__("shares.table.requestor")
+										th(class="wrapped")= i18n.__("shares.table.requestor")
+										th(class="wrapped")= i18n.__("shares.table.email")
 										th= i18n.__("shares.table.date")
 										th= i18n.__("shares.table.delete")
 										th= i18n.__("shares.table.fulfill")
@@ -193,6 +194,7 @@ block content
 											td(class="") #{ob[prop].vendor}
 											td(class="") #{ob[prop].catalognumber}
 											td(class="") #{ob[prop].requestoremail}
+											td(class="") #{ob[prop].email}
 											td #{d}
 											td
 												form(action="/cancelshare" method="post")
@@ -272,6 +274,7 @@ block content
 								tbody
 									-var ob = myshares
 									-for(var prop in ob)
+										- var c = "cancel" + prop
 										- var currentqtyint = parseInt(ob[prop].currentquantity)
 										- var qtyinsufficient = ""
 										- var checkedstr = false
@@ -287,7 +290,9 @@ block content
 											td #{ob[prop].catalognumber}
 											td
 												form(action="/cancelshare" method="post")
-													input(type="checkbox" name="cancel" value="cancel" class="cancel" checked=(checkedstr===true ? "checked" : undefined))
+													div(class="checkboxThree1", style=showfulfill)
+														input(type="checkbox" id=c name="cancel" value="cancel" class="cancel" checked=(checkedstr===true ? "checked" : undefined))
+														label(class="labelcheck1 shadow" for=c)
 													input(type="hidden" name="agent" value=ob[prop].agent)
 													input(type="hidden" name="vendor" value=ob[prop].vendor)
 													input(type="hidden" name="lab" value=ob[prop].lab)
