@@ -2763,7 +2763,7 @@ LabYokerChangeShare.prototype.fulfillShare = function(callback) {
 	}
 	//var str = "select * from labs";
 	var str ="UPDATE " + table + " SET status='" + status
-			+ "' where email='" + email + "'date between '" + date + "' and '" + date + "' and agent='" + agent + "' and vendor='" + vendor + "' and catalognumber='" + catalognumber + "'" + orderonly;
+			+ "' where email='" + email + "' date between '" + date + "' and '" + date + "' and agent='" + agent + "' and vendor='" + vendor + "' and catalognumber='" + catalognumber + "'" + orderonly;
 	console.log("str: " + str);
 	var query = client.query(str);
 	query.on("row", function(row, result) {
