@@ -492,6 +492,9 @@
     "index.forgot.message2": "Sorry. We could not find an account with this username. Please try again below.",
     "index.forgot.message3": "Sorry. You must enter your current <span class='labColor'>username</span>. Please try again below.",
 
+    "admins.pop.title": "Admin.",
+    "admins.pop.subtitle": "<div id='actionorder' class='exit' style='width: 50%; float: left; background-color: rgba(138, 109, 59, 0.55);'')>OK</div><div class='exit' id='actioncancel'>Fulfill</div>",
+
     "key.title": ""
 
 
