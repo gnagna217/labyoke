@@ -2749,8 +2749,8 @@ LabYokerChangeShare.prototype.fulfillShare = function(callback) {
 	console.log("table: " + table);
 	console.log("userlang: " + userlang);
 	console.log("email: " + userlang);
-	email = "metsnake316@hotmail.com";
-	requestor = "metsnake217@gmail.com";
+	//email = "metsnake316@hotmail.com";
+	//requestor = "metsnake217@gmail.com";
 	var results;
 	var status = "";
 	var orderonly = "";
@@ -2763,7 +2763,7 @@ LabYokerChangeShare.prototype.fulfillShare = function(callback) {
 	}
 	//var str = "select * from labs";
 	var str ="UPDATE " + table + " SET status='" + status
-			+ "' where email='" + email + "' and date between '" + date + "' and '" + date + "' and agent='" + agent + "' and vendor='" + vendor + "' and catalognumber='" + catalognumber + "'" + orderonly;
+			+ "' where email='" + email + "' and requestoremail='" + requestor + "' and date between '" + date + "' and '" + date + "' and agent='" + agent + "' and vendor='" + vendor + "' and catalognumber='" + catalognumber + "'" + orderonly;
 	console.log("str: " + str);
 	var query = client.query(str);
 	query.on("row", function(row, result) {
