@@ -260,7 +260,7 @@ block content
 								});
 				div(class="threepointssep")
 			if(myshares != "")
-				h3= i18n.__("admins.none.title")
+				h3(style="padding-top: 25px;")= i18n.__("admins.none.title")
 				p!= i18n.__("admins.none.subtitle")
 				div(id="results2", class="resultsshadow")
 					div(id="ctl00_Div2" class="row rank")
@@ -269,7 +269,7 @@ block content
 								thead
 									tr(class="you info-best" style="font-weight: bold")
 										th(class="wrapped")!= i18n.__("shares.table.reagent")
-										th= i18n.__("shares.table.location")
+										th(class="deskatbonly")= i18n.__("shares.table.location")
 										th= i18n.__("shares.table.email")
 										th= i18n.__("shares.table.vendor")
 										th= i18n.__("shares.table.catalog")
@@ -287,7 +287,7 @@ block content
 											- checkedstr = true
 										tr(class=qtyinsufficient)
 											td(class="wrapped2") #{ob[prop].agent}
-											td(class="wrapped2")  #{ob[prop].location}
+											td(class="wrapped2 deskatbonly")  #{ob[prop].location}
 											td(class="wrapped2")  #{ob[prop].email}
 											td(class="wrapped2")  #{ob[prop].vendor}
 											td(class="wrapped2")  #{ob[prop].catalognumber}
