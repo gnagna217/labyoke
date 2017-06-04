@@ -2248,8 +2248,13 @@ input::-webkit-inner-spin-button {
 }
 
 @media (max-width: 925px) {
+
 .isregroundaccountLeft{
     left: -212px;
+}
+.adjustpaddingrightandwidth2{
+    margin-right: 35px;
+    width: 100% !important;
 }
 }
 @media (max-width: 908px) {
@@ -2260,10 +2265,8 @@ input::-webkit-inner-spin-button {
     margin-right: 0px;
     width: 50%;
 }
-.adjustpaddingrightandwidth2 {
-    margin-right: 0px;
-    width: 30%;
-}
+
+
     .mobileonly{
         display: block;
     }
