@@ -32,7 +32,7 @@ block content
 	div(class="shade" id="shade")
 	div(class="shade-light" id="shade-light")
 	div(class="container login marginbottom margintop container2 " + slide)
-		div(style="float: left;" class="share-container " + fadesections)
+		div(style="float: left;" class="share-container2 " + fadesections)
 			h1= i18n.__("admins.title")
 			if(myshares == "")
 				//- adjust = ""
@@ -214,7 +214,7 @@ block content
 								});
 		div
 			a(name="upload")
-		div(class="share-container adjustpadding adjustpaddingrightandwidth", style="float:right;")
+		div(class="share-container2 adjustpadding adjustpaddingrightandwidth2", style="float:right;")
 			if(isLoggedInAdmin > 0)
 				div(class="threepointsmobile", style=nobar)
 				- if(doing == "upload")
