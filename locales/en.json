@@ -507,7 +507,8 @@
     "admins.intro4": " registered for your lab. <span class='yokeColor'>Cancelled orders</span> are highlighted.",
     "admins.none.title": "Admin Lab Reagents.",
     "admins.none.subtitle": "An administrator has uploaded the following reagents for your lab members. If <span class='yokeColorBold'>Insufficient quantities</span><span> are listed, please refresh the quantities by uploading the excel file from the Upload section.</span>",
-    
+    "admins.radio.reagents": "Lab Reagents",
+    "admins.radio.orders": "Lab Orders",
 
     "key.title": ""
 

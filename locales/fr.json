@@ -511,5 +511,6 @@
     "admins.intro4": " enregistré pour votre laboratoire. <span class='yokeColor'>Les commandes annulées</span> sont mises en souligné.",
     "admins.none.title": "Admin Réactifs Laboratoire.",
     "admins.none.subtitle": "Un administrateur a téléchargé les réactifs suivants au nom des membres du laboratoire. Si certains produits sont en <span class='yokeColorBold'>quantités insuffisantes</span><span>, veuillez actualiser votre inventaire en utlisant l'outil de téléchargement.</span>",
-
+    "admins.radio.reagents": "Labo. Réactifs",
+    "admins.radio.orders": "Labo. Commandes"
 }
