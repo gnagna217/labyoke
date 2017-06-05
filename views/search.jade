@@ -44,12 +44,12 @@ block content
         div(class="radiosearch keysearchs searchradios")
           div(style="float:left;")
             input(type="radio" name="search" value="keysearch" id="keyradio")
-            label(for="keyradio", style="float: left;")
+            label(for="keyradio", style="float: left;", onClick="radioclick()")
               span #{i18n.__("search.radio.key")}
             div(class="checking shadow", onClick="radioclick()")
           div(style="/*float:right;*/", class="margincatalogradio")
             input(type="radio" name="search" value="catalogsearch" id="catalogradio" style="margin-left: 15px;")
-            label(for="catalogradio", style="float: right;margin-right: 5px;", class="catalogradio")
+            label(for="catalogradio", style="float: right;margin-right: 5px;", class="catalogradio", onClick="radiocatclick()")
               span #{i18n.__("search.radio.catalog")}
             div(class="checkingcatalog shadow", onClick="radiocatclick()")
         div(class="keysearch", style="display:none", id="keysearch")
