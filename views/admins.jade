@@ -14,6 +14,7 @@ block content
 	- var hidefadesections = ""
 	- var uploadtext = ""
 	- var slide = "moveFromLeft"
+	- var graphdata = report_data
 	- if(doing == "upload")
 		- slide = ""
 		//- var nobar = "display:none;"
@@ -133,7 +134,76 @@ block content
 				script="$(window).scrollTop($('#uploadForm').offset().top).scrollLeft($('#uploadForm').offset().left);"
 			div(style=nobar, class="threepointssep")
 			- if(doing == "upload")
-					div(class="threepointsmobile", style=nobar)
+			div(class="threepointsmobile", style=nobar)
+			div(id="qtyComp")
+				h4!= i18n.__("orders.qty.title1") + currentlabname + i18n.__("orders.qty.title2")
+				- if(report_data != null && report_data.length >0)
+					p!= i18n.__("orders.qty.subtitle")
+					div(class="ct-chart ct-perfect-fourth")
+					div(id="tooltips", class="labColor") &nbsp;
+				- if(report_data != null && report_data.length==0)
+					h5!= i18n.__("orders.qty.subtitle1")
+
+				-var ob2 = report_data
+				- var array_rows2 = []
+				- var array_values2 = ""
+				-for(var prop in ob2)
+					- array_rows2 = array_rows2 + ob2[prop].email + "|"
+					- array_values2 = array_values2 + ob2[prop].counting + "|"
+
+				script.
+					console.log("row: " + "#{array_rows2}")
+
+					console.log("val: " + "#{array_values2}")
+
+					var values3 = "#{array_values2}";
+					var series = [];
+					var rows = [];
+					values3 = values3.split("|");
+
+					for(var prop in values3){
+					var valTransform3 = [];
+					var i = values3[prop];
+					if(i){
+					valTransform3.push(i);
+					series.push(i);
+					}
+					}
+
+					var rows4 = "#{array_rows2}";
+					rows4 = rows4.split("|");
+					for(var prop in rows4){
+					var i = rows4[prop];
+					if(i){
+					rows.push(i);
+					}
+					}
+
+					console.log("more rows: " + rows)
+					console.log("more series: " + series)
+					var data = {
+					labels: rows,
+					series: series
+					};
+
+					var options = {distributeSeries: true};
+					console.log("series : " + series);
+					if(series != null && series.length > 0){
+					var chart = new Chartist.Bar('.ct-chart', data, options);
+					var addedEvents = false;
+					chart.on('draw', function() {
+					if (!addedEvents) {
+					$('.ct-chart').find('.ct-bar').on('mouseover', function() {
+					$('#tooltips').html(("#{i18n.__("dot.selected")}").replace(/&lt;/g, '<').replace(/&gt;/g, '>') + $(this).attr('ct:value'));
+					});
+
+					$('.ct-chart').find('.ct-bar').on('mouseout', function() {
+					$('#tooltips').html("&nbsp;")
+					});
+					}
+					});
+					}
+
 
 		div(style="" class="share-container2 admintop" + fadesections)
 			div(class="radiosearch keysearchs", style="margin-bottom: 35px;padding-left: 30px; padding-right: 30px;")
