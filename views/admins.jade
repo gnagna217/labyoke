@@ -8,6 +8,7 @@ block content
 				div(class="bounce2")
 				div(class="bounce3")
 	//- var shadow = ""
+	- var adminTypecheck = adminType
 	- var nobar = ""
 	- var fadesections = ""
 	- var hidefadesections = ""
@@ -228,6 +229,7 @@ block content
 														input(type="hidden" name="requestoremail" value=ob[prop].requestoremail)
 														input(type="hidden" name="date" value=ob[prop].date)
 														input(type="hidden" name="table" value=currentlabname.replace(" ","").toLowerCase() + "_orders")
+														input(type="hidden" name="adminType" value="laborders")
 												td
 													form(action="/fulfillshare" method="post")
 														
@@ -243,6 +245,7 @@ block content
 														input(type="hidden" name="requestoremail" value=ob[prop].requestoremail)
 														input(type="hidden" name="date" value=ob[prop].date)
 														input(type="hidden" name="table" value=currentlabname.replace(" ","").toLowerCase() + "_orders")
+														input(type="hidden" name="adminType" value="laborders")
 								script.
 									$(document).ready(function() {
 										$('#rankTblreqshares').DataTable({order: [[ 5, "desc" ]],
@@ -319,6 +322,7 @@ block content
 														input(type="hidden" name="email" value=ob[prop].email)
 														input(type="hidden" name="date" value=ob[prop].date)
 														input(type="hidden" name="table" value="vm2016_agentsshare")
+														input(type="hidden" name="adminType" value="labreagents")
 								script.
 									$(document).ready(function() {
 										$('#rankTblshares').DataTable({
@@ -392,6 +396,22 @@ block content
 					$('.slide-out-tip-div').show();
 				}
 			});
+
+			var adminTypecheck = "#{adminTypecheck}";
+
+			if(adminTypecheck == "laborders"){
+				$("#table1").show();
+				$("#table2").hide();
+				$('input[name=search][value=keysearch]').prop('checked', 'checked');
+			} else if(adminTypecheck == "labreagents"){
+				$("#table1").hide();
+				$("#table2").show();
+				$('input[name=search][value=catalogsearch]').prop('checked', 'checked');
+			} else {
+				$("#table1").show();
+				$("#table2").hide();
+				$('input[name=search][value=keysearch]').prop('checked', 'checked');
+			}
 
 			function radioclick() {
 			$("#table1").show();

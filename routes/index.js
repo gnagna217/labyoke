@@ -760,6 +760,7 @@ totalshares = t[0].counting;
             var lab = req.body.lab;
             var vendor = req.body.vendor;
             var catalognumber = req.body.catalognumber;
+            var admintype = req.body.admintype; 
             var table = req.body.table;
             var email = req.body.email;
             var requestor = req.body.requestoremail;
@@ -774,6 +775,7 @@ totalshares = t[0].counting;
             if(checked == undefined)
                 checked = 1;
             console.log("date: " + date);
+            console.log("admintype: " + admintype);
             console.log("laab: " + lab);
             console.log("agent: " + agent);
             console.log("vendor: " + vendor);
@@ -786,7 +788,10 @@ totalshares = t[0].counting;
             var labYokechange = new LabYokerChangeShare(table,agent, vendor, catalognumber,email,requestor,checked,datenow,date, lab, res,userlang);
             labYokechange.cancelShare(function(error, results) {
                 if(results != null && results.length > 0){
-                    res.redirect('/admins');         
+                    res.render('admins', {
+                       admintype:admintype,lang:req.cookies.i18n, i18n:res, nosuccess: "generic", myshares: req.session.myshares, mysharesrequest: req.session.mysharesrequest, report_sharesbycategory: req.session.report_sharesbycategory, report_venn: req.session.report_venn, test: req.session.test, currentlabname: req.session.lab, ordersnum: req.session.orders, sharesnum: req.session.shares, loggedIn : true, isLoggedInAdmin: req.session.admin, title: 'Admins', labyoker : req.session.user, labyokersurname : req.session.surname
+                     });
+                    //res.redirect('/admins');         
                     //res.render('share', {ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, isLoggedInAdmin: req.session.admin, title:'Shares',loggedIn : true});
                     req.session.messages = null;
                 }
@@ -850,6 +855,7 @@ totalshares = t[0].counting;
         if (req.session.user) {
             var agent = req.body.agent;
             var lab = req.body.lab;
+            var admintype = req.body.admintype;   
             var vendor = req.body.vendor;
             var catalognumber = req.body.catalognumber;
             var table = req.body.table;
@@ -866,6 +872,7 @@ totalshares = t[0].counting;
             if(checked == undefined)
                 checked = 1;
             console.log("date: " + date);
+            console.log("admintype: " + admintype);
             console.log("laab: " + lab);
             console.log("agent: " + agent);
             console.log("vendor: " + vendor);
@@ -878,7 +885,10 @@ totalshares = t[0].counting;
             var labYokechange = new LabYokerChangeShare(table,agent, vendor, catalognumber,email,requestor,checked,datenow,date, lab, res,userlang);
             labYokechange.fulfillShare(function(error, results) {
                 if(results != null && results.length > 0){
-                    res.redirect('/admins');         
+                    res.render('admins', {
+                        admintype:admintype,lang:req.cookies.i18n, i18n:res, nosuccess: "generic", myshares: req.session.myshares, mysharesrequest: req.session.mysharesrequest, report_sharesbycategory: req.session.report_sharesbycategory, report_venn: req.session.report_venn, test: req.session.test, currentlabname: req.session.lab, ordersnum: req.session.orders, sharesnum: req.session.shares, loggedIn : true, isLoggedInAdmin: req.session.admin, title: 'Admins', labyoker : req.session.user, labyokersurname : req.session.surname
+                    });
+                    //res.redirect('/admins');         
                     //res.render('share', {ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, isLoggedInAdmin: req.session.admin, title:'Shares',loggedIn : true});
                     req.session.messages = null;
                 }
