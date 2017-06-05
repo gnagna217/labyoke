@@ -69,18 +69,54 @@ $('.fulfill').click(function() {
   var checked = fulfill.is(':checked');
   var orderText = document.getElementById("orderText");
   var langText = document.getElementById("langText").innerHTML;
+  var desc = "";
   var checkedtext = "Have you fulfilled this order?";
   var uncheckedtext = "Do you want to revert this order fulfillment?";
   console.log("lang is " + langText );
+
+  var agentnode = fulfill.closest('div').next('.agentid');
+  var labnode = agentnode.next('.labid');
+  var owneremailnode = lannode.next('.owneremailid');
+  var vendornode = owneremailnode.next('.vendorid');
+  var catalognode = vendornode.next('.catalogid');
+  var requestornode = catalognode.next('.requestorid');
+
+  var agentval = agentnode.val();
+  var labval = labnode.val();
+  var owneremailval = owneremailnode.val();
+  var vendorval = vendornode.val();
+  var catalogval = catalognode.val();
+  var requestorval = requestornode.val();
+
+  console.log("agent: " + agentval);
+  console.log("labval: " + labval);
+  console.log("owneremailval: " + owneremailval);
+  console.log("vendorval: " + vendorval);
+  console.log("catalogval: " + catalogval);
+  console.log("requestorval: " + requestorval);
+
+  desc += "<br/>Reagent: " + agentval + "<br/>";
+   desc += "<br/>Vendor: " + vendorval + "<br/>";
+   desc += "<br/>Catalog Number: " + catalogval + "<br/>";
+   desc += "<br/>Requestor: " + requestorval + "<br/>";
+   checkedtext += desc;
+   uncheckedtext += desc;
+
   if(langText == "fr"){
     checkedtext = "Avez-vous rempli cette commande de réactif?";
    uncheckedtext = "Voulez-vous marquer cette commande de réactif comme non-remplie?";
+   desc = "<br/>Réactif: " + agentval + "<br/>";
+   desc += "<br/>Vendeur: " + vendorval + "<br/>";
+   desc += "<br/>Numéro de Catalogue: " + catalogval + "<br/>";
+   desc += "<br/>Demandeur: " + requestorval + "<br/>";
+   checkedtext += desc;
+   uncheckedtext += desc;
   }
   console.log("checkedtext is " + checkedtext );
   console.log("uncheckedtext is " + uncheckedtext );
 
-  var agent = fulfill.next('.agentid').val();
-  console.log("agent: " + agent);
+
+
   if(checked){
     orderText.innerHTML = checkedtext;
   } else {
