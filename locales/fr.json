@@ -516,7 +516,7 @@
     "admins.radio.orders": "Labo. Commandes",
     "admins.tip.header":"Aide Administration?",
     "admins.tip.desc": "<br/><b>Téléchargement de Réactifs </b><br/>Les administrateurs sont chargés de télécharger l'inventaire pour tous les chercheurs de leur département. Cet outil peut être utilisé pour télécharger une feuille de calcul Xcel et reconstituer/créer des réactifs pour les chercheurs.<br/><br/><b>Lab Commandes</b><br/>Les administrators sont chargés de remplir les commandes. Dès qu'une commande est <b>remplie</b>, cliquez sur le boutton sous la colonne 'F'. Un administrateur peut aussi annuler une commande lorsque l'inventaire du propriétaire est au plus bas.<br/><br/><b>Lab Réactifs</b><br/>Lorsque l'inventaire d'un réactif appartenant à un membre du laboratoire, marquer le réactif en tant qu'insuffisant en cliquant sur le boutton sous la colonne 'X'. Réapprovisioner l'inventaire en utilisant l'outil de Téléchargement de Réactifs.",
-    "admins.qty.title1": "Réactifs des Membres du Laboratoire <i>",
+    "admins.qty.title1": "Réactifs <i>",
     "admins.qty.title2": "</i>",
     "admins.qty.subtitle": "Ce graphique représente la tendance actuelle de l'ensemble des <span class='bold', style='color:red'> réactifs en quantités insuffisantes </span> ainsi que du <span class='yokeColor bold'>nombre total de réactifs</span> par membre du laboratoire. Passez la souris au-dessus d'une <span class='labColor'>intersection</span> pour afficher sa valeur ci-dessous.",
     "admins.qty.subtitle1": "Votre laboratoire n'a partagé aucun réactif. <a href='/admins'><span class='labColor'>Télécharger maintenant</span></a>."
