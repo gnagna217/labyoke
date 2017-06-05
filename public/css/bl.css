@@ -680,7 +680,8 @@ p{
 /*modified #460077*/
 .btn-success{
     background-color: #8a6d3b;
-    width:278px;
+    /*width:278px;*/
+    width: 85%;
     border: 0;
     outline: none;
 }
