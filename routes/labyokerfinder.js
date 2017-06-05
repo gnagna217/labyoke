@@ -1529,30 +1529,9 @@ LabYokeAgents.prototype.findallsharesadmins = function(callback) {
 				results.push(test4.length);
 				results.push(test4);
 
-	labsstr = "";
-	select = "";
-	labsstr = "";
-	select = "";
-
-	for(var prop in labs){
-		a = "a" + i;
-		labsstr = (labs[prop].labname).replace(/ /g,"").toLowerCase() + "_orders "; //+ a + " ";
-		select = select + "SELECT agent, count(agent) as counting, EXTRACT(MONTH FROM date_trunc( 'month', date )) as monthorder, EXTRACT(year FROM date_trunc( 'year', date )) as yearorder from " + labsstr + "_orders where insufficient=1 group by agent, date_trunc( 'month', date ), date_trunc( 'year', date ) UNION ";
-		i++;
-	}
-	select = select.replace(/UNION\s*$/, "");
-	var q = select;
-	console.log("q allshares monthly: " + q);
-	var query5 = client.query(q);
-					query5.on("row", function(row, result5) {
-						result5.addRow(row);
-					});
-					query5.on("end", function(result5) {
-						results.push(result5.rows);
-
 							callback(null, results);
 
-					});
+
 			});
 		});
 	});
