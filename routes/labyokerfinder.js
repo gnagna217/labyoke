@@ -1515,28 +1515,11 @@ LabYokeAgents.prototype.findallsharesadmins = function(callback) {
 		});
 		query2.on("end", function(result2) {
 			results.push(result2.rows);
-
-	/*var labsstr = "";
-	var i = 0;
-	var a = "a";
-	var select = "";
-
-	for(var prop in labs){
-		a = "a" + i;
-		labsstr = (labs[prop].labname).replace(" ","").toLowerCase() + "_orders "; //+ a + " ";
-		select = select + "SELECT * from " + labsstr + "_orders where email='" + email + "' and lab='" + mylab + "' UNION ";
-		i++;
-	}
-	select = select.replace(/UNION\s*$/, "");
-	*/
 			var select = "";
-			//for(var prop in labs){
-				var labsstr = mylab.replace(/ /g,"").toLowerCase() + "_orders";
-				select = select + "SELECT * FROM " + labsstr +  " UNION ";
-			//}
+			var labsstr = mylab.replace(/ /g,"").toLowerCase() + "_orders";
+			select = select + "SELECT * FROM " + labsstr +  " UNION ";
 			select = select.replace(/UNION\s*$/, "") + " order by date desc";
 			console.log("Partages select: " + select);
-			//var query4 = client.query("SELECT * from " + mylabtable + "_orders where email='" + email + "'  order by date desc");
 			var query4 = client.query(select);
 			query4.on("row", function(row, result4) {
 				result4.addRow(row);
@@ -1548,34 +1531,8 @@ LabYokeAgents.prototype.findallsharesadmins = function(callback) {
 
 	labsstr = "";
 	select = "";
-
-	/*for(var prop in labs){
-		labsstr = (labs[prop].labname).replace(" ","").toLowerCase() + "_orders "; //+ a + " ";
-		select = select + " update "+ labsstr + " set status='' where status='new' and email='" + email+ "'; ";
-	}
-	var q = "BEGIN TRANSACTION; " + select + " COMMIT;";
-	*/
-	/*var q = "update "+ mylabtable + "_orders set status='' where status='new' and email='" + email+ "'";
-	console.log("q update: " + q);
-			var query3 = client.query(q);
-
-				query3.on("row", function(row, result3) {
-					result3.addRow(row);
-				});
-				query3.on("end", function(result3) {
-
-	*/
-
 	labsstr = "";
 	select = "";
-
-	/*for(var prop in labs){
-		labsstr = (labs[prop].labname).replace(" ","").toLowerCase() + "_orders ";
-		select = select + "SELECT agent, count(agent) as counting, EXTRACT(MONTH FROM date_trunc( 'month', date )) as monthorder, EXTRACT(year FROM date_trunc( 'year', date )) as yearorder from " + labsstr + " where email='" + email + "' and insufficient=1 group by agent, date_trunc( 'month', date ), date_trunc( 'year', date ) UNION ";
-	}
-	select = select.replace(/UNION\s*$/, "");
-	var q = select + " order by agent asc limit 5";
-	*/
 
 	for(var prop in labs){
 		a = "a" + i;
@@ -1584,14 +1541,9 @@ LabYokeAgents.prototype.findallsharesadmins = function(callback) {
 		i++;
 	}
 	select = select.replace(/UNION\s*$/, "");
-	var q = select;//"SELECT agent, count(agent) as counting, EXTRACT(MONTH FROM date_trunc( 'month', date )) as monthorder, EXTRACT(year FROM date_trunc( 'year', date )) as yearorder from " + mylabtable + "_orders where email='" + email + "' and insufficient=1 group by agent, date_trunc( 'month', date ), date_trunc( 'year', date )";
+	var q = select;
 	console.log("q allshares monthly: " + q);
 	var query5 = client.query(q);
-	
-
-					//var query5 = client
-					//	.query("SELECT agent, count(agent) as counting, EXTRACT(MONTH FROM date_trunc( 'month', date )) as monthorder, EXTRACT(year FROM date_trunc( 'year', date )) as yearorder from " + mylabtable + "_orders where email='" + email
-					//+ "' and insufficient=1 group by agent, date_trunc( 'month', date ), date_trunc( 'year', date ) order by agent asc limit 5");
 					query5.on("row", function(row, result5) {
 						result5.addRow(row);
 					});
@@ -1615,13 +1567,8 @@ LabYokeAgents.prototype.findallsharesadmins = function(callback) {
 							console.log("getting all products loaded: " + result6.rows)
 							callback(null, results);
 						});
-
-						//callback(null, results)
 					});
-				//});
-
 			});
-			//callback(null, results)
 		});
 	});
 };
