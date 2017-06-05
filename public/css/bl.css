@@ -2252,7 +2252,7 @@ input::-webkit-inner-spin-button {
 
  @media (max-width: 992px) {
 .noshowmobile992{
-    display: none;
+    display: none !important;
 }
 .admintop{
 padding-right: 0px;
