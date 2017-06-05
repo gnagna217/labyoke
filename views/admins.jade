@@ -202,7 +202,10 @@ block content
 					series: series
 					};
 
-					var options = {width: '120%',seriesBarDistance: 10,axisX: { offset: 10 }, axisY: {offset: 80,labelInterpolationFnc: function(value) { return value}, scaleMinSpace: 15}};
+					var options = {seriesBarDistance: 10,
+					axisX: { //offset: 10 
+					}, axisY: {
+					//offset: 80,labelInterpolationFnc: function(value) { return value}, scaleMinSpace: 15}};
 					//options = {distributeSeries: true};
 					console.log("series : " + series);
 					if(series != null && series.length > 0){
