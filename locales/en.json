@@ -510,7 +510,7 @@
     "admins.radio.reagents": "Lab Reagents",
     "admins.radio.orders": "Lab Orders",
     "admins.tip.header":"How To Administrate?",
-    "admins.tip.desc": "<br/><br/><b>Admin Upload</b><br/>Administrators are tasked with uploading the inventory for all researchers in their department. This tool can be used to upload an xcel spreadsheet and replenish/create reagents for reseachers.<br/><br/><b>Lab Orders</b><br/>Administrators are tasked with fulfilling orders. Once an order is fulfilled, check off the button under the 'F' column to mark the order as <b>completed</b> An admin can also cancel an order provided there is no more inventory available for the reagent owner.<br/><br/><b>Lab Reagents</b>When a lab member is running low on inventory, mark the reagent as insufficient by clicking on the button under the 'X' column. Replenish the inventory by uploading a new excel file using the 'Admin Upload' tool.",
+    "admins.tip.desc": "<br/><b>Admin Upload</b><br/>Administrators are tasked with uploading the inventory for all researchers in their department. This tool can be used to upload an xcel spreadsheet and replenish/create reagents for reseachers.<br/><br/><b>Lab Orders</b><br/>Administrators are tasked with fulfilling orders. Once an order is fulfilled, check off the button under the 'F' column to mark the order as <b>completed</b> An admin can also cancel an order provided there is no more inventory available for the reagent owner.<br/><br/><b>Lab Reagents</b>When a lab member is running low on inventory, mark the reagent as insufficient by clicking on the button under the 'X' column. Replenish the inventory by uploading a new excel file using the 'Admin Upload' tool.",
 
     "key.title": ""
 
