@@ -136,13 +136,13 @@ block content
 			- if(doing == "upload")
 			div(class="threepointsmobile", style=nobar)
 			div(id="qtyComp", style="display:block")
-				h4!= i18n.__("orders.qty.title1") + currentlabname + i18n.__("orders.qty.title2")
+				h4!= i18n.__("admins.qty.title1") + currentlabname + i18n.__("admins.qty.title2")
 				- if(report_data != null && report_data.length >0)
-					p!= i18n.__("orders.qty.subtitle")
+					p!= i18n.__("admins.qty.subtitle")
 					div(class="ct-chart ct-perfect-fourth")
 					div(id="tooltips", class="labColor") &nbsp;
 				- if(report_data != null && report_data.length==0)
-					h5!= i18n.__("orders.qty.subtitle1")
+					h5!= i18n.__("admins.qty.subtitle1")
 
 				-var ob2 = report_data
 				- var array_rows2 = []

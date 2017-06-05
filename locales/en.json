@@ -512,6 +512,10 @@
     "admins.radio.orders": "Lab Orders",
     "admins.tip.header":"How To Administrate?",
     "admins.tip.desc": "<br/><b>Admin Upload</b><br/>Administrators are tasked with uploading the inventory for all researchers in their department. This tool can be used to upload an xcel spreadsheet and replenish/create reagents for reseachers.<br/><br/><b>Lab Orders</b><br/>Administrators are tasked with fulfilling orders. Once an order is fulfilled, check off the button under the 'F' column to mark the order as <b>completed</b> An admin can also cancel an order provided there is no more inventory available for the reagent owner.<br/><br/><b>Lab Reagents</b><br/>When a lab member is running low on inventory, mark the reagent as insufficient by clicking on the button under the 'X' column. Replenish the inventory by uploading a new excel file using the 'Admin Upload' tool.",
+    "admins.qty.title1": "<i>",
+    "admins.qty.title2": "</i>'s Lab Members Reagents",
+    "admins.qty.subtitle": "This graph depicts the current trend of your lab's <span class='bold', style='color:red'> insufficient reagents </span> and <span class='yokeColor bold'>total number of reagents</span> per Lab member. Hover on top of a <span class='labColor'>dot</span> to display its value below.",
+    "admins.qty.subtitle1": "Your lab members are not sharing any reagent. <a href='/admins'><span class='labColor'>Upload now</span></a>.",
 
     "key.title": ""
 
