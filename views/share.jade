@@ -309,7 +309,7 @@ block content
 		div(style="float:right;", class="share-container " + adjust + " adjustpaddingrightandwidth " + fadesections)
 			script(type="text/javascript" src="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.js")
 
-			h3= i18n.__("shares.chart.title")
+			h3(style="padding-top:43px")= i18n.__("shares.chart.title")
 			form(action="chartSelect", method="post")
 				div(class="buttons")
 					select(name="chartSelect" type="text" id="chartSelect" class="form-control" style="width: 97%;border-color:#3d9dcb;margin-bottom:10px" placeholder=i18n.__("shares.chart.select"))
