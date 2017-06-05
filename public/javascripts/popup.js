@@ -76,7 +76,7 @@ $('.fulfill').click(function() {
 
   var agentnode = fulfill.closest('div').next('.agentid');
   var labnode = agentnode.next('.labid');
-  var owneremailnode = lannode.next('.owneremailid');
+  var owneremailnode = labnode.next('.owneremailid');
   var vendornode = owneremailnode.next('.vendorid');
   var catalognode = vendornode.next('.catalogid');
   var requestornode = catalognode.next('.requestorid');
