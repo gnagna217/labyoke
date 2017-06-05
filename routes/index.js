@@ -800,7 +800,7 @@ totalshares = t[0].counting;
             req.session.report_venn = results[5];
             req.session.shares = 0;
             console.log("test ? " + results[3]);
-            res.render('admins', {lang:req.cookies.i18n, i18n:res,report_venn: results[5], test: results[4], currentlabname: req.session.lab, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, labyokersurname : req.session.surname, myshares: results[0], mysharesrequest: results[3], report_sharesbycategory: results[1], loggedIn : true, isLoggedInAdmin: req.session.admin, title:'Admins'});
+            res.render('admins', {admintype:admintype,lang:req.cookies.i18n, i18n:res,report_venn: results[5], test: results[4], currentlabname: req.session.lab, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, labyokersurname : req.session.surname, myshares: results[0], mysharesrequest: results[3], report_sharesbycategory: results[1], loggedIn : true, isLoggedInAdmin: req.session.admin, title:'Admins'});
             req.session.messages = null;
         });
 
@@ -868,7 +868,7 @@ totalshares = t[0].counting;
         if (req.session.user) {
             var agent = req.body.agent;
             var lab = req.body.lab;
-            var admintype = req.body.admintype;   
+            var admintype = req.body.adminType;   
             var vendor = req.body.vendor;
             var catalognumber = req.body.catalognumber;
             var table = req.body.table;
@@ -910,7 +910,7 @@ totalshares = t[0].counting;
             req.session.report_venn = results[5];
             req.session.shares = 0;
             console.log("test ? " + results[3]);
-            res.render('admins', {lang:req.cookies.i18n, i18n:res,report_venn: results[5], test: results[4], currentlabname: req.session.lab, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, labyokersurname : req.session.surname, myshares: results[0], mysharesrequest: results[3], report_sharesbycategory: results[1], loggedIn : true, isLoggedInAdmin: req.session.admin, title:'Admins'});
+            res.render('admins', {admintype:admintype,lang:req.cookies.i18n, i18n:res,report_venn: results[5], test: results[4], currentlabname: req.session.lab, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, labyokersurname : req.session.surname, myshares: results[0], mysharesrequest: results[3], report_sharesbycategory: results[1], loggedIn : true, isLoggedInAdmin: req.session.admin, title:'Admins'});
             req.session.messages = null;
         });
                     //res.redirect('/admins');         
