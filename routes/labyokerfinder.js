@@ -1505,7 +1505,9 @@ LabYokeAgents.prototype.findallsharesadmins = function(callback) {
 	var checklab = [];
 
 
-		select = "SELECT b.email as email, count(a.agent) as counting, a.insufficient as insuff from vm2016_agentsshare a, vm2016_users  b where a.email = b.email and b.lab = '" + mylab + "' group by a.insufficient, b.email order by b.email";	
+		select = "select * from (SELECT a.email, count(a.email)  as insuff from vm2016_agentsshare a , vm2016_users b where  a.insufficient=1 and a.email = b.email  and b.lab='" + mylab + "' group by a.email)  y left join (SELECT c.email,count(c.email)  as noninsuff from vm2016_agentsshare c , vm2016_users d  where  c.insufficient=0 and c.email = d.email and d.lab='"+mylab+"' group by c.email) z on y.email = z.email";
+
+		//select = "SELECT b.email as email, count(a.agent) as counting, a.insufficient as insuff from vm2016_agentsshare a, vm2016_users  b where a.email = b.email and b.lab = '" + mylab + "' group by a.insufficient, b.email order by b.email";	
 
 	console.log("get allshares admin select: " + select /*+ " order by agent asc limit 6"*/);
 

@@ -147,9 +147,11 @@ block content
 				-var ob2 = report_data
 				- var array_rows2 = []
 				- var array_values2 = ""
+				- var array_values3 = ""
 				-for(var prop in ob2)
 					- array_rows2 = array_rows2 + ob2[prop].email + "|"
-					- array_values2 = array_values2 + ob2[prop].counting + "|"
+					- array_values2 = array_values2 + ob2[prop].insuff + "|"
+					- array_values3 = array_values3 + ob2[prop].noninsuff + "|"
 				script(type="text/javascript" src="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.js")
 				script.
 					console.log("row: " + "#{array_rows2}")
@@ -157,18 +159,32 @@ block content
 					console.log("val: " + "#{array_values2}")
 
 					var values3 = "#{array_values2}";
+					var values4 = "#{array_values3}";
 					var series = [];
+					var seriesinsuff = [];
+					var seriesnoninsuff = [];
 					var rows = [];
 					values3 = values3.split("|");
+					values4 = values4.split("|");
 
 					for(var prop in values3){
 					var valTransform3 = [];
 					var i = values3[prop];
+					var j = values4[prop];
+					if(j){
+						seriesnoninsuff.push(j)
+					} else {
+						seriesnoninsuff.push(0);
+					}
 					if(i){
 					valTransform3.push(i);
-					series.push(i);
+					seriesinsuff.push(i);
+					} else {
+					seriesinsuff.push(0);
 					}
 					}
+					series.push(seriesinsuff);
+					series.push(seriesnoninsuff);
 
 					var rows4 = "#{array_rows2}";
 					rows4 = rows4.split("|");
@@ -186,7 +202,7 @@ block content
 					series: series
 					};
 
-					var options = {distributeSeries: true};
+					var options = {seriesBarDistance: 10,axisX: { offset: 60 }, axisY: {offset: 80,labelInterpolationFnc: function(value) { return value + ''}, scaleMinSpace: 15};
 					console.log("series : " + series);
 					if(series != null && series.length > 0){
 					var chart = new Chartist.Bar('.ct-chart', data, options);
