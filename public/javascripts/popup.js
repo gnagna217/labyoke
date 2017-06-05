@@ -28,9 +28,9 @@ $('.cancel').click(function() {
 
   var agentnode = cancel.closest('div').next('.agentid');
   var labnode = agentnode.next('.labid');
-  var vendornode = agentnode.next('.vendorid');
+  var vendornode = labnode.next('.vendorid');
   
-  var catalognode = labnode.next('.catalogid');
+  var catalognode = vendornode.next('.catalogid');
   var owneremailnode = catalognode.next('.owneremailid');
 
   var agentval = agentnode.val();
