@@ -70,10 +70,10 @@ $('.cancel').click(function() {
   if(langText == "fr"){
     checkedtext = "Voulez-vous marquer ce réactif comme insuffisant?";
    uncheckedtext = "Voulez-vous marquer ce réactif comme réapprovisioné et en quantité suffisante?";
-  desc = "<br/><b>Réactif:</b> " + agentval + "<br/>";
-   desc += "<br/><b>Vendeur:</b> " + vendorval + "<br/>";
-   desc += "<br/><b>Numéro de Catalogue:</b> " + catalogval + "<br/>";
-   desc += "<br/><b>Proprio:</b> " + owneremailval + "<br/>";
+  desc = "<br/><b>Réactif:</b> " + agentval;
+   desc += "<br/><b>Vendeur:</b> " + vendorval;
+   desc += "<br/><b>Numéro de Catalogue:</b> " + catalogval;
+   desc += "<br/><b>Proprio:</b> " + owneremailval;
   if(requestorval != ""){
     desc += "<br/><b>Demandeur:</b> " + requestorval;
   }
@@ -150,6 +150,7 @@ $('.fulfill').click(function() {
   desc += "<br/><b>Reagent:</b> " + agentval;
    desc += "<br/><b>Vendor:</b> " + vendorval;
    desc += "<br/><b>Catalog Number:</b> " + catalogval;
+   desc += "<br/><b>Owner:</b> " + owneremailval;
    desc += "<br/><b>Requestor:</b> " + requestorval;
    desc += "<br/><b>Lab:</b> " + labval;
    checkedtext += desc;
@@ -158,10 +159,11 @@ $('.fulfill').click(function() {
   if(langText == "fr"){
     checkedtext = "Avez-vous rempli cette commande de réactif?";
    uncheckedtext = "Voulez-vous marquer cette commande de réactif comme non-remplie?";
-   desc = "<br/><b>Réactif:</b> " + agentval + "<br/>";
-   desc += "<br/><b>Vendeur:</b> " + vendorval + "<br/>";
-   desc += "<br/><b>Numéro de Catalogue:</b> " + catalogval + "<br/>";
-   desc += "<br/><b>Demandeur:</b> " + requestorval + "<br/>";
+   desc = "<br/><b>Réactif:</b> " + agentval;
+   desc += "<br/><b>Vendeur:</b> " + vendorval;
+   desc += "<br/><b>Numéro de Catalogue:</b> " + catalogval;
+   desc += "<br/><b>Proprio:</b> " + owneremailval;
+   desc += "<br/><b>Demandeur:</b> " + requestorval;
    desc += "<br/><b>Labo:</b> " + labval;
    checkedtext += desc;
    uncheckedtext += desc;
