@@ -135,7 +135,7 @@ block content
 			div(style=nobar, class="threepointssep")
 			- if(doing == "upload")
 			div(class="threepointsmobile", style=nobar)
-			div(id="qtyComp")
+			div(id="qtyComp", style="display:block")
 				h4!= i18n.__("orders.qty.title1") + currentlabname + i18n.__("orders.qty.title2")
 				- if(report_data != null && report_data.length >0)
 					p!= i18n.__("orders.qty.subtitle")
@@ -150,7 +150,7 @@ block content
 				-for(var prop in ob2)
 					- array_rows2 = array_rows2 + ob2[prop].email + "|"
 					- array_values2 = array_values2 + ob2[prop].counting + "|"
-
+				script(type="text/javascript" src="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.js")
 				script.
 					console.log("row: " + "#{array_rows2}")
 
