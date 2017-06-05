@@ -2749,14 +2749,14 @@ LabYokerChangeShare.prototype.fulfillShare = function(callback) {
 	console.log("table: " + table);
 	console.log("userlang: " + userlang);
 	console.log("email: " + userlang);
+	console.log("checked: " + checked);
+	console.log("checking status: " + checked == 0);
 	//email = "metsnake316@hotmail.com";
 	//requestor = "metsnake217@gmail.com";
 	var results;
 	var status = "";
 	var orderonly = "";
 	if(checked == "0" && requestor != undefined){
-		console.log("checked: " + checked);
-		console.log("checking status: " + checked == 0);
 		orderonly = " and requestoremail='" + requestor + "'";
 	}
 	if(checked == 0){
