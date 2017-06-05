@@ -95,10 +95,10 @@ $('.fulfill').click(function() {
   console.log("catalogval: " + catalogval);
   console.log("requestorval: " + requestorval);
 
-  desc += "<br/>Reagent: " + agentval;
-   desc += "<br/>Vendor: " + vendorval;
-   desc += "<br/>Catalog Number: " + catalogval;
-   desc += "<br/>Requestor: " + requestorval;
+  desc += "<br/><b>Reagent:</b> " + agentval;
+   desc += "<br/><b>Vendor:</b> " + vendorval;
+   desc += "<br/><b>Catalog Number:</b> " + catalogval;
+   desc += "<br/><b>Requestor:</b> " + requestorval;
    checkedtext += desc;
    uncheckedtext += desc;
 
