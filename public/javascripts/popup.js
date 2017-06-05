@@ -23,6 +23,7 @@ $('.cancel').click(function() {
   var langText = document.getElementById("langText").innerHTML;
   var checkedtext = "Do you want to mark this reagent as insufficient?";
   var uncheckedtext = "Do you want to mark this reagent as replenished and in sufficient quantities?";
+  var desc = "";
   console.log("lang is " + langText );
 
   var agentnode = cancel.closest('div').next('.agentid');
