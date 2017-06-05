@@ -32,6 +32,8 @@ $('.cancel').click(function() {
   
   var catalognode = vendornode.next('.catalogid');
   var owneremailnode = catalognode.next('.owneremailid');
+  var requestornode = owneremailnode.next('.requestorid');
+  var selfnode = requestornode.next('.selfid');
 
   var agentval = agentnode.val();
   //var labval = labnode.val();
@@ -39,16 +41,28 @@ $('.cancel').click(function() {
   var vendorval = vendornode.val();
   var catalogval = catalognode.val();
 
+  var requestorval = "";
+  var selfval = "";
+
+
   console.log("agent: " + agentval);
   //console.log("labval: " + labval);
   console.log("owneremailval: " + owneremailval);
   console.log("vendorval: " + vendorval);
   console.log("catalogval: " + catalogval);
+  console.log("requestorval: " + requestorval);
 
   desc += "<br/><b>Reagent:</b> " + agentval;
    desc += "<br/><b>Vendor:</b> " + vendorval;
    desc += "<br/><b>Catalog Number:</b> " + catalogval;
    desc += "<br/><b>Owner:</b> " + owneremailval;
+      if(selfnode.length > 0){
+    selfval = selfnode.val();
+  }  
+   if(requestornode.length > 0 && selfval == "self"){
+    requestorval = requestornode.val();
+    desc += "<br/><b>Requestor:</b> " + requestorval;
+  }  
    checkedtext += desc;
    uncheckedtext += desc;
 
@@ -60,6 +74,9 @@ $('.cancel').click(function() {
    desc += "<br/><b>Vendeur:</b> " + vendorval + "<br/>";
    desc += "<br/><b>Numéro de Catalogue:</b> " + catalogval + "<br/>";
    desc += "<br/><b>Proprio:</b> " + owneremailval + "<br/>";
+  if(requestorval != ""){
+    desc += "<br/><b>Demandeur:</b> " + requestorval;
+  }
    checkedtext += desc;
    uncheckedtext += desc;
   }
