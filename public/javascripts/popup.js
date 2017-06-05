@@ -24,9 +24,42 @@ $('.cancel').click(function() {
   var checkedtext = "Do you want to mark this reagent as insufficient?";
   var uncheckedtext = "Do you want to mark this reagent as replenished and in sufficient quantities?";
   console.log("lang is " + langText );
+
+  var agentnode = fulfill.closest('div').next('.agentid');
+  var vendornode = agentnode.next('.vendorid');
+  var labnode = vendornode.next('.labid');
+  var catalognode = labnode.next('.catalogid');
+  var owneremailnode = catalognode.next('.owneremailid');
+
+  var agentval = agentnode.val();
+  //var labval = labnode.val();
+  var owneremailval = owneremailnode.val();
+  var vendorval = vendornode.val();
+  var catalogval = catalognode.val();
+
+  console.log("agent: " + agentval);
+  //console.log("labval: " + labval);
+  console.log("owneremailval: " + owneremailval);
+  console.log("vendorval: " + vendorval);
+  console.log("catalogval: " + catalogval);
+
+  desc += "<br/><b>Reagent:</b> " + agentval;
+   desc += "<br/><b>Vendor:</b> " + vendorval;
+   desc += "<br/><b>Catalog Number:</b> " + catalogval;
+   desc += "<br/><b>Owner:</b> " + owneremailval;
+   checkedtext += desc;
+   uncheckedtext += desc;
+
+
   if(langText == "fr"){
     checkedtext = "Voulez-vous marquer ce réactif comme insuffisant?";
    uncheckedtext = "Voulez-vous marquer ce réactif comme réapprovisioné et en quantité suffisante?";
+  desc = "<br/><b>Réactif:</b> " + agentval + "<br/>";
+   desc += "<br/><b>Vendeur:</b> " + vendorval + "<br/>";
+   desc += "<br/><b>Numéro de Catalogue:</b> " + catalogval + "<br/>";
+   desc += "<br/><b>Proprio:</b> " + owneremailval + "<br/>";
+   checkedtext += desc;
+   uncheckedtext += desc;
   }
   console.log("checkedtext is " + checkedtext );
   console.log("uncheckedtext is " + uncheckedtext );
