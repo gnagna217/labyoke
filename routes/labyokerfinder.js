@@ -2755,10 +2755,11 @@ LabYokerChangeShare.prototype.fulfillShare = function(callback) {
 	var status = "";
 	var orderonly = "";
 	if(checked == "0" && requestor != undefined){
-		console.log("checking status: " + checked);
+		console.log("checked: " + checked);
+		console.log("checking status: " + checked == 0);
 		orderonly = " and requestoremail='" + requestor + "'";
 	}
-	if(checked != "0"){
+	if(checked == 0){
 		status = "fulfilled";
 	}
 	//var str = "select * from labs";
