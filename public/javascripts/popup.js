@@ -78,6 +78,9 @@ $('.fulfill').click(function() {
   }
   console.log("checkedtext is " + checkedtext );
   console.log("uncheckedtext is " + uncheckedtext );
+
+  var agent = fulfill.closest($('.agentid')).val();
+  console.log("agent: " + agent);
   if(checked){
     orderText.innerHTML = checkedtext;
   } else {
