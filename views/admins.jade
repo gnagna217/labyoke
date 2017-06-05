@@ -134,9 +134,9 @@ block content
 				script="$(window).scrollTop($('#uploadForm').offset().top).scrollLeft($('#uploadForm').offset().left);"
 			div(style=nobar, class="threepointssep")
 			- if(doing == "upload")
-			div(class="threepointsmobile", style=nobar)
-			div(id="qtyComp", style="display:block")
-				h4!= i18n.__("admins.qty.title1") + currentlabname + i18n.__("admins.qty.title2")
+			//div(class="threepointsmobile", style=nobar)
+			div(id="qtyComp", style="display:block;padding-top: 20px;")
+				h3!= i18n.__("admins.qty.title1") + currentlabname + i18n.__("admins.qty.title2")
 				- if(report_data != null && report_data.length >0)
 					p!= i18n.__("admins.qty.subtitle")
 					div(class="ct-chart ct-perfect-fourth")
