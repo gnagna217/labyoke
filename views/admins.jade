@@ -343,7 +343,8 @@ block content
 								script.
 									$(document).ready(function() {
 										$('#rankTblreqshares').DataTable({order: [[ 5, "desc" ]],
-											
+										iDisplayLength: 7,
+										aLengthMenu: [[7, 14, 21, -1], [7, 14, 21, "All"]],
 										language:{
 											processing: "#{i18n.__("datatable.processing")}",
 											search: "#{i18n.__("datatable.search")}",
