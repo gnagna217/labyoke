@@ -104,6 +104,7 @@ block content
 							script.
 								$(document).ready(function() {
 									$('#rankTblreqshares').DataTable({order: [[ 4, "desc" ]],
+									iDisplayLength: 5,
 										
 									language:{
 										processing: "#{i18n.__("datatable.processing")}",
@@ -175,6 +176,7 @@ block content
 							script.
 								$(document).ready(function() {
 									$('#rankTblshares').DataTable({
+										iDisplayLength: 5,
 										language:{
 										processing: "#{i18n.__("datatable.processing")}",
 										search: "#{i18n.__("datatable.search")}",
@@ -271,6 +273,7 @@ block content
 							script.
 								$(document).ready(function() {
 									$('#rankTblload').DataTable({
+										iDisplayLength: 5,
 										language:{
 										processing: "#{i18n.__("datatable.processing")}",
 										search: "#{i18n.__("datatable.search")}",
