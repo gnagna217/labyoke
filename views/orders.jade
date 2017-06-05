@@ -50,6 +50,7 @@ block content
                     script.
                       $(document).ready(function() {
                         $('#rankTblOrders').DataTable({order: [[ 4, "desc" ]],
+                          iDisplayLength: 5,
                           language:{
                           processing: "#{i18n.__("datatable.processing")}",
                           search: "#{i18n.__("datatable.search")}",
