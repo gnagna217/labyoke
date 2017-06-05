@@ -25,7 +25,7 @@ $('.cancel').click(function() {
   var uncheckedtext = "Do you want to mark this reagent as replenished and in sufficient quantities?";
   console.log("lang is " + langText );
 
-  var agentnode = fulfill.closest('div').next('.agentid');
+  var agentnode = cancel.closest('div').next('.agentid');
   var vendornode = agentnode.next('.vendorid');
   var labnode = vendornode.next('.labid');
   var catalognode = labnode.next('.catalogid');
