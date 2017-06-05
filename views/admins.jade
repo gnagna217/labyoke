@@ -105,6 +105,8 @@ block content
 							script.
 								$(document).ready(function() {
 									$('#rankTblload').DataTable({
+										iDisplayLength: 7,
+										aLengthMenu: [[7, 14, 21, -1], [7, 14, 21, "All"]],
 										language:{
 										processing: "#{i18n.__("datatable.processing")}",
 										search: "#{i18n.__("datatable.search")}",
@@ -135,7 +137,7 @@ block content
 			div(style=nobar, class="threepointssep")
 			- if(doing == "upload")
 			//div(class="threepointsmobile", style=nobar)
-			div(id="qtyComp", style="display:block;padding-top: 20px;")
+			div(id="qtyComp", style="display:block;padding-top: 10px;")
 				h3!= i18n.__("admins.qty.title1") + currentlabname + i18n.__("admins.qty.title2")
 				- if(report_data != null && report_data.length >0)
 					p!= i18n.__("admins.qty.subtitle")
