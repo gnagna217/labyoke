@@ -1504,27 +1504,10 @@ LabYokeAgents.prototype.findallsharesadmins = function(callback) {
 	var select = "";
 	var checklab = [];
 
-	//for(var prop in labs){
-		//var lb = labs[prop].labname;
-		//if(checklab.indexOf(lb)<0){
-		//	checklab.push(lb);
 
-		a = "a" + i;
-		labsstr = mylabtable + "_orders "; //+ a + " ";
-		console.log("get all labs shares labsstr: " + labsstr);
-		select = select + "SELECT a.agent, count(a.agent), b.insufficient as insuff from vm2016_agentsshare a, " + labsstr + " b where a.agent = b.agent and a.catalognumber = b.catalognumber and b.email='"
-					+ email + "' and b.lab='" + mylab + "' group by a.agent, b.insufficient UNION ";
-		i++;
-		//}
-	//}
+		select = "SELECT b.email, count(a.agent), a.insufficient as insuff from vm2016_agentsshare a, vm2016_users  b where a.email = b.email and b.lab = '" + mylab + "' group by a.insufficient, b.email order by b.email";	
 
-	//labsstr = labsstr.replace(/,\s*$/, "");
-	//date = date.replace(/,\s*$/, "");
-	select = select.replace(/UNION\s*$/, "");
-
-	
-
-	console.log("get allshares select: " + select /*+ " order by agent asc limit 6"*/);
+	console.log("get allshares admin select: " + select /*+ " order by agent asc limit 6"*/);
 
 		var query2 = client.query(select);
 		query2.on("row", function(row, result2) {
