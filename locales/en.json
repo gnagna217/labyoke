@@ -306,7 +306,7 @@
     "shares.table.requestor": "Requestor",
     "shares.table.delete": "X",
     "shares.table.fulfill": "F",
-    "shares.table.email":"Email",
+    "shares.table.email":"Owner",
     "shares.table.location":"Location",
     "shares.none.title": "You are currently sharing.",
     "shares.none.subtitle": "An administrator has uploaded the following reagents on your behalf. If <span class='yokeColorBold'>Insufficient quantities</span><span> are listed, please have your admin refresh the quantities.</span>",

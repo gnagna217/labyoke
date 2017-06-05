@@ -789,7 +789,7 @@ totalshares = t[0].counting;
             labYokechange.cancelShare(function(error, results) {
                 if(results != null && results.length > 0){
                     res.render('admins', {
-                       admintype:admintype,lang:req.cookies.i18n, i18n:res, nosuccess: "generic", myshares: req.session.myshares, mysharesrequest: req.session.mysharesrequest, report_sharesbycategory: req.session.report_sharesbycategory, report_venn: req.session.report_venn, test: req.session.test, currentlabname: req.session.lab, ordersnum: req.session.orders, sharesnum: req.session.shares, loggedIn : true, isLoggedInAdmin: req.session.admin, title: 'Admins', labyoker : req.session.user, labyokersurname : req.session.surname
+                       admintype:admintype,lang:req.cookies.i18n, i18n:res, myshares: req.session.myshares, mysharesrequest: req.session.mysharesrequest, report_sharesbycategory: req.session.report_sharesbycategory, report_venn: req.session.report_venn, test: req.session.test, currentlabname: req.session.lab, ordersnum: req.session.orders, sharesnum: req.session.shares, loggedIn : true, isLoggedInAdmin: req.session.admin, title: 'Admins', labyoker : req.session.user, labyokersurname : req.session.surname
                      });
                     //res.redirect('/admins');         
                     //res.render('share', {ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, isLoggedInAdmin: req.session.admin, title:'Shares',loggedIn : true});
@@ -886,7 +886,7 @@ totalshares = t[0].counting;
             labYokechange.fulfillShare(function(error, results) {
                 if(results != null && results.length > 0){
                     res.render('admins', {
-                        admintype:admintype,lang:req.cookies.i18n, i18n:res, nosuccess: "generic", myshares: req.session.myshares, mysharesrequest: req.session.mysharesrequest, report_sharesbycategory: req.session.report_sharesbycategory, report_venn: req.session.report_venn, test: req.session.test, currentlabname: req.session.lab, ordersnum: req.session.orders, sharesnum: req.session.shares, loggedIn : true, isLoggedInAdmin: req.session.admin, title: 'Admins', labyoker : req.session.user, labyokersurname : req.session.surname
+                        admintype:admintype,lang:req.cookies.i18n, i18n:res, myshares: req.session.myshares, mysharesrequest: req.session.mysharesrequest, report_sharesbycategory: req.session.report_sharesbycategory, report_venn: req.session.report_venn, test: req.session.test, currentlabname: req.session.lab, ordersnum: req.session.orders, sharesnum: req.session.shares, loggedIn : true, isLoggedInAdmin: req.session.admin, title: 'Admins', labyoker : req.session.user, labyokersurname : req.session.surname
                     });
                     //res.redirect('/admins');         
                     //res.render('share', {ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, isLoggedInAdmin: req.session.admin, title:'Shares',loggedIn : true});
