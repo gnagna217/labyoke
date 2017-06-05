@@ -132,6 +132,7 @@ $('.fulfill').click(function() {
    desc += "<br/><b>Vendor:</b> " + vendorval;
    desc += "<br/><b>Catalog Number:</b> " + catalogval;
    desc += "<br/><b>Requestor:</b> " + requestorval;
+   desc += "<br/><b>Lab:</b> " + labval;
    checkedtext += desc;
    uncheckedtext += desc;
 
@@ -142,6 +143,7 @@ $('.fulfill').click(function() {
    desc += "<br/><b>Vendeur:</b> " + vendorval + "<br/>";
    desc += "<br/><b>Numéro de Catalogue:</b> " + catalogval + "<br/>";
    desc += "<br/><b>Demandeur:</b> " + requestorval + "<br/>";
+   desc += "<br/><b>Labo:</b> " + labval;
    checkedtext += desc;
    uncheckedtext += desc;
   }
