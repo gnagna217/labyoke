@@ -3171,6 +3171,9 @@ span.num.greatherthanninetynine {
 }
 
 @media (max-width: 330px){
+#checkname {
+    margin-left: 155px;
+}
 h3, .h3 {
     font-size: 17px;
 }
