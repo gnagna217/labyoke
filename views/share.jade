@@ -105,7 +105,7 @@ block content
 								$(document).ready(function() {
 									$('#rankTblreqshares').DataTable({order: [[ 4, "desc" ]],
 									iDisplayLength: 5,
-										
+									aLengthMenu: [[5, 10, 15, -1], [5, 10, 15, "All"]],
 									language:{
 										processing: "#{i18n.__("datatable.processing")}",
 										search: "#{i18n.__("datatable.search")}",
@@ -177,6 +177,7 @@ block content
 								$(document).ready(function() {
 									$('#rankTblshares').DataTable({
 										iDisplayLength: 5,
+										aLengthMenu: [[5, 10, 15, -1], [5, 10, 15, "All"]],
 										language:{
 										processing: "#{i18n.__("datatable.processing")}",
 										search: "#{i18n.__("datatable.search")}",
@@ -274,6 +275,7 @@ block content
 								$(document).ready(function() {
 									$('#rankTblload').DataTable({
 										iDisplayLength: 5,
+										aLengthMenu: [[5, 10, 15, -1], [5, 10, 15, "All"]],
 										language:{
 										processing: "#{i18n.__("datatable.processing")}",
 										search: "#{i18n.__("datatable.search")}",
