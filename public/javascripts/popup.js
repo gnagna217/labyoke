@@ -105,10 +105,10 @@ $('.fulfill').click(function() {
   if(langText == "fr"){
     checkedtext = "Avez-vous rempli cette commande de réactif?";
    uncheckedtext = "Voulez-vous marquer cette commande de réactif comme non-remplie?";
-   desc = "<br/>Réactif: " + agentval + "<br/>";
-   desc += "<br/>Vendeur: " + vendorval + "<br/>";
-   desc += "<br/>Numéro de Catalogue: " + catalogval + "<br/>";
-   desc += "<br/>Demandeur: " + requestorval + "<br/>";
+   desc = "<br/><b>Réactif:</b> " + agentval + "<br/>";
+   desc += "<br/><b>Vendeur:</b> " + vendorval + "<br/>";
+   desc += "<br/><b>Numéro de Catalogue:</b> " + catalogval + "<br/>";
+   desc += "<br/><b>Demandeur:</b> " + requestorval + "<br/>";
    checkedtext += desc;
    uncheckedtext += desc;
   }
