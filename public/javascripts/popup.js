@@ -27,8 +27,9 @@ $('.cancel').click(function() {
   console.log("lang is " + langText );
 
   var agentnode = cancel.closest('div').next('.agentid');
+  var labnode = agentnode.next('.labid');
   var vendornode = agentnode.next('.vendorid');
-  var labnode = vendornode.next('.labid');
+  
   var catalognode = labnode.next('.catalogid');
   var owneremailnode = catalognode.next('.owneremailid');
 
