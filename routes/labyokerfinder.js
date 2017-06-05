@@ -1743,8 +1743,8 @@ LabYokerOrder.prototype.order = function(callback) {
 		});
 		query2.on("end", function(result2) {
 
-			var mailOptions = new MailOptionsWithCC(email, subject, body);
-			var mailOptionsReq = new MailOptionsWithCC(sendemail, subjectReq, bodyReq,labadmin);
+			var mailOptions = new MailOptionsWithCC(email, subject, body, labadmin);
+			var mailOptionsReq = new MailOptionsWithCC(sendemail, subjectReq, bodyReq);
 			mailOptions.sendAllEmails();
 			mailOptionsReq.sendAllEmails();
 
@@ -2719,7 +2719,7 @@ LabYokerChangeShare.prototype.cancelShare = function(callback) {
 			body += "</div>";
 			console.log("order body: " + body);
 			var mailOptions = new MailOptionsWithCC(requestor, subject, body, email);
-			//mailOptions.sendAllEmails();
+			mailOptions.sendAllEmails();
 		}
 
 		callback(null, results);
