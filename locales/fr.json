@@ -257,6 +257,7 @@
     "orders.subtitle": "Vous n'avez commandé aucun Réactif! Cliquez sur <a href='/search'>Chercher</a><span> et commencez à labyoker!</span>",
     "orders.subdesc": "Génial! Vous avez commandé les Réactifs ci-dessous. Les <span class='yokeColor'>commandes sont annulées</span> si leur propriétaire est en rupture de stock.",
     "orders.table.id": "id ",
+    "orders.table.email": "Proprio",
     "orders.table.reagent": "Réactif",
     "orders.table.vendor": "Vendeur",
     "orders.table.catalog": "Catalogue",

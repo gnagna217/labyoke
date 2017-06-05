@@ -255,6 +255,7 @@
     "orders.subtitle": "You have not ordered any reagent yet! Click on the <a href='/search'>Search</a><span> button and start labyoking!</span>",
     "orders.subdesc": "Incredible! You have ordered the following reagents so far. <span class='yokeColor'>Cancelled orders</span> are listed if they cannot be fulfilled.",
     "orders.table.id": "id ",
+    "orders.table.email": "Owner",
     "orders.table.reagent": "Reagent",
     "orders.table.vendor": "Vendor",
     "orders.table.catalog": "Catalog",
