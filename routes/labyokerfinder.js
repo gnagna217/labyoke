@@ -1481,6 +1481,68 @@ LabYokeAgents.prototype.findallshares = function(callback) {
 	});
 };
 
+LabYokeAgents.prototype.findallsharesadmins = function(callback) {
+	var results = [];
+	var labs = this.labs;
+	var mylab = this.mylab;
+	var department = this.dept;
+	var mylabtable = mylab.replace(/ /g,"").toLowerCase();
+	console.log("findmyshares: " + this.email);
+	var query = client
+			.query("SELECT * FROM vm2016_agentsshare a,labs b, vm2016_users c where b.labname='"
+					+ mylab + "' and a.email=c.email and b.labname=c.lab and a.email = c.email order by date desc");
+	var email = this.email;
+	query.on("row", function(row, result) {
+		result.addRow(row);
+	});
+	query.on("end", function(result) {
+		results.push(result.rows);
+
+	var labsstr = "";
+	var i = 0;
+	var a = "a";
+	var select = "";
+	var checklab = [];
+
+		a = "a" + i;
+		labsstr = mylabtable + "_orders ";
+		console.log("get all labs shares labsstr: " + labsstr);
+		select = select + "SELECT a.agent, count(a.agent), b.insufficient as insuff from vm2016_agentsshare a, " + labsstr + " b where a.agent = b.agent and a.catalognumber = b.catalognumber and b.email='"
+					+ email + "' and b.lab='" + mylab + "' group by a.agent, b.insufficient UNION ";
+		i++;
+
+	select = select.replace(/UNION\s*$/, "");
+
+	console.log("get allshares select: " + select /*+ " order by agent asc limit 6"*/);
+
+		var query2 = client.query(select);
+		query2.on("row", function(row, result2) {
+			result2.addRow(row);
+		});
+		query2.on("end", function(result2) {
+			results.push(result2.rows);
+
+			var select = "";
+			var labsstr = mylab.replace(/ /g,"").toLowerCase() + "_orders";
+			select = select + "SELECT * FROM " + labsstr +  " UNION ";
+
+			select = select.replace(/UNION\s*$/, "") + " order by date desc";
+			console.log("Partages select: " + select);
+
+			var query4 = client.query(select);
+			query4.on("row", function(row, result4) {
+				result4.addRow(row);
+			});
+			query4.on("end", function(result4) {
+				var test4 = result4.rows;
+				results.push(test4.length);
+				results.push(test4);
+			});
+		});
+	});
+};
+
+
 LabYokeAgents.prototype.findallshares2 = function(callback) {
 	var results = [];
 	var labs = this.labs;
