@@ -3167,6 +3167,9 @@ span.num.greatherthanninetynine {
 }
 
 @media (max-width: 330px){
+h3, .h3 {
+    font-size: 17px;
+}
 .help{
     right: 32%;
 }
