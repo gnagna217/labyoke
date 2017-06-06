@@ -44,7 +44,7 @@ block content
 					div(class="threepointsmobile", style=nobar)
 				h3(style="", class=uploadtext)= i18n.__("shares.admin.title")
 				p= i18n.__("shares.admin.subtitle")
-				form(id="uploadForm", enctype="multipart/form-data", action="admins", method="post")
+				form(id="uploadForm", enctype="multipart/form-data", action="admins", method="post", style="padding-bottom: 20px;")
 					input(style="display:none", type="file" name="file",id="file", class="inputfile inputfile-1", data-multiple-caption="{count} files selected")
 					label.shadow(for="file", style="width: 50%;text-align: center;border-radius: 6px;")
 						svg(xmlns="http://www.w3.org/2000/svg", width="20", height="17", viewBox="0 0 20 17")
