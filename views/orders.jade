@@ -8,9 +8,14 @@ block content
         div(class="bounce3")
     div(class="container login marginbottom margintop container2 moveFromLeft")
       - var classContainer = ""
+      - var widthnodata = ""
+      - var removediv = ""
+      if(orderresults == "")
+        - widthnodata = "width:100%;"
+        - removediv = "display:none;"
       if email == undefined
          - classContainer = "/*min-height: 1000px;*/"
-      div(style="float: left;" + classContainer class="order-container" id="order-container")
+      div(style="float: left;" + widthnodata class="order-container" id="order-container")
             h1= i18n.__("orders.title")
             if(orderresults == "")
               h4!= i18n.__("orders.non.title")
