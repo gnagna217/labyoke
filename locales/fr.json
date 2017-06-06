@@ -154,7 +154,7 @@
     "reports.download2.title":"Économies Jr.",
     "reports.download.today.file":"Semaine_Economies.pdf",
 
-    "reports.money.title": "Rapport sur les Économies de Partage.",
+    "reports.money.title": "Rapport Économies de Partage.",
     "reports.money.subtitle": "Télécharger le rapport sur les économies de partage de chaque laboratoire sur une période déterminée par Réactif.",
     "reports.money.message.fail": "Malheureusement nous n'avons pas pu générer le rapport souhaité. Essayez avec de nouveaux paramètres.",
     "reports.money.message.date.fail":"Malheureusement nous n'avons pas pu générer le rapport car vos dates souhaitées sont invalides. Essayez avec de nouvelles dates.",
@@ -174,7 +174,7 @@
     "reports.money.catalog": "Catalogue",
     "reports.money.button": "Générer Économies",
 
-    "reports.orders.title": "Rapport sur le Nombre de Commandes.",
+    "reports.orders.title": "Rapport Commandes.",
     "reports.orders.subtitle": "Télécharger le rapport sur les commandes pourvues.",
     "reports.orders.message.fail": "Malheureusement nous n'avons pas pu générer le rapport souhaité. Essayez avec de nouveaux paramètres.",
     "reports.orders.message.date.fail":"Malheureusement nous n'avons pas pu générer le rapport car vos dates souhaitées sont invalides. Essayez avec de nouvelles dates.",    
@@ -189,7 +189,7 @@
     "reports.orders.lab.option": "tous",
     "reports.orders.button": "Générer Commandes",
 
-    "reports.shares.title": "Rapport sur l'Inventaire des Réactifs.",
+    "reports.shares.title": "Rapport Inventaire Réactifs.",
     "reports.shares.subtitle": "Télécharger le rapport sur les Réactifs partagés.",
     "reports.shares.message.fail": "Malheureusement nous n'avons pas pu générer le rapport voulu. Essayez avec de nouveaux paramètres.",
     "reports.shares.message.date.fail":"Malheureusement nous n'avons pas pu générer le rapport car vos dates souhaitées sont invalides. Essayez avec de nouvelles dates.",
@@ -204,7 +204,7 @@
     "reports.shares.lab.option": "tous",
     "reports.shares.button": "Générer Inventaire",
 
-    "reports.insuff.title": "Rapport sur les Réactifs en Rupture de Stock.",
+    "reports.insuff.title": "Rapport Réactifs Rupture de Stock.",
     "reports.insuff.subtitle": "Télécharger le rapport sur les Réactifs en rupture de stock dans chaque laboratoire.",
     "reports.insuff.message.fail": "Malheureusement nous n'avons pas pu générer le rapport voulu faute de données suffisantes. Essayez avec de nouveaux paramètres. En fait: <b>Aucun Réactif n'est en rupture de stock en ce moment</b>.",
     "reports.insuff.message.date.fail":"Malheureusement nous n'avons pas pu générer le rapport car vos dates souhaitées sont invalides. Essayez avec de nouvelles dates.",

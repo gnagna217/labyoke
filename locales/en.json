@@ -153,7 +153,7 @@
     "reports.download2.title":"Weekly Savings",
     "reports.download.today.file":"Week_Savings.pdf",
     
-    "reports.money.title": "Shares Savings report Upload.",
+    "reports.money.title": "Shares Savings Report.",
     "reports.money.subtitle": "You can now retrieve a report of the savings each lab has made over a period of time per reagent.",
     "reports.money.message.fail": "Unfortunately we could not generate the report within the time frame chosen. Please try again with new parameters.",
     "reports.money.message.date.fail":"Unfortunately we could not generate the report as the dates provided were out of range. Please try again with new dates.",
@@ -173,7 +173,7 @@
     "reports.money.catalog": "Catalog",
     "reports.money.button": "Get Savings",
 
-    "reports.orders.title": "Orders report Upload.",
+    "reports.orders.title": "Orders Report.",
     "reports.orders.subtitle": "You can now retrieve a report of all orders requested.",
     "reports.orders.message.fail": "Unfortunately we could not generate the report within the time frame chosen. Please try again with new parameters.",
     "reports.orders.message.date.fail":"Unfortunately we could not generate the report as the dates provided were out of range. Please try again with new dates.",
@@ -188,7 +188,7 @@
     "reports.orders.lab.option": "all",
     "reports.orders.button": "Get Orders",
 
-    "reports.shares.title": "Inventory report Upload.",
+    "reports.shares.title": "Inventory Report.",
     "reports.shares.subtitle": "You can now retrieve a report of all shares uploaded.",
     "reports.shares.message.fail": "Unfortunately we could not generate the report within the time frame chosen. Please try again with new parameters.",
     "reports.shares.message.date.fail":"Unfortunately we could not generate the report as the dates provided were out of range. Please try again with new dates.",
@@ -203,7 +203,7 @@
     "reports.shares.lab.option": "all",
     "reports.shares.button": "Get Shares",
 
-    "reports.insuff.title": "Insufficient Reagents report Upload.",
+    "reports.insuff.title": "Insufficient Reagents Report.",
     "reports.insuff.subtitle": "You can now retrieve a report of the low inventories in each lab.",
     "reports.insuff.message.fail": "Unfortunately we could not generate the report as there is no data retrieved. Please try again with a new lab. Or better yet: <b>There are no insufficient inventory to report at the moment</b>.",
     "reports.insuff.message.date.fail":"Unfortunately we could not generate the report as the dates provided were out of range. Please try again with new parameters.",
