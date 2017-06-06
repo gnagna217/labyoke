@@ -19,8 +19,9 @@ block content
               h4!= i18n.__("orders.non.title")
               p!= i18n.__("orders.non.subtitle")
               div(class="searchlogo", style="margin-top:25px")
-                img(src="/images/logo_one_bottle_L_2.png", alt="The Yoke",  title="Yoke", class="searchlogoimg")
-                img(src="/images/logo_one_bottle_R_2.png", alt="The Yoke",  title="Yoke", class="searchlogoimg")
+                span(class="fa fa-circle-thin" style=" color: #3d9dcb; font-size: 60pt; position: relative; top: 88px;")
+                img(src="/images/cart.png", alt="The Yoke",  title="Yoke", style="width: 250px;margin-top: 20px;")
+                span(class="fa fa-circle-thin" style=" color: #8a6d3b; font-size: 60pt; position: relative; top: 88px;")
             if(orderresults != "" && email == undefined)
               p!=i18n.__("orders.subdesc")
               div(id="results2", class="resultsshadow")
@@ -123,7 +124,9 @@ block content
               a(href="#", class="close", data-dismiss="alert", aria-label="close", title="close")="x"
               span!= booster          
           div(class="threepointssep")
-          h3(style="padding-top: 25px;")= i18n.__("orders.chart.title")
+          h3(style="padding-top: 25px;")
+            span(class="fa fa-bar-chart" style=" color: #337ab7; margin-right: 10px;")
+            span= i18n.__("orders.chart.title")
           form(action="chartSelect", method="post")
             div(class="buttons")
               select(name="chartSelect" type="text" id="chartSelect" class="form-control" style="border-color:#3d9dcb;margin-bottom:10px;width: 97%;" placeholder=i18n.__("orders.chart.select"))
