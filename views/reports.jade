@@ -136,7 +136,7 @@ block content
 		div(class="reportSlot") &nbsp;
 		div(class="restrictreport")
 			div(class="reportMoneys results2 resultsshadow", id="reportMoney")
-				div
+				//div
 				h3= i18n.__("reports.money.title")
 				p= i18n.__("reports.money.subtitle")
 				- var datefrom_money = datefromMoney
@@ -263,7 +263,7 @@ block content
 					script.
 						$(window).scrollTop($('#reportMoney').offset().top).scrollLeft($('#reportMoney').offset().left);
 			div(class="reportOrderss results2 resultsshadow", id="reportOrders")
-				div(style="/*background-color: #3d9dcb; height: 2px; margin-bottom: 30px; margin-top: 30px;*/")
+				//div(style="/*background-color: #3d9dcb; height: 2px; margin-bottom: 30px; margin-top: 30px;*/")
 				h3= i18n.__("reports.orders.title")
 				p= i18n.__("reports.orders.subtitle")
 				- var datefrom_orders = datefromOrders
@@ -396,7 +396,7 @@ block content
 					script.
 						$(window).scrollTop($('#reportOrders').offset().top).scrollLeft($('#reportOrders').offset().left);
 			div(class="reportSharess results2 resultsshadow", id="reportShares")
-				div
+				//div
 				h3= i18n.__("reports.shares.title")
 				p= i18n.__("reports.shares.subtitle")
 				- var datefrom_shares = datefromShares
@@ -541,7 +541,7 @@ block content
 					});
 		div(class="restrictreport")
 			div(class="reportInsuffs results2 resultsshadow", id="reportInsuff")
-				div(style="/*background-color: #3d9dcb; height: 2px; margin-bottom: 30px; margin-top: 30px;*/")
+				//div(style="/*background-color: #3d9dcb; height: 2px; margin-bottom: 30px; margin-top: 30px;*/")
 				h3= i18n.__("reports.insuff.title")
 				p=i18n.__("reports.insuff.subtitle")
 				- var message_fail_insuff = i18n.__("reports.insuff.message.fail")
