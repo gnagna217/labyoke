@@ -2809,7 +2809,7 @@ LabYokerChangeShare.prototype.fulfillShare = function(callback) {
 	console.log("userlang: " + userlang);
 	console.log("email: " + userlang);
 	console.log("checked: " + checked);
-	console.log("checking status 1: " + checked == 1);
+	console.log("checking status 1: " + (checked === 1));
 	//email = "metsnake316@hotmail.com";
 	//requestor = "metsnake217@gmail.com";
 	var results;
