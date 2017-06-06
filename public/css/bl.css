@@ -10,11 +10,11 @@
 }
 
 .roue1{
-     color: #3d9dcb; font-size: 60pt; position: relative; top: 88px;
+     color: #3d9dcb; font-size: 60pt !important; position: relative; top: 88px;
 }
 
 .roue2{
-    color: #8a6d3b; font-size: 60pt; position: relative; top: 88px;
+    color: #8a6d3b; font-size: 60pt !important; position: relative; top: 88px;
 }
 #changed{
     margin-bottom: 30px;
@@ -3215,11 +3215,11 @@ span.num.greatherthanninetynine {
     width: 56.5% !important;
 }
 .roue1{
-     font-size: 40pt;
+     font-size: 40pt !important;
 }
 
 .roue2{
-    font-size: 40pt;
+    font-size: 40pt !important;
 }
 #checkname {
     margin-left: 155px;
