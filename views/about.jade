@@ -6,7 +6,7 @@ block content
         div(class="bounce1")
         div(class="bounce2")
         div(class="bounce3")                        
-  div(class="container margintop container2 moveFromLeft")
+  div(class="container margintop container2 moveFromLeft", style="height: 1800px;")
     img(src="/images/house.png" style="display:none;") 
     //div(class="fa fa-home labColor us", style="margin-top: 15px;")
     //  span(class="fa fa-plus aboutplus")
@@ -31,11 +31,11 @@ block content
           span #{i18n.__("about.desc3")}
       div.pointsLayout.alert.results
           span!= i18n.__("about.desc4")
-      div.pointsLayout.alert.results(style="margin-bottom:100px;")
+      div.pointsLayout.alert.results
           span #{i18n.__("about.desc6")}
     div(class="teamrow")
       div(class="teamcolumn manual-flip")
-        div(class="teamcard", style="margin-top: -100px;")
+        div(class="teamcard")
           div(class="front")
             img(src="/images/card.jpg" alt="Jane" style="width:100%")
             div(class="teamcontainer")
@@ -60,7 +60,7 @@ block content
             p(class="backbutton")
               button(class="teambuttonback", onclick="rotateCard(this)") #{i18n.__("card.back")}
       div(class="teamcolumn manual-flip teamcolumn1")
-        div(class="teamcard", style="margin-top: -100px;")
+        div(class="teamcard")
           div(class="front")
             img(src="images/card2_0.jpg" alt="Jane" style="width:100%")
             div(class="teamcontainer")
@@ -85,7 +85,7 @@ block content
             p(class="backbutton")
               button(class="teambuttonback", onclick="rotateCard(this)") #{i18n.__("card.back")}
       div(class="teamcolumn manual-flip teamcolumn2")
-        div(class="teamcard teamcard2", style="margin-top: -100px;")
+        div(class="teamcard teamcard2")
           div(class="front")
             img(src="images/card3_0.png" alt="Jane" style="width:100%")
             div(class="teamcontainer")
