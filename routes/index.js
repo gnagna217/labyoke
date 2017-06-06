@@ -875,7 +875,7 @@ totalshares = t[0].counting;
             var table = req.body.table;
             var email = req.body.owneremail;
             var requestor = req.body.requestoremail;
-            var checked = req.body.cancel;
+            var checked = req.body.fulfill;
             var userlang = req.cookies.i18n;
             var date = moment(req.body.date).add(1, 'day').tz("America/New_York").format(
                 'MM-DD-YYYY');
