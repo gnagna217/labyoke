@@ -254,7 +254,8 @@
 
 
     "orders.title": "Commandes.",
-    "orders.subtitle": "Vous n'avez commandé aucun Réactif! Cliquez sur <a href='/search'>Chercher</a><span> et commencez à labyoker!</span>",
+    "orders.non.title": "Vous n'avez commandé aucun Réactif.",
+    "orders.non.subtitle": "Cliquez sur <a href='/search'>Chercher</a><span> et commencez à labyoker!</span>",
     "orders.subdesc": "Génial! Vous avez commandé les Réactifs ci-dessous. Les <span class='yokeColor'>commandes sont annulées</span> si leur propriétaire est en rupture de stock.",
     "orders.table.id": "id ",
     "orders.table.email": "Proprio",
@@ -289,7 +290,8 @@
     "shares.pop.title": "Partagez?",
     "shares.pop.subtitle": "<div id='actionorder' class='exit' style='width: 50%; float: left; background-color: rgba(138, 109, 59, 0.55);'')>OK</div><div class='exit' id='actioncancel'>Annuler</div>",
     "shares.title": "Partager.",
-    "shares.subtitle": "Vous ne partagez actuellement aucun réactif.",
+    "shares.non.title": "Vous ne partagez actuellement aucun réactif.",
+    "shares.non.subtitle": "Veuillez contacter votre <a href='/account'>administrateur</a> pour reeapprovisioner votre inventaire.",
     "shares.subtitle1": "Fantastique.",
     "shares.intro": "Aucun nouveau produit chimique",
     "shares.intro5": " nouveau(x) produit(s) chimique(s)",
