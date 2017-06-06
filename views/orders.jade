@@ -13,7 +13,7 @@ block content
       div(style="float: left;" + classContainer class="order-container" id="order-container")
             h1= i18n.__("orders.title")
             if(orderresults == "")
-              p!= i18n.__("orders.subtitle")
+              h4!= i18n.__("orders.subtitle")
             if(orderresults != "" && email == undefined)
               p!=i18n.__("orders.subdesc")
               div(id="results2", class="resultsshadow")

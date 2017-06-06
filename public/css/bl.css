@@ -9,9 +9,15 @@
   -webkit-font-smoothing: antialiased;
 }
 
-
+#changed{
+    margin-bottom: 30px;
+}
 .addMargin{
     outline:none;
+}
+
+.changedh4{
+    margin-top: 10px;
 }
 
 .admintop{

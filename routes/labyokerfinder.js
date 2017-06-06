@@ -2807,7 +2807,7 @@ LabYokerChangeShare.prototype.fulfillShare = function(callback) {
 	console.log("lab: " + lab);
 	console.log("table: " + table);
 	console.log("userlang: " + userlang);
-	console.log("email: " + userlang);
+	console.log("email: " + email);
 	console.log("checked: " + checked);
 	console.log("checking status 0: " + (checked === 0));
 	//email = "metsnake316@hotmail.com";
