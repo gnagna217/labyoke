@@ -897,12 +897,12 @@ totalshares = t[0].counting;
             console.log("userlang: " + userlang);
             console.log("requestoremail: " + requestor);
             var labYokechange = new LabYokerChangeShare(table,agent, vendor, catalognumber,email,requestor,checked,datenow,date, lab, res,userlang);
-            labYokechange.findallsharesadmins(function(error, resultsfilled) {
+            labYokechange.fulfillShare(function(error, resultsfilled) {
                 if(resultsfilled != null && resultsfilled.length > 0){
 
 
         var labYokeAgents = new LabYokeAgents(req.session.email, req.session.lab, req.session.labs, req.session.dept,req.session.labadmin);
-        labYokeAgents.findallshares(function(error, results) {
+        labYokeAgents.findallsharesadmins(function(error, results) {
             //req.session.orders = results[2];
             req.session.myshares = results[0];
             //req.session.report_sharesbycategory = results[1];
