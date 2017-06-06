@@ -3207,12 +3207,15 @@ span.num.greatherthanninetynine {
 }
 
 @media (max-width: 330px){
+#menumyaccountadmin {
+    margin-left: 49%;
+}
 .adjustnav {
     width: 100%;
 }
 .menumyshares {
     /*width: 57.25% !important;*/
-    width: 57.20% !important;
+    width: 57% !important;
 }
 .roue1{
      font-size: 40pt !important;
