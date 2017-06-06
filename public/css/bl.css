@@ -853,8 +853,11 @@ a {
 }
 .reportbutton{ 
     border-width: 0px;
+    /*
     width: 35px;
-    margin-top: -3px;
+    margin-top: -3px;*/
+    width: 25px;
+    margin-top: 15px;
     float: right;
 }
 
