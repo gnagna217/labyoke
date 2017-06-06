@@ -544,6 +544,14 @@ module.exports = function(router) {
 		res.redirect('/search');
 	}
 
+    function isLoggedInAdmin(req, res, next) {
+        if (req.session.user && (req.session.useradmin || req.session.usersuperadmin))
+            return next();
+        console.log('requested url: '+req.originalUrl);
+        req.session.to = req.originalUrl;
+        res.redirect('/login');
+    }
+
 	function isLoggedInAndNotActive(req, res, next) {
 		if (req.session.active != null && req.session.active == 0)
 			return next();
@@ -1771,6 +1779,7 @@ totalshares = t[0].counting;
 													req.session.userid = done[0].id;
 													req.session.userlang = done[0].lang;
 													req.session.useradmin = false;
+                                                    req.session.usersuperadmin = false;
                                                     console.log("user surname (NEW): " + req.session.surname);
 													console.log("user language: " + req.session.userlang);
 													console.log("admin: " + done[0].admin);
