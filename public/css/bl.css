@@ -9,6 +9,13 @@
   -webkit-font-smoothing: antialiased;
 }
 
+.roue1{
+     color: #3d9dcb; font-size: 60pt; position: relative; top: 88px;
+}
+
+.roue2{
+    color: #8a6d3b; font-size: 60pt; position: relative; top: 88px;
+}
 #changed{
     margin-bottom: 30px;
 }
@@ -3200,6 +3207,13 @@ span.num.greatherthanninetynine {
 }
 
 @media (max-width: 330px){
+.roue1{
+     font-size: 40pt;
+}
+
+.roue2{
+    font-size: 40pt;
+}
 #checkname {
     margin-left: 155px;
 }
