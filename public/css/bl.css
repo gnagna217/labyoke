@@ -3207,6 +3207,9 @@ span.num.greatherthanninetynine {
 }
 
 @media (max-width: 330px){
+.menumyshares {
+    width: 57.25% !important;
+}
 .roue1{
      font-size: 40pt;
 }
