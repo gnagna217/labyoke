@@ -451,7 +451,9 @@
     "index.cancelled.subject": "LabYoke Commande - Annulation de ",
     "index.cancelled.body1": "Malheureusement, votre commande a été annulée en raison de quantités insuffisantes de l'inventaire suivant:",
     "index.fulfilled.subject": "LabYoke Commande - Commande Remplie ",
-    "index.fulfilled.body1": "Malheureusement, votre commande ne peut être remplie de suite. Ce réactif provient de l'inventaire suivant:",
+    "index.fulfilled.body1": "Votre commande a été remplie. Ce réactif provient de l'inventaire suivant:",
+    "index.fulfilled.not.subject": "LabYoke Commande - Commande Revue ",
+    "index.fulfilled.not.body1": "Malheureusement, votre commande ne peut être remplie de suite. Ce réactif provient de l'inventaire suivant:",
     
     "index.reportsMoney.param1": "Laboratoire",
     "index.reportsMoney.param2": "Économies",

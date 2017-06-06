@@ -450,7 +450,9 @@
     "index.cancelled.subject": "LabYoke Order - Cancelled for ",
     "index.cancelled.body1": "Unfortunately your order has been cancelled due to insufficient quantities from the following inventory:",
     "index.fulfilled.subject": "LabYoke Order -  Fulfilled ",
-    "index.fulfilled.body1": "Unfortunately your order fulfillment has been reverted due to unforeseen events from the following inventory:",
+    "index.fulfilled.not.subject": "LabYoke Order -  Retracted ",
+    "index.fulfilled.not.body1": "Unfortunately your order fulfillment has been reverted due to unforeseen events from the following inventory:",
+    "index.fulfilled.body1": "Your order has been successfully fulfilled from the following inventory:",
 
     "index.reportsMoney.param1": "Lab",
     "index.reportsMoney.param2": "Savings",
