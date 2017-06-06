@@ -421,6 +421,8 @@ block content
 								script.
 									$(document).ready(function() {
 										$('#rankTblshares').DataTable({
+											iDisplayLength: 6,
+											aLengthMenu: [[6, 12, 18, -1], [6, 12, 18, "All"]],
 											language:{
 											processing: "#{i18n.__("datatable.processing")}",
 											search: "#{i18n.__("datatable.search")}",
