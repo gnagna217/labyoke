@@ -2809,7 +2809,7 @@ LabYokerChangeShare.prototype.fulfillShare = function(callback) {
 	console.log("userlang: " + userlang);
 	console.log("email: " + userlang);
 	console.log("checked: " + checked);
-	console.log("checking status: " + checked == 0);
+	console.log("checking status 1: " + checked == 1);
 	//email = "metsnake316@hotmail.com";
 	//requestor = "metsnake217@gmail.com";
 	var results;
@@ -2818,7 +2818,7 @@ LabYokerChangeShare.prototype.fulfillShare = function(callback) {
 	if(checked == "0" && requestor != undefined){
 		orderonly = " and requestoremail='" + requestor + "'";
 	}
-	if(checked == 0){
+	if(checked == 1){
 		status = "fulfilled";
 	}
 	//var str = "select * from labs";
