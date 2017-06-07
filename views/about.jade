@@ -6,7 +6,7 @@ block content
         div(class="bounce1")
         div(class="bounce2")
         div(class="bounce3")                        
-  div(class="container margintop container2 moveFromLeft", style="height: 1680px;")
+  div(class="container margintop container2 moveFromLeft", style="")
     img(src="/images/house.png" style="display:none;") 
     //div(class="fa fa-home labColor us", style="margin-top: 15px;")
     //  span(class="fa fa-plus aboutplus")
@@ -135,7 +135,7 @@ block content
                 //$otherbutton.show();
             }
         }
-        $(window).load(function() {
+        $(window).on('load', function() {
           console.log("front1 h = " + $('.front1').height());
           $('.back1').css('height',$('.front1').height());
           console.log("front2 h = " + $('.front2').height());
