@@ -36,14 +36,14 @@ block content
     div(class="teamrow")
       div(class="teamcolumn manual-flip")
         div(class="teamcard")
-          div(class="front")
+          div(class="front front1")
             img(src="/images/card.jpg" alt="Jane" style="width:100%")
             div(class="teamcontainer")
               h3!="Andria Schibler"
               p(class="teamtitle") #{i18n.__("card1.title")}
               p(style="z-index: 4",class="frontbutton")
                 button(class="teambutton", onclick="rotateCard(this)") #{i18n.__("card.contact1")}
-          div(class="back")
+          div(class="back back1")
             div(class="header")
               h5(class="motto") #{i18n.__("card1.motto")}
             div(class="teamcontent")
@@ -61,14 +61,14 @@ block content
               button(class="teambuttonback", onclick="rotateCard(this)") #{i18n.__("card.back")}
       div(class="teamcolumn manual-flip teamcolumn1")
         div(class="teamcard")
-          div(class="front")
+          div(class="front fron2")
             img(src="images/card2_0.jpg" alt="Jane" style="width:100%")
             div(class="teamcontainer")
               h3!="Eran Shaysh"
               p(class="teamtitle") #{i18n.__("card2.title")}
               p(style="z-index: 4",class="frontbutton")
                 button(class="teambutton", onclick="rotateCard(this)") #{i18n.__("card.contact2")}
-          div(class="back")
+          div(class="back back2")
             div(class="header")
               h5(class="motto") #{i18n.__("card2.motto")}
             div(class="teamcontent")
@@ -86,14 +86,14 @@ block content
               button(class="teambuttonback", onclick="rotateCard(this)") #{i18n.__("card.back")}
       div(class="teamcolumn manual-flip teamcolumn2")
         div(class="teamcard teamcard2")
-          div(class="front")
+          div(class="front front3")
             img(src="images/card3_0.png" alt="Jane" style="width:100%")
             div(class="teamcontainer")
               h3!="Gnagna Konaté"
               p(class="teamtitle") #{i18n.__("card3.title")}
               p(style="z-index: 4",class="frontbutton")
                 button(class="teambutton", onclick="rotateCard(this)") #{i18n.__("card.contact3")}
-          div(class="back")
+          div(class="back back3")
             div(class="header")
               h5(class="motto") #{i18n.__("card3.motto")}
             div(class="teamcontent")
@@ -135,3 +135,11 @@ block content
                 //$otherbutton.show();
             }
         }
+        $(document).ready(function() {
+          console.log("front1 h = " + $('.front1').height());
+          $('.back1').css('height',$('.front1').height());
+          console.log("front2 h = " + $('.front2').height());
+          $('.back2').css('height',$('.front2').height());
+          console.log("front3 h = " + $('.front3').height());
+          $('.back3').css('height',$('.front3').height());
+        });
