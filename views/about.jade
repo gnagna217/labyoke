@@ -136,15 +136,7 @@ block content
             }
         }
         $(window).on('load', function() {
-          console.log("front1 h = " + $('.front1').height());
-          //$('.back1').css('height',$('.front1').height());
-          console.log("front2 h = " + $('.front2').height());
-          //$('.back2').css('height',$('.front2').height());
-          console.log("front3 h = " + $('.front3').height());
-          //$('.back3').css('height',$('.front3').height());
-          console.log("fronthelp h = " + $('.fronthelp').height());
-          console.log("section2 h = " + $('.section2').height());
           var h = 200 + $('.fronthelp').height() + $('.section2').height() + $('.front1').height();
-          console.log("h: " + h);
+          console.log("container height: " + h);
           $('.container2').css('height',h);
         });
