@@ -6,7 +6,7 @@ block content
         div(class="bounce1")
         div(class="bounce2")
         div(class="bounce3")                        
-  div(class="container margintop container2 moveFromLeft", style="")
+  div(class="container margintop container2 moveFromLeft")
     img(src="/images/house.png" style="display:none;") 
     //div(class="fa fa-home labColor us", style="margin-top: 15px;")
     //  span(class="fa fa-plus aboutplus")
@@ -15,7 +15,7 @@ block content
     div(class="fronthelp", style="margin-top: 40px;")
       a(href="/search")
         img(src="/images/house0.png", alt="The Yoke",  title="Konate-Schib", class="yokelogo", style="width: 209px;height: 143.78px;")
-    div
+    div(class="section2")
       //img(src="/images/referee.png" alt="" style="border-width:0px; width: 250px;float: right;")
       h1!= i18n.__("layout.About Us") + "."
       div(style="text-align:center; color:white;margin-top: 15px;").alert.alert-warning.labColorBackground
@@ -142,4 +142,9 @@ block content
           $('.back2').css('height',$('.front2').height());
           console.log("front3 h = " + $('.front3').height());
           $('.back3').css('height',$('.front3').height());
+          console.log("fronthelp h = " + $('.fronthelp').height());
+          console.log("section2 h = " + $('.section2').height());
+          var h = $('.fronthelp').height() + $('.section2').height() + $('.front1').height();
+          console.log("h: " + h);
+          $('.container').css('height',h);
         });
