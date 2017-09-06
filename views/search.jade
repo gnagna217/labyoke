@@ -236,12 +236,13 @@ block content
                         thead
                          tr(class="you info-best" style="font-weight: bold")
                           td(class="desktabonly")= ' '
+                          td #{i18n.__("search.table.order")}
                           td(class="desktabonly")= '# '
                           td(class="wrapped") #{i18n.__("search.table.reagent")}
                           td(class="desktabonly") #{i18n.__("search.table.catalog")}
                           td(class="desktabonly") #{i18n.__("search.table.vendor")}
                           td #{i18n.__("search.table.location")}
-                          td #{i18n.__("search.table.order")}
+                          
                         tbody
                          -var ob = searchResults
                          - var j = 1
@@ -262,14 +263,15 @@ block content
                             - var lab = ob[prop].lab                   
                             tr(class=classname)
                                 td(class="removecard")= 'x'
+                                td(data-title="" style="float:right")
+                                  span(onclick="iosLight('#{agent}','#{vendor}','#{catalognumber}','#{reqemail}','#{location}','#{category}','#{qty}','#{lab}','#{lang}','#{ob[prop].lang}')", style="cursor:pointer")
+                                        img(src="images/cart.png", alt="Order now", title="Order now", style="border-width:0px; width: 24px; margin-top: -5px;margin-left: 10%;")
                                 td(data-title="#" class="desktabonly")= j
                                 td(data-title="#{i18n.__('search.table.reagent')}" class="wrapped") #{ob[prop].agent}
                                 td(data-title="#{i18n.__('search.table.catalog')}" class="/*desktabonly*/") #{ob[prop].catalognumber}
                                 td(data-title="#{i18n.__('search.table.vendor')}" class="desktabonly") #{ob[prop].vendor}
                                 td(data-title="#{i18n.__('search.table.location')}") #{ob[prop].location}
-                                td(data-title="" style="float:right")
-                                  span(onclick="iosLight('#{agent}','#{vendor}','#{catalognumber}','#{reqemail}','#{location}','#{category}','#{qty}','#{lab}','#{lang}','#{ob[prop].lang}')", style="cursor:pointer")
-                                        img(src="images/cart.png", alt="Order now", title="Order now", style="border-width:0px; width: 24px; margin-top: -5px;margin-left: 10%;")
+
                             - j = j + 1
                       script.
                         $(document).ready(function() {
