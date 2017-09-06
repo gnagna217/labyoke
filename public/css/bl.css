@@ -89,7 +89,7 @@ body.large-screen .card-list-table tbody tr:hover td {
 .card-list-table tbody td {
   border: 0;
   display: block;
-  padding: 10px 0px 0px 40% !important;
+  padding: 10px 0px 0px 30% !important;
   position: relative;
   border-top: 0 !important;
 }
