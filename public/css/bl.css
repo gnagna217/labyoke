@@ -92,7 +92,7 @@ body.large-screen .card-list-table tbody tr:hover td {
   display: block;
   margin: 0 auto;
   height: 1px;
-  background: #dfdfdf;
+  /*background: #dfdfdf;*/
   position: absolute;
   left: 0;
   right: 0;
