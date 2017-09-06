@@ -231,7 +231,7 @@ block content
                    - i = 1
                    - className = ""
                    div(class="table-responsive")                    
-                      table(id="rankTblSearch" class="table rankTbl")
+                      table(id="rankTblSearch" class="table rankTbl card-list-table")
                         thead
                          tr(class="you info-best" style="font-weight: bold")
                           td(class="desktabonly")= 'id '
@@ -259,7 +259,7 @@ block content
                             - var qty = ob[prop].quantity
                             - var lab = ob[prop].lab                   
                             tr(class=classname)
-                                td(class="removecard")= 'x'
+                                
                                 td(data-title="id" class="desktabonly")= j
                                 td(data-title="#{i18n.__('search.table.reagent')}" class="wrapped") #{ob[prop].agent}
                                 td(data-title="#{i18n.__('search.table.catalog')}" class="/*desktabonly*/") #{ob[prop].catalognumber}
