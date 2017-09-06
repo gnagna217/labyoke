@@ -92,6 +92,10 @@ body.large-screen .card-list-table tbody tr:hover td {
   padding: 10px 0px 0px 40% !important;
   position: relative;
   border-top: 0 !important;
+
+position: absolute;
+bottom: 5%;
+left: 45%;
 }
 .card-list-table tbody td:first-of-type::after {
   visibility: hidden;
