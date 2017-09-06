@@ -275,8 +275,8 @@ block content
                           $('.removecard').click(function() {
                               if($('.removecard').is(":visible")){
                                 console.log("hiding");
-                                console.debug($('.removecard'));
-                                this.parent.hide();
+                                console.debug(this.parent());
+                                this.parent().hide();
                               }
                           });                           
                            $('#rankTblSearch').DataTable({
