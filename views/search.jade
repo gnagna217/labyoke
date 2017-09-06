@@ -260,11 +260,11 @@ block content
                             - var lab = ob[prop].lab                   
                             tr(class=classname)
                                 td(data-title="id" class="desktabonly")= j
-                                td(data-title=#{i18n.__("search.table.reagent")} class="wrapped") #{ob[prop].agent}
-                                td(data-title=#{i18n.__("search.table.catalog")} class="desktabonly") #{ob[prop].catalognumber}
-                                td(data-title=#{i18n.__("search.table.vendor")} class="desktabonly") #{ob[prop].vendor}
-                                td(data-title=#{i18n.__("search.table.location")}) #{ob[prop].location}
-                                td(data-title=#{i18n.__("search.table.order")})
+                                td(data-title="#{i18n.__("search.table.reagent")}" class="wrapped") #{ob[prop].agent}
+                                td(data-title="#{i18n.__("search.table.catalog")}" class="desktabonly") #{ob[prop].catalognumber}
+                                td(data-title="#{i18n.__("search.table.vendor")}" class="desktabonly") #{ob[prop].vendor}
+                                td(data-title="#{i18n.__("search.table.location")}") #{ob[prop].location}
+                                td(data-title="#{i18n.__("search.table.order")}")
                                   span(onclick="iosLight('#{agent}','#{vendor}','#{catalognumber}','#{reqemail}','#{location}','#{category}','#{qty}','#{lab}','#{lang}','#{ob[prop].lang}')", style="cursor:pointer")
                                         img(src="images/cart.png", alt="Order now", title="Order now", style="border-width:0px; width: 24px; margin-top: -5px;margin-left: 10%;")
                             - j = j + 1
