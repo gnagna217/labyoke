@@ -143,7 +143,7 @@ body.large-screen .card-list-table tbody tr:hover td {
 
 @media (max-width: 600px) {
     .card-list-table tbody tr {
-        width: 98%;
+        /*width: 98%;*/
     }
 }
 
