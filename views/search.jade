@@ -246,8 +246,8 @@ block content
                          -for(var prop in ob)
                             - var i = prop % 2
                             - var classname = "";
-                            - if(i==0)
-                                - classname = "active"
+                            - //if(i==0)
+                                - //classname = "active"
                             - var agent = ob[prop].agent
                             - var vendor = ob[prop].vendor
                             - var catalognumber = ob[prop].catalognumber
@@ -261,7 +261,7 @@ block content
                             tr(class=classname)
                                 td(data-title="id" class="desktabonly")= j
                                 td(data-title="#{i18n.__('search.table.reagent')}" class="wrapped") #{ob[prop].agent}
-                                td(data-title="#{i18n.__('search.table.catalog')}" class="desktabonly") #{ob[prop].catalognumber}
+                                td(data-title="#{i18n.__('search.table.catalog')}" class="/*desktabonly*/") #{ob[prop].catalognumber}
                                 td(data-title="#{i18n.__('search.table.vendor')}" class="desktabonly") #{ob[prop].vendor}
                                 td(data-title="#{i18n.__('search.table.location')}") #{ob[prop].location}
                                 td(data-title="#{i18n.__('search.table.order')}")
