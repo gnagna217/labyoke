@@ -55,7 +55,7 @@ body.large-screen .card-list-table tbody tr:hover td {
 @media (min-width: 768px) {
   .table-wrapper {
     background: white;
-    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2);
+    /*box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2);*/
   }
 }
 
@@ -76,12 +76,20 @@ body.large-screen .card-list-table tbody tr:hover td {
   display: block;
   padding: 15px 10px;
   margin: 0 0 10px 0;
+
+    width: 47%;
+    margin-left: 5px;
+    margin-right: 10px;
+    position: relative;
+    float: left;
+    border-top: 1px solid #dfdfdf;
 }
 .card-list-table tbody td {
   border: 0;
   display: block;
-  padding: 10px 10px 20px 40%;
+  padding: 10px 10px 0px 40% !important;
   position: relative;
+  border-top: 0 !important;
 }
 .card-list-table tbody td:first-of-type::after {
   visibility: hidden;
