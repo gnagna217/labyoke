@@ -259,6 +259,7 @@ block content
                             - var qty = ob[prop].quantity
                             - var lab = ob[prop].lab                   
                             tr(class=classname)
+                                td(class="removecard") != "x"
                                 td(data-title="id" class="desktabonly")= j
                                 td(data-title="#{i18n.__('search.table.reagent')}" class="wrapped") #{ob[prop].agent}
                                 td(data-title="#{i18n.__('search.table.catalog')}" class="/*desktabonly*/") #{ob[prop].catalognumber}
@@ -270,6 +271,14 @@ block content
                             - j = j + 1
                       script.
                         $(document).ready(function() {
+
+               $('.removecard').click(function() {
+                  if($('.removecard').is(":visible")){
+                    console.log("hiding");
+                    console.debug($('.removecard'));
+                    this.parent.hide();
+                  }
+                });                           
                            $('#rankTblSearch').DataTable({
                            language:{
                                         processing: "#{i18n.__("datatable.processing")}",
