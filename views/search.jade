@@ -279,9 +279,19 @@ block content
                                 console.log("hiding");
                                 console.debug($( this ));
                                 console.debug($( this ).parent());
-                                $( this ).parent().hide();
-                              
-                          });                           
+                                //$( this ).parent().hide();
+
+                                $(this).animate({
+                                  padding: "0px",
+                                     'margin-left':'-10px',
+                                  'font-size': "0px"
+                                }, 500, function() {
+                                    $( this ).parent().hide();
+                                    //$(this).remove();      
+                                });
+
+                          });
+                          
                            $('#rankTblSearch').DataTable({
                            language:{
                                         processing: "#{i18n.__("datatable.processing")}",
