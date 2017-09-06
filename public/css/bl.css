@@ -156,6 +156,10 @@ body.large-screen .card-list-table tbody tr:hover td {
     }
 }
 
+#rankTblSearch_length{
+    float:left;
+}
+
 /*end cards*/
 
 
