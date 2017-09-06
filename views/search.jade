@@ -281,12 +281,12 @@ block content
                                 console.debug($( this ).parent());
                                 //$( this ).parent().hide();
 
-                                $(this).parent().animate({
+                                $(this).animate({
                                   padding: "0px",
-                                     'margin-left':'5px',
+                                     'margin-left':'-5px',
                                   'font-size': "0px"
                                 }, 500, function() {
-                                    $( this ).remove();
+                                    $( this ).parent().remove();
                                     //$(this).remove();      
                                 });
 
