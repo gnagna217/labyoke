@@ -272,13 +272,13 @@ block content
                       script.
                         $(document).ready(function() {
 
-               $('.removecard').click(function() {
-                  if($('.removecard').is(":visible")){
-                    console.log("hiding");
-                    console.debug($('.removecard'));
-                    this.parent.hide();
-                  }
-                });                           
+                          $('.removecard').click(function() {
+                              if($('.removecard').is(":visible")){
+                                console.log("hiding");
+                                console.debug($('.removecard'));
+                                this.parent.hide();
+                              }
+                          });                           
                            $('#rankTblSearch').DataTable({
                            language:{
                                         processing: "#{i18n.__("datatable.processing")}",
