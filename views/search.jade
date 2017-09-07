@@ -329,6 +329,7 @@ block content
                         });
               script.
                 console.log($('table'));
+                $(window).scrollTop(550);
                 //$(window).scrollTop($('.results10').offset().top).scrollLeft($('.results10').offset().left);        
         if(searchResults != undefined && searchResults.length == 0 && searchformText)
           div.container.searchResults(id="results2 resultsshadow")
@@ -343,10 +344,10 @@ block content
     script.
       $( document ).ready(function() {
 
-      if($('.results10').is(':visible')){
+      /*if($('.results10').is(':visible')){
         console.log("scrolling " + $('.results10').offset().top);
         $(window).scrollTop(550);
-      }
+      }*/
         console.log( "search document loaded" );
         if ($("#checkdisplay").css("display") == "none" ){
           $('.slide-out-tip-div').hide();
