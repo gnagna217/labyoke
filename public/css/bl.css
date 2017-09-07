@@ -2344,11 +2344,10 @@ input::-webkit-inner-spin-button {
 .accountdetailMargin{
     margin-left: 0px;
 }
-.accountdetail-header{
-    /*border-bottom-color:#8a6d3b;border-bottom-style:solid;*/
+/*.accountdetail-header{
+    border-bottom-color:#8a6d3b;border-bottom-style:solid;
     margin-right: 5px;
-    background-color: white; border: none; color: white; padding-top: 5px; padding-bottom: 5px;
-}
+}*/
 .accountdetailRowMargin{
     margin-left: 5px;
 }
@@ -2749,6 +2748,11 @@ margin-top:0px;
 }
 
 @media (max-width: 768px){
+.accountdetail-header{
+    /*border-bottom-color:#8a6d3b;border-bottom-style:solid;*/
+    margin-right: 5px;
+    background-color: white; border: none; color: white; padding-top: 5px; padding-bottom: 5px;
+}
 .floatleft{
     float:left;
 }
