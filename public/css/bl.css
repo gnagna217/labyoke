@@ -131,7 +131,7 @@ body.large-screen .card-list-table tbody tr:hover td {
 }
 
 .carticon{
-    position: absolute;bottom: 5%;right: 5%;
+    position: absolute !important;bottom: 5%;right: 5%;
 }
 
 .removecard{
