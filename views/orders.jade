@@ -49,6 +49,10 @@ block content
                              - isnew = "yokeBackColor"
                           - if(n != "fulfilled")
                              - isnew = "isnew"
+                          - var mod = prop % 2
+                          - isnew += " animated fadeInDown"
+                          - if(mod == 0)
+                            - isnew += " animated fadeInUp"
                           - i = i + 1
                           tr(class=isnew)
                             td(class="desktabonly")= i

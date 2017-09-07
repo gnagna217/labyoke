@@ -86,6 +86,10 @@ block content
 										- var showcancel = ""
 										- if(status == 'fulfilled')
 											- showcancel = "display:none;"
+										- var mod = prop % 2
+										- isnew += " animated fadeInDown"
+										- if(mod == 0)
+											- isnew += " animated fadeInUp"
 										tr(class=isnew)
 											td(class="wrapped2") #{ob[prop].agent}
 											td(class="wrapped2 desktabonly") #{ob[prop].vendor}
@@ -162,6 +166,10 @@ block content
 											- qtyinsufficient = "yokeBackColor"
 											- checkedstr = true
 										- var c = "cancelr" + prop
+										- var mod = prop % 2
+										- qtyinsufficient += " animated fadeInDown"
+										- if(mod == 0)
+											- qtyinsufficient += " animated fadeInUp"
 										tr(class=qtyinsufficient)
 											td(class="wrapped2") #{ob[prop].agent}
 											td(class="wrapped2") #{ob[prop].vendor}
