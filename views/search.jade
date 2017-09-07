@@ -273,7 +273,7 @@ block content
                             - j = j + 1
                       script.
                         $(document).ready(function() {
-                          $('tr').css("-moz-user-select", "");
+                          $('tr').removeAttr("style");
 
                           $('.removecard').click(function() {
                               
