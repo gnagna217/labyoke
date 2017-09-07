@@ -328,7 +328,7 @@ block content
                            });
                         });
               script.
-                console.log($('table'));
+                console.log("scrolling " + $('table').offset().top);
                 $(window).scrollTop(550);
                 //$(window).scrollTop($('.results10').offset().top).scrollLeft($('.results10').offset().left);        
         if(searchResults != undefined && searchResults.length == 0 && searchformText)
