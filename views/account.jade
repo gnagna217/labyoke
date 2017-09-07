@@ -13,7 +13,7 @@ block content
             h1= i18n.__("account.title") + labyoker + "."
             p(style="padding-bottom: 20px;")!= i18n.__("account.subtitle")
             - if(resultsAccount)
-              div(id="ordered")
+              div(id="ordered" class="animated fadeInDown")
                 div(class="alert", style="margin-bottom: 45px;")
                   a(href="#", class="closeordered", data-dismiss="alert", aria-label="close", title="close")="x"
                   h4(class="orderedh4")= i18n.__("account.success")
