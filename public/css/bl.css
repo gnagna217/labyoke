@@ -1740,12 +1740,12 @@ table.dataTable thead .sorting_desc {
     padding-right: 20px;
 }
 table.dataTable tbody tr.odd{
-    background-color: rgba(138, 109, 59, 0.57);
+    background-color: rgba(138, 109, 59, 0.57) !important;
     /*rgba(255, 255, 255, 0.14) !important;*/
 }
 table.dataTable tbody tr.even{
     /*background-color: rgba(255, 255, 255, 0.14) !important*/;
-    background-color: rgba(61, 157, 203, 0.48);
+    background-color: rgba(61, 157, 203, 0.48) !important;
 }
 table.dataTable tbody tr.isnew.odd{
     background-color: #a4d2e8 !important;
