@@ -157,11 +157,19 @@ body.large-screen .card-list-table tbody tr:hover td {
 }
 
 #ordered{
-    width: 70%;margin-top: 20px;text-align: center;font-size: 15pt;background-color: #2975b4;border-radius: 74pt;color: white; margin: 0 auto;
+    width: 70%;text-align: center;font-size: 15pt;background-color: #2975b4;border-radius: 30pt;color: white; margin: 0 auto;margin-top: 25px;
 }
 
 .orderedh4{
     font-size: 16pt;
+}
+
+.closeordered{
+    float: right;
+    font-size: 21px;
+    font-weight: bold;
+    line-height: 1;
+    color: #68b3d6;
 }
 
 @media (max-width: 1200px) {
@@ -170,26 +178,45 @@ body.large-screen .card-list-table tbody tr:hover td {
     }
 }
 
+@media (max-width: 992px) {
+    #ordered{
+        width: 80%;
+        font-size: 14pt;
+    }
+
+    .orderedh4{
+        font-size: 15pt;
+    }
+}
+
 @media (max-width: 850px) {
     .card-list-table tbody tr {
         width: 47%;
     }
+
+    #ordered{
+        width: 85%;
+        font-size: 13pt;
+    }
+
+    .orderedh4{
+        font-size: 14pt;
+    }
 }
 
-
+@media (max-width: 700px) {
+    #ordered{
+        width: 99%;
+        font-size: 10pt;
+    }
+    .orderedh4{
+        font-size: 11pt;
+    }
+}
 @media (max-width: 590px) {
     .card-list-table tbody tr {
         width: 98%;
         height: 100%;
-    }
-
-    #ordered{
-        width: 100%;
-        font-size: 10pt;
-    }
-
-    .orderedh4{
-        font-size: 12pt;
     }
 }
 
