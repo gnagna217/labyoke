@@ -177,6 +177,7 @@ body.large-screen .card-list-table tbody tr:hover td {
 }
 
 .accountdetail-header{
+    margin-right: 5px;
     font-weight: bold;
     border-width: thin;
     background-color: rgba(41, 117, 180, 0.81); border-radius: 10px; color: white; padding-top: 5px; padding-bottom: 5px;
