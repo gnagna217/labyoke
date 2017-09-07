@@ -344,7 +344,7 @@ block content
       $( document ).ready(function() {
 
       if($('.results10').is(':visible')){
-        console.log('scrolling');
+        console.log("scrolling " + $('.results10').offset().top);
         $(window).scrollTop($('.results10').offset().top);
       }
         console.log( "search document loaded" );
