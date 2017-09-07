@@ -238,12 +238,18 @@ function updatenameform(){
   changename.style.display = 'none';
   pencilname.style.display = 'initial';
   checkname.style.display = 'none';
+  var p = changename.parentNode.nextSibling;
+  p.className += " fixmarginaccount";
+  //p.style.marginTop = "-23px";
 
   var valentered = nameform.val().trim();
   var current = $('#name').html().trim();
   if(valentered && valentered!="" && current != valentered){ 
     $('#changename').submit();
   }
+
+  var p = changename.parentNode.nextSibling;
+  p.className = "accountdetail accountdetailRowMargin";
 
 }
 
@@ -259,6 +265,8 @@ function pencilsurname(){
   changesurname.style.display = 'block';
   pencilsurname.style.display = 'none';
   checksurname.style.display = 'block';
+  var p = changesurname.parentNode.nextSibling;
+  p.className += " fixmarginaccount";
 }
 
 function updatesurnameform(){
@@ -279,6 +287,9 @@ function updatesurnameform(){
     $('#changesurname').submit();
   }
 
+  var p = changesurname.parentNode.nextSibling;
+  p.className = "accountdetail accountdetailRowMargin";
+
 }
 
 function penciltel(){
@@ -292,6 +303,8 @@ function penciltel(){
   changetel.style.display = 'block';
   penciltel.style.display = 'none';
   checktel.style.display = 'block';
+  var p = changetel.parentNode.nextSibling;
+  p.className += " fixmarginaccount";
 }
 
 function updatetelform(){
@@ -311,6 +324,8 @@ function updatetelform(){
   if(valentered && valentered!="" && currenttel != valentered){ 
     $('#changetel').submit();
   }
+  var p = changetel.parentNode.nextSibling;
+  p.className = "accountdetail accountdetailRowMargin";
 }
 
 function iosLight(){
