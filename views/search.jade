@@ -198,11 +198,11 @@ block content
          });
 
         if email != undefined
-          div(id="ordered",style="float:left;width: 100%;margin-top: 20px;")
-            div(class="alert alert-success alertshadow")
+          div(id="ordered")
+            div(class="alert alertshadow")
                 a(href="#", class="close", data-dismiss="alert", aria-label="close", title="close")="x"
-                h4= i18n.__("orders.success.title")
-                  span(style="color: #3d9dcb;")=" " + order_location
+                h4(class="orderedh4")= i18n.__("orders.success.title")
+                  span(style="font-weight:bold")=" " + order_location
                   span="!"
                 p=" "
                 p
@@ -214,7 +214,14 @@ block content
                   br
                   b= i18n.__("orders.success.vendor")
                   span= order_vendor
-          script="$(window).scrollTop($('#ordered').offset().top * 10).scrollLeft($('#ordered').offset().left);"
+          script.
+            var l = $('#ordered').offset().top;
+                if(l>100){
+                  l -= 100;
+                }
+                console.log("scrolling ordered : " + l);
+                $('html,body').animate({scrollTop: 500}, 1000);
+                //$(window).scrollTop($('#ordered').offset().top * 10).scrollLeft($('#ordered').offset().left);
 
         if(searchResults != null && searchResults.length > 0)
           //div(class="results2 resultsshadow")

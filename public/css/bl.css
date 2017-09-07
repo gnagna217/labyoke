@@ -155,6 +155,15 @@ body.large-screen .card-list-table tbody tr:hover td {
 .removecard:hover{
     color:#337ab7;
 }
+
+#ordered{
+    width: 70%;margin-top: 20px;text-align: center;font-size: 15pt;background-color: #2975b4;border-radius: 74pt;color: white; margin: 0 auto;
+}
+
+.orderedh4{
+    font-size: 16pt;
+}
+
 @media (max-width: 1200px) {
     .card-list-table tbody tr {
         width: 30%;
@@ -173,11 +182,21 @@ body.large-screen .card-list-table tbody tr:hover td {
         width: 98%;
         height: 100%;
     }
+
+    #ordered{
+        width: 100%;
+        font-size: 10pt;
+    }
+
+    .orderedh4{
+        font-size: 12pt;
+    }
 }
 
 #rankTblSearch_length{
     float:left;
 }
+
 
 /*end cards*/
 
