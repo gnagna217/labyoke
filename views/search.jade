@@ -272,8 +272,12 @@ block content
                                         img(src="images/cart.png", alt="Order now", title="Order now", style="border-width:0px; width: 24px; margin-top: -5px;margin-left: 10%;")
                             - j = j + 1
                       script.
-                        $(document).ready(function() {
+                        $(document).on('change', 'tr', function() {
+                          // Does some stuff and logs the event to the console
                           $('tr').removeAttr("style");
+                        });
+                        $(document).ready(function() {
+                          
 
                           $('.removecard').click(function() {
                               
