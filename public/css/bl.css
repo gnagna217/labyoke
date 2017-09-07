@@ -136,6 +136,9 @@ body.large-screen .card-list-table tbody tr:hover td {
     font-weight: bold;
 }
 
+.removecard:hover{
+    color:#337ab7;
+}
 @media (max-width: 1200px) {
     .card-list-table tbody tr {
         width: 30%;

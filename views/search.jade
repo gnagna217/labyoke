@@ -280,7 +280,7 @@ block content
                                 console.debug($( this ));
                                 console.debug($( this ).parent());
                                 //$( this ).parent().hide();
-                                $(this).parent().css("background-color", "red");
+                                $(this).parent().css("background-color", "#e6a2a2");
 
                                 $(this).parent().animate({
                                   /*padding: "25px",*/
@@ -289,7 +289,7 @@ block content
                                   height: '-=50px'/*,
                                   'background-color': "red"*/
                                 }, "slow", function() {
-                                    //$( this ).remove();
+                                    $( this ).remove();
                                     //$(this).hide();      
                                 });
 
