@@ -38,14 +38,6 @@ body.large-screen .card-list-table tbody tr:hover td {
   background: #fcf3d0;
 }
 
-.dataTables_empty{
-    padding-top: 30% !important;
-    padding-bottom: 30% !important;
-    padding-left: 20% !important;
-    padding-right: 20% !important;
-}
-
-
 .buttons {
   margin: 10px 0 50px;
 }
@@ -141,6 +133,13 @@ body.large-screen .card-list-table tbody tr:hover td {
 .dataTables_filter label{
     top: 2px;
     position: relative;
+}
+
+.dataTables_empty{
+    margin-top: 30%;
+    margin-bottom: 30%;
+    margin-left: -9%;
+    margin-right: 20% !important;
 }
 
 .carticon{
