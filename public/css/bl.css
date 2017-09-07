@@ -135,6 +135,13 @@ body.large-screen .card-list-table tbody tr:hover td {
     position: relative;
 }
 
+.dataTables_empty{
+    padding-top: 30% !important;
+    padding-bottom: 30% !important;
+    padding-left: 20% !important;
+    padding-right: 20% !important;
+}
+
 .carticon{
     position: absolute !important;bottom: 5%;right: 5%;
 }
