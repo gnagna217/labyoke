@@ -172,6 +172,10 @@ body.large-screen .card-list-table tbody tr:hover td {
     color: #68b3d6;
 }
 
+.alert{
+    padding-bottom: 5px;
+}
+
 @media (max-width: 1200px) {
     .card-list-table tbody tr {
         width: 30%;

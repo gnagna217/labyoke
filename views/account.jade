@@ -13,10 +13,10 @@ block content
             h1= i18n.__("account.title") + labyoker + "."
             p(style="padding-bottom: 20px;")!= i18n.__("account.subtitle")
             - if(resultsAccount)
-              div(id="changed")
-                div(class="alert alert-success alertshadow", style="margin-bottom: 45px;")
-                  a(href="#", class="close", data-dismiss="alert", aria-label="close", title="close")="x"
-                  h4(class="changedh4")= i18n.__("account.success")
+              div(id="ordered")
+                div(class="alert", style="margin-bottom: 45px;")
+                  a(href="#", class="closeordered", data-dismiss="alert", aria-label="close", title="close")="x"
+                  h4(class="orderedh4")= i18n.__("account.success")
                      span!=" " + resultsAccount
                      span="!"                 
             div(class="table-responsive center")
