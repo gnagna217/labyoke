@@ -130,6 +130,10 @@ body.large-screen .card-list-table tbody tr:hover td {
   letter-spacing: .5pt;
 }
 
+.carticon{
+    position: absolute;bottom: 5%;right: 5%;
+}
+
 .removecard{
     float: right; bottom: 20px; font-size: 15pt !important; color:#3d9dcb;
     z-index:1;
