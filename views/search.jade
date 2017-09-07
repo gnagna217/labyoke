@@ -328,9 +328,14 @@ block content
                            });
                         });
               script.
-                console.log("scrolling " + $('table').offset().top);
+                
                 //$(window).scrollTop(550);
-                $('html,body').animate({scrollTop: 500}, 2000);
+                var l = $('table').offset().top;
+                if(l>100){
+                  l -= 100;
+                }
+                console.log("scrolling " + l);
+                $('html,body').animate({scrollTop: l}, 1000);
                 //$(window).scrollTop($('.results10').offset().top).scrollLeft($('.results10').offset().left);        
         if(searchResults != undefined && searchResults.length == 0 && searchformText)
           div.container.searchResults(id="results2 resultsshadow")
