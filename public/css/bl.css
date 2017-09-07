@@ -2351,6 +2351,8 @@ input::-webkit-inner-spin-button {
 }*/
 .accountdetailRowMargin{
     margin-left: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 }

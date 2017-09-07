@@ -95,8 +95,8 @@ block content
                               div(style="margin-bottom:30px;width: 75px;", class="accountdetail accountdetailRowMargin")
                                 span(id="lang")
                                 form(action="/changeDetails" id="changelang" method="post" class="langform" style="top: -25px; position: relative;")
-                                  span(class="fa fa-sort accountlang" style="color: #8a6d3b;top: 29px; position: relative; font-size: 14pt; ")
-                                  select(name="selectlang" type="text" id="selectlang" class="form-control" style="border-color:#3d9dcb;margin-bottom:10px;width: 70%;" placeholder="")
+                                  span(class="fa fa-sort accountlang" style="color: #8a6d3b;top: 29px; position: relative; font-size: 14pt; margin-left: 15px;")
+                                  select(name="selectlang" type="text" id="selectlang" class="form-control" style="border-color:#3d9dcb;margin-bottom:10px;" placeholder="")
                                     option(value="en",style="font-weight:bold",selected=(selectedlang==="en" ? "selected" : undefined))= "en"
                                     option(value="fr",style="font-weight:bold",selected=(selectedlang==="fr" ? "selected" : undefined))= "fr"
                                   input(name="column" type="hidden" id="column" value="lang")
