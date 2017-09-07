@@ -130,6 +130,11 @@ body.large-screen .card-list-table tbody tr:hover td {
   letter-spacing: .5pt;
 }
 
+.dataTables_filter label{
+    top: 2px;
+    position: relative;
+}
+
 .carticon{
     position: absolute !important;bottom: 5%;right: 5%;
 }
