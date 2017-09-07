@@ -328,9 +328,7 @@ block content
                            });
                         });
               script.
-                console.log('scrolling');
                 console.log($('table'));
-                $(window).scrollTop($('.results10').offset().top);
                 //$(window).scrollTop($('.results10').offset().top).scrollLeft($('.results10').offset().left);        
         if(searchResults != undefined && searchResults.length == 0 && searchformText)
           div.container.searchResults(id="results2 resultsshadow")
@@ -344,6 +342,11 @@ block content
     span(class="desktabonly", id="checkdisplay")
     script.
       $( document ).ready(function() {
+
+      if($('.results10').is(':visible')){
+        console.log('scrolling');
+        $(window).scrollTop($('.results10').offset().top);
+      }
         console.log( "search document loaded" );
         if ($("#checkdisplay").css("display") == "none" ){
           $('.slide-out-tip-div').hide();
