@@ -2749,6 +2749,9 @@ margin-top:0px;
 }
 
 @media (max-width: 768px){
+.fixmarginaccount{
+    margin-top:-23px;
+}
 .accountdetail-header{
     /*border-bottom-color:#8a6d3b;border-bottom-style:solid;*/
     margin-right: 5px;

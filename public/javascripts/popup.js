@@ -225,6 +225,10 @@ function pencilname(){
   changename.style.display = 'block';
   pencilname.style.display = 'none';
   checkname.style.display = 'block';
+
+  var p = changename.parentNode.nextSibling;
+  p.className += " fixmarginaccount";
+  //p.style.marginTop = "-23px";
 }
 
 function updatenameform(){
@@ -238,9 +242,6 @@ function updatenameform(){
   changename.style.display = 'none';
   pencilname.style.display = 'initial';
   checkname.style.display = 'none';
-  var p = changename.parentNode.nextSibling;
-  p.className += " fixmarginaccount";
-  //p.style.marginTop = "-23px";
 
   var valentered = nameform.val().trim();
   var current = $('#name').html().trim();
