@@ -2721,7 +2721,7 @@ LabyokerUserDetails.prototype.changeDetails = function(callback) {
 			});
 
 		}
-		results = "<span style='color: #3d9dcb'>" + i18n.__("index.account." + column) + "</span> " +  i18n.__("index.account.to")  + " <span style='color: #3d9dcb'>" + value + "</span>";
+		results = "<span style='font-weight:bold'>" + i18n.__("index.account." + column) + "</span> " +  i18n.__("index.account.to")  + " <span style='font-weight:bold'>" + value + "</span>";
 		callback(null, results);
 	});
 };
