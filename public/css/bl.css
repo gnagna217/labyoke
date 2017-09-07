@@ -176,6 +176,12 @@ body.large-screen .card-list-table tbody tr:hover td {
     padding-bottom: 5px;
 }
 
+.accountdetail-header{
+    font-weight: bold;
+    border-width: thin;
+    background-color: rgba(41, 117, 180, 0.81); border-radius: 10px; color: white; padding-top: 5px; padding-bottom: 5px;
+}
+
 @media (max-width: 1200px) {
     .card-list-table tbody tr {
         width: 30%;
@@ -2339,12 +2345,16 @@ input::-webkit-inner-spin-button {
     margin-left: 0px;
 }
 .accountdetail-header{
-    border-bottom-color:#8a6d3b;border-bottom-style:solid;margin-right: 5px;
+    /*border-bottom-color:#8a6d3b;border-bottom-style:solid;*/
+    margin-right: 5px;
+    background-color: white; border: none; color: white; padding-top: 5px; padding-bottom: 5px;
 }
 .accountdetailRowMargin{
     margin-left: 5px;
 }
+
 }
+
 @media (min-width: 801px) {
 .reportOrders{
     margin-top:20px;
