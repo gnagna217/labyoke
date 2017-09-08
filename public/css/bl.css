@@ -2532,14 +2532,14 @@ input::-webkit-inner-spin-button {
 }
 }
 
-/* @media (max-width: 1026px) {
+ @media (max-width: 1026px) {
 .desktabonly4{
     display: none !important;
 }
 .mobileonly2{
     display: block;
 }
-}*/
+}
 
 @media (max-width: 993px) {
     .positionbutton{
@@ -2624,14 +2624,14 @@ padding-right: 0px;
 }
 }
 
- @media (max-width: 945px) {
+/* @media (max-width: 945px) {
 .desktabonly4{
     display: none !important;
 }
 .mobileonly2{
     display: block;
 }
-}
+}*/
 
 @media (max-width: 931px) {
 
