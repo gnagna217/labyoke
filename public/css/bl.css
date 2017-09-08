@@ -237,7 +237,9 @@ body.large-screen .card-list-table tbody tr:hover td {
 #rankTblSearch_length{
     float:left;
 }
-
+.alert-info .alert-success .alert-danger .alert-warning{
+    padding-bottom: 15px;
+}
 
 /*end cards*/
 
