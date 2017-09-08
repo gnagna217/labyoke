@@ -147,7 +147,9 @@ body.large-screen .card-list-table tbody tr:hover td {
 }
 
 .removecard{
-    float: right; bottom: 20px; font-size: 15pt !important; color:#3d9dcb;
+    float: right; bottom: 20px; font-size: 15pt !important; 
+    /*color:#3d9dcb;*/
+    color:white;
     z-index:1;
     font-weight: bold;
     right: 10px;
