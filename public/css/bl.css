@@ -1407,6 +1407,8 @@ input[type=radio]:checked ~ .checkingcatalog::before{
 .roundaccount:hover, .roundaccount:active, .roundaccount:focus{
     background-color: #3d9dcb;
     cursor:pointer;
+    text-decoration:none;
+    color: white;
 }
 .searchmob:hover, .searchmob:active, .searchmob:focus{
     background-color: #3d9dcb;
