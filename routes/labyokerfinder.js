@@ -1014,8 +1014,6 @@ console.log("report on orders: " + labsindept);
 	if(lab != null && lab !=undefined && lab =="all"){
 	if(where == ""){
 			where =" where ";
-	} else {
-		where = " and ";
 	}
 	
 	for(var prop in labsindept){
