@@ -1824,7 +1824,8 @@ table.dataTable tbody tr.even{
 }
 
 table.dataTable tbody tr.searchagents.odd{
-    background-color: rgba(138, 109, 59, 0.57) !important;
+    background-color: rgba(41, 117, 180, 0.57) !important;
+    /*background-color: rgba(138, 109, 59, 0.57) !important;*/
     /*rgba(255, 255, 255, 0.14) !important;*/
 }
 table.dataTable tbody tr.searchagents.even{
