@@ -1827,7 +1827,9 @@ table.dataTable tbody tr.odd{
 table.dataTable tbody tr.even{
     background-color: rgba(255, 255, 255, 0.14) !important
 }
-
+table.dataTable tbody tr.searchagents td{
+    font-size: 12px;
+}
 table.dataTable tbody tr.searchagents.odd{
     background-color: rgba(41, 117, 180, 0.57) !important;
     cursor: default !important;
