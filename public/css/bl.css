@@ -2697,7 +2697,7 @@ margin-top:0px;
 
 @media (max-width: 849px){
 .isadminroundaccountLeft{
-    left: -178px;
+    left: -187px;
 }
 
 .isregroundaccountLeft{
@@ -2707,7 +2707,7 @@ margin-top:0px;
     top: 18px;
     /*left: -216px;*/
     border-radius: 60px;
-    padding: 15px;
+    padding: 17px;
 }
 .nav > li > a {
     position: relative;
@@ -2757,7 +2757,7 @@ margin-top:0px;
 }
 
 .isadminroundaccountLeft{
-    left: -176px;
+    left: -189px;
 }
 
 .isregroundaccountLeft{
@@ -2768,7 +2768,7 @@ margin-top:0px;
     top: 18px;
     /*left: -214px;*/
     border-radius: 60px;
-    padding: 14px;
+    padding: 17px;
 }
 }
 
