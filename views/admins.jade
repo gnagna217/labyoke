@@ -98,7 +98,7 @@ block content
 								tbody
 									-var ob = json
 									-for(var prop in ob)
-										tr(class="")
+										tr(class="animated fadeInUp")
 											td(class="desktabonly") #{prop}
 											td(class="wrapped2") #{ob[prop].name_of_reagent}
 											td(class="wrapped2") #{ob[prop].vendor}
@@ -270,7 +270,7 @@ block content
 							div(class="table-responsive")               
 								table(id="rankTblreqshares" class="table rankTbl")
 									thead
-										tr(class="you info-best" style="font-weight: bold")
+										tr(class="you info-best animated fadeInUp" style="font-weight: bold")
 											th(class="wrapped")!= i18n.__("shares.table.reagent")
 											th(class="")= i18n.__("shares.table.vendor")
 											th(class="")= i18n.__("shares.table.catalog")
