@@ -87,7 +87,7 @@ block content
 										- if(status == 'fulfilled')
 											- showcancel = "display:none;"
 										- var mod = prop % 2
-										- isnew += " animated fadeInDown"
+										- isnew += " animated fadeInUp"
 										- if(mod == 0)
 											- isnew += " animated fadeInUp"
 										tr(class=isnew)
@@ -167,7 +167,7 @@ block content
 											- checkedstr = true
 										- var c = "cancelr" + prop
 										- var mod = prop % 2
-										- qtyinsufficient += " animated fadeInDown"
+										- qtyinsufficient += " animated fadeInUp"
 										- if(mod == 0)
 											- qtyinsufficient += " animated fadeInUp"
 										tr(class=qtyinsufficient)
