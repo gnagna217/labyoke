@@ -196,7 +196,7 @@ block content
                  fixedPosition: true                               //options: true makes it stick(fixed position) on scroll
              });
          });
-
+        div(style=nobar, class="threepointssep")
         if email != undefined
           div(id="ordered" class="animated fadeInDown")
             div(class="alert")
@@ -256,7 +256,7 @@ block content
                             - var i = prop % 2
                             - var classname = "searchagents animated slideInDown";
                             - if(i==0)
-                                - classname = "animated slideInUp"
+                                - classname = "searchagents animated slideInUp"
                             - var agent = ob[prop].agent
                             - var vendor = ob[prop].vendor
                             - var catalognumber = ob[prop].catalognumber
