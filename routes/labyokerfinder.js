@@ -1012,8 +1012,11 @@ console.log("report on orders: " + labsindept);
 	var select = "";
 
 	if(lab != null && lab !=undefined && lab =="all"){
-	if(where == "")
+	if(where == ""){
 			where =" where ";
+	} else {
+		where = " and ";
+	}
 	
 	for(var prop in labsindept){
 		where = where + " lab = '" + labsindept[prop].labname + "' or ";
