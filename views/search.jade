@@ -63,7 +63,7 @@ block content
                 div
                     if message
                         div(class="alert alert-danger messagesearch alertshadow")!= message
-                    form(action="/search" method="post" style="padding-left: 15%; padding-right: 15%; display: block; text-align: center;")
+                    form(action="/search" method="post" style="display: block;width: 75%;margin: 0 auto;/*padding-left: 15%; padding-right: 15%;*/ display: block; text-align: center;")
                         div(class="textentry")
                             input(type="hidden" name="searchType" value="key")
                             input(name="searchText" list="agent-datalist"  type="text" id="searchText" class="form-control searchinput" placeholder=searchText)
