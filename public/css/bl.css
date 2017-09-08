@@ -1330,7 +1330,7 @@ input[type=radio]:checked ~ .checkingcatalog::before{
 /* ====== */
 
 .isadminroundaccountLeft{
-    left: -266px;
+    left: -275px;
 }
 
 .isregroundaccountLeft{
@@ -1354,7 +1354,7 @@ input[type=radio]:checked ~ .checkingcatalog::before{
     
     border-radius: 80px;
     background-color: rgba(41, 117, 180, 0.91);
-    padding: 50px;
+    padding: 52px;
     color: white;
     border-color: rgb(173, 153, 117);
     border-style: solid;
@@ -2561,7 +2561,7 @@ padding-right: 0px;
     width: 50%;
 }
 .isadminroundaccountLeft{
-    left: -213px;
+    left: -225px;
 }
 .isregroundaccountLeft {
     left: -211px;
@@ -2576,7 +2576,7 @@ padding-right: 0px;
     top: 25px;
     /*left: -237px;*/
     border-radius: 60px;
-    padding: 24px;
+    padding: 28px;
 }
 .uploadh{
     /*width: 39% !important;*/
