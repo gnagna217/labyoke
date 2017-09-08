@@ -150,6 +150,7 @@ body.large-screen .card-list-table tbody tr:hover td {
     float: right; bottom: 20px; font-size: 15pt !important; color:#3d9dcb;
     z-index:1;
     font-weight: bold;
+    right: 10px;
 }
 
 .removecard:hover{
