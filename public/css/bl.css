@@ -153,6 +153,7 @@ body.large-screen .card-list-table tbody tr:hover td {
     z-index:1;
     font-weight: bold;
     right: 10px;
+    cursor:pointer;
 }
 
 .removecard:hover{
