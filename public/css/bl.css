@@ -1358,6 +1358,8 @@ input[type=radio]:checked ~ .checkingcatalog::before{
     color: white;
     border-color: rgb(173, 153, 117);
     border-style: solid;
+    font-size:20px;
+    color: white;text-decoration: none;
 
 }
 
@@ -2585,6 +2587,7 @@ padding-right: 0px;
     /*left: -237px;*/
     border-radius: 60px;
     padding: 28px;
+    font-size:12px;
 }
 .uploadh{
     /*width: 39% !important;*/
@@ -2622,7 +2625,7 @@ padding-right: 0px;
 
  @media (max-width: 956px) {
 .isadminroundaccountLeft{
-    left: -214px;
+    left: -229px;
 }
 
 @media (max-width: 953px) {
