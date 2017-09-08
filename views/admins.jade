@@ -87,7 +87,7 @@ block content
 							span(style="text-align: center")
 								h3(style="padding-top: 10px;")= i18n.__("shares.admin.success")
 									span(style="color: #3d9dcb;")=" " + spreadname                   
-							table(id="rankTblload" class="table rankTbl")
+							table(id="rankTblload" class="table rankTbl animated zoomInUp")
 								thead
 									tr(class="you info-best" style="font-weight: bold")
 										td(class="desktabonly")= 'id '
@@ -98,7 +98,7 @@ block content
 								tbody
 									-var ob = json
 									-for(var prop in ob)
-										tr(class="animated fadeInUp")
+										tr
 											td(class="desktabonly") #{prop}
 											td(class="wrapped2") #{ob[prop].name_of_reagent}
 											td(class="wrapped2") #{ob[prop].vendor}

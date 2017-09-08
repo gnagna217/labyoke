@@ -57,7 +57,7 @@ block content
 				div(id="results2", class="resultsshadow")
 					div(id="ctl00_Div2" class="row rank")
 						div(class="table-responsive")               
-							table(id="rankTblreqshares" class="table rankTbl")
+							table(id="rankTblreqshares" class="table rankTbl animated zoomInUp")
 								thead
 									tr(class="you info-best" style="font-weight: bold")
 										th(class="wrapped")!= i18n.__("shares.table.reagent")
@@ -86,10 +86,10 @@ block content
 										- var showcancel = ""
 										- if(status == 'fulfilled')
 											- showcancel = "display:none;"
-										- var mod = prop % 2
-										- isnew += " animated fadeInUp"
-										- if(mod == 0)
-											- isnew += " animated fadeInUp"
+										- //var mod = prop % 2
+										- //isnew += " animated fadeInUp"
+										- //if(mod == 0)
+											- //isnew += " animated fadeInUp"
 										tr(class=isnew)
 											td(class="wrapped2") #{ob[prop].agent}
 											td(class="wrapped2 desktabonly") #{ob[prop].vendor}
@@ -148,7 +148,7 @@ block content
 				div(id="results2", class="resultsshadow")
 					div(id="ctl00_Div2" class="row rank")
 						div(class="table-responsive")               
-							table(id="rankTblshares" class="table rankTbl")
+							table(id="rankTblshares" class="table rankTbl animated zoomInUp")
 								thead
 									tr(class="you info-best" style="font-weight: bold")
 										th(class="wrapped")!= i18n.__("shares.table.reagent")
@@ -166,10 +166,10 @@ block content
 											- qtyinsufficient = "yokeBackColor"
 											- checkedstr = true
 										- var c = "cancelr" + prop
-										- var mod = prop % 2
-										- qtyinsufficient += " animated fadeInUp"
-										- if(mod == 0)
-											- qtyinsufficient += " animated fadeInUp"
+										- //var mod = prop % 2
+										- //qtyinsufficient += " animated fadeInUp"
+										- //if(mod == 0)
+											- //qtyinsufficient += " animated fadeInUp"
 										tr(class=qtyinsufficient)
 											td(class="wrapped2") #{ob[prop].agent}
 											td(class="wrapped2") #{ob[prop].vendor}

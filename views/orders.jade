@@ -27,7 +27,7 @@ block content
               div(id="results2", class="resultsshadow")
                 div(id="ctl00_Div2" class="row rank")
                   div(class="table-responsive")               
-                    table(id="rankTblOrders" class="rankTbl table")
+                    table(id="rankTblOrders" class="rankTbl table  animated zoomInUp")
                       thead
                         tr(class="you info-best" style="font-weight: bold")
                           th(class="desktabonly")= i18n.__("orders.table.id")
@@ -49,10 +49,10 @@ block content
                              - isnew = "yokeBackColor"
                           - if(n != "fulfilled")
                              - isnew = "isnew"
-                          - var mod = prop % 2
-                          - isnew += " animated fadeInUp"
-                          - if(mod == 0)
-                            - isnew += " animated fadeInUp"
+                          - //var mod = prop % 2
+                          - //isnew += " animated fadeInUp"
+                          - //if(mod == 0)
+                            - //isnew += " animated fadeInUp"
                           - i = i + 1
                           tr(class=isnew)
                             td(class="desktabonly")= i
