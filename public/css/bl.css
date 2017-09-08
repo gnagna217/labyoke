@@ -232,6 +232,9 @@ body.large-screen .card-list-table tbody tr:hover td {
         width: 98%;
         height: 100%;
     }
+    .searchlogo{
+        margin-top: 20%;
+    }
 }
 
 #rankTblSearch_length{
@@ -2857,7 +2860,7 @@ h1{
     margin-bottom: -10px;
 }
 .searchlogo{
-    margin-top: 20%;
+    margin-top: 15%;
 }
 .navbar-collapse{
     width: 104%;
