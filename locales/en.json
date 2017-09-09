@@ -156,7 +156,7 @@
     "reports.label.savings":"Collect <br/>Savings",
     "reports.label.orders":"Find <br/>Orders",
     "reports.label.week":"Week <br/>Savings",
-    "reports.label.inventory":"Rack <br/>Inventory",
+    "reports.label.inventory":"Rack <br/>Reagents",
     "reports.label.insuff":"Replenish<br/>Insuff.",
 
     "reports.money.title": "Shares Savings Report.",
