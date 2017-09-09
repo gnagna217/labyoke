@@ -3142,6 +3142,9 @@ margin-top:0px;
 }
 
 @media (max-width: 767px){
+.share-container{
+    padding-top: 35px;
+}
 h1{
     margin-top:25px;
 }
