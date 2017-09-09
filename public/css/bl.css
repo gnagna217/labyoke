@@ -3143,7 +3143,7 @@ margin-top:0px;
 
 @media (max-width: 767px){
 .share-container, .container, .share-container2, .order-container{
-    padding-top: 35px;
+    margin-top: 35px;
 }
 
 h1{
