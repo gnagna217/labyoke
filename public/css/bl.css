@@ -541,7 +541,7 @@ body.large-screen .card-list-table tbody tr:hover td {
 .labelexpandadd, .labelexpandedit{
     /*width: 100%;*/
     position: relative;
-    top: -44px;
+    /*top: -44px;*/
 }
     #ordered{
         width: 99%;
@@ -551,6 +551,13 @@ body.large-screen .card-list-table tbody tr:hover td {
         font-size: 11pt;
     }
 }
+
+@media (max-width: 650px) {
+.labelexpandmood{
+    top: 0px !important;
+}
+}
+
 @media (max-width: 590px) {
 .restrictreporttext{
     width:100%;
