@@ -12,7 +12,9 @@
 
 
 /*new reports*/
-
+.restrictreporttext{
+    width:35%;
+}
 .labelbuttons{
 text-align: center;margin-top:40px;z-index: 1 !important;
 }
@@ -533,6 +535,9 @@ body.large-screen .card-list-table tbody tr:hover td {
 }
 
 @media (max-width: 700px) {
+.restrictreporttext{
+    width:55%;
+}
 .labelexpandadd, .labelexpandedit{
     /*width: 100%;*/
     position: relative;
@@ -547,6 +552,9 @@ body.large-screen .card-list-table tbody tr:hover td {
     }
 }
 @media (max-width: 590px) {
+.restrictreporttext{
+    width:100%;
+}
     .card-list-table tbody tr {
         width: 98%;
         height: 100%;
