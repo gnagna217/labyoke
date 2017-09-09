@@ -12,6 +12,10 @@
 
 
 /*new reports*/
+.highlightlabel{
+    background-color: #2975b4 !important;
+    background-image: none !important;
+}
 .labelbuttons{
 text-align: center;margin-top:40px;
 }
