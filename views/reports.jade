@@ -49,6 +49,7 @@ block content
 			label(for="toggleadd", class="labelexpandadd", style="display: inline-block;")!= "Rack <br/>Inventory"       
 			input(id="togglerules" type="checkbox" class="inputexpandrules")
 			label(for="togglerules", class="labelexpandrules", style="position: relative;top: -44px; display: inline-block;")!= "Replenish<br/>Insufficient"
+		div(style=nobar, class="threepointssep")
 			script.
 				$( ".labelexpand" ).click(function() {
 				$( this ).toggleClass( "highlightlabel" );
