@@ -129,6 +129,11 @@ block content
 				});
 
 				$( ".labelexpandmood" ).click(function() {
+				$( this ).toggleClass( "highlightlabel" );
+				$('.labelexpandedit').removeClass( "highlightlabel" );
+				$('.labelexpandadd').removeClass( "highlightlabel" );
+				$('.labelexpand').removeClass( "highlightlabel" );
+				$('.labelexpandrules').removeClass( "highlightlabel" );
 				if ( !$( ".checkintro" ).hasClass( "noshow" ) ) {
 				//if($('.fa-check:visible').size() > 0){
 				console.log("clicked");
