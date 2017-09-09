@@ -12,10 +12,7 @@
 
 
 /*new reports*/
-.highlightlabel{
-    background-color: #2975b4 !important;
-    background-image: none !important;
-}
+
 .labelbuttons{
 text-align: center;margin-top:40px;
 }
@@ -255,7 +252,7 @@ padding-top: 3px;
 }
 
 .highlightlabel{
-    background-color: #008500 !important;
+    background-color: #2975b4 !important;
     background-image: none !important;
 }
 .quoteBubble{
