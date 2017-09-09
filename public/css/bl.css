@@ -3143,7 +3143,7 @@ margin-top:0px;
 
 @media (max-width: 767px){
 .share-container, .container, .share-container2, .order-container{
-    margin-top: 35px;
+    margin-top: 20px;
 }
 
 h1{
@@ -3604,6 +3604,9 @@ span.num.greatherthanninetynine {
 
 
  @media (max-width: 440px) {
+.share-container, .container, .share-container2, .order-container{
+    margin-top: 5px;
+}
 .labelbuttons{
     text-align: center;
     margin-top: 50px;
