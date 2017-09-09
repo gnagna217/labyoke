@@ -50,6 +50,67 @@ block content
 			label(for="toggleadd", class="labelexpandadd", style="display: inline-block;")!= "Rack <br/>Inventory"       
 			input(id="togglerules" type="checkbox" class="inputexpandrules")
 			label(for="togglerules", class="labelexpandrules", style="position: relative;top: -44px; display: inline-block;")!= "Replenish<br/>Insufficient"
+			script.
+				$( ".labelexpand" ).click(function() {
+				$('.containerreport').hide();
+				$('#reportMoney').show();
+				$('#reportShares').hide();
+				$('#reportOrders').hide();
+				$('#reportInsuff').hide();
+				});
+				$( ".labelexpandedit" ).click(function() {
+					$('.containerreport').hide();
+					$('#reportOrders').show();
+					$('#reportShares').hide();
+					$('#reportMoney').hide();
+					$('#reportInsuff').hide();
+				});
+				$( ".labelexpandadd" ).click(function() {
+					$('.containerreport').hide();
+					$('#reportShares').show();
+					$('#reportMoney').hide();
+					$('#reportOrders').hide();
+					$('#reportInsuff').hide();
+				});
+				$( ".labelexpandrules" ).click(function() {
+					$('.containerreport').hide();
+					$('#reportInsuff').show();
+					$('#reportShares').hide();
+					$('#reportOrders').hide();
+					$('#reportMoney').hide();
+				});
+
+				$( ".labelexpandmood" ).click(function() {
+				if ( !$( ".checkintro" ).hasClass( "noshow" ) ) {
+				//if($('.fa-check:visible').size() > 0){
+				console.log("clicked");
+				$('.intro').show();
+				var ob = "#{resultsMoneyIntro}"
+				ob = ob.replace(/&lt;/g,"<");
+				ob = ob.replace(/&gt;/g,">");
+				var pdf = new jsPDF('l', 'pt', 'ledger');
+				var pdf2 = new jsPDF('p', 'pt', 'letter');
+				pdf2.setFont("courier", "normal");
+				pdf2.setFontSize(10);
+				source = ob;
+				
+				console.debug(source);
+				var options = {
+					background: '#fff'
+				};
+				pdf2.addHTML($(".intro"),options,function() {
+					console.log("source");
+					var filetext = "#{i18n.__("reports.download.today.file")}";
+					//var string = pdf2.output('datauristring');
+					pdf2.save(filetext);
+					$('.intro').hide();
+					$('.checkintro').addClass("noshow");
+				});
+
+				} else {
+					$('.checkintro').removeClass("noshow");
+				}
+				});				
 
 		script.
 			window.onload = function() {
