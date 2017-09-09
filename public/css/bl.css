@@ -1375,6 +1375,10 @@ a {
     margin-top: 10%; /*12%*/
 }
 
+.reportlabels{
+    margin-top: 5%;
+}
+
 .adjustwidthreports{
     width:95%;
 }
@@ -3207,6 +3211,9 @@ h1{
 .searchlogo{
     margin-top: 15%;
 }
+.reportlabels{
+    margin-top: 7%;
+}
 .navbar-collapse{
     width: 104%;
 }
@@ -3533,6 +3540,9 @@ span.num.greatherthanninetynine {
     .searchlogo{
         margin-top: 20%;
     }
+.reportlabels{
+    margin-top: 10%;
+}
 .searchradios{
     width: 80%;
 }
@@ -3664,6 +3674,9 @@ span.num.greatherthanninetynine {
 }
 .searchlogo{
     margin-top: 30%;
+}
+.reportlabels{
+    margin-top: 15%;
 }
 .searchmob{
     padding: 30px;
