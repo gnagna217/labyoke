@@ -154,6 +154,11 @@
     "reports.download.title":"Économies Sem.",
     "reports.download2.title":"Économies Jr.",
     "reports.download.today.file":"Semaine_Economies.pdf",
+    "reports.label.savings":"Les<br/>Économies",
+    "reports.label.orders":"Les<br/>Commandes",
+    "reports.label.week":"Économies<br/>du Jour",
+    "reports.label.inventory":"Les<br/>Inventaires",
+    "reports.label.insuff":"Appro<br/>visioner",
 
     "reports.money.title": "Rapport Économies de Partage.",
     "reports.money.subtitle": "Télécharger le rapport sur les économies de partage de chaque laboratoire sur une période déterminée par Réactif.",

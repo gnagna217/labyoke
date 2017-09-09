@@ -153,7 +153,12 @@
     "reports.download.title":"Week Savings",
     "reports.download2.title":"Weekly Savings",
     "reports.download.today.file":"Week_Savings.pdf",
-    
+    "reports.label.savings":"Collect <br/>Savings",
+    "reports.label.orders":"Find <br/>Orders",
+    "reports.label.week":"Week <br/>Savings",
+    "reports.label.inventory":"Rack <br/>Inventory",
+    "reports.label.insuff":"Replenish<br/>Insuff.",
+
     "reports.money.title": "Shares Savings Report.",
     "reports.money.subtitle": "You can now retrieve a report of the savings each lab has made over a period of time per reagent.",
     "reports.money.message.fail": "Unfortunately we could not generate the report within the time frame chosen. Please try again with new parameters.",
