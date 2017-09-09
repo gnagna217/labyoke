@@ -11,7 +11,319 @@
 
 
 
+/*new reports*/
+.labelbuttons{
+text-align: center;margin-top:40px;
+}
 
+.inputexpand {
+  display: none;
+  visibility: hidden;
+}
+.labelexpand {
+  display: block;
+  padding: 0.2em;
+  /*border-bottom: 1px solid #CCC;*/
+  color: #666;
+  font-size: 15pt; font-weight: bold; /*big 20pt*/
+  margin-top: 25px;
+  width:40%;
+}
+.labelexpand:hover {
+  color: #000;
+}
+.labelexpand::before {
+  font-family: Consolas, monaco, monospace;
+  font-weight: bold;
+  font-size: 15px;
+  /*content: "+";*/
+  vertical-align: text-top;
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  margin-right: 3px;
+padding-left: 11px;
+padding-top: 3px;
+  color: white;
+      margin-top: 2px;
+  background: radial-gradient(ellipse at center, #00bc00 50%, transparent 50%);
+}
+#expand {
+  height: 0px;
+  overflow: hidden;
+  transition: height 0.5s;
+  /*background: url(http://placekitten.com/g/600/300);*/
+  /*color: #FFF;*/
+    /*background-color: rgba(70, 0, 119, 0.33);*/
+    margin-bottom: 6px;
+    margin-left: 5px;
+    margin-top: -20px;
+}
+section {
+  padding: 0px 15px 25px 15px;
+}
+#toggle:checked ~ #expand {
+  height: 250px;
+}
+#toggle:checked ~ .labelexpand::before {
+  /*content: "-";*/
+}
+
+/*Expand sections on page*/
+.inputexpandedit {
+  display: none;
+  visibility: hidden;
+}
+.labelexpandedit {
+  display: block;
+  padding: 0.2em;
+  /*border-bottom: 1px solid #CCC;*/
+  color: #666;
+  font-size: 15pt; font-weight: bold;/*big 20pt*/
+  width:60%;
+}
+.labelexpandedit:hover {
+  color: #000;
+}
+.labelexpandedit::before {
+  font-family: Consolas, monaco, monospace;
+  font-weight: bold;
+  font-size: 15px;
+  /*content: "+";*/
+  vertical-align: text-top;
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  margin-right: 3px;
+padding-left: 11px;
+padding-top: 3px;
+  color: white;/*#2975b4;*/
+      margin-top: 2px;
+  background: radial-gradient(ellipse at center, #00bc00 50%, transparent 50%);
+}
+#expandedit {
+  height: 0px;
+  overflow: hidden;
+  transition: height 0.5s;
+  /*background: url(http://placekitten.com/g/600/300);*/
+  /*color: #FFF;*/
+    /*background-color: rgba(70, 0, 119, 0.33);*/
+    margin-bottom: 6px;
+    margin-left: 5px;
+    overflow:overlay;
+}
+
+#toggleedit:checked ~ #expandedit {
+  height: 250px;
+}
+#toggleedit:checked ~ .labelexpandedit::before {
+  /*content: "-";*/
+}
+
+/*Expand sections on page*/
+.inputexpandadd {
+  display: none;
+  visibility: hidden;
+}
+.labelexpandadd {
+  display: block;
+  padding: 0.2em;
+  /*border-bottom: 1px solid #CCC;*/
+  color: #666;
+  font-size: 15pt; font-weight: bold; /*big 20pt*/
+  width:80%;
+}
+.labelexpandadd:hover {
+  color: #000;
+}
+.labelexpandadd::before {
+  font-family: Consolas, monaco, monospace;
+  font-weight: bold;
+  font-size: 15px;
+  /*content: "+";*/
+  vertical-align: text-top;
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  margin-right: 3px;
+padding-left: 11px;
+padding-top: 3px;
+  color: white;
+      margin-top: 2px;
+  background: radial-gradient(ellipse at center, #00bc00 50%, transparent 50%);
+}
+#expandadd {
+    height: 0px;
+    overflow: hidden;
+    transition: height 0.5s;
+    /*background: url(http://placekitten.com/g/600/300);*/
+    /*color: #FFF;*/
+   /* background-color: rgba(70, 0, 119, 0.33);*/
+    margin-bottom: 6px;
+    margin-left: 5px;
+    overflow:overlay;
+}
+
+#toggleadd:checked ~ #expandadd {
+  height: 1000px;
+}
+#toggleadd:checked ~ .labelexpandadd::before {
+  /*content: "-";*/
+}
+
+/*Expand sections on page*/
+.labelexpandmood {
+  display: block;
+  padding: 0.2em;
+  /*border-bottom: 1px solid #CCC;*/
+  color: #666;
+  font-size: 15pt; font-weight: bold; /*big 20pt*/
+  width:100%;
+  background-color: rgba(41, 117, 180, 0.36);
+}
+
+.labelexpandmood::before {
+  font-family: Consolas, monaco, monospace;
+  font-weight: bold;
+  font-size: 15px;
+  /*content: "+";*/
+  vertical-align: text-top;
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  margin-right: 3px;
+padding-left: 11px;
+padding-top: 3px;
+  color: white;
+      margin-top: 2px;
+  background: radial-gradient(ellipse at center, #00bc00 50%, transparent 50%);
+}
+
+/*Expand sections on page*/
+.inputexpandrules {
+  display: none;
+  visibility: hidden;
+}
+.labelexpandrules {
+  display: block;
+  padding: 0.2em;
+  /*border-bottom: 1px solid #CCC;*/
+  color: #666;
+  font-size: 15pt; font-weight: bold; /*big 20pt*/
+  width:100%;
+}
+.labelexpandrules:hover {
+  color: #000;
+}
+.labelexpandrules::before {
+  font-family: Consolas, monaco, monospace;
+  font-weight: bold;
+  font-size: 15px;
+  /*content: "+";*/
+  vertical-align: text-top;
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  margin-right: 3px;
+padding-left: 11px;
+padding-top: 3px;
+  color: white;
+      margin-top: 2px;
+  background: radial-gradient(ellipse at center, #00bc00 50%, transparent 50%);
+}
+#expandrules {
+    height: 0px;
+    overflow: hidden;
+    transition: height 0.5s;
+    /*background: url(http://placekitten.com/g/600/300);*/
+    /*color: #FFF;*/
+   /* background-color: rgba(70, 0, 119, 0.33);*/
+    /*margin-bottom: 6px;*/
+    margin-left: 5px;
+    overflow:overlay;
+}
+
+#togglerules:checked ~ #expandrules {
+  height: 1000px;
+}
+#togglerules:checked ~ .labelexpandrules::before {
+  /*content: "-";*/
+}
+
+.highlightlabel{
+    background-color: #008500 !important;
+    background-image: none !important;
+}
+.quoteBubble{
+background-color: #008500 !important;
+}
+
+.quoteBubble:hover{
+    background-color: rgb(22, 185, 22) !important;
+    background-image: none;
+}
+
+.quoteBubble:active{
+    background-color: #008500 !important;
+}
+
+.quoteBubble{
+    color: white !important;
+    border-radius: 84px !important;
+    border-width: thick;
+    /*border-color: #008500 !important;*/
+    border-color: transparent !important;
+    border-style: solid;
+    width: 165px; /*big 150px*/
+    height: 165px; /*big 150px*/
+    padding-top: 5px;
+    text-align: center;
+
+    display: inline-block;
+    /*background-image: linear-gradient(#008500,#111);*/
+    text-decoration: none;
+
+}
+
+.labelexpandadd, .labelexpandedit, .labelexpand,.labelexpandrules, .labelexpandmood{
+    /*padding-top: 20px !important;*/
+    /*background-color: #008500 !important;*/ /*#8a6d3b !important;*/
+    /*color: white !important;
+    border-radius: 50px;
+
+    border-width: thick;
+    border-color: #008500 !important;
+    border-style: solid;*/
+    color: white !important;
+    border-radius: 84px;
+    border-width: thick;
+    /*border-color: #008500 !important;*/
+    border-color: transparent !important;
+    border-style: solid;
+    width: 130px; /*big 150px*/
+    height: 130px; /*big 150px*/
+    padding-top: 28px;
+    text-align: center;
+
+    display: inline-block;
+    /*background-image: linear-gradient(#008500,#111);*/
+    text-decoration: none;
+
+}
+.labelexpandadd, .labelexpandedit, .labelexpand,.labelexpandrules{
+background-color: rgba(0, 133, 0, 0.36);
+}
+
+.labelexpandadd:hover, .labelexpandedit:hover, .labelexpand:hover,.labelexpandrules:hover, .labelexpandmood:hover{
+    background-color: #008500 !important;
+    background-image: none;
+}
+
+.labelexpandadd:active, .labelexpandedit:active, .labelexpand:active,.labelexpandrules:active, .labelexpandmood:active{
+    background-color: #008500 !important;
+}
+
+/*end new reports*/
 
 
 /*cards*/
