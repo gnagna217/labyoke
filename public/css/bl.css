@@ -179,7 +179,7 @@ padding-top: 3px;
   color: #666;
   font-size: 15pt; font-weight: bold; /*big 20pt*/
   width:100%;
-  background-color: rgba(41, 117, 180, 0.36);
+  background-color: #2975b4;
 }
 
 .labelexpandmood::before {
