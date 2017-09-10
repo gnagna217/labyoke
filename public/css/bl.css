@@ -12,6 +12,10 @@
 
 
 /*new reports*/
+
+.imgcart{
+    border-width:0px; width: 24px; margin-top: -5px;margin-left: 10%;
+}
 .mobileonly3{
     display: none !important;
 }

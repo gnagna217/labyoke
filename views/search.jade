@@ -276,7 +276,7 @@ block content
                                 td(data-title="#{i18n.__('search.table.location')}") #{ob[prop].location}
                                 td(data-title="" class="carticon")
                                   span(onclick="iosLight('#{agent}','#{vendor}','#{catalognumber}','#{reqemail}','#{location}','#{category}','#{qty}','#{lab}','#{lang}','#{ob[prop].lang}')", style="cursor:pointer")
-                                        img(src="images/cart.png", alt="Order now", title="Order now", style="border-width:0px; width: 24px; margin-top: -5px;margin-left: 10%;")
+                                        img(src="images/cart.png", class="imgcart", alt="Order now", title="Order now")
                             - j = j + 1
                       script.
                         /*$("#rankTblSearch").tableDnD({
@@ -365,7 +365,9 @@ block content
     span(class="desktabonly", id="checkdisplay")
     script.
       $( document ).ready(function() {
-
+        $(".imgcart").hover(function() {
+          $( '.imgcart' ).attr("src","carthover.png");
+        });
       /*if($('.results10').is(':visible')){
         console.log("scrolling " + $('.results10').offset().top);
         $(window).scrollTop(550);
