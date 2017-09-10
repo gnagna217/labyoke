@@ -365,7 +365,7 @@ block content
     span(class="desktabonly", id="checkdisplay")
     script.
       $( document ).ready(function() {
-        var sourceSwap = function (this) {
+        function sourceSwap(this) {
           console.dir(this);
           var newSource = this.attr('alt-src');
           this.atttr('alt-src', this.attr('src'));
