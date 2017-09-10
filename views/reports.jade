@@ -54,13 +54,12 @@ block content
 				$( ".labelexpand" ).click(function() {
 				$( this ).toggleClass( "highlightlabel" );
 				//$('.containerreport').hide();
-				$('#reportMoney').toggle()
 				$('.labelexpandedit').removeClass( "highlightlabel" );
 				$('.labelexpandadd').removeClass( "highlightlabel" );
 				$('.labelexpandrules').removeClass( "highlightlabel" );
 				$('.labelexpandmood').removeClass( "highlightlabel" );
 
-				$('#reportMoney').show();
+				$('#reportMoney').toggle();
 				$('#reportShares').hide();
 				$('#reportOrders').hide();
 				$('#reportInsuff').hide();
@@ -75,12 +74,11 @@ block content
 				$( ".labelexpandedit" ).click(function() {
 					$( this ).toggleClass( "highlightlabel" );
 					//$('.containerreport').hide();
-				$('#reportOrders').toggle()
 				$('.labelexpand').removeClass( "highlightlabel" );
 				$('.labelexpandadd').removeClass( "highlightlabel" );
 				$('.labelexpandrules').removeClass( "highlightlabel" );
 				$('.labelexpandmood').removeClass( "highlightlabel" );
-					$('#reportOrders').show();
+					$('#reportOrders').toggle();
 					$('#reportShares').hide();
 					$('#reportMoney').hide();
 					$('#reportInsuff').hide();
@@ -92,7 +90,6 @@ block content
 				$('html,body').animate({scrollTop: l}, 1000);
 				});
 				$( ".labelexpandadd" ).click(function() {
-					$('#reportShares').toggle()
 					$( this ).toggleClass( "highlightlabel" );
 					//$('.containerreport').hide();
 
@@ -100,7 +97,7 @@ block content
 				$('.labelexpand').removeClass( "highlightlabel" );
 				$('.labelexpandrules').removeClass( "highlightlabel" );
 				$('.labelexpandmood').removeClass( "highlightlabel" );
-					$('#reportShares').show();
+					$('#reportShares').toggle();
 					$('#reportMoney').hide();
 					$('#reportOrders').hide();
 					$('#reportInsuff').hide();
@@ -112,14 +109,13 @@ block content
 				$('html,body').animate({scrollTop: l}, 1000);
 				});
 				$( ".labelexpandrules" ).click(function() {
-					$('#reportInsuff').toggle()
 					$( this ).toggleClass( "highlightlabel" );
 					//$('.containerreport').hide();
 				$('.labelexpandedit').removeClass( "highlightlabel" );
 				$('.labelexpandadd').removeClass( "highlightlabel" );
 				$('.labelexpand').removeClass( "highlightlabel" );
 				$('.labelexpandmood').removeClass( "highlightlabel" );
-					$('#reportInsuff').show();
+					$('#reportInsuff').toggle();
 					$('#reportShares').hide();
 					$('#reportOrders').hide();
 					$('#reportMoney').hide();
