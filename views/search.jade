@@ -371,9 +371,7 @@ block content
           $this.data('alt-src', $this.attr('src'));
           $this.attr('src', newSource);
         }
-        $(".imgcart").hover(function() {
-          $( this ).attr("src","/images/carthover.png");
-        });
+        $(".imgcart").hover(sourceSwap, sourceSwap);
       /*if($('.results10').is(':visible')){
         console.log("scrolling " + $('.results10').offset().top);
         $(window).scrollTop(550);
