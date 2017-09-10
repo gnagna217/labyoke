@@ -51,6 +51,22 @@ block content
 			label(for="togglerules", class="labelexpandrules animated fadeInUp", style="position: relative;/*top: -44px;*/ display: inline-block;")!= i18n.__("reports.label.insuff")
 		div(style=nobar, class="threepointssep")
 			script.
+				if($('#reportOrders').is(':visible')){
+					console.log("visible reportOrders");
+					$('.labelexpandedit').addClass( "highlightlabel" );
+				}
+				if($('#reportMoney').is(':visible')){
+					console.log("visible reportMoney");
+					$('.labelexpand').addClass( "highlightlabel" );
+				}
+				if($('#reportShares').is(':visible')){
+					console.log("visible reportShares");
+					$('.labelexpandadd').addClass( "highlightlabel" );
+				}
+				if($('#reportInsuff').is(':visible')){
+					console.log("visible reportInsuff");
+					$('.labelexpandrules').addClass( "highlightlabel" );
+				}
 				$( ".labelexpand" ).click(function() {
 				$( this ).toggleClass( "highlightlabel" );
 				//$('.containerreport').hide();
