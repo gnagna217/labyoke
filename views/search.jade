@@ -367,8 +367,8 @@ block content
       $( document ).ready(function() {
         var sourceSwap = function () {
           var $this = $(this);
-          var newSource = "$this.data('alt-src')";
-          $this.data('alt-src', $this.attr('src'));
+          var newSource = $this.attr('alt-src');
+          $this.atttr('alt-src', $this.attr('src'));
           $this.attr('src', newSource);
         }
         $(".imgcart").hover(sourceSwap, sourceSwap);
