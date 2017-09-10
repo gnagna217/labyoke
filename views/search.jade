@@ -365,13 +365,13 @@ block content
     span(class="desktabonly", id="checkdisplay")
     script.
       $( document ).ready(function() {
-        var sourceSwap = function () {
-          var thi = $(this);
-          var newSource = thi.attr('alt-src');
-          thi.atttr('alt-src', thi.attr('src'));
-          thi.attr('src', newSource);
+        var sourceSwap = function (this) {
+          console.dir(this);
+          var newSource = this.attr('alt-src');
+          this.atttr('alt-src', this.attr('src'));
+          this.attr('src', newSource);
         }
-        $(".imgcart").hover(sourceSwap, sourceSwap);
+        $(".imgcart").hover(sourceSwap($(this)), sourceSwap($(this)));
       /*if($('.results10').is(':visible')){
         console.log("scrolling " + $('.results10').offset().top);
         $(window).scrollTop(550);
