@@ -366,10 +366,10 @@ block content
     script.
       $( document ).ready(function() {
         var sourceSwap = function () {
-          var $this = $(this);
-          var newSource = $this.attr('alt-src');
-          $this.atttr('alt-src', $this.attr('src'));
-          $this.attr('src', newSource);
+          var thi = $(this);
+          var newSource = thi.attr('alt-src');
+          thi.atttr('alt-src', $this.attr('src'));
+          thi.attr('src', newSource);
         }
         $(".imgcart").hover(sourceSwap, sourceSwap);
       /*if($('.results10').is(':visible')){
