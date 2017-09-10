@@ -3145,9 +3145,6 @@ margin-top:0px;
 }
 
 @media (max-width: 767px){
-.mobileonly3{
-    display: block;
-}
 
 h1{
     margin-top:25px;
@@ -3503,6 +3500,9 @@ span.num.greatherthanninetynine {
 }
 
 @media (max-width: 667px){
+.mobileonly3{
+    display: block;
+}
 .centralize{
     width: 100%;
 }
