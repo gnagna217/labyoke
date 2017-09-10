@@ -54,6 +54,7 @@ block content
 				$( ".labelexpand" ).click(function() {
 				$( this ).toggleClass( "highlightlabel" );
 				//$('.containerreport').hide();
+				$('#reportMoney').toggle()
 				$('.labelexpandedit').removeClass( "highlightlabel" );
 				$('.labelexpandadd').removeClass( "highlightlabel" );
 				$('.labelexpandrules').removeClass( "highlightlabel" );
@@ -74,7 +75,7 @@ block content
 				$( ".labelexpandedit" ).click(function() {
 					$( this ).toggleClass( "highlightlabel" );
 					//$('.containerreport').hide();
-
+				$('#reportOrders').toggle()
 				$('.labelexpand').removeClass( "highlightlabel" );
 				$('.labelexpandadd').removeClass( "highlightlabel" );
 				$('.labelexpandrules').removeClass( "highlightlabel" );
@@ -91,6 +92,7 @@ block content
 				$('html,body').animate({scrollTop: l}, 1000);
 				});
 				$( ".labelexpandadd" ).click(function() {
+					$('#reportShares').toggle()
 					$( this ).toggleClass( "highlightlabel" );
 					//$('.containerreport').hide();
 
@@ -110,6 +112,7 @@ block content
 				$('html,body').animate({scrollTop: l}, 1000);
 				});
 				$( ".labelexpandrules" ).click(function() {
+					$('#reportInsuff').toggle()
 					$( this ).toggleClass( "highlightlabel" );
 					//$('.containerreport').hide();
 				$('.labelexpandedit').removeClass( "highlightlabel" );
