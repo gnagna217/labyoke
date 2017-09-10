@@ -274,6 +274,11 @@ block content
 				- var message_fail_share = i18n.__("reports.money.message.fail")
 				- var message_fail_date_share = i18n.__("reports.money.message.date.fail")
 				- var message_success_money = i18n.__("reports.money.message.success1") + datefrom_money + i18n.__("reports.money.message.success2") + dateto_money + i18n.__("reports.money.message.success3")
+				- if (addMessageMoney != null)
+					script.
+						$(document).ready(function(){
+							$('.labelexpand').addClass( "highlightlabel" );
+						});
 				- if(datefromMoney == null || datefromMoney == undefined || datefromMoney == "")
 					- datefrom_money = i18n.__("reports.money.message.datefrommoney")
 					- dateto_money = ""
@@ -403,6 +408,11 @@ block content
 				- var message_fail_order = i18n.__("reports.orders.message.fail")
 				- var message_fail_date_order = i18n.__("reports.orders.message.date.fail")
 				- var message_success_order = i18n.__("reports.orders.message.success1") + datefrom_orders + i18n.__("reports.orders.message.success2") + dateto_orders + i18n.__("reports.orders.message.success3")
+				- if (addMessageOrders != null)
+					script.
+						$(document).ready(function(){
+							$('.labelexpandedit').addClass( "highlightlabel" );
+						});
 				- if(datefromOrders == null || datefromOrders == undefined || datefromOrders == "")
 					- datefrom_orders = i18n.__("reports.orders.lab.option")
 					- dateto_orders = ""
@@ -537,6 +547,11 @@ block content
 				- var file_shares = i18n.__("reports.shares.file") + datefrom_shares + i18n.__("reports.file.to") + dateto_shares + ".pdf"
 				- var message_fail_share = i18n.__("reports.shares.message.fail")
 				- var message_fail_date_share = i18n.__("reports.shares.message.date.fail")
+				- if (addMessageShares != null)
+					script.
+						$(document).ready(function(){
+							$('.labelexpandadd').addClass( "highlightlabel" );
+						});
 				- var message_success_share = i18n.__("reports.shares.message.success1") + datefrom_shares + i18n.__("reports.shares.message.success2") + dateto_shares + i18n.__("reports.shares.message.success3")
 				- if(datefromShares == null || datefromShares == undefined || datefromShares == "")
 					- datefrom_shares = i18n.__("reports.shares.lab.option")
@@ -682,6 +697,11 @@ block content
 				- var message_fail_insuff = i18n.__("reports.insuff.message.fail")
 				- var message_fail_date_insuff = i18n.__("reports.insuff.message.date.fail")
 				- var message_success_insuff = i18n.__("reports.insuff.message.successinsuff")
+				- if (addMessageMoney != null)
+					script.
+						$(document).ready(function(){
+							$('.labelexpandrules').addClass( "highlightlabel" );
+						});
 				if (addMessageInsuff == 'failure')
 					div(class="alert alert-danger alertshadow")!= message_fail_insuff
 				if (addMessageInsuff == 'wrongdate')
@@ -907,7 +927,7 @@ block content
 			});
 		}
 
-		$(document).ready(function(){
+		/*$(document).ready(function(){
 			if($('#reportOrders').is(':visible')){
 				console.log("visible reportOrders");
 				$('.labelexpandedit').addClass( "highlightlabel" );
@@ -925,4 +945,5 @@ block content
 				$('.labelexpandrules').addClass( "highlightlabel" );
 			}
 		});
+		*/
 			
