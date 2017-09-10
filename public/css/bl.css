@@ -13,7 +13,7 @@
 
 /*new reports*/
 .mobileonly3{
-    display: none;
+    display: none !important;
 }
 .restrictreporttext{
     width:30%;
@@ -3501,7 +3501,7 @@ span.num.greatherthanninetynine {
 
 @media (max-width: 667px){
 .mobileonly3{
-    display: block;
+    display: block !important;
 }
 .centralize{
     width: 100%;
