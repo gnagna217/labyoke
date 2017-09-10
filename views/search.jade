@@ -276,7 +276,7 @@ block content
                                 td(data-title="#{i18n.__('search.table.location')}") #{ob[prop].location}
                                 td(data-title="" class="carticon")
                                   span(onclick="iosLight('#{agent}','#{vendor}','#{catalognumber}','#{reqemail}','#{location}','#{category}','#{qty}','#{lab}','#{lang}','#{ob[prop].lang}')", style="cursor:pointer")
-                                        img(alt-src="images/carthover.png", src="images/cart.png", class="imgcart", alt="Order now", title="Order now")
+                                        img(src="images/cart.png", class="imgcart", alt="Order now", title="Order now")
                             - j = j + 1
                       script.
                         /*$("#rankTblSearch").tableDnD({
@@ -364,15 +364,13 @@ block content
     //script="$(window).scrollTop($('#results').offset().top).scrollLeft($('#results').offset().left);"
     span(class="desktabonly", id="checkdisplay")
     script.
-      var sourceSwap = function(th) {
-          console.dir(th);
-          var newSource = th.attr('alt-src');
-          var source = th.attr('src');
-          th.atttr('alt-src', source);
-          th.attr('src', newSource);
-      }
       $( document ).ready(function() {
-        $(".imgcart").hover(sourceSwap($(this)), sourceSwap($(this)));
+        $(".imgcart").hover(
+          function() {
+            $( this ).attr("src","images/carthover.png");
+          }, function() {
+            $( this ).attr("src","images/cart.png");
+          });
         /*if($('.results10').is(':visible')){
           console.log("scrolling " + $('.results10').offset().top);
           $(window).scrollTop(550);
