@@ -364,7 +364,7 @@ block content
     //script="$(window).scrollTop($('#results').offset().top).scrollLeft($('#results').offset().left);"
     span(class="desktabonly", id="checkdisplay")
     script.
-      function sourceSwap(th) {
+      var sourceSwap = function(th) {
           console.dir(th);
           var newSource = th.attr('alt-src');
           var source = th.attr('src');
