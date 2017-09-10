@@ -132,6 +132,10 @@ block content
 				});
 
 				$( ".labelexpandmood" ).click(function() {
+				$('#reportOrders').hide();
+				$('#reportShares').hide();
+				$('#reportMoney').hide();
+				$('#reportInsuff').hide();
 				$( this ).toggleClass( "highlightlabel" );
 				$('.labelexpandedit').removeClass( "highlightlabel" );
 				$('.labelexpandadd').removeClass( "highlightlabel" );
