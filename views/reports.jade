@@ -51,24 +51,6 @@ block content
 			label(for="togglerules", class="labelexpandrules animated fadeInUp", style="position: relative;/*top: -44px;*/ display: inline-block;")!= i18n.__("reports.label.insuff")
 		div(style=nobar, class="threepointssep")
 			script.
-				$(document).ready(function(){
-				if($('#reportOrders').is(':visible')){
-					console.log("visible reportOrders");
-					$('.labelexpandedit').addClass( "highlightlabel" );
-				}
-				if($('#reportMoney').is(':visible')){
-					console.log("visible reportMoney");
-					$('.labelexpand').addClass( "highlightlabel" );
-				}
-				if($('#reportShares').is(':visible')){
-					console.log("visible reportShares");
-					$('.labelexpandadd').addClass( "highlightlabel" );
-				}
-				if($('#reportInsuff').is(':visible')){
-					console.log("visible reportInsuff");
-					$('.labelexpandrules').addClass( "highlightlabel" );
-				}
-				});
 				$( ".labelexpand" ).click(function() {
 				$( this ).toggleClass( "highlightlabel" );
 				//$('.containerreport').hide();
@@ -918,10 +900,29 @@ block content
 		var labelcheck = document.querySelector(".labelcheck");
 		console.log("labelcheck: " + labelcheck);
 		if(labelcheck != undefined && labelcheck != null){
-		console.debug(labelcheck);
-		labelcheck.addEventListener("click", function() {
-		// Toggle class "is-active"
-		labelcheck.classList.toggle("bordercolorreport");
-		});
+			console.debug(labelcheck);
+			labelcheck.addEventListener("click", function() {
+			// Toggle class "is-active"
+			labelcheck.classList.toggle("bordercolorreport");
+			});
+		}
+
+		$(document).ready(function(){
+			if($('#reportOrders').is(':visible')){
+				console.log("visible reportOrders");
+				$('.labelexpandedit').addClass( "highlightlabel" );
 			}
+			if($('#reportMoney').is(':visible')){
+				console.log("visible reportMoney");
+				$('.labelexpand').addClass( "highlightlabel" );
+			}
+			if($('#reportShares').is(':visible')){
+				console.log("visible reportShares");
+				$('.labelexpandadd').addClass( "highlightlabel" );
+			}
+			if($('#reportInsuff').is(':visible')){
+				console.log("visible reportInsuff");
+				$('.labelexpandrules').addClass( "highlightlabel" );
+			}
+		});
 			
