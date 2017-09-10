@@ -364,13 +364,14 @@ block content
     //script="$(window).scrollTop($('#results').offset().top).scrollLeft($('#results').offset().left);"
     span(class="desktabonly", id="checkdisplay")
     script.
-      $( document ).ready(function() {
         function sourceSwap(th) {
           console.dir(th);
           var newSource = th.attr('alt-src');
-          th.atttr('alt-src', th.attr('src'));
+          var source = th.attr('src');
+          th.atttr('alt-src', source);
           th.attr('src', newSource);
         }
+      $( document ).ready(function() {
         $(".imgcart").hover(sourceSwap($(this)), sourceSwap($(this)));
       /*if($('.results10').is(':visible')){
         console.log("scrolling " + $('.results10').offset().top);
