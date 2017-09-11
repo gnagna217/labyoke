@@ -395,7 +395,7 @@
     "index.login.cheer2": "Amazing! You are a rock star!",
     "index.login.cheer3": "Incredible!",
     "index.login.cheer4": "Keep it up!",
-    "index.login.text1": "<strong> Major Achievement!</strong> You are part of a <b><i>{{ labsavings }}</i></b> savings for a total of <b> {{ accountingsavings }}</b> {{ timeframesavings }} in your department. <b>{{ cheer }}</b>",
+    "index.login.text1": "<strong> Major Achievement!</strong> You are part of a <b><i>{{ labsavings }}</i></b> savings for a total of <b>{{ accountingsavings }}</b> {{ timeframesavings }} in your department. <b>{{ cheer }}</b>",
     "index.login.text2": "<strong> Major Achievement!</strong> You have saved <b><i>{{ labsavings }}</i></b> a total of <b>{{ accountingsavings }}</b> {{ timeframesavings }}. <b>{{ cheer }}</b>",
     "index.login.booster3": "Using LabyYoke reduces purchasing prices for <strong>You</strong> and your <strong>Lab</strong>. Use it as a social platform. Have fun and Keep it Up!",
     "index.login.message3": "Your username and/or password is wrong. Please try again.",

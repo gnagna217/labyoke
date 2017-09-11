@@ -396,7 +396,7 @@
     "index.login.cheer2" : "Incroyable! Vous êtes un(e) rock star!",
     "index.login.cheer3" : "Incroyable!",
     "index.login.cheer4" : "Continuez!",
-    "index.login.text1"  : "<strong> Succès Majeur!</strong> Vous avez contribué à <b><i>{{ labsavings }}</i></b> d'économies pour un total de <b> {{ accountingsavings }}</b> {{ timeframesavings }} dans votre département. <b>{{ cheer }}</b>",
+    "index.login.text1"  : "<strong> Succès Majeur!</strong> Vous avez contribué à <b><i>{{ labsavings }}</i></b> d'économies pour un total de <b>{{ accountingsavings }}</b> {{ timeframesavings }} dans votre département. <b>{{ cheer }}</b>",
     "index.login.text2"  : "<strong> Succès Majeur!</strong> Vous avez économisé <b><i>{{ labsavings }}</i></b> un total de <b>{{ accountingsavings }}</b> {{ timeframesavings }}. <b>{{ cheer }}</b>",
     "index.login.booster3"  : "Utiliser LabyYoke aide à réduire les prix d'achats de réactifs pour <strong>Vous</strong> ainsi que <strong>Votre Laboratoire</strong>. Utilisez LabYoke comme une plateforme sociale. Amusez-vous bien et continuez!",
     "index.login.message3"  : "Votre nom d'utilisateur et/ou mot de passe est incorrect. Veuillez réessayer.",
