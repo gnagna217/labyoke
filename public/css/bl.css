@@ -32,6 +32,9 @@
 .mobileonly3{
     display: none !important;
 }
+.desktoponly3{
+    display: block !important;
+}
 .restrictreporttext{
     width:30%;
 }
@@ -3169,6 +3172,9 @@ margin-top:0px;
 @media (max-width: 767px){
 .mobileonly3{
     display: block !important;
+}
+.desktoponly3{
+    display: none !important;
 }
 h1{
     margin-top:25px;
