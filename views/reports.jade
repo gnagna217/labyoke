@@ -51,8 +51,8 @@ block content
 			label(for="togglerules", class="labelexpandrules animated fadeInUp", style="position: relative;/*top: -44px;*/ display: inline-block;")!= i18n.__("reports.label.insuff")
 		div(style=nobar, class="threepointssep")
 			script.
-				$(".labelexpand").on("click touchend", function(e) {
-				//$( ".labelexpand" ).click(function() {
+				//$(".labelexpand").on("click touchend", function(e) {
+				$( ".labelexpand" ).click(function() {
 				$( this ).toggleClass( "highlightlabel" );
 				//$('.containerreport').hide();
 				$('.labelexpandedit').removeClass( "highlightlabel" );
@@ -73,8 +73,8 @@ block content
 				$('html,body').animate({scrollTop: l}, 1000);
 				});
 
-				$( ".labelexpandedit" ).on("click touchend", function(e) {
-				//$( ".labelexpandedit" ).click(function() {
+				//$( ".labelexpandedit" ).on("click touchend", function(e) {
+				$( ".labelexpandedit" ).click(function() {
 					$( this ).toggleClass( "highlightlabel" );
 					//$('.containerreport').hide();
 				$('.labelexpand').removeClass( "highlightlabel" );
@@ -93,8 +93,8 @@ block content
 				$('html,body').animate({scrollTop: l}, 1000);
 				});
 
-				$( ".labelexpandadd" ).on("click touchend", function(e) {
-				//$( ".labelexpandadd" ).click(function() {
+				//$( ".labelexpandadd" ).on("click touchend", function(e) {
+				$( ".labelexpandadd" ).click(function() {
 					$( this ).toggleClass( "highlightlabel" );
 					//$('.containerreport').hide();
 
@@ -114,8 +114,8 @@ block content
 				$('html,body').animate({scrollTop: l}, 1000);
 				});
 
-				$( ".labelexpandrules" ).on("click touchend", function(e) {
-				//$( ".labelexpandrules" ).click(function() {
+				//$( ".labelexpandrules" ).on("click touchend", function(e) {
+				$( ".labelexpandrules" ).click(function() {
 					$( this ).toggleClass( "highlightlabel" );
 					//$('.containerreport').hide();
 				$('.labelexpandedit').removeClass( "highlightlabel" );
@@ -134,8 +134,8 @@ block content
 				$('html,body').animate({scrollTop: l}, 1000);
 				});
 
-				$( ".labelexpandemood" ).on("click touchend", function(e) {
-				//$( ".labelexpandmood" ).click(function() {
+				//$( ".labelexpandemood" ).on("click touchend", function(e) {
+				$( ".labelexpandmood" ).click(function() {
 				$('#reportOrders').hide();
 				$('#reportShares').hide();
 				$('#reportMoney').hide();
