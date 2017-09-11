@@ -66,7 +66,7 @@ block content
                               div(style="background-color: rgb(61, 157, 203);" class=" accountdetail accountdetail-header labColor animated fadeInUp")=i18n.__("account.form.lab")
                               div(class=" accountdetail accountdetail-header labColor animated fadeInUp", style="/*font-weight:bold;border-width: thin;width: 70px;*/")=i18n.__("account.form.lang")
                             div(class="wrapped accountdetailMargin")
-                              div(style="margin-bottom:30px;", class="accountdetail animated fadeInDown")
+                              div(style="margin-bottom:30px;", class="accountdetail accountdetailRowMargin animated fadeInDown")
                                 span(id="name")!=name + " "
                                 form(action="/changeDetails" id="changename" method="post" class="nameform" style="top: -5px; position: relative;")
                                   input(name="valuedetail" type="text" id="valuedetail" placeholder=name)
