@@ -73,8 +73,8 @@ html(lang='en')
        script(type="text/javascript" src="/javascripts/jquery.slideout.js")
      if (title=='Admins')
        script(type="text/javascript" src="/javascripts/jquery.slideout.js")
-     if (title=='Orders' || title == "Share" || title=="Reports")
-       script(type="text/javascript" src="/javascripts/fastclick.js")
+     //if (title=='Orders' || title == "Share" || title=="Reports")
+     //  script(type="text/javascript" src="/javascripts/fastclick.js")
      link(rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon")
      link(rel="icon" href="/images/favicon.ico" type="image/x-icon")
 
@@ -120,11 +120,11 @@ html(lang='en')
            - user = user.substring(0,7)
    - 
    body(class=loggedIn, ontouchstart="")
-     if (title=='Orders' || title == "Share" || title=="Reports") 
-        script.
-          $(document).ready(function() {
-            FastClick.attach(document.body);
-          });
+     //if (title=='Orders' || title == "Share" || title=="Reports") 
+     //   script.
+     //     $(document).ready(function() {
+     //       FastClick.attach(document.body);
+     //     });
 
      if (loggedIn==true)
         .navbar.navbar-inverse.navbar-fixed-top.adjustnav.navbackground(role='navigation',style="background-color: white;font-size: 10pt;position:fixed !important;padding-top:10px")
