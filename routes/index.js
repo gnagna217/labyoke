@@ -1868,7 +1868,7 @@ totalshares = t[0].counting;
 													}
 													if(shares > 0){
 														//booster.push("<strong> Notification!</strong> You have <b>" + shares + " new share(s)</b> pending completion. <a href='/share'>Check it out</a> promptly and fulfill the request. Way to contribute to your lab's savings!");
-														booster.push((res.__("index.login.booster2", {orders: orders})).replace(/&lt;/g, '<').replace(/&gt;/g, '>'));
+														booster.push((res.__("index.login.booster2", {shares: shares})).replace(/&lt;/g, '<').replace(/&gt;/g, '>'));
 														boostercolor.push("warning");
 													}
 
