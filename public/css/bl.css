@@ -2752,7 +2752,7 @@ input::-webkit-inner-spin-button {
     margin-right: 5px;
 }*/
 .accountdetailRowMargin{
-    margin-left: 5px;
+    margin-left: 2px;
     /*padding-left: 10px;*/
     padding-right: 15px;
 }
