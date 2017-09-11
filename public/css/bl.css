@@ -1838,12 +1838,15 @@ position: absolute;
 }
 .nameform{
     display:none;
+    margin-left: -10px;
 }
 .surnameform{
     display:none;
+    margin-left: -10px;
 }
 .telform{
     display:none;
+    margin-left: -10px;
 }
 
 #checkname{
