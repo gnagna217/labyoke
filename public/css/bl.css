@@ -2578,8 +2578,12 @@ margin-right: 15px !important;
 .pointsLayout li
 {
     padding:10px 0;
+    margin-bottom: -13px;
 }
-
+.pointsLayout li ul
+{
+    margin-top: -5px !important;
+}
 .score{
   	height: 40px !important;
 	width: 50px;
