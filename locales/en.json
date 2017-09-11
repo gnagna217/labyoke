@@ -109,6 +109,7 @@
     "help.table.vendor": "Vendor",
     "help.table.location": "Owner",
     "help.table.order": "Order",
+    "help.table.catalog": "Catalog",
     
     "register.title": "Sign Up.",
     "register.desc1": "On your way to <a href='/login'>Lab Yoking</a> with fellow researchers.",

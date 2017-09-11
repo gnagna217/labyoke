@@ -110,6 +110,7 @@
     "help.table.vendor": "Vendeur",
     "help.table.location": "Proprio",
     "help.table.order": "Commander",
+    "help.table.catalog": "Catalogue",
     
     "register.desc1": "En route pour <a href='/login'>LabYoker</a> avec d'autres chercheurs.",
     "register.title": "Inscription.",
