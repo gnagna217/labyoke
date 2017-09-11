@@ -1725,7 +1725,8 @@ totalshares = t[0].counting;
                                             console.log("labadmin: " + labadmin);
                                             req.session.labadmin = labadmin;
                                             req.session.dept = dept;
-											res.setLocale(done[0].lang);
+                                            console.log("user language: " + done[0].lang);
+											//res.setLocale(done[0].lang);
 										}
 										
 										/*if(results != null && results.length > 2){
