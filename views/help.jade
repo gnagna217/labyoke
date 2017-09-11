@@ -43,14 +43,14 @@ block content
              thead
                 tr
                    th!= i18n.__("help.table.reagent")
-                   th!= i18n.__("help.table.catalog")
+                   th(class="desktabonly")!= i18n.__("help.table.catalog")
                    th!= i18n.__("help.table.vendor")
                    th!= i18n.__("help.table.location")
                    th!=i18n.__("help.table.order")
              tbody
                 tr
                    td!= "reagent1"
-                   td!= "catalog1"
+                   td(class="desktabonly")!= "catalog1"
                    td!= "vendor1"
                    td!= "James Hewitt"
                    td
@@ -58,7 +58,7 @@ block content
                       img(src="images/cart.png", alt="Order now", title="Order now", style="border-width:0px; width: 24px; margin-top: 0px;")
                 tr
                    td!= "reagent2"
-                   td!= "catalog2"
+                   td(class="desktabonly")!= "catalog2"
                    td!= "vendor2"
                    td!= "Marge Harvey"
                    td
@@ -66,7 +66,7 @@ block content
                       img(src="images/cart.png", alt="Order now", title="Order now", style="border-width:0px; width: 24px; margin-top: 0px;")
                 tr
                    td!= "reagent3"
-                   td!= "catalog3"
+                   td(class="desktabonly")!= "catalog3"
                    td!= "vendor3"
                    td!= "Meghan Jones"
                    td
@@ -74,7 +74,7 @@ block content
                       img(src="images/cart.png", alt="Order now", title="Order now", style="border-width:0px; width: 24px; margin-top: 0px;")
                 tr
                    td!= "reagent1"
-                   td!= "catalog1"
+                   td(class="desktabonly")!= "catalog1"
                    td!= "vendor1"
                    td!= "Laura Willet"
                    td
@@ -82,7 +82,7 @@ block content
                       img(src="images/cart.png", alt="Order now", title="Order now", style="border-width:0px; width: 24px; margin-top: 0px;")
                 tr
                    td!= "reagent3"
-                   td!= "catalog3"
+                   td(class="desktabonly")!= "catalog3"
                    td!= "vendor3"
                    td!= "Mark Mitchelson"
                    td
