@@ -149,7 +149,7 @@
     "reports.form.option4": "Inventory",
     "reports.form.option5": "Insufficient Inventory",
     "reports.tip.header":"How To Report?",
-    "reports.tip.desc": "Select a report from the drop down menu. Fields are optional unless otherwise noted.<br/><br/>Parameters under <i><b>Show</b></i> will add additional columns to the report table.<br/><br/>All reports (except the Inventory Report Upload) are restricted to only your departmental data.",
+    "reports.tip.desc": "Select a report. All reports except for the <b>Week Savings</b> (generates a report of your personal weekly savings based on your orders and shares) will open up a form below.<ul><li><b>Collect Savings:</b> A list of the reagents shared during a span of time per Lab in your department including the economical impact of such share.</li><li><b>Find Orders:</b> A list of the reagents ordered during a span of time per lab in your department.</li><li><b>Rack Reaagents:</b> A list of the reagents added to the inventory.</li><li><b>Replenish Insuff:</b> A list of the reagents in insufficient quantity per lab in your department.</li></ul>Fields are optional unless otherwise noted.<br/><br/>Parameters under <i><b>Show</b></i> will add additional columns to the report table.<br/><br/>All reports (except the Inventory Report Upload) are restricted to only your departmental data.",
     "reports.download":"Downloading",
     "reports.download.title":"Week Savings",
     "reports.download2.title":"Weekly Savings",

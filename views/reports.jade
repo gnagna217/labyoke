@@ -810,7 +810,7 @@ block content
 							- resultsInsuff = ""
 					script.
 						$(window).scrollTop($('#reportInsuff').offset().top).scrollLeft($('#reportInsuff').offset().left);
-		div(class="slide-out-tip-div desktabonly", style="display:none;z-index:1;position: fixed;top: 25% !important;max-height:400px;")
+		div(class="slide-out-tip-div desktabonly", style="display:none;z-index:1;position: fixed;top: 25% !important;max-height:320px;overflow: auto;")
 			a(class="handle" href="last-transactions", title='#{i18n.__("search.tip.header")}', style="right: -60px;left:-60px;top:25px;")!=Content
 			div(style="padding: 4px;color:white;top: -45px;position: relative;")
 				p(style="font-size: 12pt;")!= i18n.__("reports.tip.header")
