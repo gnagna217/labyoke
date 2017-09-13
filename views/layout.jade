@@ -133,9 +133,9 @@ html(lang='en')
         - user = user.substring(0, 8)
         - if(user.substring(8,8) == " ")
            - user = user.substring(0,7)
-   //if(title=='Login')
-     // :staticCache
-       // script(type="text/javascript" src="/javascripts/imageCache.js")
+   if(title=='Login')
+      :staticCache
+        script(type="text/javascript" src="/javascripts/imageCache.js")
    body(class=loggedIn, ontouchstart="")
      //if (title=='Orders' || title == "Share" || title=="Reports") 
      //   script.
