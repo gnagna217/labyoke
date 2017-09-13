@@ -238,7 +238,8 @@ html(lang='en')
 
      block content
      script(type="text/javascript" src="/javascripts/bootstrap.min.js")
-     script(type="text/javascript" src="/javascripts/popup.js")
+     if(title=='Reagent Search' || title=='Search' || title=='Share' || title=='Orders' || title=='Admins')
+      script(type="text/javascript" src="/javascripts/popup.js")
      if(title=='Login')
         script(type="text/javascript" src="/javascripts/image_preload.js")
      if (title=='Share' || title=='Admins')
