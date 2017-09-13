@@ -21,9 +21,11 @@ html(lang='en')
         - menushare = ""
         - menumyshares = ""
      title!= 'LabYoke - ' + i18n.__(a)
-     link(href='/css/animate.css', rel='stylesheet')
+     :staticCache
+        link(href='/css/animate.css', rel='stylesheet')
      if (title=='Orders' || title == "Share" || title=="Search" || title=="Help" || title=="Admins" || title=='Reagent Search')
-      link(rel="stylesheet" type="text/css" href="/css/datatables.min.css")
+      :staticCache
+        link(rel="stylesheet" type="text/css" href="/css/datatables.min.css")
      if(title=='Reagent Search' || title=='Search' || title=='Share' || title=='Orders' || title=='Admins')
       link(href='/css/popup.css', rel='stylesheet')
      link(href='/css/bootstrap.css', rel='stylesheet')
@@ -60,8 +62,6 @@ html(lang='en')
        script(type="text/javascript" src="/javascripts/canvas2svg.js")
        script(type="text/javascript" src="/javascripts/jvenn.min.js")
        script(type="text/javascript" src="/javascripts/jquery.twbsPagination.min.js")
-     if(title=='Login')
-       script(type="text/javascript" src="/javascripts/basket.full.min.js")
      if (title!='Help' || title!='About')
        script(type="text/javascript" src="/javascripts/jquery.slideout.js")
      //if (title=='Reagent Search')

@@ -1,20 +1,6 @@
 extends layout
 
 block content
-    script.
-            basket.require({ url: '/javascripts/jquery.min.js' }).then(function () {
-                basket.require({ url: '/javascripts/canvas2svg.js' });
-                basket.require({ url: '/javascripts/jvenn.min.js' });
-                basket.require({ url: '/javascripts/jquery.twbsPagination.min.js' });
-                basket.require({ url: '/javascripts/jquery.slideout.js' });
-                basket.require({ url: '/javascripts/bootstrap.min.js' });
-                basket.require({ url: '/javascripts/popup.js' });
-                basket.require({ url: '/javascripts/custom-file-input.js' });
-                basket.require({ url: '/javascripts/html2canvas.js' });
-                basket.require({ url: '/javascripts/jquery.maskedinput.min.js' });
-                basket.require({ url: '/javascripts/jsPDF-master/dist/jspdf.min.js' });
-                basket.require({ url: '/javascripts/spinner.js' });
-            });
     div(class="container login front", style="margin-top: 9%;margin-bottom:15px;min-height: 600px;")
          div(style="text-align: center;position: relative;")
              a(href="/search", class="sunlogos")

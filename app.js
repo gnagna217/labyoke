@@ -10,6 +10,7 @@ var passport = require('passport');
 var flash = require('connect-flash');
 var store  = new session.MemoryStore;
 var router = express.Router();
+var jadeStaticCache = require('jade-static-cache');
 i18n = require("i18n");
 /*var i18next = require('i18next'),
   FilesystemBackend = require('i18next-node-fs-backend'),
@@ -80,6 +81,11 @@ app.set('view options', {
 });
 
 app.use(require('stylus').middleware(__dirname + '/public'));
+
+var staticDir = path.join(__dirname, 'public');
+app.use(jadeStaticCache.static(staticDir, '/cache'));
+
+
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.set('views', path.join(__dirname, 'views'));
