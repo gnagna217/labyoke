@@ -27,23 +27,28 @@ html(lang='en')
       :staticCache
         link(rel="stylesheet" type="text/css" href="/css/datatables.min.css")
      if(title=='Reagent Search' || title=='Search' || title=='Share' || title=='Orders' || title=='Admins')
-      link(href='/css/popup.css', rel='stylesheet')
-     link(href='/css/bootstrap.css', rel='stylesheet')
-     link(href='/css/bl.css', rel='stylesheet')
-     //link(href='/css/fontello.css', rel='stylesheet')
-     link(href='/css/font-awesome.css', rel='stylesheet')
-     link(href='/css/animation.css', rel='stylesheet')
-     link(href='/css/hamburgers-master/dist/hamburgers.css', rel='stylesheet')
+      :staticCache
+        link(href='/css/popup.css', rel='stylesheet')
+     :staticCache
+      link(href='/css/bootstrap.css', rel='stylesheet')
+      link(href='/css/bl.css', rel='stylesheet')
+      //link(href='/css/fontello.css', rel='stylesheet')
+      link(href='/css/font-awesome.css', rel='stylesheet')
+      link(href='/css/animation.css', rel='stylesheet')
+      link(href='/css/hamburgers-master/dist/hamburgers.css', rel='stylesheet')
      if (title=='About Us')
-       link(href='/css/rotating-card.css', rel='stylesheet')
+       :staticCache
+        link(href='/css/rotating-card.css', rel='stylesheet')
      //if (title=='Login')
      //  link(href='/javascripts/assets/animate.css', rel='stylesheet')
      if (title=='Share' || title=='Admins')
-       link(href='/css/normalize.css', rel='stylesheet')
-       link(href='/css/component.css', rel='stylesheet')
-       link(href='//cdn.jsdelivr.net/chartist.js/latest/chartist.min.css', rel='stylesheet')
+       :staticCache
+        link(href='/css/normalize.css', rel='stylesheet')
+        link(href='/css/component.css', rel='stylesheet')
+        link(href='//cdn.jsdelivr.net/chartist.js/latest/chartist.min.css', rel='stylesheet')
      if (title=='Orders')
-      link(href='//cdn.jsdelivr.net/chartist.js/latest/chartist.min.css', rel='stylesheet')
+      :staticCache
+        link(href='//cdn.jsdelivr.net/chartist.js/latest/chartist.min.css', rel='stylesheet')
       //link(href="//fonts.googleapis.com/css?family=Reenie+Beanie:regular", rel="stylesheet", type="text/css")
      //if (title=='Reports')
      //  link(href='/css/reportbuttons.css', rel='stylesheet')
@@ -51,19 +56,23 @@ html(lang='en')
      meta(http-equiv='X-UA-Compatible', content='IE=edge')
      meta(name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no")
      meta(name='robots', content='noindex, nofollow')
-     script(type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js")
+     :staticCache 
+      script(type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js")
      if (title=='Orders' || title == "Share" || title=="Search" || title=="Help" || title=="Admins" || title=='Reagent Search')
-      script(type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.12/datatables.min.js")
+      :staticCache
+        script(type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.12/datatables.min.js")
      //if(title=='Search' || title == 'Reagent Search')
        //script(type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jqgrid/4.6.0/plugins/jquery.tablednd.js")
      //if(title == 'Pop')
      //  script(type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js")
      if (title=='Share')
-       script(type="text/javascript" src="/javascripts/canvas2svg.js")
-       script(type="text/javascript" src="/javascripts/jvenn.min.js")
-       script(type="text/javascript" src="/javascripts/jquery.twbsPagination.min.js")
+       :staticCache
+        script(type="text/javascript" src="/javascripts/canvas2svg.js")
+        script(type="text/javascript" src="/javascripts/jvenn.min.js")
+        script(type="text/javascript" src="/javascripts/jquery.twbsPagination.min.js")
      if (title!='Help' || title!='About')
-       script(type="text/javascript" src="/javascripts/jquery.slideout.js")
+       :staticCache
+        script(type="text/javascript" src="/javascripts/jquery.slideout.js")
      //if (title=='Reagent Search')
       // script(type="text/javascript" src="/javascripts/jquery.slideout.js")
      //if (title=='Search')
@@ -80,8 +89,9 @@ html(lang='en')
        //script(type="text/javascript" src="/javascripts/jquery.slideout.js")
      //if (title=='Orders' || title == "Share" || title=="Reports")
      //  script(type="text/javascript" src="/javascripts/fastclick.js")
-     link(rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon")
-     link(rel="icon" href="/images/favicon.ico" type="image/x-icon")
+     :staticCache
+      link(rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon")
+      link(rel="icon" href="/images/favicon.ico" type="image/x-icon")
 
      if scripts
        each script in scripts
@@ -239,22 +249,29 @@ html(lang='en')
                                 span(class="mobileonly2",style="margin-left: 5px;") #{i18n.__("layout.Logout2")}
 
      block content
-     script(type="text/javascript" src="/javascripts/bootstrap.min.js")
+     :staticCache
+      script(type="text/javascript" src="/javascripts/bootstrap.min.js")
      if(title=='Reagent Search' || title=='Search' || title=='Share' || title=='Orders' || title=='Admins')
-      script(type="text/javascript" src="/javascripts/popup.js")
+      :staticCache
+        script(type="text/javascript" src="/javascripts/popup.js")
      //if(title=='Login')
      //   script(type="text/javascript" src="/javascripts/image_preload.js")
      if (title=='Share' || title=='Admins')
-       script(type="text/javascript" src="/javascripts/custom-file-input.js")
+       :staticCache
+        script(type="text/javascript" src="/javascripts/custom-file-input.js")
      if(title=='Reports')
-       script(type="text/javascript" src="/javascripts/html2canvas.js")
+       :staticCache
+        script(type="text/javascript" src="/javascripts/html2canvas.js")
      if (title=='Reports' || title=='Account' || title=='Register')
-       script(type="text/javascript" src="/javascripts/jquery.maskedinput.min.js")
+       :staticCache
+        script(type="text/javascript" src="/javascripts/jquery.maskedinput.min.js")
      if (title=='Reports')
-       script(type="text/javascript" src="/javascripts/jsPDF-master/dist/jspdf.min.js")
+       :staticCache
+        script(type="text/javascript" src="/javascripts/jsPDF-master/dist/jspdf.min.js")
        //script(type="text/javascript" src="/javascripts/jsPDF-master/libs/html2pdf.js")
      if (title=='Reports' || title=='Account' || title=='Register' || title=='About Us' || title=='Change Password' || title=='Forgot Password' || title=='Register' || title=='Help' || title=='Orders' || (title=='Share' && !doing) || title=='Search' || title == 'Reagent Search' || title == 'Admins')
-       script(type="text/javascript" src="/javascripts/spinner.js")
+       :staticCache
+        script(type="text/javascript" src="/javascripts/spinner.js")
      //- if (title!='Forgot Password' && title!='Register' && title!='About Us' && title!='Help' && title!='Login' && title!='Change Password' && title != 'Home' && title != 'Pop' && title != 'Reagent Search' && title !='Search' && title !='Reports')
        //div(style="position: relative;width: 100%;text-align: center;z-index: -1;")
        //     img(src="/images/yoke4.png", alt="The Yoke", title="Yoke", class="yokelogofooter")
