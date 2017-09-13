@@ -764,7 +764,7 @@ html.hidescrollbar body{
     from { -webkit-transform: translateX(-100%); transform: translateX(-100%); }
 }
 
-.moveToleft{
+.movetoleft{
     -webkit-transition-property: width;
     -webkit-transition-duration: 2s;
     transition-property: width;
