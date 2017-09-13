@@ -9,7 +9,9 @@
   -webkit-font-smoothing: antialiased;
 }
 
-
+a{
+    outline:none;
+}
 .highlight
 {
     display: inline-block;
