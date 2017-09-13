@@ -37,7 +37,9 @@
                     var hidepageloadertimer = (elapsedTime > minloadingtime)? 0 : minloadingtime - elapsedTime
                      
                     setTimeout(function(){
-                        document.getElementById('pageloader').classList.add('dimissloader') // dismiss transition
+                        if(document.getElementById('pageloader') != null){
+                            document.getElementById('pageloader').classList.add('dimissloader') // dismiss transition
+                        }
                     }, hidepageloadertimer)
                      
                     setTimeout(function(){
