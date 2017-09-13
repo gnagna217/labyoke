@@ -313,7 +313,10 @@ html(lang='en')
               bubblenum1left = parseInt(bubblenum1left) - 10;
 
               if(bubblenum1left > 0){
+              //$(".bubble1").css("left", bubblenum1left);
               bubblenum1top = parseInt(bubblenum1top) - 3;
+              //$(".bubble1").css("top", bubblenum1top);
+              //$(".bubble1").css("position", "fixed");
               }
               }
 
@@ -333,9 +336,20 @@ html(lang='en')
                 l = 139 + p + 5.5;
                 console.log("changing left: " + l);
               }
+              //$(".roundaccount").css("left",l * -1);
+              //console.log("roundaccount left: " + l);
+              //var a = $('#menumyaccountadmin').offset().left;
               var b = $('.roundaccount').offset().left;
+              //var d = $('#menumyaccountadmin').width();
+              //console.log("a: " + a);
               console.log("b: " + b);
-              //$(".movetoleft").css("width", p);
+              //console.log("d: " + d);
+              //var c = parseInt(a) - parseInt(b) - parseInt(d) + 5.5;
+              //var c = parseInt(d) * -1;
+              //$(".roundaccount").css("left", c);
+              $(".movetoleft").css("width", p);
+              //console.log("roundaccount left: " + c);
+              
               }
               console.log("navpl width: " + w);
               console.log("============================");
@@ -347,7 +361,10 @@ html(lang='en')
               var bubblenum1top = $("#bubblenum1").offset().top;
               bubblenum1left = parseInt(bubblenum1left) - 10;
               if(bubblenum1left > 0){
+              //$(".bubble1").css("left", bubblenum1left);
               bubblenum1top = parseInt(bubblenum1top) - 3;
+              //$(".bubble1").css("top", bubblenum1top);
+              //$(".bubble1").css("position", "fixed");
               }
               }
 
@@ -367,9 +384,18 @@ html(lang='en')
                 l = 139 + p + 5.5;
                 console.log("changing left: " + l);
               }
+              //var a = $('#menumyaccountadmin').offset().left;
               var b = $('.roundaccount').offset().left;
+              //var d = $('#menumyaccountadmin').width();
+              //console.log("a: " + a);
               console.log("b: " + b);
-              //$(".movetoleft").css("width", p);
+              //console.log("d: " + d);
+              //var c = parseInt(a) - parseInt(b) + 5.5;
+              //var c = parseInt(d) * -1;
+              //$(".roundaccount").css("left", c);
+              $(".movetoleft").css("width", p);
+              //console.log("roundaccount left: " + c);
+              
               }
               console.log("navpl width: " + w);
               console.log("============================");
