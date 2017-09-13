@@ -10,10 +10,6 @@
 }
 
 a:active, span:active, div:active, a:focus, span:focus, div:focus,li:focus{
-    outline:none;
-}
-
-a:focus{
     outline:none !important;
 }
 
