@@ -254,8 +254,9 @@ html(lang='en')
      if(title=='Reagent Search' || title=='Search' || title=='Share' || title=='Orders' || title=='Admins')
       :staticCache
         script(type="text/javascript" src="/javascripts/popup.js")
-     //if(title=='Login')
-     //   script(type="text/javascript" src="/javascripts/image_preload.js")
+     if(title=='Login')
+      :staticCache
+        script(type="text/javascript" src="/javascripts/imageCache.js")
      if (title=='Share' || title=='Admins')
        :staticCache
         script(type="text/javascript" src="/javascripts/custom-file-input.js")

@@ -1,11 +1,13 @@
 extends layout
 
 block content
+    script.
+      var s=["images/en0.png", "images/bouee3.png", "images/fr0.png","images/yoke4.png", "images/movarrow2.gif"]; // or any array of image URLs
+      imageCache.pushArray(s, null, null);
     div(class="container login front", style="margin-top: 9%;margin-bottom:15px;min-height: 600px;")
          div(style="text-align: center;position: relative;")
              a(href="/search", class="sunlogos")
-                :staticCache
-                    img(src="/images/yoke4.png", alt="The Yoke",  title="Yoke", class="yokelogo")
+                img(src="/images/yoke4.png", alt="The Yoke",  title="Yoke", class="yokelogo")
              p(style="margin-bottom: 0px;margin-right: 5px;")
              //p(style="margin-bottom: -45px;margin-top: -2px;margin-right: 5px;")
                 //img(src="/images/arc_morning-1.png", alt="Sun",  title="Sun", class="suns", id="sun", style="width:360px")
@@ -79,15 +81,12 @@ block content
         div(class="help")
            span
              a(href="/login?lang=en")
-                :staticCache
-                    img(src="images/en0.png", alt="English", title="English", class="enlogin")
+                img(src="images/en0.png", alt="English", title="English", class="enlogin")
            a(href="/help" title="Help")
-            :staticCache
-                img(src="images/bouee3.png", alt="Help", title=i18n.__("login.helpLink"))
+            img(src="images/bouee3.png", alt="Help", title=i18n.__("login.helpLink"))
            span
              a(href="/login?lang=fr")
-                :staticCache
-                    img(src="images/fr0.png", alt="Français", title="Français", class="frlogin")                
+                img(src="images/fr0.png", alt="Français", title="Français", class="frlogin")                
      - if(latestshares != null && latestshares != undefined)
         div(class="slide-out-div desktabonly lineheight", style="display:none;position: fixed;bottom: 6px;top:-75px;")
             a(class="handle" href="last-transactions", style="right: -60px;")!=Content
