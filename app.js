@@ -86,8 +86,8 @@ app.use(require('stylus').middleware(__dirname + '/public'));
     maxAge: 86400
 }));
 */
-app.use(serveStatic(path.join(__dirname, '/public/images'), {
-  maxAge: '1d'
+app.use(serveStatic(path.join(__dirname, 'public/images'), {
+  maxAge: 86400
 }))
 
 var staticDir = path.join(__dirname, 'public');
