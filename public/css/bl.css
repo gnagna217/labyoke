@@ -3618,7 +3618,7 @@ span.num.greatherthanninetynine {
 
 @media (max-width: 580px){
 #pageloader{
-    display:flex;
+    /*display:flex;*/
 }
     .searchlogo{
         margin-top: 20%;
