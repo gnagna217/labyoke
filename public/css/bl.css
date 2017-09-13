@@ -9,7 +9,7 @@
   -webkit-font-smoothing: antialiased;
 }
 
-a:active, span:active, div:active{
+a:active, span:active, div:active,a:focus, span:focus, div:focus{
     outline:none;
 }
 
