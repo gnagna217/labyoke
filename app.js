@@ -11,6 +11,7 @@ var flash = require('connect-flash');
 var store  = new session.MemoryStore;
 var router = express.Router();
 var jadeStaticCache = require('jade-static-cache');
+var cacheControl = require('express-cache-controller');
 i18n = require("i18n");
 /*var i18next = require('i18next'),
   FilesystemBackend = require('i18next-node-fs-backend'),
@@ -81,7 +82,9 @@ app.set('view options', {
 });
 
 app.use(require('stylus').middleware(__dirname + '/public'));
-
+app.use(cacheControl({
+    maxAge: 86400
+}));
 var staticDir = path.join(__dirname, 'public');
 app.use(jadeStaticCache.static(staticDir, '/cache'));
 
