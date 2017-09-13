@@ -28,25 +28,24 @@
             var elapsedTime
             var dismissonloadfunc, maxloadingtimer
              
+            if(document.getElementById('pageloader') != null){
             if (animation && document.documentElement && document.documentElement.classList){
                 document.documentElement.classList.add('hidescrollbar')
                 
-                if(document.getElementById('pageloader') != null){
-                    window.addEventListener('load', dismissonloadfunc = function(){ // when page loads
-                        clearTimeout(maxloadingtimer) // cancel dismissal of transition after maxloadingtime time
-                        elapsedTime = new Date() - startTime // get time elapsed once page has loaded
-                        var hidepageloadertimer = (elapsedTime > minloadingtime)? 0 : minloadingtime - elapsedTime
-                         
-                        setTimeout(function(){
-                            document.getElementById('pageloader').classList.add('dimissloader') // dismiss transition
-                        }, hidepageloadertimer)
-                         
-                        setTimeout(function(){
-                            document.documentElement.classList.remove('hidescrollbar')
-                        }, hidepageloadertimer + 100) // 100 is the duration of the fade out effect
+                window.addEventListener('load', dismissonloadfunc = function(){ // when page loads
+                    clearTimeout(maxloadingtimer) // cancel dismissal of transition after maxloadingtime time
+                    elapsedTime = new Date() - startTime // get time elapsed once page has loaded
+                    var hidepageloadertimer = (elapsedTime > minloadingtime)? 0 : minloadingtime - elapsedTime
                      
-                    }, false)
-                }
+                    setTimeout(function(){
+                        document.getElementById('pageloader').classList.add('dimissloader') // dismiss transition
+                    }, hidepageloadertimer)
+                     
+                    setTimeout(function(){
+                        document.documentElement.classList.remove('hidescrollbar')
+                    }, hidepageloadertimer + 100) // 100 is the duration of the fade out effect
+                 
+                }, false)
                  
                 maxloadingtimer = setTimeout(function(){ // force dismissal of page transition after maxloadingtime time
                     window.removeEventListener('load', dismissonloadfunc, false) // cancel onload event function call
@@ -61,6 +60,7 @@
             }
             else{
                 document.getElementById('pageloader').style.display = 'none'
+            }
             }
          
         })();
