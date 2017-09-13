@@ -17,7 +17,7 @@ block content
                 span!= i18n.__("register.desc1")
                 span(class="labColor")= i18n.__("register.title2")
                 span!= i18n.__("register.subtitle")
-            div(id="ctl00_Div2" class="frontdiv")
+            div(id="ctl00_Div2" class="frontdiv results2")
                 div(class="alert alert-danger alertshadow", id="messagejs1", style="display:none")
                 if message
                     div(class="alert alert-danger alertshadow")!= message
@@ -38,7 +38,7 @@ block content
                             input(name="regtel" type="text" id="tel" class="form-control" placeholder=i18n.__("register.form.tel"))
                     div(class="buttons", id="regbutton1")
                         button.btn.btn-success.btn-lg.btn-block.shadow.resizebutton(type='button') #{i18n.__("register.form.button1")}
-                        img(src="/images/add.png", alt="The Lab", title="Lab", style="border-width:0px; width: 45px; height:57px; margin-top: -45px; float: right;position:relative;left:25px;", class="noshowmobile767")
+                        img(src="/images/add.png", alt="The Lab", title="Lab", style="border-width:0px; width: 45px; height:57px; margin-top: -45px; float: right;position:relative;left:25px;display:none", class="noshowmobile767")
                 script.
                     $('#regbutton1').click(function() {
                         console.log("regfirstname: " + $('#regfirstname').val());

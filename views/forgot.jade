@@ -14,7 +14,7 @@ block content
         if !userfound && !usernotfound
             h1= i18n.__("forgot.title")
             p(class="centralize")!= i18n.__("forgot.subtitle")
-            div(id="ctl00_Div2" class="frontdiv")
+            div(id="ctl00_Div2" class="frontdiv results2")
                 if message
                     div(class="alert alert-danger")!= message
                 form(action="/forgot" method="post")
@@ -24,7 +24,7 @@ block content
                             input(name="forgotuser" type="text" id="forgotuser" class="form-control" placeholder=i18n.__("forgot.username") style="border-color:#8a6d3b")
                         div(class="buttons")
                         button.btn.btn-success.btn-lg.btn-block.shadow.resizebutton(type='submit')= i18n.__("forgot.button")
-                        img(src="images/envelope_email.png", alt="The Lab", title="Lab", style="border-width:0px; width: 45px; margin-top: -44px;float: right;position:relative;left:25px;", class="noshowmobile767")
+                        img(src="images/envelope_email.png", alt="The Lab", title="Lab", style="border-width:0px; width: 45px; margin-top: -44px;float: right;position:relative;left:25px;display:none;", class="noshowmobile767")
 
         if userfound
             div(id="ctl00_Div2" class="frontdivs")
