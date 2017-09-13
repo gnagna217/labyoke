@@ -13,6 +13,13 @@ a:active, span:active, div:active,a:focus, span:focus, div:focus{
     outline:none;
 }
 
+.moveToleft{
+    -webkit-transition-property: width;
+    -webkit-transition-duration: 2s;
+    transition-property: width;
+    transition-duration: 2s;
+}
+
 .highlight
 {
     display: inline-block;
@@ -757,7 +764,12 @@ html.hidescrollbar body{
     from { -webkit-transform: translateX(-100%); transform: translateX(-100%); }
 }
 
-
+.moveToleft{
+    -webkit-transition-property: width;
+    -webkit-transition-duration: 2s;
+    transition-property: width;
+    transition-duration: 2s;
+}
 
 .alertshadow{
     border: none; 
