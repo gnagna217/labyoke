@@ -1,9 +1,6 @@
 extends layout
 
 block content
-    script.
-      //var s=["images/en0.png", "images/bouee3.png", "images/fr0.png","images/yoke4.png", "images/movarrow2.gif"]; // or any array of image URLs
-      //imageCache.pushArray(s, function(){}, function(){});
     div(class="container login front", style="margin-top: 9%;margin-bottom:15px;min-height: 600px;")
          div(style="text-align: center;position: relative;")
              a(href="/search", class="sunlogos")
@@ -122,6 +119,9 @@ block content
     span(class="desktabonly", id="checkdisplay")
     script.
         $( document ).ready(function() {
+        var s=["images/en0.png", "images/bouee3.png", "images/fr0.png","images/yoke4.png", "images/movarrow2.gif"];
+        imageCache.pushArray(s, function(){}, function(){});
+
         console.log( "login document loaded" );
             if ($("#checkdisplay").css("display") == "none" ){
                     $('.slide-out-div').hide();
