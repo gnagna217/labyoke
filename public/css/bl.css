@@ -13,13 +13,6 @@ a:active, span:active, div:active, a:focus, span:focus, div:focus,li:focus{
     outline:none !important;
 }
 
-.moveToleft{
-    -webkit-transition-property: width;
-    -webkit-transition-duration: 2s;
-    transition-property: width;
-    transition-duration: 2s;
-}
-
 .highlight
 {
     display: inline-block;
@@ -765,8 +758,7 @@ html.hidescrollbar body{
 }
 
 .movetoleft{
-    -webkit-transition-property: width;
-    -webkit-transition-duration: 1s;
+    -webkit-transition: -webkit-transform 0.3s ease 0s, opacity 0.2s ease 0s;
     transition-property: width;
     transition-duration: 1s;
 }
