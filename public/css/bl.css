@@ -766,9 +766,9 @@ html.hidescrollbar body{
 
 .movetoleft{
     -webkit-transition-property: width;
-    -webkit-transition-duration: 2s;
+    -webkit-transition-duration: 1s;
     transition-property: width;
-    transition-duration: 2s;
+    transition-duration: 1s;
 }
 
 .alertshadow{
