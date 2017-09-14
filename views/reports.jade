@@ -342,7 +342,7 @@ block content
 									label(class="labelcheck shadow",for="reportCatalogMoney")
 							//input(type="checkbox" name="reportCatalogMoney" id="reportCatalogMoney" value="catalogNumber" style="margin-top: -13px;")
 							div(style="max-width:100%; margin-top: 90px;margin-bottom:10px")
-								img(src="images/logo_one_bottle_L_3.png", alt="The Lab", title="Lab", class="reportbutton")
+								//img(src="images/logo_one_bottle_L_3.png", alt="The Lab", title="Lab", class="reportbutton")
 								button.btn.btn-success.btn-lg.btn-block.reportbutton2.shadow(type="submit",value="Report",name="submit")= i18n.__("reports.money.button")
 						if(resultsMoney != null && resultsMoney !="")
 							script(type="text/javascript" src="/javascripts/jspdf.js")
@@ -456,7 +456,7 @@ block content
 										- var lab = ob[prop].labname
 										option(value=lab) #{lab}
 							div(style="max-width:100%; margin-top: 20px;margin-bottom:10px")
-								img(src="images/logo_one_bottle_R_3.png", alt="The Lab", title="Lab", class="reportbutton")
+								//img(src="images/logo_one_bottle_R_3.png", alt="The Lab", title="Lab", class="reportbutton")
 								button.btn.btn-success.btn-lg.btn-block.reportbutton2.shadow(type="submit",value="Report",name="submit")= i18n.__("reports.orders.button")
 						span(id="triggerSafariOrder")
 						if(resultsOrders != null && resultsOrders !="")
@@ -587,7 +587,7 @@ block content
 							input(name="reportDateTo" style="margin-left: 40px;margin-bottom:10px;margin-top: -13px;" type="tel" id="reportDateTo" class="form-control")
 							
 							div(style="max-width:100%; margin-top: 20px;margin-bottom:10px")
-								img(src="images/logo_one_bottle_L_3.png", alt="The Lab", title="Lab", class="reportbutton")
+								//img(src="images/logo_one_bottle_L_3.png", alt="The Lab", title="Lab", class="reportbutton")
 								button.btn.btn-success.btn-lg.btn-block.reportbutton2.shadow(type="submit",value="Report",name="submit")= i18n.__("reports.shares.button")
 						if(resultsShares != null && resultsShares !="")
 							script(type="text/javascript" src="/javascripts/jspdf.js")
@@ -744,7 +744,7 @@ block content
 									input(type="checkbox" name="reportCatalogInsuff" id="reportCatalogInsuff" value="catalogNumber")
 									label(class="labelcheck shadow",for="reportCatalogInsuff")
 							div(style="max-width:100%; margin-top: 90px;margin-bottom:10px")
-								img(src="images/logo_one_bottle_R_3.png", alt="The Lab", title="Lab", class="reportbutton")
+								//img(src="images/logo_one_bottle_R_3.png", alt="The Lab", title="Lab", class="reportbutton")
 								button.btn.btn-success.btn-lg.btn-block.reportbutton2.shadow(type="submit",value="Report",name="submit")= i18n.__("reports.insuff.button")
 						if(resultsInsuff != null && resultsInsuff !="")
 							- var file_insuff = i18n.__("reports.insuff.file") + labinsuff + ".pdf" 
