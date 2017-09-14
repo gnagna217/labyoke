@@ -40,7 +40,7 @@ block content
 				p!= i18n.__("shares.non.subtitle")
 				div(class="searchlogo", style="margin-top:50px")
 					span(class="fa fa-cubes" style=" color: #3d9dcb; font-size: 120pt; ")
-				div(class="threepointssep", style="margin-bottom: 20px;margin-top: 20px;")
+				//div(class="threepointssep", style="margin-bottom: 20px;margin-top: 20px;")
 			if(mysharesrequest != null && mysharesrequest.length>0)
 				- var output = mysharesrequest.filter(function(x){return x.status!="fulfilled"});
 				h4= i18n.__("shares.subtitle1")
