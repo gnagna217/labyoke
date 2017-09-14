@@ -31,8 +31,8 @@ block content
 			- checkedstrInsuff = true
 		form(action="reportSelect", method="post", class="adjustwidthreports", style="display:none")
 			div(class="buttonss")
-				span(class="fa fa-sort" style="color: #8a6d3b; float: right; top: 25px; left: -10px; position: relative; font-size: 14pt; ")
-				select(name="reportSelect" type="text" id="reportSelect" class="form-control" style="border-color:#3d9dcb;margin-bottom:10px" placeholder=i18n.__("reports.form.select"))
+				span(class="fa fa-sort" style="color: #8a6d3b; float: right; top: 25px; left: -10px; position: relative; font-size: 14pt;z-index:-1;")
+				select(name="reportSelect" type="text" id="reportSelect" class="form-control" style="border-color:#3d9dcb;margin-bottom:10px;z-index: 1;background-color: transparent;" placeholder=i18n.__("reports.form.select"))
 					option(value="reportNone",style="font-weight:bold")=i18n.__("reports.form.option1")
 					option(value="reportMoney" selected=(checkedstrMoney===true ? "selected" : undefined))=i18n.__("reports.form.option2")
 					option(value="reportOrders" selected=(checkedstrOrders===true ? "selected" : undefined))=i18n.__("reports.form.option3")
@@ -313,8 +313,8 @@ block content
 							input(name="reportDateToMoney" style="margin-left: 40px;margin-top: -13px;margin-bottom:10px;margin-top: -13px;" type="tel" id="reportDateToMoney" class="form-control")
 
 							label(style="width: 100%;font-weight: bold;margin-top:10px;margin-bottom: 0px;")!= i18n.__("reports.money.lab.label") + dept + "</span>:"
-							span(class="fa fa-sort" style="color: #8a6d3b; float: right; top: 25px; left: -10px; position: relative; font-size: 14pt; ")
-							select(name="reportLabMoney" type="text" id="reportLabMoney" class="form-control" style="border-color:#3d9dcb;margin-bottom:20px" placeholder=i18n.__("reports.money.labselect"))
+							span(class="fa fa-sort" style="color: #8a6d3b; float: right; top: 25px; left: -10px; position: relative; font-size: 14pt;z-index:-1;")
+							select(name="reportLabMoney" type="text" id="reportLabMoney" class="form-control" style="border-color:#3d9dcb;margin-bottom:20px;z-index: 1;background-color: transparent;" placeholder=i18n.__("reports.money.labselect"))
 								option(value="all")=i18n.__("reports.money.lab.option")
 								if(categories != undefined)
 									- var ob = categories
@@ -447,8 +447,8 @@ block content
 							input(name="reportDateToOrders" style="margin-left: 40px;margin-bottom:10px; margin-top: -13px;" type="tel" id="reportDateToOrders" class="form-control")
 							
 							label(style="width: 100%;font-weight: bold;margin-top:10px;margin-bottom: 0px;")!= i18n.__("reports.orders.lab.label") + dept + "</span>:"
-							span(class="fa fa-sort" style="color: #8a6d3b; float: right; top: 25px; left: -10px; position: relative; font-size: 14pt; ")
-							select(name="reportLabOrders" type="text" id="reportLabOrders" class="form-control" style="border-color:#3d9dcb;margin-bottom:10px" placeholder=i18n.__("reports.orders.labselect"))
+							span(class="fa fa-sort" style="color: #8a6d3b; float: right; top: 25px; left: -10px; position: relative; font-size: 14pt;z-index:-1")
+							select(name="reportLabOrders" type="text" id="reportLabOrders" class="form-control" style="border-color:#3d9dcb;margin-bottom:10px;z-index: 1;background-color: transparent;" placeholder=i18n.__("reports.orders.labselect"))
 								option(value="all")= i18n.__("reports.orders.lab.option")
 								if(categories != undefined)
 									- var ob = categories
@@ -723,8 +723,8 @@ block content
 					form(action="reportInsuff", method="post")
 						div(class="buttonss")
 							label(style="width: 100%;font-weight: bold;margin-top:10px;margin-bottom: 0px;")!= i18n.__("reports.insuff.lab.label") + dept + "</span>:"
-							span(class="fa fa-sort" style="color: #8a6d3b; float: right; top: 25px; left: -10px; position: relative; font-size: 14pt; ")
-							select(name="reportLabInsuff" type="text" id="reportLabInsuff" class="form-control" style="border-color:#3d9dcb;margin-bottom:20px" placeholder=i18n.__("reports.insuff.labselect"))
+							span(class="fa fa-sort" style="color: #8a6d3b; float: right; top: 25px; left: -10px; position: relative; font-size: 14pt;z-index:-1")
+							select(name="reportLabInsuff" type="text" id="reportLabInsuff" class="form-control" style="border-color:#3d9dcb;margin-bottom:20px;z-index: 1;background-color: transparent;" placeholder=i18n.__("reports.insuff.labselect"))
 								option(value="all")= i18n.__("reports.insuff.lab.option")
 								if(categories != undefined)
 									- var ob = categories
