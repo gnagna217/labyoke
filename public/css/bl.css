@@ -764,6 +764,7 @@ html.hidescrollbar body{
     /*-webkit-transition: -webkit-transform 0.3s ease 0s, opacity 0.2s ease 0s;
     transition-property: width;
     transition-duration: 1s;*/
+    width:150px;
 }
 
 .alertshadow{
@@ -3201,6 +3202,9 @@ margin-top:0px;
 }
 
 @media (max-width: 767px){
+.movetoleft{
+    width:0px;
+}
 .containertop{
     margin-top: 9%;
 }
