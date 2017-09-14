@@ -67,7 +67,9 @@ block content
                               div(class=" accountdetail accountdetail-header labColor animated fadeInUp", style="/*font-weight:bold;border-width: thin;width: 70px;*/")=i18n.__("account.form.lang")
                             div(class="wrapped accountdetailMargin")
                               div(style="margin-bottom:30px;", class="accountdetail accountdetailRowMargin animated fadeInDown")
-                                - var nametrunc = name.substr(0, 18) + '...'
+                                - var nametrunc = name
+                                - if(nametrunc.length > 19)
+                                  - nametrunc = nametrunc.substr(0, 18) + '...'
                                 span(id="name")!=nametrunc + " "
                                 form(action="/changeDetails" id="changename" method="post" class="nameform" style="top: -5px; position: relative;")
                                   input(name="valuedetail" type="text" id="valuedetail" placeholder=nametrunc)
@@ -76,7 +78,9 @@ block content
                                 span(onclick="pencilname()", id="pencilname", class="fa fa-pencil labColor")
                                 span(onclick="updatenameform()", id="checkname", class="fa fa-check labColor")
                               div(style="margin-bottom:30px;", class="accountdetail accountdetailRowMargin animated fadeInDown")
-                                - var surnametrunc = surname.substr(0, 18) + '...'
+                                - var surnametrunc = surname
+                                - if(surnametrunc.length > 19)
+                                  - surnametrunc = surnametrunc.substr(0, 18) + '...'
                                 span(id="surname")!= surnametrunc + " "
                                 form(action="/changeDetails" id="changesurname" method="post" class="surnameform" style="top: -5px; position: relative;")
                                   input(name="valuedetail" type="text" id="valuedetail" placeholder=surnametrunc)
@@ -84,7 +88,10 @@ block content
                                   input(name="formemail" type="hidden" id="formemail" value=email)
                                 span(onclick="pencilsurname()", id="pencilsurname", class="fa fa-pencil labColor")
                                 span(onclick="updatesurnameform()", id="checksurname", class="fa fa-check labColor")
-                              div(style="margin-bottom:30px;", class="accountdetail accountdetailRowMargin animated fadeInDown") #{email}
+                              - var emailtrunc = email
+                              - if(email.length > 19)
+                                - emailtrunc = emailtrunc.substr(0, 18) + '...'
+                              div(style="margin-bottom:30px;", class="accountdetail accountdetailRowMargin animated fadeInDown")!= emailtrunc
                               div(style="margin-bottom:30px;", class="accountdetail accountdetailRowMargin animated fadeInDown")
                                 span(id="tel")!= tel + " "
                                 form(action="/changeDetails" id="changetel" method="post" class="telform" style="top: -5px; position: relative;")
@@ -93,7 +100,10 @@ block content
                                   input(name="formemail" type="hidden" id="formemail" value=email)
                                 span(onclick="penciltel()", id="penciltel" class="fa fa-pencil labColor")
                                 span(onclick="updatetelform()", id="checktel" class="fa fa-check labColor")
-                              div(style="margin-bottom:30px;", class="accountdetail accountdetailRowMargin animated fadeInDown") #{lab}
+                              - var labtrunc = lab
+                                - if(labtrunc.length > 19)
+                                  - labtrunc = labtrunc.substr(0, 18) + '...'
+                              div(style="margin-bottom:30px;", class="accountdetail accountdetailRowMargin animated fadeInDown")!= labtrunc
                               div(style="margin-bottom:30px;width: 75px;", class="accountdetail accountdetailRowMargin animated fadeInDown")
                                 span(id="lang")
                                 form(action="/changeDetails" id="changelang" method="post" class="langform" style="top: -25px; position: relative;")
