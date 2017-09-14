@@ -9,6 +9,9 @@
   -webkit-font-smoothing: antialiased;
 }
 
+.containertop{
+    margin-top: 6%;
+}
 a:active, span:active, div:active, a:focus, span:focus, div:focus,li:focus, form:focus{
     outline:none !important;
 }
@@ -3617,6 +3620,9 @@ span.num.greatherthanninetynine {
 
 
 @media (max-width: 580px){
+.containertop{
+    margin-top: 9%;
+}
 #pageloader{
     /*display:flex;*/
 }
