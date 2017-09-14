@@ -2216,6 +2216,7 @@ input:-webkit-autofill:hover {
     line-height: 1.42857143;
     border: 1px solid #ccc;
     border-radius: 4px;
+    background-color: transparent;
 }
 table.dataTable thead .sorting_desc {
     background-image: url(/images/sort_desc.png);
