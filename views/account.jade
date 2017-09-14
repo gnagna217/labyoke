@@ -68,8 +68,9 @@ block content
                             div(class="wrapped accountdetailMargin")
                               div(style="margin-bottom:30px;", class="accountdetail accountdetailRowMargin animated fadeInDown")
                                 span(id="name")!=name + " "
+                                - var nametrunc = name.substr(1, 18) + '...'
                                 form(action="/changeDetails" id="changename" method="post" class="nameform" style="top: -5px; position: relative;")
-                                  input(name="valuedetail" type="text" id="valuedetail" placeholder=name)
+                                  input(name="valuedetail" type="text" id="valuedetail" placeholder=nametrunc)
                                   input(name="column" type="hidden" id="column" value="name")
                                   input(name="formemail" type="hidden" id="formemail" value=email)
                                 span(onclick="pencilname()", id="pencilname", class="fa fa-pencil labColor")
