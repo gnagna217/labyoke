@@ -14,7 +14,7 @@ block content
         if !userfound && !usernotfound
             h1= i18n.__("forgot.title")
             p(class="centralize")!= i18n.__("forgot.subtitle")
-            div(id="ctl00_Div2" class="frontdiv results2")
+            div(id="ctl00_Div2" class="frontdiv results")
                 if message
                     div(class="alert alert-danger")!= message
                 form(action="/forgot" method="post")
