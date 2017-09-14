@@ -2960,6 +2960,9 @@ input::-webkit-inner-spin-button {
 }
 
  @media (max-width: 992px) {
+.movetoleft{
+    width:  115px;
+}
 .noshowmobile992{
     display: none !important;
 }
@@ -3203,7 +3206,7 @@ margin-top:0px;
 
 @media (max-width: 767px){
 .movetoleft{
-    width:0px;
+    width:  0px;
 }
 .containertop{
     margin-top: 9%;
