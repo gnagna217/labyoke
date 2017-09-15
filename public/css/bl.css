@@ -845,7 +845,7 @@ display: none;
 }
 
 .threedown{
-    box-shadow: 0px 30px #2975b4, 0px -30px #8a6d3b;
+    box-shadow: 0px 30px #2975b4, 0px -30px #8a6d3b !important;
     margin-top:10px;
 }
 .threepointssep{
@@ -3116,7 +3116,7 @@ margin-top:0px;
 
 @media (max-width: 900px) {
 .threedown{
-    box-shadow: 30px 0 #2975b4, -30px 0 #8a6d3b;
+    box-shadow: 30px 0 #2975b4, -30px 0 #8a6d3b !important;
     margin-top:0px;
 }
     .positionbutton{
