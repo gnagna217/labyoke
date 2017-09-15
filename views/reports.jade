@@ -207,7 +207,14 @@ block content
 
 					//$( ".labelexpandemood" ).on("click touchend", function(e) {
 					$( ".labelexpandmood" ).click(function() {
-					$(".reportlabels").removeClass("reportlabels2");
+					
+						$(".reportlabels").removeClass("reportlabels2");
+						$(".labelexpandmood").css("top","-44px");
+					
+						if($(window).width() > 900){
+							$(".labelexpandmood").css("top","0px");
+						}
+					
 					$('#reportOrders').hide();
 					$('#reportShares').hide();
 					$('#reportMoney').hide();
