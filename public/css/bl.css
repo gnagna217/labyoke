@@ -1516,6 +1516,7 @@ a {
     width: 95%;
     margin-top: 40px;
     margin: 0 auto;
+    margin-top: -40px;
 }
 
 .reportbutton2{
@@ -2997,6 +2998,7 @@ padding-right: 0px;
 }
 .restrictreport{
     width: 100%;
+    margin-top: 0px;
 }
 .centralize{
     width: 50%;
