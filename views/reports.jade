@@ -54,7 +54,12 @@ block content
 				script.
 					//$(".labelexpand").on("click touchend", function(e) {
 					$( ".labelexpand" ).click(function() {
-					$(".reportlabels").addClass("reportlabels2");
+					if($('#reportMoney').is(':visible')){
+						$(".reportlabels").removeClass("reportlabels2");
+					} else {
+						$(".reportlabels").addClass("reportlabels2");
+					}
+					
 					$(".reportlabels").removeClass("animated fadeInRight");
 
 					if($('#reportMoney').is(':hidden') && $('#reportOrders').is(':hidden') && $('#reportShares').is(':hidden') && $('#reportInsuff').is(':hidden')){
@@ -86,7 +91,11 @@ block content
 
 					//$( ".labelexpandedit" ).on("click touchend", function(e) {
 					$( ".labelexpandedit" ).click(function() {
-						$(".reportlabels").toggleClass("reportlabels2");
+						if($('#reportOrders').is(':visible')){
+							$(".reportlabels").removeClass("reportlabels2");
+						} else {
+							$(".reportlabels").addClass("reportlabels2");
+						}
 						$(".reportlabels").removeClass("animated fadeInRight");
 
 						if($('#reportMoney').is(':hidden') && $('#reportOrders').is(':hidden') && $('#reportShares').is(':hidden') && $('#reportInsuff').is(':hidden')){
@@ -115,7 +124,11 @@ block content
 
 					//$( ".labelexpandadd" ).on("click touchend", function(e) {
 					$( ".labelexpandadd" ).click(function() {
-					$(".reportlabels").toggleClass("reportlabels2");
+					if($('#reportShares').is(':visible')){
+						$(".reportlabels").removeClass("reportlabels2");
+					} else {
+						$(".reportlabels").addClass("reportlabels2");
+					}
 						$(".reportlabels").removeClass("animated fadeInRight");
 
 						if($('#reportMoney').is(':hidden') && $('#reportOrders').is(':hidden') && $('#reportShares').is(':hidden') && $('#reportInsuff').is(':hidden')){
@@ -146,7 +159,11 @@ block content
 
 					//$( ".labelexpandrules" ).on("click touchend", function(e) {
 					$( ".labelexpandrules" ).click(function() {
-					$(".reportlabels").addClass("reportlabels2");
+					if($('#reportInsuff').is(':visible')){
+						$(".reportlabels").removeClass("reportlabels2");
+					} else {
+						$(".reportlabels").addClass("reportlabels2");
+					}
 						$(".reportlabels").removeClass("animated fadeInRight");
 
 						if($('#reportMoney').is(':hidden') && $('#reportOrders').is(':hidden') && $('#reportShares').is(':hidden') && $('#reportInsuff').is(':hidden')){
