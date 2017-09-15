@@ -2987,6 +2987,9 @@ input::-webkit-inner-spin-button {
 }
 
  @media (max-width: 992px) {
+.restrictreport2{
+    padding-right: 0px;
+}
 .movetoleft{
     width:  115px;
 }
@@ -3119,7 +3122,6 @@ margin-top:0px;
 .restrictreport2{
     float: none;
     width: 100% !important;
-    padding-right: 0px;
 }
 .reportweek{
     top: -44px;
