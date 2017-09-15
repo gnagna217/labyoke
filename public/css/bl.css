@@ -3115,6 +3115,10 @@ margin-top:0px;
 }
 
 @media (max-width: 900px) {
+.threedown{
+    box-shadow: 30px 0 #2975b4, -30px 0 #8a6d3b;
+    margin-top:0px;
+}
     .positionbutton{
         left: 21%;
     }
