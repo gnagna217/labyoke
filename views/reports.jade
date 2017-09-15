@@ -211,9 +211,9 @@ block content
 						$(".reportlabels").removeClass("reportlabels2");
 						$(".labelexpandmood").css("top","-44px");
 					
-						if($(window).width() > 900){
+						/*if($(window).width() > 900){
 							$(".labelexpandmood").css("top","0px");
-						}
+						}*/
 					
 					$('#reportOrders').hide();
 					$('#reportShares').hide();
@@ -245,7 +245,7 @@ block content
 						console.log("source");
 						var filetext = "#{i18n.__("reports.download.today.file")}";
 						//var string = pdf2.output('datauristring');
-						pdf2.save(filetext);
+						//pdf2.save(filetext);
 						$('.intro').hide();
 						$('.checkintro').addClass("noshow");
 					});
