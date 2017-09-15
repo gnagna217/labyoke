@@ -38,7 +38,7 @@ block content
 					option(value="reportOrders" selected=(checkedstrOrders===true ? "selected" : undefined))=i18n.__("reports.form.option3")
 					option(value="reportShares" selected=(checkedstrShares===true ? "selected" : undefined))=i18n.__("reports.form.option4")
 					option(value="reportInsuff" selected=(checkedstrInsuff===true ? "selected" : undefined))=i18n.__("reports.form.option5")
-		div
+		div(style="margin-top:-25px")
 			div(class="labelbuttons reportlabels reportlabels2")
 				input(id="toggle" type="checkbox" class="inputexpand")
 				label(for="toggle", class="labelexpand animated fadeInUp", style="z-index: 0;position: relative;/*top: -44px;*/ display: inline-block;")!= i18n.__("reports.label.savings")
