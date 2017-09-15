@@ -3738,6 +3738,9 @@ span.num.greatherthanninetynine {
 
 
  @media (max-width: 440px) {
+.reportlabels{
+    margin-top: 5%;
+}
 .share-container, .container, .share-container2, .order-container{
     margin-top: 5px;
 }
