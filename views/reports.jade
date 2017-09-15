@@ -44,7 +44,7 @@ block content
 				label(for="toggle", class="labelexpand animated fadeInUp", style="z-index: 0;position: relative;/*top: -44px;*/ display: inline-block;")!= i18n.__("reports.label.savings")
 				input(id="toggleedit" type="checkbox" class="inputexpandedit")
 				label(for="toggleedit", class="labelexpandedit animated fadeInDown", style="z-index: 0;display: inline-block;")!= i18n.__("reports.label.orders")
-				label(class="labelexpandmood animated fadeInUp reportweek", style="z-index: 0;position: relative;/*top: -44px;*/ display: inline-block;background-color: rgba(138, 109, 59, 0.81);")!= i18n.__("reports.label.week")
+				label(class="labelexpandmood animated fadeInUp reportweek", style="z-index: 0;position: relative;top: -44px; display: inline-block;background-color: rgba(138, 109, 59, 0.81);")!= i18n.__("reports.label.week")
 				//span(style="color: #00bc00;" class="fa fa-volume-up fa-rotate-270 animated rollIn")
 				input(id="toggleadd" type="checkbox" class="inputexpandadd")
 				label(for="toggleadd", class="labelexpandadd animated fadeInDown", style="z-index: 0;display: inline-block;")!= i18n.__("reports.label.inventory")       
@@ -54,15 +54,15 @@ block content
 				script.
 					//$(".labelexpand").on("click touchend", function(e) {
 					$( ".labelexpand" ).click(function() {
-					$(".reportlabels").toggleClass("reportlabels2");
-					$(".reportlabels").removeClass("animated");
+					$(".reportlabels").addClass("reportlabels2");
+					$(".reportlabels").removeClass("animated fadeInRight");
 
 					if($('#reportMoney').is(':hidden') && $('#reportOrders').is(':hidden') && $('#reportShares').is(':hidden') && $('#reportInsuff').is(':hidden')){
 					console.log("apply animated");
 					$(".reportlabels").addClass("animated fadeInRight");
 					}
 
-					$("#reportMoney").toggleClass("animated fadeInUp");
+					//$("#reportMoney").toggleClass("animated fadeInUp");
 
 					$( this ).toggleClass( "highlightlabel" );
 					//$('.containerreport').hide();
@@ -87,14 +87,14 @@ block content
 					//$( ".labelexpandedit" ).on("click touchend", function(e) {
 					$( ".labelexpandedit" ).click(function() {
 						$(".reportlabels").toggleClass("reportlabels2");
-						$(".reportlabels").removeClass("animated");
+						$(".reportlabels").removeClass("animated fadeInRight");
 
 						if($('#reportMoney').is(':hidden') && $('#reportOrders').is(':hidden') && $('#reportShares').is(':hidden') && $('#reportInsuff').is(':hidden')){
 							console.log("apply animated");
 							$(".reportlabels").addClass("animated fadeInRight");
 						}
 					
-						$("#reportOrders").toggleClass("animated fadeInUp");
+						//$("#reportOrders").toggleClass("animated fadeInUp");
 						$( this ).toggleClass( "highlightlabel" );
 						//$('.containerreport').hide();
 					$('.labelexpand').removeClass( "highlightlabel" );
@@ -116,14 +116,14 @@ block content
 					//$( ".labelexpandadd" ).on("click touchend", function(e) {
 					$( ".labelexpandadd" ).click(function() {
 					$(".reportlabels").toggleClass("reportlabels2");
-						$(".reportlabels").removeClass("animated");
+						$(".reportlabels").removeClass("animated fadeInRight");
 
 						if($('#reportMoney').is(':hidden') && $('#reportOrders').is(':hidden') && $('#reportShares').is(':hidden') && $('#reportInsuff').is(':hidden')){
 							console.log("apply animated");
 							$(".reportlabels").addClass("animated fadeInRight");
 						}
 					
-						$("#reportShares").toggleClass("animated fadeInUp");
+						//$("#reportShares").toggleClass("animated fadeInUp");
 
 						$( this ).toggleClass( "highlightlabel" );
 						//$('.containerreport').hide();
@@ -146,15 +146,13 @@ block content
 
 					//$( ".labelexpandrules" ).on("click touchend", function(e) {
 					$( ".labelexpandrules" ).click(function() {
-					$(".reportlabels").toggleClass("reportlabels2");
-						$(".reportlabels").removeClass("animated");
+					$(".reportlabels").addClass("reportlabels2");
+						$(".reportlabels").removeClass("animated fadeInRight");
 
 						if($('#reportMoney').is(':hidden') && $('#reportOrders').is(':hidden') && $('#reportShares').is(':hidden') && $('#reportInsuff').is(':hidden')){
 							console.log("apply animated");
 							$(".reportlabels").addClass("animated fadeInRight");
 						}
-					
-						$("#reportInsuff").toggleClass("animated fadeInUp");
 
 						$( this ).toggleClass( "highlightlabel" );
 						//$('.containerreport').hide();
