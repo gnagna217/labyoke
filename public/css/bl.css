@@ -20,6 +20,9 @@
     width: 47% !important;
     padding-right: 50px;
 }
+.reportweekstatic{
+    top: -44px;
+}
 .reportweek{
     top: 0px;
 }

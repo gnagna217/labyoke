@@ -55,6 +55,13 @@ block content
 					//$(".labelexpand").on("click touchend", function(e) {
 					$( ".labelexpand" ).click(function() {
 					$(".reportlabels").toggleClass("reportlabels2");
+					$(".reportlabels").removeClass("animated");
+
+					if($('#reportMoney').is(':hidden') && $('#reportOrders').is(':hidden') && $('#reportShares').is(':hidden') && $('#reportInsuff').is(':hidden')){
+					console.log("apply animated");
+					$(".reportlabels").addClass("animated fadeInRight");
+					}
+
 					$( this ).toggleClass( "highlightlabel" );
 					//$('.containerreport').hide();
 					$('.labelexpandedit').removeClass( "highlightlabel" );
