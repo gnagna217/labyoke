@@ -12,12 +12,12 @@
 /*reports change*/
 .reportlabels2{
     float: left;
-    width: 50%;
+    width: 47%;
     margin-top: 10px;
 }
 .restrictreport2{
     float: right;
-    width: 45%;
+    width: 47% !important;
     padding-right: 50px;
 }
 .reportweek{
@@ -3113,7 +3113,7 @@ margin-top:0px;
 }
 .restrictreport2{
     float: none;
-    width: 100%;
+    width: 100% !important;
     padding-right: 0px;
 }
 .reportweek{
