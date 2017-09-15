@@ -3206,6 +3206,9 @@ margin-top:0px;
 }
 
 @media (max-width: 767px){
+.colorsearchback:before{
+    background-color: #68b3d6;
+}
 .movetoleft{
     width:  0px;
 }
