@@ -9,6 +9,28 @@
   -webkit-font-smoothing: antialiased;
 }
 
+/*reports change*/
+.reportlabels2{
+    float: left;
+    width: 50%;
+    margin-top: 10px;
+}
+.restrictreport2{
+    float: right;
+    width: 45%;
+    padding-right: 50px;
+}
+.reportweek{
+    top: 0px;
+}
+.reportlabelwidth2 {
+    width: 15%;
+}
+.reportlabelwidth3{
+    margin-left: 20px;
+}
+/*end reports change*/
+
 .containertop{
     margin-top: 6%;
 }
@@ -1494,7 +1516,7 @@ a {
 }
 
 .reportbutton2{
-    max-width: 50%;
+    max-width: 70%;
     width: 85%;
     margin: 0 auto;
 }
@@ -3083,6 +3105,27 @@ margin-top:0px;
     .positionbutton{
         left: 21%;
     }
+
+.reportlabels2{
+    float: none;
+    width: 100%;
+    margin-top: 10px;
+}
+.restrictreport2{
+    float: none;
+    width: 100%;
+    padding-right: 0px;
+}
+.reportweek{
+    top: -44px;
+}
+.reportlabelwidth2 {
+    width: 10%;
+}
+.reportlabelwidth3{
+    margin-left: 0px;
+}
+
 }
 
 @media (max-width: 881px) {
