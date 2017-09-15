@@ -3738,9 +3738,6 @@ span.num.greatherthanninetynine {
 
 
  @media (max-width: 440px) {
-.reportlabels{
-    margin-top: 5%;
-}
 .share-container, .container, .share-container2, .order-container{
     margin-top: 5px;
 }
@@ -3831,7 +3828,7 @@ span.num.greatherthanninetynine {
     margin-top: 30%;
 }
 .reportlabels{
-    margin-top: -3%;
+    margin-top: 5%;
 }
 .searchmob{
     padding: 30px;
