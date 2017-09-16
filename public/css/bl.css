@@ -20,10 +20,16 @@
     float: left; width: 37%; font-size: 75pt !important; /*text-align: center;*/ color: #8a6d3b;margin-right: 5%;
 }
 .helpheaderright{
-    float: left; width: 37%;font-size: 75pt !important; /*text-align: center;*/ color: #2975b4;
+    color: #508dc1;
+    top: 30px;
+    position: relative;
+    float: left; width: 37%;font-size: 75pt !important; /*text-align: center; color: #2975b4;*/
 }
 .helpcontainer{
-    display:block;margin:0 auto;margin-top:25px;position: relative;margin-left: 13%;
+        color: #ad9975;
+    margin-right: 5%;
+    top: 30px;
+    position: relative;display:block;margin:0 auto;margin-top:25px;position: relative;margin-left: 13%;
 }
 /*end help changes*/
 
@@ -3295,9 +3301,11 @@ margin-top:0px;
 }
 .helpheaderleft{
     font-size:50pt !important;
+    display:none !important;
 }
 .helpheaderright{
     font-size:50pt !important;
+    display:none !important;
 }
 .colorsearchback:before{
     background-color: #68b3d6;
