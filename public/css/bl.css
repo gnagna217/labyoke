@@ -22,6 +22,9 @@
 .helpheaderright{
     float: left; width: 40%; margin-right: 5px; font-size: 75pt !important; text-align: center; color: #2975b4;margin-left: 5%;
 }
+.helpcontainer{
+    display:block;margin:0 auto;margin-top:25px;position: relative;margin-left: 13%;
+}
 /*end help changes*/
 
 /*reports change*/
@@ -3280,11 +3283,14 @@ margin-top:0px;
 }
 
 @media (max-width: 767px){
+.helpcontainer{
+    margin-left:0px;
+}
 .helpleft{
-    width:95%;
+    width:initial;
 }
 .helpright{
-    width:95%;
+    width:initial;
 }
 .helpheaderleft{
     display:none;
