@@ -46,7 +46,7 @@ block content
 					span(class="fa fa-upload", style="margin-right: 10px;color: #337ab7;")
 					span= i18n.__("shares.admin.title")
 				p= i18n.__("shares.admin.subtitle")
-				form(id="uploadForm", enctype="multipart/form-data", action="admins", method="post")
+				form(id="uploadForm", enctype="multipart/form-data", action="admins", method="post", style="padding-bottom: 20px;")
 					input(style="display:none", type="file" name="file",id="file", class="inputfile inputfile-1", data-multiple-caption="{count} files selected")
 					label.shadow(for="file", style="width: 50%;text-align: center;border-radius: 6px;")
 						svg(xmlns="http://www.w3.org/2000/svg", width="20", height="17", viewBox="0 0 20 17")
@@ -65,7 +65,7 @@ block content
 				div
 					div(id="uploaderror", class="table-responsive alert alert-danger alertshadow", style="margin-top: 25px;")
 						span(style="text-align: center")
-							h4(style="padding-top: 5px;")= i18n.__("shares.admin.error2")
+							h4(style="padding-top: 10px;")= i18n.__("shares.admin.error2")
 				script="$(window).scrollTop($('#uploadForm').offset().top).scrollLeft($('#uploadForm').offset().left);"
 			if(nosuccess == "nodata")
 				div
@@ -139,7 +139,7 @@ block content
 			div(style=nobar, class="threepointssep")
 			- if(doing == "upload")
 			//div(class="threepointsmobile", style=nobar)
-			div(id="qtyComp", style="display:block;padding-top: 10px;")
+			div(id="qtyComp", style="display:block;padding-top: 5px;")
 				h3
 					span(class="fa fa-bar-chart", style="margin-right: 10px;color: #337ab7;")
 					span!= i18n.__("admins.qty.title1") + currentlabname + i18n.__("admins.qty.title2")
