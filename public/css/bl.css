@@ -3293,10 +3293,10 @@ margin-top:0px;
     width:initial;
 }
 .helpheaderleft{
-    display:none;
+    font-size:50pt !important;
 }
 .helpheaderright{
-    display:none;
+    font-size:50pt !important;
 }
 .colorsearchback:before{
     background-color: #68b3d6;
