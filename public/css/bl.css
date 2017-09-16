@@ -11,26 +11,25 @@
 
 /*help changes*/
 .helpleft{
-    float:left;width:33%;margin-right:5%;background-color: #ad9975; color: white;
+    float:left;width:40%;margin-right:5%;background-color: #ad9975; color: white;
 }
 .helpright{
-    float:left;width:33%; background-color: rgba(51, 122, 183, 0.86); color: white;
+    float:right;width:40%; background-color: rgba(51, 122, 183, 0.86); color: white;
 }
 .helpheaderleft{
     color: #ad9975;
-    margin-right: 5%;
     top: 30px;
     position: relative;
-    float: left; width: 37%; font-size: 75pt !important; /*text-align: center; color: #8a6d3b;*/margin-right: 5%;
+    float: left; width: 44%; font-size: 75pt !important; /*text-align: center; color: #8a6d3b;margin-right: 5%*/;
 }
 .helpheaderright{
     color: #508dc1;
     top: 30px;
     position: relative;
-    float: left; width: 37%;font-size: 75pt !important; /*text-align: center; color: #2975b4;*/
+    float: right; width: 44%;font-size: 75pt !important; /*text-align: center; color: #2975b4;*/
 }
 .helpcontainer{
-    display:block;margin:0 auto;position: relative;margin-left: 10%;width:100%;
+    display:block;margin:0 auto;position: relative;/*margin-left: 10%;*/width:80%;
 }
 .helpheaderleft2{
 display: none !important;
