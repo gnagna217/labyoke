@@ -29,7 +29,7 @@
     float: right; width: 44%;font-size: 75pt !important; /*text-align: center; color: #2975b4;*/
 }
 .helpcontainer{
-    display:block;margin:0 auto;position: relative;/*margin-left: 10%;*/width:80%;
+    display:block;margin:0 auto;position: relative;/*margin-left: 10%;*/width:90%;
 }
 .helpheaderleft2{
 display: none !important;
@@ -3317,7 +3317,7 @@ margin-top:0px;
     font-size:50pt !important;
 }
 .helpcontainer{
-    margin-left:0px;
+    width:100%;
 }
 .helpleft{
     width:initial;
