@@ -18,13 +18,13 @@
 }
 .helpheaderleft{
     color: #ad9975;
-    top: 30px;
+    top: 27px;
     position: relative;
     float: left; width: 44%; font-size: 75pt !important; /*text-align: center; color: #8a6d3b;margin-right: 5%*/;
 }
 .helpheaderright{
     color: #508dc1;
-    top: 30px;
+    top: 21px;
     position: relative;
     float: right; width: 44%;font-size: 75pt !important; /*text-align: center; color: #2975b4;*/
 }
