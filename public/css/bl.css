@@ -17,6 +17,9 @@
     float:left;width:33%; background-color: rgba(51, 122, 183, 0.86); color: white;
 }
 .helpheaderleft{
+    color: #ad9975;
+    margin-right: 5%;
+    top: 30px;
     float: left; width: 37%; font-size: 75pt !important; /*text-align: center;*/ color: #8a6d3b;margin-right: 5%;
 }
 .helpheaderright{
@@ -26,9 +29,6 @@
     float: left; width: 37%;font-size: 75pt !important; /*text-align: center; color: #2975b4;*/
 }
 .helpcontainer{
-        color: #ad9975;
-    margin-right: 5%;
-    top: 30px;
     position: relative;display:block;margin:0 auto;margin-top:25px;position: relative;margin-left: 13%;
 }
 /*end help changes*/
