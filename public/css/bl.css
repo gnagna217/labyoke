@@ -17,10 +17,10 @@
     float:left;width:33%; background-color: rgba(51, 122, 183, 0.86); color: white;
 }
 .helpheaderleft{
-    float: left; width: 40%; font-size: 75pt; text-align: center; color: #8a6d3b;
+    float: left; width: 40%; font-size: 75pt !important; text-align: center; color: #8a6d3b;
 }
 .helpheaderright{
-    float: left; width: 40%; margin-right: 5px; font-size: 75pt; text-align: center; color: #2975b4;margin-left: 5%;
+    float: left; width: 40%; margin-right: 5px; font-size: 75pt !important; text-align: center; color: #2975b4;margin-left: 5%;
 }
 /*end help changes*/
 
