@@ -11,7 +11,7 @@
 
 /*help changes*/
 .helpleft{
-    float:left;width:45%;margin-right:2%;background-color: #ad9975; color: white;
+    float:left;width:45%;/*margin-right:2%;*/background-color: #ad9975; color: white;
 }
 .helpright{
     float:right;width:45%; background-color: rgba(51, 122, 183, 0.86); color: white;
