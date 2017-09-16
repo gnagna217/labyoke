@@ -9,6 +9,21 @@
   -webkit-font-smoothing: antialiased;
 }
 
+/*help changes*/
+.helpleft{
+    float:left;width:33%;margin-right:5%;background-color: #ad9975; color: white;
+}
+.helpright{
+    float:left;width:33%; background-color: rgba(51, 122, 183, 0.86); color: white;
+}
+.helpheaderleft{
+    float: left; width: 40%; font-size: 75pt; text-align: center; color: #8a6d3b;
+}
+.helpheaderright{
+    float: left; width: 40%; margin-right: 5px; font-size: 75pt; text-align: center; color: #2975b4;margin-left: 5%;
+}
+/*end help changes*/
+
 /*reports change*/
 .reportlabels2{
     float: left;
@@ -3265,6 +3280,18 @@ margin-top:0px;
 }
 
 @media (max-width: 767px){
+.helpleft{
+    width:95%;
+}
+.helpright{
+    width:95%;
+}
+.helpheaderleft{
+    display:none;
+}
+.helpheaderright{
+    display:none;
+}
 .colorsearchback:before{
     background-color: #68b3d6;
 }

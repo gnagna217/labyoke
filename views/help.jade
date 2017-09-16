@@ -25,13 +25,13 @@ block content
 
       div(style="display:block;margin:0 auto;margin-top:25px;position: relative;margin-left: 13%;;")
         div
-          span(class="fa fa-gear", style="float: left; width: 41%; font-size: 75pt; text-align: center; padding-right: 5%; color: #8a6d3b;")
-          span(class="fa fa-tree", style="float: left; width: 35%; margin-right: 5px; font-size: 75pt; text-align: center; color: #2975b4;")
+          span(class="fa fa-gear helpheaderleft", style="")
+          span(class="fa fa-tree helpheaderright", style="")
         div
-         div.pointsLayout.alert.results.resultsshadow(style="float:left;width:33%;margin-right:5%;background-color: #ad9975; color: white;")
+         div.pointsLayout.alert.results.resultsshadow.helpleft(style="")
           span!= i18n.__("help.desc5")
          //h3!= i18n.__("help.desc6")
-         div.pointsLayout.alert.alert-success.resultsshadow(style="float:left;width:33%; background-color: rgba(51, 122, 183, 0.86); color: white;")
+         div.pointsLayout.alert.alert-success.resultsshadow.helpright(style="")
           span!= i18n.__("help.desc7")
                                                            
        if (loggedIn==true)
