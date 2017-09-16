@@ -33,10 +33,10 @@
     display:block;margin:0 auto;margin-top:25px;position: relative;margin-left: 13%;
 }
 .helpheaderleft2{
-display: none;
+display: none !important;
 }
 .helpheaderright2{
-display: none;
+display: none !important;
 }
 /*end help changes*/
 
@@ -3306,10 +3306,10 @@ margin-top:0px;
     font-size: 75pt !important;
     margin-right: 5%;
     font-size:50pt !important;
-    display: block;
+    display: block !important;
 }
 .helpheaderright2{
-    display: block;
+    display: block !important;
     color: #508dc1;
     top: 22px;
     position: relative;
