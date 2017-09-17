@@ -35,6 +35,7 @@
 .helpcontainer{
     display:block;margin:0 auto;position: relative;/*margin-left: 10%;*/width:95%;
     margin-top: -15px;
+    margin-top: -50px;
 }
 .helpheaderleft2{
 display: none !important;
@@ -3323,6 +3324,7 @@ margin-top:0px;
 }
 .helpcontainer{
     width:100%;
+    margin-top: 0px;
 }
 .helpleft{
     width:initial;
