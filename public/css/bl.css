@@ -10,6 +10,10 @@
 }
 
 /*help changes*/
+
+.helpheader{
+    margin-top:0 !important;
+}
 .helpleft{
     float:left;width:42%;/*margin-right:2%;*/background-color: #ad9975; color: white;
 }

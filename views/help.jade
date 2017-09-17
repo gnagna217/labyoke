@@ -8,10 +8,12 @@ block content
         div(class="bounce3")
    //img(src="/images/bouee6.png" style="display:none;")
    - var margintopchoice = "5%"
+   - var helpheader = " helpheader"
    - if (loggedIn==true)
      - margintopchoice = "140px"
+     - helpheader = ""
    div(class="container container2 moveFromLeft")
-     div(class="fronthelp", style="margin-top:"+margintopchoice)
+     div(class="fronthelp" + helpheader, style="margin-top:"+margintopchoice)
          a(href="/search")
            img(src="/images/bouee6.png", alt="The Yoke",  title="Yoke", class="yokelogohelp")
      div
