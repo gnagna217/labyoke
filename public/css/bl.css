@@ -11,22 +11,22 @@
 
 /*help changes*/
 .helpleft{
-    float:left;width:45%;/*margin-right:2%;*/background-color: #ad9975; color: white;
+    float:left;width:42%;/*margin-right:2%;*/background-color: #ad9975; color: white;
 }
 .helpright{
-    float:right;width:45%; background-color: rgba(51, 122, 183, 0.86); color: white;
+    float:right;width:42%; background-color: rgba(51, 122, 183, 0.86); color: white;
 }
 .helpheaderleft{
     color: #ad9975;
     top: 27px;
     position: relative;
-    float: left; width: 49%; font-size: 75pt !important; /*text-align: center; color: #8a6d3b;margin-right: 5%*/;
+    float: left; width: 45%; font-size: 75pt !important; /*text-align: center; color: #8a6d3b;margin-right: 5%*/;
 }
 .helpheaderright{
     color: #508dc1;
     top: 21px;
     position: relative;
-    float: right; width: 49%;font-size: 75pt !important; /*text-align: center; color: #2975b4;*/
+    float: right; width: 45%;font-size: 75pt !important; /*text-align: center; color: #2975b4;*/
 }
 .helpcontainer{
     display:block;margin:0 auto;position: relative;/*margin-left: 10%;*/width:95%;
