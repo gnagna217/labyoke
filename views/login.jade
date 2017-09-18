@@ -119,7 +119,7 @@ block content
     span(class="desktabonly", id="checkdisplay")
     script.
         $( document ).ready(function() {
-        var topping = localStorage.getItem('topping');
+        var topping = sessionStorage.getItem('topping');
             $(".login").css("margin-top", topping + "px");
             $(".login").css("display", "block");
             console.log("adding topped");
@@ -143,16 +143,16 @@ block content
                 var t = ($(window).height() - this.height() ) / 2  ;
 
                 console.log("topping after: " + topping);
-                //var topping = localStorage.getItem('topping');
-                var storedheight = localStorage.getItem('storedheight');
+                //var topping = sessionStorage.getItem('topping');
+                var storedheight = sessionStorage.getItem('storedheight');
                 var h = $(window).height();
                 console.log("topping forgot: " + topping);
                 console.log("sup forgot: " + (topping && parseInt(topping) > 0));
                 if (topping && parseInt(topping) > 0 && storedheight && h == parseInt(storedheight) ) {
                     t = parseInt(topping);
                 } else {
-                    localStorage.setItem('topping', t);
-                    localStorage.setItem('storedheight', $(window).height());
+                    sessionStorage.setItem('topping', t);
+                    sessionStorage.setItem('storedheight', $(window).height());
                 }
                 if(t > 0){
                 this.css("margin-top",  t + "px");
