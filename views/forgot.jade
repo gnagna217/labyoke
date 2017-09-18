@@ -55,13 +55,16 @@ block content
                 $.fn.center = function () {
                 //var topping = $('.topping').attr("title");
                 var t = ($(window).height() - this.height() ) / 2 - 70 ; 
-                /*console.log("topping forgot: " + (topping != ''));
-                console.log("sup forgot: " + (topping > 0));
-                if (topping > 0) {
-                    
-                } else if(topping) {
-                    t = topping;
-                }*/
+                
+                var topping = localStorage.getItem('topping');
+                console.log("topping forgot: " + topping);
+                console.log("sup forgot: " + (topping && parseInt(topping) > 0));
+                if (topping && parseInt(topping) > 0) {
+                    t = parseInt(topping);
+                } else {
+                    localStorage.setItem('topping', t);
+                }
+                
                 if(t > 0){
                 this.css("margin-top",  t + "px");
                 this.css("-webkit-transition","all .5s ease");
