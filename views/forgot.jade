@@ -52,6 +52,7 @@ block content
   script.
     $( document ).ready(function() {
         var h = $(window).height();
+        var wi = $(window).width();
         var topping = sessionStorage.getItem('topping');
         if(topping){
         $(".login").css("margin-top", topping + "px");
@@ -89,13 +90,13 @@ block content
             }
 
             if(!topping){
-                if(h > 440){
+                if(wi > 440){
                     $(".login").center();
                 }    
             }                                          
 
             $(window).resize(function(){
-                if(h > 440){
+                if(wi > 440){
                     $(".login").center();  
                 }
             });

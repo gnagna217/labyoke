@@ -144,6 +144,7 @@ block content
       $(document).ready(function(){
         $('#tel').mask("(999) 999-9999");
                 var h = $(window).height();
+                var wi = $(window).width();
                 var topping = sessionStorage.getItem('topping');
                 $(".login").css("margin-top", topping + "px");
                 $(".login").css("display", "block");
@@ -176,13 +177,13 @@ block content
                     }
 
                     if(!topping){
-                        if(h > 440){
+                        if(wi > 440){
                             $(".login").center();
                         }  
                     }                                          
 
                     $(window).resize(function(){
-                    if(h > 440){
+                    if(wi > 440){
                         $(".login").center();
                     }
                     });
