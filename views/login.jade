@@ -149,7 +149,8 @@ block content
                 //var topping = sessionStorage.getItem('topping');
                 var storedheight = sessionStorage.getItem('storedheight');
                 var h = $(window).height();
-                console.log("topping forgot: " + topping);
+                
+                console.log("h login: " + h);
                 console.log("sup forgot: " + (topping && parseInt(topping) > 0));
                 if (topping && parseInt(topping) > 0 && storedheight && h == parseInt(storedheight) ) {
                     t = parseInt(topping);
@@ -157,7 +158,9 @@ block content
                     sessionStorage.setItem('topping', t);
                     sessionStorage.setItem('storedheight', $(window).height());
                 }
+                console.log("t login: " + t);
                 if(t > 0){
+                console.log("topping login: " + topping);
                 this.css("margin-top",  t + "px");
                 this.css("-webkit-transition","all .5s ease");
                 this.css("transition","all .5s ease");
