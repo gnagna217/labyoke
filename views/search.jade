@@ -393,7 +393,9 @@ block content
                 if(!$('.results10').is(':visible')){
                   console.log("results visible ");
                   this.removeAttr( "style" );
-                var t = ($(window).height() - this.height() ) / 2 -200 ; if(t > 107){
+                var t = ($(window).height() - this.height() ) / 2 -200 ; 
+                console.log("t login: " + t);
+                if(t > 107){
                 this.css("margin-top",  t + "px");
                 this.css("-webkit-transition","all .5s ease");
                 this.css("transition","all .5s ease");
