@@ -20,6 +20,9 @@ body {
 
 
 @media (max-width: 650px) {
+.front{
+    padding-bottom:0px;
+}
 .teamcolumn1{
     position: relative;
     /*margin-top: 141%;*/
