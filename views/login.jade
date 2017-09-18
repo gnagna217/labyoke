@@ -119,6 +119,9 @@ block content
     span(class="desktabonly", id="checkdisplay")
     script.
         $( document ).ready(function() {
+        var topping = localStorage.getItem('topping');
+            $(".login").css("margin-top", topping + "px");
+            console.log("adding topped");
         var s=["images/en0.png", "images/bouee3.png", "images/fr0.png","images/yoke4.png", "images/movarrow2.gif","/images/sort_both.png","images/sort_desc.png","images/sort_asc.png","images/venn.png"];
         imageCache.pushArray(s, function(){}, function(){});
 
@@ -130,8 +133,7 @@ block content
             }
             $(".handle").css("top","-75px");
 
-            var topping = localStorage.getItem('topping');
-            $(".login").css("margin-top", topping + "px");
+            
 
             $(function(){
                 $.fn.center = function () {
