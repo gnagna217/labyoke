@@ -129,20 +129,4 @@ block content
                     $('.slide-out-div').show();
             }
             $(".handle").css("top","-75px");
-
-            $(function(){
-                $.fn.center = function () {
-                var t = ($(window).height() - this.height() ) / 2  ; if(t > 0){
-                this.css("margin-top",  t + "px");}
-                //this.css("left", ( $(window).width() - this.width() ) / 2 + "px");
-                return this;
-                }
-
-                $(".login").center();   // on page load div will be entered                                               
-
-                $(window).resize(function(){ // whatever the screen size this
-                $(".login").center();       // this will make it center when
-                });                          // window resize happens
-
-            });
         });
