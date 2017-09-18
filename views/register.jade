@@ -148,7 +148,9 @@ block content
                 $.fn.center = function () {
                 var topping = $('.topping').attr("title");
                 var t = ($(window).height() - this.height() ) / 2  ; 
-                if (typeof topping !== typeof undefined && topping !== false) {
+                console.log("topping reg: " + topping);
+                console.log("sup reg: " + (topping > 0));
+                if (topping > 0) {
                     
                 } else {
                     t = topping;
