@@ -125,6 +125,7 @@ block content
         if(topping){
         sessionStorage.removeItem('topping');
         }
+        $(".login").css("display", "block");
         var h = $(window).height();
         var wi = $(window).width();
 
@@ -171,7 +172,7 @@ block content
                 this.css("-webkit-transition","all .5s ease");
                 this.css("transition","all .5s ease");
                 }
-                $(".login").css("display", "block");
+                
                 //$('.topping').attr("title",t);
                 
                 //this.css("left", ( $(window).width() - this.width() ) / 2 + "px");
