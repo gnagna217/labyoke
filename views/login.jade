@@ -1,8 +1,8 @@
 extends layout
 
 block content
-    div(class="container login front containertop", style="margin-bottom:15px;")
-         div(style="text-align: center;position: relative;display:none", class="loginsection")
+    div(class="container login front containertop", style="margin-bottom:15px;display:none")
+         div(style="text-align: center;position: relative;")
              a(href="/search", class="sunlogos")
                 img(src="/images/yoke4.png", alt="The Yoke",  title="Yoke", class="yokelogo")
              p(style="margin-bottom: 0px;margin-right: 5px;")
@@ -157,27 +157,27 @@ block content
                 sessionStorage.setItem('storedheight', h);
                 }
                 
-                console.log("t loginsection: " + t);
-                console.log("height loginsection : " + this.height());
+                console.log("t login: " + t);
+                console.log("height login : " + this.height());
                 console.dir(this);
-                console.log("height loginsection 2 : " + $(".loginsection").height());
+                console.log("height login 2 : " + $(".login").height());
                 if(t > 0){
-                console.log("topping loginsection: " + topping);
+                console.log("topping login: " + topping);
                 this.css("margin-top",  t + "px");
                 this.css("-webkit-transition","all .5s ease");
                 this.css("transition","all .5s ease");
                 }
-                $(".loginsection").css("display", "block");
+                $(".login").css("display", "block");
                 //$('.topping').attr("title",t);
                 
                 //this.css("left", ( $(window).width() - this.width() ) / 2 + "px");
                 return this;
                 }
 
-                $(".loginsection").center();
+                $(".login").center();
 
                 $(window).resize(function(){ // whatever the screen size this
-                $(".loginsection").center();       // this will make it center when
+                $(".login").center();       // this will make it center when
                 });                          // window resize happens
 
             });
