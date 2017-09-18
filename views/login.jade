@@ -152,13 +152,12 @@ block content
                 
                 console.log("h login: " + h);
                 console.log("sup forgot: " + (topping && parseInt(topping) > 0));
-                if (topping && parseInt(topping) > 0 && storedheight && h == parseInt(storedheight) ) {
-                    t = parseInt(topping);
-                } else {
+                
                     sessionStorage.setItem('topping', t);
                     sessionStorage.setItem('storedheight', $(window).height());
-                }
+                
                 console.log("t login: " + t);
+                console.log("height login: " + $(window).height());
                 if(t > 0){
                 console.log("topping login: " + topping);
                 this.css("margin-top",  t + "px");
