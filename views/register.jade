@@ -146,15 +146,15 @@ block content
 
             $(function(){
                 $.fn.center = function () {
-                var topping = $('.topping').attr("title");
-                var t = ($(window).height() - this.height() ) / 2 - 70 ; 
-                console.log("topping forgot: " + (topping != ''));
+                //var topping = $('.topping').attr("title");
+                var t = ($(window).height() - this.height() ) / 2  ; 
+                /*console.log("topping forgot: " + (topping != ''));
                 console.log("sup forgot: " + (topping > 0));
                 if (topping > 0) {
                     
                 } else if(topping) {
                     t = topping;
-                }
+                }*/
                 if(t > 0){
                 this.css("margin-top",  t + "px");}
                 $('.topping').attr("title",t);
