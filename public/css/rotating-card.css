@@ -18,8 +18,15 @@ body {
         margin-bottom: 30px;
 }
 
+.teamrow{
+    overflow: hidden;
+}
 
 @media (max-width: 650px) {
+.teamrow{
+    padding-left: 15%;
+    padding-right: 15%;
+}
 .front{
     padding-bottom:20px !important;
 }
@@ -42,6 +49,10 @@ body {
 }
 
 @media (max-width: 410px) {
+.teamrow{
+    padding-left: 0;
+    padding-right: 0;
+}
 
 .teamrow{
     min-height:1650px;
