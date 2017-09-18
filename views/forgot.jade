@@ -52,13 +52,16 @@ block content
   script.
     $( document ).ready(function() {
         var topping = sessionStorage.getItem('topping');
+        if(topping){
         $(".login").css("margin-top", topping + "px");
+        }
         $(".login").css("display", "block");
         console.log("topping bef: " + topping);
         $(function(){
             $.fn.center = function () {
                 //var topping = $('.topping').attr("title");
-                var t = ($(window).height() - this.height() ) / 2; 
+                var t = ($(window).height() - this.height() ) / 2;
+                console.log("t forgot: " + t);
                 console.log("topping after: " + topping);
                 //var topping = sessionStorage.getItem('topping');
                 var storedheight = sessionStorage.getItem('storedheight');
