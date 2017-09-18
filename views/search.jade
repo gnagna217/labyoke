@@ -382,12 +382,16 @@ block content
           $('.slide-out-tip-div').show();
         }
 
+        if($('.searchResults').is(':visible')){
+          console.log("results visible ");
+          $(".searchlogo").removeAttr( "style" );
+        } 
+
             $(function(){
                 $.fn.center = function () {
-                if($('.searchResults').is(':visible')){
+                if(!$('.searchResults').is(':visible')){
                   console.log("results visible ");
                   this.removeAttr( "style" );
-                } else {
                 var t = ($(window).height() - this.height() ) / 2 -200 ; if(t > 107){
                 this.css("margin-top",  t + "px");}
                 //this.css("left", ( $(window).width() - this.width() ) / 2 + "px");
