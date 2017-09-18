@@ -605,7 +605,7 @@ body.large-screen .card-list-table tbody tr:hover td {
 
 @media (max-width: 1200px) {
     .card-list-table tbody tr {
-        width: 30%;
+        width: 32.2%;
     }
 }
 
@@ -619,10 +619,14 @@ body.large-screen .card-list-table tbody tr:hover td {
         font-size: 15pt;
     }
 }
-
+@media (max-width: 945px) {
+    .card-list-table tbody tr {
+        width: 32%;
+    }
+}
 @media (max-width: 850px) {
     .card-list-table tbody tr {
-        width: 47%;
+        width: 48%;
     }
 
     #ordered{
