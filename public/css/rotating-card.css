@@ -21,7 +21,7 @@ body {
 
 @media (max-width: 650px) {
 .front{
-    padding-bottom:0px;
+    padding-bottom:20px !important;
 }
 .teamcolumn1{
     position: relative;
