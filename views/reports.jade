@@ -1018,7 +1018,7 @@ block content
 		}
 
 		$(document).ready(function(){
-			if($('.reportMoney').is(':visible') && $('.reportShares').is(':visible') && $('.reportInsuff').is(':visible') && $('.reportOrders').is(':visible')){
+			if($('.reportMoney').is(':visible') || $('.reportShares').is(':visible') || $('.reportInsuff').is(':visible') || $('.reportOrders').is(':visible')){
 			console.log("results visible ");
 				$(".containerreports").removeAttr( "style" );
 			} 
