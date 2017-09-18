@@ -2,7 +2,7 @@ extends layout
 
 block content
     div(class="container login front containertop", style="margin-bottom:15px;display:none")
-         div(style="text-align: center;position: relative;")
+         div(style="text-align: center;position: relative;", class="loginsection")
              a(href="/search", class="sunlogos")
                 img(src="/images/yoke4.png", alt="The Yoke",  title="Yoke", class="yokelogo")
              p(style="margin-bottom: 0px;margin-right: 5px;")
@@ -157,27 +157,27 @@ block content
                 sessionStorage.setItem('storedheight', h);
                 }
                 
-                console.log("t login: " + t);
-                console.log("height login : " + this.height());
+                console.log("t loginsection: " + t);
+                console.log("height loginsection : " + this.height());
                 console.dir(this);
-                console.log("height login 2 : " + $(".login").height());
+                console.log("height loginsection 2 : " + $(".loginsection").height());
                 if(t > 0){
-                console.log("topping login: " + topping);
+                console.log("topping loginsection: " + topping);
                 this.css("margin-top",  t + "px");
                 this.css("-webkit-transition","all .5s ease");
                 this.css("transition","all .5s ease");
                 }
-                $(".login").css("display", "block");
+                $(".loginsection").css("display", "block");
                 //$('.topping').attr("title",t);
                 
                 //this.css("left", ( $(window).width() - this.width() ) / 2 + "px");
                 return this;
                 }
 
-                $(".login").center();
+                $(".loginsection").center();
 
                 $(window).resize(function(){ // whatever the screen size this
-                $(".login").center();       // this will make it center when
+                $(".loginsection").center();       // this will make it center when
                 });                          // window resize happens
 
             });
