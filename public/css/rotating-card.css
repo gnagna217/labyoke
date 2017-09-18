@@ -285,7 +285,7 @@ body {
 }
 .teamcard .header {
     padding: 15px 20px;
-    height: 90px;
+    /*height: 90px;*/
 }
 .teamcard .motto{
     border-bottom: 1px solid #EEEEEE;
