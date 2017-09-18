@@ -382,14 +382,14 @@ block content
           $('.slide-out-tip-div').show();
         }
 
-        if($('.searchResults').is(':visible')){
+        if($('.results10').is(':visible')){
           console.log("results visible ");
           $(".searchlogo").removeAttr( "style" );
         } 
 
             $(function(){
                 $.fn.center = function () {
-                if(!$('.searchResults').is(':visible')){
+                if(!$('.results10').is(':visible')){
                   console.log("results visible ");
                   this.removeAttr( "style" );
                 var t = ($(window).height() - this.height() ) / 2 -200 ; if(t > 107){
