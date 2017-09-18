@@ -1018,38 +1018,38 @@ block content
 		}
 
 		$(document).ready(function(){
-        if($('.reportMoney').is(':visible') && $('.reportShares').is(':visible') && $('.reportInsuff').is(':visible') && $('.reportOrders').is(':visible')){
-          console.log("results visible ");
-          $(".searchlogo").removeAttr( "style" );
-          $(".searchlogo").removeClass("animated fadeInDown");
-        } 
+			if($('.reportMoney').is(':visible') && $('.reportShares').is(':visible') && $('.reportInsuff').is(':visible') && $('.reportOrders').is(':visible')){
+			console.log("results visible ");
+			$(".searchlogo").removeAttr( "style" );
+			$(".searchlogo").removeClass("animated fadeInDown");
+			} 
 
-            $(function(){
-                $.fn.center = function () {
-                if(!$('.reportMoney').is(':visible') && !$('.reportShares').is(':visible') && !$('.reportInsuff').is(':visible') && !$('.reportOrders').is(':visible')){
-                  console.log("results visible ");
-                  this.removeAttr( "style" );
-                var t = ($(window).height() - this.height() - 100 ) / 2 ; 
-                console.log("t login: " + t);
-                if(t > 107){
-                console.log("inside t");
-                this.css("margin-top",  t + "px");
-                this.css("-webkit-transition","all .5s ease");
-                this.css("transition","all .5s ease");
-                }
-                //this.css("left", ( $(window).width() - this.width() ) / 2 + "px");
-                }
-                return this;
-                }
+			$(function(){
+			$.fn.center = function () {
+			if(!$('.reportMoney').is(':visible') && !$('.reportShares').is(':visible') && !$('.reportInsuff').is(':visible') && !$('.reportOrders').is(':visible')){
+			console.log("results visible ");
+			this.removeAttr( "style" );
+			var t = ($(window).height() - this.height() - 100 ) / 2 ; 
+			console.log("t login: " + t);
+			if(t > 107){
+			console.log("inside t");
+			this.css("margin-top",  t + "px");
+			this.css("-webkit-transition","all .5s ease");
+			this.css("transition","all .5s ease");
+			}
+			//this.css("left", ( $(window).width() - this.width() ) / 2 + "px");
+			}
+			return this;
+			}
 
-                $(".containerreports").center();                            
+			$(".containerreports").center();                            
 
-                $(window).resize(function(){ 
-                $(".containerreports").center();
-                });                          
+			$(window).resize(function(){ 
+			$(".containerreports").center();
+			});                          
 
-            });
-        });
+			});
+		});
 
 		/*$(document).ready(function(){
 			if($('#reportOrders').is(':visible')){
