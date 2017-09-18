@@ -146,15 +146,14 @@ block content
                 var t = ($(window).height() - this.height() ) / 2  ;
 
                 console.log("topping after: " + topping);
-                //var topping = sessionStorage.getItem('topping');
                 var storedheight = sessionStorage.getItem('storedheight');
                 var h = $(window).height();
                 
                 console.log("h login: " + h);
                 console.log("sup forgot: " + (topping && parseInt(topping) > 0));
                 
-                    sessionStorage.setItem('topping', t);
-                    sessionStorage.setItem('storedheight', $(window).height());
+                sessionStorage.setItem('topping', t);
+                sessionStorage.setItem('storedheight', $(window).height());
                 
                 console.log("t login: " + t);
                 console.log("height login: " + $(window).height());
@@ -171,9 +170,7 @@ block content
                 return this;
                 }
 
-                //if(!topping){
-                    $(".login").center();   // on page load div will be entered                                               
-                //}
+                $(".login").center();
 
                 $(window).resize(function(){ // whatever the screen size this
                 $(".login").center();       // this will make it center when
