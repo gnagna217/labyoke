@@ -9,6 +9,9 @@
   -webkit-font-smoothing: antialiased;
 }
 
+.teamcolumn{
+    margin-bottom: -40px;
+}
 /*help changes*/
 
 .helpheader{
@@ -1601,8 +1604,8 @@ a {
 .teamcolumn {
     float: left;
     width: 33.3%;
-    margin-bottom: 16px;
-    padding: 0 8px;
+    /*margin-bottom: 16px;
+    padding: 0 8px;*/
 }
 .tiptext{
     visibility: hidden;
@@ -4156,8 +4159,8 @@ h3, .h3 {
 /* Add some shadows to create a card effect */
 .teamcard {
     /*box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);*/
-    padding: 25px;
-    padding-top: 105px;
+    /*padding: 25px;
+    padding-top: 105px;*/
 }
 
 .teamcard2 {
