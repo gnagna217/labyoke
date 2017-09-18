@@ -130,13 +130,17 @@ block content
             }
             $(".handle").css("top","-75px");
 
+            var topping = localStorage.getItem('topping');
+            $(".login").css("margin-top", topping + "px");
+
             $(function(){
                 $.fn.center = function () {
                 //var topping = $('.topping').attr("title");
                 
                 var t = ($(window).height() - this.height() ) / 2  ;
 
-                var topping = localStorage.getItem('topping');
+                console.log("topping after: " + topping);
+                //var topping = localStorage.getItem('topping');
                 var storedheight = localStorage.getItem('storedheight');
                 var h = $(window).height();
                 console.log("topping forgot: " + topping);
@@ -158,7 +162,9 @@ block content
                 return this;
                 }
 
-                $(".login").center();   // on page load div will be entered                                               
+                if(!topping){
+                    $(".login").center();   // on page load div will be entered                                               
+                }
 
                 $(window).resize(function(){ // whatever the screen size this
                 $(".login").center();       // this will make it center when
