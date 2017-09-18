@@ -148,7 +148,7 @@ block content
                 $.fn.center = function () {
                 var topping = $('.topping').attr("title");
                 var t = ($(window).height() - this.height() ) / 2  ; 
-                if(topping != ""){
+                if(topping == ""){
                     t = topping;
                 }
                 if(t > 0){
