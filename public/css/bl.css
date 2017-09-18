@@ -2835,7 +2835,7 @@ input::-webkit-inner-spin-button {
 }
 .accountdetail{
     float: left; 
-    width: 16%;
+    width: 15%;
     margin-bottom:15px;
     /*font-weight:bold;*/
 }
