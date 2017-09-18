@@ -149,14 +149,16 @@ block content
                 var storedheight = sessionStorage.getItem('storedheight');
                 var h = $(window).height();
                 
-                console.log("h login: " + h);
+                console.log("h window: " + h);
                 console.log("sup forgot: " + (topping && parseInt(topping) > 0));
-                
                 sessionStorage.setItem('topping', t);
-                sessionStorage.setItem('storedheight', $(window).height());
+                if(t>0){
+                sessionStorage.setItem('topping', t);
+                sessionStorage.setItem('storedheight', h);
+                }
                 
                 console.log("t login: " + t);
-                console.log("height login: " + $(window).height());
+                console.log("height login : " + this.height());
                 if(t > 0){
                 console.log("topping login: " + topping);
                 this.css("margin-top",  t + "px");
