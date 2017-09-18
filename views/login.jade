@@ -1,7 +1,7 @@
 extends layout
 
 block content
-    div(class="container login front containertop", style="margin-bottom:15px;min-height: 600px;")
+    div(class="container login front containertop", style="margin-bottom:15px;min-height: 600px;display:none")
          div(style="text-align: center;position: relative;")
              a(href="/search", class="sunlogos")
                 img(src="/images/yoke4.png", alt="The Yoke",  title="Yoke", class="yokelogo")
@@ -121,6 +121,7 @@ block content
         $( document ).ready(function() {
         var topping = localStorage.getItem('topping');
             $(".login").css("margin-top", topping + "px");
+            $(".login").css("display", "block");
             console.log("adding topped");
         var s=["images/en0.png", "images/bouee3.png", "images/fr0.png","images/yoke4.png", "images/movarrow2.gif","/images/sort_both.png","images/sort_desc.png","images/sort_asc.png","images/venn.png"];
         imageCache.pushArray(s, function(){}, function(){});
