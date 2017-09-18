@@ -160,7 +160,7 @@ block content
                         console.log("sup forgot: " + (topping && parseInt(topping) > 0));
                         if (topping && parseInt(topping) > 0 && storedheight && h == parseInt(storedheight) ) {
                             t = parseInt(topping);
-                        } else {
+                        } else if(t>0){
                             sessionStorage.setItem('topping', t);
                             sessionStorage.setItem('storedheight', $(window).height());
                         }
