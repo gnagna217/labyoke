@@ -137,12 +137,15 @@ block content
                 var t = ($(window).height() - this.height() ) / 2  ;
 
                 var topping = localStorage.getItem('topping');
+                var storedheight = localStorage.getItem('storedheight');
+                var h = $(window).height();
                 console.log("topping forgot: " + topping);
                 console.log("sup forgot: " + (topping && parseInt(topping) > 0));
-                if (topping && parseInt(topping) > 0) {
+                if (topping && parseInt(topping) > 0 && storedheight && h == parseInt(storedheight) ) {
                     t = parseInt(topping);
                 } else {
                     localStorage.setItem('topping', t);
+                    localStorage.setItem('storedheight', $(window).height());
                 }
                 if(t > 0){
                 this.css("margin-top",  t + "px");
