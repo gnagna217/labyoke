@@ -51,6 +51,7 @@ block content
 
   script.
     $( document ).ready(function() {
+        var h = $(window).height();
         var topping = sessionStorage.getItem('topping');
         if(topping){
         $(".login").css("margin-top", topping + "px");
@@ -88,11 +89,15 @@ block content
             }
 
             if(!topping){
-                $(".login").center();   // on page load div will be entered     
+                if(h > 440){
+                    $(".login").center();
+                }    
             }                                          
 
-            $(window).resize(function(){ // whatever the screen size this
-            $(".login").center();       // this will make it center when
-            });                          // window resize happens
+            $(window).resize(function(){
+                if(h > 440){
+                    $(".login").center();  
+                }
+            });
         });
     });

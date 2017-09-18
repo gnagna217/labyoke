@@ -143,7 +143,7 @@ block content
     script.
       $(document).ready(function(){
         $('#tel').mask("(999) 999-9999");
-
+                var h = $(window).height();
                 var topping = sessionStorage.getItem('topping');
                 $(".login").css("margin-top", topping + "px");
                 $(".login").css("display", "block");
@@ -155,7 +155,6 @@ block content
                         console.log("topping after: " + topping);
                         //var topping = sessionStorage.getItem('topping');
                         var storedheight = sessionStorage.getItem('storedheight');
-                        var h = $(window).height();
                         console.log("topping forgot: " + topping);
                         console.log("sup forgot: " + (topping && parseInt(topping) > 0));
                         if (topping && parseInt(topping) > 0 && storedheight && h == parseInt(storedheight) ) {
@@ -177,12 +176,16 @@ block content
                     }
 
                     if(!topping){
-                        $(".login").center();   // on page load div will be entered     
+                        if(h > 440){
+                            $(".login").center();
+                        }  
                     }                                          
 
-                    $(window).resize(function(){ // whatever the screen size this
-                    $(".login").center();       // this will make it center when
-                    });                          // window resize happens
+                    $(window).resize(function(){
+                    if(h > 440){
+                        $(".login").center();
+                    }
+                    });
 
                 });
       });

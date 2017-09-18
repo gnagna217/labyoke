@@ -125,6 +125,8 @@ block content
         if(topping){
         sessionStorage.removeItem('topping');
         }
+        var h = $(window).height();
+
             console.log("removing topped");
         var s=["images/en0.png", "images/bouee3.png", "images/fr0.png","images/yoke4.png", "images/movarrow2.gif","/images/sort_both.png","images/sort_desc.png","images/sort_asc.png","images/venn.png"];
         imageCache.pushArray(s, function(){}, function(){});
@@ -142,12 +144,13 @@ block content
             $(function(){
                 $.fn.center = function () {
                 //var topping = $('.topping').attr("title");
+
                 
                 var t = ($(window).height() - this.height() ) / 2  ;
 
                 console.log("topping after: " + topping);
                 var storedheight = sessionStorage.getItem('storedheight');
-                var h = $(window).height();
+                
                 
                 console.log("h window: " + h);
                 console.log("sup forgot: " + (topping && parseInt(topping) > 0));
@@ -174,11 +177,15 @@ block content
                 return this;
                 }
 
-                $(".login").center();
+                if(h > 440){
+                    $(".login").center();
+                }
 
-                $(window).resize(function(){ // whatever the screen size this
-                $(".login").center();       // this will make it center when
-                });                          // window resize happens
+                $(window).resize(function(){
+                    if(h > 440){
+                        $(".login").center();
+                    }
+                });
 
             });
         });
