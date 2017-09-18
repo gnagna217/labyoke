@@ -21,8 +21,8 @@ body {
 
 @media (max-width: 650px) {
 .teamcolumn1{
-        position: relative;
-    margin-top: 141%;
+    position: relative;
+    /*margin-top: 141%;*/
 }
 
 .teamcolumn2{
