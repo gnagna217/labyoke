@@ -148,11 +148,11 @@ block content
                 $.fn.center = function () {
                 var topping = $('.topping').attr("title");
                 var t = ($(window).height() - this.height() ) / 2  ; 
-                console.log("topping reg: " + topping);
-                console.log("sup reg: " + (topping > 0));
+                console.log("topping forgot: " + (topping != ''));
+                console.log("sup forgot: " + (topping > 0));
                 if (topping > 0) {
                     
-                } else {
+                } else if(topping) {
                     t = topping;
                 }
                 if(t > 0){
