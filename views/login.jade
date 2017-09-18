@@ -119,11 +119,13 @@ block content
     span(class="desktabonly", id="checkdisplay")
     script.
         $( document ).ready(function() {
-        var topping = sessionStorage.getItem('topping');
-        //    $(".login").css("margin-top", topping + "px");
+        var toppinglogin = sessionStorage.getItem('toppinglogin');
+        if(toppinglogin){
+            $(".login").css("margin-top", toppinglogin + "px");
+        }
             
         if(topping){
-        sessionStorage.removeItem('topping');
+            sessionStorage.removeItem('topping');
         }
         $(".login").css("display", "block");
         var h = $(window).height();
@@ -159,6 +161,7 @@ block content
                 
                 if(t>0){
                 sessionStorage.setItem('topping', t);
+                sessionStorage.setItem('toppinglogin', t);
                 sessionStorage.setItem('storedheight', h);
                 }
                 
@@ -179,12 +182,13 @@ block content
                 return this;
                 }
 
-                if(wi > 440){
+                if(!toppinglogin && wi > 440){
                     $(".login").center();
                 }
 
                 $(window).resize(function(){
                     if(wi > 440){
+                        sessionStorage.removeItem('toppinglogin');
                         $(".login").center();
                     }
                 });

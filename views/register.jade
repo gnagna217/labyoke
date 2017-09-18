@@ -176,11 +176,10 @@ block content
                         return this;
                     }
 
-                    if(!topping){
-                        if(wi > 440){
-                            $(".login").center();
-                        }  
-                    }                                          
+                    if(!topping && wi > 440){
+                        $(".login").center();
+                    }  
+                                                              
 
                     $(window).resize(function(){
                     if(wi > 440){
