@@ -835,7 +835,7 @@ html.hidescrollbar body{
     /*-webkit-transition: -webkit-transform 0.3s ease 0s, opacity 0.2s ease 0s;
     transition-property: width;
     transition-duration: 1s;*/
-    width:150px;
+    width:145px;
 }
 
 .alertshadow{
