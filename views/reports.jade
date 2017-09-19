@@ -1028,6 +1028,7 @@ block content
 		}
 
 		$(document).ready(function(){
+			var wi = $(window).width();
 			$(function(){
 			$.fn.center = function () {
 			if(!$('.reportMoney').is(':visible') && !$('.reportShares').is(':visible') && !$('.reportInsuff').is(':visible') && !$('.reportOrders').is(':visible')){
@@ -1035,7 +1036,7 @@ block content
 			this.removeAttr( "style" );
 			var t = ($(window).height() - this.height() - 500 ) / 2 ; 
 			console.log("t login: " + t);
-			var wi = $(window).width();
+			
 			if(wi>440 && t > 25){
 			console.log("inside t");
 			this.css("margin-top",  t + "px");
