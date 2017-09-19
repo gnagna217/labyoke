@@ -24,8 +24,8 @@ body {
 
 @media (max-width: 650px) {
 .teamrow{
-    padding-left: 15%;
-    padding-right: 15%;
+    /*padding-left: 15%;
+    padding-right: 15%;*/
 }
 .front{
     padding-bottom:20px !important;
