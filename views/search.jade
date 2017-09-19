@@ -393,7 +393,9 @@ block content
                 if(!$('.results10').is(':visible')){
                   console.log("results visible ");
                   this.removeAttr( "style" );
-                var t = ($(window).height() - this.height() - 200 ) / 2 ; 
+                  console.log("this.height() login: " + this.height());
+                  console.log("$(window).height() login: " + $(window).height());
+                var t = ($(window).height() - this.height()  ) / 2 ; 
                 console.log("t login: " + t);
                 if(t > 107){
                 console.log("inside t");
