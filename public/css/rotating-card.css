@@ -302,11 +302,11 @@ body {
     /*height: 90px;*/
 }
 .teamcard .motto{
-    border-bottom: 1px solid #EEEEEE;
+    /*border-bottom: 1px solid #EEEEEE;*/
     color: #999999;
     font-size: 14px;
     font-weight: 400;
-    padding-bottom: 10px;
+    /*padding-bottom: 10px;*/
     text-align: center;
 }
 
