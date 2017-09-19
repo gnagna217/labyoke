@@ -3043,7 +3043,7 @@ input::-webkit-inner-spin-button {
     padding-right: 0px;
 }
 .movetoleft{
-    width:  115px;
+    width:  63px;
 }
 .noshowmobile992{
     display: none !important;
@@ -3113,7 +3113,7 @@ padding-right: 0px;
 
  @media (max-width: 956px) {
 .isadminroundaccountLeft{
-    left: -229px;
+    left: -222px;
 }
 
 @media (max-width: 953px) {
