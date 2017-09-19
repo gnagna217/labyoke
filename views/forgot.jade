@@ -73,7 +73,7 @@ block content
                 if (topping && parseInt(topping) > 0 && storedheight && h == parseInt(storedheight) ) {
                     t = parseInt(topping);
                 } else if(t>0){
-                    sessionStorage.setItem('topping', t);
+                    sessionStorage.setItem('topping', t - 25);
                     sessionStorage.setItem('storedheight', $(window).height());
                 }
 
