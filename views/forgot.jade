@@ -7,7 +7,7 @@ block content
         div(class="bounce2")
         div(class="bounce3")
 
-  div(class="container login front container2 containertop", style="text-align: center;position: relative;display:none")
+  div(class="container login front container2 containertop", style="text-align: center;position: relative;/*display:none*/")
      a(href="/search")
         img(src="/images/yoke4.png", alt="The Yoke",  title="Yoke", class="yokelogo")
        div
@@ -57,7 +57,7 @@ block content
         if(topping){
         $(".login").css("margin-top", topping + "px");
         }
-        $(".login").css("display", "block");
+        //$(".login").css("display", "block");
         console.log("topping bef: " + topping);
         $(function(){
             $.fn.center = function () {
