@@ -1,7 +1,7 @@
 extends layout
 
 block content
-    div(class="container login front containertop", style="margin-bottom:15px;/*display:none*/")
+    div(class="container login front containertop", style="margin-bottom:15px;display:none")
          div(style="text-align: center;position: relative;")
              a(href="/search", class="sunlogos")
                 img(src="/images/yoke4.png", alt="The Yoke",  title="Yoke", class="yokelogo")
@@ -128,7 +128,7 @@ block content
         /*if(topping){
             sessionStorage.removeItem('topping');
         }*/
-        //$(".login").css("display", "block");
+        $(".login").css("display", "block");
         var h = $(window).height();
         var wi = $(window).width();
 
