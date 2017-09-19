@@ -129,7 +129,7 @@ body {
     /*background-color: #FFF;
     box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.14);*/
     margin: 5px;
-    padding-bottom: 80px;
+    /*padding-bottom: 80px;*/
 }
 
 .back {
@@ -313,6 +313,7 @@ body {
 .teamcard .stats-container{
     width: 100%;
     /*margin-top: 50px;*/
+    overflow: auto;
 }
 .teamcard .stats{
     display: block;
