@@ -312,7 +312,7 @@ body {
 
 .teamcard .stats-container{
     width: 100%;
-    margin-top: 50px;
+    /*margin-top: 50px;*/
 }
 .teamcard .stats{
     display: block;
