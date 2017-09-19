@@ -1035,7 +1035,8 @@ block content
 			this.removeAttr( "style" );
 			var t = ($(window).height() - this.height() - 500 ) / 2 ; 
 			console.log("t login: " + t);
-			if(t > 25){
+			var wi = $(window).width();
+			if(wi>440 && t > 25){
 			console.log("inside t");
 			this.css("margin-top",  t + "px");
 			this.css("-webkit-transition","all .5s ease");
@@ -1046,11 +1047,15 @@ block content
 			return this;
 			}
 
+			if(wi>440){
 			$(".reportlabels2").center(); 
+			}
 			$(".containerreports").css("display", "block");                           
 
 			$(window).resize(function(){ 
+			if(wi>440){
 			$(".reportlabels2").center();
+			}
 			});                          
 
 			});
