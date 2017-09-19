@@ -133,6 +133,23 @@ block content
         var wi = $(window).width();
 
             console.log("removing topped");
+
+        $( "#user" ).focus(function() {
+          $(".fa-user").css("color","rgba(61, 157, 203, 0.78)");
+        });
+
+        $( "#user" ).focusout(function() {
+            $(".fa-user").css("color","rgba(138, 109, 59, 0.61)");
+        });
+
+        $( "#pass" ).focus(function() {
+          $(".fa-key").css("color","rgba(61, 157, 203, 0.78)");
+        });
+
+        $( "#pass" ).focusout(function() {
+            $(".fa-key").css("color","rgba(138, 109, 59, 0.61)");
+        });
+
         var s=["images/en0.png", "images/bouee3.png", "images/fr0.png","images/yoke4.png", "images/movarrow2.gif","/images/sort_both.png","images/sort_desc.png","images/sort_asc.png","images/venn.png"];
         imageCache.pushArray(s, function(){}, function(){});
 
