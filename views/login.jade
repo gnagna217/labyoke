@@ -120,6 +120,7 @@ block content
     script.
         $( document ).ready(function() {
         var toppinglogin = sessionStorage.getItem('toppinglogin');
+        var topping = sessionStorage.getItem('topping');
         if(toppinglogin){
             $(".login").css("margin-top", toppinglogin + "px");
         }
