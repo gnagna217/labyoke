@@ -4178,7 +4178,7 @@ h3, .h3 {
 
 /* Some left and right padding inside the container */
 .teamcontainer {
-    padding: 0 16px;
+    padding: 0 5px;
 }
 
 /* Clear floats */
