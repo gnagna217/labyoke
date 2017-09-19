@@ -9,6 +9,9 @@
   -webkit-font-smoothing: antialiased;
 }
 
+.texthalf{
+    width:50%;
+}
 .teamcolumn{
     margin-bottom: -40px;
 }
@@ -3312,6 +3315,9 @@ margin-top:0px;
 }
 
 @media (max-width: 767px){
+.texthalf{
+    width:100%;
+}
 #team{
     padding-right: initial;
 }
