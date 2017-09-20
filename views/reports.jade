@@ -252,11 +252,11 @@ block content
 						background: '#fff'
 					};
 					pdf2.addHTML($(".intro"),options,function() {
-						console.log("source");
+						console.log("source weekly savings");
 						var filetext = "#{i18n.__("reports.download.today.file")}";
 						//var string = pdf2.output('datauristring');
 						pdf2.save(filetext);
-						$('.intro').hide();
+						//$('.intro').hide();
 						$('.checkintro').addClass("noshow");
 					});
 
@@ -979,7 +979,7 @@ block content
 		//			div(class='point')
 		//			div(class='containerreport_button__bar')
 		if(resultsMoneyIntro != null && resultsMoneyIntro !="")
-			div(class="intro",style="margin-top:500px;display:none;")!= resultsMoneyIntro
+			div(class="intro",style="/*margin-top:500px;*/display:none;")!= resultsMoneyIntro
 			script(type="text/javascript" src="/javascripts/jspdf.js")
 			script(type="text/javascript" src="/javascripts/FileSaver.js")
 			script.
@@ -988,6 +988,7 @@ block content
 				if ( !$( ".checkintro" ).hasClass( "noshow" ) ) {
 				//if($('.fa-check:visible').size() > 0){
 				console.log("clicked");
+				$('.intro').css("margin-top",$('.restrictreport').height() + 'px');
 				$('.intro').show();
 				var ob = "#{resultsMoneyIntro}"
 				ob = ob.replace(/&lt;/g,"<");
