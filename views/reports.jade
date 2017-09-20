@@ -255,6 +255,7 @@ block content
 					var options = {
 						background: '#fff'
 					};
+
 					pdf2.addHTML($(".intro"),options,function() {
 						console.log("source weekly savings");
 						var filetext = "#{i18n.__("reports.download.today.file")}";
@@ -441,6 +442,7 @@ block content
 								script(type="text/javascript" src="/javascripts/jspdf.js")
 								script(type="text/javascript" src="/javascripts/FileSaver.js")
 								script.
+									$('.intro').show();
 									var ob = "#{resultsMoney}"
 									ob = ob.replace(/&lt;/g,"<");
 									ob = ob.replace(/&gt;/g,">");
@@ -497,6 +499,13 @@ block content
 									}
 									}
 									, margins);
+									var options = {
+										background: '#fff'
+									};
+									pdf2.addHTML($(".intro"),options,function() {
+										console.log("source");
+										$('.checkintro').addClass("noshow");
+									});
 								- resultsMoney = ""
 						script.
 							$(window).scrollTop($('#reportMoney').offset().top).scrollLeft($('#reportMoney').offset().left);
@@ -636,7 +645,14 @@ block content
 									}
 									
 									}
-									, margins);						
+									, margins);	
+									var options = {
+										background: '#fff'
+									};
+									pdf2.addHTML($(".intro"),options,function() {
+										console.log("source");
+										$('.checkintro').addClass("noshow");
+									});					
 								- resultsOrders = ""
 						script.
 							$(window).scrollTop($('#reportOrders').offset().top).scrollLeft($('#reportOrders').offset().left);
@@ -776,6 +792,13 @@ block content
 
 									}
 									, margins);
+									var options = {
+										background: '#fff'
+									};
+									pdf2.addHTML($(".intro"),options,function() {
+										console.log("source");
+										$('.checkintro').addClass("noshow");
+									});
 								- resultsShares = ""
 						script.
 							$(window).scrollTop($('#reportShares').offset().top).scrollLeft($('#reportShares').offset().left);
@@ -900,6 +923,13 @@ block content
 									}
 									}
 									, margins);
+									var options = {
+										background: '#fff'
+									};
+									pdf2.addHTML($(".intro"),options,function() {
+										console.log("source");
+										$('.checkintro').addClass("noshow");
+									});
 								- resultsInsuff = ""
 						script.
 							$(window).scrollTop($('#reportInsuff').offset().top).scrollLeft($('#reportInsuff').offset().left);
