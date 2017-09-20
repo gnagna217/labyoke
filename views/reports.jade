@@ -504,9 +504,12 @@ block content
 									}
 									}
 									, margins);
+									$(document).ready(function(){
+									$(".intro2").show();
 									$('.intro2').css("margin-top",$('.restrictreport').height() + 'px');
 									$(".intro2").html(source);
-									console.log("source is: " + source);
+									console.log("height shares is: " + $('.restrictreport').height());
+									});
 								- resultsMoney = ""
 						script.
 							$(window).scrollTop($('#reportMoney').offset().top).scrollLeft($('#reportMoney').offset().left);
@@ -648,9 +651,12 @@ block content
 									
 									}
 									, margins);	
+									$(document).ready(function(){
+									$(".intro2").show();
 									$('.intro2').css("margin-top",$('.restrictreport').height() + 'px');
 									$(".intro2").html(source);
-									console.log("source is: " + source);					
+									console.log("height shares is: " + $('.restrictreport').height());
+									});					
 								- resultsOrders = ""
 						script.
 							$(window).scrollTop($('#reportOrders').offset().top).scrollLeft($('#reportOrders').offset().left);
@@ -795,7 +801,7 @@ block content
 									$(".intro2").show();
 									$('.intro2').css("margin-top",$('.restrictreport').height() + 'px');
 									$(".intro2").html(source);
-									console.log("source shares is: " + source);
+									console.log("height shares is: " + $('.restrictreport').height());
 									});
 								- resultsShares = ""
 						script.
@@ -922,9 +928,12 @@ block content
 									}
 									}
 									, margins);
+									$(document).ready(function(){
+									$(".intro2").show();
 									$('.intro2').css("margin-top",$('.restrictreport').height() + 'px');
-									console.log("source is: " + source);
-									$('.intro2').html(source);
+									$(".intro2").html(source);
+									console.log("height shares is: " + $('.restrictreport').height());
+									});
 								- resultsInsuff = ""
 						script.
 							$(window).scrollTop($('#reportInsuff').offset().top).scrollLeft($('#reportInsuff').offset().left);
