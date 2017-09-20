@@ -388,6 +388,7 @@ block content
 						script.
 							$(document).ready(function(){
 								$('.labelexpand').addClass( "highlightlabel" );
+								$(".reportlabels").addClass("reportlabels2");
 							});
 					- if(datefromMoney == null || datefromMoney == undefined || datefromMoney == "")
 						- datefrom_money = i18n.__("reports.money.message.datefrommoney")
@@ -530,6 +531,7 @@ block content
 						script.
 							$(document).ready(function(){
 								$('.labelexpandedit').addClass( "highlightlabel" );
+								$(".reportlabels").addClass("reportlabels2");
 							});
 					- if(datefromOrders == null || datefromOrders == undefined || datefromOrders == "")
 						- datefrom_orders = i18n.__("reports.orders.lab.option")
@@ -677,6 +679,7 @@ block content
 						script.
 							$(document).ready(function(){
 								$('.labelexpandadd').addClass( "highlightlabel" );
+								$(".reportlabels").addClass("reportlabels2");
 							});
 					- var message_success_share = i18n.__("reports.shares.message.success1") + datefrom_shares + i18n.__("reports.shares.message.success2") + dateto_shares + i18n.__("reports.shares.message.success3")
 					- if(datefromShares == null || datefromShares == undefined || datefromShares == "")
@@ -831,10 +834,11 @@ block content
 					- var message_fail_insuff = i18n.__("reports.insuff.message.fail")
 					- var message_fail_date_insuff = i18n.__("reports.insuff.message.date.fail")
 					- var message_success_insuff = i18n.__("reports.insuff.message.successinsuff")
-					- if (addMessageMoney != null)
+					- if (addMessageInsuff != null)
 						script.
 							$(document).ready(function(){
 								$('.labelexpandrules').addClass( "highlightlabel" );
+								$(".reportlabels").addClass("reportlabels2");
 							});
 					if (addMessageInsuff == 'failure')
 						div(class="alert alert-danger alertshadow")!= message_fail_insuff

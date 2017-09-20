@@ -52,6 +52,15 @@ display: none !important;
 /*end help changes*/
 
 /*reports change*/
+.intro2{
+    height: 500px;
+    display: block;
+    overflow: overlay;
+}
+
+.intro2 > div{
+    margin-left:0px !important;
+}
 .containerreports{
     margin-top:-25px;
     overflow: hidden;
