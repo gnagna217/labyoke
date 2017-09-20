@@ -54,6 +54,8 @@ display: none !important;
 /*reports change*/
 .containerreports{
     margin-top:-25px;
+    overflow: hidden;
+    padding-bottom: 25px;
 }
 .reportlabels2{
     float: left;
