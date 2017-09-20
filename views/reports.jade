@@ -791,10 +791,12 @@ block content
 
 									}
 									, margins);
+									$(document).ready(function(){
 									$(".intro2").show();
 									$('.intro2').css("margin-top",$('.restrictreport').height() + 'px');
 									$(".intro2").html(source);
 									console.log("source shares is: " + source);
+									});
 								- resultsShares = ""
 						script.
 							$(window).scrollTop($('#reportShares').offset().top).scrollLeft($('#reportShares').offset().left);
