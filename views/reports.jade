@@ -83,6 +83,7 @@ block content
 					$(".containerreports").removeAttr( "style" );
 
 					$('.intro').hide();
+					$('.intro2').hide();
 					$('#reportMoney').toggle();
 					$('#reportShares').hide();
 					$('#reportOrders').hide();
@@ -125,6 +126,7 @@ block content
 						$(".containerreports").removeAttr( "style" );
 
 						$('.intro').hide();
+						$('.intro2').hide();
 						$('#reportOrders').toggle();
 						$('#reportShares').hide();
 						$('#reportMoney').hide();
@@ -167,6 +169,7 @@ block content
 						
 						$(".containerreports").removeAttr( "style" );
 						$('.intro').hide();
+						$('.intro2').hide();
 						$('#reportShares').toggle();
 						$('#reportMoney').hide();
 						$('#reportOrders').hide();
@@ -206,6 +209,7 @@ block content
 						
 						$(".containerreports").removeAttr( "style" );
 						$('.intro').hide();
+						$('.intro2').hide();
 						$('#reportInsuff').toggle();
 						$('#reportShares').hide();
 						$('#reportOrders').hide();
@@ -233,6 +237,7 @@ block content
 					$('#reportMoney').hide();
 					$('#reportInsuff').hide();
 					$('.intro').hide();
+					$('.intro2').hide();
 					$( this ).toggleClass( "highlightlabel" );
 					$('.labelexpandedit').removeClass( "highlightlabel" );
 					$('.labelexpandadd').removeClass( "highlightlabel" );
@@ -442,7 +447,7 @@ block content
 								script(type="text/javascript" src="/javascripts/jspdf.js")
 								script(type="text/javascript" src="/javascripts/FileSaver.js")
 								script.
-									$('.intro').show();
+									$('.intro2').show();
 									var ob = "#{resultsMoney}"
 									ob = ob.replace(/&lt;/g,"<");
 									ob = ob.replace(/&gt;/g,">");
@@ -499,13 +504,8 @@ block content
 									}
 									}
 									, margins);
-									var options = {
-										background: '#fff'
-									};
-									pdf2.addHTML($(".intro"),options,function() {
-										console.log("source");
-										$('.checkintro').addClass("noshow");
-									});
+									$('.intro2').css("margin-top",$('.restrictreport').height() + 'px');
+									$(".intro2").html(source);
 								- resultsMoney = ""
 						script.
 							$(window).scrollTop($('#reportMoney').offset().top).scrollLeft($('#reportMoney').offset().left);
@@ -565,6 +565,7 @@ block content
 								script(type="text/javascript" src="/javascripts/jspdf.js")
 								script(type="text/javascript" src="/javascripts/FileSaver.js")
 								script.
+									$('.intro2').show();
 									var ob = "#{resultsOrders}"
 									ob = ob.replace(/&lt;/g,"<");
 									ob = ob.replace(/&gt;/g,">");
@@ -646,13 +647,8 @@ block content
 									
 									}
 									, margins);	
-									var options = {
-										background: '#fff'
-									};
-									pdf2.addHTML($(".intro"),options,function() {
-										console.log("source");
-										$('.checkintro').addClass("noshow");
-									});					
+									$('.intro2').css("margin-top",$('.restrictreport').height() + 'px');
+									$(".intro2").html(source);					
 								- resultsOrders = ""
 						script.
 							$(window).scrollTop($('#reportOrders').offset().top).scrollLeft($('#reportOrders').offset().left);
@@ -702,6 +698,7 @@ block content
 								script(type="text/javascript" src="/javascripts/jspdf.js")
 								script(type="text/javascript" src="/javascripts/FileSaver.js")
 								script.
+									$('.intro2').show();
 									var ob = "#{resultsShares}"
 									ob = ob.replace(/&lt;/g,"<");
 									ob = ob.replace(/&gt;/g,">");
@@ -792,13 +789,8 @@ block content
 
 									}
 									, margins);
-									var options = {
-										background: '#fff'
-									};
-									pdf2.addHTML($(".intro"),options,function() {
-										console.log("source");
-										$('.checkintro').addClass("noshow");
-									});
+									$('.intro2').css("margin-top",$('.restrictreport').height() + 'px');
+									$(".intro2").html(source);
 								- resultsShares = ""
 						script.
 							$(window).scrollTop($('#reportShares').offset().top).scrollLeft($('#reportShares').offset().left);
@@ -867,6 +859,7 @@ block content
 								script(type="text/javascript" src="/javascripts/jspdf.js")
 								script(type="text/javascript" src="/javascripts/FileSaver.js")
 								script.
+									$('.intro2').show();
 									var ob = "#{resultsInsuff}"
 									ob = ob.replace(/&lt;/g,"<");
 									ob = ob.replace(/&gt;/g,">");
@@ -923,16 +916,12 @@ block content
 									}
 									}
 									, margins);
-									var options = {
-										background: '#fff'
-									};
-									pdf2.addHTML($(".intro"),options,function() {
-										console.log("source");
-										$('.checkintro').addClass("noshow");
-									});
+									$('.intro2').css("margin-top",$('.restrictreport').height() + 'px');
+									$(".intro2").html(source);
 								- resultsInsuff = ""
 						script.
 							$(window).scrollTop($('#reportInsuff').offset().top).scrollLeft($('#reportInsuff').offset().left);
+		div(class="intro2",style="display:none;")
 		div(class="slide-out-tip-div desktabonly", style="display:none;z-index:1;position: fixed;top: 25% !important;max-height:400px;")
 			a(class="handle" href="last-transactions", title='#{i18n.__("search.tip.header")}', style="right: -60px;left:-60px;top:25px;")!=Content
 			div(style="padding: 4px;color:white;top: -45px;position: relative;")
