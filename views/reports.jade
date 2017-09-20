@@ -752,11 +752,11 @@ block content
 										//var blob = pdf.output();
 										//window.open(window.URL.createObjectURL(blob),'_blank');
 
-										pdf.output('dataurlnewwindow');
+										////pdf.output('dataurlnewwindow');
 									}
 									else
 									{
-										pdf.output('dataurlnewwindow');
+										////pdf.output('dataurlnewwindow');
 										//pdf.save("#{file_shares}");
 									}
 
@@ -786,14 +786,15 @@ block content
 									}
 									else
 									{
-										pdf2.save("#{file_shares}");
+										////pdf2.save("#{file_shares}");
 									}
 
 									}
 									, margins);
+									$(".intro2").show();
 									$('.intro2').css("margin-top",$('.restrictreport').height() + 'px');
 									$(".intro2").html(source);
-									console.log("source is: " + source);
+									console.log("source shares is: " + source);
 								- resultsShares = ""
 						script.
 							$(window).scrollTop($('#reportShares').offset().top).scrollLeft($('#reportShares').offset().left);
@@ -921,7 +922,7 @@ block content
 									, margins);
 									$('.intro2').css("margin-top",$('.restrictreport').height() + 'px');
 									console.log("source is: " + source);
-									$(".intro2").html(source);
+									$('.intro2').html(source);
 								- resultsInsuff = ""
 						script.
 							$(window).scrollTop($('#reportInsuff').offset().top).scrollLeft($('#reportInsuff').offset().left);
