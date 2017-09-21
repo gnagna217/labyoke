@@ -67,6 +67,9 @@ display: none !important;
     padding: 20px !important;
 }
 
+.intro2 td, th {
+    padding-right: 5px !important;
+}
 .intro2 > div{
     margin-left:0px !important;
 }
