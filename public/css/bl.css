@@ -9,6 +9,10 @@
   -webkit-font-smoothing: antialiased;
 }
 
+.reporttitle{
+    font-size: 25pt !important;
+}
+
 .texthalf{
     width:50%;
 }
@@ -298,19 +302,19 @@ padding-top: 3px;
   display: block;
   padding: 0.2em;
   /*border-bottom: 1px solid #CCC;*/
-  color: white;
-  font-size: 15pt; font-weight: bold; /*big 20pt*/
+  color: #337ab7;
+  font-size: 24pt; font-weight: bold; /*big 20pt*/
   width:100%;
   background-color: black;
 
     z-index: 0;
     position: relative;
     display: inline-block;
-    border-radius: 64px;
-    width: 70px;
-    height: 70px;
+    /*border-radius: 64px;*/
+    width: 45px;
+    /*height: 70px;
     padding-top: 22px;
-    padding-left: 25px;
+    padding-left: 25px;*/
     float: right;
 }
 
@@ -472,13 +476,18 @@ background-color: #2975b4 !important;
 background-color: rgba(61, 157, 203, 0.81);
 }
 
-.labelexpandadd:hover, .labelexpandedit:hover, .labelexpand:hover,.labelexpandrules:hover, .labelexpandmood:hover, .labeldownload:hover{
+.labelexpandadd:hover, .labelexpandedit:hover, .labelexpand:hover,.labelexpandrules:hover, .labelexpandmood:hover{
     background-color: #2975b4 !important;
     background-image: none;
 }
-
-.labelexpandadd:active, .labelexpandedit:active, .labelexpand:active,.labelexpandrules:active, .labelexpandmood:active, .labeldownload:hover{
+.labeldownload:hover{
+    color:#3d9dcb;
+}
+.labelexpandadd:active, .labelexpandedit:active, .labelexpand:active,.labelexpandrules:active, .labelexpandmood:active{
     background-color: #2975b4 !important;
+}
+.labeldownload:active{
+    color:#3d9dcb;
 }
 
 /*end new reports*/

@@ -458,6 +458,16 @@ block content
 									var pdf = new jsPDF('l', 'pt', 'ledger');
 									var pdf2 = new jsPDF('l', 'pt', 'ledger');
 									source = ob;
+
+									$(document).ready(function(){
+
+									$(".intro2").show();
+									//$(".reportlabels").addClass("reportlabels2");
+									//$('.intro2').css("margin-top",$('.restrictreport').height() + 'px');
+									$(".intro2").html(source);
+									console.log("height shares is: " + $('.restrictreport').height());
+
+									$(".intro2").find('.labeldownload').click(function() {
 									specialElementHandlers = {
 										'#bypassme': function(element, renderer) {
 										return true;
@@ -508,12 +518,7 @@ block content
 									}
 									}
 									, margins);
-									$(document).ready(function(){
-									$(".intro2").show();
-									//$(".reportlabels").addClass("reportlabels2");
-									//$('.intro2').css("margin-top",$('.restrictreport').height() + 'px');
-									$(".intro2").html(source);
-									console.log("height shares is: " + $('.restrictreport').height());
+									});
 									});
 								- resultsMoney = ""
 						script.
@@ -593,6 +598,16 @@ block content
 									// ID selector for either ID or node name. ("#iAmID", "div", "span" etc.)
 									// There is no support for any other type of selectors 
 									// (class, of compound) at this time.
+
+									$(document).ready(function(){
+
+									$(".intro2").show();
+									//$(".reportlabels").addClass("reportlabels2");
+									//$('.intro2').css("margin-top",$('.restrictreport').height() + 'px');
+									$(".intro2").html(source);
+									console.log("height shares is: " + $('.restrictreport').height());
+
+									$(".intro2").find('.labeldownload').click(function() {
 									specialElementHandlers = {
 										// element with id of "bypass" - jQuery style selector
 										'#bypassme': function(element, renderer) {
@@ -660,12 +675,7 @@ block content
 									
 									}
 									, margins);	
-									$(document).ready(function(){
-									$(".intro2").show();
-									//$(".reportlabels").addClass("reportlabels2");
-									//$('.intro2').css("margin-top",$('.restrictreport').height() + 'px');
-									$(".intro2").html(source);
-									console.log("height shares is: " + $('.restrictreport').height());
+									});
 									});					
 								- resultsOrders = ""
 						script.
@@ -735,6 +745,15 @@ block content
 									// ID selector for either ID or node name. ("#iAmID", "div", "span" etc.)
 									// There is no support for any other type of selectors 
 									// (class, of compound) at this time.
+									$(document).ready(function(){
+
+									$(".intro2").show();
+									//$(".reportlabels").addClass("reportlabels2");
+									//$('.intro2').css("margin-top",$('.restrictreport').height() + 'px');
+									$(".intro2").html(source);
+									console.log("height shares is: " + $('.restrictreport').height());
+
+									$(".intro2").find('.labeldownload').click(function() {
 									specialElementHandlers = {
 										// element with id of "bypass" - jQuery style selector
 										'#bypassme': function(element, renderer) {
@@ -811,12 +830,7 @@ block content
 
 									}
 									, margins);
-									$(document).ready(function(){
-									$(".intro2").show();
-									//$(".reportlabels").addClass("reportlabels2");
-									//$('.intro2').css("margin-top",$('.restrictreport').height() + 'px');
-									$(".intro2").html(source);
-									console.log("height shares is: " + $('.restrictreport').height());
+									});
 									});
 								- resultsShares = ""
 						script.
