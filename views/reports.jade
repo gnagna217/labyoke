@@ -470,7 +470,7 @@ block content
 									var l = $('.intro2').offset().top + 200;
 									console.log("scrolling " + l);
 									$('html,body').animate({scrollTop: l}, 1000);
-									$(".intro2").find('.labeldownload').click(function() {
+									$(".intro2").prev('.labeldownload').click(function() {
 									specialElementHandlers = {
 										'#bypassme': function(element, renderer) {
 										return true;
@@ -613,7 +613,7 @@ block content
 									var l = $('.intro2').offset().top + 200;
 									console.log("scrolling " + l);
 									$('html,body').animate({scrollTop: l}, 1000);
-									$(".intro2").find('.labeldownload').click(function() {
+									$(".intro2").prev('.labeldownload').click(function() {
 									specialElementHandlers = {
 										// element with id of "bypass" - jQuery style selector
 										'#bypassme': function(element, renderer) {
@@ -762,7 +762,7 @@ block content
 									var l = $('.intro2').offset().top + 200;
 									console.log("scrolling " + l);
 									$('html,body').animate({scrollTop: l}, 1000);
-									$(".intro2").find('.labeldownload').click(function() {
+									$(".intro2").prev('.labeldownload').click(function() {
 									specialElementHandlers = {
 										// element with id of "bypass" - jQuery style selector
 										'#bypassme': function(element, renderer) {
@@ -931,7 +931,7 @@ block content
 									var l = $('.intro2').offset().top + 200;
 									console.log("scrolling " + l);
 									$('html,body').animate({scrollTop: l}, 1000);
-									$(".intro2").find('.labeldownload').click(function() {
+									$(".intro2").prev('.labeldownload').click(function() {
 									console.log("download clicked");
 									specialElementHandlers = {
 										'#bypassme': function(element, renderer) {
