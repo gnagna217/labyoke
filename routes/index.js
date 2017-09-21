@@ -1075,7 +1075,7 @@ totalshares = t[0].counting;
         var iserror = true;
 
         if(verifyfrom >= 0 && verifyto >= 0){
-            iserror = false;
+            //iserror = false;
         }
         if(!iserror){
 		var labYokereporterSavings = new LabYokeReporterSavings(datefrom,dateto,agent,vendor,catalognumber,lab, req.session.lab,req.session.labs,res);
