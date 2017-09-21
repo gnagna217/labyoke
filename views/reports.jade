@@ -892,11 +892,13 @@ block content
 								script.
 									$('.intro2').show();
 									var ob = "#{resultsInsuff}"
+									var src = ob;
 									ob = ob.replace(/&lt;/g,"<");
 									ob = ob.replace(/&gt;/g,">");
 									var pdf = new jsPDF('l', 'pt', 'ledger');
 									var pdf2 = new jsPDF('l', 'pt', 'ledger');
 									source = ob;
+									$(document).ready(function(){
 									$('.intro2').find('.labeldownload').click(function() {
 									console.log("download clicked");
 									specialElementHandlers = {
@@ -951,11 +953,11 @@ block content
 									}
 									, margins);
 									});
-									$(document).ready(function(){
+									
 									$(".intro2").show();
 									//$(".reportlabels").addClass("reportlabels2");
 									//$('.intro2').css("margin-top",$('.restrictreport').height() + 'px');
-									$(".intro2").html(source);
+									$(".intro2").html(src);
 									console.log("height shares is: " + $('.restrictreport').height());
 									});
 								- resultsInsuff = ""
