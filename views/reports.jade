@@ -897,6 +897,7 @@ block content
 									var pdf = new jsPDF('l', 'pt', 'ledger');
 									var pdf2 = new jsPDF('l', 'pt', 'ledger');
 									source = ob;
+									$('.intro2').find('.labeldownload').click(function() {
 									specialElementHandlers = {
 										'#bypassme': function(element, renderer) {
 										return true;
@@ -920,15 +921,16 @@ block content
 									
 									if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent))
 									{
-										pdf.output('dataurlnewwindow');
+										//pdf.output('dataurlnewwindow');
 									}
 									else
 									{
-										pdf.output('dataurlnewwindow');
+										//pdf.output('dataurlnewwindow');
 									}
 
 									}
-									, margins);	
+									, margins);
+									
 									pdf2.fromHTML(
 										source, // HTML string or DOM elem ref.
 										margins.left, // x coord
@@ -939,7 +941,7 @@ block content
 									function(dispose) {
 									if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent))
 									{
-										pdf.output('dataurlnewwindow');
+										//pdf.output('dataurlnewwindow');
 									}
 									else
 									{
@@ -947,6 +949,7 @@ block content
 									}
 									}
 									, margins);
+									});
 									$(document).ready(function(){
 									$(".intro2").show();
 									//$(".reportlabels").addClass("reportlabels2");
