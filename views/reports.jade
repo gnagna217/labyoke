@@ -905,7 +905,7 @@ block content
 								script(type="text/javascript" src="/javascripts/FileSaver.js")
 								script.
 									$('.intro2').show();
-									var ob = "#{resultsInsuff}"
+									var ob = "<div class='threepointssep'></div>" + "#{resultsInsuff}"
 									ob = ob.replace(/&lt;/g,"<");
 									ob = ob.replace(/&gt;/g,">");
 									var pdf = new jsPDF('l', 'pt', 'ledger');
