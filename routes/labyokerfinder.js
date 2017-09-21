@@ -1057,7 +1057,7 @@ console.log("report on orders: " + labsindept);
 		console.log("results : " + results);
 		var html = "";
 		if(results != null && results != ""){
-		html = "<div><span id='reporttitle' style='font-weight:bold;font-size:36pt;margin-bottom:20px;float:left'>" + i18n.__("index.reportsOrders.html2") + "</span></div><br/><div style='font-size:11pt;padding:20px; width:50%;float:left'>";
+		html = "<div><span id='reporttitle' style='font-weight:bold;font-size:36pt;margin-bottom:20px;float:left'>" + i18n.__("index.reportsOrders.html2") + "</span></div><br/><div style='font-size:11pt;padding-top: 50px;'>";
 		if(datefrom == 'all'){
 			html += i18n.__("index.reportsOrders.html3"); //"<p>This report is listing all the orders requested:</p></div>"
 		} else {
