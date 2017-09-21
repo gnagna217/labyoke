@@ -61,9 +61,10 @@ display: none !important;
     display: block;
     overflow: overlay;
     /*margin-right: 50px;*/
-    margin-top: 50px !important;
+    margin-top: 11px !important;
     background-color: rgba(138, 109, 59, 0.41);
     margin-left: 50px !important;
+    padding: 20px !important;
 }
 
 .intro2 > div{
