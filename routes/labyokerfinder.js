@@ -645,7 +645,7 @@ console.log("report on insuff: " + labsindept);
 	/*if(selected.length>0)
 		selected +=", ";
 	selected +="count(a.category)";*/
-	columns+="<td>" + i18n.__("index.reportsInsuff.param1") + "</td>";
+	columns+="<td>" + i18n.__("index.reportsInsuff.param12") + "</td>";
 
 
 
