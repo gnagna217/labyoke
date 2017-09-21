@@ -919,9 +919,9 @@ block content
 									$(".intro2").html(source);
 									console.log("height shares is: " + $('.restrictreport').height());
 									var l = $('.intro2').offset().top;
-									if(l>100){
+									/*if(l>100){
 										l -= 100;
-									}
+									}*/
 									console.log("scrolling " + l);
 									$('html,body').animate({scrollTop: l}, 1000);
 									$(".intro2").find('.labeldownload').click(function() {
