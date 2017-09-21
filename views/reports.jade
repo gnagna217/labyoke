@@ -898,7 +898,14 @@ block content
 									var pdf2 = new jsPDF('l', 'pt', 'ledger');
 									source = ob;
 									$(document).ready(function(){
-									$('.labeldownload').click(function() {
+
+									$(".intro2").show();
+									//$(".reportlabels").addClass("reportlabels2");
+									//$('.intro2').css("margin-top",$('.restrictreport').height() + 'px');
+									$(".intro2").html(source);
+									console.log("height shares is: " + $('.restrictreport').height());
+
+									$(".intro2").find('.labeldownload').click(function() {
 									console.log("download clicked");
 									specialElementHandlers = {
 										'#bypassme': function(element, renderer) {
@@ -953,11 +960,7 @@ block content
 									, margins);
 									});
 									
-									$(".intro2").show();
-									//$(".reportlabels").addClass("reportlabels2");
-									//$('.intro2').css("margin-top",$('.restrictreport').height() + 'px');
-									$(".intro2").html(source);
-									console.log("height shares is: " + $('.restrictreport').height());
+									
 									});
 								- resultsInsuff = ""
 						script.
