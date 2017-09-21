@@ -293,6 +293,32 @@ padding-top: 3px;
 }
 
 /*Expand sections on page*/
+.labeldownload {
+  display: block;
+  padding: 0.2em;
+  /*border-bottom: 1px solid #CCC;*/
+  color: #666;
+  font-size: 15pt; font-weight: bold; /*big 20pt*/
+  width:100%;
+  background-color: #2975b4;
+}
+
+.labeldownload::before {
+  font-family: Consolas, monaco, monospace;
+  font-weight: bold;
+  font-size: 15px;
+  /*content: "+";*/
+  vertical-align: text-top;
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  margin-right: 3px;
+padding-left: 11px;
+padding-top: 3px;
+  color: white;
+      margin-top: 2px;
+  background: radial-gradient(ellipse at center, #00bc00 50%, transparent 50%);
+}
 .labelexpandmood {
   display: block;
   padding: 0.2em;
@@ -406,7 +432,7 @@ background-color: #2975b4 !important;
 
 }
 
-.labelexpandadd, .labelexpandedit, .labelexpand,.labelexpandrules, .labelexpandmood{
+.labelexpandadd, .labelexpandedit, .labelexpand,.labelexpandrules, .labelexpandmood, .labeldownload{
     /*padding-top: 20px !important;*/
     /*background-color: #2975b4 !important;*/ /*#8a6d3b !important;*/
     /*color: white !important;
@@ -435,12 +461,12 @@ background-color: #2975b4 !important;
 background-color: rgba(61, 157, 203, 0.81);
 }
 
-.labelexpandadd:hover, .labelexpandedit:hover, .labelexpand:hover,.labelexpandrules:hover, .labelexpandmood:hover{
+.labelexpandadd:hover, .labelexpandedit:hover, .labelexpand:hover,.labelexpandrules:hover, .labelexpandmood:hover, .labeldownload:hover{
     background-color: #2975b4 !important;
     background-image: none;
 }
 
-.labelexpandadd:active, .labelexpandedit:active, .labelexpand:active,.labelexpandrules:active, .labelexpandmood:active{
+.labelexpandadd:active, .labelexpandedit:active, .labelexpand:active,.labelexpandrules:active, .labelexpandmood:active, .labeldownload:hover{
     background-color: #2975b4 !important;
 }
 
@@ -676,6 +702,9 @@ body.large-screen .card-list-table tbody tr:hover td {
 
 @media (max-width: 650px) {
 .labelexpandmood{
+    top: 0px !important;
+}
+.labeldownload{
     top: 0px !important;
 }
 }
@@ -3870,7 +3899,7 @@ span.num.greatherthanninetynine {
     padding-left: 0px;
     padding-right: 0px;
 }
-.labelexpandadd, .labelexpandedit, .labelexpand, .labelexpandrules, .labelexpandmood {
+.labelexpandadd, .labelexpandedit, .labelexpand, .labelexpandrules, .labelexpandmood, .labeldownload {
     color: white !important;
     border-radius: 39px;
     border-width: thick;
