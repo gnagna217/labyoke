@@ -777,7 +777,7 @@ console.log("report on shares my lab: " + mylab);
 	query.on("end", function(result) {
 		results = result.rows;
 		console.log("results : " + results);
-		var html = "<div style='padding-top:75px;margin-left:50px;margin-bottom:25px;'><label for='togglerules' class='labeldownload animated fadeInUp'><span class='fa fa-download'></span></label>";
+		var html = "<div style='margin-top:75px;margin-left:50px;margin-bottom:25px;'><label for='togglerules' class='labeldownload animated fadeInUp'><span class='fa fa-download'></span></label>";
 
 		if(results != null && results != ""){
 		html += i18n.__("index.reportsShares.html1", {dateto: dateto}); //"<div><span style='font-weight:bold;font-size:36pt;margin-bottom:20px;float:left'>Inventory.</span></div><div style=\"font-family:'calibri'; font-size:11pt;padding: 20px; width:50%;float:left\">";
@@ -899,7 +899,7 @@ console.log("report on shares my lab: " + mylab);
 	query.on("end", function(result) {
 		results = result.rows;
 		console.log("results : " + results);
-		var html = "<div style='padding-top:75px;margin-left:50px;margin-bottom:25px;'><label for='togglerules' class='labeldownload animated fadeInUp'><span class='fa fa-download'></span></label>";
+		var html = "<div style='margin-top:75px;margin-left:50px;margin-bottom:25px;'><label for='togglerules' class='labeldownload animated fadeInUp'><span class='fa fa-download'></span></label>";
 
 		html += i18n.__("index.reportsShares.html1", {dateto: dateto}); //"<div><span style='font-weight:bold;font-size:36pt;margin-bottom:20px;float:left'>Inventory.</span></div><div style=\"font-family:'calibri'; font-size:11pt;padding: 20px; width:50%;float:left\">";
 
