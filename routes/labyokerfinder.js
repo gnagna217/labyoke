@@ -550,7 +550,7 @@ console.log("report on savings- dateto: " + labsindept);
 		var savings = 0;
 		var isempty = true;
 		if(results != null && results != ""){
-		html +="<table style='margin-top:100px;float:left><tbody><tr style='color: white;background-color: #3d9dcb;font-size:12px'>" + columns + "</tr>"
+		html +="<table style='margin-top:100px;float:left'><tbody><tr style='color: white;background-color: #3d9dcb;font-size:12px'>" + columns + "</tr>"
 		
 			for(var prop in results){
 				isempty = false;
@@ -1057,7 +1057,7 @@ console.log("report on orders: " + labsindept);
 		console.log("results : " + results);
 		var html = "";
 		if(results != null && results != ""){
-		html = "<div><span id='reporttitle' style='font-weight:bold;font-size:36pt;margin-bottom:20px;float:left'>" + i18n.__("index.reportsOrders.html2") + "</span></div><br/><div style=\"font-family:'calibri'; font-size:11pt;padding: 20px; width:50%;float:left\">";
+		html = "<div><span id='reporttitle' style='font-weight:bold;font-size:36pt;margin-bottom:20px;float:left'>" + i18n.__("index.reportsOrders.html2") + "</span></div><br/><div style='font-size:11pt;padding:20px; width:50%;float:left'>";
 		if(datefrom == 'all'){
 			html += i18n.__("index.reportsOrders.html3"); //"<p>This report is listing all the orders requested:</p></div>"
 		} else {
