@@ -389,6 +389,9 @@ block content
 							$(document).ready(function(){
 								$('.labelexpand').addClass( "highlightlabel" );
 								$(".reportlabels").addClass("reportlabels2");
+								if($(window).width() > 900){
+									$(".labelexpandmood").css("top","0px");
+								}
 							});
 					- if(datefromMoney == null || datefromMoney == undefined || datefromMoney == "")
 						- datefrom_money = i18n.__("reports.money.message.datefrommoney")
@@ -507,7 +510,7 @@ block content
 									, margins);
 									$(document).ready(function(){
 									$(".intro2").show();
-									$(".reportlabels").addClass("reportlabels2");
+									//$(".reportlabels").addClass("reportlabels2");
 									//$('.intro2').css("margin-top",$('.restrictreport').height() + 'px');
 									$(".intro2").html(source);
 									console.log("height shares is: " + $('.restrictreport').height());
@@ -532,6 +535,9 @@ block content
 							$(document).ready(function(){
 								$('.labelexpandedit').addClass( "highlightlabel" );
 								$(".reportlabels").addClass("reportlabels2");
+								if($(window).width() > 900){
+									$(".labelexpandmood").css("top","0px");
+								}
 							});
 					- if(datefromOrders == null || datefromOrders == undefined || datefromOrders == "")
 						- datefrom_orders = i18n.__("reports.orders.lab.option")
@@ -656,7 +662,7 @@ block content
 									, margins);	
 									$(document).ready(function(){
 									$(".intro2").show();
-									$(".reportlabels").addClass("reportlabels2");
+									//$(".reportlabels").addClass("reportlabels2");
 									//$('.intro2').css("margin-top",$('.restrictreport').height() + 'px');
 									$(".intro2").html(source);
 									console.log("height shares is: " + $('.restrictreport').height());
@@ -680,6 +686,9 @@ block content
 							$(document).ready(function(){
 								$('.labelexpandadd').addClass( "highlightlabel" );
 								$(".reportlabels").addClass("reportlabels2");
+								if($(window).width() > 900){
+									$(".labelexpandmood").css("top","0px");
+								}
 							});
 					- var message_success_share = i18n.__("reports.shares.message.success1") + datefrom_shares + i18n.__("reports.shares.message.success2") + dateto_shares + i18n.__("reports.shares.message.success3")
 					- if(datefromShares == null || datefromShares == undefined || datefromShares == "")
@@ -804,7 +813,7 @@ block content
 									, margins);
 									$(document).ready(function(){
 									$(".intro2").show();
-									$(".reportlabels").addClass("reportlabels2");
+									//$(".reportlabels").addClass("reportlabels2");
 									//$('.intro2').css("margin-top",$('.restrictreport').height() + 'px');
 									$(".intro2").html(source);
 									console.log("height shares is: " + $('.restrictreport').height());
@@ -839,6 +848,9 @@ block content
 							$(document).ready(function(){
 								$('.labelexpandrules').addClass( "highlightlabel" );
 								$(".reportlabels").addClass("reportlabels2");
+								if($(window).width() > 900){
+									$(".labelexpandmood").css("top","0px");
+								}
 							});
 					if (addMessageInsuff == 'failure')
 						div(class="alert alert-danger alertshadow")!= message_fail_insuff
@@ -937,7 +949,7 @@ block content
 									, margins);
 									$(document).ready(function(){
 									$(".intro2").show();
-									$(".reportlabels").addClass("reportlabels2");
+									//$(".reportlabels").addClass("reportlabels2");
 									//$('.intro2').css("margin-top",$('.restrictreport').height() + 'px');
 									$(".intro2").html(source);
 									console.log("height shares is: " + $('.restrictreport').height());
