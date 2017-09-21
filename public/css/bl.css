@@ -301,7 +301,16 @@ padding-top: 3px;
   color: #666;
   font-size: 15pt; font-weight: bold; /*big 20pt*/
   width:100%;
-  background-color: #2975b4;
+  background-color: black;
+
+    z-index: 0;
+    position: relative;
+    display: inline-block;
+    border-radius: 64px;
+    width: 70px;
+    height: 70px;
+    padding-top: 20px;
+    float: right;
 }
 
 .labeldownload::before {
