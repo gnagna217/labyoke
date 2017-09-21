@@ -305,7 +305,7 @@ padding-top: 3px;
   color: #337ab7;
   font-size: 24pt; font-weight: bold; /*big 20pt*/
   width:100%;
-  background-color: black;
+  background: none;
 
     z-index: 0;
     position: relative;
