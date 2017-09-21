@@ -404,7 +404,7 @@ LabYokeReporterSavings.prototype.reportMoney = function(callback) {
 	var groupby = "a.agent, b.lab";
 	var params = "";
 	var columns ="<td>" + i18n.__("index.reportsMoney.param1") + "</td>";
-	var html = "<div><span id='reporttitle' style='font-weight:bold;font-size:36pt;margin-bottom:20px;float:left'>" + i18n.__("index.reportsMoney.param2") + ".</span></div><br/><div style='font-size:11pt;padding: 20px; width:50%;float:left'>"
+	var html = "<div><span id='reporttitle' style='font-weight:bold;font-size:36pt;margin-bottom:20px;float:left'>" + i18n.__("index.reportsMoney.param2") + ".</span></div><br/><div style='font-size:11pt;padding-top: 50px;'>"
 				+ "" + "";
 	console.log("report on savings- datefrom: " + datefrom);
 	console.log("report on savings- dateto: " + dateto);
@@ -604,7 +604,7 @@ LabYokeReporterSavings.prototype.reportInsuff = function(callback) {
 	//var groupby = "a.category, b.lab, a.price";
 	var params = "";
 	var columns ="<td>" + i18n.__("index.reportsMoney.param9") + "</td><td>" + i18n.__("reports.insuff.labselect") + "</td>";
-	var html = "<div><span id='reporttitle' style='font-weight:bold;font-size:36pt;margin-bottom:20px;float:left'>" + i18n.__("index.reportsInsuff.param1") + ".</span></div><br/><div style='font-size:11pt;padding: 20px; width:50%;float:left'>"
+	var html = "<div><span id='reporttitle' style='font-weight:bold;font-size:36pt;margin-bottom:20px;float:left'>" + i18n.__("index.reportsInsuff.param1") + ".</span></div><br/><div style='font-size:11pt;padding-top: 50px;'>"
 				+ "" + "";
 	console.log("report on savings- datefrom: " + datefrom);
 	console.log("report on savings- dateto: " + dateto);
@@ -693,7 +693,7 @@ if(lab != null && lab !=undefined && lab =="all"){
 				html += " </tr>";
 		
 			}
-			html += "</tbody></table><br/><p style='margin-top:50px'><i><b>" + i18n.__("index.reportsShares.html7") + "</b></i></p>";
+			html += "</tbody></table><br/><p style='margin-top:25px'><i><b>" + i18n.__("index.reportsShares.html7") + "</b></i></p>";
 			console.log("html insuff: " + html);
 		}
 		if(!isempty){
@@ -811,7 +811,7 @@ console.log("report on shares my lab: " + mylab);
 				html += " <td style='font-size: 12px;padding-top: 10px;padding-bottom: 10px;padding-right: 10px;'>" + moment(date).tz("America/New_York").format('MM-DD-YYYY') + "</td></tr>";
 		
 			}
-			html += "</tbody></table><p style='margin-top: 20px;'><i><b>" + i18n.__("index.reportsShares.html7") + "</b></i></p>";
+			html += "</tbody></table><p style='margin-top: 25px;'><i><b>" + i18n.__("index.reportsShares.html7") + "</b></i></p>";
 			//html += "</tbody></table><p><i><b>The LabYoke Team.</b></i></p><img style='width: 141px; margin: 0 20px;float:left' src='https:\/\/team-labyoke.herokuapp.com\/images\/yoke4.png', alt='The Yoke',  title='Yoke', class='yokelogo'/>";
 		}
 		if(!isempty){
@@ -933,13 +933,13 @@ console.log("report on shares my lab: " + mylab);
 				html += " <td style='font-size: 12px;padding-top: 10px;padding-bottom: 10px;padding-right: 10px;'>" + moment(date).tz("America/New_York").format('MM-DD-YYYY') + "</td></tr>";
 		
 			}
-			html += "</tbody></table><p style='margin-top: 20px;'><i><b>" + i18n.__("index.reportsShares.html7") + "</b></i></p>";
+			html += "</tbody></table><p style='margin-top: 25px;'><i><b>" + i18n.__("index.reportsShares.html7") + "</b></i></p>";
 			//html += "</tbody></table><p><i><b>The LabYoke Team.</b></i></p><img style='width: 141px; margin: 0 20px;float:left' src='https:\/\/team-labyoke.herokuapp.com\/images\/yoke4.png', alt='The Yoke',  title='Yoke', class='yokelogo'/>";
 		}
 		if(!isempty){
 			callback(null, html + "</div>");
 		} else {
-			callback(null, html + i18n.__("index.reportsShares.nodataIntro") + "<p style='margin-top: 20px;'><i><b>" + i18n.__("index.reportsShares.html7") + "</b></i></p>" + "</div>");
+			callback(null, html + i18n.__("index.reportsShares.nodataIntro") + "<p style='margin-top: 25px;'><i><b>" + i18n.__("index.reportsShares.html7") + "</b></i></p>" + "</div>");
 		}
 	});
 });
@@ -974,7 +974,7 @@ console.log("report on orders: " + labsindept);
 			params += i18n.__("index.reportsShares.params"); //"<div style='font-weight:bold'>Parameters</div>";
 		}
 		params += i18n.__("index.reportsShares.params1", {datefrom: datefrom}); // "<div><span style='font-weight:bold'>Date From: </span><span>" + datefrom + "</span></div>";
-		params += i18n.__("index.reportsShares.params1", {dateto: dateto}); // "<div><span style='font-weight:bold'>Date To: </span><span>" + dateto + "</span></div>";
+		params += i18n.__("index.reportsShares.params2", {dateto: dateto}); // "<div><span style='font-weight:bold'>Date To: </span><span>" + dateto + "</span></div>";
 		if(where == "")
 			where =" where ";
 		where += "date between '" + datefrom + "' and '" + dateto + "'";
@@ -1086,7 +1086,7 @@ console.log("report on orders: " + labsindept);
 				html += " <td style='font-size: 12px;'>" + moment(date).tz("America/New_York").format('MM-DD-YYYY') + "</td></tr>";
 		
 			}
-			html += "</tbody></table><p><i><b>" + i18n.__("index.reportsShares.html7") + "</b></i></p>";
+			html += "</tbody></table><p style='margin-top:25px'><i><b>" + i18n.__("index.reportsShares.html7") + "</b></i></p>";
 		}
 		
 		if(!isempty){
