@@ -408,7 +408,7 @@
     "index.reportsShares.params": "<div style='font-weight:bold'>Paramètres</div>",
     "index.reportsShares.params1": "<div><span style='font-weight:bold'>De: </span><span>{{ datefrom }}</span></div>",
     "index.reportsShares.params2": "<div><span style='font-weight:bold'>À: </span><span>{{ dateto }}</span></div>",
-    "index.reportsShares.html1": "<div><span style='font-weight:bold;font-size:34pt;'>Inventaire.</span></div><div style=\"margin-top:10px;\">",
+    "index.reportsShares.html1": "<div><span id='reporttitle' style='font-weight:bold;font-size:34pt;'>Inventaire.</span></div><div style=\"margin-top:10px;\">",
     "index.reportsShares.html2": "<p>Ce rapport répertorie tout l'inventaire téléchargé:</p></div>",
     "index.reportsShares.html3": "<p>Ce rapport répertorie l'inventaire de réactifs entre ",
     "index.reportsShares.html4": " et ",
