@@ -1077,7 +1077,7 @@ totalshares = t[0].counting;
         if(verifyfrom >= 0 && verifyto >= 0){
             //iserror = false;
         }
-        if(!iserror){
+        //if(!iserror){
 		var labYokereporterSavings = new LabYokeReporterSavings(datefrom,dateto,agent,vendor,catalognumber,lab, req.session.lab,req.session.labs,res);
 		labYokereporterSavings.reportInsuff(function(error, results) {
 			if(results != null){
@@ -1090,9 +1090,9 @@ totalshares = t[0].counting;
 				req.session.messages = null;
 			}
 		});
-        } else {
-            res.render('reports', {lang:req.cookies.i18n, i18n:res,section: "insuff", dept: req.session.dept, categories: req.session.categories, labs: req.session.labs, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, labyokersurname : req.session.surname, title:'Reports',loggedIn : true, isLoggedInAdmin: req.session.admin, addMessageInsuff: "wrongdate"});
-        }
+        //} else {
+            //res.render('reports', {lang:req.cookies.i18n, i18n:res,section: "insuff", dept: req.session.dept, categories: req.session.categories, labs: req.session.labs, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, labyokersurname : req.session.surname, title:'Reports',loggedIn : true, isLoggedInAdmin: req.session.admin, addMessageInsuff: "wrongdate"});
+        //}
 	});
 
 	router.post('/changeDetails', isLoggedIn, function(req, res) {
