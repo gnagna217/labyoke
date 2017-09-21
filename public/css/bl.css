@@ -60,7 +60,7 @@ display: none !important;
     height: 250px;
     display: block;
     overflow: overlay;
-    margin-right: 50px;
+    /*margin-right: 50px;*/
     margin-top: 50px;
 }
 
