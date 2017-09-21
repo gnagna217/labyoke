@@ -673,7 +673,7 @@ if(lab != null && lab !=undefined && lab =="all"){
 		html += params;
 		var isempty = true;
 		if(results != null && results != ""){
-		html +="<table style='margin-top:100px;float:left><tbody><tr style='color: white;background-color: #3d9dcb;font-size:12px'>" + columns + "</tr>"
+		html +="<table style='margin-top:100px;'><tbody><tr style='color:white;background-color:#3d9dcb;font-size:12px'>" + columns + "</tr>"
 		
 			for(var prop in results){
 				isempty = false;
@@ -693,7 +693,7 @@ if(lab != null && lab !=undefined && lab =="all"){
 				html += " </tr>";
 		
 			}
-			html += "</tbody></table><br/><p style='margin-top:50px'><i><b>" + i18n.__("index.reportsShares.html7") + "</b></i></p><img style='width: 141px; margin: 0 20px;float:left' src='https:\/\/team-labyoke.herokuapp.com\/images\/yoke4.png', alt='The Yoke',  title='Yoke', class='yokelogo'/>";
+			html += "</tbody></table><br/><p style='margin-top:50px'><i><b>" + i18n.__("index.reportsShares.html7") + "</b></i></p>";
 			console.log("html insuff: " + html);
 		}
 		if(!isempty){
