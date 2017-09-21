@@ -142,7 +142,7 @@
     "forgot.fail.desc": "Oh la la...",
 
     "reports.title": "Rapports.",
-    "reports.subtitle": "En tant qu'administrateur de Laboratoire, vous êtes en mesure de générer des rapports et créer un portfolio administratif. Veuillez noter que les rapports ne peuvent être générés qu'en utilisant un navigateur <b>Chrome ou Firefox</b>.",
+    "reports.subtitle": "En tant qu'administrateur de Laboratoire, vous êtes en mesure de générer des rapports et créer un portfolio administratif. Veuillez noter que les rapports ne peuvent être téléchargés qu'en utilisant un navigateur <b>Chrome ou Firefox</b>.",
     "reports.form.select": "Selectioner un Rapport",
     "reports.form.option1": "Selectioner un Rapport...",
     "reports.form.option2": "Economies",
