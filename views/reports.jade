@@ -491,11 +491,11 @@ block content
 									
 									if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent))
 									{
-										pdf.output('dataurlnewwindow');
+										////pdf.output('dataurlnewwindow');
 									}
 									else
 									{
-										pdf.output('dataurlnewwindow');
+										////pdf.output('dataurlnewwindow');
 									}
 
 									}
@@ -510,7 +510,7 @@ block content
 									function(dispose) {
 									if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent))
 									{
-										pdf.output('dataurlnewwindow');
+										////pdf.output('dataurlnewwindow');
 									}
 									else
 									{
@@ -641,11 +641,11 @@ block content
 										binaryData.push(pdf.output());
 										var blob = new Blob(binaryData, {type: "application/pdf"});
 										window.open(window.URL.createObjectURL(blob),'_blank');*/
-										pdf.output('dataurlnewwindow');
+										////pdf.output('dataurlnewwindow');
 									}
 									else
 									{
-										pdf.output('dataurlnewwindow');
+										////pdf.output('dataurlnewwindow');
 									}
 									
 									}
@@ -666,7 +666,7 @@ block content
 										binaryData.push(pdf.output());
 										var blob = new Blob(binaryData, {type: "application/pdf"});
 										window.open(window.URL.createObjectURL(blob),'_blank');*/
-										pdf2.output('dataurlnewwindow');
+										////pdf2.output('dataurlnewwindow');
 									}
 									else
 									{
@@ -825,7 +825,7 @@ block content
 									}
 									else
 									{
-										////pdf2.save("#{file_shares}");
+										pdf2.save("#{file_shares}");
 									}
 
 									}
