@@ -407,7 +407,7 @@
     "index.reportsShares.params": "<div style='font-weight:bold'>Parameters</div>",
     "index.reportsShares.params1": "<div><span style='font-weight:bold'>Date From: </span><span>{{ datefrom }}</span></div>",
     "index.reportsShares.params2": "<div><span style='font-weight:bold'>Date To: </span><span>{{ dateto }}</span></div>",
-    "index.reportsShares.html1": "<div><span id='reporttitle' style='font-weight:bold;font-size:34pt;'>Inventory.</span></div><div style=\"margin-top:10px;\">",
+    "index.reportsShares.html1": "<div><span id='reporttitle' style='font-weight:bold;font-size:34pt;'>Inventory.</span></div><div style=\"margin-top:10px;\"><br/>",
     "index.reportsShares.html2": "<p>This report is listing all the inventory uploaded:</p></div>",
     "index.reportsShares.html3": "<p>This report is listing the inventory uploaded between ",
     "index.reportsShares.html4": " and ",
