@@ -61,9 +61,9 @@ display: none !important;
     display: block;
     overflow: overlay;
     /*margin-right: 50px;*/
-    margin-top: 50px;
+    margin-top: 50px !important;
     background-color: rgba(138, 109, 59, 0.41);
-    margin-left: 50px;
+    margin-left: 50px !important;
 }
 
 .intro2 > div{
@@ -3915,7 +3915,7 @@ span.num.greatherthanninetynine {
     display:none;
 }
 .intro2{
-    margin-left:0px;
+    margin-left:0px !important;
 }
 .share-container, .container, .share-container2, .order-container{
     margin-top: 5px;
