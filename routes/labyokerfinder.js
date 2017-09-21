@@ -777,7 +777,7 @@ console.log("report on shares my lab: " + mylab);
 	query.on("end", function(result) {
 		results = result.rows;
 		console.log("results : " + results);
-		var html = "<div style='padding-top:75px;margin-left:50px;margin-right:20px;margin-bottom:25px;'><label for='togglerules' style='z-index: 0;position: relative;display: inline-block;border-radius: 64px;width: 110px;height: 110px;padding-top: 35px;float: right;' class='labeldownload animated fadeInUp'>Download</label>";
+		var html = "<div style='padding-top:75px;margin-left:50px;/*margin-right:20px;*/margin-bottom:25px;'><label for='togglerules' style='z-index: 0;position: relative;display: inline-block;border-radius: 64px;width: 110px;height: 110px;padding-top: 35px;float: right;' class='labeldownload animated fadeInUp'>Download</label>";
 
 		if(results != null && results != ""){
 		html += i18n.__("index.reportsShares.html1", {dateto: dateto}); //"<div><span style='font-weight:bold;font-size:36pt;margin-bottom:20px;float:left'>Inventory.</span></div><div style=\"font-family:'calibri'; font-size:11pt;padding: 20px; width:50%;float:left\">";
@@ -899,7 +899,7 @@ console.log("report on shares my lab: " + mylab);
 	query.on("end", function(result) {
 		results = result.rows;
 		console.log("results : " + results);
-		var html = "<div style='padding-top:75px;margin-left:50px;margin-right:20px;margin-bottom:25px;'><label for='togglerules' style='z-index: 0;position: relative;display: inline-block;border-radius: 64px;width: 110px;height: 110px;padding-top: 35px;float: right;' class='labeldownload animated fadeInUp'>Download</label>";
+		var html = "<div style='padding-top:75px;margin-left:50px;/*margin-right:20px;*/margin-bottom:25px;'><label for='togglerules' style='z-index: 0;position: relative;display: inline-block;border-radius: 64px;width: 110px;height: 110px;padding-top: 35px;float: right;' class='labeldownload animated fadeInUp'>Download</label>";
 
 		html += i18n.__("index.reportsShares.html1", {dateto: dateto}); //"<div><span style='font-weight:bold;font-size:36pt;margin-bottom:20px;float:left'>Inventory.</span></div><div style=\"font-family:'calibri'; font-size:11pt;padding: 20px; width:50%;float:left\">";
 
