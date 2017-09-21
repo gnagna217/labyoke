@@ -404,7 +404,7 @@ LabYokeReporterSavings.prototype.reportMoney = function(callback) {
 	var groupby = "a.agent, b.lab";
 	var params = "";
 	var columns ="<td>" + i18n.__("index.reportsMoney.param1") + "</td>";
-	var html = "<div><span id='reporttitle' style='font-weight:bold;font-size:36pt;margin-bottom:20px;float:left'>" + i18n.__("index.reportsMoney.param2") + ".</span></div><br/><div style=\"font-family:'calibri'; font-size:11pt;padding: 20px; width:50%;float:left\">"
+	var html = "<div><span id='reporttitle' style='font-weight:bold;font-size:36pt;margin-bottom:20px;float:left'>" + i18n.__("index.reportsMoney.param2") + ".</span></div><br/><div style='font-size:11pt;padding: 20px; width:50%;float:left'>"
 				+ "" + "";
 	console.log("report on savings- datefrom: " + datefrom);
 	console.log("report on savings- dateto: " + dateto);
@@ -550,7 +550,7 @@ console.log("report on savings- dateto: " + labsindept);
 		var savings = 0;
 		var isempty = true;
 		if(results != null && results != ""){
-		html +="<table style='margin-top:100px;float:left'><tbody><tr style='color: white;background-color: #3d9dcb;font-size:12px'>" + columns + "</tr>"
+		html +="<table style='margin-top:25px;float:left'><tbody><tr style='color: white;background-color: #3d9dcb;font-size:12px'>" + columns + "</tr>"
 		
 			for(var prop in results){
 				isempty = false;
@@ -604,7 +604,7 @@ LabYokeReporterSavings.prototype.reportInsuff = function(callback) {
 	//var groupby = "a.category, b.lab, a.price";
 	var params = "";
 	var columns ="<td>" + i18n.__("index.reportsMoney.param9") + "</td><td>" + i18n.__("reports.insuff.labselect") + "</td>";
-	var html = "<div><span id='reporttitle' style='font-weight:bold;font-size:36pt;margin-bottom:20px;float:left'>" + i18n.__("index.reportsInsuff.param1") + ".</span></div><br/><div style=\"font-family:'calibri'; font-size:11pt;padding: 20px; width:50%;float:left\">"
+	var html = "<div><span id='reporttitle' style='font-weight:bold;font-size:36pt;margin-bottom:20px;float:left'>" + i18n.__("index.reportsInsuff.param1") + ".</span></div><br/><div style='font-size:11pt;padding: 20px; width:50%;float:left'>"
 				+ "" + "";
 	console.log("report on savings- datefrom: " + datefrom);
 	console.log("report on savings- dateto: " + dateto);
@@ -673,7 +673,7 @@ if(lab != null && lab !=undefined && lab =="all"){
 		html += params;
 		var isempty = true;
 		if(results != null && results != ""){
-		html +="<table style='margin-top:100px;'><tbody><tr style='color:white;background-color:#3d9dcb;font-size:12px'>" + columns + "</tr>"
+		html +="<table style='margin-top:25px;'><tbody><tr style='color:white;background-color:#3d9dcb;font-size:12px'>" + columns + "</tr>"
 		
 			for(var prop in results){
 				isempty = false;
@@ -1772,7 +1772,7 @@ LabYokerOrder.prototype.order = function(callback) {
 		var subjectReq = /*"LabYoke - Your Request to order "*/ i18n.__({phrase: "index.orders.resubject", locale: userlang}) + agent;
 		var body="<div style='box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); box-sizing: content-box; padding-right: 15px; margin-top: 20px;'>"
 			
-		body += "<div style='text-align:center;padding-top: 20px;'><img style='width: 141px; margin: 0 20px;' src='https:\/\/team-labyoke.herokuapp.com\/images\/yoke4.png', alt='The Yoke',  title='Yoke', class='yokelogo'/></div><div style=\"font-family:'calibri'; font-size:11pt;padding: 20px;\">" + i18n.__({phrase: "index.orders.hello", locale: ownerlang}) + " " + location
+		body += "<div style='text-align:center;padding-top: 20px;'><img style='width: 141px; margin: 0 20px;' src='https:\/\/team-labyoke.herokuapp.com\/images\/yoke4.png', alt='The Yoke',  title='Yoke', class='yokelogo'/></div><div style='\"font-family:'calibri'; 'font-size:11pt;padding: 20px;\">" + i18n.__({phrase: "index.orders.hello", locale: ownerlang}) + " " + location
 				+ ",<br/><br/>";
 		var bodyReq = "<div style='box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); box-sizing: content-box; padding-right: 15px; margin-top: 20px;'>"
 			
