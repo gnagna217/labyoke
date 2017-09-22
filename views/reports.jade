@@ -1253,7 +1253,7 @@ block content
 		}
 		//$(".containerreports").css("display", "block");
 
-	- if(!resultsMoney || !resultsShares || !resultsInsuff || !resultsOrders)
+	- if(!resultsMoney && !resultsShares && !resultsInsuff && !resultsOrders)
 		script.
 			$(document).ready(function(){
 				var wi = $(window).width();
