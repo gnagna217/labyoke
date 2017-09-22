@@ -56,7 +56,7 @@ block content
 				script.
 					//$(".labelexpand").on("click touchend", function(e) {
 					$( ".labelexpand" ).click(function() {
-					recenter = 1;
+					
 					if($('#reportMoney').is(':visible')){
 						$(".reportlabels").removeClass("reportlabels2");
 						$(".labelexpandmood").css("top","-44px");
@@ -103,7 +103,7 @@ block content
 
 					//$( ".labelexpandedit" ).on("click touchend", function(e) {
 					$( ".labelexpandedit" ).click(function() {
-						recenter = 1;
+						
 						if($('#reportOrders').is(':visible')){
 							$(".reportlabels").removeClass("reportlabels2");
 							$(".labelexpandmood").css("top","-44px");
@@ -147,7 +147,7 @@ block content
 
 					//$( ".labelexpandadd" ).on("click touchend", function(e) {
 					$( ".labelexpandadd" ).click(function() {
-					recenter = 1;
+					
 					if($('#reportShares').is(':visible')){
 						$(".reportlabels").removeClass("reportlabels2");
 						$(".labelexpandmood").css("top","-44px");
@@ -192,7 +192,7 @@ block content
 
 					//$( ".labelexpandrules" ).on("click touchend", function(e) {
 					$( ".labelexpandrules" ).click(function() {
-					recenter = 1;
+					
 					if($('#reportInsuff').is(':visible')){
 						$(".reportlabels").removeClass("reportlabels2");
 						$(".labelexpandmood").css("top","-44px");
@@ -464,6 +464,7 @@ block content
 								script(type="text/javascript" src="/javascripts/FileSaver.js")
 								script(type="text/javascript" src="/javascripts/savexl.js")
 								script.
+									recenter = 1;
 									$('.intro2').show();
 									var ob = "#{resultsMoney}"
 									ob = ob.replace(/&lt;/g,"<");
@@ -627,6 +628,7 @@ block content
 								script(type="text/javascript" src="/javascripts/FileSaver.js")
 								script(type="text/javascript" src="/javascripts/savexl.js")
 								script.
+									recenter = 1;
 									$('.intro2').show();
 									var ob = "#{resultsOrders}"
 									ob = ob.replace(/&lt;/g,"<");
@@ -806,6 +808,7 @@ block content
 								script(type="text/javascript" src="/javascripts/FileSaver.js")
 								script(type="text/javascript" src="/javascripts/savexl.js")
 								script.
+									recenter = 1;
 									$('.intro2').show();
 									var ob = "#{resultsShares}"
 									ob = ob.replace(/&lt;/g,"<");
@@ -1017,7 +1020,7 @@ block content
 								script(type="text/javascript" src="/javascripts/savexl.js")
 								script.
 									
-									
+									recenter = 1;
 									var ob = "#{resultsInsuff}"
 									ob = ob.replace(/&lt;/g,"<");
 									ob = ob.replace(/&gt;/g,">");
