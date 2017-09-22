@@ -1036,6 +1036,7 @@ block content
 
 									if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
 										console.log("ismobile");
+										$('.labeldownload').css("margin-right","0px");
 									} else {
 									console.log("isdesktop");
 									$(".intro2").before("<label for='togglerules' id='labeldownload'  class='labeldownload animated fadeInUp'><span class='fa fa-download'></span></label><label for='togglerules' id='labeldownloadxl'  class='labeldownload animated fadeInUp'><span class='fa fa-database'></span></label>");
