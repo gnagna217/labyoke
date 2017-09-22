@@ -472,7 +472,7 @@ block content
 									$(".intro2").html(source);
 									$(".intro2").before("<label for='togglerules' id='labeldownload'  class='labeldownload animated fadeInUp'><span class='fa fa-download'></span></label>");
 									console.log("height shares is: " + $('.restrictreport').height());
-									var l = $('.intro2').offset().top + 200;
+									var l = $('.reportlabels').offset().bottom + + $('.reportlabels').height();
 									console.log("scrolling " + l);
 									$('html,body').animate({scrollTop: l}, 1000);
 									$(".intro2").prev('#labeldownload').click(function() {
@@ -615,7 +615,7 @@ block content
 									$(".intro2").html(source);
 									$(".intro2").before("<label for='togglerules' id='labeldownload'  class='labeldownload animated fadeInUp'><span class='fa fa-download'></span></label>");
 									console.log("height shares is: " + $('.restrictreport').height());
-									var l = $('.intro2').offset().top + 200;
+									var l = $('.intro2').offset().top + + $('.reportlabels').height();
 									console.log("scrolling " + l);
 									$('html,body').animate({scrollTop: l}, 1000);
 									$(".intro2").prev('#labeldownload').click(function() {
@@ -764,7 +764,7 @@ block content
 									$(".intro2").html(source);
 									$(".intro2").before("<label for='togglerules' id='labeldownload' class='labeldownload animated fadeInUp'><span class='fa fa-download'></span></label>");
 									console.log("height shares is: " + $('.restrictreport').height());
-									var l = $('.intro2').offset().top + 200;
+									var l = $('.intro2').offset().top + + $('.reportlabels').height();
 									console.log("scrolling " + l);
 									$('html,body').animate({scrollTop: l}, 1000);
 									$(".intro2").prev('#labeldownload').click(function() {
@@ -933,7 +933,7 @@ block content
 									$(".intro2").html(source);
 									$(".intro2").before("<label for='togglerules' id='labeldownload'  class='labeldownload animated fadeInUp'><span class='fa fa-download'></span></label>");
 									console.log("height shares is: " + $('.restrictreport').height());
-									var l = $('.intro2').offset().top + 200;
+									var l = $('.intro2').offset().top + + $('.reportlabels').height();
 									console.log("scrolling " + l);
 									$('html,body').animate({scrollTop: l}, 1000);
 									$(".intro2").prev('#labeldownload').click(function() {
