@@ -925,20 +925,45 @@ block content
 									var pdf = new jsPDF('l', 'pt', 'ledger');
 									var pdf2 = new jsPDF('l', 'pt', 'ledger');
 									source = ob;
+
+										// create a reference to the old `.html()` function
+										var htmlOriginal = $.fn.html;
+
+										// redefine the `.html()` function to accept a callback
+										$.fn.html = function(html,callback){
+										// run the old `.html()` function with the first parameter
+										var ret = htmlOriginal.apply(this, arguments);
+										// run the callback (if it is defined)
+										if(typeof callback == "function"){
+										callback();
+										}
+										// make sure chaining is not broken
+										return ret;
+										}
+
+										// test it all works as expected (including chaining)
+										//$("#mything").html("<div>My Thing</div>",function(){
+										//console.log("Just did my thing");
+										//}).css({color: 'red'})
 									$(document).ready(function(){
 
 									$(".intro2").show();
 									//$(".reportlabels").addClass("reportlabels2");
 									//$('.intro2').css("margin-top",$('.restrictreport').height() + 'px');
-									$(".intro2").html(source);
+									$(".intro2").html(source,function(){
+										console.log("Just did my thing");
+										console.log("height insuff is: " + $('.containerreports').height());
+										console.log("top insuff is: " + $('.containerreports').offset().top);
+										console.log("report insuff height is: " + $('.reportlabels').height());
+										console.log("report insuff top is: " + $('.reportlabels').offset().top);
+										var l = $('.containerreports').offset().top + $('.containerreports').height();
+										console.log("scrolling " + l);
+										$('html,body').animate({scrollTop: l}, 1000);
+
+									});
+
 									$(".intro2").before("<label for='togglerules' id='labeldownload'  class='labeldownload animated fadeInUp'><span class='fa fa-download'></span></label>");
-									console.log("height insuff is: " + $('.containerreports').height());
-									console.log("top insuff is: " + $('.containerreports').offset().top);
-									console.log("report insuff height is: " + $('.reportlabels').height());
-									console.log("report insuff top is: " + $('.reportlabels').offset().top);
-									var l = $('.containerreports').offset().top + $('.containerreports').height();
-									console.log("scrolling " + l);
-									$('html,body').animate({scrollTop: l}, 1000);
+									
 									$(".intro2").prev('#labeldownload').click(function() {
 									console.log("download clicked");
 									specialElementHandlers = {
