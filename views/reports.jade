@@ -932,7 +932,8 @@ block content
 									//$('.intro2').css("margin-top",$('.restrictreport').height() + 'px');
 									$(".intro2").html(source);
 									$(".intro2").before("<label for='togglerules' id='labeldownload'  class='labeldownload animated fadeInUp'><span class='fa fa-download'></span></label>");
-									console.log("height shares is: " + $('.restrictreport').height());
+									console.log("height insuff is: " + $('.containerreports').height());
+									console.log("top insuff is: " + $('.containerreports').offset().top);
 									var l = $('.containerreports').offset().top + $('.containerreports').height();
 									console.log("scrolling " + l);
 									$('html,body').animate({scrollTop: l}, 1000);
