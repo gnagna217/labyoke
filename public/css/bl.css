@@ -1645,7 +1645,7 @@ a {
     width: 95%;
     margin-top: 40px;
     margin: 0 auto;
-    margin-top: -40px;
+    /*margin-top: -40px;*/
 }
 
 .reportbutton2{
