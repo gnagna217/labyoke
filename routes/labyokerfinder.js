@@ -593,6 +593,7 @@ LabYokeReporterSavings.prototype.reportInsuff = function(callback) {
 	var resultsbundled = [];
 	var dataonly = [];
 	var headeronly = [];
+	var x = 0;
 	var mylab = this.mylab.replace(/ /g,"").toLowerCase();
 	var labs = this.labs;
 	var datefrom = this.datefrom;
@@ -656,8 +657,9 @@ console.log("report on insuff: " + labsindept);
 	headeronly.push(i18n.__("index.reportsMoney.param12"));
 	columns+="<td>" + i18n.__("index.reportsMoney.param12") + "</td>";
 	console.log("headeronly: "  + headeronly);
-	dataonly.push(headeronly);
+	dataonly[x].push(headeronly);
 	console.log("dataonly0: "  + dataonly);
+	
 	
 
 
@@ -688,6 +690,7 @@ if(lab != null && lab !=undefined && lab =="all"){
 		html +="<table style='margin-top:25px;'><tbody><tr style='color:white;background-color:#3d9dcb;font-size:12px'>" + columns + "</tr>"
 		
 			for(var prop in results){
+				x++;
 				var rowonly = [];
 				isempty = false;
 				rowonly.push(results[prop].agent);
@@ -708,7 +711,7 @@ if(lab != null && lab !=undefined && lab =="all"){
 				rowonly.push(moment(results[prop].insuffdate).tz("America/New_York").format('MM-DD-YYYY'));
 				html += "<td style='font-size: 12px;'>" + moment(results[prop].insuffdate).tz("America/New_York").format('MM-DD-YYYY')+ "</td>";
 				html += " </tr>";
-				dataonly.push(rowonly);
+				dataonly[x].push(rowonly);
 				console.log("dataonly: "  + dataonly);
 		
 			}
