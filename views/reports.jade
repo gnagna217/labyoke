@@ -957,7 +957,7 @@ block content
 										console.log("" + "#{dataInsuff}");
 										
 										var data = JSON.parse('!{dataInsuff}');
-										console.log(dataInsuff);
+										console.dir(data);
 										var ws_name = "SheetJS";
 
 										var wb = new Workbook(), ws = sheet_from_array_of_arrays(data);
