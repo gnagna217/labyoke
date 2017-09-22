@@ -1579,6 +1579,7 @@ a {
 
 .reportlabels{
     margin-top: 3%;
+    padding: 40px;
 }
 
 .adjustwidthreports{
@@ -3389,6 +3390,9 @@ margin-top:0px;
 }
 
 @media (max-width: 767px){
+.reportlabels{
+    padding: 0px;
+}
 .texthalf{
     width:100%;
 }
