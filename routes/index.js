@@ -1084,9 +1084,9 @@ totalshares = t[0].counting;
 				console.log("res " + results);
 				if(results!=null && results != ""){
                     console.log("datainsuff res[1] " + JSON.stringify(results[1][0]));
-					res.render('reports', {lang:req.cookies.i18n, i18n:res,section: "insuff", dept: req.session.dept, categories: req.session.categories, labs: req.session.labs, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, labyokersurname : req.session.surname, title:'Reports',loggedIn : true, resultsInsuff: results[0], dataInsuff: JSON.stringify(results[1]), isLoggedInAdmin: req.session.admin, addMessageInsuff: "success"});
+					res.render('reports', {lang:req.cookies.i18n, i18n:res,section: "insuff", dept: req.session.dept, categories: req.session.categories, labs: req.session.labs, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, labyokersurname : req.session.surname, title:'Reports',loggedIn : true, resultsInsuff: results[0], labinsuff:lab, dataInsuff: JSON.stringify(results[1]), isLoggedInAdmin: req.session.admin, addMessageInsuff: "success"});
 				} else {
-					res.render('reports', {lang:req.cookies.i18n, i18n:res,section: "insuff", dept: req.session.dept, categories: req.session.categories, labs: req.session.labs, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, labyokersurname : req.session.surname, title:'Reports',loggedIn : true, isLoggedInAdmin: req.session.admin, addMessageInsuff: "failure"});
+					res.render('reports', {lang:req.cookies.i18n, i18n:res,section: "insuff", dept: req.session.dept, categories: req.session.categories, labs: req.session.labs, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, labyokersurname : req.session.surname, title:'Reports',loggedIn : true, labinsuff:lab, isLoggedInAdmin: req.session.admin, addMessageInsuff: "failure"});
 				}
 				req.session.messages = null;
 			}

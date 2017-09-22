@@ -500,7 +500,7 @@ block content
 										saveAs(new Blob([s2ab(wbout)],{type:"application/octet-stream"}), "#{file_money}" + ".xlsx")										
 									});
 
-									$(".intro2").prev('#labeldownload').click(function() {
+									$(".intro2").prev().prev('#labeldownload').click(function() {
 									specialElementHandlers = {
 										'#bypassme': function(element, renderer) {
 										return true;
@@ -669,7 +669,7 @@ block content
 									});
 
 
-									$(".intro2").prev('#labeldownload').click(function() {
+									$(".intro2").prev().prev('#labeldownload').click(function() {
 									specialElementHandlers = {
 										// element with id of "bypass" - jQuery style selector
 										'#bypassme': function(element, renderer) {
@@ -843,7 +843,7 @@ block content
 										saveAs(new Blob([s2ab(wbout)],{type:"application/octet-stream"}), "#{file_shares}" + ".xlsx")										
 									});
 
-									$(".intro2").prev('#labeldownload').click(function() {
+									$(".intro2").prev().prev('#labeldownload').click(function() {
 									specialElementHandlers = {
 										// element with id of "bypass" - jQuery style selector
 										'#bypassme': function(element, renderer) {
@@ -995,7 +995,7 @@ block content
 								//	-for(var prop in ob0)
 								//		-test.push({ob0[prop].vendor})
 											
-								- var file_insuff = i18n.__("reports.insuff.file") + labinsuff 
+								- var file_insuff = i18n.__("reports.insuff.file") + "_" + labinsuff 
 								script(type="text/javascript" src="/javascripts/jspdf.js")
 								script(type="text/javascript" src="/javascripts/xlsx.core.min.js")
 								script(type="text/javascript" src="/javascripts/Blob.js")
@@ -1044,7 +1044,8 @@ block content
 										var wbout = XLSX.write(wb, {bookType:'xlsx', bookSST:true, type: 'binary'});
 										saveAs(new Blob([s2ab(wbout)],{type:"application/octet-stream"}), "#{file_insuff}" + ".xlsx")										
 									});
-									$(".intro2").prev('#labeldownload').click(function() {
+
+									$(".intro2").prev().prev('#labeldownload').click(function() {
 									console.log("download clicked");
 									specialElementHandlers = {
 										'#bypassme': function(element, renderer) {
