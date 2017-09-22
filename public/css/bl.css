@@ -64,10 +64,10 @@ display: none !important;
     height: 270px;
     display: block;
     overflow: overlay;
-    margin-right: 100px !important;
+    margin-right: 100px;
     margin-top: -10px !important;
     background-color: rgba(138, 109, 59, 0.41);
-    margin-left: 50px !important;
+    margin-left: 50px;
     padding: 20px !important;
 }
 
