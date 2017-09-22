@@ -607,6 +607,8 @@ LabYokeReporterSavings.prototype.reportInsuff = function(callback) {
 	//var groupby = "a.category, b.lab, a.price";
 	var params = "";
 	var columns ="<td>" + i18n.__("index.reportsMoney.param9") + "</td><td>" + i18n.__("reports.insuff.labselect") + "</td>";
+	headeronly.push(i18n.__("index.reportsMoney.param9"));
+	headeronly.push(i18n.__("reports.insuff.labselect"));
 	var html = "<div><span id='reporttitle' style='font-weight:bold;font-size:36pt;margin-bottom:20px;float:left'>" + i18n.__("index.reportsInsuff.param1") + ".</span></div><br/><div style='font-size:11pt;padding-top: 50px;'>"
 				+ "" + "";
 	console.log("report on savings- datefrom: " + datefrom);
@@ -653,7 +655,9 @@ console.log("report on insuff: " + labsindept);
 	selected +="count(a.category)";*/
 	headeronly.push(i18n.__("index.reportsMoney.param12"));
 	columns+="<td>" + i18n.__("index.reportsMoney.param12") + "</td>";
+	console.log("headeronly: "  + headeronly);
 	dataonly.push(headeronly);
+	console.log("dataonly0: "  + dataonly);
 	
 
 
@@ -705,12 +709,14 @@ if(lab != null && lab !=undefined && lab =="all"){
 				html += "<td style='font-size: 12px;'>" + moment(results[prop].insuffdate).tz("America/New_York").format('MM-DD-YYYY')+ "</td>";
 				html += " </tr>";
 				dataonly.push(rowonly);
+				console.log("dataonly: "  + dataonly);
 		
 			}
 			html += "</tbody></table><br/><p style='margin-top:25px'><i><b>" + i18n.__("index.reportsShares.html7") + "</b></i></p>";
 			console.log("html insuff: " + html);
 			resultsbundled.push(html);
 			resultsbundled.push(dataonly);
+			console.log("dataonly1: "  + dataonly);
 		}
 		if(!isempty){
 			callback(null, resultsbundled);
