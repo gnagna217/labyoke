@@ -60,24 +60,7 @@ display: none !important;
 /*end help changes*/
 
 /*reports change*/
-.intro2{
-    height: 270px;
-    display: block;
-    overflow: overlay;
-    margin-right: 100px;
-    margin-top: -10px !important;
-    background-color: rgba(138, 109, 59, 0.41);
-    margin-left: 50px;
-    padding: 20px !important;
-}
 
-.intro2 td, th {
-    padding-right: 5px !important;
-    padding-left: 5px !important;
-}
-.intro2 > div{
-    margin-left:0px !important;
-}
 .containerreports{
     margin-top:-25px;
     overflow: hidden;
@@ -2162,6 +2145,28 @@ border-top: 5px solid #8a6d3b;
     padding-bottom: 10px !important;
     margin-top: 25px;
 }
+
+/*reports change*/
+.intro2{
+    height: 270px;
+    display: block;
+    overflow: overlay;
+    margin-right: 100px;
+    margin-top: -10px !important;
+    background-color: rgba(138, 109, 59, 0.41);
+    margin-left: 50px;
+    padding: 20px !important;
+}
+
+.intro2 td, th {
+    padding-right: 5px !important;
+    padding-left: 5px !important;
+}
+.intro2 > div{
+    margin-left:0px !important;
+}
+
+/*end report changes*/
 
 .number-over{
     color: #080808 !important;
