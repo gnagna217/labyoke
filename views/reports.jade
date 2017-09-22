@@ -914,6 +914,11 @@ block content
 									//img(src="images/logo_one_bottle_R_3.png", alt="The Lab", title="Lab", class="reportbutton")
 									button.btn.btn-success.btn-lg.btn-block.reportbutton2.shadow(type="submit",value="Report",name="submit")= i18n.__("reports.insuff.button")
 							if(resultsInsuff != null && resultsInsuff !="")
+								- var ob0 = dataInsuff
+								- var test = []
+									-for(var prop in ob0)
+										-test.push({ob0[prop].vendor})
+											
 								- var file_insuff = i18n.__("reports.insuff.file") + labinsuff + ".pdf" 
 								script(type="text/javascript" src="/javascripts/jspdf.js")
 								script(type="text/javascript" src="/javascripts/xlsx.core.min.js")
@@ -950,7 +955,8 @@ block content
 										/* original data */
 										//var data = [[1,2,3,4],["Sample", "Sample", "Sample", "Sample"],["foo","bar","Hello","0.3"], ["baz", null, "qux"]];
 										console.log("" + "#{dataInsuff}");
-										var data = #{dataInsuff};
+										console.dir(dataInsuff);
+										var data = dataInsuff;
 										var ws_name = "SheetJS";
 
 										var wb = new Workbook(), ws = sheet_from_array_of_arrays(data);
