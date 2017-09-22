@@ -1252,60 +1252,60 @@ block content
 			});
 		}
 
-		- if(resultsMoney || resultsShares || resultsInsuff || resultsOrders)
-			$(document).ready(function(){
-				var wi = $(window).width();
-				$(function(){
-				$.fn.center = function () {
-				if(!$('.reportMoney').is(':visible') && !$('.reportShares').is(':visible') && !$('.reportInsuff').is(':visible') && !$('.reportOrders').is(':visible')){
-				console.log("results visible ");
-				this.removeAttr( "style" );
-				var t = ($(window).height() - this.height()) / 2 ; 
-				console.log("t login: " + t);
-				console.log("$(window).height(): " + $(window).height());
-				console.log("this.height() login: " + this.height());
-				
-				if(wi>440 && t > 25){
-				console.log("inside t");
-				this.css("margin-top",  t + "px");
-				this.css("-webkit-transition","all .5s ease");
-				this.css("transition","all .5s ease");
-				}
-				//this.css("left", ( $(window).width() - this.width() ) / 2 + "px");
-				}
-				return this;
-				}
+	- if(resultsMoney || resultsShares || resultsInsuff || resultsOrders)
+		$(document).ready(function(){
+			var wi = $(window).width();
+			$(function(){
+			$.fn.center = function () {
+			if(!$('.reportMoney').is(':visible') && !$('.reportShares').is(':visible') && !$('.reportInsuff').is(':visible') && !$('.reportOrders').is(':visible')){
+			console.log("results visible ");
+			this.removeAttr( "style" );
+			var t = ($(window).height() - this.height()) / 2 ; 
+			console.log("t login: " + t);
+			console.log("$(window).height(): " + $(window).height());
+			console.log("this.height() login: " + this.height());
+			
+			if(wi>440 && t > 25){
+			console.log("inside t");
+			this.css("margin-top",  t + "px");
+			this.css("-webkit-transition","all .5s ease");
+			this.css("transition","all .5s ease");
+			}
+			//this.css("left", ( $(window).width() - this.width() ) / 2 + "px");
+			}
+			return this;
+			}
 
-				$(".reportlabels2").center(); 
-				}
-				$(".containerreports").css("display", "block");                         
+			$(".reportlabels2").center(); 
+			}
+			$(".containerreports").css("display", "block");                         
 
-				$(window).resize(function(){ 
-				if(wi>440){
-				$(".reportlabels2").center();
-				}
-				});                          
+			$(window).resize(function(){ 
+			if(wi>440){
+			$(".reportlabels2").center();
+			}
+			});                          
 
-				});
 			});
+		});
 
-			/*$(document).ready(function(){
-				if($('#reportOrders').is(':visible')){
-					console.log("visible reportOrders");
-					$('.labelexpandedit').addClass( "highlightlabel" );
-				}
-				if($('#reportMoney').is(':visible')){
-					console.log("visible reportMoney");
-					$('.labelexpand').addClass( "highlightlabel" );
-				}
-				if($('#reportShares').is(':visible')){
-					console.log("visible reportShares");
-					$('.labelexpandadd').addClass( "highlightlabel" );
-				}
-				if($('#reportInsuff').is(':visible')){
-					console.log("visible reportInsuff");
-					$('.labelexpandrules').addClass( "highlightlabel" );
-				}
-			});
-			*/
+		/*$(document).ready(function(){
+			if($('#reportOrders').is(':visible')){
+				console.log("visible reportOrders");
+				$('.labelexpandedit').addClass( "highlightlabel" );
+			}
+			if($('#reportMoney').is(':visible')){
+				console.log("visible reportMoney");
+				$('.labelexpand').addClass( "highlightlabel" );
+			}
+			if($('#reportShares').is(':visible')){
+				console.log("visible reportShares");
+				$('.labelexpandadd').addClass( "highlightlabel" );
+			}
+			if($('#reportInsuff').is(':visible')){
+				console.log("visible reportInsuff");
+				$('.labelexpandrules').addClass( "highlightlabel" );
+			}
+		});
+		*/
 			
