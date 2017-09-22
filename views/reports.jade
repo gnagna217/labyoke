@@ -385,7 +385,7 @@ block content
 					p= i18n.__("reports.money.subtitle")
 					- var datefrom_money = datefromMoney
 					- var dateto_money = datetoMoney
-					- var file_money = i18n.__("reports.money.file") + datefrom_money + i18n.__("reports.file.to") + dateto_money + ".pdf"
+					- var file_money = i18n.__("reports.money.file") + datefrom_money + i18n.__("reports.file.to") + dateto_money
 					- var message_fail_share = i18n.__("reports.money.message.fail")
 					- var message_fail_date_share = i18n.__("reports.money.message.date.fail")
 					- var message_success_money = i18n.__("reports.money.message.success1") + datefrom_money + i18n.__("reports.money.message.success2") + dateto_money + i18n.__("reports.money.message.success3")
@@ -402,7 +402,7 @@ block content
 						- datefrom_money = i18n.__("reports.money.message.datefrommoney")
 						- dateto_money = ""
 						- message_success_money = i18n.__("reports.money.message.successmoney")
-						- file_money = i18n.__("reports.money.file_all") + ".pdf" 
+						- file_money = i18n.__("reports.money.file_all") 
 					if (addMessageMoney == 'failure')
 						div(class="alert alert-danger alertshadow")!= message_fail_share
 					if (addMessageMoney == 'wrongdate')
@@ -471,10 +471,35 @@ block content
 									//$('.intro2').css("margin-top",$('.restrictreport').height() + 'px');
 									$(".intro2").html(source);
 									$(".intro2").before("<label for='togglerules' id='labeldownload'  class='labeldownload animated fadeInUp'><span class='fa fa-download'></span></label>");
-									console.log("height shares is: " + $('.restrictreport').height());
+									
+									setTimeout(function(){
+									console.log("height insuff is: " + $('.containerreports').height());
+									console.log("top insuff is: " + $('.containerreports').offset().top);
+									console.log("report insuff height is: " + $('.reportlabels').height());
+									console.log("report insuff top is: " + $('.reportlabels').offset().top);
 									var l = $('.containerreports').offset().top + $('.containerreports').height();
 									console.log("scrolling " + l);
 									$('html,body').animate({scrollTop: l}, 1000);
+									}, 500);
+
+									$(".intro2").prev('#labeldownloadxl').click(function() {
+										/* original data */
+										//var data = [[1,2,3,4],["Sample", "Sample", "Sample", "Sample"],["foo","bar","Hello","0.3"], ["baz", null, "qux"]];
+										console.log("" + "#{dataMoney}");
+										
+										var data = JSON.parse('!{dataMoney}');
+										console.dir(data);
+										var ws_name = "SheetJS";
+
+										var wb = new Workbook(), ws = sheet_from_array_of_arrays(data);
+
+										/* add worksheet to workbook */
+										wb.SheetNames.push(ws_name);
+										wb.Sheets[ws_name] = ws;
+										var wbout = XLSX.write(wb, {bookType:'xlsx', bookSST:true, type: 'binary'});
+										saveAs(new Blob([s2ab(wbout)],{type:"application/octet-stream"}), "#{file_money}" + ".xlsx")										
+									});
+
 									$(".intro2").prev('#labeldownload').click(function() {
 									specialElementHandlers = {
 										'#bypassme': function(element, renderer) {
@@ -522,7 +547,7 @@ block content
 									}
 									else
 									{
-										pdf2.save("#{file_money}");
+										pdf2.save("#{file_money} + ".pdf"");
 									}
 									}
 									, margins);
@@ -539,7 +564,7 @@ block content
 					p= i18n.__("reports.orders.subtitle")
 					- var datefrom_orders = datefromOrders
 					- var dateto_orders = datetoOrders
-					- var file_orders = i18n.__("reports.orders.file") + datefrom_orders + i18n.__("reports.file.to") + dateto_orders + ".pdf"
+					- var file_orders = i18n.__("reports.orders.file") + datefrom_orders + i18n.__("reports.file.to") + dateto_orders
 					- var message_fail_order = i18n.__("reports.orders.message.fail")
 					- var message_fail_date_order = i18n.__("reports.orders.message.date.fail")
 					- var message_success_order = i18n.__("reports.orders.message.success1") + datefrom_orders + i18n.__("reports.orders.message.success2") + dateto_orders + i18n.__("reports.orders.message.success3")
@@ -556,7 +581,7 @@ block content
 						- datefrom_orders = i18n.__("reports.orders.lab.option")
 						- dateto_orders = ""
 						- message_success_order = i18n.__("reports.orders.message.successorders")
-						- file_orders = i18n.__("reports.orders.file_all") + ".pdf" 
+						- file_orders = i18n.__("reports.orders.file_all") 
 					if (addMessageOrders == 'failure')
 						div(class="alert alert-danger alertshadow")!= message_fail_order
 					if (addMessageOrders == 'wrongdate')
@@ -614,10 +639,36 @@ block content
 									//$('.intro2').css("margin-top",$('.restrictreport').height() + 'px');
 									$(".intro2").html(source);
 									$(".intro2").before("<label for='togglerules' id='labeldownload'  class='labeldownload animated fadeInUp'><span class='fa fa-download'></span></label>");
-									console.log("height shares is: " + $('.restrictreport').height());
+									
+									setTimeout(function(){
+									console.log("height insuff is: " + $('.containerreports').height());
+									console.log("top insuff is: " + $('.containerreports').offset().top);
+									console.log("report insuff height is: " + $('.reportlabels').height());
+									console.log("report insuff top is: " + $('.reportlabels').offset().top);
 									var l = $('.containerreports').offset().top + $('.containerreports').height();
 									console.log("scrolling " + l);
 									$('html,body').animate({scrollTop: l}, 1000);
+									}, 500);
+
+									$(".intro2").prev('#labeldownloadxl').click(function() {
+										/* original data */
+										//var data = [[1,2,3,4],["Sample", "Sample", "Sample", "Sample"],["foo","bar","Hello","0.3"], ["baz", null, "qux"]];
+										console.log("" + "#{dataOrders}");
+										
+										var data = JSON.parse('!{dataOrders}');
+										console.dir(data);
+										var ws_name = "SheetJS";
+
+										var wb = new Workbook(), ws = sheet_from_array_of_arrays(data);
+
+										/* add worksheet to workbook */
+										wb.SheetNames.push(ws_name);
+										wb.Sheets[ws_name] = ws;
+										var wbout = XLSX.write(wb, {bookType:'xlsx', bookSST:true, type: 'binary'});
+										saveAs(new Blob([s2ab(wbout)],{type:"application/octet-stream"}), "#{file_orders}" + ".xlsx")										
+									});
+
+
 									$(".intro2").prev('#labeldownload').click(function() {
 									specialElementHandlers = {
 										// element with id of "bypass" - jQuery style selector
@@ -681,7 +732,7 @@ block content
 									}
 									else
 									{
-										pdf2.save("#{file_orders}");
+										pdf2.save("#{file_orders}" + ".pdf");
 									}
 									
 									}
@@ -699,7 +750,7 @@ block content
 					p= i18n.__("reports.shares.subtitle")
 					- var datefrom_shares = datefromShares
 					- var dateto_shares = datetoShares
-					- var file_shares = i18n.__("reports.shares.file") + datefrom_shares + i18n.__("reports.file.to") + dateto_shares + ".pdf"
+					- var file_shares = i18n.__("reports.shares.file") + datefrom_shares + i18n.__("reports.file.to") + dateto_shares
 					- var message_fail_share = i18n.__("reports.shares.message.fail")
 					- var message_fail_date_share = i18n.__("reports.shares.message.date.fail")
 					- if (addMessageShares != null)
@@ -716,7 +767,7 @@ block content
 						- datefrom_shares = i18n.__("reports.shares.lab.option")
 						- dateto_shares = ""
 						- message_success_share = i18n.__("reports.shares.message.successshares")
-						- file_shares = i18n.__("reports.shares.file_all") + ".pdf" 
+						- file_shares = i18n.__("reports.shares.file_all")
 					if (addMessageShares == 'failure')
 						div(class="alert alert-danger alertshadow")!= message_fail_share
 					if (addMessageShares == 'wrongdate')
@@ -763,10 +814,35 @@ block content
 									//$('.intro2').css("margin-top",$('.restrictreport').height() + 'px');
 									$(".intro2").html(source);
 									$(".intro2").before("<label for='togglerules' id='labeldownload' class='labeldownload animated fadeInUp'><span class='fa fa-download'></span></label>");
-									console.log("height shares is: " + $('.restrictreport').height());
+									
+									setTimeout(function(){
+									console.log("height insuff is: " + $('.containerreports').height());
+									console.log("top insuff is: " + $('.containerreports').offset().top);
+									console.log("report insuff height is: " + $('.reportlabels').height());
+									console.log("report insuff top is: " + $('.reportlabels').offset().top);
 									var l = $('.containerreports').offset().top + $('.containerreports').height();
 									console.log("scrolling " + l);
 									$('html,body').animate({scrollTop: l}, 1000);
+									}, 500);
+
+									$(".intro2").prev('#labeldownloadxl').click(function() {
+										/* original data */
+										//var data = [[1,2,3,4],["Sample", "Sample", "Sample", "Sample"],["foo","bar","Hello","0.3"], ["baz", null, "qux"]];
+										console.log("" + "#{dataShares}");
+										
+										var data = JSON.parse('!{dataShares}');
+										console.dir(data);
+										var ws_name = "SheetJS";
+
+										var wb = new Workbook(), ws = sheet_from_array_of_arrays(data);
+
+										/* add worksheet to workbook */
+										wb.SheetNames.push(ws_name);
+										wb.Sheets[ws_name] = ws;
+										var wbout = XLSX.write(wb, {bookType:'xlsx', bookSST:true, type: 'binary'});
+										saveAs(new Blob([s2ab(wbout)],{type:"application/octet-stream"}), "#{file_shares}" + ".xlsx")										
+									});
+
 									$(".intro2").prev('#labeldownload').click(function() {
 									specialElementHandlers = {
 										// element with id of "bypass" - jQuery style selector
@@ -839,7 +915,7 @@ block content
 									}
 									else
 									{
-										pdf2.save("#{file_shares}");
+										pdf2.save("#{file_shares}" + ".xlsx");
 									}
 
 									}
@@ -919,7 +995,7 @@ block content
 								//	-for(var prop in ob0)
 								//		-test.push({ob0[prop].vendor})
 											
-								- var file_insuff = i18n.__("reports.insuff.file") + labinsuff + ".pdf" 
+								- var file_insuff = i18n.__("reports.insuff.file") + labinsuff 
 								script(type="text/javascript" src="/javascripts/jspdf.js")
 								script(type="text/javascript" src="/javascripts/xlsx.core.min.js")
 								script(type="text/javascript" src="/javascripts/Blob.js")
@@ -966,7 +1042,7 @@ block content
 										wb.SheetNames.push(ws_name);
 										wb.Sheets[ws_name] = ws;
 										var wbout = XLSX.write(wb, {bookType:'xlsx', bookSST:true, type: 'binary'});
-										saveAs(new Blob([s2ab(wbout)],{type:"application/octet-stream"}), "sample.xlsx")										
+										saveAs(new Blob([s2ab(wbout)],{type:"application/octet-stream"}), "#{file_insuff}"+ ".xlsx")										
 									});
 									$(".intro2").prev('#labeldownload').click(function() {
 									console.log("download clicked");
@@ -1017,7 +1093,7 @@ block content
 									}
 									else
 									{
-										pdf2.save("#{file_insuff}");
+										pdf2.save("#{file_insuff}"+ ".pdf");
 									}
 									}
 									, margins);
