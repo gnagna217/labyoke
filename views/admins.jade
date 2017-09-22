@@ -313,7 +313,7 @@ block content
 												td(class="wrapped2") #{ob[prop].requestoremail}
 												td(class="wrapped2") #{ob[prop].email}
 												td #{d}
-												td
+												td(style="width: 17px;")
 													form(action="/admincancelshare" method="post")
 														div(class="checkboxThree1", style=showcancel)
 															input(style="position:absolute;left: -9999px;" type="checkbox" id=c name="cancel" value="cancel" class="cancel" checked=(checkedstr===true ? "checked" : undefined))
@@ -328,7 +328,7 @@ block content
 														input(type="hidden" name="date" value=ob[prop].date)
 														input(type="hidden" name="table" value=currentlabname.replace(" ","").toLowerCase() + "_orders")
 														input(type="hidden" name="adminType" value="laborders")
-												td
+												td(style="width: 17px;")
 													form(action="/fulfillshare" method="post")
 														
 														div(class="checkboxThree1", style=showfulfill)
@@ -409,7 +409,7 @@ block content
 												td(class="wrapped2")  #{ob[prop].email}
 												td(class="wrapped2")  #{ob[prop].vendor}
 												td(class="wrapped2")  #{ob[prop].catalognumber}
-												td
+												td(style="width: 17px;")
 													form(action="/admincancelshare" method="post")
 														div(class="checkboxThree1", style=showfulfill)
 															input(style="position:absolute;left: -9999px;" type="checkbox" id=c name="cancel" value="cancel" class="cancel" checked=(checkedstr===true ? "checked" : undefined))
