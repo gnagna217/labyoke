@@ -1273,10 +1273,11 @@ block content
 			return this;
 			}
 
-			if(wi>440){
+			setTimeout(function(){if(wi>440){
 			$(".reportlabels2").center(); 
 			}
-			$(".containerreports").css("display", "block");                           
+			$(".containerreports").css("display", "block");
+			},1000);                         
 
 			$(window).resize(function(){ 
 			if(wi>440){
