@@ -59,7 +59,7 @@ block content
 						$(".labelexpandmood").css("top","-44px");
 					} else {
 						$(".reportlabels").addClass("reportlabels2");
-						if($(".reportlabels").width() > 675){
+						if($(window).width() > 900){
 							$(".labelexpandmood").css("top","0px");
 						}
 					}
@@ -105,8 +105,8 @@ block content
 							$(".labelexpandmood").css("top","-44px");
 						} else {
 							$(".reportlabels").addClass("reportlabels2");
-							if($(".reportlabels").width() > 675){
-								$(".labelexpandmood").css("top","0px");
+							if($(window).width() > 900){
+							$(".labelexpandmood").css("top","0px");
 							}
 						}
 						$(".reportlabels").removeClass("animated slideInRight");
@@ -148,7 +148,7 @@ block content
 						$(".labelexpandmood").css("top","-44px");
 					} else {
 						$(".reportlabels").addClass("reportlabels2");
-						if($(".reportlabels").width() > 675){
+						if($(window).width() > 900){
 							$(".labelexpandmood").css("top","0px");
 						}
 					}
@@ -187,15 +187,18 @@ block content
 
 					//$( ".labelexpandrules" ).on("click touchend", function(e) {
 					$( ".labelexpandrules" ).click(function() {
-					console.log("w is: " + $(".reportlabels").width());
 					if($('#reportInsuff').is(':visible')){
-						console.log("reportinsuff visible");
 						$(".reportlabels").removeClass("reportlabels2");
 						$(".labelexpandmood").css("top","-44px");
-					} else {
-						$(".reportlabels").addClass("reportlabels2");
+						console.log("w is: " + $(".reportlabels").width());
 						if($(".reportlabels").width() > 675){
 							$(".labelexpandmood").css("top","0px");
+						}
+					} else {
+						consol.log("and else: " + $(".reportlabels").width() + " - " + $(window).width());
+						$(".reportlabels").addClass("reportlabels2");
+						if($(window).width() > 900){
+							//$(".labelexpandmood").css("top","0px");
 						}
 					}
 						$(".reportlabels").removeClass("animated slideInRight");
