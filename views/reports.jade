@@ -1011,11 +1011,8 @@ block content
 								script(type="text/javascript" src="/javascripts/FileSaver.js")
 								script(type="text/javascript" src="/javascripts/savexl.js")
 								script.
-									if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
-										console.log("ismobile");
-									} else {
-									console.log("isdesktop");
-									$('.intro2').show();
+									
+									
 									var ob = "#{resultsInsuff}"
 									ob = ob.replace(/&lt;/g,"<");
 									ob = ob.replace(/&gt;/g,">");
@@ -1028,6 +1025,11 @@ block content
 									//$(".reportlabels").addClass("reportlabels2");
 									//$('.intro2').css("margin-top",$('.restrictreport').height() + 'px');
 									$(".intro2").html(source);
+
+									if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+										console.log("ismobile");
+									} else {
+									console.log("isdesktop");
 									$(".intro2").before("<label for='togglerules' id='labeldownload'  class='labeldownload animated fadeInUp'><span class='fa fa-download'></span></label><label for='togglerules' id='labeldownloadxl'  class='labeldownload animated fadeInUp'><span class='fa fa-database'></span></label>");
 
 									setTimeout(function(){
@@ -1113,9 +1115,9 @@ block content
 									, margins);
 									});
 									
-									
-									});
 									}
+									});
+									
 								- resultsInsuff = ""
 						script.
 							$(window).scrollTop($('#reportInsuff').offset().top).scrollLeft($('#reportInsuff').offset().left);
