@@ -1011,6 +1011,10 @@ block content
 								script(type="text/javascript" src="/javascripts/FileSaver.js")
 								script(type="text/javascript" src="/javascripts/savexl.js")
 								script.
+									if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+										console.log("ismobile");
+									} else {
+									console.log("isdesktop");
 									$('.intro2').show();
 									var ob = "#{resultsInsuff}"
 									ob = ob.replace(/&lt;/g,"<");
@@ -1111,6 +1115,7 @@ block content
 									
 									
 									});
+									}
 								- resultsInsuff = ""
 						script.
 							$(window).scrollTop($('#reportInsuff').offset().top).scrollLeft($('#reportInsuff').offset().left);
