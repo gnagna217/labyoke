@@ -81,7 +81,7 @@ display: none !important;
 .containerreports{
     margin-top:-25px;
     overflow: hidden;
-    padding-bottom: 25px;
+    /*padding-bottom: 25px;*/
 }
 .reportlabels2{
     float: left;
@@ -1643,8 +1643,8 @@ a {
 
 .restrictreport{
     width: 95%;
-    margin-top: 40px;
     margin: 0 auto;
+    margin-top: 40px;
     /*margin-top: -40px;*/
 }
 
