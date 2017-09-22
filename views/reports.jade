@@ -470,7 +470,7 @@ block content
 									//$(".reportlabels").addClass("reportlabels2");
 									//$('.intro2').css("margin-top",$('.restrictreport').height() + 'px');
 									$(".intro2").html(source);
-									$(".intro2").before("<label for='togglerules' id='labeldownload'  class='labeldownload animated fadeInUp'><span class='fa fa-download'></span></label><label for='togglerules' id='labeldownloadx'  class='labeldownload animated fadeInUp'><span class='fa fa-download'></span></label>");
+									$(".intro2").before("<label for='togglerules' id='labeldownload'  class='labeldownload animated fadeInUp'><span class='fa fa-download'></span></label>");
 									console.log("height shares is: " + $('.restrictreport').height());
 									var l = $('.intro2').offset().top + 200;
 									console.log("scrolling " + l);
@@ -613,7 +613,7 @@ block content
 									//$(".reportlabels").addClass("reportlabels2");
 									//$('.intro2').css("margin-top",$('.restrictreport').height() + 'px');
 									$(".intro2").html(source);
-									$(".intro2").before("<label for='togglerules' id='labeldownload'  class='labeldownload animated fadeInUp'><span class='fa fa-download'></span></label><label for='togglerules' id='labeldownloadx'  class='labeldownload animated fadeInUp'><span class='fa fa-download'></span></label>");
+									$(".intro2").before("<label for='togglerules' id='labeldownload'  class='labeldownload animated fadeInUp'><span class='fa fa-download'></span></label>");
 									console.log("height shares is: " + $('.restrictreport').height());
 									var l = $('.intro2').offset().top + 200;
 									console.log("scrolling " + l);
@@ -762,7 +762,7 @@ block content
 									//$(".reportlabels").addClass("reportlabels2");
 									//$('.intro2').css("margin-top",$('.restrictreport').height() + 'px');
 									$(".intro2").html(source);
-									$(".intro2").before("<label for='togglerules' id='labeldownload' class='labeldownload animated fadeInUp'><span class='fa fa-download'></span></label><label for='togglerules' id='labeldownloadx'  class='labeldownload animated fadeInUp'><span class='fa fa-download'></span></label>");
+									$(".intro2").before("<label for='togglerules' id='labeldownload' class='labeldownload animated fadeInUp'><span class='fa fa-download'></span></label>");
 									console.log("height shares is: " + $('.restrictreport').height());
 									var l = $('.intro2').offset().top + 200;
 									console.log("scrolling " + l);
@@ -931,31 +931,11 @@ block content
 									//$(".reportlabels").addClass("reportlabels2");
 									//$('.intro2').css("margin-top",$('.restrictreport').height() + 'px');
 									$(".intro2").html(source);
-									$(".intro2").before("<label for='togglerules' id='labeldownload'  class='labeldownload animated fadeInUp'><span class='fa fa-download'></span></label><label for='togglerules' id='labeldownloadx'  class='labeldownload animated fadeInUp'><span class='fa fa-download'></span></label>");
+									$(".intro2").before("<label for='togglerules' id='labeldownload'  class='labeldownload animated fadeInUp'><span class='fa fa-download'></span></label>");
 									console.log("height shares is: " + $('.restrictreport').height());
 									var l = $('.intro2').offset().top + 200;
 									console.log("scrolling " + l);
 									$('html,body').animate({scrollTop: l}, 1000);
-
-									$(".intro2").prev('#labeldownloadx').click(function() {
-										const config = {
-											filename: 'general-ledger-Q1',
-											sheet: {
-												data: [
-													[{
-													value: 'Income - Webshop',
-													type: 'string'
-													}, {
-													value: 1000,
-													type: 'number'
-													}]
-												]
-											}
-										}
-
-										zipcelx(config);
-									});
-
 									$(".intro2").prev('#labeldownload').click(function() {
 									console.log("download clicked");
 									specialElementHandlers = {
