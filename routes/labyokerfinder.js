@@ -591,7 +591,7 @@ console.log("report on savings- dateto: " + labsindept);
 LabYokeReporterSavings.prototype.reportInsuff = function(callback) {
 	var results;
 	var resultsbundled = [];
-	var dataonly = [];
+	var dataonly = new Array();
 	var headeronly = [];
 	var x = 0;
 	var mylab = this.mylab.replace(/ /g,"").toLowerCase();
@@ -657,6 +657,7 @@ console.log("report on insuff: " + labsindept);
 	headeronly.push(i18n.__("index.reportsMoney.param12"));
 	columns+="<td>" + i18n.__("index.reportsMoney.param12") + "</td>";
 	console.log("headeronly: "  + headeronly);
+	dataonly[x] = new Array();
 	dataonly[x].push(headeronly);
 	console.log("dataonly0: "  + dataonly);
 	
@@ -711,6 +712,7 @@ if(lab != null && lab !=undefined && lab =="all"){
 				rowonly.push(moment(results[prop].insuffdate).tz("America/New_York").format('MM-DD-YYYY'));
 				html += "<td style='font-size: 12px;'>" + moment(results[prop].insuffdate).tz("America/New_York").format('MM-DD-YYYY')+ "</td>";
 				html += " </tr>";
+				dataonly[x] = new Array();
 				dataonly[x].push(rowonly);
 				console.log("dataonly: "  + dataonly);
 		
