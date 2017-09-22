@@ -691,6 +691,7 @@ if(lab != null && lab !=undefined && lab =="all"){
 				var rowonly = [];
 				isempty = false;
 				rowonly.push(results[prop].agent);
+				rowonly.push(results[prop].lab);
 
 				html += "<tr>" + "<td style='font-size: 12px;'>" + results[prop].agent + "</td>" + "<td style='font-size: 12px;'>" + results[prop].lab + "</td>";
 
@@ -715,7 +716,7 @@ if(lab != null && lab !=undefined && lab =="all"){
 			html += "</tbody></table><br/><p style='margin-top:25px'><i><b>" + i18n.__("index.reportsShares.html7") + "</b></i></p>";
 			console.log("html insuff: " + html);
 			resultsbundled.push(html);
-			resultsbundled.push(results);
+			resultsbundled.push(dataonly);
 			console.log("dataonly1: "  + dataonly);
 		}
 		if(!isempty){
