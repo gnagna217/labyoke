@@ -1,6 +1,8 @@
 extends layout
 
 block content
+	script.
+		var recenter = 0;
 	div(id="pageloader")
 		div(class="spinner")
 			div(class="bounce1")
@@ -54,6 +56,7 @@ block content
 				script.
 					//$(".labelexpand").on("click touchend", function(e) {
 					$( ".labelexpand" ).click(function() {
+					recenter = 1;
 					if($('#reportMoney').is(':visible')){
 						$(".reportlabels").removeClass("reportlabels2");
 						$(".labelexpandmood").css("top","-44px");
@@ -100,6 +103,7 @@ block content
 
 					//$( ".labelexpandedit" ).on("click touchend", function(e) {
 					$( ".labelexpandedit" ).click(function() {
+						recenter = 1;
 						if($('#reportOrders').is(':visible')){
 							$(".reportlabels").removeClass("reportlabels2");
 							$(".labelexpandmood").css("top","-44px");
@@ -143,6 +147,7 @@ block content
 
 					//$( ".labelexpandadd" ).on("click touchend", function(e) {
 					$( ".labelexpandadd" ).click(function() {
+					recenter = 1;
 					if($('#reportShares').is(':visible')){
 						$(".reportlabels").removeClass("reportlabels2");
 						$(".labelexpandmood").css("top","-44px");
@@ -187,6 +192,7 @@ block content
 
 					//$( ".labelexpandrules" ).on("click touchend", function(e) {
 					$( ".labelexpandrules" ).click(function() {
+					recenter = 1;
 					if($('#reportInsuff').is(':visible')){
 						$(".reportlabels").removeClass("reportlabels2");
 						$(".labelexpandmood").css("top","-44px");
@@ -228,7 +234,6 @@ block content
 
 					//$( ".labelexpandemood" ).on("click touchend", function(e) {
 					$( ".labelexpandmood" ).click(function() {
-					
 						$(".reportlabels").removeClass("reportlabels2");
 						$(".labelexpandmood").css("top","-44px");
 					
@@ -1251,63 +1256,66 @@ block content
 			labelcheck.classList.toggle("bordercolorreport");
 			});
 		}
-		//$(".containerreports").css("display", "block");
 
-	- if(resultsMoney.length==0 && resultsShares.length==0 && resultsInsuff.length==0 && resultsOrders.length==0)
-		script.
-			$(document).ready(function(){
-				var wi = $(window).width();
-				$(function(){
-				$.fn.center = function () {
-				if(!$('.reportMoney').is(':visible') && !$('.reportShares').is(':visible') && !$('.reportInsuff').is(':visible') && !$('.reportOrders').is(':visible')){
-				console.log("results visible ");
-				this.removeAttr( "style" );
-				var t = ($(window).height() - this.height()) / 2 ; 
-				console.log("t login: " + t);
-				console.log("$(window).height(): " + $(window).height());
-				console.log("this.height() login: " + this.height());
-				
-				if(wi>440 && t > 25){
-				console.log("inside t");
-				this.css("margin-top",  t + "px");
-				this.css("-webkit-transition","all .5s ease");
-				this.css("transition","all .5s ease");
-				}
-				//this.css("left", ( $(window).width() - this.width() ) / 2 + "px");
-				}
-				return this;
-				}
 
-				$(".reportlabels2").center(); 
-				
-				$(".containerreports").css("display", "block");                         
+		$(document).ready(function(){
+			if(recenter == 0){
+			var wi = $(window).width();
 
-				$(window).resize(function(){ 
+			$(function(){
+			$.fn.center = function () {
+			if(!$('.reportMoney').is(':visible') && !$('.reportShares').is(':visible') && !$('.reportInsuff').is(':visible') && !$('.reportOrders').is(':visible')){
+			console.log("results visible ");
+			this.removeAttr( "style" );
+			var t = ($(window).height() - this.height()) / 2 ; 
+			console.log("t login: " + t);
+			console.log("$(window).height(): " + $(window).height());
+			console.log("this.height() login: " + this.height());
+			
+			if(wi>440 && t > 25){
+			console.log("inside t");
+			this.css("margin-top",  t + "px");
+			this.css("-webkit-transition","all .5s ease");
+			this.css("transition","all .5s ease");
+			}
+			//this.css("left", ( $(window).width() - this.width() ) / 2 + "px");
+			}
+			return this;
+			}
+
+			$(".reportlabels2").center(); 
+			}
+
+			$(".containerreports").css("display", "block");                         
+
+			$(window).resize(function(){ 
 				if(wi>440){
-				$(".reportlabels2").center();
+					$(".reportlabels2").center();
 				}
-				});                          
+			});                          
 
-				});
-			});
+			}
 
-			/*$(document).ready(function(){
-				if($('#reportOrders').is(':visible')){
-					console.log("visible reportOrders");
-					$('.labelexpandedit').addClass( "highlightlabel" );
-				}
-				if($('#reportMoney').is(':visible')){
-					console.log("visible reportMoney");
-					$('.labelexpand').addClass( "highlightlabel" );
-				}
-				if($('#reportShares').is(':visible')){
-					console.log("visible reportShares");
-					$('.labelexpandadd').addClass( "highlightlabel" );
-				}
-				if($('#reportInsuff').is(':visible')){
-					console.log("visible reportInsuff");
-					$('.labelexpandrules').addClass( "highlightlabel" );
-				}
 			});
-			*/
-				
+			
+
+		/*$(document).ready(function(){
+			if($('#reportOrders').is(':visible')){
+				console.log("visible reportOrders");
+				$('.labelexpandedit').addClass( "highlightlabel" );
+			}
+			if($('#reportMoney').is(':visible')){
+				console.log("visible reportMoney");
+				$('.labelexpand').addClass( "highlightlabel" );
+			}
+			if($('#reportShares').is(':visible')){
+				console.log("visible reportShares");
+				$('.labelexpandadd').addClass( "highlightlabel" );
+			}
+			if($('#reportInsuff').is(':visible')){
+				console.log("visible reportInsuff");
+				$('.labelexpandrules').addClass( "highlightlabel" );
+			}
+		});
+		*/
+			
