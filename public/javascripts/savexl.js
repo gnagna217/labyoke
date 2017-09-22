@@ -62,6 +62,7 @@ function s2ab(s) {
 
 function read(){
     /* set up XMLHttpRequest */
+    console.log("reading");
     var url = "sample.xlsx";
     var oReq = new XMLHttpRequest();
     oReq.open("GET", url, true);
