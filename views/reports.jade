@@ -948,7 +948,9 @@ block content
 
 									$(".intro2").prev('#labeldownloadxl').click(function() {
 										/* original data */
-										var data = [[1,2,3,4],["Sample", "Sample", "Sample", "Sample"],["foo","bar","Hello","0.3"], ["baz", null, "qux"]]
+										//var data = [[1,2,3,4],["Sample", "Sample", "Sample", "Sample"],["foo","bar","Hello","0.3"], ["baz", null, "qux"]];
+										console.log("" + "#{dataInsuff}");
+										var data = #{dataInsuff};
 										var ws_name = "SheetJS";
 
 										var wb = new Workbook(), ws = sheet_from_array_of_arrays(data);

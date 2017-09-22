@@ -590,6 +590,9 @@ console.log("report on savings- dateto: " + labsindept);
 
 LabYokeReporterSavings.prototype.reportInsuff = function(callback) {
 	var results;
+	var resultsbundled = [];
+	var dataonly = [];
+	var headeronly = [];
 	var mylab = this.mylab.replace(/ /g,"").toLowerCase();
 	var labs = this.labs;
 	var datefrom = this.datefrom;
@@ -627,26 +630,31 @@ console.log("report on insuff: " + labsindept);
 		if(selected.length>0)
 			selected +=", ";
 		selected += "a.agent";
+		headeronly.push(i18n.__("index.reportsMoney.param9"));
 		columns+="<td>" + i18n.__("index.reportsMoney.param9") + "</td>";
 	} 
 	if(vendor != null && vendor !=undefined && vendor !=""){
 		if(selected.length>0)
 			selected +=", ";
 		selected += "a.vendor";
+		headeronly.push(i18n.__("index.reportsMoney.param10"));
 		columns+="<td>" + i18n.__("index.reportsMoney.param10") + "</td>";
 	}
 	if(catalognumber != null && catalognumber !=undefined && catalognumber !=""){
 		if(selected.length>0)
 			selected +=", ";
 		selected += "a.catalognumber";
+		headeronly.push(i18n.__("index.reportsMoney.param11"));
 		columns+="<td>" + i18n.__("index.reportsMoney.param11") + "</td>";
 	}
 
 	/*if(selected.length>0)
 		selected +=", ";
 	selected +="count(a.category)";*/
+	headeronly.push(i18n.__("index.reportsMoney.param12"));
 	columns+="<td>" + i18n.__("index.reportsMoney.param12") + "</td>";
-
+	dataonly.push(headeronly);
+	
 
 
 if(lab != null && lab !=undefined && lab =="all"){
@@ -676,7 +684,9 @@ if(lab != null && lab !=undefined && lab =="all"){
 		html +="<table style='margin-top:25px;'><tbody><tr style='color:white;background-color:#3d9dcb;font-size:12px'>" + columns + "</tr>"
 		
 			for(var prop in results){
+				var rowonly = [];
 				isempty = false;
+				rowonly.push(results[prop].agent);
 
 				html += "<tr>" + "<td style='font-size: 12px;'>" + results[prop].agent + "</td>" + "<td style='font-size: 12px;'>" + results[prop].lab + "</td>";
 
@@ -684,20 +694,26 @@ if(lab != null && lab !=undefined && lab =="all"){
 				html += "<td style='font-size: 12px;'>" + results[prop].agent + "</td>";
 				}
 				if(vendor != null && vendor !=undefined && vendor !=""){
+					rowonly.push(results[prop].vendor);
 				html += "<td style='font-size: 12px;'>" + results[prop].vendor + "</td>";
 				}
 				if(catalognumber != null && catalognumber !=undefined && catalognumber !=""){
+					rowonly.push(results[prop].catalognumber);
 				html += "<td style='font-size: 12px;'>" + results[prop].catalognumber + "</td>";
 				}
+				rowonly.push(moment(results[prop].insuffdate).tz("America/New_York").format('MM-DD-YYYY'));
 				html += "<td style='font-size: 12px;'>" + moment(results[prop].insuffdate).tz("America/New_York").format('MM-DD-YYYY')+ "</td>";
 				html += " </tr>";
+				dataonly.push(rowonly);
 		
 			}
 			html += "</tbody></table><br/><p style='margin-top:25px'><i><b>" + i18n.__("index.reportsShares.html7") + "</b></i></p>";
 			console.log("html insuff: " + html);
+			resultsbundled.push(html);
+			resultsbundled.push(dataonly);
 		}
 		if(!isempty){
-			callback(null, html);
+			callback(null, resultsbundled);
 		} else {
 			callback(null, results)
 		}
