@@ -634,7 +634,7 @@ console.log("report on insuff: " + labsindept);
 		if(selected.length>0)
 			selected +=", ";
 		selected += "a.agent";
-		headeronlyheaderonly[y++] = i18n.__("index.reportsMoney.param9");
+		headeronly[y++] = i18n.__("index.reportsMoney.param9");
 		columns+="<td>" + i18n.__("index.reportsMoney.param9") + "</td>";
 	} 
 	if(vendor != null && vendor !=undefined && vendor !=""){
@@ -648,14 +648,14 @@ console.log("report on insuff: " + labsindept);
 		if(selected.length>0)
 			selected +=", ";
 		selected += "a.catalognumber";
-		headeronlyheaderonly[y++] = i18n.__("index.reportsMoney.param11");
+		headeronly[y++] = i18n.__("index.reportsMoney.param11");
 		columns+="<td>" + i18n.__("index.reportsMoney.param11") + "</td>";
 	}
 
 	/*if(selected.length>0)
 		selected +=", ";
 	selected +="count(a.category)";*/
-	headeronlyheaderonly[y++] = i18n.__("index.reportsMoney.param12");
+	headeronly[y++] = i18n.__("index.reportsMoney.param12");
 	columns+="<td>" + i18n.__("index.reportsMoney.param12") + "</td>";
 	console.log("headeronly: "  + headeronly);
 	dataonly[x] = new Array();
