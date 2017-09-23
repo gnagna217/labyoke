@@ -1856,6 +1856,9 @@ LabYokerOrder.prototype.order = function(callback) {
 	var userlang = this.userlang;
 	var ownerlang = this.ownerlang;
 
+	console.log("order ownerlang: " + ownerlang);
+	console.log("order userlang: " + userlang);
+
 	console.log("quantity: " + quantity);
 	quantity = parseInt(quantity) + 100;
 	console.log("currentquantity2: " + quantity);
@@ -1871,10 +1874,9 @@ LabYokerOrder.prototype.order = function(callback) {
 
 		var subject = /*"LabYoke - Pending Order for "*/ i18n.__({phrase: "index.orders.subject", locale: ownerlang}) + agent;
 		var subjectReq = /*"LabYoke - Your Request to order "*/ i18n.__({phrase: "index.orders.resubject", locale: userlang}) + agent;
-		var body="<div style='box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); box-sizing: content-box; padding-right: 15px; margin-top: 20px;'>"
+		var body = "<div style='box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); box-sizing: content-box; padding-right: 15px; margin-top: 20px;'>"
 			
-		body += "<div style='text-align:center;padding-top: 20px;'><img style='width: 141px; margin: 0 20px;' src='https:\/\/team-labyoke.herokuapp.com\/images\/yoke4.png', alt='The Yoke',  title='Yoke', class='yokelogo'/></div><div style='\"font-family:'calibri'; 'font-size:11pt;padding: 20px;\">" + i18n.__({phrase: "index.orders.hello", locale: ownerlang}) + " " + location
-				+ ",<br/><br/>";
+		body += "<div style='text-align:center;padding-top: 20px;'><img style='width: 141px; margin: 0 20px;' src='https:\/\/team-labyoke.herokuapp.com\/images\/yoke4.png', alt='The Yoke',  title='Yoke', class='yokelogo'/></div><div style='\"font-family:'calibri'; 'font-size:11pt;padding: 20px;\">" + i18n.__({phrase: "index.orders.hello", locale: ownerlang}) + " " + location + ",<br/><br/>";
 		var bodyReq = "<div style='box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); box-sizing: content-box; padding-right: 15px; margin-top: 20px;'>"
 			
 		bodyReq += "<div style='text-align:center;padding-top: 20px;'><img style='width: 141px; margin: 0 20px;' src='https:\/\/team-labyoke.herokuapp.com\/images\/yoke4.png', alt='The Yoke',  title='Yoke', class='yokelogo'/></div><div style=\"font-family:'calibri'; font-size:11pt;padding: 20px;\">" + i18n.__({phrase: "index.orders.hello", locale: userlang}) + ",<br/><br/>";
