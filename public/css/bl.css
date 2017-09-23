@@ -2166,6 +2166,24 @@ border-top: 5px solid #8a6d3b;
     margin-left:0px !important;
 }
 
+.intro{
+    height: 270px;
+    display: block;
+    overflow: overlay;
+    margin-right: 100px;
+    margin-top: -10px !important;
+    background-color: rgba(138, 109, 59, 0.41);
+    margin-left: 50px;
+    padding: 20px !important;
+}
+
+.intro td, th {
+    padding-right: 5px !important;
+    padding-left: 5px !important;
+}
+.intro > div{
+    margin-left:0px !important;
+}
 /*end report changes*/
 
 .number-over{
