@@ -408,7 +408,7 @@ LabYokeReporterSavings.prototype.reportMoney = function(callback) {
 	var params = "";
 	var columns ="<td>" + i18n.__("index.reportsMoney.param1") + "</td>";
 	headeronly.push(i18n.__("index.reportsMoney.param1"));
-	var html = "<div><span id='reporttitle' style='font-weight:bold;font-size:36pt;margin-bottom:20px;float:left'>" + i18n.__("index.reportsMoney.param2") + ".</span></div><br/><div style='font-size:11pt;padding-top: 50px;'>"
+	var html = "<div><span id='reporttitle' style='font-weight:bold;font-size:36pt;'>" + i18n.__("index.reportsMoney.param2") + ".</span></div><br/><div style='font-size:11pt;'>"
 				+ "" + "";
 	console.log("report on savings- datefrom: " + datefrom);
 	console.log("report on savings- dateto: " + dateto);
@@ -998,7 +998,7 @@ console.log("report on shares my lab: " + mylab);
 				//var category = results[prop].category;
 				var date = results[prop].date;
 
-				html += " <tr style='border-bottom-style: solid;border-bottom-width: thin;'><td style='font-size: 12px;'>" + agent + "</td>";
+				html += " <tr><td style='font-size: 12px;'>" + agent + "</td>";
 				html += " <td style='font-size: 12px;'>" + vendor + "</td>";
 				html += " <td style='font-size: 12px;'>" + catalognumber + "</td>";
 				html += " <td style='font-size: 12px;'>" + location + "</td>";
@@ -1143,7 +1143,7 @@ console.log("report on orders: " + labsindept);
 		console.log("results : " + results);
 		var html = "";
 		if(results != null && results != ""){
-		html = "<div><span id='reporttitle' style='font-weight:bold;font-size:36pt;margin-bottom:20px;float:left'>" + i18n.__("index.reportsOrders.html2") + "</span></div><br/><div style='font-size:11pt;padding-top: 50px;'>";
+		html = "<div><span id='reporttitle' style='font-weight:bold;font-size:36pt;'>" + i18n.__("index.reportsOrders.html2") + "</span></div><br/><div style='font-size:11pt;'>";
 		if(datefrom == 'all'){
 			html += i18n.__("index.reportsOrders.html3"); //"<p>This report is listing all the orders requested:</p></div>"
 		} else {
