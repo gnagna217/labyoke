@@ -1216,7 +1216,7 @@ block content
 		//			div(class='point')
 		//			div(class='containerreport_button__bar')
 		if(resultsMoneyIntro != null && resultsMoneyIntro !="")
-			div(class="intro",style="/*margin-top:500px;*/display:none;")!= resultsMoneyIntro
+			div(class="intro results animated zoomIn",style="/*margin-top:500px;*/display:none;")!= resultsMoneyIntro
 			script(type="text/javascript" src="/javascripts/jspdf.js")
 			script(type="text/javascript" src="/javascripts/FileSaver.js")
 			script.
@@ -1227,6 +1227,17 @@ block content
 				console.log("clicked");
 				$('.intro').css("margin-top",$('.restrictreport').height() + 'px');
 				$('.intro').show();
+
+				setTimeout(function(){
+				console.log("height insuff is: " + $('.containerreports').height());
+				console.log("top insuff is: " + $('.containerreports').offset().top);
+				console.log("report insuff height is: " + $('.reportlabels').height());
+				console.log("report insuff top is: " + $('.reportlabels').offset().top);
+				var l = $('.containerreports').offset().top + $('.containerreports').height();
+				console.log("scrolling " + l);
+				$('html,body').animate({scrollTop: l}, 1000);
+				}, 500);
+									
 				var ob = "#{resultsMoneyIntro}"
 				ob = ob.replace(/&lt;/g,"<");
 				ob = ob.replace(/&gt;/g,">");
