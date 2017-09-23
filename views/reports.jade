@@ -90,6 +90,7 @@ block content
 					$(".containerreports").removeAttr( "style" );
 
 					$('.intro').hide();
+					$('.desktabonly3').hide();
 					$('.intro2').hide();
 					$('.labeldownload').hide();
 					$('#reportMoney').toggle();
@@ -137,6 +138,7 @@ block content
 
 						$('.intro').hide();
 						$('.intro2').hide();
+						$('.desktabonly3').hide();
 						$('.labeldownload').hide();
 						$('#reportOrders').toggle();
 						$('#reportShares').hide();
@@ -182,6 +184,7 @@ block content
 						
 						$(".containerreports").removeAttr( "style" );
 						$('.intro').hide();
+						$('.desktabonly3').hide();
 						$('.intro2').hide();
 						$('.labeldownload').hide();
 						$('#reportShares').toggle();
@@ -225,6 +228,7 @@ block content
 						
 						$(".containerreports").removeAttr( "style" );
 						$('.intro').hide();
+						$('.desktabonly3').hide();
 						$('.intro2').hide();
 						$('.labeldownload').hide();
 						$('#reportInsuff').toggle();
@@ -253,6 +257,7 @@ block content
 					$('#reportMoney').hide();
 					$('#reportInsuff').hide();
 					$('.intro').hide();
+					$('.desktabonly3').hide();
 					$('.intro2').hide();
 					$('.labeldownload').hide();
 					$( this ).toggleClass( "highlightlabel" );
@@ -522,6 +527,7 @@ block content
 								script.
 									recenter = 1;
 									$('.intro2').show();
+									$('.desktabonly3').show();
 									var ob = "#{resultsMoney}"
 									ob = ob.replace(/&lt;/g,"<");
 									ob = ob.replace(/&gt;/g,">");
@@ -706,6 +712,7 @@ block content
 								script.
 									recenter = 1;
 									$('.intro2').show();
+									$('.desktabonly3').show();
 									var ob = "#{resultsOrders}"
 									ob = ob.replace(/&lt;/g,"<");
 									ob = ob.replace(/&gt;/g,">");
@@ -905,6 +912,7 @@ block content
 								script.
 									recenter = 1;
 									$('.intro2').show();
+									$('.desktabonly3').show();
 									var ob = "#{resultsShares}"
 									ob = ob.replace(/&lt;/g,"<");
 									ob = ob.replace(/&gt;/g,">");
@@ -1252,8 +1260,9 @@ block content
 								- resultsInsuff = ""
 						script.
 							$(window).scrollTop($('#reportInsuff').offset().top).scrollLeft($('#reportInsuff').offset().left);
-		div(class="threepointssep desktabonly3", style="top:10px")
+		div(class="threepointssep desktabonly3", style="top:10px;display:none;")
 		div(class="intro2 results animated zoomIn",style="display:none;")
+		div(class="threepointssep desktabonly3", style="top:10px;display:none;")
 		div(class="slide-out-tip-div desktabonly", style="display:none;z-index:1;position: fixed;top: 25% !important;max-height:400px;")
 			a(class="handle" href="last-transactions", title='#{i18n.__("search.tip.header")}', style="right: -60px;left:-60px;top:25px;")!=Content
 			div(style="padding: 4px;color:white;top: -45px;position: relative;")
@@ -1345,6 +1354,7 @@ block content
 				console.log("clicked");
 				$('.intro').css("margin-top",$('.restrictreport').height() + 'px');
 				$('.intro').show();
+				$('.desktabonly3').show();
 
 				setTimeout(function(){
 				console.log("height insuff is: " + $('.containerreports').height());
