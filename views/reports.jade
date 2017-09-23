@@ -568,8 +568,10 @@ block content
 										var data = JSON.parse('!{dataMoney}');
 										console.dir(data);
 										var ws_name = "SheetJS";
+										//brown
+										var opts = {fill:{fgColor:{ rgb: "C9827456" }}};
 
-										var wb = new Workbook(), ws = sheet_from_array_of_arrays(data);
+										var wb = new Workbook(), ws = sheet_from_array_of_arrays(data, opts);
 
 										/* add worksheet to workbook */
 										wb.SheetNames.push(ws_name);
@@ -1172,8 +1174,11 @@ block content
 										var data = JSON.parse('!{dataInsuff}');
 										console.dir(data);
 										var ws_name = "SheetJS";
+										
+										//dark blue
+										var opts = {fill:{fgColor:{ rgb: "C9337AB7" }}};
 
-										var wb = new Workbook(), ws = sheet_from_array_of_arrays(data);
+										var wb = new Workbook(), ws = sheet_from_array_of_arrays(data, opts);
 
 										/* add worksheet to workbook */
 										wb.SheetNames.push(ws_name);

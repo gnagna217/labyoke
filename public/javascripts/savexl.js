@@ -33,9 +33,14 @@ function sheet_from_array_of_arrays(data, opts) {
                 }
             }
             if(R == 0){
-                cell.s={
-                    fill:{
-                        fgColor:{ rgb: "FFFFAA00" }
+                if(opts != null){
+                    cell.s = opts;
+                } else {
+                    cell.s={
+                        fill:{
+                            //fgColor:{ rgb: "FFFFAA00" }
+                            fgColor:{ rgb: "B257A0C1" }
+                        }
                     }
                 }
             }
