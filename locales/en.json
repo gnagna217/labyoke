@@ -141,7 +141,8 @@
     "forgot.fail.desc": "Oops...",
 
     "reports.title": "Reports.",
-    "reports.subtitle": "Here are the reports that an administrator can generate and build a portfolio with. Please note that reports can only be downloaded using <b>Chrome or Firefox</b> browsers.",
+    "reports.subtitle": "Here are the reports that an administrator can generate and build a portfolio with.",
+    "reports.subtitle2": "Please note that reports can only be downloaded using <b>Chrome or Firefox</b> browsers.",
     "reports.form.select": "Select Report",
     "reports.form.option1": "Select A Report...",
     "reports.form.option2": "Savings",

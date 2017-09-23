@@ -11,7 +11,8 @@ block content
 	div(class="container login2 marginbottom margintop container2 moveFromLeft")
 		//img(src="/images/pile.png" class="accountlogo desktabonly" style="z-index: -1;")
 		h1= i18n.__("reports.title")
-		p(class="restrictreporttext")!= i18n.__("reports.subtitle")
+		p(class="restrictreporttext", style="float:left")!= i18n.__("reports.subtitle")
+		p(class="restrictreporttext", style="float:right")!= i18n.__("reports.subtitle2")
 
 			- var now = (new Date())
 			- now = (now.getMonth() + 1) + "/" + now.getDate() + "/" + now.getFullYear()

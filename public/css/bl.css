@@ -65,6 +65,7 @@ display: none !important;
     margin-top:-25px;
     overflow: hidden;
     padding-bottom: 25px;
+    clear: both;
 }
 .reportlabels2{
     float: left;
