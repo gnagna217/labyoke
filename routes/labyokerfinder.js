@@ -631,7 +631,7 @@ LabYokeReporterSavings.prototype.reportInsuff = function(callback) {
 	var columns ="<td>" + i18n.__("index.reportsMoney.param9") + "</td><td>" + i18n.__("reports.insuff.labselect") + "</td>";
 	headeronly.push(i18n.__("index.reportsMoney.param9"));
 	headeronly.push(i18n.__("reports.insuff.labselect"));
-	var html = "<div><span id='reporttitle' style='font-weight:bold;font-size:36pt;margin-bottom:20px;float:left'>" + i18n.__("index.reportsInsuff.param1") + ".</span></div><br/><div style='font-size:11pt;padding-top: 50px;'>"
+	var html = "<div><span id='reporttitle' style='font-weight:bold;font-size:36pt;'>" + i18n.__("index.reportsInsuff.param1") + ".</span></div><br/><div style='font-size:11pt;text-align:left'>"
 				+ "" + "";
 	console.log("report on savings- datefrom: " + datefrom);
 	console.log("report on savings- dateto: " + dateto);

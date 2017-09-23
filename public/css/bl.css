@@ -2159,6 +2159,7 @@ border-top: 5px solid #8a6d3b;
     /*rgba(138, 109, 59, 0.41);*/
     margin-left: 50px;
     padding: 20px !important;
+    text-align: center;
 }
 
 .intro2 td, th {
