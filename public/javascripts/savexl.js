@@ -39,7 +39,7 @@ function sheet_from_array_of_arrays(data, opts) {
                     cell.s={
                         fill:{
                             //fgColor:{ rgb: "FFFFAA00" }
-                            fgColor:{ rgb: "B257A0C1" }
+                            fgColor:{ rgb: "7F4CA1CD" }
                         }
                     }
                 }
