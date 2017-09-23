@@ -585,10 +585,12 @@ console.log("report on savings- dateto: " + labsindept);
 				html += "<td style='font-size: 12px;'>" + moment(results[prop].date).tz("America/New_York").format('MM-DD-YYYY') + "</td>";
 				}
 				var total = results[prop].counting /* * results[prop].price*/;
-				dataonly.push(rowonly);
+				
 				console.log("counting is: " + total);
 				savings += parseInt(total);
 				html += "<td style='font-size: 12px;'>" + accounting.formatMoney(total, { symbol: "",  format: "%v %s", precision : 0 }) /*accounting.formatMoney(total)*/ + "</td>";
+				rowonly.push(accounting.formatMoney(total, { symbol: "",  format: "%v %s", precision : 0 }));
+				dataonly.push(rowonly);
 				html += " </tr>";
 				console.log("savings is: " + savings);
 		
