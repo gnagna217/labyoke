@@ -888,6 +888,9 @@ console.log("report on shares my lab: " + mylab);
 LabYokeReporterShares.prototype.reportSharesIntro = function(callback) {
 	var results;
 	var i18n = this.res;
+	var resultsbundled = [];
+	var dataonly = [];
+	var headeronly = [];
 	//var datefrom = this.datefrom;
 	//var dateto = this.dateto;
 	//var category = this.category;
@@ -973,9 +976,17 @@ console.log("report on shares my lab: " + mylab);
 		html += params;
 		
 		if(results != null && results != ""){
+			headeronly.push(i18n.__("index.reportsMoney.param9"));
+			headeronly.push(i18n.__("index.reportsMoney.param10"));
+			headeronly.push(i18n.__("index.reportsMoney.param11"));
+			headeronly.push(i18n.__("index.reportsMoney.param15"));
+			headeronly.push(i18n.__("index.reportsMoney.param16"));
+			headeronly.push(i18n.__("index.reportsMoney.param12"));
+			dataonly.push(headeronly);
 		//"<table><tbody><tr style='color: white;background-color: #3d9dcb;'><td style='font-size: 12px;'>Reagent</td><td style='font-size: 12px;'>Vendor</td><td style='font-size: 12px;'>Catalog#</td><td style='font-size: 12px;'>Location</td><td style='font-size: 12px;'>User</td><td>Date</td></tr>"
 			html += i18n.__("index.reportsShares.html6");
 			for(var prop in results){
+				var rowonly = [];
 				isempty = false;
 				var agent = results[prop].agent;
 				var vendor = results[prop].vendor;
@@ -992,13 +1003,22 @@ console.log("report on shares my lab: " + mylab);
 				html += " <td style='font-size: 12px;padding-top: 10px;padding-bottom: 10px;padding-right: 10px;'>" + email + "</td>";
 				//html += " <td style='font-size: 12px;'>" + category + "</td>";
 				html += " <td style='font-size: 12px;padding-top: 10px;padding-bottom: 10px;padding-right: 10px;'>" + moment(date).tz("America/New_York").format('MM-DD-YYYY') + "</td></tr>";
-		
+				rowonly.push(agent);
+				rowonly.push(vendor);
+				rowonly.push(catalognumber);
+				rowonly.push(location);
+				rowonly.push(email);
+				rowonly.push(moment(date).tz("America/New_York").format('MM-DD-YYYY'));
+				dataonly.push(rowonly);
 			}
 			html += "</tbody></table><p style='margin-top: 25px;'><i><b>" + i18n.__("index.reportsShares.html7") + "</b></i></p>";
 			//html += "</tbody></table><p><i><b>The LabYoke Team.</b></i></p><img style='width: 141px; margin: 0 20px;float:left' src='https:\/\/team-labyoke.herokuapp.com\/images\/yoke4.png', alt='The Yoke',  title='Yoke', class='yokelogo'/>";
+			
 		}
 		if(!isempty){
-			callback(null, html + "</div>");
+			resultsbundled.push(html + "</div>");
+			resultsbundled.push(dataonly);
+			callback(null, resultsbundled);
 		} else {
 			callback(null, html + i18n.__("index.reportsShares.nodataIntro") + "<p style='margin-top: 25px;'><i><b>" + i18n.__("index.reportsShares.html7") + "</b></i></p>" + "</div>");
 		}
