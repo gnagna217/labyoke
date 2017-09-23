@@ -259,9 +259,26 @@ block content
 					$('.labelexpand').removeClass( "highlightlabel" );
 					$('.labelexpandrules').removeClass( "highlightlabel" );
 					if ( !$( ".checkintro" ).hasClass( "noshow" ) ) {
-					//if($('.fa-check:visible').size() > 0){
 					console.log("clicked");
 					$('.intro').show();
+
+					setTimeout(function(){
+					console.log("height insuff is: " + $('.containerreports').height());
+					console.log("top insuff is: " + $('.containerreports').offset().top);
+					console.log("report insuff height is: " + $('.reportlabels').height());
+					console.log("report insuff top is: " + $('.reportlabels').offset().top);
+					var l = $('.containerreports').offset().top + $('.containerreports').height();
+					console.log("scrolling " + l);
+					$('html,body').animate({scrollTop: l}, 1000);
+					}, 500);
+
+					if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+					console.log("ismobile");
+					$('.intro').css("margin-right","0px");
+					$('.intro').css("margin-left","0px");
+					} else {
+						console.log("isdesktop");
+
 					var ob = "#{resultsMoneyIntro}"
 					ob = ob.replace(/&lt;/g,"<");
 					ob = ob.replace(/&gt;/g,">");
@@ -284,6 +301,8 @@ block content
 						//$('.intro').hide();
 						$('.checkintro').addClass("noshow");
 					});
+
+					}
 
 					} else {
 						$('.checkintro').removeClass("noshow");
@@ -481,11 +500,8 @@ block content
 									$(document).ready(function(){
 
 									$(".intro2").show();
-									//$(".reportlabels").addClass("reportlabels2");
-									//$('.intro2').css("margin-top",$('.restrictreport').height() + 'px');
 									$(".intro2").html(source);
-									$(".intro2").before("<label for='togglerules' id='labeldownload'  class='labeldownload animated fadeInUp'><span class='fa fa-download'></span></label><label for='togglerules' id='labeldownloadxl'  class='labeldownload animated fadeInUp'><span class='fa fa-database'></span></label>");
-									
+
 									setTimeout(function(){
 									console.log("height insuff is: " + $('.containerreports').height());
 									console.log("top insuff is: " + $('.containerreports').offset().top);
@@ -495,6 +511,19 @@ block content
 									console.log("scrolling " + l);
 									$('html,body').animate({scrollTop: l}, 1000);
 									}, 500);
+
+									//$(".reportlabels").addClass("reportlabels2");
+									//$('.intro2').css("margin-top",$('.restrictreport').height() + 'px');
+									
+									if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+										console.log("ismobile");
+										$('.intro2').css("margin-right","0px");
+										$('.intro2').css("margin-left","0px");
+									} else {
+									console.log("isdesktop");
+									$(".intro2").before("<label for='togglerules' id='labeldownload'  class='labeldownload animated fadeInUp'><span class='fa fa-download'></span></label><label for='togglerules' id='labeldownloadxl'  class='labeldownload animated fadeInUp'><span class='fa fa-database'></span></label>");
+									
+									
 
 									$(".intro2").prev('#labeldownloadxl').click(function() {
 										/* original data */
@@ -566,6 +595,7 @@ block content
 									}
 									, margins);
 									});
+									}
 									});
 								- resultsMoney = ""
 						script.
@@ -653,11 +683,8 @@ block content
 									$(document).ready(function(){
 
 									$(".intro2").show();
-									//$(".reportlabels").addClass("reportlabels2");
-									//$('.intro2').css("margin-top",$('.restrictreport').height() + 'px');
 									$(".intro2").html(source);
-									$(".intro2").before("<label for='togglerules' id='labeldownload'  class='labeldownload animated fadeInUp'><span class='fa fa-download'></span></label>"<label for='togglerules' id='labeldownloadxl'  class='labeldownload animated fadeInUp'><span class='fa fa-database'></span></label>);
-									
+
 									setTimeout(function(){
 									console.log("height insuff is: " + $('.containerreports').height());
 									console.log("top insuff is: " + $('.containerreports').offset().top);
@@ -667,6 +694,19 @@ block content
 									console.log("scrolling " + l);
 									$('html,body').animate({scrollTop: l}, 1000);
 									}, 500);
+
+									//$(".reportlabels").addClass("reportlabels2");
+									//$('.intro2').css("margin-top",$('.restrictreport').height() + 'px');
+									
+									if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+										console.log("ismobile");
+										$('.intro2').css("margin-right","0px");
+										$('.intro2').css("margin-left","0px");
+									} else {
+									console.log("isdesktop");
+									$(".intro2").before("<label for='togglerules' id='labeldownload'  class='labeldownload animated fadeInUp'><span class='fa fa-download'></span></label>"<label for='togglerules' id='labeldownloadxl'  class='labeldownload animated fadeInUp'><span class='fa fa-database'></span></label>);
+									
+									
 
 									$(".intro2").prev('#labeldownloadxl').click(function() {
 										/* original data */
@@ -756,6 +796,7 @@ block content
 									}
 									, margins);	
 									});
+									}
 									});					
 								- resultsOrders = ""
 						script.
@@ -832,11 +873,8 @@ block content
 									$(document).ready(function(){
 
 									$(".intro2").show();
-									//$(".reportlabels").addClass("reportlabels2");
-									//$('.intro2').css("margin-top",$('.restrictreport').height() + 'px');
 									$(".intro2").html(source);
-									$(".intro2").before("<label for='togglerules' id='labeldownload' class='labeldownload animated fadeInUp'><span class='fa fa-download'></span></label><label for='togglerules' id='labeldownloadxl'  class='labeldownload animated fadeInUp'><span class='fa fa-database'></span></label>");
-									
+
 									setTimeout(function(){
 									console.log("height insuff is: " + $('.containerreports').height());
 									console.log("top insuff is: " + $('.containerreports').offset().top);
@@ -846,6 +884,19 @@ block content
 									console.log("scrolling " + l);
 									$('html,body').animate({scrollTop: l}, 1000);
 									}, 500);
+
+									//$(".reportlabels").addClass("reportlabels2");
+									//$('.intro2').css("margin-top",$('.restrictreport').height() + 'px');
+									
+									if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+										console.log("ismobile");
+										$('.intro2').css("margin-right","0px");
+										$('.intro2').css("margin-left","0px");
+									} else {
+									console.log("isdesktop");
+									$(".intro2").before("<label for='togglerules' id='labeldownload' class='labeldownload animated fadeInUp'><span class='fa fa-download'></span></label><label for='togglerules' id='labeldownloadxl'  class='labeldownload animated fadeInUp'><span class='fa fa-database'></span></label>");
+									
+									
 
 									$(".intro2").prev('#labeldownloadxl').click(function() {
 										/* original data */
@@ -943,6 +994,7 @@ block content
 									}
 									, margins);
 									});
+									}
 									});
 								- resultsShares = ""
 						script.
@@ -1237,7 +1289,7 @@ block content
 				console.log("scrolling " + l);
 				$('html,body').animate({scrollTop: l}, 1000);
 				}, 500);
-									
+
 				var ob = "#{resultsMoneyIntro}"
 				ob = ob.replace(/&lt;/g,"<");
 				ob = ob.replace(/&gt;/g,">");
