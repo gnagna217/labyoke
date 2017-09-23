@@ -60,6 +60,8 @@ block content
 					//$(".labelexpand").on("click touchend", function(e) {
 					$( ".labelexpand" ).click(function() {
 					
+					recenter = 1;
+					
 					if($('#reportMoney').is(':visible')){
 						$(".reportlabels").removeClass("reportlabels2");
 						$(".labelexpandmood").css("top","-44px");
@@ -109,6 +111,7 @@ block content
 
 					//$( ".labelexpandedit" ).on("click touchend", function(e) {
 					$( ".labelexpandedit" ).click(function() {
+						recenter = 1;
 						
 						if($('#reportOrders').is(':visible')){
 							$(".reportlabels").removeClass("reportlabels2");
@@ -156,6 +159,7 @@ block content
 
 					//$( ".labelexpandadd" ).on("click touchend", function(e) {
 					$( ".labelexpandadd" ).click(function() {
+					recenter = 1;
 					
 					if($('#reportShares').is(':visible')){
 						$(".reportlabels").removeClass("reportlabels2");
@@ -204,6 +208,7 @@ block content
 
 					//$( ".labelexpandrules" ).on("click touchend", function(e) {
 					$( ".labelexpandrules" ).click(function() {
+					recenter = 1;
 					
 					if($('#reportInsuff').is(':visible')){
 						$(".reportlabels").removeClass("reportlabels2");
@@ -248,6 +253,7 @@ block content
 					});
 
 					$( ".labelexpandmood" ).click(function() {
+					recenter = 1;
 						$(".alert").hide();
 						$(".reportlabels").removeClass("reportlabels2");
 						$(".labelexpandmood").css("top","-44px");
