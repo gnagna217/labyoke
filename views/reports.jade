@@ -290,8 +290,8 @@ block content
 
 					$(document).ready(function(){
 
-					$(".intro").show();
-					$(".intro").html(source);
+					$(".intro2").show();
+					$(".intro2").html(source);
 					$('.desktabonly3').show();
 
 					setTimeout(function(){
@@ -317,7 +317,7 @@ block content
 
 					var filetext = "#{i18n.__("reports.download.today.file")}";
 
-					$(".intro").prev('#labeldownloadxl').click(function() {
+					$(".intro2").prev('#labeldownloadxl').click(function() {
 						/* original data */
 						//var data = [[1,2,3,4],["Sample", "Sample", "Sample", "Sample"],["foo","bar","Hello","0.3"], ["baz", null, "qux"]];
 						console.log("" + "#{dataIntro}");
@@ -342,7 +342,7 @@ block content
 						background: '#fff'
 					};
 
-					pdf2.addHTML($(".intro"),options,function() {
+					pdf2.addHTML($(".intro2"),options,function() {
 						console.log("source weekly savings");
 						
 						//var string = pdf2.output('datauristring');
