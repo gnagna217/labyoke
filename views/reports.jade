@@ -278,6 +278,9 @@ block content
 					$('.intro').css("margin-left","0px");
 					} else {
 						console.log("isdesktop");
+					var dataintro = "#{dataIntro}";
+
+					if(dataintro != null && dataintro != ""){
 					$(".intro").before("<label for='togglerules' id='labeldownload'  class='labeldownload animated fadeInUp'><span class='fa fa-download'></span></label><label for='togglerules' id='labeldownloadxl'  class='labeldownload animated fadeInUp'><span class='fa fa-database'></span></label>");
 
 					var filetext = "#{i18n.__("reports.download.today.file")}";
@@ -324,6 +327,7 @@ block content
 						$('.checkintro').addClass("noshow");
 					});
 					});
+					} //end check dataintro
 
 					}
 
@@ -544,6 +548,9 @@ block content
 										$('.intro2').css("margin-left","0px");
 									} else {
 									console.log("isdesktop");
+									var datamoney = "#{dataMoney}";
+
+									if(datamoney != null && datamoney != ""){
 									$(".intro2").before("<label for='togglerules' id='labeldownload'  class='labeldownload animated fadeInUp'><span class='fa fa-download'></span></label><label for='togglerules' id='labeldownloadxl'  class='labeldownload animated fadeInUp'><span class='fa fa-database'></span></label>");
 									
 									
@@ -618,6 +625,7 @@ block content
 									}
 									, margins);
 									});
+									} // end datamoney
 									}
 									});
 								- resultsMoney = ""
@@ -727,6 +735,9 @@ block content
 										$('.intro2').css("margin-left","0px");
 									} else {
 									console.log("isdesktop");
+									var dataorders = "#{dataOrders}";
+
+									if(dataorders != null && dataorders != ""){
 									$(".intro2").before("<label for='togglerules' id='labeldownload'  class='labeldownload animated fadeInUp'><span class='fa fa-download'></span></label>"<label for='togglerules' id='labeldownloadxl'  class='labeldownload animated fadeInUp'><span class='fa fa-database'></span></label>);
 									
 									
@@ -819,7 +830,9 @@ block content
 									}
 									, margins);	
 									});
+									}// end dataorders
 									}
+
 									});					
 								- resultsOrders = ""
 						script.
@@ -917,6 +930,9 @@ block content
 										$('.intro2').css("margin-left","0px");
 									} else {
 									console.log("isdesktop");
+									var datashares = "#{dataShares}";
+
+									if(datashares != null && datashares != ""){
 									$(".intro2").before("<label for='togglerules' id='labeldownload' class='labeldownload animated fadeInUp'><span class='fa fa-download'></span></label><label for='togglerules' id='labeldownloadxl'  class='labeldownload animated fadeInUp'><span class='fa fa-database'></span></label>");
 									
 									
@@ -1017,6 +1033,7 @@ block content
 									}
 									, margins);
 									});
+									}// end datashares
 									}
 									});
 								- resultsShares = ""
@@ -1128,6 +1145,9 @@ block content
 										$('.intro2').css("margin-left","0px");
 									} else {
 									console.log("isdesktop");
+									var datainsuff = "#{datainsuff}";
+
+									if(datainsuff != null && datainsuff != ""){
 									$(".intro2").before("<label for='togglerules' id='labeldownload'  class='labeldownload animated fadeInUp'><span class='fa fa-download'></span></label><label for='togglerules' id='labeldownloadxl'  class='labeldownload animated fadeInUp'><span class='fa fa-database'></span></label>");
 
 									$(".intro2").prev('#labeldownloadxl').click(function() {
@@ -1202,6 +1222,7 @@ block content
 									}
 									, margins);
 									});
+									} // end datainsuff
 									
 									}
 									});
