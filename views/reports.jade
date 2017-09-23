@@ -265,13 +265,13 @@ block content
 					var ob = "#{resultsMoneyIntro}"
 					ob = ob.replace(/&lt;/g,"<");
 					ob = ob.replace(/&gt;/g,">");
-					var pdf = new jsPDF('l', 'pt', 'ledger');
+					//var pdf = new jsPDF('l', 'pt', 'ledger');
 					var pdf2 = new jsPDF('p', 'pt', 'letter');
 					pdf2.setFont("courier", "normal");
 					pdf2.setFontSize(10);
 					source = ob;
 					
-					console.debug(source);
+					console.log(source);
 					var options = {
 						background: '#fff'
 					};
