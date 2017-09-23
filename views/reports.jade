@@ -53,6 +53,7 @@ block content
 				input(id="togglerules" type="checkbox" class="inputexpandrules")
 				label(for="togglerules", class="labelexpandrules animated fadeInUp", style="z-index: 0;position: relative;/*top: -44px;*/ display: inline-block;")!= i18n.__("reports.label.insuff")
 				div(style=nobar, class="threepointssep threedown")
+
 				script.
 					//$(".labelexpand").on("click touchend", function(e) {
 					$( ".labelexpand" ).click(function() {
@@ -236,7 +237,6 @@ block content
 					$('html,body').animate({scrollTop: l}, 1000);
 					});
 
-					//$( ".labelexpandemood" ).on("click touchend", function(e) {
 					$( ".labelexpandmood" ).click(function() {
 						$(".alert").hide();
 						$(".reportlabels").removeClass("reportlabels2");
@@ -278,7 +278,29 @@ block content
 					$('.intro').css("margin-left","0px");
 					} else {
 						console.log("isdesktop");
+					$(".intro").before("<label for='togglerules' id='labeldownload'  class='labeldownload animated fadeInUp'><span class='fa fa-download'></span></label><label for='togglerules' id='labeldownloadxl'  class='labeldownload animated fadeInUp'><span class='fa fa-database'></span></label>");
 
+					var filetext = "#{i18n.__("reports.download.today.file")}";
+
+					$(".intro2").prev('#labeldownloadxl').click(function() {
+						/* original data */
+						//var data = [[1,2,3,4],["Sample", "Sample", "Sample", "Sample"],["foo","bar","Hello","0.3"], ["baz", null, "qux"]];
+						console.log("" + "#{dataIntro}");
+						
+						var data = JSON.parse('!{dataIntro}');
+						console.dir(data);
+						var ws_name = "SheetJS";
+
+						var wb = new Workbook(), ws = sheet_from_array_of_arrays(data);
+
+						/* add worksheet to workbook */
+						wb.SheetNames.push(ws_name);
+						wb.Sheets[ws_name] = ws;
+						var wbout = XLSX.write(wb, {bookType:'xlsx', bookSST:true, type: 'binary'});
+						saveAs(new Blob([s2ab(wbout)],{type:"application/octet-stream"}), filetext + ".xlsx")										
+					});
+					$(".intro").prev().prev('#labeldownload').click(function() {
+					recenter = 1;
 					var ob = "#{resultsMoneyIntro}"
 					ob = ob.replace(/&lt;/g,"<");
 					ob = ob.replace(/&gt;/g,">");
@@ -295,11 +317,12 @@ block content
 
 					pdf2.addHTML($(".intro"),options,function() {
 						console.log("source weekly savings");
-						var filetext = "#{i18n.__("reports.download.today.file")}";
+						
 						//var string = pdf2.output('datauristring');
-						pdf2.save(filetext);
+						pdf2.save(filetext + ".pdf");
 						//$('.intro').hide();
 						$('.checkintro').addClass("noshow");
+					});
 					});
 
 					}
@@ -482,11 +505,11 @@ block content
 									//img(src="images/logo_one_bottle_L_3.png", alt="The Lab", title="Lab", class="reportbutton")
 									button.btn.btn-success.btn-lg.btn-block.reportbutton2.shadow(type="submit",value="Report",name="submit")= i18n.__("reports.money.button")
 							if(resultsMoney != null && resultsMoney !="")
-								script(type="text/javascript" src="/javascripts/jspdf.js")
-								script(type="text/javascript" src="/javascripts/xlsx.core.min.js")
-								script(type="text/javascript" src="/javascripts/Blob.js")
-								script(type="text/javascript" src="/javascripts/FileSaver.js")
-								script(type="text/javascript" src="/javascripts/savexl.js")
+								//script(type="text/javascript" src="/javascripts/jspdf.js")
+								//script(type="text/javascript" src="/javascripts/xlsx.core.min.js")
+								//script(type="text/javascript" src="/javascripts/Blob.js")
+								//script(type="text/javascript" src="/javascripts/FileSaver.js")
+								//script(type="text/javascript" src="/javascripts/savexl.js")
 								script.
 									recenter = 1;
 									$('.intro2').show();
@@ -657,11 +680,11 @@ block content
 									button.btn.btn-success.btn-lg.btn-block.reportbutton2.shadow(type="submit",value="Report",name="submit")= i18n.__("reports.orders.button")
 							span(id="triggerSafariOrder")
 							if(resultsOrders != null && resultsOrders !="")
-								script(type="text/javascript" src="/javascripts/jspdf.js")
-								script(type="text/javascript" src="/javascripts/xlsx.core.min.js")
-								script(type="text/javascript" src="/javascripts/Blob.js")
-								script(type="text/javascript" src="/javascripts/FileSaver.js")
-								script(type="text/javascript" src="/javascripts/savexl.js")
+								//script(type="text/javascript" src="/javascripts/jspdf.js")
+								//script(type="text/javascript" src="/javascripts/xlsx.core.min.js")
+								//script(type="text/javascript" src="/javascripts/Blob.js")
+								//script(type="text/javascript" src="/javascripts/FileSaver.js")
+								//script(type="text/javascript" src="/javascripts/savexl.js")
 								script.
 									recenter = 1;
 									$('.intro2').show();
@@ -848,11 +871,11 @@ block content
 									//img(src="images/logo_one_bottle_L_3.png", alt="The Lab", title="Lab", class="reportbutton")
 									button.btn.btn-success.btn-lg.btn-block.reportbutton2.shadow(type="submit",value="Report",name="submit")= i18n.__("reports.shares.button")
 							if(resultsShares != null && resultsShares !="")
-								script(type="text/javascript" src="/javascripts/jspdf.js")
-								script(type="text/javascript" src="/javascripts/xlsx.core.min.js")
-								script(type="text/javascript" src="/javascripts/Blob.js")
-								script(type="text/javascript" src="/javascripts/FileSaver.js")
-								script(type="text/javascript" src="/javascripts/savexl.js")
+								//script(type="text/javascript" src="/javascripts/jspdf.js")
+								//script(type="text/javascript" src="/javascripts/xlsx.core.min.js")
+								//script(type="text/javascript" src="/javascripts/Blob.js")
+								//script(type="text/javascript" src="/javascripts/FileSaver.js")
+								//script(type="text/javascript" src="/javascripts/savexl.js")
 								script.
 									recenter = 1;
 									$('.intro2').show();
@@ -1070,11 +1093,11 @@ block content
 								//		-test.push({ob0[prop].vendor})
 											
 								- var file_insuff = i18n.__("reports.insuff.file") + "_" + labinsuff 
-								script(type="text/javascript" src="/javascripts/jspdf.js")
-								script(type="text/javascript" src="/javascripts/xlsx.core.min.js")
-								script(type="text/javascript" src="/javascripts/Blob.js")
-								script(type="text/javascript" src="/javascripts/FileSaver.js")
-								script(type="text/javascript" src="/javascripts/savexl.js")
+								//script(type="text/javascript" src="/javascripts/jspdf.js")
+								//script(type="text/javascript" src="/javascripts/xlsx.core.min.js")
+								//script(type="text/javascript" src="/javascripts/Blob.js")
+								//script(type="text/javascript" src="/javascripts/FileSaver.js")
+								//script(type="text/javascript" src="/javascripts/savexl.js")
 								script.
 									
 									recenter = 1;
@@ -1269,8 +1292,8 @@ block content
 		//			div(class='containerreport_button__bar')
 		if(resultsMoneyIntro != null && resultsMoneyIntro !="")
 			div(class="intro results animated zoomIn",style="/*margin-top:500px;*/display:none;")!= resultsMoneyIntro
-			script(type="text/javascript" src="/javascripts/jspdf.js")
-			script(type="text/javascript" src="/javascripts/FileSaver.js")
+			//script(type="text/javascript" src="/javascripts/jspdf.js")
+			//script(type="text/javascript" src="/javascripts/FileSaver.js")
 			script.
 				/*$(".containerreport_button").click(function() {
 				
