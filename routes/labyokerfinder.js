@@ -1112,14 +1112,16 @@ console.log("report on orders: " + labsindept);
 			where = where + "(";
 		}
 		where = where + " lab = '" + labsindept[prop].labname + "'";
-		if(prop < labsindept.length){
+		if(prop < (labsindept.length - 1)){
 			where = where + " or ";
 		}
 		if(prop == (labsindept.length - 1)){
 			where = where + ")";
 		}
 	}
-	where = where.replace(/or\s*$/, "");
+	console.log("where bef: "+where);
+	where = where.replace(/or )\s*$/, ")");
+	console.log("where aft: "+where);
 
 	for(var prop in labs){
 		a = "a" + i;
