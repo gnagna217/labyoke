@@ -1872,7 +1872,7 @@ input[type=radio]:checked ~ .checkingcatalog::before{
     top: 42px;
     position: relative;
     
-    border-radius: 85%;
+    border-radius: 80px;
     background-color: rgba(41, 117, 180, 0.91);
     padding: 52px;
     color: white;
@@ -1881,10 +1881,10 @@ input[type=radio]:checked ~ .checkingcatalog::before{
     font-size:20px;
     color: white;text-decoration: none;
 
-    background-image: -moz-radial-gradient(45px 45px 45deg, circle cover, yellow 0%, orange 100%, red 95%);
+    /*background-image: -moz-radial-gradient(45px 45px 45deg, circle cover, yellow 0%, orange 100%, red 95%);
     background-image: -webkit-radial-gradient(45px 45px, circle cover, #34bde8, rgb(42, 117, 179));
     background-image: radial-gradient(45px 45px 45deg, circle cover, yellow 0%, orange 100%, red 95%);
-
+    */
 
 }
 
@@ -1917,8 +1917,6 @@ input[type=radio]:checked ~ .checkingcatalog::before{
     background-color: #2975b4;
     margin-top: 5px;
     display:none;*/
-
-
 }
 .searchmob{
     margin-top: -88px;left: 24%;background-color: rgba(138, 109, 59, 0.91); /*#8a6d3b;*/
@@ -1936,7 +1934,6 @@ input[type=radio]:checked ~ .checkingcatalog::before{
     cursor:pointer;
     text-decoration:none;
     color: white;
-    background-image: none;
 }
 .searchmob:hover, .searchmob:active, .searchmob:focus{
     background-color: #3d9dcb;
