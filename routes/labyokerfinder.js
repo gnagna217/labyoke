@@ -1120,7 +1120,7 @@ console.log("report on orders: " + labsindept);
 		}
 	}
 	console.log("where bef: "+where);
-	where = where.replace(/or )\s*$/, ")");
+	where = where.replace(/or\s*$/, "");
 	console.log("where aft: "+where);
 
 	for(var prop in labs){
