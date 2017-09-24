@@ -74,11 +74,11 @@ block content
 						}
 					}
 					
-					$(".reportlabels").removeClass("animated zoomIn");
+					$(".reportlabels").removeClass("animated fadeIn");
 
 					if($('#reportMoney').is(':hidden') && $('#reportOrders').is(':hidden') && $('#reportShares').is(':hidden') && $('#reportInsuff').is(':hidden') && $(window).width() > 900){
 					console.log("apply animated");
-					$(".reportlabels").addClass("animated zoomIn");
+					$(".reportlabels").addClass("animated fadeIn");
 					}
 
 					//$("#reportMoney").toggleClass("animated fadeInUp");
@@ -124,11 +124,11 @@ block content
 							$(".labelexpandmood").css("top","0px");
 							}
 						}
-						$(".reportlabels").removeClass("animated zoomIn");
+						$(".reportlabels").removeClass("animated fadeIn");
 
 						if($('#reportMoney').is(':hidden') && $('#reportOrders').is(':hidden') && $('#reportShares').is(':hidden') && $('#reportInsuff').is(':hidden') && $(window).width() > 900){
 							console.log("apply animated");
-							$(".reportlabels").addClass("animated zoomIn");
+							$(".reportlabels").addClass("animated fadeIn");
 						}
 					
 						//$("#reportOrders").toggleClass("animated fadeInUp");
@@ -172,11 +172,11 @@ block content
 							$(".labelexpandmood").css("top","0px");
 						}
 					}
-						$(".reportlabels").removeClass("animated zoomIn");
+						$(".reportlabels").removeClass("animated fadeIn");
 
 						if($('#reportMoney').is(':hidden') && $('#reportOrders').is(':hidden') && $('#reportShares').is(':hidden') && $('#reportInsuff').is(':hidden') && $(window).width() > 900){
 							console.log("apply animated");
-							$(".reportlabels").addClass("animated zoomIn");
+							$(".reportlabels").addClass("animated fadeIn");
 						}
 					
 						//$("#reportShares").toggleClass("animated fadeInUp");
@@ -221,11 +221,11 @@ block content
 							$(".labelexpandmood").css("top","0px");
 						}
 					}
-						$(".reportlabels").removeClass("animated zoomIn");
+						$(".reportlabels").removeClass("animated fadeIn");
 
 						if($('#reportMoney').is(':hidden') && $('#reportOrders').is(':hidden') && $('#reportShares').is(':hidden') && $('#reportInsuff').is(':hidden') && $(window).width() > 900){
 							console.log("apply animated");
-							$(".reportlabels").addClass("animated zoomIn");
+							$(".reportlabels").addClass("animated fadeIn");
 						}
 
 						$( this ).toggleClass( "highlightlabel" );
@@ -1285,7 +1285,7 @@ block content
 						script.
 							$(window).scrollTop($('#reportInsuff').offset().top).scrollLeft($('#reportInsuff').offset().left);
 		div(class="threepointssep desktabonly3", style="top:10px;display:none;")
-		div(class="intro2 results animated zoomIn",style="display:none;")
+		div(class="intro2 results animated fadeIn",style="display:none;")
 		div(class="threepointssep desktabonly3", style="top:10px;display:none;")
 		div(class="slide-out-tip-div desktabonly", style="display:none;z-index:1;position: fixed;top: 25% !important;max-height:400px;")
 			a(class="handle" href="last-transactions", title='#{i18n.__("search.tip.header")}', style="right: -60px;left:-60px;top:25px;")!=Content
@@ -1367,7 +1367,7 @@ block content
 		//			div(class='point')
 		//			div(class='containerreport_button__bar')
 		if(resultsMoneyIntro != null && resultsMoneyIntro !="")
-			div(class="intro results animated zoomIn",style="/*margin-top:500px;*/display:none;")!= resultsMoneyIntro
+			div(class="intro results animated fadeIn",style="/*margin-top:500px;*/display:none;")!= resultsMoneyIntro
 			//script(type="text/javascript" src="/javascripts/jspdf.js")
 			//script(type="text/javascript" src="/javascripts/FileSaver.js")
 			script.
@@ -1460,7 +1460,7 @@ block content
 			$(".containerreports").css("display", "block");                         
 
 			$(window).resize(function(){ 
-				if(wi>440){
+				if(wi>440 && recenter==0){
 					$(".reportlabels2").center();
 				}
 			});                          
