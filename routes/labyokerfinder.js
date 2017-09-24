@@ -422,8 +422,8 @@ console.log("report on savings- dateto: " + labsindept);
 		if(params == ""){
 			params += "<div style='font-weight:bold'>" + i18n.__("index.reportsMoney.param3") + "</div>";
 		}
-		params += "<div><span style='font-weight:bold'>" + i18n.__("index.reportsMoney.param4") + ": </span><span>" + moment(datefrom).tz("America/New_York").format('MM-DD-YYYY')  + "</span></div>";
-		params += "<div><span style='font-weight:bold'>" + i18n.__("index.reportsMoney.param5") + ": </span><span>" + moment(dateto).tz("America/New_York").format('MM-DD-YYYY')  + "</span></div>";
+		params += "<div><span style='font-weight:bold'>" + i18n.__("index.reportsMoney.param4") + ": </span><span>" + datefrom /*moment(datefrom).tz("America/New_York").format('MM-DD-YYYY')*/  + "</span></div>";
+		params += "<div><span style='font-weight:bold'>" + i18n.__("index.reportsMoney.param5") + ": </span><span>" + dateto /*moment(dateto).tz("America/New_York").format('MM-DD-YYYY')*/  + "</span></div>";
 		if(selected.length>0)
 			selected +=", ";
 		selected += "b.date";
@@ -433,7 +433,7 @@ console.log("report on savings- dateto: " + labsindept);
 		if(groupby.length>0)
 			groupby +=" , ";
 		groupby += "b.date";
-		html += "<p>" + i18n.__("index.reportsMoney.param6") + " " + moment(datefrom).tz("America/New_York").format('MM-DD-YYYY') + i18n.__("index.reportsMoney.param7") + moment(dateto).tz("America/New_York").format('MM-DD-YYYY') + "</p></div>"
+		html += "<p>" + i18n.__("index.reportsMoney.param6") + " " + datefrom /*moment(datefrom).tz("America/New_York").format('MM-DD-YYYY')*/ + i18n.__("index.reportsMoney.param7") + dateto /*moment(dateto).tz("America/New_York").format('MM-DD-YYYY')*/ + "</p></div>"
 	} else {
 		datefrom = "all";
 		html += "<p>" + i18n.__("index.reportsMoney.param8") + ":</p></div>"
@@ -581,8 +581,8 @@ console.log("report on savings- dateto: " + labsindept);
 				html += "<td style='font-size: 12px;'>" + results[prop].catalognumber + "</td>";
 				}
 				if(datefrom != null && datefrom !=undefined && datefrom !="" && dateto != null && dateto !=undefined && dateto !="" ){
-				rowonly.push(moment(results[prop].date).tz("America/New_York").format('MM-DD-YYYY'));
-				html += "<td style='font-size: 12px;'>" + moment(results[prop].date).tz("America/New_York").format('MM-DD-YYYY') + "</td>";
+				rowonly.push(results[prop].date);
+				html += "<td style='font-size: 12px;'>" + results[prop].date /*moment(results[prop].date).tz("America/New_York").format('MM-DD-YYYY')*/ + "</td>";
 				}
 				var total = results[prop].counting /* * results[prop].price*/;
 				
