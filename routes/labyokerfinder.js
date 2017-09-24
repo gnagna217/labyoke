@@ -833,7 +833,7 @@ console.log("report on shares my lab: " + mylab);
 		if(datefrom == 'all'){
 			html += i18n.__("index.reportsShares.html2"); //"<p>This report is listing all the inventory uploaded:</p></div>"
 		} else {
-			html += i18n.__("index.reportsShares.html3") + moment(datefrom).tz("America/New_York").format('MM-DD-YYYY') + i18n.__("index.reportsShares.html4") + moment(dateto).tz("America/New_York").format('MM-DD-YYYY') + i18n.__("index.reportsShares.html5");
+			html += i18n.__("index.reportsShares.html3") + datefrom /*moment(datefrom).tz("America/New_York").format('MM-DD-YYYY')*/ + i18n.__("index.reportsShares.html4") + dateto /*moment(dateto).tz("America/New_York").format('MM-DD-YYYY')*/ + i18n.__("index.reportsShares.html5");
 			//"<p>This report is listing the inventory uploaded between " + moment(datefrom).tz("America/New_York").format('MM-DD-YYYY') + " and " + moment(dateto).tz("America/New_York").format('MM-DD-YYYY') + "</p></div>"
 		}
 		headeronly.push(i18n.__("index.reportsMoney.param9"));
@@ -862,14 +862,14 @@ console.log("report on shares my lab: " + mylab);
 				rowonly.push(catalognumber);
 				rowonly.push(location);
 				rowonly.push(email);
-				rowonly.push(moment(date).tz("America/New_York").format('MM-DD-YYYY'));
+				rowonly.push(moment(date).tz("Africa/Bissau").format('MM-DD-YYYY'));
 				html += " <tr><td style='font-size: 12px;'>" + agent + "</td>";
 				html += " <td style='font-size: 12px;'>" + vendor + "</td>";
 				html += " <td style='font-size: 12px;'>" + catalognumber + "</td>";
 				html += " <td style='font-size: 12px;'>" + location + "</td>";
 				html += " <td style='font-size: 12px;'>" + email + "</td>";
 				//html += " <td style='font-size: 12px;'>" + category + "</td>";
-				html += " <td style='font-size: 12px;'>" + moment(date).tz("America/New_York").format('MM-DD-YYYY') + "</td></tr>";
+				html += " <td style='font-size: 12px;'>" + moment(date).tz("Africa/Bissau").format('MM-DD-YYYY') + "</td></tr>";
 				dataonly.push(rowonly);
 			}
 			html += "</tbody></table><p style='margin-top: 25px;'><i><b>" + i18n.__("index.reportsShares.html7") + "</b></i></p>";
@@ -900,9 +900,11 @@ LabYokeReporterShares.prototype.reportSharesIntro = function(callback) {
 	var where = "";
 	var isempty = true;
 	var mylab = this.mylab;
-	var dateto = moment(new Date).tz("America/New_York").format('MM-DD-YYYY');
-	var datefrom = moment(new Date).weekday(-7).format('MM-DD-YYYY');
-	console.log('prev start', moment(new Date).weekday(-7).format('MM-DD-YYYY'));
+	//var dateto = moment(new Date).tz("America/New_York").format('MM-DD-YYYY');
+	//var datefrom = moment(new Date).weekday(-7).format('MM-DD-YYYY');
+	var dateto = moment().format('YYYY-MM-DD');
+	var datefrom = moment().subtract(7,'d').format('YYYY-MM-DD');
+	console.log('prev start', datefrom);
 	console.log("now: " + dateto);
 
 	//var mylab = this.mylab.replace(" ","").toLowerCase();
@@ -972,7 +974,7 @@ console.log("report on shares my lab: " + mylab);
 		if(datefrom == 'all'){
 			html += i18n.__("index.reportsShares.html2"); //"<p>This report is listing all the inventory uploaded:</p></div>"
 		} else {
-			html += i18n.__("index.reportsShares.html3") + moment(datefrom).tz("America/New_York").format('MM-DD-YYYY') + i18n.__("index.reportsShares.html4") + moment(dateto).tz("America/New_York").format('MM-DD-YYYY') + i18n.__("index.reportsShares.html5");
+			html += i18n.__("index.reportsShares.html3") + datefrom /*moment(datefrom).tz("America/New_York").format('MM-DD-YYYY')*/ + i18n.__("index.reportsShares.html4") + dateto /*moment(dateto).tz("America/New_York").format('MM-DD-YYYY')*/ + i18n.__("index.reportsShares.html5");
 			//"<p>This report is listing the inventory uploaded between " + moment(datefrom).tz("America/New_York").format('MM-DD-YYYY') + " and " + moment(dateto).tz("America/New_York").format('MM-DD-YYYY') + "</p></div>"
 		}
 		html += params;
@@ -1004,13 +1006,13 @@ console.log("report on shares my lab: " + mylab);
 				html += " <td style='font-size: 12px;'>" + location + "</td>";
 				html += " <td style='font-size: 12px;'>" + email + "</td>";
 				//html += " <td style='font-size: 12px;'>" + category + "</td>";
-				html += " <td style='font-size: 12px;'>" + moment(date).tz("America/New_York").format('MM-DD-YYYY') + "</td></tr>";
+				html += " <td style='font-size: 12px;'>" + moment(date).tz("Africa/Bissau").format('MM-DD-YYYY') + "</td></tr>";
 				rowonly.push(agent);
 				rowonly.push(vendor);
 				rowonly.push(catalognumber);
 				rowonly.push(location);
 				rowonly.push(email);
-				rowonly.push(moment(date).tz("America/New_York").format('MM-DD-YYYY'));
+				rowonly.push(moment(date).tz("Africa/Bissau").format('MM-DD-YYYY'));
 				dataonly.push(rowonly);
 			}
 			html += "</tbody></table><p style='margin-top: 25px;'><i><b>" + i18n.__("index.reportsShares.html7") + "</b></i></p>";
@@ -1106,7 +1108,13 @@ console.log("report on orders: " + labsindept);
 	}
 	
 	for(var prop in labsindept){
+		if(prop == 0){
+			where = where + "(";
+		}
 		where = where + " lab = '" + labsindept[prop].labname + "' or ";
+		if(prop == (labsindept.length - 1)){
+			where = where + ")";
+		}
 	}
 	where = where.replace(/or\s*$/, "");
 
@@ -1147,7 +1155,7 @@ console.log("report on orders: " + labsindept);
 		if(datefrom == 'all'){
 			html += i18n.__("index.reportsOrders.html3"); //"<p>This report is listing all the orders requested:</p></div>"
 		} else {
-			html += i18n.__("index.reportsOrders.html4") + moment(datefrom).tz("America/New_York").format('MM-DD-YYYY') + i18n.__("index.reportsShares.html4") + moment(dateto).tz("America/New_York").format('MM-DD-YYYY') + "</p></div>"
+			html += i18n.__("index.reportsOrders.html4") + datefrom /*moment(datefrom).tz("America/New_York").format('MM-DD-YYYY')*/ + i18n.__("index.reportsShares.html4") + dateto /*moment(dateto).tz("America/New_York").format('MM-DD-YYYY')*/ + "</p></div>"
 			//html += "<p>This report is listing the orders requested between " + moment(datefrom).tz("America/New_York").format('MM-DD-YYYY') + " and " + moment(dateto).tz("America/New_York").format('MM-DD-YYYY') + "</p></div>"
 		}
 		html += params;
@@ -1176,13 +1184,13 @@ console.log("report on orders: " + labsindept);
 				rowonly.push(catalognumber);
 				rowonly.push(location);
 				rowonly.push(email);
-				rowonly.push(moment(date).tz("America/New_York").format('MM-DD-YYYY'));
+				rowonly.push(moment(date).tz("Africa/Bissau").format('MM-DD-YYYY'));
 				html += " <tr><td style='font-size: 12px;'>" + agent + "</td>";
 				html += " <td style='font-size: 12px;'>" + vendor + "</td>";
 				html += " <td style='font-size: 12px;'>" + catalognumber + "</td>";
 				html += " <td style='font-size: 12px;'>" + location + "</td>";
 				html += " <td style='font-size: 12px;'>" + email + "</td>";
-				html += " <td style='font-size: 12px;'>" + moment(date).tz("America/New_York").format('MM-DD-YYYY') + "</td></tr>";
+				html += " <td style='font-size: 12px;'>" + moment(date).tz("Africa/Bissau").format('MM-DD-YYYY') + "</td></tr>";
 				dataonly.push(rowonly);
 			}
 			html += "</tbody></table><p style='margin-top:25px'><i><b>" + i18n.__("index.reportsShares.html7") + "</b></i></p>";
