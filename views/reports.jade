@@ -65,8 +65,6 @@ block content
 					if($('#reportMoney').is(':visible')){
 						$(".reportlabels").removeClass("reportlabels2");
 						$(".labelexpandmood").css("top","-44px");
-						$('.threedown').show();
-						console.log("threedown show");
 					} else {
 						$(".alert").hide();
 						$(".reportlabels").addClass("reportlabels2");
@@ -106,6 +104,9 @@ block content
 					if(l>100){
 						l -= 100;
 					}
+
+					$('.threedown').show();
+					console.log("threedown show");
 					console.log("scrolling " + l);
 					$('html,body').animate({scrollTop: l}, 1000);
 					});
@@ -117,7 +118,7 @@ block content
 						if($('#reportOrders').is(':visible')){
 							$(".reportlabels").removeClass("reportlabels2");
 							$(".labelexpandmood").css("top","-44px");
-							$('.threedown').show();
+							
 							console.log("threedown show");
 						} else {
 						$(".alert").hide("");
@@ -156,6 +157,7 @@ block content
 					if(l>100){
 						l -= 100;
 					}
+					$('.threedown').show();
 					console.log("scrolling " + l);
 					$('html,body').animate({scrollTop: l}, 1000);
 					});
@@ -167,8 +169,6 @@ block content
 					if($('#reportShares').is(':visible')){
 						$(".reportlabels").removeClass("reportlabels2");
 						$(".labelexpandmood").css("top","-44px");
-						$('.threedown').show();
-						console.log("threedown show");
 					} else {
 					$(".alert").hide();
 					
@@ -207,6 +207,7 @@ block content
 					if(l>100){
 						l -= 100;
 					}
+					$('.threedown').show();
 					console.log("scrolling " + l);
 					$('html,body').animate({scrollTop: l}, 1000);
 					});
@@ -218,8 +219,6 @@ block content
 					if($('#reportInsuff').is(':visible')){
 						$(".reportlabels").removeClass("reportlabels2");
 						$(".labelexpandmood").css("top","-44px");
-						$('.threedown').show();
-						console.log("threedown show");
 					} else {
 					$(".alert").hide();
 					
@@ -255,6 +254,7 @@ block content
 					if(l>100){
 						l -= 100;
 					}
+					$('.threedown').show();
 					console.log("scrolling " + l);
 					$('html,body').animate({scrollTop: l}, 1000);
 					});
