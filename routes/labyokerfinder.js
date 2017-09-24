@@ -1111,7 +1111,10 @@ console.log("report on orders: " + labsindept);
 		if(prop == 0){
 			where = where + "(";
 		}
-		where = where + " lab = '" + labsindept[prop].labname + "' or ";
+		where = where + " lab = '" + labsindept[prop].labname + "'";
+		if(prop < labsindept.length){
+			where = where + " or ";
+		}
 		if(prop == (labsindept.length - 1)){
 			where = where + ")";
 		}
