@@ -1872,7 +1872,7 @@ input[type=radio]:checked ~ .checkingcatalog::before{
     top: 42px;
     position: relative;
     
-    border-radius: 80px;
+    border-radius: 85%;
     background-color: rgba(41, 117, 180, 0.91);
     padding: 52px;
     color: white;
