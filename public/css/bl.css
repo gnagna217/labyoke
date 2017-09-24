@@ -1563,6 +1563,8 @@ a {
 
 .reportlabels{
     margin-top: 3%;
+    padding-left: 2%;
+    padding-right: 2%;
     /*padding-left: 40px;
     padding-right: 40px;*/
 }
