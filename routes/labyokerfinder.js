@@ -581,8 +581,8 @@ console.log("report on savings- dateto: " + labsindept);
 				html += "<td style='font-size: 12px;'>" + results[prop].catalognumber + "</td>";
 				}
 				if(datefrom != null && datefrom !=undefined && datefrom !="" && dateto != null && dateto !=undefined && dateto !="" ){
-				rowonly.push(results[prop].date);
-				html += "<td style='font-size: 12px;'>" + results[prop].date /*moment(results[prop].date).tz("America/New_York").format('MM-DD-YYYY')*/ + "</td>";
+				rowonly.push(moment(results[prop].date).tz("Africa/Bissau").format('MM-DD-YYYY'));
+				html += "<td style='font-size: 12px;'>" + moment(results[prop].date).tz("Africa/Bissau").format('MM-DD-YYYY') + "</td>";
 				}
 				var total = results[prop].counting /* * results[prop].price*/;
 				
