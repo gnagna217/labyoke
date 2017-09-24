@@ -416,7 +416,7 @@
     "index.reportsShares.html5": "</p></div>",
     "index.reportsShares.html6": "<table style='margin-top:25px;text-align: left;'><tbody><tr style='color: white;background-color: #3d9dcb;'><td style='font-size: 12px;'>Réactif</td><td style='font-size: 12px;'>Vendeur</td><td style='font-size: 12px;'>Catalogue</td><td style='font-size: 12px;'>Proprio</td><td style='font-size: 12px;'>Utilisateur</td><td>Date</td></tr>",
     "index.reportsShares.html7": "L'Équipe <a href='https://team-labyoke.herokuapp.com/'>LabYoke</a>.",
-    "index.reportsShares.nodataIntro": "<div style='font-size:20pt;font-weight:bold;'>Aucune donnée valide n'a pu être retrouvée. Commencez à partager aujourd'hui!</div>",
+    "index.reportsShares.nodataIntro": "<div style='font-size:20pt;font-weight:bold;'>Aucune donnée valide n'a pu être retrouvée. Commencez à partager dès aujourd'hui!</div>",
     "index.reportsOrders.html1": "Laboratoire: ",
     "index.reportsOrders.html2": "Commandes.",
     "index.reportsOrders.html3": "<p>Ce rapport répertorie toutes les commandes demandées:</p></div>",
