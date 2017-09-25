@@ -1100,7 +1100,6 @@ totalshares = t[0].counting;
 		var vendor = req.body.reportVendorInsuff;
 		var catalognumber = req.body.reportCatalogInsuff;
 		var lab = req.body.reportLabInsuff;
-		 
 
 		console.log("reportInsuff datefrom: " + datefrom);
 		console.log("reportInsuff dateto: " + dateto);
@@ -1123,6 +1122,7 @@ totalshares = t[0].counting;
         var labYokereporter = new LabYokeReporterShares(datefrom, dateto, req.session.lab, req.session.labs,res);
             labYokereporter.reportSharesIntro(function(error, resultsintro) {
                 var res0, res1;
+                console.log("resultsintro: " + resultsintro.length);
                 if(resultsintro !=null && resultsintro.length > 0){
                     res0 = resultsintro[1];
                 }
