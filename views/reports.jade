@@ -1417,53 +1417,6 @@ block content
 			div(class="intro results animated fadeIn",style="/*margin-top:500px;*/display:none;")!= resultsMoneyIntro
 			//script(type="text/javascript" src="/javascripts/jspdf.js")
 			//script(type="text/javascript" src="/javascripts/FileSaver.js")
-			script.
-				/*$(".containerreport_button").click(function() {
-				
-				if ( !$( ".checkintro" ).hasClass( "noshow" ) ) {
-				//if($('.fa-check:visible').size() > 0){
-				console.log("clicked");
-				$('.intro').css("margin-top",$('.restrictreport').height() + 'px');
-				$('.intro').show();
-				$('.desktabonly3').show();
-
-				setTimeout(function(){
-				console.log("height insuff is: " + $('.containerreports').height());
-				console.log("top insuff is: " + $('.containerreports').offset().top);
-				console.log("report insuff height is: " + $('.reportlabels').height());
-				console.log("report insuff top is: " + $('.reportlabels').offset().top);
-				var l = $('.containerreports').offset().top + $('.containerreports').height();
-				console.log("scrolling " + l);
-				$('html,body').animate({scrollTop: l}, 1000);
-				}, 500);
-
-				var ob = "#{resultsMoneyIntro}"
-				ob = ob.replace(/&lt;/g,"<");
-				ob = ob.replace(/&gt;/g,">");
-				var pdf = new jsPDF('l', 'pt', 'ledger');
-				var pdf2 = new jsPDF('p', 'pt', 'letter');
-				pdf2.setFont("courier", "normal");
-				pdf2.setFontSize(10);
-				source = ob;
-				
-				console.debug(source);
-				var options = {
-					background: '#fff'
-				};
-				pdf2.addHTML($(".intro"),options,function() {
-					console.log("source");
-					var filetext = "#{i18n.__("reports.download.today.file")}";
-					//var string = pdf2.output('datauristring');
-					pdf2.save(filetext);
-					//$('.intro').hide();
-					$('.checkintro').addClass("noshow");
-				});
-
-				} else {
-					$('.checkintro').removeClass("noshow");
-				}
-				});
-				*/
 	script.
 		var labelcheck = document.querySelector(".labelcheck");
 		console.log("labelcheck: " + labelcheck);

@@ -955,6 +955,8 @@ totalshares = t[0].counting;
         if(results !=null && results.length > 1){
             res1 = results[1];
         }
+        console.log("resultsMoneyIntro: " + res0);
+        console.log("dataintro: " + res1);
 
 		labyokerLab.getLabsInDept(function(error, categories) {
 			console.log("load labs in dept in reports : " + categories);
