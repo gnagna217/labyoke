@@ -729,7 +729,7 @@ if(lab != null && lab !=undefined && lab =="all"){
 				html += "<td style='font-size: 12px;'>" + results[prop].catalognumber + "</td>";
 				}
 				rowonly.push(moment(results[prop].insuffdate).tz("America/New_York").format('MM-DD-YYYY'));
-				html += "<td style='font-size: 12px;'>" + moment(results[prop].insuffdate).tz("America/New_York").format('MM-DD-YYYY')+ "</td>";
+				html += "<td style='font-size: 12px;'>" + results[prop].insuffdate + " - " + moment(results[prop].insuffdate).tz("America/New_York").format('MM-DD-YYYY')+ "</td>";
 				html += " </tr>";
 				dataonly.push(rowonly);
 				console.log("dataonly1: "  + dataonly);
