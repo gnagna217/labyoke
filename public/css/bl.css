@@ -4308,6 +4308,23 @@ span.num.greatherthanninetynine {
 
 
  @media (max-width: 440px) {
+.pin:after{
+    width: 8px;
+    height: 8px;
+    margin: 7px 0 0 5px;
+    left:30px;
+}
+.pin{
+    width: 20px;
+    height: 20px;
+    left: 50%;
+    top: -30px;
+    /* top: 50%; */
+    margin: -3px 0 0 -20px;
+}
+.pulse{
+    left: 49%;
+}
 .labeldownload {
     display:none;
 }
