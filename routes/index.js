@@ -1125,7 +1125,7 @@ totalshares = t[0].counting;
                 res0 = resultsintro[0];
                 console.log("resultsintro: " + resultsintro.length);
                 if(resultsintro !=null && resultsintro.length > 0){
-                    res0 = resultsintro[1];
+                    res0 = resultsintro[0];
                 }
                 if(resultsintro !=null && resultsintro.length > 1){
                     res1 = resultsintro[1];
