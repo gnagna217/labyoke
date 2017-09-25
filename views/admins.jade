@@ -268,7 +268,7 @@ block content
 					div(id="results2", class="resultsshadow")
 						div(id="ctl00_Div2" class="row rank")
 							div(class="table-responsive")               
-								table(id="rankTblreqshares" class="table rankTbl  animated fadeInDown")
+								table(id="rankTblreqshares" class="table rankTbl  animated fadeInDown" style="min-width: 478px;")
 									thead
 										tr(class="you info-best" style="font-weight: bold")
 											th(class="wrapped")!= i18n.__("shares.table.reagent")
@@ -409,7 +409,7 @@ block content
 												td(class="wrapped2")  #{ob[prop].email}
 												td(class="wrapped2")  #{ob[prop].vendor}
 												td(class="wrapped2")  #{ob[prop].catalognumber}
-												td(style="width: 17px;display:block;")
+												td(style="width: 17px;display:block")
 													form(action="/admincancelshare" method="post")
 														div(class="checkboxThree1", style=showfulfill)
 															input(style="position:absolute;left: -9999px;" type="checkbox" id=c name="cancel" value="cancel" class="cancel" checked=(checkedstr===true ? "checked" : undefined))
