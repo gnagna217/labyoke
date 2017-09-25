@@ -657,7 +657,7 @@ padding-top: 3px;
     padding-top: 22px;
     padding-left: 25px;*/
     float: right;
-    margin-top: -20px;
+    margin-top: 5%;
 }
 
 .labeldownload::before {
@@ -2505,8 +2505,8 @@ border-top: 5px solid #8a6d3b;
     display: block;
     overflow: overlay;
     margin-right: 100px;
-    margin-top: -10px !important;
-    background-color: rgba(173, 153, 117, 0.63);
+    margin-top: -45px !important;
+    background-color: rgb(173, 153, 117);
     color:white;
     /*rgba(138, 109, 59, 0.41);*/
     margin-left: 50px;
