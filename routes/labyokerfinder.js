@@ -624,7 +624,7 @@ LabYokeReporterSavings.prototype.reportInsuff = function(callback) {
 	var agent = this.agent;
 	var catalognumber = this.catalognumber;
 	var i18n = this.res;
-	var selected = "a.agent, b.lab";
+	var selected = "a.agent, b.lab, a.insuffdate";
 	var where = "a.email = b.email and a.insufficient = 0";
 	//var groupby = "a.category, b.lab, a.price";
 	var params = "";
