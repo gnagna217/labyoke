@@ -951,7 +951,7 @@ totalshares = t[0].counting;
         var res0, res1;
         res0 = results[0];
         if(results !=null && results.length > 0){
-            res0 = results[1];
+            res0 = results[0];
         }
         if(results !=null && results.length > 1){
             res1 = results[1];
@@ -1003,7 +1003,7 @@ totalshares = t[0].counting;
                 var res0, res1;
                 res0 = resultsintro[0];
                 if(resultsintro !=null && resultsintro.length > 0){
-                    res0 = resultsintro[1];
+                    res0 = resultsintro[0];
                 }
                 if(resultsintro !=null && resultsintro.length > 1){
                     res1 = resultsintro[1];
@@ -1065,7 +1065,7 @@ totalshares = t[0].counting;
                 res0 = resultsintro[0];
                 console.log("reportSharesIntro lenght: " + resultsintro.length);
                 if(resultsintro !=null && resultsintro.length > 0){
-                    res0 = resultsintro[1];
+                    res0 = resultsintro[0];
                 }
                 if(resultsintro !=null && resultsintro.length > 1){
                     res1 = resultsintro[1];
@@ -1234,7 +1234,7 @@ totalshares = t[0].counting;
                 console.log("resultsOrdersIntro: " + resultsintro.length);
                 res0 = resultsintro[0];
                 if(resultsintro !=null && resultsintro.length > 0){
-                    res0 = resultsintro[1];
+                    res0 = resultsintro[0];
                 }
                 if(resultsintro !=null && resultsintro.length > 1){
                     res1 = resultsintro[1];
