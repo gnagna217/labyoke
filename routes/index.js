@@ -949,7 +949,7 @@ totalshares = t[0].counting;
 
 		var labyokerLab = new LabyokerLab(req.session.lab);
         var res0, res1;
-        res0 = resultsintro[0];
+        res0 = results[0];
         if(results !=null && results.length > 0){
             res0 = results[1];
         }
