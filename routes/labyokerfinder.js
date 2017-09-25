@@ -1026,7 +1026,8 @@ console.log("report on shares my lab: " + mylab);
 			callback(null, resultsbundled);
 		} else {
 			html = html + i18n.__("index.reportsShares.nodataIntro") + "<p style='margin-top: 25px;'><i><b>" + i18n.__("index.reportsShares.html7") + "</b></i></p>" + "</div>";
-			callback(null, resultsbundled.push(html);
+			console.log("html empty: " + html);
+			callback(null, resultsbundled.push(html));
 		}
 	});
 });
