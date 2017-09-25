@@ -1019,6 +1019,7 @@ console.log("report on shares my lab: " + mylab);
 			//html += "</tbody></table><p><i><b>The LabYoke Team.</b></i></p><img style='width: 141px; margin: 0 20px;float:left' src='https:\/\/team-labyoke.herokuapp.com\/images\/yoke4.png', alt='The Yoke',  title='Yoke', class='yokelogo'/>";
 			
 		}
+		console.log("reportSharesIntro: " + html);
 		if(!isempty){
 			resultsbundled.push(html + "</div>");
 			resultsbundled.push(dataonly);
