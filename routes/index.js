@@ -1060,6 +1060,7 @@ totalshares = t[0].counting;
         var labYokereporter = new LabYokeReporterShares(datefrom, dateto, req.session.lab, req.session.labs,res);
             labYokereporter.reportSharesIntro(function(error, resultsintro) {
                 var res0, res1;
+                console.log("reportSharesIntro lenght: " + resultsintro.length);
                 if(resultsintro !=null && resultsintro.length > 0){
                     res0 = resultsintro[1];
                 }
