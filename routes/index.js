@@ -949,6 +949,7 @@ totalshares = t[0].counting;
 
 		var labyokerLab = new LabyokerLab(req.session.lab);
         var res0, res1;
+        res0 = resultsintro[0];
         if(results !=null && results.length > 0){
             res0 = results[1];
         }
@@ -1000,6 +1001,7 @@ totalshares = t[0].counting;
     		labYokereporter.reportShares(function(error, results) {
                 labYokereporter.reportSharesIntro(function(error, resultsintro) {
                 var res0, res1;
+                res0 = resultsintro[0];
                 if(resultsintro !=null && resultsintro.length > 0){
                     res0 = resultsintro[1];
                 }
@@ -1060,6 +1062,7 @@ totalshares = t[0].counting;
         var labYokereporter = new LabYokeReporterShares(datefrom, dateto, req.session.lab, req.session.labs,res);
             labYokereporter.reportSharesIntro(function(error, resultsintro) {
                 var res0, res1;
+                res0 = resultsintro[0];
                 console.log("reportSharesIntro lenght: " + resultsintro.length);
                 if(resultsintro !=null && resultsintro.length > 0){
                     res0 = resultsintro[1];
@@ -1228,6 +1231,7 @@ totalshares = t[0].counting;
         var labYokereporter = new LabYokeReporterShares(datefrom, dateto, req.session.lab, req.session.labs,res);
             labYokereporter.reportSharesIntro(function(error, resultsintro) {
                 var res0, res1;
+                res0 = resultsintro[0];
                 if(resultsintro !=null && resultsintro.length > 0){
                     res0 = resultsintro[1];
                 }
