@@ -268,7 +268,7 @@ block content
 					div(id="results2", class="resultsshadow")
 						div(id="ctl00_Div2" class="row rank")
 							div(class="table-responsive")               
-								table(id="rankTblreqshares" class="table rankTbl  animated fadeInDown" style="min-width: 478px;")
+								table(id="rankTblreqshares" class="table rankTbl  animated fadeInDown")
 									thead
 										tr(class="you info-best" style="font-weight: bold")
 											th(class="wrapped")!= i18n.__("shares.table.reagent")
@@ -313,7 +313,7 @@ block content
 												td(class="wrapped2") #{ob[prop].requestoremail}
 												td(class="wrapped2") #{ob[prop].email}
 												td #{d}
-												td(style="width: 17px;display:block;")
+												td(style="width: 17px;")
 													form(action="/admincancelshare" method="post")
 														div(class="checkboxThree1", style=showcancel)
 															input(style="position:absolute;left: -9999px;" type="checkbox" id=c name="cancel" value="cancel" class="cancel" checked=(checkedstr===true ? "checked" : undefined))
@@ -328,7 +328,7 @@ block content
 														input(type="hidden" name="date" value=ob[prop].date)
 														input(type="hidden" name="table" value=currentlabname.replace(" ","").toLowerCase() + "_orders")
 														input(type="hidden" name="adminType" value="laborders")
-												td(style="width: 17px;display:block;")
+												td(style="width: 17px;")
 													form(action="/fulfillshare" method="post")
 														
 														div(class="checkboxThree1", style=showfulfill)
