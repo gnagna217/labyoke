@@ -1231,6 +1231,7 @@ totalshares = t[0].counting;
         var labYokereporter = new LabYokeReporterShares(datefrom, dateto, req.session.lab, req.session.labs,res);
             labYokereporter.reportSharesIntro(function(error, resultsintro) {
                 var res0, res1;
+                console.log("resultsOrdersIntro: " + resultsintro.length);
                 res0 = resultsintro[0];
                 if(resultsintro !=null && resultsintro.length > 0){
                     res0 = resultsintro[1];
@@ -1238,7 +1239,7 @@ totalshares = t[0].counting;
                 if(resultsintro !=null && resultsintro.length > 1){
                     res1 = resultsintro[1];
                 }
-                console.log("resultsMoneyIntro: " + res0);
+                console.log("resultsOrdersIntro: " + res0);
                 console.log("dataintro: " + res1);
 			if(results != null){
 				console.log("res " + results);
