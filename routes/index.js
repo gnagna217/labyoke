@@ -998,11 +998,12 @@ totalshares = t[0].counting;
         if(verifyfrom >= 0 && verifyto >= 0){
             iserror = false;
         }
+        var res0, res1;
         if(!iserror){
     		var labYokereporter = new LabYokeReporterShares(datefrom, dateto, req.session.lab, req.session.labs,res);
     		labYokereporter.reportShares(function(error, results) {
                 labYokereporter.reportSharesIntro(function(error, resultsintro) {
-                var res0, res1;
+                
                 res0 = resultsintro[0];
                 if(resultsintro !=null && resultsintro.length > 0){
                     res0 = resultsintro[0];
@@ -1059,13 +1060,14 @@ totalshares = t[0].counting;
         if(verifyfrom >= 0 && verifyto >= 0){
             iserror = false;
         }
+        var res0, res1;
         if(!iserror){
 		var labYokereporterSavings = new LabYokeReporterSavings(datefrom,dateto,agent,vendor,catalognumber,lab, req.session.lab,req.session.labs,res);
 		labYokereporterSavings.reportMoney(function(error, results) {
 
         var labYokereporter = new LabYokeReporterShares(datefrom, dateto, req.session.lab, req.session.labs,res);
             labYokereporter.reportSharesIntro(function(error, resultsintro) {
-                var res0, res1;
+                
                 res0 = resultsintro[0];
                 console.log("reportSharesIntro lenght: " + resultsintro.length);
                 if(resultsintro !=null && resultsintro.length > 0){
@@ -1233,12 +1235,13 @@ totalshares = t[0].counting;
         if(verifyfrom >= 0 && verifyto >= 0){
             iserror = false;
         }
+        var res0, res1;
         if(!iserror){
 		var labYokereporter = new LabYokeReporterOrders(datefrom, dateto, lab, req.session.labs, req.session.lab, res);
 		labYokereporter.reportOrders(function(error, results) {
         var labYokereporter = new LabYokeReporterShares(datefrom, dateto, req.session.lab, req.session.labs,res);
             labYokereporter.reportSharesIntro(function(error, resultsintro) {
-                var res0, res1;
+                
                 console.log("resultsOrdersIntro: " + resultsintro.length);
                 res0 = resultsintro[0];
                 if(resultsintro !=null && resultsintro.length > 0){
