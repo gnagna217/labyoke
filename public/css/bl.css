@@ -2532,6 +2532,21 @@ border-top: 5px solid #8a6d3b;
 }*/
 
 /*reports change*/
+.backinsuff{
+    background-color: rgb(60, 129, 187);
+}
+.backorders{
+    background-color: rgb(173, 153, 117);
+}
+.backshares{
+    background-color: rgba(61, 157, 203, 0.86);
+}
+.backmoney{
+    background-color: rgb(138, 109, 59);
+}
+.backintro{
+    background-color: rgb(41, 117, 180);
+}
 .intro2{
     height: 270px;
     display: block;
