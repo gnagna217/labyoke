@@ -9,20 +9,20 @@
   -webkit-font-smoothing: antialiased;
 }
 
-.alert-danger{
+.alert-danger-report{
     background: radial-gradient(#f2dede,#f2dede, white 60%);
     text-align: center;
     border: none !important;
     box-shadow: none !important;
 }
 
-.alert-success{
+.alert-success-report{
     background: radial-gradient(#dff0d8,#dff0d8, white 60%);
     text-align: center;
     border: none !important;
     box-shadow: none !important;
 }
-.alert-warning{
+.alert-warning-report{
     background: radial-gradient(#faebcc,#faebcc, white 60%);
     text-align: center !important;
     border: none;

@@ -508,11 +508,11 @@ block content
 						- message_success_money = i18n.__("reports.money.message.successmoney")
 						- file_money = i18n.__("reports.money.file_all") 
 					if (addMessageMoney == 'failure')
-						div(class="alert alert-danger alertshadow")!= message_fail_share
+						div(class="alert alert-danger-report alertshadow")!= message_fail_share
 					if (addMessageMoney == 'wrongdate')
-						div(class="alert alert-danger alertshadow")!= message_fail_date_share
+						div(class="alert alert-danger-report alertshadow")!= message_fail_date_share
 					if (addMessageMoney == 'success')
-						div(class="alert alert-success fade in alert-dismissable alertshadow")!= message_success_money
+						div(class="alert alert-success-report fade in alert-dismissable alertshadow")!= message_success_money
 					div
 						form(action="reportMoney", method="post", id="formreportMoney")
 							div(class="buttonss")
@@ -722,11 +722,11 @@ block content
 						- message_success_order = i18n.__("reports.orders.message.successorders")
 						- file_orders = i18n.__("reports.orders.file_all") 
 					if (addMessageOrders == 'failure')
-						div(class="alert alert-danger alertshadow")!= message_fail_order
+						div(class="alert alert-danger-report alertshadow")!= message_fail_order
 					if (addMessageOrders == 'wrongdate')
-						div(class="alert alert-danger alertshadow")!= message_fail_date_order
+						div(class="alert alert-danger-report alertshadow")!= message_fail_date_order
 					if (addMessageOrders == 'success')
-						div(class="alert alert-success fade in alert-dismissable alertshadow")!= message_success_order
+						div(class="alert alert-success-report fade in alert-dismissable alertshadow")!= message_success_order
 					div
 						form(action="reportOrders", method="post")
 							div(class="buttonss")
@@ -943,11 +943,11 @@ block content
 						- message_success_share = i18n.__("reports.shares.message.successshares")
 						- file_shares = i18n.__("reports.shares.file_all")
 					if (addMessageShares == 'failure')
-						div(class="alert alert-danger alertshadow")!= message_fail_share
+						div(class="alert alert-danger-report alertshadow")!= message_fail_share
 					if (addMessageShares == 'wrongdate')
-						div(class="alert alert-danger alertshadow")!= message_fail_date_share
+						div(class="alert alert-danger-report alertshadow")!= message_fail_date_share
 					if (addMessageShares == 'success')
-						div(class="alert alert-success fade in alert-dismissable alertshadow")!= message_success_share
+						div(class="alert alert-success-report fade in alert-dismissable alertshadow")!= message_success_share
 					div
 						form(action="reportShares", method="post", id="formreportShares")
 							div(class="buttonss")
@@ -1163,11 +1163,11 @@ block content
 								}
 							});
 					if (addMessageInsuff == 'failure')
-						div(class="alert alert-danger alertshadow")!= message_fail_insuff
+						div(class="alert alert-danger-report alertshadow")!= message_fail_insuff
 					if (addMessageInsuff == 'wrongdate')
-						div(class="alert alert-danger alertshadow")!= message_fail_date_insuff
+						div(class="alert alert-danger-report alertshadow")!= message_fail_date_insuff
 					if (addMessageInsuff == 'success')
-						div(class="alert alert-success fade in alert-dismissable alertshadow")!= message_success_insuff
+						div(class="alert alert-success-report fade in alert-dismissable alertshadow")!= message_success_insuff
 					div
 						form(action="reportInsuff", method="post")
 							div(class="buttonss")
