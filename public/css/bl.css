@@ -664,7 +664,7 @@ padding-top: 3px;
   padding: 0.2em;
   /*border-bottom: 1px solid #CCC;*/
   color: #337ab7;
-  font-size: 24pt; font-weight: bold; /*big 20pt*/
+  font-size: 20pt; font-weight: bold; /*big 20pt*/
   width:100%;
   background: none;
 
@@ -672,12 +672,12 @@ padding-top: 3px;
     position: relative;
     display: inline-block;
     /*border-radius: 64px;*/
-    width: 45px;
+    width: 35px;
     /*height: 70px;
     padding-top: 22px;
     padding-left: 25px;*/
     float: right;
-    margin-top: 5%;
+    margin-top: 8%;
 }
 
 .labeldownload::before {
