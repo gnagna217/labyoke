@@ -62,7 +62,7 @@ block content
             div(id="ctl00_Div2" class="row")
                 div
                     if message
-                        div(class="alert alert-danger messagesearch alertshadow")!= message
+                        div(class="alert alert-danger-report messagesearch alertshadow")!= message
                     form(action="/search" method="post" style="display: block;width: 75%;margin: 0 auto;/*padding-left: 15%; padding-right: 15%;*/ text-align: center;")
                         div(class="textentry")
                             input(type="hidden" name="searchType" value="key")
@@ -87,7 +87,7 @@ block content
             div(id="ctl00_Div2" class="row")
                 div
                     if messageCatalog
-                        div(class="alert alert-danger messagesearch alertshadow")!= messageCatalog
+                        div(class="alert alert-danger-report messagesearch alertshadow")!= messageCatalog
                     form(action="/searchCatalog" method="post" style="display: block;width: 75%;margin: 0 auto;/*padding-left: 15%; padding-right: 15%; */ text-align: center;")
                         div(class="textentry")
                             input(type="hidden" name="searchType" value="catalog")
