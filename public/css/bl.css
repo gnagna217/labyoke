@@ -2243,10 +2243,10 @@ input[type=radio]:checked ~ .checkingcatalog::before{
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); 
     position: relative;
     top: 68px;
-    left: 58%;
+    left: 55%;
     border-radius: 550px;
-    padding: 40px;
-    width: 100px;
+    padding: 45px;
+    width: 115px;
     text-align: center;
     color: white;
     background-color: rgba(41, 117, 180, 0.91); /*#2975b4*/
