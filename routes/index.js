@@ -952,12 +952,14 @@ totalshares = t[0].counting;
         res0 = results[0];
         if(results !=null && results.length > 0){
             res0 = results[0];
+            console.log("resultsMoneyIntro: " + res0);
         }
         if(results !=null && results.length > 1){
             res1 = results[1];
+            console.log("dataintro: " + res1);
         }
-        console.log("resultsMoneyIntro: " + res0);
-        console.log("dataintro: " + res1);
+        
+        
 
 		labyokerLab.getLabsInDept(function(error, categories) {
 			console.log("load labs in dept in reports : " + categories);
@@ -1004,12 +1006,14 @@ totalshares = t[0].counting;
                 res0 = resultsintro[0];
                 if(resultsintro !=null && resultsintro.length > 0){
                     res0 = resultsintro[0];
+                    console.log("resultsMoneyIntro: " + res0);
                 }
                 if(resultsintro !=null && resultsintro.length > 1){
                     res1 = resultsintro[1];
+                    console.log("dataintro: " + res1);
                 }
-                console.log("resultsMoneyIntro: " + res0);
-                console.log("dataintro: " + res1);
+                
+                
 
 
     			if(results != null){
@@ -1066,12 +1070,14 @@ totalshares = t[0].counting;
                 console.log("reportSharesIntro lenght: " + resultsintro.length);
                 if(resultsintro !=null && resultsintro.length > 0){
                     res0 = resultsintro[0];
+                    console.log("resultsMoneyIntro: " + res0);
                 }
                 if(resultsintro !=null && resultsintro.length > 1){
                     res1 = resultsintro[1];
+                    console.log("dataintro: " + res1);
                 }
-                console.log("resultsMoneyIntro: " + res0);
-                console.log("dataintro: " + res1);
+                
+                
 
 			if(results != null){
 				console.log("res " + results);
@@ -1129,12 +1135,14 @@ totalshares = t[0].counting;
                 console.log("resultsintro: " + resultsintro.length);
                 if(resultsintro !=null && resultsintro.length > 0){
                     res0 = resultsintro[0];
+                    console.log("resultsMoneyIntro: " + res0);
                 }
                 if(resultsintro !=null && resultsintro.length > 1){
                     res1 = resultsintro[1];
+                    console.log("dataintro: " + res1);
                 }
-                console.log("resultsMoneyIntro: " + res0);
-                console.log("dataintro: " + res1);
+                
+                
 			if(results != null){
 				console.log("res " + results);
 				if(results!=null && results != ""){
@@ -1235,12 +1243,14 @@ totalshares = t[0].counting;
                 res0 = resultsintro[0];
                 if(resultsintro !=null && resultsintro.length > 0){
                     res0 = resultsintro[0];
+                    console.log("resultsOrdersIntro: " + res0);
                 }
                 if(resultsintro !=null && resultsintro.length > 1){
                     res1 = resultsintro[1];
+                    console.log("dataintro: " + res1);
                 }
-                console.log("resultsOrdersIntro: " + res0);
-                console.log("dataintro: " + res1);
+                
+                
 			if(results != null){
 				console.log("res " + results);
 				if(results != ""){
