@@ -3601,6 +3601,10 @@ padding-right: 0px;
 .isadminroundaccountLeft{
     left: -210px;
 }
+.margintop{
+    margin-top:110px !important;
+}
+}
 
 @media (max-width: 953px) {
 
@@ -4406,7 +4410,7 @@ span.num.greatherthanninetynine {
     width: 100%;
 }
 .margintop{
-    margin-top:110px !important;
+    margin-top:97px !important;
 }
 .menumyshares2 {
     width: 54.5% !important;
