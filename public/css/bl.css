@@ -2243,7 +2243,7 @@ input[type=radio]:checked ~ .checkingcatalog::before{
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); 
     position: relative;
     top: 68px;
-    left: 53%;
+    left: 58%;
     border-radius: 550px;
     padding: 40px;
     width: 100px;
@@ -2266,7 +2266,7 @@ input[type=radio]:checked ~ .checkingcatalog::before{
     display:none;*/
 }
 .searchmob{
-    margin-top: -88px;left: 24%;background-color: rgba(138, 109, 59, 0.91); /*#8a6d3b;*/
+    margin-top: -88px;left: 30%;background-color: rgba(138, 109, 59, 0.91); /*#8a6d3b;*/
     padding: 30px;
     width: 80px;
 }
@@ -4255,6 +4255,9 @@ span.num.greatherthanninetynine {
 
 
 @media (max-width: 580px){
+.searchmob{
+    left: 20%;
+}
 #pageloader{
     /*display:flex;*/
 }
