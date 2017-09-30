@@ -12,15 +12,21 @@
 .alert-danger{
     background: radial-gradient(#f2dede,#f2dede, white 60%);
     text-align: center;
+    border: none;
+    box-shadow: none;
 }
 
 .alert-success{
     background: radial-gradient(#dff0d8,#dff0d8, white 60%);
     text-align: center;
+    border: none;
+    box-shadow: none;
 }
 .alert-warning{
     background: radial-gradient(#faebcc,#faebcc, white 60%);
     text-align: center;
+    border: none;
+    box-shadow: none;
 }
 
 /*paper clip*/
