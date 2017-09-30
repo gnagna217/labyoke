@@ -9,6 +9,20 @@
   -webkit-font-smoothing: antialiased;
 }
 
+.alert-danger{
+    background: radial-gradient(#f2dede,#f2dede, white 60%);
+    text-align: center;
+}
+
+.alert-success{
+    background: radial-gradient(#dff0d8,#dff0d8, white 60%);
+    text-align: center;
+}
+.alert-warning{
+    background: radial-gradient(#faebcc,#faebcc, white 60%);
+    text-align: center;
+}
+
 /*paper clip*/
 .pin {
     z-index: 1;
