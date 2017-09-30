@@ -2740,7 +2740,7 @@ input:-webkit-autofill:hover {
     padding-left: 10px !important;
 }
 .margintop{
-    margin-top:110px !important;
+    margin-top:97px !important;
 }
 .margintop2{
     margin-top:80px !important;
@@ -3798,6 +3798,9 @@ margin-top:0px;
 }
 
 @media (max-width: 767px){
+.margintop{
+    margin-top:110px !important;
+}
 .reportlabels{
     padding: 0px;
 }
