@@ -2275,6 +2275,8 @@ input[type=radio]:checked ~ .checkingcatalog::before{
     cursor:pointer;
     text-decoration:none;
     color: white;
+    box-shadow: none;
+
 }
 .roundaccount:hover, .roundaccount:active, .roundaccount:focus{
     background-color: #3d9dcb;
@@ -2285,6 +2287,7 @@ input[type=radio]:checked ~ .checkingcatalog::before{
 .searchmob:hover, .searchmob:active, .searchmob:focus{
     background-color: #3d9dcb;
     cursor:pointer;
+    box-shadow: none;
 }
 span.fa-comment {
     position: absolute;
