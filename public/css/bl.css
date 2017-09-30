@@ -2524,6 +2524,13 @@ border-top: 5px solid #8a6d3b;
     margin-top: 25px;
 }
 
+.reportbox{
+    box-sizing: content-box;
+    padding-top: 10px !important;
+    padding-bottom: 10px !important;
+    margin-top: 25px;
+}
+
 /*reports change*/
 .intro2{
     height: 270px;
