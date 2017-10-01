@@ -2563,6 +2563,7 @@ border-top: 5px solid #8a6d3b;
     padding: 20px !important;
     text-align: center;
     box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+    border-radius: 100px / 20px;
 }
 
 .intro2 td, th {
