@@ -29,7 +29,7 @@
     box-shadow: none !important;
 }
 
-/*paper clip*/
+/*paper clip
 .pin {
     z-index: 1;
     left: 71px;
@@ -38,7 +38,6 @@
     height: 30px;
     border-radius: 50% 50% 50% 0;
     background: #3d9dcb;
-    /* position: absolute; */
     -webkit-transform: rotate(-45deg);
     -moz-transform: rotate(-45deg);
     -o-transform: rotate(-45deg);
@@ -46,7 +45,6 @@
     transform: rotate(-45deg);
     left: 69px;
     top: -32px;
-    /* top: 50%; */
     margin: -20px 0 0 -20px;
     -webkit-animation-name: bounce;
     -moz-animation-name: bounce;
@@ -78,7 +76,6 @@
     border-radius: 50%;
     height: 14px;
     width: 14px;
-    /* position: absolute; */
     left: 50%;
     top: 50%;
     margin: 11px 0px 0px -12px;
@@ -372,7 +369,7 @@
     transform: translateY(0) rotate(-45deg);
   }
 }
-
+*/
 /*end paper clip*/
 .reportSlot{
     margin-bottom: -25px;
@@ -4369,7 +4366,7 @@ span.num.greatherthanninetynine {
 
 
  @media (max-width: 440px) {
-.pin:after{
+/*.pin:after{
     width: 8px;
     height: 8px;
     margin: 7px 0 0 5px;
@@ -4380,12 +4377,12 @@ span.num.greatherthanninetynine {
     height: 20px;
     left: 50%;
     top: -30px;
-    /* top: 50%; */
     margin: 20px 0 0 -20px;
 }
 .pulse{
     left: 49%;
 }
+*/
 .labeldownload {
     display:none;
 }
