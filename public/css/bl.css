@@ -678,6 +678,7 @@ padding-top: 3px;
     padding-left: 25px;*/
     float: right;
     margin-top: 8%;
+    text-shadow: 2px 2px 2px #ccc;
 }
 
 .labeldownload::before {
@@ -845,9 +846,11 @@ background-color: rgba(61, 157, 203, 0.81);
 .labeldownload:hover{
     color:#3d9dcb;
     background:none;
+    text-shadow: none;
 }
 .labelexpandadd:active, .labelexpandedit:active, .labelexpand:active,.labelexpandrules:active, .labelexpandmood:active{
     background-color: #2975b4 !important;
+    text-shadow: none;
 }
 .labeldownload:active{
     color:#3d9dcb;
@@ -1957,7 +1960,7 @@ a {
 }
 .messagesearch{
     margin: 0 auto;
-    width: 65%;
+    width: 85%;
     position: relative;
     font-size: 12pt;
     margin-top: 10px;
