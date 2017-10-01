@@ -408,7 +408,7 @@ LabYokeReporterSavings.prototype.reportMoney = function(callback) {
 	var params = "";
 	var columns ="<td>" + i18n.__("index.reportsMoney.param1") + "</td>";
 	headeronly.push(i18n.__("index.reportsMoney.param1"));
-	var html = "<div><span id='reporttitle' style='font-weight:bold;font-size:36pt;'>" + i18n.__("index.reportsMoney.param2") + ".</span></div><br/><div style='font-size:11pt;'>"
+	var html = "<div><span id='reporttitle' style='font-weight:bold;font-size:36pt;'>" + i18n.__("index.reportsMoney.param2") + ".</span></div><br/><div style='font-size:11pt;font-size:11pt;overflow: overlay;height: 145px;'>"
 				+ "" + "";
 	console.log("report on savings- datefrom: " + datefrom);
 	console.log("report on savings- dateto: " + dateto);
@@ -560,7 +560,7 @@ console.log("report on savings- dateto: " + labsindept);
 		var savings = 0;
 		var isempty = true;
 		if(results != null && results != ""){
-		html +="<table style='margin-top:25px;text-align:left'><tbody><tr style='color: white;background-color: #3d9dcb;font-size:12px'>" + columns + "</tr>"
+		html +="<table style='text-align:left'><tbody><tr style='color: white;background-color: #3d9dcb;font-size:12px'>" + columns + "</tr>"
 		
 			for(var prop in results){
 				var rowonly = [];
@@ -631,7 +631,7 @@ LabYokeReporterSavings.prototype.reportInsuff = function(callback) {
 	var columns ="<td>" + i18n.__("index.reportsMoney.param9") + "</td><td>" + i18n.__("reports.insuff.labselect") + "</td>";
 	headeronly.push(i18n.__("index.reportsMoney.param9"));
 	headeronly.push(i18n.__("reports.insuff.labselect"));
-	var html = "<div><span id='reporttitle' style='font-weight:bold;font-size:36pt;'>" + i18n.__("index.reportsInsuff.param1") + ".</span></div><br/><div style='font-size:11pt;'>"
+	var html = "<div><span id='reporttitle' style='font-weight:bold;font-size:36pt;'>" + i18n.__("index.reportsInsuff.param1") + ".</span></div><br/><div style='font-size:11pt;font-size:11pt;overflow: overlay;height: 145px;'>"
 				+ "" + "";
 	console.log("report on savings- datefrom: " + datefrom);
 	console.log("report on savings- dateto: " + dateto);
@@ -872,7 +872,7 @@ console.log("report on shares my lab: " + mylab);
 				html += " <td style='font-size: 12px;'>" + moment(date).tz("Africa/Bissau").format('MM-DD-YYYY') + "</td></tr>";
 				dataonly.push(rowonly);
 			}
-			html += "</tbody></table><p style='margin-top: 25px;'><i><b>" + i18n.__("index.reportsShares.html7") + "</b></i></p>";
+			html += "</tbody></table></div><p style='margin-top: 25px;'><i><b>" + i18n.__("index.reportsShares.html7") + "</b></i></p>";
 			//html += "</tbody></table><p><i><b>The LabYoke Team.</b></i></p><img style='width: 141px; margin: 0 20px;float:left' src='https:\/\/team-labyoke.herokuapp.com\/images\/yoke4.png', alt='The Yoke',  title='Yoke', class='yokelogo'/>";
 		}
 		if(!isempty){
@@ -1015,7 +1015,7 @@ console.log("report on shares my lab: " + mylab);
 				rowonly.push(moment(date).tz("Africa/Bissau").format('MM-DD-YYYY'));
 				dataonly.push(rowonly);
 			}
-			html += "</tbody></table><p style='margin-top: 25px;'><i><b>" + i18n.__("index.reportsShares.html7") + "</b></i></p>";
+			html += "</tbody></table></div><p style='margin-top: 25px;'><i><b>" + i18n.__("index.reportsShares.html7") + "</b></i></p>";
 			//html += "</tbody></table><p><i><b>The LabYoke Team.</b></i></p><img style='width: 141px; margin: 0 20px;float:left' src='https:\/\/team-labyoke.herokuapp.com\/images\/yoke4.png', alt='The Yoke',  title='Yoke', class='yokelogo'/>";
 			
 		}
@@ -1160,7 +1160,7 @@ console.log("report on orders: " + labsindept);
 		console.log("results : " + results);
 		var html = "";
 		if(results != null && results != ""){
-		html = "<div><span id='reporttitle' style='font-weight:bold;font-size:36pt;'>" + i18n.__("index.reportsOrders.html2") + "</span></div><br/><div style='font-size:11pt;'>";
+		html = "<div><span id='reporttitle' style='font-weight:bold;font-size:36pt;'>" + i18n.__("index.reportsOrders.html2") + "</span></div><br/><div style='font-size:11pt;overflow: overlay;height: 155px;'>";
 		if(datefrom == 'all'){
 			html += i18n.__("index.reportsOrders.html3"); //"<p>This report is listing all the orders requested:</p></div>"
 		} else {
