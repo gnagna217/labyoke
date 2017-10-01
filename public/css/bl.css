@@ -2553,7 +2553,7 @@ border-top: 5px solid #8a6d3b;
 .intro2{
     height: 270px;
     display: block;
-    overflow: overlay;
+    /*overflow: overlay;*/
     margin-right: 100px;
     margin-top: -45px !important;
     background-color: rgb(60, 129, 187); /*rgb(173, 153, 117);*/
