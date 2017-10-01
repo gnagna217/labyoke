@@ -735,7 +735,7 @@ if(lab != null && lab !=undefined && lab =="all"){
 				console.log("dataonly1: "  + dataonly);
 		
 			}
-			html += "</tbody></table><br/><p style='margin-top:25px'><i><b>" + i18n.__("index.reportsShares.html7") + "</b></i></p>";
+			html += "</tbody></table></div><br/><p style='margin-top:25px'><i><b>" + i18n.__("index.reportsShares.html7") + "</b></i></p>";
 			console.log("html insuff: " + html);
 			console.log("dataonly1: "  + dataonly);
 		}
