@@ -1461,6 +1461,10 @@ display: none;
     box-shadow: none;
 }
 
+.checkboxThree1:hover, .checkboxThree1:active, .checkboxThree1:focus{
+  background-color: #2975b4;
+}
+
 .checkboxThree {
     width: 63px;
     height: 25px;
