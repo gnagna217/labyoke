@@ -125,7 +125,10 @@ block content
                                         $('#changelang').submit();      
                                       };
                                     };
-              div(class="results" style="float: right;margin-top: -20%;position: relative;width: 50%;margin-bottom: 70px;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); box-sizing: content-box; padding-top: 10px !important; padding-bottom: 25px !important; border-radius: 8px; padding-left: 20px; padding-right: 20px; margin-right: 50px;")  h3!= "Send Email & Notify" 
+              div(class="results" style="float: right;margin-top: -20%;position: relative;width: 50%;margin-bottom: 70px;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); box-sizing: content-box; padding-top: 10px !important; padding-bottom: 25px !important; border-radius: 8px; padding-left: 20px; padding-right: 20px; margin-right: 50px;")
+                h3
+                  span(style="color: #2975b4;margin-right: 10px;/* display: none; */" class="fa fa-envelope")
+                  span!= "Send Email & Notify" 
                 div(class="reportlabelwidth reportlabelwidth3")
                   label(for="reportVendorInsuff" style="width: 60px;font-weight: bold;")!= "Insufficient Reagent"
                   div(class="checkboxThree")
