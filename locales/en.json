@@ -308,7 +308,7 @@
     "shares.subtitle1": "Fantastic.",
     "shares.intro5": " new chem(s)",
     "shares.intro": "No new chem",
-    "shares.intro1": " currently being requested by your colleagues. In total, ",
+    "shares.intro1": " highlighted and currently being requested by your colleagues. In total, ",
     "shares.intro2": " request(s)",
     "shares.intro3": "No request",
     "shares.intro4": " registered for your lab. <span class='colorinsuff'>Cancelled orders</span> are highlighted.<div style='margin-bottom: 0px;' class='checkboxThree1'><input style='position:absolute;left: -9999px;' type='checkbox' id='cancel14' checked='checked'><label for='cancel14' class='shadow'></label><p style='margin-left: 25px;'>Order has been cancelled.</p></div><div class='checkboxThree1'><input style='position:absolute;left: -9999px;' type='checkbox' id='cancel4'><label for='cancel4' class='shadow'></label><p style='margin-left: 25px;'>Order is awaiting fulfillment.</p></div>",

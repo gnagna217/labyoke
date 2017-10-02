@@ -306,7 +306,7 @@
     "shares.subtitle1": "Fantastique.",
     "shares.intro": "Aucun nouveau produit chimique",
     "shares.intro5": " nouveau(x) produit(s) chimique(s)",
-    "shares.intro1": " actuellement demandé(s) par vos collègues. Au total, ",
+    "shares.intro1": " surligné et actuellement demandé(s) par vos collègues. Au total, ",
     "shares.intro2": " requêtes(s)",
     "shares.intro3": "Pas de requête",
     "shares.intro4": " enregistré pour votre laboratoire. <span class='colorinsuff'>Les commandes annulées</span> sont mises en souligné.<div style='margin-bottom: 0px;' class='checkboxThree1'><input style='position:absolute;left: -9999px;' type='checkbox' id='cancel14' checked='checked'><label for='cancel14' class='shadow'></label><p style='margin-left: 25px;'>Commande annulée.</p></div><div class='checkboxThree1'><input style='position:absolute;left: -9999px;' type='checkbox' id='cancel4'><label for='cancel4' class='shadow'></label><p style='margin-left: 25px;'>Commande en attente de remplissage.</p></div>",
