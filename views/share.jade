@@ -50,7 +50,7 @@ block content
 						- requestIntro = i18n.__("shares.intro")
 					span(class="labColor")!= requestIntro
 					span= i18n.__("shares.intro1")
-					- var totalrequestIntro = "<span class='labColor'>" + mysharesrequest.length + i18n.__("shares.intro2") + "</span>"
+					- var totalrequestIntro = "<span>" + mysharesrequest.length + i18n.__("shares.intro2") + "</span>"
 					- if(mysharesrequest.length == 0)
 						- totalrequestIntro = i18n.__("shares.intro3")
 					span!= totalrequestIntro + i18n.__("shares.intro4")
