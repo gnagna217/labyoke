@@ -494,7 +494,7 @@
     "index.account.surname": "nom de famille",
     "index.account.tel": "numéro de téléphone",
     "index.account.lang": "langue",
-    "index.account.noinsuff": "notification d'un réactif insuffisant",
+    "index.account.oninsuff": "notification d'un réactif insuffisant",
 
     "dot.selected": "<b>Quantité: </b>",
     "dot.reagent": " - <b>Réactif:</b> ",
