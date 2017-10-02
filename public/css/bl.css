@@ -18,13 +18,13 @@
       font-weight: bold;
 }
 .profile{
-    width:45%;
+    width:54%;
     float:left;
 }
 .notify{
     float: right;
     position: relative;
-    width: 42%;
+    width: 40%;
     margin-bottom: 70px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); 
     box-sizing: content-box; 
@@ -1063,7 +1063,7 @@ body.large-screen .card-list-table tbody tr:hover td {
 
 @media (max-width: 992px) {
 .profile{
-    width:50%;
+    width:59%;
 }
   .notify{
     margin-right: 0px;
