@@ -137,7 +137,7 @@ block content
                   label(for="emailOnInsuff" style="font-weight: bold;")!= i18n.__("account.notify.oninsuff") 
                   div(class="checkboxThree")
                     form(action="/changeDetails" id="changeoninsuff" method="post" class="oninsuffform" style="/*top: -5px; position: relative;*/")
-                      input(type="checkbox" name="emailOnInsuff" id="emailOnInsuff" value="oninsuff" (checkOnInsuff===true ? "checked" : undefined))
+                      input(type="checkbox" name="emailOnInsuff" id="emailOnInsuff" value="oninsuff" checked=(checkOnInsuff===true ? "checked" : undefined))
                       input(name="valuedetail" type="hidden" id="valuedetail" value=oninsuff)
                       input(name="column" type="hidden" id="column" value="oninsuff")
                       input(name="formemail" type="hidden" id="formemail" value=email)
