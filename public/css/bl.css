@@ -1458,6 +1458,7 @@ display: none;
 .checkboxThree1 input[type=checkbox]:checked + label {
     /*left: 30px;*/
     background: #2975b4;
+    box-shadow: none;
 }
 
 .checkboxThree {
