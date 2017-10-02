@@ -1496,6 +1496,10 @@ totalshares = t[0].counting;
 		res.redirect('/share');
 	});
 
+    router.get('/admincancelshare', function(req, res) {
+        res.redirect('/admins');
+    });
+
     router.get('/fulfillshare', function(req, res) {
         res.redirect('/admins');
     });
