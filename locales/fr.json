@@ -261,7 +261,7 @@
     "account.team.email": "Email",
     "account.tip.header":"Aide Profil?",
     "account.tip.desc": "Cliquez sur l'icône du crayon <span class='fa fa-pencil' style='color:white'></span> pour ouvrir le champ en mode édition. Effectuez votre changement souhaité (ou non) puis cliquez sur l'icône de vérification <span class='fa fa-check' style='color:white'></span> pour enregistrer.<br/><br/>Chaque champ est sauvegardé individuellement.<br/><br/>Cliquez sur <b><i>Qui est dans Votre équipe</i></b> pour une liste de tous les chercheurs de votre département.<br/><br/><b>Langue</b><br/>Toutes les communications par courrier électronique sont envoyées dans votre langue De choix sélectionné ici.<br/><br/><b>Envoyez Email & Notifiez</b><br/>Vous pouvez choisir de recevoir un mail lorsqu'un réactif est insuffisant.",
-    "account.notify.title":"Envoyez Email & Notifiez.",
+    "account.notify.title":"Email & Notification.",
     "account.notify.oninsuff":"Réactif Insuffisant",
 
     "orders.title": "Commandes.",
