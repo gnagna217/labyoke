@@ -1531,6 +1531,11 @@ position: absolute;
     left: -9999px;  
 }
 
+#emailOnInsuff{
+    position: absolute;
+    left: -9999px;  
+}
+
 #fulfill{
     position: absolute;
     left: -9999px;  

@@ -128,12 +128,12 @@ block content
               div(class="results notify" style="")
                 h3
                   span(style="color: #2975b4;margin-right: 10px;" class="fa fa-envelope")
-                  span!= "Send Email & Notify" 
+                  span!= i18n.__("account.notify.title") 
                 div(class="reportlabelwidth reportlabelwidth3", style="width: 90%;")
-                  label(for="reportVendorInsuff" style="font-weight: bold;")!= "Insufficient Reagent"
+                  label(for="emailOnInsuff" style="font-weight: bold;")!= i18n.__("account.notify.oninsuff") 
                   div(class="checkboxThree")
-                    input(type="checkbox" name="reportVendorInsuff" id="reportVendorInsuff" value="vendor")
-                    label(for="reportVendorInsuff" class="labelcheck shadow")
+                    input(type="checkbox" name="emailOnInsuff" id="emailOnInsuff" value="oninsuff")
+                    label(for="emailOnInsuff" class="labelcheck shadow")
 
         - // if(!resultsAccount || resultsAccount == undefined)
           div(class="texthalf")
