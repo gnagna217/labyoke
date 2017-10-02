@@ -1202,7 +1202,7 @@ console.log("report on orders: " + labsindept);
 				html += " <td style='font-size: 12px;'>" + moment(date).tz("Africa/Bissau").format('MM-DD-YYYY') + "</td></tr>";
 				dataonly.push(rowonly);
 			}
-			html += "</tbody></table><p style='margin-top:25px'><i><b>" + i18n.__("index.reportsShares.html7") + "</b></i></p>";
+			html += "</tbody></table></div><p style='margin-top:25px'><i><b>" + i18n.__("index.reportsShares.html7") + "</b></i></p>";
 		}
 		
 		if(!isempty){
