@@ -18,9 +18,9 @@ block content
                 span(class="labColor")= i18n.__("register.title2")
                 span!= i18n.__("register.subtitle")
             div(id="ctl00_Div2" class="frontdiv results")
-                div(class="alert alert-danger alertshadow", id="messagejs1", style="display:none")
+                div(class="alert alert-danger-report alertshadow", id="messagejs1", style="display:none")
                 if message
-                    div(class="alert alert-danger alertshadow")!= message
+                    div(class="alert alert-danger-report alertshadow")!= message
                     script.
                         $('#messagejs1').hide();
                 form(action="/register" method="post" id="regform1")
@@ -75,9 +75,9 @@ block content
             h1= i18n.__("register.form2.desc")
             p= i18n.__("register.form2.subdesc")
             div(id="ctl00_Div2" class="frontdiv results2")
-                div(class="alert alert-danger alertshadow", id="messagejs", style="display:none")
+                div(class="alert alert-danger-report alertshadow", id="messagejs", style="display:none")
                 if message
-                    div(class="alert alert-danger alertshadow")!= message
+                    div(class="alert alert-danger-report alertshadow")!= message
                     script.
                         $('#messagejs').hide();
                 form(action="/register" method="post" id="regform2")
