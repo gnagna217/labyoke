@@ -40,6 +40,7 @@ block content
                               - var checkOnInsuff = false
                               - if(oninsuff !=null && oninsuff > 0)
                                 - checkOnInsuff = true
+                              - oninsuff = oninsuff + ""
                               - var adminIntro = ""
                               - var lab = ob[prop].lab
                               - selectedlang = ob[prop].lang
@@ -233,6 +234,7 @@ block content
               if($('#emailOnInsuff:checked').length > 0){
                 v = 1;
               }
+              var oninsuff = "#{oninsuff}";
               console.log("oninsuff: " + oninsuff);
               console.log("v: " + v);
               if(oninsuff != v){
