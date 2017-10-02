@@ -8,7 +8,6 @@ block content
     //    div(class="bounce3")
 
     div(class="container login marginbottom margintop container2 moveFromLeft")
-        //img(src="/images/team2.png" class="accountlogo desktabonly")
         div(style="float: left; width: 100%;margin-bottom: 0px;", class="share-container")
             h1(class="wrapped2")= i18n.__("account.title") + labyoker + "."
             p(style="padding-bottom: 20px;")!= i18n.__("account.subtitle")
@@ -135,7 +134,7 @@ block content
                 h3(style="padding-left: 20px; padding-right: 20px;")
                   span(style="color: #2975b4;margin-right: 10px;" class="fa fa-envelope")
                   span!= i18n.__("account.notify.title") 
-                div(class="reportlabelwidth reportlabelwidth3", style="width: 90%;padding-left: 20px; padding-right: 20px;")
+                div(class="reportlabelwidth reportlabelwidth3", style="width: 90%;padding-right: 20px;margin-top: 10px;")
                   label(for="emailOnInsuff" style="font-weight: bold;")!= i18n.__("account.notify.oninsuff") 
                   div(class="checkboxThree")
                     form(action="/changeDetails" id="changeoninsuff" method="post" class="oninsuffform" style="/*top: -5px; position: relative;*/")
