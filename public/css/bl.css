@@ -10,7 +10,7 @@
 }
 
 .backColorinsuff{
-    color: rgba(88, 93, 88, 0.88) !important;
+    background-color: rgba(88, 93, 88, 0.88) !important;
     font-weight: bold;
 }
 .colorinsuff{
