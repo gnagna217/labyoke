@@ -36,6 +36,10 @@ block content
                               - var email = ob[prop].email
                               - var tel = ob[prop].tel
                               - var admin = ob[prop].admin
+                              - var oninsuff = ob[prop].oninsuff
+                              - var checkOnInsuff = false
+                              - if(oninsuff !=null && oninsuff > 0)
+                                - checkOnInsuff = true
                               - var adminIntro = ""
                               - var lab = ob[prop].lab
                               - selectedlang = ob[prop].lang
@@ -132,7 +136,11 @@ block content
                 div(class="reportlabelwidth reportlabelwidth3", style="width: 90%;")
                   label(for="emailOnInsuff" style="font-weight: bold;")!= i18n.__("account.notify.oninsuff") 
                   div(class="checkboxThree")
-                    input(type="checkbox" name="emailOnInsuff" id="emailOnInsuff" value="oninsuff")
+                    form(action="/changeDetails" id="changeoninsuff" method="post" class="oninsuffform" style="/*top: -5px; position: relative;*/")
+                      input(type="checkbox" name="emailOnInsuff" id="emailOnInsuff" value="oninsuff" (checkOnInsuff===true ? "checked" : undefined))
+                      input(name="valuedetail" type="hidden" id="valuedetail" value=oninsuff)
+                      input(name="column" type="hidden" id="column" value="oninsuff")
+                      input(name="formemail" type="hidden" id="formemail" value=email)
                     label(for="emailOnInsuff" class="labelcheck shadow")
 
         - // if(!resultsAccount || resultsAccount == undefined)
@@ -218,4 +226,18 @@ block content
             } else {
               $('.slide-out-tip-div').show();
             }
+
+
+            $( ".labelcheck" ).click(function() {
+              var v = 0;
+              if($('#emailOnInsuff:checked').length > 0){
+                v = 1;
+              }
+              console.log("oninsuff: " + oninsuff);
+              console.log("v: " + v);
+              if(oninsuff != v){
+                $('#changeoninsuff').find('.valuedetail').val(v);
+                //$('#changeoninsuff').submit();
+              }
+            });
           });
