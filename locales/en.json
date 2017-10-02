@@ -494,6 +494,7 @@
     "index.account.surname": "last name",
     "index.account.tel": "telephone number",
     "index.account.lang": "language",
+    "index.account.noinsuff": "notification to the Insufficient Reagent",
 
     "index.changepass.message2": "Please enter a valid password. Try again below.",
     "index.changepass.message4": "Your passwords do not match. Try again below.",
