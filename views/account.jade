@@ -131,10 +131,10 @@ block content
                                       };
                                     };
               div(class="results notify" style="")
-                h3
+                h3(style="padding-left: 20px; padding-right: 20px;")
                   span(style="color: #2975b4;margin-right: 10px;" class="fa fa-envelope")
                   span!= i18n.__("account.notify.title") 
-                div(class="reportlabelwidth reportlabelwidth3", style="width: 90%;")
+                div(class="reportlabelwidth reportlabelwidth3", style="width: 90%;padding-left: 20px; padding-right: 20px;")
                   label(for="emailOnInsuff" style="font-weight: bold;")!= i18n.__("account.notify.oninsuff") 
                   div(class="checkboxThree")
                     form(action="/changeDetails" id="changeoninsuff" method="post" class="oninsuffform" style="/*top: -5px; position: relative;*/")
