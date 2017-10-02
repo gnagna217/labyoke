@@ -10,11 +10,11 @@
 }
 
 .backColorinsuff{
-      background-color: #f05b4f !important;
-      color:white;
+    color: rgba(88, 93, 88, 0.88) !important;
+    font-weight: bold;
 }
 .colorinsuff{
-      color: #f05b4f !important;
+      color: rgba(88, 93, 88, 0.88) !important;
 }
 .profile{
     width:45%;
