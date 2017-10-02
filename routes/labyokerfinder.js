@@ -735,7 +735,7 @@ if(lab != null && lab !=undefined && lab =="all"){
 				console.log("dataonly1: "  + dataonly);
 		
 			}
-			html += "</tbody></table></div><br/><p style='margin-top:25px'><i><b>" + i18n.__("index.reportsShares.html7") + "</b></i></p>";
+			html += "</tbody></table></div><p style='margin-top:25px'><i><b>" + i18n.__("index.reportsShares.html7") + "</b></i></p>";
 			console.log("html insuff: " + html);
 			console.log("dataonly1: "  + dataonly);
 		}
@@ -968,6 +968,7 @@ console.log("report on shares my lab: " + mylab);
 		results = result.rows;
 		console.log("results : " + results);
 		var html = "<div style='margin-left:50px;margin-bottom:25px;'>";
+		html += "<div style='overflow: overlay;height: 230px;'>";
 
 		html += i18n.__("index.reportsShares.html1", {dateto: dateto}); //"<div><span style='font-weight:bold;font-size:36pt;margin-bottom:20px;float:left'>Inventory.</span></div><div style=\"font-family:'calibri'; font-size:11pt;padding: 20px; width:50%;float:left\">";
 
