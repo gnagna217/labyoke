@@ -595,7 +595,7 @@ console.log("report on savings- dateto: " + labsindept);
 				console.log("savings is: " + savings);
 		
 			}
-			html += "</tbody></table></div>" + i18n.__("index.reportsMoney.param14") + "<span style='font-size:30pt'>" + accounting.formatMoney(savings, { symbol: "",  format: "%v %s", precision : 0 }) /*accounting.formatMoney(savings)*/ + "</span></div><br/><p><i><b>" + i18n.__("index.reportsShares.html7") + "</b></i></p>";
+			html += "</tbody></table></div>" + i18n.__("index.reportsMoney.param14") + "<span style='font-size:30pt'>" + accounting.formatMoney(savings, { symbol: "",  format: "%v %s", precision : 0 }) /*accounting.formatMoney(savings)*/ + "</span><p style='margin-top:25px'><i><b>" + i18n.__("index.reportsShares.html7") + "</b></i></p>";
 			console.log("html money: " + html);
 
 		}
@@ -968,9 +968,10 @@ console.log("report on shares my lab: " + mylab);
 		results = result.rows;
 		console.log("results : " + results);
 		var html = "<div style='margin-left:50px;margin-bottom:25px;'>";
-		html += "<div style='overflow: overlay;height: 230px;'>";
+		
 
 		html += i18n.__("index.reportsShares.html1", {dateto: dateto}); //"<div><span style='font-weight:bold;font-size:36pt;margin-bottom:20px;float:left'>Inventory.</span></div><div style=\"font-family:'calibri'; font-size:11pt;padding: 20px; width:50%;float:left\">";
+		html += "<div style='overflow: overlay;height: 230px;'>";
 
 		if(datefrom == 'all'){
 			html += i18n.__("index.reportsShares.html2"); //"<p>This report is listing all the inventory uploaded:</p></div>"
@@ -1026,7 +1027,7 @@ console.log("report on shares my lab: " + mylab);
 			resultsbundled.push(dataonly);
 			callback(null, resultsbundled);
 		} else {
-			html = html + i18n.__("index.reportsShares.nodataIntro") + "<p style='margin-top: 25px;'><i><b>" + i18n.__("index.reportsShares.html7") + "</b></i></p>" + "</div>";
+			html = html + i18n.__("index.reportsShares.nodataIntro") + "</div><p style='margin-top: 25px;'><i><b>" + i18n.__("index.reportsShares.html7") + "</b></i></p>" + "</div>";
 			console.log("html empty: " + html);
 			resultsbundled.push(html)
 			callback(null, resultsbundled);
