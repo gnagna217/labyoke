@@ -631,7 +631,7 @@ LabYokeReporterSavings.prototype.reportInsuff = function(callback) {
 	var columns ="<td>" + i18n.__("index.reportsMoney.param9") + "</td><td>" + i18n.__("reports.insuff.labselect") + "</td>";
 	headeronly.push(i18n.__("index.reportsMoney.param9"));
 	headeronly.push(i18n.__("reports.insuff.labselect"));
-	var html = "<div><span id='reporttitle' style='font-weight:bold;font-size:36pt;'>" + i18n.__("index.reportsInsuff.param1") + ".</span></div><br/><div style='font-size:11pt;font-size:11pt;overflow: overlay;height: 145px;'>"
+	var html = "<div><span id='reporttitle' style='font-weight:bold;font-size:36pt;'>" + i18n.__("index.reportsInsuff.param1") + ".</span></div><br/><div style='font-size:11pt;font-size:11pt;overflow: overlay;height: 230px;'>"
 				+ "" + "";
 	console.log("report on savings- datefrom: " + datefrom);
 	console.log("report on savings- dateto: " + dateto);
@@ -829,7 +829,7 @@ console.log("report on shares my lab: " + mylab);
 
 		if(results != null && results != ""){
 		html += i18n.__("index.reportsShares.html1", {dateto: dateto}); //"<div><span style='font-weight:bold;font-size:36pt;margin-bottom:20px;float:left'>Inventory.</span></div><div style=\"font-family:'calibri'; font-size:11pt;padding: 20px; width:50%;float:left\">";
-
+		html += "<div style='overflow: overlay;height: 230px;'>";
 		if(datefrom == 'all'){
 			html += i18n.__("index.reportsShares.html2"); //"<p>This report is listing all the inventory uploaded:</p></div>"
 		} else {
@@ -843,7 +843,7 @@ console.log("report on shares my lab: " + mylab);
 		headeronly.push(i18n.__("index.reportsMoney.param16"));
 		headeronly.push(i18n.__("index.reportsMoney.param12"));
 		dataonly.push(headeronly);
-		html += params;
+		html +=  params;
 		html += i18n.__("index.reportsShares.html6");
 		//"<table><tbody><tr style='color: white;background-color: #3d9dcb;'><td style='font-size: 12px;'>Reagent</td><td style='font-size: 12px;'>Vendor</td><td style='font-size: 12px;'>Catalog#</td><td style='font-size: 12px;'>Location</td><td style='font-size: 12px;'>User</td><td>Date</td></tr>"
 		
