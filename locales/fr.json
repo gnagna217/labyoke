@@ -377,6 +377,8 @@
     "datatable.infoThousands": "",
     "datatable.searchplaceholder": "Rechercher...",
 
+    "index.signature": "L'Équipe <a href='https://team-labyoke.herokuapp.com/'>LabYoke</a>.",
+
     "index.orders.nonadmin1" : " Envoyez un e-mail à votre <a href='mailto:{{labadmin}}'>administrateur</a> si nécessaire.",
     "index.orders.nonadmin2" : " Vous pouvez le faire avec l'outil <a href='/share#upload'>Télécharger</a> pour réapprovisionner les laboratoires en réactifs.",
     "index.orders.booster1" : "<strong> Félicitations!</strong> Vous avez commandé un total de <b> {{ totalorders }} réactif(s)</b> et reçu un total de <b>{{ totalshares }} commande(s)</b>. Continuez!",
@@ -415,7 +417,7 @@
     "index.reportsShares.html4": " et ",
     "index.reportsShares.html5": "</p></div>",
     "index.reportsShares.html6": "<div style='overflow: overlay;height: 155px;'><table style='margin-top:25px;text-align: left;'><tbody><tr style='color: white;background-color: #3d9dcb;'><td style='font-size: 12px;'>Réactif</td><td style='font-size: 12px;'>Vendeur</td><td style='font-size: 12px;'>Catalogue</td><td style='font-size: 12px;'>Proprio</td><td style='font-size: 12px;'>Utilisateur</td><td>Date</td></tr>",
-    "index.reportsShares.html7": "L'Équipe <a href='https://team-labyoke.herokuapp.com/'>LabYoke</a>.",
+    "index.reportsShares.html7": "L'Équipe <a href='https://team-labyoke.herokuapp.com/' style='color:white'>LabYoke</a>.",
     "index.reportsShares.nodataIntro": "<div style='font-size:20pt;font-weight:bold;'>Aucune donnée valide n'a pu être retrouvée. Commencez à partager dès aujourd'hui!</div>",
     "index.reportsOrders.html1": "Laboratoire: ",
     "index.reportsOrders.html2": "Commandes.",

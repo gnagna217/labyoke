@@ -1912,8 +1912,8 @@ LabYokerOrder.prototype.order = function(callback) {
 		bodyReq += "<br><b>" + i18n.__({phrase: "index.orders.labowner", locale: userlang}) + ": </b> " + lab;
 		body += "<p>" + i18n.__({phrase: "index.orders.best", locale: ownerlang});
 		bodyReq += "<p>" + i18n.__({phrase: "index.orders.best", locale: userlang});
-		body += "</p><b><i>" + i18n.__({phrase: "index.reportsShares.html7", locale: ownerlang}) + "</i></b></div>";
-		bodyReq += "</p><b><i>" + i18n.__({phrase: "index.reportsShares.html7", locale: userlang}) + "</i></b></div>";
+		body += "</p><b><i>" + i18n.__({phrase: "index.signature", locale: ownerlang}) + "</i></b></div>";
+		bodyReq += "</p><b><i>" + i18n.__({phrase: "index.signature", locale: userlang}) + "</i></b></div>";
 		body += "</div>";
 		bodyReq += "</div>";
 		console.log("order body: " + body);
@@ -2602,7 +2602,7 @@ LabyokerRegister.prototype.register = function(callback) {
 					//		+ "?lang=" + userlang + "</a>";
 					body += "</span></p>";
 					body += i18n.__({phrase: "index.register.body3", locale: userlang}) + "<a href=\"https:\/\/team-labyoke.herokuapp.com\/share\"> " + i18n.__({phrase: "index.register.body2", locale: userlang}) + "</a>" + i18n.__({phrase: "index.register.body4", locale: userlang});
-					body += "</p><b><i>" + i18n.__({phrase: "index.reportsShares.html7", locale: userlang}) + "</i></b></div>";
+					body += "</p><b><i>" + i18n.__({phrase: "index.signature", locale: userlang}) + "</i></b></div>";
 					body += "</div>";
 					console.log("body: " + body);
 
@@ -2712,7 +2712,7 @@ Labyoker.prototype.requestChangePassword = function(callback) {
 					body +=  i18n.__({phrase: "index.change.body2", locale: userlang}) + "<a href=\"https:\/\/team-labyoke.herokuapp.com\/forgot\">" + i18n.__({phrase: "index.change.body3", locale: userlang}) + "</a>" + i18n.__({phrase: "index.change.body4", locale: userlang}) + "</span> </p>";
 					//body += "<p>[PS: Have you " + "<a href=\"https:\/\/team-labyoke.herokuapp.com\/share\">" + "shared" + "</a>" + " some chemicals today?]";
 					body += i18n.__({phrase: "index.change.body5", locale: userlang}) + "<a href=\"https:\/\/team-labyoke.herokuapp.com\/share\">" + i18n.__({phrase: "index.change.body6", locale: userlang}) + "</a>" + i18n.__({phrase: "index.change.body7", locale: userlang});
-					body += "</p><b><i>" + i18n.__({phrase: "index.reportsShares.html7", locale: userlang}) + "</i></b></div>";
+					body += "</p><b><i>" + i18n.__({phrase: "index.signature", locale: userlang}) + "</i></b></div>";
 					body += "</div>";
 					console.log("body: " + body);
 
@@ -2898,7 +2898,7 @@ LabYokerChangeShare.prototype.cancelShare = function(callback) {
 			body += "<br><b>" + i18n.__({phrase: "index.orders.catalog", locale: userlang}) + ": </b> " + catalognumber;
 			body += "<br><b>" + i18n.__({phrase: "index.orders.email", locale: userlang}) + ": </b> " + email;
 			body += "<p>" + i18n.__({phrase: "index.orders.best", locale: userlang});
-			body += "</p><b><i>" + i18n.__({phrase: "index.reportsShares.html7", locale: userlang}) + "</i></b></div>";
+			body += "</p><b><i>" + i18n.__({phrase: "index.signature", locale: userlang}) + "</i></b></div>";
 			body += "</div>";
 			console.log("order body: " + body);
 			var mailOptions = new MailOptionsWithCC(requestor, subject, body, email);
@@ -2967,7 +2967,7 @@ LabYokerChangeShare.prototype.fulfillShare = function(callback) {
 			body += "<br><b>" + i18n.__({phrase: "index.orders.catalog", locale: userlang}) + ": </b> " + catalognumber;
 			body += "<br><b>" + i18n.__({phrase: "index.orders.email", locale: userlang}) + ": </b> " + email;
 			body += "<p>" + i18n.__({phrase: "index.orders.best", locale: userlang});
-			body += "</p><b><i>" + i18n.__({phrase: "index.reportsShares.html7", locale: userlang}) + "</i></b></div>";
+			body += "</p><b><i>" + i18n.__({phrase: "index.signature", locale: userlang}) + "</i></b></div>";
 			body += "</div>";
 			console.log("fulfill body: " + body);
 			var mailOptions = new MailOptionsWithCC(requestor, subject, body, email);
@@ -2982,7 +2982,7 @@ LabYokerChangeShare.prototype.fulfillShare = function(callback) {
 			body += "<br><b>" + i18n.__({phrase: "index.orders.catalog", locale: userlang}) + ": </b> " + catalognumber;
 			body += "<br><b>" + i18n.__({phrase: "index.orders.email", locale: userlang}) + ": </b> " + email;
 			body += "<p>" + i18n.__({phrase: "index.orders.best", locale: userlang});
-			body += "</p><b><i>" + i18n.__({phrase: "index.reportsShares.html7", locale: userlang}) + "</i></b></div>";
+			body += "</p><b><i>" + i18n.__({phrase: "index.signature", locale: userlang}) + "</i></b></div>";
 			body += "</div>";
 			console.log("fulfill body: " + body);
 			var mailOptions = new MailOptionsWithCC(requestor, subject, body, email);
