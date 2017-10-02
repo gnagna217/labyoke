@@ -414,7 +414,7 @@
     "index.reportsShares.html2": "<p>This report is listing all the inventory uploaded:</p></div>",
     "index.reportsShares.html3": "<p>This report is listing the inventory uploaded between ",
     "index.reportsShares.html4": " and ",
-    "index.reportsShares.html5": "</p></div>",
+    "index.reportsShares.html5": "</p>",
     "index.reportsShares.html6": "<table style='margin-top:25px;text-align: left;'><tbody><tr style='color: white;background-color: #3d9dcb;'><td style='font-size: 12px;'>Reagent</td><td style='font-size: 12px;'>Vendor</td><td style='font-size: 12px;'>Catalog#</td><td style='font-size: 12px;'>Location</td><td style='font-size: 12px;'>User</td><td>Date</td></tr>",
     "index.reportsShares.html7": "The <a href='https://team-labyoke.herokuapp.com/' style='color:white'>LabYoke</a> Team.",
     "index.reportsShares.nodataIntro": "<div style='font-size:20pt;font-weight:bold;'>There is no data available. Start sharing today!</div>",
