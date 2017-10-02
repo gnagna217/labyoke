@@ -2919,8 +2919,10 @@ LabYokerChangeShare.prototype.cancelShare = function(callback) {
 				console.log("owner: " + email + " - oninsuffowner: " + oninsuffowner);
 				var mailOptions;
 				if(oninsuffowner != null && parseInt(oninsuffowner) > 0){
+					console.log("send email to owner as well");
 					mailOptions = new MailOptionsWithCC(requestor, subject, body, email);
 				} else{
+					console.log("send email to requestor only");
 					mailOptions = new MailOptions(requestor, subject, body);
 				}
 				mailOptions.sendAllEmails();
