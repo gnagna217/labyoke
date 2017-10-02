@@ -1164,7 +1164,7 @@ console.log("report on orders: " + labsindept);
 		if(datefrom == 'all'){
 			html += i18n.__("index.reportsOrders.html3"); //"<p>This report is listing all the orders requested:</p></div>"
 		} else {
-			html += i18n.__("index.reportsOrders.html4") + datefrom /*moment(datefrom).tz("America/New_York").format('MM-DD-YYYY')*/ + i18n.__("index.reportsShares.html4") + dateto /*moment(dateto).tz("America/New_York").format('MM-DD-YYYY')*/ + "</p></div>"
+			html += i18n.__("index.reportsOrders.html4") + datefrom /*moment(datefrom).tz("America/New_York").format('MM-DD-YYYY')*/ + i18n.__("index.reportsShares.html4") + dateto /*moment(dateto).tz("America/New_York").format('MM-DD-YYYY')*/ + "</p>"
 			//html += "<p>This report is listing the orders requested between " + moment(datefrom).tz("America/New_York").format('MM-DD-YYYY') + " and " + moment(dateto).tz("America/New_York").format('MM-DD-YYYY') + "</p></div>"
 		}
 		html += params;
