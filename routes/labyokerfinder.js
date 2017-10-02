@@ -22,12 +22,13 @@ LabYokeGlobal = function(param) {
 	this.param = param;
 };
 
-LabYokeAgents = function(email,mylab,labs,dept,labadmin) {
+LabYokeAgents = function(email,mylab,labs,dept,labadmin,oninsuff) {
 	this.email = email;
 	this.mylab = mylab;
 	this.labs = labs;
 	this.dept = dept;
 	this.labadmin = labadmin;
+	this.oninsuff = oninsuff;
 };
 
 LabyokerLab = function(lab) {
@@ -2864,6 +2865,8 @@ LabYokerChangeShare.prototype.cancelShare = function(callback) {
 	var requestor = this.requestor;
 	var i18n = this.res;
 	var userlang = this.userlang;
+	var oninsuff = this.oninsuff;
+	console.log("cancelling share current user oninsuff: " + oninsuff);
 	
 	var date = this.date;
 	console.log("date2: " + date);
@@ -2903,8 +2906,27 @@ LabYokerChangeShare.prototype.cancelShare = function(callback) {
 			body += "</p><b><i>" + i18n.__({phrase: "index.signature", locale: userlang}) + "</i></b></div>";
 			body += "</div>";
 			console.log("order body: " + body);
-			var mailOptions = new MailOptionsWithCC(requestor, subject, body, email);
-			mailOptions.sendAllEmails();
+
+			var query2 = client.query("SELECT oninsuff FROM vm2016_users where email='" + email
+			+ "'");
+			query2.on("row", function(row, result2) {
+				result2.addRow(row);
+			});
+			query2.on("end", function(result2) {
+				var results2 = result2.rows;
+				console.log("get user details " + results2);
+				var oninsuffowner = results2[0].oninsuff;
+				console.log("owner: " + email + " - oninsuffowner: " + oninsuffowner);
+				var mailOptions;
+				if(oninsuffowner != null && parseInt(oninsuffowner) > 0){
+					mailOptions = new MailOptionsWithCC(requestor, subject, body, email);
+				} else{
+					mailOptions = new MailOptions(requestor, subject, body);
+				}
+				mailOptions.sendAllEmails();
+				//callback(null, results);
+			});
+
 		}
 
 		callback(null, results);

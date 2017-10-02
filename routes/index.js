@@ -32,7 +32,7 @@ var xlsxtojson = require("xlsx-to-json-lc");
 
 var storage = multer.diskStorage({ //multers disk storage settings
         destination: function (req, file, cb) {
-            cb(null, './uploads/')
+            cb(null, './uploads/'
         },
         filename: function (req, file, cb) {
             var datetimestamp = Date.now();
@@ -435,7 +435,7 @@ module.exports = function(router) {
         }
         res.setLocale(req.cookies.i18n);
         if (req.session.user) {
-        var labYokeAgents = new LabYokeAgents(req.session.email, req.session.lab, req.session.labs, req.session.dept,req.session.labadmin);
+        var labYokeAgents = new LabYokeAgents(req.session.email, req.session.lab, req.session.labs, req.session.dept,req.session.labadmin,req.session.oninsuff);
         labYokeAgents.findallsharesadmins(function(error, results) {
             //req.session.orders = results[2];
             req.session.myshares = results[0];
@@ -799,7 +799,7 @@ totalshares = t[0].counting;
                 if(resultscancel != null && resultscancel.length > 0){
 
 
-        var labYokeAgents = new LabYokeAgents(req.session.email, req.session.lab, req.session.labs, req.session.dept,req.session.labadmin);
+        var labYokeAgents = new LabYokeAgents(req.session.email, req.session.lab, req.session.labs, req.session.dept,req.session.labadmin,req.session.oninsuff);
         labYokeAgents.findallsharesadmins(function(error, results) {
             //req.session.orders = results[2];
             req.session.myshares = results[0];
@@ -909,7 +909,7 @@ totalshares = t[0].counting;
                 if(resultsfilled != null && resultsfilled.length > 0){
 
 
-        var labYokeAgents = new LabYokeAgents(req.session.email, req.session.lab, req.session.labs, req.session.dept,req.session.labadmin);
+        var labYokeAgents = new LabYokeAgents(req.session.email, req.session.lab, req.session.labs, req.session.dept,req.session.labadmin,req.session.oninsuff);
         labYokeAgents.findallsharesadmins(function(error, results) {
             //req.session.orders = results[2];
             req.session.myshares = results[0];
@@ -1173,6 +1173,10 @@ totalshares = t[0].counting;
 		console.log("changeDetails col: " + col);
 		console.log("changeDetails val: " + val);
 		console.log("changeDetails email: " + email);
+        if(col == "oninsuff"){
+            console.log("change session for oninsuff to: " +  val);
+            req.session.oninsuff = val;
+        }
 		var labYokedetails = new LabyokerUserDetails(col, val, email,req.session.user, req.session.surname,res);
 		labYokedetails.changeDetails(function(error, results) {
 			if(results){
@@ -1192,14 +1196,14 @@ totalshares = t[0].counting;
 			labyokerLabs.getlabs(function(error, labs) {
 				req.session.labs = labs;
 				console.log("load labs in account : " + labs);
-				var labYokeAgents = new LabYokeAgents(req.session.email, req.session.lab, req.session.labs,req.session.labadmin);
+				var labYokeAgents = new LabYokeAgents(req.session.email, req.session.lab, req.session.labs,req.session.labadmin,req.session.oninsuff);
 				labYokeAgents.getLabyoker(function(error, userresults) {
 				res.render('account', {lang:req.cookies.i18n, i18n:res, userDetails: userresults, labname: req.session.lab, team:team, labs: req.session.labs, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, labyokersurname : req.session.surname, title:'Account',loggedIn : true, resultsAccount: results, isLoggedInAdmin: req.session.admin});
 					req.session.messages = null;
 				});
 			});
 		} else {
-			var labYokeAgents = new LabYokeAgents(req.session.email, req.session.lab, req.session.labs,req.session.labadmin);
+			var labYokeAgents = new LabYokeAgents(req.session.email, req.session.lab, req.session.labs,req.session.labadmin, req.session.oninsuff);
 			labYokeAgents.getLabyoker(function(error, userresults) {
 				res.render('account', {lang:req.cookies.i18n, i18n:res, userDetails: userresults, labname: req.session.lab, team:team, labs: req.session.labs, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, labyokersurname : req.session.surname, title:'Account',loggedIn : true, resultsAccount: results, isLoggedInAdmin: req.session.admin});
 				req.session.messages = null;
@@ -1306,7 +1310,7 @@ totalshares = t[0].counting;
 		var doing = req.params.doing;
 		console.log("do: " + doing);
 		res.setLocale(req.cookies.i18n);
-		var labYokeAgents = new LabYokeAgents(req.session.email, req.session.lab, req.session.labs, req.session.dept,req.session.labadmin);
+		var labYokeAgents = new LabYokeAgents(req.session.email, req.session.lab, req.session.labs, req.session.dept,req.session.labadmin,req.session.oninsuff);
 		labYokeAgents.findmyshares(function(error, results) {
 			//req.session.orders = results[2];
 			req.session.myshares = results[0];
@@ -1326,7 +1330,7 @@ totalshares = t[0].counting;
 			req.cookies.i18n = "en";
 		}
 		res.setLocale(req.cookies.i18n);
-		var labYokeAgents = new LabYokeAgents(req.session.email, req.session.lab, req.session.labs, req.session.dept,req.session.labadmin);
+		var labYokeAgents = new LabYokeAgents(req.session.email, req.session.lab, req.session.labs, req.session.dept,req.session.labadmin,req.session.oninsuff);
 		labYokeAgents.findmyshares(function(error, results) {
 			//req.session.orders = results[2];
 			req.session.myshares = results[0];
@@ -1356,14 +1360,14 @@ totalshares = t[0].counting;
 			labyokerLabs.getlabs(function(error, labs) {
 				req.session.labs = labs;
 				console.log("load labs in account : " + labs);
-				var labYokeAgents = new LabYokeAgents(req.session.email, req.session.lab, req.session.labs,req.session.labadmin);
+				var labYokeAgents = new LabYokeAgents(req.session.email, req.session.lab, req.session.labs,req.session.labadmin,req.session.oninsuff);
 				labYokeAgents.getLabyoker(function(error, results) {
 					res.render('account', {lang:req.cookies.i18n, i18n:res, dept: req.session.dept, labname: req.session.lab, team:team, labs: req.session.labs, userDetails: results, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, labyokersurname : req.session.surname, loggedIn : true, isLoggedInAdmin: req.session.admin, title:'Account'});
 					req.session.messages = null;
 				});
 			});
 		} else {
-			var labYokeAgents = new LabYokeAgents(req.session.email, req.session.lab, req.session.labs,req.session.labadmin);
+			var labYokeAgents = new LabYokeAgents(req.session.email, req.session.lab, req.session.labs,req.session.labadmin,req.session.oninsuff);
 			labYokeAgents.getLabyoker(function(error, results) {
 				res.render('account', {lang:req.cookies.i18n, i18n:res, dept: req.session.dept, labname: req.session.lab, team:team, labs: req.session.labs, userDetails: results, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, labyokersurname : req.session.surname, loggedIn : true, isLoggedInAdmin: req.session.admin, title:'Account'});
 				req.session.messages = null;
@@ -1883,6 +1887,7 @@ totalshares = t[0].counting;
 													req.session.active = done[0].active;
 													req.session.email = done[0].email;
 													req.session.lab = done[0].lab;
+                                                    req.session.oninsuff = done[0].oninsuff;
 													req.session.fullname = done[0].name;
 													req.session.surname = done[0].surname;
 													console.log("fullname " + req.session.fullname);
