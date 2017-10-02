@@ -233,7 +233,7 @@ block content
                 c = 1;
               }
             $('#changeoninsuff').find('.valuedetail').val($('#emailOnInsuff:checked').length);
-            if(c == 0){
+            if(c == 1){
                 $('.labelcheck').css("left","30px");
                 $('.labelcheck').css("background","#2975b4");
               } else {
@@ -246,6 +246,7 @@ block content
               if($('#emailOnInsuff:checked').length > 0){
                 v = 1;
               }
+              var change = 0;
               var oninsuff = "#{oninsuff}";
               console.log("oninsuff: " + oninsuff);
               console.log("v: " + v);
@@ -254,11 +255,12 @@ block content
               if(v == 0){
                 $('.labelcheck').css("left","30px");
                 $('.labelcheck').css("background","#2975b4");
+                change = 1;
               } else {
                 $('.labelcheck').css("left","0px");
                 $('.labelcheck').css("background","#8a6d3b");
               }
-                $('#changeoninsuff').find('.valuedetail').val(v);
+                $('#changeoninsuff').find('.valuedetail').val(change);
                 //$('#changeoninsuff').submit();
               
             });
