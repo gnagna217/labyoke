@@ -62,9 +62,6 @@ block content
                               div(class="accountdetail accountdetail-header labColor animated fadeInUp")=i18n.__("account.form.firstname")
                               div(class=" accountdetail accountdetail-header labColor animated fadeInUp")=i18n.__("account.form.lastname")
                               div(style="background-color: rgb(61, 157, 203);" class=" accountdetail accountdetail-header labColor animated fadeInUp")=i18n.__("account.form.email")
-                              div(class=" accountdetail accountdetail-header labColor animated fadeInUp")=i18n.__("account.form.tel")
-                              div(style="background-color: rgb(61, 157, 203);" class=" accountdetail accountdetail-header labColor animated fadeInUp")=i18n.__("account.form.lab")
-                              div(class=" accountdetail accountdetail-header labColor animated fadeInUp", style="/*font-weight:bold;border-width: thin;width: 70px;*/")=i18n.__("account.form.lang")
                             div(class="wrapped accountdetailMargin")
                               div(style="margin-bottom:30px;", class="accountdetail accountdetailRowMargin animated fadeInDown")
                                 - var nametrunc = name
@@ -92,6 +89,11 @@ block content
                               - if(email.length > 19)
                                 - emailtrunc = emailtrunc.substr(0, 18) + '...'
                               div(style="margin-bottom:30px;", class="accountdetail accountdetailRowMargin animated fadeInDown")!= emailtrunc
+                            div(style="float:left;", class="accountdetailWidth")
+                              div(class=" accountdetail accountdetail-header labColor animated fadeInUp")=i18n.__("account.form.tel")
+                              div(style="background-color: rgb(61, 157, 203);" class=" accountdetail accountdetail-header labColor animated fadeInUp")=i18n.__("account.form.lab")
+                              div(class=" accountdetail accountdetail-header labColor animated fadeInUp", style="/*font-weight:bold;border-width: thin;width: 70px;*/")=i18n.__("account.form.lang")
+                            div(class="wrapped accountdetailMargin")
                               div(style="margin-bottom:30px;", class="accountdetail accountdetailRowMargin animated fadeInDown")
                                 span(id="tel")!= tel + " "
                                 form(action="/changeDetails" id="changetel" method="post" class="telform" style="top: -5px; position: relative;")
@@ -122,6 +124,7 @@ block content
                                       $('#changelang').submit();      
                                     };
                                   };
+
         - // if(!resultsAccount || resultsAccount == undefined)
           div(class="texthalf")
             span!=adminIntro + " <span id='showteam' class='labColor' style='font-weight:bold'><div class='buttons'><button type='submit' class='btn btn-success btn-lg btn-block shadow teamaccountbuttonwidth' id='teamTitle' style='width: 278px;'>" + i18n.__("account.button") + "</button></div></span>"
