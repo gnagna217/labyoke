@@ -1054,7 +1054,7 @@ body.large-screen .card-list-table tbody tr:hover td {
 
 @media (max-width: 992px) {
   .notify{
-    margin-right: 50px;
+    margin-right: 0px;
   }
     #ordered{
         width: 80%;
