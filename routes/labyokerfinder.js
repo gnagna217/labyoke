@@ -408,7 +408,7 @@ LabYokeReporterSavings.prototype.reportMoney = function(callback) {
 	var params = "";
 	var columns ="<td>" + i18n.__("index.reportsMoney.param1") + "</td>";
 	headeronly.push(i18n.__("index.reportsMoney.param1"));
-	var html = "<div><span id='reporttitle' style='font-weight:bold;font-size:36pt;'>" + i18n.__("index.reportsMoney.param2") + ".</span></div><br/><div style='font-size:11pt;font-size:11pt;overflow: overlay;height: 145px;'>"
+	var html = "<div><span id='reporttitle' style='font-weight:bold;font-size:36pt;'>" + i18n.__("index.reportsMoney.param2") + ".</span></div><br/><div style='font-size:11pt;font-size:11pt;overflow: overlay;height: 230px;'>"
 				+ "" + "";
 	console.log("report on savings- datefrom: " + datefrom);
 	console.log("report on savings- dateto: " + dateto);
@@ -595,7 +595,7 @@ console.log("report on savings- dateto: " + labsindept);
 				console.log("savings is: " + savings);
 		
 			}
-			html += "</tbody></table><div>" + i18n.__("index.reportsMoney.param14") + "<span style='font-size:30pt'>" + accounting.formatMoney(savings, { symbol: "",  format: "%v %s", precision : 0 }) /*accounting.formatMoney(savings)*/ + "</span></div><br/><p><i><b>" + i18n.__("index.reportsShares.html7") + "</b></i></p>";
+			html += "</tbody></table></div>" + i18n.__("index.reportsMoney.param14") + "<span style='font-size:30pt'>" + accounting.formatMoney(savings, { symbol: "",  format: "%v %s", precision : 0 }) /*accounting.formatMoney(savings)*/ + "</span></div><br/><p><i><b>" + i18n.__("index.reportsShares.html7") + "</b></i></p>";
 			console.log("html money: " + html);
 
 		}
@@ -1160,7 +1160,7 @@ console.log("report on orders: " + labsindept);
 		console.log("results : " + results);
 		var html = "";
 		if(results != null && results != ""){
-		html = "<div><span id='reporttitle' style='font-weight:bold;font-size:36pt;'>" + i18n.__("index.reportsOrders.html2") + "</span></div><br/><div style='font-size:11pt;overflow: overlay;height: 155px;'>";
+		html = "<div><span id='reporttitle' style='font-weight:bold;font-size:36pt;'>" + i18n.__("index.reportsOrders.html2") + "</span></div><br/><div style='font-size:11pt;overflow: overlay;height: 230px;'>";
 		if(datefrom == 'all'){
 			html += i18n.__("index.reportsOrders.html3"); //"<p>This report is listing all the orders requested:</p></div>"
 		} else {
