@@ -2849,9 +2849,9 @@ LabyokerUserDetails.prototype.changeDetails = function(callback) {
 
 		}
 		if(value != null && value == "0"){
-			value = "No";
+			value = i18n.__("index.account.no") ;
 		} else if(value != null && value == "1"){
-			value = "Yes";
+			value = i18n.__("index.account.yes") ;
 		}
 		results = "<span style='font-weight:bold;color: #e6c293;'>" + i18n.__("index.account." + column) + "</span> " +  i18n.__("index.account.to")  + " <span style='color: #e6c293;font-weight:bold'>" + value + "</span>";
 		callback(null, results);

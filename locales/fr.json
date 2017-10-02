@@ -495,6 +495,8 @@
     "index.account.tel": "numéro de téléphone",
     "index.account.lang": "langue",
     "index.account.oninsuff": "notification d'un réactif insuffisant",
+    "index.account.yes":"Oui",
+    "index.account.no":"Non",
 
     "dot.selected": "<b>Quantité: </b>",
     "dot.reagent": " - <b>Réactif:</b> ",
