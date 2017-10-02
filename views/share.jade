@@ -78,7 +78,7 @@ block content
 											- isnew = "isnew"
 										- var insuff = parseInt(ob[prop].insufficient)
 										- if(insuff == 0)
-											- isnew = "yokeBackColor"
+											- isnew = "backinsuff"
 											- checkedstr = true
 										- var lab = (ob[prop].lab).replace(" ","").toLowerCase();
 										- var c = "cancel" + prop
@@ -163,7 +163,7 @@ block content
 										- var checkedstr = false
 										- var insuff = parseInt(ob[prop].insufficient)
 										- if(insuff == 0)
-											- qtyinsufficient = "yokeBackColor"
+											- qtyinsufficient = "backinsuff"
 											- checkedstr = true
 										- var c = "cancelr" + prop
 										- //var mod = prop % 2

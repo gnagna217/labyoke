@@ -8,6 +8,14 @@
   user-select: none;*/
   -webkit-font-smoothing: antialiased;
 }
+
+.backinsuff{
+      background-color: #f05b4f !important;
+      color:white;
+}
+.colorinsuff{
+      color: #f05b4f !important;
+}
 .profile{
     width:45%;
     float:left;

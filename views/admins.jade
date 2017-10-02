@@ -292,7 +292,7 @@ block content
 												- isnew = "isnew"
 											- var insuff = parseInt(ob[prop].insufficient)
 											- if(insuff == 0)
-												- isnew = "yokeBackColor"
+												- isnew = "backinsuff"
 												- checkedstr = true
 											//- var status = parseInt(ob[prop].status)
 											- var status = ob[prop].status
@@ -401,7 +401,7 @@ block content
 											- var checkedstr = false
 											- var insuff = parseInt(ob[prop].insufficient)
 											- if(insuff == 0)
-												- qtyinsufficient = "yokeBackColor"
+												- qtyinsufficient = "backinsuff"
 												- checkedstr = true
 											tr(class=qtyinsufficient)
 												td(class="wrapped2") #{ob[prop].agent}
