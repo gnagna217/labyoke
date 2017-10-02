@@ -19,111 +19,118 @@ block content
                   h4(class="orderedh4")= i18n.__("account.success")
                      span!=" " + resultsAccount
                      span="!"                 
-            div(class="table-responsive center")
-                         -var ob = userDetails
-                         - var j = 1
-                         - var selectedlang = ""
-                         -for(var prop in ob)
-                            - var i = prop % 2
-                            - var classname = "";
-                            - if(i==0)
-                                - classname = "active"
-                            - if(prop==1)
-                                - classname = "you info-best"
-                            - var name = ob[prop].name
-                            - var surname = ob[prop].surname
-                            - var email = ob[prop].email
-                            - var tel = ob[prop].tel
-                            - var admin = ob[prop].admin
-                            - var adminIntro = ""
-                            - var lab = ob[prop].lab
-                            - selectedlang = ob[prop].lang
-                            - var ob = labs
-                            - for(var prop in ob)
-                               - if(lab == ob[prop].labname)
-                                  - var labadmin = ob[prop].admin
-                                  - adminIntro = i18n.__("account.admin1")+ "<a href=\"mailto:'"+labadmin+"'\">" + labadmin + "</a>. " + i18n.__("account.admin2")
-                               - if(admin > 0)
-                                 - if(email == ob[prop].admin)
-                                    - var labadmin = ob[prop].labname
-                                    - adminIntro = i18n.__("account.admin3")+ "<span class='labColor'>" + labadmin + "</span>. " + i18n.__("account.admin4")
-                            - if(!name)
-                                - name = "..."
-                            - if(!email)
-                                - email = "..."
-                            - if(!surname)
-                                - surname = "..."
-                            - if(!tel)
-                                - tel = "..."
-                            - if(!lab)
-                                - lab = "..."
-                            
-                            div(style="float:left;", class="accountdetailWidth")
-                              div(class="accountdetail accountdetail-header labColor animated fadeInUp")=i18n.__("account.form.firstname")
-                              div(class=" accountdetail accountdetail-header labColor animated fadeInUp")=i18n.__("account.form.lastname")
-                              div(style="background-color: rgb(61, 157, 203);" class=" accountdetail accountdetail-header labColor animated fadeInUp")=i18n.__("account.form.email")
-                            div(class="wrapped accountdetailMargin")
-                              div(style="margin-bottom:30px;", class="accountdetail accountdetailRowMargin animated fadeInDown")
-                                - var nametrunc = name
-                                - if(nametrunc.length > 19)
-                                  - nametrunc = nametrunc.substr(0, 18) + '...'
-                                span(id="name")!=nametrunc + " "
-                                form(action="/changeDetails" id="changename" method="post" class="nameform" style="top: -5px; position: relative;")
-                                  input(name="valuedetail" type="text" id="valuedetail" placeholder=nametrunc)
-                                  input(name="column" type="hidden" id="column" value="name")
-                                  input(name="formemail" type="hidden" id="formemail" value=email)
-                                span(onclick="pencilname()", id="pencilname", class="fa fa-pencil labColor")
-                                span(onclick="updatenameform()", id="checkname", class="fa fa-check labColor")
-                              div(style="margin-bottom:30px;", class="accountdetail accountdetailRowMargin animated fadeInDown")
-                                - var surnametrunc = surname
-                                - if(surnametrunc.length > 19)
-                                  - surnametrunc = surnametrunc.substr(0, 18) + '...'
-                                span(id="surname")!= surnametrunc + " "
-                                form(action="/changeDetails" id="changesurname" method="post" class="surnameform" style="top: -5px; position: relative;")
-                                  input(name="valuedetail" type="text" id="valuedetail" placeholder=surnametrunc)
-                                  input(name="column" type="hidden" id="column" value="surname")
-                                  input(name="formemail" type="hidden" id="formemail" value=email)
-                                span(onclick="pencilsurname()", id="pencilsurname", class="fa fa-pencil labColor")
-                                span(onclick="updatesurnameform()", id="checksurname", class="fa fa-check labColor")
-                              - var emailtrunc = email
-                              - if(email.length > 19)
-                                - emailtrunc = emailtrunc.substr(0, 18) + '...'
-                              div(style="margin-bottom:30px;", class="accountdetail accountdetailRowMargin animated fadeInDown")!= emailtrunc
-                            div(style="float:left;", class="accountdetailWidth")
-                              div(class=" accountdetail accountdetail-header labColor animated fadeInUp")=i18n.__("account.form.tel")
-                              div(style="background-color: rgb(61, 157, 203);" class=" accountdetail accountdetail-header labColor animated fadeInUp")=i18n.__("account.form.lab")
-                              div(class=" accountdetail accountdetail-header labColor animated fadeInUp", style="/*font-weight:bold;border-width: thin;width: 70px;*/")=i18n.__("account.form.lang")
-                            div(class="wrapped accountdetailMargin")
-                              div(style="margin-bottom:30px;", class="accountdetail accountdetailRowMargin animated fadeInDown")
-                                span(id="tel")!= tel + " "
-                                form(action="/changeDetails" id="changetel" method="post" class="telform" style="top: -5px; position: relative;")
-                                  input(name="valuedetail" type="tel" id="valuedetail" placeholder=tel)
-                                  input(name="column" type="hidden" id="column" value="tel")
-                                  input(name="formemail" type="hidden" id="formemail" value=email)
-                                span(onclick="penciltel()", id="penciltel" class="fa fa-pencil labColor")
-                                span(onclick="updatetelform()", id="checktel" class="fa fa-check labColor")
-                              - var labtrunc = lab
-                                - if(labtrunc.length > 19)
-                                  - labtrunc = labtrunc.substr(0, 18) + '...'
-                              div(style="margin-bottom:30px;", class="accountdetail accountdetailRowMargin animated fadeInDown")!= labtrunc
-                              div(style="margin-bottom:30px;width: 75px;", class="accountdetail accountdetailRowMargin animated fadeInDown")
-                                span(id="lang")
-                                form(action="/changeDetails" id="changelang" method="post" class="langform" style="top: -25px; position: relative;")
-                                  span(class="fa fa-sort accountlang" style="color: #8a6d3b;top: 29px; position: relative; font-size: 14pt; margin-left: 15px;z-index:-1;")
-                                  select(name="selectlang" type="text" id="selectlang" class="form-control" style="border-color:#3d9dcb;margin-bottom:10px;background-color: transparent;" placeholder="")
-                                    option(value="en",style="font-weight:bold",selected=(selectedlang==="en" ? "selected" : undefined))= "en"
-                                    option(value="fr",style="font-weight:bold",selected=(selectedlang==="fr" ? "selected" : undefined))= "fr"
-                                  input(name="column" type="hidden" id="column" value="lang")
-                                  input(name="valuedetail" type="hidden" id="valuedetail" value="")
-                                  input(name="formemail" type="hidden" id="formemail" value=email)
-                                script.
-                                  window.onload = function() {
-                                    document.getElementById("selectlang").onchange = function() {
-                                      console.log("changing language " + $('#selectlang').val());
-                                      $('#changelang').find($('input#valuedetail')).val($('#selectlang').val());
-                                      $('#changelang').submit();      
+            div
+              div(class="table-responsive center", style="float:left")
+                           -var ob = userDetails
+                           - var j = 1
+                           - var selectedlang = ""
+                           -for(var prop in ob)
+                              - var i = prop % 2
+                              - var classname = "";
+                              - if(i==0)
+                                  - classname = "active"
+                              - if(prop==1)
+                                  - classname = "you info-best"
+                              - var name = ob[prop].name
+                              - var surname = ob[prop].surname
+                              - var email = ob[prop].email
+                              - var tel = ob[prop].tel
+                              - var admin = ob[prop].admin
+                              - var adminIntro = ""
+                              - var lab = ob[prop].lab
+                              - selectedlang = ob[prop].lang
+                              - var ob = labs
+                              - for(var prop in ob)
+                                 - if(lab == ob[prop].labname)
+                                    - var labadmin = ob[prop].admin
+                                    - adminIntro = i18n.__("account.admin1")+ "<a href=\"mailto:'"+labadmin+"'\">" + labadmin + "</a>. " + i18n.__("account.admin2")
+                                 - if(admin > 0)
+                                   - if(email == ob[prop].admin)
+                                      - var labadmin = ob[prop].labname
+                                      - adminIntro = i18n.__("account.admin3")+ "<span class='labColor'>" + labadmin + "</span>. " + i18n.__("account.admin4")
+                              - if(!name)
+                                  - name = "..."
+                              - if(!email)
+                                  - email = "..."
+                              - if(!surname)
+                                  - surname = "..."
+                              - if(!tel)
+                                  - tel = "..."
+                              - if(!lab)
+                                  - lab = "..."
+                              
+                              div(style="float:left;", class="accountdetailWidth")
+                                div(class="accountdetail accountdetail-header labColor animated fadeInUp")=i18n.__("account.form.firstname")
+                                div(class=" accountdetail accountdetail-header labColor animated fadeInUp")=i18n.__("account.form.lastname")
+                                div(style="background-color: rgb(61, 157, 203);" class=" accountdetail accountdetail-header labColor animated fadeInUp")=i18n.__("account.form.email")
+                              div(class="wrapped accountdetailMargin")
+                                div(style="margin-bottom:30px;", class="accountdetail accountdetailRowMargin animated fadeInDown")
+                                  - var nametrunc = name
+                                  - if(nametrunc.length > 19)
+                                    - nametrunc = nametrunc.substr(0, 18) + '...'
+                                  span(id="name")!=nametrunc + " "
+                                  form(action="/changeDetails" id="changename" method="post" class="nameform" style="top: -5px; position: relative;")
+                                    input(name="valuedetail" type="text" id="valuedetail" placeholder=nametrunc)
+                                    input(name="column" type="hidden" id="column" value="name")
+                                    input(name="formemail" type="hidden" id="formemail" value=email)
+                                  span(onclick="pencilname()", id="pencilname", class="fa fa-pencil labColor")
+                                  span(onclick="updatenameform()", id="checkname", class="fa fa-check labColor")
+                                div(style="margin-bottom:30px;", class="accountdetail accountdetailRowMargin animated fadeInDown")
+                                  - var surnametrunc = surname
+                                  - if(surnametrunc.length > 19)
+                                    - surnametrunc = surnametrunc.substr(0, 18) + '...'
+                                  span(id="surname")!= surnametrunc + " "
+                                  form(action="/changeDetails" id="changesurname" method="post" class="surnameform" style="top: -5px; position: relative;")
+                                    input(name="valuedetail" type="text" id="valuedetail" placeholder=surnametrunc)
+                                    input(name="column" type="hidden" id="column" value="surname")
+                                    input(name="formemail" type="hidden" id="formemail" value=email)
+                                  span(onclick="pencilsurname()", id="pencilsurname", class="fa fa-pencil labColor")
+                                  span(onclick="updatesurnameform()", id="checksurname", class="fa fa-check labColor")
+                                - var emailtrunc = email
+                                - if(email.length > 19)
+                                  - emailtrunc = emailtrunc.substr(0, 18) + '...'
+                                div(style="margin-bottom:30px;", class="accountdetail accountdetailRowMargin animated fadeInDown")!= emailtrunc
+                              div(style="float:left;", class="accountdetailWidth")
+                                div(class=" accountdetail accountdetail-header labColor animated fadeInUp")=i18n.__("account.form.tel")
+                                div(style="background-color: rgb(61, 157, 203);" class=" accountdetail accountdetail-header labColor animated fadeInUp")=i18n.__("account.form.lab")
+                                div(class=" accountdetail accountdetail-header labColor animated fadeInUp", style="/*font-weight:bold;border-width: thin;width: 70px;*/")=i18n.__("account.form.lang")
+                              div(class="wrapped accountdetailMargin")
+                                div(style="margin-bottom:30px;", class="accountdetail accountdetailRowMargin animated fadeInDown")
+                                  span(id="tel")!= tel + " "
+                                  form(action="/changeDetails" id="changetel" method="post" class="telform" style="top: -5px; position: relative;")
+                                    input(name="valuedetail" type="tel" id="valuedetail" placeholder=tel)
+                                    input(name="column" type="hidden" id="column" value="tel")
+                                    input(name="formemail" type="hidden" id="formemail" value=email)
+                                  span(onclick="penciltel()", id="penciltel" class="fa fa-pencil labColor")
+                                  span(onclick="updatetelform()", id="checktel" class="fa fa-check labColor")
+                                - var labtrunc = lab
+                                  - if(labtrunc.length > 19)
+                                    - labtrunc = labtrunc.substr(0, 18) + '...'
+                                div(style="margin-bottom:30px;", class="accountdetail accountdetailRowMargin animated fadeInDown")!= labtrunc
+                                div(style="margin-bottom:30px;width: 75px;", class="accountdetail accountdetailRowMargin animated fadeInDown")
+                                  span(id="lang")
+                                  form(action="/changeDetails" id="changelang" method="post" class="langform" style="top: -25px; position: relative;")
+                                    span(class="fa fa-sort accountlang" style="color: #8a6d3b;top: 29px; position: relative; font-size: 14pt; margin-left: 15px;z-index:-1;")
+                                    select(name="selectlang" type="text" id="selectlang" class="form-control" style="border-color:#3d9dcb;margin-bottom:10px;background-color: transparent;" placeholder="")
+                                      option(value="en",style="font-weight:bold",selected=(selectedlang==="en" ? "selected" : undefined))= "en"
+                                      option(value="fr",style="font-weight:bold",selected=(selectedlang==="fr" ? "selected" : undefined))= "fr"
+                                    input(name="column" type="hidden" id="column" value="lang")
+                                    input(name="valuedetail" type="hidden" id="valuedetail" value="")
+                                    input(name="formemail" type="hidden" id="formemail" value=email)
+                                  script.
+                                    window.onload = function() {
+                                      document.getElementById("selectlang").onchange = function() {
+                                        console.log("changing language " + $('#selectlang').val());
+                                        $('#changelang').find($('input#valuedetail')).val($('#selectlang').val());
+                                        $('#changelang').submit();      
+                                      };
                                     };
-                                  };
+              div(class="results" style="float: right;margin-top: -20%;position: relative;width: 50%;margin-bottom: 70px;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); box-sizing: content-box; padding-top: 10px !important; padding-bottom: 25px !important; border-radius: 8px; padding-left: 20px; padding-right: 20px; margin-right: 50px;")  h3!= "Send Email & Notify" 
+                div(class="reportlabelwidth reportlabelwidth3")
+                  label(for="reportVendorInsuff" style="width: 60px;font-weight: bold;")!= "Insufficient Reagent"
+                  div(class="checkboxThree")
+                    input(type="checkbox" name="reportVendorInsuff" id="reportVendorInsuff" value="vendor")
+                    label(for="reportVendorInsuff" class="labelcheck shadow")
 
         - // if(!resultsAccount || resultsAccount == undefined)
           div(class="texthalf")
