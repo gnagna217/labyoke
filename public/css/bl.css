@@ -2663,7 +2663,7 @@ padding-top: 5px;
 
 #team{
     display: none;
-    padding-right: 55px;
+    padding-right: 50px;
 }
 
 #sharesAll{
@@ -3577,6 +3577,9 @@ input::-webkit-inner-spin-button {
 }
 
  @media (max-width: 992px) {
+#team{
+    padding-right: 0px;
+}
 .restrictreport2{
     padding-right: 0px;
 }
