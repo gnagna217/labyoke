@@ -2848,6 +2848,11 @@ LabyokerUserDetails.prototype.changeDetails = function(callback) {
 			});
 
 		}
+		if(value != null && value == "0"){
+			value = "No";
+		} else if(value != null && value == "1"){
+			value = "Yes";
+		}
 		results = "<span style='font-weight:bold;color: #e6c293;'>" + i18n.__("index.account." + column) + "</span> " +  i18n.__("index.account.to")  + " <span style='color: #e6c293;font-weight:bold'>" + value + "</span>";
 		callback(null, results);
 	});
