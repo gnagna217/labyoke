@@ -242,9 +242,9 @@ block content
               }
 
             $( ".labelcheck" ).click(function() {
-              var v = 0;
+              var v = 1;
               if($('#emailOnInsuff:checked').length > 0){
-                v = 1;
+                v = 0;
               }
               var change = 0;
               var oninsuff = "#{oninsuff}";
@@ -252,7 +252,7 @@ block content
               console.log("v: " + v);
 
                 
-              if(v == 0){
+              if(v == 1){
                 $('.labelcheck').css("left","30px");
                 $('.labelcheck').css("background","#2975b4");
                 change = 1;
@@ -260,7 +260,7 @@ block content
                 $('.labelcheck').css("left","0px");
                 $('.labelcheck').css("background","#8a6d3b");
               }
-                $('#changeoninsuff').find('.valuedetail').val(change);
+                $('#changeoninsuff').find('.valuedetail').val(v);
                 $('#changeoninsuff').submit();
               
             });
