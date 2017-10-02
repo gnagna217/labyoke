@@ -3834,11 +3834,7 @@ margin-top:0px;
 .fixmarginaccount{
     margin-top:-23px;
 }
-.accountdetail-header{
-    /*border-bottom-color:#8a6d3b;border-bottom-style:solid;*/
-    margin-right: 5px;
-    background-color: white; border: none; color: #3d9dcb !important; padding-top: 5px; padding-bottom: 5px;margin-top:-5px;
-}
+
 .floatleft{
     float:left;
 }
@@ -3848,6 +3844,11 @@ margin-top:0px;
 }
 
 @media (max-width: 767px){
+.accountdetail-header{
+    /*border-bottom-color:#8a6d3b;border-bottom-style:solid;*/
+    margin-right: 5px;
+    background-color: white; border: none; color: #3d9dcb !important; padding-top: 5px; padding-bottom: 5px;margin-top:-5px;
+}
 .profile{
     width:100%;
 }
