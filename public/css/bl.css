@@ -3577,6 +3577,9 @@ input::-webkit-inner-spin-button {
 }
 
  @media (max-width: 992px) {
+.mobileonly3{
+    display: block !important;
+}
 #team{
     padding-right: 0px;
 }
@@ -3929,9 +3932,9 @@ margin-top:0px;
 .containertop{
     margin-top: 9%;
 }
-.mobileonly3{
+/*.mobileonly3{
     display: block !important;
-}
+}*/
 .mobileonly5{
     display: block !important;
     margin-bottom: 25px;
