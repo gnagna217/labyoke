@@ -238,7 +238,7 @@
     "reports.insuff.file_all": "Report All Insufficient Reagents",
 
     "account.title": "Hello ",
-    "account.subtitle": "<span>This page is dedicated to </span><span style='color: #3d9dcb;'>you. </span><span>If you wish to change your personal details such as your telephone number or names information.</span>",
+    "account.subtitle": "<span>This page is dedicated to </span><span style='color: #3d9dcb;'>you. </span><span>If you wish to change your personal details such as your telephone number or names information.You can also setup email notifications.</span>",
     "account.success": "Great! You have successfully changed your ",
     "account.admin1": "Indeed! Your Lab Administrator is ",
     "account.admin2": "You can contact your admin anytime.",

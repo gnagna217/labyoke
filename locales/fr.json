@@ -239,7 +239,7 @@
     "reports.insuff.file_all": "Rapport Tous Reactifs Insuffisants",
 
     "account.title": "Salut ",
-    "account.subtitle": "<span>Cette page </span><span style='color: #3d9dcb;'>vous</span> est dediée. <span>Si vous souhaitez modifier vos données personnelles telles que votre numéro de Téléphone.</span>",
+    "account.subtitle": "<span>Cette page </span><span style='color: #3d9dcb;'>vous</span> est dediée. <span>Si vous souhaitez modifier vos données personnelles telles que votre numéro de Téléphone. Vous pouvez également configurer vos notifications email</span>",
     "account.success": "Génial! Vous venez de modifier votre ",
     "account.admin1": "En effet! Votre Administrateur de laboratoire est ",
     "account.admin2": "Vous pouvez contacter votre administrateur à n'importe quel moment.",
