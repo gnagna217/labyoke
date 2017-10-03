@@ -494,7 +494,7 @@
     "index.account.surname": "last name",
     "index.account.tel": "telephone number",
     "index.account.lang": "language",
-    "index.account.oninsuff": "notification to the Insufficient Reagent",
+    "index.account.oninsuff": "Insufficient Reagent notification",
     "index.account.yes":"Yes",
     "index.account.no":"No",
 
