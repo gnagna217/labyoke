@@ -36,7 +36,31 @@ block content
          span(class="fa fa-tree helpheaderright2", style="width: 100%;text-align: center;")
          div.pointsLayout.alert.resultsshadow.helpright(style="")
           span!= i18n.__("help.desc7")
-        if (loggedIn==true)
+        - if (loggedIn==true)
+          div(style="clear:both;width: 100%;background-color: rgba(61, 157, 203, 0.79);color: white;text-align: center;padding-bottom: 15px;font-weight: bold;display:inline-block", class="alert pointsLayout")
+            div(style="width: 350px;float: left;margin-top: 20px;")
+              p!="Shares"
+              video(width="320", height="240", controls="", style="margin-right: 20px;")
+                source(src="/movie4.mov" type="video/mp4")
+                source(src="/movie4.mov" type="video/ogg")
+            div(style="width: 350px;float: left;margin-top: 20px;")
+              p!="Orders"
+              video(width="320", height="240", controls="", style="margin-right: 20px;")
+                source(src="/movie4.mov" type="video/mp4")
+                source(src="/movie4.mov" type="video/ogg")
+            div(style="width: 350px;float: left;margin-top: 20px;")
+              p!="Reports"
+              video(width="320", height="240", controls="", style="margin-right: 20px;")
+                source(src="/movie4.mov" type="video/mp4")
+                source(src="/movie4.mov" type="video/ogg")
+            - if(isLoggedInAdmin == true)
+              div(style="width: 350px;float: left;margin-top: 20px;")
+                p!="Admins"
+                video(width="320", height="240", controls="", style="margin-right: 20px;")
+                  source(src="/movie4.mov" type="video/mp4")
+                  source(src="/movie4.mov" type="video/ogg")              
+
+        //- if (loggedIn==true)
           div.alert.pointsLayout(style="clear:both;width: 100%; background-color: rgba(61, 157, 203, 0.79); color: white; text-align: center; padding-bottom: 15px;font-weight: bold;")
              span!= ''+labyoker + i18n.__("help.desc9")
              a(href="mailto:labyoke@gmail.com",style="color: rgb(255, 226, 175);")!= ' labyoke@gmail.com <br/>'
