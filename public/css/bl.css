@@ -13,6 +13,16 @@
 .videocontainer{
   width: 31%;float: left;margin-top: 20px;margin-left: 2%;
 }
+.videobox{
+  /*background-color:rgba(61, 157, 203, 0.56);*/
+  clear:both;width: 100%;
+  background-color: rgba(61, 157, 203, 0.79);
+  color: white;text-align: center;
+  padding-bottom: 15px;
+  font-weight: bold;
+  display:inline-block;
+  padding-right: 0px;padding-left: 0px;
+}
 /*end videos*/
 
 .backColorinsuff{
