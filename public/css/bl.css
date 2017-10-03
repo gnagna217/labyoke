@@ -30,10 +30,10 @@ video::-webkit-media-controls-panel {
   clear:both;width: 100%;
   background-color: rgba(61, 157, 203, 0.79);
   color: white;text-align: center;
-  padding-bottom: 15px;
   font-weight: bold;
   display:inline-block;
   padding-right: 0px;padding-left: 0px;
+  padding-bottom: 20px !important;
 }
 /*end videos*/
 
