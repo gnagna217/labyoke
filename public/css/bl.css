@@ -1150,6 +1150,9 @@ body.large-screen .card-list-table tbody tr:hover td {
 }
 
 @media (max-width: 590px) {
+.videocontainer{
+  width: 90%;
+}
 .restrictreporttext{
     width:100%;
 }
