@@ -3,11 +3,6 @@ extends layout
 block content
 		script.
 			var recenter = 0;
-		//div(id="pageloader")
-		//	div(class="spinner")
-		//		div(class="bounce1")
-		//		div(class="bounce2")
-		//		div(class="bounce3")
 		div(class="container login2 marginbottom margintop container2 moveFromLeft")
 			//img(src="/images/pile.png" class="accountlogo desktabonly" style="z-index: -1;")
 			h1= i18n.__("reports.title")
@@ -1372,57 +1367,9 @@ block content
 				});
 
 			span(class="checkintro")
-			//div(class='containerreport reportappmargin')
-			//	input(id='funky' type='checkbox')
-			//	label(for='funky')
-			//		div(class='containerreport_button shadow')
-			//			span
-			//				span!= i18n.__("reports.download.title")
-			//			span(class="downloading")!= i18n.__("reports.download")
-			//			i(class="fa fa-file-excel-o icon d_icon ion-cube", style="color:rgba(138, 109, 59, 0.68) !important;font-size:35pt")
-			//			i(class="fa fa-check icon complete ion-checkmark-round", style="color:#8a6d3b !important;font-size: 47pt;")
-			//			div(class='point')
-			//			div(class='point')
-			//			div(class='point')
-			//			div(class='point')
-			//			div(class='point')
-			//			div(class='point')
-			//			div(class='point')
-			//			div(class='point')
-			//			div(class='point')
-			//			div(class='point')
-			//			div(class='point')
-			//			div(class='point')
-			//			div(class='point')
-			//			div(class='point')
-			//			div(class='point')
-			//			div(class='point')
-			//			div(class='point')
-			//			div(class='point')
-			//			div(class='point')
-			//			div(class='point')
-			//			div(class='point')
-			//			div(class='point')
-			//			div(class='point')
-			//			div(class='point')
-			//			div(class='point')
-			//			div(class='point')
-			//			div(class='point')
-			//			div(class='point')
-			//			div(class='point')
-			//			div(class='point')
-			//			div(class='point')
-			//			div(class='point')
-			//			div(class='point')
-			//			div(class='point')
-			//			div(class='point')
-			//			div(class='point')
-			//			div(class='containerreport_button__bar')
-			if(resultsMoneyIntro != null && resultsMoneyIntro !="")
-				div(class="intro results animated fadeIn",style="/*margin-top:500px;*/display:none;")!= resultsMoneyIntro
-				//script(type="text/javascript" src="/javascripts/jspdf.js")
-				//script(type="text/javascript" src="/javascripts/FileSaver.js")
-	script.
+			- if(resultsMoneyIntro != null && resultsMoneyIntro !="")
+				div(class="intro results animated fadeIn",style="/*margin-top:500px;*/display:none;")!= resultsMoneyIntros
+		script.
 			var labelcheck = document.querySelector(".labelcheck");
 			console.log("labelcheck: " + labelcheck);
 			if(labelcheck != undefined && labelcheck != null){
