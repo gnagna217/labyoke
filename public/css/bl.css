@@ -475,6 +475,9 @@ display: none !important;
     width: 15%;
 }
 .reportlabelwidth3{
+    margin-left: 8%;
+}
+.accountlabelwidth{
     margin-left: 5%;
 }
 /*end reports change*/
@@ -3755,6 +3758,9 @@ margin-top:0px;
 }
 .reportlabelwidth3{
     margin-left: 0px;
+}
+.accountlabelwidth{
+  margin-left: 15px;
 }
 
 }
