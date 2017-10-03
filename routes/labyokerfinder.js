@@ -3001,8 +3001,31 @@ LabYokerChangeShare.prototype.fulfillShare = function(callback) {
 			body += "</p><b><i>" + i18n.__({phrase: "index.signature", locale: userlang}) + "</i></b></div>";
 			body += "</div>";
 			console.log("fulfill body: " + body);
-			var mailOptions = new MailOptionsWithCC(requestor, subject, body, email);
-			mailOptions.sendAllEmails();
+
+			var query2 = client.query("SELECT oninsuff FROM vm2016_users where email='" + email
+			+ "'");
+			query2.on("row", function(row, result2) {
+				result2.addRow(row);
+			});
+			query2.on("end", function(result2) {
+				var results2 = result2.rows;
+				console.log("get user details " + results2);
+				var onfillowner = results2[0].oninsuff;
+				console.log("owner: " + email + " - onfillowner: " + onfillowner);
+				var mailOptions;
+				if(onfillowner != null && parseInt(onfillowner) > 0){
+					console.log("send email to owner as well");
+					mailOptions = new MailOptionsWithCC(requestor, subject, body, email);
+				} else{
+					console.log("send email to requestor only");
+					mailOptions = new MailOptions(requestor, subject, body);
+				}
+				mailOptions.sendAllEmails();
+				//callback(null, results);
+			});
+
+			//var mailOptions = new MailOptionsWithCC(requestor, subject, body, email);
+			//mailOptions.sendAllEmails();
 		} else if(checked == 1){
 			var subject = i18n.__({phrase: "index.fulfilled.not.subject", locale: userlang}) + agent;//"LabYoke Order - Cancelled for " + agent;
 			var body="<div style='box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); box-sizing: content-box; padding-right: 15px; margin-top: 20px;'>"
@@ -3016,8 +3039,31 @@ LabYokerChangeShare.prototype.fulfillShare = function(callback) {
 			body += "</p><b><i>" + i18n.__({phrase: "index.signature", locale: userlang}) + "</i></b></div>";
 			body += "</div>";
 			console.log("fulfill body: " + body);
-			var mailOptions = new MailOptionsWithCC(requestor, subject, body, email);
-			mailOptions.sendAllEmails();			
+
+			var query2 = client.query("SELECT oninsuff FROM vm2016_users where email='" + email
+			+ "'");
+			query2.on("row", function(row, result2) {
+				result2.addRow(row);
+			});
+			query2.on("end", function(result2) {
+				var results2 = result2.rows;
+				console.log("get user details " + results2);
+				var onfillowner = results2[0].oninsuff;
+				console.log("owner: " + email + " - onfillowner: " + onfillowner);
+				var mailOptions;
+				if(onfillowner != null && parseInt(onfillowner) > 0){
+					console.log("send email to owner as well");
+					mailOptions = new MailOptionsWithCC(requestor, subject, body, email);
+				} else{
+					console.log("send email to requestor only");
+					mailOptions = new MailOptions(requestor, subject, body);
+				}
+				mailOptions.sendAllEmails();
+				//callback(null, results);
+			});
+
+			//var mailOptions = new MailOptionsWithCC(requestor, subject, body, email);
+			//mailOptions.sendAllEmails();			
 		}
 
 		callback(null, results);
