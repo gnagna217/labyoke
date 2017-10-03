@@ -262,6 +262,7 @@
     "account.tip.desc": "Click on the pencil icon <span class='fa fa-pencil' style='color:white'></span> to open the field in edit mode. Make your desired change (or not) then click on the check icon <span class='fa fa-check' style='color:white'></span> to save.<br/><br/>Each field is individually saved.<br/><br/>Click on the <b><i>Who's in your team</i></b> button for a list of all the researchers in your department.<br/><br/><b>Language</b><br/>All email communications are sent in your language of choice selected here.<br/><br/><b>Email & Notification</b><br/>You may elect to receive emails upon a reagent turning insufficient.",
     "account.notify.title":"Email & Notification.",
     "account.notify.oninsuff":"Insufficient Reagent",
+    "account.notify.onfill":"Fulfilled Order",
 
     "orders.title": "Orders.",
     "orders.non.title": "You have not ordered any reagent yet.",
@@ -495,6 +496,7 @@
     "index.account.tel": "telephone number",
     "index.account.lang": "language",
     "index.account.oninsuff": "Insufficient Reagent notification",
+    "index.account.onfill": "Fulfilled Order notification",
     "index.account.yes":"Yes",
     "index.account.no":"No",
 

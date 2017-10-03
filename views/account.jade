@@ -40,6 +40,10 @@ block content
                               - if(oninsuff !=null && oninsuff > 0)
                                 - checkOnInsuff = true
                               - oninsuff = oninsuff + ""
+                              - var checkOnFill = false
+                              - if(onfill !=null && onfill > 0)
+                                - checkOnFill = true
+                              - onfill = onfill + ""
                               - var adminIntro = ""
                               - var lab = ob[prop].lab
                               - selectedlang = ob[prop].lang
@@ -134,7 +138,7 @@ block content
                 h3(style="text-align: center;margin-top: 10px;padding-left: 10px;padding-right: 20px;")
                   span(style="color: #2975b4;margin-right: 10px;" class="fa fa-envelope")
                   span!= i18n.__("account.notify.title")
-                div(class="reportlabelwidth reportlabelwidth3", style="width: 90%;padding-left: 10px;padding-right: 20px;margin-top: 10px;")
+                div(class="reportlabelwidth reportlabelwidth3", style="width: 40%;padding-right: 20px;margin-top: 10px;")
                   label(for="emailOnInsuff" style="font-weight: bold;")!= i18n.__("account.notify.oninsuff")
                   div(class="checkboxThree")
                     form(action="/changeDetails" id="changeoninsuff" method="post" class="oninsuffform")
@@ -142,7 +146,16 @@ block content
                       input(name="valuedetail" type="hidden" id="valuedetail" value=oninsuff)
                       input(name="column" type="hidden" id="column" value="oninsuff")
                       input(name="formemail" type="hidden" id="formemail" value=email)
-                    label(for="emailOnInsuff" class="labelcheck shadow")
+                    label(for="emailOnInsuff" class="labelcheck shadow labelcheckoninsuff")
+                div(class="reportlabelwidth reportlabelwidth3", style="width: 40%;padding-right: 20px;margin-top: 10px;")
+                  label(for="emailOnFill" style="font-weight: bold;")!= i18n.__("account.notify.onfill")
+                  div(class="checkboxThree")
+                    form(action="/changeDetails" id="changeonfill" method="post" class="onfillform")
+                      input(type="checkbox" name="emailOnFill" id="emailOnFill" value="onfill" checked=(checkOnFill===true ? "checked" : undefined))
+                      input(name="valuedetail" type="hidden" id="valuedetail" value=onfill)
+                      input(name="column" type="hidden" id="column" value="onfill")
+                      input(name="formemail" type="hidden" id="formemail" value=email)
+                    label(for="emailOnFill" class="labelcheck shadow labelcheckonfill")
 
         - // if(!resultsAccount || resultsAccount == undefined)
           div(style="margin-top: -70px;float: left;" class="threepointssep")
@@ -230,19 +243,56 @@ block content
             }
 
             var c = 0;
+              if($('#emailOnFill:checked').length > 0){
+                c = 1;
+              }
+            $('#changeonfill').find('.valuedetail').val($('#emailOnFill:checked').length);
+            if(c == 1){
+                $('.labelcheckonfill').css("left","30px");
+                $('.labelcheckonfill').css("background","#2975b4");
+              } else {
+                $('.labelcheckonfill').css("left","0px");
+                $('.labelcheckonfill').css("background","#8a6d3b");
+              }
+
+            $( ".labelcheckonfill" ).click(function() {
+              var v = 1;
+              if($('#emailOnFill:checked').length > 0){
+                v = 0;
+              }
+              var change = 0;
+              var oninsuff = "#{onfill}";
+              console.log("onfill: " + onfill);
+              console.log("v: " + v);
+
+                
+              if(v == 1){
+                $('.labelcheckonfill').css("left","30px");
+                $('.labelcheckonfill').css("background","#2975b4");
+                change = 1;
+              } else {
+                $('.labelcheckonfill').css("left","0px");
+                $('.labelcheckonfill').css("background","#8a6d3b");
+              }
+                $('#changeonfill').find('#valuedetail').val(v);
+                $('#changeonfill').submit();
+              
+            });
+
+            var c = 0;
               if($('#emailOnInsuff:checked').length > 0){
                 c = 1;
               }
             $('#changeoninsuff').find('.valuedetail').val($('#emailOnInsuff:checked').length);
             if(c == 1){
-                $('.labelcheck').css("left","30px");
-                $('.labelcheck').css("background","#2975b4");
+                $('.labelcheckoninsuff').css("left","30px");
+                $('.labelcheckoninsuff').css("background","#2975b4");
               } else {
-                $('.labelcheck').css("left","0px");
-                $('.labelcheck').css("background","#8a6d3b");
+                $('.labelcheckoninsuff').css("left","0px");
+                $('.labelcheckoninsuff').css("background","#8a6d3b");
               }
 
-            $( ".labelcheck" ).click(function() {
+            $( ".labelcheckoninsuff" ).click(function() {
               var v = 1;
               if($('#emailOnInsuff:checked').length > 0){
                 v = 0;
@@ -254,12 +304,12 @@ block content
 
                 
               if(v == 1){
-                $('.labelcheck').css("left","30px");
-                $('.labelcheck').css("background","#2975b4");
+                $('.labelcheckoninsuff').css("left","30px");
+                $('.labelcheckoninsuff').css("background","#2975b4");
                 change = 1;
               } else {
-                $('.labelcheck').css("left","0px");
-                $('.labelcheck').css("background","#8a6d3b");
+                $('.labelcheckoninsuff').css("left","0px");
+                $('.labelcheckoninsuff').css("background","#8a6d3b");
               }
                 $('#changeoninsuff').find('#valuedetail').val(v);
                 $('#changeoninsuff').submit();
