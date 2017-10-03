@@ -43,25 +43,25 @@ block content
               span!="Video Tutorials"
             div(class="videocontainer")
               //p!="Search"
-              video(width="100%", height="100%", controls="", style="margin-right: 20px;", poster="/videos/search_en.png", src="/videos/shares_en.mov")
+              video(width="100%", height="100%", controls="", style="margin-right: 20px;", poster="/videos/search_" + language + ".png", src="/videos/vid_search_en.mov")
             div(class="videocontainer")
               //p!="Orders"
-              video(width="100%", height="100%", controls="", style="margin-right: 20px;", poster="/videos/shares_en.png", src="/videos/orders_en.mov")
+              video(width="100%", height="100%", controls="", style="margin-right: 20px;", poster="/videos/shares_en.png", src="/videos/vid_shares_en.mov")
             div(class="videocontainer")
               //p!="Shares"
-              video(width="100%", height="100%", controls="", style="margin-right: 20px;", poster="/videos/orders_en.png", src="/videos/shares_en.mov")
+              video(width="100%", height="100%", controls="", style="margin-right: 20px;", poster="/videos/orders_en.png", src="/videos/vid_orders_en.mov")
             div(class="videocontainer")
               //p!="Profile"
-              video(width="100%", height="100%", controls="", style="margin-right: 20px;", poster="/videos/profile_en.png", src="/videos/orders_en.mov")
+              video(width="100%", height="100%", controls="", style="margin-right: 20px;", poster="/videos/profile_en.png", src="/videos/vid_profile_en.mov")
                 //source(src="/movie4.mov" type="video/ogg")
             - if(isLoggedInAdmin == true)
               div(class="videocontainer")
                 //p!="Admins"
-                video(width="100%", height="100%", controls="", style="margin-right: 20px;", poster="/videos/admins_en.png", src="/videos/shares_en.mov")
+                video(width="100%", height="100%", controls="", style="margin-right: 20px;", poster="/videos/admins_en.png", src="/videos/vid_admins_en.mov")
                   //source(src="/movie4.mov" type="video/ogg") 
               div(class="videocontainer")
                 //p!="Reports"
-                video(width="100%", height="100%", controls="", style="margin-right: 20px;", poster="/videos/reports_en.png", src="/videos/orders_en.mov")
+                video(width="100%", height="100%", controls="", style="margin-right: 20px;", poster="/videos/reports_en.png", src="/videos/vid_reports_en.mov")
                   //source(src="/movie4.mov" type="video/ogg")             
 
           div.alert.pointsLayout(style="clear:both;width: 100%; background-color: rgba(61, 157, 203, 0.79); color: white; text-align: center; padding-bottom: 15px;font-weight: bold;")
