@@ -38,7 +38,9 @@ block content
           span!= i18n.__("help.desc7")
         - if (loggedIn==true)
           div(class="alert pointsLayout videobox")
-            p(style="font-size: 20pt;")!="Video Tutorials"
+            p(style="font-size: 20pt;")
+              span(class="fa fa-video-camera", style="margin-right: 10px; color: #337ab7;")
+              span!="Video Tutorials"
             div(class="videocontainer")
               //p!="Search"
               video(width="100%", height="100%", controls="", style="margin-right: 20px;", poster="/videos/search_en.png", src="/videos/shares_en.mov")
