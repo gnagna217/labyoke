@@ -23,7 +23,7 @@ video::-webkit-media-controls-panel {
 }
 
 .videocontainer{
-  width: 31.5%;float: left;margin-top: 20px;margin-left: 1.5%;padding-left: 0px !important;
+  width: 31.5%;float: left;margin-top: 20px;margin-left: 1.5%;padding-left: 0px;
 }
 .videobox{
   /*background-color:rgba(61, 157, 203, 0.56);*/
@@ -34,6 +34,7 @@ video::-webkit-media-controls-panel {
   display:inline-block;
   padding-right: 0px;padding-left: 0px;
   padding-bottom: 20px !important;
+  padding-left: 0px !important;
 }
 /*end videos*/
 
