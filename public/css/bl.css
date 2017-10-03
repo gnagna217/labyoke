@@ -9,6 +9,12 @@
   -webkit-font-smoothing: antialiased;
 }
 
+/*start videos*/
+.videocontainer{
+  width: 31%;float: left;margin-top: 20px;margin-left: 2%;
+}
+/*end videos*/
+
 .backColorinsuff{
     background-color: rgba(181, 97, 97, 0.18) !important;
     
@@ -1087,6 +1093,11 @@ body.large-screen .card-list-table tbody tr:hover td {
     }
 }
 @media (max-width: 850px) {
+/*start videos*/
+.videocontainer{
+  width: 47%;
+}
+/*end videos*/
     .card-list-table tbody tr {
         width: 48%;
     }
