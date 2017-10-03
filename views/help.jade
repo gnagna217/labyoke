@@ -39,26 +39,27 @@ block content
         - if (loggedIn==true)
           div(style="clear:both;width: 100%;background-color: rgba(61, 157, 203, 0.79);color: white;text-align: center;padding-bottom: 15px;font-weight: bold;display:inline-block;padding-right: 0px;padding-left: 0px;", class="alert pointsLayout")
             div(style="width: 47%;float: left;margin-top: 20px;margin-left: 2%;")
-              p!="Shares"
-              video(width="100%", height="100%", controls="", style="margin-right: 20px;")
-                source(src="/movie4.mov" type="video/mp4")
-                source(src="/movie4.mov" type="video/ogg")
+              p!="Search"
+              video(width="100%", height="100%", controls="", style="margin-right: 20px;", poster="/videos/search_en.png", src="/videos/shares_en.mov")
             div(style="width: 47%;float: left;margin-top: 20px;margin-left: 2%;")
               p!="Orders"
-              video(width="100%", height="100%", controls="", style="margin-right: 20px;")
-                source(src="/movie4.mov" type="video/mp4")
-                source(src="/movie4.mov" type="video/ogg")
+              video(width="100%", height="100%", controls="", style="margin-right: 20px;", poster="/videos/shares_en.png", src="/videos/orders_en.mov")
             div(style="width: 47%;float: left;margin-top: 20px;margin-left: 2%;")
-              p!="Reports"
-              video(width="100%", height="100%", controls="", style="margin-right: 20px;")
-                source(src="/movie4.mov" type="video/mp4")
-                source(src="/movie4.mov" type="video/ogg")
+              p!="Shares"
+              video(width="100%", height="100%", controls="", style="margin-right: 20px;", poster="/videos/orders_en.png", src="/videos/shares_en.mov")
+            div(style="width: 47%;float: left;margin-top: 20px;margin-left: 2%;")
+              p!="Profile"
+              video(width="100%", height="100%", controls="", style="margin-right: 20px;", poster="/videos/profile_en.png", src="/videos/orders_en.mov")
+                //source(src="/movie4.mov" type="video/ogg")
             - if(isLoggedInAdmin == true)
               div(style="width: 47%;float: left;margin-top: 20px;margin-left: 2%;")
                 p!="Admins"
-                video(width="100%", height="100%", controls="", style="margin-right: 20px;")
-                  source(src="/movie4.mov" type="video/mp4")
-                  source(src="/movie4.mov" type="video/ogg")              
+                video(width="100%", height="100%", controls="", style="margin-right: 20px;", poster="/videos/admins_en.png", src="/videos/shares_en.mov")
+                  //source(src="/movie4.mov" type="video/ogg") 
+              div(style="width: 47%;float: left;margin-top: 20px;margin-left: 2%;")
+                p!="Reports"
+                video(width="100%", height="100%", controls="", style="margin-right: 20px;", poster="/videos/reports_en.png", src="/videos/orders_en.mov")
+                  //source(src="/movie4.mov" type="video/ogg")             
 
           div.alert.pointsLayout(style="clear:both;width: 100%; background-color: rgba(61, 157, 203, 0.79); color: white; text-align: center; padding-bottom: 15px;font-weight: bold;")
              span!= ''+labyoker + i18n.__("help.desc9")
