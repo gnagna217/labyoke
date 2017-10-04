@@ -2116,7 +2116,34 @@ a {
 .accountlogo{
     position: absolute;width: 400px;top: 350px;left: 50%;
 }
-
+.slide-out-zoom-div {
+          padding: 23px;
+          width:initial;
+          background: rgba(61, 157, 203, 0.78);
+          border: none;
+          border-radius: 10px;
+        top: initial !important;
+} 
+.slide-out-zoom-div::after{
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    margin-left: -0.5em;
+    bottom: -2em;
+    left: 50%;
+    box-sizing: border-box;
+    
+    border: 0.51em solid black;
+    border-color: transparent transparent rgba(61, 157, 203, 0.78) rgba(61, 157, 203, 0.78);
+    
+    transform-origin: 0 0;
+    transform: rotate(45deg);
+    top: 40%;
+    left: 2.5%;
+    
+    /*box-shadow: -3px 3px 3px 0 rgba(0, 0, 0, 0.4);*/
+  }
 .slide-out-tip-div {
           padding: 23px;
           width:initial;
