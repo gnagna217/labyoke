@@ -68,11 +68,12 @@ video::-webkit-media-controls-panel {
 /*end videos*/
 
 .backColorinsuff{
-    background-color: rgba(181, 97, 97, 0.18) !important;
+    background-color: #d0c296 !important;
     
 }
 .colorinsuff{
-      color: #f34949 !important;
+      color: #d0c296 !important;
+      /*d0c296*/
       /*font-weight: bold;*/
 }
 .profile{
