@@ -14,6 +14,10 @@
 }
 
 /*start videos*/
+video::-webkit-media-controls-rewind-button{
+  display:none;
+}
+
 video::-internal-media-controls-download-button {
     display:none;
 }
