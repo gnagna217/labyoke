@@ -43,25 +43,25 @@ block content
               span(class="fa fa-video-camera", style="margin-right: 10px; color: #337ab7;")
               span!="Video Tutorials"
             div(class="videocontainer")
-              //p!="Search"
+              span!= i18n.__("help.video.search")
               video(width="90%", height="90%", controls="", poster="/videos/search_" + language + ".png", src="/videos/vid_search_en.mov")
             div(class="videocontainer")
-              //p!="Orders"
+              span!= i18n.__("help.video.shares")
               video(width="90%", height="90%", controls="", poster="/videos/shares_" + language + ".png", src="/videos/vid_shares_en.mov")
             div(class="videocontainer")
-              //p!="Shares"
+              span!= i18n.__("help.video.orders")
               video(width="90%", height="90%", controls="", poster="/videos/orders_" + language + ".png", src="/videos/vid_orders_en.mov")
             div(class="videocontainer")
-              //p!="Profile"
+              span!= i18n.__("help.video.profile")
               video(width="90%", height="90%", controls="", poster="/videos/profile_" + language + ".png", src="/videos/vid_profile_en.mov")
                 //source(src="/movie4.mov" type="video/ogg")
             - if(isLoggedInAdmin == true)
               div(class="videocontainer")
-                //p!="Admins"
+                span!= i18n.__("help.video.admins")
                 video(width="90%", height="90%", controls="", poster="/videos/admins_" + language + ".png", src="/videos/vid_admins_en.mov")
                   //source(src="/movie4.mov" type="video/ogg") 
               div(class="videocontainer")
-                //p!="Reports"
+                span!= i18n.__("help.video.reoprts")
                 video(width="90%", height="90%", controls="", poster="/videos/reports_" + language + ".png", src="/videos/vid_reports_en.mov")
                   //source(src="/movie4.mov" type="video/ogg")             
 

@@ -111,6 +111,12 @@
     "help.table.location": "Proprio",
     "help.table.order": "Commander",
     "help.table.catalog": "Catalogue",
+    "help.video.search": "Recherche",
+    "help.video.shares": "Partages",
+    "help.video.orders": "Commandes",
+    "help.video.admins": "Admin",
+    "help.video.profile": "Profil",
+    "help.video.reports": "Rapports",
     
     "register.desc1": "En route pour <a href='/login'>LabYoker</a> avec d'autres chercheurs.",
     "register.title": "Inscription.",
