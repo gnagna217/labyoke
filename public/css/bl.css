@@ -476,7 +476,7 @@ video::-webkit-media-controls-panel {
 }
 .helpheaderright{
     color: #508dc1;
-    top: 21px;
+    top: 34px;
     position: relative;
     float: right; width: 45%;font-size: 75pt !important; /*text-align: center; color: #2975b4;*/
 }
