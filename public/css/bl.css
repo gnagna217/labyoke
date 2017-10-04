@@ -2365,7 +2365,7 @@ input[type=radio]:checked ~ .checkingcatalog::before{
 /* ====== */
 
 .isadminroundaccountLeft{
-    left: -295px;
+    /*left: -295px;*/
 }
 
 .isregroundaccountLeft{
@@ -3727,7 +3727,7 @@ padding-right: 0px;
     width: 50%;
 }
 .isadminroundaccountLeft{
-    left: -228px;
+    /*left: -228px;*/
 }
 .isregroundaccountLeft {
     left: -211px;
@@ -3781,7 +3781,7 @@ padding-right: 0px;
 
  @media (max-width: 956px) {
 .isadminroundaccountLeft{
-    left: -210px;
+    /*left: -210px;*/
 }
 .margintop{
     margin-top:110px !important;
@@ -3884,7 +3884,7 @@ margin-top:0px;
 
 @media (max-width: 849px){
 .isadminroundaccountLeft{
-    left: -187px;
+    /*left: -187px;*/
 }
 
 .isregroundaccountLeft{
@@ -3944,7 +3944,7 @@ margin-top:0px;
 }
 
 .isadminroundaccountLeft{
-    left: -189px;
+    /*left: -189px;*/
 }
 
 .isregroundaccountLeft{
@@ -3961,7 +3961,7 @@ margin-top:0px;
 
 @media (max-width: 780px){
 .isadminroundaccountLeft{
-    left: -173.5px;
+    /*left: -173.5px;*/
 }
 
 .isregroundaccountLeft{

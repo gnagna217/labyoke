@@ -243,6 +243,8 @@ html(lang='en')
                             li(class=activateAccount, style="/*width: 122px;*/padding-top:50px;padding-right:40px;background-color:rgb(173, 153, 117)", id=testing)
                                 //a(href="/account",class="nav-menus myaccount navplaceholder", id="menumyaccounta")
                                     //span #{i18n.__("layout.Profile")}
+                                span
+                                  a(href="/account", class="roundaccount " + roundaccountLeft + activeAccountMob)!=user_surname + "" + surname
                             li(class=activateHelp)
                                 a(href='/help', class="nav-menu",id="menumyaccounta")
                                     span(class="fa fa-anchor colmenu")
@@ -251,8 +253,8 @@ html(lang='en')
                                 a(href='/about', class="nav-menu",id="menumyaccounta")
                                     span(class="fa fa-home colmenu")
                                     span #{i18n.__("layout.Us")}
-                    span
-                      a(href="/account", class="roundaccount " + roundaccountLeft + activeAccountMob)!=user_surname + "" + surname
+                    //span
+                      //a(href="/account", class="roundaccount " + roundaccountLeft + activeAccountMob)!=user_surname + "" + surname
                     ul.nav.navbar-nav.navbar-right
                         li(class="nav-menu-logout", style="cursor:pointer")
                             a 
