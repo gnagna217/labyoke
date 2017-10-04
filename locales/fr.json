@@ -278,7 +278,7 @@
     "orders.title": "Commandes.",
     "orders.non.title": "Vous n'avez commandé aucun Réactif.",
     "orders.non.subtitle": "Cliquez sur <a href='/search'>Chercher</a><span> et commencez à labyoker!</span>",
-    "orders.subdesc": "Génial! Vous avez commandé les Réactifs ci-dessous. Les commandes sont annulées <span class='colorinsuff fa fa-square'></span> si leur propriétaire est en rupture de stock.",
+    "orders.subdesc": "Génial! Vous avez commandé les Réactifs ci-dessous. Les commandes sont annulées <span class='colorinsuff fa fa-square'></span> si leur propriétaire est en rupture de stock. Les nouvelles commandes <span class='isnewcolor fa fa-square'></span> n'ont pas encore été remplies par l'administrateur du propriétaire réactif.",
     "orders.table.id": "id ",
     "orders.table.email": "Proprio",
     "orders.table.reagent": "Réac.",
