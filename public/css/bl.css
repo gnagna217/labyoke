@@ -3941,6 +3941,7 @@ margin-top:0px;
 @media (max-width: 767px){
 .helpcamera{
   font-size: 50pt !important;
+  top: 16px;
 }
 .accountdetail-header{
     /*border-bottom-color:#8a6d3b;border-bottom-style:solid;*/
