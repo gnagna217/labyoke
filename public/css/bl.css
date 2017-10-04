@@ -2478,6 +2478,10 @@ span.fa-comment {
     left: 25px; position: relative;
 }
 
+.isnewcolor{
+  color: #a4d2e8 !important;
+}
+
 .isnew{
     background-color: #a4d2e8 !important;
 }

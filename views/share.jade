@@ -45,12 +45,12 @@ block content
 				- var output = mysharesrequest.filter(function(x){return x.status!="fulfilled"});
 				h4= i18n.__("shares.subtitle1")
 				p
-					- var requestIntro = output.length + i18n.__("shares.intro5")
+					- var requestIntro = output.length + i18n.__("shares.intro5") + " <span class='isnewcolor fa fa-square'></span>"
 					- if(output.length == 0)
 						- requestIntro = i18n.__("shares.intro")
-					span(class="labColor")!= requestIntro
+					span!= requestIntro
 					span= i18n.__("shares.intro1")
-					- var totalrequestIntro = "<span class='yokeColor'>" + mysharesrequest.length + i18n.__("shares.intro2") + "</span>"
+					- var totalrequestIntro = mysharesrequest.length + i18n.__("shares.intro2")
 					- if(mysharesrequest.length == 0)
 						- totalrequestIntro = i18n.__("shares.intro3")
 					span!= totalrequestIntro + i18n.__("shares.intro4")
