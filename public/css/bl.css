@@ -23,12 +23,7 @@ video::-webkit-media-controls-panel {
 }
 
 .videocontainer{
-width: 30.5%;
-float: left;
-margin-top: 20px;
-margin-left: 2%;
-padding-left: 0px;
-padding-right: 4%;
+  width: 30%;float: left;margin-top: 20px;margin-left: 1.5%;padding-left: 0px;
 }
 .videobox{
   /*background-color:rgba(61, 157, 203, 0.56);*/
