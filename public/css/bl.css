@@ -73,7 +73,7 @@ video::-webkit-media-controls-panel {
 }
 .colorinsuff{
       color: #f34949 !important;
-      font-weight: bold;
+      /*font-weight: bold;*/
 }
 .profile{
     width:54%;
