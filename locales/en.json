@@ -116,7 +116,10 @@
     "help.video.admins": "Admins",
     "help.video.profile": "Profile",
     "help.video.reports": "Reports",
-    
+    "help.titledesc5":"The How",
+    "help.titledesc7":"The Why",
+    "help.titlevideo":"Video Tutorials",
+
     "register.title": "Sign Up.",
     "register.desc1": "On your way to <a href='/login'>Lab Yoking</a> with fellow researchers.",
     "register.title2": " Registering ",

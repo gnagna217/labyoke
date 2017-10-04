@@ -117,6 +117,9 @@
     "help.video.admins": "Admin",
     "help.video.profile": "Profil",
     "help.video.reports": "Rapports",
+    "help.titledesc5":"Le Comment",
+    "help.titledesc7":"Le Pourquoi",
+    "help.titlevideo":"Tutoriels Vidéos",
     
     "register.desc1": "En route pour <a href='/login'>LabYoker</a> avec d'autres chercheurs.",
     "register.title": "Inscription.",
