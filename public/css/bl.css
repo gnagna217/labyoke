@@ -30,6 +30,10 @@ video::-webkit-media-controls-panel {
     width: calc(100% + 30px); /* Adjust as needed */
 }
 
+.helpcamera{
+  width: 100%; color: #66b2d6; top: 20px; position: relative; float: left; font-size: 75pt !important;
+}
+
 .videocontainer{
     width: 30.5%;
     float: left;
@@ -47,7 +51,7 @@ video::-webkit-media-controls-panel {
   padding-right: 0px;padding-left: 0px;
   padding-bottom: 50px !important;
   padding-left: 0px !important;
-  margin-top: 75px;
+  margin-top: 10px;
 }
 /*end videos*/
 
@@ -3935,6 +3939,9 @@ margin-top:0px;
 }
 
 @media (max-width: 767px){
+.helpcamera{
+  font-size: 50pt !important;
+}
 .accountdetail-header{
     /*border-bottom-color:#8a6d3b;border-bottom-style:solid;*/
     margin-right: 5px;

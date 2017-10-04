@@ -39,10 +39,12 @@ block content
           span(style=" font-size: 20pt; font-weight: bold; text-align: center; margin: 0 auto; display: block;")!= i18n.__("help.titledesc7")
           span!= i18n.__("help.desc7")
         - if (loggedIn==true)
+          div(style="text-align: center;clear: both;")
+            span(class="threepointssep")
+            span(class="fa fa-video-camera helpcamera")
+
           div(class="alert pointsLayout videobox")
-            span(style="margin-top: -105px;" class="threepointssep")
-            p(style="font-size: 20pt;padding-top: 20px;padding-top: 40px;")
-              span(class="fa fa-video-camera", style="margin-right: 10px; color: #337ab7;")
+            p(style="font-size: 20pt")
               span!=i18n.__("help.titlevideo")
 
             div(style="display: flex;flex-wrap: wrap;")
