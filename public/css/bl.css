@@ -10,7 +10,8 @@
 }
 
 .zoomicon{
-  margin-right:15%;color:white;
+    margin-right: 10%;
+    margin-left: 10%;color:white;
 }
 .zoomicon:hover, .zoomicon:active, .zoomicon:focus{
   color:#337ab7;
