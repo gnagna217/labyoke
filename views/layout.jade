@@ -296,7 +296,21 @@ html(lang='en')
             div(style="color:white; text-align:center; font-size:11px;")="@LabYoke"
               img(src="/images/"+language+"0.png" alt="Language" title="Language" style="width: 15px;margin-left: 9px;")
     script.
-        $(document).ready(function() {$.page_zoom();});
+        $(document).ready(function() {
+        var options = {
+          max_zoom: 1.3, // maximum amount you can zoom in. 1.5 = 150% zoom
+          min_zoom: .5, // the minimum amount you can zoom out. .5 = 50% zoom
+          zoom_increment: .1, // how much each click zooms in/out. So if the current zoom is 1.3, one click of the zoom out link means 1.3 - 0.1 = 1.2. New zoom level is 1.2
+          current_zoom: 1, // default zoom. don't set this unless you want to force a zoom level on each page load
+          selectors: {
+            zoom_in: '.zoom_in', // the selector for the element(s) that will get the zoom in action for the onclick event
+            zoom_out: '.zoom_out', // the selector for the element(s) that will get the zoom out action for the onclick event
+            zoom_reset: '.zoom_reset' // the selector for the element(s) that will get the reset zoom action for the onclick event
+          }
+        };
+
+        $.page_zoom(options);
+        $.page_zoom();});
         $(".nav-menu-logout").click(function() {
                     $( this ).addClass( "animated hinge" );
                     setTimeout(function() {
