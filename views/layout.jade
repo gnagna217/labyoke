@@ -296,6 +296,7 @@ html(lang='en')
             div(style="color:white; text-align:center; font-size:11px;")="@LabYoke"
               img(src="/images/"+language+"0.png" alt="Language" title="Language" style="width: 15px;margin-left: 9px;")
     script.
+        $(document).ready(function() {$.page_zoom();});
         $(".nav-menu-logout").click(function() {
                     $( this ).addClass( "animated hinge" );
                     setTimeout(function() {
@@ -322,9 +323,6 @@ html(lang='en')
               $("#menumyshares").css("border-left-color", "transparent");
             });
         }
-        $(document).ready(function() {
-          $.page_zoom();
-       });
 
           
 
