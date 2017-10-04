@@ -175,18 +175,18 @@ block content
               //$("#loopkey").removeClass( "activecolmenu" );
               //$("#loopkey").addClass( "colmenu" );
           }
-        div(class="slide-out-tip-div desktabonly", style="display:none;z-index:10;position: fixed;top: 25% !important;max-height:400px;")
+        div(class="slide-out-tip-div desktabonly", style="display:none;z-index:10;position: fixed;top: 25% !important;max-height:380px;")
             a(class="handle" href="last-transactions", title='#{i18n.__("search.tip.title")}', style="right: -60px;left:-60px;")!=Content
             div(style="padding: 1px;color:white;top: -45px;position: relative;max-height: 320px;overflow: auto;")
                 div(style="margin-bottom: 20px;")
                     span(style="font-size: 12pt;margin-right: 20px;")!= i18n.__("search.zoom.header")
-                    span(class="zoom_controls", style="font-size: 20pt")
-                        a(href="#" class="zoom_out" style="margin-right:20px")
-                          span(class="fa fa-minus-circle", style="color:white")
-                        a(href="#" class="zoom_reset" style="margin-right:20px")
-                          span(class="fa fa-circle-o-notch", style="color:white")
-                        a(href="#" class="zoom_in" style="margin-right:20px")
-                          span(class="fa fa-plus-circle", style="color:white")
+                    span(class="zoom_controls")
+                        a(href="#" class="zoom_out zoomicon")
+                          span(class="fa fa-minus-circle")
+                        a(href="#" class="zoom_reset zoomicon")
+                          span(class="fa fa-circle-o-notch")
+                        a(href="#" class="zoom_in zoomicon")
+                          span(class="fa fa-plus-circle")
                     div(class="threepointssep")
                 p(style="font-size: 12pt;")!= i18n.__("search.tip.header")
                 div(style="position: relative;float: right;width: 250px;font-size: 9pt;line-height: 1.3;border-radius: 4px;")

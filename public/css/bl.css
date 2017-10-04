@@ -9,6 +9,17 @@
   -webkit-font-smoothing: antialiased;
 }
 
+.zoomicon{
+  margin-right:20px;color:white;
+}
+.zoomicon:hover, .zoomicon:active, .zoomicon:focus{
+  color:#337ab7;
+}
+
+.zoom_controls{
+  font-size:20pt;
+}
+
 .fullwidth{
   width: 100% !important;
 }
