@@ -15,6 +15,7 @@
 }
 .zoomicon:hover, .zoomicon:active, .zoomicon:focus{
   color:#337ab7;
+  cursor:pointer;
 }
 
 .zoom_controls{
