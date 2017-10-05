@@ -217,9 +217,8 @@ block content
                       - color = "#68b3d6"
                   div(style="width: " + w + "%;margin-right:" + right + "px;word-wrap: break-word;text-align: center;")
                     span(class="fa fa-vcard" style="font-size: 100pt;color:" + color)
-                    span(style="text-align: center;display: block;") #{ob2[prop].name + " " + ob2[prop].surname }
                     span(style="text-align: center;display: block;")
-                      a(href="mailto:" + ob2[prop].email , style="cursor:pointer") #{"[ " + ob2[prop].email + " ]"}
+                      a(href="mailto:" + ob2[prop].email , style="cursor:pointer") #{ob2[prop].name + " " + ob2[prop].surname }
                   //tr
                    //td #{ob2[prop].name + " " + ob2[prop].surname }
                    //td #{ob2[prop].email}
