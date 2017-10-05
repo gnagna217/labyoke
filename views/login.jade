@@ -78,12 +78,12 @@ block content
         div(class="help")
            span
              a(href="/login?lang=en")
-                img(src="images/en0.png", alt="English", title="English", class="enlogin")
+                img(src="images/en.png", alt="English", title="English", class="enlogin")
            a(href="/help" title="Help")
-            img(src="images/bouee3.png", alt="Help", title=i18n.__("login.helpLink"))
+            img(src="images/bouee5.png", alt="Help", title=i18n.__("login.helpLink"))
            span
              a(href="/login?lang=fr")
-                img(src="images/fr0.png", alt="Français", title="Français", class="frlogin")                
+                img(src="images/fr.png", alt="Français", title="Français", class="frlogin")                
      - if(latestshares != null && latestshares != undefined)
         div(class="slide-out-div desktabonly lineheight", style="display:none;position: fixed;bottom: 6px;top:-75px;")
             a(class="handle" href="last-transactions", style="right: -60px;")!=Content
@@ -151,7 +151,7 @@ block content
             $(".fa-key").css("color","rgba(138, 109, 59, 0.61)");
         });
 
-        var s=["images/en0.png", "images/bouee3.png", "images/fr0.png","images/yoke4.png", "images/movarrow2.gif","/images/sort_both.png","images/sort_desc.png","images/sort_asc.png","images/venn.png"];
+        var s=["images/en.png", "images/bouee5.png", "images/fr.png","images/yoke4.png", "images/movarrow2.gif","images/venn.png"];
         imageCache.pushArray(s, function(){}, function(){});
 
         console.log( "login document loaded" );
