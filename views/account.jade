@@ -207,8 +207,12 @@ block content
               //   tbody      
               - var ob2 = team
               - for(var prop in ob2)
+                  - var i = prop % 2
+                  - var color = "#2975b4"
+                  - if(i==0)
+                      - color = "#68b3d6"
                   div(style="width: " + t + "%;margin-left: 10px;word-wrap: break-word;text-align: center;")
-                    span(class="fa fa-user" style="font-size: 100pt;color:#68b3d6")
+                    span(class="fa fa-user" style="font-size: 100pt;color:" + color)
                     span(style="text-align: center;display: block;") #{ob2[prop].name + " " + ob2[prop].surname }
                     span(style="text-align: center;display: block;") #{"[ " + ob2[prop].email + " ]"}
                   //tr
