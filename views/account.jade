@@ -196,6 +196,8 @@ block content
             p(class="texthalf")!=i18n.__("account.team.subdesc1")+ dept + i18n.__("account.team.subdesc2")
 
             div(style="display: flex;flex-wrap: wrap;")
+            - var t = team.length
+            - t = 100/team.length
 
               //table(class="table table-striped table-responsive table-hover animated fadeInDown" )
               //   thead
@@ -205,10 +207,10 @@ block content
               //   tbody      
               - var ob2 = team
               - for(var prop in ob2)
-                  div(style="width: 100px;margin-left: 50px;word-wrap: break-word;text-align: center;")
+                  div(style="width: " + t + "%;margin-left: 50px;word-wrap: break-word;text-align: center;")
                     span(class="fa fa-user" style="font-size: 100pt;color:#68b3d6")
                     span(style="text-align: center;display: block;") #{ob2[prop].name + " " + ob2[prop].surname }
-                    span(style="text-align: center;display: block;") "[" + #{ob2[prop].email} + "]"
+                    span(style="text-align: center;display: block;") #{"[ " + ob2[prop].email + " ]"}
                   //tr
                    //td #{ob2[prop].name + " " + ob2[prop].surname }
                    //td #{ob2[prop].email}
