@@ -434,10 +434,10 @@ console.log("report on savings- dateto: " + labsindept);
 		if(groupby.length>0)
 			groupby +=" , ";
 		groupby += "b.date";
-		html += "<p>" + i18n.__("index.reportsMoney.param6") + " " + datefrom /*moment(datefrom).tz("America/New_York").format('MM-DD-YYYY')*/ + i18n.__("index.reportsMoney.param7") + dateto /*moment(dateto).tz("America/New_York").format('MM-DD-YYYY')*/ + "</p></div>"
+		html += "<p>" + i18n.__("index.reportsMoney.param6") + " " + datefrom /*moment(datefrom).tz("America/New_York").format('MM-DD-YYYY')*/ + i18n.__("index.reportsMoney.param7") + dateto /*moment(dateto).tz("America/New_York").format('MM-DD-YYYY')*/ + "</p>"
 	} else {
 		datefrom = "all";
-		html += "<p>" + i18n.__("index.reportsMoney.param8") + ":</p></div>"
+		html += "<p>" + i18n.__("index.reportsMoney.param8") + ":</p>"
 	}
 
 	if(lab != null && lab !=undefined && lab !="all"){
