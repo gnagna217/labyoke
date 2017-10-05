@@ -2953,7 +2953,8 @@ input:-webkit-autofill:hover {
     color: #337ab7;
 }
 .adjustpaddingrightandwidth{
-    margin-right: 35px;
+    /*margin-right: 35px;*/
+    margin-right: 3%;
     width: 47%;
 }
 .adjustpaddingrightandwidth2{
