@@ -214,7 +214,8 @@ block content
                   div(style="width: " + t + "%;margin-left: 10px;word-wrap: break-word;text-align: center;")
                     span(class="fa fa-vcard" style="font-size: 100pt;color:" + color)
                     span(style="text-align: center;display: block;") #{ob2[prop].name + " " + ob2[prop].surname }
-                    span(style="text-align: center;display: block;") #{"[ " + ob2[prop].email + " ]"}
+                    span(style="text-align: center;display: block;")
+                      a(mailto=ob2[prop].email , style="cursor:pointer") #{"[ " + ob2[prop].email + " ]"}
                   //tr
                    //td #{ob2[prop].name + " " + ob2[prop].surname }
                    //td #{ob2[prop].email}
