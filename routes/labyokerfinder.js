@@ -596,7 +596,7 @@ console.log("report on savings- dateto: " + labsindept);
 				console.log("savings is: " + savings);
 		
 			}
-			html += "</tbody></table></div>" + i18n.__("index.reportsMoney.param14") + "<span style='font-size:30pt'>" + accounting.formatMoney(savings, { symbol: "",  format: "%v %s", precision : 0 }) /*accounting.formatMoney(savings)*/ + "</span><p style='margin-top:25px'><i><b>" + i18n.__("index.reportsShares.html7") + "</b></i></p>";
+			html += "</tbody></table>" + i18n.__("index.reportsMoney.param14") + "<span style='font-size:30pt'>" + accounting.formatMoney(savings, { symbol: "",  format: "%v %s", precision : 0 }) /*accounting.formatMoney(savings)*/ + "</span><p style='margin-top:25px'><i><b>" + i18n.__("index.reportsShares.html7") + "</b></i></p></div>";
 			console.log("html money: " + html);
 
 		}
@@ -736,7 +736,7 @@ if(lab != null && lab !=undefined && lab =="all"){
 				console.log("dataonly1: "  + dataonly);
 		
 			}
-			html += "</tbody></table></div><p style='margin-top:25px'><i><b>" + i18n.__("index.reportsShares.html7") + "</b></i></p>";
+			html += "</tbody></table><p style='margin-top:25px'><i><b>" + i18n.__("index.reportsShares.html7") + "</b></i></p></div>";
 			console.log("html insuff: " + html);
 			console.log("dataonly1: "  + dataonly);
 		}
@@ -873,7 +873,7 @@ console.log("report on shares my lab: " + mylab);
 				html += " <td style='font-size: 12px;'>" + moment(date).tz("Africa/Bissau").format('MM-DD-YYYY') + "</td></tr>";
 				dataonly.push(rowonly);
 			}
-			html += "</tbody></table></div><p style='margin-top: 25px;'><i><b>" + i18n.__("index.reportsShares.html7") + "</b></i></p>";
+			html += "</tbody></table><p style='margin-top: 25px;'><i><b>" + i18n.__("index.reportsShares.html7") + "</b></i></p></div>";
 			//html += "</tbody></table><p><i><b>The LabYoke Team.</b></i></p><img style='width: 141px; margin: 0 20px;float:left' src='https:\/\/team-labyoke.herokuapp.com\/images\/yoke4.png', alt='The Yoke',  title='Yoke', class='yokelogo'/>";
 		}
 		if(!isempty){
@@ -1018,7 +1018,7 @@ console.log("report on shares my lab: " + mylab);
 				rowonly.push(moment(date).tz("Africa/Bissau").format('MM-DD-YYYY'));
 				dataonly.push(rowonly);
 			}
-			html += "</tbody></table></div><p style='margin-top: 25px;'><i><b>" + i18n.__("index.reportsShares.html7") + "</b></i></p>";
+			html += "</tbody></table><p style='margin-top: 25px;'><i><b>" + i18n.__("index.reportsShares.html7") + "</b></i></p></div>";
 			//html += "</tbody></table><p><i><b>The LabYoke Team.</b></i></p><img style='width: 141px; margin: 0 20px;float:left' src='https:\/\/team-labyoke.herokuapp.com\/images\/yoke4.png', alt='The Yoke',  title='Yoke', class='yokelogo'/>";
 			
 		}
@@ -1205,7 +1205,7 @@ console.log("report on orders: " + labsindept);
 				html += " <td style='font-size: 12px;'>" + moment(date).tz("Africa/Bissau").format('MM-DD-YYYY') + "</td></tr>";
 				dataonly.push(rowonly);
 			}
-			html += "</tbody></table></div><p style='margin-top:25px'><i><b>" + i18n.__("index.reportsShares.html7") + "</b></i></p>";
+			html += "</tbody></table><p style='margin-top:25px'><i><b>" + i18n.__("index.reportsShares.html7") + "</b></i></p></div>";
 		}
 		
 		if(!isempty){
