@@ -9,6 +9,12 @@
   -webkit-font-smoothing: antialiased;
 }
 
+.myteammember{
+  width:30%;
+  margin-right:10px;
+  word-wrap:break-word;
+  text-align:center;
+}
 .zoomicon{
     margin-right: 10%;
     margin-left: 10%;color:white;
@@ -3983,6 +3989,10 @@ margin-top:0px;
 }
 
 @media (max-width: 767px){
+.myteammember{
+  width:100%;
+  margin-right:0px;
+}
 .helpcamera{
   font-size: 50pt !important;
   top: 16px;
