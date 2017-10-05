@@ -10,7 +10,8 @@
 }
 
 .myteamcard{
-  font-size: 80pt;
+  margin-top: 10px;
+  font-size: 80pt !important;
 }
 .myteammember{
   width:30%;
@@ -3993,7 +3994,7 @@ margin-top:0px;
 
 @media (max-width: 767px){
 .myteamcard{
-  font-size: 50pt;
+  font-size: 50pt !important;
 }
 .myteammember{
   width:50%;
