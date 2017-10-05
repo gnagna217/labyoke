@@ -1992,6 +1992,10 @@ p{
     border-color: rgba(138, 109, 59, 0.52);
 }
 
+.bouee{
+  width: 50px;
+}
+
 .enlogin{
     /*border-width: 0px;width: 50px;margin-top: -40px;margin-right: 90px;float: right;
     width: 30px;
