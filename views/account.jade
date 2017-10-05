@@ -197,7 +197,9 @@ block content
 
             div(style="display: flex;flex-wrap: wrap;" class="animated fadeIn")
               - var t = team.length
-              - t = 90/team.length
+              - var w = 125;
+              - if(t<4)
+                - w = 90/team.length
 
               //table(class="table table-striped table-responsive table-hover animated fadeInDown" )
               //   thead
@@ -211,7 +213,7 @@ block content
                   - var color = "#2975b4"
                   - if(i==0)
                       - color = "#68b3d6"
-                  div(style="width: " + t + "%;margin-left: 10px;word-wrap: break-word;text-align: center;")
+                  div(style="width: " + w + "%;margin-right: 10px;word-wrap: break-word;text-align: center;")
                     span(class="fa fa-vcard" style="font-size: 100pt;color:" + color)
                     span(style="text-align: center;display: block;") #{ob2[prop].name + " " + ob2[prop].surname }
                     span(style="text-align: center;display: block;")
