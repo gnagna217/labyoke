@@ -1271,7 +1271,7 @@ padding-right: 50px;
     background-color: transparent !important;
 }
 .adjustpaddingrightandwidth2{
-    margin-right: 35px;
+    margin-right: 3%;
     width: 35%;
 }
 
@@ -2958,7 +2958,7 @@ input:-webkit-autofill:hover {
     width: 47%;
 }
 .adjustpaddingrightandwidth2{
-    margin-right: 35px;
+    margin-right: 3%;
     width: 35%;
 }
 .adjustpaddingright{
@@ -3675,11 +3675,11 @@ input::-webkit-inner-spin-button {
 
  @media (max-width: 1202px) {
 .adjustpaddingrightandwidth {
-    margin-right: 35px;
+    margin-right: 3%;
     width: 46%;
 }
 .adjustpaddingrightandwidth2 {
-    margin-right: 35px;
+    margin-right: 3%;
     width: 35%;
 }
 }
@@ -3841,7 +3841,7 @@ margin-top:0px;
     left: -212px;
 }
 .adjustpaddingrightandwidth2{
-    margin-right: 25px;
+    margin-right: 2%;
     width: 100% !important;
 }
 }
@@ -4403,7 +4403,8 @@ span.num.greatherthanninetynine {
     width: 100%;
 }
 .adjustpaddingrightandwidth2{
-    margin-right: 25px;
+    /*margin-right: 25px;*/
+    margin-right: 2%;
     width: 100%;
 }
 .adjustpaddingright{
