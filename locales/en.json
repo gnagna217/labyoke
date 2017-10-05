@@ -496,7 +496,7 @@
     "index.reportsMoney.param15": "Owner",
     "index.reportsMoney.param17": "Requestor",
     "index.reportsMoney.param16": "User",
-    "index.reportsMoney.param13": "Reagents Shares Savings",
+    "index.reportsMoney.param13": "Shares Savings",
     "index.reportsMoney.param14": "The <span style='font-weight:bold'>Total</span> number of Reagents saved is ",
     "index.reportsInsuff.param1": "Insufficient Reagents Shared",
 
@@ -557,7 +557,7 @@
     "zoom.minus": "Reduce Zoom",
     "zoom.plus": "Increase Zoom",
     "zoom.reset": "Reset Zoom",
-    
+
     "key.title": ""
 
 
