@@ -9,6 +9,9 @@
   -webkit-font-smoothing: antialiased;
 }
 
+.myteamcard{
+  font-size: 80pt;
+}
 .myteammember{
   width:30%;
   margin-right:10px;
@@ -3989,8 +3992,11 @@ margin-top:0px;
 }
 
 @media (max-width: 767px){
+.myteamcard{
+  font-size: 50pt;
+}
 .myteammember{
-  width:100%;
+  width:50%;
   margin-right:0px;
 }
 .helpcamera{
