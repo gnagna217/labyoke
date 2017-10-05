@@ -554,6 +554,10 @@
     "admins.qty.subtitle": "This graph depicts the current trend of your lab's insufficient reagents <span class='colorinsuff fa fa-square'></span> and total number of reagents <span class='yokeColor fa fa-square'></span> per Lab member. Hover on top of a bar to display its value below.",
     "admins.qty.subtitle1": "Your lab members are not sharing any reagent. <a href='/admins'><span class='labColor'>Upload now</span></a>.",
 
+    "zoom.minus": "Reduce Zoom",
+    "zoom.plus": "Increase Zoom",
+    "zoom.reset": "Reset Zoom",
+    
     "key.title": ""
 
 
