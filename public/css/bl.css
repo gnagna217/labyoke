@@ -66,6 +66,10 @@ video::-webkit-media-controls-rewind-button{
   display:none;
 }
 
+video::-webkit-media-controls-wireless-playback-picker-button{
+  display:none;
+}
+
 video::-internal-media-controls-download-button {
     display:none;
 }
@@ -86,7 +90,7 @@ video::-webkit-media-controls-panel {
     width: 30.5%;
     float: left;
     margin-top: 20px;
-    margin-left: 1.25%;
+    margin-left: 2%;
     padding-left: 0px;
 }
 .videobox{
@@ -1195,7 +1199,7 @@ body.large-screen .card-list-table tbody tr:hover td {
 /*start videos*/
 .videocontainer{
   width: 47%;
-  margin-left: 0.75%;
+  margin-left: 2%;
 }
 /*end videos*/
     .card-list-table tbody tr {
