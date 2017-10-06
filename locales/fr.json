@@ -557,6 +557,11 @@
     "admins.qty.title2": "</i>.",
     "admins.qty.subtitle": "Ce graphique représente la tendance actuelle de l'ensemble des réactifs en quantités insuffisantes <span class='colorinsuff fa fa-square'></span> ainsi que du nombre total de réactifs <span class='yokeColor fa fa-square'></span> par membre du laboratoire. Passez la souris au-dessus d'une barre pour afficher sa valeur ci-dessous.",
     "admins.qty.subtitle1": "Votre laboratoire n'a partagé aucun réactif. <a href='/admins'><span class='labColor'>Télécharger maintenant</span></a>.",
+    "admins.table.x": "Annuler Commande ",
+    "admins.table.f": "Remplir Commande ",
+    "admins.table.insuff": " insuffisant",
+    "admins.table.header.insuff": "Inventaire Insuffisant",
+    "admins.table.header.cancelorder": "Annuler Commande",
 
     "zoom.minus": "Réduire Zoom",
     "zoom.plus": "Augmenter Zoom",

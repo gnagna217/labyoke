@@ -277,8 +277,8 @@ block content
 											th(class="")= i18n.__("shares.table.requestor")
 											th(class="")= i18n.__("shares.table.email")
 											th= i18n.__("shares.table.date")
-											th(data-toggle="tooltip",title="Insufficient Inventory")= i18n.__("shares.table.delete")
-											th(data-toggle="tooltip",title="Fulfill Order")= i18n.__("shares.table.fulfill")
+											th(title=i18n.__("admins.table.header.cancelorder"))= i18n.__("shares.table.delete")
+											th(title="Fulfill Order")= i18n.__("shares.table.fulfill")
 									tbody
 										-var ob = mysharesrequest
 										-for(var prop in ob)
@@ -306,6 +306,8 @@ block content
 											- var showfulfill = ""
 											- if(checkedstr===true)
 												- showfulfill = "display:none;"
+											- var canc = i18n.__("admins.table.x") + #{ob[prop].agent}
+											- var f = i18n.__("admins.table.f") + #{ob[prop].agent}
 											tr(class=isnew)
 												td(class="wrapped2") #{ob[prop].agent}
 												td(class="wrapped2") #{ob[prop].vendor}
@@ -313,11 +315,11 @@ block content
 												td(class="wrapped2") #{ob[prop].requestoremail}
 												td(class="wrapped2") #{ob[prop].email}
 												td #{d}
-												td(style="width: 17px;")
+												td(style="width: 17px;" title=c)
 													form(action="/admincancelshare" method="post")
 														div(class="checkboxThree1", style=showcancel)
 															input(style="position:absolute;left: -9999px;" type="checkbox" id=c name="cancel" value="cancel" class="cancel" checked=(checkedstr===true ? "checked" : undefined))
-															label(class="labelcheck1 shadow" for=c)
+															label(class="labelcheck1 shadow" for=canc)
 														//input(type="checkbox" name="cancel" value="cancel" class="cancel" checked=(checkedstr===true ? "checked" : undefined))
 														input(type="hidden" class="agentid" name="agent" value=ob[prop].agent)
 														input(type="hidden" class="labid" name="lab" value=ob[prop].lab)
@@ -328,7 +330,7 @@ block content
 														input(type="hidden" name="date" value=ob[prop].date)
 														input(type="hidden" name="table" value=currentlabname.replace(" ","").toLowerCase() + "_orders")
 														input(type="hidden" name="adminType" value="laborders")
-												td(style="width: 17px;")
+												td(style="width: 17px;" title=f)
 													form(action="/fulfillshare" method="post")
 														
 														div(class="checkboxThree1", style=showfulfill)
@@ -391,7 +393,7 @@ block content
 											th= i18n.__("shares.table.email")
 											th= i18n.__("shares.table.vendor")
 											th= i18n.__("shares.table.catalog")
-											th(data-toggle="tooltip",title="Insufficient Inventory")= i18n.__("shares.table.delete")
+											th(title=i18n.__("admins.table.header.insuff"))= i18n.__("shares.table.delete")
 									tbody
 										-var ob = myshares
 										-for(var prop in ob)
@@ -403,13 +405,14 @@ block content
 											- if(insuff == 0)
 												- qtyinsufficient = "backColorinsuff"
 												- checkedstr = true
+												- var canc = #{ob[prop].agent} + i18n.__("admins.table.insuff")
 											tr(class=qtyinsufficient)
 												td(class="wrapped2") #{ob[prop].agent}
 												td(class="wrapped2 desktabonly")  #{ob[prop].location}
 												td(class="wrapped2")  #{ob[prop].email}
 												td(class="wrapped2")  #{ob[prop].vendor}
 												td(class="wrapped2")  #{ob[prop].catalognumber}
-												td(style="width: 17px;display:block")
+												td(style="width: 17px;display:block", title=canc)
 													form(action="/admincancelshare" method="post")
 														div(class="checkboxThree1", style=showfulfill)
 															input(style="position:absolute;left: -9999px;" type="checkbox" id=c name="cancel" value="cancel" class="cancel" checked=(checkedstr===true ? "checked" : undefined))
