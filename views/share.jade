@@ -69,6 +69,7 @@ block content
 								tbody
 									-var ob = mysharesrequest
 									-for(var prop in ob)
+										- var canc = i18n.__("admins.table.x") + ob[prop].agent
 										- var n = ob[prop].status
 										- var d = new Date(ob[prop].date)
 										- d = d.toLocaleDateString("en-US")
@@ -80,6 +81,7 @@ block content
 										- if(insuff == 0)
 											- isnew = "backColorinsuff"
 											- checkedstr = true
+											- canc = i18n.__("admins.table.repl") + ob[prop].agent
 										- var lab = (ob[prop].lab).replace(" ","").toLowerCase();
 										- var c = "cancel" + prop
 										- var status = ob[prop].status
@@ -90,7 +92,7 @@ block content
 										- //isnew += " animated fadeInUp"
 										- //if(mod == 0)
 											- //isnew += " animated fadeInUp"
-										- var canc = i18n.__("admins.table.x") + ob[prop].agent
+										
 										tr(class=isnew)
 											td(class="wrapped2") #{ob[prop].agent}
 											td(class="wrapped2 desktabonly") #{ob[prop].vendor}
@@ -163,15 +165,17 @@ block content
 										- var qtyinsufficient = ""
 										- var checkedstr = false
 										- var insuff = parseInt(ob[prop].insufficient)
+										- var canc = ob[prop].agent + i18n.__("admins.table.insuff")
 										- if(insuff == 0)
 											- qtyinsufficient = "backColorinsuff"
 											- checkedstr = true
+											- canc = ob[prop].agent + i18n.__("admins.table.repl")
 										- var c = "cancelr" + prop
 										- //var mod = prop % 2
 										- //qtyinsufficient += " animated fadeInUp"
 										- //if(mod == 0)
 											- //qtyinsufficient += " animated fadeInUp"
-										- var canc = ob[prop].agent + i18n.__("admins.table.insuff")
+										
 										tr(class=qtyinsufficient)
 											td(class="wrapped2") #{ob[prop].agent}
 											td(class="wrapped2") #{ob[prop].vendor}
