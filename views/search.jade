@@ -39,8 +39,8 @@ block content
     //    img(src="/images/logo_one_bottle_L.png", alt="The Yoke",  title="Yoke", class="searchlogoimg")
     div(class="zoomnow container login marginbottom positionings searchmargins container2 " + slide)
         div(class="searchlogo")
-          img(src="/images/logo_one_bottle_L_2.png", alt="The Yoke",  title="Yoke", class="searchlogoimg")
-          img(src="/images/logo_one_bottle_R_2.png", alt="The Yoke",  title="Yoke", class="searchlogoimg")
+          img(src="/images/logo_one_bottle_L_2.png", alt="The Yoke",  data-toggle="tooltip",title="Yoke", class="searchlogoimg")
+          img(src="/images/logo_one_bottle_R_2.png", alt="The Yoke", data-toggle="tooltip", title="Yoke", class="searchlogoimg")
         div(class="radiosearch keysearchs searchradios")
           div(style="float:left;")
             input(type="radio" name="search" value="keysearch" id="keyradio")
@@ -73,7 +73,7 @@ block content
                                     option(value='#{ob2[prop].agent}')
                         div(class="buttons positionbuttons", style="display: block; text-align: center; ")
                             button(class="btn " + classButton + " btn-lg btn-block btnsearch shadow" type='submit' style="margin: 0 auto;width: 278px;") #{i18n.__("search.buttonreagent")}
-                            img(src="images/yoke5.png", alt="The Search", title="Search", style="border-width:0px; width: 35px; margin-top: -99px; margin-left: 370px;" class="desktabonly")
+                            img(src="images/yoke5.png", alt="The Search", data-toggle="tooltip",title="Search", style="border-width:0px; width: 35px; margin-top: -99px; margin-left: 370px;" class="desktabonly")
                     //div(class="desktabonly" , style="background-color: #3d9dcb; height: 1px;width: 50%;text-align: center;margin: 0 auto;position: relative;top: -25px;")
 
         div(class="keysearch", id="catalogsearch", style="display:none")
@@ -98,7 +98,7 @@ block content
                                     option(value='#{ob2[prop].catalognumber}')
                         div(class="buttons positionbuttons", style="display: block; text-align: center;")
                             button(class="btn " + classButtonCatalog + " btn-lg btn-block btnsearch shadow" type='submit' style="margin: 0 auto;width: 278px;") #{i18n.__("search.buttoncatalog")}
-                            img(src="images/yoke6.png", alt="The Search", title="Search", style="border-width:0px; width: 35px; margin-top: -99px; margin-left: 370px;", class="desktabonly")
+                            img(src="images/yoke6.png", alt="The Search", data-toggle="tooltip",title="Search", style="border-width:0px; width: 35px; margin-top: -99px; margin-left: 370px;", class="desktabonly")
                     //div(class="searchcatalogbar desktabonly")
         script.
           console.log("catalogradio: " + "#{catalogradio}");
@@ -176,15 +176,15 @@ block content
               //$("#loopkey").addClass( "colmenu" );
           }
         div(class="slide-out-tip-div desktabonly", style="display:none;z-index:10;position: fixed;top: 25% !important;max-height:380px;")
-            a(class="handle" href="", title='#{i18n.__("search.tip.title")}', style="right: -60px;left:-60px;")!=Content
+            a(class="handle" href="", data-toggle="tooltip", title='#{i18n.__("search.tip.title")}', style="right: -60px;left:-60px;")!=Content
             div(style="padding: 1px;color:white;top: -45px;position: relative;max-height: 320px;overflow: auto;")
                 div(style="text-align: center;")
                     span(class="zoom_controls")
-                        a(href="#" class="zoom_out zoomicon" title=i18n.__("zoom.minus"))
+                        a(href="#" class="zoom_out zoomicon" data-toggle="tooltip" title=i18n.__("zoom.minus"))
                           span(class="fa fa-minus-circle")
-                        a(href="#" class="zoom_reset zoomicon" title=i18n.__("zoom.reset"))
+                        a(href="#" class="zoom_reset zoomicon" data-toggle="tooltip" title=i18n.__("zoom.reset"))
                           span(class="fa fa-circle-o-notch")
-                        a(href="#" class="zoom_in zoomicon" title=i18n.__("zoom.plus"))
+                        a(href="#" class="zoom_in zoomicon" data-toggle="tooltip" title=i18n.__("zoom.plus"))
                           span(class="fa fa-plus-circle")
                     div(class="threepointssep", style="margin-top: -10px;")
                 p(style="font-size: 12pt;")!= i18n.__("search.tip.header")
@@ -285,7 +285,7 @@ block content
                                 td(data-title="#{i18n.__('search.table.location')}") #{ob[prop].location}
                                 td(data-title="" class="carticon")
                                   span(onclick="iosLight('#{agent}','#{vendor}','#{catalognumber}','#{reqemail}','#{location}','#{category}','#{qty}','#{lab}','#{lang}','#{ob[prop].lang}')", style="cursor:pointer")
-                                        img(src="images/cart.png", class="imgcart", alt="Order now", title="Order now")
+                                        img(src="images/cart.png", class="imgcart", alt="Order now", data-toggle="tooltip",title="Order now")
                             - j = j + 1
                       script.
                         /*$("#rankTblSearch").tableDnD({

@@ -9,7 +9,7 @@ block content
 
   div(class="container login front container2 containertop", style="text-align: center;position: relative;display:none")
      a(href="/search")
-        img(src="/images/yoke4.png", alt="The Yoke",  title="Yoke", class="yokelogo")
+        img(src="/images/yoke4.png", alt="The Yoke", data-toggle="tooltip", title="Yoke", class="yokelogo")
        div
         if !userfound && !usernotfound
             h1= i18n.__("forgot.title")
@@ -24,7 +24,7 @@ block content
                             input(name="forgotuser" type="text" id="forgotuser" class="form-control" placeholder=i18n.__("forgot.username"))
                         div(class="buttons")
                         button.btn.btn-success.btn-lg.btn-block.shadow.resizebutton(type='submit')= i18n.__("forgot.button")
-                        img(src="images/envelope_email.png", alt="The Lab", title="Lab", style="border-width:0px; width: 45px; margin-top: -44px;float: right;position:relative;left:25px;display:none;", class="noshowmobile767")
+                        img(src="images/envelope_email.png", alt="The Lab", data-toggle="tooltip", title="Lab", style="border-width:0px; width: 45px; margin-top: -44px;float: right;position:relative;left:25px;display:none;", class="noshowmobile767")
 
         if userfound
             div(id="ctl00_Div2" class="frontdivs")
@@ -47,7 +47,7 @@ block content
                                     input(name="forgotuser" type="text" id="forgotuser" class="form-control" placeholder=i18n.__("forgot.username") style="border-color:#8a6d3b")
                                 div(class="buttons")
                                 button.btn.btn-success.btn-lg.btn-block.shadow.resizebutton(type='submit')= i18n.__("forgot.button")
-                                img(src="images/envelope_email.png", alt="The Lab", title="Lab", style="border-width:0px; width: 45px; margin-top: -44px;float: right;position:relative;left:25px;", class="noshowmobile767")
+                                img(src="images/envelope_email.png", alt="The Lab", data-toggle="tooltip", title="Lab", style="border-width:0px; width: 45px; margin-top: -44px;float: right;position:relative;left:25px;", class="noshowmobile767")
 
   script.
     $( document ).ready(function() {

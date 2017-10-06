@@ -326,7 +326,7 @@ block content
 						var dataintro = "#{dataIntro}";
 
 						if(dataintro != null && dataintro != ""){
-						$(".intro2").before("<label for='togglerules' id='labeldownload' class='labeldownload animated fadeInUp' title='Download PDF'><span class='fa fa-download'></span></label><label for='togglerules' id='labeldownloadxl' class='labeldownload animated fadeInUp labeldownloadxl' title='Download Excel'><span class='fa fa-database'></span></label>");
+						$(".intro2").before("<label for='togglerules' id='labeldownload' class='labeldownload animated fadeInUp' data-toggle="tooltip" title='Download PDF'><span class='fa fa-download'></span></label><label for='togglerules' id='labeldownloadxl' class='labeldownload animated fadeInUp labeldownloadxl' data-toggle="tooltip" title='Download Excel'><span class='fa fa-database'></span></label>");
 
 						var filetext = "#{i18n.__("reports.download.today.file")}";
 
@@ -549,7 +549,7 @@ block content
 											label(class="labelcheck shadow",for="reportCatalogMoney")
 									//input(type="checkbox" name="reportCatalogMoney" id="reportCatalogMoney" value="catalogNumber" style="margin-top: -13px;")
 									div(style="max-width:100%; margin-top: 90px;margin-bottom:10px")
-										//img(src="images/logo_one_bottle_L_3.png", alt="The Lab", title="Lab", class="reportbutton")
+										//img(src="images/logo_one_bottle_L_3.png", alt="The Lab", data-toggle="tooltip",title="Lab", class="reportbutton")
 										button.btn.btn-success.btn-lg.btn-block.reportbutton2.shadow(type="submit",value="Report",name="submit")= i18n.__("reports.money.button")
 								if(resultsMoney != null && resultsMoney !="")
 									script(type="text/javascript" src="/javascripts/jspdf.js")
@@ -604,7 +604,7 @@ block content
 										var datamoney = "#{dataMoney}";
 
 										if(datamoney != null && datamoney != ""){
-										$(".intro2").before("<label for='togglerules' id='labeldownload'  class='labeldownload animated fadeInUp' title='Download PDF'><span class='fa fa-download'></span></label><label for='togglerules' id='labeldownloadxl'  class='labeldownload animated fadeInUp labeldownloadxl' title='Download Excel'><span class='fa fa-database'></span></label>");
+										$(".intro2").before("<label for='togglerules' id='labeldownload'  class='labeldownload animated fadeInUp' data-toggle="tooltip" title='Download PDF'><span class='fa fa-download'></span></label><label for='togglerules' id='labeldownloadxl'  class='labeldownload animated fadeInUp labeldownloadxl' data-toggle="tooltip" title='Download Excel'><span class='fa fa-database'></span></label>");
 										
 										
 
@@ -743,7 +743,7 @@ block content
 												- var lab = ob[prop].labname
 												option(value=lab) #{lab}
 									div(style="max-width:100%; margin-top: 20px;margin-bottom:10px")
-										//img(src="images/logo_one_bottle_R_3.png", alt="The Lab", title="Lab", class="reportbutton")
+										//img(src="images/logo_one_bottle_R_3.png", alt="The Lab", data-toggle="tooltip",title="Lab", class="reportbutton")
 										button.btn.btn-success.btn-lg.btn-block.reportbutton2.shadow(type="submit",value="Report",name="submit")= i18n.__("reports.orders.button")
 								span(id="triggerSafariOrder")
 								if(resultsOrders != null && resultsOrders !="")
@@ -808,7 +808,7 @@ block content
 										var dataorders = "#{dataOrders}";
 
 										if(dataorders != null && dataorders != ""){
-										$(".intro2").before("<label for='togglerules' id='labeldownload'  class='labeldownload animated fadeInUp' title='Download PDF'><span class='fa fa-download'></span></label><label for='togglerules' id='labeldownloadxl'  class='labeldownload animated fadeInUp labeldownloadxl' title='Download Excel'><span class='fa fa-database'></span></label>");
+										$(".intro2").before("<label for='togglerules' id='labeldownload'  class='labeldownload animated fadeInUp' data-toggle="tooltip" title='Download PDF'><span class='fa fa-download'></span></label><label for='togglerules' id='labeldownloadxl'  class='labeldownload animated fadeInUp labeldownloadxl' data-toggle="tooltip" title='Download Excel'><span class='fa fa-database'></span></label>");
 										
 										
 
@@ -955,7 +955,7 @@ block content
 									input(name="reportDateTo" style="margin-left: 40px;margin-bottom:10px;margin-top: -13px;" type="tel" id="reportDateTo" class="form-control")
 									
 									div(style="max-width:100%; margin-top: 20px;margin-bottom:10px")
-										//img(src="images/logo_one_bottle_L_3.png", alt="The Lab", title="Lab", class="reportbutton")
+										//img(src="images/logo_one_bottle_L_3.png", alt="The Lab", data-toggle="tooltip",title="Lab", class="reportbutton")
 										button.btn.btn-success.btn-lg.btn-block.reportbutton2.shadow(type="submit",value="Report",name="submit")= i18n.__("reports.shares.button")
 								if(resultsShares != null && resultsShares !="")
 									script(type="text/javascript" src="/javascripts/jspdf.js")
@@ -1016,7 +1016,7 @@ block content
 										var datashares = "#{dataShares}";
 
 										if(datashares != null && datashares != ""){
-										$(".intro2").before("<label for='togglerules' id='labeldownload' class='labeldownload animated fadeInUp' title='Download PDF'><span class='fa fa-download'></span></label><label for='togglerules' id='labeldownloadxl'  class='labeldownload animated fadeInUp labeldownloadxl' title='Download Excel'><span class='fa fa-database'></span></label>");
+										$(".intro2").before("<label for='togglerules' id='labeldownload' class='labeldownload animated fadeInUp' data-toggle="tooltip" title='Download PDF'><span class='fa fa-download'></span></label><label for='togglerules' id='labeldownloadxl'  class='labeldownload animated fadeInUp labeldownloadxl' data-toggle="tooltip" title='Download Excel'><span class='fa fa-database'></span></label>");
 										
 										
 
@@ -1188,7 +1188,7 @@ block content
 											input(type="checkbox" name="reportCatalogInsuff" id="reportCatalogInsuff" value="catalogNumber")
 											label(class="labelcheck shadow",for="reportCatalogInsuff")
 									div(style="max-width:100%; margin-top: 90px;margin-bottom:10px")
-										//img(src="images/logo_one_bottle_R_3.png", alt="The Lab", title="Lab", class="reportbutton")
+										//img(src="images/logo_one_bottle_R_3.png", alt="The Lab", data-toggle="tooltip",title="Lab", class="reportbutton")
 										button.btn.btn-success.btn-lg.btn-block.reportbutton2.shadow(type="submit",value="Report",name="submit")= i18n.__("reports.insuff.button")
 								if(resultsInsuff != null && resultsInsuff !="")
 									//- var ob0 = dataInsuff
@@ -1240,7 +1240,7 @@ block content
 										var datainsuff = "#{dataInsuff}";
 
 										if(datainsuff != null && datainsuff != ""){
-										$(".intro2").before("<label for='togglerules' id='labeldownload'  class='labeldownload animated fadeInUp' title='Download PDF'><span class='fa fa-download'></span></label><label for='togglerules' id='labeldownloadxl'  class='labeldownload animated fadeInUp labeldownloadxl' title='Download Excel'><span class='fa fa-database'></span></label>");
+										$(".intro2").before("<label for='togglerules' id='labeldownload'  class='labeldownload animated fadeInUp' data-toggle="tooltip" title='Download PDF'><span class='fa fa-download'></span></label><label for='togglerules' id='labeldownloadxl'  class='labeldownload animated fadeInUp labeldownloadxl' data-toggle="tooltip" title='Download Excel'><span class='fa fa-database'></span></label>");
 
 										$(".intro2").prev('#labeldownloadxl').click(function() {
 											/* original data */
@@ -1335,15 +1335,15 @@ block content
 			div(class="intro2 animated fadeIn",style="display:none;")
 			div(class="threepointssep desktabonly3", style="top:10px;display:none;margin-top: 25px;margin-bottom: 15px;")
 			div(class="slide-out-tip-div desktabonly", style="display:none;z-index:1;position: fixed;top: 25% !important;max-height:380px;")
-				a(class="handle" href="last-transactions", title='#{i18n.__("search.tip.header")}', style="right: -60px;left:-60px;top:25px;")!=Content
+				a(class="handle" href="last-transactions", data-toggle="tooltip",title='#{i18n.__("search.tip.header")}', style="right: -60px;left:-60px;top:25px;")!=Content
 				div(style="padding: 1px;color:white;top: -45px;position: relative;max-height: 320px;overflow: auto;")
 					div(style="text-align: center;")
 						span(class="zoom_controls")
-							a(href="#" class="zoom_out zoomicon" title=i18n.__("zoom.minus"))
+							a(href="#" class="zoom_out zoomicon" data-toggle="tooltip" title=i18n.__("zoom.minus"))
 								span(class="fa fa-minus-circle")
-							a(href="#" class="zoom_reset zoomicon" title=i18n.__("zoom.reset"))
+							a(href="#" class="zoom_reset zoomicon" data-toggle="tooltip" title=i18n.__("zoom.reset"))
 								span(class="fa fa-circle-o-notch")
-							a(href="#" class="zoom_in zoomicon" title=i18n.__("zoom.plus"))
+							a(href="#" class="zoom_in zoomicon" data-toggle="tooltip" title=i18n.__("zoom.plus"))
 								span(class="fa fa-plus-circle")
 						div(class="threepointssep", style="margin-top: -10px;")
 					p(style="font-size: 12pt;")!= i18n.__("reports.tip.header")

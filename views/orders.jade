@@ -20,7 +20,7 @@ block content
               p!= i18n.__("orders.non.subtitle")
               div(class="searchlogo", style="margin-top:50px")
                 span(class="fa fa-circle-thin roue1" style="")
-                img(src="/images/cart.png", alt="The Yoke",  title="Yoke", style="width: 200px;")
+                img(src="/images/cart.png", alt="The Yoke", data-toggle="tooltip", title="Yoke", style="width: 200px;")
                 span(class="fa fa-circle-thin roue2")
               div(class="threepointssep")
             if(orderresults != "" && email == undefined)
@@ -100,15 +100,15 @@ block content
                         
                       });
       div(class="slide-out-tip-div desktabonly", style="display:none;z-index:1;position: fixed;top: 25% !important;max-height:380px;")
-        a(class="handle" href="last-transactions", title='#{i18n.__("search.tip.header")}', style="right: -60px;,left:-85px;top:25px;")!=Content
+        a(class="handle" href="last-transactions", data-toggle="tooltip",title='#{i18n.__("search.tip.header")}', style="right: -60px;,left:-85px;top:25px;")!=Content
         div(style="padding: 1px;color:white;top: -45px;position: relative;max-height: 320px;overflow: auto;")
             div(style="text-align: center;")
                 span(class="zoom_controls")
-                    a(href="#" class="zoom_out zoomicon" title=i18n.__("zoom.minus"))
+                    a(href="#" class="zoom_out zoomicon" data-toggle="tooltip" title=i18n.__("zoom.minus"))
                       span(class="fa fa-minus-circle")
-                    a(href="#" class="zoom_reset zoomicon" title=i18n.__("zoom.reset"))
+                    a(href="#" class="zoom_reset zoomicon" data-toggle="tooltip" title=i18n.__("zoom.reset"))
                       span(class="fa fa-circle-o-notch")
-                    a(href="#" class="zoom_in zoomicon" title=i18n.__("zoom.plus"))
+                    a(href="#" class="zoom_in zoomicon" data-toggle="tooltip" title=i18n.__("zoom.plus"))
                       span(class="fa fa-plus-circle")
                 div(class="threepointssep", style="margin-top: -10px;")
             p(style="font-size: 12pt;")!= i18n.__("orders.tip.header")
@@ -137,7 +137,7 @@ block content
             //div(class="alert alert-orders alert-" + boostercolor + " fade in alert-dismissable order-container /*alertshadow*/",style="margin-top:50px;width:100%")
             div(class="threepointssep mobileonly5")
             div(class="alert alert-orders fade in alert-dismissable order-container",style="margin-top:0px;width:100%;margin-bottom:-43px;")
-              a(href="#", class="close", data-dismiss="alert", aria-label="close", title="close")="x"
+              a(href="#", class="close", data-dismiss="alert", aria-label="close", data-toggle="tooltip",title="close")="x"
               span!= booster          
               div(class="threepointssep desktoponly4")
           div(class="threepointssep mobileonly4")

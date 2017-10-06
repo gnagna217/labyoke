@@ -54,7 +54,7 @@ block content
 						span= i18n.__("shares.admin.file")
 					div(class="buttons")
 						button.btn.btn-success.btn-lg.btn-block.shadow(type="submit",value="Upload",name="submit")= i18n.__("shares.admin.button")
-						//img(src="/images/yoke5.png", class=hidefadesections + " noshowmobile992", alt="The Lab", title="Lab", style="border-width:0px; width: 35px; margin-top: -67px; margin-left: 90%;")
+						//img(src="/images/yoke5.png", class=hidefadesections + " noshowmobile992", alt="The Lab", data-toggle="tooltip",title="Lab", style="border-width:0px; width: 35px; margin-top: -67px; margin-left: 90%;")
 			if(nosuccess == "databaserror")
 				div
 					div(id="uploaderror", class="table-responsive alert alert-danger-report", style="margin-top: 25px;")
@@ -277,8 +277,8 @@ block content
 											th(class="")= i18n.__("shares.table.requestor")
 											th(class="")= i18n.__("shares.table.email")
 											th= i18n.__("shares.table.date")
-											th(title="Insufficient Inventory")= i18n.__("shares.table.delete")
-											th(title="Fulfill Order")= i18n.__("shares.table.fulfill")
+											th(data-toggle="tooltip",title="Insufficient Inventory")= i18n.__("shares.table.delete")
+											th(data-toggle="tooltip",title="Fulfill Order")= i18n.__("shares.table.fulfill")
 									tbody
 										-var ob = mysharesrequest
 										-for(var prop in ob)
@@ -391,7 +391,7 @@ block content
 											th= i18n.__("shares.table.email")
 											th= i18n.__("shares.table.vendor")
 											th= i18n.__("shares.table.catalog")
-											th(title="Insufficient Inventory")= i18n.__("shares.table.delete")
+											th(data-toggle="tooltip",title="Insufficient Inventory")= i18n.__("shares.table.delete")
 									tbody
 										-var ob = myshares
 										-for(var prop in ob)
@@ -456,15 +456,15 @@ block content
 					div(class="threepointssep mobileonly3")
 
 		div(class="slide-out-tip-div desktabonly", style="display:none;z-index:9;position: fixed;top: 25% !important;max-height:380px;")
-			a(class="handle" href="last-transactions", title='#{i18n.__("admins.tip.header")}', style="right: -60px;,left:-60px;top:25px;")!=Content
+			a(class="handle" href="last-transactions", data-toggle="tooltip",title='#{i18n.__("admins.tip.header")}', style="right: -60px;,left:-60px;top:25px;")!=Content
 			div(style="padding: 1px;color:white;top: -45px;position: relative;max-height: 320px;overflow: auto;")
 				div(style="text-align: center;")
 					span(class="zoom_controls")
-						a(href="#" class="zoom_out zoomicon" title=i18n.__("zoom.minus"))
+						a(href="#" class="zoom_out zoomicon" data-toggle="tooltip" title=i18n.__("zoom.minus"))
 							span(class="fa fa-minus-circle")
-						a(href="#" class="zoom_reset zoomicon" title=i18n.__("zoom.reset"))
+						a(href="#" class="zoom_reset zoomicon" data-toggle="tooltip" title=i18n.__("zoom.reset"))
 							span(class="fa fa-circle-o-notch")
-						a(href="#" class="zoom_in zoomicon" title=i18n.__("zoom.plus"))
+						a(href="#" class="zoom_in zoomicon" data-toggle="tooltip" title=i18n.__("zoom.plus"))
 							span(class="fa fa-plus-circle")
 				div(class="threepointssep", style="margin-top: -10px;")
 				p(style="font-size: 12pt;")!= i18n.__("admins.tip.header")
