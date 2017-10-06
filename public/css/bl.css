@@ -91,11 +91,12 @@ video::-webkit-media-controls-panel {
 }
 
 .videocontainer{
-    width: 30.5%;
+    width: 33.33%;
     float: left;
     margin-top: 20px;
-    margin-left: 2%;
-    padding-left: 0px;
+    /* margin-left: 2%; */
+    padding-left: 2%;
+    padding-right: 2%;
 }
 .videobox{
   /*background-color:rgba(61, 157, 203, 0.56);*/
@@ -1202,8 +1203,8 @@ body.large-screen .card-list-table tbody tr:hover td {
 @media (max-width: 850px) {
 /*start videos*/
 .videocontainer{
-  width: 47%;
-  margin-left: 2%;
+  width: 50%;
+  /* margin-left: 2%; */
 }
 /*end videos*/
     .card-list-table tbody tr {
