@@ -75,7 +75,7 @@ video::-webkit-media-controls-wireless-playback-picker-button{
 }
 
 video::-internal-media-controls-download-button {
-    display:none;
+    display:none !important;
 }
 
 video::-webkit-media-controls-enclosure {
