@@ -66,9 +66,7 @@ video::-webkit-media-controls-rewind-button{
   display:none;
 }
 
-video::-webkit-media-controls-panel{
-  width: calc(100%) !important;
-}
+
 
 video::-webkit-media-controls-wireless-playback-picker-button{
   display:none;
@@ -86,9 +84,13 @@ video::-webkit-media-controls-enclosure {
     overflow:hidden;
 }
 
-video::-webkit-media-controls-panel {
-    width: calc(100% + 30px); /* Adjust as needed */
+video::-webkit-media-controls-panel{
+  width: calc(100%);
 }
+
+/*video::-webkit-media-controls-panel {
+    width: calc(100% + 30px); 
+}*/
 
 .helpcamera{
   width: 100%; color: #66b2d6; top: 20px; position: relative; float: left; font-size: 75pt !important;
