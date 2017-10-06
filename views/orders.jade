@@ -20,7 +20,7 @@ block content
               p!= i18n.__("orders.non.subtitle")
               div(class="searchlogo", style="margin-top:50px")
                 span(class="fa fa-circle-thin roue1" style="")
-                img(src="/images/cart.png", alt="The Yoke", data-toggle="tooltip", title="Yoke", style="width: 200px;")
+                img(src="/images/cart.png", alt="The Cart Order", style="width: 200px;")
                 span(class="fa fa-circle-thin roue2")
               div(class="threepointssep")
             if(orderresults != "" && email == undefined)
@@ -137,7 +137,7 @@ block content
             //div(class="alert alert-orders alert-" + boostercolor + " fade in alert-dismissable order-container /*alertshadow*/",style="margin-top:50px;width:100%")
             div(class="threepointssep mobileonly5")
             div(class="alert alert-orders fade in alert-dismissable order-container",style="margin-top:0px;width:100%;margin-bottom:-43px;")
-              a(href="#", class="close", data-dismiss="alert", aria-label="close", data-toggle="tooltip",title="close")="x"
+              a(href="#", class="close", data-dismiss="alert", aria-label="close", title="close")="x"
               span!= booster          
               div(class="threepointssep desktoponly4")
           div(class="threepointssep mobileonly4")
