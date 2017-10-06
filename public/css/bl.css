@@ -86,7 +86,7 @@ video::-webkit-media-controls-panel {
     width: 30.5%;
     float: left;
     margin-top: 20px;
-    margin-left: 2%;
+    margin-left: 1%;
     padding-left: 0px;
 }
 .videobox{
@@ -1195,7 +1195,7 @@ body.large-screen .card-list-table tbody tr:hover td {
 /*start videos*/
 .videocontainer{
   width: 47%;
-  margin-left: 2%;
+  margin-left: 1%;
 }
 /*end videos*/
     .card-list-table tbody tr {
