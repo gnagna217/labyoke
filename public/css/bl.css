@@ -66,9 +66,9 @@ video::-webkit-media-controls-rewind-button{
   display:none;
 }
 
-/*video::-webkit-media-controls-fullscreen-button{
-  display:none;
-}*/
+video::-webkit-media-controls-panel{
+  width: calc(100%) !important;
+}
 
 video::-webkit-media-controls-wireless-playback-picker-button{
   display:none;
@@ -93,10 +93,10 @@ video::-webkit-media-controls-panel {
 .videocontainer{
     width: 33.33%;
     float: left;
-    margin-top: 20px;
+    margin-top: 50px;
     /* margin-left: 2%; */
-    padding-left: 2%;
-    padding-right: 2%;
+    padding-left: 1%;
+    padding-right: 4%;
 }
 .videobox{
   /*background-color:rgba(61, 157, 203, 0.56);*/
