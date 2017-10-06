@@ -503,12 +503,12 @@
     "index.reportsInsuff.param1": "Réactifs en Quantités Insuffisantes",
 
     "index.account.to": ":",
-    "index.account.name": "prénom",
-    "index.account.surname": "nom de famille",
-    "index.account.tel": "numéro de téléphone",
-    "index.account.lang": "langue",
-    "index.account.oninsuff": "notification d'un réactif insuffisant",
-    "index.account.oninsuff": "notification d'une commande remplie",
+    "index.account.name": "Prénom",
+    "index.account.surname": "Nom de Famille",
+    "index.account.tel": "Numéro de Téléphone",
+    "index.account.lang": "Langue",
+    "index.account.oninsuff": "Notification d'un Réactif Insuffisant",
+    "index.account.onfill": "Notification d'une Commande Remplie",
     "index.account.yes":"Oui",
     "index.account.no":"Non",
 

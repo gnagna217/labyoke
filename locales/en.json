@@ -503,12 +503,12 @@
     "index.reportsInsuff.param1": "Insufficient Reagents Shared",
 
     "index.account.to": "to",
-    "index.account.name": "name",
-    "index.account.surname": "last name",
-    "index.account.tel": "telephone number",
-    "index.account.lang": "language",
-    "index.account.oninsuff": "Insufficient Reagent notification",
-    "index.account.onfill": "Fulfilled Order notification",
+    "index.account.name": "Name",
+    "index.account.surname": "Last Name",
+    "index.account.tel": "Telephone Number",
+    "index.account.lang": "Language",
+    "index.account.oninsuff": "Insufficient Reagent Notification",
+    "index.account.onfill": "Fulfilled Order Notification",
     "index.account.yes":"Yes",
     "index.account.no":"No",
 
