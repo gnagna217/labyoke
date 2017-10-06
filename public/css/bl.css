@@ -78,6 +78,10 @@ video::-internal-media-controls-download-button {
     display:none !important;
 }
 
+video::-webkit-media-controls-download-button {
+    display:none !important;
+}
+
 video::-webkit-media-controls-enclosure {
     overflow:hidden;
 }
