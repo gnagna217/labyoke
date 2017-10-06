@@ -73,7 +73,7 @@ block content
                                     option(value='#{ob2[prop].agent}')
                         div(class="buttons positionbuttons", style="display: block; text-align: center; ")
                             button(class="btn " + classButton + " btn-lg btn-block btnsearch shadow" type='submit' style="margin: 0 auto;width: 278px;") #{i18n.__("search.buttonreagent")}
-                            img(src="images/yoke5.png", alt="The Search", data-toggle="tooltip",title="Search", style="border-width:0px; width: 35px; margin-top: -99px; margin-left: 370px;" class="desktabonly")
+                            img(src="images/yoke5.png", alt="The Search", style="border-width:0px; width: 35px; margin-top: -99px; margin-left: 370px;" class="desktabonly")
                     //div(class="desktabonly" , style="background-color: #3d9dcb; height: 1px;width: 50%;text-align: center;margin: 0 auto;position: relative;top: -25px;")
 
         div(class="keysearch", id="catalogsearch", style="display:none")
@@ -180,11 +180,11 @@ block content
             div(style="padding: 1px;color:white;top: -45px;position: relative;max-height: 320px;overflow: auto;")
                 div(style="text-align: center;")
                     span(class="zoom_controls")
-                        a(href="#" class="zoom_out zoomicon" data-toggle="tooltip" title=i18n.__("zoom.minus"))
+                        a(href="#" class="zoom_out zoomicon" title=i18n.__("zoom.minus"))
                           span(class="fa fa-minus-circle")
-                        a(href="#" class="zoom_reset zoomicon" data-toggle="tooltip" title=i18n.__("zoom.reset"))
+                        a(href="#" class="zoom_reset zoomicon"  title=i18n.__("zoom.reset"))
                           span(class="fa fa-circle-o-notch")
-                        a(href="#" class="zoom_in zoomicon" data-toggle="tooltip" title=i18n.__("zoom.plus"))
+                        a(href="#" class="zoom_in zoomicon"  title=i18n.__("zoom.plus"))
                           span(class="fa fa-plus-circle")
                     div(class="threepointssep", style="margin-top: -10px;")
                 p(style="font-size: 12pt;")!= i18n.__("search.tip.header")
