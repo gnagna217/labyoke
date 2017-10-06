@@ -285,7 +285,7 @@ block content
                                 td(data-title="#{i18n.__('search.table.location')}") #{ob[prop].location}
                                 td(data-title="" class="carticon")
                                   span(onclick="iosLight('#{agent}','#{vendor}','#{catalognumber}','#{reqemail}','#{location}','#{category}','#{qty}','#{lab}','#{lang}','#{ob[prop].lang}')", style="cursor:pointer")
-                                        img(src="images/cart.png", class="imgcart", alt=i18n.__("search.resultssubtitle"), data-toggle="tooltip",title="i18n.__("search.resultssubtitle"))
+                                        img(src="images/cart.png", class="imgcart", alt=i18n.__("search.resultssubtitle"), data-toggle="tooltip",title=i18n.__("search.resultssubtitle"))
                             - j = j + 1
                       script.
                         /*$("#rankTblSearch").tableDnD({
