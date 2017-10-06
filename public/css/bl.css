@@ -68,9 +68,9 @@ video::-webkit-media-controls-rewind-button{
 
 
 
-video::-webkit-media-controls-wireless-playback-picker-button{
+/*video::-webkit-media-controls-wireless-playback-picker-button{
   display:none;
-}
+}*/
 
 video::-internal-media-controls-download-button {
     display:none !important;
