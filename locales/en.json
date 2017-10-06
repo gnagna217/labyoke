@@ -558,7 +558,7 @@
     "admins.table.x": "Cancel order ",
     "admins.table.f": "Fulfill order ",
     "admins.table.insuff": " insufficient",
-    "admins.table.repl": " replenish",
+    "admins.table.repl": "replenish ",
     "admins.table.header.insuff": "Insufficient Inventory",
     "admins.table.header.cancelorder": "Cancel Order",
 

@@ -560,7 +560,7 @@
     "admins.table.x": "Annuler Commande ",
     "admins.table.f": "Remplir Commande ",
     "admins.table.insuff": " insuffisant",
-    "admins.table.repl": " rempli",
+    "admins.table.repl": "rempli ",
     "admins.table.header.insuff": "Inventaire Insuffisant",
     "admins.table.header.cancelorder": "Annuler Commande",
 
