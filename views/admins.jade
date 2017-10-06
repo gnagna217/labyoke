@@ -306,8 +306,8 @@ block content
 											- var showfulfill = ""
 											- if(checkedstr===true)
 												- showfulfill = "display:none;"
-											- var canc = i18n.__("admins.table.x") + #{ob[prop].agent}
-											- var f = i18n.__("admins.table.f") + #{ob[prop].agent}
+											- var canc = i18n.__("admins.table.x") + ob[prop].agent
+											- var f = i18n.__("admins.table.f") + ob[prop].agent
 											tr(class=isnew)
 												td(class="wrapped2") #{ob[prop].agent}
 												td(class="wrapped2") #{ob[prop].vendor}
@@ -405,7 +405,7 @@ block content
 											- if(insuff == 0)
 												- qtyinsufficient = "backColorinsuff"
 												- checkedstr = true
-												- var canc = #{ob[prop].agent} + i18n.__("admins.table.insuff")
+												- var canc = ob[prop].agent + i18n.__("admins.table.insuff")
 											tr(class=qtyinsufficient)
 												td(class="wrapped2") #{ob[prop].agent}
 												td(class="wrapped2 desktabonly")  #{ob[prop].location}
