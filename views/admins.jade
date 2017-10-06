@@ -277,8 +277,8 @@ block content
 											th(class="")= i18n.__("shares.table.requestor")
 											th(class="")= i18n.__("shares.table.email")
 											th= i18n.__("shares.table.date")
-											th(title="Insufficient Inventory")= i18n.__("shares.table.delete")
-											th(title="Fulfill Order")= i18n.__("shares.table.fulfill")
+											th(data-toggle="tooltip",title="Insufficient Inventory")= i18n.__("shares.table.delete")
+											th(data-toggle="tooltip",title="Fulfill Order")= i18n.__("shares.table.fulfill")
 									tbody
 										-var ob = mysharesrequest
 										-for(var prop in ob)
@@ -391,7 +391,7 @@ block content
 											th= i18n.__("shares.table.email")
 											th= i18n.__("shares.table.vendor")
 											th= i18n.__("shares.table.catalog")
-											th(title="Insufficient Inventory")= i18n.__("shares.table.delete")
+											th(data-toggle="tooltip",title="Insufficient Inventory")= i18n.__("shares.table.delete")
 									tbody
 										-var ob = myshares
 										-for(var prop in ob)

@@ -9,6 +9,9 @@
   -webkit-font-smoothing: antialiased;
 }
 
+.table-responsive{
+  overflow: visible !important;
+}
 .tooltip > .tooltip-inner {
     background-color: #2a76b4;
     color: #FFFFFF;

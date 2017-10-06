@@ -65,7 +65,7 @@ block content
 										th(class="deskfullonly")= i18n.__("shares.table.catalog")
 										th(class="")= i18n.__("shares.table.requestor")
 										th= i18n.__("shares.table.date")
-										th(title="Insufficient Inventory")= i18n.__("shares.table.delete")
+										th(data-toggle="tooltip", title="Insufficient Inventory")= i18n.__("shares.table.delete")
 								tbody
 									-var ob = mysharesrequest
 									-for(var prop in ob)
@@ -154,7 +154,7 @@ block content
 										th(class="wrapped")!= i18n.__("shares.table.reagent")
 										th= i18n.__("shares.table.vendor")
 										th= i18n.__("shares.table.catalog")
-										th(title="Insufficient Inventory")= i18n.__("shares.table.delete")
+										th(data-toggle="tooltip",title="Insufficient Inventory")= i18n.__("shares.table.delete")
 								tbody
 									-var ob = myshares
 									-for(var prop in ob)
