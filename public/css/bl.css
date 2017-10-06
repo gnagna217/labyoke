@@ -3790,13 +3790,12 @@ padding-right: 0px;
 .navplaceholder{
     width: 90px;
 }
-.roundaccount{
+/*.roundaccount{
     top: 25px;
-    /*left: -237px;*/
     border-radius: 60px;
     padding: 28px;
     font-size:12px;
-}
+}*/
 .uploadh{
     /*width: 39% !important;*/
 }
@@ -3942,12 +3941,11 @@ margin-top:0px;
 .isregroundaccountLeft{
     left: -176px;
 }
-.roundaccount{
+/*.roundaccount{
     top: 18px;
-    /*left: -216px;*/
     border-radius: 60px;
     padding: 17px;
-}
+}*/
 .nav > li > a {
     position: relative;
     display: block;
@@ -3985,15 +3983,20 @@ margin-top:0px;
 }
 }
 
+ @media (max-width: 784px) {
+.roundaccount{
+    padding: 47px;
+}
+}
+
 
 
 @media (max-width: 796px){
-.roundaccount{
+/*.roundaccount{
     top: 25px;
-    /*left: -251px;*/
     border-radius: 60px;
     padding: 33px;
-}
+}*/
 
 .isadminroundaccountLeft{
     /*left: -189px;*/
@@ -4003,12 +4006,11 @@ margin-top:0px;
     left: -170.5px;
 }
 
-.roundaccount{
+/*.roundaccount{
     top: 18px;
-    /*left: -214px;*/
     border-radius: 60px;
     padding: 17px;
-}
+}*/
 }
 
 @media (max-width: 780px){
