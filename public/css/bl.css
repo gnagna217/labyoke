@@ -9,6 +9,27 @@
   -webkit-font-smoothing: antialiased;
 }
 
+.tooltip > .tooltip-inner {
+    background-color: #2a76b4;
+    color: #FFFFFF;
+    border: none;
+    padding: 5px 10px 5px 10px;
+    font-size: 13px;
+}
+
+.tooltip.top > .tooltip-arrow {
+  border-top: 5px solid #3d9dcb;
+}
+.tooltip.bottom > .tooltip-arrow {
+  border-top: 5px solid #3d9dcb;
+}
+.tooltip.right > .tooltip-arrow {
+  border-top: 5px solid #3d9dcb;
+}
+.tooltip.left > .tooltip-arrow {
+  border-top: 5px solid #3d9dcb;
+}
+
 .myteamcard{
   font-size: 80pt !important;
 }
