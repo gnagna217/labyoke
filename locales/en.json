@@ -543,7 +543,7 @@
     "admins.intro1": " currently highlighted and being requested by your lab members. In total, ",
     "admins.intro2": " request(s)",
     "admins.intro3": "No request",
-    "admins.intro4": " registered for your lab. Cancelled orders <span class='colorinsuff fa fa-square'></span> are highlighted.<div style='margin-bottom: 0px;margin-left: 15px;display: inline-block;' class='checkboxThree1'><input style='position:absolute;left: -9999px;' type='checkbox' id='canceltest4' checked='checked'><label for='canceltest4' class='shadow'></label><p style='margin-left: 25px;'>Action Taken (Order has been fulfilled or Cancelled).</p></div><div class='checkboxThree1' style='display: inline-block;margin-left: 15px;'><input style='position:absolute;left: -9999px;' type='checkbox' id='canceltest5'><label for='canceltest5' class='shadow'></label><p style='margin-left: 25px;'>Pending Action (Order is waiting to be fulfilled or Cancelled).</p></div>",
+    "admins.intro4": " registered for your lab. Cancelled orders <span class='colorinsuff fa fa-square'></span> are highlighted.<div style='margin-bottom: 0px;margin-left: 15px;display: inline-block;' class='checkboxThree1'><input style='position:absolute;left: -9999px;' type='checkbox' id='canceltest4' checked='checked'><label for='canceltest4' class='shadow'></label><p style='margin-left: 25px;'>Action Taken (Order has been Fulfilled or Cancelled).</p></div><div class='checkboxThree1' style='display: inline-block;margin-left: 15px;'><input style='position:absolute;left: -9999px;' type='checkbox' id='canceltest5'><label for='canceltest5' class='shadow'></label><p style='margin-left: 25px;'>Pending Action (Order is waiting to be Fulfilled or Cancelled).</p></div>",
 
     "admins.none.title": "Admin Lab Reagents.",
     "admins.none.subtitle": "An administrator has uploaded the following reagents for your lab members. If Insufficient quantities <span class='colorinsuff fa fa-square'></span><span> are listed, please refresh the quantities by uploading the excel file from the Upload section.</span><div style='margin-bottom: 0px;margin-top: 0px;margin-left: 15px;display: inline-block;' class='checkboxThree1'><input style='position:absolute;left: -9999px;' type='checkbox' id='canceltest6' checked='checked'><label for='canceltest6' class='shadow'></label><p style='margin-left: 25px;'>Action Taken as Reagent is in Insufficient quantities.</p></div><div class='checkboxThree1' style='display: inline-block;margin-left: 15px;'><input style='position:absolute;left: -9999px;' type='checkbox' id='canceltest7'><label for='canceltest7' class='shadow'></label><p style='margin-left: 25px;'>Reagent is in sufficient quantities.</p></div>",
@@ -557,8 +557,9 @@
     "admins.qty.subtitle1": "Your lab members are not sharing any reagent. <a href='/admins'><span class='labColor'>Upload now</span></a>.",
     "admins.table.x": "Cancel order ",
     "admins.table.f": "Fulfill order ",
-    "admins.table.insuff": " insufficient",
-    "admins.table.repl": "replenish ",
+    "admins.table.insuff": " Insufficient",
+    "admins.table.repl": "Replenish ",
+    "admins.table.revert": "Revert Order ",
     "admins.table.header.insuff": "Insufficient Inventory",
     "admins.table.header.cancelorder": "Cancel Order",
 

@@ -559,8 +559,9 @@
     "admins.qty.subtitle1": "Votre laboratoire n'a partagé aucun réactif. <a href='/admins'><span class='labColor'>Télécharger maintenant</span></a>.",
     "admins.table.x": "Annuler Commande ",
     "admins.table.f": "Remplir Commande ",
-    "admins.table.insuff": " insuffisant",
-    "admins.table.repl": "rempli ",
+    "admins.table.insuff": " Insuffisant",
+    "admins.table.repl": "Remplir ",
+    "admins.table.revert": "Annuler Commande ",
     "admins.table.header.insuff": "Inventaire Insuffisant",
     "admins.table.header.cancelorder": "Annuler Commande",
 
