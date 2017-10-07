@@ -2435,7 +2435,7 @@ input[type=radio]:checked ~ .checkingcatalog::before{
 }
 
 .isregroundaccountLeft{
-    left: -263.5px;
+    /*left: -263.5px;*/
 }
 
 
@@ -3797,7 +3797,7 @@ padding-right: 0px;
     /*left: -228px;*/
 }
 .isregroundaccountLeft {
-    left: -211px;
+    /*left: -211px;*/
 }
 .login2 form input {
     max-width: 93%;
@@ -3857,14 +3857,14 @@ padding-right: 0px;
 @media (max-width: 953px) {
 
 .isregroundaccountLeft{
-    left: -211px;
+    /*left: -211px;*/
 }
 }
 
 @media (max-width: 931px) {
 
 .isregroundaccountLeft{
-    left: -211px;
+    /*left: -211px;*/
 }
 }
 
@@ -3877,7 +3877,7 @@ margin-top:0px;
 }
 
 .isregroundaccountLeft{
-    left: -212px;
+    l/*eft: -212px;*/
 }
 .adjustpaddingrightandwidth2{
     margin-right: 2%;
@@ -3934,7 +3934,7 @@ margin-top:0px;
 
 @media (max-width: 881px) {
 .isregroundaccountLeft{
-    left: -211px;
+    /*left: -211px;*/
 }
 }
 
@@ -3954,7 +3954,7 @@ margin-top:0px;
 }
 
 .isregroundaccountLeft{
-    left: -176px;
+    /*left: -176px;*/
 }
 /*.roundaccount{
     top: 18px;
@@ -4019,7 +4019,7 @@ margin-top:0px;
 }
 
 .isregroundaccountLeft{
-    left: -170.5px;
+    /*left: -170.5px;*/
 }
 
 /*.roundaccount{
@@ -4035,7 +4035,7 @@ margin-top:0px;
 }
 
 .isregroundaccountLeft{
-    left: -189.5px;
+    /*left: -189.5px;*/
 }
 }
 
