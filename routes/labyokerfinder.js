@@ -2294,7 +2294,7 @@ var labyokerLabs = new LabyokerLabs('','');
 		a = "a" + i;
 		labsstr = (labs[prop].labname).replace(/ /g,"").toLowerCase() + "_orders " + a + " ";
 		requested = a + ".email = '"+ email + "' ";
-		select = select + "SELECT * FROM " + labsstr + " where " + requested + " and status='new' and insufficient!=0 UNION ";
+		select = select + "SELECT * FROM " + labsstr + " where " + requested + " and status!='fulfilled' and insufficient!=0 UNION ";
 		i++;
 	}
 
