@@ -46,10 +46,10 @@ block content
                           - d = d.toLocaleDateString("en-US")
                           - var n = ob[prop].status
                           - var isnew = ""
+                          - if(n != "fulfilled")
+                             - isnew = "isnew"
                           - if(insuff == 0)
                              - isnew = "backColorinsuff"
-                          - if(n != "fulfilled" && insuff != 0)
-                             - isnew = "isnew"
                           - //var mod = prop % 2
                           - //isnew += " animated fadeInUp"
                           - //if(mod == 0)
