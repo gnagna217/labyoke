@@ -159,6 +159,7 @@ block content
 									var pos = getUrlParameter('pos');
 									console.log("pos: " + pos);
 									if(pos!=null && pos!=""){
+										$(window).scrollTop($('#rankTblreqshares').offset().top * 10).scrollLeft($('#rankTblreqshares').offset().left);
 										var tableid = $('#rankTblreqshares').DataTable();
 										$('#rankTblreqshares').removeClass("animated fadeInDown");
 										console.debug("jumping");
