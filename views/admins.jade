@@ -253,7 +253,7 @@ block content
 					//- adjust = ""
 					h3= i18n.__("admins.subtitle")
 				if(mysharesrequest != null && mysharesrequest.length>0)
-					- var output = mysharesrequest.filter(function(x){return x.status!="fulfilled"});
+					- var output = mysharesrequest.filter(function(x){return x.status!="fulfilled" && x.insufficient !=0});
 					//h3= i18n.__("admins.subtitle1")
 					p
 						- var requestIntro = output.length + i18n.__("admins.intro5") + " <span class='isnewcolor fa fa-square'></span>"
