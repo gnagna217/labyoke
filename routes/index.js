@@ -775,6 +775,7 @@ totalshares = t[0].counting;
             var requestor = req.body.requestoremail;
             var checked = req.body.cancel;
             var pos = req.body.pos;
+            var pos2 = req.body.pos2;
             var userlang = req.cookies.i18n;
             var date = moment(req.body.date).add(1, 'day').tz("America/New_York").format(
                 'MM-DD-YYYY');
@@ -796,6 +797,7 @@ totalshares = t[0].counting;
             console.log("userlang: " + userlang);
             console.log("requestoremail: " + requestor);
             console.log("pos: " + pos);
+            console.log("pos2: " + pos2);
             var labYokechange = new LabYokerChangeShare(table,agent, vendor, catalognumber,email,requestor,checked,datenow,date, lab, res,userlang);
             labYokechange.cancelShare(function(error, resultscancel) {
                 if(resultscancel != null && resultscancel.length > 0){
@@ -811,7 +813,7 @@ totalshares = t[0].counting;
             //req.session.report_venn = results[5];
             //req.session.shares = 0;
             //console.log("test ? " + results[3]);
-            res.render('admins', {pos:pos,report_data: results[1],admintype:admintype,lang:req.cookies.i18n, i18n:res, currentlabname: req.session.lab, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, labyokersurname : req.session.surname, myshares: results[0], mysharesrequest: results[3], loggedIn : true, isLoggedInAdmin: req.session.admin, title:'Admins'});
+            res.render('admins', {pos:pos,pos2:pos2,report_data: results[1],admintype:admintype,lang:req.cookies.i18n, i18n:res, currentlabname: req.session.lab, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, labyokersurname : req.session.surname, myshares: results[0], mysharesrequest: results[3], loggedIn : true, isLoggedInAdmin: req.session.admin, title:'Admins'});
             req.session.messages = null;
         });
 
@@ -839,6 +841,7 @@ totalshares = t[0].counting;
 			var email = req.body.email;
 			var requestor = req.body.requestoremail;
 			var checked = req.body.cancel;
+            var pos = req.body.pos;
 			var userlang = req.cookies.i18n;
 			var date = moment(req.body.date).add(1, 'day').tz("America/New_York").format(
 				'MM-DD-YYYY');
@@ -858,6 +861,7 @@ totalshares = t[0].counting;
 			console.log("email: " + email);
             console.log("userlang: " + userlang);
 			console.log("requestoremail: " + requestor);
+            console.log("pos: " + pos);
 			var labYokechange = new LabYokerChangeShare(table,agent, vendor, catalognumber,email,requestor,checked,datenow,date, lab, res,userlang);
 			labYokechange.cancelShare(function(error, results) {
 				if(results != null && results.length > 0){
@@ -886,6 +890,7 @@ totalshares = t[0].counting;
             var email = req.body.owneremail;
             var requestor = req.body.requestoremail;
             var checked = req.body.fulfill;
+            var pos = req.body.pos;
             var userlang = req.cookies.i18n;
             var date = moment(req.body.date).add(1, 'day').tz("America/New_York").format(
                 'MM-DD-YYYY');
@@ -906,6 +911,7 @@ totalshares = t[0].counting;
             console.log("email: " + email);
             console.log("userlang: " + userlang);
             console.log("requestoremail: " + requestor);
+            console.log("pos: " + pos);
             var labYokechange = new LabYokerChangeShare(table,agent, vendor, catalognumber,email,requestor,checked,datenow,date, lab, res,userlang);
             labYokechange.fulfillShare(function(error, resultsfilled) {
                 if(resultsfilled != null && resultsfilled.length > 0){
@@ -921,7 +927,7 @@ totalshares = t[0].counting;
             //req.session.report_venn = results[5];
             //req.session.shares = 0;
             //console.log("test ? " + results[3]);
-            res.render('admins', {report_data: results[1],admintype:admintype,lang:req.cookies.i18n, i18n:res, currentlabname: req.session.lab, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, labyokersurname : req.session.surname, myshares: results[0], mysharesrequest: results[3], loggedIn : true, isLoggedInAdmin: req.session.admin, title:'Admins'});
+            res.render('admins', {pos:pos,report_data: results[1],admintype:admintype,lang:req.cookies.i18n, i18n:res, currentlabname: req.session.lab, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, labyokersurname : req.session.surname, myshares: results[0], mysharesrequest: results[3], loggedIn : true, isLoggedInAdmin: req.session.admin, title:'Admins'});
             req.session.messages = null;
         });
                     //res.redirect('/admins');         
