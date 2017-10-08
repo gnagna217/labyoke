@@ -42,7 +42,7 @@ block content
 					span(class="fa fa-cubes" style=" color: #3d9dcb; font-size: 120pt; ")
 				//div(class="threepointssep", style="margin-bottom: 20px;margin-top: 20px;")
 			if(mysharesrequest != null && mysharesrequest.length>0)
-				- var output = mysharesrequest.filter(function(x){return x.status!="fulfilled"});
+				- var output = mysharesrequest.filter(function(x){return x.status!="fulfilled" && x.insufficient!=0});
 				h4= i18n.__("shares.subtitle1")
 				p
 					- var requestIntro = output.length + i18n.__("shares.intro5") + " <span class='isnewcolor fa fa-square'></span>"
@@ -67,6 +67,7 @@ block content
 										th= i18n.__("shares.table.date")
 										th(data-toggle="tooltip", title=i18n.__("admins.table.header.cancelorder"))= i18n.__("shares.table.delete")
 								tbody
+									//- var output = mysharesrequest.filter(function(x){return x.status!="fulfilled"});
 									-var ob = mysharesrequest
 									-for(var prop in ob)
 										- var canc = i18n.__("admins.table.x") + ob[prop].agent
