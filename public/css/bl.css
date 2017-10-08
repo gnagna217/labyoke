@@ -9,6 +9,24 @@
   -webkit-font-smoothing: antialiased;
 }
 
+.point:before {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    /* -webkit-box-sizing: border-box; */
+    -moz-box-sizing: border-box;
+    /* box-sizing: border-box; */
+    content: ".";
+    font-size: 50pt;
+    font-weight: bold;
+    color: green;
+    top: -7px;
+    margin-left: -20px;
+    display: -webkit-box;
+    line-height: 0px;
+    position: relative;
+
+}
 .table-responsive{
   overflow: visible !important;
 }

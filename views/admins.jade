@@ -269,8 +269,10 @@ block content
 						div(id="ctl00_Div2" class="row rank")
 							div(class="table-responsive")
 								- var animatetable=" animated fadeInDown" 
+								- var point = ""
 								- if(pos!=null)
-									- animatetable=""             
+									- animatetable=""
+									- point = " point"           
 								table(id="rankTblreqshares" class="table rankTbl"+animatetable)
 									thead
 										tr(class="you info-best" style="font-weight: bold")
@@ -317,7 +319,7 @@ block content
 											
 											tr(class=isnew)
 												td(style="display:none") #{prop}
-												td(class="wrapped2") #{ob[prop].agent}
+												td(class="wrapped2" + point) #{ob[prop].agent}
 												td(class="wrapped2") #{ob[prop].vendor}
 												td(class="wrapped2") #{ob[prop].catalognumber}
 												td(class="wrapped2") #{ob[prop].requestoremail}
@@ -402,9 +404,11 @@ block content
 					div(id="results2", class="resultsshadow")
 						div(id="ctl00_Div2" class="row rank")
 							div(class="table-responsive")
-								- var animatetable2=" animated fadeInUp" 
+								- var animatetable2=" animated fadeInUp"
+								- var point2 = ""
 								- if(pos2!=null)
 									- animatetable2="" 
+									- point2 = " point"
 								table(id="rankTblshares" class="table rankTbl" + animatetable2)
 									thead
 										tr(class="you info-best" style="font-weight: bold")
@@ -431,7 +435,7 @@ block content
 												
 											tr(class=qtyinsufficient)
 												td(style="display:none") #{prop}
-												td(class="wrapped2") #{ob[prop].agent}
+												td(class="wrapped2" + point2) #{ob[prop].agent}
 												td(class="wrapped2 desktabonly")  #{ob[prop].location}
 												td(class="wrapped2")  #{ob[prop].email}
 												td(class="wrapped2")  #{ob[prop].vendor}
