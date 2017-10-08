@@ -2340,7 +2340,7 @@ var labyokerLabs = new LabyokerLabs('','');
 		a = "a" + i;
 		labsstr = (labs[prop].labname).replace(/ /g,"").toLowerCase() + "_orders " + a + " ";
 		requestor = a + ".requestoremail = '"+ email + "' ";
-		select = select + "SELECT * FROM " + labsstr + " where " + requestor + " and status='new' UNION ";
+		select = select + "SELECT * FROM " + labsstr + " where " + requestor + " and status='new' and insufficient != 0 UNION ";
 		i++;
 	}
 
