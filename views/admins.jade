@@ -386,9 +386,11 @@ block content
 										}
 										});
 										var pos = "#{pos}";
+										console.log("pos: " + pos);
 										if(pos!=null){
 											var tableid = $('#rankTblreqshares').DataTable();
 											let p = $(this).attr('data-pos');
+											console.debug(p);
 											tableid.page.jumpToData(p, 0);
 										}
 									});
