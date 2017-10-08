@@ -394,7 +394,7 @@
     "index.signature": "L'Équipe <a href='https://team-labyoke.herokuapp.com/'>LabYoke</a>.",
 
     "index.orders.nonadmin1" : " Envoyez un e-mail à votre <a href='mailto:{{labadmin}}'>administrateur</a> si nécessaire.",
-    "index.orders.nonadmin2" : " Vous pouvez le faire avec l'outil <a href='/share#upload'>Télécharger</a> pour réapprovisionner les laboratoires en réactifs.",
+    "index.orders.nonadmin2" : " Vous pouvez le faire avec l'outil <a href='/admins'>Télécharger</a> pour réapprovisionner les laboratoires en réactifs.",
     "index.orders.booster1" : "<strong> Félicitations!</strong> Vous avez commandé un total de <b> {{ totalorders }} réactif(s)</b> et reçu un total de <b>{{ totalshares }} commande(s)</b>. Continuez!",
     "index.orders.booster2" : "<strong> Attention.</strong> Vous commandez <b>plus</b> que vous ne partagez. Avez-vous réapprovisionné votre inventaire?",
     "index.orders.booster3" : "<strong> Succès Majeur!</strong> Vous partagez <b>plus</b> que vous ne commandez. Une valeureuse manière de contribuer aux économies de votre laboratoire!",

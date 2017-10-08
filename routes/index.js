@@ -842,6 +842,7 @@ totalshares = t[0].counting;
 			var requestor = req.body.requestoremail;
 			var checked = req.body.cancel;
             var pos = req.body.pos;
+            var pos2 = req.body.pos2;
 			var userlang = req.cookies.i18n;
 			var date = moment(req.body.date).add(1, 'day').tz("America/New_York").format(
 				'MM-DD-YYYY');
@@ -862,10 +863,18 @@ totalshares = t[0].counting;
             console.log("userlang: " + userlang);
 			console.log("requestoremail: " + requestor);
             console.log("pos: " + pos);
+            console.log("pos2: " + pos2);
 			var labYokechange = new LabYokerChangeShare(table,agent, vendor, catalognumber,email,requestor,checked,datenow,date, lab, res,userlang);
 			labYokechange.cancelShare(function(error, results) {
 				if(results != null && results.length > 0){
-					res.redirect('/share');			
+					//res.redirect('/share');
+                    if(pos!=null && pos!=""){
+                        res.redirect('/share?pos=' + pos);
+                    } else if(pos2!=null && pos2!=""){
+                        res.redirect('/share?pos2=' + pos2);
+                    } else{
+                        res.redirect('/share');
+                    }
 					//res.render('share', {ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, isLoggedInAdmin: req.session.admin, title:'Shares',loggedIn : true});
 					req.session.messages = null;
 				}

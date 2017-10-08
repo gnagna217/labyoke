@@ -56,10 +56,14 @@ block content
 					span!= totalrequestIntro + i18n.__("shares.intro4")
 				div(id="results2", class="resultsshadow")
 					div(id="ctl00_Div2" class="row rank")
-						div(class="table-responsive")               
-							table(id="rankTblreqshares" class="table rankTbl animated fadeInDown")
+						div(class="table-responsive")
+							- var animatetable=" animated fadeInDown" 
+								- if(pos!=null)
+									- animatetable=""             
+							table(id="rankTblreqshares" class="table rankTbl"+animatetable)
 								thead
 									tr(class="you info-best" style="font-weight: bold")
+										th(style="display:none")!="pos"
 										th(class="wrapped")!= i18n.__("shares.table.reagent")
 										th(class="desktabonly")= i18n.__("shares.table.vendor")
 										th(class="deskfullonly")= i18n.__("shares.table.catalog")
@@ -95,6 +99,7 @@ block content
 											- //isnew += " animated fadeInUp"
 										
 										tr(class=isnew)
+											td(style="display:none") #{prop}
 											td(class="wrapped2") #{ob[prop].agent}
 											td(class="wrapped2 desktabonly") #{ob[prop].vendor}
 											td(class="wrapped2 deskfullonly") #{ob[prop].catalognumber}
@@ -114,9 +119,10 @@ block content
 													input(type="hidden" class="selfid" name="self" value="self")
 													input(type="hidden" name="date" value=ob[prop].date)
 													input(type="hidden" name="table" value=currentlabname.replace(" ","").toLowerCase() + "_orders")
+													input(type="hidden" name="pos" value=prop)
 							script.
 								$(document).ready(function() {
-									$('#rankTblreqshares').DataTable({order: [[ 4, "desc" ]],
+									$('#rankTblreqshares').DataTable({order: [[ 5, "desc" ]],
 									iDisplayLength: 5,
 									aLengthMenu: [[5, 10, 15, -1], [5, 10, 15, "All"]],
 									language:{
@@ -144,6 +150,13 @@ block content
 										}
 									}
 									});
+									var pos = "#{pos}";
+									console.log("pos: " + pos);
+									if(pos!=null && pos!=""){
+										var tableid = $('#rankTblreqshares').DataTable();
+										console.debug("jumping");
+										tableid.page.jumpToData(pos, 0);
+									}
 								});
 				div(class="threepointssep")
 			if(myshares != "")
@@ -151,10 +164,14 @@ block content
 				p!= i18n.__("shares.none.subtitle")
 				div(id="results2", class="resultsshadow")
 					div(id="ctl00_Div2" class="row rank")
-						div(class="table-responsive")               
-							table(id="rankTblshares" class="table rankTbl animated fadeInUp")
+						div(class="table-responsive")
+							- var animatetable2=" animated fadeInUp" 
+								- if(pos2!=null)
+									- animatetable2=""              
+							table(id="rankTblshares" class="table rankTbl"+animatetable2)
 								thead
 									tr(class="you info-best" style="font-weight: bold")
+										th(style="display:none")!="pos"
 										th(class="wrapped")!= i18n.__("shares.table.reagent")
 										th= i18n.__("shares.table.vendor")
 										th= i18n.__("shares.table.catalog")
@@ -178,6 +195,7 @@ block content
 											- //qtyinsufficient += " animated fadeInUp"
 										
 										tr(class=qtyinsufficient)
+											td(style="display:none") #{prop}
 											td(class="wrapped2") #{ob[prop].agent}
 											td(class="wrapped2") #{ob[prop].vendor}
 											td(class="wrapped2") #{ob[prop].catalognumber}
@@ -193,9 +211,10 @@ block content
 													input(type="hidden" class="owneremailid" name="email" value=ob[prop].email)
 													input(type="hidden" name="date" value=ob[prop].date)
 													input(type="hidden" name="table" value="vm2016_agentsshare")
+													input(type="hidden" name="pos2" value=prop)
 							script.
 								$(document).ready(function() {
-									$('#rankTblshares').DataTable({
+									$('#rankTblshares').DataTable({order: [[ 1, "desc" ]],
 										iDisplayLength: 5,
 										aLengthMenu: [[5, 10, 15, -1], [5, 10, 15, "All"]],
 										language:{
@@ -223,6 +242,14 @@ block content
 										}
 									}
 										});
+										var pos2 = "#{pos2}";
+										console.log("pos2: " + pos2);
+										if(pos2!=null && pos2!=""){
+											$(window).scrollTop($('#rankTblshares').offset().top * 10).scrollLeft($('#rankTblshares').offset().left);
+											var tableid = $('#rankTblshares').DataTable();
+											console.debug("jumping");
+											tableid.page.jumpToData(pos2, 0);
+										}
 								});
 		div(style="float:right;", class="share-container " + adjust + " adjustpaddingrightandwidth " + fadesections)
 			div(class="threepointssep mobileonly3" style="margin-bottom:5px")

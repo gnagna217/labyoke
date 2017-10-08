@@ -395,7 +395,7 @@
     "index.signature": "The <a href='https://team-labyoke.herokuapp.com/'>LabYoke</a> Team.",
 
     "index.orders.nonadmin1": " Email your <a href='mailto:{{labadmin}}'>administrator</a> if needed.",
-    "index.orders.nonadmin2": " You can do so with the <a href='/share#upload'>upload tool</a> to add more reagents under your name.",
+    "index.orders.nonadmin2": " You can do so with the <a href='/admins'>upload tool</a> to add more reagents under your name.",
     "index.orders.booster1": "<strong> Self Kudos!</strong> You have ordered a total of <b> {{ totalorders }} order(s)</b> and received a total of <b>{{ totalshares }} requested share(s)</b>. Keep it up!",
     "index.orders.booster2": "<strong> Caution.</strong> You are ordering <b>more</b> than you are sharing. Did you replenish your inventory?",
     "index.orders.booster3": "<strong> Major Achievement!</strong>  You are sharing <b>more</b> than you are ordering. Way to contribute to your lab's savings!",
