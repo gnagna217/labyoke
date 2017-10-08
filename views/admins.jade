@@ -387,9 +387,7 @@ block content
 										});
 										var pos = "#{pos}";
 										if(pos!=null){
-											var tableid = $('#rankTblreqshares').DataTable({
-											responsive: true
-											});
+											var tableid = $('#rankTblreqshares').DataTable();
 											let p = $(this).attr('data-pos');
 											tableid.page.jumpToData(p, 0);
 										}
