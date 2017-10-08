@@ -58,8 +58,8 @@ block content
 					div(id="ctl00_Div2" class="row rank")
 						div(class="table-responsive")
 							- var animatetable=" animated fadeInDown" 
-								- if(pos!=null)
-									- animatetable=""             
+							//- if(pos!=null)
+							//	- animatetable=""             
 							table(id="rankTblreqshares" class="table rankTbl"+animatetable)
 								thead
 									tr(class="you info-best" style="font-weight: bold")
@@ -150,7 +150,8 @@ block content
 										}
 									}
 									});
-									var pos = "#{pos}";
+									ar urlParams = new URLSearchParams(window.location.search);
+									var pos = urlParams.get('pos');
 									console.log("pos: " + pos);
 									if(pos!=null && pos!=""){
 										var tableid = $('#rankTblreqshares').DataTable();
@@ -166,8 +167,8 @@ block content
 					div(id="ctl00_Div2" class="row rank")
 						div(class="table-responsive")
 							- var animatetable2=" animated fadeInUp" 
-								- if(pos2!=null)
-									- animatetable2=""              
+							//- if(pos2!=null)
+							//	- animatetable2=""              
 							table(id="rankTblshares" class="table rankTbl"+animatetable2)
 								thead
 									tr(class="you info-best" style="font-weight: bold")
@@ -242,7 +243,8 @@ block content
 										}
 									}
 										});
-										var pos2 = "#{pos2}";
+										var urlParams = new URLSearchParams(window.location.search);
+										var pos2 = urlParams.get('pos2');
 										console.log("pos2: " + pos2);
 										if(pos2!=null && pos2!=""){
 											$(window).scrollTop($('#rankTblshares').offset().top * 10).scrollLeft($('#rankTblshares').offset().left);
