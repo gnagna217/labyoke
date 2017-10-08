@@ -389,9 +389,8 @@ block content
 										console.log("pos: " + pos);
 										if(pos!=null){
 											var tableid = $('#rankTblreqshares').DataTable();
-											let p = $(this).attr('data-pos');
-											console.debug(p);
-											tableid.page.jumpToData(p, 0);
+											console.debug("jumping");
+											tableid.page.jumpToData(pos, 0);
 										}
 									});
 					div(class="threepointssep mobileonly3")
