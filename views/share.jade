@@ -64,9 +64,7 @@ block content
 				div(id="results2", class="resultsshadow")
 					div(id="ctl00_Div2" class="row rank")
 						div(class="table-responsive")
-							- var animatetable=" animated fadeInDown" 
-							//- if(pos!=null)
-							//	- animatetable=""             
+							- var animatetable=" animated fadeInDown"           
 							table(id="rankTblreqshares" class="table rankTbl"+animatetable)
 								thead
 									tr(class="you info-best" style="font-weight: bold")
@@ -105,7 +103,7 @@ block content
 										- //if(mod == 0)
 											- //isnew += " animated fadeInUp"
 										
-										tr(class=isnew)
+										tr(class=isnew, data-pos=prop)
 											td(style="display:none") #{prop}
 											td(class="wrapped2") #{ob[prop].agent}
 											td(class="wrapped2 desktabonly") #{ob[prop].vendor}
@@ -165,6 +163,7 @@ block content
 										$('#rankTblreqshares').removeClass("animated fadeInDown");
 										console.debug("jumping");
 										tableid.page.jumpToData(pos, 0);
+										$( "tr[data-pos=pos]" ).children('td').eq(1).addClass("point");
 									}
 								});
 				div(class="threepointssep")
@@ -174,9 +173,7 @@ block content
 				div(id="results2", class="resultsshadow")
 					div(id="ctl00_Div2" class="row rank")
 						div(class="table-responsive")
-							- var animatetable2=" animated fadeInUp" 
-							//- if(pos2!=null)
-							//	- animatetable2=""              
+							- var animatetable2=" animated fadeInUp"              
 							table(id="rankTblshares" class="table rankTbl"+animatetable2)
 								thead
 									tr(class="you info-best" style="font-weight: bold")
@@ -203,7 +200,7 @@ block content
 										- //if(mod == 0)
 											- //qtyinsufficient += " animated fadeInUp"
 										
-										tr(class=qtyinsufficient)
+										tr(class=qtyinsufficient, data-pos=prop)
 											td(style="display:none") #{prop}
 											td(class="wrapped2") #{ob[prop].agent}
 											td(class="wrapped2") #{ob[prop].vendor}
@@ -260,6 +257,7 @@ block content
 											var tableid = $('#rankTblshares').DataTable();
 											console.debug("jumping");
 											tableid.page.jumpToData(pos2, 0);
+											$( "tr[data-pos=pos2]" ).children('td').eq(1).addClass("point");
 										}
 								});
 		div(style="float:right;", class="share-container " + adjust + " adjustpaddingrightandwidth " + fadesections)
