@@ -10,12 +10,12 @@
 }
 
 .point:before {
-    content: ".";
+    content: "|";
     font-size: 50pt;
     font-weight: bold;
     color: #9ecee5;
-    top: -7px;
-    margin-left: -26px;
+    top: 24px;
+    margin-left: -27px;
     display: -webkit-box;
     line-height: 0px;
     position: relative;
