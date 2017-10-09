@@ -361,7 +361,8 @@ block content
 														input(type="hidden" name="pos" value=prop)
 								script.
 									$(document).ready(function() {
-										$('#rankTblreqshares').DataTable({order: [[ 6, "desc" ]],
+										$('#rankTblreqshares').DataTable({
+										/*order: [[ 6, "desc" ]],*/
 										iDisplayLength: 6,
 										aLengthMenu: [[6, 12, 18, -1], [6, 12, 18, "All"]],
 										language:{
@@ -459,7 +460,8 @@ block content
 														input(type="hidden" name="pos2" value=prop)
 								script.
 									$(document).ready(function() {
-										$('#rankTblshares').DataTable({order: [[ 3, "desc" ]],
+										$('#rankTblshares').DataTable({
+											/*order: [[ 3, "desc" ]],*/
 											iDisplayLength: 6,
 											aLengthMenu: [[6, 12, 18, -1], [6, 12, 18, "All"]],
 											language:{
