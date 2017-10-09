@@ -254,11 +254,11 @@ block content
 										//var urlParams = new URLSearchParams(window.location.search);
 										var pos2 = getUrlParameter('pos2');
 										console.log("pos2: " + pos2);
-										console.log("pos2_: " + (pos2!=null));
-										if(pos2!=null /*&& pos2!=""*/){
-										console.debug("jumping0");
-											
-										console.debug("jumping1");
+										console.log("pos2_: " + (pos2!=null && pos2!=""));
+										if(pos2!=null && pos2!=""){
+											console.debug("jumping0");
+												
+											console.debug("jumping1");
 											$('#rankTblshares').removeClass("animated fadeInUp");
 											console.debug("jumping");
 											var tableid = $('#rankTblshares').DataTable();
