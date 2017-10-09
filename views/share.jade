@@ -264,7 +264,7 @@ block content
 											var tableid = $('#rankTblshares').DataTable();
 											
 											tableid.page.jumpToData(pos2, 0);
-											$( "tr[data-pos=pos2]" ).children('td').eq(1).addClass("point");
+											$( "tr[data-pos="+pos2+"]" ).children('td').eq(1).addClass("point");
 
 											$(window).scrollTop($('#rankTblshares').offset().top * 10).scrollLeft($('#rankTblshares').offset().left);
 										}
