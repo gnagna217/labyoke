@@ -158,13 +158,15 @@ block content
 									//var urlParams = new URLSearchParams(window.location.search);
 									var pos = getUrlParameter('pos');
 									console.log("pos: " + pos);
-									if(pos!=null /*&& pos!=""*/){
-										$(window).scrollTop($('#rankTblreqshares').offset().top * 10).scrollLeft($('#rankTblreqshares').offset().left);
+									if(pos!=null && pos!=""){
+										
 										var tableid = $('#rankTblreqshares').DataTable();
 										$('#rankTblreqshares').removeClass("animated fadeInDown");
 										console.debug("jumping");
 										tableid.page.jumpToData(pos, 0);
 										$( "tr[data-pos=pos]" ).children('td').eq(1).addClass("point");
+
+										$(window).scrollTop($('#rankTblreqshares').offset().top * 10).scrollLeft($('#rankTblreqshares').offset().left);
 									}
 								});
 				div(class="threepointssep")
@@ -255,13 +257,15 @@ block content
 										console.log("pos2_: " + (pos2!=null));
 										if(pos2!=null /*&& pos2!=""*/){
 										console.debug("jumping0");
-											$(window).scrollTop($('#rankTblshares').offset().top * 10).scrollLeft($('#rankTblshares').offset().left);
+											
 										console.debug("jumping1");
 											$('#rankTblshares').removeClass("animated fadeInUp");
 											var tableid = $('#rankTblshares').DataTable();
 											console.debug("jumping");
 											tableid.page.jumpToData(pos2, 0);
 											$( "tr[data-pos=pos2]" ).children('td').eq(1).addClass("point");
+
+											$(window).scrollTop($('#rankTblshares').offset().top * 10).scrollLeft($('#rankTblshares').offset().left);
 										}
 								});
 		div(style="float:right;", class="share-container " + adjust + " adjustpaddingrightandwidth " + fadesections)
