@@ -279,7 +279,7 @@ block content
 											th(class="desktabonly")= i18n.__("shares.table.vendor")
 											th(class="desktabonly")= i18n.__("shares.table.catalog")
 											th(class="")= i18n.__("shares.table.requestor")
-											th(class="")= i18n.__("shares.table.email")
+											th(class="desktabonly")= i18n.__("shares.table.email")
 											th= i18n.__("shares.table.date")
 											th(title=i18n.__("admins.table.header.cancelorder"))= i18n.__("shares.table.delete")
 											th(title="Fulfill Order")= i18n.__("shares.table.fulfill")
@@ -324,7 +324,7 @@ block content
 												td(class="wrapped2 desktabonly") #{ob[prop].vendor}
 												td(class="wrapped2 desktabonly") #{ob[prop].catalognumber}
 												td(class="wrapped2") #{ob[prop].requestoremail}
-												td(class="wrapped2") #{ob[prop].email}
+												td(class="wrapped2 desktabonly") #{ob[prop].email}
 												td #{d}
 												td(style="width: 17px;" title=canc)
 													form(action="/admincancelshare" method="post")
