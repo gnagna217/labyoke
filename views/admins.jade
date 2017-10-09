@@ -267,7 +267,7 @@ block content
 						span!= totalrequestIntro + i18n.__("admins.intro4")
 					div(id="results2", class="resultsshadow")
 						div(id="ctl00_Div2" class="row rank")
-							div(class="table-responsive")
+							div(class="table-responsive", style="overflow: auto;")
 								- var animatetable=" animated fadeInDown"
 								- if(pos!=null)
 									- animatetable=""         
