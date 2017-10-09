@@ -14,7 +14,8 @@ block content
     //     img(src="/images/yoke4.png", alt="The Yoke",  title="Yoke", class="yokelogous")
     div(class="fronthelp", style="margin-top: 30px;")
       a(href="/search")
-        img(src="/images/house0.png", alt="The Yoke", class="yokelogo", style="width: 209px;height: 143.78px;")
+        :staticCache
+          img(src="/images/house0.png", alt="The Yoke", class="yokelogo", style="width: 209px;height: 143.78px;")
     div(class="section2")
       //img(src="/images/referee.png" alt="" style="border-width:0px; width: 250px;float: right;")
       //h1!= i18n.__("layout.About Us") + "."
