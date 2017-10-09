@@ -2954,7 +2954,7 @@ LabYokerChangeShare.prototype.fulfillShare = function(callback) {
 	var requestor = this.requestor;
 	var i18n = this.res;
 	var userlang = this.userlang;
-	
+
 	var date = this.date;
 	console.log("fulfill shares");
 	console.log("date2: " + date);
