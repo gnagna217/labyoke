@@ -38,7 +38,7 @@ block content
                             input(name="regtel" type="text" id="tel" class="form-control" placeholder=i18n.__("register.form.tel"))
                     div(class="buttons", id="regbutton1")
                         button.btn.btn-success.btn-lg.btn-block.shadow.resizebutton(type='button') #{i18n.__("register.form.button1")}
-                        img(src="/images/add.png", alt="The Lab", style="border-width:0px; width: 45px; height:57px; margin-top: -45px; float: right;position:relative;left:25px;display:none", class="noshowmobile767")
+                        //img(src="/images/add.png", alt="The Lab", style="border-width:0px; width: 45px; height:57px; margin-top: -45px; float: right;position:relative;left:25px;display:none", class="noshowmobile767")
                 script.
                     $('#regbutton1').click(function() {
                         console.log("regfirstname: " + $('#regfirstname').val());
@@ -107,7 +107,7 @@ block content
                     div(class="buttons", id="regbutton2")
                         //input(type="submit" class="button" value="Register")
                         button.btn.btn-success.btn-lg.btn-block.shadow.resizebutton(type='button')= i18n.__("register.form2.button2")
-                        img(src="/images/add.png", alt="The Lab", style="border-width:0px; width: 45px; margin-top: -45px; float: right;position:relative;left:25px;display:none;", class="noshowmobile767")
+                        //img(src="/images/add.png", alt="The Lab", style="border-width:0px; width: 45px; margin-top: -45px; float: right;position:relative;left:25px;display:none;", class="noshowmobile767")
                 script.
                     $('#regbutton2').click(function() {
                         console.log("regverpass: " + $('#regverpass').val());
