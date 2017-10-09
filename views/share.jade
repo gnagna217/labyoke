@@ -164,7 +164,7 @@ block content
 										$('#rankTblreqshares').removeClass("animated fadeInDown");
 										console.debug("jumping");
 										tableid.page.jumpToData(pos, 0);
-										$( "tr[data-pos=pos]" ).children('td').eq(1).addClass("point");
+										$( "tr[data-pos="+pos+"]" ).children('td').eq(1).addClass("point");
 
 										$(window).scrollTop($('#rankTblreqshares').offset().top * 10).scrollLeft($('#rankTblreqshares').offset().left);
 									}
