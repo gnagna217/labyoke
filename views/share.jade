@@ -260,8 +260,9 @@ block content
 											
 										console.debug("jumping1");
 											$('#rankTblshares').removeClass("animated fadeInUp");
-											var tableid = $('#rankTblshares').DataTable();
 											console.debug("jumping");
+											var tableid = $('#rankTblshares').DataTable();
+											
 											tableid.page.jumpToData(pos2, 0);
 											$( "tr[data-pos=pos2]" ).children('td').eq(1).addClass("point");
 
