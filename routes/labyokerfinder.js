@@ -1615,11 +1615,11 @@ LabYokeAgents.prototype.findallsharesadmins = function(callback) {
 	console.log("findmyshares: " + this.email);
 	var query = client
 			.query("SELECT * FROM vm2016_agentsshare a,labs b, vm2016_users c where b.labname='"
-					+ mylab + "' and a.email=c.email and b.labname=c.lab and a.email = c.email");
+					+ mylab + "' and a.email=c.email and b.labname=c.lab and a.email = c.email order by a.agent asc");
 			//order by date desc
 	var email = this.email;
 	console.log("myshares lab reagents: " + "SELECT * FROM vm2016_agentsshare a,labs b, vm2016_users c where b.labname='"
-					+ mylab + "' and a.email=c.email and b.labname=c.lab and a.email = c.email");
+					+ mylab + "' and a.email=c.email and b.labname=c.lab and a.email = c.email order by a.agent asc");
 	query.on("row", function(row, result) {
 		result.addRow(row);
 	});
