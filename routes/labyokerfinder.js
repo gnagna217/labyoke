@@ -1618,6 +1618,8 @@ LabYokeAgents.prototype.findallsharesadmins = function(callback) {
 					+ mylab + "' and a.email=c.email and b.labname=c.lab and a.email = c.email");
 			//order by date desc
 	var email = this.email;
+	console.log("myshares lab reagents: " + "SELECT * FROM vm2016_agentsshare a,labs b, vm2016_users c where b.labname='"
+					+ mylab + "' and a.email=c.email and b.labname=c.lab and a.email = c.email");
 	query.on("row", function(row, result) {
 		result.addRow(row);
 	});
