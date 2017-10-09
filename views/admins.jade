@@ -315,8 +315,10 @@ block content
 											- if(checkedstr===true)
 												- showfulfill = "display:none;"
 											- var point = ""
+											- var point2 = ""
 											- if(pos!=null && prop == pos)
 												- point = " point"
+												- point3 = " point2"
 											
 											tr(class=isnew)
 												td(style="display:none") #{prop}
@@ -342,7 +344,7 @@ block content
 														input(type="hidden" name="table" value=currentlabname.replace(" ","").toLowerCase() + "_orders")
 														input(type="hidden" name="adminType" value="laborders")
 														input(type="hidden" name="pos" value=prop)
-												td(style="width: 17px;" title=full)
+												td(style="width: 17px;" class=point3 title=full)
 													form(action="/fulfillshare" method="post")
 														
 														div(class="checkboxThree1", style=showfulfill)
@@ -434,9 +436,11 @@ block content
 												- checkedstr = true
 												- canc = i18n.__("admins.table.repl") + ob[prop].agent
 											- var point2 = ""
+											- var point4 = ""
 											- if(pos2!=null && prop == pos2)
 												- point2 = " point"
-												
+												- point4 = " point2"
+
 											tr(class=qtyinsufficient)
 												td(style="display:none") #{prop}
 												td(class="wrapped2" + point2) #{ob[prop].agent}
@@ -444,7 +448,7 @@ block content
 												td(class="wrapped2")  #{ob[prop].email}
 												td(class="wrapped2")  #{ob[prop].vendor}
 												td(class="wrapped2")  #{ob[prop].catalognumber}
-												td(style="width: 17px;display:block", title=canc)
+												td(style="width: 17px;display:block", class=point4,  title=canc)
 													form(action="/admincancelshare" method="post")
 														div(class="checkboxThree1", style=showfulfill)
 															input(style="position:absolute;left: -9999px;" type="checkbox" id=c name="cancel" value="cancel" class="cancel" checked=(checkedstr===true ? "checked" : undefined))
