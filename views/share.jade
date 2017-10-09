@@ -253,7 +253,9 @@ block content
 										var pos2 = getUrlParameter('pos2');
 										console.log("pos2: " + pos2);
 										if(pos2!=null && pos2!=""){
+										console.debug("jumping0");
 											$(window).scrollTop($('#rankTblshares').offset().top * 10).scrollLeft($('#rankTblshares').offset().left);
+										console.debug("jumping1");
 											$('#rankTblshares').removeClass("animated fadeInUp");
 											var tableid = $('#rankTblshares').DataTable();
 											console.debug("jumping");
