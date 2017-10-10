@@ -275,7 +275,7 @@ html(lang='en')
      if(title=='Reports')
        :staticCache
         script(type="text/javascript" src="/javascripts/html2canvas.js")
-     if (title=='Reports' || title=='Account' || title=='Register')
+     if (title=='Reports' || title=='Account' || title=='Register' || title=='Confirm Registration')
        :staticCache
         script(type="text/javascript" src="/javascripts/jquery.maskedinput.min.js")
      if (title=='Reports')
@@ -286,7 +286,7 @@ html(lang='en')
         script(type="text/javascript" src="/javascripts/FileSaver.js")
         script(type="text/javascript" src="/javascripts/savexl.js")
        //script(type="text/javascript" src="/javascripts/jsPDF-master/libs/html2pdf.js")
-     if (title=='Reports' || title=='Account' || title=='Register' || title=='About Us' || title=='Change Password' || title=='Forgot Password' || title=='Register' || title=='Help' || title=='Orders' || (title=='Share' && !doing) || title=='Search' || title == 'Reagent Search' || title == 'Admins')
+     if (title=='Reports' || title=='Account' || title=='Register' || title=='Confirm Registration' || title=='About Us' || title=='Change Password' || title=='Forgot Password' || title=='Register' || title=='Help' || title=='Orders' || (title=='Share' && !doing) || title=='Search' || title == 'Reagent Search' || title == 'Admins')
        :staticCache
         script(type="text/javascript" src="/javascripts/spinner.js")
      //- if (title!='Forgot Password' && title!='Register' && title!='About Us' && title!='Help' && title!='Login' && title!='Change Password' && title != 'Home' && title != 'Pop' && title != 'Reagent Search' && title !='Search' && title !='Reports')
