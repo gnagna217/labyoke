@@ -522,7 +522,7 @@
     "index.changepass.placeholder1": "Password",
     "index.confirmpwd.message1": "Congratulations you have successfully registered. You can now start searching to the <a href='/search'>search</a> page.",
     "index.confirmpwd.message2": "An error was found while processing your confirmation. Please try again or <a href='mailto:labyoke@gmail.com?Subject=Change Password - {{id}}' target='_top'>Contact us</a>.",
-    "index.confirmpwd.message3": "Sorry we could not find your Pre-Registration. <span style='color: #3d9dcb;'><a href='/register'>Please Register</a></span>",
+    "index.confirmpwd.message3": "Sorry we could not find your Pre-Registration. You might have already confirmed your registration. Otherwise <span style='color: #3d9dcb;'><a href='/register'>Please Register</a></span>! Or <span style='color: #3d9dcb;'><a href='/register'>Reset your Password</a></span>",
     
     "index.changepwd.message1": "Congratulations you have successfully changed your Password. Please head to the <a href='/login'>login</a> page.",
     "index.changepwd.message2": "An error was found while processing your change password. Please try again or <a href='mailto:labyoke@gmail.com?Subject=Change Password - {{id}}' target='_top'>Contact us</a>.",
