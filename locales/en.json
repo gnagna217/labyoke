@@ -539,6 +539,7 @@
     "admins.title":"Admin.",
     "admins.subtitle":"Your lab has not received any order for reagents.",
     "admins.subtitle1": "Manage Lab Orders.",
+    "admins.subtitle2":"Your lab has no reagent uploaded.",
     "admins.intro5": " order(s) to fulfill",
     "admins.intro": "No new chem",
     "admins.intro1": " currently highlighted and being requested by your lab members. In total, ",
