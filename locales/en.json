@@ -513,6 +513,7 @@
     "index.account.yes":"Yes",
     "index.account.no":"No",
 
+    "index.changepass.success": "Congrats.",
     "index.changepass.message2": "Please enter a valid password. Try again below.",
     "index.changepass.message4": "Your passwords do not match. Try again below.",
     "index.changepass.message3": "Almost there.",
