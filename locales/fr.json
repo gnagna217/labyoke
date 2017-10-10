@@ -523,9 +523,9 @@
     "index.changepass.button": "Changer",
     "index.changepass.placeholder2": "Verifier le Mot de Passe",
     "index.changepass.placeholder1": "Mot de Passe",
-    "index.confirmpwd.message1": "Félicitations! Vous êtes maintenant inscrit. Vous pouvez commencer vos <a href='/search'>recherches</a> de réactifs.",
+    "index.confirmpwd.message1": "Félicitations! Vous êtes maintenant inscrit.",
     "index.confirmpwd.message2": "Une erreur est survenue lors de votre confirmation. Veuillez réessayer ou <a href='mailto:labyoke@gmail.com?Subject=Modification de votre Mot de Passe - {{id}}' target='_top'>Contactez Nous</a>.",
-    "index.confirmpwd.message3": "Nous n'avons pas trouvé votre Pré-inscription. Avez-vous déjá confirmé votre enregistrement? Autrement <span style='color: #3d9dcb;'><a href='/register'>Veuillez vous inscrire</a></span>! Ou <span style='color: #3d9dcb;'><a href='/register'>Changer votre Mot de Passe</a></span> ",
+    "index.confirmpwd.message3": "Nous n'avons pas trouvé votre Pré-inscription. Avez-vous déjá confirmé votre inscription? Autrement <span style='color: #3d9dcb;'><a href='/register'>Veuillez vous inscrire</a></span>! Ou <span style='color: #3d9dcb;'><a href='/register'>Changer votre Mot de Passe</a></span> ",
 
     "index.changepwd.message1": "Félicitations! Vous avez changé votre mot de passe. Vous pouvez vous <a href='/login'>connecter</a> dès à présent.",
     "index.changepwd.message2": "Une erreur est survenue lors de votre changement de mot de passe. Veuillez réesssayer ou <a href='mailto:labyoke@gmail.com?Subject=Modification de votre Mot de Passe - {{id}}' target='_top'>Contactez Nous</a>.",
