@@ -455,7 +455,7 @@
     "index.register.subject": "Labyoke - Start Labyoking",
     "index.register.body": "Thanks for registering with @LabYoke. ",
     "index.register.body2": "You are one step away from labyoking! Please click on this link:<br/>",
-    "index.register.body1": "Thanks for registering with @LabYoke.",
+    "index.register.body1": "Thanks for registering with <span style='color: #3d9dcb;'><a href='https://team-labyoke.herokuapp.com/search'>LabYoke</a></span>.",
     "index.register.body3": "<p>[PS: Start ",
     "index.register.body4": " some chemicals today?]",
     "index.register.message1": "Sorry. This email address is already in use. Please use a different one and try again below.",
