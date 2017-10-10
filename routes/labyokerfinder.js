@@ -2600,7 +2600,7 @@ LabyokerRegister.prototype.register = function(callback) {
 					body += i18n.__({phrase: "index.register.body2", locale: userlang}); //"You are one step away from labyoking! Please click on this link:<br/>";
 					body += "<p style=\"text-align:center\"><span style=''>";
 					body += "<form action='https:\/\/team-labyoke.herokuapp.com\/confirmreg/"
-							+ hash_register_id + "?lang=" + userlang + "'><button type='submit' value='Confirm Registration' name='submit' style='margin: 20px;color: #fff;background-color: #8a6d3b;border-color: #8a6d3b;padding: 10px 16px;font-size: 18px;line-height: 1.3333333;border-radius: 6px;width: 278px;border: 0;-webkit-appearance: button;cursor: pointer;'>Confirm Registration</button></form>";
+							+ hash_register_id + "'><input type='hidden' name='lang' value='"+userlang+"'><button type='submit' value='Confirm Registration' name='submit' style='margin: 20px;color: #fff;background-color: #8a6d3b;border-color: #8a6d3b;padding: 10px 16px;font-size: 18px;line-height: 1.3333333;border-radius: 6px;width: 278px;border: 0;-webkit-appearance: button;cursor: pointer;'>Confirm Registration</button></form>";
 
 					//body +="<a href='https:\/\/team-labyoke.herokuapp.com\/confirmreg/"
 					//		+ hash_register_id + "?lang=" + userlang + "'>https:\/\/team-labyoke.herokuapp.com\/confirmreg?id="
@@ -2712,7 +2712,7 @@ Labyoker.prototype.requestChangePassword = function(callback) {
 					//		+ hash
 					//		+ "?lang=" + userlang + "</a>";
 					body += "<form action='https:\/\/team-labyoke.herokuapp.com\/changepassword/"
-							+ hash + "?lang="+userlang+"'><button type='submit' value='Change Password' name='submit' style='margin: 20px;margin-top:10px;color: #fff;background-color: #8a6d3b;border-color: #8a6d3b;/*padding: 10px 16px;*/font-size: 18px;line-height: 1.3333333;border-radius: 6px;width: 278px;border: 0;-webkit-appearance: button;cursor: pointer;'>Change Password</button></form>";
+							+ hash + "'><input type='hidden' name='lang' value='"+userlang+"'><button type='submit' value='Change Password' name='submit' style='margin: 20px;margin-top:10px;color: #fff;background-color: #8a6d3b;border-color: #8a6d3b;/*padding: 10px 16px;*/font-size: 18px;line-height: 1.3333333;border-radius: 6px;width: 278px;border: 0;-webkit-appearance: button;cursor: pointer;'>Change Password</button></form>";
 					body += "</span></p>";
 					//body += "<p><span>You have <b><span style='color:red;'>1 day</span></b> to change your password. But don't worry you can always send us another " + "<a href=\"https:\/\/team-labyoke.herokuapp.com\/forgot\">" + "request" + "</a>" + " once this one has expired." + "</span> </p>";
 					body +=  i18n.__({phrase: "index.change.body2", locale: userlang}) + "<a href=\"https:\/\/team-labyoke.herokuapp.com\/forgot\">" + i18n.__({phrase: "index.change.body3", locale: userlang}) + "</a>" + i18n.__({phrase: "index.change.body4", locale: userlang}) + "</span> </p>";

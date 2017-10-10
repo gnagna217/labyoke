@@ -392,7 +392,7 @@
     "datatable.infoThousands": "",
     "datatable.searchplaceholder": "Rechercher...",
 
-    "index.signature": "L'Équipe <a href='https://team-labyoke.herokuapp.com/'>LabYoke</a>.",
+    "index.signature": "L'Équipe <a href='https://team-labyoke.herokuapp.com/login?lang=fr'>LabYoke</a>.",
 
     "index.orders.nonadmin1" : " Envoyez un e-mail à votre <a href='mailto:{{labadmin}}'>administrateur</a> si nécessaire.",
     "index.orders.nonadmin2" : " Vous pouvez le faire avec l'outil <a href='/admins'>Télécharger</a> pour réapprovisionner les laboratoires en réactifs.",
