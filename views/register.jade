@@ -142,7 +142,7 @@ block content
                         h4!= i18n.__("register.thanku2.desc1")        
     script.
       $(document).ready(function(){
-        $('#tel').mask("(999) 999-9999");
+        if($('#tel')){$('#tel').mask("(999) 999-9999");}
                 var h = $(window).height();
                 var wi = $(window).width();
                 var topping = sessionStorage.getItem('topping');
