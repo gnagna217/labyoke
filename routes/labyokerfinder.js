@@ -2598,7 +2598,7 @@ LabyokerRegister.prototype.register = function(callback) {
 							+ ",<br/><br/>";
 					body += i18n.__({phrase: "index.register.body1", locale: userlang}); //"Thanks for registering with @LabYoke.";
 					body += i18n.__({phrase: "index.register.body2", locale: userlang}); //"You are one step away from labyoking! Please click on this link:<br/>";
-					body += "<p style=\"text-align:center\"><span style=''><br/>";
+					body += "<p style=\"text-align:center\"><span style=''>";
 					body += "<form action='https:\/\/team-labyoke.herokuapp.com\/confirmreg/"
 							+ hash_register_id + "?lang=" + userlang + "'><button type='submit' value='Confirm Registration' name='submit' style='margin: 20px;color: #fff;background-color: #8a6d3b;border-color: #8a6d3b;padding: 10px 16px;font-size: 18px;line-height: 1.3333333;border-radius: 6px;width: 278px;border: 0;-webkit-appearance: button;cursor: pointer;'>Confirm Registration</button></form>";
 
@@ -2706,7 +2706,7 @@ Labyoker.prototype.requestChangePassword = function(callback) {
 					body += "<div style='text-align:center;padding-top: 20px;'><img style='width: 141px; margin: 0 20px;' src='https:\/\/team-labyoke.herokuapp.com\/images\/yoke4.png', alt='The Yoke',  title='Yoke', class='yokelogo'/></div><div style='font-size:11pt;padding: 20px;'>" + i18n.__({phrase: "index.orders.hello", locale: userlang}) + " " + name
 							+ ",<br/><br/>";
 					body += i18n.__({phrase: "index.change.body1", locale: userlang}); //"You have requested to change your password @LabYoke. Please click on this link:<br/>";
-					body += "<p style=\"text-align:center\"><span><br/>";
+					body += "<p style=\"text-align:center\"><span>";
 					//<a href='https:\/\/team-labyoke.herokuapp.com\/changepassword/"
 					//		+ hash + "?lang="+userlang+"'>https:\/\/team-labyoke.herokuapp.com\/changepassword?id="
 					//		+ hash
