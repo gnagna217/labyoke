@@ -40,7 +40,7 @@ $(document).ready(function() {
     	  }
     	}
 
-    $.preloadImages("/images/BL2.png","/images/map.png");
+    //$.preloadImages("/images/BL2.png","/images/map.png");
 
     $('.changepassword').click( function(){
         if($('.pass').val()!=null && $('.repass').val()!=null && $('.pass').val()!='' && $('.pass').val()==$('.repass').val()){
