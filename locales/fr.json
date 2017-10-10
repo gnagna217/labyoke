@@ -142,7 +142,8 @@
     "register.thanku.desc1": "Nous vous avons envoyé un email pour <span class='labColor'>compléter</span><span> votre inscription. </span>",
     "register.thanku2": "Merci pour votre inscription",
     "register.thanku2.desc1": "Vous pouvez maintenant effectuer une <a href='/search'>recherche</a><span> ou <a href='/share'>partager</a></span><span> vos produits chimiques et réactifs.</span>",
-    
+    "register.thanku3": "Confirmation Enregistrement",
+
     "forgot.title": "Pas de Soucis.",
     "forgot.subtitle": "<span>Veuillez entrer votre </span><span class='labColor'>nom d'utilisateur</span><span> ci-dessous et nous vous enverrons un e-mail pour changer votre mot de passe et vous <a href='/login'>connecter</a> de nouveau.</span>",
     "forgot.username": "Nom d'Utilisateur",
@@ -524,7 +525,7 @@
     "index.changepass.placeholder1": "Mot de Passe",
     "index.confirmpwd.message1": "Félicitations! Vous êtes maintenant inscrit. Vous pouvez commencer vos <a href='/search'>recherches</a> de réactifs.",
     "index.confirmpwd.message2": "Une erreur est survenue lors de votre confirmation. Veuillez réessayer ou <a href='mailto:labyoke@gmail.com?Subject=Modification de votre Mot de Passe - {{id}}' target='_top'>Contactez Nous</a>.",
-    "index.confirmpwd.message3": "Nous n'avons pas trouvé votre Pré-inscription. Veuillez vous inscrire.",
+    "index.confirmpwd.message3": "Nous n'avons pas trouvé votre Pré-inscription. <span style='color: #3d9dcb;'><a href='/register'>Veuillez vous inscrire</a></span>",
 
     "index.changepwd.message1": "Félicitations! Vous avez changé votre mot de passe. Vous pouvez vous <a href='/login'>connecter</a> dès à présent.",
     "index.changepwd.message2": "Une erreur est survenue lors de votre changement de mot de passe. Veuillez réesssayer ou <a href='mailto:labyoke@gmail.com?Subject=Modification de votre Mot de Passe - {{id}}' target='_top'>Contactez Nous</a>.",
