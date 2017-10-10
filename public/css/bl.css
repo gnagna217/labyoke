@@ -4644,6 +4644,10 @@ span.num.greatherthanninetynine {
 
 
  @media (max-width: 440px) {
+
+#reporttitle {
+    font-size: 18pt !important;
+}
 /*.pin:after{
     width: 8px;
     height: 8px;
