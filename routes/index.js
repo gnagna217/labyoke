@@ -2146,8 +2146,8 @@ totalshares = t[0].counting;
 						isLoggedInAdmin: req.session.admin,
 						labyoker : req.session.user,
                         labyokersurname : req.session.surname,
-						confirmReset : res.__("index.confirmpwd.message1").replace(/&lt;/g, '<').replace(/&gt;/g, '>'),
-						scripts : [ '/javascripts/utils.js' ]
+						confirmReset : res.__("index.confirmpwd.message1").replace(/&lt;/g, '<').replace(/&gt;/g, '>')
+						//,scripts : [ '/javascripts/utils.js' ]
 					});
 			} else if(results != null && results.length > 0 && results == 'errorFound') {
 					res.render('register', {
@@ -2162,8 +2162,8 @@ totalshares = t[0].counting;
 						isLoggedInAdmin: req.session.admin,
 						labyoker : req.session.user,
                         labyokersurname : req.session.surname,
-						confirmReset : (res.__("index.confirmpwd.message2", { id: id })).replace(/&lt;/g, '<').replace(/&gt;/g, '>'),
-						scripts : [ '/javascripts/utils.js' ]
+						confirmReset : (res.__("index.confirmpwd.message2", { id: id })).replace(/&lt;/g, '<').replace(/&gt;/g, '>')
+						//,scripts : [ '/javascripts/utils.js' ]
 					});
 			} else if(results != null && results.length > 0 && results == 'cannotFindRequest') {
 				res.render('register', {
@@ -2178,8 +2178,8 @@ totalshares = t[0].counting;
 					isLoggedInAdmin: req.session.admin,
 					labyoker : req.session.user,
                     labyokersurname : req.session.surname,
-					confirmReset : res.__("index.confirmpwd.message3").replace(/&lt;/g, '<').replace(/&gt;/g, '>'),
-					scripts : [ '/javascripts/utils.js' ]
+					confirmReset : res.__("index.confirmpwd.message3").replace(/&lt;/g, '<').replace(/&gt;/g, '>')
+					//,scripts : [ '/javascripts/utils.js' ]
 				});
 			} else {
 					res.render('register', {
@@ -2194,8 +2194,8 @@ totalshares = t[0].counting;
 						isLoggedInAdmin: req.session.admin,
 						labyoker : req.session.user,
                         labyokersurname : req.session.surname,
-						confirmReset : (res.__("index.confirmpwd.message2", { id: id })).replace(/&lt;/g, '<').replace(/&gt;/g, '>'),
-						scripts : [ '/javascripts/utils.js' ]
+						confirmReset : (res.__("index.confirmpwd.message2", { id: id })).replace(/&lt;/g, '<').replace(/&gt;/g, '>')
+						//,scripts : [ '/javascripts/utils.js' ]
 					});
 			}
 			});
@@ -2222,8 +2222,8 @@ totalshares = t[0].counting;
 			hashid: req.params.id,
 			isLoggedInAdmin: req.session.admin,
 			labyoker : req.session.user,
-            labyokersurname : req.session.surname,
-			scripts : [ '/javascripts/utils.js' ]
+            labyokersurname : req.session.surname
+			//,scripts : [ '/javascripts/utils.js' ]
 		});
 	});
 
@@ -2266,8 +2266,8 @@ totalshares = t[0].counting;
 						labyoker : req.session.user,
                         labyokersurname : req.session.surname,
 						/*loggedIn : true,*/
-						messageSuccess : res.__("index.changepwd.message1").replace(/&lt;/g, '<').replace(/&gt;/g, '>'), 
-						scripts : [ '/javascripts/utils.js' ]
+						messageSuccess : res.__("index.changepwd.message1").replace(/&lt;/g, '<').replace(/&gt;/g, '>')
+						//,scripts : [ '/javascripts/utils.js' ]
 					});
 			} else if(results != null && results.length > 0 && results == 'errorFound') {
 					res.render('changepassword', {
@@ -2281,8 +2281,8 @@ totalshares = t[0].counting;
 						labyoker : req.session.user,
                         labyokersurname : req.session.surname,
 						isLoggedInAdmin: req.session.admin,
-						message : (res.__("index.changepwd.message2", { id: id })).replace(/&lt;/g, '<').replace(/&gt;/g, '>'), 
-						scripts : [ '/javascripts/utils.js' ]
+						message : (res.__("index.changepwd.message2", { id: id })).replace(/&lt;/g, '<').replace(/&gt;/g, '>') 
+						//,scripts : [ '/javascripts/utils.js' ]
 					});
 			} else if(results != null && results.length > 0 && results == 'dateExpired') {
 						res.render('forgot', {
@@ -2296,8 +2296,8 @@ totalshares = t[0].counting;
                         labyokersurname : req.session.surname,
 						/*loggedIn : true,*/
 						message : res.__("index.changepwd.message3").replace(/&lt;/g, '<').replace(/&gt;/g, '>'), 
-						displayForm: true,
-						scripts : [ '/javascripts/utils.js' ]
+						displayForm: true
+						//,scripts : [ '/javascripts/utils.js' ]
 					});
 			} else if(results != null && results.length > 0 && results == 'cannotFindRequest') {
 					res.render('forgot', {
@@ -2311,8 +2311,8 @@ totalshares = t[0].counting;
                         labyokersurname : req.session.surname,
 						/*loggedIn : true,*/
 						displayForm: true,
-						message : res.__("index.changepwd.message4").replace(/&lt;/g, '<').replace(/&gt;/g, '>'), 
-						scripts : [ '/javascripts/utils.js' ]
+						message : res.__("index.changepwd.message4").replace(/&lt;/g, '<').replace(/&gt;/g, '>') 
+						//,scripts : [ '/javascripts/utils.js' ]
 					});
 			} else {
 					res.render('changepassword', {
@@ -2326,8 +2326,8 @@ totalshares = t[0].counting;
                         labyokersurname : req.session.surname,
 						/*loggedIn : true,*/
 						displayForm: true,
-						message : (res.__("index.changepwd.message5", { id: id })).replace(/&lt;/g, '<').replace(/&gt;/g, '>'), 
-						scripts : [ '/javascripts/utils.js' ]
+						message : (res.__("index.changepwd.message5", { id: id })).replace(/&lt;/g, '<').replace(/&gt;/g, '>') 
+						//,scripts : [ '/javascripts/utils.js' ]
 					});
 			}
 			});
