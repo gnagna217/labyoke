@@ -1897,10 +1897,10 @@ LabYokerOrder.prototype.order = function(callback) {
 
 		var subject = /*"LabYoke - Pending Order for "*/ i18n.__({phrase: "index.orders.subject", locale: ownerlang}) + agent;
 		var subjectReq = /*"LabYoke - Your Request to order "*/ i18n.__({phrase: "index.orders.resubject", locale: userlang}) + agent;
-		var body = "<div style='box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); box-sizing: content-box; padding-right: 15px; margin-top: 20px;'>"
+		var body = "<div style='box-sizing:content-box;margin-top:20px;margin-left: 5px;margin-bottom: 5px;margin-right: 5px;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);'>"
 			
 		body += "<div style='text-align:center;padding-top: 20px;'><img style='width: 141px; margin: 0 20px;' src='https:\/\/team-labyoke.herokuapp.com\/images\/yoke4.png', alt='The Yoke',  title='Yoke', class='yokelogo'/></div><div style='font-size:11pt;padding: 20px;'>" + i18n.__({phrase: "index.orders.hello", locale: ownerlang}) + " " + location + ",<br/><br/>";
-		var bodyReq = "<div style='box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); box-sizing: content-box; padding-right: 15px; margin-top: 20px;'>"
+		var bodyReq = "<div style='box-sizing:content-box;margin-top:20px;margin-left: 5px;margin-bottom: 5px;margin-right: 5px;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);'>"
 			
 		bodyReq += "<div style='text-align:center;padding-top: 20px;'><img style='width: 141px; margin: 0 20px;' src='https:\/\/team-labyoke.herokuapp.com\/images\/yoke4.png', alt='The Yoke',  title='Yoke', class='yokelogo'/></div><div style='font-size:11pt;padding: 20px;'>" + i18n.__({phrase: "index.orders.hello", locale: userlang}) + ",<br/><br/>";
 		body += i18n.__({phrase: "index.orders.body1", locale: ownerlang}); //"This is a kind request to share 100 units from the following inventory:";
@@ -2593,7 +2593,7 @@ LabyokerRegister.prototype.register = function(callback) {
 					// HERE i18n.__({phrase: "login", locale: userlang})
 
 					var subject = i18n.__({phrase: "index.register.subject", locale: userlang}); //"Labyoke - Start Labyoking";
-					var body="<div style='box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); box-sizing: content-box; padding-right: 15px; margin-top: 20px;'>"
+					var body="<div style='box-sizing:content-box;margin-top:20px;margin-left: 5px;margin-bottom: 5px;text-align: center;margin-right: 5px;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);'>"
 					body = "<div style='text-align:center;padding-top: 20px;'><img style='width: 141px; margin: 0 20px;' src='https:\/\/team-labyoke.herokuapp.com\/images\/yoke4.png', alt='The Yoke',  title='Yoke', class='yokelogo'/></div><div style='font-size:11pt;padding: 20px;'>" + i18n.__({phrase: "index.orders.hello", locale: userlang}) + " " + firstname
 							+ ",<br/><br/>";
 					body += i18n.__({phrase: "index.register.body1", locale: userlang}); //"Thanks for registering with @LabYoke.";
@@ -2702,7 +2702,7 @@ Labyoker.prototype.requestChangePassword = function(callback) {
 
 
 					var subject = i18n.__({phrase: "index.change.subject", locale: userlang}); //"Labyoke - Change Password Request";
-					var body = "<div style='box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); box-sizing: content-box; padding-right: 15px; margin-top: 20px;'>"
+					var body = "<div style='box-sizing:content-box;margin-top:20px;margin-left: 5px;margin-bottom: 5px;text-align: center;margin-right: 5px;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);'>"
 					body += "<div style='text-align:center;padding-top: 20px;'><img style='width: 141px; margin: 0 20px;' src='https:\/\/team-labyoke.herokuapp.com\/images\/yoke4.png', alt='The Yoke',  title='Yoke', class='yokelogo'/></div><div style='font-size:11pt;padding: 20px;'>" + i18n.__({phrase: "index.orders.hello", locale: userlang}) + " " + name
 							+ ",<br/><br/>";
 					body += i18n.__({phrase: "index.change.body1", locale: userlang}); //"You have requested to change your password @LabYoke. Please click on this link:<br/>";
@@ -2903,7 +2903,7 @@ LabYokerChangeShare.prototype.cancelShare = function(callback) {
 		if(/*table == lab+"_orders" && */checked == 0){
 			
 			var subject = i18n.__({phrase: "index.cancelled.subject", locale: userlang}) + agent;//"LabYoke Order - Cancelled for " + agent;
-			var body="<div style='box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); box-sizing: content-box; padding-right: 15px; margin-top: 20px;'>"
+			var body="<div style='box-sizing:content-box;margin-top:20px;margin-left: 5px;margin-bottom: 5px;margin-right: 5px;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);'>"
 			body += "<div style='text-align:center;padding-top: 20px;'><img style='width: 141px; margin: 0 20px;' src='https:\/\/team-labyoke.herokuapp.com\/images\/yoke4.png', alt='The Yoke',  title='Yoke', class='yokelogo'/></div><div style='font-size:11pt;padding: 20px;'>" + i18n.__({phrase: "index.orders.hello", locale: userlang}) + ",<br/><br/>";
 			//body += "Unfortunately your order has been cancelled due to insufficient quantities from the following inventory:" + " <br><b>Reagent: </b> " + agent;
 			body += i18n.__({phrase: "index.cancelled.body1", locale: userlang}) + " <br><b>" + i18n.__({phrase: "index.orders.reagent", locale: userlang}) + ": </b> " + agent;
@@ -2993,7 +2993,7 @@ LabYokerChangeShare.prototype.fulfillShare = function(callback) {
 		if(/*table == lab+"_orders" && */checked == 0){
 			
 			var subject = i18n.__({phrase: "index.fulfilled.subject", locale: userlang}) + agent;//"LabYoke Order - Cancelled for " + agent;
-			var body="<div style='box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); box-sizing: content-box; padding-right: 15px; margin-top: 20px;'>"
+			var body="<div style='box-sizing:content-box;margin-top:20px;margin-left: 5px;margin-bottom: 5px;margin-right: 5px;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);'>"
 			body += "<div style='text-align:center;padding-top: 20px;'><img style='width: 141px; margin: 0 20px;' src='https:\/\/team-labyoke.herokuapp.com\/images\/yoke4.png', alt='The Yoke',  title='Yoke', class='yokelogo'/></div><div style='font-size:11pt;padding: 20px;'>" + i18n.__({phrase: "index.orders.hello", locale: userlang}) + ",<br/><br/>";
 			//body += "Unfortunately your order has been cancelled due to insufficient quantities from the following inventory:" + " <br><b>Reagent: </b> " + agent;
 			body += i18n.__({phrase: "index.fulfilled.body1", locale: userlang}) + " <br><b>" + i18n.__({phrase: "index.orders.reagent", locale: userlang}) + ": </b> " + agent;
@@ -3031,7 +3031,7 @@ LabYokerChangeShare.prototype.fulfillShare = function(callback) {
 			//mailOptions.sendAllEmails();
 		} else if(checked == 1){
 			var subject = i18n.__({phrase: "index.fulfilled.not.subject", locale: userlang}) + agent;//"LabYoke Order - Cancelled for " + agent;
-			var body="<div style='box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); box-sizing: content-box; padding-right: 15px; margin-top: 20px;'>"
+			var body="<div style='box-sizing:content-box;margin-top:20px;margin-left: 5px;margin-bottom: 5px;margin-right: 5px;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);'>"
 			body += "<div style='text-align:center;padding-top: 20px;'><img style='width: 141px; margin: 0 20px;' src='https:\/\/team-labyoke.herokuapp.com\/images\/yoke4.png', alt='The Yoke',  title='Yoke', class='yokelogo'/></div><div style='font-size:11pt;padding: 20px;'>" + i18n.__({phrase: "index.orders.hello", locale: userlang}) + ",<br/><br/>";
 			//body += "Unfortunately your order has been cancelled due to insufficient quantities from the following inventory:" + " <br><b>Reagent: </b> " + agent;
 			body += i18n.__({phrase: "index.fulfilled.not.body1", locale: userlang}) + " <br><b>" + i18n.__({phrase: "index.orders.reagent", locale: userlang}) + ": </b> " + agent;
