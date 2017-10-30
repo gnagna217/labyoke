@@ -61,6 +61,12 @@ block content
 						span(style="text-align: center")
 							h4= i18n.__("shares.admin.error5")
 				script="$(window).scrollTop($('#uploadForm').offset().top).scrollLeft($('#uploadForm').offset().left);"
+			if(nosuccess == "missingcolumn")
+				div
+					div(id="uploaderror", class="table-responsive alert alert-danger-report", style="margin-top: 25px;")
+						span(style="text-align: center")
+							h4= i18n.__("shares.admin.error6")
+				script="$(window).scrollTop($('#uploadForm').offset().top).scrollLeft($('#uploadForm').offset().left);"
 			if(nosuccess == "databaserror")
 				div
 					div(id="uploaderror", class="table-responsive alert alert-danger-report", style="margin-top: 25px;")

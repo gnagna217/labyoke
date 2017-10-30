@@ -182,6 +182,11 @@ LabYokeUploader.prototype.upload = function(callback) {
 			//var category = results[prop].category;
 			var price = 100;//results[prop].price;
 
+			if(agent == "undefined" || vendor == "undefined" || catalognumber == "undefined" || location == "undefined" || email == "undefined" ){
+				console.log("cannotUploadMissingColumn");
+				callback(null, "cannotUploadMissingColumn");
+			}
+
 			checkvalues = checkvalues + "(agent='" + agent + "' and vendor= '" + vendor + "' and catalognumber= '" + catalognumber + "' and email='" + email + "' )";
 			if(prop < (results.length-1)){
 				checkvalues = checkvalues + " or ";
@@ -255,7 +260,7 @@ LabYokeUploader.prototype.upload = function(callback) {
 		});
 	} else {
 		//Change Password already sent
-		console.log("cannotUploadMissingData.");
+		console.log("cannotUploadMissingData");
 		callback(null, "cannotUploadMissingData");
 	}	
 };
