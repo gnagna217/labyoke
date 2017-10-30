@@ -223,6 +223,10 @@ module.exports = function(router) {
                         res.render('admins', {
                         lang:req.cookies.i18n, i18n:res, report_data:req.session.report_data, myshares: req.session.myshares, mysharesrequest: req.session.mysharesrequest, report_sharesbycategory: req.session.report_sharesbycategory, report_venn: req.session.report_venn, test: req.session.test, currentlabname: req.session.lab, ordersnum: req.session.orders, sharesnum: req.session.shares, json: result, loggedIn : true, isLoggedInAdmin: req.session.admin, title: 'Admins', spreadname: req.file.originalname, labyoker : req.session.user, labyokersurname : req.session.surname
                     });
+                    } else if(done == "cannotUploadMissingData"){
+                        console.log("inside missing data");
+                        res.render('admins', {doing:"upload",lang:req.cookies.i18n, i18n:res, nosuccess: "missingdata", report_data:req.session.report_data, mysharesrequest: req.session.mysharesrequest, report_sharesbycategory: req.session.report_sharesbycategory, report_venn: req.session.report_venn, test: req.session.test, currentlabname: req.session.lab, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, labyokersurname : req.session.surname, myshares: req.session.myshares, mysharesrequest: req.session.mysharesrequest, report_sharesbycategory: req.session.report_sharesbycategory, loggedIn : true, isLoggedInAdmin: req.session.admin, title:'Admins'});
+                        req.session.messages = null;
                     } else {
                         console.log("inside not successful upload");
                         res.render('admins', {lang:req.cookies.i18n, i18n:res, nosuccess: "databaserror", report_data:req.session.report_data, myshares: req.session.myshares, mysharesrequest: req.session.mysharesrequest, report_sharesbycategory: req.session.report_sharesbycategory, report_venn: req.session.report_venn, test: req.session.test, currentlabname: req.session.lab, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, labyokersurname : req.session.surname, myshares: req.session.myshares, mysharesrequest: req.session.mysharesrequest, report_sharesbycategory: req.session.report_sharesbycategory, loggedIn : true, isLoggedInAdmin: req.session.admin, title:'Admins'});
@@ -315,7 +319,11 @@ module.exports = function(router) {
                     	res.render('share', {
                     	doing:"upload",lang:req.cookies.i18n, i18n:res, myshares: req.session.myshares, mysharesrequest: req.session.mysharesrequest, report_sharesbycategory: req.session.report_sharesbycategory, report_venn: req.session.report_venn, test: req.session.test, currentlabname: req.session.lab, ordersnum: req.session.orders, sharesnum: req.session.shares, json: result, loggedIn : true, isLoggedInAdmin: req.session.admin, title: 'Share', spreadname: req.file.originalname, labyoker : req.session.user, labyokersurname : req.session.surname
                     });
-                	} else {
+                	} else if(done == "cannotUploadMissingData"){
+                        console.log("inside missing data");
+                        res.render('admins', {doing:"upload",lang:req.cookies.i18n, i18n:res, nosuccess: "missingdata", report_data:req.session.report_data, mysharesrequest: req.session.mysharesrequest, report_sharesbycategory: req.session.report_sharesbycategory, report_venn: req.session.report_venn, test: req.session.test, currentlabname: req.session.lab, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, labyokersurname : req.session.surname, myshares: req.session.myshares, mysharesrequest: req.session.mysharesrequest, report_sharesbycategory: req.session.report_sharesbycategory, loggedIn : true, isLoggedInAdmin: req.session.admin, title:'Admins'});
+                        req.session.messages = null;
+                    } else {
                 		console.log("inside not successful upload");
                 		res.render('share', {doing:"upload",lang:req.cookies.i18n, i18n:res, nosuccess: "databaserror", report_venn: req.session.report_venn, test: req.session.test, currentlabname: req.session.lab, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, labyokersurname : req.session.surname, myshares: req.session.myshares, mysharesrequest: req.session.mysharesrequest, report_sharesbycategory: req.session.report_sharesbycategory, loggedIn : true, isLoggedInAdmin: req.session.admin, title:'Share'});
 						req.session.messages = null;
@@ -405,7 +413,11 @@ module.exports = function(router) {
                     	res.render('share', {
                     	lang:req.cookies.i18n, i18n:res, myshares: req.session.myshares, mysharesrequest: req.session.mysharesrequest, report_sharesbycategory: req.session.report_sharesbycategory, report_venn: req.session.report_venn, test: req.session.test, currentlabname: req.session.lab, ordersnum: req.session.orders, sharesnum: req.session.shares, json: result, loggedIn : true, isLoggedInAdmin: req.session.admin, title: 'Share', spreadname: req.file.originalname, labyoker : req.session.user, labyokersurname : req.session.surname
                     });
-                	} else {
+                	} else if(done == "cannotUploadMissingData"){
+                        console.log("inside missing data");
+                        res.render('admins', {doing:"upload",lang:req.cookies.i18n, i18n:res, nosuccess: "missingdata", report_data:req.session.report_data, mysharesrequest: req.session.mysharesrequest, report_sharesbycategory: req.session.report_sharesbycategory, report_venn: req.session.report_venn, test: req.session.test, currentlabname: req.session.lab, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, labyokersurname : req.session.surname, myshares: req.session.myshares, mysharesrequest: req.session.mysharesrequest, report_sharesbycategory: req.session.report_sharesbycategory, loggedIn : true, isLoggedInAdmin: req.session.admin, title:'Admins'});
+                        req.session.messages = null;
+                    } else {
                 		console.log("inside not successful upload");
                 		res.render('share', {lang:req.cookies.i18n, i18n:res, nosuccess: "databaserror", report_venn: req.session.report_venn, test: req.session.test, currentlabname: req.session.lab, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, labyokersurname : req.session.surname, myshares: req.session.myshares, mysharesrequest: req.session.mysharesrequest, report_sharesbycategory: req.session.report_sharesbycategory, loggedIn : true, isLoggedInAdmin: req.session.admin, title:'Share'});
 						req.session.messages = null;
