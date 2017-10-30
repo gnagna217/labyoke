@@ -72,7 +72,7 @@ block content
 					div(id="uploaderror", class="table-responsive alert alert-danger-report", style="margin-top: 25px;")
 						span(style="text-align: center")
 							h4(style="padding-top: 10px;")= i18n.__("shares.admin.error3")
-								span(style="color: #3d9dcb;")=" " + spreadname
+								span(style="color: #3d9dcb;word-wrap: break-word;")=" " + spreadname
 				script="$(window).scrollTop($('#uploadForm').offset().top).scrollLeft($('#uploadForm').offset().left);"
 			if(nosuccess == "generic")
 				div
@@ -86,7 +86,7 @@ block content
 						div(class="table-responsive")
 							span(style="text-align: center")
 								h3(style="padding-top: 10px;")= i18n.__("shares.admin.success")
-									span(style="color: #3d9dcb;")=" " + spreadname                   
+									span(style="color: #3d9dcb;word-wrap: break-word;")=" " + spreadname                   
 							table(id="rankTblload" class="table rankTbl animated fadeIn")
 								thead
 									tr(class="you info-best" style="font-weight: bold")

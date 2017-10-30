@@ -173,6 +173,7 @@ LabYokeUploader.prototype.upload = function(callback) {
 
 	if(results != null){
 		for(var prop in results){
+			console.log("values exist: " + prop);
 			var agent = results[prop].name_of_reagent;
 			var vendor = results[prop].vendor;
 			var catalognumber = results[prop].catalog_number;
@@ -196,7 +197,7 @@ LabYokeUploader.prototype.upload = function(callback) {
 	}
 	console.log("All checkvalues " + checkvalues);
 
-	if(values!= null){
+	if(values!= null && values != ""){
 		var query3 = client.query("Select * from vm2016_agentsshare where " + checkvalues);
 
 		query3.on("row", function(row, result3) {
