@@ -55,6 +55,12 @@ block content
 					div(class="buttons")
 						button.btn.btn-success.btn-lg.btn-block.shadow(type="submit",value="Upload",name="submit")= i18n.__("shares.admin.button")
 						//img(src="/images/yoke5.png", class=hidefadesections + " noshowmobile992", alt="The Lab", data-toggle="tooltip",title="Lab", style="border-width:0px; width: 35px; margin-top: -67px; margin-left: 90%;")
+			if(nosuccess == "missingdata")
+				div
+					div(id="uploaderror", class="table-responsive alert alert-danger-report", style="margin-top: 25px;")
+						span(style="text-align: center")
+							h4= i18n.__("shares.admin.error5")
+				script="$(window).scrollTop($('#uploadForm').offset().top).scrollLeft($('#uploadForm').offset().left);"
 			if(nosuccess == "databaserror")
 				div
 					div(id="uploaderror", class="table-responsive alert alert-danger-report", style="margin-top: 25px;")

@@ -344,6 +344,7 @@
     "shares.admin.error2": "Veuillez sélectionner un fichier Excel valide et réessayer.",
     "shares.admin.error3": "Aucune donnée n'est disponible dans le fichier sélectionné.",
     "shares.admin.error4": "Une erreur générique s'est produite. S'il vous plait, assurez vous de la validité des colonnes et rangées de votre fichier et réessayez.",
+    "shares.admin.error5": "Le fichier téléchargé ne contient aucune valeur.Veuillez remplir le fichier, sauvegarder, et réessayez.",
     "shares.admin.success": "Fantastique! Vous avez téléchargé le fichier avec succès: ",
     "shares.chart.title": "Graphiques Opérationnels.",
     "shares.chart.select": "Selectionnez un Graphique",

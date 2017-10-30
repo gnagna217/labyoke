@@ -346,6 +346,7 @@
     "shares.admin.error2": "Please select a valid Excel File and try again.",
     "shares.admin.error3": "There is no data available in the file selected.",
     "shares.admin.error4": "A generic error has occurred. Please check the validity of the file's columns and rows then try again.",
+    "shares.admin.error5": "The uploaded file does not contain any value. Please fill out the rows, save, and try to upload again.",
     "shares.admin.success": "Fantastic! You have uploaded the file: ",
     "shares.chart.title": "Operational Charts.",
     "shares.chart.select": "Select Chart",
