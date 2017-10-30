@@ -24,11 +24,11 @@
     font-size: 90pt;
     font-weight: bolder;
     color: #4CAF50;
-    margin-left: -30px;
+    margin-left: -33px;
     display: -webkit-box;
     line-height: 0px;
     position: relative;
-    top: -10px;
+    top: 0px;
 }
 .point2:after{
     content: "|";
