@@ -22,8 +22,8 @@ block content
 		- fadesections = "fadesections"
 		- hidefadesections = "hidefadesections"
 		- uploadtext = "uploadtext"
-		script.
-			$('.admintop').click(function() {$('.admintop').removeClass("fadesections");});
+	script.
+		$('.admintop').click(function() {console.log("check has faded.");if($('.admintop').hasClass("fadesections")){console.log("remove faded.");$('.admintop').removeClass("fadesections");}});
 
 	- var adjust = "adjustpadding"
 
