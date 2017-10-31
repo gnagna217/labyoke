@@ -22,8 +22,6 @@ block content
 		- fadesections = "fadesections"
 		- hidefadesections = "hidefadesections"
 		- uploadtext = "uploadtext"
-	script.
-		$('.admintop').click(function() {console.log("check has faded.");if($('.admintop').hasClass("fadesections")){console.log("remove faded.");$('.admintop').removeClass("fadesections");}});
 
 	- var adjust = "adjustpadding"
 
@@ -556,6 +554,14 @@ block content
 		span(class="desktabonly", id="checkdisplay")
 		script.
 			$( document ).ready(function() {
+				$('.admintop').click(function() {
+					console.log("check has faded.");
+					if($('.admintop').hasClass("fadesections")){
+						console.log("remove faded.");
+						$('.admintop').removeClass("fadesections");
+					}
+				});
+				
 				$( ".uploadtext" ).addClass( "animated fadeIn" );
 				$('body').click(function() {
 					// jQuery selector to get an element
