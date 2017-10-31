@@ -170,6 +170,7 @@ LabYokeUploader.prototype.upload = function(callback) {
 	var values = "";
 	var checkvalues = "";
 	var now = moment(new Date).tz("America/New_York").format('MM-DD-YYYY');
+	var proceed = true;
 
 	if(results != null){
 		for(var prop in results){
@@ -184,18 +185,19 @@ LabYokeUploader.prototype.upload = function(callback) {
 			console.log("check if undefined");
 
 			if(agent == undefined || vendor == undefined || catalognumber == undefined || location == undefined || email == undefined ){
-				console.log("cannotUploadMissingColumn");
-				callback(null, "cannotUploadMissingColumn");
+				proceed = false;
 			}
 
-			checkvalues = checkvalues + "(agent='" + agent + "' and vendor= '" + vendor + "' and catalognumber= '" + catalognumber + "' and email='" + email + "' )";
-			if(prop < (results.length-1)){
-				checkvalues = checkvalues + " or ";
-			}
+			if(proceed){
+				checkvalues = checkvalues + "(agent='" + agent + "' and vendor= '" + vendor + "' and catalognumber= '" + catalognumber + "' and email='" + email + "' )";
+				if(prop < (results.length-1)){
+					checkvalues = checkvalues + " or ";
+				}
 
-			values = values + "('" + agent + "', '" + vendor + "', '" + catalognumber + "', '" + location + "', '" + email + "','" + now + "','new',0,1,null," + price + ")";
-			if(prop < (results.length-1)){
-				values = values + ",";
+				values = values + "('" + agent + "', '" + vendor + "', '" + catalognumber + "', '" + location + "', '" + email + "','" + now + "','new',0,1,null," + price + ")";
+				if(prop < (results.length-1)){
+					values = values + ",";
+				}
 			}
 		}
 		console.log("checkvalues: " + checkvalues);
@@ -203,7 +205,7 @@ LabYokeUploader.prototype.upload = function(callback) {
 	}
 	console.log("All checkvalues " + checkvalues);
 
-	if(values!= null && values != ""){
+	if(values!= null && values != "" && proceed){
 		var query3 = client.query("Select * from vm2016_agentsshare where " + checkvalues);
 
 		query3.on("row", function(row, result3) {
@@ -259,6 +261,9 @@ LabYokeUploader.prototype.upload = function(callback) {
 				//callback(null, "successfulUpload");
 			}
 		});
+	} else if(!proceed){
+		console.log("cannotUploadMissingColumn");
+		callback(null, "cannotUploadMissingColumn");
 	} else {
 		//Change Password already sent
 		console.log("cannotUploadMissingData");
