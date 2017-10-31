@@ -181,8 +181,9 @@ LabYokeUploader.prototype.upload = function(callback) {
 			var email = results[prop].user;
 			//var category = results[prop].category;
 			var price = 100;//results[prop].price;
+			console.log("check if undefined");
 
-			if(agent == "undefined" || vendor == "undefined" || catalognumber == "undefined" || location == "undefined" || email == "undefined" ){
+			if(agent == undefined || vendor == undefined || catalognumber == undefined || location == undefined || email == undefined ){
 				console.log("cannotUploadMissingColumn");
 				callback(null, "cannotUploadMissingColumn");
 			}
