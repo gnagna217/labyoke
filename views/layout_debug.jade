@@ -21,6 +21,7 @@ html(lang='en')
         - menushare = ""
         - menumyshares = ""
      title!= 'LabYoke - ' + i18n.__(a)
+     link(href='/css/botchat.css', rel='stylesheet')
      link(href='/css/animate.css', rel='stylesheet')
      if (title=='Orders' || title == "Share" || title=="Search" || title=="Help" || title=="Admins" || title=='Reagent Search')
       link(rel="stylesheet" type="text/css" href="/css/datatables.min.css")
@@ -32,6 +33,7 @@ html(lang='en')
      link(href='/css/font-awesome.css', rel='stylesheet')
      link(href='/css/animation.css', rel='stylesheet')
      link(href='/css/hamburgers-master/dist/hamburgers.css', rel='stylesheet')
+
      if (title=='About Us')
        link(href='/css/rotating-card.css', rel='stylesheet')
      //if (title=='Login')
@@ -237,6 +239,8 @@ html(lang='en')
                                 span(class="mobileonly2",style="margin-left: 5px;") #{i18n.__("layout.Logout2")}
 
      block content
+     div(id="bot")
+     script(type="text/javascript" src="/javascripts/botchat.js")
      script(type="text/javascript" src="/javascripts/bootstrap.min.js")
      script(type="text/javascript" src="/javascripts/popup.js")
      if(title=='Login')
@@ -262,6 +266,13 @@ html(lang='en')
             div(style="color:white; text-align:center; font-size:11px;")="@labyoke"
               img(src="/images/"+language+"0.png" alt="Language" title="Language" style="width: 15px;margin-left: 9px;")
     script.
+        BotChat.App({
+        directLine: { secret: "jMO0wtNhTWM.cwA.rqg._IWRYZZ7OsyoD0F6JfuPEDOnw6SP48-pAnIRptYH3mE" },
+        user: { id: 'userid' },
+        bot: { id: 'Labyoke' },
+        resize: 'detect'
+      }, document.getElementById("bot"));
+
         $(".nav-menu-logout").click(function() {
                     $( this ).addClass( "animated hinge" );
                     setTimeout(function() {

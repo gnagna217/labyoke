@@ -35,7 +35,7 @@ var connector = new builder.ChatConnector({
 var bot = new builder.UniversalBot(connector);
 
 bot.dialog('/', function (session) {
-session.send("Hello World");
+session.send("Hello There!");
 console.log("connecting");
 });
 
