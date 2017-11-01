@@ -479,7 +479,7 @@ module.exports = function(router) {
             //req.session.shares = 0;
             console.log("test ? " + results[4]);
             console.log("meadminof ? " + results[0]);
-            res.render('admins', {meadminof:req.session.meadminof,lang:req.cookies.i18n, i18n:res, currentlabname: req.session.lab, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, labyokersurname : req.session.surname, myshares: results[1], mysharesrequest: results[4], report_data: results[2], loggedIn : true, isLoggedInAdmin: req.session.admin, title:'Admins'});
+            res.render('admins', {meadminof:req.session.meadminof,lang:req.cookies.i18n, i18n:res, currentlabname: meadminof, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, labyokersurname : req.session.surname, myshares: results[1], mysharesrequest: results[4], report_data: results[2], loggedIn : true, isLoggedInAdmin: req.session.admin, title:'Admins'});
             req.session.messages = null;
         });
     } else {
