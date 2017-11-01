@@ -1627,7 +1627,7 @@ LabYokeAgents.prototype.findallsharesadmins = function(callback) {
 	console.log("findmyshares: " + this.email);
 	console.log("shares labs: " + labs);
 	var email = this.email;
-	var isassignedadmin = true;
+	var isassignedadmin = false;
 
 	var select = "";
 	select = "select * from labs where admin = '"+email+"'";
@@ -1641,7 +1641,7 @@ LabYokeAgents.prototype.findallsharesadmins = function(callback) {
 	if(test5 !=null && test5.length > 0){
 		console.log("test5 admin of lab: " + test5[0].labname);	
 		mylab = test5[0].labname;
-		isassignedadmin = false;
+		isassignedadmin = true;
 	}
 	results.push(mylab);
 	console.log("admin shares mylab: " + mylab);
