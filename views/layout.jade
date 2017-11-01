@@ -265,13 +265,13 @@ html(lang='en')
                                 span(class="mobileonly2",style="margin-left: 5px;") #{i18n.__("layout.Logout2")}
 
      block content
-     div(id="bot")
      :staticCache
-      script(src="https://cdn.botframework.com/botframework-webchat/latest/botchat.js")
       script(type="text/javascript" src="/javascripts/bootstrap.min.js")
      if(title=='Reagent Search' || title=='Search' || title=='Share' || title=='Orders' || title=='Admins' || title=='Account')
+      div(id="bot")
       :staticCache
         script(type="text/javascript" src="/javascripts/popup.js")
+        script(src="https://cdn.botframework.com/botframework-webchat/latest/botchat.js")
      if (title=='Share' || title=='Admins')
        :staticCache
         script(type="text/javascript" src="/javascripts/custom-file-input.js")
@@ -305,7 +305,7 @@ html(lang='en')
     script.
         BotChat.App({
           directLine: { secret: "jMO0wtNhTWM.cwA.rqg._IWRYZZ7OsyoD0F6JfuPEDOnw6SP48-pAnIRptYH3mE" },
-          user: { id: 'userid' },
+          user: { id: '#{labyoker}' },
           bot: { id: 'Labyoke' },
           resize: 'detect'
         }, document.getElementById("bot"));
