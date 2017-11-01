@@ -24,13 +24,23 @@
 .wc-chatview-panel{
       width: 200px;
     height: 200px;
-    margin: 25px;
+    margin: 50px;
     background-color: transparent;
+    border-radius: 50px;
 }
 .wc-console{
       border: none !important;
-  border-bottom: 5px solid #8b6e37 !important;
+  border-bottom: 1px solid #8b6e37 !important;
 }
+.wc-textbox {
+    left: 15px !important;
+    }
+.wc-chatview-panel {
+    right: 100% !important;
+    left: 39% !important;
+    top: 100% !important;
+  }
+
 .point:before {
     /*content: "|";
     font-size: 50pt;
