@@ -268,7 +268,11 @@ html(lang='en')
      :staticCache
       script(type="text/javascript" src="/javascripts/bootstrap.min.js")
      if(title=='Reagent Search' || title=='Search' || title=='Share' || title=='Orders' || title=='Admins' || title=='Account')
-      div(id="bot")
+      div(class="labbot sleep" style="overflow: hidden;position: absolute;right: 100%;left: 43.5%;top: 100%;bottom: 0px;margin: 50px;margin-top: 110px;width: 70px;height: 70px;")
+        img(src="/images/tip5.png" style="width: 70px;")
+      div(class="labbot awake" style="overflow: hidden;position: absolute;right: 100%;left: 54%;top: 100%;bottom: 0px;margin: 50px;margin-top: 110px;width: 70px;height: 70px;display:none")
+        img(src="/images/tip6.png" style="width: 70px;")
+      div(id="bot", style="display:none")
       :staticCache
         script(type="text/javascript" src="/javascripts/popup.js")
         script(src="https://cdn.botframework.com/botframework-webchat/latest/botchat.js")
@@ -309,7 +313,14 @@ html(lang='en')
           bot: { id: 'Labyoke' },
           resize: 'detect'
         }, document.getElementById("bot"));
+
         $(document).ready(function() {
+          $(".labbot").click(function() {
+            $( "#bot" ).show();
+            $( "#awake" ).show();
+            $( "#sleep" ).hide();
+          });
+
         //$('[data-toggle="tooltip"]').tooltip({placement: "bottom"});
         var options = {
           max_zoom: 1.3, // maximum amount you can zoom in. 1.5 = 150% zoom
