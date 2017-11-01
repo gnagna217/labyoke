@@ -1629,16 +1629,16 @@ LabYokeAgents.prototype.findallsharesadmins = function(callback) {
 	var email = this.email;
 
 	var select = "";
-	select = "select labname from labs where admin = '"+email+"'";
+	select = "select * from labs where admin = '"+email+"'";
 	var query5 = client.query(select);
 			query5.on("row", function(row, result5) {
 				result5.addRow(row);
 			});
 			query5.on("end", function(result5) {
 				var test5 = result5.rows;
-				console.log("test5 admin of lab: " + test5[0]);
-				results.push(test5[0]);
-	mylab = test5[0];
+				console.log("test5 admin of lab: " + test5[0].labname);
+				results.push(test5[0].labname);
+	mylab = test5[0].labname;
 
 
 	var query = client
