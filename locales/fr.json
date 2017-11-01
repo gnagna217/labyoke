@@ -542,7 +542,7 @@
 
     "admins.pop.title": "Admin.",
     "admins.pop.subtitle": "<div id='actionorder' class='exit' style='width: 50%; float: left; background-color: rgba(138, 109, 59, 0.55);'')>OK</div><div class='exit' id='actioncancel'>Annuler</div>",
-    "admins.title":"Admin",
+    "admins.title":"Admin.",
     "admins.subtitle":"Votre laboratoire n'a reçu aucune commande de réactifs",
     "admins.subtitle1": "Commandes Laboratoire.",
     "admins.subtitle2":"Votre laboratoire n'a aucun réactif enregistré à son actif.",
