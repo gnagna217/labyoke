@@ -9,6 +9,27 @@
   -webkit-font-smoothing: antialiased;
 }
 
+.wc-upload{
+  display:none;
+}
+
+.wc-message-groups{
+  overflow: auto !important;
+}
+
+.wc-header{
+  display: none;
+}
+
+.wc-chatview-panel{
+      width: 200px;
+    height: 200px;
+    margin: 25px;
+    background-color: transparent;
+}
+.wc-console{
+  border-bottom: 5px solid #8b6e37 !important;
+}
 .point:before {
     /*content: "|";
     font-size: 50pt;
