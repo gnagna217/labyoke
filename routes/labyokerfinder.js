@@ -1636,9 +1636,9 @@ LabYokeAgents.prototype.findallsharesadmins = function(callback) {
 			});
 			query5.on("end", function(result5) {
 				var test5 = result5.rows;
-				console.log("test5 admin of lab: " + test5);
-				results.push(test5);
-	mylab = test5;
+				console.log("test5 admin of lab: " + test5[0]);
+				results.push(test5[0]);
+	mylab = test5[0];
 
 
 	var query = client
