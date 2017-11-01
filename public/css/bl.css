@@ -10,7 +10,7 @@
 }
 
 .wc-upload{
-  display:none;
+  display:none !important;
 }
 
 .wc-message-groups{
