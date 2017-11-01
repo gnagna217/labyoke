@@ -37,7 +37,7 @@ block content
 		div
 			a(name="upload")
 		div(class="share-container2 adjustpaddingrightandwidth2", style="float:left;")
-			h1= i18n.__("admins.title")
+			h1= currentlabname + "'s " + i18n.__("admins.title")
 			if(isLoggedInAdmin > 0)
 				//div(class="threepointsmobile", style=nobar)
 				- if(doing == "upload")
