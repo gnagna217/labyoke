@@ -540,7 +540,7 @@
     "index.forgot.message2": "Nous n'avons pas pu trouver votre nom d'utilisateur. Veuillez réessayer ci-dessous.",
     "index.forgot.message3": "Veuillez entrer votre<span class='labColor'>nom d'utilisateur</span>. Veuillez réessayer ci-dessous.",    
 
-    "admins.pop.title": "Admin.",
+    "admins.pop.title": "Admin",
     "admins.pop.subtitle": "<div id='actionorder' class='exit' style='width: 50%; float: left; background-color: rgba(138, 109, 59, 0.55);'')>OK</div><div class='exit' id='actioncancel'>Annuler</div>",
     "admins.title":"Admin.",
     "admins.subtitle":"Votre laboratoire n'a reçu aucune commande de réactifs",
