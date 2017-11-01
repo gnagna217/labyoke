@@ -37,7 +37,7 @@ block content
 		div
 			a(name="upload")
 		div(class="share-container2 adjustpaddingrightandwidth2", style="float:left;")
-			h1= currentlabname + " " + i18n.__("admins.title")
+			h1!= i18n.__("admins.title") + " <span style='font-size: 75%;font-style: italic;'>" + currentlabname + "</span>."
 			if(isLoggedInAdmin > 0)
 				//div(class="threepointsmobile", style=nobar)
 				- if(doing == "upload")
@@ -154,7 +154,7 @@ block content
 			div(id="qtyComp", style="display:block;padding-top: 5px;")
 				h3
 					span(class="fa fa-bar-chart", style="margin-right: 10px;color: #337ab7;")
-					span!= i18n.__("admins.qty.title1") + currentlabname + i18n.__("admins.qty.title2")
+					span!= i18n.__("admins.qty.title")
 				- if(report_data != null && report_data.length >0)
 					p!= i18n.__("admins.qty.subtitle")
 					div(class="ct-chart ct-perfect-fourth")
