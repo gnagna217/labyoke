@@ -1679,8 +1679,8 @@ LabYokeAgents.prototype.findallsharesadmins = function(callback) {
 var listlabs = "";
 if(labs){
 for(var l in labs){
-	console.log("l: " + labs[l]);
-	listlabs = listlabs + "'" + labs[l] + "',";
+	console.log("l: " + labs[l].labname);
+	listlabs = listlabs + "'" + labs[l].labname + "',";
 }
 listlabs = listlabs.replace(/,\s*$/, "")
 console.log("listlabs: " + listlabs);
@@ -1690,7 +1690,7 @@ console.log("listlabs: " + listlabs);
 	for(var prop in labs){
 		var labsstr = (labs[prop].labname).replace(/ /g,"").toLowerCase() + "_orders";
 		//select = select + "SELECT * FROM " + labsstr +  " where email='" + email + "' UNION ";
-	select = select + "SELECT * FROM " + labsstr +  " where email in (Select email from vm2016_users where lab in (" + listlabs + ") UNION ";
+	select = select + "SELECT * FROM " + labsstr +  " where email in (Select email from vm2016_users where lab in (" + listlabs + ")) UNION ";
 	}
 	select = select.replace(/UNION\s*$/, "") + " order by date desc";
 	console.log("Shares admin select: " + select);
