@@ -470,14 +470,16 @@ module.exports = function(router) {
         var labYokeAgents = new LabYokeAgents(req.session.email, req.session.lab, req.session.labs, req.session.dept,req.session.labadmin,req.session.oninsuff);
         labYokeAgents.findallsharesadmins(function(error, results) {
             //req.session.orders = results[2];
-            req.session.myshares = results[0];
-            req.session.report_data = results[1];
-            req.session.mysharesrequest = results[3];
+            req.session.myshares = results[1];
+            req.session.report_data = results[2];
+            req.session.mysharesrequest = results[4];
+            req.session.meadminof = results[0];
             //req.session.test = results[4];
             //req.session.report_venn = results[5];
             //req.session.shares = 0;
-            console.log("test ? " + results[3]);
-            res.render('admins', {lang:req.cookies.i18n, i18n:res, currentlabname: req.session.lab, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, labyokersurname : req.session.surname, myshares: results[0], mysharesrequest: results[3], report_data: results[1], loggedIn : true, isLoggedInAdmin: req.session.admin, title:'Admins'});
+            console.log("test ? " + results[4]);
+            console.log("meadminof ? " + results[0]);
+            res.render('admins', {meadminof:req.session.meadminof,lang:req.cookies.i18n, i18n:res, currentlabname: req.session.lab, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, labyokersurname : req.session.surname, myshares: results[1], mysharesrequest: results[4], report_data: results[2], loggedIn : true, isLoggedInAdmin: req.session.admin, title:'Admins'});
             req.session.messages = null;
         });
     } else {

@@ -1626,6 +1626,20 @@ LabYokeAgents.prototype.findallsharesadmins = function(callback) {
 	var mylabtable = mylab.replace(/ /g,"").toLowerCase();
 	console.log("findmyshares: " + this.email);
 	console.log("shares labs: " + labs);
+
+	var select = "";
+	select = "select labname from labs where admin = '"+email+"'";
+	var query5 = client.query(select);
+			query5.on("row", function(row, result5) {
+				result5.addRow(row);
+			});
+			query5.on("end", function(result5) {
+				var test5 = result5.rows;
+				console.log("test5 admin of lab: " + test5);
+				results.push(test5);
+	mylab = test5;
+
+
 	var query = client
 			.query("SELECT * FROM vm2016_agentsshare a,labs b, vm2016_users c where b.labname='"
 					+ mylab + "' and a.email=c.email and b.labname=c.lab and a.email = c.email order by a.agent asc");
@@ -1704,7 +1718,10 @@ console.log("listlabs: " + listlabs);
 				results.push(test4.length);
 				results.push(test4);
 
+
+
 							callback(null, results);
+			});
 
 
 			});
