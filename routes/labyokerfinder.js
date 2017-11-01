@@ -1679,7 +1679,8 @@ LabYokeAgents.prototype.findallsharesadmins = function(callback) {
 var listlabs = "";
 if(labs){
 for(var l in labs){
-	listlabs = l + ",";
+	console.log("l: " + l);
+	listlabs = listlabs + l + ",";
 }
 listlabs = listlabs.replace(/,\s*$/, "")
 console.log("listlabs: " + listlabs);
