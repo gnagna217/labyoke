@@ -155,6 +155,7 @@ var bot = new builder.UniversalBot(connector);
 app.post('/api/messages', connector.listen());
 bot.dialog('/', function (session) {
 session.send("Hello World");
+console.log("connecting");
 });
 
 
