@@ -1690,7 +1690,7 @@ console.log("listlabs: " + listlabs);
 	for(var prop in labs){
 		var labsstr = (labs[prop].labname).replace(/ /g,"").toLowerCase() + "_orders";
 		//select = select + "SELECT * FROM " + labsstr +  " where email='" + email + "' UNION ";
-	select = select + "SELECT * FROM " + labsstr +  " where email in (Select email from vm2016_users where lab in (" + listlabs + ")) UNION ";
+	select = select + "SELECT * FROM " + labsstr +  " where email in (select * from vm2016_users  where lab in (select labname from labs where admin = '"+email+"')) UNION ";
 	}
 	select = select.replace(/UNION\s*$/, "") + " order by date desc";
 	console.log("Shares admin select: " + select);
