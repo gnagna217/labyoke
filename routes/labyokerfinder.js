@@ -1626,6 +1626,7 @@ LabYokeAgents.prototype.findallsharesadmins = function(callback) {
 	var mylabtable = mylab.replace(/ /g,"").toLowerCase();
 	console.log("findmyshares: " + this.email);
 	console.log("shares labs: " + labs);
+	var email = this.email;
 
 	var select = "";
 	select = "select labname from labs where admin = '"+email+"'";
@@ -1644,7 +1645,7 @@ LabYokeAgents.prototype.findallsharesadmins = function(callback) {
 			.query("SELECT * FROM vm2016_agentsshare a,labs b, vm2016_users c where b.labname='"
 					+ mylab + "' and a.email=c.email and b.labname=c.lab and a.email = c.email order by a.agent asc");
 			//order by date desc
-	var email = this.email;
+	
 	console.log("myshares lab reagents: " + "SELECT * FROM vm2016_agentsshare a,labs b, vm2016_users c where b.labname='"
 					+ mylab + "' and a.email=c.email and b.labname=c.lab and a.email = c.email order by a.agent asc");
 	query.on("row", function(row, result) {
