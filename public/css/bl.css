@@ -28,6 +28,7 @@
     background-color: transparent;
 }
 .wc-console{
+      border: none !important;
   border-bottom: 5px solid #8b6e37 !important;
 }
 .point:before {
