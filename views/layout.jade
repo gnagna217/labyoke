@@ -30,6 +30,7 @@ html(lang='en')
       :staticCache
         link(href='/css/popup.css', rel='stylesheet')
      :staticCache
+      link(href='/css/botchat.css', rel='stylesheet')
       link(href='/css/bootstrap.css', rel='stylesheet')
       link(href='/css/bl.css', rel='stylesheet')
       //link(href='/css/fontello.css', rel='stylesheet')
@@ -264,7 +265,9 @@ html(lang='en')
                                 span(class="mobileonly2",style="margin-left: 5px;") #{i18n.__("layout.Logout2")}
 
      block content
+     div(id="bot")
      :staticCache
+      script(type="text/javascript" src="/javascripts/botchat.js")
       script(type="text/javascript" src="/javascripts/bootstrap.min.js")
      if(title=='Reagent Search' || title=='Search' || title=='Share' || title=='Orders' || title=='Admins' || title=='Account')
       :staticCache
@@ -300,6 +303,12 @@ html(lang='en')
             div(style="color:white; text-align:center; font-size:11px;")="@LabYoke"
               img(src="/images/"+language+".png" alt="Language" data-toggle="tooltip" title="Language" style="width: 15px;margin-left: 9px;")
     script.
+        BotChat.App({
+          directLine: { secret: "jMO0wtNhTWM.cwA.rqg._IWRYZZ7OsyoD0F6JfuPEDOnw6SP48-pAnIRptYH3mE" },
+          user: { id: 'userid' },
+          bot: { id: 'Labyoke' },
+          resize: 'detect'
+        }, document.getElementById("bot"));
         $(document).ready(function() {
         //$('[data-toggle="tooltip"]').tooltip({placement: "bottom"});
         var options = {
