@@ -49,9 +49,10 @@ block content
                               - var lab = ob[prop].lab
                               - selectedlang = ob[prop].lang
                               - var ob = labs
+                              - var labadmin = "unknown"
                               - for(var prop in ob)
                                  - if(lab == ob[prop].labname)
-                                    - var labadmin = ob[prop].admin
+                                    - labadmin = ob[prop].admin
                                     - adminIntro = i18n.__("account.admin1")+ "<a href=\"mailto:'"+labadmin+"'\">" + labadmin + "</a>. " + i18n.__("account.admin2")
                                  - if(admin > 0)
                                    - if(email == ob[prop].admin)
@@ -162,7 +163,7 @@ block content
         - // if(!resultsAccount || resultsAccount == undefined)
           div(style="margin-top: -70px;float: left;" class="threepointssep")
           div(class="texthalf")
-            span!=adminIntro + " <span id='showteam' class='labColor' style='font-weight:bold'><div class='buttons'><button type='submit' class='btn btn-success btn-lg btn-block shadow teamaccountbuttonwidth' id='teamTitle' style='width: 278px;'>" + i18n.__("account.button") + "</button></div></span>"
+            span!=" <span id='showteam' class='labColor' style='font-weight:bold'><div class='buttons'><button type='submit' class='btn btn-success btn-lg btn-block shadow teamaccountbuttonwidth' id='teamTitle' style='width: 278px;'>" + i18n.__("account.button") + "</button></div></span>"
             script.
               $('#teamTitle').click(function() {
                   if($('#team').is(":visible")){
@@ -193,7 +194,7 @@ block content
           div(id="team")
             //div(class="threepoints noshowmobile")
             h3!=i18n.__("account.team.desc1") + labname + i18n.__("account.team.desc2")
-            p(class="texthalf")!=i18n.__("account.team.subdesc1")+ dept + i18n.__("account.team.subdesc2")
+            p(class="texthalf")!=i18n.__("account.team.subdesc1")+ dept + ". " + adminIntro + i18n.__("account.team.subdesc2")
 
             div(style="display: flex;flex-wrap: wrap;width: 100%;" class="animated fadeIn")
               - var t = team.length
