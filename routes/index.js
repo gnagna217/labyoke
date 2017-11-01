@@ -27,6 +27,18 @@ var multer = require('multer');
 var xlstojson = require("xls-to-json-lc");
 var xlsxtojson = require("xlsx-to-json-lc");
 
+var builder = require('botbuilder');
+var connector = new builder.ChatConnector({
+ appId: "179eabf1-4e28-43ef-bfb4-22159b624bcc",
+ appPassword: "whLEJQ31#!&gghhuBOO674["
+});
+var bot = new builder.UniversalBot(connector);
+
+bot.dialog('/', function (session) {
+session.send("Hello World");
+console.log("connecting");
+});
+
 //var fs = require('fs');
 //html-pdf
 
@@ -55,6 +67,8 @@ module.exports = function(router) {
 
 	var competitionStarts = dates.competitionStarts;
 	var competitionEnds = dates.competitionEnds;
+
+    router.post('/api/messages', connector.listen());
 
     router.post('/admins/:doing', isLoggedInAdmin, function(req, res) {
         if(req.cookies.i18n == null || req.cookies.i18n == undefined){
