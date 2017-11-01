@@ -110,7 +110,7 @@ block content
 											td(class="wrapped2 deskfullonly") #{ob[prop].catalognumber}
 											td(class="wrapped2") #{ob[prop].requestoremail}
 											td #{d}
-											td(style="width: 17px;display:block", title=canc)
+											td(style="width: 17px;display:block;padding-left: 0px;padding-right: 0px;", title=canc)
 												form(action="/cancelshare" method="post")
 													div(class="checkboxThree1", style=showcancel)
 														input(style="position:absolute;left: -9999px;" type="checkbox" id=c name="cancel" value="cancel" class="cancel" checked=(checkedstr===true ? "checked" : undefined))
@@ -209,7 +209,7 @@ block content
 											td(class="wrapped2") #{ob[prop].agent}
 											td(class="wrapped2") #{ob[prop].vendor}
 											td(class="wrapped2") #{ob[prop].catalognumber}
-											td(style="width: 17px;display:block", title=canc)
+											td(style="width: 17px;display:block;padding-left: 0px;padding-right: 0px;", title=canc)
 												form(action="/cancelshare" method="post")
 													div(class="checkboxThree1")
 														input(style="position:absolute;left: -9999px;" type="checkbox" id=c name="cancel" value="cancel" class="cancel" checked=(checkedstr===true ? "checked" : undefined))
