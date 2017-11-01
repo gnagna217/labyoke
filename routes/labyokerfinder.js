@@ -1631,14 +1631,18 @@ LabYokeAgents.prototype.findallsharesadmins = function(callback) {
 	var select = "";
 	select = "select * from labs where admin = '"+email+"'";
 	var query5 = client.query(select);
-			query5.on("row", function(row, result5) {
-				result5.addRow(row);
-			});
-			query5.on("end", function(result5) {
-				var test5 = result5.rows;
-				console.log("test5 admin of lab: " + test5[0].labname);
-				results.push(test5[0].labname);
-	mylab = test5[0].labname;
+	query5.on("row", function(row, result5) {
+		result5.addRow(row);
+	});
+	query5.on("end", function(result5) {
+		var test5 = result5.rows;
+
+	if(test5 !=null && test5.length > 0){
+		console.log("test5 admin of lab: " + test5[0].labname);	
+		mylab = test5[0].labname;
+	}
+	results.push(mylab);
+	console.log("admin shares mylab: " + mylab);
 
 
 	var query = client
