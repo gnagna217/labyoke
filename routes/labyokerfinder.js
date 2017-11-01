@@ -1625,6 +1625,7 @@ LabYokeAgents.prototype.findallsharesadmins = function(callback) {
 	var department = this.dept;
 	var mylabtable = mylab.replace(/ /g,"").toLowerCase();
 	console.log("findmyshares: " + this.email);
+	console.log("shares labs: " + labs);
 	var query = client
 			.query("SELECT * FROM vm2016_agentsshare a,labs b, vm2016_users c where b.labname='"
 					+ mylab + "' and a.email=c.email and b.labname=c.lab and a.email = c.email order by a.agent asc");
@@ -1645,9 +1646,9 @@ LabYokeAgents.prototype.findallsharesadmins = function(callback) {
 	var checklab = [];
 
 
-		select = "select * from (SELECT a.email as emailinsuff, count(a.email)  as insuff from vm2016_agentsshare a , vm2016_users b where  a.insufficient=1 and a.email = b.email  and b.lab='" + mylab + "' group by a.email)  y left join (SELECT c.email,count(c.email)  as noninsuff from vm2016_agentsshare c , vm2016_users d  where  c.insufficient=0 and c.email = d.email and d.lab='"+mylab+"' group by c.email) z on y.emailinsuff = z.email";
+	select = "select * from (SELECT a.email as emailinsuff, count(a.email)  as insuff from vm2016_agentsshare a , vm2016_users b where  a.insufficient=1 and a.email = b.email  and b.lab='" + mylab + "' group by a.email)  y left join (SELECT c.email,count(c.email)  as noninsuff from vm2016_agentsshare c , vm2016_users d  where  c.insufficient=0 and c.email = d.email and d.lab='"+mylab+"' group by c.email) z on y.emailinsuff = z.email";
 
-		//select = "SELECT b.email as email, count(a.agent) as counting, a.insufficient as insuff from vm2016_agentsshare a, vm2016_users  b where a.email = b.email and b.lab = '" + mylab + "' group by a.insufficient, b.email order by b.email";	
+	//select = "SELECT b.email as email, count(a.agent) as counting, a.insufficient as insuff from vm2016_agentsshare a, vm2016_users  b where a.email = b.email and b.lab = '" + mylab + "' group by a.insufficient, b.email order by b.email";	
 
 	console.log("get allshares admin select: " + select /*+ " order by agent asc limit 6"*/);
 
@@ -1657,11 +1658,42 @@ LabYokeAgents.prototype.findallsharesadmins = function(callback) {
 		});
 		query2.on("end", function(result2) {
 			results.push(result2.rows);
-			var select = "";
-			var labsstr = mylab.replace(/ /g,"").toLowerCase() + "_orders";
-			select = select + "SELECT * FROM " + labsstr +  " UNION ";
-			select = select.replace(/UNION\s*$/, "") + " order by date desc";
-			console.log("Partages select: " + select);
+
+/*
+	var query = client.query("Select * from vm2016_users where lab='" + mylab + "'");
+	query.on("row", function(row, result) {
+		result.addRow(row);
+	});
+	query.on("end", function(result) {
+		results = result.rows;
+		callback(null, results);
+
+	});
+*/
+			//var select = "";
+			//var labsstr = mylab.replace(/ /g,"").toLowerCase() + "_orders";
+			//select = select + "SELECT * FROM " + labsstr +  " UNION ";
+			//select = select.replace(/UNION\s*$/, "") + " order by date desc";
+			//console.log("Partages select: " + select);
+
+var listlabs = "";
+if(labs){
+for(var l in labs){
+	listlabs = l + ",";
+}
+listlabs = listlabs.replace(/,\s*$/, "")
+console.log("listlabs: " + listlabs);
+}
+//var q = "SELECT * FROM samalab_orders where email in (Select email from vm2016_users where lab in ())
+	var select = "";
+	for(var prop in labs){
+		var labsstr = (labs[prop].labname).replace(/ /g,"").toLowerCase() + "_orders";
+		//select = select + "SELECT * FROM " + labsstr +  " where email='" + email + "' UNION ";
+	select = select + "SELECT * FROM " + labsstr +  " where email in (Select email from vm2016_users where lab in (" + listlabs + ") UNION ";
+	}
+	select = select.replace(/UNION\s*$/, "") + " order by date desc";
+	console.log("Shares admin select: " + select);
+
 			var query4 = client.query(select);
 			query4.on("row", function(row, result4) {
 				result4.addRow(row);
