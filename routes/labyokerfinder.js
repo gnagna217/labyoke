@@ -1656,7 +1656,7 @@ LabYokeAgents.prototype.findallsharesadmins = function(callback) {
 	var labsstr = "";
 	var i = 0;
 	var a = "a";
-	var select = "";
+	 select = "";
 	var checklab = [];
 
 
@@ -1700,7 +1700,7 @@ listlabs = listlabs.replace(/,\s*$/, "")
 console.log("listlabs: " + listlabs);
 }
 //var q = "SELECT * FROM samalab_orders where email in (Select email from vm2016_users where lab in ())
-	var select = "";
+	 select = "";
 	for(var prop in labs){
 		var labsstr = (labs[prop].labname).replace(/ /g,"").toLowerCase() + "_orders";
 		//select = select + "SELECT * FROM " + labsstr +  " where email='" + email + "' UNION ";
