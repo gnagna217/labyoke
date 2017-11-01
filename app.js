@@ -142,6 +142,24 @@ app.use(function(err, req, res, next) {
 });
 
 
+
+//Labyoke
+//179eabf1-4e28-43ef-bfb4-22159b624bcc
+//whLEJQ31#!&gghhuBOO674[
+var builder = require('botbuilder');
+var connector = new builder.ChatConnector({
+ appId: "179eabf1-4e28-43ef-bfb4-22159b624bcc",
+ appPassword: "whLEJQ31#!&gghhuBOO674["
+});
+var bot = new builder.UniversalBot(connector);
+app.post('/api/messages', connector.listen());
+bot.dialog('/', function (session) {
+session.send("Hello World");
+});
+
+
+
+
 var port = Number(process.env.PORT || 3000);
 app.listen(port, function() {
 	console.log("Listening on " + port);
