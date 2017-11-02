@@ -32,12 +32,50 @@ var connector = new builder.ChatConnector({
  appId: "179eabf1-4e28-43ef-bfb4-22159b624bcc",
  appPassword: "whLEJQ31#!&gghhuBOO674["
 });
-var bot = new builder.UniversalBot(connector);
+
+/*var bot = new builder.UniversalBot(connector);
 
 bot.dialog('/', function (session) {
 session.send("Hello There!");
 console.log("connecting");
 });
+*/
+
+var bot = new builder.UniversalBot(connector, function (session) {
+    session.send("You said: '%s'. Try asking for 'hi' or say 'help' or 'goodbye' or 'order' or 'cancel order' ", session.message.text);
+});
+
+
+// Install a custom recognizer to look for user saying 'help' or 'goodbye'.
+bot.recognizer({
+  recognize: function (context, done) {
+  var intent = { score: 0.0 };
+
+        if (context.message.text) {
+            switch (context.message.text.toLowerCase()) {
+                case 'hi':
+                    intent = { score: 1.0, intent: 'HiIntent' };
+                    break;
+                case 'cancel':
+                    intent = { score: 1.0, intent: 'CancelOrderIntent' };
+                    break;
+            }
+        }
+        done(null, intent);
+    }
+});
+
+bot.recognizer(new builder.RegExpRecognizer( "CancelOrderIntent", { en_us: /^(cancel|nevermind)/i, en_fr: /^(annuler)/i }));
+bot.dialog('CancelDialog', function (session) {
+    session.endConversation("Ok, I'm canceling your order.");
+}).triggerAction({ matches: 'CancelOrderIntent' });
+
+bot.recognizer(new builder.RegExpRecognizer( "HiIntent", { en_us: /^(hello|hi)/i, en_fr: /^(salut|bonjour|bonsoir)/i }));
+bot.dialog('HiDialog', function (session) {
+    session.endConversation("Oh Hello to you!");
+}).triggerAction({ matches: 'HiIntent' });
+
+
 
 //var fs = require('fs');
 //html-pdf
