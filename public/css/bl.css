@@ -12,11 +12,11 @@
 
 /* Start chatbot */
 
-.labbot .sleep{
+.sleep{
   position: sticky;overflow: hidden;right: 100%;left: 0;bottom: 0px;margin: 10px;width: 40px;
   cursor: pointer;clear:both;height: 130px;clear: both;
 }
-.labbot .awake{
+.awake{
 overflow: hidden;/*position: fixed;*/right: 100%;left: 200px;bottom: 0px;margin: 10px;
 margin-left: 320px;width: 50px;cursor: pointer;padding-top: 55px;margin-bottom: 30px;
 }
