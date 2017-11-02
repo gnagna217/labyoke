@@ -56,10 +56,10 @@ bot.recognizer({
             switch (s) {
                 case 'hi':
                     intent = { score: 1.0, intent: 'HiIntent' };
-                    break;
+                    //break;
                 case 'cancel':
                     intent = { score: 1.0, intent: 'CancelOrderIntent' };
-                    break;
+                    //break;
                 default:
                     if (s.match(/^(hello|hi)/i)) {
                         intent = { score: 1.0, intent: 'HiIntent' };
