@@ -268,11 +268,17 @@ html(lang='en')
      :staticCache
       script(type="text/javascript" src="/javascripts/bootstrap.min.js")
      if(title=='Reagent Search' || title=='Search' || title=='Share' || title=='Orders' || title=='Admins' || title=='Account')
-      div(class="labbot sleep" style="/*position: fixed;*/overflow: hidden;right: 100%;left: 0;bottom: 0px;margin: 10px;margin-bottom: 30px;width: 40px;/*height: 70px;*/cursor: pointer;padding-top: 55px;clear:both;height: 175px;")
-        img(src="/images/tip5.png" style="width: 40px;")
-      div(class="labbot awake" style="overflow: hidden;/*position: fixed;*/right: 100%;left: 200px;bottom: 0px;margin: 10px;margin-left: 320px;width: 50px;/*height: 70px;*/cursor: pointer;padding-top: 55px;margin-bottom: 30px;display:none")
-        img(src="/images/tip3.png" style="width: 50px;")
-      div(id="bot", style="position: relative;bottom: 0px;margin: 10px;margin-top: -200px;top: -45px;")
+      a(href="#popup1bot")
+        div(class="labbot sleep" style="/*position: fixed;*/overflow: hidden;right: 100%;left: 0;bottom: 0px;margin: 10px;margin-bottom: 30px;width: 40px;/*height: 70px;*/cursor: pointer;padding-top: 55px;clear:both;height: 175px;")
+        img(src="/images/tip5.png" style="width: 40px;")      
+      div(id="popup1bot" class="overlaybot")
+        div(class="popupbot")
+          div(class="modal-header")
+            a(class="close" href="#") &times;
+          div(class="contentbot")
+            div(class="labbot awake" style="overflow: hidden;/*position: fixed;*/right: 100%;left: 200px;bottom: 0px;margin: 10px;margin-left: 320px;width: 50px;/*height: 70px;*/cursor: pointer;padding-top: 55px;margin-bottom: 30px;display:none")
+              img(src="/images/tip3.png" style="width: 50px;")
+            div(id="bot", style="position: relative;bottom: 0px;margin: 10px;margin-top: -200px;top: -45px;")
       :staticCache
         script(type="text/javascript" src="/javascripts/popup.js")
         script(src="https://cdn.botframework.com/botframework-webchat/latest/botchat.js")
@@ -320,6 +326,14 @@ html(lang='en')
         }
 
         $(document).ready(function() {
+
+          $(function(){
+              $('#popup1bot').draggable({
+                handle: ".modal-header"
+            });
+              $('#popup1bot').resizable();
+            
+          });
 
           $(".labbot").click(function() {
             $( "#bot" ).show();
