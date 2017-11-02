@@ -9,7 +9,18 @@
   -webkit-font-smoothing: antialiased;
 }
 
+
 /* Start chatbot */
+
+.labbot .sleep{
+  position: sticky;overflow: hidden;right: 100%;left: 0;bottom: 0px;margin: 10px;width: 40px;
+  cursor: pointer;clear:both;height: 130px;clear: both;
+}
+.labbot .awake{
+overflow: hidden;/*position: fixed;*/right: 100%;left: 200px;bottom: 0px;margin: 10px;
+margin-left: 320px;width: 50px;cursor: pointer;padding-top: 55px;margin-bottom: 30px;
+}
+
 .wc-upload{
   display:none !important;
 }
@@ -26,9 +37,10 @@
     width: 300px;
     height: 250px;
     margin: 10px;
-    margin-bottom: 40px;
+    margin-bottom: 0px;
     background-color: transparent;
     border-radius: 20px;
+    top: 20px;
 }
 .wc-console{
       border: none !important;
@@ -68,7 +80,7 @@
 }
 
 .popupbot {
-  margin: 70px auto;
+  margin: 15% auto;
   padding: 20px;
   /*background: #fff;*/
   border-radius: 5px;
@@ -92,6 +104,8 @@
   font-weight: bold;
   text-decoration: none;
   color: #333;
+  z-index: 2;
+
 }
 .popupbot .close:hover {
   color: #337ab7;
@@ -99,11 +113,13 @@
 .popupbot .contentbot {
   /*max-height: 30%;
   overflow: auto;*/
-  height: 210px;
+  height: 230px;
 }
 
 .modal-header{
    cursor: move;
+       z-index: 1;
+    width: 275px;
 }
 
  /* end chatbot */ 
@@ -1386,6 +1402,9 @@ body.large-screen .card-list-table tbody tr:hover td {
 }
 
 @media (max-width: 590px) {
+.labbot{
+  display: none;
+}
 .videocontainer{
   width: 100%;
   padding: 10px;
