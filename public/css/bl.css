@@ -24,7 +24,7 @@
 
 .wc-chatview-panel{
     width: 300px;
-    height: 200px;
+    height: 250px;
     margin: 10px;
     margin-bottom: 40px;
     background-color: transparent;
@@ -99,6 +99,7 @@
 .popupbot .contentbot {
   /*max-height: 30%;
   overflow: auto;*/
+  height: 210px;
 }
 
 .modal-header{
