@@ -42,6 +42,9 @@
     /*left: 39% !important;
     top: 119% !important;*/
   }
+  .wc-app{
+    height:100%;
+  }
 
 .point:before {
     /*content: "|";
