@@ -307,12 +307,15 @@ html(lang='en')
             div(style="color:white; text-align:center; font-size:11px;")="@LabYoke"
               img(src="/images/"+language+".png" alt="Language" data-toggle="tooltip" title="Language" style="width: 15px;margin-left: 9px;")
     script.
+        var botchat = document.querySelector("#bot");
+        if(botchat != undefined && botchat != null){
         BotChat.App({
           directLine: { secret: "jMO0wtNhTWM.cwA.rqg._IWRYZZ7OsyoD0F6JfuPEDOnw6SP48-pAnIRptYH3mE" },
           user: { id: '#{labyoker}' },
           bot: { id: 'Labyoke' },
           resize: 'detect'
         }, document.getElementById("bot"));
+        }
 
         $(document).ready(function() {
 
