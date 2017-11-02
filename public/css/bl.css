@@ -13,7 +13,7 @@
 /* Start chatbot */
 
 .sleep{
-  position: sticky;overflow: hidden;right: 100%;left: 0;bottom: 0px;margin: 10px;width: 40px;
+  position: sticky;overflow: hidden;right: 100%;left: 0;bottom: 0px;margin: 0px 10px 10px;width: 40px;
   cursor: pointer;clear:both;height: 130px;clear: both;
 }
 .awake{
