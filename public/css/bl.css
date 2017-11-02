@@ -43,6 +43,7 @@ margin-left: 320px;width: 50px;cursor: pointer;padding-top: 55px;margin-bottom: 
     background-color: transparent;
     border-radius: 20px;
     top: 0px;
+    left: -20px;
 }
 .wc-console{
   border: none !important;
