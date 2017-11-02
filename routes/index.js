@@ -65,6 +65,13 @@ bot.recognizer({
                     if (s.match(/(hello|hi)/i)) {
                         intent = { score: 1.0, intent: 'HiIntent' };
                     }
+                    if (s.match(/order/i)) {
+                        intent = { score: 1.0, intent: 'OrderIntent' };
+                    }
+                    if (s.match(/cancel order/i)) {
+                        intent = { score: 1.0, intent: 'CancelOrderIntent' };
+                    }
+
                     break;
             }
         }
@@ -74,14 +81,17 @@ bot.recognizer({
 
 //bot.recognizer(new builder.RegExpRecognizer( "CancelOrderIntent", { en_us: /^(cancel|nevermind)/i, en_fr: /^(annuler)/i }));
 bot.dialog('CancelDialog', function (session) {
-    session.endConversation("Ok, I'm canceling your order.");
+    session.endConversation("Absolutely, I'm canceling your order now.");
 }).triggerAction({ matches: 'CancelOrderIntent' });
 
 //bot.recognizer(new builder.RegExpRecognizer( "HiIntent", { en_us: /^(hello|hi)/i, en_fr: /^(salut|bonjour|bonsoir)/i }));
 bot.dialog('HiDialog', function (session) {
-    session.endConversation("Oh Hello to you! What can I help you with?");
+    session.endConversation("Oh Hello to you! What can I help you with? Try asking for 'help' or 'goodbye' or 'order <reagent>' or 'cancel order <reagent> from <email>'");
 }).triggerAction({ matches: 'HiIntent' });
 
+bot.dialog('OrderDialog', function (session) {
+    session.endConversation("Absolutely, I am putting an order out now. Please check your emails for confirmation.");
+}).triggerAction({ matches: 'OrderIntent' });
 
 
 //var fs = require('fs');
