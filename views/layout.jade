@@ -289,6 +289,13 @@ html(lang='en')
                 $(".overlaybot").css({ 'visibility' : 'visible', 'opacity' : '1' });
               });
           });
+          $(".labbot").click(function() {
+                $( "#bot" ).hide();
+                $( ".awake" ).hide();
+                $( ".sleep" ).show();
+                $( "#popup1bot" ).hide();
+              });
+          });
 
       div(class="labbot sleep" style="")
         img(src="/images/tip5.png" style="width: 40px;")      
