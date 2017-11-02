@@ -65,12 +65,12 @@ bot.recognizer({
     }
 });
 
-bot.recognizer(new builder.RegExpRecognizer( "CancelOrderIntent", { en_us: /^(cancel|nevermind)/i, en_fr: /^(annuler)/i }));
+//bot.recognizer(new builder.RegExpRecognizer( "CancelOrderIntent", { en_us: /^(cancel|nevermind)/i, en_fr: /^(annuler)/i }));
 bot.dialog('CancelDialog', function (session) {
     session.endConversation("Ok, I'm canceling your order.");
 }).triggerAction({ matches: 'CancelOrderIntent' });
 
-bot.recognizer(new builder.RegExpRecognizer( "HiIntent", { en_us: /^(hello|hi)/i, en_fr: /^(salut|bonjour|bonsoir)/i }));
+//bot.recognizer(new builder.RegExpRecognizer( "HiIntent", { en_us: /^(hello|hi)/i, en_fr: /^(salut|bonjour|bonsoir)/i }));
 bot.dialog('HiDialog', function (session) {
     session.endConversation("Oh Hello to you!");
 }).triggerAction({ matches: 'HiIntent' });
