@@ -2206,6 +2206,7 @@ a {
     -webkit-border-radius: 10px;
     border-radius: 10px;
     background: rgba(138, 109, 59, 0.70);
+    background-color: rgba(138, 109, 59, 0.70) !important;
     -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
 }
 ::-webkit-scrollbar-thumb:window-inactive {
