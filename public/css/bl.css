@@ -97,8 +97,8 @@
   color: #06D85F;
 }
 .popupbot .contentbot {
-  max-height: 30%;
-  overflow: auto;
+  /*max-height: 30%;
+  overflow: auto;*/
 }
 
 .modal-header{
