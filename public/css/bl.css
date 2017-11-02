@@ -24,7 +24,7 @@
 .wc-chatview-panel{
     width: 200px;
     height: 200px;
-    margin: 50px;
+    margin: 10px;
     margin-bottom: 20px;
     background-color: transparent;
     border-radius: 50px;
@@ -38,8 +38,8 @@
     }
 .wc-chatview-panel {
     right: 100% !important;
-    /*left: 39% !important;*/
-    top: 119% !important;
+    /*left: 39% !important;
+    top: 119% !important;*/
   }
 
 .point:before {
