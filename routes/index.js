@@ -61,7 +61,7 @@ bot.recognizer({
                     intent = { score: 1.0, intent: 'CancelOrderIntent' };
                     break;
                 default:
-                    if (s.matches(/^(hello|hi)/i)) {
+                    if (s.match(/^(hello|hi)/i)) {
                         intent = { score: 1.0, intent: 'HiIntent' };
                     }
                     break;
