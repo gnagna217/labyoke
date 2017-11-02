@@ -72,7 +72,7 @@ bot.recognizer({
                         intent = { score: 1.0, intent: 'CancelOrderIntent' };
                     }
                     if (s.match(/help/i)) {
-                        intent = { score: 1.0, intent: 'CancelOrderIntent' };
+                        intent = { score: 1.0, intent: 'HelpIntent' };
                     }
 
                     break;
@@ -98,7 +98,7 @@ bot.dialog('OrderDialog', function (session) {
 
 bot.dialog('HelpDialog', function (session) {
     session.endConversation("You seem to be asking for help on something. Try our <a href='/help'>help</a> section for a wealth of information and video tutorials. Anything else I can help you with?");
-}).triggerAction({ matches: 'OrderIntent' });
+}).triggerAction({ matches: 'HelpIntent' });
 
 //var fs = require('fs');
 //html-pdf
