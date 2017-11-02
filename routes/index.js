@@ -52,12 +52,18 @@ bot.recognizer({
   var intent = { score: 0.0 };
 
         if (context.message.text) {
-            switch (context.message.text.toLowerCase()) {
+            var s = context.message.text.toLowerCase();
+            switch (s) {
                 case 'hi':
                     intent = { score: 1.0, intent: 'HiIntent' };
                     break;
                 case 'cancel':
                     intent = { score: 1.0, intent: 'CancelOrderIntent' };
+                    break;
+                default:
+                    if (s.matches(/^(hello|hi)/i)) {
+                        intent = { score: 1.0, intent: 'HiIntent' };
+                    }
                     break;
             }
         }
@@ -72,7 +78,7 @@ bot.dialog('CancelDialog', function (session) {
 
 //bot.recognizer(new builder.RegExpRecognizer( "HiIntent", { en_us: /^(hello|hi)/i, en_fr: /^(salut|bonjour|bonsoir)/i }));
 bot.dialog('HiDialog', function (session) {
-    session.endConversation("Oh Hello to you!");
+    session.endConversation("Oh Hello to you! What can I help you with?");
 }).triggerAction({ matches: 'HiIntent' });
 
 
