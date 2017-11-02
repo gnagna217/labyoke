@@ -11,7 +11,9 @@
 
 
 /* Start chatbot */
-
+.wc-message-from {
+    color: white;
+}
 .sleep{
   position: sticky;overflow: hidden;right: 100%;left: 0;bottom: 0px;margin: 0px 10px 10px;width: 40px;
   cursor: pointer;clear:both;height: 130px;clear: both;
@@ -51,6 +53,7 @@ margin-left: 320px;width: 50px;cursor: pointer;padding-top: 55px;margin-bottom: 
     }
 .wc-shellinput{
   background-color: transparent;
+  color:white;
 }
 .wc-chatview-panel {
     right: 100% !important;
@@ -87,7 +90,7 @@ margin-left: 320px;width: 50px;cursor: pointer;padding-top: 55px;margin-bottom: 
   width: 350px;
   position: relative;
   transition: all 5s ease-in-out;
-  background-color: rgba(172, 153, 118, 0.45);
+  background-color: rgba(172, 153, 118, 0.91);
 }
 
 .popupbot h2 {
