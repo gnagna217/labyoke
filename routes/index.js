@@ -133,7 +133,7 @@ function hotelAsAttachment() {
 }
 
 bot.dialog('Test2Dialog', function (session) {
-var message = new builder.Message().attachments(hotelAsAttachment());
+var message = new builder.Message().addAttachment(hotelAsAttachment());
 session.send(message).endDialog();
 }).triggerAction({ matches: 'Test2Intent' });
 
