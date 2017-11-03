@@ -97,7 +97,7 @@ bot.dialog('OrderDialog', function (session) {
 }).triggerAction({ matches: 'OrderIntent' });
 
 bot.dialog('HelpDialog', function (session) {
-    session.say("You seem to be asking for help on something. Try our help section for a wealth of information and video tutorials or be. Anything else I can help you with?","You seem to be asking for help on something. Try our help section for a wealth of information and video tutorials or be. Anything else I can help you with?");
+    session.say("You seem to be asking for help on something. Try our [help](https://team-labyoke.herokuapp.com/help) section for a wealth of information and video tutorials or be. Anything else I can help you with?","You seem to be asking for help on something. Try our help section for a wealth of information and video tutorials or be. Anything else I can help you with?");
 }).triggerAction({ matches: 'HelpIntent' });
 
 //var fs = require('fs');
