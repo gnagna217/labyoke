@@ -141,12 +141,14 @@ margin-left: 320px;width: 50px;cursor: pointer;padding-top: 55px;margin-bottom: 
 }
 
 .modal-header{
-   cursor: move;
-       z-index: 1;
+    cursor: move;
+    z-index: 1;
     width: 275px;
     padding: 5px;
     text-align: center;
     padding-top: 0px;
+    position: relative;
+    left: 6%;
 }
 
  /* end chatbot */ 
