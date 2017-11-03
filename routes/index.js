@@ -26,6 +26,7 @@ var router = express.Router();
 var multer = require('multer');
 var xlstojson = require("xls-to-json-lc");
 var xlsxtojson = require("xlsx-to-json-lc");
+var globalocale = "en";
 
 var builder = require('botbuilder');
 var connector = new builder.ChatConnector({
@@ -42,8 +43,9 @@ console.log("connecting");
 */
 
 var bot = new builder.UniversalBot(connector, function (session) {
-var options = session.localizer.gettext(session.preferredLocale(), "hi");
+var options = session.localizer.gettext(session.preferredLocale(globalocale), "hi");
 console.log("bot locale: " + session.preferredLocale());
+console.log("req locale: "+globalocale);
 console.log("options: " + options);
     session.send("You said: '%s'. Try asking for 'hi' or say 'help' or 'goodbye' or 'order' or 'cancel order' ", session.message.text);
 });
@@ -112,6 +114,7 @@ bot.dialog('HiDialog', function (session) {
 bot.dialog('OrderDialog', function (session) {
     session.say("Absolutely! Let's put it together...");
     var message = new builder.Message().addAttachment(hotelAsAttachment());
+    session.delay(500);
     session.send(message).endDialog();
     //, I am putting an order out now. Please check your emails for confirmation.");
 }).triggerAction({ matches: 'OrderIntent' });
@@ -808,6 +811,8 @@ module.exports = function(router) {
 		res.cookie('i18n', lang);
 		req.cookies.i18n = lang;
 		res.setLocale(req.cookies.i18n);
+        globalocale = lang;
+        console.log("set globalocale: " + globalocale);
 
 		if (req.session.user) {
 			res.redirect('/search');
