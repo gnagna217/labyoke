@@ -107,7 +107,10 @@ bot.dialog('HiDialog', function (session) {
 }).triggerAction({ matches: 'HiIntent' });
 
 bot.dialog('OrderDialog', function (session) {
-    session.endConversation("Absolutely, I am putting an order out now. Please check your emails for confirmation.");
+    session.say("Absolutely! Let's put it together...");
+    var message = new builder.Message().addAttachment(hotelAsAttachment());
+    session.send(message).endDialog();
+    //, I am putting an order out now. Please check your emails for confirmation.");
 }).triggerAction({ matches: 'OrderIntent' });
 
 bot.dialog('HelpDialog', function (session) {
