@@ -94,9 +94,9 @@ margin-left: 320px;width: 50px;cursor: pointer;padding-top: 55px;margin-bottom: 
   visibility: hidden;
   opacity: 0;
 
-  width: 350px;
-    height: 380px;
-    z-index: 2;
+  width: 0px;
+  height: 325px;
+    z-index: 13;
 }
 .overlaybot:target {
   visibility: visible;
