@@ -108,6 +108,125 @@ bot.dialog('ThankDialog', function (session) {
     session.say("You are most welcome. I am always here when you need me.");
 }).triggerAction({ matches: 'ThankIntent' });
 
+// Add dialog to handle 'Buy' button click
+bot.dialog('buyButtonClick', [
+    function (session, args, next) {
+        // Get color and optional size from users utterance
+        var utterance = args.intent.matched[0];
+        var color = /(white|gray)/i.exec(utterance);
+        var size = /\b(Extra Large|Large|Medium|Small)\b/i.exec(utterance);
+        if (color) {
+            // Initialize cart item
+            var item = session.dialogData.item = { 
+                product: "classic " + color[0].toLowerCase() + " t-shirt",
+                size: size ? size[0].toLowerCase() : null,
+                price: 25.0,
+                qty: 1
+            };
+            if (!item.size) {
+                // Prompt for size
+                builder.Prompts.choice(session, "What size would you like?", "Small|Medium|Large|Extra Large");
+            } else {
+                //Skip to next waterfall step
+                next();
+            }
+        } else {
+            // Invalid product
+            session.send("I'm sorry... That product wasn't found.").endDialog();
+        }   
+    },
+    function (session, results) {
+        // Save size if prompted
+        var item = session.dialogData.item;
+        if (results.response) {
+            item.size = results.response.entity.toLowerCase();
+        }
+
+        // Add to cart
+        if (!session.userData.cart) {
+            session.userData.cart = [];
+        }
+        session.userData.cart.push(item);
+
+        // Send confirmation to users
+        session.send("A '%(size)s %(product)s' has been added to your cart.", item).endDialog();
+    }
+]).triggerAction({ matches: /(buy|add)\s.*shirt/i });
+
+bot.dialog('TestDialog', function (session) {
+    //session.say("You are most welcome. I am always here when you need me.");
+
+var msg = new builder.Message(session)
+    .addAttachment({
+        contentType: "application/vnd.microsoft.card.adaptive",
+        content: {
+            type: "AdaptiveCard",
+            speak: "<s>Your  meeting about \"Adaptive Card design session\"<break strength='weak'/> is starting at 12:30pm</s><s>Do you want to snooze <break strength='weak'/> or do you want to send a late notification to the attendees?</s>",
+               body: [
+                    {
+                        "type": "TextBlock",
+                        "text": "Adaptive Card design session",
+                        "size": "large",
+                        "weight": "bolder"
+                    },
+                    {
+                        "type": "TextBlock",
+                        "text": "Conf Room 112/3377 (10)"
+                    },
+                    {
+                        "type": "TextBlock",
+                        "text": "12:30 PM - 1:30 PM"
+                    },
+                    {
+                        "type": "TextBlock",
+                        "text": "Snooze for"
+                    },
+                    {
+                        "type": "Input.ChoiceSet",
+                        "id": "snooze",
+                        "style":"compact",
+                        "choices": [
+                            {
+                                "title": "5 minutes",
+                                "value": "5",
+                                "isSelected": true
+                            },
+                            {
+                                "title": "15 minutes",
+                                "value": "15"
+                            },
+                            {
+                                "title": "30 minutes",
+                                "value": "30"
+                            }
+                        ]
+                    }
+                ],
+                "actions": [
+                    {
+                        "type": "Action.Http",
+                        "method": "POST",
+                        "url": "http://foo.com",
+                        "title": "Snooze"
+                    },
+                    {
+                        "type": "Action.Http",
+                        "method": "POST",
+                        "url": "http://foo.com",
+                        "title": "I'll be late"
+                    },
+                    {
+                        "type": "Action.Http",
+                        "method": "POST",
+                        "url": "http://foo.com",
+                        "title": "Dismiss"
+                    }
+                ]
+        }
+    });
+session.send(msg).endDialog();
+}).triggerAction({ matches: 'TestIntent' });
+
 //var fs = require('fs');
 //html-pdf
 
