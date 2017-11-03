@@ -65,6 +65,9 @@ bot.recognizer({
                     if (s.match(/(hello|hi)/i)) {
                         intent = { score: 1.0, intent: 'HiIntent' };
                     }
+                    if (s.match(/(thank you|thanks)/i)) {
+                        intent = { score: 1.0, intent: 'ThankIntent' };
+                    }
                     if (s.match(/order/i)) {
                         intent = { score: 1.0, intent: 'OrderIntent' };
                     }
@@ -74,6 +77,7 @@ bot.recognizer({
                     if (s.match(/help/i)) {
                         intent = { score: 1.0, intent: 'HelpIntent' };
                     }
+
 
                     break;
             }
@@ -99,6 +103,10 @@ bot.dialog('OrderDialog', function (session) {
 bot.dialog('HelpDialog', function (session) {
     session.say("You seem to be asking for help on something. Try our [help](https://team-labyoke.herokuapp.com/help) section for a wealth of information and video tutorials or be. Anything else I can help you with?","You seem to be asking for help on something. Try our help section for a wealth of information and video tutorials or be. Anything else I can help you with?");
 }).triggerAction({ matches: 'HelpIntent' });
+
+bot.dialog('ThankDialog', function (session) {
+    session.say("You are most welcome. I am always here when you need me.");
+}).triggerAction({ matches: 'ThankIntent' });
 
 //var fs = require('fs');
 //html-pdf
