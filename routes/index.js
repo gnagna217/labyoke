@@ -77,6 +77,9 @@ bot.recognizer({
                     if (s.match(/help/i)) {
                         intent = { score: 1.0, intent: 'HelpIntent' };
                     }
+                    if (s.match(/test/i)) {
+                        intent = { score: 1.0, intent: 'TestIntent' };
+                    }
 
 
                     break;
