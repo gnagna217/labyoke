@@ -85,9 +85,9 @@ margin-left: 320px;width: 50px;cursor: pointer;padding-top: 55px;margin-bottom: 
 
 .overlaybot {
   position: fixed;
-  top: 0;
+  top: 35%;
   bottom: 0;
-  left: 0;
+  left: 35%;
   right: 0;
   background: transparent;
   transition: opacity 500ms;
