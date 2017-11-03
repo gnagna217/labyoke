@@ -120,7 +120,7 @@ bot.dialog('ThankDialog', function (session) {
 
 
 
-function hotelAsAttachment(hotel) {
+function hotelAsAttachment() {
     return new builder.HeroCard()
         .title("Order")
         //.subtitle('%d stars. %d reviews. From $%d per night.', hotel.rating, hotel.numberOfReviews, hotel.priceStarting)
@@ -134,7 +134,7 @@ function hotelAsAttachment(hotel) {
 }
 
 bot.dialog('Test2Dialog', function (session) {
-var message = new builder.Message().attachments(hotels.map(hotelAsAttachment));
+var message = new builder.Message().attachments(hotelAsAttachment);
 session.send(msg).endDialog();
 }).triggerAction({ matches: 'Test2Intent' });
 
