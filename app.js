@@ -33,7 +33,7 @@ i18n.configure({
 locales:['en', 'fr'],
 
 //define the path to language json files, default is /locales
-directory: __dirname + '/locales',
+directory: __dirname + '/locale',
 
 //define the default language
 defaultLocale: 'en',
