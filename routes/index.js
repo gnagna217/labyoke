@@ -42,6 +42,8 @@ console.log("connecting");
 */
 
 var bot = new builder.UniversalBot(connector, function (session) {
+var options = session.localizer.gettext(session.preferredLocale(), "admins.pop.title");
+console.log("options: " + options);
     session.send("You said: '%s'. Try asking for 'hi' or say 'help' or 'goodbye' or 'order' or 'cancel order' ", session.message.text);
 });
 
@@ -50,9 +52,6 @@ var bot = new builder.UniversalBot(connector, function (session) {
 bot.recognizer({
   recognize: function (context, done) {
   var intent = { score: 0.0 };
-
-var options = session.localizer.gettext(session.preferredLocale(), "admins.pop.title");
-console.log("options: " + options);
 
         if (context.message.text) {
             var s = context.message.text.toLowerCase();
