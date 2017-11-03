@@ -51,6 +51,9 @@ bot.recognizer({
   recognize: function (context, done) {
   var intent = { score: 0.0 };
 
+var options = session.localizer.gettext(session.preferredLocale(), "admins.pop.title");
+console.log("options: " + options);
+
         if (context.message.text) {
             var s = context.message.text.toLowerCase();
             switch (s) {
