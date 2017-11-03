@@ -81,7 +81,9 @@ margin-left: 320px;width: 50px;cursor: pointer;padding-top: 55px;margin-bottom: 
   .wc-app{
     height:100%;
   }
-
+.wc-card{
+  width:200px;
+}
 
 .overlaybot {
   position: fixed;
