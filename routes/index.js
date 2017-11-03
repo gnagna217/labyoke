@@ -80,6 +80,10 @@ bot.recognizer({
                     if (s.match(/test/i)) {
                         intent = { score: 1.0, intent: 'TestIntent' };
                     }
+                    if (s.match(/(buy|add)\s.*shirt/i)) {
+                        intent = { score: 1.0, intent: 'Test2Intent' };
+                    }
+
 
 
                     break;
@@ -110,6 +114,8 @@ bot.dialog('HelpDialog', function (session) {
 bot.dialog('ThankDialog', function (session) {
     session.say("You are most welcome. I am always here when you need me.");
 }).triggerAction({ matches: 'ThankIntent' });
+
+
 
 // Add dialog to handle 'Buy' button click
 bot.dialog('buyButtonClick', [
@@ -154,7 +160,8 @@ bot.dialog('buyButtonClick', [
         // Send confirmation to users
         session.send("A '%(size)s %(product)s' has been added to your cart.", item).endDialog();
     }
-]).triggerAction({ matches: /(buy|add)\s.*shirt/i });
+//]).triggerAction({ matches: /(buy|add)\s.*shirt/i });
+]).triggerAction({ matches: 'Test2Intent' });
 
 bot.dialog('TestDialog', function (session) {
     //session.say("You are most welcome. I am always here when you need me.");
