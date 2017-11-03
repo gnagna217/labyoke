@@ -84,12 +84,12 @@ bot.recognizer({
 
 //bot.recognizer(new builder.RegExpRecognizer( "CancelOrderIntent", { en_us: /^(cancel|nevermind)/i, en_fr: /^(annuler)/i }));
 bot.dialog('CancelDialog', function (session) {
-    session.endConversation("Absolutely, I'm canceling your order now.");
+    session.send("Absolutely, I'm canceling your order now.");
 }).triggerAction({ matches: 'CancelOrderIntent' });
 
 //bot.recognizer(new builder.RegExpRecognizer( "HiIntent", { en_us: /^(hello|hi)/i, en_fr: /^(salut|bonjour|bonsoir)/i }));
 bot.dialog('HiDialog', function (session) {
-    session.endConversation("Oh Hello to you! What can I help you with? Try asking for 'help' or 'goodbye' or 'order <reagent>' or 'cancel order <reagent> from <email>'");
+    session.endConversation("Oh Hello to you! What can I help you with? Try asking for 'help' or 'order <reagent>' or 'cancel order <reagent> from <email>'");
 }).triggerAction({ matches: 'HiIntent' });
 
 bot.dialog('OrderDialog', function (session) {
@@ -97,7 +97,7 @@ bot.dialog('OrderDialog', function (session) {
 }).triggerAction({ matches: 'OrderIntent' });
 
 bot.dialog('HelpDialog', function (session) {
-    session.endConversation("You seem to be asking for help on something. Try our help section for a wealth of information and video tutorials. Anything else I can help you with?");
+    session.say("You seem to be asking for help on something. Try our help section for a wealth of information and video tutorials or be. Anything else I can help you with?","You seem to be asking for help on something. Try our help section for a wealth of information and video tutorials or be. Anything else I can help you with?");
 }).triggerAction({ matches: 'HelpIntent' });
 
 //var fs = require('fs');
