@@ -123,8 +123,8 @@ bot.dialog('ThankDialog', function (session) {
 function hotelAsAttachment() {
     return new builder.HeroCard()
         .title("Order")
-        .subtitle("Please confirm this order.")
-        .text("**Reagent:** Some Reagent *@* **Location:** labmember@gmail.com.")
+        .subtitle("Please confirm this order:")
+        .text("**Reagent:** Some Reagent - **Location:** labmember@gmail.com")
         .buttons([
             new builder.CardAction()
                 .title('Yes')
