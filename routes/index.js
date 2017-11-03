@@ -65,7 +65,7 @@ bot.recognizer({
                     if (s.match(/(hello|hi)/i)) {
                         intent = { score: 1.0, intent: 'HiIntent' };
                     }
-                    if (s.match(/(thank you|thanks)/i)) {
+                    if (s.match(/(thank|thanks)/i)) {
                         intent = { score: 1.0, intent: 'ThankIntent' };
                     }
                     if (s.match(/order/i)) {
