@@ -93,6 +93,10 @@ margin-left: 320px;width: 50px;cursor: pointer;padding-top: 55px;margin-bottom: 
   transition: opacity 500ms;
   visibility: hidden;
   opacity: 0;
+
+  width: 350px;
+    height: 380px;
+    z-index: 2;
 }
 .overlaybot:target {
   visibility: visible;
