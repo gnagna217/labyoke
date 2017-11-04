@@ -43,11 +43,11 @@ console.log("connecting");
 */
 
 var bot = new builder.UniversalBot(connector, function (session) {
-var options = session.localizer.gettext(session.preferredLocale(globalocale), "bot.cancel");
+var options = session.localizer.gettext(session.preferredLocale(globalocale), "bot.confused");
 console.log("bot locale: " + session.preferredLocale());
 console.log("req locale: "+globalocale);
 console.log("options: " + options);
-    session.send("You said: '%s'. Try asking for 'hi' or say 'help' or 'goodbye' or 'order' or 'cancel order' ", session.message.text);
+    session.send(options, session.message.text);
 });
 
 
