@@ -55,6 +55,7 @@ console.log("options: " + options);
 bot.recognizer({
   recognize: function (context, done) {
   var intent = { score: 0.0 };
+  var matched = false;
 
         if (context.message.text) {
             var s = context.message.text.toLowerCase();
@@ -68,27 +69,38 @@ bot.recognizer({
                     console.log("default: " + s.match(/(hello|hi)/i));
                     if (s.match(/(hello|hi|bonjour|bonsoir|salut)/i)) {
                         intent = { score: 1.0, intent: 'HiIntent' };
+                        matched = true;
                     }
                     if (s.match(/(thank|thanks|merci)/i)) {
                         intent = { score: 1.0, intent: 'ThankIntent' };
+                        matched = true;
                     }
                     if (s.match(/(order|commander)/i)) {
                         intent = { score: 1.0, intent: 'OrderIntent' };
+                        matched = true;
                     }
                     if (s.match(/(cancel order | annuler commande)/i)) {
                         intent = { score: 1.0, intent: 'CancelOrderIntent' };
+                        matched = true;
                     }
                     if (s.match(/(help|aide)/i)) {
                         intent = { score: 1.0, intent: 'HelpIntent' };
+                        matched = true;
                     }
                     if (s.match(/(bye|goodbye|au revoir)/i)) {
                         intent = { score: 1.0, intent: 'CiaoIntent' };
+                        matched = true;
                     }
                     if (s.match(/test/i)) {
                         intent = { score: 1.0, intent: 'TestIntent' };
+                        matched = true;
                     }
                     if (s.match(/test2/i)) {
                         intent = { score: 1.0, intent: 'Test2Intent' };
+                        matched = true;
+                    }
+                    if(!matched){
+                        intent = { score: 1.0, intent: 'ConfusedIntent' };
                     }
                     break;
             }
@@ -102,6 +114,12 @@ bot.dialog('CancelDialog', function (session) {
 var options = session.localizer.gettext(session.preferredLocale(globalocale), "bot.cancel");
     session.send(options);//"Absolutely, I'm canceling your order now.");
 }).triggerAction({ matches: 'CancelOrderIntent' });
+
+
+bot.dialog('ConfusedDialog', function (session) {
+var options = session.localizer.gettext(session.preferredLocale(globalocale), "bot.confused");
+    session.send(options, session.message.text);
+}).triggerAction({ matches: 'ConfusedIntent' });
 
 //bot.recognizer(new builder.RegExpRecognizer( "HiIntent", { en_us: /^(hello|hi)/i, en_fr: /^(salut|bonjour|bonsoir)/i }));
 bot.dialog('HiDialog', function (session) {
