@@ -36,7 +36,7 @@ color: white !important;
 }
 .awake{
 overflow: hidden;/*position: fixed;*/right: 100%;left: 200px;bottom: 0px;margin: 10px;
-margin-left: 320px;width: 50px;cursor: pointer;padding-top: 55px;margin-bottom: 30px;
+margin-left: 310px;width: 50px;cursor: pointer;padding-top: 55px;margin-bottom: 30px;
 }
 
 .wc-upload{
