@@ -81,6 +81,9 @@ bot.recognizer({
                     if (s.match(/(help|aide)/i)) {
                         intent = { score: 1.0, intent: 'HelpIntent' };
                     }
+                    if (s.match(/(bye|goodbye|au revoir)/i)) {
+                        intent = { score: 1.0, intent: 'CiaoIntent' };
+                    }
                     if (s.match(/test/i)) {
                         intent = { score: 1.0, intent: 'TestIntent' };
                     }
@@ -106,11 +109,16 @@ var options = session.localizer.gettext(session.preferredLocale(globalocale), "b
     session.endConversation(options);//"Oh Hello to you! What can I help you with? Try asking for 'help' or 'order <reagent>' or 'cancel order <reagent> from <email>'");
 }).triggerAction({ matches: 'HiIntent' });
 
+bot.dialog('CiaoDialog', function (session) {
+var options = session.localizer.gettext(session.preferredLocale(globalocale), "bot.ciao");
+    session.endConversation(options);//"Oh Hello to you! What can I help you with? Try asking for 'help' or 'order <reagent>' or 'cancel order <reagent> from <email>'");
+}).triggerAction({ matches: 'CiaoIntent' });
+
 bot.dialog('OrderDialog', function (session) {
     var options = session.localizer.gettext(session.preferredLocale(globalocale), "bot.order");
     session.say(options);//"Absolutely! Let's put it together...");
     var message = new builder.Message().addAttachment(hotelAsAttachment());
-    session.delay(500);
+    session.delay(3000);
     session.send(message).endDialog();
     //, I am putting an order out now. Please check your emails for confirmation.");
 }).triggerAction({ matches: 'OrderIntent' });
