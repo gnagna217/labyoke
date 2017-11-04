@@ -66,19 +66,19 @@ bot.recognizer({
                     intent = { score: 1.0, intent: 'CancelOrderIntent' };
                 default:
                     console.log("default: " + s.match(/(hello|hi)/i));
-                    if (s.match(/(hello|hi)/i)) {
+                    if (s.match(/(hello|hi|bonjour|bonsoir|salut)/i)) {
                         intent = { score: 1.0, intent: 'HiIntent' };
                     }
-                    if (s.match(/(thank|thanks)/i)) {
+                    if (s.match(/(thank|thanks|merci)/i)) {
                         intent = { score: 1.0, intent: 'ThankIntent' };
                     }
-                    if (s.match(/order/i)) {
+                    if (s.match(/(order|commander)/i)) {
                         intent = { score: 1.0, intent: 'OrderIntent' };
                     }
-                    if (s.match(/cancel order/i)) {
+                    if (s.match(/(cancel order | annuler commande)/i)) {
                         intent = { score: 1.0, intent: 'CancelOrderIntent' };
                     }
-                    if (s.match(/help/i)) {
+                    if (s.match(/(help|aide)/i)) {
                         intent = { score: 1.0, intent: 'HelpIntent' };
                     }
                     if (s.match(/test/i)) {
