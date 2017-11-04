@@ -96,16 +96,19 @@ bot.recognizer({
 
 //bot.recognizer(new builder.RegExpRecognizer( "CancelOrderIntent", { en_us: /^(cancel|nevermind)/i, en_fr: /^(annuler)/i }));
 bot.dialog('CancelDialog', function (session) {
-    session.send("Absolutely, I'm canceling your order now.");
+var options = session.localizer.gettext(session.preferredLocale(globalocale), "bot.cancel");
+    session.send(options);//"Absolutely, I'm canceling your order now.");
 }).triggerAction({ matches: 'CancelOrderIntent' });
 
 //bot.recognizer(new builder.RegExpRecognizer( "HiIntent", { en_us: /^(hello|hi)/i, en_fr: /^(salut|bonjour|bonsoir)/i }));
 bot.dialog('HiDialog', function (session) {
-    session.endConversation("Oh Hello to you! What can I help you with? Try asking for 'help' or 'order <reagent>' or 'cancel order <reagent> from <email>'");
+var options = session.localizer.gettext(session.preferredLocale(globalocale), "bot.hi");
+    session.endConversation(options);//"Oh Hello to you! What can I help you with? Try asking for 'help' or 'order <reagent>' or 'cancel order <reagent> from <email>'");
 }).triggerAction({ matches: 'HiIntent' });
 
 bot.dialog('OrderDialog', function (session) {
-    session.say("Absolutely! Let's put it together...");
+    var options = session.localizer.gettext(session.preferredLocale(globalocale), "bot.order");
+    session.say(options);//"Absolutely! Let's put it together...");
     var message = new builder.Message().addAttachment(hotelAsAttachment());
     session.delay(500);
     session.send(message).endDialog();
@@ -113,11 +116,13 @@ bot.dialog('OrderDialog', function (session) {
 }).triggerAction({ matches: 'OrderIntent' });
 
 bot.dialog('HelpDialog', function (session) {
-    session.say("You seem to be asking for help on something. Try our [help](https://team-labyoke.herokuapp.com/help) section for a wealth of information and video tutorials or be. Anything else I can help you with?","You seem to be asking for help on something. Try our help section for a wealth of information and video tutorials or be. Anything else I can help you with?");
+    var options = session.localizer.gettext(session.preferredLocale(globalocale), "bot.help");
+    session.say(options);//"You seem to be asking for help on something. Try our [help](https://team-labyoke.herokuapp.com/help) section for a wealth of information and video tutorials. Anything else I can help you with?");
 }).triggerAction({ matches: 'HelpIntent' });
 
 bot.dialog('ThankDialog', function (session) {
-    session.say("You are most welcome. I am always here when you need me.");
+    var options = session.localizer.gettext(session.preferredLocale(globalocale), "bot.thanks");
+    session.say(options);//"You are most welcome. I am always here when you need me.");
 }).triggerAction({ matches: 'ThankIntent' });
 
 

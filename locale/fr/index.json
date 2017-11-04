@@ -1,3 +1,7 @@
 {
-"hi": "salut"
+"bot.cancel": "Absolument, J'annulle votre commande.",
+"bot.order": "Absolument! En préparation...",
+"bot.hi": "Oh Salut! Que puis-je faire pour vous aider? Dites 'aide' or 'commander <réactif>' ou 'annuler commande <réactif> de <email>'",
+"bot.thanks": "Je vous en prie. Je suis toujours là pour vous.",
+"bot.help": "Vous demandez de l'aide. Accédez á notre section [aide](https://team-labyoke.herokuapp.com/help) pour un floriléde d'informations et vidéos tutorielles."
 }
