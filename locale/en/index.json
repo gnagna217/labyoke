@@ -1,9 +1,5 @@
 {
-"bot.confused" : "Vous avez dit : '%s'. Je ne suis pas certain d'avoir compris. Vous pouvez me demander de l' 'aide' ou de 'commander <réactif>' ou 'annuler commande <réactif> de <email>' ",
-"bot.cancel": "Absolument, J'annule votre commande.",
-"bot.order": "Absolument! En préparation...",
-"bot.ciao": "Au revoir.",
-"bot.hi": "Oh Salut! Que puis-je faire pour vous aider? Dites 'aide' or 'commander <réactif>' ou 'annuler commande <réactif> de <email>'",
-"bot.thanks": "Je vous en prie. Je suis toujours là pour vous.",
-"bot.help": "Vous demandez de l'aide. Accédez á notre section [aide](https://team-labyoke.herokuapp.com/help) pour un floriléde d'informations et vidéos tutorielles."
+"bot.hi": "Oh Hello to you! What can I help you with? Try asking for 'help' or 'order <reagent>' or 'cancel order <reagent> from <email>'",
+"bot.thanks": "You are most welcome. I am always here when you need me.",
+"bot.help": "You seem to be asking for help on something. Try our [help](https://team-labyoke.herokuapp.com/help) section for a wealth of information and video tutorials or be. Anything else I can help you with?","You seem to be asking for help on something. Try our help section for a wealth of information and video tutorials or be. Anything else I can help you with?"
 }
