@@ -65,8 +65,17 @@ margin-left: 320px;width: 50px;cursor: pointer;padding-top: 55px;margin-bottom: 
   border: none !important;
   border-bottom: 1px solid #f5f3f0 !important;
 }
+.wc-console.has-text .wc-send svg {
+    fill: white;
+}
 .wc-textbox {
     left: 15px !important;
+    right: 0px !important;
+    word-wrap: break-word;
+    word-break: break-word;
+    overflow: auto;
+    width: 245px;
+    display: block;
     }
 .wc-shellinput{
   background-color: transparent;
