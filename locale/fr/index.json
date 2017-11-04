@@ -1,5 +1,5 @@
 {
-  "bot.confused" : "Vous avez dit : '%s'. Je ne suis pas certain d'avoir compris. Vous pouvez me demander de l' 'aide' ou de 'commander <réactif>' ou 'annuler commande <réactif> de <email>' ",
+"bot.confused" : "Vous avez dit : '%s'. Je ne suis pas certain d'avoir compris. Vous pouvez me demander de l' 'aide' ou de 'commander <réactif>' ou 'annuler commande <réactif> de <email>' ",
 "bot.cancel": "Absolument, J'annulle votre commande.",
 "bot.order": "Absolument! En préparation...",
 "bot.ciao": "Au revoir.",
