@@ -26,7 +26,7 @@ var router = express.Router();
 var multer = require('multer');
 var xlstojson = require("xls-to-json-lc");
 var xlsxtojson = require("xlsx-to-json-lc");
-var globalocale = "en";
+var globalocale = "fr";
 
 var builder = require('botbuilder');
 var connector = new builder.ChatConnector({
@@ -64,7 +64,6 @@ bot.recognizer({
                     //break;
                 case 'cancel':
                     intent = { score: 1.0, intent: 'CancelOrderIntent' };
-                    //break;
                 default:
                     console.log("default: " + s.match(/(hello|hi)/i));
                     if (s.match(/(hello|hi)/i)) {
@@ -88,12 +87,6 @@ bot.recognizer({
                     if (s.match(/test2/i)) {
                         intent = { score: 1.0, intent: 'Test2Intent' };
                     }
-                    /*if (s.match(/(buy|add)\s.*shirt/i)) {
-                        intent = { score: 1.0, intent: 'Test2Intent' };
-                    }*/
-
-
-
                     break;
             }
         }
