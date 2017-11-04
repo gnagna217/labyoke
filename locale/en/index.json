@@ -1,3 +1,9 @@
 {
-"bot.help": "You seem to be asking for help on something."
+"bot.confused" : "You said: '%s'. Try asking for 'help' or 'order <reagent>' or 'cancel order <reagent> from <email>'",
+"bot.cancel": "Absolutely, I'm canceling your order now.",
+"bot.order": "Absolutely! Let's put it together...",
+"bot.ciao": "Goodbye.",
+"bot.hi": "Oh Hello to you! What can I help you with? Try asking for 'help' or 'order <reagent>' or 'cancel order <reagent> from <email>'",
+"bot.thanks": "You are most welcome. I am always here when you need me.",
+"bot.help": "You seem to be asking for help on something. Try our [help](https://team-labyoke.herokuapp.com/help) section for a wealth of information and video tutorials or be. Anything else I can help you with?"
 }
