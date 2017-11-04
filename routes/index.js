@@ -26,7 +26,7 @@ var router = express.Router();
 var multer = require('multer');
 var xlstojson = require("xls-to-json-lc");
 var xlsxtojson = require("xlsx-to-json-lc");
-var globalocale = "fr";
+var globalocale = "en";
 
 var builder = require('botbuilder');
 var connector = new builder.ChatConnector({
