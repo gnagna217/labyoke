@@ -27,6 +27,7 @@ var multer = require('multer');
 var xlstojson = require("xls-to-json-lc");
 var xlsxtojson = require("xlsx-to-json-lc");
 var globalocale = "en";
+var globalemail = "";
 
 var builder = require('botbuilder');
 var connector = new builder.ChatConnector({
@@ -134,6 +135,30 @@ var options = session.localizer.gettext(session.preferredLocale(globalocale), "b
 
 bot.dialog('OrderDialog', function (session) {
     var options = session.localizer.gettext(session.preferredLocale(globalocale), "bot.order");
+
+
+
+            var searchText = "bamhi";
+            var searchType = "";
+            var labYokeSearch = new LabYokeSearch(searchText, globalemail, searchType);
+            var messageStr = "";
+            labYokeSearch.search(function(error, results) {
+                console.log("results " + results[0].length);    
+                if (searchText != null && searchText.length > 0){
+                    if(results[0].length == 0){
+                        //messageStr = (res.__("index.search.message1", {searchText:searchText})).replace(/&lt;/g, '<').replace(/&gt;/g, '>');
+                        console.log("test results is: " + results[0]);
+                        //messageStr = "Sorry we could not find any results with your reagent search request: <b>" + searchText + "</b>. Please try again.";
+                    }
+                    //res.render('search', {searchType:searchType,userlang:req.session.userlang,lang:req.cookies.i18n, i18n:res, mylab: req.session.lab, message: messageStr, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user,labyokersurname : req.session.surname, isLoggedInAdmin: req.session.admin, title: 'Search', fullname: req.session.fullname, sendemail: req.session.email, searchResults : results[0], agentsResults : results[1], searchformText: searchText, loggedIn : true});
+                } else {
+                    messageStr = "You entered an invalid reagent keyword. Please try again.";
+                    console.log(messageStr);
+                    //res.render('search', {searchType:searchType,userlang:req.session.userlang,lang:req.cookies.i18n, i18n:res, message: res.__("index.search.message2"), mylab: req.session.lab,ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, labyokersurname : req.session.surname,isLoggedInAdmin: req.session.admin, title: 'Search', loggedIn : true, agentsResults : results[1]});
+                }
+            });
+
+
     session.say(options);//"Absolutely! Let's put it together...");
     var message = new builder.Message().addAttachment(hotelAsAttachment());
     session.delay(3000);
@@ -1909,6 +1934,7 @@ totalshares = t[0].counting;
 				req.session.firstname = user_name;
 				req.session.lastname = user_surname;
 				req.session.email = user_email;
+                globalemail = req.session.email;
 				req.session.tel = user_tel;
 				labyokerRegister.register(function(error, done) {
 
@@ -2167,6 +2193,7 @@ totalshares = t[0].counting;
 													console.log("req.session.usersuperadmin? " + req.session.usersuperadmin);
 													req.session.active = done[0].active;
 													req.session.email = done[0].email;
+                                                    globalemail = req.session.email;
 													req.session.lab = done[0].lab;
                                                     req.session.oninsuff = done[0].oninsuff;
 													req.session.fullname = done[0].name;
