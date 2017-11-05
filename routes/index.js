@@ -166,7 +166,7 @@ session.say(options);//"Absolutely! Let's put it together...");
     session.send(message).endDialog();
                     } else {
 options = session.localizer.gettext(session.preferredLocale(globalocale), "bot.order.noresults");
-session.say(options,searchText);                      
+session.send(options,searchText);                      
                     }
                     //res.render('search', {searchType:searchType,userlang:req.session.userlang,lang:req.cookies.i18n, i18n:res, mylab: req.session.lab, message: messageStr, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user,labyokersurname : req.session.surname, isLoggedInAdmin: req.session.admin, title: 'Search', fullname: req.session.fullname, sendemail: req.session.email, searchResults : results[0], agentsResults : results[1], searchformText: searchText, loggedIn : true});
                 } else {
