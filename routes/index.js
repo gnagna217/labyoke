@@ -156,7 +156,7 @@ session.say(options);//"Absolutely! Let's put it together...");
 //    var agent = ob[prop].agent
 
                         //messageStr = "Sorry we could not find any results with your reagent search request: <b>" + searchText + "</b>. Please try again.";
-    var message = new builder.Message().addAttachment(hotelAsAttachment(firstchoice));
+    var message = new builder.Message().addAttachment(hotelAsAttachment(firstchoice,session));
     session.delay(3000);
     session.send(message).endDialog();
                     }
@@ -186,7 +186,7 @@ bot.dialog('ThankDialog', function (session) {
 
 
 
-function hotelAsAttachment(results) {
+function hotelAsAttachment(results,session) {
     var opttitle = session.localizer.gettext(session.preferredLocale(globalocale), "bot.order.title");
     var optsubtitle = session.localizer.gettext(session.preferredLocale(globalocale), "bot.order.subtitle");
     var optreagent = session.localizer.gettext(session.preferredLocale(globalocale), "bot.order.reagent");
