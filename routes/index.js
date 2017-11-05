@@ -190,7 +190,7 @@ function hotelAsAttachment(results) {
     return new builder.HeroCard()
         .title("Order")
         .subtitle("Please confirm this order:")
-        .text("**Reagent:** " + results.agent + "/n/n **Vendor:** " + results.vendor + "/n/n **Catalog Number:** " + results.catalognumber + "/n/n **Location:** " + results.email)
+        .text("**Reagent:** " + results.agent + "\n\n **Vendor:** " + results.vendor + "\n\n **Catalog Number:** " + results.catalognumber + "\n\n **Location:** " + results.email)
         .buttons([
             new builder.CardAction()
                 .title('Yes')
