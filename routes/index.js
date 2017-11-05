@@ -215,7 +215,7 @@ function hotelAsAttachment(results,session) {
         .buttons([
             new builder.CardAction()
                 .title(optbutton)
-                .type('openUrl')
+                .type('test')
                 .value(processOrder(results))
         ]);
 }
