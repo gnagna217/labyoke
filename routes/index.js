@@ -135,20 +135,30 @@ var options = session.localizer.gettext(session.preferredLocale(globalocale), "b
 
 bot.dialog('OrderDialog', function (session) {
     var options = session.localizer.gettext(session.preferredLocale(globalocale), "bot.order");
+session.say(options);//"Absolutely! Let's put it together...");
 
-
-
-            var searchText = "bamhi";
-            var searchType = "";
+            var input = session.message.text;
+            var searchText = input.split(' ')[1];
+            var searchType = "key";
             var labYokeSearch = new LabYokeSearch(searchText, globalemail, searchType);
             var messageStr = "";
             labYokeSearch.search(function(error, results) {
                 console.log("results " + results[0].length);    
                 if (searchText != null && searchText.length > 0){
-                    if(results[0].length == 0){
+                    var searchresults = results[0];
+                    if(searchresults.length > 0){
                         //messageStr = (res.__("index.search.message1", {searchText:searchText})).replace(/&lt;/g, '<').replace(/&gt;/g, '>');
                         console.log("test results is: " + results[0]);
+                        var firstchoice = searchresults[0];
+
+//for(var prop in ob)
+//    var i = prop % 2
+//    var agent = ob[prop].agent
+
                         //messageStr = "Sorry we could not find any results with your reagent search request: <b>" + searchText + "</b>. Please try again.";
+    var message = new builder.Message().addAttachment(hotelAsAttachment(firstchoice));
+    session.delay(3000);
+    session.send(message).endDialog();
                     }
                     //res.render('search', {searchType:searchType,userlang:req.session.userlang,lang:req.cookies.i18n, i18n:res, mylab: req.session.lab, message: messageStr, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user,labyokersurname : req.session.surname, isLoggedInAdmin: req.session.admin, title: 'Search', fullname: req.session.fullname, sendemail: req.session.email, searchResults : results[0], agentsResults : results[1], searchformText: searchText, loggedIn : true});
                 } else {
@@ -159,10 +169,8 @@ bot.dialog('OrderDialog', function (session) {
             });
 
 
-    session.say(options);//"Absolutely! Let's put it together...");
-    var message = new builder.Message().addAttachment(hotelAsAttachment());
-    session.delay(3000);
-    session.send(message).endDialog();
+    
+
     //, I am putting an order out now. Please check your emails for confirmation.");
 }).triggerAction({ matches: 'OrderIntent' });
 
@@ -178,11 +186,11 @@ bot.dialog('ThankDialog', function (session) {
 
 
 
-function hotelAsAttachment() {
+function hotelAsAttachment(results) {
     return new builder.HeroCard()
         .title("Order")
         .subtitle("Please confirm this order:")
-        .text("**Reagent:** Some Reagent - **Location:** labmember@gmail.com")
+        .text("**Reagent:** " + results.agent + "/n/n **Vendor:** " + results.vendor + "/n/n **Catalog Number:** " + results.catalognumber + "/n/n **Location:** " + results.email)
         .buttons([
             new builder.CardAction()
                 .title('Yes')
