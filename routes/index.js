@@ -195,7 +195,9 @@ bot.dialog('ThankDialog', function (session) {
     session.say(options);//"You are most welcome. I am always here when you need me.");
 }).triggerAction({ matches: 'ThankIntent' });
 
-
+function processOrder(results) {
+console.log("process order: " + results.agent);
+}
 
 function hotelAsAttachment(results,session) {
     var opttitle = session.localizer.gettext(session.preferredLocale(globalocale), "bot.order.title");
@@ -214,7 +216,7 @@ function hotelAsAttachment(results,session) {
             new builder.CardAction()
                 .title(optbutton)
                 .type('openUrl')
-                .value('https://team-labyoke.herokuapp.com/orders')
+                .value(processOrder(results))
         ]);
 }
 
