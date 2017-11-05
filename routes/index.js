@@ -187,13 +187,21 @@ bot.dialog('ThankDialog', function (session) {
 
 
 function hotelAsAttachment(results) {
+    var opttitle = session.localizer.gettext(session.preferredLocale(globalocale), "bot.order.title");
+    var optsubtitle = session.localizer.gettext(session.preferredLocale(globalocale), "bot.order.subtitle");
+    var optreagent = session.localizer.gettext(session.preferredLocale(globalocale), "bot.order.reagent");
+    var optvendor = session.localizer.gettext(session.preferredLocale(globalocale), "bot.order.vendor");
+    var optcatalog = session.localizer.gettext(session.preferredLocale(globalocale), "bot.order.catalognumber");
+    var optemail = session.localizer.gettext(session.preferredLocale(globalocale), "bot.order.email");
+    var optbutton = session.localizer.gettext(session.preferredLocale(globalocale), "bot.order.button");
+
     return new builder.HeroCard()
-        .title("Order")
-        .subtitle("Please confirm this order:")
-        .text("**Reagent:** " + results.agent + "\n\n **Vendor:** " + results.vendor + "\n\n **Catalog Number:** " + results.catalognumber + "\n\n **Location:** " + results.email)
+        .title(opttitle)
+        .subtitle(optsubtitle)
+        .text("**"+optreagent+":** " + results.agent + "\n\n**"+optvendor+":** " + results.vendor + "\n\n**"+optcatalognumber+":** " + results.catalognumber + "\n\n**"+optemail+":** " + results.email)
         .buttons([
             new builder.CardAction()
-                .title('Yes')
+                .title(optbutton)
                 .type('openUrl')
                 .value('https://team-labyoke.herokuapp.com/orders')
         ]);

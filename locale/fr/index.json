@@ -1,7 +1,16 @@
 {
 "bot.confused" : "Vous avez dit : '%s'. Je ne suis pas certain d'avoir compris. Vous pouvez me demander de l' 'aide' ou 'commander <réactif>' ou 'annuler commande <réactif> en provenance de <email>' ",
 "bot.cancel": "Absolument, J'annule votre commande.",
+
 "bot.order": "Absolument! En préparation...",
+"bot.order.title": "Commande",
+"bot.order.subtitle": "Veuillez confirmer la commande suivante:",
+"bot.order.reagent": "Réactif",
+"bot.order.email": "Email",
+"bot.order.vendor": "Vendeur",
+"bot.order.catalognumber": "Numéro de Catalogue",
+"bot.order.button": "Oui",
+
 "bot.ciao": "Au revoir.",
 "bot.hi": "Oh Salut! Je m'appelle Professeur L. Que puis-je faire pour vous aider? Dites 'aide' ou 'commander <réactif>' ou 'annuler commande <réactif> en provenance de <email>'",
 "bot.thanks": "Je vous en prie. Je suis toujours là pour vous.",
