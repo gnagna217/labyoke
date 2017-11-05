@@ -13,7 +13,7 @@
 /* Start chatbot */
 
 .botbottom{
-    margin-bottom: 150px;
+    margin-bottom: 150px !important;
 }
 input.wc-shellinput::-webkit-input-placeholder {
 color: white !important;
