@@ -138,8 +138,12 @@ bot.dialog('OrderDialog', function (session) {
 session.say(options);//"Absolutely! Let's put it together...");
 
             var input = session.message.text;
-            var searchText0 = input.split(' ')[0];
-            searchText = searchText.substring(searchText0.length,searchText.length)
+            
+            var searchText = "";
+            if(input.length > 0){
+                var searchText0 = input.split(' ')[0];
+                searchText = input.substring(searchText0.length,input.length);
+            }
             var searchType = "key";
             var labYokeSearch = new LabYokeSearch(searchText, globalemail, searchType);
             var messageStr = "";
