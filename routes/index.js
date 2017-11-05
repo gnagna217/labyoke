@@ -143,6 +143,7 @@ session.say(options);//"Absolutely! Let's put it together...");
             if(input.length > 0){
                 var searchText0 = input.split(' ')[0];
                 searchText = input.substring(searchText0.length,input.length);
+                searchText = searchText.trim();
             }
             var searchType = "key";
             var labYokeSearch = new LabYokeSearch(searchText, globalemail, searchType);
