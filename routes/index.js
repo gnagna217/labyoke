@@ -138,7 +138,8 @@ bot.dialog('OrderDialog', function (session) {
 session.say(options);//"Absolutely! Let's put it together...");
 
             var input = session.message.text;
-            var searchText = input.split(' ')[1];
+            var searchText0 = input.split(' ')[0];
+            searchText = searchText.substring(searchText0.length,searchText.length)
             var searchType = "key";
             var labYokeSearch = new LabYokeSearch(searchText, globalemail, searchType);
             var messageStr = "";
@@ -198,7 +199,7 @@ function hotelAsAttachment(results,session) {
     return new builder.HeroCard()
         .title(opttitle)
         .subtitle(optsubtitle)
-        .text("**"+optreagent+":** " + results.agent + "\n\n**"+optvendor+":** " + results.vendor + "\n\n**"+optcatalognumber+":** " + results.catalognumber + "\n\n**"+optemail+":** " + results.email)
+        .text("**"+optreagent+":** " + results.agent + "\n\n**"+optvendor+":** " + results.vendor + "\n\n**"+optcatalog+":** " + results.catalognumber + "\n\n**"+optemail+":** " + results.email)
         .buttons([
             new builder.CardAction()
                 .title(optbutton)
