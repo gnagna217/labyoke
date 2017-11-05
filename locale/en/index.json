@@ -10,6 +10,8 @@
 "bot.order.vendor": "Vendor",
 "bot.order.catalognumber": "Catalog Number",
 "bot.order.button": "Yes",
+"bot.order.invalidsearch": "You entered an invalid reagent keyword. Please try again and enter: Order <reagent>.",
+"bot.order.noresults": "There are no available reagents for your order attempt of '%s'.",
 
 "bot.ciao": "Goodbye.",
 "bot.hi": "Oh Hello to you! My name's Professor L! What can I help you with? Try asking for 'help' or 'order <reagent>' or 'cancel order <reagent> from <email>'",
