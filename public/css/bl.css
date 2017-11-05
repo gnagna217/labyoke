@@ -11,6 +11,10 @@
 
 
 /* Start chatbot */
+
+.botbottom{
+    margin-bottom: 150px;
+}
 input.wc-shellinput::-webkit-input-placeholder {
 color: white !important;
 }
@@ -31,7 +35,7 @@ color: white !important;
     color: white;
 }
 .sleep{
-  position: sticky;overflow: hidden;right: 100%;left: 0;bottom: 0px;margin: 0px 10px 10px;width: 40px;
+  position: fixed;overflow: hidden;right: 100%;left: 0;bottom: 0px;margin: 0px 10px 10px;width: 40px;
   cursor: pointer;clear:both;height: 130px;clear: both;
 }
 .awake{
@@ -1442,6 +1446,9 @@ body.large-screen .card-list-table tbody tr:hover td {
 }
 
 @media (max-width: 590px) {
+.botbottom{
+  margin-bottom: 0px;
+}
 .labbot{
   display: none;
 }
