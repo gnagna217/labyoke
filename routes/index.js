@@ -211,8 +211,9 @@ bot.dialog('/order', [
     session.endDialog()
   }*/
   function (session, args) {
-    console.log("ordering? " + args.results);
-    console.log("ordering session.dialogData? " + session.dialogData.results);
+    console.log("ordering? " + args);
+    console.log("ordering? " + args.agent);
+    console.log("ordering session.dialogData? " + session.dialogData.agent);
   }
 ])
 
@@ -225,8 +226,8 @@ function hotelAsAttachment(results,session) {
     var optemail = session.localizer.gettext(session.preferredLocale(globalocale), "bot.order.email");
     var optbutton = session.localizer.gettext(session.preferredLocale(globalocale), "bot.order.button");
 
-session.dialogData.results = results;
-var buttonList = [builder.CardAction.dialogAction(session, 'Order', session.dialogData, 'Yes')];
+session.dialogData.agent = results.agent;
+var buttonList = [builder.CardAction.dialogAction(session, 'Order', session, 'Yes')];
 /*[new builder.CardAction()
     .title(optbutton)
     .type('postBack')
