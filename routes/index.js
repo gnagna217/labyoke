@@ -1158,7 +1158,7 @@ totalshares = t[0].counting;
             console.log("requestoremail: " + requestor);
             console.log("pos: " + pos);
             console.log("pos2: " + pos2);
-            var labYokechange = new LabYokerChangeShare(table,agent, vendor, catalognumber,email,requestor,checked,datenow,date, lab, res,userlang);
+            var labYokechange = new LabYokerChangeShare(table,agent, vendor, catalognumber,email,requestor,checked,datenow,date, lab, res,userlang,req.session.labs);
             labYokechange.cancelShare(function(error, resultscancel) {
                 if(resultscancel != null && resultscancel.length > 0){
 
@@ -1226,7 +1226,7 @@ totalshares = t[0].counting;
 			console.log("requestoremail: " + requestor);
             console.log("pos: " + pos);
             console.log("pos2: " + pos2);
-			var labYokechange = new LabYokerChangeShare(table,agent, vendor, catalognumber,email,requestor,checked,datenow,date, lab, res,userlang);
+			var labYokechange = new LabYokerChangeShare(table,agent, vendor, catalognumber,email,requestor,checked,datenow,date, lab, res,userlang,req.session.labs);
 			labYokechange.cancelShare(function(error, results) {
 				if(results != null && results.length > 0){
 					//res.redirect('/share');
@@ -1283,7 +1283,7 @@ totalshares = t[0].counting;
             console.log("userlang: " + userlang);
             console.log("requestoremail: " + requestor);
             console.log("pos: " + pos);
-            var labYokechange = new LabYokerChangeShare(table,agent, vendor, catalognumber,email,requestor,checked,datenow,date, lab, res,userlang);
+            var labYokechange = new LabYokerChangeShare(table,agent, vendor, catalognumber,email,requestor,checked,datenow,date, lab, res,userlang,req.session.labs);
             labYokechange.fulfillShare(function(error, resultsfilled) {
                 if(resultsfilled != null && resultsfilled.length > 0){
 

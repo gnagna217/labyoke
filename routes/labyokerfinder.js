@@ -40,7 +40,7 @@ LabyokerLabs = function(lab,adminemail) {
 	this.lab = lab;
 };
 
-LabYokerChangeShare = function(table, agent, vendor,catalognumber,email,requestor,checked,datenow,date,lab,res,userlang) {
+LabYokerChangeShare = function(table, agent, vendor,catalognumber,email,requestor,checked,datenow,date,lab,res,userlang,labs) {
 	this.agent = agent;
 	this.vendor = vendor;
 	this.catalognumber = catalognumber;
@@ -53,6 +53,7 @@ LabYokerChangeShare = function(table, agent, vendor,catalognumber,email,requesto
 	this.lab = lab;
 	this.res = res;
 	this.userlang = userlang;
+	this.labs = labs;
 };
 
 LabyokerUserDetails = function(column, value, email,curname,cursurname,res) {
@@ -3030,6 +3031,7 @@ LabYokerChangeShare.prototype.fulfillShare = function(callback) {
 	var requestor = this.requestor;
 	var i18n = this.res;
 	var userlang = this.userlang;
+	var labs = this.labs;
 
 	var date = this.date;
 	console.log("fulfill shares");
@@ -3054,13 +3056,22 @@ LabYokerChangeShare.prototype.fulfillShare = function(callback) {
 		status = "fulfilled";
 	}
 	//var str = "select * from labs";
-	var str ="UPDATE " + table + " SET status='" + status
+
+	for(var prop in labs){
+		a = "a" + i;
+		var labsstr = (labs[prop].labname).replace(/ /g,"").toLowerCase() + "_orders b ";
+	var str ="UPDATE " + labsstr + " SET status='" + status
 			+ "' where email='" + email + "' and requestoremail='" + requestor + "' and date between '" + date + "' and '" + date + "' and agent='" + agent + "' and vendor='" + vendor + "' and catalognumber='" + catalognumber + "'" + orderonly;
 	console.log("str: " + str);
 	var query = client.query(str);
 	query.on("row", function(row, result) {
 		result.addRow(row);
 	});
+	console.log("i is: " + i);
+	console.log("lenght is: " + labs.length);
+		if(i==labs.length){
+			console.log("send message now fulfill");
+
 	query.on("end", function(result) {
 		results = "success";
 
@@ -3145,6 +3156,20 @@ LabYokerChangeShare.prototype.fulfillShare = function(callback) {
 
 		callback(null, results);
 	});
+
+
+			
+		}
+		i++;
+	}
+	/*var str ="UPDATE " + table + " SET status='" + status
+			+ "' where email='" + email + "' and requestoremail='" + requestor + "' and date between '" + date + "' and '" + date + "' and agent='" + agent + "' and vendor='" + vendor + "' and catalognumber='" + catalognumber + "'" + orderonly;
+	console.log("str: " + str);
+	var query = client.query(str);
+	query.on("row", function(row, result) {
+		result.addRow(row);
+	});*/
+
 //callback(null, results);
 };
 
