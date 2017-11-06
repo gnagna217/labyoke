@@ -2949,6 +2949,8 @@ LabYokerChangeShare.prototype.cancelShare = function(callback) {
 	var i18n = this.res;
 	var userlang = this.userlang;
 	var oninsuff = this.oninsuff;
+	var labs = this.labs;
+
 	console.log("cancelling share current user oninsuff: " + oninsuff);
 	
 	var date = this.date;
@@ -2965,13 +2967,21 @@ LabYokerChangeShare.prototype.cancelShare = function(callback) {
 		orderonly = " and requestoremail='" + requestor + "'";
 	}
 
-	var str = "UPDATE " + table + " SET insufficient=" + checked
+	var i = 0;
+	for(var prop in labs){
+		var labsstr = (labs[prop].labname).replace(/ /g,"").toLowerCase() + "_orders ";
+	var str = "UPDATE " + labsstr + " SET insufficient=" + checked
 			+ ", insuffdate='" + datenow + "' where email='" + email + "' and date between '" + date + "' and '" + date + "' and agent='" + agent + "' and vendor='" + vendor + "' and catalognumber='" + catalognumber + "'" + orderonly;
 	console.log("str: " + str);
 	var query = client.query(str);
 	query.on("row", function(row, result) {
 		result.addRow(row);
 	});
+	console.log("i is: " + i);
+	console.log("lenght is: " + labs.length);
+		if(i==(labs.length-1)){
+
+
 	query.on("end", function(result) {
 		results = "success";
 
@@ -3016,7 +3026,8 @@ LabYokerChangeShare.prototype.cancelShare = function(callback) {
 
 		callback(null, results);
 	});
-//callback(null, results);
+}
+}
 };
 
 LabYokerChangeShare.prototype.fulfillShare = function(callback) {
