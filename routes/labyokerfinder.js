@@ -2979,6 +2979,7 @@ LabYokerChangeShare.prototype.cancelShare = function(callback) {
 	});
 	console.log("i is: " + i);
 	console.log("lenght is: " + labs.length);
+
 		if(i==(labs.length-1)){
 
 
@@ -3027,6 +3028,7 @@ LabYokerChangeShare.prototype.cancelShare = function(callback) {
 		callback(null, results);
 	});
 }
+i++;
 }
 };
 
