@@ -3056,9 +3056,8 @@ LabYokerChangeShare.prototype.fulfillShare = function(callback) {
 		status = "fulfilled";
 	}
 	//var str = "select * from labs";
-
+	var i = 0;
 	for(var prop in labs){
-		a = "a" + i;
 		var labsstr = (labs[prop].labname).replace(/ /g,"").toLowerCase() + "_orders b ";
 	var str ="UPDATE " + labsstr + " SET status='" + status
 			+ "' where email='" + email + "' and requestoremail='" + requestor + "' and date between '" + date + "' and '" + date + "' and agent='" + agent + "' and vendor='" + vendor + "' and catalognumber='" + catalognumber + "'" + orderonly;
@@ -3158,7 +3157,7 @@ LabYokerChangeShare.prototype.fulfillShare = function(callback) {
 	});
 
 
-			
+
 		}
 		i++;
 	}
