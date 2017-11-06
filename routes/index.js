@@ -208,16 +208,17 @@ function hotelAsAttachment(results,session) {
     var optemail = session.localizer.gettext(session.preferredLocale(globalocale), "bot.order.email");
     var optbutton = session.localizer.gettext(session.preferredLocale(globalocale), "bot.order.button");
 
+var buttonList = [builder.CardAction.dialogAction(session, 'Profile', null, 'Profile')]
+/*[new builder.CardAction()
+    .title(optbutton)
+    .type('postBack')
+    .value(processOrder(results))
+]*/
     return new builder.HeroCard()
         .title(opttitle)
         .subtitle(optsubtitle)
         .text("**"+optreagent+":** " + results.agent + "\n\n**"+optvendor+":** " + results.vendor + "\n\n**"+optcatalog+":** " + results.catalognumber + "\n\n**"+optemail+":** " + results.email)
-        .buttons([
-            new builder.CardAction()
-                .title(optbutton)
-                .type('postBack')
-                .value(processOrder(results))
-        ]);
+        .buttons(buttonList);
 }
 
 bot.dialog('Test2Dialog', function (session) {
