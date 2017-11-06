@@ -210,10 +210,10 @@ bot.dialog('/order', [
     session.send('Hello ' + session.userData.name)
     session.endDialog()
   }*/
-  function (session, args) {
-    console.log("ordering? " + args);
-    console.log("ordering? " + args.results);
-    console.log("ordering session.dialogData? " + session.dialogData.results);
+  function (session, results) {
+    console.log("ordering? " + results);
+    console.log("ordering? " + results.response);
+    console.log("ordering session.dialogData? " + results.response.length);
   }
 ])
 
