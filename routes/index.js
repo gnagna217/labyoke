@@ -226,7 +226,7 @@ function hotelAsAttachment(results,session) {
     var optemail = session.localizer.gettext(session.preferredLocale(globalocale), "bot.order.email");
     var optbutton = session.localizer.gettext(session.preferredLocale(globalocale), "bot.order.button");
 
-session.userData.results = results;
+session.userData.agent = results.agent;
 var buttonList = [builder.CardAction.dialogAction(session, 'Order', session, 'Yes')];
 /*[new builder.CardAction()
     .title(optbutton)
