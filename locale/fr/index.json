@@ -16,5 +16,8 @@
 "bot.ciao": "Au revoir.",
 "bot.hi": "Oh Salut! Je m'appelle Professeur L. Que puis-je faire pour vous aider? Dites **aide** ou **commander *réactif*** ou **annuler commande *réactif* en provenance de *email***",
 "bot.thanks": "Je vous en prie. Je suis toujours là pour vous.",
-"bot.help": "Vous demandez de l'aide. Accédez á notre section [aide](https://team-labyoke.herokuapp.com/help) pour un florilége d'informations et vidéos tutorielles."
+"bot.help": "Vous demandez de l'aide. Accédez á notre section [aide](https://team-labyoke.herokuapp.com/help) pour un florilége d'informations et vidéos tutorielles.",
+
+"bot.ordersuccessful": "Votre commande et un email de confirmation ont été envoyé avec succès.",
+"bot.ordernotsuccessful": "Une erreur est survenue. Veuillez ré-essayer une autre commande."
 }

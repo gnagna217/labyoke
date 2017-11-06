@@ -28,6 +28,9 @@ var xlstojson = require("xls-to-json-lc");
 var xlsxtojson = require("xlsx-to-json-lc");
 var globalocale = "en";
 var globalemail = "";
+var globalabadmin = "";
+var globalab = "";
+var globalres;
 
 var builder = require('botbuilder');
 var connector = new builder.ChatConnector({
@@ -162,7 +165,7 @@ session.say(options);//"Absolutely! Let's put it together...");
 //    var agent = ob[prop].agent
 
                         //messageStr = "Sorry we could not find any results with your reagent search request: <b>" + searchText + "</b>. Please try again.";
-    var message = new builder.Message().addAttachment(hotelAsAttachment(firstchoice,session));
+    var message = new builder.Message().addAttachment(createOrderCard(firstchoice,session));
     session.delay(3000);
     session.send(message).endDialog();
                     } else {
@@ -211,12 +214,37 @@ bot.dialog('/order', [
     session.endDialog()
   }*/
   function (session, args) {
-    console.log("ordering0: " + session.userData.results);
-    console.log("ordering1: " + session.userData.results.agent);
+    console.log("ordering lab: " + session.userData.results.lab);
+    console.log("ordering agent: " + session.userData.results.agent);
+    console.log("ordering vendor: " + session.userData.results.vendor);
+    console.log("ordering catalognumber: " + session.userData.results.catalognumber);
+    console.log("ordering email: " + session.userData.results.email);
+    console.log("ordering location: " + session.userData.results.location);
+    console.log("ordering globalemail: " + globalemail);
+    console.log("ordering globalab: " + globalab);
+    console.log("ordering globalabadmin: " + globalabadmin);
+    console.log("ordering globalres: " + globalres);
+    console.log("ordering globalocale: " + globalocale);
+    var ownerlang = globalocale;
+
+            var labYokerorder = new LabYokerOrder(session.userData.results.lab, session.userData.results.agent, session.userData.results.vendor, session.userData.results.catalognumber,session.userData.results.email,session.userData.results.location,globalemail,100, globalab,globalres,globalocale,ownerlang,globalabadmin);
+            labYokerorder.order(function(error, results) {
+                if(results != null && results=="successfulOrder"){
+                    console.log("ordering agentform: " + session.userData.results.agent);
+                    console.log("ordering location: " + session.userData.results.location);
+                    var options = session.localizer.gettext(session.preferredLocale(globalocale), "bot.ordersuccessful");
+                    session.say(options);
+                    //res.render('search', {lang:req.cookies.i18n, i18n:res,booster:req.session.savingsText, boostercolor:req.session.savingsColor, currentlabname:req.session.lab, categories: req.session.categories, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, labyokersurname : req.session.surname, isLoggedInAdmin: req.session.admin, title:'Search',loggedIn : true, order_location: location, order_agent: agent, order_vendor: vendor, order_catalog: catalognumber, email: email});
+                    //req.session.messages = null;
+                } else {
+                    var options = session.localizer.gettext(session.preferredLocale(globalocale), "bot.ordernotsuccessful");
+                    session.say(options);
+                }
+            });
   }
 ])
 
-function hotelAsAttachment(results,session) {
+function createOrderCard(results,session) {
     var opttitle = session.localizer.gettext(session.preferredLocale(globalocale), "bot.order.title");
     var optsubtitle = session.localizer.gettext(session.preferredLocale(globalocale), "bot.order.subtitle");
     var optreagent = session.localizer.gettext(session.preferredLocale(globalocale), "bot.order.reagent");
@@ -2147,6 +2175,7 @@ totalshares = t[0].counting;
 		}
 		console.log("req.cookies.i18n after setup: " + req.cookies.i18n);
 		res.setLocale(req.cookies.i18n);
+        globalres = res;
 		if (req.session.user) {
 			res.redirect('/search');
 		} else {
@@ -2167,6 +2196,7 @@ totalshares = t[0].counting;
                                             console.log("dept: " + dept);
                                             console.log("labadmin: " + labadmin);
                                             req.session.labadmin = labadmin;
+                                            globalabadmin = labadmin;
                                             req.session.dept = dept;
                                             console.log("user language: " + done[0].lang);
 											//res.setLocale(done[0].lang);
@@ -2243,6 +2273,7 @@ totalshares = t[0].counting;
 													req.session.email = done[0].email;
                                                     globalemail = req.session.email;
 													req.session.lab = done[0].lab;
+                                                    globalab = done[0].lab;
                                                     req.session.oninsuff = done[0].oninsuff;
 													req.session.fullname = done[0].name;
 													req.session.surname = done[0].surname;
