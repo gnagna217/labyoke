@@ -199,6 +199,8 @@ function processOrder(results) {
 console.log("process order: " + results.agent);
 }
 
+bot.beginDialogAction('Order', '/order')
+
 bot.dialog('/order', [
   /*function (session) {
     builder.Prompts.text(session, 'Hi! What is your name?')
