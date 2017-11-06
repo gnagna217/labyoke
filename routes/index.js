@@ -220,12 +220,13 @@ bot.dialog('/order', [
     console.log("ordering catalognumber: " + session.userData.results.catalognumber);
     console.log("ordering email: " + session.userData.results.email);
     console.log("ordering location: " + session.userData.results.location);
+    console.log("ordering lang: " + session.userData.results.lang);
     console.log("ordering globalemail: " + globalemail);
     console.log("ordering globalab: " + globalab);
     console.log("ordering globalabadmin: " + globalabadmin);
     console.log("ordering globalres: " + globalres);
     console.log("ordering globalocale: " + globalocale);
-    var ownerlang = globalocale;
+    var ownerlang = session.userData.results.lang;
 
             var labYokerorder = new LabYokerOrder(session.userData.results.lab, session.userData.results.agent, session.userData.results.vendor, session.userData.results.catalognumber,session.userData.results.email,session.userData.results.location,globalemail,100, globalab,globalres,globalocale,ownerlang,globalabadmin);
             labYokerorder.order(function(error, results) {
