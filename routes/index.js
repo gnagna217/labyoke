@@ -199,6 +199,20 @@ function processOrder(results) {
 console.log("process order: " + results.agent);
 }
 
+bot.dialog('/order', [
+  /*function (session) {
+    builder.Prompts.text(session, 'Hi! What is your name?')
+  },
+  function (session, results) {
+    session.userData.name = results.response
+    session.send('Hello ' + session.userData.name)
+    session.endDialog()
+  }*/
+  function (session) {
+    console.log("ordering? " + session.results);
+  }
+])
+
 function hotelAsAttachment(results,session) {
     var opttitle = session.localizer.gettext(session.preferredLocale(globalocale), "bot.order.title");
     var optsubtitle = session.localizer.gettext(session.preferredLocale(globalocale), "bot.order.subtitle");
@@ -208,7 +222,8 @@ function hotelAsAttachment(results,session) {
     var optemail = session.localizer.gettext(session.preferredLocale(globalocale), "bot.order.email");
     var optbutton = session.localizer.gettext(session.preferredLocale(globalocale), "bot.order.button");
 
-var buttonList = [builder.CardAction.dialogAction(session, 'Profile', null, 'Profile')]
+session.results = results;
+var buttonList = [builder.CardAction.dialogAction(session, 'Order', null, 'Yes')];
 /*[new builder.CardAction()
     .title(optbutton)
     .type('postBack')
