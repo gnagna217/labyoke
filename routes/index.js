@@ -30,6 +30,7 @@ var globalocale = "en";
 var globalemail = "";
 var globalabadmin = "";
 var globalab = "";
+var globaluserlang = "en";
 var globalres;
 
 var builder = require('botbuilder');
@@ -226,9 +227,10 @@ bot.dialog('/order', [
     console.log("ordering globalabadmin: " + globalabadmin);
     console.log("ordering globalres: " + globalres);
     console.log("ordering globalocale: " + globalocale);
+    console.log("ordering globaluserlang: " + globaluserlang);
     var ownerlang = session.userData.results.lang;
 
-            var labYokerorder = new LabYokerOrder(session.userData.results.lab, session.userData.results.agent, session.userData.results.vendor, session.userData.results.catalognumber,session.userData.results.email,session.userData.results.location,globalemail,100, globalab,globalres,globalocale,ownerlang,globalabadmin);
+            var labYokerorder = new LabYokerOrder(session.userData.results.lab, session.userData.results.agent, session.userData.results.vendor, session.userData.results.catalognumber,session.userData.results.email,session.userData.results.location,globalemail,100, globalab,globalres,globaluserlang,ownerlang,globalabadmin);
             labYokerorder.order(function(error, results) {
                 if(results != null && results=="successfulOrder"){
                     console.log("ordering agentform: " + session.userData.results.agent);
@@ -2253,6 +2255,7 @@ totalshares = t[0].counting;
 													//req.session.dept = dept[0].department;
 													req.session.userid = done[0].id;
 													req.session.userlang = done[0].lang;
+                                                    globaluserlang = done[0].lang;
 													req.session.useradmin = false;
                                                     req.session.usersuperadmin = false;
                                                     console.log("user surname (NEW): " + req.session.surname);
