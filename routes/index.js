@@ -213,7 +213,7 @@ bot.dialog('/order', [
   function (session, results) {
     console.log("ordering? " + results);
     console.log("ordering? " + results.response);
-    console.log("ordering session.dialogData? " + results.response.length);
+    console.log("ordering session.dialogData? " + results.length);
   }
 ])
 
