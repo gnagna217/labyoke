@@ -210,10 +210,10 @@ bot.dialog('/order', [
     session.send('Hello ' + session.userData.name)
     session.endDialog()
   }*/
-  function (session, results) {
-    console.log("ordering? " + results);
-    console.log("ordering? " + results.response);
-    console.log("ordering session.dialogData? " + results.length);
+  function (session, args) {
+    console.log("ordering? " + session.userData);
+    console.log("ordering? " + session.userData.agent);
+    console.log("ordering session.dialogData? " + args[0]);
   }
 ])
 
@@ -226,7 +226,7 @@ function hotelAsAttachment(results,session) {
     var optemail = session.localizer.gettext(session.preferredLocale(globalocale), "bot.order.email");
     var optbutton = session.localizer.gettext(session.preferredLocale(globalocale), "bot.order.button");
 
-session.dialogData.results = results;
+session.userData.results = results;
 var buttonList = [builder.CardAction.dialogAction(session, 'Order', session, 'Yes')];
 /*[new builder.CardAction()
     .title(optbutton)
