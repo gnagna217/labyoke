@@ -3068,7 +3068,7 @@ LabYokerChangeShare.prototype.fulfillShare = function(callback) {
 	});
 	console.log("i is: " + i);
 	console.log("lenght is: " + labs.length);
-		if(i==labs.length){
+		if(i==(labs.length-1)){
 			console.log("send message now fulfill");
 
 	query.on("end", function(result) {
