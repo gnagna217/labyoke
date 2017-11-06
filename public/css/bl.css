@@ -13,8 +13,8 @@
 /* Start chatbot */
 
 .ac-pushButton{
-    background-color: #347ab7;
-    color: white;
+    background-color: #347ab7 !important;
+    color: white !important;
 }
 .botbottom{
     margin-bottom: 100px !important;

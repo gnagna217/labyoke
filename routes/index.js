@@ -211,9 +211,9 @@ bot.dialog('/order', [
     session.endDialog()
   }*/
   function (session, args) {
-    console.log("ordering? " + args);
-    console.log("ordering? " + args.agent);
-    console.log("ordering session.dialogData? " + session.dialogData.agent);
+    console.log("ordering? " + session.action);
+    console.log("ordering? " + args.dialogData);
+    console.log("ordering session.dialogData? " + args.dialogData.agent);
   }
 ])
 
