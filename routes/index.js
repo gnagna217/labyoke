@@ -161,7 +161,7 @@ var options = session.localizer.gettext(session.preferredLocale(globalocale), "b
             var messageStr = "";
             labYokeBotOrder.search(function(error, results) {
                 console.log("results " + results[0].length);    
-                if (searchText != null && searchText.length > 0){
+                if (reagentText != null && reagentText.length > 0){
                     var searchresults = results[0];
                     if(searchresults.length > 0){
                         console.log("test results is: " + results[0]);
