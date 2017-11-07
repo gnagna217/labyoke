@@ -80,12 +80,12 @@ bot.recognizer({
                         intent = { score: 1.0, intent: 'ThankIntent' };
                         matched = true;
                     }
-                    if (s.match(/(order|commander)/i)) {
-                        intent = { score: 1.0, intent: 'OrderIntent' };
-                        matched = true;
-                    }
                     if (s.match(/(cancel order | annuler commande)/i)) {
                         intent = { score: 1.0, intent: 'CancelOrderIntent' };
+                        matched = true;
+                    }
+                    if (s.match(/(order|commander)/i)) {
+                        intent = { score: 1.0, intent: 'OrderIntent' };
                         matched = true;
                     }
                     if (s.match(/(help|aide)/i)) {
