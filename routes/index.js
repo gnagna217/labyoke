@@ -124,12 +124,14 @@ var options = session.localizer.gettext(session.preferredLocale(globalocale), "b
             var searchText = "";
             if(input.length > 0){
                 var searchText0 = input.split(' ')[0];
+                console.log("searchText0: " + searchText0);
                 var searchText1 = input.substring(searchText0.length,input.length);
                 console.log("searchText1: " + searchText1);
                 //searchText1 = searchText.trim();
+                searchText1 = searchText1.trim();
                 var searchText2 = searchText1.split(' from ')[0];
                 var reagentText = searchText2.trim()
-                var searchText3 = input.substring(searchText2.length,searchText1.length);
+                var searchText3 = input.substring(reagentText.length,searchText1.length);
                 console.log("searchText3: " + searchText3);
                 var emailText = searchText3.trim();
                 console.log("reagentText: " + reagentText);
