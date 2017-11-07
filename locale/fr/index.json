@@ -19,5 +19,12 @@
 "bot.help": "Vous demandez de l'aide. Accédez á notre section [aide](https://team-labyoke.herokuapp.com/help) pour un florilége d'informations et vidéos tutorielles.",
 
 "bot.ordersuccessful": "Votre commande et un email de confirmation ont été envoyé avec succès.",
-"bot.ordernotsuccessful": "Une erreur est survenue. Veuillez ré-essayer une autre commande."
+"bot.ordernotsuccessful": "Une erreur est survenue. Veuillez ré-essayer une autre commande.",
+
+"bot.Cancel.title": "Annulation de Commande",
+"bot.Cancel.subtitle": "Veuillez confirmer l'annulation de commande suivante:",
+"bot.cancel.invalidsearch": "Le réactif à annuler est invalide. Veuillez réessayer et entrer: **Annuler *réactif* de *email***.",
+"bot.cancel.noresults": "Désolé je n'ai pas pu trouver le réactif à annuler: **%s**.",
+"bot.cancelsuccessful": "Votre annulation et un email de confirmation ont été envoyé avec succès.",
+"bot.cancelnotsuccessful": "Une erreur est survenue. Veuillez ré-essayer."
 }

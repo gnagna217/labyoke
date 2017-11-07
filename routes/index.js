@@ -120,22 +120,38 @@ var options = session.localizer.gettext(session.preferredLocale(globalocale), "b
     session.say(options);//"Absolutely, I'm canceling your order now.");
 
             var input = session.message.text;
-            
+            var reagentText = "";
             var searchText = "";
+            var emailText = "";
             if(input.length > 0){
                 var searchText0 = input.split(' ')[0];
                 console.log("searchText0: " + searchText0);
                 var searchText1 = input.substring(searchText0.length,input.length);
                 console.log("searchText1: " + searchText1);
                 //searchText1 = searchText.trim();
+                if(searchText1 != "" && searchText1.length > 0){
                 searchText1 = searchText1.trim();
-                var searchText2 = searchText1.split(' from ')[0];
-                var reagentText = searchText2.trim()
+                var splitSearch = searchText1.split(' from ');
+                if(splitSearch!=null && splitSearch.length == 2){
+                var searchText2 = splitSearch[0];
+                reagentText = searchText2.trim()
                 var searchText3 = searchText1.split(' from ')[1];
                 console.log("searchText3: " + searchText3);
-                var emailText = searchText3.trim();
+                emailText = searchText3.trim();
                 console.log("reagentText: " + reagentText);
                 console.log("emailText: " + emailText);
+
+
+                } else {
+                    options = session.localizer.gettext(session.preferredLocale(globalocale), "bot.cancel.invalidsearch");
+                    session.say(options);
+                }
+
+
+            } else {
+                options = session.localizer.gettext(session.preferredLocale(globalocale), "bot.cancel.invalidsearch");
+                session.say(options); 
+            }
 
 
             }
@@ -149,11 +165,12 @@ var options = session.localizer.gettext(session.preferredLocale(globalocale), "b
                     if(searchresults.length > 0){
                         console.log("test results is: " + results[0]);
                         var firstchoice = searchresults[0];
-
+*/
     var message = new builder.Message().addAttachment(createOrderCard(firstchoice,session,"cancel"));
     session.delay(3000);
     session.send(message).endDialog();
-                    } else {
+
+/*                    } else {
 options = session.localizer.gettext(session.preferredLocale(globalocale), "bot.cancel.noresults");
 session.send(options,searchText);                      
                     }
@@ -164,7 +181,6 @@ session.send(options,searchText);
 session.say(options); 
                 }
             });*/
-
 
 }).triggerAction({ matches: 'CancelOrderIntent' });
 
@@ -251,7 +267,44 @@ function processOrder(results) {
 console.log("process order: " + results.agent);
 }
 
-bot.beginDialogAction('Order', '/order')
+bot.beginDialogAction('Cancel', '/cancel');
+
+bot.beginDialogAction('Order', '/order');
+
+bot.dialog('/cancel', [
+
+  function (session, args) {
+    console.log("ordering lab: " + session.userData.results.lab);
+    console.log("ordering agent: " + session.userData.results.agent);
+    console.log("ordering vendor: " + session.userData.results.vendor);
+    console.log("ordering catalognumber: " + session.userData.results.catalognumber);
+    console.log("ordering email: " + session.userData.results.email);
+    console.log("ordering location: " + session.userData.results.location);
+    console.log("ordering lang: " + session.userData.results.lang);
+    console.log("ordering globalemail: " + globalemail);
+    console.log("ordering globalab: " + globalab);
+    console.log("ordering globalabadmin: " + globalabadmin);
+    console.log("ordering globalres: " + globalres);
+    console.log("ordering globalocale: " + globalocale);
+    console.log("ordering globaluserlang: " + globaluserlang);
+    var ownerlang = session.userData.results.lang;
+
+            /*var labYokerorder = new LabYokerOrder(session.userData.results.lab, session.userData.results.agent, session.userData.results.vendor, session.userData.results.catalognumber,session.userData.results.email,session.userData.results.location,globalemail,100, globalab,globalres,globaluserlang,ownerlang,globalabadmin);
+            labYokerorder.order(function(error, results) {
+                if(results != null && results=="successfulOrder"){
+                    console.log("ordering agentform: " + session.userData.results.agent);
+                    console.log("ordering location: " + session.userData.results.location);
+                    var options = session.localizer.gettext(session.preferredLocale(globalocale), "bot.cancelsuccessful");
+                    session.say(options);
+                } else {
+                    var options = session.localizer.gettext(session.preferredLocale(globalocale), "bot.cancelnotsuccessful");
+                    session.say(options);
+                }
+            });*/
+            var options = session.localizer.gettext(session.preferredLocale(globalocale), "bot.cancelsuccessful");
+            session.say(options);
+  }
+]);
 
 bot.dialog('/order', [
   /*function (session) {
@@ -293,7 +346,7 @@ bot.dialog('/order', [
                 }
             });
   }
-])
+]);
 
 function createOrderCard(results,session,type) {
     var opttitle = session.localizer.gettext(session.preferredLocale(globalocale), "bot."+type+".title");
@@ -305,7 +358,7 @@ function createOrderCard(results,session,type) {
     var optbutton = session.localizer.gettext(session.preferredLocale(globalocale), "bot.order.button");
 
 session.userData.results = results;
-var buttonList = [builder.CardAction.dialogAction(session, 'Order', session, 'Yes')];
+var buttonList = [builder.CardAction.dialogAction(session, type, session, 'Yes')];
 /*[new builder.CardAction()
     .title(optbutton)
     .type('postBack')
