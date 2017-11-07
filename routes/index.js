@@ -166,7 +166,7 @@ var options = session.localizer.gettext(session.preferredLocale(globalocale), "b
                         console.log("test results is: " + results[0]);
                         var firstchoice = searchresults[0];
 */
-    var message = new builder.Message().addAttachment(createOrderCard(firstchoice,session,"cancel"));
+    var message = new builder.Message().addAttachment(createOrderCard(firstchoice,session,"Cancel"));
     session.delay(3000);
     session.send(message).endDialog();
 
@@ -230,7 +230,7 @@ session.say(options);//"Absolutely! Let's put it together...");
 //    var agent = ob[prop].agent
 
                         //messageStr = "Sorry we could not find any results with your reagent search request: <b>" + searchText + "</b>. Please try again.";
-    var message = new builder.Message().addAttachment(createOrderCard(firstchoice,session,"order"));
+    var message = new builder.Message().addAttachment(createOrderCard(firstchoice,session,"Order"));
     session.delay(3000);
     session.send(message).endDialog();
                     } else {
@@ -349,6 +349,7 @@ bot.dialog('/order', [
 ]);
 
 function createOrderCard(results,session,type) {
+    console.log("creating card");
     var opttitle = session.localizer.gettext(session.preferredLocale(globalocale), "bot."+type+".title");
     var optsubtitle = session.localizer.gettext(session.preferredLocale(globalocale), "bot."+type+".subtitle");
     var optreagent = session.localizer.gettext(session.preferredLocale(globalocale), "bot.order.reagent");
