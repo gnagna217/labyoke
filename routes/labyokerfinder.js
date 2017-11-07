@@ -2267,7 +2267,7 @@ LabYokeBotOrder.prototype.search = function(callback) {
 	console.log("reqemail: " + this.reqemail);
 	console.log("email: " + this.email);
 	console.log("mylab: " + this.lab);
-	var query = client.query("SELECT * FROM " + this.lab+ "_orders where email = " + this.email + " and requestoremail = " +this.reqemail + " and agent = " + this.reagent + " and status = 'new' order by date desc");
+	var query = client.query("SELECT * FROM " + this.lab+ "_orders where email = '" + this.email + "' and requestoremail = '" +this.reqemail + "' and agent = '" + this.reagent + "' and status = 'new' order by date desc");
 
 	query.on("row", function(row, result) {
 		result.addRow(row);
