@@ -131,7 +131,7 @@ var options = session.localizer.gettext(session.preferredLocale(globalocale), "b
                 searchText1 = searchText1.trim();
                 var searchText2 = searchText1.split(' from ')[0];
                 var reagentText = searchText2.trim()
-                var searchText3 = input.substring(reagentText.length,searchText1.length);
+                var searchText3 = searchText1.substring(reagentText.length,searchText1.length);
                 console.log("searchText3: " + searchText3);
                 var emailText = searchText3.trim();
                 console.log("reagentText: " + reagentText);
