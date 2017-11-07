@@ -1,5 +1,5 @@
 {
-"bot.confused" : "You said: **%s**. Try asking for **help** or **order *reagent*** or **cancel order *reagent* from *email***",
+"bot.confused" : "You said: **%s**. Try asking for **help** or **order *reagent*** or **cancel *reagent* from *email***",
 "bot.cancel": "Absolutely, I'm canceling your order now.",
 
 "bot.order": "Absolutely! Let's put it together...",

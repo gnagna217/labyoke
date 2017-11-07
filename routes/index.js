@@ -80,7 +80,7 @@ bot.recognizer({
                         intent = { score: 1.0, intent: 'ThankIntent' };
                         matched = true;
                     }
-                    if (s.match(/(cancel order|annuler commande)/i)) {
+                    if (s.match(/(cancel|annuler)/i)) {
                         intent = { score: 1.0, intent: 'CancelOrderIntent' };
                         matched = true;
                     }
