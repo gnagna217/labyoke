@@ -117,7 +117,53 @@ bot.recognizer({
 //bot.recognizer(new builder.RegExpRecognizer( "CancelOrderIntent", { en_us: /^(cancel|nevermind)/i, en_fr: /^(annuler)/i }));
 bot.dialog('CancelDialog', function (session) {
 var options = session.localizer.gettext(session.preferredLocale(globalocale), "bot.cancel");
-    session.send(options);//"Absolutely, I'm canceling your order now.");
+    session.say(options);//"Absolutely, I'm canceling your order now.");
+
+            var input = session.message.text;
+            
+            var searchText = "";
+            if(input.length > 0){
+                var searchText0 = input.split(' ')[0];
+                var searchText1 = input.substring(searchText0.length,input.length);
+                console.log("searchText1: " + searchText1);
+                //searchText1 = searchText.trim();
+                var searchText2 = searchText1.split(' from ')[0];
+                var reagentText = searchText2.trim()
+                var searchText3 = input.substring(searchText2.length,searchText1.length);
+                console.log("searchText3: " + searchText3);
+                var emailText = searchText3.trim();
+                console.log("reagentText: " + reagentText);
+                console.log("emailText: " + emailText);
+
+
+            }
+            /*var searchType = "key";
+            var labYokeSearch = new LabYokeSearch(searchText, globalemail, searchType);
+            var messageStr = "";
+            labYokeSearch.search(function(error, results) {
+                console.log("results " + results[0].length);    
+                if (searchText != null && searchText.length > 0){
+                    var searchresults = results[0];
+                    if(searchresults.length > 0){
+                        console.log("test results is: " + results[0]);
+                        var firstchoice = searchresults[0];
+
+    var message = new builder.Message().addAttachment(createOrderCard(firstchoice,session,"cancel"));
+    session.delay(3000);
+    session.send(message).endDialog();
+                    } else {
+options = session.localizer.gettext(session.preferredLocale(globalocale), "bot.cancel.noresults");
+session.send(options,searchText);                      
+                    }
+                } else {
+                    messageStr = "couldnt find order to cancel";
+                    console.log(messageStr);
+                    options = session.localizer.gettext(session.preferredLocale(globalocale), "bot.cancel.invalidsearch");
+session.say(options); 
+                }
+            });*/
+
+
 }).triggerAction({ matches: 'CancelOrderIntent' });
 
 
@@ -166,7 +212,7 @@ session.say(options);//"Absolutely! Let's put it together...");
 //    var agent = ob[prop].agent
 
                         //messageStr = "Sorry we could not find any results with your reagent search request: <b>" + searchText + "</b>. Please try again.";
-    var message = new builder.Message().addAttachment(createOrderCard(firstchoice,session));
+    var message = new builder.Message().addAttachment(createOrderCard(firstchoice,session,"order"));
     session.delay(3000);
     session.send(message).endDialog();
                     } else {
@@ -247,9 +293,9 @@ bot.dialog('/order', [
   }
 ])
 
-function createOrderCard(results,session) {
-    var opttitle = session.localizer.gettext(session.preferredLocale(globalocale), "bot.order.title");
-    var optsubtitle = session.localizer.gettext(session.preferredLocale(globalocale), "bot.order.subtitle");
+function createOrderCard(results,session,type) {
+    var opttitle = session.localizer.gettext(session.preferredLocale(globalocale), "bot."+type+".title");
+    var optsubtitle = session.localizer.gettext(session.preferredLocale(globalocale), "bot."+type+".subtitle");
     var optreagent = session.localizer.gettext(session.preferredLocale(globalocale), "bot.order.reagent");
     var optvendor = session.localizer.gettext(session.preferredLocale(globalocale), "bot.order.vendor");
     var optcatalog = session.localizer.gettext(session.preferredLocale(globalocale), "bot.order.catalognumber");
