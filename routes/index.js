@@ -16,6 +16,7 @@ var Labyoker = labyokeFinderClass.Labyoker;
 var LabYokeAgents = labyokeFinderClass.LabYokeAgents;
 var LabyokerUserDetails = labyokeFinderClass.LabyokerUserDetails;
 var LabYokerChangeShare = labyokeFinderClass.LabYokerChangeShare;
+var LabYokeBotOrder = labyokeFinderClass.LabYokeBotOrder;
 var moment = require('moment-timezone');
 var jstz = require('jstimezonedetect');
 
@@ -155,22 +156,22 @@ var options = session.localizer.gettext(session.preferredLocale(globalocale), "b
 
 
             }
-            /*var searchType = "key";
-            var labYokeSearch = new LabYokeSearch(searchText, globalemail, searchType);
+            var searchType = "key";
+            var labYokeBotOrder = new LabYokeBotOrder(reagentText, globalemail, emailText, globalab);
             var messageStr = "";
-            labYokeSearch.search(function(error, results) {
+            labYokeBotOrder.search(function(error, results) {
                 console.log("results " + results[0].length);    
                 if (searchText != null && searchText.length > 0){
                     var searchresults = results[0];
                     if(searchresults.length > 0){
                         console.log("test results is: " + results[0]);
                         var firstchoice = searchresults[0];
-*/
+
     var message = new builder.Message().addAttachment(createOrderCard(firstchoice,session,"Cancel"));
     session.delay(3000);
     session.send(message).endDialog();
 
-/*                    } else {
+                   } else {
 options = session.localizer.gettext(session.preferredLocale(globalocale), "bot.cancel.noresults");
 session.send(options,searchText);                      
                     }
@@ -180,7 +181,7 @@ session.send(options,searchText);
                     options = session.localizer.gettext(session.preferredLocale(globalocale), "bot.cancel.invalidsearch");
 session.say(options); 
                 }
-            });*/
+            });
 
 }).triggerAction({ matches: 'CancelOrderIntent' });
 
@@ -359,6 +360,7 @@ function createOrderCard(results,session,type) {
     var optbutton = session.localizer.gettext(session.preferredLocale(globalocale), "bot.order.button");
 
 session.userData.results = results;
+
 var buttonList = [builder.CardAction.dialogAction(session, type, session, 'Yes')];
 /*[new builder.CardAction()
     .title(optbutton)

@@ -22,6 +22,13 @@ LabYokeGlobal = function(param) {
 	this.param = param;
 };
 
+LabYokeBotOrder = function(reagent, email, reqemail, lab) {
+	this.reagent = reagent;
+	this.email = email;
+	this.reqemail = reqemail;
+	this.lab = lab;
+};
+
 LabYokeAgents = function(email,mylab,labs,dept,labadmin,oninsuff) {
 	this.email = email;
 	this.mylab = mylab;
@@ -2254,6 +2261,23 @@ LabYokerGetOrder.prototype.getorders = function(callback) {
 	});
 };
 
+LabYokeBotOrder.prototype.search = function(callback) {
+	var results = [];
+	console.log("reagent: " + this.reagent);
+	console.log("reqemail: " + this.reqemail);
+	console.log("email: " + this.email);
+	console.log("mylab: " + this.lab);
+	var query = client.query("SELECT * FROM " + this.lab+ "_orders where email = " + this.email + " and requestoremail = " +this.reqemail + "and agent = " + this.reagent + " and status = 'new' order by date desc");
+
+	query.on("row", function(row, result) {
+		result.addRow(row);
+	});
+	query.on("end", function(result) {
+		results.push(result.rows);
+		callback(null, results)
+	});
+};
+
 LabYokeSearch.prototype.search = function(callback) {
 	var results = [];
 	console.log("searchText: " + this.searchText);
@@ -3395,4 +3419,5 @@ exports.LabYokeReporterShares = LabYokeReporterShares;
 exports.LabyokerTeam = LabyokerTeam;
 exports.LabyokerLab = LabyokerLab;
 exports.LabYokeGlobal = LabYokeGlobal;
+exports.LabYokeBotOrder = LabYokeBotOrder;
 exports.LabYokeTest = LabYokeTest;
