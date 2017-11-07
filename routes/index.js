@@ -173,7 +173,7 @@ var options = session.localizer.gettext(session.preferredLocale(globalocale), "b
 
                    } else {
 options = session.localizer.gettext(session.preferredLocale(globalocale), "bot.cancel.noresults");
-session.send(options,searchText);                      
+session.send(options,searchText1);                      
                     }
                 } else {
                     messageStr = "couldnt find order to cancel";
