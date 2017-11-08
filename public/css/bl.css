@@ -173,7 +173,9 @@ margin-left: 310px;width: 50px;cursor: pointer;padding-top: 55px;margin-bottom: 
     left: 6%;
 }
 
-
+.labbot{
+  z-index: 2;
+}
  /* end chatbot */ 
 
 .point:before {
