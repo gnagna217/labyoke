@@ -43,7 +43,7 @@ color: white !important;
     color: white;
 }
 .sleep{
-  position: fixed;overflow: hidden;right: 100%;left: 0;bottom: 0px;margin: 0px 10px 10px;width: 40px;
+  position: fixed;overflow: hidden;right: 100%;left: 0;bottom: 0px;margin: 0px 10px 17px;width: 40px;
   cursor: pointer;clear:both;height: 130px;clear: both;
 }
 .awake{
