@@ -2284,13 +2284,10 @@ LabYokeSearch.prototype.botsearch = function(callback) {
 	console.log("searchType: " + this.searchType);
 	var query;
 	var s = "SELECT * FROM vm2016_agentsshare a, vm2016_users b where a.email = b.email and ( a.catalognumber like lower('"
-					+ this.searchText + "')) or (lower(a.agent) like lower('"
-					+ this.searchText + "')) ) and a.insufficient = 1 and a.email != '" + this.email+ "' and (b.disable <> 0 or b.disable is null) order by a.agent";
+					+ this.searchText + "') or lower(a.agent) like lower('"
+					+ this.searchText + "') ) and a.insufficient = 1 and a.email != '" + this.email+ "' and (b.disable <> 0 or b.disable is null) order by a.agent";
 	console.log("s: "+s);
-	query = client
-			.query("SELECT * FROM vm2016_agentsshare a, vm2016_users b where a.email = b.email and ( a.catalognumber like lower('"
-					+ this.searchText + "')) or (lower(a.agent) like lower('"
-					+ this.searchText + "')) ) and a.insufficient = 1 and a.email != '" + this.email+ "' and (b.disable <> 0 or b.disable is null) order by a.agent");
+	query = client.query(s);
 
 	query.on("row", function(row, result) {
 		result.addRow(row);
