@@ -132,11 +132,23 @@ var options = session.localizer.gettext(session.preferredLocale(globalocale), "b
                 //searchText1 = searchText.trim();
                 if(searchText1 != "" && searchText1.length > 0){
                 searchText1 = searchText1.trim();
-                var splitSearch = searchText1.split(' from ');
+
+                var splitSearch;
+                if(globalocale == "en"){
+                 splitSearch = searchText1.split(' from ');
+                } else {
+                    splitSearch = searchText1.split(' de ');
+                }
                 if(splitSearch!=null && splitSearch.length == 2){
                 var searchText2 = splitSearch[0];
-                reagentText = searchText2.trim()
-                var searchText3 = searchText1.split(' from ')[1];
+                reagentText = searchText2.trim();
+                var searchText3;
+                if(globalocale == "en"){
+                 searchText3 = searchText1.split(' from ')[1]
+                } else {
+                  searchText3 = searchText1.split(' from ')[1]
+                }
+                
                 console.log("searchText3: " + searchText3);
                 emailText = searchText3.trim();
                 console.log("reagentText: " + reagentText);
