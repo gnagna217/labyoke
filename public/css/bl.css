@@ -22,6 +22,10 @@
 input.wc-shellinput::-webkit-input-placeholder {
 color: white !important;
 }
+
+.wc-console svg{
+  fill: white;
+}
  
 input.wc-shellinput:-moz-placeholder { /* Firefox 18- */
 color: white !important;  
