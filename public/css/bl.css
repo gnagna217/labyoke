@@ -24,7 +24,7 @@ color: white !important;
 }
 
 .wc-console svg{
-  fill: white;
+  fill: white !important;
 }
  
 input.wc-shellinput:-moz-placeholder { /* Firefox 18- */
