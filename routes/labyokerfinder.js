@@ -2278,6 +2278,35 @@ LabYokeBotOrder.prototype.search = function(callback) {
 	});
 };
 
+LabYokeSearch.prototype.botsearch = function(callback) {
+	var results = [];
+	console.log("searchText: " + this.searchText);
+	console.log("searchType: " + this.searchType);
+	var query;
+
+		query = client
+			.query("SELECT * FROM vm2016_agentsshare a, vm2016_users b where a.email = b.email and ( a.catalognumber like like lower('"
+					+ this.searchText + "')) or (lower(a.agent) like lower('"
+					+ this.searchText + "')) ) and a.insufficient = 1 and a.email != '" + this.email+ "' and (b.disable <> 0 or b.disable is null) order by a.agent");
+
+	query.on("row", function(row, result) {
+		result.addRow(row);
+	});
+	query.on("end", function(result) {
+		results.push(result.rows);
+		var query2 = client.query("SELECT distinct agent, catalognumber FROM vm2016_agentsshare order by agent, catalognumber");
+		
+		query2.on("row", function(row, result2) {
+			result2.addRow(row);
+		});
+		query2.on("end", function(result2) {
+			results.push(result2.rows);
+				callback(null, results)
+		});
+		//callback(null, results)
+	});
+};
+
 LabYokeSearch.prototype.search = function(callback) {
 	var results = [];
 	console.log("searchText: " + this.searchText);

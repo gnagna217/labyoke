@@ -217,7 +217,7 @@ session.say(options);//"Absolutely! Let's put it together...");
             var searchType = "key";
             var labYokeSearch = new LabYokeSearch(searchText, globalemail, searchType);
             var messageStr = "";
-            labYokeSearch.search(function(error, results) {
+            labYokeSearch.botsearch(function(error, results) {
                 console.log("results " + results[0].length);    
                 if (searchText != null && searchText.length > 0){
                     var searchresults = results[0];
