@@ -146,7 +146,7 @@ var options = session.localizer.gettext(session.preferredLocale(globalocale), "b
                 if(globalocale == "en"){
                  searchText3 = searchText1.split(' from ')[1]
                 } else {
-                  searchText3 = searchText1.split(' from ')[1]
+                  searchText3 = searchText1.split(' de ')[1]
                 }
                 
                 console.log("searchText3: " + searchText3);
