@@ -49,17 +49,16 @@ console.log("connecting");
 */
 
 var bot = new builder.UniversalBot(connector, function (session) {
-//var options = session.localizer.gettext(session.preferredLocale(globalocale), "bot.confused");
+var options = session.localizer.gettext(session.preferredLocale(globalocale), "bot.confused");
+console.log("options: " + options);
 session.beginDialog('greet');
-console.log("bot locale: " + session.preferredLocale());
 //console.log("req locale: "+globalocale);
-//console.log("options: " + options);
+
 //    session.send(options, session.message.text);
 });
 
-bot.beginDialog('greet', function (session) {
-    session.endDialog('Hello %s!', results.user);
-    
+bot.dialog('greet', function (session) {
+    session.send('Hello %s!', results.user);
     //builder.Prompts.text(session, 'Before get started, please tell me your name?');
 });
 
