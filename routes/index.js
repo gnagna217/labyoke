@@ -50,14 +50,18 @@ console.log("connecting");
 
 var bot = new builder.UniversalBot(connector, function (session) {
 //var options = session.localizer.gettext(session.preferredLocale(globalocale), "bot.confused");
-session.send("hello");
+session.beginDialog('greet');
 console.log("bot locale: " + session.preferredLocale());
 //console.log("req locale: "+globalocale);
 //console.log("options: " + options);
 //    session.send(options, session.message.text);
 });
 
-
+bot.dialog('greet', new builder.SimpleDialog(function (session, results) {
+    session.endDialog('Hello %s!', results.user);
+    
+    //builder.Prompts.text(session, 'Before get started, please tell me your name?');
+}));
 
 
 // Install a custom recognizer to look for user saying 'help' or 'goodbye'.
