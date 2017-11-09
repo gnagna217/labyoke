@@ -76,7 +76,7 @@ app.post('/locales/add/:lng/:ns', i18nextMiddleware.missingKeyHandler(i18next));
 
 app.use(cookieSession({
   name: 'session',
-  keys: [/* secret keys */],
+  keys: ['keys1','keys2'],
   secret: 'wearethebest',
   // Cookie Options
   maxAge: 24 * 60 * 60 * 1000 // 24 hours
