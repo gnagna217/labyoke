@@ -3,12 +3,13 @@ var path = require('path');
 var favicon = require('static-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
-var session = require('express-session');
+//var session = require('express-session');
+var session2 = require('cookie-session');
 var bodyParser = require('body-parser');
 var app = express();
 var passport = require('passport');
 var flash = require('connect-flash');
-var store  = new session.MemoryStore;
+//var store  = new session.MemoryStore;
 var router = express.Router();
 var jadeStaticCache = require('jade-static-cache');
 var serveStatic = require('serve-static')
@@ -63,7 +64,7 @@ app.post('/locales/add/:lng/:ns', i18nextMiddleware.missingKeyHandler(i18next));
 }));
 */
 
-app.use(session({
+/*app.use(session({
 	  cookie: {
 	    path    : '/',
 	    httpOnly: false,
@@ -71,6 +72,15 @@ app.use(session({
 	  },
 	  secret: 'wearethebest'
 	}));
+*/
+
+app.use(cookieSession({
+  name: 'session',
+  keys: [/* secret keys */],
+  secret: 'wearethebest',
+  // Cookie Options
+  maxAge: 24 * 60 * 60 * 1000 // 24 hours
+}))
 
 app.use(passport.initialize());
 app.use(passport.session()); // persistent login sessions
