@@ -51,7 +51,7 @@ console.log("connecting");
 var bot = new builder.UniversalBot(connector, function (session) {
 var options = session.localizer.gettext(session.preferredLocale(globalocale), "bot.confused");
 console.log("options: " + options);
-session.beginDialog('greet');
+//session.beginDialog('greet');
 //console.log("req locale: "+globalocale);
 
 //    session.send(options, session.message.text);
@@ -69,14 +69,13 @@ bot.recognizer({
   var intent = { score: 0.0 };
   var matched = false;
 
+session.beginDialog('greet');
         if (context.message.text) {
             var s = context.message.text.toLowerCase();
             switch (s) {
                 case 'hi':
                     intent = { score: 1.0, intent: 'HiIntent' };
                     //break;
-                case 'cancel':
-                    intent = { score: 1.0, intent: 'CancelOrderIntent' };
                 default:
                     console.log("default: " + s.match(/(hello|hi)/i));
                     if (s.match(/(hello|hi|bonjour|bonsoir|salut)/i)) {
