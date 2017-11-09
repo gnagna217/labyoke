@@ -71,19 +71,6 @@ bot.dialog('greet', new builder.SimpleDialog(function (session, results) {
     builder.Prompts.text(session, 'Before get started, please tell me your name?');
 }));
 
-bot.on('conversationUpdate', function (activity) {
-    if (activity.membersAdded) {
-        activity.membersAdded.forEach((identity) => {
-            if (identity.id === activity.address.bot.id) {
-                var reply = new builder.activity()
-                    .address(activity.address)
-                    .text('Hi there!');
-                bot.send(reply);
-            }
-        });
-    }
-});
-
 // Install a custom recognizer to look for user saying 'help' or 'goodbye'.
 bot.recognizer({
   recognize: function (context, done) {
