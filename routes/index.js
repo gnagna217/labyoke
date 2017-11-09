@@ -50,45 +50,14 @@ console.log("connecting");
 
 var bot = new builder.UniversalBot(connector, function (session) {
 var options = session.localizer.gettext(session.preferredLocale(globalocale), "bot.confused");
-console.log("bot locale: " + session.preferredLocale());
-console.log("req locale: "+globalocale);
-console.log("options: " + options);
-    session.send(options, session.message.text);
+session.send("hello");
+//console.log("bot locale: " + session.preferredLocale());
+//console.log("req locale: "+globalocale);
+//console.log("options: " + options);
+//    session.send(options, session.message.text);
 });
 
-private Activity HandleSystemMessage(Activity message)
-{
-    if (message.Type == ActivityTypes.DeleteUserData)
-    {
-        // Implement user deletion here
-        // If we handle user deletion, return a real message
-    }
-    else if (message.Type == ActivityTypes.ConversationUpdate)
-    {
-        // Handle conversation state changes, like members being added and removed
-        // Use Activity.MembersAdded and Activity.MembersRemoved and Activity.Action for info
-        // Not available in all channels
- 
-        // Note: Add introduction here:
-        ConnectorClient connector = new ConnectorClient(new Uri(message.ServiceUrl));
-        Activity reply = message.CreateReply("Hello from my simple Bot!");
-        connector.Conversations.ReplyToActivityAsync(reply);
-    }
-    else if (message.Type == ActivityTypes.ContactRelationUpdate)
-    {
-        // Handle add/remove from contact lists
-        // Activity.From + Activity.Action represent what happened
-    }
-    else if (message.Type == ActivityTypes.Typing)
-    {
-        // Handle knowing tha the user is typing
-    }
-    else if (message.Type == ActivityTypes.Ping)
-    {
-    }
- 
-    return null;
-}
+
 
 
 // Install a custom recognizer to look for user saying 'help' or 'goodbye'.
