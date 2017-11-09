@@ -49,18 +49,27 @@ console.log("connecting");
 */
 
 var bot = new builder.UniversalBot(connector, function (session) {
-var options = session.localizer.gettext(session.preferredLocale(globalocale), "bot.confused");
-console.log("options: " + options);
+console.log("greeting ");
+    var userName = session.userData[UserNameKey];
+    console.log("user is: " + userName);
+    if (!userName) {
+        return session.beginDialog('greet');
+    }
 //session.beginDialog('greet');
 //console.log("req locale: "+globalocale);
 
 //    session.send(options, session.message.text);
 });
 
-bot.dialog('greet', function (session) {
-    session.send('Hello!');
-    //builder.Prompts.text(session, 'Before get started, please tell me your name?');
-});
+bot.dialog('greet', new builder.SimpleDialog(function (session, results) {
+    if (results && results.response) {
+        session.userData[UserNameKey] = results.response;
+        session.privateConversationData[UserWelcomedKey] = true;
+        return session.endDialog('Welcome %s! %s', results.response, HelpMessage);
+    }
+
+    builder.Prompts.text(session, 'Before get started, please tell me your name?');
+}));
 
 bot.on('conversationUpdate', function (activity) {
     if (activity.membersAdded) {
