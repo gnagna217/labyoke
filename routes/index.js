@@ -62,6 +62,7 @@ console.log("greeting ");
 });
 
 bot.dialog('greet', new builder.SimpleDialog(function (session, results) {
+    console.log("greetings.");
     if (results && results.response) {
         session.userData[UserNameKey] = results.response;
         session.privateConversationData[UserWelcomedKey] = true;
@@ -507,12 +508,7 @@ module.exports = function(router) {
 	var competitionStarts = dates.competitionStarts;
 	var competitionEnds = dates.competitionEnds;
 
-    router.post('/api/messages', connector.listen(), function(req, res) {
-
-        console.log("api messages here");
-
-
-    });
+    router.post('/api/messages', connector.listen());
 
     router.post('/admins/:doing', isLoggedInAdmin, function(req, res) {
         if(req.cookies.i18n == null || req.cookies.i18n == undefined){
