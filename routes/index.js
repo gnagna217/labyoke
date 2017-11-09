@@ -51,7 +51,7 @@ console.log("connecting");
 var bot = new builder.UniversalBot(connector, function (session) {
 //var options = session.localizer.gettext(session.preferredLocale(globalocale), "bot.confused");
 session.send("hello");
-//console.log("bot locale: " + session.preferredLocale());
+console.log("bot locale: " + session.preferredLocale());
 //console.log("req locale: "+globalocale);
 //console.log("options: " + options);
 //    session.send(options, session.message.text);
