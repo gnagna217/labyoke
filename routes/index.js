@@ -507,7 +507,12 @@ module.exports = function(router) {
 	var competitionStarts = dates.competitionStarts;
 	var competitionEnds = dates.competitionEnds;
 
-    router.post('/api/messages', connector.listen());
+    router.post('/api/messages', connector.listen(), function(req, res) {
+
+        console.log("api messages here");
+
+
+    });
 
     router.post('/admins/:doing', isLoggedInAdmin, function(req, res) {
         if(req.cookies.i18n == null || req.cookies.i18n == undefined){
