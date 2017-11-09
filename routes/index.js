@@ -64,7 +64,7 @@ bot.dialog('greet', function (session) {
 
 
 // Install a custom recognizer to look for user saying 'help' or 'goodbye'.
-bot.recognizer({
+/*bot.recognizer({
   recognize: function (context, done) {
   var intent = { score: 0.0 };
   var matched = false;
@@ -119,7 +119,7 @@ session.beginDialog('greet');
         done(null, intent);
     }
 });
-
+*/
 //bot.recognizer(new builder.RegExpRecognizer( "CancelOrderIntent", { en_us: /^(cancel|nevermind)/i, en_fr: /^(annuler)/i }));
 bot.dialog('CancelDialog', function (session) {
 var options = session.localizer.gettext(session.preferredLocale(globalocale), "bot.cancel");
