@@ -83,44 +83,44 @@ session.beginDialog('greet');
             var s = context.message.text.toLowerCase();
             switch (s) {
                 case 'hi':
-                    intent = { score: 1.0, intent: 'HiIntent' };
+                    intent = { score: 0.8, intent: 'HiIntent' };
                     //break;
                 default:
                     console.log("default: " + s.match(/(hello|hi)/i));
                     if (s.match(/(hello|hi|bonjour|bonsoir|salut)/i)) {
-                        intent = { score: 1.0, intent: 'HiIntent' };
+                        intent = { score: 0.8, intent: 'HiIntent' };
                         matched = true;
                     }
                     if (s.match(/(thank|thanks|merci)/i)) {
-                        intent = { score: 1.0, intent: 'ThankIntent' };
+                        intent = { score: 0.8, intent: 'ThankIntent' };
                         matched = true;
                     }
                     if (s.match(/(cancel|annuler)/i)) {
-                        intent = { score: 1.0, intent: 'CancelOrderIntent' };
+                        intent = { score: 0.8, intent: 'CancelOrderIntent' };
                         matched = true;
                     }
                     if (s.match(/(order|commander)/i)) {
-                        intent = { score: 1.0, intent: 'OrderIntent' };
+                        intent = { score: 0.8, intent: 'OrderIntent' };
                         matched = true;
                     }
                     if (s.match(/(help|aide)/i)) {
-                        intent = { score: 1.0, intent: 'HelpIntent' };
+                        intent = { score: 0.8, intent: 'HelpIntent' };
                         matched = true;
                     }
                     if (s.match(/(bye|goodbye|au revoir)/i)) {
-                        intent = { score: 1.0, intent: 'CiaoIntent' };
+                        intent = { score: 0.8, intent: 'CiaoIntent' };
                         matched = true;
                     }
                     if (s.match(/test/i)) {
-                        intent = { score: 1.0, intent: 'TestIntent' };
+                        intent = { score: 0.8, intent: 'TestIntent' };
                         matched = true;
                     }
                     if (s.match(/test2/i)) {
-                        intent = { score: 1.0, intent: 'Test2Intent' };
+                        intent = { score: 0.8, intent: 'Test2Intent' };
                         matched = true;
                     }
                     if(!matched){
-                        intent = { score: 1.0, intent: 'ConfusedIntent' };
+                        intent = { score: 0.8, intent: 'ConfusedIntent' };
                     }
                     break;
             }
