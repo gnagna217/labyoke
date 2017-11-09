@@ -58,7 +58,7 @@ session.beginDialog('greet');
 });
 
 bot.dialog('greet', function (session) {
-    session.send('Hello %s!', results.user);
+    session.send('Hello!');
     //builder.Prompts.text(session, 'Before get started, please tell me your name?');
 });
 
