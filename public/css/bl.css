@@ -44,7 +44,7 @@ color: white !important;
 }
 .sleep{
   position: fixed;overflow: hidden;right: 100%;left: 0;bottom: 0px;margin: 0px 10px 17px;width: 40px;
-  cursor: pointer;clear:both;height: 130px;clear: both;
+  cursor: pointer;clear:both;height: 135px;clear: both;
 }
 .awake{
 overflow: hidden;/*position: fixed;*/right: 100%;left: 200px;bottom: 0px;margin: 10px;
