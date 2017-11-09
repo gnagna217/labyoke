@@ -57,11 +57,11 @@ console.log("bot locale: " + session.preferredLocale());
 //    session.send(options, session.message.text);
 });
 
-bot.dialog('greet', new builder.SimpleDialog(function (session, results) {
+bot.beginDialog('greet', function (session) {
     session.endDialog('Hello %s!', results.user);
     
     //builder.Prompts.text(session, 'Before get started, please tell me your name?');
-}));
+});
 
 
 // Install a custom recognizer to look for user saying 'help' or 'goodbye'.
