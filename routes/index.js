@@ -62,9 +62,21 @@ bot.dialog('greet', function (session) {
     //builder.Prompts.text(session, 'Before get started, please tell me your name?');
 });
 
+bot.on('conversationUpdate', function (activity) {
+    if (activity.membersAdded) {
+        activity.membersAdded.forEach((identity) => {
+            if (identity.id === activity.address.bot.id) {
+                var reply = new builder.activity()
+                    .address(activity.address)
+                    .text('Hi there!');
+                bot.send(reply);
+            }
+        });
+    }
+});
 
 // Install a custom recognizer to look for user saying 'help' or 'goodbye'.
-/*bot.recognizer({
+bot.recognizer({
   recognize: function (context, done) {
   var intent = { score: 0.0 };
   var matched = false;
@@ -119,7 +131,7 @@ session.beginDialog('greet');
         done(null, intent);
     }
 });
-*/
+
 //bot.recognizer(new builder.RegExpRecognizer( "CancelOrderIntent", { en_us: /^(cancel|nevermind)/i, en_fr: /^(annuler)/i }));
 bot.dialog('CancelDialog', function (session) {
 var options = session.localizer.gettext(session.preferredLocale(globalocale), "bot.cancel");
