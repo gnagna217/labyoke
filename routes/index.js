@@ -50,11 +50,13 @@ console.log("connecting");
 
 var bot = new builder.UniversalBot(connector, function (session) {
 console.log("greeting ");
-    var userName = session.userData[UserNameKey];
+    var userName = session.userData["UserName"];
     console.log("user is: " + userName);
-    if (!userName) {
+/*    if (!userName) {
         return session.beginDialog('greet');
     }
+*/
+session.beginDialog('greet');
 //session.beginDialog('greet');
 //console.log("req locale: "+globalocale);
 
