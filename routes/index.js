@@ -973,7 +973,6 @@ module.exports = function(router) {
         }
         globalocale = req.cookies.i18n;
         res.setLocale(req.cookies.i18n);
-        if (req.session.user) {
         var labYokeAgents = new LabYokeAgents(req.session.email, req.session.lab, req.session.labs, req.session.dept,req.session.labadmin,req.session.oninsuff);
         labYokeAgents.findallsharesadmins(function(error, results) {
             //req.session.orders = results[2];
@@ -991,9 +990,6 @@ module.exports = function(router) {
             res.render('admins', {lang:req.cookies.i18n, i18n:res, currentlabname: results[0], ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, labyokersurname : req.session.surname, myshares: results[1], mysharesrequest: results[4], report_data: results[2], loggedIn : true, isLoggedInAdmin: req.session.admin, title:'Admins'});
             req.session.messages = null;
         });
-    } else {
-        res.redirect("/login");
-    }
     });
 
 	router.get('/test', function(req, res) {
