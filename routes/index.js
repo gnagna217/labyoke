@@ -56,21 +56,26 @@ console.log("options: " + options);
     session.send(options, session.message.text);
 });
 
+bot.dialog('greet', function (session) {
+var options = session.localizer.gettext(session.preferredLocale(globalocale), "bot.greet");
+    session.endConversation(options);//"Oh Hello to you! What can I help you with? Try asking for 'help' or 'order <reagent>' or 'cancel order <reagent> from <email>'");
+})
+
 bot.on('conversationUpdate', function (message) {
     if (message.membersAdded) {
         message.membersAdded.forEach(function (identity) {
             if (identity.id == message.address.bot.id) {
                 // Bot is joining conversation
                 // - For WebChat channel you'll get this on page load.
-var msg = new builder.Message()
-                        .address(message.address);
+//var msg = new builder.Message()
+//                        .address(message.address);
                         
-    msg.data.textLocale = globalocale;
-    msg.data.text("bot.greet");
+  //  msg.data.textLocale = globalocale;
+   // msg.data.text("bot.greet");
 
         //msg.data.text = "I see that you clicked a button.";
-
-    bot.send(msg);                //var reply = new builder.Message()
+bot.beginDialog('greet');
+   // bot.send(msg);                //var reply = new builder.Message()
                 //        .address(message.address)
                 //        .text("Welcome to my page");
                 //bot.send(options);
