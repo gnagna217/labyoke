@@ -1920,7 +1920,7 @@ totalshares = t[0].counting;
 			req.cookies.i18n = "en";
 		}
         globalocale = req.cookies.i18n;
-		res.setLocale(req.cookies.i18n);
+		//res.setLocale(req.cookies.i18n);
 		var labYokeAgents = new LabYokeAgents(req.session.email, req.session.lab, req.session.labs, req.session.dept,req.session.labadmin,req.session.oninsuff);
 		labYokeAgents.findmyshares(function(error, results) {
 			//req.session.orders = results[2];
