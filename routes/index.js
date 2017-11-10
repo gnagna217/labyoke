@@ -1037,8 +1037,8 @@ module.exports = function(router) {
 		res.render('about', {
 			lang:req.cookies.i18n,
 			i18n:res,
-			ordersnum: req.session.orders,
-			sharesnum: req.session.shares,
+			/*ordersnum: req.session.orders,
+			sharesnum: req.session.shares,*/
 			title : 'About Us',
 			loggedIn : req.session.loggedin,
 			labyoker : req.session.user,
@@ -2421,6 +2421,7 @@ totalshares = t[0].counting;
 												if(resultsShares != null){
 													console.log("initshares is " + resultsShares);
 													shares = resultsShares;
+                                                    sessionStorage.setItem("shares",shares);
 													req.session.shares = shares;
 												}
 												init.initialOrders(function(error, resultsOrders) {
@@ -2429,6 +2430,7 @@ totalshares = t[0].counting;
 														console.log("initorders is " + resultsOrders);
 														orders = resultsOrders;
 														req.session.orders = orders;
+                                                        sessionStorage.setItem("orders",orders);
 													}
 													req.session.user = done[0].name;
                                                     req.session.surname = done[0].surname;
