@@ -72,7 +72,7 @@ bot.on('conversationUpdate', function (message) {
 //var msg = new builder.Message()
 //                        .address(message.address);
                         
-  //  msg.data.textLocale = globalocale;
+  message.data.textLocale = globalocale;
    // msg.data.text("bot.greet");
 
         //msg.data.text = "I see that you clicked a button.";
@@ -112,8 +112,6 @@ bot.recognizer({
                 case 'hi':
                     intent = { score: 1.0, intent: 'HiIntent' };
                     //break;
-                case 'cancel':
-                    intent = { score: 1.0, intent: 'CancelOrderIntent' };
                 default:
                     console.log("default: " + s.match(/(hello|hi)/i));
                     if (s.match(/(hello|hi|bonjour|bonsoir|salut)/i)) {
