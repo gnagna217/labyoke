@@ -56,7 +56,7 @@ console.log("options: " + options);
     session.send(options, session.message.text);
 });
 
-bot.dialog('greet', function (session) {
+bot.dialog('/', function (session) {
 var options = session.localizer.gettext(session.preferredLocale(globalocale), "bot.greet");
     session.endConversation(options);//"Oh Hello to you! What can I help you with? Try asking for 'help' or 'order <reagent>' or 'cancel order <reagent> from <email>'");
 })
@@ -74,7 +74,7 @@ bot.on('conversationUpdate', function (message) {
    // msg.data.text("bot.greet");
 
         //msg.data.text = "I see that you clicked a button.";
-//bot.beginDialog('greet');
+bot.beginDialog(message.address, '*:/');
    // bot.send(msg);                //var reply = new builder.Message()
                 //        .address(message.address)
                 //        .text("Welcome to my page");
