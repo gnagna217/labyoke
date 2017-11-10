@@ -957,6 +957,7 @@ module.exports = function(router) {
         if(req.cookies.i18n == null || req.cookies.i18n == undefined){
             req.cookies.i18n = "en";
         }
+        globalocale = req.cookies.i18n;
         res.setLocale(req.cookies.i18n);
         if (req.session.user) {
         var labYokeAgents = new LabYokeAgents(req.session.email, req.session.lab, req.session.labs, req.session.dept,req.session.labadmin,req.session.oninsuff);
@@ -1007,6 +1008,7 @@ module.exports = function(router) {
 		if(lang == null || lang == undefined){
 			lang = "en";
 		}
+        globalocale = lang;
 		console.log("lang is finally: " + lang);
 		res.cookie('i18n', lang);
 		req.cookies.i18n = lang;
@@ -1030,6 +1032,7 @@ module.exports = function(router) {
 		if(req.cookies.i18n == null || req.cookies.i18n == undefined){
 			req.cookies.i18n = "en";
 		}
+        globalocale = req.cookies.i18n;
 		res.setLocale(req.cookies.i18n);
 		res.render('about', {
 			lang:req.cookies.i18n,
@@ -1134,6 +1137,7 @@ module.exports = function(router) {
 		if(req.cookies.i18n == null || req.cookies.i18n == undefined){
 			req.cookies.i18n = "en";
 		}
+        globalocale = req.cookies.i18n;
 		console.log("getsearch - i18n: " + req.cookies.i18n);
 		res.setLocale(req.cookies.i18n);
 		console.log("getsearch - userlang: " + req.session.userlang);
@@ -1158,6 +1162,7 @@ module.exports = function(router) {
 		if(req.cookies.i18n == null || req.cookies.i18n == undefined){
 			req.cookies.i18n = "en";
 		}
+        globalocale = req.cookies.i18n;
 		res.setLocale(req.cookies.i18n);
 		if (req.session.user) {
             req.session.orders = 0;
@@ -1486,6 +1491,7 @@ totalshares = t[0].counting;
 		if(req.cookies.i18n == null || req.cookies.i18n == undefined){
 			req.cookies.i18n = "en";
 		}
+        globalocale = req.cookies.i18n;
 		res.setLocale(req.cookies.i18n);
 
 		var datefrom = "01-01-2016";
@@ -1827,6 +1833,7 @@ totalshares = t[0].counting;
 		if(req.cookies.i18n == null || req.cookies.i18n == undefined){
 			req.cookies.i18n = "en";
 		}
+        globalocale = req.cookies.i18n;
 		res.setLocale(req.cookies.i18n);
 		res.render('play', {lang:req.cookies.i18n, i18n:res,ordersnum: req.session.orders, sharesnum: req.session.shares, title: 'Play',labyoker : req.session.user, labyokersurname : req.session.surname});
 		req.session.messages = null;
@@ -1856,6 +1863,7 @@ totalshares = t[0].counting;
 		if(req.cookies.i18n == null || req.cookies.i18n == undefined){
 			req.cookies.i18n = "en";
 		}
+        globalocale = req.cookies.i18n;
 		var doing = req.params.doing;
 		console.log("do: " + doing);
 		res.setLocale(req.cookies.i18n);
@@ -1878,6 +1886,7 @@ totalshares = t[0].counting;
 		if(req.cookies.i18n == null || req.cookies.i18n == undefined){
 			req.cookies.i18n = "en";
 		}
+        globalocale = req.cookies.i18n;
 		res.setLocale(req.cookies.i18n);
 		var labYokeAgents = new LabYokeAgents(req.session.email, req.session.lab, req.session.labs, req.session.dept,req.session.labadmin,req.session.oninsuff);
 		labYokeAgents.findmyshares(function(error, results) {
@@ -1898,6 +1907,7 @@ totalshares = t[0].counting;
 		if(req.cookies.i18n == null || req.cookies.i18n == undefined){
 			req.cookies.i18n = "en";
 		}
+        globalocale = req.cookies.i18n;
 		res.setLocale(req.cookies.i18n);
 		console.log("inside accounnt: " + req.session.email);
 		console.log("account labs: " + req.session.labs);
@@ -1934,6 +1944,7 @@ totalshares = t[0].counting;
 		} else if(lang == null || lang == undefined){
 			lang = "en";
 		}
+        globalocale = lang;
 		req.cookies.i18n = lang;
 		res.setLocale(lang);
 		console.log("lang is finally: " + lang);
@@ -1999,6 +2010,7 @@ totalshares = t[0].counting;
 		if(lang == null || lang == undefined){
 			lang = "en";
 		}
+        globalocale = lang;
 		console.log("lang is finally: " + lang);
 		res.cookie('i18n', lang);
 		req.cookies.i18n = lang;
@@ -2658,6 +2670,7 @@ totalshares = t[0].counting;
 		if(lang == null || lang == undefined){
 			lang = "en";
 		}
+        globalocale = lang;
 		req.cookies.i18n = lang;
 		res.setLocale(lang);
 		var id = req.params.id;
@@ -2744,6 +2757,7 @@ totalshares = t[0].counting;
 		if(lang == null || lang == undefined){
 			lang = "en";
 		}
+        globalocale = lang;
 		console.log("lang is forgot user: " + lang);
 		req.cookies.i18n = lang;
 		res.setLocale(lang);
