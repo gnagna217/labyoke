@@ -62,11 +62,17 @@ bot.on('conversationUpdate', function (message) {
             if (identity.id == message.address.bot.id) {
                 // Bot is joining conversation
                 // - For WebChat channel you'll get this on page load.
-                var options = session.localizer.gettext(session.preferredLocale(globalocale), "bot.greet");
-                //var reply = new builder.Message()
+var msg = new builder.Message()
+                        .address(message.address)
+                        .text("I see that you clicked a button.");
+    msg.data.textLocale = globalocale;
+
+        //msg.data.text = "I see that you clicked a button.";
+
+    bot.send(msg);                //var reply = new builder.Message()
                 //        .address(message.address)
                 //        .text("Welcome to my page");
-                bot.send(options);
+                //bot.send(options);
             } else {
                 // User is joining conversation
                 // - For WebChat channel this will be sent when user sends first message.
