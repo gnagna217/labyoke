@@ -49,23 +49,13 @@ console.log("connecting");
 */
 
 var bot = new builder.UniversalBot(connector, function (session) {
-console.log("greeting ");
-    var userName = session.userData["user"];
-    console.log("user is: " + userName);
-//session.say("test");
-//    session.send(options, session.message.text);
+var options = session.localizer.gettext(session.preferredLocale(globalocale), "bot.confused");
+console.log("bot locale: " + session.preferredLocale());
+console.log("req locale: "+globalocale);
+console.log("options: " + options);
+    session.send(options, session.message.text);
 });
 
-bot.dialog('greet', new builder.SimpleDialog(function (session, results) {
-    console.log("greetings.");
-    if (results && results.response) {
-        session.userData[UserNameKey] = results.response;
-        session.privateConversationData[UserWelcomedKey] = true;
-        return session.endDialog('Welcome %s! %s', results.response, HelpMessage);
-    }
-
-    builder.Prompts.text(session, 'Before get started, please tell me your name?');
-}));
 
 // Install a custom recognizer to look for user saying 'help' or 'goodbye'.
 bot.recognizer({
@@ -73,13 +63,14 @@ bot.recognizer({
   var intent = { score: 0.0 };
   var matched = false;
 
-session.beginDialog('greet');
         if (context.message.text) {
             var s = context.message.text.toLowerCase();
             switch (s) {
                 case 'hi':
                     intent = { score: 1.0, intent: 'HiIntent' };
                     //break;
+                case 'cancel':
+                    intent = { score: 1.0, intent: 'CancelOrderIntent' };
                 default:
                     console.log("default: " + s.match(/(hello|hi)/i));
                     if (s.match(/(hello|hi|bonjour|bonsoir|salut)/i)) {
