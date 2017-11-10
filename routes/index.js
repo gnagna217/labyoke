@@ -49,19 +49,30 @@ console.log("connecting");
 */
 
 var bot = new builder.UniversalBot(connector, function (session) {
-var options = session.localizer.gettext(session.preferredLocale(globalocale), "bot.confused");
+/*var options = session.localizer.gettext(session.preferredLocale(globalocale), "bot.confused");
 console.log("bot locale: " + session.preferredLocale());
 console.log("req locale: "+globalocale);
 console.log("options: " + options);
     session.send(options, session.message.text);
+    */
 });
 
 bot.dialog('/greet', function (session) {
-    session.preferredLocale(globalocale);
+    session.preferredLocale(globalocale, function (err) {
+            if (!err) {
+                // Locale files loaded
 console.log("greet globalocale: " + session.preferredLocale());
-var options = session.localizer.gettext(session.preferredLocale(globalocale), "bot.greet");
+var options = session.localizer.gettext(session.preferredLocale(), "bot.greet");
 console.log("greeting: " + options);
-    session.say(options);//"Oh Hello to you! What can I help you with? Try asking for 'help' or 'order <reagent>' or 'cancel order <reagent> from <email>'");
+ 
+                //session.endDialog('locale_updated '+globalocale);
+            } else {
+                // Problem loading the selected locale
+                session.error(err);
+            }
+        });
+   session.say(options);//"Oh Hello to you! What can I help you with? Try asking for 'help' or 'order <reagent>' or 'cancel order <reagent> from <email>'");
+
 })
 
 bot.on('conversationUpdate', function (message) {
