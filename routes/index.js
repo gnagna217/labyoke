@@ -66,7 +66,7 @@ var msg = new builder.Message()
                         .address(message.address);
                         
     msg.data.textLocale = globalocale;
-    msg.text("bot.greet");
+    msg.data.text("bot.greet");
 
         //msg.data.text = "I see that you clicked a button.";
 
