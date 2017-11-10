@@ -57,6 +57,7 @@ console.log("options: " + options);
 });
 
 bot.dialog('/greet', function (session) {
+console.log("greet globalocale: " + globalocale);
 var options = session.localizer.gettext(session.preferredLocale(globalocale), "bot.greet");
 console.log("greet: " + options);
     session.endConversation(options);//"Oh Hello to you! What can I help you with? Try asking for 'help' or 'order <reagent>' or 'cancel order <reagent> from <email>'");
