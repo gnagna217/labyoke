@@ -63,9 +63,10 @@ bot.on('conversationUpdate', function (message) {
                 // Bot is joining conversation
                 // - For WebChat channel you'll get this on page load.
 var msg = new builder.Message()
-                        .address(message.address)
-                        .text("I see that you clicked a button.");
+                        .address(message.address);
+                        
     msg.data.textLocale = globalocale;
+    msg.text("bot.greet");
 
         //msg.data.text = "I see that you clicked a button.";
 
