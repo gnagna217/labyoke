@@ -64,14 +64,14 @@ bot.dialog('/greet', function (session) {
 console.log("greet globalocale: " + session.preferredLocale());
 var options = session.localizer.gettext(session.preferredLocale(), "bot.greet");
 console.log("greeting: " + options);
- 
+    session.say(options);//"Oh Hello to you! What can I help you with? Try asking for 'help' or 'order <reagent>' or 'cancel order <reagent> from <email>'");
+
                 //session.endDialog('locale_updated '+globalocale);
             } else {
                 // Problem loading the selected locale
                 session.error(err);
             }
         });
-   session.say(options);//"Oh Hello to you! What can I help you with? Try asking for 'help' or 'order <reagent>' or 'cancel order <reagent> from <email>'");
 
 })
 
