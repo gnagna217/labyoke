@@ -270,8 +270,10 @@ html(lang='en')
      if(title=='Reagent Search' || title=='Search' || title=='Share' || title=='Orders' || title=='Admins' || title=='Account')
       :staticCache
         script(type="text/javascript" src="/javascripts/popup.js")
-        script(src="https://cdn.botframework.com/botframework-webchat/latest/botchat.js")
         script(type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js")
+     if(title=='Reagent Search' || title=='Search' || title=='Share' || title=='Orders' || title=='Account')
+      :staticCache
+        script(src="https://cdn.botframework.com/botframework-webchat/latest/botchat.js")
       script.
           $(function(){
               $('#popup1bot').draggable({
