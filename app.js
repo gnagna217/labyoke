@@ -3,8 +3,8 @@ var path = require('path');
 var favicon = require('static-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
-var session = require('express-session');
-//var cookieSession = require('cookie-session');
+//var session = require('express-session');
+var cookieSession = require('cookie-session');
 var bodyParser = require('body-parser');
 var app = express();
 var passport = require('passport');
@@ -64,7 +64,7 @@ app.post('/locales/add/:lng/:ns', i18nextMiddleware.missingKeyHandler(i18next));
 }));
 */
 
-app.use(session({
+/*app.use(session({
 	  cookie: {
 	    path    : '/',
 	    httpOnly: false,
@@ -72,16 +72,15 @@ app.use(session({
 	  },
 	  secret: 'wearethebest'
 	}));
+*/
 
-
-/*app.use(cookieSession({
+app.use(cookieSession({
   name: 'session',
   keys: ['keys1','keys2'],
   secret: 'wearethebest',
   // Cookie Options
   maxAge: 24 * 60 * 60 * 1000 // 24 hours
 }))
-*/
 
 app.use(passport.initialize());
 app.use(passport.session()); // persistent login sessions
