@@ -552,6 +552,7 @@ module.exports = function(router) {
         if(req.cookies.i18n == null || req.cookies.i18n == undefined){
             req.cookies.i18n = "en";
         }
+        globalocale = req.cookies.i18n;
         var doing = req.params.doing;
         console.log("do: " + doing);
         res.setLocale(req.cookies.i18n);
@@ -652,6 +653,7 @@ module.exports = function(router) {
         if(req.cookies.i18n == null || req.cookies.i18n == undefined){
             req.cookies.i18n = "en";
         }
+        globalocale = req.cookies.i18n;
         var labYokeAgents = new LabYokeAgents(req.session.email, req.session.lab, req.session.labs, req.session.dept,req.session.labadmin,req.session.oninsuff);
         labYokeAgents.findallsharesadmins(function(error, resultss) {
             //req.session.orders = results[2];
@@ -755,6 +757,7 @@ module.exports = function(router) {
     	if(req.cookies.i18n == null || req.cookies.i18n == undefined){
 			req.cookies.i18n = "en";
 		}
+        globalocale = req.cookies.i18n;
         var labYokeAgents = new LabYokeAgents(req.session.email, req.session.lab, req.session.labs, req.session.dept,req.session.labadmin,req.session.oninsuff);
         labYokeAgents.findallsharesadmins(function(error, resultss) {
 		var doing = req.params.doing;
@@ -858,6 +861,7 @@ module.exports = function(router) {
     	if(req.cookies.i18n == null || req.cookies.i18n == undefined){
 			req.cookies.i18n = "en";
 		}
+        globalocale = req.cookies.i18n;
         var labYokeAgents = new LabYokeAgents(req.session.email, req.session.lab, req.session.labs, req.session.dept,req.session.labadmin,req.session.oninsuff);
         labYokeAgents.findallsharesadmins(function(error, resultss) {
     	res.setLocale(req.cookies.i18n);
@@ -1273,6 +1277,7 @@ totalshares = t[0].counting;
 		if(req.cookies.i18n == null || req.cookies.i18n == undefined){
 			req.cookies.i18n = "en";
 		}
+        globalocale = req.cookies.i18n;
 		res.setLocale(req.cookies.i18n);
 		if (req.session.user) {
 			var agent = req.body.agentform;
@@ -1308,6 +1313,7 @@ totalshares = t[0].counting;
         if(req.cookies.i18n == null || req.cookies.i18n == undefined){
             req.cookies.i18n = "en";
         }
+        globalocale = req.cookies.i18n;
         res.setLocale(req.cookies.i18n);
         if (req.session.user) {
             var agent = req.body.agent;
@@ -1380,6 +1386,7 @@ totalshares = t[0].counting;
 		if(req.cookies.i18n == null || req.cookies.i18n == undefined){
 			req.cookies.i18n = "en";
 		}
+        globalocale = req.cookies.i18n;
 		res.setLocale(req.cookies.i18n);
 		if (req.session.user) {
 			var agent = req.body.agent;
@@ -1437,6 +1444,7 @@ totalshares = t[0].counting;
         if(req.cookies.i18n == null || req.cookies.i18n == undefined){
             req.cookies.i18n = "en";
         }
+        globalocale = req.cookies.i18n;
         res.setLocale(req.cookies.i18n);
         if (req.session.user) {
             var agent = req.body.agent;
@@ -1556,6 +1564,7 @@ totalshares = t[0].counting;
 		if(req.cookies.i18n == null || req.cookies.i18n == undefined){
 			req.cookies.i18n = "en";
 		}
+        globalocale = req.cookies.i18n;
 		res.setLocale(req.cookies.i18n);
 		var datefrom = req.body.reportDateFrom;
 		var dateto = req.body.reportDateTo;
@@ -1608,6 +1617,7 @@ totalshares = t[0].counting;
 		if(req.cookies.i18n == null || req.cookies.i18n == undefined){
 			req.cookies.i18n = "en";
 		}
+        globalocale = req.cookies.i18n;
 		res.setLocale(req.cookies.i18n);
 		var datefrom = req.body.reportDateFromMoney;
 		var dateto = req.body.reportDateToMoney;
@@ -1675,6 +1685,7 @@ totalshares = t[0].counting;
 		if(req.cookies.i18n == null || req.cookies.i18n == undefined){
 			req.cookies.i18n = "en";
 		}
+        globalocale = req.cookies.i18n;
 		res.setLocale(req.cookies.i18n);
 		var datefrom = undefined;
 		var dateto = undefined;
@@ -1737,6 +1748,7 @@ totalshares = t[0].counting;
 		if(req.cookies.i18n == null || req.cookies.i18n == undefined){
 			req.cookies.i18n = "en";
 		}
+        globalocale = req.cookies.i18n;
 		res.setLocale(req.cookies.i18n);
 		var col = req.body.column;
 		var val = req.body.valuedetail.replace("'","");
@@ -1794,6 +1806,7 @@ totalshares = t[0].counting;
 		if(req.cookies.i18n == null || req.cookies.i18n == undefined){
 			req.cookies.i18n = "en";
 		}
+        globalocale = req.cookies.i18n;
 		res.setLocale(req.cookies.i18n);
 		var datefrom = req.body.reportDateFromOrders;
 		var dateto = req.body.reportDateToOrders;
@@ -1983,6 +1996,7 @@ totalshares = t[0].counting;
 			} else if(lang == null || lang == undefined){
 				lang = "en";
 			}
+            globalocale = lang;
 			res.setLocale(lang);
 			var forgotuser = req.body.forgotuser;
 			if (forgotuser != null && forgotuser.length > 0){
@@ -2093,6 +2107,7 @@ totalshares = t[0].counting;
 		if(req.cookies.i18n == null || req.cookies.i18n == undefined){
 			req.cookies.i18n = "en";
 		}
+        globalocale = req.cookies.i18n;
 		res.setLocale(req.cookies.i18n);
 		var rendered = false;
 		var lab = req.body.reglab;
@@ -2309,6 +2324,7 @@ totalshares = t[0].counting;
 		if(req.cookies.i18n == null || req.cookies.i18n == undefined){
 			req.cookies.i18n = "en";
 		}
+        globalocale = req.cookies.i18n;
 		if (req.session.user) {
 			res.setLocale(req.cookies.i18n);
 			var searchText = req.body.searchText;
@@ -2340,6 +2356,7 @@ totalshares = t[0].counting;
 		if(req.cookies.i18n == null || req.cookies.i18n == undefined){
 			req.cookies.i18n = "en";
 		}
+        globalocale = req.cookies.i18n;
 		res.setLocale(req.cookies.i18n);
 		if (req.session.user) {
 			var searchText = req.body.searchTextCatalog;
@@ -2376,6 +2393,7 @@ totalshares = t[0].counting;
 		if(req.cookies.i18n == null || req.cookies.i18n == undefined){
 			req.cookies.i18n = "en";
 		}
+        globalocale = req.cookies.i18n;
 		console.log("req.cookies.i18n after setup: " + req.cookies.i18n);
 		res.setLocale(req.cookies.i18n);
         globalres = res;
@@ -2807,6 +2825,7 @@ totalshares = t[0].counting;
 		if(lang == null || lang == undefined){
 			lang = "en";
 		}
+        globalocale = lang;
 		req.cookies.i18n = lang;
 		/*labyoker.changepassword(function(error, done) {
 			if (done != null) {
