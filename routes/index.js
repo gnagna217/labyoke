@@ -1905,8 +1905,8 @@ totalshares = t[0].counting;
 			///req.session.report_sharesbycategory = results[1];
 			///req.session.mysharesrequest = results[3];
 
-			req.session.test = results[4];
-			req.session.report_venn = results[5];
+			//req.session.test = results[4];
+			//req.session.report_venn = results[5];
 			//req.session.shares = 0;
 			console.log("test ? " + results[3]);
 			res.render('share', {doing:"upload",lang:req.cookies.i18n, i18n:res,report_venn: results[5], test: results[4], currentlabname: req.session.lab, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, labyokersurname : req.session.surname, myshares: results[0], mysharesrequest: results[3], report_sharesbycategory: results[1], loggedIn : true, isLoggedInAdmin: req.session.admin, title:'Share'});
@@ -1920,7 +1920,7 @@ totalshares = t[0].counting;
 			req.cookies.i18n = "en";
 		}
         globalocale = req.cookies.i18n;
-		//res.setLocale(req.cookies.i18n);
+		res.setLocale(req.cookies.i18n);
 		var labYokeAgents = new LabYokeAgents(req.session.email, req.session.lab, req.session.labs, req.session.dept,req.session.labadmin,req.session.oninsuff);
 		labYokeAgents.findmyshares(function(error, results) {
 			//req.session.orders = results[2];
@@ -1929,8 +1929,8 @@ totalshares = t[0].counting;
 			///req.session.report_sharesbycategory = results[1];
 			///req.session.mysharesrequest = results[3];
 
-			req.session.test = results[4];
-			req.session.report_venn = results[5];
+			//req.session.test = results[4];
+			//req.session.report_venn = results[5];
 			req.session.shares = 0;
 			console.log("test ? " + results[3]);
             console.log("shares req.session.user1: " + req.session.user);
