@@ -1460,10 +1460,10 @@ body.large-screen .card-list-table tbody tr:hover td {
   margin-bottom: 0px;
 }
 .labbot{
-  display: none;
+  display: none !important;
 }
 #popup1bot{
-  display: none;
+  display: none !important;
 }
 .videocontainer{
   width: 100%;
