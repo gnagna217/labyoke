@@ -28,6 +28,6 @@
 "bot.cancelsuccessful": "Your order has been successfully cancelled. A confirmation email has been sent to the requestor.",
 "bot.cancelnotsuccessful": "There was an issue while I tried to cancel the order. Please try again.",
 
-"bot.greet":"Hello there! My name's Professor L! What can I help you with? Try asking for **help** or **order *reagent*** or **cancel order *reagent* from *email***."
+"bot.greet": "Hello there! My name's Professor L! What can I help you with? Try asking for **help** or **order *reagent*** or **cancel order *reagent* from *email***."
 
 }
