@@ -1465,6 +1465,9 @@ body.large-screen .card-list-table tbody tr:hover td {
 #popup1bot{
   display: none !important;
 }
+.botbottom {
+    margin-bottom: 0px !important;
+}
 .videocontainer{
   width: 100%;
   padding: 10px;
