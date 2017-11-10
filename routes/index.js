@@ -1915,6 +1915,7 @@ totalshares = t[0].counting;
 	});
 
 	router.get('/share', isLoggedIn, function(req, res) {
+        console.log("shares req.session.user0: " + req.session.user);
 		if(req.cookies.i18n == null || req.cookies.i18n == undefined){
 			req.cookies.i18n = "en";
 		}
@@ -1932,6 +1933,7 @@ totalshares = t[0].counting;
 			req.session.report_venn = results[5];
 			req.session.shares = 0;
 			console.log("test ? " + results[3]);
+            console.log("shares req.session.user1: " + req.session.user);
 			res.render('share', {lang:req.cookies.i18n, i18n:res,report_venn: results[5], test: results[4], currentlabname: req.session.lab, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, labyokersurname : req.session.surname, myshares: results[0], mysharesrequest: results[3], report_sharesbycategory: results[1], loggedIn : true, isLoggedInAdmin: req.session.admin, title:'Share'});
 			req.session.messages = null;
 		});
