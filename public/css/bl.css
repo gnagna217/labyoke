@@ -80,6 +80,9 @@ margin-left: 310px;width: 50px;cursor: pointer;padding-top: 55px;margin-bottom: 
 .wc-console.has-text .wc-send svg {
     fill: white;
 }
+.wc-console.has-text .wc-send svg :hover{
+    fill: #8a6e3c;
+}
 .wc-textbox {
     left: 15px !important;
     right: 0px !important;
