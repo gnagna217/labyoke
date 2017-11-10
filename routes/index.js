@@ -1176,7 +1176,7 @@ module.exports = function(router) {
 		}
         globalocale = req.cookies.i18n;
 		res.setLocale(req.cookies.i18n);
-		if (req.session.user) {
+		//if (req.session.user) {
             req.session.orders = 0;
 			var labyokerLab = new LabyokerLab(req.session.lab);
 		labyokerLab.getLabsInDept(function(error, categories) {
@@ -1264,9 +1264,9 @@ totalshares = t[0].counting;
 			});
 				});
 				});
-		} else {
-			res.redirect('/login');
-		}
+		//} else {
+		//	res.redirect('/login');
+		//}
 	});
 
 	router.post('/orders', isLoggedIn, function(req, res) {
