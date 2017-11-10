@@ -57,7 +57,8 @@ console.log("options: " + options);
 });
 
 bot.dialog('/greet', function (session) {
-console.log("greet globalocale: " + globalocale);
+    session.preferredLocale(globalocale);
+console.log("greet globalocale: " + session.preferredLocale());
 var options = session.localizer.gettext(session.preferredLocale(globalocale), "bot.greet");
 console.log("greet: " + options);
     session.say(options);//"Oh Hello to you! What can I help you with? Try asking for 'help' or 'order <reagent>' or 'cancel order <reagent> from <email>'");
@@ -72,7 +73,6 @@ bot.on('conversationUpdate', function (message) {
 //var msg = new builder.Message()
 //                        .address(message.address);
                         
-  message.data.textLocale = globalocale;
    // msg.data.text("bot.greet");
 
         //msg.data.text = "I see that you clicked a button.";
