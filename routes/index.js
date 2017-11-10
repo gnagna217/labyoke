@@ -1153,7 +1153,7 @@ module.exports = function(router) {
 		console.log("getsearch - i18n: " + req.cookies.i18n);
 		res.setLocale(req.cookies.i18n);
 		console.log("getsearch - userlang: " + req.session.userlang);
-		if (req.session.user) {
+		//if (req.session.user) {
 			var labYokeSearch = new LabYokeSearch("",req.session.email,"");
 			labYokeSearch.findagents(function(error, results) {			
 				if (results != null && results.length > 0){
@@ -1163,9 +1163,9 @@ module.exports = function(router) {
 				}
 				req.session.messages = null;
 			});
-		} else {
-			res.redirect('/login');
-		}
+		//} else {
+		//	res.redirect('/login');
+		//}
 	});
 
 
@@ -1275,7 +1275,7 @@ totalshares = t[0].counting;
 		}
         globalocale = req.cookies.i18n;
 		res.setLocale(req.cookies.i18n);
-		if (req.session.user) {
+		//if (req.session.user) {
 			var agent = req.body.agentform;
 			var lab = req.body.labform;
 			var vendor = req.body.vendorform;
@@ -1300,9 +1300,9 @@ totalshares = t[0].counting;
 					req.session.messages = null;
 				}
 			});
-		} else {
-			res.redirect('/login');
-		}
+		//} else {
+		//	res.redirect('/login');
+		//}
 	});
 
     router.post('/admincancelshare', isLoggedIn, function(req, res) {
@@ -1311,7 +1311,7 @@ totalshares = t[0].counting;
         }
         globalocale = req.cookies.i18n;
         res.setLocale(req.cookies.i18n);
-        if (req.session.user) {
+        //if (req.session.user) {
             var agent = req.body.agent;
             var lab = req.body.lab;
             var vendor = req.body.vendor;
@@ -1373,9 +1373,9 @@ totalshares = t[0].counting;
                     req.session.messages = null;
                 }
             });
-        } else {
-            res.redirect('/login');
-        }
+        //} else {
+        //    res.redirect('/login');
+        //}
     });
 
 	router.post('/cancelshare', isLoggedIn, function(req, res) {
@@ -1384,7 +1384,7 @@ totalshares = t[0].counting;
 		}
         globalocale = req.cookies.i18n;
 		res.setLocale(req.cookies.i18n);
-		if (req.session.user) {
+		//if (req.session.user) {
 			var agent = req.body.agent;
 			var lab = req.body.lab;
 			var vendor = req.body.vendor;
@@ -1431,9 +1431,9 @@ totalshares = t[0].counting;
 					req.session.messages = null;
 				}
 			});
-		} else {
-			res.redirect('/login');
-		}
+		//} else {
+		//	res.redirect('/login');
+		//}
 	});
 
     router.post('/fulfillshare', isLoggedInAdmin, function(req, res) {
@@ -1442,7 +1442,7 @@ totalshares = t[0].counting;
         }
         globalocale = req.cookies.i18n;
         res.setLocale(req.cookies.i18n);
-        if (req.session.user) {
+        //if (req.session.user) {
             var agent = req.body.agent;
             var lab = req.body.lab;
             var admintype = req.body.adminType;   
@@ -1501,9 +1501,9 @@ totalshares = t[0].counting;
                     req.session.messages = null;
                 }
             });
-        } else {
-            res.redirect('/login');
-        }
+        //} else {
+         //   res.redirect('/login');
+        //}
     });
 
 
@@ -2321,7 +2321,7 @@ totalshares = t[0].counting;
 			req.cookies.i18n = "en";
 		}
         globalocale = req.cookies.i18n;
-		if (req.session.user) {
+		//if (req.session.user) {
 			res.setLocale(req.cookies.i18n);
 			var searchText = req.body.searchText;
 			var searchType = req.body.searchType;
@@ -2343,9 +2343,9 @@ totalshares = t[0].counting;
 				}
 				req.session.messages = null;
 			});
-		} else {
-			res.redirect('/login');
-		}
+		//} else {
+		//	res.redirect('/login');
+		//}
 	});
 
 	router.post('/searchCatalog', function(req, res) {
@@ -2354,7 +2354,7 @@ totalshares = t[0].counting;
 		}
         globalocale = req.cookies.i18n;
 		res.setLocale(req.cookies.i18n);
-		if (req.session.user) {
+		//if (req.session.user) {
 			var searchText = req.body.searchTextCatalog;
 			var searchType = req.body.searchType;
 			var labYokeSearch = new LabYokeSearch(searchText, req.session.email, searchType);
@@ -2376,9 +2376,9 @@ totalshares = t[0].counting;
 				}
 				req.session.messages = null;
 			});
-		} else {
-			res.redirect('/login');
-		}
+		//} else {
+		//	res.redirect('/login');
+		//}
 	});
 
 	router.post('/login',function(req, res) {
