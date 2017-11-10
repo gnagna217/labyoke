@@ -59,7 +59,7 @@ console.log("options: " + options);
 bot.dialog('/greet', function (session) {
     session.preferredLocale(globalocale);
 console.log("greet globalocale: " + session.preferredLocale());
-var options = session.localizer.gettext(session.preferredLocale(globalocale), "bot.greeting");
+var options = session.localizer.gettext(session.preferredLocale(globalocale), "bot.greet");
 console.log("greeting: " + options);
     session.say(options);//"Oh Hello to you! What can I help you with? Try asking for 'help' or 'order <reagent>' or 'cancel order <reagent> from <email>'");
 })
