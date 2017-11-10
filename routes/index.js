@@ -1069,6 +1069,7 @@ module.exports = function(router) {
 	});
 
 	function isLoggedIn(req, res, next) {
+        console.log("req.session.user: " + req.session.user);
 		if (req.session.user)
 			return next();
 		console.log('requested url: '+req.originalUrl);
@@ -1076,6 +1077,7 @@ module.exports = function(router) {
 		res.redirect('/login');
 	}
 	function isLoggedInAdmin(req, res, next) {
+        console.log("req.session.user: " + req.session.user);
 		console.log("req.session.useradmin: " + req.session.useradmin);
 		console.log("req.session.usersuperadmin: " + req.session.usersuperadmin);
 		if (req.session.user && (req.session.useradmin || req.session.usersuperadmin))
@@ -1086,6 +1088,7 @@ module.exports = function(router) {
 	}
 
     function isLoggedInAdmin(req, res, next) {
+        console.log("req.session.user: " + req.session.user);
         if (req.session.user && (req.session.useradmin || req.session.usersuperadmin))
             return next();
         console.log('requested url: '+req.originalUrl);
@@ -1094,12 +1097,14 @@ module.exports = function(router) {
     }
 
 	function isLoggedInAndNotActive(req, res, next) {
+        console.log("req.session.active: " + req.session.active);
 		if (req.session.active != null && req.session.active == 0)
 			return next();
 		res.redirect('/');
 	}
 
 	function isAdmin(req, res, next) {
+        console.log("req.session.userid: " + req.session.userid);
 		if (req.session.userid == 'algo' || req.session.userid == 'amjw'
 				|| req.session.userid == 'mkon')
 			return next();
