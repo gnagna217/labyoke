@@ -2679,33 +2679,45 @@ LabyokerRegister.prototype.register = function(callback) {
 
 	if(tel != null && tel.length>0 && username != null && username.length>0 && firstname != null && firstname.length>0 && lastname != null && lastname.length>0 && email != null && email.length>0 && password != null && password.length>0 && lab != null && lab.length>0 ){
 	console.log("processing registration2...");
-	var query = client.query("SELECT * FROM vm2016_users where id='" + username
-			+ "'"/* and password='"+password+"'" */);
-	query.on("row", function(row, result) {
-		result.addRow(row);
-	});
-	query.on("end", function(result) {
-		results = result.rows;
-		console.log("id entered: " + username);
-		if (results != null && results.length > 0) {
-			
-			/*for (i = 0; i < results.length; i++) { 
-				console.log("results[i].email: " + results[i].email);
-				if(results[i].email == email){*/
-					console.log("in use?: idalreadyInUse");
-					callback(null, "idalreadyInUse");
-			/*	}
-			}*/
 
-		} else {
+	var query3 = client.query("SELECT * FROM labs where labname='" + lab + "'");
+	query3.on("row", function(row, result3) {
+		result3.addRow(row);
+	});
+	query3.on("end", function(result3) {
+		results = result3.rows;
+		console.log("lab entered: " + lab);
+		var admin = "labyoke@gmail.com"
+		if (results != null && results.length > 0) {
+				console.log("results[0].admin: " + results[0].admin);
+				admin = results[0].admin;
+		}
+
+		var query = client.query("SELECT * FROM vm2016_users where id='" + username + "'");
+		query.on("row", function(row, result) {
+			result.addRow(row);
+		});
+		query.on("end", function(result) {
+			results = result.rows;
+			console.log("id entered: " + username);
+			if (results != null && results.length > 0) {
+				
+				/*for (i = 0; i < results.length; i++) { 
+					console.log("results[i].email: " + results[i].email);
+					if(results[i].email == email){*/
+						console.log("in use?: idalreadyInUse");
+						callback(null, "idalreadyInUse");
+				/*	}
+				}*/
+
+			} else {
 				var hash_register_id = crypt.hashSync(username);
 				console.log("before registerid: " + hash_register_id);
 				hash_register_id = hash_register_id.replace(/\//g, "");
 				console.log("registerid: " + hash_register_id);
-			var hash = crypt.hashSync(password);
-			var query2 = client.query("INSERT INTO vm2016_users VALUES ('" + username
-				+ "', '" + hash + "', '" + firstname + "',  0, null, null, '" + email + "', null, '" + lab + "', '" + lastname + "', '" + tel + "', 0, '','" + hash_register_id + "', null,'" + userlang + "')");
-
+				var hash = crypt.hashSync(password);
+				var query2 = client.query("INSERT INTO vm2016_users VALUES ('" + username
+					+ "', '" + hash + "', '" + firstname + "',  0, null, null, '" + email + "', null, '" + lab + "', '" + lastname + "', '" + tel + "', 0, '','" + hash_register_id + "', null,'" + userlang + "')");
 
 				query2.on("row", function(row, result2) {
 					result2.addRow(row);
@@ -2721,34 +2733,51 @@ LabyokerRegister.prototype.register = function(callback) {
 					// HERE i18n.__({phrase: "login", locale: userlang})
 
 					var subject = i18n.__({phrase: "index.register.subject", locale: userlang}); //"Labyoke - Start Labyoking";
-					var body="<div style='box-sizing:content-box;margin-top:20px;margin-left: 5px;margin-bottom: 5px;text-align: center;margin-right: 5px;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);'>"
+					var subjectadmin = i18n.__({phrase: "index.register.subjectadmin", locale: userlang});
+					var bodyadmin="<div style='box-sizing:content-box;margin-top:20px;margin-left: 5px;margin-bottom: 5px;text-align: center;margin-right: 5px;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);'>"
+					var body = bodyadmin;
+					bodyadmin = "<div style='text-align:center;padding-top: 20px;'><img style='width: 141px; margin: 0 20px;' src='https:\/\/team-labyoke.herokuapp.com\/images\/yoke4.png', alt='The Yoke',  title='Yoke', class='yokelogo'/></div><div style='font-size:11pt;padding: 20px;'>" + i18n.__({phrase: "index.orders.hello", locale: userlang}) + ",<br/><br/>";
 					body = "<div style='text-align:center;padding-top: 20px;'><img style='width: 141px; margin: 0 20px;' src='https:\/\/team-labyoke.herokuapp.com\/images\/yoke4.png', alt='The Yoke',  title='Yoke', class='yokelogo'/></div><div style='font-size:11pt;padding: 20px;'>" + i18n.__({phrase: "index.orders.hello", locale: userlang}) + " " + firstname
 							+ ",<br/><br/>";
 					body += i18n.__({phrase: "index.register.body1", locale: userlang}); //"Thanks for registering with @LabYoke.";
-					body += i18n.__({phrase: "index.register.body2", locale: userlang}); //"You are one step away from labyoking! Please click on this link:<br/>";
-					body += "<p style=\"text-align:center\"><span style=''>";
-					body += "<form action='https:\/\/team-labyoke.herokuapp.com\/confirmreg/"
+					body += i18n.__({phrase: "index.register.body5", locale: userlang}); //"Your lab admin is reviewing your registration. Please expect to receive a confirmation email shortly.";
+					bodyadmin += i18n.__({phrase: "index.register.adminbody1", locale: userlang}); //"A new researcher has registered for your lab.";
+					bodyadmin += i18n.__({phrase: "index.register.firstname", locale: userlang}) + firstname;
+					bodyadmin += i18n.__({phrase: "index.register.lastname", locale: userlang}) + lastname;
+					bodyadmin += i18n.__({phrase: "index.register.email", locale: userlang}) + email;
+					bodyadmin += i18n.__({phrase: "index.register.tel", locale: tel}) + tel;
+					bodyadmin += i18n.__({phrase: "index.register.body2", locale: userlang}); //"You are one step away from labyoking! Please click on this link:<br/>";
+					bodyadmin += "<p style=\"text-align:center\"><span style=''>";
+					bodyadmin += "<form action='https:\/\/team-labyoke.herokuapp.com\/confirmreg/"
 							+ hash_register_id + "'><input type='hidden' name='lang' value='"+userlang+"'><button type='submit' value='Confirm Registration' name='submit' style='margin: 20px;color: #fff;background-color: #8a6d3b;border-color: #8a6d3b;padding: 10px 16px;font-size: 18px;line-height: 1.3333333;border-radius: 6px;width: 278px;border: 0;-webkit-appearance: button;cursor: pointer;'>Confirm Registration</button></form>";
 
 					//body +="<a href='https:\/\/team-labyoke.herokuapp.com\/confirmreg/"
 					//		+ hash_register_id + "?lang=" + userlang + "'>https:\/\/team-labyoke.herokuapp.com\/confirmreg?id="
 					//		+ hash_register_id
 					//		+ "?lang=" + userlang + "</a>";
-					body += "</span></p>";
-					body += i18n.__({phrase: "index.register.body3", locale: userlang}) + "<a href=\"https:\/\/team-labyoke.herokuapp.com\/share\"> " + i18n.__({phrase: "index.register.body2", locale: userlang}) + "</a>" + i18n.__({phrase: "index.register.body4", locale: userlang});
+					bodyadmin += "</span></p>";
+					bodyadmin += i18n.__({phrase: "index.register.body3", locale: userlang}) + "<a href=\"https:\/\/team-labyoke.herokuapp.com\/share\"> " + i18n.__({phrase: "index.register.body6", locale: userlang}) + "</a>" + i18n.__({phrase: "index.register.body4", locale: userlang});
+					bodyadmin += "</p><b><i>" + i18n.__({phrase: "index.signature", locale: userlang}) + "</i></b></div>";
+					bodyadmin += "</div>";
+					body += i18n.__({phrase: "index.register.body3", locale: userlang}) + "<a href=\"https:\/\/team-labyoke.herokuapp.com\/share\"> " + i18n.__({phrase: "index.register.body6", locale: userlang}) + "</a>" + i18n.__({phrase: "index.register.body4", locale: userlang});
 					body += "</p><b><i>" + i18n.__({phrase: "index.signature", locale: userlang}) + "</i></b></div>";
 					body += "</div>";
+					console.log("bodyadmin: " + bodyadmin);
 					console.log("body: " + body);
 
 					var mailOptions = new MailOptions(email, subject, body);
+					var mailOptionsAdmin = new MailOptions(admin, subjectadmin, bodyadmin);
 					mailOptions.sendAllEmails();
-
+					mailOptionsAdmin.sendAllEmails();
 					callback(null, "success");
 
-				});
-				
-		}
+				});	
+			}
+		});
+
 	});
+
+
 } else if(tel != null && tel.length>0 && firstname != null && firstname.length>0 && lastname != null && lastname.length>0 && email != null && email.length>0 ){
 	var rendered = false;
 	console.log("processing registration...");
@@ -2906,6 +2935,9 @@ LabyokerConfirm.prototype.confirm = function(callback) {
 
 		if (results != null && results.length == 1){
 			var userid = results[0].id;
+			var useremail = results[0].email;
+			var firstname = results[0].firstname;
+			var userlang = results[0].lang;
 			console.log("confirm registration now for: " + userid);
 
 			var query2 = client.query("UPDATE vm2016_users SET active=1, register_id='' where id='" + userid + "'");
@@ -2916,6 +2948,21 @@ LabyokerConfirm.prototype.confirm = function(callback) {
 			query2.on("end", function(result2) {
 				var results2 = result2.rows;
 				if (results2 != null) {
+
+					var subject = i18n.__({phrase: "index.confirm.subject", locale: userlang}); //"Labyoke - Start Labyoking";
+					var body = "<div style='text-align:center;padding-top: 20px;'><img style='width: 141px; margin: 0 20px;' src='https:\/\/team-labyoke.herokuapp.com\/images\/yoke4.png', alt='The Yoke',  title='Yoke', class='yokelogo'/></div><div style='font-size:11pt;padding: 20px;'>" + i18n.__({phrase: "index.orders.hello", locale: userlang}) + " " + firstname
+							+ ",<br/><br/>";
+					body += "<p style=\"text-align:center\"><span style=''>";
+					body += i18n.__({phrase: "index.confirm.body1", locale: userlang}); //"Thanks for registering with @LabYoke.";
+					body += "</span></p>";
+					body += i18n.__({phrase: "index.register.body3", locale: userlang}) + "<a href=\"https:\/\/team-labyoke.herokuapp.com\/share\"> " + i18n.__({phrase: "index.register.body6", locale: userlang}) + "</a>" + i18n.__({phrase: "index.register.body4", locale: userlang});
+					body += "</p><b><i>" + i18n.__({phrase: "index.signature", locale: userlang}) + "</i></b></div>";
+					body += "</div>";
+					
+					console.log("body: " + body);
+
+					var mailOptions = new MailOptions(email, subject, body);
+					mailOptions.sendAllEmails();
 					callback(null, "confirmReset");
 				} else {
 					callback(null, "errorFound");
