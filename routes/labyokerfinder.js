@@ -2767,8 +2767,8 @@ LabyokerRegister.prototype.register = function(callback) {
 
 					var mailOptions = new MailOptions(email, subject, body);
 					var mailOptionsAdmin = new MailOptions(admin, subjectadmin, bodyadmin);
-					mailOptions.sendAllEmails();
-					mailOptionsAdmin.sendAllEmails();
+					//mailOptions.sendAllEmails();
+					//mailOptionsAdmin.sendAllEmails();
 					callback(null, "success");
 
 				});	
