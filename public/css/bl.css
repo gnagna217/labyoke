@@ -26,10 +26,6 @@ color: white !important;
 .wc-console svg{
   fill: white !important;
 }
- 
-.wc-send svg :hover{
-    fill: #8a6e3c !important;
-}
 
 input.wc-shellinput:-moz-placeholder { /* Firefox 18- */
 color: white !important;  
