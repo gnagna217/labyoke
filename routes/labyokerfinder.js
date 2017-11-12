@@ -2964,7 +2964,7 @@ LabyokerConfirm.prototype.confirm = function(callback) {
 					
 					console.log("body: " + body);
 
-					var mailOptions = new MailOptions(email, subject, body);
+					var mailOptions = new MailOptions(useremail, subject, body);
 					mailOptions.sendAllEmails();
 					callback(null, "confirmReset");
 				} else {
