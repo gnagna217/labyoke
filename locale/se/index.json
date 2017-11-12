@@ -1,33 +1,39 @@
 {
-"bot.confused" : "You said: **%s**. Try asking for **help** or **order *reagent*** or **cancel *reagent* from *email***",
-"bot.cancel": "Absolutely, I'm canceling your order now.",
+"bot.confused": "Sade du: **%s**. Försöket som frågar för **hjälp** eller ***reagent*** för beställning eller **avbryt *reagent* från *email***",
+"bot.cancel": "Absolut, avbryter jag din beställning nu. ",
 
-"bot.order": "Absolutely! Let's put it together...",
-"bot.Order.title": "Order",
-"bot.Order.subtitle": "Please confirm this order:",
-"bot.order.reagent": "Reagent",
+
+"bot.order": "Absolut! Låt oss sätta den tillsammans…",
+"bot.Order.title": "Beställning",
+"bot.Order.subtitle": "Bekräftar Please denna beställning: ",
+"bot.order.reagent": "Agens",
 "bot.order.email": "Email",
-"bot.order.vendor": "Vendor",
-"bot.order.catalognumber": "Catalog Number",
-"bot.order.button": "Yes",
-"bot.order.invalidsearch": "You entered an invalid reagent keyword. Please try again and enter: **Order *reagent***.",
-"bot.order.noresults": "There are no available reagents for your order attempt of **%s**.",
+"bot.order.vendor": "Försäljare",
+"bot.order.catalognumber": "Katalognummer",
+"bot.order.button": "Ja",
+"bot.order.invalidsearch": "Skrev in du ett ogiltigt agensnyckelord. Behaga försöket igen och skriv in: ***reagent*** för beställning. ",
+"bot.order.noresults": "Finns det några tillgängliga agens för ditt beställningsförsök av **%s**. ",
 
-"bot.ciao": "Goodbye.",
-"bot.hi": "Oh Hello to you!",
-"bot.thanks": "You are most welcome. I am always here when you need me.",
-"bot.help": "You seem to be asking for help on something. Try our [help](https://team-labyoke.herokuapp.com/help) section for a wealth of information and video tutorials or be. Anything else I can help you with?",
 
-"bot.ordersuccessful": "Your order has been successfully placed. A confirmation email has been sent to you.",
-"bot.ordernotsuccessful": "There was an issue while I tried to place your order. Please try again.",
+"bot.ciao": "Farväl. ",
+"bot.hi": "Oj Hello till dig! ",
+"bot.thanks": "Är du mest välkommen. Jag är alltid här när du behöver mig. ",
+"bot.help": "Verkar du för att fråga för hjälp på något. Försök vårt [hjälp] (det https://team-labyoke.herokuapp.com/help) avsnittet för en rikedom av informations- och videotutorials eller är. Något annat kan jag hjälpa dig med? ",
 
-"bot.Cancel.title": "Cancel Order",
-"bot.Cancel.subtitle": "Please confirm this cancellation:",
-"bot.cancel.invalidsearch": "You entered invalid cancel keywords. Please try again and enter: **Cancel *reagent* from *email***.",
-"bot.cancel.noresults": "Sorry I could not find any reagent to cancel for: **%s**.",
-"bot.cancelsuccessful": "Your order has been successfully cancelled. A confirmation email has been sent to the requestor.",
-"bot.cancelnotsuccessful": "There was an issue while I tried to cancel the order. Please try again.",
 
-"bot.greet": "Hello there! My name's Professor L! What can I help you with? Try asking for **help** or **order *reagent*** or **cancel order *reagent* from *email***."
+"bot.ordersuccessful": "Har din beställning lyckat förlagts. En bekräftelseemail har överförts till dig. ",
+"bot.ordernotsuccessful": "Fanns det en fråga, medan jag försökte att förlägga din beställning. Behaga försöket igen. ",
+
+
+"bot.Cancel.title": "Annulleringsbeställning",
+"bot.Cancel.subtitle": "Bekräftar Please denna annullering: ",
+"bot.cancel.invalidsearch": "Skrev in du ogiltiga annulleringsnyckelord. Behaga försöket igen och skriv in: **Avbryt *reagent* från *email***. ",
+"bot.cancel.noresults": "Ledset kunde jag inte finna någon agens för att avbryta för: **%s**. ",
+"bot.cancelsuccessful": "Har din beställning lyckat avbrutits. En bekräftelseemail har överförts till requestoren. ",
+"bot.cancelnotsuccessful": "Fanns det en fråga, medan jag försökte att avbryta beställningen. Behaga försöket igen. ",
+
+
+"bot.greet": "Hello där! Mitt namn är professor L! Vad kan jag hjälpa dig med? Försök som frågar för **hjälp** eller **beställa *reagent*** eller ***reagent* för annulleringsbeställning från *email***.",
+
 
 }
