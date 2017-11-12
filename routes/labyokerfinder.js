@@ -2958,7 +2958,7 @@ LabyokerConfirm.prototype.confirm = function(callback) {
 
 					var subject = i18n.__({phrase: "index.confirm.subject", locale: userlang}); //"Labyoke - Registration Confirmed";
 					var body = "<div style='text-align:center;padding-top: 20px;'><img style='width: 141px; margin: 0 20px;' src='https:\/\/team-labyoke.herokuapp.com\/images\/yoke4.png', alt='The Yoke',  title='Yoke', class='yokelogo'/></div><div style='font-size:11pt;padding: 20px;'>" + i18n.__({phrase: "index.orders.hello", locale: userlang}) + " " + firstname + " " + lastname
-							+ ",<br/><br/>";
+							+ ",<br/>";
 					body += "<p style=\"text-align:center\"><span style=''>";
 					body += i18n.__("index.regconfirm.body", {lab: userlab});
 					//i18n.__({phrase: "index.regconfirm.body", locale: userlang, lab: userlab});
