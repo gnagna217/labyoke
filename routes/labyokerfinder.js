@@ -2752,7 +2752,7 @@ LabyokerRegister.prototype.register = function(callback) {
 					bodyadmin += i18n.__({phrase: "index.register.body2", locale: adminlang}); //"You are one step away from labyoking! Please click on this link:<br/>";
 					bodyadmin += "<p style=\"text-align:center\"><span style=''>";
 					bodyadmin += "<form action='https:\/\/team-labyoke.herokuapp.com\/confirmreg/"
-							+ hash_register_id + "'><input type='hidden' name='lang' value='"+adminlang+"'><button type='submit' value='Confirm Registration' name='submit' style='margin: 20px;color: #fff;background-color: #8a6d3b;border-color: #8a6d3b;padding: 10px 16px;font-size: 18px;line-height: 1.3333333;border-radius: 6px;width: 278px;border: 0;-webkit-appearance: button;cursor: pointer;'>Confirm Registration</button></form>";
+							+ hash_register_id + "'><input type='hidden' name='lang' value='"+adminlang+"'><button type='submit' value='Confirm Registration' name='submit' style='margin: 20px;color: #fff;background-color: #8a6d3b;border-color: #8a6d3b;padding: 10px 16px;font-size: 18px;line-height: 1.3333333;border-radius: 6px;width: 278px;border: 0;cursor: pointer;-webkit-appearance: button;'>Confirm Registration</button></form>";
 
 					//body +="<a href='https:\/\/team-labyoke.herokuapp.com\/confirmreg/"
 					//		+ hash_register_id + "?lang=" + userlang + "'>https:\/\/team-labyoke.herokuapp.com\/confirmreg?id="
