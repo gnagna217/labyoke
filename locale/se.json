@@ -332,6 +332,8 @@
 "dot.selected": "<b>Selected antal: </b>",
 "dot.reagent": " - <b>Reagent: </b> ",
 
-"shares.pop.title": "Dela? "
+"shares.pop.title": "Dela? ",
+"shares.pop.subtitle": "<div id='actionorder' class='width: 50%; float: left; background-color: rgba (138, 109, 59, 0,55);'>OK</div><div class='exit' id='actioncancel'>Cancel</div>"
+
 
 }
