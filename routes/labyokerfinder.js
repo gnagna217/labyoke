@@ -2736,7 +2736,7 @@ LabyokerRegister.prototype.register = function(callback) {
 					// HERE i18n.__({phrase: "login", locale: userlang})
 
 					var subject = i18n.__({phrase: "index.register.subject", locale: userlang}); //"Labyoke - Start Labyoking";
-					var subjectadmin = i18n.__({phrase: "index.register.subjectadmin", locale: userlang});
+					var subjectadmin = i18n.__({phrase: "index.register.subjectadmin", locale: adminlang});
 					var bodyadmin="<div style='box-sizing:content-box;margin-top:20px;margin-left: 5px;margin-bottom: 5px;text-align: center;margin-right: 5px;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);'>"
 					var body = bodyadmin;
 					bodyadmin = "<div style='text-align:center;padding-top: 20px;'><img style='width: 141px; margin: 0 20px;' src='https:\/\/team-labyoke.herokuapp.com\/images\/yoke4.png', alt='The Yoke',  title='Yoke', class='yokelogo'/></div><div style='font-size:11pt;padding: 20px;'>" + i18n.__({phrase: "index.orders.hello", locale: adminlang}) + ",<br/><br/>";
