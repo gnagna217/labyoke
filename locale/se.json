@@ -550,6 +550,69 @@
 "index.account.oninsuff": "Otillräckligt agensmeddelande",
 "index.account.onfill": "Fullgjort beställningsmeddelande",
 "index.account.yes": "Ja",
-"index.account.no": "Inte"
+"index.account.no": "Inte",
+
+
+"index.changepass.success": "Congrats. ",
+"index.changepass.message2": "Skriver in Please ett giltigt lösenord. Försök igen under. ",
+"index.changepass.message4": "Matchar dina lösenord inte. Försök igen under. ",
+"index.changepass.message3": "Nästan där. ",
+"index.changepass.message1": "Behaga ändring din <ahref= för lösenordet därefter/login'> login</a> igen. ",
+"index.changepass.button": "Ändra",
+"index.changepass.placeholder2": "Komma in igen lösenordet",
+"index.changepass.placeholder1": "Lösenord",
+"index.confirmpwd.message1": "Lyckönskan har du lyckat registrerat din labbmedlem. ",
+"index.confirmpwd.message2": "Fanns ett fel, medan bearbeta denna bekräftelse. Behaga försöket igen eller lösenordet för <a href='mailto:labyoke@gmail.com?Subject=Change - {{ID}} 'target=' _top'>ändring dess password</a>. ",
+"index.confirmpwd.message3": "Ledset kunde vi inte finna denna förhandsregistrering. Du kunde redan ha bekräftat den. Annorlunda <span style='color: #3d9dcb; 'behar ><ahref=' /register'> Register</a> din labb member</span>! Eller <span style='color: #3d9dcb; 'nollställer ><ahref=' /forgot'> dess Password</a></span>",
+   
+"index.changepwd.message1": "Lyckönskan har du lyckat ändrat ditt lösenord. Behaga huvudet till den <ahref='-/login'> login</a> sidan. ",
+"index.changepwd.message2": "Fanns ett fel, medan bearbeta ditt ändringslösenord. Behaga försöket igen eller lösenordet för <a href='mailto:labyoke@gmail.com?Subject=Change - {{ID}} 'den target=' _top'>kontakten us</a>. ",
+"index.changepwd.message3": "Tyvärr har din ändringslösenordförfrågan förfallit. Please gör ny förfrågan. ",
+"index.changepwd.message4": "Ledset kunde vi inte finna din ändringslösenordförfrågan. Please gör ny förfrågan. ",
+"index.changepwd.message5": "Fanns ett fel, medan bearbeta ditt ändringslösenord. Behaga försöket igen eller lösenordet för <a href='mailto:labyoke@gmail.com?Subject=Change - {{ID}} 'den target=' _top'>kontakten us</a>. ",
+
+
+"index.forgot.message1": "Ah. Vi har överfört dig en email redan i dag för att ändra ditt lösenord. Behaga kontrollen din inbox. ",
+"index.forgot.message2": "Ledset. Vi kunde inte finna ett konto med denna användarnamn. Behaga försöket igen under. ",
+"index.forgot.message3": "Ledset. Du måste skriva in din aktuella <span class='labColor'> username</span>. Behaga försöket igen under. ",
+
+"admins.pop.title": "Admin. ",
+"admins.pop.subtitle": "<div id='actionorder' style='width: 50%; float: left; background-color: rgba (138, 109, 59, 0,55); ')>OK</div><divclass='exitid='actioncancel'> Cancel</div>",
+"admins.title": "Admin. ",
+"admins.subtitle": "Har din labb inte mottagit någon beställning för agens. ",
+"admins.subtitle1": "Rättalabbbeställningar. ",
+"admins.subtitle2": "Har din labb ingen laddad upp agens. ",
+"admins.intro5": "beställningar som ska fullgöras",
+"admins.intro": "Ingen ny chem",
+"admins.intro1": " för närvarande markerat och bes av dina labbmedlemmar. I slutsumma ",
+"admins.intro2": "förfrågningar",
+"admins.intro3": "Ingen förfrågan",
+"admins.intro4": "registrerings för din labb. Den avbrutna <span class='colorinsuff fa fa-square'></span> för beställningar är highlighted.<div-style='margin-bottom: 0px; marginal-lämnat: 15px; skärm: inline-kvarter; 'class='checkboxThree1'><input-style='position: evig sanning; left: -9999px; style='margin-left för class='shadow'></label><p 'för type='checkbox' id='canceltest4-' checked='checked'><label for='canceltest4': 25px; 'tagen >Action (beställning har fullgjorts eller har avbrutits). style='display </p></div><div class='checkboxThree1': inline-kvarter; marginal-lämnat: 15px; '><inputstyle='position: evig sanning; left: -9999px; 'type='checkbox' class='shadow'></label><pstyle='margin-left för id='canceltest5'><label for='canceltest5': 25px; '>Pending handling (beställning väntar för att fullgöras eller avbrytas). style='display </p></div><divclass='checkboxThreepoint': inline-kvarter; marginal-lämnat: 15px; '><inputstyle='position: evig sanning; left: -9999px; style='margin-left 'för type='checkbox' id='canceltestpoint'><label for='canceltestpoint'></label><p: 25px; '>Order som fullgöras precis, eller cancelled.</p></div>",
+"admins.noorders.intro": "Gjordes inga beställningar av dina labbmedlemmar. Fråga dem för att starta <ahref=/search'> labyoking</a> då för att kontrollera tillbaka för listan av frambragda beställningar. ",
+"admins.noreagents.intro": "Laddades upp inga agens för dina labbmedlemmar. Använd <aen href='/admins'> laddar upp Reagents</a>hjälpmedlet för att ladda agens. Du ska behöva följande kolonntitelrader: <ulstyle='color: #3e9ccb; '><li>name_of_reagent</li><li>vendor</li><li>catalog_number</li><li>location</li><li>user</li></ul>",
+
+
+"admins.none.title": "Admin-labbagens. ",
+"admins.none.subtitle": "Har en administratör laddat upp följande agens för dina labbmedlemmar. Om den <span class='colorinsuff fa fa-square'></span><span> för otillräckligt antal listas, behaga förnyar antalet, genom att ladda upp överträffamappen från style='marginen-bottom för ladda upp section.</span><div: 0px; marginal-överkant: 0px; marginal-lämnat: 15px; skärm: inline-kvarter; 'class='checkboxThree1'><input-style='position: evig sanning; left: -9999px; style='margin-left för class='shadow'></label><p 'för type='checkbox' id='canceltest6-' checked='checked'><label for='canceltest6': 25px; 'är >Actionen som tas som agens, i style='display otillräcklig quantities.</p></div><div class='checkboxThree1': inline-kvarter; marginal-lämnat: 15px; '><inputstyle='position: evig sanning; left: -9999px; 'type='checkbox' class='shadow'></label><pstyle='margin-left för id='canceltest7'><label for='canceltest7': 25px; '>Reagent är i tillräcklig style='display quantities.</p></div><divclass='checkboxThreepoint': inline-kvarter; marginal-lämnat: 15px; '><inputstyle='position: evig sanning; left: -9999px; style='margin-left 'för type='checkbox' id='canceltestpoint'><label for='canceltestpoint'></label><p: 25px; '>Reagent avbrutet precis och markerat som i otillräcklig quantities.</p></div>",
+"admins.radio.reagents": "Labbagens",
+"admins.radio.orders": "Beställer labbet",
+"admins.tip.header": "Hur man förvaltar? ",
+"admins.tip.desc": "taskeds <br/><b>Admin Upload</b><br/>Administrators med att ladda upp inventariet för alla forskare i deras avdelning. Detta hjälpmedel kan vara van vid laddar upp ett xcelräkneark och fyller på/skapar agens för reseachers.<br/><br/><b>Lab Orders</b><br/>Administrators taskeds med att fullgöra beställningar. En gång fullgöras kontrollerar en beställning, av knappen under 'den f-' kolonnen för att markera beställningen, som <b>completed</b> som en admin kan också avbryta en beställning förutsatt att där, är inget mer inventarium som är tillgängligt för agens owner.<br/><br/><b>Lab Reagents</b><br/>When en labbmedlem är rinnande lågt på inventarium, markerar agens som otillräcklig, genom att klicka på knappen under 'den x-' kolonnen. Fyll på inventariet, genom att ladda upp ett nytt, överträffar mappen som använder 'Adminen, laddar upp' hjälpmedlet. ",
+"admins.qty.title": "Labbagens",
+"admins.qty.subtitle": "Visar denna graf den aktuella trenden av din labbs fa fa-square'></span> för class='colorinsuff för otillräckliga agens den <span och totala antalet av den <span class='yokeColorfa fa-square'></span> för agens per labbmedlemmen. Sväva överst av en stång för att visa dess värde under. ",
+"admins.qty.subtitle1": "Delar dina labbmedlemmar inte någon agens. class='labColor'> för <aen href='/admins'><span laddar upp now</span></a>. ",
+"admins.table.x": "Annulleringsbeställning",
+"admins.table.f": "Fullgöra beställning",
+"admins.table.insuff": "Otillräckligt",
+"admins.table.repl": "Fyll på",
+"admins.table.revert": "Återvänd beställning",
+"admins.table.header.insuff": "Otillräckligt inventarium",
+"admins.table.header.cancelorder": "Annulleringsbeställning",
+
+"zoom.minus": "Förminska zoomen",
+"zoom.plus": "Öka zoomen",
+"zoom.reset": "Nollställningszoom",
+
+"key.title": ""
 
 }
