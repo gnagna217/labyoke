@@ -4,8 +4,8 @@ var shadelight = document.getElementById("shade-light");
  $.getJSON("/javascripts/lang/en.json", function(json) {
         console.log(json); // access the response object
         console.log(json.data); // access the array
-        console.log(json.data[0]); // access the first object of the array
-        console.log(json.data[0].number); // access the first object proprty of the array
+        console.log(json.data.popup.order); // access the first object of the array
+        //console.log(json.data[0].number); // access the first object proprty of the array
     });
 
 $('html').click(function() {
