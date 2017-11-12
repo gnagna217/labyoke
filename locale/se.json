@@ -327,15 +327,6 @@
 "orders.success.vendor": "Försäljare: ",
 "orders.tip.header": "Hur man beställer? ",
 
-"orders.tip.desc": "Delas denna sida in i 2 avsnitt: listas personliga Orders</b><br/>All agens för <br/><br/><b>Your, som du har beställt. Nya beställningar markeras i ljus - blått. En gång har ägaren av agens beskådat transaktionen, statusen av beställningen är uppsättningen till <i>fulfilled</i>. Avbrutna beställningar, som administratörer inte kunde fullgöra, markeras i ljus brons. För varje avbruten beställning ska du motta en tabell för annullering email.<br/><br/>The kan sökas, och listan för sorted.<br/><br/><b>Operational Charts</b><br/>A av diagram är tillgänglig för att visualisera datan som frambrings av den delade data.<bren/><br/>The <b><i>Bubble</i></b>, innehåller hjälpmotormeddelanden, som firar dina framgångar, men också ibland kunde varna dig om dina datatrender. ",
-
-
-"dot.selected": "<b>Selected antal: </b>",
-"dot.reagent": " - <b>Reagent: </b> ",
-
-
-"shares.pop.title": "Dela? ",
-"shares.pop.subtitle": "<div id='actionorder' class='width: 50%; float: left; background-color: rgba (138, 109, 59, 0,55);'>OK</div><div class='exit' id='actioncancel'>Cancel</div>"
-
+"orders.tip.desc": "Delas denna sida in i 2 avsnitt: listas personliga Orders</b><br/>All agens för <br/><br/><b>Your, som du har beställt. Nya beställningar markeras i ljus - blått. En gång har ägaren av agens beskådat transaktionen, statusen av beställningen är uppsättningen till <i>fulfilled</i>. Avbrutna beställningar, som administratörer inte kunde fullgöra, markeras i ljus brons. För varje avbruten beställning ska du motta en tabell för annullering email.<br/><br/>The kan sökas, och listan för sorted.<br/><br/><b>Operational Charts</b><br/>A av diagram är tillgänglig för att visualisera datan som frambrings av den delade data.<bren/><br/>The <b><i>Bubble</i></b>, innehåller hjälpmotormeddelanden, som firar dina framgångar, men också ibland kunde varna dig om dina datatrender. "
 
 }
