@@ -471,7 +471,7 @@
     "index.register.email": "<br/><b>Email:</b> ",
     "index.register.tel": "<br/><b>Tel:</b> ",
     "index.regconfirm.body": "We are pleased to inform you that you have been successfully registered @ Labyoke. Your lab is <span style='color:#3d9dcb'>{{lab}}</span>.",
-    "index.register.adminbody1":"A researcher is attempting to register in your lab. Here are the details:",
+    "index.register.adminbody1":"A registration is pending for your laboratory. Here are the details:",
     "index.register.message1": "Sorry. This email address is already in use. Please use a different one and try again below.",
     "index.register.message2": "Sorry you cannot proceed. Please fill out ALL fields and try again below.",
     "index.register.message3": "Sorry. We could not register you. Please try again below.",
