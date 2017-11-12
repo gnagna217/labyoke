@@ -140,7 +140,7 @@
     "register.form2.button2": "Start Lab Yoking",
     "register.thanku": "Thanks for pre-registering",
     "register.thanku.desc1": "We have sent an email to your lab administrator to <span class='labColor'>complete</span><span> your registration. You will receive an email once your registration is confirmed.</span>",
-    "register.thanku2": "Thanks for registering",
+    "register.thanku2": "Thanks for confirming this registration.",
     "register.thanku2.desc1": "You may now start <a href='/search'>searching</a><span> or <a href='/share'>sharing</a></span><span> your own chemicals.</span>",
     "register.thanku3": "Registration Confirmation",
 
