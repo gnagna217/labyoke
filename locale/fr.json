@@ -468,7 +468,7 @@
     "index.register.email": "<br/>Email: ",
     "index.register.tel": "<br/>Téléphone: ",
     "index.register.body6": "à partager",
-    "index.register.adminbody1":"Un nouveau chercheur tente de s'enregistrer dans votre laboratoire. Voici ses données:",
+    "index.register.adminbody1":"Un chercheur tente de s'enregistrer dans votre laboratoire. Voici ses données:",
     "index.register.message1": "Désolé. Cette adresse email est déjà utilisé. Veuillez en choisir une autre et réessayez de vous inscrire.",
     "index.register.message2": "Malheureusement vous ne pouvez pas continuer. Assurez-vous d'avoir rempli TOUS les champs et réessayez.",
     "index.register.message3": "Malheureusement nous n'avons pas été en mesure de vous inscrire. Veuillez réessayer ci-dessous.",
