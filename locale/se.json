@@ -39,7 +39,7 @@
 "search.table.order": "Beställning",
 "search.tip.header": "Hur man söker? ",
 "search.tip.title": "Behöv en spets? ",
-"search.tip.desc": "Kan du söka vid nyckelord, eller katalogen number.<br/><br/><b>By Keyword</b><br/>You kan endera skriva helheten, eller delen av en agens eller dig kan välja en agens från listan för tappa som ner är tillgänglig till dig. Listan kan förkortas, om du startar att skriva namnet av agens som du söker efter. <br/>Click på <i><b>Find vid Reagent</b></i>knappen för att hämta en lista av agens, och kemikalieer, att du kan order.<br/><br/><b>Bykatalogen Number</b><br/>You kan endera skriva helheten eller delen av ett katalognummer, eller dig kan välja ett katalognummer från listan för tappa som ner är tillgänglig till dig. Listan kan förkortas, om du startar att skriva katalognumret som du söker efter. <br/>Click på <b><i>Find vid Catalog</i></b> för att hämta en lista av agens, och kemikalieer, att du kan visade resultat för order.<br/><br/><b>Search Results</b><br/>The, är av agens som markeras som tillgängligt och laddas upp för närvarande av resultat för en administrator.<br/>Search innehåller aldrig dina egna agens endast agens förutom ditt inventarium. Du kan klara av din egen inventariumtillgänglighet från <ahref='en/aktiers style='font-weight: djärvt; färg: #8a6d3b; '>Shares</a> page.<br/><br/><b>Order</b><br/>Once som du har avgjort på en agens, och läge, klickar på style='marginen-left för class='imgcart'' för title='Order för alt='Order för vagnssymbols<img src='images/cart.png' nu' nu: 0px; marginal-överkant: 0px; '> att beställa agens. En email ska överföras till dig och ägaren av agens för att fullgöra beställningen. ",
+"search.tip.desc": "Kan du söka vid nyckelord, eller katalogen number.<br/><br/><b>By Keyword</b><br/>Du kan endera skriva helheten, eller delen av en agens eller dig kan välja en agens från listan för tappa som ner är tillgänglig till dig. Listan kan förkortas, om du startar att skriva namnet av agens som du söker efter. <br/>Click på <i><b>Find vid Reagent</b></i>knappen för att hämta en lista av agens, och kemikalieer, att du kan order.<br/><br/><b>Bykatalogen Number</b><br/>Du kan endera skriva helheten eller delen av ett katalognummer, eller dig kan välja ett katalognummer från listan för tappa som ner är tillgänglig till dig. Listan kan förkortas, om du startar att skriva katalognumret som du söker efter. <br/>Click på <b><i>Find vid Catalog</i></b> för att hämta en lista av agens, och kemikalieer, att du kan visade resultat för order.<br/><br/><b>Search Results</b><br/>The, är av agens som markeras som tillgängligt och laddas upp för närvarande av resultat för en administrator.<br/>Search innehåller aldrig dina egna agens endast agens förutom ditt inventarium. Du kan klara av din egen inventariumtillgänglighet från <ahref='en/aktiers style='font-weight: djärvt; färg: #8a6d3b; '>Shares</a> page.<br/><br/><b>Order</b><br/>Once som du har avgjort på en agens, och läge, klickar på style='marginen-left för class='imgcart'' för title='Order för alt='Order för vagnssymbols<img src='images/cart.png' nu' nu: 0px; marginal-överkant: 0px; '> att beställa agens. En email ska överföras till dig och ägaren av agens för att fullgöra beställningen. ",
 "search.zoom.header": "Zoom",
 
 
@@ -267,7 +267,7 @@
 
 
 "account.title": "Hello",
-"account.subtitle": "är <span>Thissidan hängiven till </span><spanstyle='coloren: #3d9dcb; '>you. </span><span>If som du önskar att ändra dina personliga detaljer liksom ditt telefonnummer eller namnger information. Du kan också ställa in emailen notifications.</span>",
+"account.subtitle": "är <span>Thissidan hängiven till </span><spanstyle='coloren: #3d9dcb; '>dig. </span><span>If som du önskar att ändra dina personliga detaljer liksom ditt telefonnummer eller namnger information. Du kan också ställa in emailen notifications.</span>",
 "account.success": "Utmärkt! Du har lyckat ändrat ditt",
 "account.admin1": "Sannerligen! Din labbadministratör är",
 "account.admin2": "Kan du kontakta din admin när som helst. ",
@@ -282,13 +282,13 @@
 "account.button": "Är vem i ditt lag? ",
 "account.hide": "Skinn",
 "account.team.desc1": "Din <i>",
-"account.team.desc2": "</i>lag. ",
+"account.team.desc2": " </i>lag. ",
 "account.team.subdesc1": "Är din avdelning <span class='labColor'>",
 "account.team.subdesc2": ". Här är en lista allra dina registreringskollegor som labyoking tillsammans med dig och stiger beloppet av dagliga besparingar: ",
 "account.team.name": "Namn",
 "account.team.email": "Email",
 "account.tip.header": "Hur man uppdaterar konto? ",
-"account.tip.desc": "Klicka på style='coloren för fa-pencil' för class='faen för blyertspennasymbolen den <span: white'></span> som öppnar fältet redigerar in, funktionsläge. Gör din önskade ändring (eller inte) klickar därefter på style='coloren för fa-check' för class='faen för kontrollsymbolen den <span: white'></span> till save.<br/><br/>Eachfältet är saved.<br/><br/>Click på <b><i>Whoen är individuellt i din team</i></b>knapp för en lista, allra som forskarna i dina department.<br/><br/><b>Language</b><br/>Allemailkommunikationer överförs i ditt språk av prima utvald here.<br/><br/><b>Email, & Notification</b><br/>You kan välja för att motta emails på en otillräcklig agens som vänder. ",
+"account.tip.desc": "Klicka på style='coloren för fa-pencil' för class='faen för blyertspennasymbolen den <span: white'></span> som öppnar fältet redigerar in, funktionsläge. Gör din önskade ändring (eller inte) klickar därefter på style='coloren för fa-check' för class='faen för kontrollsymbolen den <span: white'></span> till save.<br/><br/>Eachfältet är saved.<br/><br/>Click på <b><i>Whoen är individuellt i din team</i></b>knapp för en lista, allra som forskarna i dina department.<br/><br/><b>Language</b><br/>Allemailkommunikationer överförs i ditt språk av prima utvald here.<br/><br/><b>Email, & Notification</b><br/>Du kan välja för att motta emails på en otillräcklig agens som vänder. ",
 "account.notify.title": "Email & meddelande. ",
 "account.notify.oninsuff": "Otillräcklig agens",
 "account.notify.onfill": "Fullgjord beställning",
@@ -327,7 +327,7 @@
 "orders.success.vendor": "Försäljare: ",
 "orders.tip.header": "Hur man beställer? ",
 
-"orders.tip.desc": "Delas denna sida in i 2 avsnitt: listas personliga Orders</b><br/>All agens för <br/><br/><b>Your, som du har beställt. Nya beställningar markeras i ljus - blått. En gång har ägaren av agens beskådat transaktionen, statusen av beställningen är uppsättningen till <i>fulfilled</i>. Avbrutna beställningar, som administratörer inte kunde fullgöra, markeras i ljus brons. För varje avbruten beställning ska du motta en tabell för annullering email.<br/><br/>The kan sökas, och listan för sorted.<br/><br/><b>Operational Charts</b><br/>A av diagram är tillgänglig för att visualisera datan som frambrings av den delade data.<bren/><br/>The <b><i>Bubble</i></b>, innehåller hjälpmotormeddelanden, som firar dina framgångar, men också ibland kunde varna dig om dina datatrender. ",
+"orders.tip.desc": "Delas denna sida in i 2 avsnitt: listas personliga Orders</b><br/>All agens för <br/><br/><b>dig, som du har beställt. Nya beställningar markeras i ljus - blått. En gång har ägaren av agens beskådat transaktionen, statusen av beställningen är uppsättningen till <i>fulfilled</i>. Avbrutna beställningar, som administratörer inte kunde fullgöra, markeras i ljus brons. För varje avbruten beställning ska du motta en tabell för annullering email.<br/><br/>The kan sökas, och listan för sorted.<br/><br/><b>Operational Charts</b><br/>A av diagram är tillgänglig för att visualisera datan som frambrings av den delade data.<bren/><br/>The <b><i>Bubble</i></b>, innehåller hjälpmotormeddelanden, som firar dina framgångar, men också ibland kunde varna dig om dina datatrender. ",
 
 "dot.selected": "<b>Selected antal: </b>",
 "dot.reagent": " - <b>Reagent: </b> ",
@@ -394,7 +394,7 @@
 "shares.venn.chart.title1": "Agens i",
 "shares.venn.chart.title2": "Gemensamma agens i",
 "shares.tip.header": "Hur man delar? ",
-"shares.tip.desc": "Delas denna sida in i 3 avsnitt: <br/><br/><b>Youragens beställde vid annan researchers</b><br/>When beställningar för en forskare en agens från ditt inventarium, en rad tillfogas till tabellen för att hålla spåret av transaktionen. Nya aktier markeras i ljus - blått. <br/><br/>If för några anledning, är du oförmögen att fullgöra beställningen, kan du klicka på checkboxen under <b>X</b>kolonnen för att överföra en email till requestoren och för att avbryta beställningen. Avbrutna beställningar markeras i ljusa bronze.<br/><br/><b>Youragens som laddas upp av din administrators</b><br/>Youradministratör, laddas med påfyllning av ditt agensinventarium i LabYoke. <br/>If är du rinnande lågt på inventariet för en agens, klickar på checkboxen under <b><i>X</i></b>kolonnen. Kontrollerade agens ska inte visas i några sökanderesultat och thus kan inte beställas. Du kan alltid beträffande-instate agens, genom att kontrollera som den, kan again.<br/><br/>Tables sökas, och listan för sorted.<br/><br/><b>Operational Charts</b><br/>A av diagram är tillgänglig för att visualisera datan som frambrings av de delade datan. ",
+"shares.tip.desc": "Delas denna sida in i 3 avsnitt: <br/><br/><b>Dina agens beställde vid annan researchers</b><br/>When beställningar för en forskare en agens från ditt inventarium, en rad tillfogas till tabellen för att hålla spåret av transaktionen. Nya aktier markeras i ljus - blått. <br/><br/>If för några anledning, är du oförmögen att fullgöra beställningen, kan du klicka på checkboxen under <b>X</b>kolonnen för att överföra en email till requestoren och för att avbryta beställningen. Avbrutna beställningar markeras i ljusa bronze.<br/><br/><b>Dina agens som laddas upp av din administrators</b><br/>Din administratör, laddas med påfyllning av ditt agensinventarium i LabYoke. <br/>If är du rinnande lågt på inventariet för en agens, klickar på checkboxen under <b><i>X</i></b>kolonnen. Kontrollerade agens ska inte visas i några sökanderesultat och thus kan inte beställas. Du kan alltid beträffande-instate agens, genom att kontrollera som den, kan again.<br/><br/>Tables sökas, och listan för sorted.<br/><br/><b>Operational Charts</b><br/>A av diagram är tillgänglig för att visualisera datan som frambrings av de delade datan. ",
 
 
 "datatable.processing": "Bearbeta…",
@@ -437,7 +437,7 @@
 "index.login.cheer4": "Håll upp den! ",
 "index.login.text1": "<strong> Major Achievement! </strong> är du delen av besparingar för <b><i> {{labsavings}} en </i></b> för en slutsumma av <b> {{accountingsavings}} </b> {{timeframesavings}} i din avdelning. <b> {{jubel}} </b>",
 "index.login.text2": "<strong> Major Achievement! </strong> har du sparat <b><i> {{labsavings}} </i></b> per slutsumma av <b> {{accountingsavings}} </b> {{timeframesavings}}. <b> {{jubel}} </b>",
-"index.login.booster3": "Förminskar att använda LabyYoke att inhandla priser för <strong>You</strong> och din <strong>Lab</strong>. Använd det som en social plattform. Ha gyckel och håll upp den! ",
+"index.login.booster3": "Förminskar att använda LabyYoke att inhandla priser för <strong>Dig</strong> och din <strong>Lab</strong>. Använd det som en social plattform. Ha gyckel och håll upp den! ",
 "index.login.message3": "Är ditt användarnamn och/eller lösenord fel. Behaga försöket igen. ",
    
 "index.search.message1": "Ledset kunde vi inte finna några resultat med din agenssökandeförfrågan: <b> {{searchText}} </b>. Behaga försöket igen. ",
@@ -508,7 +508,7 @@
 "index.register.message11": "Ledset. Denna användarnamn är redan i bruk. Behaga bruk olik och försök igen under. ",
 "index.change.subject": "Labyoke - ändra lösenordförfrågan",
 "index.change.body1": "Har du bett för att ändra ditt lösenord @LabYoke.<br/><br/>Please klickar på denna sammanlänkning: <br/>",
-"index.change.body2": "har <p><span>Youen <b><span style='color: rött; '>1 day</span></b> som ändrar ditt lösenord. Men oroa inte dig kan alltid överföra oss andra",
+"index.change.body2": "har <p><span>dig en <b><span style='color: rött; '>1 day</span></b> som ändrar ditt lösenord. Men oroa inte dig kan alltid överföra oss andra",
 "index.change.body3": "förfrågan",
 "index.change.body4": "när detta har förfallit.",
 "index.change.body5": "<p> [PS: Har du",

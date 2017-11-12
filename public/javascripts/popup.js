@@ -66,7 +66,6 @@ $('.cancel').click(function() {
    checkedtext += desc;
    uncheckedtext += desc;
 
-
   if(langText == "fr"){
     checkedtext = "Voulez-vous marquer ce réactif comme insuffisant?";
    uncheckedtext = "Voulez-vous marquer ce réactif comme réapprovisioné et en quantité suffisante?";
@@ -76,6 +75,20 @@ $('.cancel').click(function() {
    desc += "<br/><b>Proprio:</b> " + owneremailval;
   if(requestorval != ""){
     desc += "<br/><b>Demandeur:</b> " + requestorval;
+  }
+   checkedtext += desc;
+   uncheckedtext += desc;
+  }
+
+  if(langText == "se"){
+    checkedtext = "Önskar du att markera denna agens som otillräcklig?";
+   uncheckedtext = "Önskar du att markera denna agens som fyllt på och i tillräckligt antal?";
+  desc = "<br/><b>Agens:</b> " + agentval;
+   desc += "<br/><b>Försäljare:</b> " + vendorval;
+   desc += "<br/><b>Katalog:</b> " + catalogval;
+   desc += "<br/><b>Ägare:</b> " + owneremailval;
+  if(requestorval != ""){
+    desc += "<br/><b>Requestor:</b> " + requestorval;
   }
    checkedtext += desc;
    uncheckedtext += desc;
@@ -164,6 +177,19 @@ $('.fulfill').click(function() {
    desc += "<br/><b>Numéro de Catalogue:</b> " + catalogval;
    desc += "<br/><b>Proprio:</b> " + owneremailval;
    desc += "<br/><b>Demandeur:</b> " + requestorval;
+   desc += "<br/><b>Labo:</b> " + labval;
+   checkedtext += desc;
+   uncheckedtext += desc;
+  }
+
+  if(langText == "se"){
+    checkedtext = "Har du fullgjort denna beställning? ";
+   uncheckedtext = "Önskar du att återvända denna beställningsuppfyllelse?";
+   desc = "<br/><b>Agens:</b> " + agentval;
+   desc += "<br/><b>Försäljare:</b> " + vendorval;
+   desc += "<br/><b>Katalog:</b> " + catalogval;
+   desc += "<br/><b>Ägare:</b> " + owneremailval;
+   desc += "<br/><b>Requestor:</b> " + requestorval;
    desc += "<br/><b>Labo:</b> " + labval;
    checkedtext += desc;
    uncheckedtext += desc;
@@ -363,6 +389,9 @@ function iosLight(agent,vendor,catalognumber,reqemail,location,category,qty,lab,
   var trans = "You are about to order <br/>Reagent: " + agent + "<br/>Vendor: "+vendor+"<br/>Catalog#: "+catalognumber;
   if(browserlang == "fr"){
     trans = "Vous êtes sur le point de commander <br/>Réactif: " + agent + "<br/>Vendeur: "+vendor+"<br/>Catalogue: "+catalognumber;
+  }
+  if(browserlang == "se"){
+    trans = "Du ska just att beställa <br/>Agens: " + agent + "<br/>Försäljare: "+vendor+"<br/>Katalog: "+catalognumber;
   }
   orderText.innerHTML = trans;
   var pop = document.getElementById("ios-light");
