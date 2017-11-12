@@ -2310,6 +2310,14 @@ p{
   width: 50px;
 }
 
+.selogin{
+  position: relative;
+  top: -40px;
+  right: -75px;
+  margin-right: 5px;
+  width: 30px;
+}
+
 .enlogin{
     /*border-width: 0px;width: 50px;margin-top: -40px;margin-right: 90px;float: right;
     width: 30px;
