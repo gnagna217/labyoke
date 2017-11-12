@@ -447,26 +447,17 @@
 "index.reportsShares.params": "<divstyle='font-weight: bold'> Parameters</div>",
 "index.reportsShares.params1": "<div><span style='font-weight: bold'>datum från: </span><span> {{datefrom}} </span></div>",
 "index.reportsShares.params2": "<div><span style='font-weight: bold'>datum till: </span><span> {{datetoen}} </span></div>",
-"index.reportsShares.html1": "<div><span id='reporttitlestyle='font-weight: djärvt; stilsort-format: 34pt; '>Inventory.</span></div><divstyle= \ "marginal-överkant: 10px; \ "><br/>",
+"index.reportsShares.html1": "<div><span id='reporttitlestyle='font-weight: djärvt; stilsort-format: 34pt; '>Inventory.</span></div><div style='marginal-överkant: 10px;'><br/>",
 "index.reportsShares.html2": "är <p>Thisrapporten lista allt laddat upp inventarium: </p></div>",
 "index.reportsShares.html3": "listar <p>Thisrapporten inventariet som laddas upp mellan",
 "index.reportsShares.html4": " och ",
 "index.reportsShares.html5": "</p>",
-"index.reportsShares.html6": "<table style='margin-top: 25px; text-arrangera i rak linje: left; '><tbody><trstyle='color: vit; background-color: #3d9dcb; 'style='font-size ><td: 12px; 'style='font-size >Reagent</td><td: 12px; 'style='font-size >Vendor</td><td: 12px; 'style='font-size >Catalog#</td><td: 12px; 'style='font-size >Location</td><td: 12px; '>User</td><td>Date</td></tr>",
-"index.reportsShares.html7": "Style='coloren för <a href='https://team-labyoke.herokuapp.com/: lag för white'> LabYoke</a>. ",
+"index.reportsShares.html6": "<table style='margin-top: 25px; text-arrangera i rak linje: left; '><tbody><trstyle='color: white; background-color: #3d9dcb; 'style='font-size ><td: 12px; 'style='font-size >Reagent</td><td: 12px; 'style='font-size >Vendor</td><td: 12px; 'style='font-size >Catalog#</td><td: 12px; 'style='font-size >Location</td><td: 12px; '>User</td><td>Date</td></tr>",
+"index.reportsShares.html7": "Ett <a href='https://team-labyoke.herokuapp.com/' style='color:white'>LabYoke</a> Team.",
 "index.reportsShares.nodataIntro": "style='font-size <div: 20pt; stilsort-vikt: djärvt; 'är >There inga tillgängliga data. Starta att dela i dag! </div>",
 "index.reportsOrders.html1": "Labb: ",
 "index.reportsOrders.html2": "Beställningar. ",
 "index.reportsOrders.html3": "är <p>Thisrapporten lista alla bedda beställningar: </p></div>",
-"index.reportsOrders.html4": "listar <p>Thisrapporten beställningarna som bes mellan",
-"index.reportsOrders.html5": "<table style='margin-top: 25px; text-arrangera i rak linje: left; '><tbody><trstyle='color: vit; background-color: #3d9dcb; 'style='font-size ><td: 12px; 'style='font-size >Reagent</td><td: 12px; 'style='font-size >Vendor</td><td: 12px; 'style='font-size >Catalog#</td><td: 12px; 'style='font-size >Owner</td><td: 12px; '>Requestor</td><td>Date</td></tr>",
-"index.orders.subject": "LabYoke Admin - oavgjord beställning för",
-"index.orders.resubject": "LabYoke - din förfrågan att beställa",
-"index.orders.hello": "Hello",
-"index.orders.body1": "Är denna snäll förfrågan att dela 100 enheter från följande inventarium: ",
-"index.orders.body2": "Har du bett 100 enheter från följande inventarium: ",
-"index.orders.reagent": "Agens"
-
-
+"index.reportsOrders.html4": "listar <p>Thisrapporten beställningarna som bes mellan"
 
 }
