@@ -404,7 +404,7 @@
     "index.orders.booster3" : "<strong> Succès Majeur!</strong> Vous partagez <b>plus</b> que vous ne commandez. Une valeureuse manière de contribuer aux économies de votre laboratoire!",
     "index.orders.booster4" : "<strong> Fort et Stable!</strong> Vous êtes parfaitement <b>équilibré</b>! Vous partagez autant de réactifs que vous en commandez. C'est parfait!",
 
-    "index.login.message1": "Vous n'avez pas complété votre inscription. Nous vous avons envoyé un email. Vérifiez et cliquez sur le lien.",
+    "index.login.message1": "Votre inscription est incomplète. Nous vous enverrons un email de confirmation dès que possible.",
     "index.login.message2" : "Votre compte a été désactivé. Veuillez contacter votre administrateur de laboratoire.",
     "index.login.all1" : "MONDE",
     "index.login.all2" : "avec l'aide d'Autres Laboratoires",
