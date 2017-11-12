@@ -18,7 +18,7 @@
 "bot.ciao": "Farväl. ",
 "bot.hi": "Oj Hello till dig! ",
 "bot.thanks": "Är du mest välkommen. Jag är alltid här när du behöver mig. ",
-"bot.help": "Verkar du för att fråga för hjälp på något. Försök vårt [hjälp] (det https://team-labyoke.herokuapp.com/help) avsnittet för en rikedom av informations- och videotutorials eller är. Något annat kan jag hjälpa dig med? ",
+"bot.help": "Verkar du för att fråga för hjälp på något. Försök vårt [hjälp](https://team-labyoke.herokuapp.com/help) avsnittet för en rikedom av informations- och videotutorials eller är. Något annat kan jag hjälpa dig med? ",
 
 
 "bot.ordersuccessful": "Har din beställning lyckat förlagts. En bekräftelseemail har överförts till dig. ",
