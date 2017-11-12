@@ -1,7 +1,7 @@
 var shade = document.getElementById("shade");
 var shadelight = document.getElementById("shade-light");
 
- $.getJSON("/ljavascripts/lang/en.json", function(json) {
+ $.getJSON("/javascripts/lang/en.json", function(json) {
         console.log(json); // access the response object
         console.log(json.data); // access the array
         console.log(json.data[0]); // access the first object of the array
