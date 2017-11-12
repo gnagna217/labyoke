@@ -2748,7 +2748,7 @@ LabyokerRegister.prototype.register = function(callback) {
 					bodyadmin += i18n.__({phrase: "index.register.firstname", locale: adminlang}) + firstname;
 					bodyadmin += i18n.__({phrase: "index.register.lastname", locale: adminlang}) + lastname;
 					bodyadmin += i18n.__({phrase: "index.register.email", locale: adminlang}) + email;
-					bodyadmin += i18n.__({phrase: "index.register.tel", locale: tel}) + tel;
+					bodyadmin += i18n.__({phrase: "index.register.tel", locale: adminlang}) + tel;
 					bodyadmin += i18n.__({phrase: "index.register.body2", locale: adminlang}); //"You are one step away from labyoking! Please click on this link:<br/>";
 					bodyadmin += "<p style=\"text-align:center\"><span style=''>";
 					bodyadmin += "<form action='https:\/\/team-labyoke.herokuapp.com\/confirmreg/"
