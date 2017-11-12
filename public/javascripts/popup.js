@@ -1,7 +1,7 @@
 var shade = document.getElementById("shade");
 var shadelight = document.getElementById("shade-light");
 
- $.getJSON("/locale/en/index.json", function(json) {
+ $.getJSON("/ljavascripts/lang/en.json", function(json) {
         console.log(json); // access the response object
         console.log(json.data); // access the array
         console.log(json.data[0]); // access the first object of the array
@@ -20,6 +20,7 @@ $('html').click(function() {
     alert();
   }*/
 });
+
 
 $('.cancel').click(function() {
   var cancel = $(this);
