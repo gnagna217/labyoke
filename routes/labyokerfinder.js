@@ -2960,8 +2960,7 @@ LabyokerConfirm.prototype.confirm = function(callback) {
 					var body = "<div style='text-align:center;padding-top: 20px;'><img style='width: 141px; margin: 0 20px;' src='https:\/\/team-labyoke.herokuapp.com\/images\/yoke4.png', alt='The Yoke',  title='Yoke', class='yokelogo'/></div><div style='font-size:11pt;padding: 20px;'>" + i18n.__({phrase: "index.orders.hello", locale: userlang}) + " " + firstname + " " + lastname
 							+ ",<br/>";
 					body += "<p style=\"text-align:center\"><span style=''>";
-					body += i18n.__("index.regconfirm.body", {lab: userlab});
-					//i18n.__({phrase: "index.regconfirm.body", locale: userlang, lab: userlab});
+					body += i18n.__({phrase: "index.regconfirm.body", locale: userlang},{lab: userlab});
 					body += "</span></p>";
 					body += i18n.__({phrase: "index.register.body3", locale: userlang}) + "<a href=\"https:\/\/team-labyoke.herokuapp.com\/share\"> " + i18n.__({phrase: "index.register.body6", locale: userlang}) + "</a>" + i18n.__({phrase: "index.register.body4", locale: userlang});
 					body += "</p><b><i>" + i18n.__({phrase: "index.signature", locale: userlang}) + "</i></b></div>";
