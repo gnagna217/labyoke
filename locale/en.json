@@ -405,7 +405,7 @@
     "index.orders.booster3": "<strong> Major Achievement!</strong>  You are sharing <b>more</b> than you are ordering. Way to contribute to your lab's savings!",
     "index.orders.booster4": "<strong> Strong and Steady!</strong> You are perfectly <b>balanced</b>! You are sharing as many reagents as you are ordering. Way to go!",
     
-    "index.login.message1": "Your registration is not yet complete. Your lab administrator is still reviewing it. Please check your emails once confirmed.",
+    "index.login.message1": "Your registration is not yet complete. Your lab administrator is still reviewing it and will send you an email once confirmed.",
     "index.login.message2": "Your account has been disabled. Please contact your lab administrator.",
     "index.login.all1": "WORLD",
     "index.login.all2": "Other Labs",
