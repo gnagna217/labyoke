@@ -125,27 +125,27 @@ bot.recognizer({
                     //break;
                 default:
                     console.log("default: " + s.match(/(hello|hi)/i));
-                    if (s.match(/(hello|hi|bonjour|bonsoir|salut)/i)) {
+                    if (s.match(/(hello|hi|bonjour|bonsoir|salut)|hej/i)) {
                         intent = { score: 1.0, intent: 'HiIntent' };
                         matched = true;
                     }
-                    if (s.match(/(thank|thanks|merci)/i)) {
+                    if (s.match(/(thank|thanks|merci|tack)/i)) {
                         intent = { score: 1.0, intent: 'ThankIntent' };
                         matched = true;
                     }
-                    if (s.match(/(cancel|annuler)/i)) {
+                    if (s.match(/(cancel|annuler|annulleringsbeställning)/i)) {
                         intent = { score: 1.0, intent: 'CancelOrderIntent' };
                         matched = true;
                     }
-                    if (s.match(/(order|commander)/i)) {
+                    if (s.match(/(order|commander|beställa)/i)) {
                         intent = { score: 1.0, intent: 'OrderIntent' };
                         matched = true;
                     }
-                    if (s.match(/(help|aide)/i)) {
+                    if (s.match(/(help|aide|hjälp)/i)) {
                         intent = { score: 1.0, intent: 'HelpIntent' };
                         matched = true;
                     }
-                    if (s.match(/(bye|goodbye|au revoir)/i)) {
+                    if (s.match(/(bye|goodbye|au revoir|hej då)/i)) {
                         intent = { score: 1.0, intent: 'CiaoIntent' };
                         matched = true;
                     }

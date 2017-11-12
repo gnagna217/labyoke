@@ -33,7 +33,7 @@
 "bot.cancelnotsuccessful": "Fanns det en fråga, medan jag försökte att avbryta beställningen. Behaga försöket igen. ",
 
 
-"bot.greet": "Hello där! Mitt namn är professor L! Vad kan jag hjälpa dig med? Försök som frågar för **hjälp** eller **beställa *reagent*** eller ***reagent* för annulleringsbeställning från *email***.",
+"bot.greet": "Hello där! Mitt namn är professor L! Vad kan jag hjälpa dig med? Försök som frågar för **hjälp** eller **beställa *reagent*** eller ***reagent* för *annulleringsbeställning* från *email***."
 
 
 }
