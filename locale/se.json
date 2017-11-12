@@ -465,29 +465,7 @@
 "index.orders.hello": "Hello",
 "index.orders.body1": "Är denna snäll förfrågan att dela 100 enheter från följande inventarium: ",
 "index.orders.body2": "Har du bett 100 enheter från följande inventarium: ",
-"index.orders.reagent": "Agens",
-"index.orders.vendor": "Försäljare",
-"index.orders.catalog": "Catalog#",
-"index.orders.email": "Ägare",
-"index.orders.sendemail": "Requestor",
-"index.orders.labrequestor": "Requestorlabb",
-"index.orders.labowner": "Ägarelabb",
-"index.orders.best": "Med vänliga hälsningar,",
-"index.confirm.subject": "Labyoke - bekräftad registrering",
-"index.confirm.body": "Lyckönskan! Din administration har godkänt din förfrågan. Du är nu officiellt en Labyoker! ",
-"index.register.subjectadmin": "Labyoke - registreringsförfrågan",
-"index.register.subject": "Labyoke - registreringsförfrågan under granskning",
-"index.register.body": "Tack för registrering med LabYoke. ",
-"index.register.body2": "klickar <br/><br/>Please på denna sammanlänkning för att bekräfta denna registreringsförfrågan: <br/>",
-"index.register.body1": "Tack för registrering med <span style='color: #3d9dcb; '><a href='https://team-labyoke.herokuapp.com/search'>LabYoke</a></span>. ",
-"index.register.body3": "<p> [PS: Starta",
-"index.register.body4": "några kemikalieer i dag?]",
-"index.register.body5": "Granskar din labb admin för närvarande din registrering. Please förväntar att motta en bekräftelseemail kort. Du är ett moment i väg från labyoking! ",
-"index.register.body6": "dela",
-"index.register.firstname": "<br/><br/><b>Firstnamn: </b>",
-"index.register.lastname": "<br/><b>Lastnamn: </b>",
-"index.register.email": "<br/><b>Email: </b>",
-"index.register.tel": "<br/><b>Tel: </b>"
+"index.orders.reagent": "Agens"
 
 
 
