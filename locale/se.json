@@ -333,7 +333,7 @@
 "dot.reagent": " - <b>Reagent: </b> ",
 
 
-    "shares.pop.title": "Dela? ",
+"shares.pop.title": "Dela? ",
 "shares.pop.subtitle": "<div id='actionorder' class='width: 50%; float: left; background-color: rgba (138, 109, 59, 0,55);'>OK</div><div class='exit' id='actioncancel'>Cancel</div>",
 "shares.title": "Aktie. ",
 "shares.non.title": "Delar du för närvarande inte någon agens. ",
@@ -491,7 +491,7 @@
 
 
 
-    "index.regconfirm.body": "Behas vi för att informera dig att du har varit lyckat registrerings@ Labyoke. Din labb är den <span style='coloren: #3d9dcb'> {{labbet}} </span>. ",
+"index.regconfirm.body": "Behas vi för att informera dig att du har varit lyckat registrerings@ Labyoke. Din labb är den <span style='coloren: #3d9dcb'> {{labbet}} </span>. ",
 "index.register.adminbody1": "Är en registrering oavgjord för ditt laboratorium. Här är detaljerna: ",
 "index.register.message1": "Ledset. Denna emailadress är redan i bruk. Behaga bruk olik och försök igen under. ",
 "index.register.message2": "Ledset kan du inte fortsätta. Behaga fyller ut ALLA fält och försöker igen under. ",
@@ -520,7 +520,7 @@
 "index.fulfilled.body1": "Har din beställning lyckat fullgjorts från följande inventarium: ",
 
 
-    "index.reportsMoney.param1": "Labb",
+"index.reportsMoney.param1": "Labb",
 "index.reportsMoney.param2": "Besparingar",
 "index.reportsMoney.param3": "Parametrar",
 "index.reportsMoney.param4": "Från",
@@ -540,7 +540,7 @@
 "index.reportsInsuff.param1": "Delade otillräckliga agens",
 
 
-    "index.account.to": "till",
+"index.account.to": "till",
 "index.account.name": "Namn",
 "index.account.surname": "Efternamn",
 "index.account.tel": "Telefonnummer",
@@ -551,7 +551,7 @@
 "index.account.no": "Inte",
 
 
-    "index.changepass.success": "Congrats. ",
+"index.changepass.success": "Congrats. ",
 "index.changepass.message2": "Skriver in Please ett giltigt lösenord. Försök igen under. ",
 "index.changepass.message4": "Matchar dina lösenord inte. Försök igen under. ",
 "index.changepass.message3": "Nästan där. ",
@@ -570,11 +570,11 @@
 "index.changepwd.message5": "Fanns ett fel, medan bearbeta ditt ändringslösenord. Behaga försöket igen eller lösenordet för <a href='mailto:labyoke@gmail.com?Subject=Change - {{ID}} 'den target=' _top'>kontakten us</a>. ",
 
 
-    "index.forgot.message1": "Ah. Vi har överfört dig en email redan i dag för att ändra ditt lösenord. Behaga kontrollen din inbox. ",
+"index.forgot.message1": "Ah. Vi har överfört dig en email redan i dag för att ändra ditt lösenord. Behaga kontrollen din inbox. ",
 "index.forgot.message2": "Ledset. Vi kunde inte finna ett konto med denna användarnamn. Behaga försöket igen under. ",
 "index.forgot.message3": "Ledset. Du måste skriva in din aktuella <span class='labColor'> username</span>. Behaga försöket igen under. ",
 
-    "admins.pop.title": "Admin. ",
+"admins.pop.title": "Admin. ",
 "admins.pop.subtitle": "<div id='actionorder' style='width: 50%; float: left; background-color: rgba (138, 109, 59, 0,55); ')>OK</div><divclass='exitid='actioncancel'> Cancel</div>",
 "admins.title": "Admin. ",
 "admins.subtitle": "Har din labb inte mottagit någon beställning för agens. ",
@@ -590,7 +590,7 @@
 "admins.noreagents.intro": "Laddades upp inga agens för dina labbmedlemmar. Använd <aen href='/admins'> laddar upp Reagents</a>hjälpmedlet för att ladda agens. Du ska behöva följande kolonntitelrader: <ulstyle='color: #3e9ccb; '><li>name_of_reagent</li><li>vendor</li><li>catalog_number</li><li>location</li><li>user</li></ul>",
 
 
-    "admins.none.title": "Admin-labbagens. ",
+"admins.none.title": "Admin-labbagens. ",
 "admins.none.subtitle": "Har en administratör laddat upp följande agens för dina labbmedlemmar. Om den <span class='colorinsuff fa fa-square'></span><span> för otillräckligt antal listas, behaga förnyar antalet, genom att ladda upp överträffamappen från style='marginen-bottom för ladda upp section.</span><div: 0px; marginal-överkant: 0px; marginal-lämnat: 15px; skärm: inline-kvarter; 'class='checkboxThree1'><input-style='position: evig sanning; left: -9999px; style='margin-left för class='shadow'></label><p 'för type='checkbox' id='canceltest6-' checked='checked'><label for='canceltest6': 25px; 'är >Actionen som tas som agens, i style='display otillräcklig quantities.</p></div><div class='checkboxThree1': inline-kvarter; marginal-lämnat: 15px; '><inputstyle='position: evig sanning; left: -9999px; 'type='checkbox' class='shadow'></label><pstyle='margin-left för id='canceltest7'><label for='canceltest7': 25px; '>Reagent är i tillräcklig style='display quantities.</p></div><divclass='checkboxThreepoint': inline-kvarter; marginal-lämnat: 15px; '><inputstyle='position: evig sanning; left: -9999px; style='margin-left 'för type='checkbox' id='canceltestpoint'><label for='canceltestpoint'></label><p: 25px; '>Reagent avbrutet precis och markerat som i otillräcklig quantities.</p></div>",
 "admins.radio.reagents": "Labbagens",
 "admins.radio.orders": "Beställer labbet",
@@ -607,15 +607,10 @@
 "admins.table.header.insuff": "Otillräckligt inventarium",
 "admins.table.header.cancelorder": "Annulleringsbeställning",
 
-
-
-
-    "zoom.minus": "Förminska zoomen",
+"zoom.minus": "Förminska zoomen",
 "zoom.plus": "Öka zoomen",
 "zoom.reset": "Nollställningszoom",
 
-
-    "key.title": "",
-
+"key.title": "",
 
 }
