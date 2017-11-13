@@ -271,8 +271,7 @@ html(lang='en')
       :staticCache
         script(type="text/javascript" src="/javascripts/init.js")
         script.
-          var l = '#{language}';
-          console.log("language is: " + #{language});
+          var l = '#{lang}';
           console.log("l is: " + l);
           MYLIBRARY.init([l]);
         script(type="text/javascript" src="/javascripts/popup.js")
