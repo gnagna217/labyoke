@@ -271,7 +271,7 @@ html(lang='en')
       :staticCache
         script(type="text/javascript" src="/javascripts/init.js")
         script.
-          var l = '#{lang}';
+          var l = '#{language}';
           console.log("l is: " + l);
           MYLIBRARY.init([l]);
         script(type="text/javascript" src="/javascripts/popup.js")
@@ -352,6 +352,7 @@ html(lang='en')
        script.
           var h = $(window).height() - 125;
           $(".marginbottom").css("min-height",h);
+          console.log("language: " + '#{language}');
      div(style="margin-top: 40px; background-color: #8a6d3b; position: fixed;bottom: 0;width: 100%;")
             div(style="color:white; text-align:center; font-size:11px;")="@LabYoke"
               img(src="/images/"+language+".png" alt="Language" data-toggle="tooltip" title="Language" style="width: 15px;margin-left: 9px;")
