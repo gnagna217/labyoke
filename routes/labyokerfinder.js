@@ -3304,7 +3304,7 @@ LabYokerChangeShare.prototype.fulfillShare = function(callback) {
 			body += "</div>";
 			console.log("fulfill body: " + body);
 
-			var query2 = client.query("SELECT oninsuff FROM vm2016_users where email='" + email
+			var query2 = client.query("SELECT onfill FROM vm2016_users where email='" + email
 			+ "'");
 			query2.on("row", function(row, result2) {
 				result2.addRow(row);
@@ -3342,7 +3342,7 @@ LabYokerChangeShare.prototype.fulfillShare = function(callback) {
 			body += "</div>";
 			console.log("fulfill body: " + body);
 
-			var query2 = client.query("SELECT oninsuff FROM vm2016_users where email='" + email
+			var query2 = client.query("SELECT onfill FROM vm2016_users where email='" + email
 			+ "'");
 			query2.on("row", function(row, result2) {
 				result2.addRow(row);
