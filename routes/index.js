@@ -1972,7 +1972,7 @@ totalshares = t[0].counting;
 		} else {
 			var labYokeAgents = new LabYokeAgents(req.session.email, req.session.lab, req.session.labs,req.session.labadmin,req.session.oninsuff);
 			labYokeAgents.getLabyoker(function(error, results) {
-				res.render('account', {llocaleslist:localeslist,ang:req.cookies.i18n, i18n:res, dept: req.session.dept, labname: req.session.lab, team:team, labs: req.session.labs, userDetails: results, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, labyokersurname : req.session.surname, loggedIn : true, isLoggedInAdmin: req.session.admin, title:'Account'});
+				res.render('account', {localeslist:localeslist,lang:req.cookies.i18n, i18n:res, dept: req.session.dept, labname: req.session.lab, team:team, labs: req.session.labs, userDetails: results, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, labyokersurname : req.session.surname, loggedIn : true, isLoggedInAdmin: req.session.admin, title:'Account'});
 				req.session.messages = null;
 			});
 		}
