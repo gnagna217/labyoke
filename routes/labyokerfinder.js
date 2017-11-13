@@ -3312,7 +3312,7 @@ LabYokerChangeShare.prototype.fulfillShare = function(callback) {
 			query2.on("end", function(result2) {
 				var results2 = result2.rows;
 				console.log("get user details " + results2);
-				var onfillowner = results2[0].oninsuff;
+				var onfillowner = results2[0].onfill;
 				console.log("owner: " + email + " - onfillowner: " + onfillowner);
 				var mailOptions;
 				if(onfillowner != null && parseInt(onfillowner) > 0){
@@ -3350,7 +3350,7 @@ LabYokerChangeShare.prototype.fulfillShare = function(callback) {
 			query2.on("end", function(result2) {
 				var results2 = result2.rows;
 				console.log("get user details " + results2);
-				var onfillowner = results2[0].oninsuff;
+				var onfillowner = results2[0].onfill;
 				console.log("owner: " + email + " - onfillowner: " + onfillowner);
 				var mailOptions;
 				if(onfillowner != null && parseInt(onfillowner) > 0){
