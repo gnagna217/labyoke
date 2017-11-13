@@ -128,7 +128,7 @@ bot.recognizer({
                     //break;
                 default:
                     console.log("default: " + s.match(/(hello|hi)/i));
-                    if (s.match(/(hello|hi|bonjour|bonsoir|salut)|hej/i)) {
+                    if (s.match(/(hello|hi|bonjour|bonsoir|salut|hej)/i)) {
                         intent = { score: 1.0, intent: 'HiIntent' };
                         matched = true;
                     }
@@ -191,8 +191,10 @@ var options = session.localizer.gettext(session.preferredLocale(globalocale), "b
                 var splitSearch;
                 if(globalocale == "en"){
                  splitSearch = searchText1.split(' from ');
-                } else {
+                } else if (globalocale == "fr"){
                     splitSearch = searchText1.split(' de ');
+                } else if (globalocale == "se"){
+                    splitSearch = searchText1.split(' från ');
                 }
                 if(splitSearch!=null && splitSearch.length == 2){
                 var searchText2 = splitSearch[0];
@@ -200,8 +202,10 @@ var options = session.localizer.gettext(session.preferredLocale(globalocale), "b
                 var searchText3;
                 if(globalocale == "en"){
                  searchText3 = searchText1.split(' from ')[1]
-                } else {
+                } else if (globalocale == "fr"){
                   searchText3 = searchText1.split(' de ')[1]
+                } else if (globalocale == "se"){
+                  searchText3 = searchText1.split(' från ')[1]
                 }
                 
                 console.log("searchText3: " + searchText3);
