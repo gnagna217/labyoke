@@ -423,7 +423,7 @@ function iosLight(agent,vendor,catalognumber,reqemail,location,category,qty,lab,
 
  $.getJSON("/javascripts/lang/"+browserlang+".json", function(json) {
         //console.log(json);
-        console.log("ordering now");// access the first object of the array
+        console.log("ordering now: " + json["popup.reagent"]);// access the first object of the array
         //console.log(json.data[0].number); // access the first object proprty of the array
         reagenttext = json["popup.reagent"];
         vendortext = json["popup.vendor"];
