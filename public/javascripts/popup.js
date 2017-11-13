@@ -169,7 +169,7 @@ $('.fulfill').click(function() {
   var checkedtext = "Have you fulfilled this order?";
   var uncheckedtext = "Do you want to revert this order fulfillment?";
   console.log("lang is " + langText );
-
+console.log("fulfill reagenttext: " + reagenttext);
   var agentnode = fulfill.closest('div').next('.agentid');
   var labnode = agentnode.next('.labid');
   var owneremailnode = labnode.next('.owneremailid');
