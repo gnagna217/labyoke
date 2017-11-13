@@ -3,12 +3,12 @@
     "popup.order": "Du ska just att beställa ",
     "popup.cancel.insufficient": "Önskar du att markera denna agens som otillräcklig?",
     "popup.cancel.replenish": "Önskar du att markera denna agens som fyllt på och i tillräckligt antal?",
-    "popup.reagent": "Agens",
-    "popup.vendor": "Försäljare",
-    "popup.catalog": "Katalognummer",
-    "popup.owner": "Ägare",
-    "popup.requestor": "Requestor",
-    "popup.lab": "Labb",
+    "popup.reagent": "<b>Agens</b>",
+    "popup.vendor": "<b>Försäljare</b>",
+    "popup.catalog": "<b>Katalognummer</b>",
+    "popup.owner": "<b>Ägare</b>",
+    "popup.requestor": "<b>Requestor</b>",
+    "popup.lab": "<b>Labb</b>",
     "popup.fulfill.order": "Har du fullgjort denna beställning?",
     "popup.fulfill.revert" : "Önskar du att återvända denna beställningsuppfyllelse?"
 }
