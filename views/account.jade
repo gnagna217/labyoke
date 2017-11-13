@@ -122,9 +122,10 @@ block content
                                   form(action="/changeDetails" id="changelang" method="post" class="langform" style="top: -25px; position: relative;")
                                     span(class="fa fa-sort accountlang" style="color: #8a6d3b;top: 29px; position: relative; font-size: 14pt; margin-left: 15px;z-index:-1;")
                                     select(name="selectlang" type="text" id="selectlang" class="form-control" style="border-color:#3d9dcb;margin-bottom:10px;background-color: transparent;" placeholder="")
-                                      - for(var loc in localeslist)
-                                          - var loca = localeslist[loc]
-                                      option(value=localeslist,style="font-weight:bold",selected=(selectedlang===localeslist ? "selected" : undefined))=localeslist
+                                      - var locs = localeslist.split(",");
+                                      - for(var loc in locs)
+                                          - var loca = locs[loc]
+                                          option(value=loca,style="font-weight:bold",selected=(selectedlang===loca ? "selected" : undefined))=loca
                                       option(value="en",style="font-weight:bold",selected=(selectedlang==="en" ? "selected" : undefined))= "en"
                                       option(value="fr",style="font-weight:bold",selected=(selectedlang==="fr" ? "selected" : undefined))= "fr"
                                       option(value="se",style="font-weight:bold",selected=(selectedlang==="se" ? "selected" : undefined))= "se"
