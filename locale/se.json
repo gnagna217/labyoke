@@ -333,8 +333,7 @@
 "dot.reagent": " - <b>Reagent: </b> ",
 
 "shares.pop.title": "Dela? ",
-"shares.pop.subtitle": "<div id='actionorder' class='width: 50%; float: left; background-color: rgba (138, 109, 59, 0,55);'>OK</div><div class='exit' id='actioncancel'>Cancel</div>",
-
+"shares.pop.subtitle": "<div id='actionorder' class='exit' style='width: 50%; float: left; background-color: rgba(138, 109, 59, 0.55);'')>OK</div><div class='exit' id='actioncancel'>Annullering</div>",
 
 "shares.title": "Aktie. ",
 "shares.non.title": "Delar du för närvarande inte någon agens. ",
@@ -577,7 +576,7 @@
 "index.forgot.message3": "Ledset. Du måste skriva in din aktuella <span class='labColor'> username</span>. Behaga försöket igen under. ",
 
 "admins.pop.title": "Admin. ",
-"admins.pop.subtitle": "<div id='actionorder' style='width: 50%; float: left; background-color: rgba (138, 109, 59, 0,55); ')>OK</div><divclass='exitid='actioncancel'> Cancel</div>",
+"admins.pop.subtitle": "<div id='actionorder' class='exit' style='width: 50%; float: left; background-color: rgba(138, 109, 59, 0.55);'')>OK</div><div class='exit' id='actioncancel'>Annullering</div>",
 "admins.title": "Admin. ",
 "admins.subtitle": "Har din labb inte mottagit någon beställning för agens. ",
 "admins.subtitle1": "Rättalabbbeställningar. ",
