@@ -49,7 +49,7 @@ $('.cancel').click(function() {
         ownertext = json["popup.owner"];
         requestortext = json["popup.requestor"];
         labtext = json["popup.lab"];
-    });
+//    });
 
   var cancel = $(this);
   var checked = cancel.is(':checked');
@@ -165,7 +165,7 @@ $('.cancel').click(function() {
     }
     iosLightExit();
 }
-
+});
 });
 
 $('.fulfill').click(function() {
@@ -191,7 +191,6 @@ $('.fulfill').click(function() {
         ownertext = json["popup.owner"];
         requestortext = json["popup.requestor"];
         labtext = json["popup.lab"];
-    });
 
   var fulfill = $(this);
   var checked = fulfill.is(':checked');
@@ -232,33 +231,6 @@ $('.fulfill').click(function() {
    checkedtextfull += desc;
    uncheckedtextfull += desc;
 
-/*
-  if(langText == "fr"){
-  //  checkedtextfull = "Avez-vous rempli cette commande de réactif?";
-   //uncheckedtextfull = "Voulez-vous marquer cette commande de réactif comme non-remplie?";
-  desc += "<br/><b>"+reagenttext+":</b> " + agentval;
-   desc += "<br/><b>"+vendortext+":</b> " + vendorval;
-   desc += "<br/><b>"+catalognumbertext+":</b> " + catalogval;
-   desc += "<br/><b>"+ownertext+":</b> " + owneremailval;
-   desc += "<br/><b>"+requestortext+":</b> " + requestorval;
-   desc += "<br/><b>"+labtext+":</b> " + labval;
-   checkedtextfull += desc;
-   uncheckedtextfull += desc;
-  }
-
-  if(langText == "se"){
-   // checkedtextfull = "Har du fullgjort denna beställning? ";
-   //uncheckedtextfull = "Önskar du att återvända denna beställningsuppfyllelse?";
-  desc += "<br/><b>"+reagenttext+":</b> " + agentval;
-   desc += "<br/><b>"+vendortext+":</b> " + vendorval;
-   desc += "<br/><b>"+catalognumbertext+":</b> " + catalogval;
-   desc += "<br/><b>"+ownertext+":</b> " + owneremailval;
-   desc += "<br/><b>"+requestortext+":</b> " + requestorval;
-   desc += "<br/><b>"+labtext+":</b> " + labval;
-   checkedtextfull += desc;
-   uncheckedtextfull += desc;
-  }
-*/
   console.log("checkedtext is " + checkedtextfull );
   console.log("uncheckedtext is " + uncheckedtextfull );
 
@@ -295,7 +267,7 @@ $('.fulfill').click(function() {
     }
     iosLightExit();
 }
-
+});
 });
 
 function materialLight(){
@@ -457,7 +429,7 @@ function iosLight(agent,vendor,catalognumber,reqemail,location,category,qty,lab,
         vendortext = json["popup.vendor"];
         catalognumbertext = json["popup.catalog"];
         ordertext = json["popup.order"];
-    });
+//    });
 
   qtyform.value = qty;
   labform.value = lab;
@@ -475,6 +447,7 @@ function iosLight(agent,vendor,catalognumber,reqemail,location,category,qty,lab,
   var shade = document.getElementById("shade");
   shade.style.display = "block";
   actionorder.onclick = function(){iosLightOrder(reqemail)};
+  });
 }
 
 function iosLightOrder(email){
