@@ -10,8 +10,12 @@ var shadelight = document.getElementById("shade-light");
   var ownertext = "Owner";
   var requestortext = "Requestor";
   var labtext = "Lab";
-  var langText = document.getElementById("langText").innerHTML;
-
+  var langText = "en";
+  console.log("langtext: " + document.getElementById("langText"));
+  if(document.getElementById("langText") != undefined){
+    langText = document.getElementById("langText").innerHTML;
+  }
+  console.log("langtext: " + langText);
 
  $.getJSON("/javascripts/lang/"+langText+".json", function(json) {
         //console.log(json);
