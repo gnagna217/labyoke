@@ -1952,6 +1952,10 @@ totalshares = t[0].counting;
 		console.log("account labs: " + req.session.labs);
 		console.log("account lab: " + req.session.lab);
         console.log("locales: " + localeslist);
+        for(var loc in localeslist){
+        var loca = localeslist[loc];
+        console.log("loc: " + loca);
+        }
 		var labyokerTeam = new LabyokerTeam(req.session.lab);
 		labyokerTeam.getTeam(function(error, team) {
 		if(req.session.labs == undefined){
