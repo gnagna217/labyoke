@@ -1,5 +1,36 @@
+
 var shade = document.getElementById("shade");
 var shadelight = document.getElementById("shade-light");
+
+  var checkedtext = "Do you want to mark this reagent as insufficient?";
+  var uncheckedtext = "Do you want to mark this reagent as replenished and in sufficient quantities?";
+  var checkedtextfull = "Have you fulfilled this order?";
+  var uncheckedtextfull = "Do you want to revert this order fulfillment?";
+  var reagenttext = "Reagent";
+  var vendortext = "Vendor";
+  var catalognumbertext = "Catalog Number";
+  var ownertext = "Owner";
+  var requestortext = "Requestor";
+  var labtext = "Lab";
+  var ordertext = "You are about to order ";
+
+  console.log("lib: " +  MYLIBRARY.getLang(0));
+
+$.getJSON("/javascripts/lang/" + MYLIBRARY.getLang(0) + ".json", function(json) {
+        //console.log(json);
+        console.log(json["popup.order"]);// access the first object of the array
+        checkedtext = json["popup.cancel.insufficient"];
+        uncheckedtext = json["popup.cancel.replenish"];
+        checkedtextfull = json["popup.fulfill.order"];
+        uncheckedtextfull = json["popup.fulfill.revert"];
+        reagenttext = json["popup.reagent"];
+        vendortext = json["popup.vendor"];
+        catalognumbertext = json["popup.catalog"];
+        ownertext = json["popup.owner"];
+        requestortext = json["popup.requestor"];
+        labtext = json["popup.lab"];
+        ordertext = json["popup.order"];
+    });
 
 $('html').click(function() {
   /*$('#nameform:visible').hide();
@@ -21,8 +52,8 @@ $('.cancel').click(function() {
   console.debug(checked);
   var orderText = document.getElementById("orderText");
   var langText = document.getElementById("langText").innerHTML;
-  var checkedtext = "Do you want to mark this reagent as insufficient?";
-  var uncheckedtext = "Do you want to mark this reagent as replenished and in sufficient quantities?";
+  //var checkedtext = "Do you want to mark this reagent as insufficient?";
+  //var uncheckedtext = "Do you want to mark this reagent as replenished and in sufficient quantities?";
   var desc = "";
   console.log("lang is " + langText );
 
@@ -46,27 +77,26 @@ $('.cancel').click(function() {
 
 
   console.log("agent: " + agentval);
-  //console.log("labval: " + labval);
   console.log("owneremailval: " + owneremailval);
   console.log("vendorval: " + vendorval);
   console.log("catalogval: " + catalogval);
   console.log("requestorval: " + requestorval);
 
-  desc += "<br/><b>Reagent:</b> " + agentval;
-   desc += "<br/><b>Vendor:</b> " + vendorval;
-   desc += "<br/><b>Catalog Number:</b> " + catalogval;
-   desc += "<br/><b>Owner:</b> " + owneremailval;
+  desc += "<br/><b>" + reagenttext + ":</b> " + agentval;
+   desc += "<br/><b>" + vendortext + ":</b> " + vendorval;
+   desc += "<br/><b>" + catalognumbertext + ":</b> " + catalogval;
+   desc += "<br/><b>" + ownertext + ":</b> " + owneremailval;
       if(selfnode.length > 0){
     selfval = selfnode.val();
   }  
    if(requestornode.length > 0 && selfval == "self"){
     requestorval = requestornode.val();
-    desc += "<br/><b>Requestor:</b> " + requestorval;
+    desc += "<br/><b>" + requestortext + ":</b> " + requestorval;
   }  
-   checkedtext += desc;
-   uncheckedtext += desc;
+   var displaycheckedtext = checkedtext + desc;
+   var displayuncheckedtext = uncheckedtext + desc;
 
-  if(langText == "fr"){
+  /*if(langText == "fr"){
     checkedtext = "Voulez-vous marquer ce réactif comme insuffisant?";
    uncheckedtext = "Voulez-vous marquer ce réactif comme réapprovisioné et en quantité suffisante?";
   desc = "<br/><b>Réactif:</b> " + agentval;
@@ -92,13 +122,13 @@ $('.cancel').click(function() {
   }
    checkedtext += desc;
    uncheckedtext += desc;
-  }
-  console.log("checkedtext is " + checkedtext );
-  console.log("uncheckedtext is " + uncheckedtext );
+  }*/
+  console.log("displaycheckedtext is " + displaycheckedtext );
+  console.log("displayuncheckedtext is " + displayuncheckedtext );
   if(checked){
-    orderText.innerHTML = checkedtext;
+    orderText.innerHTML = displaycheckedtext;
   } else {
-    orderText.innerHTML = uncheckedtext;
+    orderText.innerHTML = displayuncheckedtext;
   }
   var pop = document.getElementById("ios-light");
   pop.style.display = "block";
@@ -135,9 +165,8 @@ $('.fulfill').click(function() {
   var orderText = document.getElementById("orderText");
   var langText = document.getElementById("langText").innerHTML;
   var desc = "";
-  var checkedtext = "Have you fulfilled this order?";
-  var uncheckedtext = "Do you want to revert this order fulfillment?";
-  console.log("lang is " + langText );
+  //var checkedtext = "Have you fulfilled this order?";
+  //var uncheckedtext = "Do you want to revert this order fulfillment?";
 
   var agentnode = fulfill.closest('div').next('.agentid');
   var labnode = agentnode.next('.labid');
@@ -145,6 +174,9 @@ $('.fulfill').click(function() {
   var vendornode = owneremailnode.next('.vendorid');
   var catalognode = vendornode.next('.catalogid');
   var requestornode = catalognode.next('.requestorid');
+
+  console.log("lang is " + langText );
+  console.log("fulfill reagenttext: " + reagenttext);
 
   var agentval = agentnode.val();
   var labval = labnode.val();
@@ -159,17 +191,21 @@ $('.fulfill').click(function() {
   console.log("vendorval: " + vendorval);
   console.log("catalogval: " + catalogval);
   console.log("requestorval: " + requestorval);
+  console.log("checkedtextfull0: " + checkedtextfull);
+  console.log("uncheckedtextfull0: " + uncheckedtextfull);
 
-  desc += "<br/><b>Reagent:</b> " + agentval;
-   desc += "<br/><b>Vendor:</b> " + vendorval;
-   desc += "<br/><b>Catalog Number:</b> " + catalogval;
-   desc += "<br/><b>Owner:</b> " + owneremailval;
-   desc += "<br/><b>Requestor:</b> " + requestorval;
-   desc += "<br/><b>Lab:</b> " + labval;
-   checkedtext += desc;
-   uncheckedtext += desc;
+  desc += "<br/><b>" + reagenttext + ":</b> " + agentval;
+   desc += "<br/><b>" + vendortext + ":</b> " + vendorval;
+   desc += "<br/><b>" + catalognumbertext + ":</b> " + catalogval;
+   desc += "<br/><b>" + ownertext + ":</b> " + owneremailval;
+   desc += "<br/><b>" + requestortext + ":</b> " + requestorval;
+   desc += "<br/><b>" + labtext + ":</b> " + labval;
+   var displaycheckedtextfull = checkedtextfull + desc;
+   var displayuncheckedtextfull = uncheckedtextfull + desc;
+   console.log("checkedtextfull1: " + displaycheckedtextfull);
+   console.log("uncheckedtextfull1: " + displayuncheckedtextfull);
 
-  if(langText == "fr"){
+  /*if(langText == "fr"){
     checkedtext = "Avez-vous rempli cette commande de réactif?";
    uncheckedtext = "Voulez-vous marquer cette commande de réactif comme non-remplie?";
    desc = "<br/><b>Réactif:</b> " + agentval;
@@ -193,16 +229,16 @@ $('.fulfill').click(function() {
    desc += "<br/><b>Labo:</b> " + labval;
    checkedtext += desc;
    uncheckedtext += desc;
-  }
-  console.log("checkedtext is " + checkedtext );
-  console.log("uncheckedtext is " + uncheckedtext );
+  }*/
+  console.log("checkedtext is " + displaycheckedtextfull );
+  console.log("uncheckedtext is " + displayuncheckedtextfull );
 
 
 
   if(checked){
-    orderText.innerHTML = checkedtext;
+    orderText.innerHTML = displaycheckedtextfull;
   } else {
-    orderText.innerHTML = uncheckedtext;
+    orderText.innerHTML = displayuncheckedtextfull;
   }
   var pop = document.getElementById("ios-light");
   pop.style.display = "block";
@@ -386,13 +422,13 @@ function iosLight(agent,vendor,catalognumber,reqemail,location,category,qty,lab,
 
   qtyform.value = qty;
   labform.value = lab;
-  var trans = "You are about to order <br/>Reagent: " + agent + "<br/>Vendor: "+vendor+"<br/>Catalog#: "+catalognumber;
-  if(browserlang == "fr"){
+  var trans = ordertext + "<br/><b>" + reagenttext + ":</b> " + agent + "<br/><b>" + vendortext + ":</b> "+vendor+"<br/><b>" + catalognumbertext + ":</b> "+catalognumber;
+  /*if(browserlang == "fr"){
     trans = "Vous êtes sur le point de commander <br/>Réactif: " + agent + "<br/>Vendeur: "+vendor+"<br/>Catalogue: "+catalognumber;
   }
   if(browserlang == "se"){
     trans = "Du ska just att beställa <br/>Agens: " + agent + "<br/>Försäljare: "+vendor+"<br/>Katalog: "+catalognumber;
-  }
+  }*/
   orderText.innerHTML = trans;
   var pop = document.getElementById("ios-light");
   pop.style.display = "block";
