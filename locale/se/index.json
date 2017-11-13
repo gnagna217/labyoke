@@ -1,17 +1,17 @@
 {
-"bot.confused": "Sade du: **%s**. Försöket som frågar för **hjälp** eller ***reagent*** för beställning eller **avbryt *reagent* från *email***",
+"bot.confused": "Sade du: **%s**. Försöket som frågar för **hjälp** eller ***reagens*** för beställning eller **avbryt *reagens* från *email***",
 "bot.cancel": "Absolut, avbryter jag din beställning nu. ",
 
 
 "bot.order": "Absolut! Låt oss sätta den tillsammans…",
 "bot.Order.title": "Beställning",
 "bot.Order.subtitle": "Bekräftar Please denna beställning: ",
-"bot.order.reagent": "Agens",
+"bot.order.reagent": "Reagens",
 "bot.order.email": "Email",
 "bot.order.vendor": "Försäljare",
 "bot.order.catalognumber": "Katalognummer",
 "bot.order.button": "Ja",
-"bot.order.invalidsearch": "Skrev in du ett ogiltigt agensnyckelord. Behaga försöket igen och skriv in: ***reagent*** för beställning. ",
+"bot.order.invalidsearch": "Skrev in du ett ogiltigt agensnyckelord. Behaga försöket igen och skriv in: ***reagens*** för beställning. ",
 "bot.order.noresults": "Finns det några tillgängliga agens för ditt beställningsförsök av **%s**. ",
 
 
@@ -27,13 +27,13 @@
 
 "bot.Cancel.title": "Annulleringsbeställning",
 "bot.Cancel.subtitle": "Bekräftar Please denna annullering: ",
-"bot.cancel.invalidsearch": "Skrev in du ogiltiga annulleringsnyckelord. Behaga försöket igen och skriv in: **Avbryt *reagent* från *email***. ",
+"bot.cancel.invalidsearch": "Skrev in du ogiltiga annulleringsnyckelord. Behaga försöket igen och skriv in: **Avbryt *reagens* från *email***. ",
 "bot.cancel.noresults": "Ledset kunde jag inte finna någon agens för att avbryta för: **%s**. ",
 "bot.cancelsuccessful": "Har din beställning lyckat avbrutits. En bekräftelseemail har överförts till requestoren. ",
 "bot.cancelnotsuccessful": "Fanns det en fråga, medan jag försökte att avbryta beställningen. Behaga försöket igen. ",
 
 
-"bot.greet": "Hello där! Mitt namn är professor L! Vad kan jag hjälpa dig med? Försök som frågar för **hjälp** eller **beställa *reagent*** eller ***reagent* för *annulleringsbeställning* från *email***."
+"bot.greet": "Hello där! Mitt namn är professor L! Vad kan jag hjälpa dig med? Försök som frågar för **hjälp** eller **beställa *reagens*** eller ***reagens* för *annulleringsbeställning* från *email***."
 
 
 }
