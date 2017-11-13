@@ -1948,6 +1948,7 @@ totalshares = t[0].counting;
 		console.log("inside accounnt: " + req.session.email);
 		console.log("account labs: " + req.session.labs);
 		console.log("account lab: " + req.session.lab);
+        console.log("locales: " + res.locales);
 		var labyokerTeam = new LabyokerTeam(req.session.lab);
 		labyokerTeam.getTeam(function(error, team) {
 		if(req.session.labs == undefined){
