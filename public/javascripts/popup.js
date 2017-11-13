@@ -433,7 +433,7 @@ function iosLight(agent,vendor,catalognumber,reqemail,location,category,qty,lab,
 
   qtyform.value = qty;
   labform.value = lab;
-  var trans = ordertext + "<br/>" + reagenttext + ": " + agent + "<br/>" + vendortext + ": "+vendor+"<br/>" + catalognumbertext + ": "+catalognumber;
+  var trans = ordertext + "<br/><b>" + reagenttext + ":</b> " + agent + "<br/><b>" + vendortext + ":</b> "+vendor+"<br/><b>" + catalognumbertext + ":</b> "+catalognumber;
   /*if(browserlang == "fr"){
     trans = "Vous êtes sur le point de commander <br/>Réactif: " + agent + "<br/>Vendeur: "+vendor+"<br/>Catalogue: "+catalognumber;
   }
