@@ -10,6 +10,23 @@ var shadelight = document.getElementById("shade-light");
   var ownertext = "Owner";
   var requestortext = "Requestor";
   var labtext = "Lab";
+
+$('html').click(function() {
+  /*$('#nameform:visible').hide();
+  if($('#nameform:hidden')){
+    $('#name:hidden').show();
+    $('#changename:visible').hide();
+    $('#pencilname:hidden').show();
+  }*/
+ /* $('#nameform').size()
+  if($('#nameform') && $('#nameform').){
+    alert();
+  }*/
+});
+
+
+$('.cancel').click(function() {
+
   var langText = "en";
   console.log("langtext: " + document.getElementById("langText"));
   if(document.getElementById("langText") != undefined){
@@ -33,21 +50,6 @@ var shadelight = document.getElementById("shade-light");
         labtext = json["popup.lab"];
     });
 
-$('html').click(function() {
-  /*$('#nameform:visible').hide();
-  if($('#nameform:hidden')){
-    $('#name:hidden').show();
-    $('#changename:visible').hide();
-    $('#pencilname:hidden').show();
-  }*/
- /* $('#nameform').size()
-  if($('#nameform') && $('#nameform').){
-    alert();
-  }*/
-});
-
-
-$('.cancel').click(function() {
   var cancel = $(this);
   var checked = cancel.is(':checked');
   console.log("checked is: " + checked);
@@ -163,6 +165,30 @@ $('.cancel').click(function() {
 });
 
 $('.fulfill').click(function() {
+
+    var langText = "en";
+  console.log("langtext: " + document.getElementById("langText"));
+  if(document.getElementById("langText") != undefined){
+    langText = document.getElementById("langText").innerHTML;
+  }
+  console.log("langtext: " + langText);
+
+ $.getJSON("/javascripts/lang/"+langText+".json", function(json) {
+        //console.log(json);
+        console.log(json["popup.order"]);// access the first object of the array
+        //console.log(json.data[0].number); // access the first object proprty of the array
+        checkedtext = json["popup.cancel.insufficient"];
+        uncheckedtext = json["popup.cancel.replenish"];
+        checkedtextfull = json["popup.fulfill.order"];
+        uncheckedtextfull = json["popup.fulfill.revert"];
+        reagenttext = json["popup.reagent"];
+        vendortext = json["popup.vendor"];
+        catalognumbertext = json["popup.catalog"];
+        ownertext = json["popup.owner"];
+        requestortext = json["popup.requestor"];
+        labtext = json["popup.lab"];
+    });
+ 
   var fulfill = $(this);
   var checked = fulfill.is(':checked');
   var orderText = document.getElementById("orderText");
