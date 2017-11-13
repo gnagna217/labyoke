@@ -27,6 +27,9 @@ var router = express.Router();
 var multer = require('multer');
 var xlstojson = require("xls-to-json-lc");
 var xlsxtojson = require("xlsx-to-json-lc");
+
+var localeslist = ["en","fr","se"];
+
 var globalocale = "en";
 var globalemail = "";
 var globalabadmin = "";
@@ -1948,7 +1951,7 @@ totalshares = t[0].counting;
 		console.log("inside accounnt: " + req.session.email);
 		console.log("account labs: " + req.session.labs);
 		console.log("account lab: " + req.session.lab);
-        console.log("locales: " + res.locales);
+        console.log("locales: " + localeslist);
 		var labyokerTeam = new LabyokerTeam(req.session.lab);
 		labyokerTeam.getTeam(function(error, team) {
 		if(req.session.labs == undefined){
@@ -1958,14 +1961,14 @@ totalshares = t[0].counting;
 				console.log("load labs in account : " + labs);
 				var labYokeAgents = new LabYokeAgents(req.session.email, req.session.lab, req.session.labs,req.session.labadmin,req.session.oninsuff);
 				labYokeAgents.getLabyoker(function(error, results) {
-					res.render('account', {lang:req.cookies.i18n, i18n:res, dept: req.session.dept, labname: req.session.lab, team:team, labs: req.session.labs, userDetails: results, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, labyokersurname : req.session.surname, loggedIn : true, isLoggedInAdmin: req.session.admin, title:'Account'});
+					res.render('account', {localeslist:localeslist,lang:req.cookies.i18n, i18n:res, dept: req.session.dept, labname: req.session.lab, team:team, labs: req.session.labs, userDetails: results, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, labyokersurname : req.session.surname, loggedIn : true, isLoggedInAdmin: req.session.admin, title:'Account'});
 					req.session.messages = null;
 				});
 			});
 		} else {
 			var labYokeAgents = new LabYokeAgents(req.session.email, req.session.lab, req.session.labs,req.session.labadmin,req.session.oninsuff);
 			labYokeAgents.getLabyoker(function(error, results) {
-				res.render('account', {lang:req.cookies.i18n, i18n:res, dept: req.session.dept, labname: req.session.lab, team:team, labs: req.session.labs, userDetails: results, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, labyokersurname : req.session.surname, loggedIn : true, isLoggedInAdmin: req.session.admin, title:'Account'});
+				res.render('account', {llocaleslist:localeslist,ang:req.cookies.i18n, i18n:res, dept: req.session.dept, labname: req.session.lab, team:team, labs: req.session.labs, userDetails: results, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, labyokersurname : req.session.surname, loggedIn : true, isLoggedInAdmin: req.session.admin, title:'Account'});
 				req.session.messages = null;
 			});
 		}
