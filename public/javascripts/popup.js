@@ -166,8 +166,8 @@ $('.fulfill').click(function() {
   var orderText = document.getElementById("orderText");
   var langText = document.getElementById("langText").innerHTML;
   var desc = "";
-  var checkedtext = "Have you fulfilled this order?";
-  var uncheckedtext = "Do you want to revert this order fulfillment?";
+  //var checkedtext = "Have you fulfilled this order?";
+  //var uncheckedtext = "Do you want to revert this order fulfillment?";
 
   var agentnode = fulfill.closest('div').next('.agentid');
   var labnode = agentnode.next('.labid');
@@ -199,8 +199,8 @@ $('.fulfill').click(function() {
    desc += "<br/><b>" + ownertext + ":</b> " + owneremailval;
    desc += "<br/><b>" + requestortext + ":</b> " + requestorval;
    desc += "<br/><b>" + labtext + ":</b> " + labval;
-   checkedtext += desc;
-   uncheckedtext += desc;
+   checkedtextfull += desc;
+   uncheckedtextfull += desc;
 
   /*if(langText == "fr"){
     checkedtext = "Avez-vous rempli cette commande de réactif?";
@@ -227,15 +227,15 @@ $('.fulfill').click(function() {
    checkedtext += desc;
    uncheckedtext += desc;
   }*/
-  console.log("checkedtext is " + checkedtext );
-  console.log("uncheckedtext is " + uncheckedtext );
+  console.log("checkedtext is " + checkedtextfull );
+  console.log("uncheckedtext is " + uncheckedtextfull );
 
 
 
   if(checked){
-    orderText.innerHTML = checkedtext;
+    orderText.innerHTML = checkedtextfull;
   } else {
-    orderText.innerHTML = uncheckedtext;
+    orderText.innerHTML = uncheckedtextfull;
   }
   var pop = document.getElementById("ios-light");
   pop.style.display = "block";
