@@ -168,8 +168,7 @@ $('.fulfill').click(function() {
   var desc = "";
   var checkedtext = "Have you fulfilled this order?";
   var uncheckedtext = "Do you want to revert this order fulfillment?";
-  console.log("lang is " + langText );
-console.log("fulfill reagenttext: " + reagenttext);
+
   var agentnode = fulfill.closest('div').next('.agentid');
   var labnode = agentnode.next('.labid');
   var owneremailnode = labnode.next('.owneremailid');
@@ -177,6 +176,9 @@ console.log("fulfill reagenttext: " + reagenttext);
   var catalognode = vendornode.next('.catalogid');
   var requestornode = catalognode.next('.requestorid');
 
+  console.log("lang is " + langText );
+  console.log("fulfill reagenttext: " + reagenttext);
+  
   var agentval = agentnode.val();
   var labval = labnode.val();
   var owneremailval = owneremailnode.val();
