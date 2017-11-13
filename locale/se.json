@@ -2,10 +2,10 @@
 "Welcome": "Högt",
 "Language": "Språk",
 "login.hello": "Hello. ",
-"login.morning": "Bra morgon. ",
-"login.afternoon": "Bra eftermiddag. ",
-"login.evening": "Bra afton. ",
-"login.night": "Bra natt. ",
+"login.morning": "God morgon. ",
+"login.afternoon": "God eftermiddag. ",
+"login.evening": "God afton. ",
+"login.night": "God natt. ",
 "login.welcome": "Hello! Välkomnande till LabYoke. Du är ett moment i väg från att få dina chems! ",
 "login.button": "Få i",
 "login.registerLink": "Register nu",
@@ -333,7 +333,7 @@
 "dot.reagent": " - <b>Reagent: </b> ",
 
 "shares.pop.title": "Dela? ",
-"shares.pop.subtitle": "<div id='actionorder' class='exit' style='width: 50%; float: left; background-color: rgba(138, 109, 59, 0.55);'')>OK</div><div class='exit' id='actioncancel'>Annullering</div>",
+"shares.pop.subtitle": "<div id='actionorder' class='exit' style='width: 50%; float: left; background-color: rgba(138, 109, 59, 0.55);'')>Okej</div><div class='exit' id='actioncancel'>Annullering</div>",
 
 "shares.title": "Aktie. ",
 "shares.non.title": "Delar du för närvarande inte någon agens. ",
@@ -576,7 +576,7 @@
 "index.forgot.message3": "Ledset. Du måste skriva in din aktuella <span class='labColor'> username</span>. Behaga försöket igen under. ",
 
 "admins.pop.title": "Admin. ",
-"admins.pop.subtitle": "<div id='actionorder' class='exit' style='width: 50%; float: left; background-color: rgba(138, 109, 59, 0.55);'')>OK</div><div class='exit' id='actioncancel'>Annullering</div>",
+"admins.pop.subtitle": "<div id='actionorder' class='exit' style='width: 50%; float: left; background-color: rgba(138, 109, 59, 0.55);'')>Okej</div><div class='exit' id='actioncancel'>Annullering</div>",
 "admins.title": "Admin. ",
 "admins.subtitle": "Har din labb inte mottagit någon beställning för agens. ",
 "admins.subtitle1": "Rättalabbbeställningar. ",
