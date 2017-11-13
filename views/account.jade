@@ -123,10 +123,11 @@ block content
                                     span(class="fa fa-sort accountlang" style="color: #8a6d3b;top: 29px; position: relative; font-size: 14pt; margin-left: 15px;z-index:-1;")
                                     select(name="selectlang" type="text" id="selectlang" class="form-control" style="border-color:#3d9dcb;margin-bottom:10px;background-color: transparent;" placeholder="")
                                       - for(var loc in localeslist)
-                                          option(value=loc,style="font-weight:bold",selected=(selectedlang===loc ? "selected" : undefined))= loc
-                                      //option(value="en",style="font-weight:bold",selected=(selectedlang==="en" ? "selected" : undefined))= "en"
-                                      //option(value="fr",style="font-weight:bold",selected=(selectedlang==="fr" ? "selected" : undefined))= "fr"
-                                      //option(value="se",style="font-weight:bold",selected=(selectedlang==="se" ? "selected" : undefined))= "se"
+                                          - var loca = localeslist[loc]
+                                          option(value=loca,style="font-weight:bold",selected=(selectedlang===loca ? "selected" : undefined))=loca
+                                      option(value="en",style="font-weight:bold",selected=(selectedlang==="en" ? "selected" : undefined))= "en"
+                                      option(value="fr",style="font-weight:bold",selected=(selectedlang==="fr" ? "selected" : undefined))= "fr"
+                                      option(value="se",style="font-weight:bold",selected=(selectedlang==="se" ? "selected" : undefined))= "se"
                                     input(name="column" type="hidden" id="column" value="lang")
                                     input(name="valuedetail" type="hidden" id="valuedetail" value="")
                                     input(name="formemail" type="hidden" id="formemail" value=email)
