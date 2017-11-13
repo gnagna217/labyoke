@@ -1,16 +1,6 @@
 var shade = document.getElementById("shade");
 var shadelight = document.getElementById("shade-light");
-  var checkedtext = "Do you want to mark this reagent as insufficient?";
-  var uncheckedtext = "Do you want to mark this reagent as replenished and in sufficient quantities?";
-  var checkedtextfull = "Have you fulfilled this order?";
-  var uncheckedtextfull = "Do you want to revert this order fulfillment?";
-  var reagenttext = "Reagent";
-  var vendortext = "Vendor";
-  var catalognumbertext = "Catalog Number";
-  var ownertext = "Owner";
-  var requestortext = "Requestor";
-  var labtext = "Lab";
-  var ordertext = "You are about to order ";
+
 
 $('html').click(function() {
   /*$('#nameform:visible').hide();
@@ -25,40 +15,15 @@ $('html').click(function() {
   }*/
 });
 
-
 $('.cancel').click(function() {
-
-  var langText = "en";
-  console.log("langtext: " + document.getElementById("langText"));
-  if(document.getElementById("langText") != undefined){
-    langText = document.getElementById("langText").innerHTML;
-  }
-  console.log("langtext: " + langText);
-
- $.getJSON("/javascripts/lang/"+langText+".json", function(json) {
-        //console.log(json);
-        console.log(json["popup.order"]);// access the first object of the array
-        //console.log(json.data[0].number); // access the first object proprty of the array
-        checkedtext = json["popup.cancel.insufficient"];
-        uncheckedtext = json["popup.cancel.replenish"];
-        checkedtextfull = json["popup.fulfill.order"];
-        uncheckedtextfull = json["popup.fulfill.revert"];
-        reagenttext = json["popup.reagent"];
-        vendortext = json["popup.vendor"];
-        catalognumbertext = json["popup.catalog"];
-        ownertext = json["popup.owner"];
-        requestortext = json["popup.requestor"];
-        labtext = json["popup.lab"];
-//    });
-
   var cancel = $(this);
   var checked = cancel.is(':checked');
   console.log("checked is: " + checked);
   console.debug(checked);
   var orderText = document.getElementById("orderText");
   var langText = document.getElementById("langText").innerHTML;
-  //var checkedtext = "Do you want to mark this reagent as insufficient?";
-  //var uncheckedtext = "Do you want to mark this reagent as replenished and in sufficient quantities?";
+  var checkedtext = "Do you want to mark this reagent as insufficient?";
+  var uncheckedtext = "Do you want to mark this reagent as replenished and in sufficient quantities?";
   var desc = "";
   console.log("lang is " + langText );
 
@@ -88,50 +53,47 @@ $('.cancel').click(function() {
   console.log("catalogval: " + catalogval);
   console.log("requestorval: " + requestorval);
 
-  desc += "<br/><b>"+reagenttext+":</b> " + agentval;
-   desc += "<br/><b>"+vendortext+":</b> " + vendorval;
-   desc += "<br/><b>"+catalognumbertext+":</b> " + catalogval;
-   desc += "<br/><b>"+ownertext+":</b> " + owneremailval;
+  desc += "<br/><b>Reagent:</b> " + agentval;
+   desc += "<br/><b>Vendor:</b> " + vendorval;
+   desc += "<br/><b>Catalog Number:</b> " + catalogval;
+   desc += "<br/><b>Owner:</b> " + owneremailval;
       if(selfnode.length > 0){
     selfval = selfnode.val();
   }  
    if(requestornode.length > 0 && selfval == "self"){
     requestorval = requestornode.val();
-    desc += "<br/><b>"+requestortext+":</b> " + requestorval;
+    desc += "<br/><b>Requestor:</b> " + requestorval;
   }  
    checkedtext += desc;
    uncheckedtext += desc;
 
-/*
   if(langText == "fr"){
-    //checkedtext = "Voulez-vous marquer ce réactif comme insuffisant?";
-   //uncheckedtext = "Voulez-vous marquer ce réactif comme réapprovisioné et en quantité suffisante?";
-  desc += "<br/><b>"+reagenttext+":</b> " + agentval;
-   desc += "<br/><b>"+vendortext+":</b> " + vendorval;
-   desc += "<br/><b>"+catalognumbertext+":</b> " + catalogval;
-   desc += "<br/><b>"+ownertext+":</b> " + owneremailval;
+    checkedtext = "Voulez-vous marquer ce réactif comme insuffisant?";
+   uncheckedtext = "Voulez-vous marquer ce réactif comme réapprovisioné et en quantité suffisante?";
+  desc = "<br/><b>Réactif:</b> " + agentval;
+   desc += "<br/><b>Vendeur:</b> " + vendorval;
+   desc += "<br/><b>Numéro de Catalogue:</b> " + catalogval;
+   desc += "<br/><b>Proprio:</b> " + owneremailval;
   if(requestorval != ""){
-    desc += "<br/><b>"+requestortext+":</b> " + requestorval;
+    desc += "<br/><b>Demandeur:</b> " + requestorval;
   }
    checkedtext += desc;
    uncheckedtext += desc;
   }
 
   if(langText == "se"){
-    //checkedtext = "Önskar du att markera denna agens som otillräcklig?";
-   //uncheckedtext = "Önskar du att markera denna agens som fyllt på och i tillräckligt antal?";
-  desc += "<br/><b>"+reagenttext+":</b> " + agentval;
-   desc += "<br/><b>"+vendortext+":</b> " + vendorval;
-   desc += "<br/><b>"+catalognumbertext+":</b> " + catalogval;
-   desc += "<br/><b>"+ownertext+":</b> " + owneremailval;
+    checkedtext = "Önskar du att markera denna agens som otillräcklig?";
+   uncheckedtext = "Önskar du att markera denna agens som fyllt på och i tillräckligt antal?";
+  desc = "<br/><b>Agens:</b> " + agentval;
+   desc += "<br/><b>Försäljare:</b> " + vendorval;
+   desc += "<br/><b>Katalog:</b> " + catalogval;
+   desc += "<br/><b>Ägare:</b> " + owneremailval;
   if(requestorval != ""){
-    desc += "<br/><b>"+requestortext+":</b> " + requestorval;
+    desc += "<br/><b>Requestor:</b> " + requestorval;
   }
    checkedtext += desc;
    uncheckedtext += desc;
   }
-*/
-
   console.log("checkedtext is " + checkedtext );
   console.log("uncheckedtext is " + uncheckedtext );
   if(checked){
@@ -165,40 +127,17 @@ $('.cancel').click(function() {
     }
     iosLightExit();
 }
-});
+
 });
 
 $('.fulfill').click(function() {
-
-    var langText = "en";
-  console.log("langtext: " + document.getElementById("langText"));
-  if(document.getElementById("langText") != undefined){
-    langText = document.getElementById("langText").innerHTML;
-  }
-  console.log("langtext: " + langText);
-
- $.getJSON("/javascripts/lang/"+langText+".json", function(json) {
-        //console.log(json);
-        console.log(json["popup.order"]);// access the first object of the array
-        //console.log(json.data[0].number); // access the first object proprty of the array
-        checkedtext = json["popup.cancel.insufficient"];
-        uncheckedtext = json["popup.cancel.replenish"];
-        checkedtextfull = json["popup.fulfill.order"];
-        uncheckedtextfull = json["popup.fulfill.revert"];
-        reagenttext = json["popup.reagent"];
-        vendortext = json["popup.vendor"];
-        catalognumbertext = json["popup.catalog"];
-        ownertext = json["popup.owner"];
-        requestortext = json["popup.requestor"];
-        labtext = json["popup.lab"];
-
   var fulfill = $(this);
   var checked = fulfill.is(':checked');
   var orderText = document.getElementById("orderText");
   var langText = document.getElementById("langText").innerHTML;
   var desc = "";
-  //var checkedtext = "Have you fulfilled this order?";
-  //var uncheckedtext = "Do you want to revert this order fulfillment?";
+  var checkedtext = "Have you fulfilled this order?";
+  var uncheckedtext = "Do you want to revert this order fulfillment?";
   console.log("lang is " + langText );
 
   var agentnode = fulfill.closest('div').next('.agentid');
@@ -222,24 +161,49 @@ $('.fulfill').click(function() {
   console.log("catalogval: " + catalogval);
   console.log("requestorval: " + requestorval);
 
-  desc += "<br/><b>"+reagenttext+":</b> " + agentval;
-   desc += "<br/><b>"+vendortext+":</b> " + vendorval;
-   desc += "<br/><b>"+catalognumbertext+":</b> " + catalogval;
-   desc += "<br/><b>"+ownertext+":</b> " + owneremailval;
-   desc += "<br/><b>"+requestortext+":</b> " + requestorval;
-   desc += "<br/><b>"+labtext+":</b> " + labval;
-   checkedtextfull += desc;
-   uncheckedtextfull += desc;
+  desc += "<br/><b>Reagent:</b> " + agentval;
+   desc += "<br/><b>Vendor:</b> " + vendorval;
+   desc += "<br/><b>Catalog Number:</b> " + catalogval;
+   desc += "<br/><b>Owner:</b> " + owneremailval;
+   desc += "<br/><b>Requestor:</b> " + requestorval;
+   desc += "<br/><b>Lab:</b> " + labval;
+   checkedtext += desc;
+   uncheckedtext += desc;
 
-  console.log("checkedtext is " + checkedtextfull );
-  console.log("uncheckedtext is " + uncheckedtextfull );
+  if(langText == "fr"){
+    checkedtext = "Avez-vous rempli cette commande de réactif?";
+   uncheckedtext = "Voulez-vous marquer cette commande de réactif comme non-remplie?";
+   desc = "<br/><b>Réactif:</b> " + agentval;
+   desc += "<br/><b>Vendeur:</b> " + vendorval;
+   desc += "<br/><b>Numéro de Catalogue:</b> " + catalogval;
+   desc += "<br/><b>Proprio:</b> " + owneremailval;
+   desc += "<br/><b>Demandeur:</b> " + requestorval;
+   desc += "<br/><b>Labo:</b> " + labval;
+   checkedtext += desc;
+   uncheckedtext += desc;
+  }
+
+  if(langText == "se"){
+    checkedtext = "Har du fullgjort denna beställning? ";
+   uncheckedtext = "Önskar du att återvända denna beställningsuppfyllelse?";
+   desc = "<br/><b>Agens:</b> " + agentval;
+   desc += "<br/><b>Försäljare:</b> " + vendorval;
+   desc += "<br/><b>Katalog:</b> " + catalogval;
+   desc += "<br/><b>Ägare:</b> " + owneremailval;
+   desc += "<br/><b>Requestor:</b> " + requestorval;
+   desc += "<br/><b>Labo:</b> " + labval;
+   checkedtext += desc;
+   uncheckedtext += desc;
+  }
+  console.log("checkedtext is " + checkedtext );
+  console.log("uncheckedtext is " + uncheckedtext );
 
 
 
   if(checked){
-    orderText.innerHTML = checkedtextfull;
+    orderText.innerHTML = checkedtext;
   } else {
-    orderText.innerHTML = uncheckedtextfull;
+    orderText.innerHTML = uncheckedtext;
   }
   var pop = document.getElementById("ios-light");
   pop.style.display = "block";
@@ -267,7 +231,7 @@ $('.fulfill').click(function() {
     }
     iosLightExit();
 }
-});
+
 });
 
 function materialLight(){
@@ -421,33 +385,21 @@ function iosLight(agent,vendor,catalognumber,reqemail,location,category,qty,lab,
   console.log("owner language is: " + ownerlang);
   console.log("browser language is: " + browserlang);
 
- $.getJSON("/javascripts/lang/"+browserlang+".json", function(json) {
-        //console.log(json);
-        console.log("ordering now: " + json["popup.reagent"]);// access the first object of the array
-        //console.log(json.data[0].number); // access the first object proprty of the array
-        reagenttext = json["popup.reagent"];
-        vendortext = json["popup.vendor"];
-        catalognumbertext = json["popup.catalog"];
-        ordertext = json["popup.order"];
-//    });
-
   qtyform.value = qty;
   labform.value = lab;
-  var trans = ordertext + "<br/><b>" + reagenttext + ":</b> " + agent + "<br/><b>" + vendortext + ":</b> "+vendor+"<br/><b>" + catalognumbertext + ":</b> "+catalognumber;
-  /*if(browserlang == "fr"){
+  var trans = "You are about to order <br/>Reagent: " + agent + "<br/>Vendor: "+vendor+"<br/>Catalog#: "+catalognumber;
+  if(browserlang == "fr"){
     trans = "Vous êtes sur le point de commander <br/>Réactif: " + agent + "<br/>Vendeur: "+vendor+"<br/>Catalogue: "+catalognumber;
   }
   if(browserlang == "se"){
     trans = "Du ska just att beställa <br/>Agens: " + agent + "<br/>Försäljare: "+vendor+"<br/>Katalog: "+catalognumber;
   }
-  */
   orderText.innerHTML = trans;
   var pop = document.getElementById("ios-light");
   pop.style.display = "block";
   var shade = document.getElementById("shade");
   shade.style.display = "block";
   actionorder.onclick = function(){iosLightOrder(reqemail)};
-  });
 }
 
 function iosLightOrder(email){
