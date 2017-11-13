@@ -10,6 +10,7 @@ var shadelight = document.getElementById("shade-light");
   var ownertext = "Owner";
   var requestortext = "Requestor";
   var labtext = "Lab";
+  var ordertext = "You are about to order ";
 
 $('html').click(function() {
   /*$('#nameform:visible').hide();
@@ -101,6 +102,7 @@ $('.cancel').click(function() {
    checkedtext += desc;
    uncheckedtext += desc;
 
+/*
   if(langText == "fr"){
     //checkedtext = "Voulez-vous marquer ce réactif comme insuffisant?";
    //uncheckedtext = "Voulez-vous marquer ce réactif comme réapprovisioné et en quantité suffisante?";
@@ -128,6 +130,8 @@ $('.cancel').click(function() {
    checkedtext += desc;
    uncheckedtext += desc;
   }
+*/
+
   console.log("checkedtext is " + checkedtext );
   console.log("uncheckedtext is " + uncheckedtext );
   if(checked){
@@ -188,7 +192,7 @@ $('.fulfill').click(function() {
         requestortext = json["popup.requestor"];
         labtext = json["popup.lab"];
     });
- 
+
   var fulfill = $(this);
   var checked = fulfill.is(':checked');
   var orderText = document.getElementById("orderText");
@@ -228,6 +232,7 @@ $('.fulfill').click(function() {
    checkedtextfull += desc;
    uncheckedtextfull += desc;
 
+/*
   if(langText == "fr"){
   //  checkedtextfull = "Avez-vous rempli cette commande de réactif?";
    //uncheckedtextfull = "Voulez-vous marquer cette commande de réactif comme non-remplie?";
@@ -253,6 +258,7 @@ $('.fulfill').click(function() {
    checkedtextfull += desc;
    uncheckedtextfull += desc;
   }
+*/
   console.log("checkedtext is " + checkedtextfull );
   console.log("uncheckedtext is " + uncheckedtextfull );
 
@@ -443,15 +449,26 @@ function iosLight(agent,vendor,catalognumber,reqemail,location,category,qty,lab,
   console.log("owner language is: " + ownerlang);
   console.log("browser language is: " + browserlang);
 
+ $.getJSON("/javascripts/lang/"+browserlang+".json", function(json) {
+        //console.log(json);
+        console.log("ordering now");// access the first object of the array
+        //console.log(json.data[0].number); // access the first object proprty of the array
+        reagenttext = json["popup.reagent"];
+        vendortext = json["popup.vendor"];
+        catalognumbertext = json["popup.catalog"];
+        ordertext = json["popup.order"];
+    });
+
   qtyform.value = qty;
   labform.value = lab;
-  var trans = "You are about to order <br/>Reagent: " + agent + "<br/>Vendor: "+vendor+"<br/>Catalog#: "+catalognumber;
-  if(browserlang == "fr"){
+  var trans = ordertext + "<br/>" + reagenttext + ": " + agent + "<br/>" + vendortext + ": "+vendor+"<br/>" + catalognumbertext + ": "+catalognumber;
+  /*if(browserlang == "fr"){
     trans = "Vous êtes sur le point de commander <br/>Réactif: " + agent + "<br/>Vendeur: "+vendor+"<br/>Catalogue: "+catalognumber;
   }
   if(browserlang == "se"){
     trans = "Du ska just att beställa <br/>Agens: " + agent + "<br/>Försäljare: "+vendor+"<br/>Katalog: "+catalognumber;
   }
+  */
   orderText.innerHTML = trans;
   var pop = document.getElementById("ios-light");
   pop.style.display = "block";
