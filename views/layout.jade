@@ -269,6 +269,9 @@ html(lang='en')
       script(type="text/javascript" src="/javascripts/bootstrap.min.js")
      if(title=='Reagent Search' || title=='Search' || title=='Share' || title=='Orders' || title=='Admins' || title=='Account')
       :staticCache
+        script(type="text/javascript" src="/javascripts/init.js")
+        script.
+          MYLIBRARY.init(['#{language}']);
         script(type="text/javascript" src="/javascripts/popup.js")
         script(type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js")
      if(title=='Reagent Search' || title=='Search' || title=='Share' || title=='Orders' || title=='Account')

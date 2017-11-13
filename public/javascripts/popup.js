@@ -1,6 +1,36 @@
 var shade = document.getElementById("shade");
 var shadelight = document.getElementById("shade-light");
 
+  var checkedtext_ = "Do you want to mark this reagent as insufficient?";
+  var uncheckedtext_ = "Do you want to mark this reagent as replenished and in sufficient quantities?";
+  var checkedtextfull = "Have you fulfilled this order?";
+  var uncheckedtextfull = "Do you want to revert this order fulfillment?";
+  var reagenttext = "Reagent";
+  var vendortext = "Vendor";
+  var catalognumbertext = "Catalog Number";
+  var ownertext = "Owner";
+  var requestortext = "Requestor";
+  var labtext = "Lab";
+  var ordertext = "You are about to order ";
+
+  console.log("lib: " +  MYLIBRARY.getLang(0));
+
+$.getJSON("/javascripts/lang/" + MYLIBRARY.getLang(0) + ".json", function(json) {
+        //console.log(json);
+        console.log(json["popup.order"]);// access the first object of the array
+        //console.log(json.data[0].number); // access the first object proprty of the array
+        checkedtext_ = json["popup.cancel.insufficient"];
+        uncheckedtext_ = json["popup.cancel.replenish"];
+        checkedtextfull = json["popup.fulfill.order"];
+        uncheckedtextfull = json["popup.fulfill.revert"];
+        reagenttext = json["popup.reagent"];
+        vendortext = json["popup.vendor"];
+        catalognumbertext = json["popup.catalog"];
+        ownertext = json["popup.owner"];
+        requestortext = json["popup.requestor"];
+        labtext = json["popup.lab"];
+        ordertext = json["popup.order"];
+    });
 
 $('html').click(function() {
   /*$('#nameform:visible').hide();
