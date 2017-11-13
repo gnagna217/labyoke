@@ -1,8 +1,8 @@
 var shade = document.getElementById("shade");
 var shadelight = document.getElementById("shade-light");
 
-  var checkedtext_ = "Do you want to mark this reagent as insufficient?";
-  var uncheckedtext_ = "Do you want to mark this reagent as replenished and in sufficient quantities?";
+  var checkedtext = "Do you want to mark this reagent as insufficient?";
+  var uncheckedtext = "Do you want to mark this reagent as replenished and in sufficient quantities?";
   var checkedtextfull = "Have you fulfilled this order?";
   var uncheckedtextfull = "Do you want to revert this order fulfillment?";
   var reagenttext = "Reagent";
@@ -19,8 +19,8 @@ $.getJSON("/javascripts/lang/" + MYLIBRARY.getLang(0) + ".json", function(json) 
         //console.log(json);
         console.log(json["popup.order"]);// access the first object of the array
         //console.log(json.data[0].number); // access the first object proprty of the array
-        checkedtext_ = json["popup.cancel.insufficient"];
-        uncheckedtext_ = json["popup.cancel.replenish"];
+        checkedtext = json["popup.cancel.insufficient"];
+        uncheckedtext = json["popup.cancel.replenish"];
         checkedtextfull = json["popup.fulfill.order"];
         uncheckedtextfull = json["popup.fulfill.revert"];
         reagenttext = json["popup.reagent"];
@@ -52,8 +52,8 @@ $('.cancel').click(function() {
   console.debug(checked);
   var orderText = document.getElementById("orderText");
   var langText = document.getElementById("langText").innerHTML;
-  var checkedtext = "Do you want to mark this reagent as insufficient?";
-  var uncheckedtext = "Do you want to mark this reagent as replenished and in sufficient quantities?";
+  //var checkedtext = "Do you want to mark this reagent as insufficient?";
+  //var uncheckedtext = "Do you want to mark this reagent as replenished and in sufficient quantities?";
   var desc = "";
   console.log("lang is " + langText );
 
