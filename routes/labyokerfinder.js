@@ -3174,7 +3174,7 @@ LabYokerChangeShare.prototype.cancelShare = function(callback) {
 	for(var prop in labs){
 		var labsstr = (labs[prop].labname).replace(/ /g,"").toLowerCase() + "_orders ";
 	var str = "UPDATE " + labsstr + " SET insufficient=" + checked
-			+ ", insuffdate='" + datenow + "' where email='" + email + "' and date between '" + date + "' and '" + date + "' and agent='" + agent + "' and vendor='" + vendor + "' and catalognumber='" + catalognumber + "'"; //+ orderonly;
+			+ ", insuffdate='" + datenow + "' where email='" + email + "' and date between '" + date + "' and '" + date + "' and agent='" + agent + "' and vendor='" + vendor + "' and catalognumber='" + catalognumber + "'" + orderonly;
 	console.log("str: " + str);
 	var query = client.query(str);
 	query.on("row", function(row, result) {
@@ -3325,7 +3325,7 @@ LabYokerChangeShare.prototype.fulfillShare = function(callback) {
 		status = "fulfilled";
 	}
 	//var str = "select * from labs";
-		if(table != "vm2016_agentsshare"){
+if(table != "vm2016_agentsshare"){
 	var i = 0;
 	for(var prop in labs){
 		var labsstr = (labs[prop].labname).replace(/ /g,"").toLowerCase() + "_orders b ";
@@ -3435,7 +3435,7 @@ LabYokerChangeShare.prototype.fulfillShare = function(callback) {
 
 
 	var str ="UPDATE " + table + " SET status='" + status
-			+ "' where email='" + email + "' and agent='" + agent + "' and vendor='" + vendor + "' and catalognumber='" + catalognumber + "'" + orderonly;
+			+ "' where email='" + email + "' and agent='" + agent + "' and vendor='" + vendor + "' and catalognumber='" + catalognumber + "'";// + orderonly;
 	console.log("str: " + str);
 	var query = client.query(str);
 	query.on("row", function(row, result) {
