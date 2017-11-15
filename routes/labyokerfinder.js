@@ -3174,7 +3174,7 @@ LabYokerChangeShare.prototype.cancelShare = function(callback) {
 	for(var prop in labs){
 		var labsstr = (labs[prop].labname).replace(/ /g,"").toLowerCase() + "_orders ";
 	var str = "UPDATE " + labsstr + " SET insufficient=" + checked
-			+ ", insuffdate='" + datenow + "' where email='" + email + "' and date between '" + date + "' and '" + date + "' and agent='" + agent + "' and vendor='" + vendor + "' and catalognumber='" + catalognumber + "'" + orderonly;
+			+ ", insuffdate='" + datenow + "' where email='" + email + "' and date between '" + date + "' and '" + date + "' and agent='" + agent + "' and vendor='" + vendor + "' and catalognumber='" + catalognumber + "'"; //+ orderonly;
 	console.log("str: " + str);
 	var query = client.query(str);
 	query.on("row", function(row, result) {
@@ -3235,7 +3235,7 @@ i++;
 }
 } else {
 		var str = "UPDATE " + table + " SET insufficient=" + checked
-			+ ", insuffdate='" + datenow + "' where email='" + email + "' and agent='" + agent + "' and vendor='" + vendor + "' and catalognumber='" + catalognumber + "'" + orderonly;
+			+ ", insuffdate='" + datenow + "' where email='" + email + "' and agent='" + agent + "' and vendor='" + vendor + "' and catalognumber='" + catalognumber + "'"; //+ orderonly;
 	console.log("str: " + str);
 	var query = client.query(str);
 	query.on("row", function(row, result) {
@@ -3270,13 +3270,13 @@ i++;
 				var oninsuffowner = results2[0].oninsuff;
 				console.log("owner: " + email + " - oninsuffowner: " + oninsuffowner);
 				var mailOptions;
-				if(oninsuffowner != null && parseInt(oninsuffowner) > 0){
-					console.log("send email to owner as well");
-					mailOptions = new MailOptionsWithCC(requestor, subject, body, email);
-				} else{
-					console.log("send email to requestor only");
-					mailOptions = new MailOptions(requestor, subject, body);
-				}
+				//if(oninsuffowner != null && parseInt(oninsuffowner) > 0){
+				//	console.log("send email to owner as well");
+				//	mailOptions = new MailOptionsWithCC(requestor, subject, body, email);
+				//} else{
+					console.log("send email to owner only");
+					mailOptions = new MailOptions(email, subject, body);
+				//}
 				mailOptions.sendAllEmails();
 				//callback(null, results);
 			});
@@ -3475,13 +3475,13 @@ LabYokerChangeShare.prototype.fulfillShare = function(callback) {
 				var onfillowner = results2[0].onfill;
 				console.log("owner: " + email + " - onfillowner: " + onfillowner);
 				var mailOptions;
-				if(onfillowner != null && parseInt(onfillowner) > 0){
-					console.log("send email to owner as well");
-					mailOptions = new MailOptionsWithCC(requestor, subject, body, email);
-				} else{
-					console.log("send email to requestor only");
-					mailOptions = new MailOptions(requestor, subject, body);
-				}
+				//if(onfillowner != null && parseInt(onfillowner) > 0){
+				//	console.log("send email to owner as well");
+				//	mailOptions = new MailOptionsWithCC(requestor, subject, body, email);
+				//} else{
+					console.log("send email to owner only");
+					mailOptions = new MailOptions(email, subject, body);
+				//}
 				mailOptions.sendAllEmails();
 			});
 
@@ -3509,13 +3509,13 @@ LabYokerChangeShare.prototype.fulfillShare = function(callback) {
 				var onfillowner = results2[0].onfill;
 				console.log("owner: " + email + " - onfillowner: " + onfillowner);
 				var mailOptions;
-				if(onfillowner != null && parseInt(onfillowner) > 0){
-					console.log("send email to owner as well");
-					mailOptions = new MailOptionsWithCC(requestor, subject, body, email);
-				} else{
-					console.log("send email to requestor only");
-					mailOptions = new MailOptions(requestor, subject, body);
-				}
+				//if(onfillowner != null && parseInt(onfillowner) > 0){
+				//	console.log("send email to owner as well");
+				//	mailOptions = new MailOptionsWithCC(requestor, subject, body, email);
+				//} else{
+					console.log("send email to owner only");
+					mailOptions = new MailOptions(email, subject, body);
+				//}
 				mailOptions.sendAllEmails();
 			});		
 		}
