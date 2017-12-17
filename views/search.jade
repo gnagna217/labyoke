@@ -66,7 +66,7 @@ block content
                     form(action="/search" method="post" style="display: block;width: 75%;margin: 0 auto;/*padding-left: 15%; padding-right: 15%;*/ text-align: center;")
                         div(class="textentry")
                             input(type="hidden" name="searchType" value="key")
-                            input(name="searchText" list="agent-datalist"  type="text" id="searchText" class="form-control searchinput" placeholder=searchText)
+                            input(name="searchText" list="agent-datalist"  type="text" id="searchText" class="form-control form-control0 searchinput" placeholder=searchText)
                             datalist(id="agent-datalist")
                                 -var ob2 = agentsResults
                                 -for(var prop in ob2)
@@ -91,7 +91,7 @@ block content
                     form(action="/searchCatalog" method="post" style="display: block;width: 75%;margin: 0 auto;/*padding-left: 15%; padding-right: 15%; */ text-align: center;")
                         div(class="textentry")
                             input(type="hidden" name="searchType" value="catalog")
-                            input(name="searchTextCatalog" list="catalog-datalist" type="text" id="searchTextCatalog" class="form-control searchinput" placeholder=searchTextCatalog)
+                            input(name="searchTextCatalog" list="catalog-datalist" type="text" id="searchTextCatalog" class="form-control form-control0 searchinput" placeholder=searchTextCatalog)
                             datalist(id="catalog-datalist")
                                 -var ob2 = agentsResults
                                 -for(var prop in ob2)
