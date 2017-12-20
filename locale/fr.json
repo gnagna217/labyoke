@@ -154,7 +154,7 @@
     "forgot.desc2": "Oui, nous avons trouvé votre compte! Veuillez vérifier votre boîte de réception afin de modifier votre mot de passe. Ensuite, <a href='/login'>connectez-vous</a> à nouveau.",
     "forgot.fail.desc": "Oh la la...",
 
-    "reports.title": "Rapports.",
+    "reports.title": " Rapports ",
     "reports.subtitle": "En tant qu'administrateur de Laboratoire, vous êtes en mesure de générer des rapports et créer un portfolio administratif.",
     "reports.subtitle2": "Veuillez noter que les rapports ne peuvent être téléchargés qu'en utilisant un navigateur <b>Chrome ou Firefox</b>.",
     "reports.form.select": "Selectioner un Rapport",
@@ -253,7 +253,7 @@
     "reports.insuff.file": "Rapport Reactifs Insuffisants",
     "reports.insuff.file_all": "Rapport Tous Reactifs Insuffisants",
 
-    "account.title": "Salut ",
+    "account.title": " Salut ",
     "account.subtitle": "<span>Cette page </span><span style='color: #3d9dcb;'>vous</span> est dediée. <span>Si vous souhaitez modifier vos données personnelles telles que votre numéro de Téléphone. Vous pouvez également configurer vos notifications email</span>",
     "account.success": "Génial! Vous venez de modifier votre ",
     "account.admin1": "En effet! Votre Administrateur de laboratoire est ",
@@ -280,7 +280,7 @@
     "account.notify.oninsuff":"Réactif Insuffisant",
     "account.notify.onfill":"Commande Remplie",
 
-    "orders.title": "Commandes.",
+    "orders.title": " Commandes ",
     "orders.non.title": "Vous n'avez commandé aucun Réactif.",
     "orders.non.subtitle": "Cliquez sur <a href='/search'>Chercher</a><span> et commencez à labyoker!</span>",
     "orders.subdesc": "Génial! Vous avez commandé les Réactifs ci-dessous. Les commandes sont annulées <span class='colorinsuff fa fa-square'></span> si leur propriétaire est en rupture de stock. Les nouvelles commandes <span class='isnewcolor fa fa-square'></span> n'ont pas encore été remplies par l'administrateur du propriétaire réactif.",
@@ -316,7 +316,7 @@
 
     "shares.pop.title": "Partagez?",
     "shares.pop.subtitle": "<div id='actionorder' class='exit' style='width: 50%; float: left; background-color: rgba(138, 109, 59, 0.55);'')>OK</div><div class='exit' id='actioncancel'>Annuler</div>",
-    "shares.title": "Partager.",
+    "shares.title": " Partager ",
     "shares.non.title": "Vous ne partagez actuellement aucun réactif.",
     "shares.non.subtitle": "Veuillez contacter votre <a href='/account'>administrateur</a> pour réeapprovisioner votre inventaire.",
     "shares.subtitle1": "Fantastique.",
@@ -555,7 +555,7 @@
 
     "admins.pop.title": "Admin.",
     "admins.pop.subtitle": "<div id='actionorder' class='exit' style='width: 50%; float: left; background-color: rgba(138, 109, 59, 0.55);'')>OK</div><div class='exit' id='actioncancel'>Annuler</div>",
-    "admins.title":"Admin.",
+    "admins.title":" Admin ",
     "admins.subtitle":"Votre laboratoire n'a reçu aucune commande de réactifs",
     "admins.subtitle1": "Commandes Laboratoire.",
     "admins.subtitle2":"Votre laboratoire n'a aucun réactif enregistré à son actif.",

@@ -153,7 +153,7 @@
     "forgot.desc2": "Yes we indeed found your account! Please check your inbox in order to change your password. Then <a href='/login'>login</a> again.",
     "forgot.fail.desc": "Oops...",
 
-    "reports.title": "Reports.",
+    "reports.title": " Reports ",
     "reports.subtitle": "Here are the reports that an administrator can generate and build a portfolio with.",
     "reports.subtitle2": "Please note that reports can only be downloaded using <b>Chrome or Firefox</b> browsers.",
     "reports.form.select": "Select Report",
@@ -252,7 +252,7 @@
     "reports.insuff.file": "Report Insufficient Reagents",
     "reports.insuff.file_all": "Report All Insufficient Reagents",
 
-    "account.title": "Hello ",
+    "account.title": " Hello ",
     "account.subtitle": "<span>This page is dedicated to </span><span style='color: #3d9dcb;'>you. </span><span>If you wish to change your personal details such as your telephone number or names information.You can also setup email notifications.</span>",
     "account.success": "Great! You have successfully changed your ",
     "account.admin1": "Indeed! Your Lab Administrator is ",
@@ -279,7 +279,7 @@
     "account.notify.oninsuff":"Insufficient Reagent",
     "account.notify.onfill":"Fulfilled Order",
 
-    "orders.title": "Orders.",
+    "orders.title": " Orders ",
     "orders.non.title": "You have not ordered any reagent yet.",
     "orders.non.subtitle":"Click on the <a href='/search'>Search</a><span> button and start labyoking!</span>",
     "orders.subdesc": "Incredible! You have ordered the following reagents so far. Cancelled orders <span class='colorinsuff fa fa-square'></span> are listed if they cannot be fulfilled. New orders <span class='isnewcolor fa fa-square'></span> have not been fulfilled by the reagent owner's adminstrator yet.",
@@ -318,7 +318,7 @@
 
     "shares.pop.title": "Sharing?",
     "shares.pop.subtitle": "<div id='actionorder' class='exit' style='width: 50%; float: left; background-color: rgba(138, 109, 59, 0.55);'')>OK</div><div class='exit' id='actioncancel'>Cancel</div>",
-    "shares.title": "Share.",
+    "shares.title": " Share ",
     "shares.non.title": "You are currently not sharing any reagent.",
     "shares.non.subtitle": "Please contact your <a href='/account'>administrator</a> to replenish your LabYoke inventory.",
     "shares.subtitle1": "Fantastic.",
@@ -552,7 +552,7 @@
 
     "admins.pop.title": "Admin.",
     "admins.pop.subtitle": "<div id='actionorder' class='exit' style='width: 50%; float: left; background-color: rgba(138, 109, 59, 0.55);'')>OK</div><div class='exit' id='actioncancel'>Cancel</div>",
-    "admins.title":"Admin.",
+    "admins.title":" Admin ",
     "admins.subtitle":"Your lab has not received any order for reagents.",
     "admins.subtitle1": "Manage Lab Orders.",
     "admins.subtitle2":"Your lab has no reagent uploaded.",

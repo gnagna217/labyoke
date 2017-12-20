@@ -161,7 +161,7 @@
 "forgot.fail.desc": "Oops…",
 
 
-"reports.title": "Rapporter. ",
+"reports.title": " Rapporter ",
 "reports.subtitle": "Här är rapporterna att en administratör kan frambringa och bygga en portfölj med. ",
 "reports.subtitle2": "Behaga anmärkningen att rapporter kan endast nedladdas genom att använda <b>Chrome eller Firefox</b>webbläsare. ",
 "reports.form.select": "Välj rapporten",
@@ -268,7 +268,7 @@
 "reports.insuff.file_all": "Anmäla alla otillräckliga agens",
 
 
-"account.title": "Hello",
+"account.title": " Hej ",
 "account.subtitle": "är <span>Thissidan hängiven till </span><spanstyle='coloren: #3d9dcb; '>dig. </span><span>If som du önskar att ändra dina personliga detaljer liksom ditt telefonnummer eller namnger information. Du kan också ställa in emailen notifications.</span>",
 "account.success": "Utmärkt! Du har lyckat ändrat ditt",
 "account.admin1": "Sannerligen! Din labbadministratör är",
@@ -296,7 +296,7 @@
 "account.notify.onfill": "Fullgjord beställning",
 
 
-"orders.title": "Beställningar. ",
+"orders.title": " Beställningar ",
 "orders.non.title": "Har du inte beställt någon agens ännu. ",
 "orders.non.subtitle": "Klicka på den <ahref='-/search'> Search</a><span> knappen och starta labyoking! </span>",
 "orders.subdesc": "Oerhört! Du har beställt följande agens hittills. Den avbrutna <span class='colorinsuff fa fa-square'></span> för beställningar listas, om de inte kan fullgöras. Har den <span class='isnewcolorfa fa-square'></span> för nya beställningar inte fullgjorts av agensägarens adminstrator ännu. ",
@@ -337,7 +337,7 @@
 "shares.pop.title": "Dela? ",
 "shares.pop.subtitle": "<div id='actionorder' class='exit' style='width: 50%; float: left; background-color: rgba(138, 109, 59, 0.55);'')>Okej</div><div class='exit' id='actioncancel'>Annullering</div>",
 
-"shares.title": "Aktie. ",
+"shares.title": " Delar ",
 "shares.non.title": "Delar du för närvarande inte någon agens. ",
 "shares.non.subtitle": "Behaga kontakten din <ahref=/account'> administrator</a> för att fylla på ditt LabYoke inventarium. ",
 "shares.subtitle1": "Fantastiskt. ",
@@ -579,7 +579,7 @@
 
 "admins.pop.title": "Admin. ",
 "admins.pop.subtitle": "<div id='actionorder' class='exit' style='width: 50%; float: left; background-color: rgba(138, 109, 59, 0.55);'')>Okej</div><div class='exit' id='actioncancel'>Annullering</div>",
-"admins.title": "Admin. ",
+"admins.title": " Admin ",
 "admins.subtitle": "Har din labb inte mottagit någon beställning för agens. ",
 "admins.subtitle1": "Rättalabbbeställningar. ",
 "admins.subtitle2": "Har din labb ingen laddad upp agens. ",
