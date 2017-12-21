@@ -9,6 +9,11 @@
   -webkit-font-smoothing: antialiased;
 }
 
+.handle{
+  right: -60px;,left:-85px;top:25px;
+  cursor: pointer;
+}
+
 .lightyokecolor{
     color: #65acce;
 }
