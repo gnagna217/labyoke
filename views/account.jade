@@ -228,7 +228,7 @@ block content
                     span(style="text-align: center;display: block;margin: 10px;")
                       a(href="mailto:" + ob2[prop].email , style="cursor:pointer")
                         span(class="fa fa-location-arrow" id="email" style="cursor:pointer;color: #68b4d7;font-size:10pt;")
-                      span!= #{ob2[prop].name + " " + ob2[prop].surname }
+                      span #{ob2[prop].name + " " + ob2[prop].surname }
                   //tr
                    //td #{ob2[prop].name + " " + ob2[prop].surname }
                    //td #{ob2[prop].email}
