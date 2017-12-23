@@ -140,6 +140,11 @@ margin-left: 310px;width: 50px;cursor: pointer;padding-top: 55px;margin-bottom: 
     fill: white;
 }
 
+.wc-send{
+  background:none;
+  border:none;
+}
+
 .wc-textbox {
     left: 15px !important;
     right: 0px !important;
