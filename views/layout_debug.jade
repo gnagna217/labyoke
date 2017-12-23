@@ -269,6 +269,8 @@ html(lang='en')
      div(style="margin-top: 40px; background-color: #8a6d3b; position: fixed;bottom: 0;width: 100%;")
             div(style="color:white; text-align:center; font-size:11px;")="@labyoke"
               img(src="/images/"+language+"0.png" alt="Language" title="Language" style="width: 15px;margin-left: 9px;")
+     a(href="#0" class="cd-top" title="go to top")
+      span(class="fa fa-chevron-circle-up")
     script.
         BotChat.App({
         directLine: { secret: "jMO0wtNhTWM.cwA.rqg._IWRYZZ7OsyoD0F6JfuPEDOnw6SP48-pAnIRptYH3mE" },
@@ -374,6 +376,34 @@ html(lang='en')
               }
               console.log("navpl width: " + w);
               console.log("============================");
+
+
+            // browser window scroll (in pixels) after which the "back to top" link is shown
+            var offset = 300,
+              //browser window scroll (in pixels) after which the "back to top" link opacity is reduced
+              offset_opacity = 1200,
+              //duration of the top scrolling animation (in ms)
+              scroll_top_duration = 700,
+              //grab the "back to top" link
+              $back_to_top = $('.cd-top');
+
+            //hide or show the "back to top" link
+            $(window).scroll(function(){
+              ( $(this).scrollTop() > offset ) ? $back_to_top.addClass('cd-is-visible') : $back_to_top.removeClass('cd-is-visible cd-fade-out');
+              if( $(this).scrollTop() > offset_opacity ) { 
+                $back_to_top.addClass('cd-fade-out');
+              }
+            });
+
+            //smooth scroll to top
+            $back_to_top.on('click', function(event){
+              event.preventDefault();
+              $('body,html').animate({
+                scrollTop: 0 ,
+                }, scroll_top_duration
+              );
+            });
+
           });
           $( window ).resize(function() {
             if($("#bubblenum1") != null && $("#bubblenum1").size() > 0){
