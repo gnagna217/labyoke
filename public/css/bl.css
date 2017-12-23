@@ -4400,7 +4400,7 @@ margin-top:0px;
   font-size: 50pt !important;
 }
 .myteammember{
-  width:50%;
+  width:30%;
   margin-right:0px;
 }
 .helpcamera{
@@ -4964,7 +4964,9 @@ span.num.greatherthanninetynine {
 
 
  @media (max-width: 440px) {
-
+.myteammember {
+    width: 50%;
+}
 #reporttitle {
     font-size: 18pt !important;
 }
