@@ -25,6 +25,10 @@
     -moz-transition: opacity .3s 0s, visibility 0s 0s;
     transition: opacity .3s 0s, visibility 0s 0s;
 }
+
+.cd-top:hover {
+    color: #2a74b4 !important;
+}
 @media only screen and (min-width: 1024px)
 .cd-top {
     height: 60px;
