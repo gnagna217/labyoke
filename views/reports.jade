@@ -479,6 +479,48 @@ block content
 								$('#reportMoney').hide();
 							}
 						}
+
+
+						var checkedstrMoney = "#{checkedstrMoney}";
+					if(checkedstrMoney == "true"){
+						console.log("section checkedstrMoney");
+						$('.containerreport').hide();
+						$('#reportShares').hide();
+						$('#reportMoney').show();
+						$('#reportOrders').hide();
+						$('#reportInsuff').hide();
+						$(window).scrollTop($('#reportMoney').offset().top - 100).scrollLeft($('#reportMoney').offset().left);
+						}
+					var checkedstrOrders = "#{checkedstrOrders}";
+					if(checkedstrOrders == "true"){
+						console.log("section checkedstrOrders");
+						$('.containerreport').hide();
+						$('#reportShares').hide();
+						$('#reportMoney').hide();
+						$('#reportOrders').show();
+						$('#reportInsuff').hide();
+						$(window).scrollTop($('#reportOrders').offset().top - 100).scrollLeft($('#reportOrders').offset().left);
+						}
+					var checkedstrShares = "#{checkedstrShares}";
+					if(checkedstrShares == "true"){
+						console.log("section checkedstrShares");
+						$('.containerreport').hide();
+						$('#reportShares').show();
+						$('#reportMoney').hide();
+						$('#reportOrders').hide();
+						$('#reportInsuff').hide();
+						$(window).scrollTop($('#reportShares').offset().top - 100).scrollLeft($('#reportShares').offset().left);
+						}
+					var checkedstrInsuff = "#{checkedstrInsuff}";
+					if(checkedstrInsuff == "true"){
+						console.log("section checkedstrInsuff");
+						$('.containerreport').hide();
+						$('#reportShares').hide();
+						$('#reportMoney').hide();
+						$('#reportOrders').hide();
+						$('#reportInsuff').show();
+						$(window).scrollTop($('#reportInsuff').offset().top - 100).scrollLeft($('#reportInsuff').offset().left);
+						}
 					}
 				div(class="reportSlot") &nbsp;
 				div(class="restrictreport restrictreport2")
@@ -1440,46 +1482,7 @@ block content
 				$(".containerreports").css("display", "block");
 				}
 
-					var checkedstrMoney = "#{checkedstrMoney}";
-					if(checkedstrMoney == "true"){
-						console.log("section checkedstrMoney");
-						$('.containerreport').hide();
-						$('#reportShares').hide();
-						$('#reportMoney').show();
-						$('#reportOrders').hide();
-						$('#reportInsuff').hide();
-						$(window).scrollTop($('#reportMoney').offset().top - 100).scrollLeft($('#reportMoney').offset().left);
-						}
-					var checkedstrOrders = "#{checkedstrOrders}";
-					if(checkedstrOrders == "true"){
-						console.log("section checkedstrOrders");
-						$('.containerreport').hide();
-						$('#reportShares').hide();
-						$('#reportMoney').hide();
-						$('#reportOrders').show();
-						$('#reportInsuff').hide();
-						$(window).scrollTop($('#reportOrders').offset().top - 100).scrollLeft($('#reportOrders').offset().left);
-						}
-					var checkedstrShares = "#{checkedstrShares}";
-					if(checkedstrShares == "true"){
-						console.log("section checkedstrShares");
-						$('.containerreport').hide();
-						$('#reportShares').show();
-						$('#reportMoney').hide();
-						$('#reportOrders').hide();
-						$('#reportInsuff').hide();
-						$(window).scrollTop($('#reportShares').offset().top - 100).scrollLeft($('#reportShares').offset().left);
-						}
-					var checkedstrInsuff = "#{checkedstrInsuff}";
-					if(checkedstrInsuff == "true"){
-						console.log("section checkedstrInsuff");
-						$('.containerreport').hide();
-						$('#reportShares').hide();
-						$('#reportMoney').hide();
-						$('#reportOrders').hide();
-						$('#reportInsuff').show();
-						$(window).scrollTop($('#reportInsuff').offset().top - 100).scrollLeft($('#reportInsuff').offset().left);
-						}
+					
 
 				});
 				
