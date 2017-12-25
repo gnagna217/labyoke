@@ -407,6 +407,7 @@ block content
 						$('#reportShares').hide();
 						$('#reportOrders').hide();
 						$('#reportInsuff').hide();
+						$(window).scrollTop($('#reportMoney').offset().top - 100).scrollLeft($('#reportMoney').offset().left);
 					} else if(eSelect.selectedIndex === 2 || $('#reportSelect').val() == 'reportOrders') {
 						console.log("resultsOrders inside");
 						$('.containerreport').hide();
@@ -414,6 +415,7 @@ block content
 						$('#reportShares').hide();
 						$('#reportMoney').hide();
 						$('#reportInsuff').hide();
+						$(window).scrollTop($('#reportOrders').offset().top - 100).scrollLeft($('#reportOrders').offset().left);
 					} else if(eSelect.selectedIndex === 3 || $('#reportSelect').val() == 'reportShares') {
 						console.log("resultsShares inside");
 						$('.containerreport').hide();
@@ -421,6 +423,7 @@ block content
 						$('#reportMoney').hide();
 						$('#reportOrders').hide();
 						$('#reportInsuff').hide();
+						$(window).scrollTop($('#reportShares').offset().top - 100).scrollLeft($('#reportShares').offset().left);
 					} else if(eSelect.selectedIndex === 4 || $('#reportSelect').val() == 'reportInsuff') {
 						console.log("resultsInsuff inside");
 						$('.containerreport').hide();
@@ -428,6 +431,7 @@ block content
 						$('#reportShares').hide();
 						$('#reportOrders').hide();
 						$('#reportMoney').hide();
+						$(window).scrollTop($('#reportInsuff').offset().top - 100).scrollLeft($('#reportInsuff').offset().left);
 					} else if(eSelect.selectedIndex === 0 || $('#reportSelect').val() == 'reportNone') {
 						console.log("result None inside");
 						$('.containerreport').show();
