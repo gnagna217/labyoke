@@ -5038,6 +5038,11 @@ span.num.greatherthanninetynine {
     width: 100%;
     margin: 0 auto;
 }
+
+.reportbutton3{
+  width: 80%;
+}
+
 .reportlabelwidth{
     width:25%;
 }
