@@ -224,37 +224,11 @@ html(lang='en')
      block content
      :staticCache
       script(type="text/javascript" src="/javascripts/bootstrap.min.js")
-     if(title=='Reagent Search' || title=='Search' || title=='Share' || title=='Orders' || title=='Admins' || title=='Account')     
-      script(type="text/javascript" src="/javascripts/init.js")
-      script.
-        var l = "#{language}";
-        console.log("l is: " + l);
-        MYLIBRARY.init([l]);
-      script(type="text/javascript" src="/javascripts/popup.js")
       :staticCache
         script(type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js")
      if(title=='Reagent Search' || title=='Search' || title=='Share' || title=='Orders' || title=='Account')
       :staticCache
         script(src="https://cdn.botframework.com/botframework-webchat/latest/botchat.js")
-      script.
-
-          $(document).ready(function() {
-          $(".sleepimg").click(function() {
-                $( "#bot" ).show();
-                $( ".awake" ).show();
-                $( ".sleep" ).hide();
-                $( "#popup1bot" ).show();
-                $(".overlaybot").css({ 'visibility' : 'visible', 'opacity' : '1' });
-                setTimeout(function() { $('.wc-shellinput').focus(); $(".wc-shellinput").attr("placeholder",'#{i18n.__("layout.bot.placeholder")}'); }, 1000);
-              });
-          
-          $(".close").click(function() {
-                $( "#bot" ).hide();
-                $( ".awake" ).hide();
-                $( ".sleep" ).show();
-                $( "#popup1bot" ).hide();
-              });
-          });
 
       div(class="labbot sleep" style="")
         span(class="fa fa-comment sleep0" style="display: block;font-size: 15pt;margin-left: 20px;color: #3e9ccb;font-weight: bold;position: initial;")
@@ -290,17 +264,55 @@ html(lang='en')
      if (title=='Reports' || title=='Account' || title=='Register' || title=='Confirm Registration' || title=='About Us' || title=='Change Password' || title=='Forgot Password' || title=='Register' || title=='Help' || title=='Orders' || (title=='Share' && !doing) || title=='Search' || title == 'Reagent Search' || title == 'Admins')
        :staticCache
         script(type="text/javascript" src="/javascripts/spinner.js")
-
-       script.
-          var h = $(window).height() - 125;
-          $(".marginbottom").css("min-height",h);
      div(style="margin-top: 40px; background-color: #8a6d3b; position: fixed;bottom: 0;width: 100%;")
             div(style="color:white; text-align:center; font-size:11px;")="@LabYoke"
               img(src="/images/"+language+".png" alt="Language" data-toggle="tooltip" title="Language" style="width: 15px;margin-left: 9px;")
      a(href="#0" class="cd-top" title="go to top")
       span(class="fa fa-chevron-circle-up")
-    :staticCache
+     :staticCache
       script(type="text/javascript" src="/js/global.js")
-
-          
-
+     if (title=='Login')
+      :staticCache      
+        script(type="text/javascript" src="/js/login-utils.js")
+     if (title=='Admins')
+      :staticCache      
+        script(type="text/javascript" src="/js/admins-utils.js")
+     if (title=='Reagent Search')
+      :staticCache      
+        script(type="text/javascript" src="/js/search-utils.js")
+     if (title=='Account')
+      :staticCache      
+        script(type="text/javascript" src="/js/account-utils.js")
+     if (title=='Register')
+      :staticCache      
+        script(type="text/javascript" src="/js/register-utils.js")
+     if (title=='Confirm Registration')
+      :staticCache      
+        script(type="text/javascript" src="/js/register-utils.js")
+     if (title=='Change Password')
+      :staticCache      
+        script(type="text/javascript" src="/js/forgot-utils.js")
+     if (title=='Forgot Password')
+      :staticCache      
+        script(type="text/javascript" src="/js/forgot-utils.js")
+     if (title=='Help')
+      :staticCache      
+        script(type="text/javascript" src="/js/help-utils.js")
+     if (title=='Orders')
+      :staticCache      
+        script(type="text/javascript" src="/js/orders-utils.js")
+     if (title=='Share')
+      :staticCache      
+        script(type="text/javascript" src="/js/shares-utils.js")
+     if (title=='Search')
+      :staticCache      
+        script(type="text/javascript" src="/js/search-utils.js")          
+     if (title=='Play')
+      :staticCache      
+        script(type="text/javascript" src="/js/play-utils.js")
+     if (title=='Pop')
+      :staticCache      
+        script(type="text/javascript" src="/js/pop-utils.js")
+     if(title=='Reagent Search' || title=='Search' || title=='Share' || title=='Orders' || title=='Admins' || title=='Account')     
+      script(type="text/javascript" src="/javascripts/init.js")
+      script(type="text/javascript" src="/javascripts/popup.js")
