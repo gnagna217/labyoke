@@ -86,62 +86,7 @@ block content
                         div(class="buttons positionbuttons", style="display: block; text-align: center;")
                             button(class="btn " + classButtonCatalog + " btn-lg btn-block btnsearch shadow" type='submit' style="margin: 0 auto;width: 278px;") #{i18n.__("search.buttoncatalog")}        
 
-          var existscatalog = "#{catalogradio}";
-          var existskey = "#{searchradio}";
-          var existssearchType = "#{searchradioType}";
-          console.log(" length catalogradio: " + existscatalog.length);
-          console.log("length searchradio: " + existskey.length);
-          if(existskey.length > 0 || existssearchType == "key"){
-            $("#keysearch").show();
-            $("#catalogsearch").hide();
-            $('input[name=search][value=keysearch]').prop('checked', 'checked');
-              console.log("existssearchType is key: "+existssearchType);
-              $("#loopkey").removeClass( "colmenu" );
-              $("#loopkey").addClass( "activecolmenu" );
-              $("#loopcatalog").removeClass( "activecolmenu" );
-              $("#loopcatalog").addClass( "colmenu" );
-          } else if(existscatalog.length > 0 || existssearchType == "catalog"){
-            $("#keysearch").hide();
-            $("#catalogsearch").show();
-            $('input[name=search][value=catalogsearch]').prop('checked', 'checked');
-              console.log("existssearchType is cat: "+existssearchType);
-              $("#loopcatalog").removeClass( "colmenu" );
-              $("#loopcatalog").addClass( "activecolmenu" );
-              $("#loopkey").removeClass( "activecolmenu" );
-              $("#loopkey").addClass( "colmenu" );
-          } else {
-            $("#keysearch").show();
-            $("#catalogsearch").hide();
-            $('input[name=search][value=keysearch]').prop('checked', 'checked');
-              $("#loopcatalog").removeClass( "activecolmenu" );
-              $("#loopcatalog").addClass( "colmenu" );
-              $("#loopkey").removeClass( "activecolmenu" );
-              $("#loopkey").addClass( "colmenu" );
-          }
-          
-          
-          $("input[name=search]").on( "change", function() {
-               var test = $(this).val();
-               if(test == "catalogsearch"){
-                  $("#keysearch").hide();
-                  $("#catalogsearch").show();
-               } else {
-                  $("#keysearch").show();
-                  $("#catalogsearch").hide();
-               }
-               
-               
-          } );
-          function radioclick() {
-              $("#keysearch").show();
-              $("#catalogsearch").hide();
-              $('input[name=search][value=keysearch]').prop('checked', 'checked');
-          }
-          function radiocatclick() {
-              $("#keysearch").hide();
-              $("#catalogsearch").show();
-              $('input[name=search][value=catalogsearch]').prop('checked', 'checked');
-          }
+
         div(class="slide-out-tip-div desktabonly", style="display:none;z-index:10;position: fixed;top: 25% !important;max-height:380px;")
             a(class="handle" href="", title='#{i18n.__("search.tip.title")}', style="right: -60px;left:-60px;")!=Content
             div(style="padding: 1px;color:white;top: -45px;position: relative;max-height: 320px;overflow: auto;")
@@ -247,7 +192,67 @@ block content
           console.log("catalogradio: " + "#{catalogradio}");
           console.log("searchradio: " + "#{searchradio}");
           console.log("searchType: " + "#{searchradioType}");
+          var existscatalog = "#{catalogradio}";
+          var existskey = "#{searchradio}";
+          var existssearchType = "#{searchradioType}";
+          console.log(" length catalogradio: " + existscatalog.length);
+          console.log("length searchradio: " + existskey.length);
+          if(existskey.length > 0 || existssearchType == "key"){
+            $("#keysearch").show();
+            $("#catalogsearch").hide();
+            $('input[name=search][value=keysearch]').prop('checked', 'checked');
+              console.log("existssearchType is key: "+existssearchType);
+              $("#loopkey").removeClass( "colmenu" );
+              $("#loopkey").addClass( "activecolmenu" );
+              $("#loopcatalog").removeClass( "activecolmenu" );
+              $("#loopcatalog").addClass( "colmenu" );
+          } else if(existscatalog.length > 0 || existssearchType == "catalog"){
+            $("#keysearch").hide();
+            $("#catalogsearch").show();
+            $('input[name=search][value=catalogsearch]').prop('checked', 'checked');
+              console.log("existssearchType is cat: "+existssearchType);
+              $("#loopcatalog").removeClass( "colmenu" );
+              $("#loopcatalog").addClass( "activecolmenu" );
+              $("#loopkey").removeClass( "activecolmenu" );
+              $("#loopkey").addClass( "colmenu" );
+          } else {
+            $("#keysearch").show();
+            $("#catalogsearch").hide();
+            $('input[name=search][value=keysearch]').prop('checked', 'checked');
+              $("#loopcatalog").removeClass( "activecolmenu" );
+              $("#loopcatalog").addClass( "colmenu" );
+              $("#loopkey").removeClass( "activecolmenu" );
+              $("#loopkey").addClass( "colmenu" );
+          }
           
+          
+          $("input[name=search]").on( "change", function() {
+               var test = $(this).val();
+               if(test == "catalogsearch"){
+                  $("#keysearch").hide();
+                  $("#catalogsearch").show();
+               } else {
+                  $("#keysearch").show();
+                  $("#catalogsearch").hide();
+               }
+               
+               
+          } );
+          function radioclick() {
+              $("#keysearch").show();
+              $("#catalogsearch").hide();
+              $('input[name=search][value=keysearch]').prop('checked', 'checked');
+          }
+          function radiocatclick() {
+              $("#keysearch").hide();
+              $("#catalogsearch").show();
+              $('input[name=search][value=catalogsearch]').prop('checked', 'checked');
+          }
+
+
+
+
+                    
                   var l = $('#ordered').offset().top;
                 if(l>100){
                   l -= 100;
