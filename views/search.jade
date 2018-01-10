@@ -262,13 +262,14 @@ block content
                 }
 
 
-
+                if($('table').length > 0){
                 var l = $('table').offset().top;
                 if(l>100){
                   l -= 100;
                 }
                 console.log("scrolling " + l);
-                $('html,body').animate({scrollTop: l}, 1000);   
+                $('html,body').animate({scrollTop: l}, 1000);
+                }   
 
 
                           $('.removecard').click(function() {
