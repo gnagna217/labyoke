@@ -224,15 +224,6 @@ html(lang='en')
      block content
      :staticCache
       script(type="text/javascript" src="/javascripts/bootstrap.min.js")
-     if(title=='Reagent Search' || title=='Search' || title=='Share' || title=='Orders' || title=='Admins' || title=='Account')     
-      script(type="text/javascript" src="/javascripts/init.js")
-      script.
-        var l = "#{language}";
-        console.log("l is: " + l);
-        MYLIBRARY.init([l]);
-      script(type="text/javascript" src="/javascripts/popup.js")
-     :staticCache
-      script(type="text/javascript" src="/javascripts/bootstrap.min.js")
       :staticCache
         script(type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js")
      if(title=='Reagent Search' || title=='Search' || title=='Share' || title=='Orders' || title=='Account')
@@ -278,7 +269,8 @@ html(lang='en')
               img(src="/images/"+language+".png" alt="Language" data-toggle="tooltip" title="Language" style="width: 15px;margin-left: 9px;")
      a(href="#0" class="cd-top" title="go to top")
       span(class="fa fa-chevron-circle-up")
-
+     script.
+      var l = "#{language}";
      if(title=='Login')
         script(type="text/javascript" src="/js/login-utils.js")
      if(title=='Admins')
@@ -306,6 +298,9 @@ html(lang='en')
      if(title=='Play')
         script(type="text/javascript" src="/js/play-utils.js")
      if(title=='Pop')
-        script(type="text/javascript" src="/js/pop-utils.js") 
+        script(type="text/javascript" src="/js/pop-utils.js")
+     if(title=='Reagent Search' || title=='Search' || title=='Share' || title=='Orders' || title=='Admins' || title=='Account')     
+        script(type="text/javascript" src="/javascripts/init.js")
+        script(type="text/javascript" src="/javascripts/popup.js")     
      :staticCache
       script(type="text/javascript" src="/js/global.js")
