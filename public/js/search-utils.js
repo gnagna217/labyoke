@@ -1,5 +1,5 @@
-        console.log("l is: " + l);
-        MYLIBRARY.init([l]);
+        console.log("l is: " + lang);
+        MYLIBRARY.init([lang]);
 
           $(document).ready(function() {
 
