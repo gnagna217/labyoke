@@ -1,10 +1,6 @@
 
           $(document).ready(function() {
 
-          	var l = "#{language}";
-        console.log("l is: " + l);
-        MYLIBRARY.init([l]);
-
           $(".sleepimg").click(function() {
                 $( "#bot" ).show();
                 $( ".awake" ).show();
@@ -23,5 +19,5 @@
 
           var h = $(window).height() - 125;
           $(".marginbottom").css("min-height",h);
-          
+
           });
