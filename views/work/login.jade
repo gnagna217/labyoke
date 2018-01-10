@@ -1,0 +1,219 @@
+extends layout
+
+block content
+    div(class="container login front containertop", style="margin-bottom:15px;display:none")
+         div(style="text-align: center;position: relative;")
+             a(href="/search", class="sunlogos")
+                img(src="/images/yoke4.png", alt="The Yoke", class="yokelogo")
+             p(style="margin-bottom: 0px;margin-right: 5px;")
+             //p(style="margin-bottom: -45px;margin-top: -2px;margin-right: 5px;")
+                //img(src="/images/arc_morning-1.png", alt="Sun",  title="Sun", class="suns", id="sun", style="width:360px")
+             - // var d = new Date();
+             - // var n = d.getHours();
+             h1(id="hour", style="font-size:30px")
+             - //if(n < 11)
+                 //h1 #{i18n.__("login.morning")}
+             - //if(n >= 11 && n <= 17)
+                 //h1 #{i18n.__("login.afternoon")}
+             - //if(n > 17)
+                 //h1 #{i18n.__("login.evening")}
+             //p(style="display:none")!= mom + " - " + n + " hours"
+             p(class="centralize") #{i18n.__("login.welcome")}
+             script.
+                var t = new Date();
+                var n = t.getHours();
+                var text = "";
+                var im = "";
+                if(n >= 6 && n < 12){
+                    text = "#{i18n.__("login.morning")}";
+                } else if(n >= 12 && n <= 17){
+                    text = "#{i18n.__("login.afternoon")}";
+                } else if(n >= 17 && n <= 20){
+                    text = "#{i18n.__("login.evening")}";
+                } else {
+                    text = "#{i18n.__("login.night")}";
+                }
+                if(n >= 6 && n < 8){
+                    im = "arc_morning-1.png";
+                } else if(n >= 8 && n < 12){
+                    im = "arc_morning-2.png";
+                } else if(n >= 12 && n < 15){
+                    im = "arc_afternoon-1.png";
+                } else if(n >= 15 && n < 17){
+                    im = "arc_afternoon-2.png";
+                } else if(n >= 17 && n < 19){
+                    im = "arc_evening-1.png";
+                } else if(n >= 19 && n < 20){
+                    im = "arc_evening-2.png";
+                } else if(n >= 20 && n < 22){
+                    im = "arc_night-1.png";
+                } else {
+                    im = "arc_night-2.png";
+                }
+                $('#hour').html(text);
+                $('#sun').attr("src","/images/" + im);
+
+                //console.log("t.getHours() = " + t.getHours());
+
+             div(id="ctl00_Div2" class="frontdiv results")
+               div
+                if message
+                    div(class="alert alert-danger-report fade in alert-dismissable alertshadow")!= message
+                form(action="/login" method="post")
+                    div(class="textentry", style="margin-top: -5px;margin-bottom: 15px;")
+                        span(class="fa fa-user" style="top: 15px;position: relative;float: right;color: rgba(138, 109, 59, 0.61);")
+                        input(name="user" type="text" id="user" class="form-control form-control0 placeholderColor" placeholder= i18n.__("login.username"))
+                    div(class="textentry",  style="margin-top: -5px;")
+                        input(name="pass" type="password" id="pass" class="form-control form-control0 placeholderColor" placeholder= i18n.__("login.password"))
+                        span(class="fa fa-key" style="top: -20px;position: relative;float: right;color: rgba(138, 109, 59, 0.61);")
+                    div(class="buttons")
+                        //input(type="submit" class="button" value="Get in")
+                        button.btn.btn-success.btn-lg.btn-block.shadow.resizebutton(type='submit') #{i18n.__("login.button")}
+                        //img(src="images/lab.png", alt="The Lab", title="Lab", style="border-width:0px; width: 50px; margin-top: -50px; float: right;")
+                div(style="max-width: 100%;margin-top: 10px;")
+                    span(class="floatleft", style="padding-bottom: 20px;")
+                        a(href="/register", style="z-index:10") #{i18n.__("login.registerLink")}
+                    span(style="float:right;padding-bottom: 20px;")
+                        a(href="/forgot", style="z-index:10") #{i18n.__("login.forgotLink")}
+        div(class="help")
+           span
+             a(href="/login?lang=se")
+                img(src="images/se.png", alt="Svenska", class="selogin")
+           span
+             a(href="/login?lang=en")
+                img(src="images/en.png", alt="English", class="enlogin")
+           a(href="/help" title="Help")
+            img(src="images/bouee5.png", alt="Help", class="bouee")
+           span
+             a(href="/login?lang=fr")
+                img(src="images/fr.png", alt="Français", class="frlogin")                
+     - if(latestshares != null && latestshares != undefined)
+        div(class="slide-out-div desktabonly lineheight", style="display:none;position: fixed;bottom: 6px;top:-75px;")
+            a(class="handle" href="last-transactions", style="right: -60px;")!=Content
+            div(style="text-align: center;padding: 1px;color:white;top: -25px;position: relative;")
+                p(style="font-weight: bold;")!= i18n.__("login.texting1")
+                p
+                    -var ob = latestshares
+                    - var i = 0
+                    -for(var prop in ob.slice(0, 3))
+                        - var n = ob[prop].agent
+                            //span(class="test2",style="color:white;")!="-|- " 
+                            span(class="test",style="color:#ddd")!= n + " "
+                            - if(prop < 2)
+                                span(class="test2", style="color:white;")!="-|- "
+    //script(type="text/javascript" src="/javascripts/assets/jquery.fittext.js")
+    //script(type="text/javascript" src="/javascripts/assets/jquery.lettering.js")
+    //script(type="text/javascript" src="/javascripts/jquery.textillate.js")
+    script.
+         $(function(){
+             $('.slide-out-div').tabSlideOut({
+                 imgpos: 75,
+                 tabHandle: '.handle',                              //class of the element that will be your tab
+                 pathToTabImage: 'images/movarrow2.gif',          //path to the image for the tab (optionaly can be set using css)
+                 imageHeight: '40px',                               //height of tab image
+                 imageWidth: '40px',                               //width of tab image    
+                 tabLocation: 'bottom',                               //side of screen where tab lives, top, right, bottom, or left
+                 speed: 300,                                        //speed of animation
+                 action: 'click',                                   //options: 'click' or 'hover', action to trigger animation
+                 topPos: 'initial',                                   //position from the top
+                 fixedPosition: false                               //options: true makes it stick(fixed position) on scroll
+             });
+         });
+    span(class="desktabonly", id="checkdisplay")
+    script.
+        $( document ).ready(function() {
+
+        var toppinglogin = sessionStorage.getItem('toppinglogin');
+        var topping = sessionStorage.getItem('topping');
+        if(toppinglogin){
+            $(".login").css("margin-top", toppinglogin + "px");
+        }
+            
+        /*if(topping){
+            sessionStorage.removeItem('topping');
+        }*/
+        $(".login").css("display", "block");
+        var h = $(window).height();
+        var wi = $(window).width();
+
+            console.log("removing topped");
+
+        $( "#user" ).focus(function() {
+          $(".fa-user").css("color","rgba(61, 157, 203, 0.78)");
+        });
+
+        $( "#user" ).focusout(function() {
+            $(".fa-user").css("color","rgba(138, 109, 59, 0.61)");
+        });
+
+        $( "#pass" ).focus(function() {
+          $(".fa-key").css("color","rgba(61, 157, 203, 0.78)");
+        });
+
+        $( "#pass" ).focusout(function() {
+            $(".fa-key").css("color","rgba(138, 109, 59, 0.61)");
+        });
+
+        var s=["images/en.png", "images/bouee5.png", "images/fr.png","images/yoke4.png", "images/movarrow2.gif","images/venn.png","images/card3_0.png","images/bouee6.png","images/cart.png","images/carthover.png","images/card.jpg","images/card2_0.jpg"];
+        imageCache.pushArray(s, function(){}, function(){});
+
+        console.log( "login document loaded" );
+            if ($("#checkdisplay").css("display") == "none" ){
+                    $('.slide-out-div').hide();
+            } else {
+                    $('.slide-out-div').show();
+            }
+            $(".handle").css("top","-75px");
+
+            
+
+            $(function(){
+                $.fn.center = function () {
+                //var topping = $('.topping').attr("title");
+
+                
+                var t = ($(window).height() - this.height() ) / 2  ;
+
+                console.log("topping after: " + topping);
+                var storedheight = sessionStorage.getItem('storedheight');
+                
+                
+                console.log("h window: " + h);
+                console.log("sup forgot: " + (topping && parseInt(topping) > 0));
+                
+                if(t>0){
+                sessionStorage.setItem('topping', t - 5);
+                sessionStorage.setItem('toppinglogin', t - 5);
+                sessionStorage.setItem('storedheight', h);
+                }
+                
+                console.log("t login: " + t);
+                console.log("height login : " + this.height());
+                console.dir(this);
+                console.log("height login 2 : " + $(".login").height());
+                if(t > 0){
+                console.log("topping login: " + topping);
+                this.css("margin-top",  t + "px");
+                this.css("-webkit-transition","all .5s ease");
+                this.css("transition","all .5s ease");
+                }
+                
+                //$('.topping').attr("title",t);
+                
+                //this.css("left", ( $(window).width() - this.width() ) / 2 + "px");
+                return this;
+                }
+
+                if(!toppinglogin && wi > 440){
+                    $(".login").center();
+                }
+
+                $(window).resize(function(){
+                    if(wi > 440){
+                        sessionStorage.removeItem('toppinglogin');
+                        $(".login").center();
+                    }
+                });
+
+            });
+        });

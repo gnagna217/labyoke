@@ -1,0 +1,615 @@
+extends layout
+
+block content
+	if !doing
+		div(id="pageloader")
+			div(class="spinner")
+				div(class="bounce1")
+				div(class="bounce2")
+				div(class="bounce3")
+	//- var shadow = ""
+	- var adminTypecheck = adminType
+	- var nobar = ""
+	- var fadesections = ""
+	- var hidefadesections = ""
+	- var uploadtext = ""
+	- var slide = "moveFromLeft"
+	- var graphdata = report_data
+	- if(doing == "upload")
+		- slide = ""
+		//- var nobar = "display:none;"
+		//- shadow = "uploadh"
+		- fadesections = "fadesections"
+		- hidefadesections = "hidefadesections"
+		- uploadtext = "uploadtext"
+
+	- var adjust = "adjustpadding"
+
+	div(id="langText", style="display:none")!= lang
+	div(id="ios-light")
+		center
+			h1= i18n.__("admins.pop.title")
+			p(id="orderText")
+			div!= i18n.__("admins.pop.subtitle")
+	div(class="shade" id="shade")
+	div(class="shade-light" id="shade-light")
+	div(class="zoomnow container login marginbottom margintop container2 botbottom " + slide)
+		div
+			a(name="upload")
+		div(class="share-container2 adjustpaddingrightandwidth2", style="float:left;")
+			h1
+				span(class="fa fa-user-plus lightyokecolor")
+				span!= i18n.__("admins.title") + " <span style='font-size: 75%;font-style: italic;'>[" + currentlabname + "] </span>"
+				span(class="fa fa-caret-right lightyokecolor animated fadeIn" style="font-size: 20pt;")
+			if(isLoggedInAdmin > 0)
+				//div(class="threepointsmobile", style=nobar)
+				- if(doing == "upload")
+					div(class="threepointsmobile", style=nobar)
+				h3(style="", class=uploadtext)
+					span(class="fa fa-upload", style="margin-right: 10px;color: #337ab7;")
+					span= i18n.__("shares.admin.title")
+				p= i18n.__("shares.admin.subtitle")
+				form(id="uploadForm", enctype="multipart/form-data", action="admins", method="post")
+					input(style="display:none", type="file" name="file",id="file", class="inputfile inputfile-1", data-multiple-caption="{count} files selected")
+					label.shadow(for="file", style="width: 50%;text-align: center;border-radius: 6px;")
+						svg(xmlns="http://www.w3.org/2000/svg", width="20", height="17", viewBox="0 0 20 17")
+							path(d="M10 0l-5.2 4.9h3.3v5.1h3.8v-5.1h3.3l-5.2-4.9zm9.3 11.5l-3.2-2.1h-2l3.4 2.6h-3.5c-.1 0-.2.1-.2.1l-.8 2.3h-6l-.8-2.2c-.1-.1-.1-.2-.2-.2h-3.6l3.4-2.6h-2l-3.2 2.1c-.4.3-.7 1-.6 1.5l.6 3.1c.1.5.7.9 1.2.9h16.3c.6 0 1.1-.4 1.3-.9l.6-3.1c.1-.5-.2-1.2-.7-1.5z")
+						span= i18n.__("shares.admin.file")
+					div(class="buttons")
+						button.btn.btn-success.btn-lg.btn-block.shadow(type="submit",value="Upload",name="submit")= i18n.__("shares.admin.button")
+						//img(src="/images/yoke5.png", class=hidefadesections + " noshowmobile992", alt="The Lab", data-toggle="tooltip",title="Lab", style="border-width:0px; width: 35px; margin-top: -67px; margin-left: 90%;")
+			if(nosuccess == "missingdata")
+				div
+					div(id="uploaderror", class="table-responsive alert alert-danger-report", style="margin-top: 25px;")
+						span(style="text-align: center")
+							h4= i18n.__("shares.admin.error5")
+				script="$(window).scrollTop($('#uploadForm').offset().top).scrollLeft($('#uploadForm').offset().left);"
+			if(nosuccess == "missingcolumn")
+				div
+					div(id="uploaderror", class="table-responsive alert alert-danger-report", style="margin-top: 25px;")
+						span(style="text-align: center")
+							h4= i18n.__("shares.admin.error6")
+				script="$(window).scrollTop($('#uploadForm').offset().top).scrollLeft($('#uploadForm').offset().left);"
+			if(nosuccess == "databaserror")
+				div
+					div(id="uploaderror", class="table-responsive alert alert-danger-report", style="margin-top: 25px;")
+						span(style="text-align: center")
+							h4= i18n.__("shares.admin.error1")
+				script="$(window).scrollTop($('#uploadForm').offset().top).scrollLeft($('#uploadForm').offset().left);"
+			if(nosuccess == "nofile")
+				div
+					div(id="uploaderror", class="table-responsive alert alert-danger-report", style="margin-top: 25px;")
+						span(style="text-align: center")
+							h4(style="padding-top: 10px;")= i18n.__("shares.admin.error2")
+				script="$(window).scrollTop($('#uploadForm').offset().top).scrollLeft($('#uploadForm').offset().left);"
+			if(nosuccess == "nodata")
+				div
+					div(id="uploaderror", class="table-responsive alert alert-danger-report", style="margin-top: 25px;")
+						span(style="text-align: center")
+							h4(style="padding-top: 10px;")= i18n.__("shares.admin.error3")
+								span(style="color: #3d9dcb;word-wrap: break-word;")=" " + spreadname
+				script="$(window).scrollTop($('#uploadForm').offset().top).scrollLeft($('#uploadForm').offset().left);"
+			if(nosuccess == "generic")
+				div
+					div(id="uploaderror", class="table-responsive alert alert-danger-report", style="margin-top: 25px;")
+						span(style="text-align: center")
+							h4(style="padding-top: 10px;")= i18n.__("shares.admin.error4")
+				script="$(window).scrollTop($('#uploadForm').offset().top).scrollLeft($('#uploadForm').offset().left);"
+			if json
+				div(id="results", class="margintop")
+					div(id="ctl00_Div2" class="row rank")
+						div(class="table-responsive")
+							span(style="text-align: center")
+								h3(style="padding-top: 10px;")= i18n.__("shares.admin.success")
+									span(style="color: #3d9dcb;word-wrap: break-word;")=" " + spreadname                   
+							table(id="rankTblload" class="table rankTbl animated fadeIn")
+								thead
+									tr(class="you info-best" style="font-weight: bold")
+										td(class="desktabonly")= 'id '
+										td(class="wrapped")!= i18n.__("shares.table.reagent")
+										td= i18n.__("shares.table.vendor")
+										td= i18n.__("shares.table.catalog")
+										td= i18n.__("shares.table.location")
+								tbody
+									-var ob = json
+									-for(var prop in ob)
+										tr
+											td(class="desktabonly") #{prop}
+											td(class="wrapped2") #{ob[prop].name_of_reagent}
+											td(class="wrapped2") #{ob[prop].vendor}
+											td(class="wrapped2") #{ob[prop].catalog_number}
+											td(class="wrapped2") #{ob[prop].location}
+							script.
+								$(document).ready(function() {
+									$('#rankTblload').DataTable({
+										iDisplayLength: 6,
+										aLengthMenu: [[6, 12, 18, -1], [6, 12, 18, "All"]],
+										language:{
+										processing: "#{i18n.__("datatable.processing")}",
+										search: "#{i18n.__("datatable.search")}",
+										lengthMenu: "#{i18n.__("datatable.lengthMenu")}",
+										info: "#{i18n.__("datatable.info")}",
+										infoEmpty: "#{i18n.__("datatable.infoEmpty")}",
+										infoFiltered: "#{i18n.__("datatable.infoFiltered")}",
+										infoPostFix: "",
+										loadingRecords: "#{i18n.__("datatable.loadingRecords")}",
+										zeroRecords: "#{i18n.__("datatable.zeroRecords")}",
+										emptyTable: "#{i18n.__("datatable.emptyTable")}",
+										paginate: {
+										first: "#{i18n.__("datatable.first")}",
+										previous: "#{i18n.__("datatable.previous")}",
+										next: "#{i18n.__("datatable.next")}",
+										last: "#{i18n.__("datatable.last")}",
+										//search: "_INPUT_",
+										searchPlaceholder: "#{i18n.__("datatable.searchplaceholder")}"
+										},
+										aria: {
+										sortAscending: "#{i18n.__("datatable.sortAscending")}",
+										sortDescending: "#{i18n.__("datatable.sortDescending")}"
+										}
+									}
+										});
+								});
+				script="$(window).scrollTop($('#uploadForm').offset().top).scrollLeft($('#uploadForm').offset().left);"
+			div(style=nobar, class="threepointssep")
+			- if(doing == "upload")
+			//div(class="threepointsmobile", style=nobar)
+			div(id="qtyComp", style="display:block;padding-top: 5px;")
+				h3
+					span(class="fa fa-bar-chart", style="margin-right: 10px;color: #337ab7;")
+					span!= i18n.__("admins.qty.title")
+				- if(report_data != null && report_data.length >0)
+					p!= i18n.__("admins.qty.subtitle")
+					div(class="ct-chart ct-perfect-fourth")
+					div(id="tooltips", class="labColor") &nbsp;
+				- if(report_data != null && report_data.length==0)
+					h5!= i18n.__("admins.qty.subtitle1")
+
+				- if(report_data != null && report_data.length >0)
+					-var ob2 = report_data
+					- var array_rows2 = []
+					- var array_values2 = ""
+					- var array_values3 = ""
+					-for(var prop in ob2)
+						- array_rows2 = array_rows2 + ob2[prop].emailinsuff + "|"
+						- array_values2 = array_values2 + ob2[prop].insuff + "|"
+						- array_values3 = array_values3 + ob2[prop].noninsuff + "|"
+					script(type="text/javascript" src="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.js")
+					script.
+						console.log("row: " + "#{array_rows2}")
+
+						console.log("val: " + "#{array_values2}")
+
+						var values3 = "#{array_values2}";
+						var values4 = "#{array_values3}";
+						var series = [];
+						var seriesinsuff = [];
+						var seriesnoninsuff = [];
+						var rows = [];
+						values3 = values3.split("|");
+						values4 = values4.split("|");
+
+						for(var prop in values3){
+						var valTransform3 = [];
+						var i = values3[prop];
+						var j = values4[prop];
+						if(j){
+							seriesnoninsuff.push(j)
+						} else {
+							seriesnoninsuff.push(0);
+						}
+						if(i){
+						valTransform3.push(i);
+						seriesinsuff.push(i);
+						} else {
+						seriesinsuff.push(0);
+						}
+						}
+						series.push(seriesinsuff);
+						series.push(seriesnoninsuff);
+
+						var rows4 = "#{array_rows2}";
+						rows4 = rows4.split("|");
+						for(var prop in rows4){
+						var i = rows4[prop];
+						if(i){
+						rows.push(i);
+						}
+						}
+
+						console.log("more rows: " + rows)
+						console.log("more series: " + series)
+						var data = {
+						labels: rows,
+						series: series
+						};
+
+						var options = {seriesBarDistance: 10,
+						axisX: { 
+						//offset: 10 
+						}, axisY: {
+						//offset: 80,labelInterpolationFnc: function(value) { return value},
+						scaleMinSpace: 15}};
+						//options = {distributeSeries: true};
+						console.log("series : " + series);
+						if(series != null && series.length > 0){
+						var chart = new Chartist.Bar('.ct-chart', data, options);
+						var addedEvents = false;
+						chart.on('draw', function() {
+						if (!addedEvents) {
+						$('.ct-chart').find('.ct-bar').on('mouseover', function() {
+						$('#tooltips').html(("#{i18n.__("dot.selected")}").replace(/&lt;/g, '<').replace(/&gt;/g, '>') + $(this).attr('ct:value'));
+						});
+
+						$('.ct-chart').find('.ct-bar').on('mouseout', function() {
+						$('#tooltips').html("&nbsp;")
+						});
+						}
+						});
+						}
+			div(style=nobar, class="threepointssep mobileonly3")
+
+		div(style="" class="share-container2 admintop " + fadesections)
+			div(class="radiosearch keysearchs", style="margin-bottom: 35px;padding-left: 30px; padding-right: 30px;")
+				div(style="float:left;")
+					input(type="radio" name="search" value="keysearch" id="keyradio")
+					label(for="keyradio", style="float: left;", onClick="radioclick()")
+						span
+							h3 #{i18n.__("admins.radio.orders")}
+					div(class="checking shadow", onClick="radioclick()", style="margin-top: 15px;")
+				div(style="/*float:right;*/", class="margincatalogradio")
+					input(type="radio" name="search" value="catalogsearch" id="catalogradio" style="margin-left: 15px;")
+					label(for="catalogradio", style="float: right;margin-right: 5px;", class="catalogradio", onClick="radiocatclick()")
+						span
+							h3 #{i18n.__("admins.radio.reagents")}
+					div(class="checkingcatalog shadow", onClick="radiocatclick()", style="top: 15px;")
+
+			div(id="table1")
+				if(myshares == "")
+					//- adjust = ""
+					span= i18n.__("admins.subtitle")
+				if(mysharesrequest != null && mysharesrequest.length>0)
+					- var output = mysharesrequest.filter(function(x){return x.status!="fulfilled" && x.insufficient !=0});
+					//h3= i18n.__("admins.subtitle1")
+					p
+						- var requestIntro = output.length + i18n.__("admins.intro5") + " <span class='isnewcolor fa fa-square'></span>"
+						- if(output.length == 0)
+							- requestIntro = i18n.__("admins.intro")
+						span!= requestIntro
+						span= i18n.__("admins.intro1")
+						- var totalrequestIntro = "" + mysharesrequest.length + i18n.__("admins.intro2")
+						- if(mysharesrequest.length == 0)
+							- totalrequestIntro = i18n.__("admins.intro3")
+						span!= totalrequestIntro + i18n.__("admins.intro4")
+					div(id="results2", class="resultsshadow")
+						div(id="ctl00_Div2" class="row rank")
+							div(class="table-responsive")
+								- var animatetable=" animated fadeIn"
+								- if(pos!=null)
+									- animatetable=""         
+								table(id="rankTblreqshares" class="table rankTbl"+animatetable)
+									thead
+										tr(class="you info-best" style="font-weight: bold")
+											th(style="display:none")="pos"
+											th(class="wrapped")!= i18n.__("shares.table.reagent")
+											th(class="desktabonly")= i18n.__("shares.table.vendor")
+											th(class="desktabonly")= i18n.__("shares.table.catalog")
+											th(class="")= i18n.__("shares.table.requestor")
+											th(class="")= i18n.__("shares.table.email")
+											th= i18n.__("shares.table.date")
+											th(title=i18n.__("admins.table.header.cancelorder"))= i18n.__("shares.table.delete")
+											th(title="Fulfill Order")= i18n.__("shares.table.fulfill")
+									tbody
+										-var ob = mysharesrequest
+										-for(var prop in ob)
+											- var canc = i18n.__("admins.table.x") + ob[prop].agent
+											- var full = i18n.__("admins.table.f") + ob[prop].agent
+											- var n = ob[prop].status
+											- var d = new Date(ob[prop].date)
+											- d = d.toLocaleDateString("en-US")
+											- var isnew = ""
+											- var checkedstr = false
+											- var checkedfilledstr = false
+											- if(n != "fulfilled")
+												- isnew = "isnew"
+											- var insuff = parseInt(ob[prop].insufficient)
+											- if(insuff == 0)
+												- isnew = "backColorinsuff"
+												- checkedstr = true
+												- canc = i18n.__("admins.table.repl") + ob[prop].agent
+											//- var status = parseInt(ob[prop].status)
+											- var status = ob[prop].status
+											- var showcancel = ""
+											- if(status == 'fulfilled')
+												- checkedfilledstr = true
+												- showcancel = "display:none;"
+												- full = i18n.__("admins.table.revert") + ob[prop].agent
+											- var lab = (ob[prop].lab).replace(" ","").toLowerCase();
+											- var f = "fulfill" + prop
+											- var c = "cancel" + prop
+											- var showfulfill = ""
+											- if(checkedstr===true)
+												- showfulfill = "display:none;"
+											- var point = ""
+											- var point2 = ""
+											- if(pos!=null && prop == pos)
+												- point = " point"
+												- point3 = " point2"
+											
+											tr(class=isnew)
+												td(style="display:none") #{prop}
+												td(class="wrapped2" + point) #{ob[prop].agent}
+												td(class="wrapped2 desktabonly") #{ob[prop].vendor}
+												td(class="wrapped2 desktabonly") #{ob[prop].catalognumber}
+												td(class="wrapped2") #{ob[prop].requestoremail}
+												td(class="wrapped2") #{ob[prop].email}
+												td #{d}
+												td(style="width: 17px;padding-left: 0px;padding-right: 0px;" title=canc)
+													form(action="/admincancelshare" method="post")
+														div(class="checkboxThree1", style=showcancel)
+															input(style="position:absolute;left: -9999px;" type="checkbox" id=c name="cancel" value="cancel" class="cancel" checked=(checkedstr===true ? "checked" : undefined))
+															label(class="labelcheck1 shadow" for=c)
+														//input(type="checkbox" name="cancel" value="cancel" class="cancel" checked=(checkedstr===true ? "checked" : undefined))
+														input(type="hidden" class="agentid" name="agent" value=ob[prop].agent)
+														input(type="hidden" class="labid" name="lab" value=ob[prop].lab)
+														input(type="hidden" class="vendorid" name="vendor" value=ob[prop].vendor)
+														input(type="hidden" class="catalogid" name="catalognumber" value=ob[prop].catalognumber)
+														input(type="hidden" class="owneremailid" name="email" value=ob[prop].email)
+														input(type="hidden" class="requestorid" name="requestoremail" value=ob[prop].requestoremail)
+														input(type="hidden" name="date" value=ob[prop].date)
+														input(type="hidden" name="table" value=currentlabname.replace(" ","").toLowerCase() + "_orders")
+														input(type="hidden" name="adminType" value="laborders")
+														input(type="hidden" name="pos" value=prop)
+												td(style="width: 17px;padding-left: 0px;padding-right: 0px;" class=point3 title=full)
+													form(action="/fulfillshare" method="post")
+														
+														div(class="checkboxThree1", style=showfulfill)
+															input(style="position:absolute;left: -9999px;" type="checkbox" id=f name="fulfill" value="fulfill" class="fulfill" checked=(checkedfilledstr===true ? "checked" : undefined))
+															label(class="labelcheck1 shadow" for=f)
+														input(type="hidden" class="agentid" name="agent" value=ob[prop].agent)
+														input(type="hidden" class="labid" name="lab" value=ob[prop].lab)
+														input(type="hidden" class="owneremailid" name="owneremail" value=ob[prop].email)
+														input(type="hidden" class="vendorid" name="vendor" value=ob[prop].vendor)
+														input(type="hidden" class="catalogid" name="catalognumber" value=ob[prop].catalognumber)
+														input(type="hidden" class="requestorid" name="requestoremail" value=ob[prop].requestoremail)
+														input(type="hidden" name="email" value=ob[prop].email)
+														input(type="hidden" name="date" value=ob[prop].date)
+														input(type="hidden" name="table" value=currentlabname.replace(" ","").toLowerCase() + "_orders")
+														input(type="hidden" name="adminType" value="laborders")
+														input(type="hidden" name="pos" value=prop)
+								script.
+									$(document).ready(function() {
+										$('#rankTblreqshares').DataTable({
+										order: [[ 6, "desc" ]],
+										iDisplayLength: 6,
+										aLengthMenu: [[6, 12, 18, -1], [6, 12, 18, "All"]],
+										language:{
+											processing: "#{i18n.__("datatable.processing")}",
+											search: "#{i18n.__("datatable.search")}",
+											lengthMenu: "#{i18n.__("datatable.lengthMenu")}",
+											info: "#{i18n.__("datatable.info")}",
+											infoEmpty: "#{i18n.__("datatable.infoEmpty")}",
+											infoFiltered: "#{i18n.__("datatable.infoFiltered")}",
+											infoPostFix: "",
+											loadingRecords: "#{i18n.__("datatable.loadingRecords")}",
+											zeroRecords: "#{i18n.__("datatable.zeroRecords")}",
+											emptyTable: "#{i18n.__("datatable.emptyTable")}",
+											paginate: {
+											first: "#{i18n.__("datatable.first")}",
+											previous: "#{i18n.__("datatable.previous")}",
+											next: "#{i18n.__("datatable.next")}",
+											last: "#{i18n.__("datatable.last")}",
+											//search: "_INPUT_",
+											searchPlaceholder: "#{i18n.__("datatable.searchplaceholder")}"
+											},
+											aria: {
+											sortAscending: "#{i18n.__("datatable.sortAscending")}",
+											sortDescending: "#{i18n.__("datatable.sortDescending")}"
+											}
+										}
+										});
+										var pos = "#{pos}";
+										console.log("pos: " + pos);
+										if(pos!=null && pos!=""){
+											$(window).scrollTop($('#rankTblreqshares').offset().top * 10).scrollLeft($('#rankTblreqshares').offset().left);
+											var tableid = $('#rankTblreqshares').DataTable();
+											console.debug("jumping");
+											tableid.page.jumpToData(pos, 0);
+										}
+									});
+					div(class="threepointssep mobileonly3")
+				else
+					p!= i18n.__("admins.noorders.intro")
+			div(id="table2")
+				if(myshares == "")
+					span= i18n.__("admins.subtitle2")
+				if(myshares != "")
+					//h3(style="padding-top: 25px;")= i18n.__("admins.none.title")
+					p!= i18n.__("admins.none.subtitle")
+					div(id="results2", class="resultsshadow")
+						div(id="ctl00_Div2" class="row rank")
+							div(class="table-responsive")
+								- var animatetable2=" animated fadeIn"
+								- if(pos2!=null)
+									- animatetable2=""
+								table(id="rankTblshares" class="table rankTbl" + animatetable2)
+									thead
+										tr(class="you info-best" style="font-weight: bold")
+											th(style="display:none")!="pos"
+											th(class="wrapped")!= i18n.__("shares.table.reagent")
+											th(class="desktabonly")= i18n.__("shares.table.location")
+											th= i18n.__("shares.table.email")
+											th= i18n.__("shares.table.vendor")
+											th= i18n.__("shares.table.catalog")
+											th(title=i18n.__("admins.table.header.insuff"))= i18n.__("shares.table.delete")
+									tbody
+										-var ob = myshares
+										-for(var prop in ob)
+											- var c = "cancelr" + prop
+											- var currentqtyint = parseInt(ob[prop].currentquantity)
+											- var qtyinsufficient = ""
+											- var checkedstr = false
+											- var insuff = parseInt(ob[prop].insufficient)
+											- var canc = ob[prop].agent + i18n.__("admins.table.insuff")
+											- if(insuff == 0)
+												- qtyinsufficient = "backColorinsuff"
+												- checkedstr = true
+												- canc = i18n.__("admins.table.repl") + ob[prop].agent
+											- var point2 = ""
+											- var point4 = ""
+											- if(pos2!=null && prop == pos2)
+												- point2 = " point"
+												//- point4 = " point2"
+
+											tr(class=qtyinsufficient)
+												td(style="display:none") #{prop}
+												td(class="wrapped2" + point2) #{ob[prop].agent}
+												td(class="wrapped2 desktabonly")  #{ob[prop].location}
+												td(class="wrapped2")  #{ob[prop].email}
+												td(class="wrapped2")  #{ob[prop].vendor}
+												td(class="wrapped2")  #{ob[prop].catalognumber}
+												td(style="width: 17px;display:block;padding-left: 0px;padding-right: 0px;", class=point4,  title=canc)
+													form(action="/admincancelshare" method="post")
+														div(class="checkboxThree1", style=showfulfill)
+															input(style="position:absolute;left: -9999px;" type="checkbox" id=c name="cancel" value="cancel" class="cancel" checked=(checkedstr===true ? "checked" : undefined))
+															label(class="labelcheck1 shadow" for=c)
+														input(type="hidden" class="agentid" name="agent" value=ob[prop].agent)
+														input(type="hidden" class="labid" name="lab" value=ob[prop].lab)
+														input(type="hidden" class="vendorid" name="vendor" value=ob[prop].vendor)
+														input(type="hidden" class="catalogid" name="catalognumber" value=ob[prop].catalognumber)
+														input(type="hidden" class="owneremailid" name="email" value=ob[prop].email)		
+														input(type="hidden" name="date" value=ob[prop].date)
+														input(type="hidden" name="table" value="vm2016_agentsshare")
+														input(type="hidden" name="adminType" value="labreagents")
+														input(type="hidden" name="pos2" value=prop)
+								script.
+									$(document).ready(function() {
+										$('#rankTblshares').DataTable({
+											order: [[ 1, "asc" ]],
+											iDisplayLength: 6,
+											aLengthMenu: [[6, 12, 18, -1], [6, 12, 18, "All"]],
+											language:{
+											processing: "#{i18n.__("datatable.processing")}",
+											search: "#{i18n.__("datatable.search")}",
+											lengthMenu: "#{i18n.__("datatable.lengthMenu")}",
+											info: "#{i18n.__("datatable.info")}",
+											infoEmpty: "#{i18n.__("datatable.infoEmpty")}",
+											infoFiltered: "#{i18n.__("datatable.infoFiltered")}",
+											infoPostFix: "",
+											loadingRecords: "#{i18n.__("datatable.loadingRecords")}",
+											zeroRecords: "#{i18n.__("datatable.zeroRecords")}",
+											emptyTable: "#{i18n.__("datatable.emptyTable")}",
+											paginate: {
+											first: "#{i18n.__("datatable.first")}",
+											previous: "#{i18n.__("datatable.previous")}",
+											next: "#{i18n.__("datatable.next")}",
+											last: "#{i18n.__("datatable.last")}",
+											//search: "_INPUT_",
+											searchPlaceholder: "#{i18n.__("datatable.searchplaceholder")}"
+											},
+											aria: {
+											sortAscending: "#{i18n.__("datatable.sortAscending")}",
+											sortDescending: "#{i18n.__("datatable.sortDescending")}",
+											}
+										}
+											});
+
+										var pos2 = "#{pos2}";
+										console.log("pos2: " + pos2);
+										if(pos2!=null && pos2!=""){
+											$(window).scrollTop($('#rankTblshares').offset().top * 10).scrollLeft($('#rankTblshares').offset().left);
+											radiocatclick();
+											var tableid = $('#rankTblshares').DataTable();
+											console.debug("jumping");
+											tableid.page.jumpToData(pos2, 0);
+										}
+									});
+					div(class="threepointssep mobileonly3")
+				else
+					p!= i18n.__("admins.noreagents.intro")
+		div(class="slide-out-tip-div desktabonly", style="display:none;z-index:9;position: fixed;top: 25% !important;max-height:380px;")
+			a(class="handle" href="last-transactions", title='#{i18n.__("admins.tip.header")}', style="right: -60px;,left:-60px;top:25px;")!=Content
+			div(style="padding: 1px;color:white;top: -45px;position: relative;max-height: 320px;overflow: auto;")
+				div(style="text-align: center;")
+					span(class="zoom_controls")
+						a(href="#" class="zoom_out zoomicon" title=i18n.__("zoom.minus"))
+							span(class="fa fa-minus-circle")
+						a(href="#" class="zoom_reset zoomicon" title=i18n.__("zoom.reset"))
+							span(class="fa fa-circle-o-notch")
+						a(href="#" class="zoom_in zoomicon" title=i18n.__("zoom.plus"))
+							span(class="fa fa-plus-circle")
+				div(class="threepointssep", style="margin-top: -10px;")
+				p(style="font-size: 12pt;")!= i18n.__("admins.tip.header")
+				div(style="position: relative;float: right;width: 250px;font-size: 9pt;line-height: 1.3;border-radius: 4px;")
+					span!= i18n.__("admins.tip.desc")
+			script.
+				$(function(){
+				$('.slide-out-tip-div').tabSlideOut({
+				imgPos: 100,
+				tabHandle: '.handle',                              //class of the element that will be your tab
+				pathToTabImage: '/images/bouee5.png',          //path to the image for the tab (optionaly can be set using css)
+				imageHeight: '50px',                               //height of tab image
+				imageWidth: '50px',                               //width of tab image    
+				tabLocation: 'right',                               //side of screen where tab lives, top, right, bottom, or left
+				speed: 300,                                        //speed of animation
+				action: 'click',                                   //options: 'click' or 'hover', action to trigger animation
+				topPos: '25% !important',                                   //position from the top
+				fixedPosition: true                               //options: true makes it stick(fixed position) on scroll
+				});
+				});
+		span(class="desktabonly", id="checkdisplay")
+		script.
+			$( document ).ready(function() {
+				$('.admintop').click(function() {
+					if($('.admintop').hasClass("fadesections")){
+						console.log("remove faded.");
+						$('.admintop').removeClass("fadesections");
+					}
+				});
+
+				$( ".uploadtext" ).addClass( "animated fadeIn" );
+				$('body').click(function() {
+					// jQuery selector to get an element
+					var query = $('#focusadmin');
+					// check if element is Visible
+					var isVisible = query.is(':visible');
+					if (isVisible === true) {
+						console.log("hide admin focus");
+						query.hide();
+					}
+				});
+			console.log( "share document loaded" );
+				if ($("#checkdisplay").css("display") == "none" ){
+					$('.slide-out-tip-div').hide();
+				} else {
+					$('.slide-out-tip-div').show();
+				}
+			});
+
+			var adminTypecheck = "#{admintype}";
+			console.log("admintype: " + adminTypecheck);
+
+			if(adminTypecheck == "laborders"){
+				$("#table1").show();
+				$("#table2").hide();
+				$('input[name=search][value=keysearch]').prop('checked', 'checked');
+			} else if(adminTypecheck == "labreagents"){
+				$("#table1").hide();
+				$("#table2").show();
+				$('input[name=search][value=catalogsearch]').prop('checked', 'checked');
+			} else {
+				$("#table1").show();
+				$("#table2").hide();
+				$('input[name=search][value=keysearch]').prop('checked', 'checked');
+			}
+
+			function radioclick() {
+			$("#table1").show();
+			$("#table2").hide();
+			$('input[name=search][value=keysearch]').prop('checked', 'checked');
+			}
+			function radiocatclick() {
+			$("#table1").hide();
+			$("#table2").show();
+			$('input[name=search][value=catalogsearch]').prop('checked', 'checked');
+			}

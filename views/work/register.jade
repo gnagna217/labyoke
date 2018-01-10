@@ -1,0 +1,207 @@
+extends layout
+
+block content
+  //div(id="pageloader")
+  //  div(class="spinner")
+  //      div(class="bounce1")
+  //      div(class="bounce2")
+  //      div(class="bounce3")
+
+  div(class="container login front container2 containertop", style="text-align: center;position: relative;display:none")
+     a(href="/search" class=labentered)
+        img(src="/images/yoke4.png", alt="The Yoke", class="yokelogo")
+       div
+        if !labentered && !regsuccess && !confirmReset
+            h1 #{i18n.__("register.title")}
+            p(class="centralize") 
+                span!= i18n.__("register.desc1")
+                span(class="labColor")= i18n.__("register.title2")
+                span!= i18n.__("register.subtitle")
+            div(id="ctl00_Div2" class="frontdiv results")
+                div(class="alert alert-danger-report alertshadow", id="messagejs1", style="display:none")
+                if message
+                    div(class="alert alert-danger-report alertshadow")!= message
+                    script.
+                        $('#messagejs1').hide();
+                form(action="/register" method="post" id="regform1")
+                    div(style="margin-bottom: 20px;")
+                        div(class="textentry")
+                            input(name="regfirstname" type="text" id="regfirstname" class="form-control" placeholder=i18n.__("register.form.name"))
+                        div(class="textentry")
+                            input(name="reglastname" type="text" id="lastname" class="form-control" placeholder=i18n.__("register.form.lastname"))
+                    div(style="margin-bottom: 20px;")
+                        div(class="textentry")
+                            span(class="fa fa-envelope" style="top: 15px;position: relative;float: right;color: #3d9dcb;")
+                            input(name="regemail" type="text" id="regemail" class="form-control" placeholder=i18n.__("register.form.email"))
+                        div(class="textentry")
+                            span(class="fa fa-phone" style="top: 15px;position: relative;float: right;color: #3d9dcb;")
+                            input(name="regtel" type="text" id="tel" class="form-control" placeholder=i18n.__("register.form.tel"))
+                    div(class="buttons", id="regbutton1")
+                        button.btn.btn-success.btn-lg.btn-block.shadow.resizebutton(type='button') #{i18n.__("register.form.button1")}
+                        //img(src="/images/add.png", alt="The Lab", style="border-width:0px; width: 45px; height:57px; margin-top: -45px; float: right;position:relative;left:25px;display:none", class="noshowmobile767")
+                script.
+                    $('#regbutton1').click(function() {
+                        console.log("regfirstname: " + $('#regfirstname').val());
+                        console.log("reglastname: " + $('#lastname').val());
+                        console.log("regemail: " + $('#regemail').val());
+                        console.log("regtel: " + $('#tel').val());
+                        if($('#regfirstname').val() != "" && $('#lastname').val() != "" && $('#regemail').val() != "" && $('#tel').val() != "" ){
+                            console.log("go on!");
+                            $('#regform1').submit();
+                        } else if($('#regfirstname').val() == "" || $('#regfirstname').val() == undefined){
+                            console.log("stop!");
+                            $('#messagejs1').html("#{i18n.__("index.register.message7")}");
+                            $('#messagejs1').show();
+                            return false;
+                        } else if($('#lastname').val() == "" || $('#lastname').val() == undefined){
+                            console.log("stop!");
+                            $('#messagejs1').html("#{i18n.__("index.register.message8")}");
+                            $('#messagejs1').show();
+                            return false;
+                        } else if($('#regemail').val() == "" || $('#regemail').val() == undefined){
+                            console.log("stop!");
+                            $('#messagejs1').html("#{i18n.__("index.register.message9")}");
+                            $('#messagejs1').show();
+                            return false;
+                        } else if($('#tel').val() == "" || $('#tel').val() == undefined){
+                            console.log("stop!");
+                            $('#messagejs1').html("#{i18n.__("index.register.message10")}");
+                            $('#messagejs1').show();
+                            return false;
+                        } 
+                      }); 
+
+        if labentered
+            h1= i18n.__("register.form2.desc")
+            p= i18n.__("register.form2.subdesc")
+            div(id="ctl00_Div2" class="frontdiv results2")
+                div(class="alert alert-danger-report alertshadow", id="messagejs", style="display:none")
+                if message
+                    div(class="alert alert-danger-report alertshadow")!= message
+                    script.
+                        $('#messagejs').hide();
+                form(action="/register" method="post" id="regform2")
+                    div(style="margin-bottom: 20px;")
+                        div(class="textentry")
+                            span(class="fa fa-user" style="top: 15px;position: relative;float: right;color: #3d9dcb;")
+                            input(name="reguser" type="text" id="reguser" class="form-control" placeholder=i18n.__("register.form2.username"))
+                        div(class="textentry")
+                            input(name="regpass" type="password" id="regpass" class="form-control" placeholder=i18n.__("register.form2.pwd"))
+                            span(class="fa fa-key" style="top: -20px;position: relative;float: right;color: #3d9dcb;")
+                        div(class="textentry")
+                            input(name="regverpass" type="password" id="regverpass" class="form-control" placeholder=i18n.__("register.form2.verifypwd"))
+
+                    div(style="margin-bottom: 20px;")
+                        div(class="textentry")
+                            span(class="fa fa-sort" style="color: #8a6d3b; float: right; top: 25px; left: -10px; position: relative; font-size: 14pt; ")
+                            select(name="reglab" type="text" id="reglab" class="form-control" style="border-color:#3d9dcb" placeholder=i18n.__("register.form2.lab"))
+                             if(labs != undefined)
+                                 - var ob = labs
+                                 - for(var prop in ob)
+                                   - var lab = ob[prop].labname
+                                   option(value=lab) #{lab}
+                        input(name="regfirstname" type="hidden" id="regfirstname" value=firstname)
+                        input(name="reglastname" type="hidden" id="reglastname" value=lastname)
+                        input(name="regemail" type="hidden" id="regemail" value=email)
+                        input(name="regtel" type="hidden" id="regtel" value=tel)
+                    div(class="buttons", id="regbutton2")
+                        //input(type="submit" class="button" value="Register")
+                        button.btn.btn-success.btn-lg.btn-block.shadow.resizebutton(type='button')= i18n.__("register.form2.button2")
+                        //img(src="/images/add.png", alt="The Lab", style="border-width:0px; width: 45px; margin-top: -45px; float: right;position:relative;left:25px;display:none;", class="noshowmobile767")
+                script.
+                    $('#regbutton2').click(function() {
+                        console.log("regverpass: " + $('#regverpass').val());
+                        console.log("regpass: " + $('#regpass').val());
+                        if($('#reguser').val() != "" && $('#regverpass').val() != "" && $('#regverpass').val() == $('#regpass').val()){
+                            console.log("go on!");
+                            $('#regform2').submit();
+                        } else if($('#reguser').val() == ""  || $('#reguser').val() == undefined){
+                            console.log("stop!");
+                            $('#messagejs').html("#{i18n.__("index.register.message6")}");
+                            $('#messagejs').show();
+                            return false;
+                        } else if($('#regverpass').val() == undefined || $('#regpass').val() == undefined || $('#regpass').val() == "" || $('#regverpass').val() == "" || $('#regverpass').val() != $('#regpass').val()){
+                            console.log("stop!");
+                            $('#messagejs').html("#{i18n.__("index.register.message5")}");
+                            $('#messagejs').show();
+                            return false;
+                        } 
+                      });
+            
+        if regsuccess && !labentered
+                div(id="ctl00_Div2")
+                    span(style="text-align: center")
+                        h3= i18n.__("register.thanku")
+                            span(style="color: #3d9dcb;")!=" " + regsuccess + "!"
+                        p(class="centralize")!= i18n.__("register.thanku.desc1")
+        if confirmReset
+                div(id="ctl00_Div2")
+                    span(style="text-align: center")
+                        h3!= i18n.__("register.thanku2")
+                        p(class="centralize")!=" " + confirmReset + "!"
+                        //p(class="centralize")!= i18n.__("register.thanku2.desc1")        
+    script.
+      $(document).ready(function(){
+        if($('#tel')){$('#tel').mask("(999) 999-9999");}
+
+        var toppinglogin = sessionStorage.getItem('toppinglogin');
+        var topping = sessionStorage.getItem('topping');
+        if(toppinglogin){
+            $(".login").css("margin-top", toppinglogin + "px");
+        }
+            
+        $(".login").css("display", "block");
+        var h = $(window).height();
+        var wi = $(window).width();
+
+
+            $(function(){
+                $.fn.center = function () {
+                //var topping = $('.topping').attr("title");
+
+                
+                var t = ($(window).height() - this.height() ) / 2  ;
+
+                console.log("topping after: " + topping);
+                var storedheight = sessionStorage.getItem('storedheight');
+                
+                
+                console.log("h window: " + h);
+                console.log("sup forgot: " + (topping && parseInt(topping) > 0));
+                
+                if(t>0){
+                sessionStorage.setItem('topping', t - 5);
+                sessionStorage.setItem('toppinglogin', t - 5);
+                sessionStorage.setItem('storedheight', h);
+                }
+                
+                console.log("t login: " + t);
+                console.log("height login : " + this.height());
+                console.dir(this);
+                console.log("height login 2 : " + $(".login").height());
+                if(t > 0){
+                console.log("topping login: " + topping);
+                this.css("margin-top",  t + "px");
+                this.css("-webkit-transition","all .5s ease");
+                this.css("transition","all .5s ease");
+                }
+                
+                //$('.topping').attr("title",t);
+                
+                //this.css("left", ( $(window).width() - this.width() ) / 2 + "px");
+                return this;
+                }
+
+                if(!toppinglogin && wi > 440){
+                    $(".login").center();
+                }
+
+                $(window).resize(function(){
+                    if(wi > 440){
+                        sessionStorage.removeItem('toppinglogin');
+                        $(".login").center();
+                    }
+                });
+
+            });
+      });
