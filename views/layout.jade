@@ -225,11 +225,11 @@ html(lang='en')
      :staticCache
       script(type="text/javascript" src="/javascripts/bootstrap.min.js")
      if(title=='Reagent Search' || title=='Search' || title=='Share' || title=='Orders' || title=='Admins' || title=='Account')     
-      //script(type="text/javascript" src="/javascripts/init.js")
-      //script.
-        //var l = "#{language}";
-        //console.log("l is: " + l);
-        //MYLIBRARY.init([l]);
+      script(type="text/javascript" src="/javascripts/init.js")
+      script.
+        var l = "#{language}";
+        console.log("l is: " + l);
+        MYLIBRARY.init([l]);
       script(type="text/javascript" src="/javascripts/popup.js")
       :staticCache
         script(type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js")
