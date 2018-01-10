@@ -187,6 +187,16 @@ block content
                         h4="Try another chemical reagent!"
     span(class="desktabonly", id="checkdisplay")
     script.
+              function radioclick() {
+              $("#keysearch").show();
+              $("#catalogsearch").hide();
+              $('input[name=search][value=keysearch]').prop('checked', 'checked');
+          }
+          function radiocatclick() {
+              $("#keysearch").hide();
+              $("#catalogsearch").show();
+              $('input[name=search][value=catalogsearch]').prop('checked', 'checked');
+          }
       $( document ).ready(function() {
 
           console.log("catalogradio: " + "#{catalogradio}");
@@ -238,16 +248,7 @@ block content
                
                
           } );
-          function radioclick() {
-              $("#keysearch").show();
-              $("#catalogsearch").hide();
-              $('input[name=search][value=keysearch]').prop('checked', 'checked');
-          }
-          function radiocatclick() {
-              $("#keysearch").hide();
-              $("#catalogsearch").show();
-              $('input[name=search][value=catalogsearch]').prop('checked', 'checked');
-          }
+
 
 
 
