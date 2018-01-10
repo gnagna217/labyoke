@@ -1,20 +1,12 @@
 extends layout
 
 block content
-    //div(id="pageloader")
-    //  div(class="spinner")
-    //    div(class="bounce1")
-    //    div(class="bounce2")
-    //    div(class="bounce3")
     - var catalogradio = searchformTextCatalog
     - var searchradio = searchformText
     - var searchradioType = searchType
     - var slide = "moveFromLeft"
     if searchradioType
       - slide = ""
-    //img(src="/images/yoke5.png" style="display:none;")
-    //img(src="/images/yoke6.png" style="display:none;") 
-    //img(src="/images/logo_one_bottle_L_2.png" style="display:none;") 
     form(action="/orders" id="orders" method="post")
         input(name="emailform" type="hidden" id="emailform" value="")
         input(name="agentform" type="hidden" id="agentform" value="")
@@ -34,9 +26,6 @@ block content
                     div(class="exit" onclick="iosLightExit()") #{i18n.__("search.layovercancel")}
         div(class="shade" id="shade")
         div(class="shade-light" id="shade-light")
-    //if(searchResults == undefined || (searchResults != null && searchResults.length == 0)) 
-    //  div(class="searchlogo")
-    //    img(src="/images/logo_one_bottle_L.png", alt="The Yoke",  title="Yoke", class="searchlogoimg")
     div(class="zoomnow container login marginbottom positionings searchmargins container2 botbottom " + slide)
         div(class="searchlogo")
           img(src="/images/logo_one_bottle_L_2.png", alt="The Yoke",  data-toggle="tooltip",title="Yoke", class="searchlogoimg")
@@ -73,8 +62,6 @@ block content
                                     option(value='#{ob2[prop].agent}')
                         div(class="buttons positionbuttons", style="display: block; text-align: center; ")
                             button(class="btn " + classButton + " btn-lg btn-block btnsearch shadow" type='submit' style="margin: 0 auto;width: 278px;") #{i18n.__("search.buttonreagent")}
-                            //img(src="images/yoke5.png", alt="The Search", style="border-width:0px; width: 35px; margin-top: -99px; margin-left: 370px;" class="desktabonly")
-                    //div(class="desktabonly" , style="background-color: #3d9dcb; height: 1px;width: 50%;text-align: center;margin: 0 auto;position: relative;top: -25px;")
 
         div(class="keysearch", id="catalogsearch", style="display:none")
             span(id="loopcatalog", class="fa fa-search colmenu desktabonly" style="position: relative;to;font-size: 15pt;top: -150px;margin: 0 auto;text-align: center;display: block;")
@@ -98,8 +85,6 @@ block content
                                     option(value='#{ob2[prop].catalognumber}')
                         div(class="buttons positionbuttons", style="display: block; text-align: center;")
                             button(class="btn " + classButtonCatalog + " btn-lg btn-block btnsearch shadow" type='submit' style="margin: 0 auto;width: 278px;") #{i18n.__("search.buttoncatalog")}
-                            //img(src="images/yoke6.png", alt="The Search", data-toggle="tooltip",title="Search", style="border-width:0px; width: 35px; margin-top: -99px; margin-left: 370px;", class="desktabonly")
-                    //div(class="searchcatalogbar desktabonly")
         script.
           console.log("catalogradio: " + "#{catalogradio}");
           console.log("searchradio: " + "#{searchradio}");
@@ -115,24 +100,20 @@ block content
             $("#keysearch").show();
             $("#catalogsearch").hide();
             $('input[name=search][value=keysearch]').prop('checked', 'checked');
-            //if(existssearchType == "key"){
               console.log("existssearchType is key: "+existssearchType);
               $("#loopkey").removeClass( "colmenu" );
               $("#loopkey").addClass( "activecolmenu" );
               $("#loopcatalog").removeClass( "activecolmenu" );
               $("#loopcatalog").addClass( "colmenu" );
-            //}
           } else if(existscatalog.length > 0 || existssearchType == "catalog"){
             $("#keysearch").hide();
             $("#catalogsearch").show();
             $('input[name=search][value=catalogsearch]').prop('checked', 'checked');
-            //if(existssearchType == "catalog"){
               console.log("existssearchType is cat: "+existssearchType);
               $("#loopcatalog").removeClass( "colmenu" );
               $("#loopcatalog").addClass( "activecolmenu" );
               $("#loopkey").removeClass( "activecolmenu" );
               $("#loopkey").addClass( "colmenu" );
-            //}
           } else {
             $("#keysearch").show();
             $("#catalogsearch").hide();
@@ -160,20 +141,11 @@ block content
               $("#keysearch").show();
               $("#catalogsearch").hide();
               $('input[name=search][value=keysearch]').prop('checked', 'checked');
-              //$("#loopcatalog").removeClass( "activecolmenu" );
-              //$("#loopcatalog").addClass( "colmenu" );
-              //$("#loopkey").removeClass( "activecolmenu" );
-              //$("#loopkey").addClass( "colmenu" );
           }
           function radiocatclick() {
               $("#keysearch").hide();
               $("#catalogsearch").show();
               $('input[name=search][value=catalogsearch]').prop('checked', 'checked');
-              //console.log("existssearchType is cat: "+existssearchType);
-              //$("#loopcatalog").removeClass( "colmenu" );
-              //$("#loopcatalog").addClass( "activecolmenu" );
-              //$("#loopkey").removeClass( "activecolmenu" );
-              //$("#loopkey").addClass( "colmenu" );
           }
         div(class="slide-out-tip-div desktabonly", style="display:none;z-index:10;position: fixed;top: 25% !important;max-height:380px;")
             a(class="handle" href="", title='#{i18n.__("search.tip.title")}', style="right: -60px;left:-60px;")!=Content
@@ -209,7 +181,6 @@ block content
         if email != undefined
           div(id="ordered" class="animated fadeInDown")
             div(class="alert")
-                //a(href="#", class="closeordered", data-dismiss="alert", aria-label="close", title="close")="x"
                 h4(class="orderedh4")= i18n.__("orders.success.title")
                   span(style="color: #e6c293;font-weight:bold")=" " + order_location
                   span="!"
@@ -230,10 +201,8 @@ block content
                 }
                 console.log("scrolling ordered : " + l);
                 $('html,body').animate({scrollTop: 500}, 1000);
-                //$(window).scrollTop($('#ordered').offset().top * 10).scrollLeft($('#ordered').offset().left);
 
         if(searchResults != null && searchResults.length > 0)
-          //div(class="results2 resultsshadow")
           div(class="results10")
               div
                   span(style="text-align: center")
@@ -288,40 +257,21 @@ block content
                                         img(src="images/cart.png", class="imgcart", alt=i18n.__("search.resultssubtitle"), data-toggle="tooltip",title=i18n.__("search.resultssubtitle"))
                             - j = j + 1
                       script.
-                        /*$("#rankTblSearch").tableDnD({
-                            onDragClass: "myDragClass",
-                            onDrop: function(table, row) {
-                              $("#rankTblSearch").find("tr").removeClass("even odd animated");
-                              $("#rankTblSearch").find("tr:even").addClass("even");
-                              $("#rankTblSearch").find("tr:odd").addClass("odd");
-                            }
-                        });
-                        */
-                        //$(document).on('change', 'tr', function() {
-                          // Does some stuff and logs the event to the console
-                          //$('tr').removeAttr("style");
-                        //});
                         $(document).ready(function() {
-                          
-
                           $('.removecard').click(function() {
                               
                                 console.log("hiding");
                                 console.debug($( this ));
                                 console.debug($( this ).parent());
-                                //$( this ).parent().hide();
                                 $(this).parent().css("background-color", "rgba(51, 122, 183, 0.78)");
-                                //#e6a2a2
 
                                 $(this).parent().animate({
                                   paddingLeft: '+=20px',
                                   fontSize: "-=0.4em",
                                   marginLeft: '+=50px',
                                   width: '-=50px',
-                                  height: '-=50px'/*,
-                                  'background-color': "red"*/
+                                  height: '-=50px'
                                 }, 500, function() {
-                                    //$( this ).remove();
                                     $(this).hide();      
                                 });
 
@@ -354,14 +304,12 @@ block content
                         });
               script.
                 
-                //$(window).scrollTop(550);
                 var l = $('table').offset().top;
                 if(l>100){
                   l -= 100;
                 }
                 console.log("scrolling " + l);
-                $('html,body').animate({scrollTop: l}, 1000);
-                //$(window).scrollTop($('.results10').offset().top).scrollLeft($('.results10').offset().left);        
+                $('html,body').animate({scrollTop: l}, 1000);      
         if(searchResults != undefined && searchResults.length == 0 && searchformText)
           div.container.searchResults(id="results2 resultsshadow")
                 div(id="ctl00_Div2" class="row rank")
@@ -369,8 +317,7 @@ block content
                       span(style="text-align: center")
                         h3(style="font-weight: 400;")="Sorry we could not find any location for your"
                             span(style="color: #3d9dcb;")=" " + searchText
-                        h4="Try another chemical reagent!"              
-    //script="$(window).scrollTop($('#results').offset().top).scrollLeft($('#results').offset().left);"
+                        h4="Try another chemical reagent!"
     span(class="desktabonly", id="checkdisplay")
     script.
       $( document ).ready(function() {
@@ -412,13 +359,10 @@ block content
                 this.css("-webkit-transition","all .5s ease");
                 this.css("transition","all .5s ease");
                 }
-                //this.css("left", ( $(window).width() - this.width() ) / 2 + "px");
                 }
                 return this;
                 }
-
                 $(".container2").center();                            
-
                 $(window).resize(function(){ 
                 $(".container2").center();
                 });                          
