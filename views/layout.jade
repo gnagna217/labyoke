@@ -384,21 +384,30 @@ html(lang='en')
               scrollTop: 0 ,
               }, scroll_top_duration
             );
-          });   
-        var query = $('#bot');
-        var isVisible = query.is(':visible');
-        if (isVisible === true) {
-        //var botchat = document.querySelector("#bot");
-        //if(botchat != undefined && botchat != null){
+          });
 
-        BotChat.App({
-          directLine: { secret: "jMO0wtNhTWM.cwA.rqg._IWRYZZ7OsyoD0F6JfuPEDOnw6SP48-pAnIRptYH3mE" },
-          user: { id: '#{labyoker}' },
-          bot: { id: 'Labyoke' },
-          resize: 'detect'
-        }, document.getElementById("bot"));
-        $( "#bot" ).hide();
+        function hasTouch() {
+            return 'ontouchstart' in document.documentElement
+                   || navigator.maxTouchPoints > 0
+                   || navigator.msMaxTouchPoints > 0;
         }
+        if(!hasTouch()){
+          var query = $('#bot');
+          var isVisible = query.is(':visible');
+          if (isVisible === true) {
+          //var botchat = document.querySelector("#bot");
+          //if(botchat != undefined && botchat != null){
+
+          BotChat.App({
+            directLine: { secret: "jMO0wtNhTWM.cwA.rqg._IWRYZZ7OsyoD0F6JfuPEDOnw6SP48-pAnIRptYH3mE" },
+            user: { id: '#{labyoker}' },
+            bot: { id: 'Labyoke' },
+            resize: 'detect'
+          }, document.getElementById("bot"));
+          $( "#bot" ).hide();
+          }
+        } 
+
 
         //$('[data-toggle="tooltip"]').tooltip({placement: "bottom"});
         var options = {
