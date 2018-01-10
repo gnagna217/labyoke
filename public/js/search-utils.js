@@ -1,8 +1,8 @@
-
-
-          $(document).ready(function() {
         console.log("l is: " + l);
         MYLIBRARY.init([l]);
+
+          $(document).ready(function() {
+
           $(".sleepimg").click(function() {
                 $( "#bot" ).show();
                 $( ".awake" ).show();
