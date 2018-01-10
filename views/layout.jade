@@ -273,7 +273,10 @@ html(lang='en')
       var lang = !{JSON.stringify(language)};
       //"#{language}"
       console.log("lang: " + lang);
-     script(type="text/javascript" src="/js/lang-utils.js")
+     if(title=='Reagent Search' || title=='Search' || title=='Share' || title=='Orders' || title=='Admins' || title=='Account')     
+        script(type="text/javascript" src="/javascripts/init.js")
+        script(type="text/javascript" src="/js/lang-utils.js")
+        script(type="text/javascript" src="/javascripts/popup.js") 
      if(title=='Login')
         script(type="text/javascript" src="/js/login-utils.js")
      if(title=='Admins')
@@ -301,9 +304,6 @@ html(lang='en')
      if(title=='Play')
         script(type="text/javascript" src="/js/play-utils.js")
      if(title=='Pop')
-        script(type="text/javascript" src="/js/pop-utils.js")
-     if(title=='Reagent Search' || title=='Search' || title=='Share' || title=='Orders' || title=='Admins' || title=='Account')     
-        script(type="text/javascript" src="/javascripts/init.js")
-        script(type="text/javascript" src="/javascripts/popup.js")     
+        script(type="text/javascript" src="/js/pop-utils.js")    
      :staticCache
       script(type="text/javascript" src="/js/global.js")
