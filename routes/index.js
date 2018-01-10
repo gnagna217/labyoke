@@ -2348,7 +2348,6 @@ totalshares = t[0].counting;
 			var messageStr = "";
 			console.log("search - userlang: " + req.session.userlang);
             console.log("search - searchType: " + searchType);
-            console.log("search - agentsResults: " + results[1].length);
 			labYokeSearch.search(function(error, results) {
 				console.log("results " + results[0].length);	
 				if (searchText != null && searchText.length > 0){
