@@ -539,7 +539,7 @@
     "index.changepass.button": "Changer",
     "index.changepass.placeholder2": "Verifier le Mot de Passe",
     "index.changepass.placeholder1": "Mot de Passe",
-    "index.confirmpwd.message1": "Félicitations! Votre membre de laboratoire est inscrit!",
+    "index.confirmpwd.message1": "Félicitations! Votre membre de laboratoire est inscrit",
     "index.confirmpwd.message2": "Une erreur est survenue lors de votre confirmation. Veuillez réessayer ou <a href='mailto:labyoke@gmail.com?Subject=Modification de votre Mot de Passe - {{id}}' target='_top'>changez son mot de passe</a>.",
     "index.confirmpwd.message3": "Nous n'avons pas trouvé cette Pré-inscription. L'avez-vous déjá confirmée? Autrement <span style='color: #3d9dcb;'><a href='/register'>Veuillez ré-inscrire</a> le chercheur</span>! Ou <span style='color: #3d9dcb;'><a href='/forgot'>Changer son Mot de Passe</a></span> ",
 

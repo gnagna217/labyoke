@@ -562,7 +562,7 @@
 "index.changepass.button": "Ändra",
 "index.changepass.placeholder2": "Komma in igen lösenordet",
 "index.changepass.placeholder1": "Lösenord",
-"index.confirmpwd.message1": "Lyckönskan har du lyckat registrerat din labbmedlem. ",
+"index.confirmpwd.message1": "Lyckönskan har du lyckat registrerat din labbmedlem",
 "index.confirmpwd.message2": "Fanns ett fel, medan bearbeta denna bekräftelse. Behaga försöket igen eller lösenordet för <a href='mailto:labyoke@gmail.com?Subject=Change - {{ID}} 'target=' _top'>ändring dess password</a>. ",
 "index.confirmpwd.message3": "Ledset kunde vi inte finna denna förhandsregistrering. Du kunde redan ha bekräftat den. Annorlunda <span style='color: #3d9dcb; 'behar ><ahref=' /register'> Register</a> din labb member</span>! Eller <span style='color: #3d9dcb; 'nollställer ><ahref=' /forgot'> dess Password</a></span>",
    

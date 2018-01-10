@@ -536,7 +536,7 @@
     "index.changepass.button": "Change",
     "index.changepass.placeholder2": "Re-enter Password",
     "index.changepass.placeholder1": "Password",
-    "index.confirmpwd.message1": "Congratulations you have successfully registered your lab member.",
+    "index.confirmpwd.message1": "Congratulations you have successfully registered your lab member",
     "index.confirmpwd.message2": "An error was found while processing this confirmation. Please try again or <a href='mailto:labyoke@gmail.com?Subject=Change Password - {{id}}' target='_top'>change its password</a>.",
     "index.confirmpwd.message3": "Sorry we could not find this Pre-Registration. You might have already confirmed it. Otherwise <span style='color: #3d9dcb;'><a href='/register'>Please Register</a> your lab member</span>! Or <span style='color: #3d9dcb;'><a href='/forgot'>Reset its Password</a></span>",
     
