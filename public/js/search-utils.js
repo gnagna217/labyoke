@@ -1,6 +1,4 @@
-
-
-          $(document).ready(function() {
+$(document).ready(function() {
 
           $(".sleepimg").click(function() {
                 $( "#bot" ).show();

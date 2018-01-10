@@ -2,8 +2,6 @@
 
           $(document).ready(function() {
           	
-        console.log("l is: " + l);
-        MYLIBRARY.init([l]);
           $(".sleepimg").click(function() {
                 $( "#bot" ).show();
                 $( ".awake" ).show();
