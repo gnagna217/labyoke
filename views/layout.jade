@@ -270,7 +270,8 @@ html(lang='en')
      a(href="#0" class="cd-top" title="go to top")
       span(class="fa fa-chevron-circle-up")
      script.
-      var l = "#{language}";
+      var l = !{JSON.stringify(language)};
+      //"#{language}"
       console.log("l: " + l);
      if(title=='Login')
         script(type="text/javascript" src="/js/login-utils.js")
