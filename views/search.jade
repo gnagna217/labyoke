@@ -252,13 +252,14 @@ block content
 
 
 
-                    
-                  var l = $('#ordered').offset().top;
+              if($('#ordered')){
+                var l = $('#ordered').offset().top;
                 if(l>100){
                   l -= 100;
                 }
                 console.log("scrolling ordered : " + l);
                 $('html,body').animate({scrollTop: 500}, 1000);
+                }
 
 
 
