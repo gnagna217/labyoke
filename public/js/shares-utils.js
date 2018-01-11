@@ -127,7 +127,7 @@
 											$(window).scrollTop($('#rankTblshares').offset().top * 10).scrollLeft($('#rankTblshares').offset().left);
 										}
 
-				$( ".uploadtext" ).addClass( "animated fadeIn" );
+				/*$( ".uploadtext" ).addClass( "animated fadeIn" );
 				$('body').click(function() {
 					// jQuery selector to get an element
 					var query = $('#focusadmin');
@@ -148,7 +148,7 @@
 				$('#sharesVenn').show();
 				$('#sharesAll').show();
 				$('#monthAll').show();
-
+*/
 
 								});
 
