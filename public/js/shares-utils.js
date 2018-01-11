@@ -108,7 +108,7 @@
                           }
                         });
 
-
+if($('#rankTblshares').length > 0){
                         $('#rankTblshares').DataTable({order: [[ 5, "desc" ]],
                           iDisplayLength: 5,
                           aLengthMenu: [[5, 10, 15, -1], [5, 10, 15, "All"]],
@@ -136,6 +136,7 @@
                           }
                           }
                         });
+}
 
 
 
