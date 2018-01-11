@@ -148,14 +148,12 @@ block content
                         input(name="column" type="hidden" id="column" value="onfill")
                         input(name="formemail" type="hidden" id="formemail" value=email)
                       label(for="emailOnFill" class="labelcheck shadow labelcheckonfill")
-
           div(style="margin-top: -70px;float: left;" class="threepointssep")
           div(class="texthalf")
             span!=" <span id='showteam' class='labColor' style='font-weight:bold'><div class='buttons'><button type='submit' class='btn btn-success btn-lg btn-block shadow teamaccountbuttonwidth' id='teamTitle' style='width: 278px;'>" + i18n.__("account.button") + "</button></div></span>"
           div(id="team")
             h3!=i18n.__("account.team.desc1") + labname + i18n.__("account.team.desc2")
             p(class="texthalf")!=i18n.__("account.team.subdesc1")+ dept + "</span>. " + adminIntro + i18n.__("account.team.subdesc2")
-
             div(style="display: flex;flex-wrap: wrap;width: 100%;" class="animated fadeIn")
               - var t = team.length
               - var w = 180;
