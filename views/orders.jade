@@ -1,11 +1,6 @@
 extends layout
 
 block content
-    //div(id="pageloader")
-    //  div(class="spinner")
-    //    div(class="bounce1")
-    //    div(class="bounce2")
-    //    div(class="bounce3")
     div(class="zoomnow container login marginbottom margintop container2 moveFromLeft botbottom")
       - var classContainer = ""
       - var widthnodata = ""
@@ -53,10 +48,6 @@ block content
                              - isnew = "isnew"
                           - if(insuff == 0)
                              - isnew = "backColorinsuff"
-                          - //var mod = prop % 2
-                          - //isnew += " animated fadeInUp"
-                          - //if(mod == 0)
-                            - //isnew += " animated fadeInUp"
                           - i = i + 1
                           tr(class=isnew)
                             td(class="desktabonly")= i
@@ -65,43 +56,7 @@ block content
                             td(class="wrapped2 desktabonly") #{ob[prop].catalognumber}
                             td(class="wrapped2") #{ob[prop].email}
                             td #{d}
-                    script.
-                      $(document).ready(function() {
-                        $('#rankTblOrders').DataTable({order: [[ 5, "desc" ]],
-                          iDisplayLength: 5,
-                          aLengthMenu: [[5, 10, 15, -1], [5, 10, 15, "All"]],
-                          language:{
-                          processing: "#{i18n.__("datatable.processing")}",
-                          search: "#{i18n.__("datatable.search")}",
-                          lengthMenu: "#{i18n.__("datatable.lengthMenu")}",
-                          info: "#{i18n.__("datatable.info")}",
-                          infoEmpty: "#{i18n.__("datatable.infoEmpty")}",
-                          infoFiltered: "#{i18n.__("datatable.infoFiltered")}",
-                          infoPostFix: "",
-                          loadingRecords: "#{i18n.__("datatable.loadingRecords")}",
-                          zeroRecords: "#{i18n.__("datatable.zeroRecords")}",
-                          emptyTable: "#{i18n.__("datatable.emptyTable")}",
-                          paginate: {
-                          first: "#{i18n.__("datatable.first")}",
-                          previous: "#{i18n.__("datatable.previous")}",
-                          next: "#{i18n.__("datatable.next")}",
-                          last: "#{i18n.__("datatable.last")}",
-                          searchPlaceholder: "#{i18n.__("datatable.searchplaceholder")}"
-                          },
-                          aria: {
-                          sortAscending: "#{i18n.__("datatable.sortAscending")}",
-                          sortDescending: "#{i18n.__("datatable.sortDescending")}"
-                          }
-                          }
-                        });
-                        var win = $( window ).width();
-                        console.log(win);
-                        if(win < 767){
-                          $("#order-container").css( "min-height", "0px" );
-                        }
-                        $("#rankTblOrders").css( "width", "100%" );
-                        
-                      });
+
       div(class="slide-out-tip-div desktabonly", style="display:none;z-index:1;position: fixed;top: 25% !important;max-height:380px;")
         a(class="handle" href="last-transactions", title='#{i18n.__("search.tip.header")}', style="right: -60px;,left:-85px;top:25px;")!=Content
         div(style="padding: 1px;color:white;top: -45px;position: relative;max-height: 320px;overflow: auto;")
@@ -117,27 +72,11 @@ block content
             p(style="font-size: 12pt;")!= i18n.__("orders.tip.header")
             div(style="position: relative;float: right;width: 250px;font-size: 9pt;line-height: 1.3;border-radius: 4px;")
               span!= i18n.__("orders.tip.desc")
-      script.
-         $(function(){
-             $('.slide-out-tip-div').tabSlideOut({
-                 imgPos: 100,
-                 tabHandle: '.handle',                              //class of the element that will be your tab
-                 pathToTabImage: 'images/bouee5.png',          //path to the image for the tab (optionaly can be set using css)
-                 imageHeight: '50px',                               //height of tab image
-                 imageWidth: '50px',                               //width of tab image    
-                 tabLocation: 'right',                               //side of screen where tab lives, top, right, bottom, or left
-                 speed: 300,                                        //speed of animation
-                 action: 'click',                                   //options: 'click' or 'hover', action to trigger animation
-                 topPos: '25% !important',                                   //position from the top
-                 fixedPosition: true                               //options: true makes it stick(fixed position) on scroll
-             });
-         });
 
       if(orderresults != "" && email == undefined)
         div(style="float:right; padding-left: 25px", class="share-container adjustpadding adjustpaddingrightandwidth")
           script(type="text/javascript" src="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.js")
           if(orderresults != "" && email == undefined)
-            //div(class="alert alert-orders alert-" + boostercolor + " fade in alert-dismissable order-container /*alertshadow*/",style="margin-top:50px;width:100%")
             div(class="threepointssep mobileonly5")
             div(class="alert alert-orders fade in alert-dismissable order-container",style="margin-top:0px;width:100%;margin-bottom:-43px;")
               a(href="#", class="close", data-dismiss="alert", aria-label="close", title="close")="x"
@@ -164,86 +103,8 @@ block content
           - var count = 0;
           - var filteroutput = test.filter(function(x){console.log("x.monthorder: "+x.monthorder); console.log("x.yearorder: "+x.yearorder); console.log("now.getFullYear(): "+ now.getFullYear()); console.log("now.getMonth(): "+ now.getMonth()); console.log("so: "+ (x.yearorder == now.getFullYear() && x.monthorder == (now.getMonth() + 1))); if(x.yearorder == now.getFullYear() && x.monthorder == (now.getMonth() + 1)){count++;} console.log("count is: "+count); if(count<6){return (x.yearorder == now.getFullYear() && x.monthorder == (now.getMonth() + 1))}});
           script.
-            console.log("find0: " + ("#{find0}" != null && "#{find0}" != undefined && ("#{find0}").length > 0));
-            window.onload = function() {
-            $('#labsComp').hide();
-            $('#monthComp').hide();
-            $('#qtyComp').hide();
-
-            $('#chartSelect').val('chartQty');
-
-            var eSelect = document.getElementById('chartSelect');
-            console.debug("selected: " + $('#chartSelect').val());
-
-            if(chartSelect.selectedIndex === 1 || $('#chartSelect').val() == 'chartQty') {
-              $('#chartNotes').hide();
-              console.log("chartQty inside");
-              $('#qtyComp').show();
-
-              if("#{find0}" != null && "#{find0}" != undefined && ("#{find0}").length > 0)
-                document.querySelector('.ct-chart1').__chartist__.update();
-              $('#monthComp').hide();
-              $('#labsComp').hide();
-            } else if(chartSelect.selectedIndex === 2 || $('#reportSelect').val() == 'chartOrders') {
-              $('#chartNotes').hide();
-              console.log("chartOrders inside");
-              $('#qtyComp').hide();
-              $('#monthComp').show();
-              if("#{filteroutput}" != null && "#{filteroutput}" != undefined && ("#{filteroutput}").length > 0)
-                document.querySelector('.ct-chart0').__chartist__.update();
-              $('#labsComp').hide();
-            } else if(chartSelect.selectedIndex === 3 || $('#reportSelect').val() == 'chartLabs') {
-              $('#chartNotes').hide();
-              console.log("chartLabs inside");
-              $('#qtyComp').hide();
-              $('#monthComp').hide();
-              $('#labsComp').show();
-              if("#{find2}" != null && "#{find2}" != undefined && ("#{find2}").length > 0)
-                document.querySelector('.ct-chart-3').__chartist__.update();
-            } else if(eSelect.selectedIndex === 0 || $('#reportSelect').val() == 'chartNone') {
-              console.log("result None inside");
-              $('#qtyComp').hide();
-              $('#monthComp').hide();
-              $('#labsComp').hide();
-              $('#chartNotes').show();
-            }
-
-            chartSelect.onchange = function() {
-            if(chartSelect.selectedIndex === 1 || $('#chartSelect').val() == 'chartQty') {
-              console.log("chartQty inside");
-              $('#chartNotes').hide();
-              $('#qtyComp').show();
-              if("#{find0}" != null && "#{find0}" != undefined && ("#{find0}").length > 0)
-                document.querySelector('.ct-chart1').__chartist__.update();
-              $('#monthComp').hide();
-              $('#labsComp').hide();
-            } else if(chartSelect.selectedIndex === 2 || $('#reportSelect').val() == 'chartOrders') {
-              console.log("chartOrders inside");
-              $('#chartNotes').hide();
-              $('#qtyComp').hide();
-              $('#monthComp').show();
-              if("#{filteroutput}" != null && "#{filteroutput}" != undefined && ("#{filteroutput}").length > 0)
-                document.querySelector('.ct-chart0').__chartist__.update();
-              $('#labsComp').hide();
-            } else if(chartSelect.selectedIndex === 3 || $('#reportSelect').val() == 'chartLabs') {
-              console.log("chartLabs inside");
-              $('#chartNotes').hide();
-              $('#qtyComp').hide();
-              $('#monthComp').hide();
-              $('#labsComp').show();
-              if("#{find2}" != null && "#{find2}" != undefined && ("#{find2}").length > 0)
-                document.querySelector('.ct-chart3').__chartist__.update();
-            } else if(eSelect.selectedIndex === 0 || $('#reportSelect').val() == 'chartNone') {
-              console.log("result None inside");
-              $('#qtyComp').hide();
-              $('#monthComp').hide();
-              $('#labsComp').hide();
-              $('#chartNotes').show();
-            }            
-            };
-
-            };
-
+            var find0 = "#{find0}", find1 = "#{find1}", find2 = "#{find2}", now = "#{now}", filteroutput = "#{filteroutput}"
+          script(type="text/javascript" src="/js/orders-chartnotes-utils.js")
 
 
           div(id="qtyComp", style="display:none")
@@ -268,7 +129,6 @@ block content
                  span= i18n.__("orders.month.subtitle2")
           div(id="labsComp", style="display:none")
             //- if(filteroutput != null && filteroutput.length == 0) 
-            // h5= i18n.__("orders.month.subtitle2")
             h4= i18n.__("orders.month.subtitle3")
             p!= i18n.__("orders.month.subtitle4")
             - if(laborders != null && laborders.length > 0)
@@ -276,7 +136,6 @@ block content
                div(id="tooltips3", class="labColor") &nbsp;
             - if(laborders != null && laborders.length == 0) 
              h5= i18n.__("orders.month.subtitle5")
-          //div(class="threepointssep", style="top: 0px;margin-bottom: 0px;margin-top: 10px;")
 
           - var array_rows = []
           - var array_values = ""
@@ -376,11 +235,11 @@ block content
             var catTransformLimit = [];
             var valTransform = [];
             var valTransformOrders = [];
-            for(var prop in categories){
-              //catTransform.push((categories[prop]).toLowerCase());
-              //valTransform.push(0);
-              //valTransformOrders.push(0);
-            }
+            /*for(var prop in categories){
+              catTransform.push((categories[prop]).toLowerCase());
+              valTransform.push(0);
+              valTransformOrders.push(0);
+            }*/
 
             var rows = "#{array_rows}";
             rows = rows.split("|");
