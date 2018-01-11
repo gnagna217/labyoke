@@ -1,12 +1,6 @@
 extends layout
 
 block content
-   //div(id="pageloader")
-   //   div(class="spinner")
-   //     div(class="bounce1")
-   //     div(class="bounce2")
-   //     div(class="bounce3")
-   //img(src="/images/bouee6.png" style="display:none;")
    - var margintopchoice = "5%"
    - var helpheader = " helpheader"
    - if (loggedIn==true)
@@ -20,7 +14,6 @@ block content
            img(src="/images/bouee6.png", alt="The Yoke", class="yokelogohelp")
      div
       div
-       //img(src="/images/referee.png" alt="" style="border-width:0px; width: 250px;float: right;")
        h1!= i18n.__("help.title") + "."
        div(class="pointsLayout alert results")
           span= i18n.__("help.desc1")
@@ -35,7 +28,6 @@ block content
          div.pointsLayout.alert.resultsshadow.helpleft(style="")
           span(style=" font-size: 20pt; font-weight: bold; text-align: center; margin: 0 auto; display: block;margin-left: -30px;")!= i18n.__("help.titledesc5")
           span!= i18n.__("help.desc5")
-         //h3!= i18n.__("help.desc6")
          span(class="fa fa-question helpheaderright2", style="width: 100%;text-align: center;")
          div.pointsLayout.alert.resultsshadow.helpright
           span(style=" font-size: 20pt; font-weight: bold; text-align: center; margin: 0 auto; display: block;")!= i18n.__("help.titledesc7")
@@ -62,16 +54,13 @@ block content
               div(class="videocontainer")
                 span!= i18n.__("help.video.profile")
                 video(width="100%", height="100%", controls="", controlslist="nodownload", poster="/videos/profile_" + language + ".png", src="/videos/vid_profile_en.mov")
-                  //source(src="/movie4.mov" type="video/ogg")
               - if(isLoggedInAdmin == true)
                 div(class="videocontainer")
                   span!= i18n.__("help.video.admins")
                   video(width="100%", height="100%", controls="", controlslist="nodownload", poster="/videos/admins_" + language + ".png", src="/videos/vid_admins_en.mov")
-                    //source(src="/movie4.mov" type="video/ogg") 
                 div(class="videocontainer")
                   span!= i18n.__("help.video.reports")
-                  video(width="100%", height="100%", controls="", controlslist="nodownload", poster="/videos/reports_" + language + ".png", src="/videos/vid_reports_en.mov")
-                    //source(src="/movie4.mov" type="video/ogg")             
+                  video(width="100%", height="100%", controls="", controlslist="nodownload", poster="/videos/reports_" + language + ".png", src="/videos/vid_reports_en.mov")          
 
           div.alert.pointsLayout(style="clear:both;width: 100%; background-color: rgba(61, 157, 203, 0.79); color: white; text-align: center; padding-bottom: 15px;font-weight: bold;")
              span!= ''+labyoker + i18n.__("help.desc9")
