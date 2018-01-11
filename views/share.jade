@@ -225,13 +225,7 @@ block content
 							- array_catalogs_venn = array_catalogs_venn + ob[prop].catalognumber + "|"
 
 						script.
-							var test = JSON.parse('#{JSON.stringify(venn)}'.replace(/&quot;/g, '"'));
-							var colorDefault = ["rgb(61,157,203)", "rgb(138,109,59)", "rgb(0,102,0)", "rgb(90,155,212)", "rgb(241,90,96)", "rgb(207,207,27)", "rgb(255,117,0)", "rgb(192,152,83)"];
-							console.log(test);
-							console.log("filter department venn: " + "#{array_labs_venn}");
-							console.log("filter catalog venn: " + "#{array_catalogs_venn}");
-							console.log("filter venn: " + "#{venn}");
-							var var_venn_chart_title1 = "#{i18n.__("shares.venn.chart.title1")}", var_venn_chart_title2 = "#{i18n.__("shares.venn.chart.title2")}", var_venn_chart_titlenone = "#{i18n.__("shares.venn.chart.titlenone")}";
+							var test = JSON.parse('#{JSON.stringify(venn)}'.replace(/&quot;/g, '"')), colorDefault = ["rgb(61,157,203)", "rgb(138,109,59)", "rgb(0,102,0)", "rgb(90,155,212)", "rgb(241,90,96)", "rgb(207,207,27)", "rgb(255,117,0)", "rgb(192,152,83)"], var_venn_chart_title1 = "#{i18n.__("shares.venn.chart.title1")}", var_venn_chart_title2 = "#{i18n.__("shares.venn.chart.title2")}", var_venn_chart_titlenone = "#{i18n.__("shares.venn.chart.titlenone")}";
 						script(type="text/javascript" src="/js/shares-venn-utils.js")
 
 
