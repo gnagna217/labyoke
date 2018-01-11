@@ -2,12 +2,6 @@ extends layout
 
 block content
 	if !doing
-		//div(id="pageloader")
-		//	div(class="spinner")
-		//		div(class="bounce1")
-		//		div(class="bounce2")
-		//		div(class="bounce3")
-	//- var shadow = ""
 	- var nobar = ""
 	- var fadesections = ""
 	- var hidefadesections = ""
@@ -15,8 +9,6 @@ block content
 	- var slide = "moveFromLeft"
 	- if(doing == "upload")
 		- slide = ""
-		//- var nobar = "display:none;"
-		//- shadow = "uploadh"
 		- fadesections = "fadesections"
 		- hidefadesections = "hidefadesections"
 		- uploadtext = "uploadtext"
@@ -45,12 +37,10 @@ block content
 				span!= i18n.__("shares.title")
 				span(class="fa fa-caret-right lightyokecolor animated fadeIn" style="font-size: 20pt;")
 			if(myshares == "")
-				//- adjust = ""
 				h4= i18n.__("shares.non.title")
 				p!= i18n.__("shares.non.subtitle")
 				div(class="searchlogo", style="margin-top:50px")
 					span(class="fa fa-cubes" style=" color: #3d9dcb; font-size: 120pt; ")
-				//div(class="threepointssep", style="margin-bottom: 20px;margin-top: 20px;")
 			if(mysharesrequest != null && mysharesrequest.length>0)
 				- var output = mysharesrequest.filter(function(x){return x.status!="fulfilled" && x.insufficient!=0});
 				h4= i18n.__("shares.subtitle1")
@@ -79,7 +69,6 @@ block content
 										th= i18n.__("shares.table.date")
 										th(data-toggle="tooltip", title=i18n.__("admins.table.header.cancelorder"))= i18n.__("shares.table.delete")
 								tbody
-									//- var output = mysharesrequest.filter(function(x){return x.status!="fulfilled"});
 									-var ob = mysharesrequest
 									-for(var prop in ob)
 										- var canc = i18n.__("admins.table.x") + ob[prop].agent
@@ -101,10 +90,6 @@ block content
 										- var showcancel = ""
 										- if(status == 'fulfilled')
 											- showcancel = "display:none;"
-										- //var mod = prop % 2
-										- //isnew += " animated fadeInUp"
-										- //if(mod == 0)
-											- //isnew += " animated fadeInUp"
 										
 										tr(class=isnew, data-pos=prop)
 											td(style="display:none") #{prop}
@@ -149,7 +134,6 @@ block content
 										previous: "#{i18n.__("datatable.previous")}",
 										next: "#{i18n.__("datatable.next")}",
 										last: "#{i18n.__("datatable.last")}",
-										//search: "_INPUT_",
 										searchPlaceholder: "#{i18n.__("datatable.searchplaceholder")}"
 										},
 										aria: {
@@ -158,7 +142,6 @@ block content
 										}
 									}
 									});
-									//var urlParams = new URLSearchParams(window.location.search);
 									var pos = getUrlParameter('pos');
 									console.log("pos: " + pos);
 									if(pos!=null && pos!=""){
@@ -168,7 +151,6 @@ block content
 										console.debug("jumping");
 										tableid.page.jumpToData(pos, 0);
 										$('#rankTblreqshares').find($( "tr[data-pos="+pos+"]" )).children('td').eq(1).addClass("point");
-										//$( "tr[data-pos="+pos+"]" ).children('td').eq(6).addClass("point2");
 
 										$(window).scrollTop($('#rankTblreqshares').offset().top * 10).scrollLeft($('#rankTblreqshares').offset().left);
 									}
@@ -202,10 +184,6 @@ block content
 											- checkedstr = true
 											- canc = ob[prop].agent + i18n.__("admins.table.repl")
 										- var c = "cancelr" + prop
-										- //var mod = prop % 2
-										- //qtyinsufficient += " animated fadeInUp"
-										- //if(mod == 0)
-											- //qtyinsufficient += " animated fadeInUp"
 										
 										tr(class=qtyinsufficient, data-pos=prop)
 											td(style="display:none") #{prop}
@@ -246,7 +224,6 @@ block content
 										previous: "#{i18n.__("datatable.previous")}",
 										next: "#{i18n.__("datatable.next")}",
 										last: "#{i18n.__("datatable.last")}",
-										//search: "_INPUT_",
 										searchPlaceholder: "#{i18n.__("datatable.searchplaceholder")}"
 										},
 										aria: {
@@ -255,7 +232,6 @@ block content
 										}
 									}
 										});
-										//var urlParams = new URLSearchParams(window.location.search);
 										var pos2 = getUrlParameter('pos2');
 										console.log("pos2: " + pos2);
 										console.log("pos2_: " + (pos2!=null && pos2!=""));
@@ -269,7 +245,6 @@ block content
 											
 											tableid.page.jumpToData(pos2, 0);
 											$('#rankTblshares').find($("tr[data-pos="+pos2+"]")).children('td').eq(1).addClass("point");
-											//$( "tr[data-pos="+pos2+"]" ).children('td').eq(4).addClass("point2");
 
 											$(window).scrollTop($('#rankTblshares').offset().top * 10).scrollLeft($('#rankTblshares').offset().left);
 										}
@@ -395,10 +370,8 @@ block content
 						- for(var prop in ob)
 							- getlabs.push(ob[prop].labname)
 						- for(var prop in ob)
-							//div!= "prop: " + prop + " - " + ob.length
 							- if(seriesname == '')
 								- seriesname = ob[prop].labname
-							//div!= "seriesname: " + seriesname
 							- if(labname == '')
 								- labname = ob[prop].labname
 							- if (ob[prop].labname == labname && prop < (ob.length))
@@ -408,20 +381,16 @@ block content
 									- vennportion = {name:'', data:[]}
 									- vennportion.name = seriesname
 									- vennportion.data = seriesdata
-									//div!= "vennportion: " + vennportion
 									- venn.push(vennportion)
-								//div!= "feeding seriesdata: " + seriesdata
 							- else
 								- vennportion.name = seriesname
 								- vennportion.data = seriesdata
-								//div!= "vennportion: " + vennportion
 								- venn.push(vennportion)
 								- seriesdata = []
 								- seriesname = ob[prop].labname
 								- seriesdata.push(ob[prop].catalognumber)
 								- labname = ob[prop].labname
 								- vennportion = {name:'', data:[]}
-								//div!= "venn: " + venn
 							- array_labs_venn = array_labs_venn + ob[prop].labname + "|"
 							- array_catalogs_venn = array_catalogs_venn + ob[prop].catalognumber + "|"
 
@@ -539,7 +508,6 @@ block content
 					p(style="padding-top: 20px;")=" "
 			div(id="monthAll", style="display:none")
 				h4= i18n.__("shares.month.title")
-				- // var now = new Date()
 				- var month = "month";
 				- //var filteroutput = test.filter(function(x){console.log("x.monthorder: "+x.monthorder); console.log("x.yearorder: "+x.yearorder); console.log("now.getFullYear(): "+ now.getFullYear()); console.log("now.getMonth(): "+ now.getMonth()); console.log("so: "+ (x.yearorder == now.getFullYear() && x.monthorder == now.getMonth())); return (x.yearorder == now.getFullYear() && x.monthorder == now.getMonth() + 1)});
 				- if(filteroutput != null && filteroutput.length > 0) 
