@@ -24,6 +24,78 @@
 
 
 
+				$('#monthAll').hide();
+				$('#sharesAll').hide();
+
+				$('#chartSelect').val('chartVenn');
+
+				var eSelect = document.getElementById('chartSelect');
+				console.debug("selected: " + $('#chartSelect').val());
+
+				if(chartSelect.selectedIndex === 1 || $('#chartSelect').val() == 'chartVenn') {
+				console.log("sharesVenn inside");
+				$('#chartNotes').hide();
+				$('#sharesVenn').show();
+				$('#monthAll').hide();
+				$('#sharesAll').hide();
+				} if(chartSelect.selectedIndex === 2 || $('#chartSelect').val() == 'chartAll') {
+				console.log("sharesAll inside");
+				$('#chartNotes').hide();
+				$('#sharesAll').show();
+				if("#{find0}" != null && "#{find0}" != undefined && ("#{find0}").length > 0)
+					document.querySelector('.ct-chart').__chartist__.update();
+				$('#monthAll').hide();
+				$('#sharesVenn').hide();
+				} else if(chartSelect.selectedIndex === 3 || $('#reportSelect').val() == 'chartMonth') {
+				console.log("chartOrders inside");
+				$('#chartNotes').hide();
+				$('#sharesAll').hide();
+				$('#monthAll').show();
+				$('#sharesVenn').hide();
+				if("#{filteroutput}" != null && "#{filteroutput}" != undefined && ("#{filteroutput}").length > 0)
+					document.querySelector('.ct-chart0').__chartist__.update();
+				} else if(eSelect.selectedIndex === 0 || $('#reportSelect').val() == 'chartNone') {
+				console.log("result None inside");
+				$('#monthAll').hide();
+				$('#sharesAll').hide();
+				$('#sharesVenn').hide();
+				$('#chartNotes').show();
+				}
+
+				chartSelect.onchange = function() {
+				if(chartSelect.selectedIndex === 1 || $('#chartSelect').val() == 'chartVenn') {
+				console.log("sharesAll inside");
+				$('#chartNotes').hide();
+				$('#sharesAll').hide();
+				$('#sharesVenn').show();
+				$('#monthAll').hide();
+				} if(chartSelect.selectedIndex === 2 || $('#chartSelect').val() == 'chartAll') {
+				console.log("sharesAll inside");
+				$('#chartNotes').hide();
+				$('#sharesAll').show();
+				$('#sharesVenn').hide();
+				if("#{find0}" != null && "#{find0}" != undefined && ("#{find0}").length > 0)
+					document.querySelector('.ct-chart').__chartist__.update();
+				$('#monthAll').hide();
+				}  else if(chartSelect.selectedIndex === 3 || $('#reportSelect').val() == 'chartMonth') {
+				console.log("chartOrders inside");
+				$('#chartNotes').hide();
+				$('#sharesAll').hide();
+				$('#sharesVenn').hide();
+				$('#monthAll').show();
+				if("#{filteroutput}" != null && "#{filteroutput}" != undefined && ("#{filteroutput}").length > 0)
+					document.querySelector('.ct-chart0').__chartist__.update();
+				} else if(eSelect.selectedIndex === 0 || $('#reportSelect').val() == 'chartNone') {
+				console.log("result None inside");
+				$('#monthAll').hide();
+				$('#sharesAll').hide();
+				$('#sharesVenn').hide();
+				$('#chartNotes').show();
+				}           
+				};
+
+
+
 									var pos = getUrlParameter('pos');
 									console.log("pos: " + pos);
 									if(pos!=null && pos!=""){
@@ -108,7 +180,7 @@
                           }
                         });
 
-if($('#rankTblshares').length > 0){
+
                         $('#rankTblshares').DataTable({order: [[ 5, "desc" ]],
                           iDisplayLength: 5,
                           aLengthMenu: [[5, 10, 15, -1], [5, 10, 15, "All"]],
@@ -136,7 +208,7 @@ if($('#rankTblshares').length > 0){
                           }
                           }
                         });
-}
+
 
 
 
@@ -148,80 +220,7 @@ if($('#rankTblshares').length > 0){
 		};
 
 
-				window.onload = function() {
-				$('#monthAll').hide();
-				$('#sharesAll').hide();
-
-				$('#chartSelect').val('chartVenn');
-
-				var eSelect = document.getElementById('chartSelect');
-				console.debug("selected: " + $('#chartSelect').val());
-
-				if(chartSelect.selectedIndex === 1 || $('#chartSelect').val() == 'chartVenn') {
-				console.log("sharesVenn inside");
-				$('#chartNotes').hide();
-				$('#sharesVenn').show();
-				$('#monthAll').hide();
-				$('#sharesAll').hide();
-				} if(chartSelect.selectedIndex === 2 || $('#chartSelect').val() == 'chartAll') {
-				console.log("sharesAll inside");
-				$('#chartNotes').hide();
-				$('#sharesAll').show();
-				if("#{find0}" != null && "#{find0}" != undefined && ("#{find0}").length > 0)
-					document.querySelector('.ct-chart').__chartist__.update();
-				$('#monthAll').hide();
-				$('#sharesVenn').hide();
-				} else if(chartSelect.selectedIndex === 3 || $('#reportSelect').val() == 'chartMonth') {
-				console.log("chartOrders inside");
-				$('#chartNotes').hide();
-				$('#sharesAll').hide();
-				$('#monthAll').show();
-				$('#sharesVenn').hide();
-				if("#{filteroutput}" != null && "#{filteroutput}" != undefined && ("#{filteroutput}").length > 0)
-					document.querySelector('.ct-chart0').__chartist__.update();
-				} else if(eSelect.selectedIndex === 0 || $('#reportSelect').val() == 'chartNone') {
-				console.log("result None inside");
-				$('#monthAll').hide();
-				$('#sharesAll').hide();
-				$('#sharesVenn').hide();
-				$('#chartNotes').show();
-				}
-
-				chartSelect.onchange = function() {
-				if(chartSelect.selectedIndex === 1 || $('#chartSelect').val() == 'chartVenn') {
-				console.log("sharesAll inside");
-				$('#chartNotes').hide();
-				$('#sharesAll').hide();
-				$('#sharesVenn').show();
-				$('#monthAll').hide();
-				} if(chartSelect.selectedIndex === 2 || $('#chartSelect').val() == 'chartAll') {
-				console.log("sharesAll inside");
-				$('#chartNotes').hide();
-				$('#sharesAll').show();
-				$('#sharesVenn').hide();
-				if("#{find0}" != null && "#{find0}" != undefined && ("#{find0}").length > 0)
-					document.querySelector('.ct-chart').__chartist__.update();
-				$('#monthAll').hide();
-				}  else if(chartSelect.selectedIndex === 3 || $('#reportSelect').val() == 'chartMonth') {
-				console.log("chartOrders inside");
-				$('#chartNotes').hide();
-				$('#sharesAll').hide();
-				$('#sharesVenn').hide();
-				$('#monthAll').show();
-				if("#{filteroutput}" != null && "#{filteroutput}" != undefined && ("#{filteroutput}").length > 0)
-					document.querySelector('.ct-chart0').__chartist__.update();
-				} else if(eSelect.selectedIndex === 0 || $('#reportSelect').val() == 'chartNone') {
-				console.log("result None inside");
-				$('#monthAll').hide();
-				$('#sharesAll').hide();
-				$('#sharesVenn').hide();
-				$('#chartNotes').show();
-				}           
-				};
-
-				};
-
-
+$(function(){
 				$('.slide-out-tip-div').tabSlideOut({
 				imgPos: 100,
 				tabHandle: '.handle',                              //class of the element that will be your tab
@@ -234,3 +233,4 @@ if($('#rankTblshares').length > 0){
 				topPos: '25% !important',                                   //position from the top
 				fixedPosition: true                               //options: true makes it stick(fixed position) on scroll
 				});
+			});
