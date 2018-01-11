@@ -96,62 +96,6 @@
 
 
 
-									var pos = getUrlParameter('pos');
-									console.log("pos: " + pos);
-									if(pos!=null && pos!=""){
-										
-										var tableid = $('#rankTblreqshares').DataTable();
-										$('#rankTblreqshares').removeClass("animated fadeIn");
-										console.debug("jumping");
-										tableid.page.jumpToData(pos, 0);
-										$('#rankTblreqshares').find($( "tr[data-pos="+pos+"]" )).children('td').eq(1).addClass("point");
-
-										$(window).scrollTop($('#rankTblreqshares').offset().top * 10).scrollLeft($('#rankTblreqshares').offset().left);
-									}
-
-
-									var pos2 = getUrlParameter('pos2');
-										console.log("pos2: " + pos2);
-										console.log("pos2_: " + (pos2!=null && pos2!=""));
-										if(pos2!=null && pos2!=""){
-											console.log("jumping0");
-												
-											console.log("jumping1");
-											$('#rankTblshares').removeClass("animated fadeIn");
-											console.log("jumping");
-											var tableid = $('#rankTblshares').DataTable();
-											
-											tableid.page.jumpToData(pos2, 0);
-											$('#rankTblshares').find($("tr[data-pos="+pos2+"]")).children('td').eq(1).addClass("point");
-
-											$(window).scrollTop($('#rankTblshares').offset().top * 10).scrollLeft($('#rankTblshares').offset().left);
-										}
-
-				/*$( ".uploadtext" ).addClass( "animated fadeIn" );
-				$('body').click(function() {
-					// jQuery selector to get an element
-					var query = $('#focusadmin');
-					// check if element is Visible
-					var isVisible = query.is(':visible');
-					if (isVisible === true) {
-						console.log("hide admin focus");
-						query.hide();
-					}
-				});
-			console.log( "share document loaded" );
-				if ($("#checkdisplay").css("display") == "none" ){
-					$('.slide-out-tip-div').hide();
-				} else {
-					$('.slide-out-tip-div').show();
-				}
-				$('#chartNotes').show();
-				$('#sharesVenn').show();
-				$('#sharesAll').show();
-				$('#monthAll').show();
-*/
-
-								});
-
                         $('#rankTblreqshares').DataTable({order: [[ 5, "desc" ]],
                           iDisplayLength: 5,
                           aLengthMenu: [[5, 10, 15, -1], [5, 10, 15, "All"]],
@@ -211,6 +155,66 @@
 
 
 
+									var pos = getUrlParameter('pos');
+									console.log("pos: " + pos);
+									if(pos!=null && pos!=""){
+										
+										var tableid = $('#rankTblreqshares').DataTable();
+										$('#rankTblreqshares').removeClass("animated fadeIn");
+										console.debug("jumping");
+										tableid.page.jumpToData(pos, 0);
+										$('#rankTblreqshares').find($( "tr[data-pos="+pos+"]" )).children('td').eq(1).addClass("point");
+
+										$(window).scrollTop($('#rankTblreqshares').offset().top * 10).scrollLeft($('#rankTblreqshares').offset().left);
+									}
+
+
+									var pos2 = getUrlParameter('pos2');
+										console.log("pos2: " + pos2);
+										console.log("pos2_: " + (pos2!=null && pos2!=""));
+										if(pos2!=null && pos2!=""){
+											console.log("jumping0");
+												
+											console.log("jumping1");
+											$('#rankTblshares').removeClass("animated fadeIn");
+											console.log("jumping");
+											var tableid = $('#rankTblshares').DataTable();
+											
+											tableid.page.jumpToData(pos2, 0);
+											$('#rankTblshares').find($("tr[data-pos="+pos2+"]")).children('td').eq(1).addClass("point");
+
+											$(window).scrollTop($('#rankTblshares').offset().top * 10).scrollLeft($('#rankTblshares').offset().left);
+										}
+
+				/*$( ".uploadtext" ).addClass( "animated fadeIn" );
+				$('body').click(function() {
+					// jQuery selector to get an element
+					var query = $('#focusadmin');
+					// check if element is Visible
+					var isVisible = query.is(':visible');
+					if (isVisible === true) {
+						console.log("hide admin focus");
+						query.hide();
+					}
+				});
+			console.log( "share document loaded" );
+				if ($("#checkdisplay").css("display") == "none" ){
+					$('.slide-out-tip-div').hide();
+				} else {
+					$('.slide-out-tip-div').show();
+				}
+				$('#chartNotes').show();
+				$('#sharesVenn').show();
+				$('#sharesAll').show();
+				$('#monthAll').show();
+*/
+
+								});
+
+
+
+
+
 
          function getUrlParameter(name) {
 			name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
@@ -220,7 +224,7 @@
 		};
 
 
-$(function(){
+//$(function(){
 				$('.slide-out-tip-div').tabSlideOut({
 				imgPos: 100,
 				tabHandle: '.handle',                              //class of the element that will be your tab
@@ -233,4 +237,4 @@ $(function(){
 				topPos: '25% !important',                                   //position from the top
 				fixedPosition: true                               //options: true makes it stick(fixed position) on scroll
 				});
-			});
+//			});
