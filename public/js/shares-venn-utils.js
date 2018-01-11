@@ -12,9 +12,9 @@
 								var title = "";
 								var list = this.list;
 								if (this.listnames.length == 1) {
-									title += "#{i18n.__("shares.venn.chart.title1")}" + "<span class='yokeColor'>";
+									title += var_venn_chart_title1 + "<span class='yokeColor'>";
 								} else {
-									title += "#{i18n.__("shares.venn.chart.title2")}" + "<span class='yokeColor'>";
+									title += var_venn_chart_title2 + "<span class='yokeColor'>";
 								}
 
 								for (name in this.listnames) {
@@ -27,7 +27,7 @@
 								title += ":";
 								var pageValues = [];
 								if(this.list.length == 0){
-									title +=  "#{i18n.__("shares.venn.chart.titlenone")}" + "";
+									title +=  var_venn_chart_titlenone + "";
 								} else {
 									for (val in this.list) {
 										pageValues.push(this.list[val]);
