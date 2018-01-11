@@ -43,12 +43,12 @@ $('#messagejs1').hide();
                             $('#regform2').submit();
                         } else if($('#reguser').val() == ""  || $('#reguser').val() == undefined){
                             console.log("stop!");
-                            $('#messagejs').html("#{i18n.__("index.register.message6")}");
+                            $('#messagejs').html(var_register6);
                             $('#messagejs').show();
                             return false;
                         } else if($('#regverpass').val() == undefined || $('#regpass').val() == undefined || $('#regpass').val() == "" || $('#regverpass').val() == "" || $('#regverpass').val() != $('#regpass').val()){
                             console.log("stop!");
-                            $('#messagejs').html("#{i18n.__("index.register.message5")}");
+                            $('#messagejs').html(var_register5);
                             $('#messagejs').show();
                             return false;
                         } 
