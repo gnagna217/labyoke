@@ -32,7 +32,19 @@
                         }
                         $("#rankTblOrders").css( "width", "100%" );
                         
-                      });
+
+          console.log( "orders document loaded" );
+          if ($("#checkdisplay").css("display") == "none" ){
+            $('.slide-out-tip-div').hide();
+          } else {
+            $('.slide-out-tip-div').show();
+          }
+          $('#chartNotes').show();
+          $('#qtyComp').show();
+          $('#monthComp').show();
+          $('#labsComp').show();
+        });
+
 
          $(function(){
              $('.slide-out-tip-div').tabSlideOut({
@@ -76,6 +88,7 @@
                           }
                           }
                         });
+
 
 
 
