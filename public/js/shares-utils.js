@@ -124,7 +124,34 @@
                         });
 
 
-console.log("rankTblshares: " + $('#rankTblshares').length);
+
+                        $('#rankTblshares').DataTable({order: [[ 1, "desc" ]],
+                          iDisplayLength: 5,
+                          aLengthMenu: [[5, 10, 15, -1], [5, 10, 15, "All"]],
+                          language:{
+                          processing: var_processing,
+                          search: var_search,
+                          lengthMenu: var_lengthMenu,
+                          info: var_info,
+                          infoEmpty: var_infoEmpty,
+                          infoFiltered: var_infoFiltered,
+                          infoPostFix: "",
+                          loadingRecords: var_loadingRecords,
+                          zeroRecords: var_zeroRecords,
+                          emptyTable: var_emptyTable,
+                          paginate: {
+                          first: var_first,
+                          previous: var_previous,
+                          next: var_next,
+                          last: var_last,
+                          searchPlaceholder: var_searchplaceholder
+                          },
+                          aria: {
+                          sortAscending: var_sortAscending,
+                          sortDescending: var_sortDescending
+                          }
+                          }
+                        });
 
 
 });
