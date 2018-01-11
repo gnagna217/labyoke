@@ -290,11 +290,13 @@ html(lang='en')
           var var_bot_placeholder = "#{i18n.__("layout.bot.placeholder")}";
         script(type="text/javascript" src="/js/account-utils.js")
      if(title=='Register')
+        script.
+          var var_register10 = "#{i18n.__("index.register.message10")}", var_register7 = "#{i18n.__("index.register.message7")}", var_register8 = "#{i18n.__("index.register.message8")}", var_register9 = "#{i18n.__("index.register.message9")}"; 
         script(type="text/javascript" src="/js/register-utils.js")
      if(title=='Confirm Registration')
         script(type="text/javascript" src="/js/register-utils.js")
      if(title=='Change Password')
-        script(type="text/javascript" src="/js/forgot-utils.js")
+        script(type="text/javascript" src="/js/changepassword-utils.js")
      if(title=='Forgot Password')
         script(type="text/javascript" src="/js/forgot-utils.js")
      if(title=='Help')

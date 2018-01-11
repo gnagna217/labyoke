@@ -1,12 +1,6 @@
 extends layout
 
 block content
-  //div(id="pageloader")
-  //  div(class="spinner")
-  //      div(class="bounce1")
-  //      div(class="bounce2")
-  //      div(class="bounce3")
-
   div(class="container login front container2 containertop", style="text-align: center;position: relative;display:none")
      a(href="/search" class=labentered)
         img(src="/images/yoke4.png", alt="The Yoke", class="yokelogo")
@@ -21,8 +15,6 @@ block content
                 div(class="alert alert-danger-report alertshadow", id="messagejs1", style="display:none")
                 if message
                     div(class="alert alert-danger-report alertshadow")!= message
-                    script.
-                        $('#messagejs1').hide();
                 form(action="/register" method="post" id="regform1")
                     div(style="margin-bottom: 20px;")
                         div(class="textentry")
@@ -38,39 +30,6 @@ block content
                             input(name="regtel" type="text" id="tel" class="form-control" placeholder=i18n.__("register.form.tel"))
                     div(class="buttons", id="regbutton1")
                         button.btn.btn-success.btn-lg.btn-block.shadow.resizebutton(type='button') #{i18n.__("register.form.button1")}
-                        //img(src="/images/add.png", alt="The Lab", style="border-width:0px; width: 45px; height:57px; margin-top: -45px; float: right;position:relative;left:25px;display:none", class="noshowmobile767")
-                script.
-                    $('#regbutton1').click(function() {
-                        console.log("regfirstname: " + $('#regfirstname').val());
-                        console.log("reglastname: " + $('#lastname').val());
-                        console.log("regemail: " + $('#regemail').val());
-                        console.log("regtel: " + $('#tel').val());
-                        if($('#regfirstname').val() != "" && $('#lastname').val() != "" && $('#regemail').val() != "" && $('#tel').val() != "" ){
-                            console.log("go on!");
-                            $('#regform1').submit();
-                        } else if($('#regfirstname').val() == "" || $('#regfirstname').val() == undefined){
-                            console.log("stop!");
-                            $('#messagejs1').html("#{i18n.__("index.register.message7")}");
-                            $('#messagejs1').show();
-                            return false;
-                        } else if($('#lastname').val() == "" || $('#lastname').val() == undefined){
-                            console.log("stop!");
-                            $('#messagejs1').html("#{i18n.__("index.register.message8")}");
-                            $('#messagejs1').show();
-                            return false;
-                        } else if($('#regemail').val() == "" || $('#regemail').val() == undefined){
-                            console.log("stop!");
-                            $('#messagejs1').html("#{i18n.__("index.register.message9")}");
-                            $('#messagejs1').show();
-                            return false;
-                        } else if($('#tel').val() == "" || $('#tel').val() == undefined){
-                            console.log("stop!");
-                            $('#messagejs1').html("#{i18n.__("index.register.message10")}");
-                            $('#messagejs1').show();
-                            return false;
-                        } 
-                      }); 
-
         if labentered
             h1= i18n.__("register.form2.desc")
             p= i18n.__("register.form2.subdesc")
@@ -105,9 +64,7 @@ block content
                         input(name="regemail" type="hidden" id="regemail" value=email)
                         input(name="regtel" type="hidden" id="regtel" value=tel)
                     div(class="buttons", id="regbutton2")
-                        //input(type="submit" class="button" value="Register")
                         button.btn.btn-success.btn-lg.btn-block.shadow.resizebutton(type='button')= i18n.__("register.form2.button2")
-                        //img(src="/images/add.png", alt="The Lab", style="border-width:0px; width: 45px; margin-top: -45px; float: right;position:relative;left:25px;display:none;", class="noshowmobile767")
                 script.
                     $('#regbutton2').click(function() {
                         console.log("regverpass: " + $('#regverpass').val());
@@ -138,8 +95,7 @@ block content
                 div(id="ctl00_Div2")
                     span(style="text-align: center")
                         h3!= i18n.__("register.thanku2")
-                        p(class="centralize")!=" " + confirmReset + "!"
-                        //p(class="centralize")!= i18n.__("register.thanku2.desc1")        
+                        p(class="centralize")!=" " + confirmReset + "!"      
     script.
       $(document).ready(function(){
         if($('#tel')){$('#tel').mask("(999) 999-9999");}
