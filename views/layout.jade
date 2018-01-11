@@ -300,6 +300,7 @@ html(lang='en')
      if(title=='Orders')
         script.
           var var_processing = '#{i18n.__("datatable.processing")'; 
+          console.log("var_processing: " + var_processing);
         script(type="text/javascript" src="/js/orders-utils.js")
      if(title=='Share') 
         script(type="text/javascript" src="/js/shares-utils.js")
