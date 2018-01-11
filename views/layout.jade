@@ -282,6 +282,10 @@ html(lang='en')
      if(title=='Reagent Search')
         script(type="text/javascript" src="/js/search-utils.js")
      if(title=='Account')
+        script.
+          var var_account_button = "#{i18n.__("account.button")}";
+          var var_account_hide_button = "#{i18n.__("account.hide")}";
+          var var_bot_placeholder = "#{i18n.__("layout.bot.placeholder")}";
         script(type="text/javascript" src="/js/account-utils.js")
      if(title=='Register')
         script(type="text/javascript" src="/js/register-utils.js")

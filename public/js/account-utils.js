@@ -7,7 +7,7 @@
                 $( ".sleep" ).hide();
                 $( "#popup1bot" ).show();
                 $(".overlaybot").css({ 'visibility' : 'visible', 'opacity' : '1' });
-                setTimeout(function() { $('.wc-shellinput').focus(); $(".wc-shellinput").attr("placeholder",'#{i18n.__("layout.bot.placeholder")}'); }, 1000);
+                setTimeout(function() { $('.wc-shellinput').focus(); $(".wc-shellinput").attr("placeholder",var_bot_placeholder); }, 1000);
               });
           
           $(".close").click(function() {
@@ -140,7 +140,7 @@
                   if($('#team').is(":visible")){
                     $('.accountlogo').show();
                     $('#team').hide();
-                    $('#teamTitle').html("#{i18n.__("account.button")}");
+                    $('#teamTitle').html(var_account_button);
                     $('#teamTitle').css('background-color','#8a6d3b');
                     $("#teamTitle").mouseenter(function() {
                     $(this).css("background", "#2975b4");
@@ -150,7 +150,7 @@
                   } else {
                     $('.accountlogo').hide();
                     $('#team').show();
-                    $('#teamTitle').html("#{i18n.__("account.hide")}");
+                    $('#teamTitle').html(var_account_hide_button);
                     $('#teamTitle').css('background-color','#2975b4');
                     $("#teamTitle").mouseenter(function() {
                     $(this).css("background", "#8a6d3b");
