@@ -127,27 +127,28 @@
                           
                            $('#rankTblSearch').DataTable({
                            language:{
-                                        processing: "#{i18n.__("datatable.processing")}",
-                                        search: "#{i18n.__("datatable.search")}",
-                                        lengthMenu: "#{i18n.__("datatable.lengthMenu")}",
-                                        info: "#{i18n.__("datatable.info")}",
-                                        infoEmpty: "#{i18n.__("datatable.infoEmpty")}",
-                                        infoFiltered: "#{i18n.__("datatable.infoFiltered")}",
-                                        infoPostFix: "",
-                                        loadingRecords: "#{i18n.__("datatable.loadingRecords")}",
-                                        zeroRecords: "#{i18n.__("datatable.zeroRecords")}",
-                                        emptyTable: "#{i18n.__("datatable.emptyTable")}",
-                                        paginate: {
-                                        first: "#{i18n.__("datatable.first")}",
-                                        previous: "#{i18n.__("datatable.previous")}",
-                                        next: "#{i18n.__("datatable.next")}",
-                                        last: "#{i18n.__("datatable.last")}"
-                                        },
-                                        aria: {
-                                        sortAscending: "#{i18n.__("datatable.sortAscending")}",
-                                        sortDescending: "#{i18n.__("datatable.sortDescending")}"
-                                        }
-                                    }
+                          processing: var_processing,
+                          search: var_search,
+                          lengthMenu: var_lengthMenu,
+                          info: var_info,
+                          infoEmpty: var_infoEmpty,
+                          infoFiltered: var_infoFiltered,
+                          infoPostFix: "",
+                          loadingRecords: var_loadingRecords,
+                          zeroRecords: var_zeroRecords,
+                          emptyTable: var_emptyTable,
+                          paginate: {
+                          first: var_first,
+                          previous: var_previous,
+                          next: var_next,
+                          last: var_last,
+                          searchPlaceholder: var_searchplaceholder
+                          },
+                          aria: {
+                          sortAscending: var_sortAscending,
+                          sortDescending: var_sortDescending
+                          }
+                          }
                            });
 
 
