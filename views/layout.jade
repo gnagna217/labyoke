@@ -299,7 +299,8 @@ html(lang='en')
         script(type="text/javascript" src="/js/help-utils.js")
      if(title=='Orders')
         script.
-          console.log("var_processing: ");
+          var var_processing = '#{i18n.__("datatable.processing")'; 
+          console.log("var_processing: " + var_processing);
         script(type="text/javascript" src="/js/orders-utils.js")
      if(title=='Share') 
         script(type="text/javascript" src="/js/shares-utils.js")
