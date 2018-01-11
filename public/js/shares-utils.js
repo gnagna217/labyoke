@@ -93,7 +93,7 @@
 
 
 
-								});
+								
 
                         $('#rankTblreqshares').DataTable({order: [[ 5, "desc" ]],
                           iDisplayLength: 5,
@@ -124,7 +124,7 @@
                         });
 
 
-console.log("rankTblshares: " + $('#rankTblshares').length);
+console.log("rankTblshares: " + $('#rankTblshares').lngth);
                         $('#rankTblshares').DataTable({order: [[ 5, "desc" ]],
                           iDisplayLength: 5,
                           aLengthMenu: [[5, 10, 15, -1], [5, 10, 15, "All"]],
@@ -153,7 +153,7 @@ console.log("rankTblshares: " + $('#rankTblshares').length);
                           }
                         });
 
-
+});
 
 
          function getUrlParameter(name) {
