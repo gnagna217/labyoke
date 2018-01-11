@@ -83,5 +83,5 @@
 								}
 
 								$("#tooltipsvenn").html(title + displayvalues);
-							};
+							}
 							});
