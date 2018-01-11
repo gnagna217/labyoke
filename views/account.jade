@@ -197,7 +197,14 @@ block content
               - var right = 10;
               - if(t<4)
                 - w = 90/team.length
-                - right = 0;     
+                - right = 0;
+
+              //table(class="table table-striped table-responsive table-hover animated fadeInDown" )
+              //   thead
+              //      tr
+              //         th!= i18n.__("account.team.name")
+              //         th!=i18n.__("account.team.email")
+              //   tbody      
               - var ob2 = team
               - for(var prop in ob2)
                   - var i = prop % 2
@@ -210,14 +217,17 @@ block content
                       a(href="mailto:" + ob2[prop].email , style="cursor:pointer")
                         span(class="fa fa-location-arrow" id="email" style="cursor:pointer;color: #68b4d7;font-size:10pt;")
                       span #{" " + ob2[prop].name + " " + ob2[prop].surname }
+                  //tr
+                   //td #{ob2[prop].name + " " + ob2[prop].surname }
+                   //td #{ob2[prop].email}
 
           script.
-            //if($('#team').is(":visible")){
+            if($('#team').is(":visible")){
               
-            //}
-            //$(document).ready(function(){
-              //$('#changetel input[id="valuedetail"]').mask("(999) 999-9999");
-            //}); 
+            }
+            $(document).ready(function(){
+              $('#changetel input[id="valuedetail"]').mask("(999) 999-9999");
+            }); 
         div(class="slide-out-tip-div desktabonly", style="display:none;z-index:1;position: fixed;top: 25% !important;max-height:380px;z-index: 1;")
             a(class="handle" href="", title='#{i18n.__("search.tip.title")}', style="")!=Content
             div(style="padding: 1px;color:white;top: -45px;position: relative;max-height: 320px;overflow: auto;")
@@ -234,7 +244,7 @@ block content
                 div(style="position: relative;float: right;width: 250px;font-size: 9pt;line-height: 1.3;border-radius: 4px;")
                   span!= i18n.__("account.tip.desc")
         script.
-         /*$(function(){
+         $(function(){
              $('.slide-out-tip-div').tabSlideOut({
                  imgPos: 85,
                  tabHandle: '.handle',                              //class of the element that will be your tab
@@ -247,5 +257,88 @@ block content
                  topPos: '25% !important',                                   //position from the top
                  fixedPosition: true                               //options: true makes it stick(fixed position) on scroll
              });
-         });*/
+         });
         span(class="desktabonly", id="checkdisplay")
+        script.
+          $( document ).ready(function() {
+            console.log( "account document loaded" );
+            if ($("#checkdisplay").css("display") == "none" ){
+              $('.slide-out-tip-div').hide();
+            } else {
+              $('.slide-out-tip-div').show();
+            }
+
+            var c = 0;
+              if($('#emailOnFill:checked').length > 0){
+                c = 1;
+              }
+            $('#changeonfill').find('.valuedetail').val($('#emailOnFill:checked').length);
+            if(c == 1){
+                $('.labelcheckonfill').css("left","30px");
+                $('.labelcheckonfill').css("background","#2975b4");
+              } else {
+                $('.labelcheckonfill').css("left","0px");
+                $('.labelcheckonfill').css("background","#8a6d3b");
+              }
+
+            $( ".labelcheckonfill" ).click(function() {
+              var v = 1;
+              if($('#emailOnFill:checked').length > 0){
+                v = 0;
+              }
+              var change = 0;
+              var onfill = "#{onfill}";
+              console.log("onfill: " + onfill);
+              console.log("v: " + v);
+
+                
+              if(v == 1){
+                $('.labelcheckonfill').css("left","30px");
+                $('.labelcheckonfill').css("background","#2975b4");
+                change = 1;
+              } else {
+                $('.labelcheckonfill').css("left","0px");
+                $('.labelcheckonfill').css("background","#8a6d3b");
+              }
+                $('#changeonfill').find('#valuedetail').val(v);
+                $('#changeonfill').submit();
+              
+            });
+
+            var c = 0;
+              if($('#emailOnInsuff:checked').length > 0){
+                c = 1;
+              }
+            $('#changeoninsuff').find('.valuedetail').val($('#emailOnInsuff:checked').length);
+            if(c == 1){
+                $('.labelcheckoninsuff').css("left","30px");
+                $('.labelcheckoninsuff').css("background","#2975b4");
+              } else {
+                $('.labelcheckoninsuff').css("left","0px");
+                $('.labelcheckoninsuff').css("background","#8a6d3b");
+              }
+
+            $( ".labelcheckoninsuff" ).click(function() {
+              var v = 1;
+              if($('#emailOnInsuff:checked').length > 0){
+                v = 0;
+              }
+              var change = 0;
+              var oninsuff = "#{oninsuff}";
+              console.log("oninsuff: " + oninsuff);
+              console.log("v: " + v);
+
+                
+              if(v == 1){
+                $('.labelcheckoninsuff').css("left","30px");
+                $('.labelcheckoninsuff').css("background","#2975b4");
+                change = 1;
+              } else {
+                $('.labelcheckoninsuff').css("left","0px");
+                $('.labelcheckoninsuff').css("background","#8a6d3b");
+              }
+                $('#changeoninsuff').find('#valuedetail').val(v);
+                $('#changeoninsuff').submit();
+              
+            });
+          });
