@@ -308,6 +308,10 @@ html(lang='en')
      if(title=='Play')
         script(type="text/javascript" src="/js/play-utils.js")
      if(title=='Pop')
-        script(type="text/javascript" src="/js/pop-utils.js")    
+        script(type="text/javascript" src="/js/pop-utils.js")
+     if(title=='Reports')
+        script.
+          var var_resultsMoneyIntro="#{resultsMoneyIntro}", var_dataIntro = "#{dataIntro}", var_reports_download_pdf = "#{i18n.__("reports.download.pdf")}", var_reports_download_today = "#{i18n.__("reports.download.today.file")}",  var_reports_download_excel = "#{i18n.__("reports.download.excel")}";
+        script(type="text/javascript" src="/js/reports-utils.js")
      :staticCache
       script(type="text/javascript" src="/js/global.js")
