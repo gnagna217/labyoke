@@ -70,11 +70,11 @@ block content
 							- message_success_money = i18n.__("reports.money.message.successmoney")
 							- file_money = i18n.__("reports.money.file_all") 
 						if (addMessageMoney == 'failure')
-							div(class="alert alert-danger-report alertshadow")!= message_fail_share
+							div(class="alert alert-danger-report alertshadow alert-shares")!= message_fail_share
 						if (addMessageMoney == 'wrongdate')
-							div(class="alert alert-danger-report alertshadow")!= message_fail_date_share
+							div(class="alert alert-danger-report alertshadow alert-shares")!= message_fail_date_share
 						if (addMessageMoney == 'success')
-							div(class="alert alert-success-report fade in alert-dismissable alertshadow")!= message_success_money
+							div(class="alert alert-success-report fade in alert-dismissable alertshadow alert-shares")!= message_success_money
 						div
 							form(action="reportMoney", method="post", id="formreportMoney")
 								div(class="buttonss")
@@ -136,27 +136,17 @@ block content
 						- var message_fail_order = i18n.__("reports.orders.message.fail")
 						- var message_fail_date_order = i18n.__("reports.orders.message.date.fail")
 						- var message_success_order = i18n.__("reports.orders.message.success1") + datefrom_orders + i18n.__("reports.orders.message.success2") + dateto_orders + i18n.__("reports.orders.message.success3")
-						//- if (addMessageOrders != null)
-							script.
-								/*$(document).ready(function(){
-									recenter = 1;
-									$('.labelexpandedit').addClass( "highlightlabel" );
-									$(".reportlabels").addClass("reportlabels2");
-									if($(window).width() > 900){
-										$(".labelexpandmood").css("top","0px");
-									}
-								});*/
 						- if(datefromOrders == null || datefromOrders == undefined || datefromOrders == "")
 							- datefrom_orders = i18n.__("reports.orders.lab.option")
 							- dateto_orders = ""
 							- message_success_order = i18n.__("reports.orders.message.successorders")
 							- file_orders = i18n.__("reports.orders.file_all") 
 						if (addMessageOrders == 'failure')
-							div(class="alert alert-danger-report alertshadow")!= message_fail_order
+							div(class="alert alert-danger-report alertshadow alert-orders")!= message_fail_order
 						if (addMessageOrders == 'wrongdate')
-							div(class="alert alert-danger-report alertshadow")!= message_fail_date_order
+							div(class="alert alert-danger-report alertshadow alert-orders")!= message_fail_date_order
 						if (addMessageOrders == 'success')
-							div(class="alert alert-success-report fade in alert-dismissable alertshadow")!= message_success_order
+							div(class="alert alert-success-report fade in alert-dismissable alertshadow alert-orders")!= message_success_order
 						div
 							form(action="reportOrders", method="post")
 								div(class="buttonss")
@@ -200,16 +190,6 @@ block content
 						- var file_shares = i18n.__("reports.shares.file") + " " + datefrom_shares + i18n.__("reports.file.to") + dateto_shares
 						- var message_fail_share = i18n.__("reports.shares.message.fail")
 						- var message_fail_date_share = i18n.__("reports.shares.message.date.fail")
-						//- if (addMessageShares != null)
-							//script.
-								/*$(document).ready(function(){
-								recenter = 1;
-									$('.labelexpandadd').addClass( "highlightlabel" );
-									$(".reportlabels").addClass("reportlabels2");
-									if($(window).width() > 900){
-										$(".labelexpandmood").css("top","0px");
-									}
-								});*/
 						- var message_success_share = i18n.__("reports.shares.message.success1") + datefrom_shares + i18n.__("reports.shares.message.success2") + dateto_shares + i18n.__("reports.shares.message.success3")
 						- if(datefromShares == null || datefromShares == undefined || datefromShares == "")
 							- datefrom_shares = i18n.__("reports.shares.lab.option")
@@ -217,11 +197,11 @@ block content
 							- message_success_share = i18n.__("reports.shares.message.successshares")
 							- file_shares = i18n.__("reports.shares.file_all")
 						if (addMessageShares == 'failure')
-							div(class="alert alert-danger-report alertshadow")!= message_fail_share
+							div(class="alert alert-danger-report alertshadow alert-inv")!= message_fail_share
 						if (addMessageShares == 'wrongdate')
-							div(class="alert alert-danger-report alertshadow")!= message_fail_date_share
+							div(class="alert alert-danger-report alertshadow alert-inv")!= message_fail_date_share
 						if (addMessageShares == 'success')
-							div(class="alert alert-success-report fade in alert-dismissable alertshadow")!= message_success_share
+							div(class="alert alert-success-report fade in alert-dismissable alertshadow alert-inv")!= message_success_share
 						div
 							form(action="reportShares", method="post", id="formreportShares")
 								div(class="buttonss")
@@ -254,22 +234,12 @@ block content
 						- var message_fail_insuff = i18n.__("reports.insuff.message.fail")
 						- var message_fail_date_insuff = i18n.__("reports.insuff.message.date.fail")
 						- var message_success_insuff = i18n.__("reports.insuff.message.successinsuff")
-						//- if (addMessageInsuff != null)
-							//script.
-								/*$(document).ready(function(){
-								recenter = 1;
-									$('.labelexpandrules').addClass( "highlightlabel" );
-									$(".reportlabels").addClass("reportlabels2");
-									if($(window).width() > 900){
-										$(".labelexpandmood").css("top","0px");
-									}
-								});*/
 						if (addMessageInsuff == 'failure')
-							div(class="alert alert-danger-report alertshadow")!= message_fail_insuff
+							div(class="alert alert-danger-report alertshadow alert-insuff")!= message_fail_insuff
 						if (addMessageInsuff == 'wrongdate')
-							div(class="alert alert-danger-report alertshadow")!= message_fail_date_insuff
+							div(class="alert alert-danger-report alertshadow alert-insuff")!= message_fail_date_insuff
 						if (addMessageInsuff == 'success')
-							div(class="alert alert-success-report fade in alert-dismissable alertshadow")!= message_success_insuff
+							div(class="alert alert-success-report fade in alert-dismissable alertshadow alert-insuff")!= message_success_insuff
 						div
 							form(action="reportInsuff", method="post")
 								div(class="buttonss")
