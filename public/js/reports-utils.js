@@ -42,7 +42,7 @@ console.log("recenter: ") + recenter;
 				$(".containerreports").css("display", "block");
 				}
 
-				
+
 			$(document).ready(function(){
 
 
@@ -401,7 +401,7 @@ var h = $(window).height() - 125;
 
 
 						//if (addMessageMoney != null)
-							if($('.labelexpand').length > 0){
+						if($('.alert').is(':visible')){
 									recenter = 1;
 									$('.labelexpand').addClass( "highlightlabel" );
 									$(".reportlabels").addClass("reportlabels2");
@@ -409,6 +409,7 @@ var h = $(window).height() - 125;
 										$(".labelexpandmood").css("top","0px");
 									}
 								}
+
 
 
 				});
