@@ -1,7 +1,7 @@
 extends layout
 
 block content
-  div(class="container login front container2 containertop", style="text-align: center;position: relative;display:none")
+  div(class="container login front container2 containertop change-container")
      a(href="/search")
         img(src="/images/yoke4.png", alt="The Yoke", class="yokelogo")
        div
@@ -12,9 +12,9 @@ block content
                 if message
                     div(class="alert alert-danger-report")!= message
                 form(action="/forgot" method="post")
-                    div(style="margin-bottom: 20px;")
+                    div(class="marginbottom-20")
                         div(class="textentry")
-                            span(class="fa fa-user" style="top: 15px;position: relative;float: right;color: #3d9dcb;")
+                            span(class="fa fa-user forgot-user")
                             input(name="forgotuser" type="text" id="forgotuser" class="form-control form-control0" placeholder=i18n.__("forgot.username"))
                         div(class="buttons")
                         button.btn.btn-success.btn-lg.btn-block.shadow.resizebutton(type='submit')= i18n.__("forgot.button")
@@ -35,8 +35,8 @@ block content
                     p!=message
                     if !noforgotform
                         form(action="/forgot" method="post")
-                            div(style="margin-bottom: 20px;")
+                            div(class="marginbottom-20")
                                 div(class="textentry")
-                                    input(name="forgotuser" type="text" id="forgotuser" class="form-control form-control0" placeholder=i18n.__("forgot.username") style="border-color:#8a6d3b")
+                                    input(name="forgotuser" type="text" id="forgotuser" class="form-control form-control0 forgot-border-color" placeholder=i18n.__("forgot.username"))
                                 div(class="buttons")
                                 button.btn.btn-success.btn-lg.btn-block.shadow.resizebutton(type='submit')= i18n.__("forgot.button")
