@@ -73,6 +73,7 @@
   cursor: pointer;
 }
 
+
 .lightyokecolor{
     color: #65acce;
 }
@@ -5904,3 +5905,57 @@ color:white !important;background-color:#3d9dcb !important;font-size:12px !impor
 }
 
 /*end search*/
+
+/*start shares*/
+.shares-cubes{
+  color: #3d9dcb !important; font-size: 120pt !important; 
+}
+.shares-cancel{
+  width: 17px !important;display:block !important;padding-left: 0px !important;padding-right: 0px !important;
+}
+.shares-input-cancel{
+  position:absolute !important;left: -9999px !important;
+}
+.paddingtop-25{
+  padding-top: 25px !important;
+}
+.marginbottom-5{
+  margin-bottom:5px !important;
+}
+.shares-chart{
+color: #337ab7 !important; margin-right: 10px !important;
+}
+.shares-form{
+  width: 97% !important;border-color:#3d9dcb !important;margin-bottom:10px !important;z-index: 1 !important;background-color: transparent !important;
+}
+.shares-sort{
+  color: #8a6d3b !important; float: right !important; top: -35px !important; left: -35px !important; position: relative !important; font-size: 14pt !important;z-index:-1 !important;
+}
+.shares-bottom-sep{
+  margin-bottom: 30px !important; margin-top: 0px !important;
+}
+.shares-venn-field{
+  margin-top:8px !important; margin-left:10px !important; font-size: 14px !important;padding: 4px 10px !important;line-height: 1.42857143 !important; border: 1px solid #ccc !important; border-radius: 4px !important;
+}
+.shares-status{
+  vertical-align: 10px !important; margin-left: 0px !important;
+}
+.shares-overflow{
+  overflow:auto !important;
+}
+.margin-auto{
+  margin: 0 auto !important;
+}
+.marginleft-20per{
+  margin-left: 20% !important;
+}
+.margintop-15{
+  margin-top:-15px !important;
+}
+.paddingtop-20{
+  padding-top: 20px !important;
+}
+.shares-handle{
+  right: -60px !important;left:-60px !important;top:25px !important;
+}
+/* end shares*/

@@ -14,7 +14,7 @@ block content
 		- uploadtext = "uploadtext"
 	- var adjust = "adjustpadding"
 	- var filteroutput2 = report_sharesbycategory.filter(function(x){console.log("filter2: " + x.insuff); return (x.insuff == 1)});
-	div(id="langText", style="display:none")!= lang
+	div(id="langText", class="displaynone")!= lang
 	div(id="ios-light")
 		center
 			h1= i18n.__("shares.pop.title")
@@ -23,16 +23,16 @@ block content
 	div(class="shade" id="shade")
 	div(class="shade-light" id="shade-light")
 	div(class="zoomnow container login marginbottom margintop container2 botbottom " + slide)
-		div(style="float: left;" class="share-container " + fadesections)
+		div(class="share-container " + fadesections + " float-left")
 			h1
 				span(class="fa fa-exchange lightyokecolor")
 				span!= i18n.__("shares.title")
-				span(class="fa fa-caret-right lightyokecolor animated fadeIn" style="font-size: 20pt;")
+				span(class="fa fa-caret-right lightyokecolor animated fadeIn font-20")
 			if(myshares == "")
 				h4= i18n.__("shares.non.title")
 				p!= i18n.__("shares.non.subtitle")
-				div(class="searchlogo", style="margin-top:50px")
-					span(class="fa fa-cubes" style=" color: #3d9dcb; font-size: 120pt; ")
+				div(class="searchlogo margintop-50")
+					span(class="fa fa-cubes shares-cubes")
 			if(mysharesrequest != null && mysharesrequest.length>0)
 				- var output = mysharesrequest.filter(function(x){return x.status!="fulfilled" && x.insufficient!=0});
 				h4= i18n.__("shares.subtitle1")
@@ -52,8 +52,8 @@ block content
 							- var animatetable=" animated fadeIn"           
 							table(id="rankTblreqshares" class="table rankTbl"+animatetable)
 								thead
-									tr(class="you info-best" style="font-weight: bold")
-										th(style="display:none")!="pos"
+									tr(class="you info-best font-bold")
+										th(class="displaynone")!="pos"
 										th(class="wrapped")!= i18n.__("shares.table.reagent")
 										th(class="desktabonly")= i18n.__("shares.table.vendor")
 										th(class="deskfullonly")= i18n.__("shares.table.catalog")
@@ -81,19 +81,19 @@ block content
 										- var status = ob[prop].status
 										- var showcancel = ""
 										- if(status == 'fulfilled')
-											- showcancel = "display:none;"
+											- showcancel = " displaynone"
 										
 										tr(class=isnew, data-pos=prop)
-											td(style="display:none") #{prop}
+											td(class="displaynone") #{prop}
 											td(class="wrapped2") #{ob[prop].agent}
 											td(class="wrapped2 desktabonly") #{ob[prop].vendor}
 											td(class="wrapped2 deskfullonly") #{ob[prop].catalognumber}
 											td(class="wrapped2") #{ob[prop].requestoremail}
 											td #{d}
-											td(style="width: 17px;display:block;padding-left: 0px;padding-right: 0px;", title=canc)
+											td(class="shares-cancel", title=canc)
 												form(action="/cancelshare" method="post")
-													div(class="checkboxThree1", style=showcancel)
-														input(style="position:absolute;left: -9999px;" type="checkbox" id=c name="cancel" value="cancel" class="cancel" checked=(checkedstr===true ? "checked" : undefined))
+													div(class="checkboxThree1" + showcancel)
+														input(type="checkbox" id=c name="cancel" value="cancel" class="cancel shares-input-cancel" checked=(checkedstr===true ? "checked" : undefined))
 														label(class="labelcheck1 shadow" for=c)
 													input(type="hidden" class="agentid" name="agent" value=ob[prop].agent)
 													input(type="hidden" class="labid" name="lab" value=ob[prop].lab)
@@ -107,7 +107,7 @@ block content
 													input(type="hidden" name="pos" value=prop)
 				div(class="threepointssep")
 			if(myshares != "")
-				h4(style="padding-top: 25px;")= i18n.__("shares.none.title")
+				h4(class="paddingtop-25")= i18n.__("shares.none.title")
 				p!= i18n.__("shares.none.subtitle")
 				div(id="results2", class="resultsshadow")
 					div(id="ctl00_Div2" class="row rank")
@@ -115,8 +115,8 @@ block content
 							- var animatetable2=" animated fadeIn"              
 							table(id="rankTblshares" class="table rankTbl"+animatetable2)
 								thead
-									tr(class="you info-best" style="font-weight: bold")
-										th(style="display:none")!="pos"
+									tr(class="you info-best font-bold")
+										th(class="displaynone")!="pos"
 										th(class="wrapped")!= i18n.__("shares.table.reagent")
 										th= i18n.__("shares.table.vendor")
 										th= i18n.__("shares.table.catalog")
@@ -136,14 +136,14 @@ block content
 										- var c = "cancelr" + prop
 										
 										tr(class=qtyinsufficient, data-pos=prop)
-											td(style="display:none") #{prop}
+											td(class="displaynone") #{prop}
 											td(class="wrapped2") #{ob[prop].agent}
 											td(class="wrapped2") #{ob[prop].vendor}
 											td(class="wrapped2") #{ob[prop].catalognumber}
-											td(style="width: 17px;display:block;padding-left: 0px;padding-right: 0px;", title=canc)
+											td(class="shares-cancel", title=canc)
 												form(action="/cancelshare" method="post")
 													div(class="checkboxThree1")
-														input(style="position:absolute;left: -9999px;" type="checkbox" id=c name="cancel" value="cancel" class="cancel" checked=(checkedstr===true ? "checked" : undefined))
+														input(type="checkbox" id=c name="cancel" value="cancel" class="cancel shares-input-cancel" checked=(checkedstr===true ? "checked" : undefined))
 														label(class="labelcheck1 shadow" for=c)
 													input(type="hidden" class="agentid" name="agent" value=ob[prop].agent)
 													input(type="hidden" class="labid" name="lab" value=ob[prop].lab)
@@ -153,29 +153,29 @@ block content
 													input(type="hidden" name="date" value=ob[prop].date)
 													input(type="hidden" name="table" value="vm2016_agentsshare")
 													input(type="hidden" name="pos2" value=prop)
-		div(style="float:right;", class="share-container " + adjust + " adjustpaddingrightandwidth " + fadesections)
-			div(class="threepointssep mobileonly3" style="margin-bottom:5px")
+		div(class="share-container " + adjust + " adjustpaddingrightandwidth " + fadesections + " float-right")
+			div(class="threepointssep mobileonly3 marginbottom-5")
 			script(type="text/javascript" src="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.js")
 
-			h3(style="padding-top:43px")
-				span(class="fa fa-bar-chart" style=" color: #337ab7; margin-right: 10px;")
+			h3(class="paddingtop-43")
+				span(class="fa fa-bar-chart shares-chart")
 				span= i18n.__("shares.chart.title")
 			form(action="chartSelect", method="post")
 				div(class="buttons")
-					select(name="chartSelect" type="text" id="chartSelect" class="form-control" style="width: 97%;border-color:#3d9dcb;margin-bottom:10px;z-index: 1;background-color: transparent;" placeholder=i18n.__("shares.chart.select"))
-						option(value="chartNone",style="font-weight:bold")=i18n.__("shares.chart.option1")
+					select(name="chartSelect" type="text" id="chartSelect" class="form-control shares-form" placeholder=i18n.__("shares.chart.select"))
+						option(value="chartNone",class="font-bold")=i18n.__("shares.chart.option1")
 						option(value="chartVenn" selected)= i18n.__("shares.chart.option2")
 						option(value="chartAll")= i18n.__("shares.chart.option3")
 						option(value="chartMonth")= i18n.__("shares.chart.option4")
-					span(class="fa fa-sort" style="color: #8a6d3b; float: right; top: -35px; left: -35px; position: relative; font-size: 14pt;z-index:-1")
-			div(id="chartNotes", style="display:none")
+					span(class="fa fa-sort shares-sort")
+			div(id="chartNotes", class="displaynone")
 				p!= i18n.__("shares.chart.notes")
 			- var find0 = filteroutput2
 			- var now = new Date()
 			- var filteroutput = test.filter(function(x){console.log("x.monthorder: "+x.monthorder); console.log("x.yearorder: "+x.yearorder); console.log("now.getFullYear(): "+ now.getFullYear()); console.log("now.getMonth(): "+ now.getMonth()); console.log("so: "+ (x.yearorder == now.getFullYear() && x.monthorder == now.getMonth())); return (x.yearorder == now.getFullYear() && x.monthorder == now.getMonth() + 1)});
 
-			div(style="margin-bottom: 30px; margin-top: 0px;")
-			div(id="sharesVenn", style="display:none")
+			div(class="shares-bottom-sep")
+			div(id="sharesVenn", class="displaynone")
 				h4= i18n.__("shares.venn.title")
 				- if(report_venn != null && report_venn.length > 0)
 					p!=i18n.__("shares.venn.subtitle1")
@@ -184,10 +184,10 @@ block content
 						span= i18n.__("shares.venn.subtitle2")
 
 					div= i18n.__("shares.venn.desc")
-						input(id="search-field" type="search" style="margin-top:8px; margin-left:10px; font-size: 14px;padding: 4px 10px;line-height: 1.42857143; border: 1px solid #ccc; border-radius: 4px;" placeholder=i18n.__("shares.venn.select"))
-						span(id="search-status" class="label label-info" style="vertical-align: 10px; margin-left: 0px;" class="label label-success")
-					div(class="ct-chart5 ct-perfect-five", style="overflow:auto;")
-						div(id="vennChart" style="margin: 0 auto; /*width: 430px; height: 300px*/")
+						input(id="search-field" type="search" class="shares-venn-field" placeholder=i18n.__("shares.venn.select"))
+						span(id="search-status" class="label label-success shares-status")
+					div(class="ct-chart5 ct-perfect-five shares-overflow")
+						div(id="vennChart" class="margin-auto")
 						- var array_labs_venn = " |"
 						- var array_catalogs_venn = " |"
 						- var ob = report_venn
@@ -229,15 +229,15 @@ block content
 						script(type="text/javascript" src="/js/shares-venn-utils.js")
 
 
-					div(style="margin-left: 20%;")
+					div(class="marginleft-20per")
 						div(id="tooltipsvenn-container")
-							div(id="tooltipsvenn", class="labColor", style="margin-top:-15px")!= i18n.__("shares.venn.chart.table")
+							div(id="tooltipsvenn", class="labColor margintop-15")!= i18n.__("shares.venn.chart.table")
 							div
 								ul(id="pagination-demo" class="pagination-sm")
 				- if(report_venn != null && report_venn.length==0)
 					h5=i18n.__("shares.venn.none")
-					p(style="padding-top: 20px;")=" "
-			div(id="sharesAll", style="display:none")
+					p(class="paddingtop-20")=" "
+			div(id="sharesAll", class="displaynone")
 				h4= i18n.__("shares.all.title")
 				- if(filteroutput2 != null && filteroutput2.length > 0)
 					p!=i18n.__("shares.all.subtitle")
@@ -245,8 +245,8 @@ block content
 					div(id="tooltips", class="labColor") &nbsp;
 				- if(filteroutput2 != null && filteroutput2.length==0)
 					h5= i18n.__("shares.all.none")
-					p(style="padding-top: 20px;")=" "
-			div(id="monthAll", style="display:none")
+					p(class="paddingtop-20")=" "
+			div(id="monthAll", class="displaynone")
 				h4= i18n.__("shares.month.title")
 				- var month = "month";
 				- //var filteroutput = test.filter(function(x){console.log("x.monthorder: "+x.monthorder); console.log("x.yearorder: "+x.yearorder); console.log("now.getFullYear(): "+ now.getFullYear()); console.log("now.getMonth(): "+ now.getMonth()); console.log("so: "+ (x.yearorder == now.getFullYear() && x.monthorder == now.getMonth())); return (x.yearorder == now.getFullYear() && x.monthorder == now.getMonth() + 1)});
@@ -257,7 +257,7 @@ block content
 				- if(filteroutput != null && filteroutput.length == 0) 
 					h5
 						span!=i18n.__("shares.month.none")
-			div(style="padding-top:25px;", class="") &nbsp;
+			div(class="paddingtop-25;") &nbsp;
 			- var array_rows = " |"
 			- var array_values = "0|"
 			- var array_rows2 = []
@@ -275,10 +275,10 @@ block content
 				script.
 					var var_filteroutput = "#{filteroutput}", var_array_values = "#{array_values}", var_array_rows = "#{array_rows}", var_array_rows2 = "#{array_rows2}", var_array_values2 = "#{array_values2}", var_dot_select = "#{i18n.__("dot.selected")}";
 				script(type="text/javascript" src="/js/shares-chartnotes-utils.js")
-			div(class="slide-out-tip-div desktabonly", style="display:none;z-index:1;position: fixed;top: 25% !important;max-height:380px;")
-				a(class="handle" href="", title='#{i18n.__("search.tip.title")}', style="right: -60px;,left:-60px;top:25px;")!=Content
-				div(style="padding: 1px;color:white;top: -45px;position: relative;max-height: 320px;overflow: auto;")
-					div(style="text-align: center;")
+			div(class="slide-out-tip-div account-slide-container")
+				a(class="handle shares-handle" href="", title='#{i18n.__("search.tip.title")}')!=Content
+				div(class="slide-container-one")
+					div(class="textalign-center")
 						span(class="zoom_controls")
 							a(href="#" class="zoom_out zoomicon" title=i18n.__("zoom.minus"))
 								span(class="fa fa-minus-circle")
@@ -286,8 +286,8 @@ block content
 								span(class="fa fa-circle-o-notch")
 							a(href="#" class="zoom_in zoomicon" title=i18n.__("zoom.plus"))
 								span(class="fa fa-plus-circle")
-						div(class="threepointssep", style="margin-top: -10px;")
-					p(style="font-size: 12pt;")!= i18n.__("shares.tip.header")
-					div(style="position: relative;float: right;width: 250px;font-size: 9pt;line-height: 1.3;border-radius: 4px;")
+						div(class="threepointssep margintopbelow-10")
+					p(class="font-12")!= i18n.__("shares.tip.header")
+					div(class="slide-desc")
 						span!= i18n.__("shares.tip.desc")
 		span(class="desktabonly", id="checkdisplay")
