@@ -5655,3 +5655,38 @@ a.mailto:link {
   color:white !important;font-weight:bold !important;
 }
 /*End Locale*/
+
+.labyoker-money{
+  font-weight:bold !important;font-size:36pt !important;
+}
+.labyoker-money-text{
+  font-size:11pt !important;overflow: overlay !important;height: 230px !important;
+}
+.textalign-left{
+  text-align: left !important;
+}
+.labyoker-tr{
+  color: white !important;background-color: #3d9dcb !important;font-size:12px !important;
+}
+.font-30{font-size:30pt !important;}
+.margintop-25{
+  margin-top: 25px !important;
+}
+.labyoker-table{
+  margin-top:25px !important;text-align:left !important;
+}
+.labyoker-report-container{
+  margin-left:50px !important;margin-bottom:25px !important ;
+}
+.labyoker-tr{
+color:white !important;background-color:#3d9dcb !important;font-size:12px !important;
+}
+.labyoker-report-container-one{
+ overflow: overlay !important;height: 230px !important;
+}
+.labyoker-change{
+  font-weight:bold !important;color: #e6c293 !important;
+}
+.labyoker-change-one{
+  color: #e6c293 !important;font-weight:bold !important;
+}

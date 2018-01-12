@@ -429,7 +429,7 @@ LabYokeReporterSavings.prototype.reportMoney = function(callback) {
 	var params = "";
 	var columns ="<td>" + i18n.__("index.reportsMoney.param1") + "</td>";
 	headeronly.push(i18n.__("index.reportsMoney.param1"));
-	var html = "<div><span id='reporttitle' style='font-weight:bold;font-size:36pt;'>" + i18n.__("index.reportsMoney.param2") + ".</span></div><br/><div style='font-size:11pt;font-size:11pt;overflow: overlay;height: 230px;'>"
+	var html = "<div><span id='reporttitle' class='labyoker-money'>" + i18n.__("index.reportsMoney.param2") + ".</span></div><br/><div class='labyoker-money-text'>"
 				+ "" + "";
 	console.log("report on savings- datefrom: " + datefrom);
 	console.log("report on savings- dateto: " + dateto);
@@ -441,10 +441,10 @@ console.log("report on savings- dateto: " + labsindept);
 
 	if(datefrom != null && dateto != null && datefrom !=undefined && dateto !=undefined && datefrom !="" && dateto !=""){
 		if(params == ""){
-			params += "<div style='font-weight:bold'>" + i18n.__("index.reportsMoney.param3") + "</div>";
+			params += "<div class='font-bold'>" + i18n.__("index.reportsMoney.param3") + "</div>";
 		}
-		params += "<div><span style='font-weight:bold'>" + i18n.__("index.reportsMoney.param4") + ": </span><span>" + datefrom /*moment(datefrom).tz("America/New_York").format('MM-DD-YYYY')*/  + "</span></div>";
-		params += "<div><span style='font-weight:bold'>" + i18n.__("index.reportsMoney.param5") + ": </span><span>" + dateto /*moment(dateto).tz("America/New_York").format('MM-DD-YYYY')*/  + "</span></div>";
+		params += "<div><span class='font-bold'>" + i18n.__("index.reportsMoney.param4") + ": </span><span>" + datefrom /*moment(datefrom).tz("America/New_York").format('MM-DD-YYYY')*/  + "</span></div>";
+		params += "<div><span class='font-bold'>" + i18n.__("index.reportsMoney.param5") + ": </span><span>" + dateto /*moment(dateto).tz("America/New_York").format('MM-DD-YYYY')*/  + "</span></div>";
 		if(selected.length>0)
 			selected +=", ";
 		selected += "b.date";
@@ -462,9 +462,9 @@ console.log("report on savings- dateto: " + labsindept);
 
 	if(lab != null && lab !=undefined && lab !="all"){
 		if(params == ""){
-			params += "<div style='font-weight:bold'>" + i18n.__("index.reportsMoney.param3") + "</div>";
+			params += "<div class='font-bold'>" + i18n.__("index.reportsMoney.param3") + "</div>";
 		}
-		params += "<div><span style='font-weight:bold'>" + i18n.__("index.reportsMoney.param1") + ": </span><span>" + lab + "</span></div>";
+		params += "<div><span class='font-bold'>" + i18n.__("index.reportsMoney.param1") + ": </span><span>" + lab + "</span></div>";
 		//if(where.length>0)
 		//	where +=" and ";
 		//where += "b.lab = '" + lab + "'";
@@ -581,42 +581,42 @@ console.log("report on savings- dateto: " + labsindept);
 		var savings = 0;
 		var isempty = true;
 		if(results != null && results != ""){
-		html +="<table style='text-align:left'><tbody><tr style='color: white;background-color: #3d9dcb;font-size:12px'>" + columns + "</tr>"
+		html +="<table class='textalign-left'><tbody><tr class='labyoker-tr'>" + columns + "</tr>"
 		
 			for(var prop in results){
 				var rowonly = [];
 				isempty = false;
 				rowonly.push(results[prop].lab);
-				html += "<tr><td style='font-size: 12px;'>" + results[prop].lab + "</td>";
+				html += "<tr><td class='font-12px'>" + results[prop].lab + "</td>";
 
 				if(agent != null && agent !=undefined && agent !=""){
 					rowonly.push(results[prop].agent);
-				html += "<td style='font-size: 12px;'>" + results[prop].agent + "</td>";
+				html += "<td class='font-12px'>" + results[prop].agent + "</td>";
 				}
 				if(vendor != null && vendor !=undefined && vendor !=""){
 					rowonly.push(results[prop].vendor);
-				html += "<td style='font-size: 12px;'>" + results[prop].vendor + "</td>";
+				html += "<td class='font-12px'>" + results[prop].vendor + "</td>";
 				}
 				if(catalognumber != null && catalognumber !=undefined && catalognumber !=""){
 				rowonly.push(results[prop].catalognumber);
-				html += "<td style='font-size: 12px;'>" + results[prop].catalognumber + "</td>";
+				html += "<td class='font-12px'>" + results[prop].catalognumber + "</td>";
 				}
 				if(datefrom != null && datefrom !=undefined && datefrom !="" && dateto != null && dateto !=undefined && dateto !="" ){
 				rowonly.push(moment(results[prop].date).tz("Africa/Bissau").format('MM-DD-YYYY'));
-				html += "<td style='font-size: 12px;'>" + moment(results[prop].date).tz("Africa/Bissau").format('MM-DD-YYYY') + "</td>";
+				html += "<td class='font-12px'>" + moment(results[prop].date).tz("Africa/Bissau").format('MM-DD-YYYY') + "</td>";
 				}
 				var total = results[prop].counting /* * results[prop].price*/;
 				
 				console.log("counting is: " + total);
 				savings += parseInt(total);
-				html += "<td style='font-size: 12px;'>" + accounting.formatMoney(total, { symbol: "",  format: "%v %s", precision : 0 }) /*accounting.formatMoney(total)*/ + "</td>";
+				html += "<td class='font-12px'>" + accounting.formatMoney(total, { symbol: "",  format: "%v %s", precision : 0 }) /*accounting.formatMoney(total)*/ + "</td>";
 				rowonly.push(accounting.formatMoney(total, { symbol: "",  format: "%v %s", precision : 0 }));
 				dataonly.push(rowonly);
 				html += " </tr>";
 				console.log("savings is: " + savings);
 		
 			}
-			html += "</tbody></table>" + i18n.__("index.reportsMoney.param14") + "<span style='font-size:30pt'>" + accounting.formatMoney(savings, { symbol: "",  format: "%v %s", precision : 0 }) /*accounting.formatMoney(savings)*/ + "</span><p style='margin-top:25px'><i><b>" + i18n.__("index.reportsShares.html7") + "</b></i></p></div>";
+			html += "</tbody></table>" + i18n.__("index.reportsMoney.param14") + "<span class='font-30'>" + accounting.formatMoney(savings, { symbol: "",  format: "%v %s", precision : 0 }) /*accounting.formatMoney(savings)*/ + "</span><p class='margintop-25'><i><b>" + i18n.__("index.reportsShares.html7") + "</b></i></p></div>";
 			console.log("html money: " + html);
 
 		}
@@ -652,7 +652,7 @@ LabYokeReporterSavings.prototype.reportInsuff = function(callback) {
 	var columns ="<td>" + i18n.__("index.reportsMoney.param9") + "</td><td>" + i18n.__("reports.insuff.labselect") + "</td>";
 	headeronly.push(i18n.__("index.reportsMoney.param9"));
 	headeronly.push(i18n.__("reports.insuff.labselect"));
-	var html = "<div><span id='reporttitle' style='font-weight:bold;font-size:36pt;'>" + i18n.__("index.reportsInsuff.param1") + ".</span></div><br/><div style='font-size:11pt;font-size:11pt;overflow: overlay;height: 230px;'>"
+	var html = "<div><span id='reporttitle' class='labyoker-money'>" + i18n.__("index.reportsInsuff.param1") + ".</span></div><br/><div class='labyoker-money-text'>"
 				+ "" + "";
 	console.log("report on savings- datefrom: " + datefrom);
 	console.log("report on savings- dateto: " + dateto);
@@ -663,9 +663,9 @@ var labyokerLab = new LabyokerLab(this.mylab);
 console.log("report on insuff: " + labsindept);
 	if(lab != null && lab !=undefined && lab !="all"){
 		if(params == ""){
-			params += "<div style='font-weight:bold'>" + i18n.__("index.reportsMoney.param3") + "</div>";
+			params += "<div class='font-bold'>" + i18n.__("index.reportsMoney.param3") + "</div>";
 		}
-		params += "<div><span style='font-weight:bold'>" + i18n.__("index.reportsMoney.param1") + ": </span><span>" + lab + "</span></div>";
+		params += "<div><span class='font-bold'>" + i18n.__("index.reportsMoney.param1") + ": </span><span>" + lab + "</span></div>";
 		if(where.length>0)
 			where += i18n.__("index.reportsMoney.param7") ;
 		where += "b.lab = '" + lab + "'";
@@ -728,7 +728,7 @@ if(lab != null && lab !=undefined && lab =="all"){
 		html += params;
 		var isempty = true;
 		if(results != null && results != ""){
-		html +="<table style='margin-top:25px;text-align:left;'><tbody><tr style='color:white;background-color:#3d9dcb;font-size:12px'>" + columns + "</tr>"
+		html +="<table class='labyoker-table'><tbody><tr class='labyoker-tr'>" + columns + "</tr>"
 		
 			for(var prop in results){
 				var rowonly = [];
@@ -736,27 +736,27 @@ if(lab != null && lab !=undefined && lab =="all"){
 				rowonly.push(results[prop].agent);
 				rowonly.push(results[prop].lab);
 
-				html += "<tr>" + "<td style='font-size: 12px;'>" + results[prop].agent + "</td>" + "<td style='font-size: 12px;'>" + results[prop].lab + "</td>";
+				html += "<tr>" + "<td class='font-12px'>" + results[prop].agent + "</td>" + "<td class='font-12px'>" + results[prop].lab + "</td>";
 
 				if(agent != null && agent !=undefined && agent !=""){
-				html += "<td style='font-size: 12px;'>" + results[prop].agent + "</td>";
+				html += "<td class='font-12px'>" + results[prop].agent + "</td>";
 				}
 				if(vendor != null && vendor !=undefined && vendor !=""){
 					rowonly.push(results[prop].vendor);
-				html += "<td style='font-size: 12px;'>" + results[prop].vendor + "</td>";
+				html += "<td class='font-12px'>" + results[prop].vendor + "</td>";
 				}
 				if(catalognumber != null && catalognumber !=undefined && catalognumber !=""){
 					rowonly.push(results[prop].catalognumber);
-				html += "<td style='font-size: 12px;'>" + results[prop].catalognumber + "</td>";
+				html += "<td class='font-12px'>" + results[prop].catalognumber + "</td>";
 				}
 				rowonly.push(moment(results[prop].insuffdate).tz("America/New_York").format('MM-DD-YYYY'));
-				html += "<td style='font-size: 12px;'>" + moment(results[prop].insuffdate).tz("America/New_York").format('MM-DD-YYYY')+ "</td>";
+				html += "<td class='font-12px'>" + moment(results[prop].insuffdate).tz("America/New_York").format('MM-DD-YYYY')+ "</td>";
 				html += " </tr>";
 				dataonly.push(rowonly);
 				console.log("dataonly1: "  + dataonly);
 		
 			}
-			html += "</tbody></table><p style='margin-top:25px'><i><b>" + i18n.__("index.reportsShares.html7") + "</b></i></p></div>";
+			html += "</tbody></table><p class='margintop-25'><i><b>" + i18n.__("index.reportsShares.html7") + "</b></i></p></div>";
 			console.log("html insuff: " + html);
 			console.log("dataonly1: "  + dataonly);
 		}
@@ -797,10 +797,10 @@ console.log("report on shares: " + labsindept);
 console.log("report on shares my lab: " + mylab);
 	if(datefrom != null && dateto != null && datefrom !=undefined && dateto !=undefined && datefrom !="" && dateto !=""){
 		if(params == ""){
-			params += i18n.__("index.reportsShares.params");//"<div style='font-weight:bold'>Parameters</div>";
+			params += i18n.__("index.reportsShares.params");//"<div class='font-bold'>Parameters</div>";
 		}
-		params += i18n.__("index.reportsShares.params1", {datefrom: datefrom}); //"<div><span style='font-weight:bold'>Date From: </span><span>" + datefrom + "</span></div>";
-		params += i18n.__("index.reportsShares.params2", {dateto: dateto}); //"<div><span style='font-weight:bold'>Date To: </span><span>" + dateto + "</span></div>";
+		params += i18n.__("index.reportsShares.params1", {datefrom: datefrom}); //"<div><span class='font-bold'>Date From: </span><span>" + datefrom + "</span></div>";
+		params += i18n.__("index.reportsShares.params2", {dateto: dateto}); //"<div><span class='font-bold'>Date To: </span><span>" + dateto + "</span></div>";
 		if(where == "")
 			where =" where ";
 		where += "date between '" + datefrom + "' and '" + dateto + "'";
@@ -809,9 +809,9 @@ console.log("report on shares my lab: " + mylab);
 	}
 	/*if(category != null && category !=undefined && category !="all"){
 		if(params == ""){
-			params += "<div style='font-weight:bold'>Parameters</div>";
+			params += "<div class='font-bold'>Parameters</div>";
 		}
-		params += "<div><span style='font-weight:bold'>Category: </span><span>" + category + "</span></div>";
+		params += "<div><span class='font-bold'>Category: </span><span>" + category + "</span></div>";
 		if(where == ""){
 			where =" where ";
 		}
@@ -846,11 +846,11 @@ console.log("report on shares my lab: " + mylab);
 	query.on("end", function(result) {
 		results = result.rows;
 		console.log("results : " + results);
-		var html = "<div style='margin-left:50px;margin-bottom:25px;'>";
+		var html = "<div class='labyoker-report-container'>";
 
 		if(results != null && results != ""){
 		html += i18n.__("index.reportsShares.html1", {dateto: dateto}); //"<div><span style='font-weight:bold;font-size:36pt;margin-bottom:20px;float:left'>Inventory.</span></div><div style=\"font-family:'calibri'; font-size:11pt;padding: 20px; width:50%;float:left\">";
-		html += "<div style='overflow: overlay;height: 230px;'>";
+		html += "<div class='labyoker-report-container-one'>";
 		if(datefrom == 'all'){
 			html += i18n.__("index.reportsShares.html2"); //"<p>This report is listing all the inventory uploaded:</p></div>"
 		} else {
@@ -866,7 +866,7 @@ console.log("report on shares my lab: " + mylab);
 		dataonly.push(headeronly);
 		html +=  params;
 		html += i18n.__("index.reportsShares.html6");
-		//"<table><tbody><tr style='color: white;background-color: #3d9dcb;'><td style='font-size: 12px;'>Reagent</td><td style='font-size: 12px;'>Vendor</td><td style='font-size: 12px;'>Catalog#</td><td style='font-size: 12px;'>Location</td><td style='font-size: 12px;'>User</td><td>Date</td></tr>"
+		//"<table><tbody><tr class='locale-tr'><td class='font-12px'>Reagent</td><td class='font-12px'>Vendor</td><td class='font-12px'>Catalog#</td><td class='font-12px'>Location</td><td class='font-12px'>User</td><td>Date</td></tr>"
 		
 			for(var prop in results){
 				var rowonly = [];
@@ -884,16 +884,16 @@ console.log("report on shares my lab: " + mylab);
 				rowonly.push(location);
 				rowonly.push(email);
 				rowonly.push(moment(date).tz("Africa/Bissau").format('MM-DD-YYYY'));
-				html += " <tr><td style='font-size: 12px;'>" + agent + "</td>";
-				html += " <td style='font-size: 12px;'>" + vendor + "</td>";
-				html += " <td style='font-size: 12px;'>" + catalognumber + "</td>";
-				html += " <td style='font-size: 12px;'>" + location + "</td>";
-				html += " <td style='font-size: 12px;'>" + email + "</td>";
-				//html += " <td style='font-size: 12px;'>" + category + "</td>";
-				html += " <td style='font-size: 12px;'>" + moment(date).tz("Africa/Bissau").format('MM-DD-YYYY') + "</td></tr>";
+				html += " <tr><td class='font-12px'>" + agent + "</td>";
+				html += " <td class='font-12px'>" + vendor + "</td>";
+				html += " <td class='font-12px'>" + catalognumber + "</td>";
+				html += " <td class='font-12px'>" + location + "</td>";
+				html += " <td class='font-12px'>" + email + "</td>";
+				//html += " <td class='font-12px'>" + category + "</td>";
+				html += " <td class='font-12px'>" + moment(date).tz("Africa/Bissau").format('MM-DD-YYYY') + "</td></tr>";
 				dataonly.push(rowonly);
 			}
-			html += "</tbody></table><p style='margin-top: 25px;'><i><b>" + i18n.__("index.reportsShares.html7") + "</b></i></p></div>";
+			html += "</tbody></table><p class='margintop-25'><i><b>" + i18n.__("index.reportsShares.html7") + "</b></i></p></div>";
 			//html += "</tbody></table><p><i><b>The LabYoke Team.</b></i></p><img style='width: 141px; margin: 0 20px;float:left' src='https:\/\/team-labyoke.herokuapp.com\/images\/yoke4.png', alt='The Yoke',  title='Yoke', class='yokelogo'/>";
 		}
 		if(!isempty){
@@ -939,10 +939,10 @@ console.log("report on shares: " + labsindept);
 console.log("report on shares my lab: " + mylab);
 	if(datefrom != null && dateto != null && datefrom !=undefined && dateto !=undefined && datefrom !="" && dateto !=""){
 		if(params == ""){
-			params += i18n.__("index.reportsShares.params");//"<div style='font-weight:bold'>Parameters</div>";
+			params += i18n.__("index.reportsShares.params");//"<div class='font-bold'>Parameters</div>";
 		}
-		params += i18n.__("index.reportsShares.params1", {datefrom: datefrom}); //"<div><span style='font-weight:bold'>Date From: </span><span>" + datefrom + "</span></div>";
-		params += i18n.__("index.reportsShares.params2", {dateto: dateto}); //"<div><span style='font-weight:bold'>Date To: </span><span>" + dateto + "</span></div>";
+		params += i18n.__("index.reportsShares.params1", {datefrom: datefrom}); //"<div><span class='font-bold'>Date From: </span><span>" + datefrom + "</span></div>";
+		params += i18n.__("index.reportsShares.params2", {dateto: dateto}); //"<div><span class='font-bold'>Date To: </span><span>" + dateto + "</span></div>";
 		if(where == "")
 			where =" where ";
 		where += "date between '" + datefrom + "' and '" + dateto + "'";
@@ -951,9 +951,9 @@ console.log("report on shares my lab: " + mylab);
 	}
 	/*if(category != null && category !=undefined && category !="all"){
 		if(params == ""){
-			params += "<div style='font-weight:bold'>Parameters</div>";
+			params += "<div class='font-bold'>Parameters</div>";
 		}
-		params += "<div><span style='font-weight:bold'>Category: </span><span>" + category + "</span></div>";
+		params += "<div><span class='font-bold'>Category: </span><span>" + category + "</span></div>";
 		if(where == ""){
 			where =" where ";
 		}
@@ -988,11 +988,11 @@ console.log("report on shares my lab: " + mylab);
 	query.on("end", function(result) {
 		results = result.rows;
 		console.log("results : " + results);
-		var html = "<div style='margin-left:50px;margin-bottom:25px;'>";
+		var html = "<div class='labyoker-report-container'>";
 		
 
 		html += i18n.__("index.reportsShares.html1", {dateto: dateto}); //"<div><span style='font-weight:bold;font-size:36pt;margin-bottom:20px;float:left'>Inventory.</span></div><div style=\"font-family:'calibri'; font-size:11pt;padding: 20px; width:50%;float:left\">";
-		html += "<div style='overflow: overlay;height: 230px;'>";
+		html += "<div class='labyoker-report-container-one'>";
 
 		if(datefrom == 'all'){
 			html += i18n.__("index.reportsShares.html2"); //"<p>This report is listing all the inventory uploaded:</p></div>"
@@ -1010,7 +1010,7 @@ console.log("report on shares my lab: " + mylab);
 			headeronly.push(i18n.__("index.reportsMoney.param16"));
 			headeronly.push(i18n.__("index.reportsMoney.param12"));
 			dataonly.push(headeronly);
-		//"<table><tbody><tr style='color: white;background-color: #3d9dcb;'><td style='font-size: 12px;'>Reagent</td><td style='font-size: 12px;'>Vendor</td><td style='font-size: 12px;'>Catalog#</td><td style='font-size: 12px;'>Location</td><td style='font-size: 12px;'>User</td><td>Date</td></tr>"
+		//"<table><tbody><tr class='locale-tr'><td class='font-12px'>Reagent</td><td class='font-12px'>Vendor</td><td class='font-12px'>Catalog#</td><td class='font-12px'>Location</td><td class='font-12px'>User</td><td>Date</td></tr>"
 			html += i18n.__("index.reportsShares.html6");
 			for(var prop in results){
 				var rowonly = [];
@@ -1023,13 +1023,13 @@ console.log("report on shares my lab: " + mylab);
 				//var category = results[prop].category;
 				var date = results[prop].date;
 
-				html += " <tr><td style='font-size: 12px;'>" + agent + "</td>";
-				html += " <td style='font-size: 12px;'>" + vendor + "</td>";
-				html += " <td style='font-size: 12px;'>" + catalognumber + "</td>";
-				html += " <td style='font-size: 12px;'>" + location + "</td>";
-				html += " <td style='font-size: 12px;'>" + email + "</td>";
-				//html += " <td style='font-size: 12px;'>" + category + "</td>";
-				html += " <td style='font-size: 12px;'>" + moment(date).tz("Africa/Bissau").format('MM-DD-YYYY') + "</td></tr>";
+				html += " <tr><td class='font-12px'>" + agent + "</td>";
+				html += " <td class='font-12px'>" + vendor + "</td>";
+				html += " <td class='font-12px'>" + catalognumber + "</td>";
+				html += " <td class='font-12px'>" + location + "</td>";
+				html += " <td class='font-12px'>" + email + "</td>";
+				//html += " <td class='font-12px'>" + category + "</td>";
+				html += " <td class='font-12px'>" + moment(date).tz("Africa/Bissau").format('MM-DD-YYYY') + "</td></tr>";
 				rowonly.push(agent);
 				rowonly.push(vendor);
 				rowonly.push(catalognumber);
@@ -1038,7 +1038,7 @@ console.log("report on shares my lab: " + mylab);
 				rowonly.push(moment(date).tz("Africa/Bissau").format('MM-DD-YYYY'));
 				dataonly.push(rowonly);
 			}
-			html += "</tbody></table><p style='margin-top: 25px;'><i><b>" + i18n.__("index.reportsShares.html7") + "</b></i></p></div>";
+			html += "</tbody></table><p class='margintop-25'><i><b>" + i18n.__("index.reportsShares.html7") + "</b></i></p></div>";
 			//html += "</tbody></table><p><i><b>The LabYoke Team.</b></i></p><img style='width: 141px; margin: 0 20px;float:left' src='https:\/\/team-labyoke.herokuapp.com\/images\/yoke4.png', alt='The Yoke',  title='Yoke', class='yokelogo'/>";
 			
 		}
@@ -1048,7 +1048,7 @@ console.log("report on shares my lab: " + mylab);
 			resultsbundled.push(dataonly);
 			callback(null, resultsbundled);
 		} else {
-			html = html + i18n.__("index.reportsShares.nodataIntro") + "<p style='margin-top: 25px;'><i><b>" + i18n.__("index.reportsShares.html7") + "</b></i></p>" + "</div>";
+			html = html + i18n.__("index.reportsShares.nodataIntro") + "<p class='margintop-25'><i><b>" + i18n.__("index.reportsShares.html7") + "</b></i></p>" + "</div>";
 			console.log("html empty: " + html);
 			resultsbundled.push(html)
 			callback(null, resultsbundled);
@@ -1086,10 +1086,10 @@ console.log("report on orders: " + labsindept);
 
 	if(datefrom != null && dateto != null && datefrom !=undefined && dateto !=undefined && datefrom !="" && dateto !=""){
 		if(params == ""){
-			params += i18n.__("index.reportsShares.params"); //"<div style='font-weight:bold'>Parameters</div>";
+			params += i18n.__("index.reportsShares.params"); //"<div class='font-bold'>Parameters</div>";
 		}
-		params += i18n.__("index.reportsShares.params1", {datefrom: datefrom}); // "<div><span style='font-weight:bold'>Date From: </span><span>" + datefrom + "</span></div>";
-		params += i18n.__("index.reportsShares.params2", {dateto: dateto}); // "<div><span style='font-weight:bold'>Date To: </span><span>" + dateto + "</span></div>";
+		params += i18n.__("index.reportsShares.params1", {datefrom: datefrom}); // "<div><span class='font-bold'>Date From: </span><span>" + datefrom + "</span></div>";
+		params += i18n.__("index.reportsShares.params2", {dateto: dateto}); // "<div><span class='font-bold'>Date To: </span><span>" + dateto + "</span></div>";
 		if(where == "")
 			where =" where ";
 		where += "date between '" + datefrom + "' and '" + dateto + "'";
@@ -1098,9 +1098,9 @@ console.log("report on orders: " + labsindept);
 	}
 	if(lab != null && lab !=undefined && lab !="all"){
 		if(params == ""){
-			params += i18n.__("index.reportsShares.params"); //"<div style='font-weight:bold'>Parameters</div>";
+			params += i18n.__("index.reportsShares.params"); //"<div class='font-bold'>Parameters</div>";
 		}
-		params += "<div><span style='font-weight:bold'>" + i18n.__("index.reportsOrders.html1") + "</span><span>" + lab + "</span></div>";
+		params += "<div><span class='font-bold'>" + i18n.__("index.reportsOrders.html1") + "</span><span>" + lab + "</span></div>";
 		if(where == "")
 			where =" where ";
 		if(where.trim() != "where")
@@ -1109,9 +1109,9 @@ console.log("report on orders: " + labsindept);
 	} 
 	/*if(category != null && category !=undefined && category !="all"){
 		if(params == ""){
-			params += "<div style='font-weight:bold'>Parameters</div>";
+			params += "<div class='font-bold'>Parameters</div>";
 		}
-		params += "<div><span style='font-weight:bold'>Category: </span><span>" + category+ "</span></div>";
+		params += "<div><span class='font-bold'>Category: </span><span>" + category+ "</span></div>";
 		if(where == "")
 			where =" where ";
 		if(where.trim() != "where")
@@ -1183,7 +1183,7 @@ console.log("report on orders: " + labsindept);
 		console.log("results : " + results);
 		var html = "";
 		if(results != null && results != ""){
-		html = "<div><span id='reporttitle' style='font-weight:bold;font-size:36pt;'>" + i18n.__("index.reportsOrders.html2") + "</span></div><br/><div style='font-size:11pt;overflow: overlay;height: 230px;'>";
+		html = "<div><span id='reporttitle' class='labyoker-money'>" + i18n.__("index.reportsOrders.html2") + "</span></div><br/><div class='labyoker-money-text'>";
 		if(datefrom == 'all'){
 			html += i18n.__("index.reportsOrders.html3"); //"<p>This report is listing all the orders requested:</p></div>"
 		} else {
@@ -1199,7 +1199,7 @@ console.log("report on orders: " + labsindept);
 		headeronly.push(i18n.__("index.reportsMoney.param17"));
 		headeronly.push(i18n.__("index.reportsMoney.param12"));
 		dataonly.push(headeronly);
-		//html +="<table><tbody><tr style='color: white;background-color: #3d9dcb;'><td style='font-size: 12px;'>Reagent</td><td style='font-size: 12px;'>Vendor</td><td style='font-size: 12px;'>Catalog#</td><td style='font-size: 12px;'>Owner</td><td style='font-size: 12px;'>Requestor</td><td>Date</td></tr>"
+		//html +="<table><tbody><tr class='locale-tr'><td class='font-12px'>Reagent</td><td class='font-12px'>Vendor</td><td class='font-12px'>Catalog#</td><td class='font-12px'>Owner</td><td class='font-12px'>Requestor</td><td>Date</td></tr>"
 		
 			for(var prop in results){
 				var rowonly = [];
@@ -1217,15 +1217,15 @@ console.log("report on orders: " + labsindept);
 				rowonly.push(location);
 				rowonly.push(email);
 				rowonly.push(moment(date).tz("Africa/Bissau").format('MM-DD-YYYY'));
-				html += " <tr><td style='font-size: 12px;'>" + agent + "</td>";
-				html += " <td style='font-size: 12px;'>" + vendor + "</td>";
-				html += " <td style='font-size: 12px;'>" + catalognumber + "</td>";
-				html += " <td style='font-size: 12px;'>" + location + "</td>";
-				html += " <td style='font-size: 12px;'>" + email + "</td>";
-				html += " <td style='font-size: 12px;'>" + moment(date).tz("Africa/Bissau").format('MM-DD-YYYY') + "</td></tr>";
+				html += " <tr><td class='font-12px'>" + agent + "</td>";
+				html += " <td class='font-12px'>" + vendor + "</td>";
+				html += " <td class='font-12px'>" + catalognumber + "</td>";
+				html += " <td class='font-12px'>" + location + "</td>";
+				html += " <td class='font-12px'>" + email + "</td>";
+				html += " <td class='font-12px'>" + moment(date).tz("Africa/Bissau").format('MM-DD-YYYY') + "</td></tr>";
 				dataonly.push(rowonly);
 			}
-			html += "</tbody></table><p style='margin-top:25px'><i><b>" + i18n.__("index.reportsShares.html7") + "</b></i></p></div>";
+			html += "</tbody></table><p class='margintop-25'><i><b>" + i18n.__("index.reportsShares.html7") + "</b></i></p></div>";
 		}
 		
 		if(!isempty){
@@ -3037,7 +3037,7 @@ LabyokerUserDetails.prototype.changeDetails = function(callback) {
 		} else if(value != null && value == "1"){
 			value = i18n.__("index.account.yes") ;
 		}
-		results = "<span style='font-weight:bold;color: #e6c293;'>" + i18n.__("index.account." + column) + "</span> " +  i18n.__("index.account.to")  + " <span style='color: #e6c293;font-weight:bold'>" + value + "</span>";
+		results = "<span class='labyoker-change'>" + i18n.__("index.account." + column) + "</span> " +  i18n.__("index.account.to")  + " <span style='labyoker-change-one'>" + value + "</span>";
 		callback(null, results);
 	});
 };
