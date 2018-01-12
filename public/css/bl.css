@@ -5576,4 +5576,61 @@ a.mailto:link {
 .layout-footer-img{
   width: 15px !important;margin-left: 9px !important;
 }
+.account-color-one{
+  color: #2975b4 !important;
+}
+.account-color-two{
+  color: #68b3d6 !important;
+}
 /*End layout*/
+
+/*Start Locale*/
+.font-34{
+  font-size:34pt !important;
+}
+.margintop-10{
+  margin-top:10px !important;
+}
+.locale-table{
+  margin-top:25px !important;text-align: left !important;
+}
+.locale-tr{
+  color: white !important;background-color: #3d9dcb !important;
+}
+.font12px{
+  font-size: 12px !important;
+}
+.color-white{
+  color:white !important;
+}
+.shares-nodata{
+  font-size:20pt !important;font-weight:bold !important;
+}
+.orders-tr{
+  color: white !important;background-color: #3d9dcb !important;
+}
+.register-color{
+  color: #3d9dcb !important;
+}
+.color-red{
+  color:red !important;
+}
+.pop-subtitle{
+  width: 50% !important; float: left !important; background-color: rgba(138, 109, 59, 0.55) !important;
+}
+.locale-account-color{
+  color:#8a6d3b !important;
+}
+.shares-locale-check{
+  margin-bottom: 0px !important;margin-left: 15px !important;display: inline-block !important;
+}
+.check-position{
+  position:absolute !important;left: -9999px !important;
+}
+.marginleft-25{
+  margin-left: 25px !important;
+}
+.check-position-one{
+  display: inline-block !important;margin-left: 15px !important;
+}
+/*End Locale*/

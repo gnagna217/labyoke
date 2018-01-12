@@ -148,7 +148,7 @@ block content
                         input(name="column" type="hidden" id="column" value="onfill")
                         input(name="formemail" type="hidden" id="formemail" value=email)
                       label(for="emailOnFill" class="labelcheck shadow labelcheckonfill")
-        div(style="account-3-sep" class="threepointssep")
+        div(class="threepointssep account-3-sep")
         div(class="texthalf")
           span!=" <span id='showteam' class='labColor font-bold'><div class='buttons'><button type='submit' class='btn btn-success btn-lg btn-block shadow teamaccountbuttonwidth width-278' id='teamTitle'>" + i18n.__("account.button") + "</button></div></span>"
         div(id="team")
@@ -164,11 +164,11 @@ block content
             - var ob2 = team
             - for(var prop in ob2)
                 - var i = prop % 2
-                - var color = "#2975b4"
+                - var color = "#account-color-one"
                 - if(i==0)
-                    - color = "#68b3d6"
+                    - color = "account-color-two"
                 div(class="myteammember")
-                  span(class="fa fa-user-circle-o myteamcard" style="color:" + color)
+                  span(class="fa fa-user-circle-o myteamcard " + color)
                   span(class="account-align")
                     a(href="mailto:" + ob2[prop].email , class="cursor-pointer")
                       span(class="fa fa-location-arrow account-location" id="email")
