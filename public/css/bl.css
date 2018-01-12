@@ -5510,4 +5510,7 @@ a.mailto:link {
 .account-desc{
   position: relative !important;float: right !important;width: 250px !important;font-size: 9pt !important;line-height: 1.3 !important;border-radius: 4px !important;
 }
+.account-slide-container{
+  display:none;z-index:1 !important;position: fixed !important;top: 25% !important;max-height:380px !important;
+}
 /* End account styles*/
