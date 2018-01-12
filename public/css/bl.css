@@ -5514,3 +5514,66 @@ a.mailto:link {
   display:none;z-index:1 !important;position: fixed !important;top: 25% !important;max-height:380px !important;
 }
 /* End account styles*/
+
+/*Start Layout*/
+.layout-container{
+  background-color: white !important;font-size: 10pt !important;position:fixed !important;padding-top:10px !important;
+}
+.margintop-5{
+  margin-top: 5px !important;
+}
+.layout-container-first{
+  margin-bottom: 16px !important;float:right !important; margin-left:auto !important;margin-right: -10px !important;
+}
+.nooutline{
+  outline:none !important;
+}
+.layout-account{
+  font-size: 17px !important;color: white !important;text-decoration !important: none !important;
+}
+.layout-search{
+  color: white !important;text-decoration: none !important;
+}
+.layout-search-text{
+  color: white !important;font-size: 11pt !important;
+}
+.width-111{
+  width: 111px !important;
+}
+.layout-search-active{
+  font-size: 14pt !important;margin-top: -5px !important;
+}
+.layout-shares{
+  border-left-color: white !important;border-left-style: solid !important;border-width: thick !important;
+}
+.marginleft-5{
+  margin-left: 5px !important;
+}
+.layout-chatbot{
+  display: block !important;font-size: 15pt !important;margin-left: 20px !important;color: #3e9ccb !important;font-weight: bold !important;position: initial !important;
+}
+.width-40{
+  width: 40px !important;
+}
+.layout-modal{
+  font-size: 28pt !important;color: #8e784d !important;
+}
+.layout-comment{
+  display: block !important;font-size: 15pt !important;margin-left: 20px !important;color: #3e9ccb !important;font-weight: bold !important;
+}
+.width-50{
+  width: 50px !important;
+}
+.layout-bot{
+  position: relative !important;bottom: 0px !important;margin: 10px !important;margin-top: -240px !important;
+}
+.layout-footer{
+  margin-top: 40px !important; background-color: #8a6d3b !important; position: fixed !important;bottom: 0 !important;width: 100% !important;
+}
+.layout-footer-text{
+  color:white !important; text-align:center !important; font-size:11px !important;
+}
+.layout-footer-img{
+  width: 15px !important;margin-left: 9px !important;
+}
+/*End layout*/
