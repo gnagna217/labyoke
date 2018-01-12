@@ -1,8 +1,6 @@
 extends layout
 
 block content
-		script.
-			var recenter = 0;
 		div(class="zoomnow container login2 marginbottom margintop container2 moveFromLeft")
 			h1
 				span(class="fa fa-file-text lightyokecolor")
@@ -178,7 +176,7 @@ block content
 									script(type="text/javascript" src="/javascripts/savexl.js")
 									script.
 										var var_resultsOrders =  "#{resultsOrders}", var_dataOrders = "#{dataOrders}", var_reports_download_pdf = "#{i18n.__("reports.download.pdf")}", var_reports_download_excel = "#{i18n.__("reports.download.excel")}",var_fileOrders = "#{file_orders}"; 
-									script(type="text/javascript" src="/js/reports-utils-orders.js")			
+									script(type="text/javascript" src="/js/reports-utils-orders.js")
 									- resultsOrders = ""
 					div(class="reportSharess results2 resultsshadow", id="reportShares", style="border-radius: 50px 100px !important;")
 						h3
