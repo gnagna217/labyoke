@@ -1,7 +1,4 @@
 console.log(test);
-console.log("filter department venn: " + var_array_labs_venn);
-console.log("filter catalog venn: " + var_array_catalogs_venn);
-console.log("filter venn: " + test);
 
 $('#vennChart').jvenn({
     series: test,
