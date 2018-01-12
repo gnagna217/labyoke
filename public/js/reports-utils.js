@@ -1,23 +1,4 @@
-
-
 console.log("recenter: ") + recenter;
-
-			$(document).ready(function(){
-
-
-var h = $(window).height() - 125;
-          $(".marginbottom").css("min-height",h);
-
-			var labelcheck = document.querySelector(".labelcheck");
-			console.log("labelcheck: " + labelcheck);
-			if(labelcheck != undefined && labelcheck != null){
-				console.debug(labelcheck);
-				labelcheck.addEventListener("click", function() {
-				labelcheck.classList.toggle("bordercolorreport");
-				});
-			}
-
-
 
 
 				console.log("recenter: " + recenter);
@@ -60,6 +41,27 @@ var h = $(window).height() - 125;
 				} else {
 				$(".containerreports").css("display", "block");
 				}
+
+				
+			$(document).ready(function(){
+
+
+var h = $(window).height() - 125;
+          $(".marginbottom").css("min-height",h);
+
+			var labelcheck = document.querySelector(".labelcheck");
+			console.log("labelcheck: " + labelcheck);
+			if(labelcheck != undefined && labelcheck != null){
+				console.debug(labelcheck);
+				labelcheck.addEventListener("click", function() {
+				labelcheck.classList.toggle("bordercolorreport");
+				});
+			}
+
+
+
+
+
 
 				
 
