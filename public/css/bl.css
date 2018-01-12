@@ -69,7 +69,7 @@
   color: #68b4d7 !important;
 }
 .handle{
-  right: -60px !important;left:-85px !important;top:25px !important;
+  right: -60px;left:-85px;top:25px;
   cursor: pointer;
 }
 
