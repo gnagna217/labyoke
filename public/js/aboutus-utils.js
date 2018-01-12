@@ -1,16 +1,16 @@
-function rotateCard(btn){
+function rotateCard(btn) {
     var $otherbutton;
     var $card = $(btn).closest('.teamcolumn');
     var classname = $(btn).parent().attr("class");
     console.log("classname: " + classname);
-    if(classname == "frontbutton"){
-      $otherbutton = $(btn).parent().next('.backbutton');
+    if (classname == "frontbutton") {
+        $otherbutton = $(btn).parent().next('.backbutton');
     } else {
-      $otherbutton = $(btn).parent().prev('.frontbutton');
+        $otherbutton = $(btn).parent().prev('.frontbutton');
     }
     console.log($otherbutton);
     var $front = $card.find('.front');
-    if($card.hasClass('hover')){
+    if ($card.hasClass('hover')) {
         $card.removeClass('hover');
         $front.show();
         //$(btn).parent().hide();
@@ -23,9 +23,9 @@ function rotateCard(btn){
     }
 }
 $(window).on('load', function() {
-  var h = 200 + $('.fronthelp').height() + $('.section2').height() + $('.front1').height();
-  console.log("container height: " + h);
+    var h = 200 + $('.fronthelp').height() + $('.section2').height() + $('.front1').height();
+    console.log("container height: " + h);
 
-  var h0 = $(window).height() - 125;
-  $(".marginbottom").css("min-height",h0);
+    var h0 = $(window).height() - 125;
+    $(".marginbottom").css("min-height", h0);
 });
