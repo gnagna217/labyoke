@@ -1,12 +1,12 @@
 extends layout
 
 block content
-    div(class="container login front containertop", style="margin-bottom:15px;display:none")
-         div(style="text-align: center;position: relative;")
+    div(class="container login front containertop login-container")
+         div(class="login-center-relative")
              a(href="/search", class="sunlogos")
                 img(src="/images/yoke4.png", alt="The Yoke", class="yokelogo")
-             p(style="margin-bottom: 0px;margin-right: 5px;")
-             h1(id="hour", style="font-size:30px")
+             p(class="marginbottom-0-right-5")
+             h1(id="hour", class="font-30")
              p(class="centralize") #{i18n.__("login.welcome")}
 
              div(id="ctl00_Div2" class="frontdiv results")
@@ -14,19 +14,19 @@ block content
                 if message
                     div(class="alert alert-danger-report fade in alert-dismissable alertshadow")!= message
                 form(action="/login" method="post")
-                    div(class="textentry", style="margin-top: -5px;margin-bottom: 15px;")
-                        span(class="fa fa-user" style="top: 15px;position: relative;float: right;color: rgba(138, 109, 59, 0.61);")
+                    div(class="textentry login-text-user")
+                        span(class="fa fa-user login-user")
                         input(name="user" type="text" id="user" class="form-control form-control0 placeholderColor" placeholder= i18n.__("login.username"))
-                    div(class="textentry",  style="margin-top: -5px;")
+                    div(class="textentry login-text-pass")
                         input(name="pass" type="password" id="pass" class="form-control form-control0 placeholderColor" placeholder= i18n.__("login.password"))
-                        span(class="fa fa-key" style="top: -20px;position: relative;float: right;color: rgba(138, 109, 59, 0.61);")
+                        span(class="fa fa-key login-pass")
                     div(class="buttons")
                         button.btn.btn-success.btn-lg.btn-block.shadow.resizebutton(type='submit') #{i18n.__("login.button")}
-                div(style="max-width: 100%;margin-top: 10px;")
-                    span(class="floatleft", style="padding-bottom: 20px;")
-                        a(href="/register", style="z-index:10") #{i18n.__("login.registerLink")}
-                    span(style="float:right;padding-bottom: 20px;")
-                        a(href="/forgot", style="z-index:10") #{i18n.__("login.forgotLink")}
+                div(class="login-buttons")
+                    span(class="floatleft paddingbottom-20")
+                        a(href="/register", class="zindex-10") #{i18n.__("login.registerLink")}
+                    span(class="float-right paddingbottom-20")
+                        a(href="/forgot", class="zindex-10") #{i18n.__("login.forgotLink")}
         div(class="help")
            span
              a(href="/login?lang=se")
@@ -40,16 +40,16 @@ block content
              a(href="/login?lang=fr")
                 img(src="images/fr.png", alt="Français", class="frlogin")                
      - if(latestshares != null && latestshares != undefined)
-        div(class="slide-out-div desktabonly lineheight", style="display:none;position: fixed;bottom: 6px;top:-75px;")
-            a(class="handle" href="last-transactions", style="right: -60px;")!=Content
-            div(style="text-align: center;padding: 1px;color:white;top: -25px;position: relative;")
-                p(style="font-weight: bold;")!= i18n.__("login.texting1")
+        div(class="slide-out-div desktabonly lineheight login-slide-container")
+            a(class="handle rightbelow-60" href="last-transactions")!=Content
+            div(class="login-text")
+                p(class="font-bold")!= i18n.__("login.texting1")
                 p
                     -var ob = latestshares
                     - var i = 0
                     -for(var prop in ob.slice(0, 3))
                         - var n = ob[prop].agent
-                            span(class="test",style="color:#ddd")!= n + " "
+                            span(class="test login-color-slide")!= n + " "
                             - if(prop < 2)
-                                span(class="test2", style="color:white;")!="-|- "
+                                span(class="test2 color-white")!="-|- "
     span(class="desktabonly", id="checkdisplay")
