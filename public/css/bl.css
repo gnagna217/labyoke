@@ -5818,9 +5818,11 @@ color:white !important;background-color:#3d9dcb !important;font-size:12px !impor
 .slide-content{
   right: -60px !important;left:-85px !important;top:25px !important;
 }
+
 .slide-container-one{
   padding: 1px !important;color:white !important;top: -45px !important;position: relative !important;max-height: 320px !important;overflow: auto !important;
 }
+
 .margintopbelow-10{
   margin-top: -10px !important;
 }
@@ -5868,3 +5870,37 @@ color:white !important;background-color:#3d9dcb !important;font-size:12px !impor
   color: #3d9dcb !important;
 }
 /* end register*/
+
+/*start search*/
+.search-exit{
+  width: 50% !important; float: left !important; background-color: rgba(138, 109, 59, 0.55) !important;
+}
+.marginleft-15{
+  margin-left: 15px !important;
+}
+.search-radio-catalog{
+  float: right !important;margin-right: 5px !important;
+}
+.search-key{
+  position: relative !important;font-size: 15pt !important;top: -150px !important;margin: 0 auto !important;text-align: center !important;display: block !important;
+}
+.search-form{
+  display: block !important;width: 75% !important;margin: 0 auto !important; text-align: center !important;
+}
+.search-buttons{
+  display: block !important; text-align: center !important;
+}
+.search-submit{
+  margin: 0 auto !important;width: 278px !important;
+}
+.slide-content-one{
+  right: -60px !important;left:-60px !important;
+}
+.search-location{
+  color: #e6c293 !important;font-weight:bold !important;
+}
+.font-400{
+  font-weight: 400 !important;
+}
+
+/*end search*/

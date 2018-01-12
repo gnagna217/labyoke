@@ -22,7 +22,7 @@ block content
                 h1 #{i18n.__("search.layovertitle")}
                 p(id="orderText")
                 div
-                    div(id="actionorder" class="exit" style="width: 50%; float: left; background-color: rgba(138, 109, 59, 0.55);") #{i18n.__("search.layoverok")}
+                    div(id="actionorder" class="exit search-exit") #{i18n.__("search.layoverok")}
                     div(class="exit" onclick="iosLightExit()") #{i18n.__("search.layovercancel")}
         div(class="shade" id="shade")
         div(class="shade-light" id="shade-light")
@@ -31,18 +31,18 @@ block content
           img(src="/images/logo_one_bottle_L_2.png", alt="The Yoke",  data-toggle="tooltip",title="Yoke", class="searchlogoimg")
           img(src="/images/logo_one_bottle_R_2.png", alt="The Yoke", data-toggle="tooltip", title="Yoke", class="searchlogoimg")
         div(class="radiosearch keysearchs searchradios")
-          div(style="float:left;")
+          div(class="float-left")
             input(type="radio" name="search" value="keysearch" id="keyradio")
-            label(for="keyradio", style="float: left;", onClick="radioclick()")
+            label(for="keyradio", class="float-left", onClick="radioclick()")
               span #{i18n.__("search.radio.key")}
             div(class="checking shadow", onClick="radioclick()")
-          div(style="/*float:right;*/", class="margincatalogradio")
-            input(type="radio" name="search" value="catalogsearch" id="catalogradio" style="margin-left: 15px;")
-            label(for="catalogradio", style="float: right;margin-right: 5px;", class="catalogradio", onClick="radiocatclick()")
+          div(class="margincatalogradio")
+            input(type="radio" name="search" value="catalogsearch" id="catalogradio" class="marginleft-15")
+            label(for="catalogradio", class="catalogradio search-radio-catalog", onClick="radiocatclick()")
               span #{i18n.__("search.radio.catalog")}
             div(class="checkingcatalog shadow", onClick="radiocatclick()")
-        div(class="keysearch", style="display:none", id="keysearch")
-            span(id="loopkey", class="fa fa-search colmenu desktabonly" style="position: relative;to;font-size: 15pt;top: -150px;margin: 0 auto;text-align: center;display: block;")
+        div(class="keysearch displaynone", id="keysearch")
+            span(id="loopkey", class="fa fa-search colmenu desktabonly search-key")
             - searchText = i18n.__("search.searchholder")
             - classButton = "btn-success"
             if searchformText
@@ -52,7 +52,7 @@ block content
                 div
                     if message
                         div(class="alert alert-danger-report messagesearch alertshadow")!= message
-                    form(action="/search" method="post" style="display: block;width: 75%;margin: 0 auto;/*padding-left: 15%; padding-right: 15%;*/ text-align: center;")
+                    form(action="/search" method="post" class="search-form")
                         div(class="textentry")
                             input(type="hidden" name="searchType" value="key")
                             input(name="searchText" list="agent-datalist"  type="text" id="searchText" class="form-control form-control0 searchinput" placeholder=searchText)
@@ -60,11 +60,11 @@ block content
                                 -var ob2 = agentsResults
                                 -for(var prop in ob2)
                                     option(value='#{ob2[prop].agent}')
-                        div(class="buttons positionbuttons", style="display: block; text-align: center; ")
-                            button(class="btn " + classButton + " btn-lg btn-block btnsearch shadow" type='submit' style="margin: 0 auto;width: 278px;") #{i18n.__("search.buttonreagent")}
+                        div(class="buttons positionbuttons search-buttons")
+                            button(class="btn " + classButton + " btn-lg btn-block btnsearch shadow search-submit" type='submit') #{i18n.__("search.buttonreagent")}
 
-        div(class="keysearch", id="catalogsearch", style="display:none")
-            span(id="loopcatalog", class="fa fa-search colmenu desktabonly" style="position: relative;to;font-size: 15pt;top: -150px;margin: 0 auto;text-align: center;display: block;")
+        div(class="keysearch displaynone", id="catalogsearch")
+            span(id="loopcatalog", class="fa fa-search colmenu desktabonly search-key")
             - searchTextCatalog = i18n.__("search.catalogholder")
             - classButtonCatalog = "btn-success"
             if searchformTextCatalog
@@ -75,7 +75,7 @@ block content
                 div
                     if messageCatalog
                         div(class="alert alert-danger-report messagesearch alertshadow")!= messageCatalog
-                    form(action="/searchCatalog" method="post" style="display: block;width: 75%;margin: 0 auto;/*padding-left: 15%; padding-right: 15%; */ text-align: center;")
+                    form(action="/searchCatalog" method="post" class="search-form")
                         div(class="textentry")
                             input(type="hidden" name="searchType" value="catalog")
                             input(name="searchTextCatalog" list="catalog-datalist" type="text" id="searchTextCatalog" class="form-control form-control0 searchinput" placeholder=searchTextCatalog)
@@ -83,14 +83,14 @@ block content
                                 -var ob2 = agentsResults
                                 -for(var prop in ob2)
                                     option(value='#{ob2[prop].catalognumber}')
-                        div(class="buttons positionbuttons", style="display: block; text-align: center;")
-                            button(class="btn " + classButtonCatalog + " btn-lg btn-block btnsearch shadow" type='submit' style="margin: 0 auto;width: 278px;") #{i18n.__("search.buttoncatalog")}        
+                        div(class="buttons positionbuttons search-buttons")
+                            button(class="btn " + classButtonCatalog + " btn-lg btn-block btnsearch shadow search-submit" type='submit') #{i18n.__("search.buttoncatalog")}        
 
 
-        div(class="slide-out-tip-div desktabonly", style="display:none;z-index:10;position: fixed;top: 25% !important;max-height:380px;")
-            a(class="handle" href="", title='#{i18n.__("search.tip.title")}', style="right: -60px;left:-60px;")!=Content
-            div(style="padding: 1px;color:white;top: -45px;position: relative;max-height: 320px;overflow: auto;")
-                div(style="text-align: center;")
+        div(class="slide-out-tip-div desktabonly account-slide-container")
+            a(class="handle slide-content-one" href="", title='#{i18n.__("search.tip.title")}')!=Content
+            div(class="slide-container-one")
+                div(class="textalign-center")
                     span(class="zoom_controls")
                         a(href="#" class="zoom_out zoomicon" title=i18n.__("zoom.minus"))
                           span(class="fa fa-minus-circle")
@@ -98,9 +98,9 @@ block content
                           span(class="fa fa-circle-o-notch")
                         a(href="#" class="zoom_in zoomicon" title=i18n.__("zoom.plus"))
                           span(class="fa fa-plus-circle")
-                    div(class="threepointssep", style="margin-top: -10px;")
-                p(style="font-size: 12pt;")!= i18n.__("search.tip.header")
-                div(style="position: relative;float: right;width: 250px;font-size: 9pt;line-height: 1.3;border-radius: 4px;")
+                    div(class="threepointssep margintopbelow-10")
+                p(class="font-12pt")!= i18n.__("search.tip.header")
+                div(class="slide-desc")
                   span!= i18n.__("search.tip.desc")
 
         div(style=nobar, class="threepointssep")
@@ -108,7 +108,7 @@ block content
           div(id="ordered" class="animated fadeInDown")
             div(class="alert")
                 h4(class="orderedh4")= i18n.__("orders.success.title")
-                  span(style="color: #e6c293;font-weight:bold")=" " + order_location
+                  span(class="search-location")=" " + order_location
                   span="!"
                 p=" "
                 p
@@ -125,21 +125,21 @@ block content
         if(searchResults != null && searchResults.length > 0)
           div(class="results10")
               div
-                  span(style="text-align: center")
-                    h3(style="font-weight: 400;") #{i18n.__("search.resultstitle")}
+                  span(class="textalign-center")
+                    h3(class="font-400") #{i18n.__("search.resultstitle")}
                         if searchformText
-                            span(style="color: #3d9dcb;")=" " + searchText
+                            span(class="register-success-label")=" " + searchText
                         if searchformTextCatalog
-                            span(style="color: #3d9dcb;")=" " + searchformTextCatalog
+                            span(class="register-success-label")=" " + searchformTextCatalog
                     h4 #{i18n.__("search.resultssubtitle")}
-              #labyokers.container(style="width:100%;")
+              #labyokers.container.width-100
                 div(id="ctl00_Div2" class="row rank").match
                    - i = 1
                    - className = ""
                    div(class="table-responsive")                    
                       table(id="rankTblSearch" class="table rankTbl card-list-table")
                         thead
-                         tr(class="you info-best" style="font-weight: bold")
+                         tr(class="you info-best" class="font-bold")
                           td(class="desktabonly")= ' '
                           td(class="desktabonly")= '# '
                           td(class="wrapped") #{i18n.__("search.table.reagent")}
@@ -173,7 +173,7 @@ block content
                                 td(data-title="#{i18n.__('search.table.vendor')}") #{ob[prop].vendor}
                                 td(data-title="#{i18n.__('search.table.location')}") #{ob[prop].location}
                                 td(data-title="" class="carticon")
-                                  span(onclick="iosLight('#{agent}','#{vendor}','#{catalognumber}','#{reqemail}','#{location}','#{category}','#{qty}','#{lab}','#{lang}','#{ob[prop].lang}')", style="cursor:pointer")
+                                  span(onclick="iosLight('#{agent}','#{vendor}','#{catalognumber}','#{reqemail}','#{location}','#{category}','#{qty}','#{lab}','#{lang}','#{ob[prop].lang}')", class="cursor-pointer")
                                         img(src="images/cart.png", class="imgcart", alt=i18n.__("search.resultssubtitle"), data-toggle="tooltip",title=i18n.__("search.resultssubtitle"))
                             - j = j + 1
 
@@ -181,8 +181,8 @@ block content
           div.container.searchResults(id="results2 resultsshadow")
                 div(id="ctl00_Div2" class="row rank")
                    div(class="table-responsive")
-                      span(style="text-align: center")
-                        h3(style="font-weight: 400;")="Sorry we could not find any location for your"
-                            span(style="color: #3d9dcb;")=" " + searchText
+                      span(class="textalign-center")
+                        h3(class="font-400")="Sorry we could not find any location for your"
+                            span(class="register-success-label")=" " + searchText
                         h4="Try another chemical reagent!"
     span(class="desktabonly", id="checkdisplay")
