@@ -2,15 +2,15 @@ extends layout
 
 block content
     div(class="zoomnow container login marginbottom margintop container2 moveFromLeft botbottom")
-        div(style="float: left; width: 100%;margin-bottom: 0px;", class="share-container")
+        div(class="share-container account-container")
             h1(class="wrapped2")
               span(class="fa fa-user lightyokecolor")
               span!= " " + i18n.__("account.title") + labyoker + " "
-              span(class="fa fa-caret-right lightyokecolor animated fadeIn" style="font-size: 20pt;")
-            p(style="padding-bottom: 20px;", class="texthalf")!= i18n.__("account.subtitle")
+              span(class="fa fa-caret-right lightyokecolor animated fadeIn font-20")
+            p(class="texthalf padding-bottom-20")!= i18n.__("account.subtitle")
             - if(resultsAccount)
               div(id="ordered" class="animated fadeInDown")
-                div(class="alert", style="margin-bottom: 45px;")
+                div(class="alert margin-bottom-45")
                   a(href="#", class="closeordered", data-dismiss="alert", aria-label="close",data-toggle="tooltip", title="close")="x"
                   h4(class="orderedh4")= i18n.__("account.success")
                      span!=" " + resultsAccount
@@ -65,28 +65,28 @@ block content
                                   - tel = "..."
                               - if(!lab)
                                   - lab = "..."
-                              div(style="float:left;", class="accountdetailWidth")
+                              div(class="accountdetailWidth float-left")
                                 div(class="accountdetail accountdetail-header labColor animated fadeInUp")=i18n.__("account.form.firstname")
                                 div(class=" accountdetail accountdetail-header labColor animated fadeInUp")=i18n.__("account.form.lastname")
-                                div(style="background-color: rgb(61, 157, 203);" class=" accountdetail accountdetail-header labColor animated fadeInUp")=i18n.__("account.form.email")
+                                div(class=" accountdetail accountdetail-header labColor animated fadeInUp account-background")=i18n.__("account.form.email")
                               div(class="wrapped accountdetailMargin")
-                                div(style="margin-bottom:30px;", class="accountdetail accountdetailRowMargin animated fadeInDown")
+                                div(class="margin-bottom-30 accountdetail accountdetailRowMargin animated fadeInDown")
                                   - var nametrunc = name
                                   - if(nametrunc.length > 19)
                                     - nametrunc = nametrunc.substr(0, 18) + '...'
                                   span(id="name")!=nametrunc + " "
-                                  form(action="/changeDetails" id="changename" method="post" class="nameform" style="top: -5px; position: relative;")
+                                  form(action="/changeDetails" id="changename" method="post" class="nameform topdown-5")
                                     input(name="valuedetail" type="text" id="valuedetail" placeholder=nametrunc)
                                     input(name="column" type="hidden" id="column" value="name")
                                     input(name="formemail" type="hidden" id="formemail" value=email)
                                   span(onclick="pencilname()", id="pencilname", class="fa fa-pencil labColor")
                                   span(onclick="updatenameform()", id="checkname", class="fa fa-check labColor")
-                                div(style="margin-bottom:30px;", class="accountdetail accountdetailRowMargin animated fadeInDown")
+                                div(class=" margin-bottom-30 accountdetail accountdetailRowMargin animated fadeInDown")
                                   - var surnametrunc = surname
                                   - if(surnametrunc.length > 19)
                                     - surnametrunc = surnametrunc.substr(0, 18) + '...'
                                   span(id="surname")!= surnametrunc + " "
-                                  form(action="/changeDetails" id="changesurname" method="post" class="surnameform" style="top: -5px; position: relative;")
+                                  form(action="/changeDetails" id="changesurname" method="post" class="surnameform topdown-5")
                                     input(name="valuedetail" type="text" id="valuedetail" placeholder=surnametrunc)
                                     input(name="column" type="hidden" id="column" value="surname")
                                     input(name="formemail" type="hidden" id="formemail" value=email)
@@ -95,15 +95,15 @@ block content
                                 - var emailtrunc = email
                                 - if(email.length > 19)
                                   - emailtrunc = emailtrunc.substr(0, 18) + '...'
-                                div(style="margin-bottom:30px;", class="accountdetail accountdetailRowMargin animated fadeInDown")!= emailtrunc
-                              div(style="float:left;", class="accountdetailWidth")
+                                div(class="margin-bottom-30 accountdetail accountdetailRowMargin animated fadeInDown")!= emailtrunc
+                              div(class="float-left accountdetailWidth")
                                 div(class=" accountdetail accountdetail-header labColor animated fadeInUp")=i18n.__("account.form.tel")
-                                div(style="background-color: rgb(61, 157, 203);" class=" accountdetail accountdetail-header labColor animated fadeInUp")=i18n.__("account.form.lab")
-                                div(class=" accountdetail accountdetail-header labColor animated fadeInUp", style="/*font-weight:bold;border-width: thin;width: 70px;*/")=i18n.__("account.form.lang")
+                                div(class="account-background accountdetail accountdetail-header labColor animated fadeInUp")=i18n.__("account.form.lab")
+                                div(class=" accountdetail accountdetail-header labColor animated fadeInUp")=i18n.__("account.form.lang")
                               div(class="wrapped accountdetailMargin")
-                                div(style="margin-bottom:30px;", class="accountdetail accountdetailRowMargin animated fadeInDown")
+                                div(class="margin-bottom-30 accountdetail accountdetailRowMargin animated fadeInDown")
                                   span(id="tel")!= tel + " "
-                                  form(action="/changeDetails" id="changetel" method="post" class="telform" style="top: -5px; position: relative;")
+                                  form(action="/changeDetails" id="changetel" method="post" class="telform topdown-5")
                                     input(name="valuedetail" type="tel" id="valuedetail" placeholder=tel)
                                     input(name="column" type="hidden" id="column" value="tel")
                                     input(name="formemail" type="hidden" id="formemail" value=email)
@@ -112,26 +112,26 @@ block content
                                 - var labtrunc = lab
                                   - if(labtrunc.length > 19)
                                     - labtrunc = labtrunc.substr(0, 18) + '...'
-                                div(style="margin-bottom:30px;", class="accountdetail accountdetailRowMargin animated fadeInDown")!= labtrunc
-                                div(style="margin-bottom:30px;width: 75px;", class="accountdetail accountdetailRowMargin animated fadeInDown")
+                                div(class="margin-bottom-30 accountdetail accountdetailRowMargin animated fadeInDown")!= labtrunc
+                                div(class="margin-bottom-30 width-75 accountdetail accountdetailRowMargin animated fadeInDown")
                                   span(id="lang")
-                                  form(action="/changeDetails" id="changelang" method="post" class="langform" style="top: -25px; position: relative;")
-                                    span(class="fa fa-sort accountlang" style="color: #8a6d3b;top: 29px; position: relative; font-size: 14pt; margin-left: 15px;z-index:-1;")
-                                    select(name="selectlang" type="text" id="selectlang" class="form-control" style="border-color:#3d9dcb;margin-bottom:10px;background-color: transparent;" placeholder="")
+                                  form(action="/changeDetails" id="changelang" method="post" class="langform topdown-25")
+                                    span(class="fa fa-sort accountlang")
+                                    select(name="selectlang" type="text" id="selectlang" class="form-control" placeholder="")
                                       - for(var loc in localeslist)
                                           - var loca = localeslist[loc]
-                                          option(value=loca,style="font-weight:bold",selected=(selectedlang===loca ? "selected" : undefined))=loca
+                                          option(value=loca,class="font-bold",selected=(selectedlang===loca ? "selected" : undefined))=loca
                                     input(name="column" type="hidden" id="column" value="lang")
                                     input(name="valuedetail" type="hidden" id="valuedetail" value="")
                                     input(name="formemail" type="hidden" id="formemail" value=email)
-              div(style="margin-top: -70px;float: left;" class="mobileonly4 threepointssep")
-              div(class="results notify animated fadeIn", style="padding-left: 0px;padding-right: 0px;")
-                h3(style="text-align: center;margin-top: 10px;padding-left: 10px;padding-right: 20px;")
-                  span(style="color: #2975b4;margin-right: 10px;" class="fa fa-envelope")
+              div(class="accountthreepoint mobileonly4 threepointssep")
+              div(class="results notify animated fadeIn accountres")
+                h3(class="account-h3")
+                  span(class="account-envelope fa fa-envelope")
                   span!= i18n.__("account.notify.title")
-                div(style="display: flex;text-align: center;")
-                  div(class="reportlabelwidth accountlabelwidth", style="width: 45%;padding-right: 20px;margin-top: 10px;")
-                    label(for="emailOnInsuff" style="font-weight: bold;")!= i18n.__("account.notify.oninsuff")
+                div(class="account-container-one")
+                  div(class="reportlabelwidth accountlabelwidth account-email")
+                    label(for="emailOnInsuff" class="font-bold")!= i18n.__("account.notify.oninsuff")
                     div(class="fullwidth checkboxThree")
                       form(action="/changeDetails" id="changeoninsuff" method="post" class="oninsuffform")
                         input(type="checkbox" name="emailOnInsuff" id="emailOnInsuff" value="oninsuff" checked=(checkOnInsuff===true ? "checked" : undefined))
@@ -139,8 +139,8 @@ block content
                         input(name="column" type="hidden" id="column" value="oninsuff")
                         input(name="formemail" type="hidden" id="formemail" value=email)
                       label(for="emailOnInsuff" class="labelcheck shadow labelcheckoninsuff")
-                  div(class="reportlabelwidth accountlabelwidth", style="width: 45%;padding-right: 20px;margin-top: 10px;")
-                    label(for="emailOnFill" style="font-weight: bold;")!= i18n.__("account.notify.onfill")
+                  div(class="reportlabelwidth accountlabelwidth account-email")
+                    label(for="emailOnFill" class="font-weight-bold")!= i18n.__("account.notify.onfill")
                     div(class="fullwidth checkboxThree")
                       form(action="/changeDetails" id="changeonfill" method="post" class="onfillform")
                         input(type="checkbox" name="emailOnFill" id="emailOnFill" value="onfill" checked=(checkOnFill===true ? "checked" : undefined))
@@ -148,13 +148,13 @@ block content
                         input(name="column" type="hidden" id="column" value="onfill")
                         input(name="formemail" type="hidden" id="formemail" value=email)
                       label(for="emailOnFill" class="labelcheck shadow labelcheckonfill")
-        div(style="margin-top: -70px;float: left;" class="threepointssep")
+        div(style="account-3-sep" class="threepointssep")
         div(class="texthalf")
-          span!=" <span id='showteam' class='labColor' style='font-weight:bold'><div class='buttons'><button type='submit' class='btn btn-success btn-lg btn-block shadow teamaccountbuttonwidth' id='teamTitle' style='width: 278px;'>" + i18n.__("account.button") + "</button></div></span>"
+          span!=" <span id='showteam' class='labColor font-bold'><div class='buttons'><button type='submit' class='btn btn-success btn-lg btn-block shadow teamaccountbuttonwidth width-278' id='teamTitle'>" + i18n.__("account.button") + "</button></div></span>"
         div(id="team")
           h3!=i18n.__("account.team.desc1") + labname + i18n.__("account.team.desc2")
           p(class="texthalf")!=i18n.__("account.team.subdesc1")+ dept + "</span>. " + adminIntro + i18n.__("account.team.subdesc2")
-          div(style="display: flex;flex-wrap: wrap;width: 100%;" class="animated fadeIn")
+          div(class="account-text animated fadeIn")
             - var t = team.length
             - var w = 180;
             - var right = 10;
@@ -169,14 +169,14 @@ block content
                     - color = "#68b3d6"
                 div(class="myteammember")
                   span(class="fa fa-user-circle-o myteamcard" style="color:" + color)
-                  span(style="text-align: center;display: block;margin: 10px;")
-                    a(href="mailto:" + ob2[prop].email , style="cursor:pointer")
-                      span(class="fa fa-location-arrow" id="email" style="cursor:pointer;color: #68b4d7;font-size:10pt;")
+                  span(class="account-align")
+                    a(href="mailto:" + ob2[prop].email , class="cursor-pointer")
+                      span(class="fa fa-location-arrow account-location" id="email")
                     span #{" " + ob2[prop].name + " " + ob2[prop].surname }
         div(class="slide-out-tip-div desktabonly", style="display:none;z-index:1;position: fixed;top: 25% !important;max-height:380px;z-index: 1;")
             a(class="handle" href="", title='#{i18n.__("search.tip.title")}', style="")!=Content
-            div(style="padding: 1px;color:white;top: -45px;position: relative;max-height: 320px;overflow: auto;")
-                div(style="text-align: center;")
+            div(class="slide-div")
+                div(class="text-align-center")
                     span(class="zoom_controls")
                         a(href="#" class="zoom_out zoomicon" title=i18n.__("zoom.minus"))
                           span(class="fa fa-minus-circle")
@@ -184,8 +184,8 @@ block content
                           span(class="fa fa-circle-o-notch")
                         a(href="#" class="zoom_in zoomicon" title=i18n.__("zoom.plus"))
                           span(class="fa fa-plus-circle")
-                    div(class="threepointssep", style="margin-top: -10px;")
-                p(style="font-size: 12pt;")!= i18n.__("account.tip.header")
-                div(style="position: relative;float: right;width: 250px;font-size: 9pt;line-height: 1.3;border-radius: 4px;")
+                    div(class="threepointssep marginbottom-down-10")
+                p(class="font-12")!= i18n.__("account.tip.header")
+                div(class="account-desc")
                   span!= i18n.__("account.tip.desc")
         span(class="desktabonly", id="checkdisplay")
