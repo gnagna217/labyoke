@@ -7,10 +7,10 @@ block content
 			h1
 				span(class="fa fa-file-text lightyokecolor")
 				span!= i18n.__("reports.title")
-				span(class="fa fa-caret-right lightyokecolor animated fadeIn" style="font-size: 20pt;")
+				span(class="fa fa-caret-right lightyokecolor animated fadeIn font-20")
 			p
-				span(class="restrictreporttext", style="float:left")!= i18n.__("reports.subtitle")
-				span(class="restrictreporttext", style="float:right")!= i18n.__("reports.subtitle2")
+				span(class="restrictreporttext float-left")!= i18n.__("reports.subtitle")
+				span(class="restrictreporttext float-right")!= i18n.__("reports.subtitle2")
 
 				- var now = (new Date())
 				- now = (now.getMonth() + 1) + "/" + now.getDate() + "/" + now.getFullYear()
@@ -30,32 +30,32 @@ block content
 			- var checkedstrInsuff = false;
 			- if(section !=null && section.length>0 && section == "insuff")
 				- checkedstrInsuff = true
-			form(action="reportSelect", method="post", class="adjustwidthreports", style="display:none")
+			form(action="reportSelect", method="post", class="adjustwidthreports displaynone")
 				div(class="buttonss")
-					span(class="fa fa-sort" style="color: #8a6d3b; float: right; top: 25px; left: -10px; position: relative; font-size: 14pt;z-index:-1;")
-					select(name="reportSelect" type="text" id="reportSelect" class="form-control form-control0" style="border-color:#3d9dcb;margin-bottom:10px;z-index: 1;background-color: transparent;" placeholder=i18n.__("reports.form.select"))
-						option(value="reportNone",style="font-weight:bold")=i18n.__("reports.form.option1")
+					span(class="fa fa-sort reports-sort")
+					select(name="reportSelect" type="text" id="reportSelect" class="form-control form-control0 reports-select" placeholder=i18n.__("reports.form.select"))
+						option(value="reportNone",class="font-bold")=i18n.__("reports.form.option1")
 						option(value="reportMoney" selected=(checkedstrMoney===true ? "selected" : undefined))=i18n.__("reports.form.option2")
 						option(value="reportOrders" selected=(checkedstrOrders===true ? "selected" : undefined))=i18n.__("reports.form.option3")
 						option(value="reportShares" selected=(checkedstrShares===true ? "selected" : undefined))=i18n.__("reports.form.option4")
 						option(value="reportInsuff" selected=(checkedstrInsuff===true ? "selected" : undefined))=i18n.__("reports.form.option5")
-			div(class="containerreports", style="display:none")
+			div(class="containerreports displaynone")
 				div(class="labelbuttons reportlabels")
 					input(id="toggle" type="checkbox" class="inputexpand")
-					label(for="toggle", class="labelexpand animated fadeInUp", style="z-index: 0;position: relative;/*top: -44px;*/ display: inline-block;")!= i18n.__("reports.label.savings")
+					label(for="toggle", class="labelexpand animated fadeInUp reports-labelmoney")!= i18n.__("reports.label.savings")
 					input(id="toggleedit" type="checkbox" class="inputexpandedit")
-					label(for="toggleedit", class="labelexpandedit animated fadeInDown", style="z-index: 0;display: inline-block;")!= i18n.__("reports.label.orders")
-					label(class="labelexpandmood animated fadeInUp reportweek", style="z-index: 0;position: relative;top: -44px;display: inline-block;background-color: rgba(138, 109, 59, 0.81);")!= i18n.__("reports.label.week")
+					label(for="toggleedit", class="labelexpandedit animated fadeInDown reports-labelorders")!= i18n.__("reports.label.orders")
+					label(class="labelexpandmood animated fadeInUp reportweek reports-labelweek")!= i18n.__("reports.label.week")
 					input(id="toggleadd" type="checkbox" class="inputexpandadd")
-					label(for="toggleadd", class="labelexpandadd animated fadeInDown", style="z-index: 0;display: inline-block;")!= i18n.__("reports.label.inventory")       
+					label(for="toggleadd", class="labelexpandadd animated fadeInDown reports-labelorders")!= i18n.__("reports.label.inventory")       
 					input(id="togglerules" type="checkbox" class="inputexpandrules")
-					label(for="togglerules", class="labelexpandrules animated fadeInUp", style="z-index: 0;position: relative; display: inline-block;margin-top: -20px;")!= i18n.__("reports.label.insuff")
+					label(for="togglerules", class="labelexpandrules animated fadeInUp reports-labelinsuff")!= i18n.__("reports.label.insuff")
 					div(style=nobar, class="threepointssep threedown")
 				div(class="reportSlot") &nbsp;
 				div(class="restrictreport restrictreport2")
-					div(class="reportMoneys results2 resultsshadow", id="reportMoney", style="border-radius: 50px 100px !important;")
+					div(class="reportMoneys results2 resultsshadow reports-border-radius", id="reportMoney")
 						h3
-							span(class="fa fa-file-text" style=" color: #2975b4; margin-right: 10px;")
+							span(class="fa fa-file-text reports-text")
 							span= i18n.__("reports.money.title")
 						p= i18n.__("reports.money.subtitle")
 						- var datefrom_money = datefromMoney
@@ -78,17 +78,17 @@ block content
 						div
 							form(action="reportMoney", method="post", id="formreportMoney")
 								div(class="buttonss")
-									label(style="top: 23px; position: relative;font-weight: bold;")= i18n.__("reports.money.datefrom")
-									span(class="fa fa-calendar" style="top: 23px;position: relative;float: right;color: #3d9dcb;")
-									input(name="reportDateFromMoney" style="margin-left: 40px;margin-top: -13px;margin-bottom:10px;margin-top: -13px;" type="tel" id="reportDateFromMoney" class="form-control form-control0")
+									label(class="reports-datefrom")= i18n.__("reports.money.datefrom")
+									span(class="fa fa-calendar reports-calendar")
+									input(name="reportDateFromMoney" type="tel" id="reportDateFromMoney" class="form-control form-control0 reports-date-money")
 									
-									label(style="top: 23px; position: relative;font-weight: bold;")= i18n.__("reports.money.dateto")
-									span(class="fa fa-calendar" style="top: 23px;position: relative;float: right;color: #3d9dcb;")
-									input(name="reportDateToMoney" style="margin-left: 40px;margin-top: -13px;margin-bottom:10px;margin-top: -13px;" type="tel" id="reportDateToMoney" class="form-control form-control0")
+									label(class="reports-datefrom")= i18n.__("reports.money.dateto")
+									span(class="fa fa-calendar reports-calendar")
+									input(name="reportDateToMoney" type="tel" id="reportDateToMoney" class="form-control form-control0 reports-date-money")
 
-									label(style="width: 100%;font-weight: bold;margin-top:10px;margin-bottom: 0px;")!= i18n.__("reports.money.lab.label") + dept + "</span>:"
-									span(class="fa fa-sort" style="color: #8a6d3b; float: right; top: 25px; left: -10px; position: relative; font-size: 14pt;z-index:-1;")
-									select(name="reportLabMoney" type="text" id="reportLabMoney" class="form-control form-control0" style="border-color:#3d9dcb;margin-bottom:20px;z-index: 1;background-color: transparent;" placeholder=i18n.__("reports.money.labselect"))
+									label(class="reports-dept")!= i18n.__("reports.money.lab.label") + dept + "</span>:"
+									span(class="fa fa-sort reports-sort")
+									select(name="reportLabMoney" type="text" id="reportLabMoney" class="form-control form-control0 reports-insuff-select" placeholder=i18n.__("reports.money.labselect"))
 										option(value="all")=i18n.__("reports.money.lab.option")
 										if(categories != undefined)
 											- var ob = categories
@@ -96,23 +96,23 @@ block content
 												- var lab = ob[prop].labname
 												option(value=lab) #{lab}
 									div(class="reportlabelwidth hideinapp")
-										label(style="width: 100px;font-weight: bold;margin-top:10px;")=i18n.__("reports.money.show")
+										label(class="reports-show")=i18n.__("reports.money.show")
 									div(class="reportlabelwidth reportlabelwidth3")
-										label(for="reportAgentMoney", style="width: 65px;font-weight: bold;")=i18n.__("reports.money.reagent")
+										label(for="reportAgentMoney", class="reports-reagent")=i18n.__("reports.money.reagent")
 										div(class="checkboxThree")
 											input(type="checkbox" name="reportAgentMoney" id="reportAgentMoney" value="reagent")
 											label(class="labelcheck shadow",for="reportAgentMoney")
 									div(class="reportlabelwidth reportlabelwidth3")
-										label(for="reportVendorMoney",style="width: 60px;font-weight: bold;")=i18n.__("reports.money.vendor")
+										label(for="reportVendorMoney",class="reports-vendor")=i18n.__("reports.money.vendor")
 										div(class="checkboxThree")
 											input(type="checkbox" name="reportVendorMoney" id="reportVendorMoney" value="vendor")
 											label(class="labelcheck shadow",for="reportVendorMoney")
 									div(class="reportlabelwidth reportlabelwidth3")
-										label(for="reportCatalogMoney",style="width: 75px;font-weight: bold;")=i18n.__("reports.money.catalog")
+										label(for="reportCatalogMoney",class="reports-catalog")=i18n.__("reports.money.catalog")
 										div(class="checkboxThree")
 											input(type="checkbox" name="reportCatalogMoney" id="reportCatalogMoney" value="catalogNumber")
 											label(class="labelcheck shadow",for="reportCatalogMoney")
-									div(style="max-width:100%; margin-top: 90px;margin-bottom:10px")
+									div(class="reports-buttons-insuff")
 										button.btn.btn-success.btn-lg.btn-block.reportbutton2.reportbutton3.shadow(type="submit",value="Report",name="submit")= i18n.__("reports.money.button")
 								if(resultsMoney != null && resultsMoney !="")
 									script(type="text/javascript" src="/javascripts/jspdf.js")
@@ -125,9 +125,9 @@ block content
 									script(type="text/javascript" src="/js/reports-utils-money.js")
 									- resultsMoney = ""
 
-					div(class="reportOrderss results2 resultsshadow", id="reportOrders", style="border-radius: 50px 100px !important;")
+					div(class="reportOrderss results2 resultsshadow reports-container", id="reportOrders")
 						h3
-							span(class="fa fa-file-text" style=" color: #2975b4; margin-right: 10px;")
+							span(class="fa fa-file-text reports-text")
 							span= i18n.__("reports.orders.title")
 						p= i18n.__("reports.orders.subtitle")
 						- var datefrom_orders = datefromOrders
@@ -150,24 +150,24 @@ block content
 						div
 							form(action="reportOrders", method="post")
 								div(class="buttonss")
-									label(style="top: 23px; position: relative;font-weight: bold;")=i18n.__("reports.orders.datefrom")
-									span(class="fa fa-calendar" style="top: 23px;position: relative;float: right;color: #3d9dcb;")
-									input(name="reportDateFromOrders" style="margin-left: 40px;;margin-bottom:10px;margin-top: -13px;" type="tel" id="reportDateFromOrders" class="form-control form-control0")
+									label(class="reports-datefrom")=i18n.__("reports.orders.datefrom")
+									span(class="fa fa-calendar reports-calendar")
+									input(name="reportDateFromOrders" type="tel" id="reportDateFromOrders" class="form-control form-control0 reports-input-tel")
 									
-									label(style="top: 23px; position: relative;font-weight: bold;")=i18n.__("reports.orders.dateto")
-									span(class="fa fa-calendar" style="top: 23px;position: relative;float: right;color: #3d9dcb;")
-									input(name="reportDateToOrders" style="margin-left: 40px;margin-bottom:10px; margin-top: -13px;" type="tel" id="reportDateToOrders" class="form-control form-control0")
+									label(class="reports-datefrom")=i18n.__("reports.orders.dateto")
+									span(class="fa fa-calendar reports-calendar")
+									input(name="reportDateToOrders" class="reports-input-tel" type="tel" id="reportDateToOrders" class="form-control form-control0")
 									
-									label(style="width: 100%;font-weight: bold;margin-top:10px;margin-bottom: 0px;")!= i18n.__("reports.orders.lab.label") + dept + "</span>:"
-									span(class="fa fa-sort" style="color: #8a6d3b; float: right; top: 25px; left: -10px; position: relative; font-size: 14pt;z-index:-1")
-									select(name="reportLabOrders" type="text" id="reportLabOrders" class="form-control form-control0" style="border-color:#3d9dcb;margin-bottom:10px;z-index: 1;background-color: transparent;" placeholder=i18n.__("reports.orders.labselect"))
+									label(class="reports-dept")!= i18n.__("reports.orders.lab.label") + dept + "</span>:"
+									span(class="fa fa-sort reports-sort")
+									select(name="reportLabOrders" type="text" id="reportLabOrders" class="form-control form-control0 reports-orders-select" placeholder=i18n.__("reports.orders.labselect"))
 										option(value="all")= i18n.__("reports.orders.lab.option")
 										if(categories != undefined)
 											- var ob = categories
 											- for(var prop in ob)
 												- var lab = ob[prop].labname
 												option(value=lab) #{lab}
-									div(style="max-width:100%; margin-top: 20px;margin-bottom:10px")
+									div(class="reports-buttons")
 										button.btn.btn-success.btn-lg.btn-block.reportbutton2.reportbutton3.shadow(type="submit",value="Report",name="submit")= i18n.__("reports.orders.button")
 								span(id="triggerSafariOrder")
 								if(resultsOrders != null && resultsOrders !="")
@@ -180,9 +180,9 @@ block content
 										var var_resultsOrders =  "#{resultsOrders}", var_dataOrders = "#{dataOrders}", var_reports_download_pdf = "#{i18n.__("reports.download.pdf")}", var_reports_download_excel = "#{i18n.__("reports.download.excel")}",var_fileOrders = "#{file_orders}"; 
 									script(type="text/javascript" src="/js/reports-utils-orders.js")
 									- resultsOrders = ""
-					div(class="reportSharess results2 resultsshadow", id="reportShares", style="border-radius: 50px 100px !important;")
+					div(class="reportSharess results2 resultsshadow reports-container", id="reportShares")
 						h3
-							span(class="fa fa-file-text" style=" color: #2975b4; margin-right: 10px;")
+							span(class="fa fa-file-text reports-text")
 							span= i18n.__("reports.shares.title")
 						p= i18n.__("reports.shares.subtitle")
 						- var datefrom_shares = datefromShares
@@ -205,15 +205,15 @@ block content
 						div
 							form(action="reportShares", method="post", id="formreportShares")
 								div(class="buttonss")
-									label(style="top: 23px; position: relative;font-weight: bold;")= i18n.__("reports.shares.datefrom")
-									span(class="fa fa-calendar" style="top: 23px;position: relative;float: right;color: #3d9dcb;")
-									input(name="reportDateFrom" style="margin-left: 40px;margin-bottom:10px;margin-top: -13px;" type="tel" id="reportDateFrom" class="form-control form-control0")
+									label(class="reports-datefrom")= i18n.__("reports.shares.datefrom")
+									span(class="fa fa-calendar reports-calendar")
+									input(name="reportDateFrom" type="tel" id="reportDateFrom" class="form-control form-control0 reports-input-date")
 									
-									label(style="top: 23px; position: relative;font-weight: bold;")= i18n.__("reports.shares.dateto")
-									span(class="fa fa-calendar" style="top: 23px;position: relative;float: right;color: #3d9dcb;")
-									input(name="reportDateTo" style="margin-left: 40px;margin-bottom:10px;margin-top: -13px;" type="tel" id="reportDateTo" class="form-control form-control0")
+									label(class="reports-datefrom")= i18n.__("reports.shares.dateto")
+									span(class="fa fa-calendar reports-calendar")
+									input(name="reportDateTo" type="tel" id="reportDateTo" class="form-control form-control0 reports-input-date")
 									
-									div(style="max-width:100%; margin-top: 20px;margin-bottom:10px")
+									div(class="reports-buttons")
 										button.btn.btn-success.btn-lg.btn-block.reportbutton2.reportbutton3.shadow(type="submit",value="Report",name="submit")= i18n.__("reports.shares.button")
 								if(resultsShares != null && resultsShares !="")
 									script(type="text/javascript" src="/javascripts/jspdf.js")
@@ -226,9 +226,9 @@ block content
 									script(type="text/javascript" src="/js/reports-utils-inv.js")	
 									- resultsShares = ""
 
-					div(class="reportInsuffs results2 resultsshadow", id="reportInsuff", style="border-radius: 50px 100px !important;")
+					div(class="reportInsuffs results2 resultsshadow reports-container", id="reportInsuff")
 						h3
-							span(class="fa fa-file-text" style=" color: #2975b4; margin-right: 10px;")
+							span(class="fa fa-file-text reports-text")
 							span= i18n.__("reports.insuff.title")
 						p=i18n.__("reports.insuff.subtitle")
 						- var message_fail_insuff = i18n.__("reports.insuff.message.fail")
@@ -243,9 +243,9 @@ block content
 						div
 							form(action="reportInsuff", method="post")
 								div(class="buttonss")
-									label(style="width: 100%;font-weight: bold;margin-top:10px;margin-bottom: 0px;")!= i18n.__("reports.insuff.lab.label") + dept + "</span>:"
-									span(class="fa fa-sort" style="color: #8a6d3b; float: right; top: 25px; left: -10px; position: relative; font-size: 14pt;z-index:-1")
-									select(name="reportLabInsuff" type="text" id="reportLabInsuff" class="form-control form-control0" style="border-color:#3d9dcb;margin-bottom:20px;z-index: 1;background-color: transparent;" placeholder=i18n.__("reports.insuff.labselect"))
+									label(class="reports-dept")!= i18n.__("reports.insuff.lab.label") + dept + "</span>:"
+									span(class="fa fa-sort reports-sort")
+									select(name="reportLabInsuff" type="text" id="reportLabInsuff" class="form-control form-control0 reports-insuff-select" placeholder=i18n.__("reports.insuff.labselect"))
 										option(value="all")= i18n.__("reports.insuff.lab.option")
 										if(categories != undefined)
 											- var ob = categories
@@ -253,18 +253,18 @@ block content
 												- var lab = ob[prop].labname
 												option(value=lab) #{lab}
 									div(class="reportlabelwidth hideinapp")
-										label(style="width: 100px;font-weight: bold;margin-top:10px;")= i18n.__("reports.insuff.show")
+										label(class="reports-show")= i18n.__("reports.insuff.show")
 									div(class="reportlabelwidth reportlabelwidth3")
-										label(for="reportVendorInsuff",style="width: 60px;font-weight: bold;")= i18n.__("reports.insuff.vendor")
+										label(for="reportVendorInsuff",class="reports-vendor")= i18n.__("reports.insuff.vendor")
 										div(class="checkboxThree")
 											input(type="checkbox" name="reportVendorInsuff" id="reportVendorInsuff" value="vendor")
 											label(class="labelcheck shadow", for="reportVendorInsuff")
-									div(class="reportlabelwidth reportlabelwidth3", style="width:10%; position:relative; float:left;")
-										label(for="reportCatalogInsuff",style="width: 75px;font-weight: bold;")= i18n.__("reports.insuff.catalog")
+									div(class="reportlabelwidth reportlabelwidth3 reports-insuff-label")
+										label(for="reportCatalogInsuff",class="reports-catalog")= i18n.__("reports.insuff.catalog")
 										div(class="checkboxThree")
 											input(type="checkbox" name="reportCatalogInsuff" id="reportCatalogInsuff" value="catalogNumber")
 											label(class="labelcheck shadow",for="reportCatalogInsuff")
-									div(style="max-width:100%; margin-top: 90px;margin-bottom:10px")
+									div(class="reports-buttons-insuff")
 										button.btn.btn-success.btn-lg.btn-block.reportbutton2.reportbutton3.shadow(type="submit",value="Report",name="submit")= i18n.__("reports.insuff.button")
 								if(resultsInsuff != null && resultsInsuff !="")
 									- var file_insuff = i18n.__("reports.insuff.file") + "_" + labinsuff 
@@ -277,13 +277,13 @@ block content
 										var var_resultsInsuff = "#{resultsInsuff}", var_dataInsuff = "#{dataInsuff}", var_reports_download_pdf = "#{i18n.__('reports.download.pdf')}", var_reports_download_excel = "#{i18n.__('reports.download.excel')}", var_dataInsuff = "#{dataInsuff}", var_fileinsuff = "#{file_insuff}";
 									script(type="text/javascript" src="/js/reports-utils-insuff.js")
 									- resultsInsuff = ""
-			div(class="threepointssep desktabonly3", style="top:10px;display:none;")
-			div(class="intro2 animated fadeIn",style="display:none;")
-			div(class="threepointssep desktabonly3", style="top:10px;display:none;margin-top: 25px;margin-bottom: 15px;")
+			div(class="threepointssep desktabonly3 reports-3-sep")
+			div(class="intro2 animated fadeIn displaynone")
+			div(class="threepointssep desktabonly3 reports-3-sep-one")
 			div(class="slide-out-tip-div account-slide-container")
-				a(class="handle" href="last-transactions",title='#{i18n.__("search.tip.header")}', style="right: -60px;left:-60px;top:25px;")!=Content
+				a(class="handle reports-handle" href="last-transactions",title='#{i18n.__("search.tip.header")}')!=Content
 				div(class="slide-container-one")
-					div(style="text-align: center;")
+					div(class="textalign-center")
 						span(class="zoom_controls")
 							a(href="#" class="zoom_out zoomicon" title=i18n.__("zoom.minus"))
 								span(class="fa fa-minus-circle")
@@ -291,12 +291,12 @@ block content
 								span(class="fa fa-circle-o-notch")
 							a(href="#" class="zoom_in zoomicon" title=i18n.__("zoom.plus"))
 								span(class="fa fa-plus-circle")
-						div(class="threepointssep", style="margin-top: -10px;")
-					p(style="font-size: 12pt;")!= i18n.__("reports.tip.header")
+						div(class="threepointssep margintopbelow-10")
+					p(class="font-12pt")!= i18n.__("reports.tip.header")
 					div(class="slide-desc")
 						span!= i18n.__("reports.tip.desc")
 			span(class="desktabonly", id="checkdisplay")
 
 			span(class="checkintro")
 			- if(resultsMoneyIntro != null && resultsMoneyIntro !="")
-				div(class="intro results animated fadeIn",style="/*margin-top:500px;*/display:none;")!= resultsMoneyIntros
+				div(class="intro results animated fadeIn displaynone")!= resultsMoneyIntros

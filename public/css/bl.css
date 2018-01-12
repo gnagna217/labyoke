@@ -5959,3 +5959,87 @@ color: #337ab7 !important; margin-right: 10px !important;
   right: -60px !important;left:-60px !important;top:25px !important;
 }
 /* end shares*/
+
+/*start reports*/
+.reports-sort{
+  color: #8a6d3b !important; float: right !important; top: 25px !important; left: -10px !important; position: relative !important; font-size: 14pt !important;z-index:-1 !important;
+}
+.reports-select{
+  border-color:#3d9dcb !important;margin-bottom:10px !important;z-index: 1 !important;background-color: transparent !important;
+}
+.reports-labelmoney{
+  z-index: 0 !important;position: relative !important; display: inline-block !important;
+}
+.reports-labelorders{
+  z-index: 0 !important;display: inline-block !important;
+}
+.reports-labelweek{
+  z-index: 0 !important;position: relative !important;top: -44px !important;display: inline-block !important;background-color: rgba(138, 109, 59, 0.81) !important;
+}
+.reports-labelinsuff{
+  z-index: 0 !important;position: relative !important; display: inline-block !important;margin-top: -20px !important;
+}
+.reports-border-radius{
+  z-index: 0;position: relative !important; display: inline-block !important;margin-top: -20px !important;
+}
+.reports-text{
+  color: #2975b4 !important; margin-right: 10px !important;
+}
+.reports-datefrom{
+  top: 23px !important; position: relative !important;font-weight: bold !important;
+}
+.reports-calendar{
+  top: 23px !important;position: relative !important;float: right !important;color: #3d9dcb !important;
+}
+.reports-input-date{
+  margin-left: 40px !important;margin-bottom:10px !important;margin-top: -13px !important;
+}
+.reports-buttons{
+  max-width:100% !important; margin-top: 20px !important;margin-bottom:10px !important;
+}
+.reports-container{
+  border-radius: 50px 100px !important !important;
+}
+.reports-dept{
+  width: 100% !important;font-weight: bold !important;margin-top:10px !important;margin-bottom: 0px !important;
+}
+.reports-show{
+  width: 100px !important;font-weight: bold !important;margin-top:10px !important;
+}
+.reports-reagent{
+width: 65px !important;font-weight: bold !important; 
+}
+.reports-vendor{
+  width: 60px !important;font-weight: bold !important;
+}
+.reports-buttons-insuff{
+  max-width:100% !important; margin-top: 90px !important;margin-bottom:10px !important;
+}
+.reports-orders-select{
+  border-color:#3d9dcb !important;margin-bottom:10px !important;z-index: 1 !important;background-color: transparent !important;
+}
+.reports-insuff-select{
+  border-color:#3d9dcb !important;margin-bottom:20px !important;z-index: 1 !important;background-color: transparent !important;
+}
+.reports-insuff-label{
+  width:10% !important; position:relative !important; float:left !important;
+}
+.reports-catalog{
+  width: 75px !important;font-weight: bold !important;
+}
+.reports-input-tel{
+  margin-left: 40px !important;margin-bottom:10px !important;margin-top: -13px !important;
+}
+.reports-3-sep{
+  top:10px !important;display:none;
+}
+.reports-3-sep-one{
+  top:10px !important;display:none;margin-top: 25px !important;margin-bottom: 15px !important;
+}
+.reports-handle{
+  right: -60px;left:-60px;top:25px;
+}
+.reports-date-money{
+  margin-left: 40px !important;margin-top: -13px !important;margin-bottom:10px !important;margin-top: -13px !important;
+}
+/*end reports*/
