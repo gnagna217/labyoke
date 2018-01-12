@@ -69,7 +69,7 @@
   color: #68b4d7 !important;
 }
 .handle{
-  right: -60px;,left:-85px;top:25px;
+  right: -60px !important;left:-85px !important;top:25px !important;
   cursor: pointer;
 }
 
@@ -5513,6 +5513,7 @@ a.mailto:link {
 .account-slide-container{
   display:none;z-index:1 !important;position: fixed !important;top: 25% !important;max-height:380px !important;
 }
+
 /* End account styles*/
 
 /*Start Layout*/
@@ -5806,3 +5807,43 @@ color:white !important;background-color:#3d9dcb !important;font-size:12px !impor
   color:#ddd !important;
 }
 /*end login*/
+
+/*start orders*/
+.margintop-50{
+  margin-top:50px !important;
+}
+.width-200{
+  width: 200px !important;
+}
+.slide-content{
+  right: -60px !important;left:-85px !important;top:25px !important;
+}
+.slide-container-one{
+  padding: 1px !important;color:white !important;top: -45px !important;position: relative !important;max-height: 320px !important;overflow: auto !important;
+}
+.margintopbelow-10{
+  margin-top: -10px !important;
+}
+.slide-desc{
+ position: relative !important;float: right !important;width: 250px !important;font-size: 9pt !important;line-height: 1.3 !important;border-radius: 4px !important;
+}
+.orders-results{
+  float:right !important; padding-left: 25px !important;
+}
+.order-container-one{
+  margin-top:0px !important;width:100% !important;margin-bottom:-43px !important;
+}
+.paddingtop-43{
+  padding-top: 43px !important;
+}
+.orders-chart-one{
+  color: #337ab7 !important; margin-right: 10px !important;
+}
+.orders-chart-two{
+  border-color:#3d9dcb !important; margin-bottom:10px !important;width: 97% !important;z-index: 1 !important;background-color: transparent !important;
+}
+.orders-sort{
+  color: #8a6d3b !important; float: right !important; top: -35px !important; left: -27px !important; position: relative !important; font-size: 14pt !important;z-index:-1 !important;
+}
+
+/*end orders*/
