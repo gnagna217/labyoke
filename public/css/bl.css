@@ -5633,4 +5633,25 @@ a.mailto:link {
 .check-position-one{
   display: inline-block !important;margin-left: 15px !important;
 }
+.colr-col{
+  color: #3e9ccb !important;
+}
+.locale-search-tip{
+  font-weight: bold !important;color: #8a6d3b !important;
+}
+.marginlefttop-none{
+   margin-left: 0px !important;margin-top: 0px !important;
+}
+.locale-bouee{
+  width: 2% !important; height: 2% !important;
+}
+.locale-help{
+  color:#2975b4 !important;font-weight:bold !important;
+}
+.paddingleft-10{
+  padding-left: 10px !important;
+}
+.locale-download{
+  color:white !important;font-weight:bold !important;
+}
 /*End Locale*/
