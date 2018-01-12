@@ -1,6 +1,6 @@
 
 
-
+console.log("recenter: ") + recenter;
 
 			$(document).ready(function(){
 
