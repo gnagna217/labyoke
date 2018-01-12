@@ -18,7 +18,7 @@ var h = $(window).height() - 125;
 			}
 
 
-			
+
 
 				console.log("recenter: " + recenter);
 				if(recenter == 0){
@@ -395,6 +395,20 @@ var h = $(window).height() - 125;
 ******************************************
 ******************************************
 */
+
+
+
+						//if (addMessageMoney != null)
+							if($('.labelexpand').length > 0){
+									recenter = 1;
+									$('.labelexpand').addClass( "highlightlabel" );
+									$(".reportlabels").addClass("reportlabels2");
+									if($(window).width() > 900){
+										$(".labelexpandmood").css("top","0px");
+									}
+								}
+
+
 				});
 				
 
