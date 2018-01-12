@@ -1,5 +1,9 @@
-         $(function() {
-             $('.slide-out-div').tabSlideOut({
+
+
+
+         $(document).ready(function() {
+
+                         $('.slide-out-div').tabSlideOut({
                  imgpos: 75,
                  tabHandle: '.handle', //class of the element that will be your tab
                  pathToTabImage: 'images/movarrow2.gif', //path to the image for the tab (optionaly can be set using css)
@@ -11,10 +15,7 @@
                  topPos: 'initial', //position from the top
                  fixedPosition: false //options: true makes it stick(fixed position) on scroll
              });
-         });
-
-
-         $(document).ready(function() {
+                         
 
              var toppinglogin = sessionStorage.getItem('toppinglogin');
              var topping = sessionStorage.getItem('topping');
