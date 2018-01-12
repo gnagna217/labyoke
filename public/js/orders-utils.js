@@ -12,7 +12,7 @@ $(document).ready(function() {
         });
         setTimeout(function() {
             $('.wc-shellinput').focus();
-            $(".wc-shellinput").attr("placeholder", '#{i18n.__("layout.bot.placeholder")}');
+            $(".wc-shellinput").attr("placeholder", var_bot_placeholder );
         }, 1000);
     });
 

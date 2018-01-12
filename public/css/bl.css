@@ -5895,7 +5895,7 @@ color:white !important;background-color:#3d9dcb !important;font-size:12px !impor
   margin: 0 auto !important;width: 278px !important;
 }
 .slide-content-one{
-  right: -60px !important;left:-60px !important;
+  right: -60px;left:-60px;
 }
 .search-location{
   color: #e6c293 !important;font-weight:bold !important;
