@@ -5396,3 +5396,27 @@ a.mailto:link {
     text-decoration:none;
     color:white;
 }
+
+/*Start about styles*/
+.margintop-30{
+  margin-top: 30px !important;
+}
+.aboutlogo{
+  width: 209px !important;
+  height: 143.78px !important;
+}
+.hideoverflow{
+  overflow: hidden !important;
+}.width-100{
+  width:100% !important;
+}
+.font-bold{
+  font-weight:bold !important;
+}
+.float-rihgt{
+  float:right !important;
+}
+.clear-both{
+  clear:both !important;
+}
+/* End about styles*/
