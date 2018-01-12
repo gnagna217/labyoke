@@ -1,7 +1,7 @@
 extends layout
 
 block content
-  div(class="container login front container2 containertop", style="text-align: center;position: relative;display:none")
+  div(class="container login front container2 containertop register-top")
      a(href="/search" class=labentered)
         img(src="/images/yoke4.png", alt="The Yoke", class="yokelogo")
        div
@@ -12,23 +12,23 @@ block content
                 span(class="labColor")= i18n.__("register.title2")
                 span!= i18n.__("register.subtitle")
             div(id="ctl00_Div2" class="frontdiv results")
-                div(class="alert alert-danger-report alertshadow", id="messagejs1", style="display:none")
+                div(class="alert alert-danger-report alertshadow displaynone", id="messagejs1")
                 if message
                     div(class="alert alert-danger-report alertshadow")!= message
                     script.
                         $('#messagejs1').hide();
                 form(action="/register" method="post" id="regform1")
-                    div(style="margin-bottom: 20px;")
+                    div(class="marginbottom-20")
                         div(class="textentry")
                             input(name="regfirstname" type="text" id="regfirstname" class="form-control" placeholder=i18n.__("register.form.name"))
                         div(class="textentry")
                             input(name="reglastname" type="text" id="lastname" class="form-control" placeholder=i18n.__("register.form.lastname"))
-                    div(style="margin-bottom: 20px;")
+                    div(class="marginbottom-20")
                         div(class="textentry")
-                            span(class="fa fa-envelope" style="top: 15px;position: relative;float: right;color: #3d9dcb;")
+                            span(class="fa fa-envelope register-envelope")
                             input(name="regemail" type="text" id="regemail" class="form-control" placeholder=i18n.__("register.form.email"))
                         div(class="textentry")
-                            span(class="fa fa-phone" style="top: 15px;position: relative;float: right;color: #3d9dcb;")
+                            span(class="fa fa-phone register-envelope")
                             input(name="regtel" type="text" id="tel" class="form-control" placeholder=i18n.__("register.form.tel"))
                     div(class="buttons", id="regbutton1")
                         button.btn.btn-success.btn-lg.btn-block.shadow.resizebutton(type='button') #{i18n.__("register.form.button1")}
@@ -37,26 +37,26 @@ block content
             h1= i18n.__("register.form2.desc")
             p= i18n.__("register.form2.subdesc")
             div(id="ctl00_Div2" class="frontdiv results2")
-                div(class="alert alert-danger-report alertshadow", id="messagejs", style="display:none")
+                div(class="alert alert-danger-report alertshadow displaynone", id="messagejs")
                 if message
                     div(class="alert alert-danger-report alertshadow")!= message
                     script.
                         $('#messagejs').hide();
                 form(action="/register" method="post" id="regform2")
-                    div(style="margin-bottom: 20px;")
+                    div(class="marginbottom-20")
                         div(class="textentry")
-                            span(class="fa fa-user" style="top: 15px;position: relative;float: right;color: #3d9dcb;")
+                            span(class="fa fa-user register-envelope")
                             input(name="reguser" type="text" id="reguser" class="form-control" placeholder=i18n.__("register.form2.username"))
                         div(class="textentry")
                             input(name="regpass" type="password" id="regpass" class="form-control" placeholder=i18n.__("register.form2.pwd"))
-                            span(class="fa fa-key" style="top: -20px;position: relative;float: right;color: #3d9dcb;")
+                            span(class="fa fa-key register-key")
                         div(class="textentry")
                             input(name="regverpass" type="password" id="regverpass" class="form-control" placeholder=i18n.__("register.form2.verifypwd"))
 
-                    div(style="margin-bottom: 20px;")
+                    div(class="marginbottom-20")
                         div(class="textentry")
-                            span(class="fa fa-sort" style="color: #8a6d3b; float: right; top: 25px; left: -10px; position: relative; font-size: 14pt; ")
-                            select(name="reglab" type="text" id="reglab" class="form-control" style="border-color:#3d9dcb" placeholder=i18n.__("register.form2.lab"))
+                            span(class="fa fa-sort register-sort")
+                            select(name="reglab" type="text" id="reglab" class="form-control register-border-color" placeholder=i18n.__("register.form2.lab"))
                              if(labs != undefined)
                                  - var ob = labs
                                  - for(var prop in ob)
@@ -71,12 +71,12 @@ block content
             
         if regsuccess && !labentered
                 div(id="ctl00_Div2")
-                    span(style="text-align: center")
+                    span(class="textalign-center")
                         h3= i18n.__("register.thanku")
-                            span(style="color: #3d9dcb;")!=" " + regsuccess + "!"
+                            span(class="register-success-label")!=" " + regsuccess + "!"
                         p(class="centralize")!= i18n.__("register.thanku.desc1")
         if confirmReset
                 div(id="ctl00_Div2")
-                    span(style="text-align: center")
+                    span(class="textalign-center")
                         h3!= i18n.__("register.thanku2")
                         p(class="centralize")!=" " + confirmReset + "!"
