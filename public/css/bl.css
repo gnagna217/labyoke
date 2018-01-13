@@ -5977,7 +5977,7 @@ color: #337ab7 !important; margin-right: 10px !important;
   z-index: 0 !important;display: inline-block !important;
 }
 .reports-labelweek{
-  z-index: 0 !important;position: relative !important;top: -44px !important;display: inline-block !important;background-color: rgba(138, 109, 59, 0.81) !important;
+  z-index: 0 !important;position: relative !important;top: -44px;display: inline-block !important;background-color: rgba(138, 109, 59, 0.81) !important;
 }
 .reports-labelinsuff{
   z-index: 0 !important;position: relative !important; display: inline-block !important;margin-top: -20px !important;
