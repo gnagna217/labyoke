@@ -69,7 +69,7 @@ $(document).ready(function() {
                 //var data = [[1,2,3,4],["Sample", "Sample", "Sample", "Sample"],["foo","bar","Hello","0.3"], ["baz", null, "qux"]];
                 console.log("" + var_dataOrders);
 
-                var data = JSON.parse(unescape(var_dataOrders));
+                var data = JSON.parse(escape(var_dataOrders));
                 console.dir(data);
                 var ws_name = "SheetJS";
 
