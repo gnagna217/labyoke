@@ -79,12 +79,12 @@ block content
 							form(action="reportMoney", method="post", id="formreportMoney")
 								div(class="buttonss")
 									label(class="reports-datefrom")= i18n.__("reports.money.datefrom")
-									span(class="fa fa-calendar reports-calendar")
-									input(name="reportDateFromMoney" type="tel" id="reportDateFromMoney" class="form-control form-control0 reports-date-money")
+									//span(class="fa fa-calendar reports-calendar")
+									input(name="reportDateFromMoney" type="tel" id="reportDateFromMoney" class="form-control form-control0 reports-date-money adddatepicker")
 									
 									label(class="reports-datefrom")= i18n.__("reports.money.dateto")
-									span(class="fa fa-calendar reports-calendar")
-									input(name="reportDateToMoney" type="tel" id="reportDateToMoney" class="form-control form-control0 reports-date-money")
+									//span(class="fa fa-calendar reports-calendar")
+									input(name="reportDateToMoney" type="tel" id="reportDateToMoney" class="form-control form-control0 reports-date-money adddatepicker")
 
 									label(class="reports-dept")!= i18n.__("reports.money.lab.label") + dept + "</span>:"
 									span(class="fa fa-sort reports-sort")
@@ -151,12 +151,12 @@ block content
 							form(action="reportOrders", method="post")
 								div(class="buttonss")
 									label(class="reports-datefrom")=i18n.__("reports.orders.datefrom")
-									span(class="fa fa-calendar reports-calendar")
-									input(name="reportDateFromOrders" type="tel" id="reportDateFromOrders" class="form-control form-control0 reports-input-tel")
+									//span(class="fa fa-calendar reports-calendar")
+									input(name="reportDateFromOrders" type="tel" id="reportDateFromOrders" class="form-control form-control0 reports-input-tel adddatepicker")
 									
 									label(class="reports-datefrom")=i18n.__("reports.orders.dateto")
-									span(class="fa fa-calendar reports-calendar")
-									input(name="reportDateToOrders" class="reports-input-tel" type="tel" id="reportDateToOrders" class="form-control form-control0")
+									//span(class="fa fa-calendar reports-calendar")
+									input(name="reportDateToOrders" class="reports-input-tel" type="tel" id="reportDateToOrders" class="form-control form-control0 adddatepicker")
 									
 									label(class="reports-dept")!= i18n.__("reports.orders.lab.label") + dept + "</span>:"
 									span(class="fa fa-sort reports-sort")
@@ -206,12 +206,12 @@ block content
 							form(action="reportShares", method="post", id="formreportShares")
 								div(class="buttonss")
 									label(class="reports-datefrom")= i18n.__("reports.shares.datefrom")
-									span(class="fa fa-calendar reports-calendar")
-									input(name="reportDateFrom" type="tel" id="reportDateFrom" class="form-control form-control0 reports-input-date")
+									//span(class="fa fa-calendar reports-calendar")
+									input(name="reportDateFrom" type="tel" id="reportDateFrom" class="form-control form-control0 reports-input-date adddatepicker")
 									
 									label(class="reports-datefrom")= i18n.__("reports.shares.dateto")
-									span(class="fa fa-calendar reports-calendar")
-									input(name="reportDateTo" type="tel" id="reportDateTo" class="form-control form-control0 reports-input-date")
+									//span(class="fa fa-calendar reports-calendar")
+									input(name="reportDateTo" type="tel" id="reportDateTo" class="form-control form-control0 reports-input-date adddatepicker")
 									
 									div(class="reports-buttons")
 										button.btn.btn-success.btn-lg.btn-block.reportbutton2.reportbutton3.shadow(type="submit",value="Report",name="submit")= i18n.__("reports.shares.button")

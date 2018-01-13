@@ -45,6 +45,14 @@ if (recenter == 0) {
 
 $(document).ready(function() {
 
+$( ".adddatepicker" ).datepicker({
+      showOn: "both", 
+      buttonText: "<span class='fa fa-calendar reports-calendar'></span>"
+    });
+
+
+
+
     $("#reportDateFrom").mask("99-99-9999", {
         placeholder: "mm-dd-yyyy"
     });

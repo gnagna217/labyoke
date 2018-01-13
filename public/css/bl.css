@@ -6092,5 +6092,22 @@ width: 65px !important;font-weight: bold !important;
 .admin-content{
   right: -60px;left:-60px;top:25px;
 }
-
+.ui-datepicker-trigger{
+    border: none;
+    background: none;
+    float: right;
+    top: -57px !important;
+    position: relative!important;
+    outline: none;
+}
+.ui-datepicker{
+    background-color: #3379b7;
+    width: 38%;
+    padding: 20px;
+    border-radius: 20px;
+    color: white;
+}
+.ui-corner-all {
+    color: white;
+}
 /*end admins*/
