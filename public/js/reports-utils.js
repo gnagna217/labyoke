@@ -64,7 +64,6 @@ $(document).ready(function() {
         placeholder: "mm-dd-yyyy"
     });
 
-
     var h = $(window).height() - 125;
     $(".marginbottom").css("min-height", h);
 
@@ -98,7 +97,7 @@ $(document).ready(function() {
         recenter = 1;
 
         if ($('#reportMoney').is(':visible')) {
-            //$(".reportlabels").removeClass("reportlabels2");
+            $(".reportlabels").removeClass("reportlabels2");
             $(".labelexpandmood").css("top", "-44px");
         } else {
             $(".alert").hide();
@@ -155,7 +154,7 @@ $(document).ready(function() {
         recenter = 1;
 
         if ($('#reportOrders').is(':visible')) {
-            //$(".reportlabels").removeClass("reportlabels2");
+            $(".reportlabels").removeClass("reportlabels2");
             $(".labelexpandmood").css("top", "-44px");
 
             console.log("threedown show");
@@ -210,7 +209,7 @@ $(document).ready(function() {
         recenter = 1;
 
         if ($('#reportShares').is(':visible')) {
-            //$(".reportlabels").removeClass("reportlabels2");
+            $(".reportlabels").removeClass("reportlabels2");
             $(".labelexpandmood").css("top", "-44px");
         } else {
             $(".alert").hide();
@@ -264,7 +263,7 @@ $(document).ready(function() {
         recenter = 1;
 
         if ($('#reportInsuff').is(':visible')) {
-            //$(".reportlabels").removeClass("reportlabels2");
+            $(".reportlabels").removeClass("reportlabels2");
             $(".labelexpandmood").css("top", "-44px");
         } else {
             $(".alert").hide();
@@ -490,6 +489,7 @@ window.onload = function() {
         $('#reportShares').hide();
         $('#reportOrders').hide();
         $('#reportInsuff').hide();
+        $(".reportlabels").addClass("reportlabels2");
         $(window).scrollTop($('#reportMoney').offset().top - 100).scrollLeft($('#reportMoney').offset().left);
     } else if (eSelect.selectedIndex === 2 || $('#reportSelect').val() == 'reportOrders') {
         console.log("resultsOrders inside");
@@ -498,6 +498,7 @@ window.onload = function() {
         $('#reportShares').hide();
         $('#reportMoney').hide();
         $('#reportInsuff').hide();
+        $(".reportlabels").addClass("reportlabels2");
         $(window).scrollTop($('#reportOrders').offset().top - 100).scrollLeft($('#reportOrders').offset().left);
     } else if (eSelect.selectedIndex === 3 || $('#reportSelect').val() == 'reportShares') {
         console.log("resultsShares inside");
@@ -506,6 +507,7 @@ window.onload = function() {
         $('#reportMoney').hide();
         $('#reportOrders').hide();
         $('#reportInsuff').hide();
+        $(".reportlabels").addClass("reportlabels2");
         $(window).scrollTop($('#reportShares').offset().top - 100).scrollLeft($('#reportShares').offset().left);
     } else if (eSelect.selectedIndex === 4 || $('#reportSelect').val() == 'reportInsuff') {
         console.log("resultsInsuff inside");
@@ -514,6 +516,7 @@ window.onload = function() {
         $('#reportShares').hide();
         $('#reportOrders').hide();
         $('#reportMoney').hide();
+        $(".reportlabels").addClass("reportlabels2");
         $(window).scrollTop($('#reportInsuff').offset().top - 100).scrollLeft($('#reportInsuff').offset().left);
     } else if (eSelect.selectedIndex === 0 || $('#reportSelect').val() == 'reportNone') {
         console.log("result None inside");
@@ -526,35 +529,35 @@ window.onload = function() {
 
     eSelect.onchange = function() {
         if (eSelect.selectedIndex === 1 || $('#reportSelect').val() == 'reportMoney') {
-            console.log("resultsMoney inside");
+            console.log("resultsMoney inside0");
             $('.containerreport').hide();
             $('#reportMoney').show();
             $('#reportShares').hide();
             $('#reportOrders').hide();
             $('#reportInsuff').hide();
         } else if (eSelect.selectedIndex === 2 || $('#reportSelect').val() == 'reportOrders') {
-            console.log("resultsOrders inside");
+            console.log("resultsOrders inside0");
             $('.containerreport').hide();
             $('#reportOrders').show();
             $('#reportShares').hide();
             $('#reportMoney').hide();
             $('#reportInsuff').hide();
         } else if (eSelect.selectedIndex === 3 || $('#reportSelect').val() == 'reportShares') {
-            console.log("resultsShares inside");
+            console.log("resultsShares inside0");
             $('.containerreport').hide();
             $('#reportShares').show();
             $('#reportMoney').hide();
             $('#reportOrders').hide();
             $('#reportInsuff').hide();
         } else if (eSelect.selectedIndex === 4 || $('#reportSelect').val() == 'reportInsuff') {
-            console.log("resultsInsuff inside");
+            console.log("resultsInsuff inside0");
             $('.containerreport').hide();
             $('#reportInsuff').show();
             $('#reportShares').hide();
             $('#reportOrders').hide();
             $('#reportMoney').hide();
         } else if (eSelect.selectedIndex === 0 || $('#reportSelect').val() == 'reportNone') {
-            console.log("result None inside");
+            console.log("result None inside0");
             $('.containerreport').show();
             $('#reportInsuff').hide();
             $('#reportShares').hide();
