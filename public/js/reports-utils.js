@@ -63,7 +63,7 @@ $(document).ready(function() {
     $("#reportDateToMoney").mask("99-99-9999", {
         placeholder: "mm-dd-yyyy"
     });
-    
+
 
     var h = $(window).height() - 125;
     $(".marginbottom").css("min-height", h);
@@ -98,7 +98,7 @@ $(document).ready(function() {
         recenter = 1;
 
         if ($('#reportMoney').is(':visible')) {
-            $(".reportlabels").removeClass("reportlabels2");
+            //$(".reportlabels").removeClass("reportlabels2");
             $(".labelexpandmood").css("top", "-44px");
         } else {
             $(".alert").hide();
@@ -155,7 +155,7 @@ $(document).ready(function() {
         recenter = 1;
 
         if ($('#reportOrders').is(':visible')) {
-            $(".reportlabels").removeClass("reportlabels2");
+            //$(".reportlabels").removeClass("reportlabels2");
             $(".labelexpandmood").css("top", "-44px");
 
             console.log("threedown show");
@@ -210,7 +210,7 @@ $(document).ready(function() {
         recenter = 1;
 
         if ($('#reportShares').is(':visible')) {
-            $(".reportlabels").removeClass("reportlabels2");
+            //$(".reportlabels").removeClass("reportlabels2");
             $(".labelexpandmood").css("top", "-44px");
         } else {
             $(".alert").hide();
@@ -264,7 +264,7 @@ $(document).ready(function() {
         recenter = 1;
 
         if ($('#reportInsuff').is(':visible')) {
-            $(".reportlabels").removeClass("reportlabels2");
+            //$(".reportlabels").removeClass("reportlabels2");
             $(".labelexpandmood").css("top", "-44px");
         } else {
             $(".alert").hide();
