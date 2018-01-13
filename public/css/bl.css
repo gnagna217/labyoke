@@ -6043,3 +6043,51 @@ width: 65px !important;font-weight: bold !important;
   margin-left: 40px !important;margin-top: -13px !important;margin-bottom:10px !important;margin-top: -13px !important;
 }
 /*end reports*/
+/*start admins*/
+.admin-title{
+  font-size: 75% !important; font-style: italic !important;
+}
+.admin-upload{
+  margin-right: 10px !important;color: #337ab7 !important;
+}
+.admin-file-upload{
+  width: 50% !important;text-align: center !important;border-radius: 6px !important;
+}
+.paddingtop-10{
+  padding-top: 10px !important;
+}
+.admin-name{
+  color: #3d9dcb !important;word-wrap: break-word !important;
+}
+.admin-qty{
+  display:block !important;padding-top: 5px !important;
+}
+.admin-qty-chart{
+  margin-right: 10px !important;color: #337ab7 !important;
+}
+.admin-key{
+  margin-bottom: 35px !important;padding-left: 30px !important; padding-right: 30px !important;
+}
+.admin-catalog{
+  float: right !important;margin-right: 5px !important;
+}
+.top-15{
+  top: 15px !important;
+}
+.admin-cancel{
+  width: 17px !important;padding-left: 0px !important;padding-right: 0px !important;
+}
+.admin-fulfill{
+  position:absolute !important;left: -9999px !important;
+}
+.admin-insuff{
+  width: 17px !important;display:block !important;padding-left: 0px !important;padding-right: 0px !important;
+}
+.admin-slide{
+  display:none;z-index:9 !important;position: fixed !important;top: 25% !important;max-height:380px !important;
+}
+.admin-content{
+  right: -60px;left:-60px;top:25px;
+}
+
+/*end admins*/
