@@ -154,6 +154,7 @@ block content
 													input(type="hidden" name="pos2" value=prop)
 		div(class="share-container " + adjust + " adjustpaddingrightandwidth " + fadesections + " float-right")
 			div(class="threepointssep mobileonly3 marginbottom-5")
+			script(type="text/javascript" src="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.js")
 
 			h3(class="paddingtop-43")
 				span(class="fa fa-bar-chart shares-chart")
@@ -269,7 +270,7 @@ block content
 				-for(var prop in ob2)
 					- array_rows2 = array_rows2 + ob2[prop].agent + "|"
 					- array_values2 = array_values2 + ob2[prop].counting + "|"
-				script(type="text/javascript" src="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.js")
+
 				script.
 					var var_filteroutput = "#{filteroutput}", var_array_values = "#{array_values}", var_array_rows = "#{array_rows}", var_array_rows2 = "#{array_rows2}", var_array_values2 = "#{array_values2}", var_dot_select = "#{i18n.__("dot.selected")}";
 				script(type="text/javascript" src="/js/shares-chartnotes-utils.js")

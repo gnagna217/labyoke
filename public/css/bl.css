@@ -5702,6 +5702,9 @@ color:white !important;background-color:#3d9dcb !important;font-size:12px !impor
   border-width:0px !important;
 }
 .displaynone{
+  display:none;
+}
+.displaynone-impt{
   display:none !important;
 }
 .change-key{
