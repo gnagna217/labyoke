@@ -45,6 +45,25 @@ if (recenter == 0) {
 
 $(document).ready(function() {
 
+    $("#reportDateFrom").mask("99-99-9999", {
+        placeholder: "mm-dd-yyyy"
+    });
+    $("#reportDateTo").mask("99-99-9999", {
+        placeholder: "mm-dd-yyyy"
+    });
+    $("#reportDateFromOrders").mask("99-99-9999", {
+        placeholder: "mm-dd-yyyy"
+    });
+    $("#reportDateToOrders").mask("99-99-9999", {
+        placeholder: "mm-dd-yyyy"
+    });
+    $("#reportDateFromMoney").mask("99-99-9999", {
+        placeholder: "mm-dd-yyyy"
+    });
+    $("#reportDateToMoney").mask("99-99-9999", {
+        placeholder: "mm-dd-yyyy"
+    });
+    
 
     var h = $(window).height() - 125;
     $(".marginbottom").css("min-height", h);

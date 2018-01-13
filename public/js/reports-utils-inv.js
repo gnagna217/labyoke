@@ -25,29 +25,6 @@ source = ob;
 // (class, of compound) at this time.
 $(document).ready(function() {
 
-
-
-    $("#reportDateFrom").mask("99-99-9999", {
-        placeholder: "mm-dd-yyyy"
-    });
-    $("#reportDateTo").mask("99-99-9999", {
-        placeholder: "mm-dd-yyyy"
-    });
-    $("#reportDateFromOrders").mask("99-99-9999", {
-        placeholder: "mm-dd-yyyy"
-    });
-    $("#reportDateToOrders").mask("99-99-9999", {
-        placeholder: "mm-dd-yyyy"
-    });
-    $("#reportDateFromMoney").mask("99-99-9999", {
-        placeholder: "mm-dd-yyyy"
-    });
-    $("#reportDateToMoney").mask("99-99-9999", {
-        placeholder: "mm-dd-yyyy"
-    });
-
-
-
     $(".intro2").show();
     $(".intro2").addClass("backshares");
     //$('.pin').show();
