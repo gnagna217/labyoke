@@ -5702,7 +5702,7 @@ color:white !important;background-color:#3d9dcb !important;font-size:12px !impor
   border-width:0px !important;
 }
 .displaynone{
-  display:none;
+  display:none !important;
 }
 .change-key{
   top: -20px !important;position: relative !important;float: right !important;color: rgba(138, 109, 59, 0.61) !important;
