@@ -55,8 +55,10 @@ $(document).ready(function() {
 	    if (!$('#reportMoney').is(':visible') || !$('#reportInsuff').is(':visible') || !$('#reportOrders').is(':visible') || !$('#reportShares').is(':visible') ) {
             console.log("report visible");
             if ($(window).width() > 900) {
-                $(".labelexpandmood").css("top", "0px");
+                $(".labelexpandmood").css("top", "-44px");
             }
+        } else{
+        	$(".labelexpandmood").css("top", "0px");
         }
 
 	$( ".adddatepicker" ).datepicker({
