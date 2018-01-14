@@ -47,10 +47,13 @@ $(document).ready(function() {
 
 $( ".adddatepicker" ).datepicker({
       showOn: "both", 
-      buttonText: "<span class='fa fa-calendar reports-calendar'></span>"
+      buttonText: "<span class='fa fa-calendar reports-calendar'></span>",
+      nextText: "<i class='fa fa-arrow-right'></i>",
+      prevText: "<i class='fa fa-arrow-left'></i>",
+      dateFormat: "mm-dd-yyyy"
     });
 
-
+$(".adddatepicker").datepicker().datepicker("setDate", new Date());
 
 
     $("#reportDateFrom").mask("99-99-9999", {
