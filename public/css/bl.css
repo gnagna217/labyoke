@@ -6116,11 +6116,10 @@ width: 65px !important;font-weight: bold !important;
 }
 
 .ui-state-default:hover{
-  background-color: #ceb080;
+  color: #e8c48a;
   padding:1px;
   font-weight: bold;
-  color:white;
-  font-size: 12pt;
+  font-size: 15pt;
 }
 
 .ui-datepicker { width: 17em; padding: .2em 1.2em 0; display: none; }
