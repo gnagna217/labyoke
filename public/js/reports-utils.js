@@ -53,7 +53,7 @@ $(document).ready(function() {
       dateFormat: "mm-dd-yy"
     });
 
-	$(".adddatepicker").datepicker().datepicker("setDate", new Date());
+	//$(".adddatepicker").datepicker().datepicker("setDate", new Date());
 
 
     $("#reportDateFrom").mask("99-99-9999", {
