@@ -46,12 +46,15 @@ if (recenter == 0) {
 $(document).ready(function() {
 
 	$( ".adddatepicker" ).datepicker({
-      showOn: "both", 
-      buttonText: "<span class='fa fa-calendar reports-calendar'></span>",
-      nextText: ">>",
-      prevText: "<<",
-      dateFormat: "mm-dd-yy"
-    });
+		showOn: "both", 
+		buttonText: "<span class='fa fa-calendar reports-calendar'></span>",
+		nextText: ">>",
+		prevText: "<<",
+		dateFormat: "mm-dd-yy",
+		dayNamesMin: [ var_sunday_min , var_monday_min, var_tuesday_min , var_wednesday_min, var_thursday_min, var_friday_min, var_saturday_min ],
+		monthNames: [ var_month0 , var_month1, var_month2 , var_month3, var_month4, var_month5, var_month6, var_month7, var_month8, var_month9, var_month10, var_month11 ]
+	});
+
 
 	//$(".adddatepicker").datepicker().datepicker("setDate", new Date());
 

@@ -587,6 +587,27 @@
     "zoom.plus": "Increase Zoom",
     "zoom.reset": "Reset Zoom",
 
+    "date.monday.min": "Mo",
+    "date.tuesday.min": "Tu",
+    "date.wednesday.min": "We",
+    "date.thursday.min": "Th",
+    "date.friday.min": "Fr",
+    "date.saturday.min": "Sa",
+    "date.sunnday.min": "Su",
+
+    "date.jan": "January",
+    "date.fev": "February",
+    "date.mars": "March",
+    "date.avril": "April",
+    "date.mai": "May",
+    "date.juin": "June",
+    "date.juillet": "July",
+    "date.aout": "August",
+    "date.sept": "September",
+    "date.octobre": "October",
+    "date.nov": "November",
+    "date.dec": "December",
+
     "key.title": ""
 
 
