@@ -271,21 +271,17 @@ html(lang='en')
       span(class="fa fa-chevron-circle-up")
      script.
       var lang = !{JSON.stringify(language)}, var_processing = "#{i18n.__("datatable.processing")}", var_search = "#{i18n.__("datatable.search")}", var_lengthMenu = "#{i18n.__("datatable.lengthMenu")}", var_info = "#{i18n.__("datatable.info")}", var_infoEmpty = "#{i18n.__("datatable.infoEmpty")}", var_infoFiltered = "#{i18n.__("datatable.infoFiltered")}", var_loadingRecords = "#{i18n.__("datatable.loadingRecords")}", var_zeroRecords = "#{i18n.__("datatable.zeroRecords")}", var_emptyTable = "#{i18n.__("datatable.emptyTable")}", var_first = "#{i18n.__("datatable.first")}", var_previous = "#{i18n.__("datatable.previous")}", var_next = "#{i18n.__("datatable.next")}", var_last = "#{i18n.__("datatable.last")}", var_searchplaceholder = "#{i18n.__("datatable.searchplaceholder")}", var_sortAscending = "#{i18n.__("datatable.sortAscending")}", var_sortDescending = "#{i18n.__("datatable.sortDescending")}",var_bot_placeholder = "#{i18n.__("layout.bot.placeholder")}";
-     if(title=='Reagent Search' || title=='Search' || title=='Share' || title=='Orders' || title=='Admins' || title=='Account')
-       :staticCache    
+     if(title=='Reagent Search' || title=='Search' || title=='Share' || title=='Orders' || title=='Admins' || title=='Account')     
         script(type="text/javascript" src="/javascripts/init.js")
         script(type="text/javascript" src="/js/lang-utils.js")
         script(type="text/javascript" src="/javascripts/popup.js") 
      if(title=='Login')
-       :staticCache
         script(type="text/javascript" src="/js/login-utils.js")
      if(title=='Admins')
-       :staticCache
         script.
           var var_admintype = "#{admintype}", var_pos = "#{pos}", var_pos2 = "#{pos2}";
         script(type="text/javascript" src="/js/admins-utils.js")
      if(title=='Reagent Search')
-       :staticCache
         script(type="text/javascript" src="/js/search-utils.js")
      if(title=='Account')
        :staticCache
