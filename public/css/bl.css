@@ -6105,7 +6105,7 @@ width: 65px !important;font-weight: bold !important;
     outline: none;
 }
 .ui-datepicker{
-    background-color: #3d9dcb;
+    background-color: #3d9dcbe8; /*#3d9dcb;*/
     border-radius: 20px;
 }
 .ui-corner-all {
