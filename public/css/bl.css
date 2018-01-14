@@ -6105,7 +6105,7 @@ width: 65px !important;font-weight: bold !important;
     outline: none;
 }
 .ui-datepicker{
-    background-color: #ceb080;
+    background-color: #3d9dcb;
     /*width: 38%;*/
     padding: 20px;
     border-radius: 20px;
@@ -6116,11 +6116,7 @@ width: 65px !important;font-weight: bold !important;
 }
 
 .ui-state-default:hover{
-  background-color: red;
-}
-
-.ui-state-default:hover{
-  background-color: #3d9dcb;
+  background-color: #ceb080;
   padding:1px;
   font-weight: bold;
   color:white;
