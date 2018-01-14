@@ -271,39 +271,52 @@ html(lang='en')
       span(class="fa fa-chevron-circle-up")
      script.
       var lang = !{JSON.stringify(language)}, var_processing = "#{i18n.__("datatable.processing")}", var_search = "#{i18n.__("datatable.search")}", var_lengthMenu = "#{i18n.__("datatable.lengthMenu")}", var_info = "#{i18n.__("datatable.info")}", var_infoEmpty = "#{i18n.__("datatable.infoEmpty")}", var_infoFiltered = "#{i18n.__("datatable.infoFiltered")}", var_loadingRecords = "#{i18n.__("datatable.loadingRecords")}", var_zeroRecords = "#{i18n.__("datatable.zeroRecords")}", var_emptyTable = "#{i18n.__("datatable.emptyTable")}", var_first = "#{i18n.__("datatable.first")}", var_previous = "#{i18n.__("datatable.previous")}", var_next = "#{i18n.__("datatable.next")}", var_last = "#{i18n.__("datatable.last")}", var_searchplaceholder = "#{i18n.__("datatable.searchplaceholder")}", var_sortAscending = "#{i18n.__("datatable.sortAscending")}", var_sortDescending = "#{i18n.__("datatable.sortDescending")}",var_bot_placeholder = "#{i18n.__("layout.bot.placeholder")}";
-     if(title=='Reagent Search' || title=='Search' || title=='Share' || title=='Orders' || title=='Admins' || title=='Account')     
+     if(title=='Reagent Search' || title=='Search' || title=='Share' || title=='Orders' || title=='Admins' || title=='Account')
+       :staticCache    
         script(type="text/javascript" src="/javascripts/init.js")
         script(type="text/javascript" src="/js/lang-utils.js")
         script(type="text/javascript" src="/javascripts/popup.js") 
      if(title=='Login')
+       :staticCache
         script(type="text/javascript" src="/js/login-utils.js")
      if(title=='Admins')
+       :staticCache
         script.
           var var_admintype = "#{admintype}", var_pos = "#{pos}", var_pos2 = "#{pos2}";
         script(type="text/javascript" src="/js/admins-utils.js")
      if(title=='Reagent Search')
+       :staticCache
         script(type="text/javascript" src="/js/search-utils.js")
      if(title=='Account')
+       :staticCache
         script.
           var var_account_button = "#{i18n.__("account.button")}", var_account_hide_button = "#{i18n.__("account.hide")}", var_bot_placeholder = "#{i18n.__("layout.bot.placeholder")}";
         script(type="text/javascript" src="/js/account-utils.js")
      if(title=='Register')
+       :staticCache
         script.
           var var_register10 = "#{i18n.__("index.register.message10")}", var_register7 = "#{i18n.__("index.register.message7")}", var_register8 = "#{i18n.__("index.register.message8")}", var_register9 = "#{i18n.__("index.register.message9")}", var_register5 = "#{i18n.__("index.register.message5")}", var_register6 = "#{i18n.__("index.register.message6")}"; 
         script(type="text/javascript" src="/js/register-utils.js")
      if(title=='Confirm Registration')
+       :staticCache
         script(type="text/javascript" src="/js/register-utils.js")
      if(title=='Change Password')
+       :staticCache
         script(type="text/javascript" src="/js/changepassword-utils.js")
      if(title=='Forgot Password')
+       :staticCache
         script(type="text/javascript" src="/js/forgot-utils.js")
      if(title=='Help')
+       :staticCache
         script(type="text/javascript" src="/js/help-utils.js")
      if(title=='Orders')
+       :staticCache
         script(type="text/javascript" src="/js/orders-utils.js")
      if(title=='Share')
+       :staticCache
         script(type="text/javascript" src="/js/shares-utils.js")
      if(title=='Search')
+       :staticCache
         script(type="text/javascript" src="/js/search-utils.js")          
      if(title=='Play')
        :staticCache
