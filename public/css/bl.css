@@ -6092,6 +6092,9 @@ width: 65px !important;font-weight: bold !important;
 .admin-content{
   right: -60px;left:-60px;top:25px;
 }
+.open{
+  display: block;
+}
 
 /* end admins*/
 
