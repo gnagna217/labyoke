@@ -306,8 +306,10 @@ html(lang='en')
      if(title=='Search')
         script(type="text/javascript" src="/js/search-utils.js")          
      if(title=='Play')
+       :staticCache
         script(type="text/javascript" src="/js/play-utils.js")
      if(title=='Pop')
+       :staticCache     
         script(type="text/javascript" src="/js/pop-utils.js")
      if(title=='Reports')
        :staticCache
