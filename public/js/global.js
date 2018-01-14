@@ -53,7 +53,7 @@ $(document).ready(function() {
                     secret: "jMO0wtNhTWM.cwA.rqg._IWRYZZ7OsyoD0F6JfuPEDOnw6SP48-pAnIRptYH3mE"
                 },
                 user: {
-                    id: '#{labyoker}'
+                    id: var_labyoker
                 },
                 bot: {
                     id: 'Labyoke'
