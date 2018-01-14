@@ -6120,6 +6120,7 @@ width: 65px !important;font-weight: bold !important;
   padding:1px;
   font-weight: bold;
   color:white;
+  font-size: 12pt;
 }
 
 .ui-datepicker { width: 17em; padding: .2em 1.2em 0; display: none; }

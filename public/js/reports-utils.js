@@ -50,7 +50,7 @@ $( ".adddatepicker" ).datepicker({
       buttonText: "<span class='fa fa-calendar reports-calendar'></span>",
       nextText: ">>",
       prevText: "<<",
-      dateFormat: "mm-dd-yyyy"
+      dateFormat: "mm-dd-yy"
     });
 
 $(".adddatepicker").datepicker().datepicker("setDate", new Date());
