@@ -48,8 +48,8 @@ $(document).ready(function() {
 $( ".adddatepicker" ).datepicker({
       showOn: "both", 
       buttonText: "<span class='fa fa-calendar reports-calendar'></span>",
-      nextText: "<i class='fa fa-arrow-right'></i>",
-      prevText: "<i class='fa fa-arrow-left'></i>",
+      nextText: "<span class='fa fa-arrow-right'></span>",
+      prevText: "<span class='fa fa-arrow-left'></span>",
       dateFormat: "mm-dd-yyyy"
     });
 
