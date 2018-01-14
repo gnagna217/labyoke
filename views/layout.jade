@@ -278,25 +278,20 @@ html(lang='en')
      if(title=='Login')
         script(type="text/javascript" src="/js/login-utils.js")
      if(title=='Admins')
-       :staticCache
         script.
           var var_admintype = "#{admintype}", var_pos = "#{pos}", var_pos2 = "#{pos2}";
         script(type="text/javascript" src="/js/admins-utils.js")
      if(title=='Reagent Search')
-       :staticCache
         script(type="text/javascript" src="/js/search-utils.js")
      if(title=='Account')
-       :staticCache
         script.
           var var_account_button = "#{i18n.__("account.button")}", var_account_hide_button = "#{i18n.__("account.hide")}", var_bot_placeholder = "#{i18n.__("layout.bot.placeholder")}";
         script(type="text/javascript" src="/js/account-utils.js")
      if(title=='Register')
-       :staticCache
         script.
           var var_register10 = "#{i18n.__("index.register.message10")}", var_register7 = "#{i18n.__("index.register.message7")}", var_register8 = "#{i18n.__("index.register.message8")}", var_register9 = "#{i18n.__("index.register.message9")}", var_register5 = "#{i18n.__("index.register.message5")}", var_register6 = "#{i18n.__("index.register.message6")}"; 
         script(type="text/javascript" src="/js/register-utils.js")
      if(title=='Confirm Registration')
-       :staticCache
         script(type="text/javascript" src="/js/register-utils.js")
      if(title=='Change Password')
        :staticCache
