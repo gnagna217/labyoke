@@ -46,7 +46,7 @@ $(window).resize(function() {
       var field = $(document.activeElement);
       if (field.is('.hasDatepicker')) {
       	console.log("found hasDatepicker");
-            field.datepicker('hide').datepicker('show');
+            field.datepicker('hide');
       }
 });
 
