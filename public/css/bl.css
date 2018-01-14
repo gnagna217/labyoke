@@ -6106,11 +6106,7 @@ width: 65px !important;font-weight: bold !important;
 }
 .ui-datepicker{
     background-color: #3d9dcb;
-    /*width: 38%;*/
-    padding: 20px;
     border-radius: 20px;
-        width: 25%;
-    /*color: white;*/
 }
 .ui-corner-all {
     color: white;
@@ -6123,7 +6119,7 @@ width: 65px !important;font-weight: bold !important;
   font-size: 15pt;
 }
 
-.ui-datepicker { width: 17em; padding: .2em 1.2em 0; display: none; }
+.ui-datepicker { width: 25%; padding: .2em 1.2em 0; display: none; }
 .ui-datepicker .ui-datepicker-header { position:relative; padding:.2em 0; }
 .ui-datepicker .ui-datepicker-prev, .ui-datepicker .ui-datepicker-next { position:absolute; top: 2px; width: 1.8em; height: 1.8em; }
 .ui-datepicker .ui-datepicker-prev-hover, .ui-datepicker .ui-datepicker-next-hover { top: 1px; }
