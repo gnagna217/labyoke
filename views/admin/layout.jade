@@ -29,10 +29,6 @@ html(lang='en')
      script(type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js")
      script(type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.12/datatables.min.js")
      //script(type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.10.16/rr-1.2.3/datatables.min.js")
-     if (title=='Share')
-       script(type="text/javascript" src="/javascripts/canvas2svg.js")
-       script(type="text/javascript" src="/javascripts/jvenn.min.js")
-       script(type="text/javascript" src="/javascripts/jquery.twbsPagination.min.js")
      link(rel="shortcut icon" href="/images/adminico.png" type="image/x-icon")
      link(rel="icon" href="/images/adminico.png" type="image/x-icon")
 
@@ -151,16 +147,16 @@ html(lang='en')
                                 span(style="margin-left: 5px;")="Logout"
 
      block content
-     script(type="text/javascript" src="/javascripts/bootstrap.min.js")
-     script(type="text/javascript" src="/javascripts/popup.js")
+     :staticCache
+      script(type="text/javascript" src="/javascripts/bootstrap.min.js")
+     :staticCache
+      script(type="text/javascript" src="/javascripts/init.js")
+      script(type="text/javascript" src="/js/lang-utils.js")
+      script(type="text/javascript" src="/javascripts/popup.js")
      if (title=='Users')
        script(type="text/javascript" src="/javascripts/custom-file-input.js")
      if (title=='Reports' || title=='Account' || title=='Register')
        script(type="text/javascript" src="/javascripts/jquery.maskedinput.min.js")
-     - if (title!='Forgot Password' && title!='Register' && title!='About Us' && title!='Help' && title!='Login' && title!='Change Password')
-       //script.
-          //var h = $(window).height() - 125;
-          //$(".marginbottom").css("min-height",h);
      div(style="margin-top: 100px; background-color: #8a6d3b; position: fixed;bottom: 0;width: 100%;")
             div(style="color:white; text-align:center; font-size:11px;")="@labyoke"
      a(href="#0" class="cd-top" title="go to top")
