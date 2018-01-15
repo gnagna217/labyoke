@@ -164,8 +164,8 @@ html(lang='en')
                   a(href="/account", class="layout-account roundaccountmob " + activeAccountMob)!= user_surname + "" + surname
                 span
                   a(href="/search", class="layout-search roundaccountmob searchmob " + activeSearchMob)
-                  label(for="togglerules" style="background-color: red;width: 50px;height: 50px;padding-top: 5px;padding: 7px;" onclick="window.open('/admin/login')" class="animated fadeInUp labelexpandrules reports-labelinsuff roundaccountmob shadow adminmobile")!= "+"
                     span(class=" layout-search-text fa fa-search colmenu " + activeSearchMob)
+                  label(for="togglerules" style="background-color: red;width: 50px;height: 50px;padding-top: 5px;padding: 7px;" onclick="window.open('/admin/login')" class="animated fadeInUp labelexpandrules reports-labelinsuff roundaccountmob shadow adminmobile")!= "+"
                 .collapse.navbar-collapse(id="navburger")
                     div.adjustWidthSearch.float-left(class=isreghide)
                         - adjustWidth = ""
