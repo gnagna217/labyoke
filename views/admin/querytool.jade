@@ -1,0 +1,125 @@
+extends layout
+
+block content
+    div(class="container login2 marginbottom margintop container2 /*moveFromLeft*/")
+        div
+            h1
+              span(class="fa fa-gear lightyokecolor")
+              span!= ' Query '
+              span(class="fa fa-caret-right lightyokecolor animated fadeIn" style="font-size: 20pt;")
+            p(style="margin-bottom: 40px;")!="Start querying the database."
+            - var remove = 0
+            - searchText = "Looking for reagent..."
+            - searchTextCatalog = "Looking for catalog number..."
+            - classButton = "btn-success"
+            - classButtonCatalog = "btn-success"
+            if searchformText
+                - searchText = "" + searchformText
+                - classButton = "btn-success btn-success-results"
+            if searchformTextCatalog
+                - searchTextCatalog = "Search: " + searchformTextCatalog
+                - searchformTextCatalog = "Search: " + searchformTextCatalog
+                - classButtonCatalog = "btn-success-results"            
+            div(id="ctl00_Div2" class="row")
+                div
+                    if message
+                        div(class="alert alert-danger")!= message
+                    form(action="/querytool" method="post")
+                        textarea(name="queryText" list="agent-datalist" class="form-control shadow" id="queryText" placeholder="Select * from ..." cols="30" rows="7" style="outline: none;overflow:auto;width: 100%; padding-left: 35px;padding-top: 25px;font-size: 14pt;color: #3d9dcb; margin-bottom: 25px;" autofocus)
+                        div(class="buttons")
+                            //input(type="submit" class="button" value="Get in")
+                            button(class="btn " + classButton + " btn-lg btn-block btn50 shadow" type='submit') Submit
+                            //img(src="images/yoke5.png", alt="The Search", title="Search", style="border-width:0px; width: 50px; margin-top: -77px; margin-left: 300px;")
+        
+        - if((searchResults != null && searchResults.length > 0) || (rowCount != null && rowCount != undefined))
+            -var count = 0
+            div
+              div(id="queryresults")
+                  div(style="height: 3px; margin-bottom: 40px; margin-top: 30px; margin: 30px 210px 30px 210px; border-radius: 40px;")
+                  div(style=" width: 0; height: 0; border-left: 20px solid transparent; border-right: 20px solid transparent; border-top: 20px solid #64abcf; top: -30px; position: relative; margin: 0 auto; text-align: center; ")
+                  div(style="width: 0;height: 0;border-left: 20px solid transparent;border-right: 20px solid transparent;border-top: 20px solid #ffffff;top: -54px;position: relative;margin: 0 auto;text-align: center;" class="")
+                  div(style="top: -30px; position: relative;")
+                    span(style="text-align: center")
+                      - if(error != "error")
+                        - count = rowCount
+                      h3="Your query: "
+                        if searchformText
+                            span(style="color: #3d9dcb;")=" " + searchText
+                            span(style="color: #8a6d3b;")=" (" + count + ")"
+              - style = ""
+              - if(error != "error" && type == "select")
+                  - style = "overflow: auto; max-height: 100%;"
+            - if(error != "error" && type == "select" && searchResults != null && searchResults.length > 0)
+                div(class="results resultsshadow")
+                    div(id="ctl00_Div2" class="row rank")
+                        - var keys
+                        div(class="table-responsive")                
+                            table(id="rankTblload" class="table rankTbl")
+                                thead
+                                    tr(class="you info-best" style="font-weight: bold")
+                                        - keys = Object.keys(searchResults[0])
+                                        - for(var prop in keys)
+                                            td(class="wrapped") #{keys[prop]}
+                                tbody
+                                  - var values = Object.keys(searchResults).map(function(key) {return searchResults[key];})
+                                  - keys = Object.keys(searchResults[0])
+                                  -for(var prop in searchResults)
+                                    tr(class="wrapped")
+                                        - var values = Object.keys(searchResults[prop]).map(function(key) {var t = searchResults[prop];return t[key];})
+                                        -for(var val in values)
+                                            - var valobj = values[val]
+                                            - if(Object.prototype.toString.call(valobj) === '[object Date]')
+                                                - var d = new Date(valobj)
+                                                - valobj = d.toLocaleDateString("en-US")
+                                            td #{valobj}
+                            script.
+                                $(document).ready(function() {
+                                   $('#rankTblload').DataTable();
+                                   $("#queryText").val("#{searchText}")
+                                });
+
+            div(id="raw")
+                h5(style="text-align:center;padding-top:10px;margin-bottom:15px;cursor:pointer;font-weight:bold", id="labyokerslink")="Raw data "
+                  span(class="fa fa-database labyokerslinkdb", style="font-size: 15pt;color: #3d9dcb;")
+                div(class="queryseparator", style="display:none")
+                  div(style="height: 3px; margin-bottom: 40px; margin-top: 30px; margin: 30px 210px 30px 210px; border-radius: 40px;")
+                  div(style=" width: 0; height: 0; border-left: 20px solid transparent; border-right: 20px solid transparent; border-top: 20px solid #2a74b4; top: -30px; position: relative; margin: 0 auto; text-align: center; ")
+                  div(style="width: 0;height: 0;border-left: 20px solid transparent;border-right: 20px solid transparent;border-top: 20px solid #ffffff;top: -54px;position: relative;margin: 0 auto;text-align: center;" class="")
+                #labyokers.results.resultsshadow.queryraw(style="background: none;word-wrap:break-word; display:none;background:none;display: block;margin: 0px auto;box-shadow: none;top: -35px;position: relative;display:none;"+style)
+                    div(id="ctl00_Div2" class="row rank").match
+                       - i = 
+                       - var j = 1
+                       - className = ""
+                       div(class="table-responsive" style="margin-top: 20px;text-align:center")
+                         - if(error != "error" && type == "select")  
+                           - for(var prop in searchResults)
+                                p!="<span class='labColor'><b>" + j + ". </b></span>" + JSON.stringify(searchResults[prop])
+                                - j = j + 1
+                                - remove = 1
+                         - if(error == "error")
+                             p(style="text-align:center")="Your query cannot be processed - "
+                                span!=JSON.stringify(errorStr).replace(/&quot;/g, '"')
+                             - remove = 1
+                         - if(error != "error" && type != "select" && rowCount != "error" && remove == 0)
+                             p(style="text-align:center")!="" + type + " - " + rowCount + " row(s) affected."
+                             - remove = 1
+                         - if(count == 0)
+                             p(style="text-align:center")!="There are no results available for your query."
+                             - remove = 1                        
+             
+            script.
+                var rem = #{remove};
+                if(rem == '0'){
+                    $('#raw').remove();
+                    $('#queryresults').remove();
+                } else {
+                    $(window).scrollTop($('.results').offset().top + 100).scrollLeft($('.results').offset().left);
+                }
+                labyokerslink.onclick = function(){
+                $(".queryseparator").toggle();
+                $("#labyokers").toggle();
+                $(window).scrollTop($('#labyokers').offset().top).scrollLeft($('#labyokers').offset().left);
+                };
+
+        
+
