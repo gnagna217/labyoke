@@ -2944,6 +2944,14 @@ totalshares = t[0].counting;
 
 
 
+    function isLoggedInSuperAdmin(req, res, next) {
+        if (req.session.user && req.session.usersuperadmin)
+            return next();
+        console.log('requested url: '+req.originalUrl);
+        req.session.to = req.originalUrl;
+        res.redirect('/login');
+    }
+
     router.get('/admin', function(req, res) {
         res.redirect('/admin/querytool');
     });
