@@ -9,6 +9,14 @@
   -webkit-font-smoothing: antialiased;
 }
 
+.adminmobile{
+  display: none !important;
+}
+
+.admindesktop{
+  display: block !important;
+}
+
 .backfulfill{
     background-color: #4caf4f;
     color: white;
@@ -3733,6 +3741,12 @@ margin-top:0px;
 }
 
 @media (max-width: 767px){
+.adminmobile{
+  display: block !important;
+}
+.admindesktop{
+  display: none !important;
+}
 .myteamcard{
   font-size: 50pt !important;
 }
