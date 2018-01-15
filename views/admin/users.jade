@@ -71,7 +71,7 @@ block content
                       td(class="wrapped desktabonly tduser" data-title="Name") #{ob[prop].name}
                       td(class="desktabonly tduser" data-title="Surname") #{ob[prop].surname}
                       td(class="wrapped tduser selectlab"+prop data-title="Lab" data-search="")
-                        form(action="/transferusertolab" method="post" id="transform")
+                        form(action="/admin/transferusertolab" method="post" id="transform")
                           select(name="labnameedit" type="text" id="labnameedit" class="form-control labnameedit" style="border-color:#3d9dcb;/*margin-bottom:10px*/" placeholder="Lab")
                             option(value"selectlabnameedit")="Select a Lab"
                             - if(labs != undefined)
@@ -101,7 +101,7 @@ block content
                       td(class="desktabonly tduser" data-title="Email") #{ob[prop].email}
                       - if(isadmin != 2)
                         td(class="tduser" data-title="Admin")
-                          form(action="/isadmin" method="post")
+                          form(action="/admin/isadmin" method="post")
                             div(style="" class="checkboxThree1")
                               input(style="position:absolute;left: -9999px;" type="checkbox" id="isadmin"+isadmininput name="isadmin" value="isadmin" class="isadmin" checked=(checkedstradmin===true ? "checked" : undefined))
                               label(for="isadmin"+isadmininput class="labelcheck1 shadow")
@@ -114,7 +114,7 @@ block content
                         td(class="tduser" data-title="Super Admin")
                           span!= "&nbsp;"
                       td(data-title="Disable" class="tduser")
-                        form(action="/disable" method="post")
+                        form(action="/admin/disable" method="post")
                           div(style="" class="checkboxThree1")
                             input(style="position:absolute;left: -9999px;" id="cancel"+disableinput type="checkbox" name="cancel" value="cancel" class="cancel" checked=(checkedstr===true ? "checked" : undefined))
                             label(for="cancel"+disableinput class="labelcheck1 shadow")

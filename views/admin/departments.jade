@@ -61,7 +61,7 @@ block content
 							select(name="deptorph"+prop type="text" style="margin-right: 15px;" id="deptorph"+prop class="depsorph animated slideInDown")
 								option(value=department selected="selected" style="font-weight:bold")!= department
 							span(class="fa fa-trash deletedept deptvoidtrash" style="")
-								form(action="/deletedept" method="post")
+								form(action="/admin/deletedept" method="post")
 									input(type="hidden" value=department name="department")
 							//div(class="depsorph" style="background-color: #ad9876;")!= department
 
@@ -112,7 +112,7 @@ block content
 						$(window).scrollTop($('#createDept').offset().top - 100).scrollLeft($('#createDept').offset().left);
 
 				div(id="ctl00_Div2" class="results resultsshadow borderradius")
-					form(action="/createdepartment" method="post")
+					form(action="/admin/createdepartment" method="post")
 						div(class="textentry")
 							label(style="width: 100%;")!="<span class='labColor'> Name </span>"
 							input(name="department" type="text" id="department" class="form-control placeholderColor" placeholder="Department name" style="")
@@ -141,7 +141,7 @@ block content
 						$('#editLab').hide();
 						});
 				div(id="ctl00_Div2" class="results resultsshadow borderradius")
-					form(action="/createlab" method="post")
+					form(action="/admin/createlab" method="post")
 						div(class="textentry")
 						label(style="width: 100%;")!="<span class='labColor'> Name </span>"
 						input(name="labname" type="text" id="labname" class="form-control placeholderColor" placeholder="Lab name" style="/*background-color:rgba(61, 157, 203, 0.7);color:white*/")
@@ -192,7 +192,7 @@ block content
 						$('#editLab').show();
 						});
 				div(id="ctl00_Div2" class="results resultsshadow borderradius")
-					form(action="/editlab" method="post")
+					form(action="/admin/editlab" method="post")
 						div(class="textentry")
 						label(style="width: 100%;")!="<span class='labColor'> Name </span>"
 						select(name="labnameedit" type="text" id="labnameedit" class="form-control" style="border-color:#3d9dcb;margin-bottom: 20px;" placeholder="Department")
@@ -258,7 +258,7 @@ block content
 						//nochange = 1;
 						});
 				div(id="ctl00_Div2" class="results resultsshadow borderradius")
-					form(action="/setvenn" method="post")
+					form(action="/admin/setvenn" method="post")
 						label(style="width: 100%;")!="<span class='labColor'>Department </span>"
 						select(name="deptlabvenn" type="text" id="deptlabvenn" class="form-control" style="border-color:#3d9dcb;margin-bottom: 20px;" placeholder="Department")
 							option(value="selectdeptvenn")="Select a Department"
@@ -612,7 +612,7 @@ block content
 								}
 								console.log("isvenns check - " + labs[prop] + " : " + check);
 								/*
-								vennbody += "<tr class='wrapped'><td>" + labs[prop] + "</td><td>" + "<form action='/setvenn' method='post'><input type='checkbox' name='addvenn' value='addvenn' class='addvenn' " + checkedstr + "/><input type='hidden' name='labnamevenn' value='" + labs[prop] + "'/><input type='hidden' name='departmentvenn' value='" + dept + "' />" + "</form></td></tr>"; 
+								vennbody += "<tr class='wrapped'><td>" + labs[prop] + "</td><td>" + "<form action='/admin/setvenn' method='post'><input type='checkbox' name='addvenn' value='addvenn' class='addvenn' " + checkedstr + "/><input type='hidden' name='labnamevenn' value='" + labs[prop] + "'/><input type='hidden' name='departmentvenn' value='" + dept + "' />" + "</form></td></tr>"; 
 								*/
 
 

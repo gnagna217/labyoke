@@ -3730,7 +3730,7 @@ totalshares = t[0].counting;
                             var labyoker = new Labyoker(username, password);
 
                             labyoker
-                                    .login(function(error, results) {
+                                    .adminlogin(function(error, results) {
                                         var done, shares, orders, dept;
 
                                         if(results != null && results.length > 0){

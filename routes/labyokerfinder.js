@@ -171,6 +171,41 @@ LabYokeTest = function(resp) {
 	this.resp = resp;
 };
 
+
+
+
+LabYokeDepartment = function(name) {
+	this.name = name
+};
+
+LabYokeUserTransfer = function(id, lab, name, surname, email) {
+	this.id = id;
+	this.lab = lab;
+	this.name = name;
+	this.surname = surname;
+	this.email = email;
+};
+
+LabYokeLab = function(name,department,admin) {
+	this.name = name;
+	this.department = department;
+	this.admin = admin;
+};
+
+LabYokeLabVenn = function(name,department,check) {
+	this.name = name;
+	this.department = department;
+	this.check = check;
+};
+
+LabYokeUsers = function(id,name,surname,email,checked) {
+	this.id = id;
+	this.name = name;
+	this.surname = surname;
+	this.email = email;
+	this.checked = checked;
+};
+
 LabYokeUploader.prototype.upload = function(callback) {
 	var results = this.jsonResults;
 	var jsonnum = results;
@@ -3634,6 +3669,967 @@ var analyze = function(matchresults, participantsResults) {
 	}
 }
 
+
+
+LabYokeGlobal.prototype.getUsers = function(callback) {
+	var results;
+	var query = client.query("SELECT * FROM vm2016_users");
+	query.on("row", function(row, result) {
+		result.addRow(row);
+	});
+	query.on("end", function(result) {
+		results = result.rows;
+		console.log("get all users: " + results);
+		callback(null, results);
+	});
+};
+
+LabyokerLab.prototype.getLabUsers = function(callback) {
+		var lab = this.lab;
+		console.log("starting getLabUsers: " + lab);
+		var query4 = client.query("select * from vm2016_users where lab='" + lab + "'");
+		query4.on("row", function(row, result4) {
+			result4.addRow(row);
+		});
+		query4.on("end", function(result4) {
+			console.log("returning getLabUsers: " + lab);
+			callback(null,result4.rows);
+		});
+};
+
+LabYokeGlobal.prototype.finddepartments = function(callback) {
+	var resultsLogin = [];
+	var query = client.query("SELECT * from departments where status isnull");
+	var labadmins = [];
+	var orphandepts = [];
+	query.on("row", function(row, result) {
+		result.addRow(row);
+	});
+	query.on("end", function(result) {
+
+		var query1 = client.query("select * from departments where departmentname not in (select department from labs) and status isnull");
+		query1.on("row", function(row, result1) {
+			result1.addRow(row);
+			orphandepts = result1.rows; 
+		});
+		query1.on("end", function(result1) {
+
+
+		var query2 = client.query("SELECT a.email from vm2016_users a where (a.admin = 1 or a.admin = 2) and a.email not in (select admin from labs)");
+		query2.on("row", function(row, result2) {
+			result2.addRow(row);
+			labadmins = result2.rows; 
+		});
+		query2.on("end", function(result2) {
+
+			var query3 = client.query("select department,labname,isvenn, disable, admin from labs order by department");
+		query3.on("row", function(row, result3) {
+			result3.addRow(row);
+		});
+		query3.on("end", function(result3) {
+			var venndata = result3.rows;
+			//var userdata;
+			var users = []; 
+			var depts = [];
+			var labs = []; 
+			var admins = []; 
+			var getlabs = [];
+			var getadmins = [];
+			//var getadmins = [];
+			var venns = [];
+			var disabled = [];
+			var vennportion = {departments:[], labs:[], users:[], isvenn:[], isdisabled:[], admins:[]	}
+			var deptlabs = [];
+			var userslabs = [];
+			var deptlabadmins = [];
+			var vennlabs = [];
+			var disabledlabs = [];
+			for(var prop in venndata){
+				var lab = venndata[prop].labname;
+				console.log("lab here: " + lab);
+				
+				var labyokerLab = new LabyokerLab(lab);
+
+var userdata = new Promise(
+    function (resolve, reject) {
+        //if (isMomHappy) {
+        var lab0 = lab
+		console.log("starting getLabUsers: " + lab0);
+		var query4 = client.query("select * from vm2016_users where lab='" + lab0 + "'");
+		query4.on("row", function(row, result4) {
+			result4.addRow(row);
+		});
+		query4.on("end", function(result4) {
+			console.log("returning getLabUsers: " + lab0);
+			resolve(result4.rows);
+		});
+    }
+);
+
+var emptyuser = new Promise(
+    function (resolve, reject) {
+			resolve("");
+    }
+);
+
+console.log("userdata: " + userdata);
+
+		/*userdata = new Promise(labyokerLab.getLabUsers(function(error, users0) {
+
+console.log("userdata: " + this.lab + " - " + users0.email + " - " + users0.name);
+		});
+*/
+
+
+				var dept = venndata[prop].department;
+				
+				var labadmin = venndata[prop].admin;
+				getlabs.push(lab);
+				getadmins.push(labadmin);
+				//getadmins.push(labadmin);
+				var isvenn = venndata[prop].isvenn;
+				var dis = venndata[prop].disable;
+				if(dis == null){
+					dis = "0";
+				}
+				var isdisabled = dis;
+				//if(depts.indexOf(dept) == -1){
+				if(prop == 0){
+					depts.push(dept);
+				}
+				
+				console.log("HERE depts: " + JSON.stringify(depts));
+				console.log("HERE dept: " + venndata.length);
+				console.log("HERE venndata.length : " + venndata.length);
+				if(depts.indexOf(dept) == -1 || prop == (venndata.length - 1)){
+					console.log("push dept.");
+					depts.push(dept);
+					labs.push(deptlabs);
+					admins.push(deptlabadmins);
+					venns.push(vennlabs);
+					disabled.push(disabledlabs);
+					users.push(userslabs);
+					console.log("labs: " + JSON.stringify(labs));
+					console.log("venns: " + JSON.stringify(venns));
+					console.log("users: " + JSON.stringify(users));
+					deptlabs = [];
+					vennlabs = [];
+					disabledlabs = [];
+					deptlabadmins = [];
+					userslabs = [];
+				} //else {
+					//users.push(emptyuser);
+				//}
+				deptlabs.push(lab);
+				userslabs.push(userdata);
+				deptlabadmins.push(labadmin);
+				vennlabs.push(isvenn);
+				disabledlabs.push(isdisabled);
+
+				console.log("prop: " + prop);
+				console.log("deptlabadmins: " + JSON.stringify(deptlabadmins));
+				console.log("deptlabs: " + JSON.stringify(deptlabs));
+				console.log("vennlabs: " + JSON.stringify(vennlabs));
+				console.log("disabledlabs: " + JSON.stringify(disabledlabs));
+				console.log("labdadmins: " + JSON.stringify(labadmins));
+
+				console.log("userslabs: " + userslabs);
+				//console.log("getadmins: " + JSON.stringify(getadmins));
+			}
+
+			labs.push(deptlabs);
+			venns.push(vennlabs);
+			disabled.push(disabledlabs);
+			admins.push(deptlabadmins);
+			users.push(userslabs);
+
+			console.log("users: " + users);
+
+			vennportion.departments = depts;
+			vennportion.labs = labs;
+			vennportion.isvenn = venns;
+			vennportion.isdisabled = disabled;
+			vennportion.admins = admins;
+			vennportion.users = users;
+
+			console.log("vennportion: " + JSON.stringify(vennportion));
+			console.log("vennportion raw: " + vennportion);
+
+			resultsLogin.push(result.rows);
+			console.log("get departments: " + resultsLogin[0].length);
+			resultsLogin.push(result2.rows);
+			console.log("get users: " + resultsLogin[1].length);
+			resultsLogin.push(vennportion);
+			resultsLogin.push(getlabs);
+			resultsLogin.push(labadmins);
+			resultsLogin.push(getadmins);
+			resultsLogin.push(orphandepts);
+			//resultsLogin.push(getadmins);
+			console.log("getadmins: " + JSON.stringify(getadmins));
+			console.log("vennportion: " + JSON.stringify(vennportion));
+			console.log("getlabs: " + JSON.stringify(getlabs));
+			console.log("orphandepts: " + JSON.stringify(orphandepts));
+			callback(null, resultsLogin);
+			});
+		});
+	});
+});
+};
+
+LabYokeLab.prototype.createlab = function(callback) {
+	var resultsLogin = [];
+	var labname = this.name;
+	var labadmin = this.admin;
+	var labdept = this.department;
+	var stopproc = 0;
+	var stopmessage = "";
+
+	console.log("admin is: -" + labadmin+"-");
+	console.log("dept is: -" + labdept+"-");
+	console.log("equals? : " + (labdept == "Select a Department"));
+
+	if(labdept == "Select a Department"){
+		console.log("bad dept");
+		stopproc = 1;
+		stopmessage = "We cannot process your request. Please select a valid department from the dropdown.";
+	} else if(labadmin == "Select an Administrator"){
+		console.log("bad admin");
+		stopproc = 1;
+		stopmessage = "We cannot process your request. Please select a valid administrator from the dropdown.";
+	}	
+	console.log("stopproc: " + stopproc);
+	if(stopproc == 0){
+		var query = client.query("select * from labs where lower(labname) = '" + labname.toLowerCase() + "'");
+		query.on("row", function(row, result) {
+			result.addRow(row);
+		});
+		query.on("end", function(result) {
+			console.log("select labs: " + result.rows.length);
+			if(result.rows.length == 0){
+				var query2 = client.query("INSERT INTO labs (labname,admin,department,isvenn, disable) VALUES ('" + labname + "','" + labadmin + "','" + labdept + "', 0, 0)");
+
+				query2.on("row", function(row, result2) {
+					console.log("inserted new lab.");
+					result2.addRow(row);
+				});
+				query2.on("end", function(result2) {
+					var l = labname.toLowerCase().replace(/ /g,"");
+					console.log("labname before create: " + l);
+					var createlaborders = "create table " + l + "_orders(agent text not null, vendor text not null, catalognumber text not null,email text,requestoremail text,date date,status text,lab text,insufficient integer,insuffdate date,quantity integer,id serial primary key)";
+					var query3 = client.query(createlaborders);
+
+					query3.on("row", function(row, result3) {
+						result3.addRow(row);
+					});
+					query3.on("end", function(result3) {
+
+						resultsLogin.push("success");
+						resultsLogin.push("Your new lab <b>" + labname + "</b> has been successfully added.");
+						console.log("successful");
+						callback(null, resultsLogin);
+						});
+					query3.on("error", function(err) {
+						console.log("error");
+						resultsLogin.push("error");
+						resultsLogin.push("Your new <b>" + labname + "</b>'s orders table cannot be added due to: " + err);
+						callback(null, resultsLogin);
+					});
+				});
+				query2.on("error", function(err) {
+					console.log("error");
+					resultsLogin.push("error");
+					resultsLogin.push("Your new lab <b>" + labname + "</b> cannot be added due to: " + err);
+					callback(null, resultsLogin);
+				});
+			} else {
+				console.log("error");
+				resultsLogin.push("error");
+				resultsLogin.push("There is already a lab by the name of <b>" + labname + "</b>. Please enter another department name.");
+				callback(null, resultsLogin);
+			}
+		});
+	} else {
+		resultsLogin.push("error");
+		resultsLogin.push(stopmessage);
+		callback(null, resultsLogin);
+	}
+};
+
+LabYokeLab.prototype.editlab = function(callback) {
+	var resultsLogin = [];
+	var labname = this.name;
+	var labadmin = this.admin;
+	var labdept = this.department;
+	var stopproc = 0;
+	var stopmessage = "We cannot process your request. Please select a department or admin.";
+	var where = "where";
+	var where0 = "where";
+	var searchtag = "";
+	var set = "";
+	var cont = 1;
+	var samedept = 0;
+
+	console.log("lab is: " + labname + "");
+	console.log("admin is: " + labadmin + "");
+	console.log("dept is: " + labdept + "");
+	console.log("equals? : " + (labdept == "Select a Department"));
+
+	if(labname == "Select a Lab"){
+		console.log("bad lab");
+		labdept = null;
+		stopproc = 1;
+		stopmessage = "We cannot process your request. Please select a valid lab from the dropdown.";
+	} else {
+		//where0 += " labname = '" + labname + "'";
+	}
+	if(labdept == "Select a Department"){
+		console.log("bad dept");
+		labdept = null;
+		//stopproc = 1;
+		//stopmessage = "We cannot process your request. Please select a valid department from the dropdown.";
+	} else {
+		searchtag += "department <b>" + labdept + "</b>";
+		where += " department = '" + labdept + "'";
+		where0 += " and department = '" + labdept + "'";
+		set += " department='" + labdept + "'";
+		cont = 0;
+	}
+	if(labadmin == "Select an Administrator"){
+		console.log("bad admin");
+		labadmin = null;
+		stopproc = 1;
+		stopmessage = "We cannot process your request. Please select a valid administrator from the dropdown.";
+	} else {
+		if(where != "where"){
+			where += " or ";
+			searchtag += " and/or ";
+			set += ",";
+		}
+		where += " admin='" + labadmin + "'";
+		searchtag += "admin <b>" + labadmin + "</b>";
+		set += " admin='" + labadmin + "'";
+		cont = 0;
+	}
+	console.log("stopproc: " + stopproc);
+	console.log("where: " + where);
+	if(stopproc == 0 && cont == 0){
+		/*var query3 = client.query("select * from labs " + where0);
+		query3.on("row", function(row, result3) {
+			result3.addRow(row);
+		});
+		query3.on("end", function(result3) {
+			
+			console.log("select labs: " + result3.rows.length);
+			if(result3.rows.length == 1){
+				samedept = 1;
+			}
+		*/
+		var query = client.query("select * from labs " + where);
+		query.on("row", function(row, result) {
+			result.addRow(row);
+		});
+		query.on("end", function(result) {
+			console.log("select labs: " + result.rows.length);
+			var a = result.rows;
+			var findadmin = 0;
+			var finddept = 0;
+			var adminExists = 0;
+				console.log("lab field: " + labname);
+				console.log("admin field: " + labadmin);
+				console.log("dept field: " + labdept);
+			for(prop in a){
+				/*if(labdept == a[prop].department){
+					finddept = 1;
+					searchtag = "department <b>" + labdept + "</b>";
+				}*/
+				console.log("dept: " + a[prop].department);
+				console.log("labname: " + a[prop].labname);
+				console.log("admin: " + a[prop].admin);
+
+				if(labname == a[prop].labname && labdept == a[prop].department){
+					console.log("same dept and lab!!!");
+					findadmin = 0;
+					//searchtag = "admin <b>" + labadmin + "</b>";
+				}
+				if(labadmin == a[prop].admin && labname == a[prop].labname){
+					console.log("same admin and lab!!!");
+					findadmin = 0;
+					//searchtag = "admin <b>" + labadmin + "</b>";
+				}
+				if(labadmin == a[prop].admin && labname != a[prop].labname){
+					adminExists = 1;
+					console.log("admin exists in different lab!!!");
+					findadmin = 1;
+					searchtag = "admin <b>" + labadmin + "</b>";
+				}
+			}
+			console.log("find dept: " + finddept);
+			console.log("find admin: " + findadmin);
+			if(result.rows.length == 0 || (/*samedept == 1 &&*/ findadmin == 0 && adminExists == 0 /* && finddept == 0*/)){
+				var query2 = client.query("UPDATE labs set " + set + " where labname='" + labname + "'");
+
+				query2.on("row", function(row, result2) {
+					result2.addRow(row);
+				});
+				query2.on("end", function(result2) {
+					resultsLogin.push("success");
+					resultsLogin.push("Your lab <b>" + labname + "</b> has been successfully updated.");
+					console.log("successful");
+					callback(null, resultsLogin);
+				});
+				query2.on("error", function(err) {
+					console.log("error");
+					resultsLogin.push("error");
+					resultsLogin.push("Your lab <b>" + labname + "</b> cannot be updated due to: " + err);
+					callback(null, resultsLogin);
+				});
+			} else {
+				console.log("error");
+				resultsLogin.push("error");
+				resultsLogin.push("There is already a lab with the " + searchtag + ".");
+				callback(null, resultsLogin);
+			}
+
+		});
+		query.on("error", function(err) {
+			console.log("error");
+			resultsLogin.push("error");
+			resultsLogin.push("Your lab <b>" + labname + "</b> cannot be updated due to: " + err + ".");
+			callback(null, resultsLogin);
+		});
+		/*});*/
+	} else {
+		resultsLogin.push("error");
+		resultsLogin.push(stopmessage);
+		callback(null, resultsLogin);
+	}
+};
+
+LabYokeLab.prototype.setadmin = function(callback) {
+	var resultsLogin = [];
+	var labname = this.name;
+	var labadmin = this.admin;
+	var labdept = this.department;
+
+
+	console.log("lab is: " + labname + "");
+	console.log("admin is: " + labadmin + "");
+	console.log("dept is: " + labdept + "");
+	console.log("equals? : " + (labdept == "Select a Department"));
+
+				var query2 = client.query("UPDATE labs set admin='" + labadmin + "' where labname='" + labname + "' and department='" + labdept + "'");
+
+				query2.on("row", function(row, result2) {
+					result2.addRow(row);
+				});
+				query2.on("end", function(result2) {
+					resultsLogin.push("success");
+					resultsLogin.push("The lab <b>" + labname + "</b> in the <b>" + labdept + "</b> department has been successfully updated with a new administrator: <i><b>" + labadmin + "</b></i>.");
+					console.log("successful");
+					callback(null, resultsLogin);
+				});
+				query2.on("error", function(err) {
+					console.log("error");
+					resultsLogin.push("error");
+					resultsLogin.push("Your lab <b>" + labname + "</b> administrator in the <b>" + labdept + "</b> department cannot be updated due to: " + err);
+					callback(null, resultsLogin);
+				});
+};
+
+LabYokeDepartment.prototype.createdepartment = function(callback) {
+	var resultsLogin = [];
+	var departmentname = this.name;
+	var query = client.query("select * from departments where lower(departmentname) = '" + departmentname.toLowerCase() + "'");
+
+	query.on("row", function(row, result) {
+		result.addRow(row);
+	});
+	query.on("end", function(result) {
+		console.log("select depts: " + result.rows.length);
+		if(result.rows.length == 0){
+			var query2 = client.query("INSERT INTO departments (departmentname) VALUES ('" + departmentname + "')");
+
+			query2.on("row", function(row, result2) {
+				result2.addRow(row);
+			});
+			query2.on("end", function(result2) {
+				resultsLogin.push("success");
+				resultsLogin.push("Your new department <b>" + departmentname + "</b> has been successfully added.");
+				console.log("successful");
+				callback(null, resultsLogin);
+			});
+			query2.on("error", function(err) {
+				console.log("error");
+				resultsLogin.push("error");
+				resultsLogin.push("Your new department <b>" + departmentname + "</b> cannot be added due to: " + err);
+				callback(null, resultsLogin);
+			});
+		} else {
+			console.log("error");
+			resultsLogin.push("error");
+			resultsLogin.push("There is already a department by the name of <b>" + departmentname + "</b>. Please enter another department name.");
+			callback(null, resultsLogin);
+		}
+	});
+};
+
+
+LabYokeLabVenn.prototype.setvenn = function(callback) {
+	var resultsLogin = [];
+	var labname = this.name;
+	var check = this.check;
+	var labdept = this.department;
+	var VEN_LIMIT = 6;
+	var stopmessage = "";
+
+	console.log("check is: " + check);
+	console.log("dept is: " + labdept);
+	console.log("labname : " + labname);
+
+	/*if(labdept == "Select a Department"){
+		console.log("bad dept");
+		stopproc = 1;
+		stopmessage = "We cannot process your request. Please select a valid department from the dropdown.";
+	} else if(labadmin == "Select an Administrator"){
+		console.log("bad admin");
+		stopproc = 1;
+		stopmessage = "We cannot process your request. Please select a valid administrator from the dropdown.";
+	}	
+	console.log("stopproc: " + stopproc);
+
+	if(stopproc == 0){*/
+		var query = client.query("select count(*) as co from labs where department = '" + labdept + "' and isvenn=1");
+		query.on("row", function(row, result) {
+			result.addRow(row);
+		});
+		query.on("end", function(result) {
+			var count = result.rows;
+			console.log("counting venns: " + JSON.stringify(count[0]));
+			var c = parseInt(count[0].co,10);
+			console.log("counting venns2: " + c);
+			if((c < VEN_LIMIT && check == 1) || (check == 0)){
+				var query2 = client.query("UPDATE labs set isvenn=" + check + " where labname='" + labname + "' and department = '" + labdept + "'");
+
+				query2.on("row", function(row, result2) {
+					result2.addRow(row);
+				});
+				query2.on("end", function(result2) {
+					resultsLogin.push("success");
+					if(check == 1){
+						resultsLogin.push("You have successfully added <b>" + labname + "</b> to the <b>" + labdept + "</b> Venn diagram.");
+					} else {
+						resultsLogin.push("You have successfully removed <b>" + labname + "</b> from the <b>" + labdept + "</b> Venn diagram.");
+					}
+					console.log("successful");
+					callback(null, resultsLogin);
+				});
+				query2.on("error", function(err) {
+					console.log("error");
+					resultsLogin.push("error");
+					resultsLogin.push("We were unable to set the Venn setting due to: " + err);
+					callback(null, resultsLogin);
+				});
+			} else {
+				console.log("error");
+				resultsLogin.push("error");
+				resultsLogin.push("There are already "+VEN_LIMIT+" labs selected for <b>" + labdept + "</b>. Please unselect one of the labs first then try again.");
+				callback(null, resultsLogin);
+			}
+		});
+	/*} else {
+		resultsLogin.push("error");
+		resultsLogin.push(stopmessage);
+		callback(null, resultsLogin);
+	}*/
+};
+
+LabYokeLabVenn.prototype.setdisable = function(callback) {
+	var resultsLogin = [];
+	var labname = this.name;
+	var check = this.check;
+	var labdept = this.department;
+	var VEN_LIMIT = 0;
+	var stopmessage = "";
+
+	console.log("check is: " + check);
+	console.log("dept is: " + labdept);
+	console.log("labname : " + labname);
+
+	/*if(labdept == "Select a Department"){
+		console.log("bad dept");
+		stopproc = 1;
+		stopmessage = "We cannot process your request. Please select a valid department from the dropdown.";
+	} else if(labadmin == "Select an Administrator"){
+		console.log("bad admin");
+		stopproc = 1;
+		stopmessage = "We cannot process your request. Please select a valid administrator from the dropdown.";
+	}	
+	console.log("stopproc: " + stopproc);
+
+	if(stopproc == 0){*/
+		var query = client.query("select count(*) as co from vm2016_users where lab = '" + labname + "' and disable is null or disable = 0");
+		query.on("row", function(row, result) {
+			result.addRow(row);
+		});
+		query.on("end", function(result) {
+			var count = result.rows;
+			console.log("counting users in lab: " + JSON.stringify(count[0]));
+			var c = parseInt(count[0].co,10);
+			console.log("counting users: " + c);
+			if(c  == 0){
+				var query2 = client.query("UPDATE labs set disable=" + check + " where labname='" + labname + "' and department = '" + labdept + "'");
+
+				query2.on("row", function(row, result2) {
+					result2.addRow(row);
+				});
+				query2.on("end", function(result2) {
+					resultsLogin.push("success");
+					if(check == 1){
+						resultsLogin.push("You have successfully disabled <b>" + labname + "</b> in <b>" + labdept + "</b>.");
+					} else {
+						resultsLogin.push("You have successfully re-enabled <b>" + labname + "</b> in <b>" + labdept + "</b>.");
+					}
+					console.log("successful");
+					callback(null, resultsLogin);
+				});
+				query2.on("error", function(err) {
+					console.log("error");
+					resultsLogin.push("error");
+					resultsLogin.push("We were unable to set the Disable setting due to: " + err);
+					callback(null, resultsLogin);
+				});
+			} else {
+				console.log("error");
+				resultsLogin.push("error");
+				resultsLogin.push("There are users assigned to this lab. Please do transfer them first then try again.");
+				callback(null, resultsLogin);
+			}
+		});
+	/*} else {
+		resultsLogin.push("error");
+		resultsLogin.push(stopmessage);
+		callback(null, resultsLogin);
+	}*/
+};
+
+LabYokeDepartment.prototype.voiddepartment = function(callback) {
+	var results;
+	var resultsLogin = [];
+	console.log("voiddepartment: " + this.name);
+	var dept = this.name;
+	var query = client
+			.query("UPDATE departments SET status='VOID' where departmentname='" + dept + "'");
+	query.on("row", function(row, result) {
+		result.addRow(row);
+	});
+	query.on("end", function(result) {
+		results = result.rows;
+		resultsLogin.push("success");
+		resultsLogin.push("The department <b>"+ dept + "</b> has been successfully deleted.");
+		callback(null, resultsLogin)
+	});
+};
+
+LabyokerLab.prototype.getLabsInDept = function(callback) {
+	var results;
+	var lab = this.lab;
+	var query = client
+			.query("SELECT distinct labname FROM labs where department in (select department from labs where labname='"+lab+"')");
+	query.on("row", function(row, result) {
+		result.addRow(row);
+	});
+	query.on("end", function(result) {
+		results = result.rows;
+		callback(null, results)
+	});
+};
+
+Labyoker.prototype.adminlogin = function(callback) {
+	var password = this.password;
+	var username = this.username;
+
+	var results;
+	var results2;
+	var resultsLogin = [];
+	var query = client.query("SELECT * FROM vm2016_users where id='" + username
+			+ "' and (admin=1 or admin=2)"/* and password='"+password+"'" */);
+	query.on("row", function(row, result) {
+		result.addRow(row);
+	});
+	query.on("end", function(result) {
+		results = result.rows;
+		if (results != null && results.length == 1) {
+			resultsLogin.push(results);
+			var pass = results[0].password;
+			var active = results[0].active;
+			var email = results[0].email;
+			var lab = results[0].lab;
+			var query2 = client.query("SELECT department from labs where labname='" + lab + "'");
+		query2.on("row", function(row, result2) {
+			result2.addRow(row);
+		});
+		query2.on("end", function(result2) {
+			results2 = result2.rows;
+			resultsLogin.push(results2);
+			console.log("dept is: " + results2[0].email);
+			// var hash = crypt.hashSync(pass, salt);
+			//if (active == 1) {
+				var c = crypt.compareSync(password, pass);
+				console.log("compare is: " + c);
+				if (c) {
+
+		/*var query2 = client
+				.query("SELECT count(agent) as counting from vm2016_orders where email='" + email
+			+ "' and status='new'");
+		query2.on("row", function(row, result2) {
+			result2.addRow(row);
+		});
+		query2.on("end", function(result2) {
+			//results.push(result2.rows);
+
+		var query3 = client
+				.query("SELECT count(agent) as counting from vm2016_orders where requestoremail='" + email
+			+ "' and status='new'");
+		query3.on("row", function(row, result3) {
+			result3.addRow(row);
+		});
+		query3.on("end", function(result3) {
+			//results.push(result2.rows);
+			var test3 = result3.rows;
+			var test2 = result2.rows;
+			//resultsLogin.push(results);
+			resultsLogin.push(test2[0].counting);
+			resultsLogin.push(test3[0].counting);
+			console.log("shares found: " + test2[0].counting)
+			console.log("orders found: " + test3[0].counting)*/
+			callback(null, resultsLogin)
+		/*});
+			
+		});*/
+
+					//callback(null, results);
+				} else {
+					callback(null, null);
+				}
+			/*} else {
+				var query = client
+						.query("SELECT * FROM vm2016_users where id='"
+								+ username + "'");
+				query.on("row", function(row, result) {
+					result.addRow(row);
+				});
+				query.on("end", function(result) {
+					callback(null, result.rows);
+				});
+			}*/
+			});
+		} else {
+			callback(null, null);
+		}
+		
+	});
+};
+
+LabYokeUserTransfer.prototype.transfer = function(callback) {
+	var id = this.id;
+	var lab = this.lab;
+	var name = this.name;
+	var surname = this.surname;
+	var email = this.email;
+
+	console.log("id: " + id);
+	console.log("lab: " + lab);
+
+	var results = "fail";
+
+	var str = "UPDATE vm2016_users SET lab='" + lab
+			+ "' where id='" + id + "'";
+	console.log("str: " + str);
+	var query = client.query(str);
+	query.on("row", function(row, result) {
+		result.addRow(row);
+	});
+	query.on("end", function(result) {
+		results = "success";
+			var subject = "LabYoke Account - Lab Transfer ";
+			var body = "<div style='text-align:center'><img style='width: 141px; margin: 0 20px;' src='https:\/\/team-labyoke.herokuapp.com\/images\/yoke4.png', alt='The Yoke',  title='Yoke', class='yokelogo'/></div><div style=\"font-family:'calibri'; font-size:11pt;padding: 20px;float:left\">Hello " + name + " " + surname + ",<br/><br/>";
+			body += "You have just been transferred to another lab - <b>" + lab + "</b> - by an admin per request. Please contact your Lab Administrator for further details.<br>";
+			body += "<p>Best regards,";
+			body += "</p><b><i>The LabYoke Team.</i></b></div>";
+			console.log("transferred body: " + body);
+		
+			var mailOptions = new MailOptions(email, subject, body);
+			mailOptions.sendAllEmails();
+
+		callback(null, results);
+	});
+};
+
+LabYokeUsers.prototype.disableUser = function(callback) {
+	var id = this.id;
+	var name = this.name;
+	var surname = this.surname;
+	var checked = this.checked;
+	var email = this.email;
+
+	console.log("id: " + id);
+	console.log("surname: " + surname);
+	console.log("name: " + name);
+	var results;
+	var orderonly = "";
+
+
+	var str = "UPDATE vm2016_users SET disable=" + checked
+			+ " where id='" + id + "'";
+	console.log("str: " + str);
+	var query = client.query(str);
+	query.on("row", function(row, result) {
+		result.addRow(row);
+	});
+	query.on("end", function(result) {
+		results = "success";
+			var subject = "LabYoke Account - Disabled ";
+			var body = "<div style='text-align:center'><img style='width: 141px; margin: 0 20px;' src='https:\/\/team-labyoke.herokuapp.com\/images\/yoke4.png', alt='The Yoke',  title='Yoke', class='yokelogo'/></div><div style=\"font-family:'calibri'; font-size:11pt;padding: 20px;float:left\">Hello " + name + " " + surname + ",<br/><br/>";
+
+		if(checked == 0){
+			body += "Unfortunately your user has been disabled by an admin per request. Please contact your Lab Administrator for further details.<br>";
+			body += "<p>Best regards,";
+			body += "</p><b><i>The LabYoke Team.</i></b></div>";
+			console.log("disable body: " + body);
+		}
+		if(checked == 1){
+			subject = "LabYoke Account - Re-Activated ";
+			body += "Success your user has been reactivated by an admin per request. Please contact your Lab Administrator for further details.<br>";
+			body += "<p>Best regards,";
+			body += "</p><b><i>The LabYoke Team.</i></b></div>";
+			console.log("enable body: " + body);
+
+		}
+			var mailOptions = new MailOptions(email, subject, body);
+			mailOptions.sendAllEmails();
+
+		callback(null, results);
+	});
+//callback(null, results);
+};
+
+LabYokeUsers.prototype.makeadminUser = function(callback) {
+	var id = this.id;
+	var name = this.name;
+	var surname = this.surname;
+	var checked = this.checked;
+	var email = this.email;
+	var resultsadmin;
+
+	console.log("id: " + id);
+	console.log("surname: " + surname);
+	console.log("name: " + name);
+	console.log("checked: " + checked);
+	var results;
+	var orderonly = "";
+
+	var query2 = client.query("Select * from labs where admin='" + email + "'");
+	query2.on("row", function(row, result2) {
+		result2.addRow(row);
+	});
+	query2.on("end", function(result2) {
+		resultsadmin = result2.rows;
+		console.log("resultsadmin " + resultsadmin.length);
+		if(resultsadmin.length == 0){
+			var str = "UPDATE vm2016_users SET admin=" + checked
+					+ " where id='" + id + "'";
+			console.log("str: " + str);
+			var query = client.query(str);
+			query.on("row", function(row, result) {
+				result.addRow(row);
+			});
+			query.on("end", function(result) {
+				results = "success";
+					var subject = "LabYoke Account - Admin de-activated ";
+					var body = "<div style='text-align:center'><img style='width: 141px; margin: 0 20px;' src='https:\/\/team-labyoke.herokuapp.com\/images\/yoke4.png', alt='The Yoke',  title='Yoke', class='yokelogo'/></div><div style=\"font-family:'calibri'; font-size:11pt;padding: 20px;float:left\">Hello " + name + " " + surname + ",<br/><br/>";
+
+				if(checked == 0){
+					body += "Unfortunately your status has been downgraded to <b>regular</b> by an admin per request. Please contact your Lab Administrator for further details.<br>";
+					body += "<p>Best regards,";
+					body += "</p><b><i>The LabYoke Team.</i></b></div>";
+					console.log("disable body: " + body);
+				}
+				if(checked == 1){
+					subject = "LabYoke Account - Admin activated ";
+					body += "Success your status has been upgraded to <b>admin</b> per request. Please contact your Lab Administrator for further details.<br>";
+					body += "<p>Best regards,";
+					body += "</p><b><i>The LabYoke Team.</i></b></div>";
+					console.log("enable body: " + body);
+
+				}
+					var mailOptions = new MailOptions(email, subject, body);
+					mailOptions.sendAllEmails();
+
+				callback(null, results);
+			});
+		} else {
+			callback(null, "error1");
+		}
+	});
+	query2.on("error", function(result2) {
+		callback(null, "error2");
+	});
+};
+
+
+
+LabYokerChangeShare.prototype.admincancelShare = function(callback) {
+	var agent = this.agent;
+	var vendor = this.vendor;
+	var catalognumber = this.catalognumber;
+	var checked = this.checked;
+	var lab = this.lab.replace(/ /g,"").toLowerCase();
+	var table = this.table;
+	var email = this.email;
+	var datenow = this.datenow;
+	var requestor = this.requestor;
+	
+	var date = this.date;
+	console.log("date2: " + date);
+	console.log("requestor: " + requestor);
+	console.log("checked: " + checked);
+	var results;
+	var orderonly = "";
+	if(checked == "0" && requestor != undefined){
+		console.log("checking that it's insufficient: " + checked);
+		orderonly = " and requestoremail='" + requestor + "'";
+	}
+
+	var str = "UPDATE " + table + " SET insufficient=" + checked
+			+ ", insuffdate='" + datenow + "' where date between '" + date + "' and '" + date + "' and agent='" + agent + "' and vendor='" + vendor + "' and catalognumber='" + catalognumber + "'" + orderonly;
+	console.log("str: " + str);
+	var query = client.query(str);
+	query.on("row", function(row, result) {
+		result.addRow(row);
+	});
+	query.on("end", function(result) {
+		results = "success";
+
+		if(table == lab+"_orders" && checked == 0){
+			var subject = "LabYoke Order - Cancelled for " + agent;
+			var body = "<div style='text-align:center'><img style='width: 141px; margin: 0 20px;' src='https:\/\/team-labyoke.herokuapp.com\/images\/yoke4.png', alt='The Yoke',  title='Yoke', class='yokelogo'/></div><div style=\"font-family:'calibri'; font-size:11pt;padding: 20px;float:left\">Hello,<br/><br/>";
+			body += "Unfortunately your order has been cancelled due to insufficient quantities from the following inventory: <br><b>Reagent: </b> " + agent;
+			body += "<br><b>Vendor: </b> " + vendor;
+			body += "<br><b>Catalog#: </b> " + catalognumber;
+			body += "<br><b>Owner: </b> " + email;
+			body += "<p>Best regards,";
+			body += "</p><b><i>The LabYoke Team.</i></b></div>";
+			console.log("order body: " + body);
+			var mailOptions = new MailOptionsWithCC(requestor, subject, body, email);
+			mailOptions.sendAllEmails();
+		}
+
+		callback(null, results);
+	});
+//callback(null, results);
+};
+
+
 exports.Labyoker = Labyoker;
 exports.LabyokerUserDetails = LabyokerUserDetails;
 exports.LabYokeReporterOrders = LabYokeReporterOrders;
@@ -3656,3 +4652,8 @@ exports.LabyokerLab = LabyokerLab;
 exports.LabYokeGlobal = LabYokeGlobal;
 exports.LabYokeBotOrder = LabYokeBotOrder;
 exports.LabYokeTest = LabYokeTest;
+exports.LabYokeDepartment = LabYokeDepartment;
+exports.LabYokeLab = LabYokeLab;
+exports.LabYokeLabVenn = LabYokeLabVenn;
+exports.LabYokeUsers = LabYokeUsers;
+exports.LabYokeUserTransfer = LabYokeUserTransfer;
