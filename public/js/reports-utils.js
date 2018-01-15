@@ -51,10 +51,10 @@ $(window).resize(function() {
 });
 
 $(document).ready(function() {
-$('.restrictreport').show();
+
 	    if (!$('#reportMoney').is(':visible') || !$('#reportInsuff').is(':visible') || !$('#reportOrders').is(':visible') || !$('#reportShares').is(':visible') ) {
             console.log("report visible");
-            
+
             if ($(window).width() > 900) {
                 $(".labelexpandmood").css("top", "-44px");
             }
@@ -123,7 +123,7 @@ $('.restrictreport').show();
      */
 
     $(".labelexpand").click(function() {
-
+$('.restrictreport').show();
         recenter = 1;
 
         if ($('#reportMoney').is(':visible')) {
@@ -181,6 +181,7 @@ $('.restrictreport').show();
 
     //$( ".labelexpandedit" ).on("click touchend", function(e) {
     $(".labelexpandedit").click(function() {
+        $('.restrictreport').show();
         recenter = 1;
 
         if ($('#reportOrders').is(':visible')) {
@@ -236,6 +237,7 @@ $('.restrictreport').show();
 
     //$( ".labelexpandadd" ).on("click touchend", function(e) {
     $(".labelexpandadd").click(function() {
+        $('.restrictreport').show();
         recenter = 1;
 
         if ($('#reportShares').is(':visible')) {
@@ -290,6 +292,7 @@ $('.restrictreport').show();
 
     //$( ".labelexpandrules" ).on("click touchend", function(e) {
     $(".labelexpandrules").click(function() {
+        $('.restrictreport').show();
         recenter = 1;
 
         if ($('#reportInsuff').is(':visible')) {
