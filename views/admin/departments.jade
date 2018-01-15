@@ -1,0 +1,1010 @@
+extends layout
+
+block content
+	script.
+		var nochange = 0;
+	div(id="ios-light")
+		center
+			h1="Add."
+			p(id="addVennText")
+			div
+				div(id="actionorderVenn" class="exit" style="width: 50%; float: left; background-color: rgba(138, 109, 59, 0.55);")="OK"
+				div(class="exit" id="actioncancelVenn")="Cancel"
+	div(id="ios-lightdis")
+		center
+			h1="Disable."
+			p(id="disablelabText")
+			div
+				div(id="actionorderDisable" class="exit" style="width: 50%; float: left; background-color: rgba(138, 109, 59, 0.55);")="OK"
+				div(class="exit" id="actioncancelDisable")="Cancel"
+	div(class="shade" id="shade")
+	div(class="shade-light" id="shade-light")
+	div(class="container login2 marginbottom margintop container2 /*moveFromLeft*/")
+		h1
+			span(class="fa fa-building lightyokecolor")
+			span!= ' Labs & Deps '
+			span(class="fa fa-caret-right lightyokecolor animated fadeIn" style="font-size: 20pt;")		
+		p!="You can <span style='font-weight: bold;''>create</span> a new department and lab. As well as <span style='font-weight: bold;''>set</span> some useful settings for labs."
+
+		div(style="width: 100%;margin-bottom: 40px;margin-top: 40px;")
+			div(class="editstart animated zoomIn", style="")
+				select(name="createSelect" type="text" id="createSelect" class="form-control" style="" placeholder="Create...")
+					option(value="createNone" selected=(checkedstrAll===true ? "selected" : undefined) style="font-weight:bold")="Start to ..."
+					option(value="createDept" selected=(checkedstrDept===true ? "selected" : undefined))="Create Department"
+					option(value="createLab" selected=(checkedstrLab===true ? "selected" : undefined))="Create Lab"
+					option(value="vennsettings" selected=(checkedstrVenn===true ? "selected" : undefined))="Set Lab Settings"
+					option(value="editLab" selected=(checkedstrEditLab===true ? "selected" : undefined))="Transfer Lab"
+			- if(vennsettings != undefined)
+				div
+					if successmessagevoiddept != null
+						div(class="alert alert-success fade in alert-dismissable deptvoidmsg")!= successmessagevoiddept
+					if errormessagevoiddept != null
+						div(class="alert alert-danger fade in alert-dismissable")!= errormessagevoiddept
+					div(class="deptlist" style="")
+						- var test = JSON.parse(JSON.stringify(vennsettings).replace(/&quot;/g, '"'))
+						- var depts0 = test.departments
+						- var p = 0;
+						- for(var prop in depts0)
+							- var department = depts0[prop]
+							- var selname = "dept" + prop
+							select(name=selname type="text" id=selname style="margin-right: 15px;" class="deps animated bounceInDown")
+								option(value=department selected="selected" style="font-weight:bold")!= department
+								- var index = depts0.indexOf(department)
+								- if(index > -1)
+									- var labs0 = test.labs[index];	
+									- for(var prop2 in labs0)
+										option(value=labs0[prop2] pos=p department=department deptpos=prop style="font-weight:bold")!= labs0[prop2]
+										- p += 1
+
+						- for(var prop in orphandepts)
+							- var department = orphandepts[prop].departmentname
+							select(name="deptorph"+prop type="text" style="margin-right: 15px;" id="deptorph"+prop class="depsorph animated slideInDown")
+								option(value=department selected="selected" style="font-weight:bold")!= department
+							span(class="fa fa-trash deletedept deptvoidtrash" style="")
+								form(action="/deletedept" method="post")
+									input(type="hidden" value=department name="department")
+							//div(class="depsorph" style="background-color: #ad9876;")!= department
+
+
+			- var venn = vennsettings
+			- var checkedstrDept = false;
+			- if(section !=null && section.length>0 && section == "department")
+				- checkedstrDept = true
+			- var checkedstrLab = false;
+			- if(section !=null && section.length>0 && section == "lab")
+				- checkedstrLab = true
+			- var checkedstrVenn = false;
+			- if(section !=null && section.length>0 && section == "venn")
+				- checkedstrVenn = true
+			- var checkedstrEditLab = false;
+			- if(section !=null && section.length>0 && section == "editlab")
+				- checkedstrEditLab = true
+			- var checkedstrAll = false;
+			- if(section !=null && section.length>0 && section == "all")
+				- checkedstrAll = true
+			//form(action="createSelect", method="post")
+				//div(style="top: -25px; position: relative; float: right; margin-right: 10px;")
+				//	div(class="arrow-up", style="margin-bottom: 5px;")
+				//	div(class="arrow-down")
+			div(id="labdetail", style="display:none")
+				h3(style="text-align: center;")!= 'Lab'
+				p(style="text-align: center;margin: 0px 5%;")!="Here are the <b style='color:#68b3d6'>users</b> assigned to the lab. <b style='color:#95794d'>Adminsitrators</b> are highlighted."
+				div(id="labmembers")
+					//div(class="myteammember")
+					//	span(class="fa fa-vcard myteamcard" style="color:#68b3d6")
+					//	span(style="text-align: center;display: block;margin: 10px;")
+					//		a(href="mailto:" , style="cursor:pointer")!= "Gnagna Konate"
+					//div(class="myteammember")
+					//	span(class="fa fa-vcard myteamcard" style="color:#95794d")
+					//	span(style="text-align: center;display: block;margin: 10px;")
+					//		a(href="mailto:" , style="cursor:pointer")!= "Gnagna Konate"
+
+			div(id="createDept", style="display:none", class="setlab")
+				h3(style="text-align: center;")!= 'Create a new Department.'
+				p(style="text-align: center;margin: 0px 5%;")!="Add a department to the existing list."
+				if errormessagedept != null
+					div(class="alert alert-danger fade in alert-dismissable")!= errormessagedept
+					script.
+						$(window).scrollTop($('#createDept').offset().top - 100).scrollLeft($('#createDept').offset().left); 
+				if successmessagedept != null
+					div(class="alert alert-success fade in alert-dismissable")!= successmessagedept
+					script.
+						$(window).scrollTop($('#createDept').offset().top - 100).scrollLeft($('#createDept').offset().left);
+
+				div(id="ctl00_Div2" class="results resultsshadow borderradius")
+					form(action="/createdepartment" method="post")
+						div(class="textentry")
+							label(style="width: 100%;")!="<span class='labColor'> Name </span>"
+							input(name="department" type="text" id="department" class="form-control placeholderColor" placeholder="Department name" style="")
+						div(class="buttons" style="/*margin-top: 15px;*/")
+							button.btn.btn-success.btn-lg.btn-block.shadow.btn50(type='submit', style="width: 50%;margin-top: 20px;") Add
+							img(src="images/lab.png", alt="The Lab", title="Lab", style="border-width:0px; width: 50px;top: -10px;position: relative;float: right;")
+			div(id="createLab", style="display:none", class="setlab")
+				h3(style="text-align: center;")!= 'Add a new lab.'
+				p(style="text-align: center;margin: 0px 5%;")!="Each lab is assigned an administrator and department. Labs may or may not be part of the Venn Diagram. There is a maximum of 6 labs per department that can be listed in the diagram."
+				if errormessagelab != null
+					div(class="alert alert-danger fade in alert-dismissable")!= errormessagelab
+					script.
+						$(window).scrollTop($('#createLab').offset().top - 100).scrollLeft($('#createLab').offset().left);
+				if successmessagelab != null
+					div(class="alert alert-success fade in alert-dismissable")!= successmessagelab
+					script.
+						$(window).scrollTop($('#createLab').offset().top - 100).scrollLeft($('#createLab').offset().left);
+				if successmessagelab != null || errormessagelab != null
+					script.
+						$(window).scrollTop($('#createLab').offset().top - 100).scrollLeft($('#createLab').offset().left);
+						$( document ).ready(function() {
+						//$("#createLab").val("vennsettings");
+						$('#vennSettings').hide();
+						$('#createDept').hide();
+						$('#createLab').show();
+						$('#editLab').hide();
+						});
+				div(id="ctl00_Div2" class="results resultsshadow borderradius")
+					form(action="/createlab" method="post")
+						div(class="textentry")
+						label(style="width: 100%;")!="<span class='labColor'> Name </span>"
+						input(name="labname" type="text" id="labname" class="form-control placeholderColor" placeholder="Lab name" style="/*background-color:rgba(61, 157, 203, 0.7);color:white*/")
+						label(style="width: 100%;margin-top: 10px;")!="<span class='labColor'> Department </span>"
+						select(name="deptlab" type="text" id="deptlab" class="form-control" style="border-color:#3d9dcb;/*margin-bottom:10px*/" placeholder="Department")
+							option(value"selectdept")="Select a Department"
+							- if(depts != undefined)
+								- for(var prop in depts)
+									- var department = depts[prop].departmentname
+									option(value=department) #{department}
+						div(style="top: -25px; position: relative; float: right; margin-right: 10px;")
+							div(class="arrow-up", style="margin-bottom: 5px;")
+							div(class="arrow-down")
+						//label(style="width: 100%;top: -25px;position: relative;")!="<span class='labColor'> Administrator </span>"
+						//select(name="adminlab" type="text" id="adminlab" class="form-control" style="border-color:#3d9dcb;/*margin-bottom:10px;*/ top: -25px;position: relative;" placeholder="Admin")
+						//	option(value"selectdept")="Select an Administrator"
+							- //if(users != undefined)
+								- //for(var prop in users)
+									- //var user = users[prop].email
+									//option(value=user) #{user}
+						//div(style="top: -60px; position: relative; float: right; margin-right: 10px;")
+						//	div(class="arrow-up", style="margin-bottom: 5px;")
+						//	div(class="arrow-down")
+						div(class="buttons", style="/*margin-top: 15px;*/")
+							//input(type="submit" class="button" value="Get in")
+							button.btn.btn-success.btn-lg.btn-block.shadow.btn50(type='submit', style="width: 50%;margin-top: 20px;") Add
+							img(src="images/lab.png", alt="The Lab", title="Lab", style="border-width:0px; width: 50px;float: right;top: -10px;position: relative;")
+
+			div(id="editLab", style="display:none", class="setlab")
+				h3(style="text-align: center;")!= 'Transfer an existing Lab.'
+				p(style="text-align: center;margin: 0px 5%;")!="Each lab is assigned an administrator and department. Select the department and/or Administrator that the Lab should be assigned to provided they are available and have not been assigned to another lab."
+				if errormessagelabedit != null
+					div(class="alert alert-danger fade in alert-dismissable")!= errormessagelabedit
+					script.
+						$(window).scrollTop($('#editLab').offset().top - 100).scrollLeft($('#editLab').offset().left);
+				if successmessagelabedit != null
+					div(class="alert alert-success fade in alert-dismissable")!= successmessagelabedit
+					script.
+						$(window).scrollTop($('#editLab').offset().top - 100).scrollLeft($('#editLab').offset().left);
+				if errormessagelabedit != null || successmessagelabedit != null
+					script.
+						$(window).scrollTop($('#editLab').offset().top - 100).scrollLeft($('#editLab').offset().left);
+						$( document ).ready(function() {
+						//$("#createSelect").val("vennsettings");
+						$('#vennSettings').hide();
+						$('#createDept').hide();
+						$('#createLab').hide();
+						$('#editLab').show();
+						});
+				div(id="ctl00_Div2" class="results resultsshadow borderradius")
+					form(action="/editlab" method="post")
+						div(class="textentry")
+						label(style="width: 100%;")!="<span class='labColor'> Name </span>"
+						select(name="labnameedit" type="text" id="labnameedit" class="form-control" style="border-color:#3d9dcb;margin-bottom: 20px;" placeholder="Department")
+							option(value"selectlabnameedit")="Select a Lab"
+							- if(labs != undefined)
+								- for(var prop in labs)
+									- var lab = labs[prop]
+									- var admin = admins[prop]
+									option(value=lab, admin=admin) #{lab}
+						div(style="top: -45px; position: relative; float: right; margin-right: 10px;")
+							div(class="arrow-up", style="margin-bottom: 5px;")
+							div(class="arrow-down")
+						div(id="transferdept", style="display:none;margin-bottom: 10px;")
+							label(style="width: 100%;/*margin-top: 10px;top: -25px;*/position: relative;/*padding-top: 15px;*/")!="<span class='labColor'> Department </span>"
+							select(name="deptlabedit" type="text" id="deptlabedit" class="form-control" style="border-color:#3d9dcb;/*margin-bottom:10px; top: -25px;*/ position: relative;" placeholder="Department")
+								option(value"selectdeptedit")="Select a Department"
+								- if(depts != undefined)
+									- for(var prop in depts)
+										- var department = depts[prop].departmentname
+										option(value=department) #{department}
+							div(style="top: -23px;position: relative;float: right;margin-right: 10px;")
+								div(class="arrow-up", style="margin-bottom: 5px;")
+								div(class="arrow-down")
+						div(id="transferadmin", style="display:none;margin-top: 20px;")
+							label(style="width: 100%;/*top: -25px;*/position: relative;/*top: -45px;padding-top: 15px;*/")!="<span class='labColor'> Administrator </span>"
+							select(name="adminlabedit" type="text" id="adminlabedit" class="form-control" style="border-color:#3d9dcb;/*margin-bottom:10px; top: -45px;*/position: relative;" placeholder="Admin")
+								option(value"selectdadminedit")="Select an Administrator"
+								- if(users != undefined)
+									- for(var prop in users)
+										- var user = users[prop].email
+										option(value=user) #{user}
+							div(style="top: -25px; position: relative; float: right; margin-right: 10px;")
+								div(class="arrow-up", style="margin-bottom: 5px;")
+								div(class="arrow-down")
+							div(class="buttons", style="/*margin-top: 15px;*/")
+								button.btn.btn-success.btn-lg.btn-block.shadow.btn50(type='submit', style="width: 50%;margin-top: 20px;") Edit
+								img(src="images/lab.png", alt="The Lab", title="Lab", style="border-width:0px; width: 50px; top: -10px;position: relative; float: right;")
+
+			div(id="vennSettings", style="display:none", class="setlab")
+				h3(style="text-align: center;")!= 'Edit Lab Settings.'
+				p(style="text-align: center;margin: 0px 5%;")!="In this section, you can now add a lab to its Department's Venn diagram. Or Set the lab administrator. Or Disable a lab provided no users have been assigned to it.<br/><b>Note:</b> You can add up to 6 labs per department for graph visibility sake."
+				if errormessagevenn != null
+					div(class="alert alert-danger fade in alert-dismissable")!= errormessagevenn
+				if successmessagevenn != null
+					div(class="alert alert-success fade in alert-dismissable")!= successmessagevenn
+				if errormessagedisable != null
+					div(class="alert alert-danger fade in alert-dismissable")!= errormessagedisable
+				if successmessagedisable != null
+					div(class="alert alert-success fade in alert-dismissable")!= successmessagedisable
+				if errormessageadmin != null
+					div(class="alert alert-danger fade in alert-dismissable")!= errormessageadmin
+				if successmessageadmin != null
+					div(class="alert alert-success fade in alert-dismissable")!= successmessageadmin
+				if successmessageadmin != null || errormessageadmin != null || successmessagedisable != null || errormessagedisable != null || successmessagevenn != null || errormessagevenn != null
+					script.
+						$(window).scrollTop($('#vennSettings').offset().top - 100).scrollLeft($('#vennSettings').offset().left);
+						$( document ).ready(function() {
+						$("#createSelect").val("vennsettings");
+						$('#vennSettings').show();
+						$('#createDept').hide();
+						$('#createLab').hide();
+						$('#editLab').hide();
+						//nochange = 1;
+						});
+				div(id="ctl00_Div2" class="results resultsshadow borderradius")
+					form(action="/setvenn" method="post")
+						label(style="width: 100%;")!="<span class='labColor'>Department </span>"
+						select(name="deptlabvenn" type="text" id="deptlabvenn" class="form-control" style="border-color:#3d9dcb;margin-bottom: 20px;" placeholder="Department")
+							option(value="selectdeptvenn")="Select a Department"
+							- if(depts != undefined)
+								- for(var prop in depts)
+									- var department = depts[prop].departmentname
+									option(value=department) #{department}
+						div(style="top: -45px; position: relative; float: right; margin-right: 10px;")
+							div(class="arrow-up", style="margin-bottom: 5px;")
+							div(class="arrow-down")
+					div(id="vennSettingsNolab", style="display:none")
+					div(id="vennSettingsDisplay", style="display:none")
+
+						div(class="table-responsive" id="table")                
+							table(id="rankTblload" class="table rankTbl")
+								thead(class="you info-best" style="font-weight: bold")
+									th(class="wrapped") Lab
+									th(class="wrapped") Admin
+									th(class="wrapped") Isvenn
+									th(class="wrapped") Disable
+								tbody(id="vennbody")
+
+						div(class="buttons" style="")
+							img(src="images/lab.png", alt="The Lab", title="Lab", style="border-width:0px; width: 50px; margin-top: -10px;float: right;")
+		script.
+			window.onload = function() {
+				$('#createDept').hide();
+				$('#createLab').hide();
+				$('#editLab').hide();
+				var adminvalue = "";
+
+				$('#vennSettingsDisplay').hide();
+				$('#vennSettings').hide();
+
+				var eSelect = document.getElementById('createSelect');
+
+				$(".deps").change(function(){
+					var savedep = $(this).val();
+					
+					console.log("savedep: " + savedep);
+					$('.deps').each(function(i, obj) {
+					$(this).val($(this).find("option:eq(0)").val());
+					$(this).css('background-color', '#3378b7');
+					});
+					console.log("savedep: " + savedep);
+					console.log("heredeps: " + $(this).val());
+					$(this).val(savedep)
+					
+					$( ".setlab:visible" ).addClass("restrictcolumns");
+					if($(".setlab").is(":visible")){
+						$('#labdetail').addClass("restrictcolumns");
+					}
+					console.log("optt: " + $('option:selected', this).attr('department'));
+					if($('option:selected', this).attr('department') != undefined){
+					console.log("show labdetail");
+
+					var deptpos = $('option:selected', this).attr('deptpos');
+					var labpos = $('option:selected', this).attr('pos');
+					//deptpos = deptpos.replace("dept","");
+					//console.log(#{JSON.stringify(vennuser)});
+					var users = JSON.parse('#{JSON.stringify(vennuser)}'.replace(/&quot;/g, '"'));
+					//var users0 = users[deptpos];
+					var users0 = users[labpos];
+					//console.log("labpos: " + users[labpos]);
+					console.log("labpos: " + labpos);
+					console.log("deptpos: " + deptpos);
+					console.log("users length: " + users.length);
+					console.log("users0length: " + users0.length);
+					//console.log("user: " + users0[labpos].id)
+
+					$('#labmembers').html("");
+					$('#labdetail').show();
+
+					var usersdiv = document.getElementById("labmembers");
+					var userslength = users0.length;
+					var size = 100;
+					//var check = size/userslength;
+					var wind = $("#labdetail").width();
+					if(wind != null){
+						wind = wind;
+					} else{
+						wind = window.innerWidth;
+					}
+					var winwi = Math.floor(wind/150);
+					
+					if(winwi <= userslength){
+						size = (size/winwi);
+					} else {
+						size = size/userslength;
+					}
+					size = size - 2;
+					console.log("userslength: " + userslength);
+					console.log("window width: " + winwi);
+					console.log("size: " + size);
+					//if(size > 30){
+					//	size = check;
+					//}
+					for(var p in users0){
+						var userdiv = document.createElement("div");
+						var userpan = document.createElement("span");
+						var userpan2 = document.createElement("span");
+						var userspan3 = document.createElement("span");
+						var userspan4 = document.createElement("span");
+						var usera = document.createElement("a");
+						userdiv.setAttribute('class',"myteammember");
+						userdiv.setAttribute('style',"width:" + size + "%");
+						userpan.setAttribute('class',"fa fa-user-circle-o myteamcard");
+						if(users0[p].admin == 1){
+							userpan.setAttribute('style',"color:#95794d");
+						} else {
+							userpan.setAttribute('style',"color:#68b3d6");
+						}
+						userspan3.setAttribute('class',"fa fa-location-arrow");
+						userspan3.setAttribute('id',"email");
+
+						userspan3.setAttribute('style',"cursor:pointer;color: #3479b7;font-size:10pt");
+						usera.setAttribute('href',"mailto:" + users0[p].email);
+						usera.setAttribute('style',"cursor:pointer");
+						userspan4.innerHTML = " " + users0[p].name + " " + users0[p].surname;
+						userpan2.setAttribute('style',"text-align: center;display: block;margin: 10px;");
+						usera.appendChild(userspan3);
+						userpan2.appendChild(usera);
+						userpan2.appendChild(userspan4);
+						userdiv.appendChild(userpan);
+						//userdiv.appendChild(usera);
+						userdiv.appendChild(userpan2);
+						usersdiv.appendChild(userdiv);
+						}
+						
+						$(this).css('background-color', '#3d9dcb');
+						$(window).scrollTop($('#labdetail').offset().top - 100).scrollLeft($('#labdetail').offset().left); 
+					} else {
+						console.log("hide labdetail");
+						$('#labdetail').hide();
+						$( "#labdetail" ).removeClass("restrictcolumns");
+						$( ".setlab:visible" ).removeClass("restrictcolumns");
+					}
+					
+				})
+
+				$(".setlab").change(function(){
+					console.log("here: " + $(this).val());
+					$( "#labdetail:visible" ).addClass("restrictcolumns");
+					if($("#labdetail").is(":visible")){
+						$('#setlab').addClass("restrictcolumns");
+					}
+				})
+				var labnameedit = document.getElementById('labnameedit');
+				labnameedit.onchange = function() {
+					console.log("adminvalue: " + adminvalue);
+					if(adminvalue != undefined && adminvalue != ""){
+					$("#adminlabedit option[value='" + adminvalue + "']").remove();
+					}
+					//var labvalue = $("#labnameedit").val();
+					//$("#deptlabedit").append('<option value="' + labvalue +'">' + labvalue + '</option>');
+					$('#transferadmin').hide();
+					$('#transferdept').show();
+				};
+
+				var deptlabedit = document.getElementById('deptlabedit');
+				deptlabedit.onchange = function() {
+					adminvalue = $('option:selected', "#labnameedit").attr('admin');
+					console.log("adminvalue: " + adminvalue);
+					$("#adminlabedit").append('<option value="' + adminvalue +'">' + adminvalue + '</option>');
+					$('#transferadmin').show();
+				};
+				
+				console.debug("selected: " + $('#createSelect').val());
+				var section = "${section}";
+				if(eSelect.selectedIndex === 1 || $('#createSelect').val() == 'createDept') {
+					console.log("createDept inside");
+					$('#createDept').show();
+					$('#vennSettings').hide();
+					$('#createLab').hide();
+					$('#editLab').hide();
+					$('#createSelect').css('background-color', '#3d9dcb');
+					$(window).scrollTop($('#createDept').offset().top - 100).scrollLeft($('#createDept').offset().left);
+				} else if(eSelect.selectedIndex === 2 || $('#createSelect').val() == 'createLab') {
+					console.log("createLab inside");
+					$('#createLab').show();
+					$('#createDept').hide();
+					$('#vennSettings').hide();
+					$('#editLab').hide();
+					$('#createSelect').css('background-color', '#3d9dcb');
+					$(window).scrollTop($('#createLab').offset().top - 100).scrollLeft($('#createLab').offset().left);
+				} else if(eSelect.selectedIndex === 3 || $('#createSelect').val() == 'vennSettings') {
+					console.log("vennSettings inside");
+					$('#vennSettings').show();
+					$('#createDept').hide();
+					$('#createLab').hide();
+					$('#editLab').hide();
+					$('#createSelect').css('background-color', '#3d9dcb');
+					$(window).scrollTop($('#vennSettings').offset().top - 100).scrollLeft($('#vennSettings').offset().left); 
+				} else if(eSelect.selectedIndex === 3 || $('#createSelect').val() == 'editLab') {
+					console.log("transfer lab inside");
+					$('#editLab').show();
+					$('#vennSettings').hide();
+					$('#createDept').hide();
+					$('#createLab').hide();
+					$('#createSelect').css('background-color', '#3d9dcb'); 
+					$(window).scrollTop($('#editLab').offset().top - 100).scrollLeft($('#editLab').offset().left); 
+				} else if(section == "all" && (eSelect.selectedIndex === 0 || $('#createSelect').val() == 'createNone')) {
+					console.log("create None inside");
+					$('#createLab').hide();
+					$('#createDept').hide();
+					$('#vennSettings').hide();
+					$('#editLab').hide();
+					$('#createSelect').css('background-color', '#3379b7'); 
+				}
+
+				eSelect.onchange = function() {
+					console.log("here: " + $(this).val());
+					$( "#labdetail:visible" ).addClass("restrictcolumns");
+					
+
+					if(eSelect.selectedIndex === 1 || $('#createSelect').val() == 'createDept') {
+						console.log("createDept inside");
+						$('#createDept').show();
+						$('#createLab').hide();
+						$('#vennSettings').hide();
+						$('#editLab').hide();
+						$('#createSelect').css('background-color', '#3d9dcb'); 
+						//$(".deps").css('background-color', '#3378b7'); 
+						if($("#labdetail").is(":visible")){
+							$('#createDept').addClass("restrictcolumns");
+						}
+						var wind = $(".myteammember").width();
+						if(wind != null && window.innerWidth > 440){
+						wind = wind*2;
+						//$(".myteammember").width(wind+"px");
+						}
+						$(window).scrollTop($('#createDept').offset().top - 100).scrollLeft($('#createDept').offset().left); 
+					} else if(eSelect.selectedIndex === 2 || $('#createSelect').val() == 'createLab') {
+						console.log("createLab inside");
+						$('#createLab').show();
+						$('#createDept').hide();
+						$('#vennSettings').hide();
+						$('#editLab').hide();
+						$('#createSelect').css('background-color', '#3d9dcb'); 
+						//$(".deps").css('background-color', '#3378b7'); 
+						if($("#labdetail").is(":visible")){
+							$('#createLab').addClass("restrictcolumns");
+						}
+						var wind = $(".myteammember").width();
+						if(wind != null && window.innerWidth > 440){
+						wind = wind*2;
+						//$(".myteammember").width(wind+"px");
+						}
+						$(window).scrollTop($('#createLab').offset().top - 100).scrollLeft($('#createLab').offset().left); 
+					} else if(eSelect.selectedIndex === 3 || $('#createSelect').val() == 'vennSettings') {
+						console.log("vennSettings inside");
+						$('#vennSettings').show();
+						$('#createDept').hide();
+						$('#createLab').hide();
+						$('#editLab').hide();
+						$('#createSelect').css('background-color', '#3d9dcb'); 
+						//$(".deps").css('background-color', '#3378b7'); 
+						if($("#labdetail").is(":visible")){
+							$('#vennSettings').addClass("restrictcolumns");
+						}
+						var wind = $(".myteammember").width();
+						if(wind != null && window.innerWidth > 440){
+						wind = wind*2;
+						//$(".myteammember").width(wind+"px");
+						}
+						$(window).scrollTop($('#vennSettings').offset().top - 100).scrollLeft($('#vennSettings').offset().left); 
+					} else if(eSelect.selectedIndex === 3 || $('#createSelect').val() == 'editLab') {
+						console.log("transfer lab inside");
+						$('#vennSettings').hide();
+						$('#createDept').hide();
+						$('#createLab').hide();
+						$('#editLab').show();
+						$('#createSelect').css('background-color', '#3d9dcb');
+						//$(".deps").css('background-color', '#3378b7');
+						if($("#labdetail").is(":visible")){
+							$('#editLab').addClass("restrictcolumns");
+						}
+						var wind = $(".myteammember").width();
+						if(wind != null && window.innerWidth > 440){
+						wind = wind*2;
+						//$(".myteammember").width(wind+"px");
+						}
+						$(window).scrollTop($('#editLab').offset().top - 100).scrollLeft($('#editLab').offset().left); 
+					} else if(eSelect.selectedIndex === 0 || $('#createSelect').val() == 'createNone') {
+						console.log("create None inside");
+						$('#createLab').hide();
+						$('#createDept').hide();
+						$('#vennSettings').hide();
+						$('#editLab').hide();
+						$('#createSelect').css('background-color', '#3379b7');
+						//$(".deps").css('background-color', '#3378b7');
+						$( "#labdetail:visible" ).removeClass("restrictcolumns");
+					}
+				}
+
+				var eSelectvenn = document.getElementById('deptlabvenn');
+				console.debug("venn setting selected: " + $('#deptlabvenn').val());
+
+				if(nochange == 0 && (eSelectvenn.selectedIndex === 0 || $('#deptlabvenn').val() == 'selectdeptvenn')) {
+					console.log("venn settings None inside0");
+					$('#vennSettingsDisplay').hide();
+					//$('#vennSettings').hide();
+				} else if(nochange == 1) {
+					console.log("don't switch to default");
+				} else {
+					console.log("venn settings display inside 0");
+					var dept = $('#deptlabvenn').val();
+					console.log("deptlabvenn dept: " + dept);
+					var test = JSON.parse('#{JSON.stringify(vennsettings)}'.replace(/&quot;/g, '"'));
+					console.log("deptlabvenn vennsettings: " + test);
+					console.log("deptlabvenn vennsettings find index: " + test.indexOf(dept));
+					$('#vennSettingsDisplay').show();
+					$('#vennSettings').show();
+				}
+
+				eSelectvenn.onchange = function() {
+					console.log("venn changing");
+					if(eSelectvenn.selectedIndex === 0 || $('#deptlabvenn').val() == 'selectdeptvenn') {
+						console.log("venn settings None inside1");
+						$('#vennSettingsDisplay').hide();
+						//$('#vennSettings').hide();
+					} else {
+						console.log("venn settings display inside 1");
+						var dept = $('#deptlabvenn').val();
+						console.log("deptlabvenn dept: " + dept);
+						var test = JSON.parse('#{JSON.stringify(venn)}'.replace(/&quot;/g, '"'));
+						console.debug(test);
+						var departments = test.departments
+						console.debug(departments);
+						console.log("deptlabvenn vennsettings find index: " + departments.indexOf(dept));
+						var index = departments.indexOf(dept);
+						console.debug("index: " + index);
+						if(index > -1){
+							var labs = test.labs[index];
+							var currentadmins = test.admins[index];
+							var labadmins = JSON.parse('#{JSON.stringify(labadmins)}'.replace(/&quot;/g, '"'));
+							//var getadmins = JSON.parse('#{JSON.stringify(getadmins)}'.replace(/&quot;/g, '"'));
+							var isvenns = test.isvenn[index];
+							var isdisabled = test.isdisabled[index];
+							console.debug(labs);
+							console.debug(isvenns);
+							var vennbody = "";
+							$('#vennbody').html("");
+							for(prop in labs){
+								var check = isvenns[prop];
+								var checkdis = isdisabled[prop];
+								var currentadmin = currentadmins[prop];
+								var checkedstr = "";
+								if(check == 1){
+									checkedstr = "checked='checked'";
+								}
+								console.log("isvenns check - " + labs[prop] + " : " + check);
+								/*
+								vennbody += "<tr class='wrapped'><td>" + labs[prop] + "</td><td>" + "<form action='/setvenn' method='post'><input type='checkbox' name='addvenn' value='addvenn' class='addvenn' " + checkedstr + "/><input type='hidden' name='labnamevenn' value='" + labs[prop] + "'/><input type='hidden' name='departmentvenn' value='" + dept + "' />" + "</form></td></tr>"; 
+								*/
+
+
+
+								var tr = document.createElement("tr");
+								tr.setAttribute('class',"wrapped");
+								var td = document.createElement("td");
+								td.innerHTML = labs[prop];
+								tr.appendChild(td);
+
+								td = document.createElement("td");
+								var fadmin = document.createElement("form");
+								fadmin.setAttribute('action',"/setadmin");
+								fadmin.setAttribute('method',"post");
+								var selectadmin = document.createElement("select");
+								selectadmin.setAttribute('type',"text");
+								selectadmin.setAttribute('name',"labnameadmin");
+								selectadmin.setAttribute('id',"labnameadmin");
+								selectadmin.setAttribute('class',"form-control labnameedit");
+
+								console.log("labadmins : " + currentadmin);
+								//console.dir(labadmins);
+
+								/*if(labadmins != undefined){
+								for(var pr in labadmins){
+								var labadmin = labadmins[pr].email
+								console.log("labadmin : " + labadmin);
+								var checkedstrLab = "undefined";
+								if(currentadmin != undefined && labadmin == currentadmin){
+									checkedstrLab = "selected"
+								}
+								console.log("checkedstrLab: " + checkedstrLab);
+								var optadmin = document.createElement("option");
+								if(checkedstrLab != "undefined"){
+									optadmin.setAttribute('selected',checkedstrLab);
+								}
+								optadmin.setAttribute('name',"addvenn");
+								optadmin.setAttribute('value',labadmin);
+								optadmin.innerHTML = labadmin;
+								selectadmin.appendChild(optadmin);
+								}
+								}*/
+								var optadmin = document.createElement("option");
+								optadmin.setAttribute('selected',"selected");
+								optadmin.setAttribute('name',"addcurrentadmin");
+								optadmin.setAttribute('value',currentadmin);
+								optadmin.setAttribute('current',currentadmin);
+								optadmin.innerHTML = currentadmin;
+
+								selectadmin.appendChild(optadmin);
+
+								if(labadmins != undefined){
+								for(var pr in labadmins){
+								var labadmin = labadmins[pr].email
+								console.log("labadmin : " + labadmin);
+								optadmin = document.createElement("option");
+								optadmin.setAttribute('name',"addpossibleadmin");
+								optadmin.setAttribute('value',labadmin);
+								optadmin.setAttribute('current',currentadmin);
+								optadmin.innerHTML = labadmin;
+								selectadmin.appendChild(optadmin);
+								}
+								}
+
+
+								selectadmin.onchange = function () {
+								console.log("clicked");
+								var addadmin = $(this);
+								var selectedadmin = addadmin.val();//options[addadmin.selectedIndex].value
+								console.log("selectedadmin: " + selectedadmin);
+								console.log("currentadmin: " + currentadmin);
+								var addAdminText = document.getElementById("addVennText");
+								if(selectedadmin != currentadmin){
+								addAdminText.innerHTML = "Do you want to assign this administrator to this lab?";
+								
+								var pop = document.getElementById("ios-light");
+								pop.style.display = "block";
+								var shade = document.getElementById("shade");
+								shade.style.display = "block";
+								}
+
+								actionorderVenn.onclick = function(){
+								var parenttr = addadmin.closest('tr');
+								var currentbackgroundColor = parenttr.css('backgroundColor');
+
+								console.log("currentbackgroundColor: " + currentbackgroundColor);
+								if(currentbackgroundColor == 'rgba(0, 0, 0, 0)'){
+								parenttr.css('background-color', 'rgba(138, 109, 59, 0.66)');
+								} else {
+								parenttr.css('background-color', '#ded5c9');
+								}
+								console.log("submit form to add admin");
+								addadmin.closest('form').submit();
+								}
+
+								actioncancelVenn.onclick = function(){
+								console.log("current: " + $('option:selected', addadmin).attr('current'));
+								addadmin.val($('option:selected', addadmin).attr('current'));
+								//if(checked){
+								//addvenn.prop('checked', false);
+								//} else {
+								//addvenn.prop('checked', true);
+								//}
+								iosLightExit();
+								}
+
+
+								}
+
+								fadmin.appendChild(selectadmin);
+
+								var inputhidden = document.createElement("input");
+								inputhidden.setAttribute('type',"hidden");
+								inputhidden.setAttribute('name',"labname");
+								inputhidden.setAttribute('value',labs[prop]);	
+								fadmin.appendChild(inputhidden);
+
+								inputhidden = document.createElement("input");
+								inputhidden.setAttribute('type',"hidden");
+								inputhidden.setAttribute('name',"dept");
+								inputhidden.setAttribute('value',dept);	
+								fadmin.appendChild(inputhidden);
+
+								var divarrow = document.createElement("div");
+								divarrow.setAttribute('style',"top: -25px;position: relative;float: right;margin-right: 10px;");
+								var divarrowup = document.createElement("div");
+								divarrowup.setAttribute('style',"margin-bottom: 5px;");
+								divarrowup.setAttribute("class","arrow-up");
+								var divarrowdown = document.createElement("div");
+								divarrowdown.setAttribute("class","arrow-down");
+								divarrow.appendChild(divarrowup);
+								divarrow.appendChild(divarrowdown);
+								fadmin.appendChild(divarrow);
+
+								td.appendChild(fadmin);
+								tr.appendChild(td);
+
+
+
+								var f = document.createElement("form");
+								f.setAttribute('action',"/setvenn");
+								f.setAttribute('method',"post");
+								var i = document.createElement("input");
+								i.setAttribute('type',"checkbox");
+								i.setAttribute('name',"addvenn");
+								i.setAttribute('value',"addvenn");
+								i.setAttribute('class',"addvenn");
+
+
+								if(check == 1){
+									i.setAttribute('checked',"checked");
+								}
+
+								var i0 = document.createElement("div");
+								i0.setAttribute('class',"checkboxThree1");
+								var i1 = document.createElement("input");
+								i1.setAttribute('style',"position:absolute;left: -9999px;");
+								i1.setAttribute('id',"addvenn"+prop);
+								i1.setAttribute('type',"checkbox");
+								i1.setAttribute('value',"addvenn");
+								i1.setAttribute('name',"addvenn");
+								i1.setAttribute('class',"addvenn");
+								if(check == 1){
+									i1.setAttribute('checked',"checked");
+								}
+								var i2 = document.createElement("label");
+								i2.setAttribute('class',"labelcheck1 shadow");
+								i2.setAttribute('for',"addvenn"+prop);
+								i0.appendChild(i1);
+								i0.appendChild(i2);
+
+
+								td = document.createElement("td");
+
+								i2.onclick = function () {
+								
+
+								var addvenn = $(this).prev("input");
+								console.dir(addvenn);
+								var checked = addvenn.is(':checked');
+								console.log("clicked advenn - checked is: " + checked);
+								var addVennText = document.getElementById("addVennText");
+								if(!checked){
+								addVennText.innerHTML = "Do you want to add this lab to the Venn Diagram?";
+								} else {
+								addVennText.innerHTML = "Do you want to remove this lab from the Venn Diagram?";
+								}
+								var pop = document.getElementById("ios-light");
+								pop.style.display = "block";
+								var shade = document.getElementById("shade");
+								shade.style.display = "block";
+
+								actionorderVenn.onclick = function(){
+								var parenttr = addvenn.closest('tr');
+								var currentbackgroundColor = parenttr.css('backgroundColor');
+
+								console.log("currentbackgroundColor: " + currentbackgroundColor);
+								if(currentbackgroundColor == 'rgb(255, 255, 255)'){
+								parenttr.css('background-color', 'rgba(138, 109, 59, 0.66)');
+								} else {
+								parenttr.css('background-color', 'rgb(255, 255, 255');
+								}
+								addvenn.closest('form').submit();
+								}
+								actioncancelVenn.onclick = function(){
+								console.log("cancelled addvenn click: " +  checked);
+								addvenn.prop('checked', checked);
+								/*if(checked){
+								addvenn.prop('checked', false);
+								} else {
+								addvenn.prop('checked', true);
+								}*/
+								iosLightExit();
+								}
+
+								}
+								f.appendChild(i0);
+								
+								var fdis = document.createElement("form");
+								fdis.setAttribute('action',"/setdisabled");
+								fdis.setAttribute('method',"post");
+								var idis = document.createElement("input"); //input element, text
+								idis.setAttribute('type',"checkbox");
+								idis.setAttribute('name',"disablelab");
+								idis.setAttribute('value',"disablelab");
+								idis.setAttribute('class',"disablelab");
+								if(checkdis == 1){
+									idis.setAttribute('checked',"checked");
+								}
+
+								var j0 = document.createElement("div");
+								j0.setAttribute('class',"checkboxThree1");
+								var j1 = document.createElement("input");
+								j1.setAttribute('style',"position:absolute;left: -9999px;");
+								j1.setAttribute('id',"disablelab"+prop);
+								j1.setAttribute('type',"checkbox");
+								j1.setAttribute('value',"disablelab");
+								j1.setAttribute('name',"disablelab");
+								j1.setAttribute('class',"disablelab");
+								if(checkdis == 1){
+									j1.setAttribute('checked',"checked");
+								}
+								var j2 = document.createElement("label");
+								j2.setAttribute('class',"labelcheck1 shadow");
+								j2.setAttribute('for',"disablelab" + prop);
+								j0.appendChild(j1);
+								j0.appendChild(j2);
+
+
+								tdis = document.createElement("td");
+
+								j2.onclick = function () {
+								console.log("clicked disable");
+								var disablelab = $(this).prev("input");;
+								var checkedis = disablelab.is(':checked');
+								var disablelabText = document.getElementById("disablelabText");
+								if(!checkedis){
+								disablelabText.innerHTML = "Do you want to disable this lab?";
+								} else {
+								disablelabText.innerHTML = "Do you want to re-enable this lab?";
+								}
+								var pop = document.getElementById("ios-lightdis");
+								pop.style.display = "block";
+								var shade = document.getElementById("shade");
+								shade.style.display = "block";
+
+								actionorderDisable.onclick = function(){
+								console.log("cancelled disablelab click: " +  checkedis);
+								var parenttr = disablelab.closest('tr');
+								var currentbackgroundColor = parenttr.css('backgroundColor');
+
+								console.log("currentbackgroundColor: " + currentbackgroundColor);
+								if(currentbackgroundColor == 'rgb(255, 255, 255)'){
+								parenttr.css('background-color', 'rgba(138, 109, 59, 0.66)');
+								} else {
+								parenttr.css('background-color', 'rgb(255, 255, 255');
+								}
+								disablelab.closest('form').submit();
+								}
+								actioncancelDisable.onclick = function(){
+								disablelab.prop('checked', checkedis);
+								/*if(checkedis){
+								disablelab.prop('checked', false);
+								} else {
+								disablelab.prop('checked', true);
+								}*/
+								iosLightExitDis();
+								}
+
+								}
+								fdis.appendChild(j0);
+								
+
+								i = document.createElement("input");
+								i.setAttribute('type',"hidden");
+								i.setAttribute('name',"labnamevenn");
+								i.setAttribute('value',labs[prop]);	
+
+								idis = document.createElement("input");
+								idis.setAttribute('type',"hidden");
+								idis.setAttribute('name',"labnamevenn");
+								idis.setAttribute('value',labs[prop]);								
+								f.appendChild(i);
+								fdis.appendChild(idis);
+
+								i = document.createElement("input");
+								i.setAttribute('type',"hidden");
+								i.setAttribute('name',"departmentvenn");
+								i.setAttribute('value',dept);	
+
+								idis = document.createElement("input");
+								idis.setAttribute('type',"hidden");
+								idis.setAttribute('name',"departmentvenn");
+								idis.setAttribute('value',dept);								
+								f.appendChild(i);
+								fdis.appendChild(idis);
+
+
+
+								td.appendChild(f);
+								tdis.appendChild(fdis);
+								tr.appendChild(td);
+								tr.appendChild(tdis);
+								document.getElementById("vennbody").appendChild(tr);
+
+							}
+							//$('#vennbody').html(vennbody);
+							$('#vennSettingsDisplay').show();
+							$('#vennSettings').show();
+							$('#vennSettingsNolab').hide();
+						} else {
+							console.log("no labs associated")
+							$('#vennSettingsNolab').html("No lab is associated to this department.");
+							$('#vennSettingsDisplay').hide();
+							$('#vennSettings').show();
+							$('#vennSettingsNolab').show();
+						}
+					}
+				}
+
+					var checkedstrDept = "#{checkedstrDept}";
+					if(checkedstrDept == "true"){
+						console.log("section createdept");
+						//$("#createLab").val("vennsettings");
+						$('#vennSettings').hide();
+						$('#createDept').show();
+						$('#createLab').hide();
+						$('#editLab').hide();
+						$(window).scrollTop($('#createDept').offset().top - 100).scrollLeft($('#createDept').offset().left);
+						}
+					var checkedstrLab = "#{checkedstrLab}";
+					if(checkedstrLab == "true"){
+						console.log("section createLab");
+						//$("#createLab").val("vennsettings");
+						$('#vennSettings').hide();
+						$('#createDept').hide();
+						$('#createLab').show();
+						$('#editLab').hide();
+						$(window).scrollTop($('#createLab').offset().top - 100).scrollLeft($('#createLab').offset().left);
+						}
+					var checkedstrEditLab = "#{checkedstrEditLab}";
+					if(checkedstrEditLab == "true"){
+						console.log("section editLab");
+						//$("#createLab").val("vennsettings");
+						$('#vennSettings').hide();
+						$('#createDept').hide();
+						$('#createLab').hide();
+						$('#editLab').show();
+						$(window).scrollTop($('#editLab').offset().top - 100).scrollLeft($('#editLab').offset().left);
+						}
+					var checkedstrVenn = "#{checkedstrVenn}";
+					if(checkedstrVenn == "true"){
+						console.log("section vennSettings");
+						//$("#createLab").val("vennsettings");
+						$('#vennSettings').show();
+						$('#createDept').hide();
+						$('#createLab').hide();
+						$('#editLab').hide();
+						$(window).scrollTop($('#vennSettings').offset().top - 100).scrollLeft($('#vennSettings').offset().left);
+						}
+			}
+			$('.addvenn').click(function() {
+			console.log("clicked");
+			});
+
+			/*$( document ).ready(function() {
+			console.log("checkedstrDept: " + #{checkedstrDept});
+			var checkedstrDept = "#{checkedstrDept}";
+			if(checkedstrDept == "true"){
+				console.log("show department");
+				$("#createDept").show();
+				$(window).scrollTop($('#createDept').offset().top - 100).scrollLeft($('#createDept').offset().left);
+			}
+				//$( ".fa-envelope:visible" ).click(function() {$( this ).removeClass( "fa-envelope" );$( this ).addClass( "fa-envelope-open" );});
+			});*/
