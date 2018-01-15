@@ -11,10 +11,12 @@
 
 .adminmobile{
   display: none !important;
+  background-color: red;width: 50px;height: 50px;padding-top: 5px;padding: 7px;
 }
 
 .admindesktop{
   display: block !important;
+  background-color: red; width: 50px;height: 50px; padding-top: 5px;float: right;top: 84px; right: 25px; margin-right: 15px; position: relative !important;
 }
 
 .backfulfill{
@@ -5215,6 +5217,9 @@ color: #337ab7 !important; margin-right: 10px !important;
 }
 .reports-labelinsuff{
   z-index: 0 !important;position: relative !important; display: inline-block !important;margin-top: -20px !important;
+}
+.labeladmin{
+  z-index: 0 !important;position: relative !important; display: inline-block;margin-top: -20px !important;
 }
 .reports-border-radius{
   z-index: 0;position: relative !important; display: inline-block;margin-top: -20px !important;
