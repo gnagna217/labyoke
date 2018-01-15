@@ -11,7 +11,7 @@
 
 .adminmobile{
   display: none !important;
-  background-color: red !important;width: 50px !important;height: 50px !important;padding-top: 5px !important;padding: 7px;
+  background-color: red !important;width: 50px !important;height: 50px !important;padding-top: 5px !important;padding: 7px !important;
 }
 
 .admindesktop{
