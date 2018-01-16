@@ -3684,7 +3684,7 @@ input::-webkit-inner-spin-button {
 
 @media (min-width: 767px) {
 .navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form{
-        background-color: rgba(138, 109, 59, 0.93) !important;
+        background-color: rgba(138, 109, 59, 0.70) !important;
 }
 .labColorBackgroundHover {
     background-color: #3d9dcb !important;
