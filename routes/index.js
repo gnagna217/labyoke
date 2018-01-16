@@ -3463,7 +3463,7 @@ totalshares = t[0].counting;
                 req.session.messages = null;
             });
         } else {
-            res.redirect('/login');
+            res.redirect('/admin/login');
         }
     });
 
@@ -3513,7 +3513,7 @@ totalshares = t[0].counting;
                 });
             }
         } else {
-            res.redirect('/login');
+            res.redirect('/admin/login');
         }
     });
 
@@ -3550,7 +3550,7 @@ totalshares = t[0].counting;
                 }
             });
         } else {
-            res.redirect('/login');
+            res.redirect('/admin/login');
         }
     });
 
@@ -3573,13 +3573,13 @@ totalshares = t[0].counting;
             var labYokeusers = new LabYokeUsers(id,name, surname, email,checked);
             labYokeusers.disableUser(function(error, results) {
                 if(results != null && results.length > 0){
-                    res.redirect('/users');         
+                    res.redirect('/admin/users');         
                     //res.render('departments', {ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, isLoggedInAdmin: req.session.admin, title:'Shares',loggedIn : true});
                     req.session.messages = null;
                 }
             });
         } else {
-            res.redirect('/login');
+            res.redirect('/admin/login');
         }
     });
 
@@ -3607,7 +3607,7 @@ totalshares = t[0].counting;
                 }
             });
         } else {
-            res.redirect('/login');
+            res.redirect('/admin/login');
         }
     });
 
@@ -3641,13 +3641,13 @@ totalshares = t[0].counting;
             var labYokechange = new LabYokerChangeShare(table,agent, vendor, catalognumber,email,requestor,checked,datenow,date, lab);
             labYokechange.cancelShare(function(error, results) {
                 if(results != null && results.length > 0){
-                    res.redirect('/departments');           
+                    res.redirect('/admin/departments');           
                     //res.render('departments', {ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, isLoggedInAdmin: req.session.admin, title:'Shares',loggedIn : true});
                     req.session.messages = null;
                 }
             });
         } else {
-            res.redirect('/login');
+            res.redirect('/admin/login');
         }
     });
 
@@ -3718,7 +3718,7 @@ totalshares = t[0].counting;
                 req.session.messages = null;
             });
         } else {
-            res.redirect('/login');
+            res.redirect('/admin/login');
         }
     });
 
@@ -3908,7 +3908,7 @@ totalshares = t[0].counting;
                                                         res.redirect(req.session.to);
                                                         req.session.to = null;
                                                     } else {
-                                                        res.redirect('/querytool');
+                                                        res.redirect('/admin/querytool');
                                                     }
                                                     });
                                                 });
