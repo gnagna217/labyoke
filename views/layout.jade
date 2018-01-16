@@ -161,7 +161,7 @@ html(lang='en')
                     - if (title == 'Admins')
                         - activateAdmin = activateAdmin + "labColorBackgroundHover"
                 span
-                  a(href="/account", class="layout-account roundaccountmob " + activeAccountMob)!= user_surname + "" + surname
+                  a(href="/account", style="z-index: -11;", class="layout-account roundaccountmob " + activeAccountMob)!= user_surname + "" + surname
                 span
                   a(href="/search", class="layout-search roundaccountmob searchmob " + activeSearchMob)
                     span(class=" layout-search-text fa fa-search colmenu " + activeSearchMob)

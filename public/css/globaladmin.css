@@ -4221,6 +4221,7 @@ margin-top:0px;
     float: right;
     top: 150px;
     right: 32%;
+    z-index: -11;
 }
 .btn50{
   width: 100% !important;

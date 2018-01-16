@@ -13,7 +13,7 @@
 display: none !important;
 }
 .adminmobile{
-  display: none !important;
+  display: none !important;z-index: -10;
   background-color: red !important;width: 50px !important;height: 50px !important;padding-top: 5px !important;padding: 7px !important;
 }
 
@@ -3925,7 +3925,7 @@ h1{
     margin-bottom: -10px;
 }
 .searchlogo{
-    margin-top: 15%;
+    margin-top: 18%;
 }
 .reportlabels{
     margin-top: 7%;
