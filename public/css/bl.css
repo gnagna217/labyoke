@@ -14,12 +14,12 @@ display: none !important;
 }
 .adminmobile{
   display: none !important;z-index: -10;
-  background-color: red !important;width: 50px !important;height: 50px !important;padding-top: 5px !important;padding: 7px !important;
+  background-color: red !important;width: 45px !important;height: 45px !important;padding-top: 5px !important;padding: 7px !important;
 }
 
 .admindesktop{
   display: block !important;
-  background-color: red !important; width: 50px !important;height: 50px !important; padding-top: 5px !important;float: right;top: 84px; right: 40px;position: relative !important;
+  background-color: red !important; width: 45px !important;height: 45px !important; padding-top: 5px !important;float: right;top: 84px; right: 40px;position: relative !important;
 }
 
 .adminmobile:hover, .admindesktop:hover, .adminmobile:focus, .admindesktop:focus{
