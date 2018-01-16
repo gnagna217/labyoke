@@ -2953,7 +2953,7 @@ totalshares = t[0].counting;
             return next();
         console.log('requested url: '+req.originalUrl);
         req.session.to = req.originalUrl;
-        res.redirect('/login');
+        res.redirect('/admin/login');
     }
 
     router.get('/admin', function(req, res) {
