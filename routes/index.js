@@ -3023,7 +3023,7 @@ totalshares = t[0].counting;
             labyokerLabs.getlabs(function(error, labs) {
                 req.session.labs = labs;
                 console.log("loggin in labs: " + labs);
-                res.render('admin/login', {ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, title: 'Login',isLoggedInAdmin: req.session.admin});
+                res.render('admin/login', {loggedlabyoker:req.session.user,ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, title: 'Login',isLoggedInAdmin: req.session.admin});
                 req.session.messages = null;
             });
 
