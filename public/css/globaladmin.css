@@ -3684,7 +3684,7 @@ input::-webkit-inner-spin-button {
 
 @media (min-width: 767px) {
 .navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form{
-        background-color: rgba(138, 109, 59, 0.70) !important;
+        background-color: rgba(138, 109, 59, 0.93) !important;
 }
 .labColorBackgroundHover {
     background-color: #3d9dcb !important;
@@ -4387,19 +4387,19 @@ h1{
     width: 75%;
 }
 #menumyaccount{
-    background-color: rgba(138, 109, 59, 0.70) !important;
+    background-color: rgba(138, 109, 59, 0.93) !important;
 }
 
 .adjustWidthSearchUL{
-    background-color: rgba(138, 109, 59, 0.70) !important;
+    background-color: rgba(138, 109, 59, 0.93) !important;
 }
 
 #menumyshares{
-    background-color: rgba(138, 109, 59, 0.70) !important;
+    background-color: rgba(138, 109, 59, 0.93) !important;
     width: 50%;
 }
 .padnum{
-    background-color: rgba(138, 109, 59, 0.70) !important;
+    background-color: rgba(138, 109, 59, 0.93) !important;
 }
 .desktabonly5{
     display: none !important;
@@ -4590,7 +4590,7 @@ span.num.greatherthanninetynine {
 }
 #menumyaccountadmin{
     margin-top: -100px; /*-175px;*/
-    background-color: rgba(138, 109, 59, 0.70) !important;
+    background-color: rgba(138, 109, 59, 0.93) !important;
     /*margin-left: 95px;*/
     margin-left: 50%;
     margin-bottom: -12px;
