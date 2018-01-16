@@ -2956,7 +2956,7 @@ totalshares = t[0].counting;
         res.redirect('/admin/login');
     }
 
-    router.get('/admin', function(req, res) {
+    router.get('/admin/', function(req, res) {
         res.redirect('/admin/querytool');
     });
 
@@ -3015,7 +3015,8 @@ totalshares = t[0].counting;
 
     router.get('/admin/login', function(req, res) {
         console.log("login req.session.user: " + req.session.user);
-        if (req.session.user) {
+        console.log("login req.session.usersuperadmin: " + req.session.usersuperadmin);
+        if (req.session.usersuperadmin) {
             res.redirect('/admin/querytool');
         } else {
             var labyokerLabs = new LabyokerLabs('','');
