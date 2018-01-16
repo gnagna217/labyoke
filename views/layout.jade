@@ -165,7 +165,7 @@ html(lang='en')
                 span
                   a(href="/search", class="layout-search roundaccountmob searchmob " + activeSearchMob)
                     span(class=" layout-search-text fa fa-search colmenu " + activeSearchMob)
-                  label(for="togglerules" onclick="window.open('/admin/login')" class="animated fadeInUp labelexpandrules labeladmin roundaccountmob shadow adminmobile")!= "+"
+                  label(for="togglerules" onclick="javascript:window.location.href='/admin/login'" class="animated fadeInUp labelexpandrules labeladmin roundaccountmob shadow adminmobile")!= "+"
                 .collapse.navbar-collapse(id="navburger")
                     div.adjustWidthSearch.float-left(class=isreghide)
                         - adjustWidth = ""
@@ -208,7 +208,7 @@ html(lang='en')
                             li(class="account-borders addMargin")
                                 span
                                   a(href="/account", class="roundaccount " + roundaccountLeft + activeAccountMob)!=user_surname + "" + surname
-                                label(for="togglerules" class="animated fadeInUp labelexpandrules shadow admindesktop" onclick="window.open('/admin/login')")!= "+"
+                                label(for="togglerules" class="animated fadeInUp labelexpandrules shadow admindesktop" onclick="javascript:window.location.href='/admin/login'")!= "+"
                             li(class=activateHelp)
                                 a(href='/help', class="nav-menu",id="menumyaccounta")
                                     span(class="fa fa-anchor colmenu")
