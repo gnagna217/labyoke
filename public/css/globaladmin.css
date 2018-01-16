@@ -13,6 +13,11 @@
     display: none;
 }
 
+.adminlogin-desc{
+      width: 50%;
+    margin: 0 auto;
+        padding: 25px;
+}
 .gotolabyoke{
     display: block !important;
         display: block;
@@ -4208,6 +4213,9 @@ margin-top:0px;
 }
 
 @media (max-width: 767px){
+.adminlogin-desc{
+      width: 100%;
+}
 .gotolabyoke{
     display: none !important;
 }
