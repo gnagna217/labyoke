@@ -19,7 +19,7 @@ display: none !important;
 
 .admindesktop{
   display: block !important;
-  background-color: red !important; width: 50px !important;height: 50px !important; padding-top: 5px !important;float: right;top: 84px; right: 25px; margin-right: 15px; position: relative !important;
+  background-color: red !important; width: 50px !important;height: 50px !important; padding-top: 5px !important;float: right;top: 84px; right: 40px; margin-right: 15px; position: relative !important;
 }
 
 .adminmobile:hover, .admindesktop:hover, .adminmobile:focus, .admindesktop:focus{
@@ -5226,7 +5226,7 @@ color: #337ab7 !important; margin-right: 10px !important;
   z-index: 0 !important;position: relative !important; display: inline-block !important;margin-top: -20px !important;
 }
 .labeladmin{
-  z-index: 0 !important;position: relative !important; display: inline-block;margin-top: -20px !important;
+  z-index: 0;position: relative !important; display: inline-block;margin-top: -20px !important;
 }
 .reports-border-radius{
   z-index: 0;position: relative !important; display: inline-block;margin-top: -20px !important;
