@@ -3799,7 +3799,7 @@ totalshares = t[0].counting;
                                                         req.session.admin = 1;
                                                         req.session.useradmin = true;
                                                     }
-                                                    if(req.session.admin > 1)
+                                                    if(c > 1)
                                                         req.session.usersuperadmin = true;
                                                     console.log("req.session.usersuperadmin: " + req.session.usersuperadmin);
                                                     console.log("req.session.admin: " + req.session.admin);
