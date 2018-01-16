@@ -13,8 +13,8 @@
 display: none !important;
 }
 .adminmobile{
-  display: none !important;z-index: -10;
-  background-color: red !important;width: 45px !important;height: 45px !important;padding-top: 5px !important;padding: 7px !important;
+  display: none !important;z-index: -10 !important;
+  background-color: red !important;width: 45px !important;height: 45px !important;padding-top: 5px !important;padding: 5px !important;
 }
 
 .admindesktop{
