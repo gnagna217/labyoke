@@ -3908,8 +3908,7 @@ totalshares = t[0].counting;
                                                     
 
                                                     if(req.session.to != null && req.session.to.length > 0){
-                                                        //res.redirect(req.session.to);
-                                                        res.redirect('/admin/querytool');
+                                                        res.redirect(req.session.to);
                                                         req.session.to = null;
                                                     } else {
                                                         res.redirect('/admin/querytool');
