@@ -6,8 +6,12 @@ block content
          div(style="text-align: center;position: relative;")
              a(href="/admin/querytool")
                 img(src="/images/labadmin.png", alt="The Yoke",  title="Yoke", class="yokelogo")
-             h1(style="font-size:30px")!= 'Hello Sys Admins.' + loggedlabyoker
-             p="Welcome to LabYoke Admin. You are one step away from managing useful entities!"
+             h1(style="font-size:30px")!= 'Hello Sys Admins.'
+             - if(loggedlabyoker != null && loggedlabyoker != "")
+                p!="Welcome to LabYoke Admin <b>" + loggedlabyoker + "</b>. You are still logged into <a href='/search'>Labyoke</a>. However you do not have sufficient permissions to access the System Admin pages. If you have a super admin account please log in below or reach out to your administrator for access. You are one step away from managing useful entities!"
+             - else
+                p="Welcome to LabYoke Admin. You are one step away from managing useful entities!"
+
          div(id="ctl00_Div2" class="frontdiv results3")
            div
             if message
