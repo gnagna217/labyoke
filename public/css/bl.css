@@ -8,7 +8,12 @@
   user-select: none;*/
   -webkit-font-smoothing: antialiased;
 }
-
+.successful-fulfill{
+      background: linear-gradient(to right, #1aaf1e , white);
+}
+.successful-cancel{
+      background: linear-gradient(to right, #1aaf1e, #d1c396);
+}
 .gotolabyoke{
 display: none !important;
 }
