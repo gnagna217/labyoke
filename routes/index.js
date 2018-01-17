@@ -1076,6 +1076,7 @@ module.exports = function(router) {
 		req.session.user = null;
         req.session.surname = null;
 		req.session.loggedin = false;
+        req.session.to = null;
 		res.redirect('/login');
 	});
 
@@ -2632,7 +2633,8 @@ totalshares = t[0].counting;
 													
 
 													if(req.session.to != null && req.session.to.length > 0){
-														res.redirect(req.session.to);
+														console.log("login going to: " + req.session.to);
+                                                        res.redirect(req.session.to);
 														req.session.to = null;
 													} else {
 														res.redirect('/search');
