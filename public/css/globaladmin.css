@@ -4825,7 +4825,7 @@ table.dataTable tbody tr {
 
  @media (max-width: 440px) {
 .gotolabyokemobile{
-    /*top: 130px;*/
+    top: 160px;
     right: 85px;
         width: 40px!important;
     height: 40px!important;
