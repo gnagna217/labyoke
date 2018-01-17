@@ -4228,7 +4228,7 @@ margin-top:0px;
     padding: 7px !important;
     float: right;
     top: 150px;
-    right: 32%;
+    right: 29%;
     z-index: -10;
 }
 .btn50{
@@ -4825,8 +4825,8 @@ table.dataTable tbody tr {
 
  @media (max-width: 440px) {
 .gotolabyokemobile{
-    top: 130px;
-    right: 105px;
+    /*top: 130px;*/
+    right: 85px;
         width: 40px!important;
     height: 40px!important;
     padding: 2px!important;
@@ -4921,7 +4921,7 @@ table.dataTable tbody tr {
     width: 100%;
 }
 .margintop{
-    margin-top:97px !important;
+    margin-top:110px !important;
 }
 .menumyshares2 {
     width: 54.5% !important;
@@ -4971,8 +4971,8 @@ table.dataTable tbody tr {
     margin-top: 5%;
 }
 .searchmob{
-    padding: 30px;
-    width: 80px;
+    /*padding: 30px;
+    width: 80px;*/
     margin: 0 auto;
     margin-top: -70px;
     /*left: 35%;*/
