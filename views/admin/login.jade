@@ -8,7 +8,7 @@ block content
                 img(src="/images/labadmin.png", alt="The Yoke",  title="Yoke", class="yokelogo")
              h1(style="font-size:30px")!= 'Hello Sys Admins.'
              - if(loggedlabyoker != null && loggedlabyoker != "")
-                p(class="adminlogin-desc")!="Welcome to LabYoke Admin <b>" + loggedlabyoker + "</b>. You are still logged into <a href='/search'>Labyoke</a>. However you do not have sufficient permissions to access the System Admin pages. If you have a super admin account please log in below or reach out to your administrator for access. You are one step away from managing useful entities!"
+                p(class="adminlogin-desc")!="Welcome to LabYoke Admin <b>" + loggedlabyoker + "</b>.<br/> You are still logged into <a href='/search'>Labyoke</a>. However you do not have sufficient permissions to access the System Admin pages. If you have a super admin account please log in below or reach out to your administrator for access."
              - else
                 p(class="adminlogin-desc")="Welcome to LabYoke Admin. You are one step away from managing useful entities!"
 
