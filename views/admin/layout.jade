@@ -163,6 +163,8 @@ html(lang='en')
        script(type="text/javascript" src="/javascripts/jquery.maskedinput.min.js")
      if(title=='Departments')
        :staticCache
+        script.
+          var var_vennsettings = "#{vennsettings}", var_vennuser = "#{vennuser}",  var_venn = "#{venn}", var_labadmins = "#{labadmins}", var_checkedstrDept =  "#{checkedstrDept}", var_checkedstrLab =  "#{checkedstrLab}", var_checkedstrEditLab =  "#{checkedstrEditLab}", var_checkedstrVenn =  "#{checkedstrVenn}";
         script(type="text/javascript" src="/js/departments-utils.js")
      div(style="margin-top: 100px; background-color: #8a6d3b; position: fixed;bottom: 0;width: 100%;")
             div(style="color:white; text-align:center; font-size:11px;")="@labyoke"

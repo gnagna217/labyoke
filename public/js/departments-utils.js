@@ -1,3 +1,4 @@
+
             window.onload = function() {
                 $('#createDept').hide();
                 $('#createLab').hide();
@@ -31,7 +32,7 @@
 
                     var deptpos = $('option:selected', this).attr('deptpos');
                     var labpos = $('option:selected', this).attr('pos');
-                    var users = JSON.parse('#{JSON.stringify(vennuser)}'.replace(/&quot;/g, '"'));
+                    var users = JSON.parse(JSON.stringify(var_vennuser).replace(/&quot;/g, '"'));
                     var users0 = users[labpos];
                     console.log("labpos: " + labpos);
                     console.log("deptpos: " + deptpos);
@@ -268,7 +269,7 @@
                     console.log("venn settings display inside 0");
                     var dept = $('#deptlabvenn').val();
                     console.log("deptlabvenn dept: " + dept);
-                    var test = JSON.parse('#{JSON.stringify(vennsettings)}'.replace(/&quot;/g, '"'));
+                    var test = JSON.parse(JSON.stringify(var_vennsettings).replace(/&quot;/g, '"'));
                     console.log("deptlabvenn vennsettings: " + test);
                     console.log("deptlabvenn vennsettings find index: " + test.indexOf(dept));
                     $('#vennSettingsDisplay').show();
@@ -285,7 +286,7 @@
                         console.log("venn settings display inside 1");
                         var dept = $('#deptlabvenn').val();
                         console.log("deptlabvenn dept: " + dept);
-                        var test = JSON.parse('#{JSON.stringify(venn)}'.replace(/&quot;/g, '"'));
+                        var test = JSON.parse(JSON.stringify(venn).replace(/&quot;/g, '"'));
                         console.debug(test);
                         var departments = test.departments
                         console.debug(departments);
@@ -295,7 +296,7 @@
                         if(index > -1){
                             var labs = test.labs[index];
                             var currentadmins = test.admins[index];
-                            var labadmins = JSON.parse('#{JSON.stringify(labadmins)}'.replace(/&quot;/g, '"'));
+                            var labadmins = JSON.parse(JSON.stringify(labadmins).replace(/&quot;/g, '"'));
                             //var getadmins = JSON.parse('#{JSON.stringify(getadmins)}'.replace(/&quot;/g, '"'));
                             var isvenns = test.isvenn[index];
                             var isdisabled = test.isdisabled[index];
@@ -654,7 +655,7 @@
                     }
                 }
 
-                    var checkedstrDept = "#{checkedstrDept}";
+                    var checkedstrDept = var_checkedstrDept;
                     if(checkedstrDept == "true"){
                         console.log("section createdept");
                         //$("#createLab").val("vennsettings");
@@ -664,7 +665,7 @@
                         $('#editLab').hide();
                         $(window).scrollTop($('#createDept').offset().top - 100).scrollLeft($('#createDept').offset().left);
                         }
-                    var checkedstrLab = "#{checkedstrLab}";
+                    var checkedstrLab = var_checkedstrLab;
                     if(checkedstrLab == "true"){
                         console.log("section createLab");
                         //$("#createLab").val("vennsettings");
@@ -674,7 +675,7 @@
                         $('#editLab').hide();
                         $(window).scrollTop($('#createLab').offset().top - 100).scrollLeft($('#createLab').offset().left);
                         }
-                    var checkedstrEditLab = "#{checkedstrEditLab}";
+                    var checkedstrEditLab = var_checkedstrEditLab;
                     if(checkedstrEditLab == "true"){
                         console.log("section editLab");
                         //$("#createLab").val("vennsettings");
@@ -684,7 +685,7 @@
                         $('#editLab').show();
                         $(window).scrollTop($('#editLab').offset().top - 100).scrollLeft($('#editLab').offset().left);
                         }
-                    var checkedstrVenn = "#{checkedstrVenn}";
+                    var checkedstrVenn = var_checkedstrVenn;
                     if(checkedstrVenn == "true"){
                         console.log("section vennSettings");
                         //$("#createLab").val("vennsettings");
