@@ -4,8 +4,6 @@ html(lang='en')
      title= 'LabYoke Admin - ' + title
      link(href='/css/animate.css', rel='stylesheet')
      link(rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.12/datatables.min.css")
-     //link(rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/dt-1.10.16/rr-1.2.3/datatables.min.css")
-
      link(href='/css/popup.css', rel='stylesheet')
      link(href='/css/bootstrap.css', rel='stylesheet')
      link(href='/css/globaladmin.min.css', rel='stylesheet')
@@ -28,7 +26,6 @@ html(lang='en')
      link(rel='shortcut icon', href='/images/BLlogin.png')
      script(type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js")
      script(type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.12/datatables.min.js")
-     //script(type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.10.16/rr-1.2.3/datatables.min.js")
      :staticCache
       link(rel="shortcut icon" href="/images/adminico.ico" type="image/x-icon")
       link(rel="icon" href="/images/adminico.ico" type="image/x-icon")
@@ -65,14 +62,10 @@ html(lang='en')
            - user = user.substring(0,7)
    body(class=loggedIn)
      if (loggedIn==true)
-        .navbar.navbar-inverse.navbar-fixed-top.adjustnav.navbackground(role='navigation',style="background-color: white;font-size: 10pt;position:fixed !important;padding-top:10px")
-            .container.nobottom(class="margin-top: 5px;")
-                .navbar-header.paddingrightnav(style="margin-bottom: 16px;float:right; margin-left:auto;margin-right: -10px;")
-                    //button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-collapse', style="border-color:#8a6d3b")
-                      //  span.icon-bar
-                      //  span.icon-bar
-                      //  span.icon-bar
-                    button(class="hamburger hamburger--spring" data-toggle="collapse" data-target=".navbar-collapse" type="button" style="outline:none;margin-right: 10px;")
+        .navbar.navbar-inverse.navbar-fixed-top.adjustnav.navbackground.admin-nav(role='navigation')
+            .container.nobottom.margintop-5
+                .navbar-header.paddingrightnav.admin-subnav
+                    button(class="hamburger hamburger--spring admin-button" data-toggle="collapse" data-target=".navbar-collapse" type="button")
                       span(class="hamburger-box")
                         span(class="hamburger-inner")
 
@@ -104,24 +97,24 @@ html(lang='en')
                 span
                   label(for="togglerules" onclick="javascript:window.location.href='/search'" class="animated fadeInUp labelexpandrules labeladmin roundaccountmob shadow gotolabyokemobile" title="Labyoke")!= "L"
                   label(for="togglerules" onclick="javascript:window.location.href='/search'" class="animated fadeInUp labelexpandrules labeladmin roundaccountmob shadow gotolabyoke" title="Labyoke")!= "L"
-                  a(href="/querytool", class="roundaccountmob searchmob " + activeSearchMob, style="color: white;text-decoration: none; z-index: -11;")
-                    span(class="fa fa-gear colmenu " + activeSearchMob, style="color: white;font-size: 11pt;")
+                  a(href="/querytool", class="roundaccountmob searchmob admin-query " + activeSearchMob)
+                    span(class="fa fa-gear colmenu admin-menu " + activeSearchMob)
                 .collapse.navbar-collapse(id="navburger")
-                    div.adjustWidthSearch(style="float:left", class=isreghide)
+                    div.adjustWidthSearch.float-left(class=isreghide)
                         - adjustWidth = ""
                         - menuaccount = "menumyaccountadmin"
                         if(isLoggedInAdmin == false)
-                            - adjustWidth =  "width: 111px;"
+                            - adjustWidth =  "width-111"
                             - menuaccount = "menumyaccount"
                         ul.nav.navbar-nav.addMargin.adjustWidthSearchUL(id="#menumyaccounta")
                             li(class=activateTool)
-                                a(href="/admin/querytool", class="nav-menu",id="menusearch", style=adjustWidth)
-                                    span(class="fa fa-gear colmenu", style="font-size: 14pt;margin-top: -5px")
+                                a(href="/admin/querytool", class="nav-menu " + adjustWidth ,id="menusearch")
+                                    span(class="fa fa-gear colmenu admin-gear")
                                     span=" Tool"
 
                             
                     div(class="paddingMobile")
-                        ul.nav.navbar-nav(id="menumyshares", class="addMargin", style="border-left-color: white;/*border-left-style: solid;*/border-width: thick;")
+                        ul.nav.navbar-nav(id="menumyshares", class="addMargin admin-dept")
                             li(class=activateDepartments)
                                 a(href="/admin/departments",class="nav-menu",id="")
                                     span(class="fa fa-building colmenu")
@@ -131,11 +124,6 @@ html(lang='en')
                                     span(class="fa fa-users colmenu")
                                     span=" Users"
                         ul.nav.navbar-nav(id=menuaccount, class="addMargin menu-border")
-                            //li(class=activateAccount)
-                                //a(href="/account",class="nav-menu myaccount", id="menumyaccounta")
-                                    //span(class="fa fa-cog colmenu")
-                                    //span(class="desktabonly2")=" " + user + "'s"
-                                    //span=" Profile"
                             li(class=activateHelp)
                                 a(href='/help', class="nav-menu",id="menumyaccounta")
                                     span(class="fa fa-anchor colmenu")
@@ -145,9 +133,9 @@ html(lang='en')
                                     span(class="fa fa-home colmenu")
                                     span!=" Us "
                     ul.nav.navbar-nav.navbar-right
-                        li(class="nav-menu-logout", style="cursor:pointer")
+                        li(class="nav-menu-logout cursor-pointer")
                             a 
-                                span(style="margin-left: 5px;")="Logout"
+                                span(class="marginleft-5")="Logout"
 
      block content
      :staticCache
@@ -163,8 +151,8 @@ html(lang='en')
      if (title=='Reports' || title=='Account' || title=='Register')
        script(type="text/javascript" src="/javascripts/jquery.maskedinput.min.js")
 
-     div(style="margin-top: 100px; background-color: #8a6d3b; position: fixed;bottom: 0;width: 100%;")
-            div(style="color:white; text-align:center; font-size:11px;")="@labyoke"
+     div(class="admin-bottom")
+            div(class="admin-labyoke")="@labyoke"
      a(href="#0" class="cd-top" title="go to top")
       span(class="fa fa-chevron-circle-up")
     :staticCache

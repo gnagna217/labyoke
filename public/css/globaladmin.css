@@ -5368,3 +5368,49 @@ a.mailto:link {
   top: -25px; position: relative; float: right; margin-right: 10px;
 }
 /* end departments */
+
+/*Start layout*/
+.admin-nav{
+  background-color: white;font-size: 10pt;position:fixed !important;padding-top:10px;
+}
+.margintop-5{
+  margin-top: 5px;
+}
+.admin-subnav{
+  margin-bottom: 16px;float:right; margin-left:auto;margin-right: -10px;
+}
+.admin-button{
+  outline:none;margin-right: 10px;
+}
+.admin-query{
+  color: white;text-decoration: none; z-index: -11;
+}
+.admin-menu{
+  color: white;font-size: 11pt;
+}
+.float-left{
+  float:left;
+}
+.width-111{
+  width: 111px;
+}
+.admin-gear{
+  font-size: 14pt;margin-top: -5px;
+}
+.admin-dept{
+  border-left-color: white;border-width: thick;
+}
+.cursor-pointer{
+  cursor:pointer;
+}
+.marginleft-5{
+  margin-left: 5px;
+}
+.admin-bottom{
+  margin-top: 100px; background-color: #8a6d3b; position: fixed;bottom: 0;width: 100%;
+}
+.admin-labyoke{
+  color:white; text-align:center; font-size:11px;
+}
+
+/*ends layout*/
