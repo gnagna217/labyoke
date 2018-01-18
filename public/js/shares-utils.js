@@ -59,9 +59,15 @@ $(document).ready(function() {
         $('#rankTblshares').removeClass("animated fadeIn");
         console.log("jumping");
         var tableid = $('#rankTblshares').DataTable();
-
+        var tr = $('#rankTblshares').find($("tr[data-pos=" + pos2 + "]"));
+        var point = "successful-fulfill";
+        console.debug(tr);
+        if(tr.hasClass("backColorinsuff")){
+            console.log("has point insuff");
+            point = "successful-cancel";
+        }
         tableid.page.jumpToData(pos2, 0);
-        $('#rankTblshares').find($("tr[data-pos=" + pos2 + "]")).children('td').eq(1).addClass("successful-cancel");
+        tr.children('td').eq(1).addClass(point);
         //point
         $(window).scrollTop($('#rankTblshares').offset().top * 10).scrollLeft($('#rankTblshares').offset().left);
     }

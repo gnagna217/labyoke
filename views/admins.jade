@@ -295,6 +295,7 @@ block content
 										-var ob = myshares
 										-for(var prop in ob)
 											- var c = "cancelr" + prop
+											- var status = ob[prop].status
 											- var currentqtyint = parseInt(ob[prop].currentquantity)
 											- var qtyinsufficient = ""
 											- var checkedstr = false
@@ -307,7 +308,9 @@ block content
 											- var point2 = ""
 											- var point4 = ""
 											- if(pos2!=null && prop == pos2)
-												- point2 = " successful-cancel"
+												- point2 = " successful-fulfill"
+												- if(insuff == 0)
+													- point2 = " successful-cancel"
 
 											tr(class=qtyinsufficient)
 												td(class="displaynone") #{prop}
