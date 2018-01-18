@@ -180,7 +180,7 @@ block content
 						div(class="dept-edit-arrow")
 							div(class="arrow-up marginbottom-5")
 							div(class="arrow-down")
-						div(id="transferdept", style="dept-edit-transfer")
+						div(id="transferdept", class="dept-edit-transfer")
 							label(class="dept-edit-label")!="<span class='labColor'> Department </span>"
 							select(name="deptlabedit" type="text" id="deptlabedit" class="form-control dept-edit-select" placeholder="Department")
 								option(value"selectdeptedit")="Select a Department"
@@ -188,7 +188,7 @@ block content
 									- for(var prop in depts)
 										- var department = depts[prop].departmentname
 										option(value=department) #{department}
-							div(style="dept-edit-arrow-one")
+							div(class="dept-edit-arrow-one")
 								div(class="arrow-up marginbottom-5")
 								div(class="arrow-down")
 						div(id="transferadmin", class="dept-transfer")
@@ -199,7 +199,7 @@ block content
 									- for(var prop in users)
 										- var user = users[prop].email
 										option(value=user) #{user}
-							div(style="dept-transfer-arrow")
+							div(class="dept-transfer-arrow")
 								div(class="arrow-up marginbottom-5")
 								div(class="arrow-down")
 							div(class="buttons")
@@ -261,5 +261,4 @@ block content
 
 		script.
 			var var_vennsettings = "#{vennsettings}", var_vennuser = "#{vennuser}",  var_venn = "#{venn}", var_labadmins = "#{labadmins}", var_checkedstrDept =  "#{checkedstrDept}", var_checkedstrLab =  "#{checkedstrLab}", var_checkedstrEditLab =  "#{checkedstrEditLab}", var_checkedstrVenn =  "#{checkedstrVenn}";
-		:staticCache
-			script(type="text/javascript" src="/js/departments-utils.js")
+		script(type="text/javascript" src="/js/departments-utils.js")
