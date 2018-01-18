@@ -36,8 +36,15 @@ $(document).ready(function() {
         $('#rankTblreqshares').removeClass("animated fadeIn");
         console.debug("jumping");
         tableid.page.jumpToData(pos, 0);
-        $('#rankTblreqshares').find($("tr[data-pos=" + pos + "]")).children('td').eq(1).addClass("point");
-
+        var tr = $('#rankTblreqshares').find($("tr[data-pos=" + pos + "]"));
+        var point = "successful-fulfill";
+        console.debug(tr);
+        if(tr.hasClass("backColorinsuff")){
+            console.log("has point insuff");
+            point = "successful-cancel";
+        }
+        tr.children('td').eq(1).addClass(point);
+        //point
         $(window).scrollTop($('#rankTblreqshares').offset().top * 10).scrollLeft($('#rankTblreqshares').offset().left);
     }
 
@@ -54,8 +61,8 @@ $(document).ready(function() {
         var tableid = $('#rankTblshares').DataTable();
 
         tableid.page.jumpToData(pos2, 0);
-        $('#rankTblshares').find($("tr[data-pos=" + pos2 + "]")).children('td').eq(1).addClass("point");
-
+        $('#rankTblshares').find($("tr[data-pos=" + pos2 + "]")).children('td').eq(1).addClass("successful-cancel");
+        //point
         $(window).scrollTop($('#rankTblshares').offset().top * 10).scrollLeft($('#rankTblshares').offset().left);
     }
 

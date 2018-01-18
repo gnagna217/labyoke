@@ -199,13 +199,16 @@ block content
 											- if(n != "fulfilled")
 												- isnew = "isnew"
 											- var insuff = parseInt(ob[prop].insufficient)
+											- var point = ""
 											- if(insuff == 0)
+												- point = " successful-cancel"
 												- isnew = "backColorinsuff"
 												- checkedstr = true
 												- canc = i18n.__("admins.table.repl") + ob[prop].agent
 											- var status = ob[prop].status
 											- var showcancel = ""
 											- if(status == 'fulfilled')
+												- point = " successful-fulfill"
 												- checkedfilledstr = true
 												- showcancel = " displaynone"
 												- full = i18n.__("admins.table.revert") + ob[prop].agent
@@ -215,10 +218,10 @@ block content
 											- var showfulfill = " "
 											- if(checkedstr===true)
 												- showfulfill = " displaynone"
-											- var point = ""
+											
 											- var point2 = ""
 											- if(pos!=null && prop == pos)
-												- point = " point"
+												//- point = " point"
 												- point3 = " point2"
 											
 											tr(class=isnew)
@@ -302,7 +305,7 @@ block content
 											- var point2 = ""
 											- var point4 = ""
 											- if(pos2!=null && prop == pos2)
-												- point2 = " point"
+												- point2 = " successful-cancel"
 
 											tr(class=qtyinsufficient)
 												td(class="displaynone") #{prop}
