@@ -5419,6 +5419,13 @@ width: 65px !important;font-weight: bold !important;
 .ui-datepicker-rtl .ui-datepicker-group-last .ui-datepicker-header { border-right-width:0; border-left-width:1px; }
 .ui-datepicker-rtl .ui-datepicker-group-middle .ui-datepicker-header { border-right-width:0; border-left-width:1px; }
 
+
+.marginleftbelow-3{
+  margin-left: -3px;
+}
+.immediate-action{
+  color: #65c867; font-size: 15pt; padding-right: 7px; top: 4px; position: relative;
+}
 @media (max-width: 900px) {
 .ui-datepicker{
 width:68%;
