@@ -56,7 +56,7 @@ block content
 
 						- for(var prop in orphandepts)
 							- var department = orphandepts[prop].departmentname
-							select(name="deptorph"+prop type="text" id="deptorph"+prop class="depsorph animated slideInDown marginright-15")
+							select(name="deptorph"+prop type="text" id="deptorph"+prop class="depsorph animated slideInDown marginright-15orph")
 								option(value=department selected="selected" class="font-bold")!= department
 							span(class="fa fa-trash deletedept deptvoidtrash")
 								form(action="/admin/deletedept" method="post")

@@ -10,7 +10,7 @@
 }
 
 /* departments*/
-.marginright-15{
+.marginright-15, .marginright-15orph{
   margin-right: 15px;
 }
 /* end departments*/
@@ -4222,6 +4222,10 @@ margin-top:0px;
 .marginright-15 {
     margin-right: 2.5% !important;
     margin-left: 2.5%;
+}
+.marginright-15orph {
+    margin-right: 1% !important;
+    margin-left: 1%;
 }
 .adminlogin-desc{
       width: 100%;
