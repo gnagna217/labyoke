@@ -199,16 +199,13 @@ block content
 											- if(n != "fulfilled")
 												- isnew = "isnew"
 											- var insuff = parseInt(ob[prop].insufficient)
-											- var point = ""
 											- if(insuff == 0)
-												- point = " successful-cancel"
 												- isnew = "backColorinsuff"
 												- checkedstr = true
 												- canc = i18n.__("admins.table.repl") + ob[prop].agent
 											- var status = ob[prop].status
 											- var showcancel = ""
 											- if(status == 'fulfilled')
-												- point = " successful-fulfill"
 												- checkedfilledstr = true
 												- showcancel = " displaynone"
 												- full = i18n.__("admins.table.revert") + ob[prop].agent
@@ -220,7 +217,12 @@ block content
 												- showfulfill = " displaynone"
 											
 											- var point2 = ""
+											- var point = ""
 											- if(pos!=null && prop == pos)
+												- if(status == 'fulfilled')
+													- point = " successful-fulfill"
+												- if(insuff == 0)
+													- point = " successful-cancel"
 												//- point = " point"
 												- point3 = " point2"
 											
