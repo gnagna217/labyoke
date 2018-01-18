@@ -324,7 +324,7 @@ window.onload = function() {
             console.log("venn settings display inside 1");
             var dept = $('#deptlabvenn').val();
             console.log("deptlabvenn dept: " + dept);
-            var test = JSON.parse(JSON.stringify(venn).replace(/&quot;/g, '"'));
+            var test = JSON.parse(var_venn.replace(/&quot;/g, '"'));
             console.debug(test);
             var departments = test.departments
             console.debug(departments);
