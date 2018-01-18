@@ -5272,13 +5272,13 @@ a.mailto:link {
 
 /* departments*/
 .dept-action-order{
-  width: 50%; float: left; background-color: rgba(138, 109, 59, 0.55);
+  width: 50% !important; float: left; background-color: rgba(138, 109, 59, 0.55);
 }
 .dept-action-order-disable{
-  width: 50%; float: left; background-color: rgba(138, 109, 59, 0.55);
+  width: 50% !important; float: left; background-color: rgba(138, 109, 59, 0.55);
 }
 .dept-select{
-  width: 100%;margin-bottom: 40px;margin-top: 40px;
+  width: 100% !important;margin-bottom: 40px;margin-top: 40px;
 }
 .marginright-15{
   margin-right: 15px;
