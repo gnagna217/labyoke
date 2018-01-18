@@ -113,7 +113,7 @@ $(document).ready(function() {
 if ( !$.fn.dataTable.isDataTable( '#rankTblreqshares' ) ) {
     $('#rankTblreqshares').DataTable({
         order: [
-            [1, "desc"]
+            []
         ],
         iDisplayLength: 5,
         aLengthMenu: [
@@ -150,7 +150,7 @@ if ( !$.fn.dataTable.isDataTable( '#rankTblreqshares' ) ) {
 if ( !$.fn.dataTable.isDataTable( '#rankTblshares' ) ) {
     $('#rankTblshares').DataTable({
         order: [
-            [1, "desc"]
+            []
         ],
         iDisplayLength: 5,
         aLengthMenu: [
