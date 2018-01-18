@@ -133,7 +133,7 @@
   color: white;
     top: 35px;
     left: -35px;
-    z-index: 1;
+    z-index: 0;
     position: relative;
     font-size: 9pt;
     cursor: pointer;
