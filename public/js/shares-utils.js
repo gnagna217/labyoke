@@ -104,7 +104,7 @@ $(document).ready(function() {
 
 
 
-
+if ( !$.fn.dataTable.isDataTable( '#rankTblreqshares' ) ) {
     $('#rankTblreqshares').DataTable({
         order: [
             [5, "desc"]
@@ -138,9 +138,10 @@ $(document).ready(function() {
             }
         }
     });
+}
 
 
-
+if ( !$.fn.dataTable.isDataTable( '#rankTblshares' ) ) {
     $('#rankTblshares').DataTable({
         order: [
             [1, "desc"]
@@ -174,6 +175,7 @@ $(document).ready(function() {
             }
         }
     });
+}
 
 
 });
