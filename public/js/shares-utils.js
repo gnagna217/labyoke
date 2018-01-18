@@ -113,7 +113,7 @@ $(document).ready(function() {
 if ( !$.fn.dataTable.isDataTable( '#rankTblreqshares' ) ) {
     $('#rankTblreqshares').DataTable({
         order: [
-            [5, "desc"]
+            [1, "desc"]
         ],
         iDisplayLength: 5,
         aLengthMenu: [
