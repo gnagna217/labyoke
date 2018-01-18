@@ -3,6 +3,7 @@ extends layout
 block content
 	script.
 		var nochange = 0;
+	- var venn = vennsettings
 	div(id="ios-light")
 		center
 			h1="Add."
@@ -65,7 +66,7 @@ block content
 									input(type="hidden" value=department name="department")
 
 
-			- var venn = vennsettings
+			
 			- var checkedstrDept = false;
 			- if(section !=null && section.length>0 && section == "department")
 				- checkedstrDept = true
@@ -221,5 +222,5 @@ block content
 							img(src="/images/lab.png", alt="The Lab", title="Lab", class="dept-button-image")
 
 		script.
-			var var_vennsettings = "#{JSON.stringify(vennsettings)}", var_vennuser = "#{JSON.stringify(vennuser)}",  var_venn = "#{venn}", var_labadmins = "#{JSON.stringify(labadmins)}", var_checkedstrDept =  "#{checkedstrDept}", var_checkedstrLab =  "#{checkedstrLab}", var_checkedstrEditLab =  "#{checkedstrEditLab}", var_checkedstrVenn =  "#{checkedstrVenn}";
+			var var_venn = "#{JSON.stringify(venn)}", var_vennsettings = "#{JSON.stringify(vennsettings)}", var_vennuser = "#{JSON.stringify(vennuser)}",  var_venn = "#{venn}", var_labadmins = "#{JSON.stringify(labadmins)}", var_checkedstrDept =  "#{checkedstrDept}", var_checkedstrLab =  "#{checkedstrLab}", var_checkedstrEditLab =  "#{checkedstrEditLab}", var_checkedstrVenn =  "#{checkedstrVenn}";
 		script(type="text/javascript" src="/js/departments-utils.js")
