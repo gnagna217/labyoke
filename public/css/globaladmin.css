@@ -9,6 +9,12 @@
   -webkit-font-smoothing: antialiased;
 }
 
+/* departments*/
+.marginright-15{
+  margin-right: 15px;
+}
+/* end departments*/
+
 .gotolabyokemobile{
     display: none;
 }
@@ -5275,6 +5281,7 @@ a.mailto:link {
 }
 
 /* departments*/
+
 .dept-action-order{
   width: 50% !important; float: left; background-color: rgba(138, 109, 59, 0.55);
 }
@@ -5284,9 +5291,7 @@ a.mailto:link {
 .dept-select{
   width: 100% !important;margin-bottom: 40px;margin-top: 40px;
 }
-.marginright-15{
-  margin-right: 15px;
-}
+
 .font-bold{
   font-weight: bold;
 }
