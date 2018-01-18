@@ -32,7 +32,7 @@
 
                     var deptpos = $('option:selected', this).attr('deptpos');
                     var labpos = $('option:selected', this).attr('pos');
-                    var users = JSON.parse(JSON.stringify(var_vennuser).replace(/&quot;/g, '"'));
+                    var users = JSON.parse(var_vennuser.replace(/&quot;/g, '"'));
                     var users0 = users[labpos];
                     console.log("labpos: " + labpos);
                     console.log("deptpos: " + deptpos);
@@ -269,7 +269,7 @@
                     console.log("venn settings display inside 0");
                     var dept = $('#deptlabvenn').val();
                     console.log("deptlabvenn dept: " + dept);
-                    var test = JSON.parse(JSON.stringify(var_vennsettings).replace(/&quot;/g, '"'));
+                    var test = JSON.parse(var_vennsettings.replace(/&quot;/g, '"'));
                     console.log("deptlabvenn vennsettings: " + test);
                     console.log("deptlabvenn vennsettings find index: " + test.indexOf(dept));
                     $('#vennSettingsDisplay').show();
@@ -296,7 +296,7 @@
                         if(index > -1){
                             var labs = test.labs[index];
                             var currentadmins = test.admins[index];
-                            var labadmins = JSON.parse(JSON.stringify(labadmins).replace(/&quot;/g, '"'));
+                            var labadmins = JSON.parse(var_labadmins.replace(/&quot;/g, '"'));
                             //var getadmins = JSON.parse('#{JSON.stringify(getadmins)}'.replace(/&quot;/g, '"'));
                             var isvenns = test.isvenn[index];
                             var isdisabled = test.isdisabled[index];

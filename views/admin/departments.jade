@@ -260,5 +260,5 @@ block content
 							img(src="/images/lab.png", alt="The Lab", title="Lab", class="dept-button-image")
 
 		script.
-			var var_vennsettings = "#{vennsettings}", var_vennuser = "#{vennuser}",  var_venn = "#{venn}", var_labadmins = "#{labadmins}", var_checkedstrDept =  "#{checkedstrDept}", var_checkedstrLab =  "#{checkedstrLab}", var_checkedstrEditLab =  "#{checkedstrEditLab}", var_checkedstrVenn =  "#{checkedstrVenn}";
+			var var_vennsettings = "#{JSON.stringify(vennsettings)}", var_vennuser = "#{JSON.stringify(vennuser)}",  var_venn = "#{venn}", var_labadmins = "#{JSON.stringify(labadmins)}", var_checkedstrDept =  "#{checkedstrDept}", var_checkedstrLab =  "#{checkedstrLab}", var_checkedstrEditLab =  "#{checkedstrEditLab}", var_checkedstrVenn =  "#{checkedstrVenn}";
 		script(type="text/javascript" src="/js/departments-utils.js")
