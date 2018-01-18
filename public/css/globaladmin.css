@@ -4213,6 +4213,10 @@ margin-top:0px;
 }
 
 @media (max-width: 767px){
+.marginright-15 {
+    margin-right: 2.5%;
+    margin-left: 2.5%;
+}
 .adminlogin-desc{
       width: 100%;
 }
