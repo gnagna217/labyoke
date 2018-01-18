@@ -5269,3 +5269,93 @@ a.mailto:link {
     text-decoration:none;
     color:white;
 }
+
+/* departments*/
+.dept-action-order{
+  width: 50%; float: left; background-color: rgba(138, 109, 59, 0.55);
+}
+.dept-action-order-disable{
+  width: 50%; float: left; background-color: rgba(138, 109, 59, 0.55);
+}
+.dept-select{
+  width: 100%;margin-bottom: 40px;margin-top: 40px;
+}
+.marginright-15{
+  margin-right: 15px;
+}
+.font-bold{
+  font-weight: bold;
+}
+.displaynone{
+  display:none;
+}
+.textalign-center{
+  text-align: center;
+}
+.dept-desc{
+  text-align: center;margin: 0px 5%;
+}
+.dept-desc-one{
+ color:#68b3d6;
+}
+.dept-desc-two{
+  color:#95794d;
+}
+.width-100{
+  width: 100%;
+}
+.dept-button{
+  width: 50%;margin-top: 20px;
+}
+.dept-button-image{
+  border-width:0px; width: 50px;top: -10px;position: relative;float: right;
+}
+.dept-label-one{
+  width: 100%;margin-top: 10px;
+}
+.dept-label-two{
+  border-color:#3d9dcb;
+}
+.dept-arrow{
+  top: -25px; position: relative; float: right; margin-right: 10px;
+}
+.marginbottom-5{
+  margin-bottom: 5px;
+}
+.dept-button-one{
+  width: 50%;margin-top: 20px;
+}
+.dept-button-one-image{
+  border-width:0px; width: 50px;float: right;top: -10px;position: relative;
+}
+.dept-edit-lab{
+  border-color:#3d9dcb;margin-bottom: 20px;
+}
+.dept-edit-arrow{
+  top: -45px; position: relative; float: right; margin-right: 10px;
+}
+.dept-edit-transfer{
+  display:none;margin-bottom: 10px;
+}
+.dept-edit-label{
+  width: 100%;position: relative;
+}
+.dept-edit-select{
+  border-color:#3d9dcb; position: relative;
+}
+.dept-edit-arrow-one{
+  top: -23px;position: relative;float: right;margin-right: 10px;
+}
+.dept-transfer{
+  display:none;margin-top: 20px;
+}
+.dept-transfer-label{
+  width: 100%;position: relative;
+}
+.dept-transfer-select{
+  border-color:#3d9dcb;position: relative;
+}
+.dept-transfer-arrow{
+  top: -25px; position: relative; float: right; margin-right: 10px;
+}
+/* end departments */
