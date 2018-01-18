@@ -112,9 +112,7 @@ $(document).ready(function() {
 
 if ( !$.fn.dataTable.isDataTable( '#rankTblreqshares' ) ) {
     $('#rankTblreqshares').DataTable({
-        order: [
-            []
-        ],
+        order: [],
         iDisplayLength: 5,
         aLengthMenu: [
             [5, 10, 15, -1],
@@ -149,9 +147,7 @@ if ( !$.fn.dataTable.isDataTable( '#rankTblreqshares' ) ) {
 
 if ( !$.fn.dataTable.isDataTable( '#rankTblshares' ) ) {
     $('#rankTblshares').DataTable({
-        order: [
-            []
-        ],
+        order: [],
         iDisplayLength: 5,
         aLengthMenu: [
             [5, 10, 15, -1],
