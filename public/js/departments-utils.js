@@ -10,6 +10,45 @@
 
                 var eSelect = document.getElementById('createSelect');
 
+if ($('.alert-create-dept').is(':visible')) {
+console.log("alert-create-dept visible ");
+$(window).scrollTop($('#createDept').offset().top - 100).scrollLeft($('#createDept').offset().left); 
+}
+if ($('.alert-create-lab').is(':visible')) {
+console.log("alert-create-lab visible ");
+$(window).scrollTop($('#createLab').offset().top - 100).scrollLeft($('#createLab').offset().left);
+//$(window).scrollTop($('#createLab').offset().top - 100).scrollLeft($('#createLab').offset().left);
+$( document ).ready(function() {
+$('#vennSettings').hide();
+$('#createDept').hide();
+$('#createLab').show();
+$('#editLab').hide();
+});
+
+}
+if ($('.alert-edit-lab').is(':visible')) {
+console.log("alert-edit-lab visible ");
+$(window).scrollTop($('#editLab').offset().top - 100).scrollLeft($('#editLab').offset().left);
+                        $( document ).ready(function() {
+                        $('#vennSettings').hide();
+                        $('#createDept').hide();
+                        $('#createLab').hide();
+                        $('#editLab').show();
+                        });
+}
+if ($('.alert-edit-venn').is(':visible')) {
+console.log("alert-edit-venn visible ");
+$(window).scrollTop($('#vennSettings').offset().top - 100).scrollLeft($('#vennSettings').offset().left);
+                        $( document ).ready(function() {
+                        $("#createSelect").val("vennsettings");
+                        $('#vennSettings').show();
+                        $('#createDept').hide();
+                        $('#createLab').hide();
+                        $('#editLab').hide();
+                        //nochange = 1;
+                        });
+}
+
                 $(".deps").change(function(){
                     var savedep = $(this).val();
                     

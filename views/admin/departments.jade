@@ -90,13 +90,9 @@ block content
 				h3(class="textalign-center")!= 'Create a new Department.'
 				p(class="dept-desc")!="Add a department to the existing list."
 				if errormessagedept != null
-					div(class="alert alert-danger fade in alert-dismissable")!= errormessagedept
-					script.
-						$(window).scrollTop($('#createDept').offset().top - 100).scrollLeft($('#createDept').offset().left); 
+					div(class="alert alert-danger fade in alert-dismissable alert-create-dept")!= errormessagedept
 				if successmessagedept != null
-					div(class="alert alert-success fade in alert-dismissable")!= successmessagedept
-					script.
-						$(window).scrollTop($('#createDept').offset().top - 100).scrollLeft($('#createDept').offset().left);
+					div(class="alert alert-success fade in alert-dismissable alert-create-dept")!= successmessagedept
 
 				div(id="ctl00_Div2" class="results resultsshadow borderradius")
 					form(action="/admin/createdepartment" method="post")
@@ -110,22 +106,10 @@ block content
 				h3(class="textalign-center")!= 'Add a new lab.'
 				p(class="dept-desc")!="Each lab is assigned an administrator and department. Labs may or may not be part of the Venn Diagram. There is a maximum of 6 labs per department that can be listed in the diagram."
 				if errormessagelab != null
-					div(class="alert alert-danger fade in alert-dismissable")!= errormessagelab
-					script.
-						$(window).scrollTop($('#createLab').offset().top - 100).scrollLeft($('#createLab').offset().left);
+					div(class="alert alert-danger fade in alert-dismissable alert-create-lab")!= errormessagelab
 				if successmessagelab != null
-					div(class="alert alert-success fade in alert-dismissable")!= successmessagelab
-					script.
-						$(window).scrollTop($('#createLab').offset().top - 100).scrollLeft($('#createLab').offset().left);
-				if successmessagelab != null || errormessagelab != null
-					script.
-						$(window).scrollTop($('#createLab').offset().top - 100).scrollLeft($('#createLab').offset().left);
-						$( document ).ready(function() {
-						$('#vennSettings').hide();
-						$('#createDept').hide();
-						$('#createLab').show();
-						$('#editLab').hide();
-						});
+					div(class="alert alert-success fade in alert-dismissable alert-create-lab")!= successmessagelab
+
 				div(id="ctl00_Div2" class="results resultsshadow borderradius")
 					form(action="/admin/createlab" method="post")
 						div(class="textentry")
@@ -150,22 +134,10 @@ block content
 				h3(class="textalign-center")!= 'Transfer an existing Lab.'
 				p(class="dept-desc")!="Each lab is assigned an administrator and department. Select the department and/or Administrator that the Lab should be assigned to provided they are available and have not been assigned to another lab."
 				if errormessagelabedit != null
-					div(class="alert alert-danger fade in alert-dismissable")!= errormessagelabedit
-					script.
-						$(window).scrollTop($('#editLab').offset().top - 100).scrollLeft($('#editLab').offset().left);
+					div(class="alert alert-danger fade in alert-dismissable alert-edit-lab")!= errormessagelabedit
 				if successmessagelabedit != null
-					div(class="alert alert-success fade in alert-dismissable")!= successmessagelabedit
-					script.
-						$(window).scrollTop($('#editLab').offset().top - 100).scrollLeft($('#editLab').offset().left);
-				if errormessagelabedit != null || successmessagelabedit != null
-					script.
-						$(window).scrollTop($('#editLab').offset().top - 100).scrollLeft($('#editLab').offset().left);
-						$( document ).ready(function() {
-						$('#vennSettings').hide();
-						$('#createDept').hide();
-						$('#createLab').hide();
-						$('#editLab').show();
-						});
+					div(class="alert alert-success fade in alert-dismissable alert-edit-lab")!= successmessagelabedit
+
 				div(id="ctl00_Div2" class="results resultsshadow borderradius")
 					form(action="/admin/editlab" method="post")
 						div(class="textentry")
@@ -210,28 +182,17 @@ block content
 				h3(class="textalign-center")!= 'Edit Lab Settings.'
 				p(class="dept-desc")!="In this section, you can now add a lab to its Department's Venn diagram. Or Set the lab administrator. Or Disable a lab provided no users have been assigned to it.<br/><b>Note:</b> You can add up to 6 labs per department for graph visibility sake."
 				if errormessagevenn != null
-					div(class="alert alert-danger fade in alert-dismissable")!= errormessagevenn
+					div(class="alert alert-danger fade in alert-dismissable alert-edit-venn")!= errormessagevenn
 				if successmessagevenn != null
-					div(class="alert alert-success fade in alert-dismissable")!= successmessagevenn
+					div(class="alert alert-success fade in alert-dismissable alert-edit-venn")!= successmessagevenn
 				if errormessagedisable != null
-					div(class="alert alert-danger fade in alert-dismissable")!= errormessagedisable
+					div(class="alert alert-danger fade in alert-dismissable alert-edit-venn")!= errormessagedisable
 				if successmessagedisable != null
-					div(class="alert alert-success fade in alert-dismissable")!= successmessagedisable
+					div(class="alert alert-success fade in alert-dismissable alert-edit-venn")!= successmessagedisable
 				if errormessageadmin != null
-					div(class="alert alert-danger fade in alert-dismissable")!= errormessageadmin
+					div(class="alert alert-danger fade in alert-dismissable alert-edit-venn")!= errormessageadmin
 				if successmessageadmin != null
-					div(class="alert alert-success fade in alert-dismissable")!= successmessageadmin
-				if successmessageadmin != null || errormessageadmin != null || successmessagedisable != null || errormessagedisable != null || successmessagevenn != null || errormessagevenn != null
-					script.
-						$(window).scrollTop($('#vennSettings').offset().top - 100).scrollLeft($('#vennSettings').offset().left);
-						$( document ).ready(function() {
-						$("#createSelect").val("vennsettings");
-						$('#vennSettings').show();
-						$('#createDept').hide();
-						$('#createLab').hide();
-						$('#editLab').hide();
-						//nochange = 1;
-						});
+					div(class="alert alert-success fade in alert-dismissable alert-edit-venn")!= successmessageadmin
 				div(id="ctl00_Div2" class="results resultsshadow borderradius")
 					form(action="/admin/setvenn" method="post")
 						label(class="width-100")!="<span class='labColor'>Department </span>"
