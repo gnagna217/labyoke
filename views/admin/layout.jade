@@ -161,6 +161,9 @@ html(lang='en')
        script(type="text/javascript" src="/javascripts/custom-file-input.js")
      if (title=='Reports' || title=='Account' || title=='Register')
        script(type="text/javascript" src="/javascripts/jquery.maskedinput.min.js")
+     if(title=='Departments')
+       :staticCache
+        script(type="text/javascript" src="/js/departments-utils.js")
      div(style="margin-top: 100px; background-color: #8a6d3b; position: fixed;bottom: 0;width: 100%;")
             div(style="color:white; text-align:center; font-size:11px;")="@labyoke"
      a(href="#0" class="cd-top" title="go to top")
