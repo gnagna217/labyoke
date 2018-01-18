@@ -356,7 +356,7 @@
     "shares.chart.option3": "Votre Top 5 Partages",
     "shares.chart.option4": "Votre Top 5 Partages ce mois-ci",
     "shares.chart.notes": "Les données générées par toutes les commandes à travers les différents laboratoires de votre département nous permettent de construire ces graphiques cools et informatifs qui pourraient vous intéresser. <span class='labColor'>Sélectionnez un graphique</span> ci-dessus et commencez à explorer! Restez à l'écoute d'autres graphiques seront bientôt en ligne.",
-    "shares.venn.title": "Un diagramme de Venn de tous les ré-agents de votre département.",
+    "shares.venn.title": "Un diagramme Venn des ré-actifs de votre département.",
     "shares.venn.subtitle1": "Ce graphique venn représente les réactifs croisés dans au plus six des laboratoires de votre département. Vous pouvez trouver un réactif parmi les laboratoires en effectuant une recherche ci-dessous ou imprimer ",
     "shares.venn.subtitle2": " une feuille de calcul CVS/Excel contenant toutes les données.",
     "shares.venn.desc": "Trouver un réactif:",
