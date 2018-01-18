@@ -1,1 +1,0 @@
-$(window).scrollTop(var_node.offset().top - 100).scrollLeft(var_node.offset().left);
