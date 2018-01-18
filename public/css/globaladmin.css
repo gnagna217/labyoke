@@ -5418,3 +5418,34 @@ a.mailto:link {
 }
 
 /*ends layout*/
+
+/* login */
+.admin-login{
+  margin-top: 5%;margin-bottom: 15px;display: block;transition: all 0.5s ease;
+}
+.admin-login-one{
+  text-align: center;position: relative;
+}
+.font-30{
+  font-size:30px;
+}
+.font-15{
+  font-size: 15pt;
+}
+.admin-login-user{
+  top: 15px;position: relative;float: right;color: rgba(138, 109, 59, 0.61);
+}
+.admin-login-key{
+  top: -20px;position: relative;float: right;color: rgba(138, 109, 59, 0.61);
+}
+.margintop-10{
+  margin-top: 10px;
+}
+.z-index-10{
+  z-index:10;
+}
+.float-right{
+  float:right;
+}
+
+/*end login*/

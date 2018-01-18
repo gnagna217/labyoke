@@ -2,13 +2,13 @@ extends layout
 
 block content
 
-    div(class="container login front", style="margin-top: 5%;margin-bottom: 15px;display: block;transition: all 0.5s ease;")
-         div(style="text-align: center;position: relative;")
+    div(class="container login front admin-login")
+         div(class="admin-login-one")
              a(href="/admin/querytool")
                 img(src="/images/labadmin.png", alt="The Yoke",  title="Yoke", class="yokelogo")
-             h1(style="font-size:30px")!= 'Hello Sys Admins.'
+             h1(class="font-30")!= 'Hello Sys Admins.'
              - if(loggedlabyoker != null && loggedlabyoker != "")
-                p(class="adminlogin-desc")!="Welcome to LabYoke Admin, <span style='font-size: 15pt;'><b>" + loggedlabyoker + "</b></span>.<br/> You are still logged into <a href='/search'>Labyoke</a>. Unfortunately you do not have sufficient permissions to access the System Admin pages. If you have a super admin account please log in below or reach out to your administrator for access."
+                p(class="adminlogin-desc")!="Welcome to LabYoke Admin, <span class='font-15'><b>" + loggedlabyoker + "</b></span>.<br/> You are still logged into <a href='/search'>Labyoke</a>. Unfortunately you do not have sufficient permissions to access the System Admin pages. If you have a super admin account please log in below or reach out to your administrator for access."
              - else
                 p(class="adminlogin-desc")="Welcome to LabYoke Admin. You are one step away from managing useful entities!"
 
@@ -18,102 +18,19 @@ block content
                 div(class="alert alert-danger fade in alert-dismissable")!= message
             form(action="/admin/login" method="post")
                 div(class="textentry")
-                    span(class="fa fa-user" style="top: 15px;position: relative;float: right;color: rgba(138, 109, 59, 0.61);")
-                    input(name="user" type="text" id="user" class="form-control form-control0 placeholderColor" placeholder="Username" style="/*background-color:rgba(61, 157, 203, 0.7);color:white*/")
+                    span(class="fa fa-user admin-login-user")
+                    input(name="user" type="text" id="user" class="form-control form-control0 placeholderColor" placeholder="Username")
                 div(class="textentry")
-                    input(name="pass" type="password" id="pass" class="form-control form-control0 placeholderColor" placeholder="Password" style="/*background-color:rgba(61, 157, 203, 0.7);color:white*/")
-                    span(class="fa fa-key" style="top: -20px;position: relative;float: right;color: rgba(138, 109, 59, 0.61);")
+                    input(name="pass" type="password" id="pass" class="form-control form-control0 placeholderColor" placeholder="Password")
+                    span(class="fa fa-key admin-login-key")
                 div(class="buttons")
-                    //input(type="submit" class="button" value="Get in")
                     button.btn.btn-success.btn-lg.btn-block.shadow.resizebutton(type='submit') Get in
-                    //img(src="images/lab.png", alt="The Lab", title="Lab", style="border-width:0px; width: 50px; margin-top: -50px; float: right;")
-            div(style="margin-top: 10px;")
+            div(class="margintop-10")
                 span(class="floatleft")
-                    a(href="https://team-labyoke.herokuapp.com/", style="z-index:10")="Labyoke"
-                span(style="float:right;")
-                    a(href="/forgot", style="z-index:10")="Forgot password"
+                    a(href="https://team-labyoke.herokuapp.com/", class="z-index-10")="Labyoke"
+                span(class="float-right")
+                    a(href="/forgot", class="z-index-10")="Forgot password"
     div(class="help")
        a(href="/help" title="Help")
         img(src="/images/bouee3.png", alt="Help", title="Help", class="helplogin")
-        script.
-            $( document ).ready(function() {
-            var toppinglogin = sessionStorage.getItem('toppinglogin');
-            var topping = sessionStorage.getItem('topping');
-            if(toppinglogin){
-                $(".login").css("margin-top", toppinglogin + "px");
-            }
-                
-            $(".login").css("display", "block");
-            var h = $(window).height();
-            var wi = $(window).width();
-
-                console.log("removing topped");
-
-            $( "#user" ).focus(function() {
-              $(".fa-user").css("color","rgba(61, 157, 203, 0.78)");
-            });
-
-            $( "#user" ).focusout(function() {
-                $(".fa-user").css("color","rgba(138, 109, 59, 0.61)");
-            });
-
-            $( "#pass" ).focus(function() {
-              $(".fa-key").css("color","rgba(61, 157, 203, 0.78)");
-            });
-
-            $( "#pass" ).focusout(function() {
-                $(".fa-key").css("color","rgba(138, 109, 59, 0.61)");
-            });
-
-            console.log( "login document loaded" );
-
-                $(function(){
-                    $.fn.center = function () {
-                    //var topping = $('.topping').attr("title");
-
-                    
-                    var t = ($(window).height() - this.height() ) / 2  ;
-
-                    console.log("topping after: " + topping);
-                    var storedheight = sessionStorage.getItem('storedheight');
-                    
-                    
-                    console.log("h window: " + h);
-                    console.log("sup forgot: " + (topping && parseInt(topping) > 0));
-                    
-                    if(t>0){
-                    sessionStorage.setItem('topping', t - 5);
-                    sessionStorage.setItem('toppinglogin', t - 5);
-                    sessionStorage.setItem('storedheight', h);
-                    }
-                    
-                    console.log("t login: " + t);
-                    console.log("height login : " + this.height());
-                    console.dir(this);
-                    console.log("height login 2 : " + $(".login").height());
-                    if(t > 0){
-                    console.log("topping login: " + topping);
-                    this.css("margin-top",  t + "px");
-                    this.css("-webkit-transition","all .5s ease");
-                    this.css("transition","all .5s ease");
-                    }
-                    
-                    //$('.topping').attr("title",t);
-                    
-                    //this.css("left", ( $(window).width() - this.width() ) / 2 + "px");
-                    return this;
-                    }
-
-                    if(!toppinglogin && wi > 440){
-                        $(".login").center();
-                    }
-
-                    $(window).resize(function(){
-                        if(wi > 440){
-                            sessionStorage.removeItem('toppinglogin');
-                            $(".login").center();
-                        }
-                    });
-
-                });
-            });
+        script(type="text/javascript" src="/js/admin-login-utils.js")
