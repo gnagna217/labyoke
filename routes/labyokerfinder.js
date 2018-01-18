@@ -1359,7 +1359,7 @@ LabYokeAgents.prototype.findmyshares = function(callback) {
 	console.log("findmyshares: " + this.email);
 	var query = client
 			.query("SELECT * FROM vm2016_agentsshare where email='"
-					+ this.email + "' order by date desc");
+					+ this.email + "' order by agent asc");
 	var email = this.email;
 	query.on("row", function(row, result) {
 		result.addRow(row);
