@@ -162,6 +162,22 @@ html(lang='en')
      if (title=='Reports' || title=='Account' || title=='Register')
        script(type="text/javascript" src="/javascripts/jquery.maskedinput.min.js")
      if(title=='Departments')
+        - var venn = vennsettings
+        - var checkedstrDept = false;
+        - if(section !=null && section.length>0 && section == "department")
+          - checkedstrDept = true
+        - var checkedstrLab = false;
+        - if(section !=null && section.length>0 && section == "lab")
+          - checkedstrLab = true
+        - var checkedstrVenn = false;
+        - if(section !=null && section.length>0 && section == "venn")
+          - checkedstrVenn = true
+        - var checkedstrEditLab = false;
+        - if(section !=null && section.length>0 && section == "editlab")
+          - checkedstrEditLab = true
+        - var checkedstrAll = false;
+        - if(section !=null && section.length>0 && section == "all")
+          - checkedstrAll = true
        :staticCache
         script.
           var var_vennsettings = "#{vennsettings}", var_vennuser = "#{vennuser}",  var_venn = "#{venn}", var_labadmins = "#{labadmins}", var_checkedstrDept =  "#{checkedstrDept}", var_checkedstrLab =  "#{checkedstrLab}", var_checkedstrEditLab =  "#{checkedstrEditLab}", var_checkedstrVenn =  "#{checkedstrVenn}";
