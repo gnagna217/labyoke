@@ -4,6 +4,8 @@ window.onload = function() {
     $('#editLab').hide();
     var adminvalue = "";
 
+    console.log("var_venn: " + var_venn)
+
     $('#vennSettingsDisplay').hide();
     $('#vennSettings').hide();
 
