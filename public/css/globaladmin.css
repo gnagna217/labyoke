@@ -27,7 +27,8 @@
 .gotolabyoke{
     display: block !important;
         display: block;
-    background-color: #FF5722 !important;
+    /*background-color: #FF5722 !important;*/
+    background-color:#0295dc!important;
     width: 45px !important;
     height: 45px !important;
     padding-top: 5px !important;
@@ -4235,7 +4236,7 @@ margin-top:0px;
 }
 .gotolabyokemobile{
     display: block !important;
-    background-color: #FF5722 !important;
+    background-color:#0295dc!important;
     width: 45px !important;
     height: 45px !important;
     padding-top: 5px !important;
