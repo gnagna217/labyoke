@@ -98,6 +98,10 @@ if (hamburger != undefined && hamburger != null) {
     });
 }
 
+$(".closemenu").click(function() {
+    if($("#navburger").hasClass('in')){$(".hamburger").click();}
+});
+
 var logout = document.querySelector(".nav-menu-logout");
 // On click
 if (logout != undefined && logout != null) {
