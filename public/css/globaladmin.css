@@ -24,20 +24,6 @@
     margin: 0 auto;
         padding: 25px;
 }
-.gotolabyoke{
-    display: block !important;
-    display: block;
-    border-color: #2b75b4 !important;border-width: initial;
-    /*background-color: #FF5722 !important;*/
-    background-color:#538fc2!important;
-    width: 45px !important;
-    height: 45px !important;
-    padding-top: 5px !important;
-    padding: 7px !important;
-    float: right;
-    top: 100px !important;
-    right: 132px;
-}
 
 #rankTblload_length{
       position: relative;
@@ -5536,4 +5522,19 @@ a.mailto:link {
 }
 
 /* end users */
+
+.gotolabyoke{
+    display: block !important;
+    display: block;
+    border-color: #2b75b4 !important;border-width: initial;
+    /*background-color: #FF5722 !important;*/
+    background-color:#538fc2!important;
+    width: 45px !important;
+    height: 45px !important;
+    padding-top: 5px !important;
+    padding: 7px !important;
+    float: right;
+    top: 100px !important;
+    right: 132px;
+}
 
