@@ -52,10 +52,10 @@ $(window).resize(function() {
 
 $(document).ready(function() {
 
-        if ($('#ui-datepicker-div').is(':visible')){
+
             console.log("date visible");
             $("#ui-datepicker-div").width($("#reportDateFrom").width()+"px")
-        }
+
 
 	    if (!$('#reportMoney').is(':visible') || !$('#reportInsuff').is(':visible') || !$('#reportOrders').is(':visible') || !$('#reportShares').is(':visible') ) {
             console.log("report visible");
