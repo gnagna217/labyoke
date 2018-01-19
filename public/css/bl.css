@@ -19,12 +19,12 @@ display: none !important;
 }
 .adminmobile{
   display: none !important;z-index: -10 !important;
-  background-color: #FF5722 !important;width: 45px !important;height: 45px !important;padding-top: 5px !important;padding: 5px !important;
+  background-color: #FF5722 !important;width: 44px !important;height: 44px !important;padding-top: 5px !important;padding: 5px !important;
 }
 
 .admindesktop{
   display: block !important;
-  background-color: #FF5722 !important; width: 45px !important;height: 45px !important; padding-top: 5px !important;float: right;top: 84px; right: 40px;position: relative !important;
+  background-color: #FF5722 !important; width: 44px !important;height: 44px !important; padding-top: 5px !important;float: right;top: 70px; right: 40px;position: relative !important;
 }
 
 .adminmobile:hover, .admindesktop:hover, .adminmobile:focus, .admindesktop:focus{
