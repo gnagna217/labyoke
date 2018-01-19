@@ -13,7 +13,7 @@ var pdf2 = new jsPDF('l', 'pt', 'ledger');
 source = ob;
 
 $(document).ready(function() {
-$(".restrictreport").show();
+$(".restrictreport").removeClass("displaynone");
     $(".intro2").show();
     $(".intro2").addClass("backmoney");
     $(".intro2").html(source);
