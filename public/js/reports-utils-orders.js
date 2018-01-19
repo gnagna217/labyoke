@@ -27,7 +27,6 @@ source = ob;
 
 $(document).ready(function() {
 
-$(".restrictreport").removeClass("displaynone");
     $(".intro2").show();
     $(".intro2").addClass("backorders");
     //$('.pin').show();

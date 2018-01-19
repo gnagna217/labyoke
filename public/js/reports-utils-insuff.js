@@ -13,7 +13,7 @@ var pdf2 = new jsPDF('l', 'pt', 'ledger');
 source = ob;
 
 $(document).ready(function() {
-$(".restrictreport").removeClass("displaynone");
+
     $(".intro2").show();
     $(".intro2").addClass("backinsuff");
     //$('.pin').show();

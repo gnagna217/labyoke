@@ -51,7 +51,7 @@ $(window).resize(function() {
 });
 
 $(document).ready(function() {
-
+$(".restrictreport").removeClass("displaynone");
 $("#reportDateFrom").click(function() {
             console.log("date visible");
             $("#ui-datepicker-div").width($("#reportDateFrom").width()+"px");
