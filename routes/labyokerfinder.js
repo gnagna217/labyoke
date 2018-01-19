@@ -113,6 +113,10 @@ LabYokeSearch = function(searchText, email, searchType) {
 	this.email = email;
 	this.searchType = searchType;
 };
+LabYokeSearchAdmin = function(queryText, email) {
+	this.queryText = queryText;
+	this.email = email;
+};
 
 LabYokeUploader = function(jsonResults) {
 	this.jsonResults = jsonResults;
@@ -4631,12 +4635,51 @@ LabYokerChangeShare.prototype.admincancelShare = function(callback) {
 //callback(null, results);
 };
 
+LabYokeSearchAdmin.prototype.query = function(callback) {
+	var results = [];
+	console.log("queryText: " + this.queryText);
+	var stringArray = this.queryText.split(" ");
+	var type = stringArray[0].toLowerCase();
+	results.push(type);
+	var query = client.query(this.queryText);
+	query.on("row", function(row, result) {
+		result.addRow(row);
+	});
+	query.on("end", function(result) {
+		results.push(result.rows);
+		results.push(result.rowCount);
+		console.log("result of query: " + result.rowCount);
+		callback(null, results)
+		//callback(null, results)
+	});
+	query.on('error', function(err) {
+		results.push("error");
+		results.push(err + "");
+		
+  		console.log('Query error: ' + err);
+  		callback(null, results);
+	});
+};
+
+LabYokeSearchAdmin.prototype.findagents = function(callback) {
+	var results;
+	var query = client.query("SELECT distinct agent, catalognumber FROM vm2016_agentsshare order by agent, catalognumber");
+	
+	query.on("row", function(row, result) {
+		result.addRow(row);
+	});
+	query.on("end", function(result) {
+		results = result.rows;
+			callback(null, results)
+	});
+};
 
 exports.Labyoker = Labyoker;
 exports.LabyokerUserDetails = LabyokerUserDetails;
 exports.LabYokeReporterOrders = LabYokeReporterOrders;
 exports.LabYokeAgents = LabYokeAgents;
 exports.LabYokeSearch = LabYokeSearch;
+exports.LabYokeSearchAdmin = LabYokeSearchAdmin;
 exports.LabyokerRegister = LabyokerRegister;
 exports.LabYokerGetOrder = LabYokerGetOrder;
 exports.LabYokerOrder = LabYokerOrder;

@@ -3001,7 +3001,7 @@ totalshares = t[0].counting;
 
     router.get('/admin/querytool', isLoggedInSuperAdmin, function(req, res) {
         if (req.session.user) {
-            var labYokeSearch = new LabYokeSearch("",req.session.email);
+            var labYokeSearch = new LabYokeSearchAdmin("",req.session.email);
             labYokeSearch.findagents(function(error, results) {         
                 if (results != null && results.length > 0){
                     res.render('admin/querytool', {mylab: req.session.lab,ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, isLoggedInAdmin: req.session.admin, agentsResults : results, loggedIn : true, title: 'Query Tool'});
