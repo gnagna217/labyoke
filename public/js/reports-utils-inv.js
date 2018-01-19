@@ -24,7 +24,7 @@ source = ob;
 // There is no support for any other type of selectors 
 // (class, of compound) at this time.
 $(document).ready(function() {
-
+$(".restrictreport").show();
     $(".intro2").show();
     $(".intro2").addClass("backshares");
     //$('.pin').show();
