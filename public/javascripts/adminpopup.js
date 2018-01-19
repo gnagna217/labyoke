@@ -18,8 +18,8 @@ $('.deletedept').click(function() {
   console.log("clicked");
   var addvenn = $(this);
   var addVennText = document.getElementById("addVennText");
-
-  addVennText.innerHTML = "Do you wish to void this department?";
+$("#addVennText").prev().hide();
+  addVennText.innerHTML = "<h1>Delete.</h1>Do you wish to void this department?";
 
   var pop = document.getElementById("ios-light");
   pop.style.display = "block";
