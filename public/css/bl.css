@@ -887,7 +887,7 @@ background-color: #2975b4 !important;
 background-color: rgba(61, 157, 203, 0.81);
 }
 
-.labelexpandadd:hover, .labelexpandedit:hover, .labelexpand:hover,.labelexpandrules:hover, .labelexpandmood:hover{
+.labelexpandadd:hover, .labelexpandedit:hover, .labelexpand:hover,.labelexpandrules:hover, .labelexpandmood:hover, .labelexpandrules:focus{
     background-color: #2975b4 !important;
     background-image: none;
 }
