@@ -52,9 +52,14 @@ $(window).resize(function() {
 
 $(document).ready(function() {
 
-
+$("#reportDateFrom").click(function() {
             console.log("date visible");
-            $("#ui-datepicker-div").width($("#reportDateFrom").width()+"px")
+            $("#ui-datepicker-div").width($("#reportDateFrom").width()+"px");
+});
+$("#reportDateTo").click(function() {
+            console.log("date visible");
+            $("#ui-datepicker-div").width($("#reportDateTo").width()+"px");
+});
 
 
 	    if (!$('#reportMoney').is(':visible') || !$('#reportInsuff').is(':visible') || !$('#reportOrders').is(':visible') || !$('#reportShares').is(':visible') ) {
