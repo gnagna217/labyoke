@@ -4413,19 +4413,19 @@ h1{
     width: 75%;
 }
 #menumyaccount{
-    background-color: rgba(138, 109, 59, 0.93) !important;
+    background-color: rgba(138, 109, 59, 0.8) !important;
 }
 
 .adjustWidthSearchUL{
-    background-color: rgba(138, 109, 59, 0.93) !important;
+    background-color: rgba(138, 109, 59, 0.8) !important;
 }
 
 #menumyshares{
-    background-color: rgba(138, 109, 59, 0.93) !important;
+    background-color: rgba(138, 109, 59, 0.8) !important;
     width: 50%;
 }
 .padnum{
-    background-color: rgba(138, 109, 59, 0.93) !important;
+    background-color: rgba(138, 109, 59, 0.8) !important;
 }
 .desktabonly5{
     display: none !important;
@@ -4616,7 +4616,7 @@ span.num.greatherthanninetynine {
 }
 #menumyaccountadmin{
     margin-top: -100px; /*-175px;*/
-    background-color: rgba(138, 109, 59, 0.93) !important;
+    background-color: rgba(138, 109, 59, 0.8) !important;
     /*margin-left: 95px;*/
     margin-left: 50%;
     margin-bottom: -12px;
