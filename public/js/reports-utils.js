@@ -52,7 +52,8 @@ $(window).resize(function() {
 
 $(document).ready(function() {
 
-        if (!$('#ui-datepicker-div').is(':visible')){
+        if ($('#ui-datepicker-div').is(':visible')){
+            console.log("date visible");
             $("#ui-datepicker-div").width($("#reportDateFrom").width()+"px")
         }
 
