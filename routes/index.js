@@ -3698,7 +3698,7 @@ totalshares = t[0].counting;
         if (req.session.user) {
             var queryText = req.body.queryText;
             console.log("queryText tool: " + queryText);
-            var labYokeSearch = new LabYokeSearch(queryText, req.session.email);
+            var labYokeSearch = new LabYokeSearchAdmin(queryText, req.session.email);
             var messageStr = "";
             labYokeSearch.query(function(error, results) {
                 console.log("results " + results.length);
