@@ -136,25 +136,25 @@ html(lang='en')
                         li(class="nav-menu-logout cursor-pointer")
                             a 
                                 span(class="marginleft-5")="Logout"
+     div.closemenu
+       block content
+       :staticCache
+        script(type="text/javascript" src="/javascripts/bootstrap.min.js")
+       script.
+        var lang = "en", var_processing = "#{i18n.__("datatable.processing")}", var_search = "#{i18n.__("datatable.search")}", var_lengthMenu = "#{i18n.__("datatable.lengthMenu")}", var_info = "#{i18n.__("datatable.info")}", var_infoEmpty = "#{i18n.__("datatable.infoEmpty")}", var_infoFiltered = "#{i18n.__("datatable.infoFiltered")}", var_loadingRecords = "#{i18n.__("datatable.loadingRecords")}", var_zeroRecords = "#{i18n.__("datatable.zeroRecords")}", var_emptyTable = "#{i18n.__("datatable.emptyTable")}", var_first = "#{i18n.__("datatable.first")}", var_previous = "#{i18n.__("datatable.previous")}", var_next = "#{i18n.__("datatable.next")}", var_last = "#{i18n.__("datatable.last")}", var_searchplaceholder = "#{i18n.__("datatable.searchplaceholder")}", var_sortAscending = "#{i18n.__("datatable.sortAscending")}", var_sortDescending = "#{i18n.__("datatable.sortDescending")}",var_bot_placeholder = "#{i18n.__("layout.bot.placeholder")}";
+       :staticCache
+        script(type="text/javascript" src="/javascripts/init.js")
+        script(type="text/javascript" src="/js/lang-utils.js")
+        script(type="text/javascript" src="/javascripts/adminpopup.js")
+       if (title=='Users')
+         script(type="text/javascript" src="/javascripts/custom-file-input.js")
+       if (title=='Reports' || title=='Account' || title=='Register')
+         script(type="text/javascript" src="/javascripts/jquery.maskedinput.min.js")
 
-     block content
-     :staticCache
-      script(type="text/javascript" src="/javascripts/bootstrap.min.js")
-     script.
-      var lang = "en", var_processing = "#{i18n.__("datatable.processing")}", var_search = "#{i18n.__("datatable.search")}", var_lengthMenu = "#{i18n.__("datatable.lengthMenu")}", var_info = "#{i18n.__("datatable.info")}", var_infoEmpty = "#{i18n.__("datatable.infoEmpty")}", var_infoFiltered = "#{i18n.__("datatable.infoFiltered")}", var_loadingRecords = "#{i18n.__("datatable.loadingRecords")}", var_zeroRecords = "#{i18n.__("datatable.zeroRecords")}", var_emptyTable = "#{i18n.__("datatable.emptyTable")}", var_first = "#{i18n.__("datatable.first")}", var_previous = "#{i18n.__("datatable.previous")}", var_next = "#{i18n.__("datatable.next")}", var_last = "#{i18n.__("datatable.last")}", var_searchplaceholder = "#{i18n.__("datatable.searchplaceholder")}", var_sortAscending = "#{i18n.__("datatable.sortAscending")}", var_sortDescending = "#{i18n.__("datatable.sortDescending")}",var_bot_placeholder = "#{i18n.__("layout.bot.placeholder")}";
-     :staticCache
-      script(type="text/javascript" src="/javascripts/init.js")
-      script(type="text/javascript" src="/js/lang-utils.js")
-      script(type="text/javascript" src="/javascripts/adminpopup.js")
-     if (title=='Users')
-       script(type="text/javascript" src="/javascripts/custom-file-input.js")
-     if (title=='Reports' || title=='Account' || title=='Register')
-       script(type="text/javascript" src="/javascripts/jquery.maskedinput.min.js")
-
-     div(class="admin-bottom")
-            div(class="admin-labyoke")="@labyoke"
-     a(href="#0" class="cd-top" title="go to top")
-      span(class="fa fa-chevron-circle-up")
+       div(class="admin-bottom")
+              div(class="admin-labyoke")="@labyoke"
+       a(href="#0" class="cd-top" title="go to top")
+        span(class="fa fa-chevron-circle-up")
     :staticCache
      script(type="text/javascript" src="/js/admin-layout-utils.js")
 

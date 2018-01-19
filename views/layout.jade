@@ -222,117 +222,117 @@ html(lang='en')
                             a 
                                 span(class="desktabonly4 marginleft-5") #{i18n.__("layout.Logout")}
                                 span(class="mobileonly2 marginleft-5") #{i18n.__("layout.Logout2")}
+     div.closemenu
+       block content
+       :staticCache
+        script(type="text/javascript" src="/javascripts/bootstrap.min.js")
+        :staticCache
+          script(type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js")
+       if(title=='Reagent Search' || title=='Search' || title=='Share' || title=='Orders' || title=='Account')
+        :staticCache
+          script(src="https://cdn.botframework.com/botframework-webchat/latest/botchat.js")
 
-     block content
-     :staticCache
-      script(type="text/javascript" src="/javascripts/bootstrap.min.js")
-      :staticCache
-        script(type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js")
-     if(title=='Reagent Search' || title=='Search' || title=='Share' || title=='Orders' || title=='Account')
-      :staticCache
-        script(src="https://cdn.botframework.com/botframework-webchat/latest/botchat.js")
-
-      div(class="labbot sleep")
-        span(class="fa fa-comment sleep0 layout-chatbot")
-        img(src="/images/tip5.png" class="sleepimg width-40")      
-      div(id="popup1bot" class="overlaybot")
-        div(class="popupbot")
-          div
-            div(class="modal-header")
-              span(class="fa fa-arrows layout-modal")
-            a(class="close" href="#") &times;
-          div(class="contentbot")
-            div(class="labbot awake")
-              span(class="fa fa-commenting layout-comment")
-              img(src="/images/tip3.png" class="width-50")
-            div(id="bot", class="layout-bot")
-      
-     if (title=='Share' || title=='Admins')
-       :staticCache
-        script(type="text/javascript" src="/javascripts/custom-file-input.js")
-     if(title=='Reports')
-       :staticCache
-        script(type="text/javascript" src="/javascripts/html2canvas.js")
-     if (title=='Reports' || title=='Account' || title=='Register' || title=='Confirm Registration' || title=='Change Password')
-       :staticCache
-        script(type="text/javascript" src="/javascripts/jquery.maskedinput.min.js")
-     if (title=='Reports')
-       :staticCache
-        script(type="text/javascript" src="/javascripts/jspdf.js")
-        script(type="text/javascript" src="/javascripts/xlsx.core.min.js")
-        script(type="text/javascript" src="/javascripts/Blob.js")
-        script(type="text/javascript" src="/javascripts/FileSaver.js")
-        script(type="text/javascript" src="/javascripts/savexl.js")
-     if (title=='Reports' || title=='Account' || title=='Register' || title=='Confirm Registration' || title=='About Us' || title=='Change Password' || title=='Forgot Password' || title=='Register' || title=='Help' || title=='Orders' || (title=='Share' && !doing) || title=='Search' || title == 'Reagent Search' || title == 'Admins')
-       :staticCache
-        script(type="text/javascript" src="/javascripts/spinner.js")
-     div(class="layout-footer")
-            div(class="layout-footer-text")="@LabYoke"
-              img(src="/images/"+language+".png" alt="Language" data-toggle="tooltip" title="Language" class="layout-footer-img")
-     a(href="#0" class="cd-top" title="go to top")
-      span(class="fa fa-chevron-circle-up")
-     script.
-      var lang = !{JSON.stringify(language)}, var_processing = "#{i18n.__("datatable.processing")}", var_search = "#{i18n.__("datatable.search")}", var_lengthMenu = "#{i18n.__("datatable.lengthMenu")}", var_info = "#{i18n.__("datatable.info")}", var_infoEmpty = "#{i18n.__("datatable.infoEmpty")}", var_infoFiltered = "#{i18n.__("datatable.infoFiltered")}", var_loadingRecords = "#{i18n.__("datatable.loadingRecords")}", var_zeroRecords = "#{i18n.__("datatable.zeroRecords")}", var_emptyTable = "#{i18n.__("datatable.emptyTable")}", var_first = "#{i18n.__("datatable.first")}", var_previous = "#{i18n.__("datatable.previous")}", var_next = "#{i18n.__("datatable.next")}", var_last = "#{i18n.__("datatable.last")}", var_searchplaceholder = "#{i18n.__("datatable.searchplaceholder")}", var_sortAscending = "#{i18n.__("datatable.sortAscending")}", var_sortDescending = "#{i18n.__("datatable.sortDescending")}",var_bot_placeholder = "#{i18n.__("layout.bot.placeholder")}";
-     if(title=='Reagent Search' || title=='Search' || title=='Share' || title=='Orders' || title=='Admins' || title=='Account')
-       :staticCache
-        script(type="text/javascript" src="/javascripts/init.js")
-        script(type="text/javascript" src="/js/lang-utils.js")
-        script(type="text/javascript" src="/javascripts/popup.js") 
-     if(title=='Login')
-       :staticCache
-        script(type="text/javascript" src="/js/login-utils.js")
-     if(title=='Admins')
-       :staticCache
-        script.
-          var var_admintype = "#{admintype}", var_pos = "#{pos}", var_pos2 = "#{pos2}";
-        script(type="text/javascript" src="/js/admins-utils.js")
-     if(title=='Reagent Search')
-       :staticCache
-        script(type="text/javascript" src="/js/search-utils.js")
-     if(title=='Account')
-       :staticCache
-        script.
-          var var_account_button = "#{i18n.__("account.button")}", var_account_hide_button = "#{i18n.__("account.hide")}", var_bot_placeholder = "#{i18n.__("layout.bot.placeholder")}";
-        script(type="text/javascript" src="/js/account-utils.js")
-     if(title=='Register')
-       :staticCache
-        script.
-          var var_register10 = "#{i18n.__("index.register.message10")}", var_register7 = "#{i18n.__("index.register.message7")}", var_register8 = "#{i18n.__("index.register.message8")}", var_register9 = "#{i18n.__("index.register.message9")}", var_register5 = "#{i18n.__("index.register.message5")}", var_register6 = "#{i18n.__("index.register.message6")}"; 
-        script(type="text/javascript" src="/js/register-utils.js")
-     if(title=='Confirm Registration')
-       :staticCache
-        script(type="text/javascript" src="/js/register-utils.js")
-     if(title=='Change Password')
-       :staticCache
-        script(type="text/javascript" src="/js/changepassword-utils.js")
-     if(title=='Forgot Password')
-       :staticCache
-        script(type="text/javascript" src="/js/forgot-utils.js")
-     if(title=='Help')
-       :staticCache
-        script(type="text/javascript" src="/js/help-utils.js")
-     if(title=='Orders')
-       :staticCache
-        script(type="text/javascript" src="/js/orders-utils.js")
-     if(title=='Share')
-       :staticCache
-        script(type="text/javascript" src="/js/shares-utils.js")
-     if(title=='Search')
-       :staticCache
-        script(type="text/javascript" src="/js/search-utils.js")          
-     if(title=='Play')
-       :staticCache
-        script(type="text/javascript" src="/js/play-utils.js")
-     if(title=='Pop')
-       :staticCache
-        script(type="text/javascript" src="/js/pop-utils.js")
-     if(title=='Reports')
+        div(class="labbot sleep")
+          span(class="fa fa-comment sleep0 layout-chatbot")
+          img(src="/images/tip5.png" class="sleepimg width-40")      
+        div(id="popup1bot" class="overlaybot")
+          div(class="popupbot")
+            div
+              div(class="modal-header")
+                span(class="fa fa-arrows layout-modal")
+              a(class="close" href="#") &times;
+            div(class="contentbot")
+              div(class="labbot awake")
+                span(class="fa fa-commenting layout-comment")
+                img(src="/images/tip3.png" class="width-50")
+              div(id="bot", class="layout-bot")
+        
+       if (title=='Share' || title=='Admins')
+         :staticCache
+          script(type="text/javascript" src="/javascripts/custom-file-input.js")
+       if(title=='Reports')
+         :staticCache
+          script(type="text/javascript" src="/javascripts/html2canvas.js")
+       if (title=='Reports' || title=='Account' || title=='Register' || title=='Confirm Registration' || title=='Change Password')
+         :staticCache
+          script(type="text/javascript" src="/javascripts/jquery.maskedinput.min.js")
+       if (title=='Reports')
+         :staticCache
+          script(type="text/javascript" src="/javascripts/jspdf.js")
+          script(type="text/javascript" src="/javascripts/xlsx.core.min.js")
+          script(type="text/javascript" src="/javascripts/Blob.js")
+          script(type="text/javascript" src="/javascripts/FileSaver.js")
+          script(type="text/javascript" src="/javascripts/savexl.js")
+       if (title=='Reports' || title=='Account' || title=='Register' || title=='Confirm Registration' || title=='About Us' || title=='Change Password' || title=='Forgot Password' || title=='Register' || title=='Help' || title=='Orders' || (title=='Share' && !doing) || title=='Search' || title == 'Reagent Search' || title == 'Admins')
+         :staticCache
+          script(type="text/javascript" src="/javascripts/spinner.js")
+       div(class="layout-footer")
+              div(class="layout-footer-text")="@LabYoke"
+                img(src="/images/"+language+".png" alt="Language" data-toggle="tooltip" title="Language" class="layout-footer-img")
+       a(href="#0" class="cd-top" title="go to top")
+        span(class="fa fa-chevron-circle-up")
+       script.
+        var lang = !{JSON.stringify(language)}, var_processing = "#{i18n.__("datatable.processing")}", var_search = "#{i18n.__("datatable.search")}", var_lengthMenu = "#{i18n.__("datatable.lengthMenu")}", var_info = "#{i18n.__("datatable.info")}", var_infoEmpty = "#{i18n.__("datatable.infoEmpty")}", var_infoFiltered = "#{i18n.__("datatable.infoFiltered")}", var_loadingRecords = "#{i18n.__("datatable.loadingRecords")}", var_zeroRecords = "#{i18n.__("datatable.zeroRecords")}", var_emptyTable = "#{i18n.__("datatable.emptyTable")}", var_first = "#{i18n.__("datatable.first")}", var_previous = "#{i18n.__("datatable.previous")}", var_next = "#{i18n.__("datatable.next")}", var_last = "#{i18n.__("datatable.last")}", var_searchplaceholder = "#{i18n.__("datatable.searchplaceholder")}", var_sortAscending = "#{i18n.__("datatable.sortAscending")}", var_sortDescending = "#{i18n.__("datatable.sortDescending")}",var_bot_placeholder = "#{i18n.__("layout.bot.placeholder")}";
+       if(title=='Reagent Search' || title=='Search' || title=='Share' || title=='Orders' || title=='Admins' || title=='Account')
+         :staticCache
+          script(type="text/javascript" src="/javascripts/init.js")
+          script(type="text/javascript" src="/js/lang-utils.js")
+          script(type="text/javascript" src="/javascripts/popup.js") 
+       if(title=='Login')
+         :staticCache
+          script(type="text/javascript" src="/js/login-utils.js")
+       if(title=='Admins')
+         :staticCache
+          script.
+            var var_admintype = "#{admintype}", var_pos = "#{pos}", var_pos2 = "#{pos2}";
+          script(type="text/javascript" src="/js/admins-utils.js")
+       if(title=='Reagent Search')
+         :staticCache
+          script(type="text/javascript" src="/js/search-utils.js")
+       if(title=='Account')
+         :staticCache
+          script.
+            var var_account_button = "#{i18n.__("account.button")}", var_account_hide_button = "#{i18n.__("account.hide")}", var_bot_placeholder = "#{i18n.__("layout.bot.placeholder")}";
+          script(type="text/javascript" src="/js/account-utils.js")
+       if(title=='Register')
+         :staticCache
+          script.
+            var var_register10 = "#{i18n.__("index.register.message10")}", var_register7 = "#{i18n.__("index.register.message7")}", var_register8 = "#{i18n.__("index.register.message8")}", var_register9 = "#{i18n.__("index.register.message9")}", var_register5 = "#{i18n.__("index.register.message5")}", var_register6 = "#{i18n.__("index.register.message6")}"; 
+          script(type="text/javascript" src="/js/register-utils.js")
+       if(title=='Confirm Registration')
+         :staticCache
+          script(type="text/javascript" src="/js/register-utils.js")
+       if(title=='Change Password')
+         :staticCache
+          script(type="text/javascript" src="/js/changepassword-utils.js")
+       if(title=='Forgot Password')
+         :staticCache
+          script(type="text/javascript" src="/js/forgot-utils.js")
+       if(title=='Help')
+         :staticCache
+          script(type="text/javascript" src="/js/help-utils.js")
+       if(title=='Orders')
+         :staticCache
+          script(type="text/javascript" src="/js/orders-utils.js")
+       if(title=='Share')
+         :staticCache
+          script(type="text/javascript" src="/js/shares-utils.js")
+       if(title=='Search')
+         :staticCache
+          script(type="text/javascript" src="/js/search-utils.js")          
+       if(title=='Play')
+         :staticCache
+          script(type="text/javascript" src="/js/play-utils.js")
+       if(title=='Pop')
+         :staticCache
+          script(type="text/javascript" src="/js/pop-utils.js")
+       if(title=='Reports')
+         :staticCache
+          script.
+            var var_resultsMoneyIntro="#{resultsMoneyIntro}", var_dataIntro = "#{dataIntro}", var_reports_download_pdf = "#{i18n.__("reports.download.pdf")}", var_reports_download_today = "#{i18n.__("reports.download.today.file")}",  var_reports_download_excel = "#{i18n.__("reports.download.excel")}", var_sunday_min = "#{i18n.__("date.sunday.min")}" , var_monday_min = "#{i18n.__("date.monday.min")}", var_tuesday_min = "#{i18n.__("date.tuesday.min")}" , var_wednesday_min = "#{i18n.__("date.wednesday.min")}", var_thursday_min = "#{i18n.__("date.thursday.min")}", var_friday_min = "#{i18n.__("date.friday.min")}", var_saturday_min = "#{i18n.__("date.saturday.min")}", var_month0 = "#{i18n.__("date.jan")}" , var_month1 = "#{i18n.__("date.fev")}", var_month2 = "#{i18n.__("date.mars")}" , var_month3 = "#{i18n.__("date.avril")}", var_month4 = "#{i18n.__("date.mai")}", var_month5 = "#{i18n.__("date.juin")}", var_month6 = "#{i18n.__("date.juillet")}", var_month7 = "#{i18n.__("date.aout")}", var_month8 = "#{i18n.__("date.sept")}", var_month9 = "#{i18n.__("date.octobre")}", var_month10 = "#{i18n.__("date.nov")}", var_month11 = "#{i18n.__("date.dec")}";
+          script(type="text/javascript" src="/js/reports-utils.js")
        :staticCache
         script.
-          var var_resultsMoneyIntro="#{resultsMoneyIntro}", var_dataIntro = "#{dataIntro}", var_reports_download_pdf = "#{i18n.__("reports.download.pdf")}", var_reports_download_today = "#{i18n.__("reports.download.today.file")}",  var_reports_download_excel = "#{i18n.__("reports.download.excel")}", var_sunday_min = "#{i18n.__("date.sunday.min")}" , var_monday_min = "#{i18n.__("date.monday.min")}", var_tuesday_min = "#{i18n.__("date.tuesday.min")}" , var_wednesday_min = "#{i18n.__("date.wednesday.min")}", var_thursday_min = "#{i18n.__("date.thursday.min")}", var_friday_min = "#{i18n.__("date.friday.min")}", var_saturday_min = "#{i18n.__("date.saturday.min")}", var_month0 = "#{i18n.__("date.jan")}" , var_month1 = "#{i18n.__("date.fev")}", var_month2 = "#{i18n.__("date.mars")}" , var_month3 = "#{i18n.__("date.avril")}", var_month4 = "#{i18n.__("date.mai")}", var_month5 = "#{i18n.__("date.juin")}", var_month6 = "#{i18n.__("date.juillet")}", var_month7 = "#{i18n.__("date.aout")}", var_month8 = "#{i18n.__("date.sept")}", var_month9 = "#{i18n.__("date.octobre")}", var_month10 = "#{i18n.__("date.nov")}", var_month11 = "#{i18n.__("date.dec")}";
-        script(type="text/javascript" src="/js/reports-utils.js")
-     :staticCache
-      script.
-        var var_labyoker = '#{labyoker}';
-        console.log("superadmin: " + "#{superadmin}");
-      script(type="text/javascript" src="/js/global.js")
+          var var_labyoker = '#{labyoker}';
+          console.log("superadmin: " + "#{superadmin}");
+        script(type="text/javascript" src="/js/global.js")
