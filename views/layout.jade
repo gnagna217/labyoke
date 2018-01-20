@@ -304,6 +304,8 @@ html(lang='en')
           script(type="text/javascript" src="/js/register-utils.js")
        if(title=='Change Password')
          :staticCache
+          script.
+            var var_changepass_msg2 = "#{i18n.__("index.changepass.message2 ")}", var_reg_msg4 = "#{i18n.__("index.register.message4 ")}";
           script(type="text/javascript" src="/js/changepassword-utils.js")
        if(title=='Forgot Password')
          :staticCache

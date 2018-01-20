@@ -10,14 +10,12 @@ $('#changebutton').click(function() {
         $('#changepwd').submit();
     } else if ($('#pass').val() == "" || $('#pass').val() == undefined) {
         console.log("stop!");
-        $('#messagejs').html("#{i18n.__("
-            index.changepass.message2 ")}");
+        $('#messagejs').html(var_changepass_msg2);
         $('#messagejs').show();
         return false;
     } else if ($('#repass').val() == undefined || $('#repass').val() == undefined) {
         console.log("stop!");
-        $('#messagejs').html("#{i18n.__("
-            index.register.message4 ")}");
+        $('#messagejs').html(var_reg_msg4);
         $('#messagejs').show();
         return false;
     }
