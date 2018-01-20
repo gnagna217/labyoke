@@ -1230,6 +1230,20 @@ background-color: rgba(61, 157, 203, 0.81);
     top: 100px !important;
     right: 132px;
 }
+
+.gotolabyokemobile{
+    display: none;
+    border-color: #2b75b4 !important;border-width: initial;
+    background-color:#538fc2!important;
+    width: 45px !important;
+    height: 45px !important;
+    padding-top: 5px !important;
+    padding: 7px !important;
+    float: right;
+    top: 160px;
+    right: 34%;
+    z-index: -10;
+}
 /*end new reports*/
 
 
@@ -4238,16 +4252,6 @@ margin-top:0px;
 }
 .gotolabyokemobile{
     display: block !important;
-    border-color: #2b75b4 !important;border-width: initial;
-    background-color:#538fc2!important;
-    width: 45px !important;
-    height: 45px !important;
-    padding-top: 5px !important;
-    padding: 7px !important;
-    float: right;
-    top: 160px;
-    right: 34%;
-    z-index: -10;
 }
 .btn50{
   width: 100% !important;
