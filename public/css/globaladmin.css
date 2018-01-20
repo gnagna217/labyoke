@@ -20,9 +20,10 @@
 }
 
 .adminlogin-desc{
-      width: 50%;
+    width: 50%;
     margin: 0 auto;
-        padding: 25px;
+    padding: 25px;
+    padding-top: 0px;
 }
 
 #rankTblload_length{
