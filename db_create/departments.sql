@@ -2,7 +2,7 @@
 
 -- DROP TABLE public.departments;
 CREATE SEQUENCE IF NOT EXISTS departments_id_seq;
-CREATE TABLE public.departments
+CREATE TABLE IF NOT EXISTS ublic.departments
 (
     id integer NOT NULL DEFAULT nextval('departments_id_seq'::regclass),
     departmentname text NOT NULL,

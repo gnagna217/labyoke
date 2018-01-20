@@ -2,7 +2,7 @@
 
 -- DROP TABLE public.vm2016_orders;
 CREATE SEQUENCE IF NOT EXISTS vm2016_orders_id_seq;
-CREATE TABLE public.vm2016_orders
+CREATE TABLE IF NOT EXISTS public.vm2016_orders
 (
     agent text,
     vendor text,

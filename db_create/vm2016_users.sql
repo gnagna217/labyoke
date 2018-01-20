@@ -2,7 +2,7 @@
 
 -- DROP TABLE public.vm2016_users;
 
-CREATE TABLE public.vm2016_users
+CREATE TABLE IF NOT EXISTS public.vm2016_users
 (
     id text NOT NULL,
     password text,
