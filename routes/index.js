@@ -1082,11 +1082,9 @@ module.exports = function(router) {
 
 	function isLoggedIn(req, res, next) {
         console.log("req.session.user: " + req.session.user);
-        var deny = req.session.deny;
-        console.log("deny: " + deny);
-		if (req.session.user && !deny)
+		if (req.session.user)
 			return next();
-		console.log('requested url: ' + req.originalUrl);
+		console.log('requested url: '+req.originalUrl);
 		req.session.to = req.originalUrl;
 		res.redirect('/login');
 	}
@@ -2434,19 +2432,6 @@ totalshares = t[0].counting;
                     if (results != null && results.length > 0) {
                         done = results[0];
                         dept = results[1];
-                        console.log("dept: " + dept);
-                        console.log("parseInt(done[0].admin, 10): " + parseInt(done[0].admin, 10));
-                        if(dept != null && dept == "" && parseInt(done[0].admin, 10) > 1){
-                            console.log("user is superadmin but doesn't belong to any department");
-                            req.session.user = done[0].name;
-                            req.session.surname = done[0].surname;
-                                //req.session.dept = dept[0].department;
-                            req.session.userid = done[0].id;
-                            req.session.userlang = done[0].lang;
-                            req.session.useradmin = false;
-                            req.session.usersuperadmin = true;
-                            req.session.deny = true;
-                        }
                         labadmin = results[2];
                         console.log("dept: " + dept);
                         console.log("labadmin: " + labadmin);
@@ -2456,11 +2441,7 @@ totalshares = t[0].counting;
                         console.log("user language: " + done[0].lang);
                         //res.setLocale(done[0].lang);
                     }
-                    console.log("req.session.deny: " + req.session.deny);
-                    if(req.session.deny){
-                        res.redirect("/admin/querytool");
-                    } else {
-                    console.log("its fine");
+
                     /*if(results != null && results.length > 2){
                         orders = results[2];
                         req.session.orders = orders;
@@ -2762,7 +2743,6 @@ totalshares = t[0].counting;
                                     title: 'Login'
                                 });
                     }
-                }
                 });
             } else {
                 res
@@ -3059,7 +3039,6 @@ totalshares = t[0].counting;
 
 
     router.get('/admin/querytool', isLoggedInSuperAdmin, function(req, res) {
-        console.log("admin/quertytool req.session.user: " + req.session.user);
         if (req.session.user) {
             var labYokeSearch = new LabYokeSearchAdmin("",req.session.email);
             labYokeSearch.findagents(function(error, results) {         
