@@ -1082,9 +1082,10 @@ module.exports = function(router) {
 
 	function isLoggedIn(req, res, next) {
         console.log("req.session.user: " + req.session.user);
-		if (req.session.user)
+        var deny = req.session.deny;
+		if (req.session.user && !deny)
 			return next();
-		console.log('requested url: '+req.originalUrl);
+		console.log('requested url: ' + req.originalUrl);
 		req.session.to = req.originalUrl;
 		res.redirect('/login');
 	}
@@ -2443,6 +2444,7 @@ totalshares = t[0].counting;
                             req.session.userlang = done[0].lang;
                             req.session.useradmin = false;
                             req.session.usersuperadmin = true;
+                            req.session.deny = true;
                             res.redirect("/admin/querytool");
                         }
                         labadmin = results[2];
