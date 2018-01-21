@@ -70,17 +70,20 @@ block content
                       td(class="wrapped desktabonly tduser" data-title="Name") #{ob[prop].name}
                       td(class="desktabonly tduser" data-title="Surname") #{ob[prop].surname}
                       td(class="wrapped tduser selectlab"+prop data-title="Lab" data-search="")
-                        form(action="/admin/transferusertolab" method="post" id="transform")
-                          select(name="labnameedit" type="text" id="labnameedit" class="form-control labnameedit admin-users-border" placeholder="Lab")
-                            option(value"selectlabnameedit")="Select a Lab"
-                            - if(labs != undefined)
-                              - for(var pr in labs)
-                                - var lab = labs[pr].labname
-                                - var checkedstrLab = false;
-                                - if(lab == ob[prop].lab)
-                                  - checkedstrLab = true
-                                  script.
-                                    var prop = "#{prop}";var lab = "#{lab}"; $(".selectlab"+prop).attr("data-search", lab)
+                        - if("initial_lab" == ob[prop].lab)
+                          span!= ob[prop].lab
+                        - else
+                          form(action="/admin/transferusertolab" method="post" id="transform")
+                            select(name="labnameedit" type="text" id="labnameedit" class="form-control labnameedit admin-users-border" placeholder="Lab")
+                              option(value"selectlabnameedit")="Select a Lab"
+                              - if(labs != undefined)
+                                - for(var pr in labs)
+                                  - var lab = labs[pr].labname
+                                  - var checkedstrLab = false;
+                                  - if(lab == ob[prop].lab)
+                                    - checkedstrLab = true
+                                    script.
+                                      var prop = "#{prop}";var lab = "#{lab}"; $(".selectlab"+prop).attr("data-search", lab)
                                           
                                 option(value=lab selected=(checkedstrLab===true ? "selected" : undefined)) #{lab}
 
