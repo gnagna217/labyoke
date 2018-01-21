@@ -2566,10 +2566,15 @@ Labyoker.prototype.login = function(callback) {
 		});
 		query2.on("end", function(result2) {
 			results2 = result2.rows;
+			if(results2 != null && results2.length > 0){
 			console.log("LOGIN DEPT: " + results2[0].department);
 			console.log("LOGIN ADMIN: " + results2[0].admin);
 			resultsLogin.push(results2[0].department);
 			resultsLogin.push(results2[0].admin);
+		} else {
+			resultsLogin.push("");
+			resultsLogin.push("");
+		}
 			//console.log("dept is: " + results2[0].email);
 			// var hash = crypt.hashSync(pass, salt);
 			//if (active == 1) {
