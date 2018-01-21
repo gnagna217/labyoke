@@ -48,6 +48,15 @@ var connector = new builder.ChatConnector({
  appPassword: "whLEJQ31#!&gghhuBOO674["
 });
 
+
+const notifier = require('node-notifier');
+ 
+// Object
+notifier.notify({
+  title: 'My notification',
+  message: 'Hello, there!'
+});
+
 /*var bot = new builder.UniversalBot(connector);
 
 bot.dialog('/', function (session) {
