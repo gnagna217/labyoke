@@ -2432,6 +2432,8 @@ totalshares = t[0].counting;
                     if (results != null && results.length > 0) {
                         done = results[0];
                         dept = results[1];
+                        console.log("dept: " + dept);
+                        console.log("parseInt(done[0].admin, 10): " + parseInt(done[0].admin, 10));
                         if(dept != null && dept == "" && parseInt(done[0].admin, 10) > 1){
                             console.log("user is superadmin but doesn't belong to any department");
                             req.session.user = done[0].name;
