@@ -1164,11 +1164,11 @@ module.exports = function(router) {
 
 
 notifier.notify({
-'title': 'My awesome title',
-'message': 'Hello from node, Mr. User!',
-'icon': path.join(__dirname, 'coulson.jpg'), // Absolute path (doesn't work on balloons)
-'sound': true, // Only Notification Center or Windows Toasters
-'wait': true // Wait with callback, until user action is taken against notification
+title: 'My awesome title',
+message: 'Hello from node, Mr. User!',
+icon: path.join(__dirname, 'coulson.jpg'), // Absolute path (doesn't work on balloons)
+sound: true, // Only Notification Center or Windows Toasters
+wait: true // Wait with callback, until user action is taken against notification
 });
 
 
