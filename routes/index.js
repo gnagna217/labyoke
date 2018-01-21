@@ -2446,7 +2446,6 @@ totalshares = t[0].counting;
                             req.session.useradmin = false;
                             req.session.usersuperadmin = true;
                             req.session.deny = true;
-                            res.redirect("/admin/querytool");
                         }
                         labadmin = results[2];
                         console.log("dept: " + dept);
@@ -2457,7 +2456,11 @@ totalshares = t[0].counting;
                         console.log("user language: " + done[0].lang);
                         //res.setLocale(done[0].lang);
                     }
-
+                    console.log("req.session.deny: " + req.session.deny);
+                    if(req.session.deny){
+                        res.redirect("/admin/querytool");
+                    } else {
+                    console.log("its fine");
                     /*if(results != null && results.length > 2){
                         orders = results[2];
                         req.session.orders = orders;
@@ -2759,6 +2762,7 @@ totalshares = t[0].counting;
                                     title: 'Login'
                                 });
                     }
+                }
                 });
             } else {
                 res
