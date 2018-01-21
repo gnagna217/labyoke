@@ -49,8 +49,9 @@ var connector = new builder.ChatConnector({
 });
 
 
-var notifier = require('node-notifier');
 
+const notifier = require('node-notifier');
+const path = require('path');
 /*var bot = new builder.UniversalBot(connector);
 
 bot.dialog('/', function (session) {
@@ -1158,11 +1159,20 @@ module.exports = function(router) {
 				console.log("loggin in labs: " + labs);
 				console.log("loggin in latest: " + latest);
 
-// Object
-notifier.notify({
-  title: 'My notification',
-  message: 'Hello, there!'
-});
+
+ 
+notifier.notify(
+  {
+    title: 'My awesome title',
+    message: 'Hello from node, Mr. User!',
+    icon: path.join(__dirname, '/images/yoke4.png'), // Absolute path (doesn't work on balloons)
+    sound: true, // Only Notification Center or Windows Toasters
+    wait: true // Wait with callback, until user action is taken against notification
+  },
+  function(err, response) {
+    // Response is response from notification
+  }
+);
 
 				res.render('login', {superadmin:req.session.usersuperadmin,latestshares:latest, mom: mom, lang:req.cookies.i18n, i18n: res, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, labyokersurname : req.session.surname, title: 'Login',isLoggedInAdmin: req.session.admin});
 				req.session.messages = null;
