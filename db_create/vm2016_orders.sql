@@ -8,7 +8,7 @@ CREATE TABLE IF NOT EXISTS public.vm2016_orders
     vendor text,
     catalognumber text,
     email text,
-    requestoremail,
+    requestoremail text,
     date date,
     status text,
     category text,

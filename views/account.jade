@@ -17,10 +17,10 @@ block content
                      span="!"                 
             div
               div(class="table-responsive center profile")
-                           -var ob = userDetails
-                           - var j = 1
-                           - var selectedlang = ""
-                           -for(var prop in ob)
+                              -var ob = userDetails[0]
+                              - var j = 1
+                              - var selectedlang = ""
+                            //-for(var prop in ob)
                               - var i = prop % 2
                               - var classname = "";
                               - if(i==0)
@@ -140,7 +140,7 @@ block content
                         input(name="formemail" type="hidden" id="formemail" value=email)
                       label(for="emailOnInsuff" class="labelcheck shadow labelcheckoninsuff")
                   div(class="reportlabelwidth accountlabelwidth account-email")
-                    label(for="emailOnFill" class="font-weight-bold")!= i18n.__("account.notify.onfill")
+                    label(for="emailOnFill" class="font-bold")!= i18n.__("account.notify.onfill")
                     div(class="fullwidth checkboxThree")
                       form(action="/changeDetails" id="changeonfill" method="post" class="onfillform")
                         input(type="checkbox" name="emailOnFill" id="emailOnFill" value="onfill" checked=(checkOnFill===true ? "checked" : undefined))
