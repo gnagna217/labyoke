@@ -71,7 +71,7 @@ block content
                       td(class="desktabonly tduser" data-title="Surname") #{ob[prop].surname}
                       td(class="wrapped tduser selectlab"+prop data-title="Lab" data-search="")
                         - if("initial_lab" == ob[prop].lab)
-                          span!= ob[prop].lab
+                            span!= ob[prop].lab
                         - else
                           form(action="/admin/transferusertolab" method="post" id="transform")
                             select(name="labnameedit" type="text" id="labnameedit" class="form-control labnameedit admin-users-border" placeholder="Lab")
@@ -84,17 +84,17 @@ block content
                                     - checkedstrLab = true
                                     script.
                                       var prop = "#{prop}";var lab = "#{lab}"; $(".selectlab"+prop).attr("data-search", lab)
-                                          
-                                option(value=lab selected=(checkedstrLab===true ? "selected" : undefined)) #{lab}
+                                            
+                                  option(value=lab selected=(checkedstrLab===true ? "selected" : undefined)) #{lab}
 
-                          input(type="hidden" name="id" value=ob[prop].id)
-                          input(type="hidden" name="name" value=ob[prop].name)
-                          input(type="hidden" name="surname" value=ob[prop].surname)
-                          input(type="hidden" name="oldlab" value=ob[prop].lab)
-                          input(type="hidden" name="email" value=ob[prop].email)
-                          div(class="admin-users-arrow")
-                            div(class="arrow-up marginbottom-5")
-                            div(class="arrow-down")
+                            input(type="hidden" name="id" value=ob[prop].id)
+                            input(type="hidden" name="name" value=ob[prop].name)
+                            input(type="hidden" name="surname" value=ob[prop].surname)
+                            input(type="hidden" name="oldlab" value=ob[prop].lab)
+                            input(type="hidden" name="email" value=ob[prop].email)
+                            div(class="admin-users-arrow")
+                              div(class="arrow-up marginbottom-5")
+                              div(class="arrow-down")
                       td(class="desktabonly tduser" data-title="Email") #{ob[prop].email}
                       - if(isadmin != 2)
                         td(class="tduser" data-title="Admin")
