@@ -48,36 +48,7 @@ var connector = new builder.ChatConnector({
  appPassword: "whLEJQ31#!&gghhuBOO674["
 });
 
-const { app } = require('electron'),
-Notification = require('electron-native-notification');
-app.on('ready', () => {
-    console.log("electron notification");
- 
-  const opt = { body: 'See? Really easy to use!' };
- 
-  const notification = new Notification('I am a notification!', opt);
- 
-  notification.on('show', () => {
-    console.log('I\'m coming~');
-  });
- 
-  notification.onclick = () => {
-    console.log('On no! You touch me. It\'s hurt!!');
-  };
- 
-  notification.addEventListener('close', () => {
-    console.log('I\'ll be back!!');
-  });
- 
-  notification.addListener('error', (err) => {
-    console.error(err);
-  });
- 
-  console.log('What does the notification say? ' + notification.body);
- 
-  setTimeout(() => notification.close(), 2000);
- 
-});
+
 /*var bot = new builder.UniversalBot(connector);
 
 bot.dialog('/', function (session) {
