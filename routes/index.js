@@ -1083,6 +1083,7 @@ module.exports = function(router) {
 	function isLoggedIn(req, res, next) {
         console.log("req.session.user: " + req.session.user);
         var deny = req.session.deny;
+        console.log("deny: " + deny);
 		if (req.session.user && !deny)
 			return next();
 		console.log('requested url: ' + req.originalUrl);
