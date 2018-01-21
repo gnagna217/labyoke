@@ -48,6 +48,14 @@ var connector = new builder.ChatConnector({
  appPassword: "whLEJQ31#!&gghhuBOO674["
 });
 
+var eNotify = require('electron-notify');
+// Change config options
+eNotify.setConfig({
+    appIcon: path.join(__dirname, '/images/yoke4.png'),
+    displayTime: 6000
+});
+// Send simple notification
+eNotify.notify({ title: 'Notification title', text: 'Some text' });
 
 /*var bot = new builder.UniversalBot(connector);
 
