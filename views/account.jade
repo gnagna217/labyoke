@@ -17,10 +17,11 @@ block content
                      span="!"                 
             div
               div(class="table-responsive center profile")
-                              -var ob = userDetails[0]
-                              - var j = 1
-                              - var selectedlang = ""
-                              //-for(var prop in ob)
+                           -var ob = userDetails
+                           - var j = 1
+                           - var selectedlang = ""
+                           -for(var prop in ob)
+                              span!="here " + prop
                               - var i = prop % 2
                               - var classname = "";
                               - if(i==0)
