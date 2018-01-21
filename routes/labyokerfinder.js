@@ -3710,7 +3710,7 @@ LabyokerLab.prototype.getLabUsers = function(callback) {
 
 LabYokeGlobal.prototype.finddepartments = function(callback) {
 	var resultsLogin = [];
-	var query = client.query("SELECT * from departments where status isnull");
+	var query = client.query("SELECT * from departments where status isnull and departmentname != 'initial_department'");
 	var labadmins = [];
 	var orphandepts = [];
 	query.on("row", function(row, result) {
@@ -3718,7 +3718,7 @@ LabYokeGlobal.prototype.finddepartments = function(callback) {
 	});
 	query.on("end", function(result) {
 
-		var query1 = client.query("select * from departments where departmentname not in (select department from labs) and status isnull");
+		var query1 = client.query("select * from departments where departmentname != 'initial_department' and departmentname not in (select department from labs) and status isnull");
 		query1.on("row", function(row, result1) {
 			result1.addRow(row);
 			orphandepts = result1.rows; 
@@ -3733,7 +3733,7 @@ LabYokeGlobal.prototype.finddepartments = function(callback) {
 		});
 		query2.on("end", function(result2) {
 
-			var query3 = client.query("select department,labname,isvenn, disable, admin from labs order by department");
+			var query3 = client.query("select department,labname,isvenn, disable, admin from labs where labname != 'initial_lab' order by department");
 		query3.on("row", function(row, result3) {
 			result3.addRow(row);
 		});
@@ -3766,7 +3766,7 @@ var userdata = new Promise(
         //if (isMomHappy) {
         var lab0 = lab
 		console.log("starting getLabUsers: " + lab0);
-		var query4 = client.query("select * from vm2016_users where lab='" + lab0 + "'");
+		var query4 = client.query("select * from vm2016_users where lab='" + lab0 + "' and lab!='initial_lab'");
 		query4.on("row", function(row, result4) {
 			result4.addRow(row);
 		});
@@ -3910,7 +3910,7 @@ LabYokeLab.prototype.createlab = function(callback) {
 	}	
 	console.log("stopproc: " + stopproc);
 	if(stopproc == 0){
-		var query = client.query("select * from labs where lower(labname) = '" + labname.toLowerCase() + "'");
+		var query = client.query("select * from labs where lower(labname) = '" + labname.toLowerCase() + "' and labname!='initial_lab'");
 		query.on("row", function(row, result) {
 			result.addRow(row);
 		});
@@ -4035,7 +4035,7 @@ LabYokeLab.prototype.editlab = function(callback) {
 				samedept = 1;
 			}
 		*/
-		var query = client.query("select * from labs " + where);
+		var query = client.query("select * from labs " + where + " and labname !='initial_lab'");
 		query.on("row", function(row, result) {
 			result.addRow(row);
 		});
@@ -4150,7 +4150,7 @@ LabYokeLab.prototype.setadmin = function(callback) {
 LabYokeDepartment.prototype.createdepartment = function(callback) {
 	var resultsLogin = [];
 	var departmentname = this.name;
-	var query = client.query("select * from departments where lower(departmentname) = '" + departmentname.toLowerCase() + "'");
+	var query = client.query("select * from departments where lower(departmentname) = '" + departmentname.toLowerCase() + "' and departmentname != 'initial_department'");
 
 	query.on("row", function(row, result) {
 		result.addRow(row);
@@ -4209,7 +4209,7 @@ LabYokeLabVenn.prototype.setvenn = function(callback) {
 	console.log("stopproc: " + stopproc);
 
 	if(stopproc == 0){*/
-		var query = client.query("select count(*) as co from labs where department = '" + labdept + "' and isvenn=1");
+		var query = client.query("select count(*) as co from labs where department = '" + labdept + "' and isvenn=1 and departmentname != 'initial_department'");
 		query.on("row", function(row, result) {
 			result.addRow(row);
 		});
@@ -4278,7 +4278,7 @@ LabYokeLabVenn.prototype.setdisable = function(callback) {
 	console.log("stopproc: " + stopproc);
 
 	if(stopproc == 0){*/
-		var query = client.query("select count(*) as co from vm2016_users where lab = '" + labname + "' and disable is null or disable = 0");
+		var query = client.query("select count(*) as co from vm2016_users where lab!='initial_lab' and lab = '" + labname + "' and disable is null or disable = 0");
 		query.on("row", function(row, result) {
 			result.addRow(row);
 		});
@@ -4345,7 +4345,7 @@ LabyokerLab.prototype.getLabsInDept = function(callback) {
 	var results;
 	var lab = this.lab;
 	var query = client
-			.query("SELECT distinct labname FROM labs where department in (select department from labs where labname='"+lab+"')");
+			.query("SELECT distinct labname FROM labs where labname != 'initial_lab' and department in (select department from labs where labname='"+lab+"')");
 	query.on("row", function(row, result) {
 		result.addRow(row);
 	});
