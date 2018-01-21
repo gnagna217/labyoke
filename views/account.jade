@@ -18,6 +18,8 @@ block content
             div
               div(class="table-responsive center profile")
                               -var ob = userDetails
+                              script.
+                                console.log("userdetails: "+JSON.stringify("#{userDetails}"))
                               -var prop = 0
                               - var j = 1
                               - var selectedlang = ""
