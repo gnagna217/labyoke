@@ -50,12 +50,6 @@ var connector = new builder.ChatConnector({
 
 
 var notifier = require('node-notifier');
- 
-// Object
-notifier.notify({
-  title: 'My notification',
-  message: 'Hello, there!'
-});
 
 /*var bot = new builder.UniversalBot(connector);
 
@@ -1163,6 +1157,13 @@ module.exports = function(router) {
 				console.log("in LOGIN: GET LABS now " + req.session.labs);
 				console.log("loggin in labs: " + labs);
 				console.log("loggin in latest: " + latest);
+
+// Object
+notifier.notify({
+  title: 'My notification',
+  message: 'Hello, there!'
+});
+
 				res.render('login', {superadmin:req.session.usersuperadmin,latestshares:latest, mom: mom, lang:req.cookies.i18n, i18n: res, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, labyokersurname : req.session.surname, title: 'Login',isLoggedInAdmin: req.session.admin});
 				req.session.messages = null;
 			});
