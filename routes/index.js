@@ -1161,18 +1161,48 @@ module.exports = function(router) {
 
 
  
-notifier.notify(
+var nc = new notifier.NotificationCenter();
+
+var trueAnswer = 'Most def.';
+
+nc.notify(
   {
-    title: 'My awesome title',
-    message: 'Hello from node, Mr. User!',
-    icon: path.join(__dirname, '/images/yoke4.png'), // Absolute path (doesn't work on balloons)
-    sound: true, // Only Notification Center or Windows Toasters
-    wait: true // Wait with callback, until user action is taken against notification
+    title: 'Notifications',
+    message: 'Are they cool?',
+    sound: 'Funk',
+    // case sensitive
+    closeLabel: 'Absolutely not',
+    actions: trueAnswer
   },
-  function(err, response) {
-    // Response is response from notification
+  function(err, response, metadata) {
+    if (err) throw err;
+    console.log(metadata);
+
+    if (metadata.activationValue !== trueAnswer) {
+      return; // No need to continue
+    }
+
+    nc.notify(
+      {
+        title: 'Notifications',
+        message: 'Do you want to reply to them?',
+        sound: 'Funk',
+        // case sensitive
+        reply: true
+      },
+      function(err, response, metadata) {
+        if (err) throw err;
+        console.log(metadata);
+      }
+    );
   }
 );
+
+nc.on('replied', function(obj, options, metadata) {
+  console.log('User replied', metadata);
+});
+
+
 
 				res.render('login', {superadmin:req.session.usersuperadmin,latestshares:latest, mom: mom, lang:req.cookies.i18n, i18n: res, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, labyokersurname : req.session.surname, title: 'Login',isLoggedInAdmin: req.session.admin});
 				req.session.messages = null;
