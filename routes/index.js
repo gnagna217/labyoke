@@ -3059,6 +3059,7 @@ totalshares = t[0].counting;
 
 
     router.get('/admin/querytool', isLoggedInSuperAdmin, function(req, res) {
+        console.log("admin/quertytool req.session.user: " + req.session.user);
         if (req.session.user) {
             var labYokeSearch = new LabYokeSearchAdmin("",req.session.email);
             labYokeSearch.findagents(function(error, results) {         
