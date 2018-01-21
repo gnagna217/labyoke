@@ -2405,319 +2405,369 @@ totalshares = t[0].counting;
 		//}
 	});
 
-	router.post('/login',function(req, res) {
+    router.post('/login', function(req, res) {
 
-		var mom = moment().tz(jstz.determine().name()).format;
-		console.log("timezone jstz.determine().name(): " + jstz.determine().name());
-		console.log("req.cookies.i18n: " + req.cookies.i18n);
-		if(req.cookies.i18n == null || req.cookies.i18n == undefined){
-			req.cookies.i18n = "en";
-		}
+        var mom = moment().tz(jstz.determine().name()).format;
+        console.log("timezone jstz.determine().name(): " + jstz.determine().name());
+        console.log("req.cookies.i18n: " + req.cookies.i18n);
+        if (req.cookies.i18n == null || req.cookies.i18n == undefined) {
+            req.cookies.i18n = "en";
+        }
         globalocale = req.cookies.i18n;
-		console.log("req.cookies.i18n after setup: " + req.cookies.i18n);
-		res.setLocale(req.cookies.i18n);
+        console.log("req.cookies.i18n after setup: " + req.cookies.i18n);
+        res.setLocale(req.cookies.i18n);
         globalres = res;
-		if (req.session.user) {
-			res.redirect('/search');
-		} else {
-						var username = req.body.user;
-						var password = req.body.pass;
-						if (username != null && username.length > 0
-								&& password != null && password.length > 0) {
-							var labyoker = new Labyoker(username, password);
+        if (req.session.user) {
+            res.redirect('/search');
+        } else {
+            var username = req.body.user;
+            var password = req.body.pass;
+            if (username != null && username.length > 0 &&
+                password != null && password.length > 0) {
+                var labyoker = new Labyoker(username, password);
 
-							labyoker
-									.login(function(error, results) {
-										var done, shares, orders, dept, labadmin;
+                labyoker.login(function(error, results) {
+                    var done, shares, orders, dept, labadmin;
 
-										if(results != null && results.length > 0){
-											done = results[0];
-											dept = results[1];
-                                            labadmin = results[2];
-                                            console.log("dept: " + dept);
-                                            console.log("labadmin: " + labadmin);
-                                            req.session.labadmin = labadmin;
-                                            globalabadmin = labadmin;
-                                            req.session.dept = dept;
-                                            console.log("user language: " + done[0].lang);
-											//res.setLocale(done[0].lang);
-										}
-										
-										/*if(results != null && results.length > 2){
-											orders = results[2];
-											req.session.orders = orders;
-										}*/
-										console.log("done is " + done);
-										console.log("department is : " + dept);
-										//console.log("done2 is " + done.length);
-										console.log("shares is " + shares);
-										console.log("orders is " + orders);
+                    if (results != null && results.length > 0) {
+                        done = results[0];
+                        dept = results[1];
+                        if(dept != null && dept == "" && parseInt(done[0].admin, 10) > 1){
+                            console.log("user is superadmin but doesn't belong to any department");
+                            req.session.user = done[0].name;
+                            req.session.surname = done[0].surname;
+                                //req.session.dept = dept[0].department;
+                            req.session.userid = done[0].id;
+                            req.session.userlang = done[0].lang;
+                            req.session.useradmin = true;
+                            req.session.usersuperadmin = true;
+                            res.redirect("/admin/querytool");
+                        }
+                        labadmin = results[2];
+                        console.log("dept: " + dept);
+                        console.log("labadmin: " + labadmin);
+                        req.session.labadmin = labadmin;
+                        globalabadmin = labadmin;
+                        req.session.dept = dept;
+                        console.log("user language: " + done[0].lang);
+                        //res.setLocale(done[0].lang);
+                    }
 
-										if (done != null && done.length > 0) {
-											if (done[0].active == 0) {
+                    /*if(results != null && results.length > 2){
+                        orders = results[2];
+                        req.session.orders = orders;
+                    }*/
+                    console.log("done is " + done);
+                    console.log("department is : " + dept);
+                    //console.log("done2 is " + done.length);
+                    console.log("shares is " + shares);
+                    console.log("orders is " + orders);
 
-												return res
-														.render(
-															'login',
-															{
-																i18n:res,lang:req.cookies.i18n,message : (res.__("index.login.message1")).replace(/&lt;/g, '<').replace(/&gt;/g, '>') /*"You have not completed your registration. Please check your emails and click on the link."*/, title: 'Login'
-															});
-											}
-											if (done[0].disable == 0) {
+                    if (done != null && done.length > 0) {
+                        if (done[0].active == 0) {
 
-												return res
-														.render(
-															'login',
-															{
-																i18n:res,lang:req.cookies.i18n,message : (res.__("index.login.message2")).replace(/&lt;/g, '<').replace(/&gt;/g, '>')/*"Your account has been disabled. Please contact your lab administrator."*/, title: 'Login'
-															});
-											}
+                            return res
+                                .render(
+                                    'login', {
+                                        i18n: res,
+                                        lang: req.cookies.i18n,
+                                        message: (res.__("index.login.message1")).replace(/&lt;/g, '<').replace(/&gt;/g, '>') /*"You have not completed your registration. Please check your emails and click on the link."*/ ,
+                                        title: 'Login'
+                                    });
+                        }
+                        if (done[0].disable == 0) {
 
-											var init = new LabyokerInit(done[0].email, done[0].lab);
-											init.initialShares(function(error, resultsShares) {
-												console.log("inside init shares " + resultsShares);
-												if(resultsShares != null){
-													console.log("initshares is " + resultsShares);
-													shares = resultsShares;
-													req.session.shares = shares;
-												}
-												init.initialOrders(function(error, resultsOrders) {
-													console.log("inside init orders " + resultsOrders);
-													if(resultsOrders != null){
-														console.log("initorders is " + resultsOrders);
-														orders = resultsOrders;
-														req.session.orders = orders;
-													}
-													req.session.user = done[0].name;
-                                                    req.session.surname = done[0].surname;
-													//req.session.dept = dept[0].department;
-													req.session.userid = done[0].id;
-													req.session.userlang = done[0].lang;
-                                                    globaluserlang = done[0].lang;
-													req.session.useradmin = false;
-                                                    req.session.usersuperadmin = false;
-                                                    console.log("user surname (NEW): " + req.session.surname);
-													console.log("user language: " + req.session.userlang);
-													console.log("admin: " + done[0].admin);
-													var c = parseInt(done[0].admin,10);
-													req.session.admin = c;
-													console.log("c: " + c);
-													if(c > 0 ){
-														req.session.admin = 1;
-														req.session.useradmin = true;
-													}
-													if(c > 1){
-														req.session.usersuperadmin = true;
-													}
-													console.log("req.session.useradmin? " + req.session.useradmin);
-													console.log("req.session.usersuperadmin? " + req.session.usersuperadmin);
-													req.session.active = done[0].active;
-													req.session.email = done[0].email;
-                                                    globalemail = req.session.email;
-													req.session.lab = done[0].lab;
-                                                    globalab = done[0].lab;
-                                                    req.session.oninsuff = done[0].oninsuff;
-													req.session.fullname = done[0].name;
-													req.session.surname = done[0].surname;
-													console.log("fullname " + req.session.fullname);
-													console.log("email " + req.session.email);
-													req.session.loggedin = true;
+                            return res
+                                .render(
+                                    'login', {
+                                        i18n: res,
+                                        lang: req.cookies.i18n,
+                                        message: (res.__("index.login.message2")).replace(/&lt;/g, '<').replace(/&gt;/g, '>') /*"Your account has been disabled. Please contact your lab administrator."*/ ,
+                                        title: 'Login'
+                                    });
+                        }
 
-													console.log("initial req.session.lab: " + req.session.lab);
-													var timeframesavings = "year";
-													var choosetime = "";
-													var timearr = ["year","month","all"];
-													var labarr = ["all",req.session.lab];
-													var datefromsavings = "";
-													var datetosavings = "";
-													var lab = "";
-													var labsavings = "";
-//(res.__("index.login.message2")).replace(/&lt;/g, '<').replace(/&gt;/g, '>')
-													var t = Math.floor((Math.random() * timearr.length-1) + 1);
-													var l = Math.floor((Math.random() * labarr.length-1) + 1);
-													console.log("random int time: " + t);
-													console.log("random int lab: " + l);
+                        var init = new LabyokerInit(done[0].email, done[0].lab);
+                        init.initialShares(function(error, resultsShares) {
+                            console.log("inside init shares " + resultsShares);
+                            if (resultsShares != null) {
+                                console.log("initshares is " + resultsShares);
+                                shares = resultsShares;
+                                req.session.shares = shares;
+                            }
+                            init.initialOrders(function(error, resultsOrders) {
+                                console.log("inside init orders " + resultsOrders);
+                                if (resultsOrders != null) {
+                                    console.log("initorders is " + resultsOrders);
+                                    orders = resultsOrders;
+                                    req.session.orders = orders;
+                                }
+                                req.session.user = done[0].name;
+                                req.session.surname = done[0].surname;
+                                //req.session.dept = dept[0].department;
+                                req.session.userid = done[0].id;
+                                req.session.userlang = done[0].lang;
+                                globaluserlang = done[0].lang;
+                                req.session.useradmin = false;
+                                req.session.usersuperadmin = false;
+                                console.log("user surname (NEW): " + req.session.surname);
+                                console.log("user language: " + req.session.userlang);
+                                console.log("admin: " + done[0].admin);
+                                var c = parseInt(done[0].admin, 10);
+                                req.session.admin = c;
+                                console.log("c: " + c);
+                                if (c > 0) {
+                                    req.session.admin = 1;
+                                    req.session.useradmin = true;
+                                }
+                                if (c > 1) {
+                                    req.session.usersuperadmin = true;
+                                }
+                                console.log("req.session.useradmin? " + req.session.useradmin);
+                                console.log("req.session.usersuperadmin? " + req.session.usersuperadmin);
+                                req.session.active = done[0].active;
+                                req.session.email = done[0].email;
+                                globalemail = req.session.email;
+                                req.session.lab = done[0].lab;
+                                globalab = done[0].lab;
+                                req.session.oninsuff = done[0].oninsuff;
+                                req.session.fullname = done[0].name;
+                                req.session.surname = done[0].surname;
+                                console.log("fullname " + req.session.fullname);
+                                console.log("email " + req.session.email);
+                                req.session.loggedin = true;
 
-													lab = labarr[l];
-													choosetime = timearr[t];
-													console.log("lab: " + lab);
-													console.log("choosetime: " + choosetime);
+                                console.log("initial req.session.lab: " + req.session.lab);
+                                var timeframesavings = "year";
+                                var choosetime = "";
+                                var timearr = ["year", "month", "all"];
+                                var labarr = ["all", req.session.lab];
+                                var datefromsavings = "";
+                                var datetosavings = "";
+                                var lab = "";
+                                var labsavings = "";
+                                //(res.__("index.login.message2")).replace(/&lt;/g, '<').replace(/&gt;/g, '>')
+                                var t = Math.floor((Math.random() * timearr.length - 1) + 1);
+                                var l = Math.floor((Math.random() * labarr.length - 1) + 1);
+                                console.log("random int time: " + t);
+                                console.log("random int lab: " + l);
 
-													if(lab == "all"){
-														//labsavings = "<b><i>WORLD</i></b>";
-														labsavings = (res.__("index.login.all1")).replace(/&lt;/g, '<').replace(/&gt;/g, '>');
-													} else {
-														//labsavings = "<b><i>Other Labs</i></b>";
-														labsavings = (res.__("index.login.all2")).replace(/&lt;/g, '<').replace(/&gt;/g, '>');
-													}
-													var choose = "";
-													if(choosetime == "year"){
-														var date = new Date(), y = date.getFullYear(), m = date.getMonth();
-														datefromsavings = moment(new Date(y, 0, 1)).tz("America/New_York").format('MM-DD-YYYY');
-														datetosavings = moment(new Date(y, 12, 1)).tz("America/New_York").format('MM-DD-YYYY');
-														choose = (res.__("index.login.time1.year",{choosetime: "année"})).replace(/&lt;/g, '<').replace(/&gt;/g, '>');
-														/*datefromsavings = "01-01-2016";
-														datetosavings = "12-31-2016";*/
-													}
-													if(choosetime == "month"){
-														var date = new Date(), y = date.getFullYear(), m = date.getMonth();
-														datefromsavings = moment(new Date(y, m, 1)).tz("America/New_York").format('MM-DD-YYYY');
-														datetosavings = moment(new Date(y, m + 1, 0)).tz("America/New_York").format('MM-DD-YYYY');
-														choose = (res.__("index.login.time1.month",{choosetime: "mois"})).replace(/&lt;/g, '<').replace(/&gt;/g, '>');
-														/*datefromsavings = "12-01-2016";
-														datetosavings = "12-31-2016";*/
-													}
-													timeframesavings = choose; //"this past <b>" + choosetime + "</b>";
-													if(choosetime == "all"){
-														datefromsavings = undefined;
-														datetosavings = undefined;
-														//timeframesavings = "over time";
-														timeframesavings = res.__("index.login.time2");
-													}
-													
-													console.log("timeframesavings datefromsavings: " + datefromsavings);
-													console.log("timeframesavings datetosavings: " + datetosavings);
-													console.log("timeframesavings: " + timeframesavings);
-													var booster = [];
-													var boostercolor = [];
-													if(orders > 0){
-														//booster.push("<strong> Notification!</strong> You have <b>" + orders + " new order(s)</b> pending completion.");
-														booster.push((res.__("index.login.booster1",{orders: orders})).replace(/&lt;/g, '<').replace(/&gt;/g, '>'));
-														boostercolor.push("warning");
-													}
-													if(shares > 0){
-														//booster.push("<strong> Notification!</strong> You have <b>" + shares + " new share(s)</b> pending completion. <a href='/share'>Check it out</a> promptly and fulfill the request. Way to contribute to your lab's savings!");
-														booster.push((res.__("index.login.booster2", {shares: shares})).replace(/&lt;/g, '<').replace(/&gt;/g, '>'));
-														boostercolor.push("warning");
-													}
+                                lab = labarr[l];
+                                choosetime = timearr[t];
+                                console.log("lab: " + lab);
+                                console.log("choosetime: " + choosetime);
 
-									console.log("in LOGIN: GET LABS - " + req.session.labs);
-			if(req.session.labs != null && req.session.labs != undefined){
-													var labYokereporterSavings = new LabYokeReporterSavings(datefromsavings,datetosavings,undefined,undefined,undefined,lab, req.session.lab,req.session.labs,res);
-													labYokereporterSavings.dataMoney(function(error, savings) {
-														console.log("savings: " + savings);
+                                if (lab == "all") {
+                                    //labsavings = "<b><i>WORLD</i></b>";
+                                    labsavings = (res.__("index.login.all1")).replace(/&lt;/g, '<').replace(/&gt;/g, '>');
+                                } else {
+                                    //labsavings = "<b><i>Other Labs</i></b>";
+                                    labsavings = (res.__("index.login.all2")).replace(/&lt;/g, '<').replace(/&gt;/g, '>');
+                                }
+                                var choose = "";
+                                if (choosetime == "year") {
+                                    var date = new Date(),
+                                        y = date.getFullYear(),
+                                        m = date.getMonth();
+                                    datefromsavings = moment(new Date(y, 0, 1)).tz("America/New_York").format('MM-DD-YYYY');
+                                    datetosavings = moment(new Date(y, 12, 1)).tz("America/New_York").format('MM-DD-YYYY');
+                                    choose = (res.__("index.login.time1.year", {
+                                        choosetime: "année"
+                                    })).replace(/&lt;/g, '<').replace(/&gt;/g, '>');
+                                    /*datefromsavings = "01-01-2016";
+                                    datetosavings = "12-31-2016";*/
+                                }
+                                if (choosetime == "month") {
+                                    var date = new Date(),
+                                        y = date.getFullYear(),
+                                        m = date.getMonth();
+                                    datefromsavings = moment(new Date(y, m, 1)).tz("America/New_York").format('MM-DD-YYYY');
+                                    datetosavings = moment(new Date(y, m + 1, 0)).tz("America/New_York").format('MM-DD-YYYY');
+                                    choose = (res.__("index.login.time1.month", {
+                                        choosetime: "mois"
+                                    })).replace(/&lt;/g, '<').replace(/&gt;/g, '>');
+                                    /*datefromsavings = "12-01-2016";
+                                    datetosavings = "12-31-2016";*/
+                                }
+                                timeframesavings = choose; //"this past <b>" + choosetime + "</b>";
+                                if (choosetime == "all") {
+                                    datefromsavings = undefined;
+                                    datetosavings = undefined;
+                                    //timeframesavings = "over time";
+                                    timeframesavings = res.__("index.login.time2");
+                                }
 
-														req.session.savings = savings;
-														var cheer = res.__("index.login.cheer1");//"Keep searching, ordering, and sharing!";
-														if (savings > 10000){
-															cheer = res.__("index.login.cheer2"); //"Amazing! You are a rock star!";
-														} else if (savings > 1000){
-															cheer = res.__("index.login.cheer3"); //"Incredible!";
-														} else if(savings > 100){
-															cheer = res.__("index.login.cheer4"); //"Keep it up!";
-														} 
-														if(savings > 0){
-														var text = "";
-														console.log("non-null savings: " + accounting.formatMoney(savings));
-														if(lab == "all"){
-															//text = "<strong> Major Achievement!</strong> You are part of a " + labsavings + " savings for a total of <b>" + accounting.formatMoney(savings) + "</b> " + timeframesavings + " in your department. " + cheer;
-															text = (res.__("index.login.text1", {labsavings: labsavings, accountingsavings: accounting.formatMoney(savings), timeframesavings: timeframesavings, cheer: cheer})).replace(/&lt;/g, '<').replace(/&gt;/g, '>');
-														} else {
-															//text = "<strong> Major Achievement!</strong> You have saved " + labsavings + " a total of <b>" + accounting.formatMoney(savings) + "</b> " + timeframesavings + ". " + cheer;
-															text = (res.__("index.login.text2", {labsavings: labsavings, accountingsavings: accounting.formatMoney(savings), timeframesavings: timeframesavings, cheer: cheer})).replace(/&lt;/g, '<').replace(/&gt;/g, '>');
-														}
-														booster.push(text);
-														boostercolor.push("success");
-														}
+                                console.log("timeframesavings datefromsavings: " + datefromsavings);
+                                console.log("timeframesavings datetosavings: " + datetosavings);
+                                console.log("timeframesavings: " + timeframesavings);
+                                var booster = [];
+                                var boostercolor = [];
+                                if (orders > 0) {
+                                    //booster.push("<strong> Notification!</strong> You have <b>" + orders + " new order(s)</b> pending completion.");
+                                    booster.push((res.__("index.login.booster1", {
+                                        orders: orders
+                                    })).replace(/&lt;/g, '<').replace(/&gt;/g, '>'));
+                                    boostercolor.push("warning");
+                                }
+                                if (shares > 0) {
+                                    //booster.push("<strong> Notification!</strong> You have <b>" + shares + " new share(s)</b> pending completion. <a href='/share'>Check it out</a> promptly and fulfill the request. Way to contribute to your lab's savings!");
+                                    booster.push((res.__("index.login.booster2", {
+                                        shares: shares
+                                    })).replace(/&lt;/g, '<').replace(/&gt;/g, '>'));
+                                    boostercolor.push("warning");
+                                }
 
-														var b = Math.floor((Math.random() * booster.length-1) + 1);
-														if(booster[b] == undefined){
-															//booster[b] = "Using LabyYoke reduces purchasing prices for <strong>You</strong> and your <strong>Lab</strong>. Use it as a social platform. Have fun and Keep it Up!";
-															booster[b] = (res.__("index.login.booster3")).replace(/&lt;/g, '<').replace(/&gt;/g, '>');
-															console.log(booster[b]);
-															boostercolor[b] = "success"
-														}
-														req.session.savingsTextInitial = booster[b];
-														req.session.savingsColorInitial = boostercolor[b];
-														console.log("req.session.savingsText: " + req.session.savingsTextInitial);
-													
+                                console.log("in LOGIN: GET LABS - " + req.session.labs);
+                                if (req.session.labs != null && req.session.labs != undefined) {
+                                    var labYokereporterSavings = new LabYokeReporterSavings(datefromsavings, datetosavings, undefined, undefined, undefined, lab, req.session.lab, req.session.labs, res);
+                                    labYokereporterSavings.dataMoney(function(error, savings) {
+                                        console.log("savings: " + savings);
 
-													if(req.session.to != null && req.session.to.length > 0){
-														console.log("login going to: " + req.session.to);
-                                                        res.redirect(req.session.to);
-														req.session.to = null;
-													} else {
-														res.redirect('/search');
-													}
-													});
-			} else {
-				var labyokerLabs = new LabyokerLabs('','');
-				labyokerLabs.getlabs(function(error, labs) {
-					req.session.labs = labs;
-					console.log("in LOGIN: GET LABS now " + req.session.labs);
-					console.log("loggin in labs: " + labs);
+                                        req.session.savings = savings;
+                                        var cheer = res.__("index.login.cheer1"); //"Keep searching, ordering, and sharing!";
+                                        if (savings > 10000) {
+                                            cheer = res.__("index.login.cheer2"); //"Amazing! You are a rock star!";
+                                        } else if (savings > 1000) {
+                                            cheer = res.__("index.login.cheer3"); //"Incredible!";
+                                        } else if (savings > 100) {
+                                            cheer = res.__("index.login.cheer4"); //"Keep it up!";
+                                        }
+                                        if (savings > 0) {
+                                            var text = "";
+                                            console.log("non-null savings: " + accounting.formatMoney(savings));
+                                            if (lab == "all") {
+                                                //text = "<strong> Major Achievement!</strong> You are part of a " + labsavings + " savings for a total of <b>" + accounting.formatMoney(savings) + "</b> " + timeframesavings + " in your department. " + cheer;
+                                                text = (res.__("index.login.text1", {
+                                                    labsavings: labsavings,
+                                                    accountingsavings: accounting.formatMoney(savings),
+                                                    timeframesavings: timeframesavings,
+                                                    cheer: cheer
+                                                })).replace(/&lt;/g, '<').replace(/&gt;/g, '>');
+                                            } else {
+                                                //text = "<strong> Major Achievement!</strong> You have saved " + labsavings + " a total of <b>" + accounting.formatMoney(savings) + "</b> " + timeframesavings + ". " + cheer;
+                                                text = (res.__("index.login.text2", {
+                                                    labsavings: labsavings,
+                                                    accountingsavings: accounting.formatMoney(savings),
+                                                    timeframesavings: timeframesavings,
+                                                    cheer: cheer
+                                                })).replace(/&lt;/g, '<').replace(/&gt;/g, '>');
+                                            }
+                                            booster.push(text);
+                                            boostercolor.push("success");
+                                        }
 
-														var labYokereporterSavings = new LabYokeReporterSavings(datefromsavings,datetosavings,undefined,undefined,undefined,lab, req.session.lab,req.session.labs,res);
-													labYokereporterSavings.dataMoney(function(error, savings) {
-														console.log("savings: " + savings);
-
-														req.session.savings = savings;
-														var cheer = res.__("index.login.cheer1");//"Keep searching, ordering, and sharing!";
-														if (savings > 10000){
-															cheer = res.__("index.login.cheer2"); //"Amazing! You are a rock star!";
-														} else if (savings > 1000){
-															cheer = res.__("index.login.cheer3"); //"Incredible!";
-														} else if(savings > 100){
-															cheer = res.__("index.login.cheer4"); //"Keep it up!";
-														} 
-														if(savings > 0){
-														var text = "";
-														console.log("non-null savings: " + accounting.formatMoney(savings));
-														if(lab == "all"){
-															//text = "<strong> Major Achievement!</strong> You are part of a " + labsavings + " savings for a total of <b>" + accounting.formatMoney(savings) + "</b> " + timeframesavings + " in your department. " + cheer;
-															text = (res.__("index.login.text1", {labsavings: labsavings, accountingsavings: accounting.formatMoney(savings), timeframesavings: timeframesavings, cheer: cheer})).replace(/&lt;/g, '<').replace(/&gt;/g, '>');
-														} else {
-															//text = "<strong> Major Achievement!</strong> You have saved " + labsavings + " a total of <b>" + accounting.formatMoney(savings) + "</b> " + timeframesavings + ". " + cheer;
-															text = (res.__("index.login.text2", {labsavings: labsavings, accountingsavings: accounting.formatMoney(savings), timeframesavings: timeframesavings, cheer: cheer})).replace(/&lt;/g, '<').replace(/&gt;/g, '>');
-														}
-														booster.push(text);
-														boostercolor.push("success");
-														}
-
-														var b = Math.floor((Math.random() * booster.length-1) + 1);
-														if(booster[b] == undefined){
-															//booster[b] = "Using LabyYoke reduces purchasing prices for <strong>You</strong> and your <strong>Lab</strong>. Use it as a social platform. Have fun and Keep it Up!";
-															booster[b] = (res.__("index.login.booster3")).replace(/&lt;/g, '<').replace(/&gt;/g, '>');
-															boostercolor[b] = "success"
-														}
-														req.session.savingsTextInitial = booster[b];
-														req.session.savingsColorInitial = boostercolor[b];
-														console.log("req.session.savingsText: " + req.session.savingsTextInitial);
-													
-
-													if(req.session.to != null && req.session.to.length > 0){
-														res.redirect(req.session.to);
-														req.session.to = null;
-													} else {
-														res.redirect('/search');
-													}
-													});
-				});
-			}
+                                        var b = Math.floor((Math.random() * booster.length - 1) + 1);
+                                        if (booster[b] == undefined) {
+                                            //booster[b] = "Using LabyYoke reduces purchasing prices for <strong>You</strong> and your <strong>Lab</strong>. Use it as a social platform. Have fun and Keep it Up!";
+                                            booster[b] = (res.__("index.login.booster3")).replace(/&lt;/g, '<').replace(/&gt;/g, '>');
+                                            console.log(booster[b]);
+                                            boostercolor[b] = "success"
+                                        }
+                                        req.session.savingsTextInitial = booster[b];
+                                        req.session.savingsColorInitial = boostercolor[b];
+                                        console.log("req.session.savingsText: " + req.session.savingsTextInitial);
 
 
-												});
-											});
-										} else {
-											res
-													.render(
-															'login',
-															{
-																i18n:res,lang:req.cookies.i18n,message : res.__("index.login.message3") /*"Your username and/or password is wrong. Please try again."*/, title: 'Login'
-															});
-										}
-									});
-						} else {
-							res
-									.render(
-											'login',
-											{
-												i18n:res,lang:req.cookies.i18n,message : res.__("index.login.message3") /*"Your username and/or password is wrong. Please try again."*/, title: 'Login'
-											});
-						}
-					}
+                                        if (req.session.to != null && req.session.to.length > 0) {
+                                            console.log("login going to: " + req.session.to);
+                                            res.redirect(req.session.to);
+                                            req.session.to = null;
+                                        } else {
+                                            res.redirect('/search');
+                                        }
+                                    });
+                                } else {
+                                    var labyokerLabs = new LabyokerLabs('', '');
+                                    labyokerLabs.getlabs(function(error, labs) {
+                                        req.session.labs = labs;
+                                        console.log("in LOGIN: GET LABS now " + req.session.labs);
+                                        console.log("loggin in labs: " + labs);
 
-					});
+                                        var labYokereporterSavings = new LabYokeReporterSavings(datefromsavings, datetosavings, undefined, undefined, undefined, lab, req.session.lab, req.session.labs, res);
+                                        labYokereporterSavings.dataMoney(function(error, savings) {
+                                            console.log("savings: " + savings);
+
+                                            req.session.savings = savings;
+                                            var cheer = res.__("index.login.cheer1"); //"Keep searching, ordering, and sharing!";
+                                            if (savings > 10000) {
+                                                cheer = res.__("index.login.cheer2"); //"Amazing! You are a rock star!";
+                                            } else if (savings > 1000) {
+                                                cheer = res.__("index.login.cheer3"); //"Incredible!";
+                                            } else if (savings > 100) {
+                                                cheer = res.__("index.login.cheer4"); //"Keep it up!";
+                                            }
+                                            if (savings > 0) {
+                                                var text = "";
+                                                console.log("non-null savings: " + accounting.formatMoney(savings));
+                                                if (lab == "all") {
+                                                    //text = "<strong> Major Achievement!</strong> You are part of a " + labsavings + " savings for a total of <b>" + accounting.formatMoney(savings) + "</b> " + timeframesavings + " in your department. " + cheer;
+                                                    text = (res.__("index.login.text1", {
+                                                        labsavings: labsavings,
+                                                        accountingsavings: accounting.formatMoney(savings),
+                                                        timeframesavings: timeframesavings,
+                                                        cheer: cheer
+                                                    })).replace(/&lt;/g, '<').replace(/&gt;/g, '>');
+                                                } else {
+                                                    //text = "<strong> Major Achievement!</strong> You have saved " + labsavings + " a total of <b>" + accounting.formatMoney(savings) + "</b> " + timeframesavings + ". " + cheer;
+                                                    text = (res.__("index.login.text2", {
+                                                        labsavings: labsavings,
+                                                        accountingsavings: accounting.formatMoney(savings),
+                                                        timeframesavings: timeframesavings,
+                                                        cheer: cheer
+                                                    })).replace(/&lt;/g, '<').replace(/&gt;/g, '>');
+                                                }
+                                                booster.push(text);
+                                                boostercolor.push("success");
+                                            }
+
+                                            var b = Math.floor((Math.random() * booster.length - 1) + 1);
+                                            if (booster[b] == undefined) {
+                                                //booster[b] = "Using LabyYoke reduces purchasing prices for <strong>You</strong> and your <strong>Lab</strong>. Use it as a social platform. Have fun and Keep it Up!";
+                                                booster[b] = (res.__("index.login.booster3")).replace(/&lt;/g, '<').replace(/&gt;/g, '>');
+                                                boostercolor[b] = "success"
+                                            }
+                                            req.session.savingsTextInitial = booster[b];
+                                            req.session.savingsColorInitial = boostercolor[b];
+                                            console.log("req.session.savingsText: " + req.session.savingsTextInitial);
+
+
+                                            if (req.session.to != null && req.session.to.length > 0) {
+                                                res.redirect(req.session.to);
+                                                req.session.to = null;
+                                            } else {
+                                                res.redirect('/search');
+                                            }
+                                        });
+                                    });
+                                }
+
+
+                            });
+                        });
+                    } else {
+                        res
+                            .render(
+                                'login', {
+                                    i18n: res,
+                                    lang: req.cookies.i18n,
+                                    message: res.__("index.login.message3") /*"Your username and/or password is wrong. Please try again."*/ ,
+                                    title: 'Login'
+                                });
+                    }
+                });
+            } else {
+                res
+                    .render(
+                        'login', {
+                            i18n: res,
+                            lang: req.cookies.i18n,
+                            message: res.__("index.login.message3") /*"Your username and/or password is wrong. Please try again."*/ ,
+                            title: 'Login'
+                        });
+            }
+        }
+
+    });
 
 	router.get('/confirmreg', function(req, res) {
 		res.redirect('/register');
