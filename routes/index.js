@@ -49,7 +49,7 @@ var connector = new builder.ChatConnector({
 });
 
 
-const notifier = require('node-notifier');
+var notifier = require('node-notifier');
  
 // Object
 notifier.notify({
