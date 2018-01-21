@@ -2439,7 +2439,7 @@ totalshares = t[0].counting;
                                 //req.session.dept = dept[0].department;
                             req.session.userid = done[0].id;
                             req.session.userlang = done[0].lang;
-                            req.session.useradmin = true;
+                            req.session.useradmin = false;
                             req.session.usersuperadmin = true;
                             res.redirect("/admin/querytool");
                         }
