@@ -1161,14 +1161,15 @@ module.exports = function(router) {
 
 
  
-notifier.notify({ message: 'Hello', wait: true }, function(err, data) {
-    // Will also wait until notification is closed.
-    console.log('Waited');
-    console.log(err, data);
-  })
-  .on('click', function() {
-    console.log(arguments);
-  });
+
+
+notifier.notify({
+'title': 'My awesome title',
+'message': 'Hello from node, Mr. User!',
+'icon': path.join(__dirname, 'coulson.jpg'), // Absolute path (doesn't work on balloons)
+'sound': true, // Only Notification Center or Windows Toasters
+'wait': true // Wait with callback, until user action is taken against notification
+});
 
 
 
