@@ -1168,10 +1168,10 @@ var notifications = [
         { label: 'muffin', dispname: 'Muffin' },
         { label: 'cake', dispname: 'Cake' }
     ],
-    muffinopts = { label: 'muffin', icon: path.join(__dirname, '/images/yoke4.png') },
-    cakeopts = { label: 'cake', title: 'Cake is ready!', icon: path.join(__dirname, '/images/yoke4.png'), sticky: true };
+    muffinopts = { label: 'muffin', icon: path.join(__dirname, '../public/images/yoke4.png') },
+    cakeopts = { label: 'cake', title: 'Cake is ready!', icon: path.join(__dirname, '../public/images/yoke4.png'), sticky: true };
 
-growly.register('Bakery', path.join(__dirname, '/images/yoke4.png'), notifications, function(err) {
+growly.register('Bakery', path.join(__dirname, '../public/images/yoke4.png'), notifications, function(err) {
     if (err) { 
         console.log(err);
         return;
