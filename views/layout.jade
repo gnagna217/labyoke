@@ -340,4 +340,6 @@ html(lang='en')
         script(type="text/javascript" src="/js/global.js")
        script(type="text/javascript" src="/javascripts/notifications.js")
        script.
-      notify("New shares","Hello there! You have " + "#{sharesNum}" + " shares awaiting fullfilment.");
+        var test = "Hello there! You have " + "#{sharesnumber}" + " shares awaiting fullfilment.";
+        console.log("notify: " + test);
+        notify("New shares",test);
