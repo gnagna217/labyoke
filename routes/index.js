@@ -50,7 +50,6 @@ var connector = new builder.ChatConnector({
 
 
 
-var notifier = require('node-notifier');
 var path = require('path');
 /*var bot = new builder.UniversalBot(connector);
 
