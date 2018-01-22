@@ -49,6 +49,8 @@ var connector = new builder.ChatConnector({
 });
 
 
+
+var notifier = require('node-notifier');
 var path = require('path');
 /*var bot = new builder.UniversalBot(connector);
 
@@ -1167,10 +1169,10 @@ var notifications = [
         { label: 'muffin', dispname: 'Muffin' },
         { label: 'cake', dispname: 'Cake' }
     ],
-    muffinopts = { label: 'muffin', icon: '/images/yoke4.png' },
-    cakeopts = { label: 'cake', title: 'Cake is ready!', icon: '/images/yoke4.png', sticky: true };
+    muffinopts = { label: 'muffin', icon: '../node_modules/growly/example/muffin.png' },
+    cakeopts = { label: 'cake', title: 'Cake is ready!', icon: '../node_modules/growly/example/cake.png', sticky: true };
 
-growly.register('Bakery', '/images/yoke4.png', notifications, function(err) {
+growly.register('Bakery', '../node_modules/growly/example/muffin.png', notifications, function(err) {
     if (err) { 
         console.log(err);
         return;
