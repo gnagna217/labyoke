@@ -2,6 +2,7 @@ function notify(body, title) {
   // Let's check if the browser supports notifications
     var options = {
     body: body,
+    tag: "",
     icon: "/images/yoke4.png"
     };
   if (!("Notification" in window)) {
