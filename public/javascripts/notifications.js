@@ -2,8 +2,8 @@ function notify(body, title) {
   // Let's check if the browser supports notifications
     var options = {
     body: body,
-    tag: "",
-    icon: "/images/yoke4.png"
+    requireInteraction: true
+    //icon: "/images/yoke4.png"
     };
   if (!("Notification" in window)) {
     console.log("This application does not support notification");
