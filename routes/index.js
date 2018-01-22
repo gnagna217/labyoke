@@ -50,8 +50,8 @@ var connector = new builder.ChatConnector({
 
 
 
-const notifier = require('node-notifier');
-const path = require('path');
+var notifier = require('node-notifier');
+var path = require('path');
 /*var bot = new builder.UniversalBot(connector);
 
 bot.dialog('/', function (session) {
