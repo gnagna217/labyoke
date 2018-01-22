@@ -1163,12 +1163,24 @@ module.exports = function(router) {
  
 
 
+const Growl = require('node-notifier').Growl;
+
+var notifier = new Growl({
+  name: 'Growl Name Used', // Defaults as 'Node'
+  host: 'localhost',
+  port: 23053
+});
+
 notifier.notify({
-title: 'My awesome title',
-message: 'Hello from node, Mr. User!',
-icon: path.join(__dirname, 'coulson.jpg'), // Absolute path (doesn't work on balloons)
-sound: true, // Only Notification Center or Windows Toasters
-wait: true // Wait with callback, until user action is taken against notification
+  title: 'Foo',
+  message: 'Hello World',
+  icon: fs.readFileSync(__dirname + '/coulson.jpg'),
+  wait: false, // Wait for User Action against Notification
+
+  // and other growl options like sticky etc.
+  sticky: false,
+  label: void 0,
+  priority: void 0
 });
 
 
