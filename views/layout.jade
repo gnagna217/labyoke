@@ -340,6 +340,6 @@ html(lang='en')
         script(type="text/javascript" src="/js/global.js")
        script(type="text/javascript" src="/javascripts/notifications.js")
        script.
-        var test = "Hello there! You have " + "#{sharesnumber}" + " shares awaiting fullfilment.";
+        var num = parseInt("#{sharesnumber}"); if(num>0){var test = "Hello there! You have " + "#{sharesnumber}" + " shares awaiting fullfilment.";
         console.log("notify: " + test);
-        notify("New shares",test);
+        notify(test,"New shares");}
