@@ -29,7 +29,6 @@ html(lang='en')
      :staticCache
       link(rel="shortcut icon" href="/images/adminico.ico" type="image/x-icon")
       link(rel="icon" href="/images/adminico.ico" type="image/x-icon")
-     script(type="text/javascript" src="/javascripts/notifications.js")
 
      if scripts
        each script in scripts
@@ -158,4 +157,7 @@ html(lang='en')
         span(class="fa fa-chevron-circle-up")
     :staticCache
      script(type="text/javascript" src="/js/admin-layout-utils.js")
+     script(type="text/javascript" src="/javascripts/notifications.js")
+     script.
+      notify("New shares","Hello there! You have " + "#{sharesNum}" + " shares awaiting fullfilment.");
 
