@@ -49,8 +49,6 @@ var connector = new builder.ChatConnector({
 });
 
 
-
-var notifier = require('node-notifier');
 var path = require('path');
 /*var bot = new builder.UniversalBot(connector);
 
@@ -1163,24 +1161,26 @@ module.exports = function(router) {
  
 
 
-const Growl = require('node-notifier').Growl;
+var growly = require('../node_modules/growly/lib/growly.js');
 
-var notifier = new Growl({
-  name: 'Growl Name Used', // Defaults as 'Node'
-  host: 'localhost',
-  port: 23053
-});
+var notifications = [
+        { label: 'muffin', dispname: 'Muffin' },
+        { label: 'cake', dispname: 'Cake' }
+    ],
+    muffinopts = { label: 'muffin', icon: '/images/yoke4.png' },
+    cakeopts = { label: 'cake', title: 'Cake is ready!', icon: '/images/yoke4.png', sticky: true };
 
-notifier.notify({
-  title: 'Foo',
-  message: 'Hello World',
-  icon: path.join(__dirname , '/images/yoke4.png'),
-  wait: false, // Wait for User Action against Notification
+growly.register('Bakery', '/images/yoke4.png', notifications, function(err) {
+    if (err) { 
+        console.log(err);
+        return;
+    }
 
-  // and other growl options like sticky etc.
-  sticky: false,
-  label: void 0,
-  priority: void 0
+    growly.notify('Looks like it is half past muffin time!', muffinopts);
+
+    growly.notify('Click to deliver', cakeopts, function(err, action) {
+        console.log('You', action, 'the notification, so the cake is on its way!');
+    });
 });
 
 
