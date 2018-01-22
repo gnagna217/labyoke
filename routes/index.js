@@ -1174,7 +1174,7 @@ var notifier = new Growl({
 notifier.notify({
   title: 'Foo',
   message: 'Hello World',
-  icon: fs.readFileSync(__dirname + '/images/yoke4.png'),
+  icon: path.join(__dirname , '/images/yoke4.png'),
   wait: false, // Wait for User Action against Notification
 
   // and other growl options like sticky etc.
