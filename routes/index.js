@@ -49,8 +49,6 @@ var connector = new builder.ChatConnector({
 });
 
 
-
-var path = require('path');
 /*var bot = new builder.UniversalBot(connector);
 
 bot.dialog('/', function (session) {
@@ -1157,34 +1155,6 @@ module.exports = function(router) {
 				console.log("in LOGIN: GET LABS now " + req.session.labs);
 				console.log("loggin in labs: " + labs);
 				console.log("loggin in latest: " + latest);
-
-
- 
-
-
-var growly = require('../node_modules/growly/lib/growly.js');
-
-var notifications = [
-        { label: 'muffin', dispname: 'Muffin' },
-        { label: 'cake', dispname: 'Cake' }
-    ],
-    muffinopts = { label: 'muffin', icon: path.join(__dirname, '../public/images/yoke4.png') },
-    cakeopts = { label: 'cake', title: 'Cake is ready!', icon: path.join(__dirname, '../public/images/yoke4.png'), sticky: true };
-
-growly.register('Bakery', path.join(__dirname, '../public/images/yoke4.png'), notifications, function(err) {
-    if (err) { 
-        console.log(err);
-        return;
-    }
-
-    growly.notify('Looks like it is half past muffin time!', muffinopts);
-
-    growly.notify('Click to deliver', cakeopts, function(err, action) {
-        console.log('You', action, 'the notification, so the cake is on its way!');
-    });
-});
-
-
 
 				res.render('login', {superadmin:req.session.usersuperadmin,latestshares:latest, mom: mom, lang:req.cookies.i18n, i18n: res, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, labyokersurname : req.session.surname, title: 'Login',isLoggedInAdmin: req.session.admin});
 				req.session.messages = null;
