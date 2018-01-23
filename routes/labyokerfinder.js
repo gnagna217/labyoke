@@ -1021,7 +1021,7 @@ console.log("report on shares my lab: " + mylab);
 	console.log("where2: " +  where);
 
 	//var qryStr = "SELECT * FROM vm2016_agentsshare a, vm2016_users b" + where + " order by a.date desc";
-	var qryStr = "SELECT * FROM "+mylab+"_orders where email='" + myemail + "' order by a.date desc";
+	var qryStr = "SELECT * FROM "+mylab+"_orders a where email='" + myemail + "' order by a.date desc";
 
 	console.log("query report shares: " + qryStr);
 	query = client.query(qryStr);
