@@ -826,7 +826,7 @@ LabYokeReporterShares.prototype.reportShares = function(callback) {
 	var where = "";
 	var isempty = true;
 	var mylab = this.mylab;
-	var myemail = this.myemail;
+
 	//var mylab = this.mylab.replace(" ","").toLowerCase();
 	console.log("report on something: datefrom: " + datefrom);
 	console.log("report on something: dateto: " + dateto);
@@ -962,6 +962,7 @@ LabYokeReporterShares.prototype.reportSharesIntro = function(callback) {
 	var where = "";
 	var isempty = true;
 	var mylab = this.mylab;
+	var myemail = this.myemail;
 	//var dateto = moment(new Date).tz("America/New_York").format('MM-DD-YYYY');
 	//var datefrom = moment(new Date).weekday(-7).format('MM-DD-YYYY');
 	var dateto = moment().format('MM-DD-YYYY');
