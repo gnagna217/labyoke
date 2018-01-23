@@ -2096,10 +2096,7 @@ totalshares = t[0].counting;
             init.initialShares(function(error, resultsShares) {
                 console.log("inside init shares " + resultsShares);
                 console.log("initshares is " + initial_sharesnum);
-                if(req.session.shares != 0){
-                    res.cookie('is',req.session.shares);
-                    console.log("setting is " + req.session.shares);
-                }
+                
                 console.log("checking is " + req.cookies.is);
                 var cookie = req.cookies.sh;
                 console.log("cookie is " + cookie);
@@ -2515,7 +2512,10 @@ totalshares = t[0].counting;
                                 console.log("initshares is " + resultsShares);
                                 shares = resultsShares;
                                 req.session.shares = shares;
-                                initial_sharesnum = shares;
+                                if(req.session.shares != 0){
+                                    res.cookie('is',req.session.shares);
+                                    console.log("setting is " + req.session.shares);
+                                }
                             }
                             init.initialOrders(function(error, resultsOrders) {
                                 console.log("inside init orders " + resultsOrders);
@@ -3854,7 +3854,10 @@ totalshares = t[0].counting;
                                                     console.log("initshares is " + resultsShares);
                                                     shares = resultsShares;
                                                     req.session.shares = shares;
-                                                    initial_sharesnum = shares;
+                                                    if(req.session.shares != 0){
+                                                        res.cookie('is',req.session.shares);
+                                                        console.log("setting is " + req.session.shares);
+                                                    }
                                                 }
                                                 init.initialOrders(function(error, resultsOrders) {
                                                     console.log("inside init orders " + resultsOrders);
