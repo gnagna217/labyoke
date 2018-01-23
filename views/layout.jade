@@ -345,11 +345,11 @@ html(lang='en')
                 method: "POST",
                 url: 'https://team-labyoke.herokuapp.com/findSharesNum',
                 data: {
-                    email: "gnagna217@gmail.com",
-                    lab: "SeneLab"
+                    email: "#{currente}",
+                    lab: "#{currentl}"
                 },
                 success: function (response) {
                     console.log("success get sharesnum. now trying to nofity...");
-                    notify("Hello "+"#{labyoker}"+"! You have ", " new shares awaiting.","New shares");
+                    notify("Hello "+"#{labyoker}"+"! You have ", " new share(s) awaiting.","New shares");
                 }
             });

@@ -574,7 +574,7 @@ module.exports = function(router) {
             var cont = 1;
             if(err){
                  //res.json({error_code:1,err_desc:err});
-                 res.render('admins', {superadmin:req.session.usersuperadmin,doing:"upload",lang:req.cookies.i18n, i18n:res, nosuccess: "generic", report_data:req.session.report_data, myshares: req.session.myshares, mysharesrequest: req.session.mysharesrequest, report_sharesbycategory: req.session.report_sharesbycategory, report_venn: req.session.report_venn, test: req.session.test, currentlabname: req.session.lab, ordersnum: req.session.orders, sharesnum: req.session.shares, loggedIn : true, isLoggedInAdmin: req.session.admin, title: 'Admins', labyoker : req.session.user, labyokersurname : req.session.surname
+                 res.render('admins', {currente:req.session.email,currentl:req.session.lab,superadmin:req.session.usersuperadmin,doing:"upload",lang:req.cookies.i18n, i18n:res, nosuccess: "generic", report_data:req.session.report_data, myshares: req.session.myshares, mysharesrequest: req.session.mysharesrequest, report_sharesbycategory: req.session.report_sharesbycategory, report_venn: req.session.report_venn, test: req.session.test, currentlabname: req.session.lab, ordersnum: req.session.orders, sharesnum: req.session.shares, loggedIn : true, isLoggedInAdmin: req.session.admin, title: 'Admins', labyoker : req.session.user, labyokersurname : req.session.surname
                  });
                  cont = 0;
                  console.log("generic error: "+cont);
@@ -585,7 +585,7 @@ module.exports = function(router) {
                 //res.json({error_code:1,err_desc:"No file passed"});
                 
                 res.render('admins', {
-                   superadmin:req.session.usersuperadmin,doing:"upload",lang:req.cookies.i18n, i18n:res, nosuccess: "nofile", report_data:req.session.report_data, myshares: req.session.myshares, mysharesrequest: req.session.mysharesrequest, report_sharesbycategory: req.session.report_sharesbycategory, report_venn: req.session.report_venn, test: req.session.test, currentlabname: req.session.lab, ordersnum: req.session.orders, sharesnum: req.session.shares, loggedIn : true, isLoggedInAdmin: req.session.admin, title: 'Admins', labyoker : req.session.user, labyokersurname : req.session.surname
+                   currente:req.session.email,currentl:req.session.lab,superadmin:req.session.usersuperadmin,doing:"upload",lang:req.cookies.i18n, i18n:res, nosuccess: "nofile", report_data:req.session.report_data, myshares: req.session.myshares, mysharesrequest: req.session.mysharesrequest, report_sharesbycategory: req.session.report_sharesbycategory, report_venn: req.session.report_venn, test: req.session.test, currentlabname: req.session.lab, ordersnum: req.session.orders, sharesnum: req.session.shares, loggedIn : true, isLoggedInAdmin: req.session.admin, title: 'Admins', labyoker : req.session.user, labyokersurname : req.session.surname
                 });
                 cont = 0;
                 console.log("no file error: " + cont);
@@ -610,7 +610,7 @@ module.exports = function(router) {
                         //return res.json({error_code:1,err_desc:err, data: null});
 
                         res.render('admins', {
-                        superadmin:req.session.usersuperadmin,doing:"upload",lang:req.cookies.i18n, i18n:res, nosuccess: "nodata", report_data:req.session.report_data, myshares: req.session.myshares, mysharesrequest: req.session.mysharesrequest, report_sharesbycategory: req.session.report_sharesbycategory, report_venn: req.session.report_venn, test: req.session.test, currentlabname: req.session.lab, ordersnum: req.session.orders, sharesnum: req.session.shares, loggedIn : true, isLoggedInAdmin: req.session.admin, title: 'Admins', spreadname: req.file.originalname, labyoker : req.session.user, labyokersurname : req.session.surname
+                        currente:req.session.email,currentl:req.session.lab,superadmin:req.session.usersuperadmin,doing:"upload",lang:req.cookies.i18n, i18n:res, nosuccess: "nodata", report_data:req.session.report_data, myshares: req.session.myshares, mysharesrequest: req.session.mysharesrequest, report_sharesbycategory: req.session.report_sharesbycategory, report_venn: req.session.report_venn, test: req.session.test, currentlabname: req.session.lab, ordersnum: req.session.orders, sharesnum: req.session.shares, loggedIn : true, isLoggedInAdmin: req.session.admin, title: 'Admins', spreadname: req.file.originalname, labyoker : req.session.user, labyokersurname : req.session.surname
                         });
                         cont = 0;
                         console.log("no data error : " + cont);
@@ -632,19 +632,19 @@ module.exports = function(router) {
                         console.log("inside successful upload");
                         console.log("mysharesrequest " + req.session.mysharesrequest);
                         res.render('admins', {
-                        superadmin:req.session.usersuperadmin,doing:"upload",lang:req.cookies.i18n, i18n:res, myshares: req.session.myshares, report_data:req.session.report_data, mysharesrequest: req.session.mysharesrequest, report_sharesbycategory: req.session.report_sharesbycategory, report_venn: req.session.report_venn, test: req.session.test, currentlabname: req.session.lab, ordersnum: req.session.orders, sharesnum: req.session.shares, json: result, loggedIn : true, isLoggedInAdmin: req.session.admin, title: 'Admins', spreadname: req.file.originalname, labyoker : req.session.user, labyokersurname : req.session.surname
+                        currente:req.session.email,currentl:req.session.lab,superadmin:req.session.usersuperadmin,doing:"upload",lang:req.cookies.i18n, i18n:res, myshares: req.session.myshares, report_data:req.session.report_data, mysharesrequest: req.session.mysharesrequest, report_sharesbycategory: req.session.report_sharesbycategory, report_venn: req.session.report_venn, test: req.session.test, currentlabname: req.session.lab, ordersnum: req.session.orders, sharesnum: req.session.shares, json: result, loggedIn : true, isLoggedInAdmin: req.session.admin, title: 'Admins', spreadname: req.file.originalname, labyoker : req.session.user, labyokersurname : req.session.surname
                     });
                     } else if(done == "cannotUploadMissingData"){
                         console.log("inside missing data");
-                        res.render('admins', {superadmin:req.session.usersuperadmin,doing:"upload",lang:req.cookies.i18n, i18n:res, nosuccess: "missingdata", report_data:req.session.report_data, mysharesrequest: req.session.mysharesrequest, report_sharesbycategory: req.session.report_sharesbycategory, report_venn: req.session.report_venn, test: req.session.test, currentlabname: req.session.lab, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, labyokersurname : req.session.surname, myshares: req.session.myshares, mysharesrequest: req.session.mysharesrequest, report_sharesbycategory: req.session.report_sharesbycategory, loggedIn : true, isLoggedInAdmin: req.session.admin, title:'Admins'});
+                        res.render('admins', {currente:req.session.email,currentl:req.session.lab,superadmin:req.session.usersuperadmin,doing:"upload",lang:req.cookies.i18n, i18n:res, nosuccess: "missingdata", report_data:req.session.report_data, mysharesrequest: req.session.mysharesrequest, report_sharesbycategory: req.session.report_sharesbycategory, report_venn: req.session.report_venn, test: req.session.test, currentlabname: req.session.lab, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, labyokersurname : req.session.surname, myshares: req.session.myshares, mysharesrequest: req.session.mysharesrequest, report_sharesbycategory: req.session.report_sharesbycategory, loggedIn : true, isLoggedInAdmin: req.session.admin, title:'Admins'});
                         req.session.messages = null;
                     } else if(done == "cannotUploadMissingColumn"){
                         console.log("inside missing column");
-                        res.render('admins', {superadmin:req.session.usersuperadmin,doing:"upload",lang:req.cookies.i18n, i18n:res, nosuccess: "missingcolumn", report_data:req.session.report_data, mysharesrequest: req.session.mysharesrequest, report_sharesbycategory: req.session.report_sharesbycategory, report_venn: req.session.report_venn, test: req.session.test, currentlabname: req.session.lab, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, labyokersurname : req.session.surname, myshares: req.session.myshares, mysharesrequest: req.session.mysharesrequest, report_sharesbycategory: req.session.report_sharesbycategory, loggedIn : true, isLoggedInAdmin: req.session.admin, title:'Admins'});
+                        res.render('admins', {currente:req.session.email,currentl:req.session.lab,superadmin:req.session.usersuperadmin,doing:"upload",lang:req.cookies.i18n, i18n:res, nosuccess: "missingcolumn", report_data:req.session.report_data, mysharesrequest: req.session.mysharesrequest, report_sharesbycategory: req.session.report_sharesbycategory, report_venn: req.session.report_venn, test: req.session.test, currentlabname: req.session.lab, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, labyokersurname : req.session.surname, myshares: req.session.myshares, mysharesrequest: req.session.mysharesrequest, report_sharesbycategory: req.session.report_sharesbycategory, loggedIn : true, isLoggedInAdmin: req.session.admin, title:'Admins'});
                         req.session.messages = null;
                     } else {
                         console.log("inside not successful upload");
-                        res.render('admins', {superadmin:req.session.usersuperadmin,doing:"upload",lang:req.cookies.i18n, i18n:res, nosuccess: "databaserror", report_data:req.session.report_data, mysharesrequest: req.session.mysharesrequest, report_sharesbycategory: req.session.report_sharesbycategory, report_venn: req.session.report_venn, test: req.session.test, currentlabname: req.session.lab, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, labyokersurname : req.session.surname, myshares: req.session.myshares, mysharesrequest: req.session.mysharesrequest, report_sharesbycategory: req.session.report_sharesbycategory, loggedIn : true, isLoggedInAdmin: req.session.admin, title:'Admins'});
+                        res.render('admins', {currente:req.session.email,currentl:req.session.lab,superadmin:req.session.usersuperadmin,doing:"upload",lang:req.cookies.i18n, i18n:res, nosuccess: "databaserror", report_data:req.session.report_data, mysharesrequest: req.session.mysharesrequest, report_sharesbycategory: req.session.report_sharesbycategory, report_venn: req.session.report_venn, test: req.session.test, currentlabname: req.session.lab, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, labyokersurname : req.session.surname, myshares: req.session.myshares, mysharesrequest: req.session.mysharesrequest, report_sharesbycategory: req.session.report_sharesbycategory, loggedIn : true, isLoggedInAdmin: req.session.admin, title:'Admins'});
                         req.session.messages = null;
                     }
                 });
@@ -677,7 +677,7 @@ module.exports = function(router) {
             if(err){
                  //res.json({error_code:1,err_desc:err});
                  res.render('admins', {
-                   superadmin:req.session.usersuperadmin,meadminof:req.session.meadminof,lang:req.cookies.i18n, i18n:res, nosuccess: "generic", report_data:resultss[2], myshares: resultss[1], mysharesrequest: resultss[4], report_sharesbycategory: req.session.report_sharesbycategory, report_venn: req.session.report_venn, test: req.session.test, currentlabname: req.session.lab, ordersnum: req.session.orders, sharesnum: req.session.shares, loggedIn : true, isLoggedInAdmin: req.session.admin, title: 'Admins', labyoker : req.session.user, labyokersurname : req.session.surname
+                   currente:req.session.email,currentl:req.session.lab,superadmin:req.session.usersuperadmin,meadminof:req.session.meadminof,lang:req.cookies.i18n, i18n:res, nosuccess: "generic", report_data:resultss[2], myshares: resultss[1], mysharesrequest: resultss[4], report_sharesbycategory: req.session.report_sharesbycategory, report_venn: req.session.report_venn, test: req.session.test, currentlabname: req.session.lab, ordersnum: req.session.orders, sharesnum: req.session.shares, loggedIn : true, isLoggedInAdmin: req.session.admin, title: 'Admins', labyoker : req.session.user, labyokersurname : req.session.surname
                  });
                  cont = 0;
                  console.log("generic error: "+cont);
@@ -688,7 +688,7 @@ module.exports = function(router) {
                 //res.json({error_code:1,err_desc:"No file passed"});
                 
                 res.render('admins', {
-                   superadmin:req.session.usersuperadmin,meadminof:req.session.meadminof,ang:req.cookies.i18n, i18n:res, nosuccess: "nofile", report_data:resultss[2], myshares: resultss[1], mysharesrequest: resultss[4], report_sharesbycategory: req.session.report_sharesbycategory, report_venn: req.session.report_venn, test: req.session.test, currentlabname: req.session.lab, ordersnum: req.session.orders, sharesnum: req.session.shares, loggedIn : true, isLoggedInAdmin: req.session.admin, title: 'Admins', labyoker : req.session.user, labyokersurname : req.session.surname
+                   currente:req.session.email,currentl:req.session.lab,superadmin:req.session.usersuperadmin,meadminof:req.session.meadminof,ang:req.cookies.i18n, i18n:res, nosuccess: "nofile", report_data:resultss[2], myshares: resultss[1], mysharesrequest: resultss[4], report_sharesbycategory: req.session.report_sharesbycategory, report_venn: req.session.report_venn, test: req.session.test, currentlabname: req.session.lab, ordersnum: req.session.orders, sharesnum: req.session.shares, loggedIn : true, isLoggedInAdmin: req.session.admin, title: 'Admins', labyoker : req.session.user, labyokersurname : req.session.surname
                 });
                 cont = 0;
                 console.log("no file error: " + cont);
@@ -713,7 +713,7 @@ module.exports = function(router) {
                         //return res.json({error_code:1,err_desc:err, data: null});
 
                         res.render('admins', {
-                        superadmin:req.session.usersuperadmin,meadminof:req.session.meadminof,lang:req.cookies.i18n, i18n:res, nosuccess: "nodata", report_data:resultss[2], myshares: resultss[1], mysharesrequest: resultss[4], report_sharesbycategory: req.session.report_sharesbycategory, report_venn: req.session.report_venn, test: req.session.test, currentlabname: req.session.lab, ordersnum: req.session.orders, sharesnum: req.session.shares, loggedIn : true, isLoggedInAdmin: req.session.admin, title: 'Admins', spreadname: req.file.originalname, labyoker : req.session.user, labyokersurname : req.session.surname
+                        currente:req.session.email,currentl:req.session.lab,superadmin:req.session.usersuperadmin,meadminof:req.session.meadminof,lang:req.cookies.i18n, i18n:res, nosuccess: "nodata", report_data:resultss[2], myshares: resultss[1], mysharesrequest: resultss[4], report_sharesbycategory: req.session.report_sharesbycategory, report_venn: req.session.report_venn, test: req.session.test, currentlabname: req.session.lab, ordersnum: req.session.orders, sharesnum: req.session.shares, loggedIn : true, isLoggedInAdmin: req.session.admin, title: 'Admins', spreadname: req.file.originalname, labyoker : req.session.user, labyokersurname : req.session.surname
                         });
                         cont = 0;
                         console.log("no data error : " + cont);
@@ -735,19 +735,19 @@ module.exports = function(router) {
                         console.log("inside successful upload");
                         ///console.log("mysharesrequest " + req.session.mysharesrequest);
                         res.render('admins', {
-                        superadmin:req.session.usersuperadmin,meadminof:req.session.meadminof,lang:req.cookies.i18n, i18n:res, report_data:resultss[2], myshares: resultss[1], mysharesrequest: resultss[4], report_sharesbycategory: req.session.report_sharesbycategory, report_venn: req.session.report_venn, test: req.session.test, currentlabname: req.session.lab, ordersnum: req.session.orders, sharesnum: req.session.shares, json: result, loggedIn : true, isLoggedInAdmin: req.session.admin, title: 'Admins', spreadname: req.file.originalname, labyoker : req.session.user, labyokersurname : req.session.surname
+                        currente:req.session.email,currentl:req.session.lab,superadmin:req.session.usersuperadmin,meadminof:req.session.meadminof,lang:req.cookies.i18n, i18n:res, report_data:resultss[2], myshares: resultss[1], mysharesrequest: resultss[4], report_sharesbycategory: req.session.report_sharesbycategory, report_venn: req.session.report_venn, test: req.session.test, currentlabname: req.session.lab, ordersnum: req.session.orders, sharesnum: req.session.shares, json: result, loggedIn : true, isLoggedInAdmin: req.session.admin, title: 'Admins', spreadname: req.file.originalname, labyoker : req.session.user, labyokersurname : req.session.surname
                     });
                     } else if(done == "cannotUploadMissingData"){
                         console.log("inside missing data");
-                        res.render('admins', {superadmin:req.session.usersuperadmin,meadminof:req.session.meadminof,doing:"upload",lang:req.cookies.i18n, i18n:res, nosuccess: "missingdata", report_data:resultss[2], mysharesrequest: resultss[4], report_sharesbycategory: req.session.report_sharesbycategory, report_venn: req.session.report_venn, test: req.session.test, currentlabname: req.session.lab, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, labyokersurname : req.session.surname, myshares: resultss[1], report_sharesbycategory: req.session.report_sharesbycategory, loggedIn : true, isLoggedInAdmin: req.session.admin, title:'Admins'});
+                        res.render('admins', {currente:req.session.email,currentl:req.session.lab,superadmin:req.session.usersuperadmin,meadminof:req.session.meadminof,doing:"upload",lang:req.cookies.i18n, i18n:res, nosuccess: "missingdata", report_data:resultss[2], mysharesrequest: resultss[4], report_sharesbycategory: req.session.report_sharesbycategory, report_venn: req.session.report_venn, test: req.session.test, currentlabname: req.session.lab, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, labyokersurname : req.session.surname, myshares: resultss[1], report_sharesbycategory: req.session.report_sharesbycategory, loggedIn : true, isLoggedInAdmin: req.session.admin, title:'Admins'});
                         req.session.messages = null;
                     } else if(done == "cannotUploadMissingColumn"){
                         console.log("inside missing column");
-                        res.render('admins', {superadmin:req.session.usersuperadmin,meadminof:req.session.meadminof,doing:"upload",lang:req.cookies.i18n, i18n:res, nosuccess: "missingcolumn", report_data:resultss[2], mysharesrequest: resultss[4], report_sharesbycategory: req.session.report_sharesbycategory, report_venn: req.session.report_venn, test: req.session.test, currentlabname: req.session.lab, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, labyokersurname : req.session.surname, myshares: resultss[1], report_sharesbycategory: req.session.report_sharesbycategory, loggedIn : true, isLoggedInAdmin: req.session.admin, title:'Admins'});
+                        res.render('admins', {currente:req.session.email,currentl:req.session.lab,superadmin:req.session.usersuperadmin,meadminof:req.session.meadminof,doing:"upload",lang:req.cookies.i18n, i18n:res, nosuccess: "missingcolumn", report_data:resultss[2], mysharesrequest: resultss[4], report_sharesbycategory: req.session.report_sharesbycategory, report_venn: req.session.report_venn, test: req.session.test, currentlabname: req.session.lab, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, labyokersurname : req.session.surname, myshares: resultss[1], report_sharesbycategory: req.session.report_sharesbycategory, loggedIn : true, isLoggedInAdmin: req.session.admin, title:'Admins'});
                         req.session.messages = null;
                     }  else {
                         console.log("inside not successful upload");
-                        res.render('admins', {superadmin:req.session.usersuperadmin,meadminof:req.session.meadminof,lang:req.cookies.i18n, i18n:res, nosuccess: "databaserror", report_data:resultss[2], myshares: resultss[1], mysharesrequest: resultss[4], report_sharesbycategory: req.session.report_sharesbycategory, report_venn: req.session.report_venn, test: req.session.test, currentlabname: req.session.lab, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, labyokersurname : req.session.surname, myshares: resultss[1], report_sharesbycategory: req.session.report_sharesbycategory, loggedIn : true, isLoggedInAdmin: req.session.admin, title:'Admins'});
+                        res.render('admins', {currente:req.session.email,currentl:req.session.lab,superadmin:req.session.usersuperadmin,meadminof:req.session.meadminof,lang:req.cookies.i18n, i18n:res, nosuccess: "databaserror", report_data:resultss[2], myshares: resultss[1], mysharesrequest: resultss[4], report_sharesbycategory: req.session.report_sharesbycategory, report_venn: req.session.report_venn, test: req.session.test, currentlabname: req.session.lab, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, labyokersurname : req.session.surname, myshares: resultss[1], report_sharesbycategory: req.session.report_sharesbycategory, loggedIn : true, isLoggedInAdmin: req.session.admin, title:'Admins'});
                         req.session.messages = null;
                     }
                 });
@@ -781,7 +781,7 @@ module.exports = function(router) {
             if(err){
                  //res.json({error_code:1,err_desc:err});
                  res.render('share', {
-                   superadmin:req.session.usersuperadmin,doing:"upload",lang:req.cookies.i18n, i18n:res, nosuccess: "generic", myshares: resultss[1], mysharesrequest: resultss[4], report_sharesbycategory: req.session.report_sharesbycategory, report_venn: req.session.report_venn, test: req.session.test, currentlabname: req.session.lab, ordersnum: req.session.orders, sharesnum: req.session.shares, loggedIn : true, isLoggedInAdmin: req.session.admin, title: 'Share', labyoker : req.session.user, labyokersurname : req.session.surname
+                   currente:req.session.email,currentl:req.session.lab,superadmin:req.session.usersuperadmin,doing:"upload",lang:req.cookies.i18n, i18n:res, nosuccess: "generic", myshares: resultss[1], mysharesrequest: resultss[4], report_sharesbycategory: req.session.report_sharesbycategory, report_venn: req.session.report_venn, test: req.session.test, currentlabname: req.session.lab, ordersnum: req.session.orders, sharesnum: req.session.shares, loggedIn : true, isLoggedInAdmin: req.session.admin, title: 'Share', labyoker : req.session.user, labyokersurname : req.session.surname
                  });
                  cont = 0;
                  console.log("generic error: "+cont);
@@ -792,7 +792,7 @@ module.exports = function(router) {
                 //res.json({error_code:1,err_desc:"No file passed"});
                 
                 res.render('share', {
-                   superadmin:req.session.usersuperadmin,doing:"upload",lang:req.cookies.i18n, i18n:res, nosuccess: "nofile", myshares: resultss[1], mysharesrequest: resultss[4], report_sharesbycategory: req.session.report_sharesbycategory, report_venn: req.session.report_venn, test: req.session.test, currentlabname: req.session.lab, ordersnum: req.session.orders, sharesnum: req.session.shares, loggedIn : true, isLoggedInAdmin: req.session.admin, title: 'Share', labyoker : req.session.user, labyokersurname : req.session.surname
+                   currente:req.session.email,currentl:req.session.lab,superadmin:req.session.usersuperadmin,doing:"upload",lang:req.cookies.i18n, i18n:res, nosuccess: "nofile", myshares: resultss[1], mysharesrequest: resultss[4], report_sharesbycategory: req.session.report_sharesbycategory, report_venn: req.session.report_venn, test: req.session.test, currentlabname: req.session.lab, ordersnum: req.session.orders, sharesnum: req.session.shares, loggedIn : true, isLoggedInAdmin: req.session.admin, title: 'Share', labyoker : req.session.user, labyokersurname : req.session.surname
                 });
                 cont = 0;
                 console.log("no file error: " + cont);
@@ -817,7 +817,7 @@ module.exports = function(router) {
                         //return res.json({error_code:1,err_desc:err, data: null});
 
                         res.render('share', {
-                    	superadmin:req.session.usersuperadmin,doing:"upload",lang:req.cookies.i18n, i18n:res, nosuccess: "nodata", myshares: resultss[1], mysharesrequest: resultss[4], report_sharesbycategory: req.session.report_sharesbycategory, report_venn: req.session.report_venn, test: req.session.test, currentlabname: req.session.lab, ordersnum: req.session.orders, sharesnum: req.session.shares, loggedIn : true, isLoggedInAdmin: req.session.admin, title: 'Share', spreadname: req.file.originalname, labyoker : req.session.user, labyokersurname : req.session.surname
+                    	currente:req.session.email,currentl:req.session.lab,superadmin:req.session.usersuperadmin,doing:"upload",lang:req.cookies.i18n, i18n:res, nosuccess: "nodata", myshares: resultss[1], mysharesrequest: resultss[4], report_sharesbycategory: req.session.report_sharesbycategory, report_venn: req.session.report_venn, test: req.session.test, currentlabname: req.session.lab, ordersnum: req.session.orders, sharesnum: req.session.shares, loggedIn : true, isLoggedInAdmin: req.session.admin, title: 'Share', spreadname: req.file.originalname, labyoker : req.session.user, labyokersurname : req.session.surname
                     	});
                     	cont = 0;
                     	console.log("no data error : " + cont);
@@ -839,19 +839,19 @@ module.exports = function(router) {
                     	console.log("inside successful upload");
                     	//console.log("mysharesrequest " + req.session.mysharesrequest);
                     	res.render('share', {
-                    	superadmin:req.session.usersuperadmin,doing:"upload",lang:req.cookies.i18n, i18n:res, myshares: resultss[1], mysharesrequest: resultss[4], report_sharesbycategory: req.session.report_sharesbycategory, report_venn: req.session.report_venn, test: req.session.test, currentlabname: req.session.lab, ordersnum: req.session.orders, sharesnum: req.session.shares, json: result, loggedIn : true, isLoggedInAdmin: req.session.admin, title: 'Share', spreadname: req.file.originalname, labyoker : req.session.user, labyokersurname : req.session.surname
+                    	currente:req.session.email,currentl:req.session.lab,superadmin:req.session.usersuperadmin,doing:"upload",lang:req.cookies.i18n, i18n:res, myshares: resultss[1], mysharesrequest: resultss[4], report_sharesbycategory: req.session.report_sharesbycategory, report_venn: req.session.report_venn, test: req.session.test, currentlabname: req.session.lab, ordersnum: req.session.orders, sharesnum: req.session.shares, json: result, loggedIn : true, isLoggedInAdmin: req.session.admin, title: 'Share', spreadname: req.file.originalname, labyoker : req.session.user, labyokersurname : req.session.surname
                     });
                 	} else if(done == "cannotUploadMissingData"){
                         console.log("inside missing data");
-                        res.render('admins', {superadmin:req.session.usersuperadmin,doing:"upload",lang:req.cookies.i18n, i18n:res, nosuccess: "missingdata", report_data:resultss[2], mysharesrequest: resultss[4], report_sharesbycategory: req.session.report_sharesbycategory, report_venn: req.session.report_venn, test: req.session.test, currentlabname: req.session.lab, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, labyokersurname : req.session.surname, myshares: resultss[1], report_sharesbycategory: req.session.report_sharesbycategory, loggedIn : true, isLoggedInAdmin: req.session.admin, title:'Admins'});
+                        res.render('admins', {currente:req.session.email,currentl:req.session.lab,superadmin:req.session.usersuperadmin,doing:"upload",lang:req.cookies.i18n, i18n:res, nosuccess: "missingdata", report_data:resultss[2], mysharesrequest: resultss[4], report_sharesbycategory: req.session.report_sharesbycategory, report_venn: req.session.report_venn, test: req.session.test, currentlabname: req.session.lab, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, labyokersurname : req.session.surname, myshares: resultss[1], report_sharesbycategory: req.session.report_sharesbycategory, loggedIn : true, isLoggedInAdmin: req.session.admin, title:'Admins'});
                         req.session.messages = null;
                     } else if(done == "cannotUploadMissingColumn"){
                         console.log("inside missing column");
-                        res.render('admins', {superadmin:req.session.usersuperadmin,doing:"upload",lang:req.cookies.i18n, i18n:res, nosuccess: "missingcolumn", report_data:resultss[2], mysharesrequest: resultss[4], report_sharesbycategory: req.session.report_sharesbycategory, report_venn: req.session.report_venn, test: req.session.test, currentlabname: req.session.lab, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, labyokersurname : req.session.surname, myshares: resultss[1], report_sharesbycategory: req.session.report_sharesbycategory, loggedIn : true, isLoggedInAdmin: req.session.admin, title:'Admins'});
+                        res.render('admins', {currente:req.session.email,currentl:req.session.lab,superadmin:req.session.usersuperadmin,doing:"upload",lang:req.cookies.i18n, i18n:res, nosuccess: "missingcolumn", report_data:resultss[2], mysharesrequest: resultss[4], report_sharesbycategory: req.session.report_sharesbycategory, report_venn: req.session.report_venn, test: req.session.test, currentlabname: req.session.lab, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, labyokersurname : req.session.surname, myshares: resultss[1], report_sharesbycategory: req.session.report_sharesbycategory, loggedIn : true, isLoggedInAdmin: req.session.admin, title:'Admins'});
                         req.session.messages = null;
                     }  else {
                 		console.log("inside not successful upload");
-                		res.render('share', {superadmin:req.session.usersuperadmin,doing:"upload",lang:req.cookies.i18n, i18n:res, nosuccess: "databaserror", report_venn: req.session.report_venn, test: req.session.test, currentlabname: req.session.lab, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, labyokersurname : req.session.surname, myshares: resultss[1], mysharesrequest: resultss[4], report_sharesbycategory: req.session.report_sharesbycategory, loggedIn : true, isLoggedInAdmin: req.session.admin, title:'Share'});
+                		res.render('share', {currente:req.session.email,currentl:req.session.lab,superadmin:req.session.usersuperadmin,doing:"upload",lang:req.cookies.i18n, i18n:res, nosuccess: "databaserror", report_venn: req.session.report_venn, test: req.session.test, currentlabname: req.session.lab, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, labyokersurname : req.session.surname, myshares: resultss[1], mysharesrequest: resultss[4], report_sharesbycategory: req.session.report_sharesbycategory, loggedIn : true, isLoggedInAdmin: req.session.admin, title:'Share'});
 						req.session.messages = null;
                 	}
                 });
@@ -883,7 +883,7 @@ module.exports = function(router) {
             if(err){
                  //res.json({error_code:1,err_desc:err});
                  res.render('share', {
-                   superadmin:req.session.usersuperadmin,lang:req.cookies.i18n, i18n:res, nosuccess: "generic", myshares: resultss[1], mysharesrequest: resultss[4], report_sharesbycategory: req.session.report_sharesbycategory, report_venn: req.session.report_venn, test: req.session.test, currentlabname: req.session.lab, ordersnum: req.session.orders, sharesnum: req.session.shares, loggedIn : true, isLoggedInAdmin: req.session.admin, title: 'Share', labyoker : req.session.user, labyokersurname : req.session.surname
+                   currente:req.session.email,currentl:req.session.lab,superadmin:req.session.usersuperadmin,lang:req.cookies.i18n, i18n:res, nosuccess: "generic", myshares: resultss[1], mysharesrequest: resultss[4], report_sharesbycategory: req.session.report_sharesbycategory, report_venn: req.session.report_venn, test: req.session.test, currentlabname: req.session.lab, ordersnum: req.session.orders, sharesnum: req.session.shares, loggedIn : true, isLoggedInAdmin: req.session.admin, title: 'Share', labyoker : req.session.user, labyokersurname : req.session.surname
                  });
                  cont = 0;
                  console.log("generic error: "+cont);
@@ -894,7 +894,7 @@ module.exports = function(router) {
                 //res.json({error_code:1,err_desc:"No file passed"});
                 
                 res.render('share', {
-                   superadmin:req.session.usersuperadmin,lang:req.cookies.i18n, i18n:res, nosuccess: "nofile", myshares: resultss[1], mysharesrequest: resultss[4], report_sharesbycategory: req.session.report_sharesbycategory, report_venn: req.session.report_venn, test: req.session.test, currentlabname: req.session.lab, ordersnum: req.session.orders, sharesnum: req.session.shares, loggedIn : true, isLoggedInAdmin: req.session.admin, title: 'Share', labyoker : req.session.user, labyokersurname : req.session.surname
+                   currente:req.session.email,currentl:req.session.lab,superadmin:req.session.usersuperadmin,lang:req.cookies.i18n, i18n:res, nosuccess: "nofile", myshares: resultss[1], mysharesrequest: resultss[4], report_sharesbycategory: req.session.report_sharesbycategory, report_venn: req.session.report_venn, test: req.session.test, currentlabname: req.session.lab, ordersnum: req.session.orders, sharesnum: req.session.shares, loggedIn : true, isLoggedInAdmin: req.session.admin, title: 'Share', labyoker : req.session.user, labyokersurname : req.session.surname
                 });
                 cont = 0;
                 console.log("no file error: " + cont);
@@ -919,7 +919,7 @@ module.exports = function(router) {
                         //return res.json({error_code:1,err_desc:err, data: null});
 
                         res.render('share', {
-                    	superadmin:req.session.usersuperadmin,lang:req.cookies.i18n, i18n:res, nosuccess: "nodata", myshares: resultss[1], mysharesrequest: resultss[4], report_sharesbycategory: req.session.report_sharesbycategory, report_venn: req.session.report_venn, test: req.session.test, currentlabname: req.session.lab, ordersnum: req.session.orders, sharesnum: req.session.shares, loggedIn : true, isLoggedInAdmin: req.session.admin, title: 'Share', spreadname: req.file.originalname, labyoker : req.session.user, labyokersurname : req.session.surname
+                    	currente:req.session.email,currentl:req.session.lab,superadmin:req.session.usersuperadmin,lang:req.cookies.i18n, i18n:res, nosuccess: "nodata", myshares: resultss[1], mysharesrequest: resultss[4], report_sharesbycategory: req.session.report_sharesbycategory, report_venn: req.session.report_venn, test: req.session.test, currentlabname: req.session.lab, ordersnum: req.session.orders, sharesnum: req.session.shares, loggedIn : true, isLoggedInAdmin: req.session.admin, title: 'Share', spreadname: req.file.originalname, labyoker : req.session.user, labyokersurname : req.session.surname
                     	});
                     	cont = 0;
                     	console.log("no data error : " + cont);
@@ -941,19 +941,19 @@ module.exports = function(router) {
                     	console.log("inside successful upload");
                     	//console.log("mysharesrequest " + req.session.mysharesrequest);
                     	res.render('share', {
-                    	superadmin:req.session.usersuperadmin,lang:req.cookies.i18n, i18n:res, myshares: resultss[1], mysharesrequest: resultss[4], report_sharesbycategory: req.session.report_sharesbycategory, report_venn: req.session.report_venn, test: req.session.test, currentlabname: req.session.lab, ordersnum: req.session.orders, sharesnum: req.session.shares, json: result, loggedIn : true, isLoggedInAdmin: req.session.admin, title: 'Share', spreadname: req.file.originalname, labyoker : req.session.user, labyokersurname : req.session.surname
+                    	currente:req.session.email,currentl:req.session.lab,superadmin:req.session.usersuperadmin,lang:req.cookies.i18n, i18n:res, myshares: resultss[1], mysharesrequest: resultss[4], report_sharesbycategory: req.session.report_sharesbycategory, report_venn: req.session.report_venn, test: req.session.test, currentlabname: req.session.lab, ordersnum: req.session.orders, sharesnum: req.session.shares, json: result, loggedIn : true, isLoggedInAdmin: req.session.admin, title: 'Share', spreadname: req.file.originalname, labyoker : req.session.user, labyokersurname : req.session.surname
                     });
                 	} else if(done == "cannotUploadMissingData"){
                         console.log("inside missing data");
-                        res.render('admins', {superadmin:req.session.usersuperadmin,doing:"upload",lang:req.cookies.i18n, i18n:res, nosuccess: "missingdata", report_data:resultss[2], mysharesrequest: resultss[4], report_sharesbycategory: req.session.report_sharesbycategory, report_venn: req.session.report_venn, test: req.session.test, currentlabname: req.session.lab, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, labyokersurname : req.session.surname, myshares: resultss[1], report_sharesbycategory: req.session.report_sharesbycategory, loggedIn : true, isLoggedInAdmin: req.session.admin, title:'Admins'});
+                        res.render('admins', {currente:req.session.email,currentl:req.session.lab,superadmin:req.session.usersuperadmin,doing:"upload",lang:req.cookies.i18n, i18n:res, nosuccess: "missingdata", report_data:resultss[2], mysharesrequest: resultss[4], report_sharesbycategory: req.session.report_sharesbycategory, report_venn: req.session.report_venn, test: req.session.test, currentlabname: req.session.lab, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, labyokersurname : req.session.surname, myshares: resultss[1], report_sharesbycategory: req.session.report_sharesbycategory, loggedIn : true, isLoggedInAdmin: req.session.admin, title:'Admins'});
                         req.session.messages = null;
                     } else if(done == "cannotUploadMissingColumn"){
                         console.log("inside missing column");
-                        res.render('admins', {superadmin:req.session.usersuperadmin,doing:"upload",lang:req.cookies.i18n, i18n:res, nosuccess: "missingcolumn", report_data:resultss[2], mysharesrequest: resultss[4], report_sharesbycategory: req.session.report_sharesbycategory, report_venn: req.session.report_venn, test: req.session.test, currentlabname: req.session.lab, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, labyokersurname : req.session.surname, myshares: resultss[1], report_sharesbycategory: req.session.report_sharesbycategory, loggedIn : true, isLoggedInAdmin: req.session.admin, title:'Admins'});
+                        res.render('admins', {currente:req.session.email,currentl:req.session.lab,superadmin:req.session.usersuperadmin,doing:"upload",lang:req.cookies.i18n, i18n:res, nosuccess: "missingcolumn", report_data:resultss[2], mysharesrequest: resultss[4], report_sharesbycategory: req.session.report_sharesbycategory, report_venn: req.session.report_venn, test: req.session.test, currentlabname: req.session.lab, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, labyokersurname : req.session.surname, myshares: resultss[1], report_sharesbycategory: req.session.report_sharesbycategory, loggedIn : true, isLoggedInAdmin: req.session.admin, title:'Admins'});
                         req.session.messages = null;
                     }  else {
                 		console.log("inside not successful upload");
-                		res.render('share', {superadmin:req.session.usersuperadmin,lang:req.cookies.i18n, i18n:res, nosuccess: "databaserror", report_venn: req.session.report_venn, test: req.session.test, currentlabname: req.session.lab, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, labyokersurname : req.session.surname, myshares: resultss[1], mysharesrequest: resultss[4], report_sharesbycategory: req.session.report_sharesbycategory, loggedIn : true, isLoggedInAdmin: req.session.admin, title:'Share'});
+                		res.render('share', {currente:req.session.email,currentl:req.session.lab,superadmin:req.session.usersuperadmin,lang:req.cookies.i18n, i18n:res, nosuccess: "databaserror", report_venn: req.session.report_venn, test: req.session.test, currentlabname: req.session.lab, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, labyokersurname : req.session.surname, myshares: resultss[1], mysharesrequest: resultss[4], report_sharesbycategory: req.session.report_sharesbycategory, loggedIn : true, isLoggedInAdmin: req.session.admin, title:'Share'});
 						req.session.messages = null;
                 	}
                 });
@@ -999,7 +999,7 @@ module.exports = function(router) {
             //req.session.shares = 0;
             console.log("test ? " + results[4]);
             console.log("meadminof ? " + results[0]);
-            res.render('admins', {superadmin:req.session.usersuperadmin,lang:req.cookies.i18n, i18n:res, currentlabname: results[0], ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, labyokersurname : req.session.surname, myshares: results[1], mysharesrequest: results[4], report_data: results[2], loggedIn : true, isLoggedInAdmin: req.session.admin, title:'Admins'});
+            res.render('admins', {currente:req.session.email,currentl:req.session.lab,superadmin:req.session.usersuperadmin,lang:req.cookies.i18n, i18n:res, currentlabname: results[0], ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, labyokersurname : req.session.surname, myshares: results[1], mysharesrequest: results[4], report_data: results[2], loggedIn : true, isLoggedInAdmin: req.session.admin, title:'Admins'});
             req.session.messages = null;
         });
     });
@@ -1018,7 +1018,7 @@ module.exports = function(router) {
 		var labYokeTest = new LabYokeTest(res);
 		labYokeTest.test(function(error, done) {
 
-		res.render('test',{superadmin:req.session.usersuperadmin,lang:req.cookies.i18n, i18n: res});
+		res.render('test',{currente:req.session.email,currentl:req.session.lab,superadmin:req.session.usersuperadmin,lang:req.cookies.i18n, i18n: res});
 	});
 	});
 
@@ -1038,7 +1038,7 @@ module.exports = function(router) {
 		req.cookies.i18n = lang;
 		res.setLocale(req.cookies.i18n);
 		res.render('help', {
-			superadmin:req.session.usersuperadmin,lang:req.cookies.i18n,
+			currente:req.session.email,currentl:req.session.lab,superadmin:req.session.usersuperadmin,lang:req.cookies.i18n,
 			i18n:res,
 			ordersnum: req.session.orders,
 			sharesnum: req.session.shares,
@@ -1059,7 +1059,7 @@ module.exports = function(router) {
         globalocale = req.cookies.i18n;
 		res.setLocale(req.cookies.i18n);
 		res.render('about', {
-			superadmin:req.session.usersuperadmin,lang:req.cookies.i18n,
+			currente:req.session.email,currentl:req.session.lab,superadmin:req.session.usersuperadmin,lang:req.cookies.i18n,
 			i18n:res,
 			ordersnum: req.session.orders,
 			sharesnum: req.session.shares,
@@ -1156,7 +1156,7 @@ module.exports = function(router) {
 				console.log("loggin in labs: " + labs);
 				console.log("loggin in latest: " + latest);
 
-				res.render('login', {superadmin:req.session.usersuperadmin,latestshares:latest, mom: mom, lang:req.cookies.i18n, i18n: res, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, labyokersurname : req.session.surname, title: 'Login',isLoggedInAdmin: req.session.admin});
+				res.render('login', {currente:req.session.email,currentl:req.session.lab,superadmin:req.session.usersuperadmin,latestshares:latest, mom: mom, lang:req.cookies.i18n, i18n: res, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, labyokersurname : req.session.surname, title: 'Login',isLoggedInAdmin: req.session.admin});
 				req.session.messages = null;
 			});
 			});
@@ -1176,9 +1176,9 @@ module.exports = function(router) {
 			var labYokeSearch = new LabYokeSearch("",req.session.email,"");
 			labYokeSearch.findagents(function(error, results) {			
 				if (results != null && results.length > 0){
-					res.render('search', {superadmin:req.session.usersuperadmin,userlang:req.session.userlang,lang:req.cookies.i18n, i18n:res, mylab: req.session.lab,ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, labyokersurname : req.session.surname, isLoggedInAdmin: req.session.admin, agentsResults : results, loggedIn : true, title: 'Reagent Search'});
+					res.render('search', {currente:req.session.email,currentl:req.session.lab,superadmin:req.session.usersuperadmin,userlang:req.session.userlang,lang:req.cookies.i18n, i18n:res, mylab: req.session.lab,ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, labyokersurname : req.session.surname, isLoggedInAdmin: req.session.admin, agentsResults : results, loggedIn : true, title: 'Reagent Search'});
 				} else {
-					res.render('search', {superadmin:req.session.usersuperadmin,userlang:req.session.userlang,lang:req.cookies.i18n, i18n:res, mylab: req.session.lab,ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, labyokersurname : req.session.surname, isLoggedInAdmin: req.session.admin, loggedIn : true, title: 'Reagent Search'});
+					res.render('search', {currente:req.session.email,currentl:req.session.lab,superadmin:req.session.usersuperadmin,userlang:req.session.userlang,lang:req.cookies.i18n, i18n:res, mylab: req.session.lab,ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, labyokersurname : req.session.surname, isLoggedInAdmin: req.session.admin, loggedIn : true, title: 'Reagent Search'});
 				}
 				req.session.messages = null;
 			});
@@ -1278,7 +1278,7 @@ totalshares = t[0].counting;
 					req.session.savingsColor = boostercolor[b];
 					//console.log("lab orders results1: " + results2[1]);				
 					//res.render('orders', {test: results[3], laborders: results2[0],lab1orders: results2[1], ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, isLoggedInAdmin: req.session.admin, title:'Orders', loggedIn : true, orderresults: results[0], report_sharesbycategory: results[1]});
-					res.render('orders', {superadmin:req.session.usersuperadmin,lang:req.cookies.i18n, i18n:res,booster:req.session.savingsText, boostercolor:req.session.savingsColor,currentlabname:req.session.lab, categories: req.session.categories, test: results[3], laborders: results2, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, labyokersurname : req.session.surname, isLoggedInAdmin: req.session.admin, title:'Orders', loggedIn : true, orderresults: results[0], report_sharesbycategory: results[1], report_ordersbycategory: results[4]});
+					res.render('orders', {currente:req.session.email,currentl:req.session.lab,superadmin:req.session.usersuperadmin,lang:req.cookies.i18n, i18n:res,booster:req.session.savingsText, boostercolor:req.session.savingsColor,currentlabname:req.session.lab, categories: req.session.categories, test: results[3], laborders: results2, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, labyokersurname : req.session.surname, isLoggedInAdmin: req.session.admin, title:'Orders', loggedIn : true, orderresults: results[0], report_sharesbycategory: results[1], report_ordersbycategory: results[4]});
 				}
 			});
 				});
@@ -1315,7 +1315,7 @@ totalshares = t[0].counting;
 					//console.log("ordering reqcategory: " + reqcategory);
 					console.log("booster",req.session.savingsText);
 				
-					res.render('search', {superadmin:req.session.usersuperadmin,lang:req.cookies.i18n, i18n:res,booster:req.session.savingsText, boostercolor:req.session.savingsColor, currentlabname:req.session.lab, categories: req.session.categories, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, labyokersurname : req.session.surname, isLoggedInAdmin: req.session.admin, title:'Search',loggedIn : true, order_location: location, order_agent: agent, order_vendor: vendor, order_catalog: catalognumber, email: email});
+					res.render('search', {currente:req.session.email,currentl:req.session.lab,superadmin:req.session.usersuperadmin,lang:req.cookies.i18n, i18n:res,booster:req.session.savingsText, boostercolor:req.session.savingsColor, currentlabname:req.session.lab, categories: req.session.categories, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, labyokersurname : req.session.surname, isLoggedInAdmin: req.session.admin, title:'Search',loggedIn : true, order_location: location, order_agent: agent, order_vendor: vendor, order_catalog: catalognumber, email: email});
 					req.session.messages = null;
 				}
 			});
@@ -1383,7 +1383,7 @@ totalshares = t[0].counting;
             //req.session.report_venn = results[5];
             //req.session.shares = 0;
             //console.log("test ? " + results[3]);
-            res.render('admins', {superadmin:req.session.usersuperadmin,meadminof:req.session.meadminof,pos:pos,pos2:pos2,report_data: results[2],admintype:admintype,lang:req.cookies.i18n, i18n:res, currentlabname: req.session.lab, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, labyokersurname : req.session.surname, myshares: results[1], mysharesrequest: results[4], loggedIn : true, isLoggedInAdmin: req.session.admin, title:'Admins'});
+            res.render('admins', {currente:req.session.email,currentl:req.session.lab,superadmin:req.session.usersuperadmin,meadminof:req.session.meadminof,pos:pos,pos2:pos2,report_data: results[2],admintype:admintype,lang:req.cookies.i18n, i18n:res, currentlabname: req.session.lab, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, labyokersurname : req.session.surname, myshares: results[1], mysharesrequest: results[4], loggedIn : true, isLoggedInAdmin: req.session.admin, title:'Admins'});
             req.session.messages = null;
         });
 
@@ -1512,7 +1512,7 @@ totalshares = t[0].counting;
             //req.session.report_venn = results[5];
             //req.session.shares = 0;
             //console.log("test ? " + results[3]);
-            res.render('admins', {superadmin:req.session.usersuperadmin,meadminof:req.session.meadminof,pos:pos,report_data: results[2],admintype:admintype,lang:req.cookies.i18n, i18n:res, currentlabname: req.session.lab, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, labyokersurname : req.session.surname, myshares: results[1], mysharesrequest: results[4], loggedIn : true, isLoggedInAdmin: req.session.admin, title:'Admins'});
+            res.render('admins', {currente:req.session.email,currentl:req.session.lab,superadmin:req.session.usersuperadmin,meadminof:req.session.meadminof,pos:pos,report_data: results[2],admintype:admintype,lang:req.cookies.i18n, i18n:res, currentlabname: req.session.lab, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, labyokersurname : req.session.surname, myshares: results[1], mysharesrequest: results[4], loggedIn : true, isLoggedInAdmin: req.session.admin, title:'Admins'});
             req.session.messages = null;
         });
                     //res.redirect('/admins');         
@@ -1563,11 +1563,11 @@ totalshares = t[0].counting;
 				labyokerLabs.getlabs(function(error, labs) {
 					req.session.labs = labs;
 					console.log("load labs in reports : " + labs);
-					res.render('reports', {superadmin:req.session.usersuperadmin,lang:req.cookies.i18n, i18n:res, resultsMoneyIntro:res0,dataIntro:res1,dept: req.session.dept, categories: categories, labs: req.session.labs, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, labyokersurname : req.session.surname, isLoggedInAdmin: req.session.admin, loggedIn : true, title: 'Reports', isLoggedInAdmin: req.session.admin});
+					res.render('reports', {currente:req.session.email,currentl:req.session.lab,superadmin:req.session.usersuperadmin,lang:req.cookies.i18n, i18n:res, resultsMoneyIntro:res0,dataIntro:res1,dept: req.session.dept, categories: categories, labs: req.session.labs, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, labyokersurname : req.session.surname, isLoggedInAdmin: req.session.admin, loggedIn : true, title: 'Reports', isLoggedInAdmin: req.session.admin});
 					req.session.messages = null;
 				});
 			} else {
-				res.render('reports', {superadmin:req.session.usersuperadmin,lang:req.cookies.i18n, i18n:res, resultsMoneyIntro:res0,dataIntro:res1, dept: req.session.dept, categories: categories, labs: req.session.labs, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, labyokersurname : req.session.surname, isLoggedInAdmin: req.session.admin, loggedIn : true, title: 'Reports', isLoggedInAdmin: req.session.admin});
+				res.render('reports', {currente:req.session.email,currentl:req.session.lab,superadmin:req.session.usersuperadmin,lang:req.cookies.i18n, i18n:res, resultsMoneyIntro:res0,dataIntro:res1, dept: req.session.dept, categories: categories, labs: req.session.labs, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, labyokersurname : req.session.surname, isLoggedInAdmin: req.session.admin, loggedIn : true, title: 'Reports', isLoggedInAdmin: req.session.admin});
 				req.session.messages = null;
 			}
 		});
@@ -1615,16 +1615,16 @@ totalshares = t[0].counting;
     			if(results != null){
     				console.log("res " + results);
     				if(results != ""){
-    					res.render('reports', {superadmin:req.session.usersuperadmin,lang:req.cookies.i18n, i18n:res,resultsMoneyIntro:res0,dataIntro:res1,section: "shares", dept: req.session.dept, categories: req.session.categories, labs: req.session.labs, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, labyokersurname : req.session.surname, datefromShares: datefrom, datetoShares: dateto, title:'Reports',loggedIn : true, resultsShares: results[0], dataShares: JSON.stringify(results[1]), isLoggedInAdmin: req.session.admin, addMessageShares: "success"});
+    					res.render('reports', {currente:req.session.email,currentl:req.session.lab,superadmin:req.session.usersuperadmin,lang:req.cookies.i18n, i18n:res,resultsMoneyIntro:res0,dataIntro:res1,section: "shares", dept: req.session.dept, categories: req.session.categories, labs: req.session.labs, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, labyokersurname : req.session.surname, datefromShares: datefrom, datetoShares: dateto, title:'Reports',loggedIn : true, resultsShares: results[0], dataShares: JSON.stringify(results[1]), isLoggedInAdmin: req.session.admin, addMessageShares: "success"});
     				} else {
-    					res.render('reports', {superadmin:req.session.usersuperadmin,lang:req.cookies.i18n, i18n:res,resultsMoneyIntro:res0,dataIntro:res1,section: "shares", dept: req.session.dept, categories: req.session.categories, labs: req.session.labs, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, labyokersurname : req.session.surname, datefromShares: datefrom, datetoShares: dateto, title:'Reports',loggedIn : true, isLoggedInAdmin: req.session.admin, addMessageShares: "failure"});
+    					res.render('reports', {currente:req.session.email,currentl:req.session.lab,superadmin:req.session.usersuperadmin,lang:req.cookies.i18n, i18n:res,resultsMoneyIntro:res0,dataIntro:res1,section: "shares", dept: req.session.dept, categories: req.session.categories, labs: req.session.labs, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, labyokersurname : req.session.surname, datefromShares: datefrom, datetoShares: dateto, title:'Reports',loggedIn : true, isLoggedInAdmin: req.session.admin, addMessageShares: "failure"});
     				}
     				req.session.messages = null;
     			}
             });
     		});
         } else {
-            res.render('reports', {superadmin:req.session.usersuperadmin,lang:req.cookies.i18n, i18n:res,resultsMoneyIntro:res0,dataIntro:res1,section: "shares", dept: req.session.dept, categories: req.session.categories, labs: req.session.labs, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, labyokersurname : req.session.surname, datefromShares: datefrom, datetoShares: dateto, title:'Reports',loggedIn : true, isLoggedInAdmin: req.session.admin, addMessageShares: "wrongdate"});
+            res.render('reports', {currente:req.session.email,currentl:req.session.lab,superadmin:req.session.usersuperadmin,lang:req.cookies.i18n, i18n:res,resultsMoneyIntro:res0,dataIntro:res1,section: "shares", dept: req.session.dept, categories: req.session.categories, labs: req.session.labs, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, labyokersurname : req.session.surname, datefromShares: datefrom, datetoShares: dateto, title:'Reports',loggedIn : true, isLoggedInAdmin: req.session.admin, addMessageShares: "wrongdate"});
         }
 	});
 
@@ -1681,10 +1681,10 @@ totalshares = t[0].counting;
 				console.log("res " + results);
 				if(results!=undefined && results != ""){
 					console.log("successful money report");
-					res.render('reports', {superadmin:req.session.usersuperadmin,lang:req.cookies.i18n, i18n:res,resultsMoneyIntro:res0,dataIntro:res1,dept: req.session.dept, categories: req.session.categories, labs: req.session.labs, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, labyokersurname : req.session.surname, datefromMoney: datefrom, datetoMoney: dateto, title:'Reports',loggedIn : true, resultsMoney: results[0], dataMoney: JSON.stringify(results[1]), isLoggedInAdmin: req.session.admin, addMessageMoney: "success", section: "money"});
+					res.render('reports', {currente:req.session.email,currentl:req.session.lab,superadmin:req.session.usersuperadmin,lang:req.cookies.i18n, i18n:res,resultsMoneyIntro:res0,dataIntro:res1,dept: req.session.dept, categories: req.session.categories, labs: req.session.labs, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, labyokersurname : req.session.surname, datefromMoney: datefrom, datetoMoney: dateto, title:'Reports',loggedIn : true, resultsMoney: results[0], dataMoney: JSON.stringify(results[1]), isLoggedInAdmin: req.session.admin, addMessageMoney: "success", section: "money"});
 				} else {
 					console.log("failed money report");
-					res.render('reports', {superadmin:req.session.usersuperadmin,lang:req.cookies.i18n, i18n:res,resultsMoneyIntro:res0,dataIntro:res1,dept: req.session.dept, categories: req.session.categories, labs: req.session.labs, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, labyokersurname : req.session.surname, datefromMoney: datefrom, datetoMoney: dateto, title:'Reports',loggedIn : true, isLoggedInAdmin: req.session.admin, addMessageMoney: "failure", section: "money"});
+					res.render('reports', {currente:req.session.email,currentl:req.session.lab,superadmin:req.session.usersuperadmin,lang:req.cookies.i18n, i18n:res,resultsMoneyIntro:res0,dataIntro:res1,dept: req.session.dept, categories: req.session.categories, labs: req.session.labs, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, labyokersurname : req.session.surname, datefromMoney: datefrom, datetoMoney: dateto, title:'Reports',loggedIn : true, isLoggedInAdmin: req.session.admin, addMessageMoney: "failure", section: "money"});
 				}
 				req.session.messages = null;
 			}
@@ -1692,7 +1692,7 @@ totalshares = t[0].counting;
         });
 
         } else {
-            res.render('reports', {superadmin:req.session.usersuperadmin,lang:req.cookies.i18n, i18n:res,resultsMoneyIntro:res0,dataIntro:res1,dept: req.session.dept, categories: req.session.categories, labs: req.session.labs, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, labyokersurname : req.session.surname, datefromMoney: datefrom, datetoMoney: dateto, title:'Reports',loggedIn : true, isLoggedInAdmin: req.session.admin, addMessageMoney: "wrongdate", section: "money"});
+            res.render('reports', {currente:req.session.email,currentl:req.session.lab,superadmin:req.session.usersuperadmin,lang:req.cookies.i18n, i18n:res,resultsMoneyIntro:res0,dataIntro:res1,dept: req.session.dept, categories: req.session.categories, labs: req.session.labs, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, labyokersurname : req.session.surname, datefromMoney: datefrom, datetoMoney: dateto, title:'Reports',loggedIn : true, isLoggedInAdmin: req.session.admin, addMessageMoney: "wrongdate", section: "money"});
         }
 	});
 
@@ -1746,9 +1746,9 @@ totalshares = t[0].counting;
 				console.log("res " + results);
 				if(results!=null && results != ""){
                     console.log("datainsuff res[1] " + JSON.stringify(results[1][0]));
-					res.render('reports', {superadmin:req.session.usersuperadmin,lang:req.cookies.i18n, i18n:res,resultsMoneyIntro:res0,dataIntro:res1,section: "insuff", dept: req.session.dept, categories: req.session.categories, labs: req.session.labs, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, labyokersurname : req.session.surname, title:'Reports',loggedIn : true, resultsInsuff: results[0], labinsuff:lab, dataInsuff: JSON.stringify(results[1]), isLoggedInAdmin: req.session.admin, addMessageInsuff: "success"});
+					res.render('reports', {currente:req.session.email,currentl:req.session.lab,superadmin:req.session.usersuperadmin,lang:req.cookies.i18n, i18n:res,resultsMoneyIntro:res0,dataIntro:res1,section: "insuff", dept: req.session.dept, categories: req.session.categories, labs: req.session.labs, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, labyokersurname : req.session.surname, title:'Reports',loggedIn : true, resultsInsuff: results[0], labinsuff:lab, dataInsuff: JSON.stringify(results[1]), isLoggedInAdmin: req.session.admin, addMessageInsuff: "success"});
 				} else {
-					res.render('reports', {superadmin:req.session.usersuperadmin,lang:req.cookies.i18n, i18n:res,resultsMoneyIntro:res0,dataIntro:res1,section: "insuff", dept: req.session.dept, categories: req.session.categories, labs: req.session.labs, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, labyokersurname : req.session.surname, title:'Reports',loggedIn : true, labinsuff:lab, isLoggedInAdmin: req.session.admin, addMessageInsuff: "failure"});
+					res.render('reports', {currente:req.session.email,currentl:req.session.lab,superadmin:req.session.usersuperadmin,lang:req.cookies.i18n, i18n:res,resultsMoneyIntro:res0,dataIntro:res1,section: "insuff", dept: req.session.dept, categories: req.session.categories, labs: req.session.labs, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, labyokersurname : req.session.surname, title:'Reports',loggedIn : true, labinsuff:lab, isLoggedInAdmin: req.session.admin, addMessageInsuff: "failure"});
 				}
 				req.session.messages = null;
 			}
@@ -1796,14 +1796,14 @@ totalshares = t[0].counting;
 				console.log("load labs in account : " + labs);
 				var labYokeAgents = new LabYokeAgents(req.session.email, req.session.lab, req.session.labs,req.session.labadmin,req.session.oninsuff);
 				labYokeAgents.getLabyoker(function(error, userresults) {
-				res.render('account', {superadmin:req.session.usersuperadmin,localeslist:localeslist,lang:req.cookies.i18n, i18n:res, userDetails: userresults, labname: req.session.lab, team:team, labs: req.session.labs, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, labyokersurname : req.session.surname, title:'Account',loggedIn : true, resultsAccount: results, isLoggedInAdmin: req.session.admin});
+				res.render('account', {currente:req.session.email,currentl:req.session.lab,superadmin:req.session.usersuperadmin,localeslist:localeslist,lang:req.cookies.i18n, i18n:res, userDetails: userresults, labname: req.session.lab, team:team, labs: req.session.labs, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, labyokersurname : req.session.surname, title:'Account',loggedIn : true, resultsAccount: results, isLoggedInAdmin: req.session.admin});
 					req.session.messages = null;
 				});
 			});
 		} else {
 			var labYokeAgents = new LabYokeAgents(req.session.email, req.session.lab, req.session.labs,req.session.labadmin, req.session.oninsuff);
 			labYokeAgents.getLabyoker(function(error, userresults) {
-				res.render('account', {superadmin:req.session.usersuperadmin,localeslist:localeslist,lang:req.cookies.i18n, i18n:res, userDetails: userresults, labname: req.session.lab, team:team, labs: req.session.labs, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, labyokersurname : req.session.surname, title:'Account',loggedIn : true, resultsAccount: results, isLoggedInAdmin: req.session.admin});
+				res.render('account', {currente:req.session.email,currentl:req.session.lab,superadmin:req.session.usersuperadmin,localeslist:localeslist,lang:req.cookies.i18n, i18n:res, userDetails: userresults, labname: req.session.lab, team:team, labs: req.session.labs, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, labyokersurname : req.session.surname, title:'Account',loggedIn : true, resultsAccount: results, isLoggedInAdmin: req.session.admin});
 				req.session.messages = null;
 			});
 		}
@@ -1860,16 +1860,16 @@ totalshares = t[0].counting;
 			if(results != null){
 				console.log("res " + results);
 				if(results != ""){
-					res.render('reports', {superadmin:req.session.usersuperadmin,lang:req.cookies.i18n, i18n:res,resultsMoneyIntro:res0,dataIntro:res1,section: "orders", dept: req.session.dept, categories: req.session.categories, labs: req.session.labs, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, labyokersurname : req.session.surname, datefromOrders: datefrom, datetoOrders: dateto, title:'Reports',loggedIn : true, resultsOrders: results[0], dataOrders: JSON.stringify(results[1]), isLoggedInAdmin: req.session.admin, addMessageOrders: "success"});
+					res.render('reports', {currente:req.session.email,currentl:req.session.lab,superadmin:req.session.usersuperadmin,lang:req.cookies.i18n, i18n:res,resultsMoneyIntro:res0,dataIntro:res1,section: "orders", dept: req.session.dept, categories: req.session.categories, labs: req.session.labs, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, labyokersurname : req.session.surname, datefromOrders: datefrom, datetoOrders: dateto, title:'Reports',loggedIn : true, resultsOrders: results[0], dataOrders: JSON.stringify(results[1]), isLoggedInAdmin: req.session.admin, addMessageOrders: "success"});
 				} else {
-					res.render('reports', {superadmin:req.session.usersuperadmin,lang:req.cookies.i18n, i18n:res,resultsMoneyIntro:res0,dataIntro:res1,section: "orders", dept: req.session.dept, categories: req.session.categories, labs: req.session.labs, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, labyokersurname : req.session.surname, datefromOrders: datefrom, datetoOrders: dateto, title:'Reports',loggedIn : true, isLoggedInAdmin: req.session.admin, addMessageOrders: "failure"});
+					res.render('reports', {currente:req.session.email,currentl:req.session.lab,superadmin:req.session.usersuperadmin,lang:req.cookies.i18n, i18n:res,resultsMoneyIntro:res0,dataIntro:res1,section: "orders", dept: req.session.dept, categories: req.session.categories, labs: req.session.labs, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, labyokersurname : req.session.surname, datefromOrders: datefrom, datetoOrders: dateto, title:'Reports',loggedIn : true, isLoggedInAdmin: req.session.admin, addMessageOrders: "failure"});
 				}
 				req.session.messages = null;
 			}
 		});
         });
         } else {
-            res.render('reports', {superadmin:req.session.usersuperadmin,lang:req.cookies.i18n, i18n:res,resultsMoneyIntro:res0,dataIntro:res1,section: "orders", dept: req.session.dept, categories: req.session.categories, labs: req.session.labs, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, labyokersurname : req.session.surname, datefromOrders: datefrom, datetoOrders: dateto, title:'Reports',loggedIn : true, isLoggedInAdmin: req.session.admin, addMessageOrders: "wrongdate"});            
+            res.render('reports', {currente:req.session.email,currentl:req.session.lab,superadmin:req.session.usersuperadmin,lang:req.cookies.i18n, i18n:res,resultsMoneyIntro:res0,dataIntro:res1,section: "orders", dept: req.session.dept, categories: req.session.categories, labs: req.session.labs, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, labyokersurname : req.session.surname, datefromOrders: datefrom, datetoOrders: dateto, title:'Reports',loggedIn : true, isLoggedInAdmin: req.session.admin, addMessageOrders: "wrongdate"});            
         }
 	});
 
@@ -1879,7 +1879,7 @@ totalshares = t[0].counting;
 		}
         globalocale = req.cookies.i18n;
 		res.setLocale(req.cookies.i18n);
-		res.render('play', {superadmin:req.session.usersuperadmin,lang:req.cookies.i18n, i18n:res,ordersnum: req.session.orders, sharesnum: req.session.shares, title: 'Play',labyoker : req.session.user, labyokersurname : req.session.surname});
+		res.render('play', {currente:req.session.email,currentl:req.session.lab,superadmin:req.session.usersuperadmin,lang:req.cookies.i18n, i18n:res,ordersnum: req.session.orders, sharesnum: req.session.shares, title: 'Play',labyoker : req.session.user, labyokersurname : req.session.surname});
 		req.session.messages = null;
 	});
 
@@ -1897,7 +1897,7 @@ totalshares = t[0].counting;
 					console.log("in pop: GET LABS now " + req.session.labs);
 					console.log("pop in labs: " + labs);
 					console.log("pop in latest: " + latest);
-					res.render('pop', {superadmin:req.session.usersuperadmin,latestshares:latest,lang:req.cookies.i18n, i18n:res, title: 'Pop'});
+					res.render('pop', {currente:req.session.email,currentl:req.session.lab,superadmin:req.session.usersuperadmin,latestshares:latest,lang:req.cookies.i18n, i18n:res, title: 'Pop'});
 				});
 			});
 		req.session.messages = null;
@@ -1923,7 +1923,7 @@ totalshares = t[0].counting;
 			//req.session.report_venn = results[5];
 			//req.session.shares = 0;
 			console.log("test ? " + results[3]);
-			res.render('share', {superadmin:req.session.usersuperadmin,doing:"upload",lang:req.cookies.i18n, i18n:res,report_venn: results[5], test: results[4], currentlabname: req.session.lab, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, labyokersurname : req.session.surname, myshares: results[0], mysharesrequest: results[3], report_sharesbycategory: results[1], loggedIn : true, isLoggedInAdmin: req.session.admin, title:'Share'});
+			res.render('share', {currente:req.session.email,currentl:req.session.lab,superadmin:req.session.usersuperadmin,doing:"upload",lang:req.cookies.i18n, i18n:res,report_venn: results[5], test: results[4], currentlabname: req.session.lab, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, labyokersurname : req.session.surname, myshares: results[0], mysharesrequest: results[3], report_sharesbycategory: results[1], loggedIn : true, isLoggedInAdmin: req.session.admin, title:'Share'});
 			req.session.messages = null;
 		});
 	});
@@ -1948,7 +1948,7 @@ totalshares = t[0].counting;
 			req.session.shares = 0;
 			console.log("test ? " + results[3]);
             console.log("shares req.session.user1: " + req.session.user);
-			res.render('share', {superadmin:req.session.usersuperadmin,lang:req.cookies.i18n, i18n:res,report_venn: results[5], test: results[4], currentlabname: req.session.lab, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, labyokersurname : req.session.surname, myshares: results[0], mysharesrequest: results[3], report_sharesbycategory: results[1], loggedIn : true, isLoggedInAdmin: req.session.admin, title:'Share'});
+			res.render('share', {currente:req.session.email,currentl:req.session.lab,superadmin:req.session.usersuperadmin,lang:req.cookies.i18n, i18n:res,report_venn: results[5], test: results[4], currentlabname: req.session.lab, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, labyokersurname : req.session.surname, myshares: results[0], mysharesrequest: results[3], report_sharesbycategory: results[1], loggedIn : true, isLoggedInAdmin: req.session.admin, title:'Share'});
 			req.session.messages = null;
 		});
 	});
@@ -1976,14 +1976,14 @@ totalshares = t[0].counting;
 				console.log("load labs in account : " + labs);
 				var labYokeAgents = new LabYokeAgents(req.session.email, req.session.lab, req.session.labs,req.session.labadmin,req.session.oninsuff);
 				labYokeAgents.getLabyoker(function(error, results) {
-					res.render('account', {superadmin:req.session.usersuperadmin,localeslist:localeslist,lang:req.cookies.i18n, i18n:res, dept: req.session.dept, labname: req.session.lab, team:team, labs: req.session.labs, userDetails: results, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, labyokersurname : req.session.surname, loggedIn : true, isLoggedInAdmin: req.session.admin, title:'Account'});
+					res.render('account', {currente:req.session.email,currentl:req.session.lab,superadmin:req.session.usersuperadmin,localeslist:localeslist,lang:req.cookies.i18n, i18n:res, dept: req.session.dept, labname: req.session.lab, team:team, labs: req.session.labs, userDetails: results, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, labyokersurname : req.session.surname, loggedIn : true, isLoggedInAdmin: req.session.admin, title:'Account'});
 					req.session.messages = null;
 				});
 			});
 		} else {
 			var labYokeAgents = new LabYokeAgents(req.session.email, req.session.lab, req.session.labs,req.session.labadmin,req.session.oninsuff);
 			labYokeAgents.getLabyoker(function(error, results) {
-				res.render('account', {superadmin:req.session.usersuperadmin,localeslist:localeslist,lang:req.cookies.i18n, i18n:res, dept: req.session.dept, labname: req.session.lab, team:team, labs: req.session.labs, userDetails: results, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, labyokersurname : req.session.surname, loggedIn : true, isLoggedInAdmin: req.session.admin, title:'Account'});
+				res.render('account', {currente:req.session.email,currentl:req.session.lab,superadmin:req.session.usersuperadmin,localeslist:localeslist,lang:req.cookies.i18n, i18n:res, dept: req.session.dept, labname: req.session.lab, team:team, labs: req.session.labs, userDetails: results, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, labyokersurname : req.session.surname, loggedIn : true, isLoggedInAdmin: req.session.admin, title:'Account'});
 				req.session.messages = null;
 			});
 		}
@@ -2006,7 +2006,7 @@ totalshares = t[0].counting;
 		res.cookie('i18n', lang);
 		req.cookies.i18n = lang;
 		res.setLocale(req.cookies.i18n);
-		res.render('forgot', {superadmin:req.session.usersuperadmin,lang:req.cookies.i18n, i18n:res, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, labyokersurname : req.session.surname, isLoggedInAdmin: req.session.admin, title: 'Forgot Password'});
+		res.render('forgot', {currente:req.session.email,currentl:req.session.lab,superadmin:req.session.usersuperadmin,lang:req.cookies.i18n, i18n:res, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, labyokersurname : req.session.surname, isLoggedInAdmin: req.session.admin, title: 'Forgot Password'});
 		req.session.messages = null;
 	});
 
@@ -2030,18 +2030,18 @@ totalshares = t[0].counting;
 					console.log("done: " + (done != null && done.length > 0 && done == 'alreadySent'));
 					console.log("done2: " + (done != null && done == 'alreadySent'));
 					if (done != null && done.length > 0 && done != 'alreadySent') {
-						res.render('forgot', {superadmin:req.session.usersuperadmin,lang:req.cookies.i18n, i18n:res, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, labyokersurname : req.session.surname, isLoggedInAdmin: req.session.admin, userfound : forgotuser, title: 'Forgot Password'});
+						res.render('forgot', {currente:req.session.email,currentl:req.session.lab,superadmin:req.session.usersuperadmin,lang:req.cookies.i18n, i18n:res, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, labyokersurname : req.session.surname, isLoggedInAdmin: req.session.admin, userfound : forgotuser, title: 'Forgot Password'});
 					} else if(done != null && done.length > 0 && done == 'alreadySent') {
 						res.render(
 							'forgot',
 							{
-								superadmin:req.session.usersuperadmin,lang:req.cookies.i18n, i18n:res, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, labyokersurname : req.session.surname, isLoggedInAdmin: req.session.admin, title: 'Forgot Password', message : res.__("index.forgot.message1"), usernotfound : true, noforgotform: true
+								currente:req.session.email,currentl:req.session.lab,superadmin:req.session.usersuperadmin,lang:req.cookies.i18n, i18n:res, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, labyokersurname : req.session.surname, isLoggedInAdmin: req.session.admin, title: 'Forgot Password', message : res.__("index.forgot.message1"), usernotfound : true, noforgotform: true
 							});
 					} else {
 						res.render(
 							'forgot',
 							{
-								superadmin:req.session.usersuperadmin,lang:req.cookies.i18n, i18n:res, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user,  labyokersurname : req.session.surname, isLoggedInAdmin: req.session.admin, title: 'Forgot Password', message : res.__("index.forgot.message2"), usernotfound : true
+								currente:req.session.email,currentl:req.session.lab,superadmin:req.session.usersuperadmin,lang:req.cookies.i18n, i18n:res, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user,  labyokersurname : req.session.surname, isLoggedInAdmin: req.session.admin, title: 'Forgot Password', message : res.__("index.forgot.message2"), usernotfound : true
 							});
 					}
 				});
@@ -2049,7 +2049,7 @@ totalshares = t[0].counting;
 				res.render(
 					'forgot',
 					{
-						superadmin:req.session.usersuperadmin,lang:req.cookies.i18n, i18n:res, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user,  labyokersurname : req.session.surname, isLoggedInAdmin: req.session.admin, title: 'Forgot Password', message : res.__("index.forgot.message3"), usernotfound : true
+						currente:req.session.email,currentl:req.session.lab,superadmin:req.session.usersuperadmin,lang:req.cookies.i18n, i18n:res, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user,  labyokersurname : req.session.surname, isLoggedInAdmin: req.session.admin, title: 'Forgot Password', message : res.__("index.forgot.message3"), usernotfound : true
 					});
 
 			}
@@ -2077,12 +2077,12 @@ totalshares = t[0].counting;
 				labyokerLabs.getlabs(function(error, labs) {
 					req.session.labs = labs;
 					console.log("load labs in register : " + labs);
-					res.render('register', {superadmin:req.session.usersuperadmin,lang:req.cookies.i18n, i18n:res, ordersnum: req.session.orders, labs: req.session.labs, sharesnum: req.session.shares, labyoker : req.session.user, labyokersurname : req.session.surname, isLoggedInAdmin: req.session.admin, title: 'Register'});
+					res.render('register', {currente:req.session.email,currentl:req.session.lab,superadmin:req.session.usersuperadmin,lang:req.cookies.i18n, i18n:res, ordersnum: req.session.orders, labs: req.session.labs, sharesnum: req.session.shares, labyoker : req.session.user, labyokersurname : req.session.surname, isLoggedInAdmin: req.session.admin, title: 'Register'});
 					req.session.messages = null;
 					req.body.reglab = null;
 				});
 			} else {
-				res.render('register', {superadmin:req.session.usersuperadmin,lang:req.cookies.i18n, i18n:res, ordersnum: req.session.orders, labs: req.session.labs, sharesnum: req.session.shares, labyoker : req.session.user, labyokersurname : req.session.surname, isLoggedInAdmin: req.session.admin, title: 'Register'});
+				res.render('register', {currente:req.session.email,currentl:req.session.lab,superadmin:req.session.usersuperadmin,lang:req.cookies.i18n, i18n:res, ordersnum: req.session.orders, labs: req.session.labs, sharesnum: req.session.shares, labyoker : req.session.user, labyokersurname : req.session.surname, isLoggedInAdmin: req.session.admin, title: 'Register'});
 				req.session.messages = null;
 				req.body.reglab = null;
 			}
@@ -2209,14 +2209,14 @@ totalshares = t[0].counting;
 				if(done != null && done.length > 0 && done == 'idalreadyInUse') {
 						console.log("status = idalreadyInUse");
 						rendered = true;
-						res.render('register', {lang:req.cookies.i18n, i18n:res, labs: req.session.labs, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, labyokersurname : req.session.surname, isLoggedInAdmin: req.session.admin, title: 'Register', message : res.__("index.register.message11")});
+						res.render('register', {currente:req.session.email,currentl:req.session.lab,lang:req.cookies.i18n, i18n:res, labs: req.session.labs, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, labyokersurname : req.session.surname, isLoggedInAdmin: req.session.admin, title: 'Register', message : res.__("index.register.message11")});
 				} else if(done != null && done.length > 0 && done == 'firstsection') {
 					console.log("status = firstsection1");
 					rendered = true;
 					res.render(
 						'register',
 						{
-							lang:req.cookies.i18n,
+							currente:req.session.email,currentl:req.session.lab,lang:req.cookies.i18n,
 							i18n: res,
 							ordersnum: req.session.orders,
 							sharesnum: req.session.shares,
@@ -2233,7 +2233,7 @@ totalshares = t[0].counting;
 						});
 				} else if (done != null && done.length > 0 && done != 'success') {
 					console.log("status = status1");
-					res.render('register', {lang:req.cookies.i18n, i18n:res, labs: req.session.labs, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, labyokersurname : req.session.surname,isLoggedInAdmin: req.session.admin, title: 'Register', message : res.__("index.register.message3")});
+					res.render('register', {currente:req.session.email,currentl:req.session.lab,lang:req.cookies.i18n, i18n:res, labs: req.session.labs, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, labyokersurname : req.session.surname,isLoggedInAdmin: req.session.admin, title: 'Register', message : res.__("index.register.message3")});
 				} else if(done != null && done.length > 0 && done == 'success') {
 					console.log("status = success1");
 					rendered = true;
@@ -2241,7 +2241,7 @@ totalshares = t[0].counting;
 					res.render(
 						'register',
 						{
-							lang:req.cookies.i18n,
+							currente:req.session.email,currentl:req.session.lab,lang:req.cookies.i18n,
 							i18n:res,
 							ordersnum: req.session.orders,
 							sharesnum: req.session.shares, 
@@ -2257,7 +2257,7 @@ totalshares = t[0].counting;
 					res.render(
 						'register',
 						{
-							lang:req.cookies.i18n,
+							currente:req.session.email,currentl:req.session.lab,lang:req.cookies.i18n,
 							i18n:res,
 							ordersnum: req.session.orders,
 							sharesnum: req.session.shares,
@@ -2284,14 +2284,14 @@ totalshares = t[0].counting;
 					if(done != null && done.length > 0 && done == 'alreadyInUse') {
 						console.log("status = alreadyInUse");
 						rendered = true;
-						res.render('register', {lang:req.cookies.i18n, i18n:res, labs: req.session.labs, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, labyokersurname : req.session.surname,isLoggedInAdmin: req.session.admin, title: 'Register', message : res.__("index.register.message1")});
+						res.render('register', {currente:req.session.email,currentl:req.session.lab,lang:req.cookies.i18n, i18n:res, labs: req.session.labs, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, labyokersurname : req.session.surname,isLoggedInAdmin: req.session.admin, title: 'Register', message : res.__("index.register.message1")});
 					} else if(done != null && done.length > 0 && done == 'firstsection') {
 						console.log("status = firstsection");
 						rendered = true;
 						res.render(
 							'register',
 							{
-								lang:req.cookies.i18n,
+								currente:req.session.email,currentl:req.session.lab,lang:req.cookies.i18n,
 								i18n:res,
 								ordersnum: req.session.orders,
 								sharesnum: req.session.shares, 
@@ -2309,14 +2309,14 @@ totalshares = t[0].counting;
 					} else if(done != null && done.length > 0 && done != 'success') {
 						console.log("status = not successful");
 						rendered = true;
-						res.render('register', {i18n:res, labs: req.session.labs, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user,labyokersurname : req.session.surname, isLoggedInAdmin: req.session.admin, title: 'Register', message : res.__("index.register.message3")});
+						res.render('register', {currente:req.session.email,currentl:req.session.lab,i18n:res, labs: req.session.labs, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user,labyokersurname : req.session.surname, isLoggedInAdmin: req.session.admin, title: 'Register', message : res.__("index.register.message3")});
 					} else if(done != null && done.length > 0 && done == 'success') {
 						console.log("status = success");
 						rendered = true;
 						res.render(
 							'register',
 							{
-								lang:req.cookies.i18n,
+								currente:req.session.email,currentl:req.session.lab,lang:req.cookies.i18n,
 								i18n:res,
 								ordersnum: req.session.orders,
 								sharesnum: req.session.shares, 
@@ -2334,7 +2334,7 @@ totalshares = t[0].counting;
 						res.render(
 							'register',
 							{
-								lang:req.cookies.i18n,
+								currente:req.session.email,currentl:req.session.lab,lang:req.cookies.i18n,
 								i18n: res,
 								ordersnum: req.session.orders,
 								sharesnum: req.session.shares, 
@@ -2348,14 +2348,14 @@ totalshares = t[0].counting;
 					}
 					if(!rendered){
 						console.log("nothing entered");
-						res.render('register', {lang:req.cookies.i18n, i18n:res, labs: req.session.labs, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, labyokersurname : req.session.surname,isLoggedInAdmin: req.session.admin, message : res.__("index.register.message4"), title: 'Register'});
+						res.render('register', {currente:req.session.email,currentl:req.session.lab,lang:req.cookies.i18n, i18n:res, labs: req.session.labs, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, labyokersurname : req.session.surname,isLoggedInAdmin: req.session.admin, message : res.__("index.register.message4"), title: 'Register'});
 					}
 				});
 			} else {
 				res.render(
 				'register',
 				{
-					lang:req.cookies.i18n,
+					currente:req.session.email,currentl:req.session.lab,lang:req.cookies.i18n,
 					i18n:res,
 					ordersnum: req.session.orders,
 					sharesnum: req.session.shares, 
@@ -2389,10 +2389,10 @@ totalshares = t[0].counting;
 						messageStr = (res.__("index.search.message1", {searchText:searchText})).replace(/&lt;/g, '<').replace(/&gt;/g, '>');
 						//messageStr = "Sorry we could not find any results with your reagent search request: <b>" + searchText + "</b>. Please try again.";
 					}
-					res.render('search', {superadmin:req.session.usersuperadmin,searchType:searchType,userlang:req.session.userlang,lang:req.cookies.i18n, i18n:res, mylab: req.session.lab, message: messageStr, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user,labyokersurname : req.session.surname, isLoggedInAdmin: req.session.admin, title: 'Search', fullname: req.session.fullname, sendemail: req.session.email, searchResults : results[0], agentsResults : results[1], searchformText: searchText, loggedIn : true});
+					res.render('search', {currente:req.session.email,currentl:req.session.lab,superadmin:req.session.usersuperadmin,searchType:searchType,userlang:req.session.userlang,lang:req.cookies.i18n, i18n:res, mylab: req.session.lab, message: messageStr, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user,labyokersurname : req.session.surname, isLoggedInAdmin: req.session.admin, title: 'Search', fullname: req.session.fullname, sendemail: req.session.email, searchResults : results[0], agentsResults : results[1], searchformText: searchText, loggedIn : true});
 				} else {
 					messageStr = "You entered an invalid reagent keyword. Please try again.";
-					res.render('search', {superadmin:req.session.usersuperadmin,searchType:searchType,userlang:req.session.userlang,lang:req.cookies.i18n, i18n:res, message: res.__("index.search.message2"), mylab: req.session.lab,ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, labyokersurname : req.session.surname,isLoggedInAdmin: req.session.admin, title: 'Search', loggedIn : true, agentsResults : results[1]});
+					res.render('search', {currente:req.session.email,currentl:req.session.lab,superadmin:req.session.usersuperadmin,searchType:searchType,userlang:req.session.userlang,lang:req.cookies.i18n, i18n:res, message: res.__("index.search.message2"), mylab: req.session.lab,ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, labyokersurname : req.session.surname,isLoggedInAdmin: req.session.admin, title: 'Search', loggedIn : true, agentsResults : results[1]});
 				}
 				req.session.messages = null;
 			});
@@ -2421,11 +2421,11 @@ totalshares = t[0].counting;
 						messageStr = (res.__("index.searchcatalog.message1", {searchText:searchText})).replace(/&lt;/g, '<').replace(/&gt;/g, '>');
 						//messageStr = "Sorry we could not find any results with your catalog search request: <b>" + searchText + "</b>. Please try again.";
 					}
-					res.render('search', {superadmin:req.session.usersuperadmin,searchType: "catalog",userlang:req.session.userlang,lang:req.cookies.i18n, i18n:res, mylab: req.session.lab, messageCatalog: messageStr, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, labyokersurname : req.session.surname, isLoggedInAdmin: req.session.admin, title: 'Reagent Search', fullname: req.session.fullname, sendemail: req.session.email, searchResults : results[0], agentsResults : results[1], searchformTextCatalog: searchText, loggedIn : true});
+					res.render('search', {currente:req.session.email,currentl:req.session.lab,superadmin:req.session.usersuperadmin,searchType: "catalog",userlang:req.session.userlang,lang:req.cookies.i18n, i18n:res, mylab: req.session.lab, messageCatalog: messageStr, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, labyokersurname : req.session.surname, isLoggedInAdmin: req.session.admin, title: 'Reagent Search', fullname: req.session.fullname, sendemail: req.session.email, searchResults : results[0], agentsResults : results[1], searchformTextCatalog: searchText, loggedIn : true});
 				} else {
                     console.log("searchType catalog 1 " + searchType);
 					messageStr = "You entered an invalid catalog keyword. Please try again.";
-					res.render('search', {superadmin:req.session.usersuperadmin,searchType: "catalog",userlang:req.session.userlang,lang:req.cookies.i18n, i18n:res, messageCatalog: res.__("index.searchcatalog.message2"),mylab: req.session.lab,ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, labyokersurname : req.session.surname,isLoggedInAdmin: req.session.admin, title: 'Reagent Search', loggedIn : true, agentsResults : results[1]});
+					res.render('search', {currente:req.session.email,currentl:req.session.lab,superadmin:req.session.usersuperadmin,searchType: "catalog",userlang:req.session.userlang,lang:req.cookies.i18n, i18n:res, messageCatalog: res.__("index.searchcatalog.message2"),mylab: req.session.lab,ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, labyokersurname : req.session.surname,isLoggedInAdmin: req.session.admin, title: 'Reagent Search', loggedIn : true, agentsResults : results[1]});
 				}
 				req.session.messages = null;
 			});
@@ -2815,7 +2815,7 @@ totalshares = t[0].counting;
 			
 			if (results != null && results.length > 0 && results == 'confirmReset') {
 					res.render('register', {
-						lang:req.cookies.i18n,
+						currente:req.session.email,currentl:req.session.lab,lang:req.cookies.i18n,
 						i18n:res,
 						ordersnum: req.session.orders,
 						sharesnum: req.session.shares,
@@ -2831,7 +2831,7 @@ totalshares = t[0].counting;
 					});
 			} else if(results != null && results.length > 0 && results == 'errorFound') {
 					res.render('register', {
-						lang:req.cookies.i18n,
+						currente:req.session.email,currentl:req.session.lab,lang:req.cookies.i18n,
 						i18n:res,
 						ordersnum: req.session.orders,
 						sharesnum: req.session.shares,
@@ -2847,7 +2847,7 @@ totalshares = t[0].counting;
 					});
 			} else if(results != null && results.length > 0 && results == 'cannotFindRequest') {
 				res.render('register', {
-					lang:req.cookies.i18n,
+					currente:req.session.email,currentl:req.session.lab,lang:req.cookies.i18n,
 					i18n:res,
 					ordersnum: req.session.orders,
 					sharesnum: req.session.shares,
@@ -2863,7 +2863,7 @@ totalshares = t[0].counting;
 				});
 			} else {
 					res.render('register', {
-						lang:req.cookies.i18n,
+						currente:req.session.email,currentl:req.session.lab,lang:req.cookies.i18n,
 						i18n:res,
 						ordersnum: req.session.orders,
 						sharesnum: req.session.shares,
@@ -2893,7 +2893,7 @@ totalshares = t[0].counting;
 		req.cookies.i18n = lang;
 		res.setLocale(lang);
 		res.render('changepassword', {
-			lang:req.cookies.i18n,
+			currente:req.session.email,currentl:req.session.lab,lang:req.cookies.i18n,
 			i18n:res,
 			ordersnum: req.session.orders,
 			sharesnum: req.session.shares,
@@ -2939,7 +2939,7 @@ totalshares = t[0].counting;
 			
 			if (results != null && results.length > 0 && results == 'passwordReset') {
 					res.render('changepassword', {
-						lang:lang,
+						currente:req.session.email,currentl:req.session.lab,lang:lang,
 						i18n:res,
 						ordersnum: req.session.orders,
 						sharesnum: req.session.shares,
@@ -2953,7 +2953,7 @@ totalshares = t[0].counting;
 					});
 			} else if(results != null && results.length > 0 && results == 'errorFound') {
 					res.render('changepassword', {
-						lang:lang,
+						currente:req.session.email,currentl:req.session.lab,lang:lang,
 						i18n:res,
 						ordersnum: req.session.orders,
 						sharesnum: req.session.shares, 
@@ -2968,7 +2968,7 @@ totalshares = t[0].counting;
 					});
 			} else if(results != null && results.length > 0 && results == 'dateExpired') {
 						res.render('forgot', {
-						lang:lang,
+						currente:req.session.email,currentl:req.session.lab,lang:lang,
 						i18n:res,
 						ordersnum: req.session.orders,
 						sharesnum: req.session.shares, 
@@ -2983,7 +2983,7 @@ totalshares = t[0].counting;
 					});
 			} else if(results != null && results.length > 0 && results == 'cannotFindRequest') {
 					res.render('forgot', {
-						lang:lang,
+						currente:req.session.email,currentl:req.session.lab,lang:lang,
 						i18n:res,
 						ordersnum: req.session.orders,
 						sharesnum: req.session.shares, 
@@ -2998,7 +2998,7 @@ totalshares = t[0].counting;
 					});
 			} else {
 					res.render('changepassword', {
-						lang:lang,
+						currente:req.session.email,currentl:req.session.lab,lang:lang,
 						i18n:res,
 						ordersnum: req.session.orders,
 						sharesnum: req.session.shares,
@@ -3076,9 +3076,9 @@ totalshares = t[0].counting;
             var labYokeSearch = new LabYokeSearchAdmin("",req.session.email);
             labYokeSearch.findagents(function(error, results) {         
                 if (results != null && results.length > 0){
-                    res.render('admin/querytool', {mylab: req.session.lab,ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, isLoggedInAdmin: req.session.admin, agentsResults : results, loggedIn : true, title: 'Query Tool'});
+                    res.render('admin/querytool', {currente:req.session.email,currentl:req.session.lab,mylab: req.session.lab,ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, isLoggedInAdmin: req.session.admin, agentsResults : results, loggedIn : true, title: 'Query Tool'});
                 } else {
-                    res.render('admin/querytool', {mylab: req.session.lab,ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, isLoggedInAdmin: req.session.admin, loggedIn : true, title: 'Query Tool'});
+                    res.render('admin/querytool', {currente:req.session.email,currentl:req.session.lab,mylab: req.session.lab,ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, isLoggedInAdmin: req.session.admin, loggedIn : true, title: 'Query Tool'});
                 }
                 req.session.messages = null;
             });
@@ -3097,7 +3097,7 @@ totalshares = t[0].counting;
             labyokerLabs.getlabs(function(error, labs) {
                 req.session.labs = labs;
                 console.log("loggin in labs: " + labs);
-                res.render('admin/login', {loggedlabyoker:req.session.user,ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, title: 'Login',isLoggedInAdmin: req.session.admin});
+                res.render('admin/login', {currente:req.session.email,currentl:req.session.lab,loggedlabyoker:req.session.user,ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, title: 'Login',isLoggedInAdmin: req.session.admin});
                 req.session.messages = null;
             });
 
@@ -3150,7 +3150,7 @@ totalshares = t[0].counting;
                         console.log("limit: " + limit);
                         if(i == (limit -1) ){
                             console.log("vennusers is: " +  JSON.stringify(vennusers));
-                            res.render('admin/departments', {orphandepts:departments[6],vennuser:vennusers, admins:departments[5],labadmins: departments[4], section:"department", labs: departments[3], errormessagedept: errormessagedept, successmessagedept: successmessagedept, depts: departments[0], vennsettings: departments[2], users: departments[1],labyoker : req.session.user, loggedIn : true, isLoggedInAdmin: req.session.admin, title:'Departments'});
+                            res.render('admin/departments', {currente:req.session.email,currentl:req.session.lab,orphandepts:departments[6],vennuser:vennusers, admins:departments[5],labadmins: departments[4], section:"department", labs: departments[3], errormessagedept: errormessagedept, successmessagedept: successmessagedept, depts: departments[0], vennsettings: departments[2], users: departments[1],labyoker : req.session.user, loggedIn : true, isLoggedInAdmin: req.session.admin, title:'Departments'});
                         }
                         console.log("i is: " + i);
                         i++;
@@ -3209,7 +3209,7 @@ totalshares = t[0].counting;
                         console.log("limit: " + limit);
                         if(i == (limit -1) ){
                             console.log("vennusers is: " +  JSON.stringify(vennusers));
-                            res.render('admin/departments', {orphandepts:departments[6],vennuser:vennusers, admins:departments[5],labadmins: departments[4], section:"lab", labs: departments[3], errormessagelab: errormessagelab, successmessagelab: successmessagelab, depts: departments[0], vennsettings: departments[2], users: departments[1], labyoker : req.session.user, loggedIn : true, isLoggedInAdmin: req.session.admin, title:'Departments'});
+                            res.render('admin/departments', {currente:req.session.email,currentl:req.session.lab,orphandepts:departments[6],vennuser:vennusers, admins:departments[5],labadmins: departments[4], section:"lab", labs: departments[3], errormessagelab: errormessagelab, successmessagelab: successmessagelab, depts: departments[0], vennsettings: departments[2], users: departments[1], labyoker : req.session.user, loggedIn : true, isLoggedInAdmin: req.session.admin, title:'Departments'});
                         }
                         console.log("i is: " + i);
                         i++;
@@ -3268,7 +3268,7 @@ totalshares = t[0].counting;
                         console.log("limit: " + limit);
                         if(i == (limit -1) ){
                             console.log("vennusers is: " +  JSON.stringify(vennusers));
-                            res.render('admin/departments', {orphandepts:departments[6],vennuser:vennusers,labadmins: departments[4], section:"editlab", labs: departments[3], errormessagelabedit: errormessagelabedit, successmessagelabedit: successmessagelabedit, depts: departments[0], vennsettings: departments[2], users: departments[1], labyoker : req.session.user, loggedIn : true, isLoggedInAdmin: req.session.admin, title:'Departments'});
+                            res.render('admin/departments', {currente:req.session.email,currentl:req.session.lab,orphandepts:departments[6],vennuser:vennusers,labadmins: departments[4], section:"editlab", labs: departments[3], errormessagelabedit: errormessagelabedit, successmessagelabedit: successmessagelabedit, depts: departments[0], vennsettings: departments[2], users: departments[1], labyoker : req.session.user, loggedIn : true, isLoggedInAdmin: req.session.admin, title:'Departments'});
                         }
                         console.log("i is: " + i);
                         i++;
@@ -3328,7 +3328,7 @@ totalshares = t[0].counting;
                         console.log("limit: " + limit);
                         if(i == (limit -1) ){
                             console.log("vennusers is: " +  JSON.stringify(vennusers));
-                            res.render('admin/departments', {orphandepts:departments[6],vennuser:vennusers,admins:departments[5], labadmins: departments[4], section:"vennSettings", labs: departments[3], errormessageadmin: errormessagelabedit, successmessageadmin: successmessagelabedit, depts: departments[0], vennsettings: departments[2], users: departments[1], labyoker : req.session.user, loggedIn : true, isLoggedInAdmin: req.session.admin, title:'Departments'});
+                            res.render('admin/departments', {currente:req.session.email,currentl:req.session.lab,orphandepts:departments[6],vennuser:vennusers,admins:departments[5], labadmins: departments[4], section:"vennSettings", labs: departments[3], errormessageadmin: errormessagelabedit, successmessageadmin: successmessagelabedit, depts: departments[0], vennsettings: departments[2], users: departments[1], labyoker : req.session.user, loggedIn : true, isLoggedInAdmin: req.session.admin, title:'Departments'});
                         }
                         console.log("i is: " + i);
                         i++;
@@ -3386,7 +3386,7 @@ totalshares = t[0].counting;
                         console.log("limit: " + limit);
                         if(i == (limit -1) ){
                             console.log("vennusers is: " +  JSON.stringify(vennusers));
-                            res.render('admin/departments', {orphandepts:departments[6],vennuser:vennusers,admins:departments[5],labadmins: departments[4], labs: departments[3], vennsettings: departments[2], users: departments[1], errormessagevoiddept: errormessagevenn, successmessagevoiddept: successmessagevenn, depts: departments[0], labyoker : req.session.user, loggedIn : true, isLoggedInAdmin: req.session.admin, title:'Departments'});
+                            res.render('admin/departments', {currente:req.session.email,currentl:req.session.lab,orphandepts:departments[6],vennuser:vennusers,admins:departments[5],labadmins: departments[4], labs: departments[3], vennsettings: departments[2], users: departments[1], errormessagevoiddept: errormessagevenn, successmessagevoiddept: successmessagevenn, depts: departments[0], labyoker : req.session.user, loggedIn : true, isLoggedInAdmin: req.session.admin, title:'Departments'});
                         }
                         console.log("i is: " + i);
                         i++;
@@ -3450,7 +3450,7 @@ totalshares = t[0].counting;
                         console.log("limit: " + limit);
                         if(i == (limit -1) ){
                             console.log("vennusers is: " +  JSON.stringify(vennusers));
-                            res.render('admin/departments', {orphandepts:departments[6],vennuser:vennusers,admins:departments[5],labadmins: departments[4], section:"venn", labs: departments[3], vennsettings: departments[2], users: departments[1], errormessagevenn: errormessagevenn, successmessagevenn: successmessagevenn, depts: departments[0], labyoker : req.session.user, loggedIn : true, isLoggedInAdmin: req.session.admin, title:'Departments'});
+                            res.render('admin/departments', {currente:req.session.email,currentl:req.session.lab,orphandepts:departments[6],vennuser:vennusers,admins:departments[5],labadmins: departments[4], section:"venn", labs: departments[3], vennsettings: departments[2], users: departments[1], errormessagevenn: errormessagevenn, successmessagevenn: successmessagevenn, depts: departments[0], labyoker : req.session.user, loggedIn : true, isLoggedInAdmin: req.session.admin, title:'Departments'});
                         }
                         console.log("i is: " + i);
                         i++;
@@ -3513,7 +3513,7 @@ totalshares = t[0].counting;
                         console.log("limit: " + limit);
                         if(i == (limit -1) ){
                             console.log("vennusers is: " +  JSON.stringify(vennusers));
-                            res.render('admin/departments', {orphandepts:departments[6],vennuser:vennusers,admins:departments[5],labadmins: departments[4], section:"venn", labs: departments[3], vennsettings: departments[2], users: departments[1], errormessagedisable: errormessagedisable, successmessagedisable: successmessagedisable, depts: departments[0], labyoker : req.session.user, loggedIn : true, isLoggedInAdmin: req.session.admin, title:'Departments'});
+                            res.render('admin/departments', {currente:req.session.email,currentl:req.session.lab,orphandepts:departments[6],vennuser:vennusers,admins:departments[5],labadmins: departments[4], section:"venn", labs: departments[3], vennsettings: departments[2], users: departments[1], errormessagedisable: errormessagedisable, successmessagedisable: successmessagedisable, depts: departments[0], labyoker : req.session.user, loggedIn : true, isLoggedInAdmin: req.session.admin, title:'Departments'});
                         }
                         console.log("i is: " + i);
                         i++;
@@ -3531,9 +3531,9 @@ totalshares = t[0].counting;
             var labyokeGlobal = new LabYokeGlobal();
             labyokeGlobal.getUsers(function(error, results) {           
                 if (results != null && results.length > 0){
-                    res.render('admin/users', {labs:req.session.labs, mylab: req.session.lab,labyoker : req.session.user, isLoggedInAdmin: req.session.admin, users : results, loggedIn : true, title: 'Users'});
+                    res.render('admin/users', {currente:req.session.email,currentl:req.session.lab,labs:req.session.labs, mylab: req.session.lab,labyoker : req.session.user, isLoggedInAdmin: req.session.admin, users : results, loggedIn : true, title: 'Users'});
                 } else {
-                    res.render('admin/users', {labs:req.session.labs, mylab: req.session.lab,labyoker : req.session.user, isLoggedInAdmin: req.session.admin, loggedIn : true, title: 'Users'});
+                    res.render('admin/users', {currente:req.session.email,currentl:req.session.lab,labs:req.session.labs, mylab: req.session.lab,labyoker : req.session.user, isLoggedInAdmin: req.session.admin, loggedIn : true, title: 'Users'});
                 }
                 req.session.messages = null;
             });
@@ -3563,9 +3563,9 @@ totalshares = t[0].counting;
                 labyokeGlobal.getUsers(function(error, results) {
                     console.log("users transfer total: " + results);            
                     if (results != null && results.length > 0){
-                        res.render('admin/users', {labs:req.session.labs, transferuser:usertransfer, transfermess: "nochange", mylab: req.session.lab,labyoker : req.session.user, isLoggedInAdmin: req.session.admin, users : results, loggedIn : true, title: 'Users'});
+                        res.render('admin/users', {currente:req.session.email,currentl:req.session.lab,labs:req.session.labs, transferuser:usertransfer, transfermess: "nochange", mylab: req.session.lab,labyoker : req.session.user, isLoggedInAdmin: req.session.admin, users : results, loggedIn : true, title: 'Users'});
                     } else {
-                        res.render('admin/users', {labs:req.session.labs, transferuser:usertransfer, transfermess: "nochange", mylab: req.session.lab,labyoker : req.session.user, isLoggedInAdmin: req.session.admin, loggedIn : true, title: 'Users'});
+                        res.render('admin/users', {currente:req.session.email,currentl:req.session.lab,labs:req.session.labs, transferuser:usertransfer, transfermess: "nochange", mylab: req.session.lab,labyoker : req.session.user, isLoggedInAdmin: req.session.admin, loggedIn : true, title: 'Users'});
                     }
                     req.session.messages = null;
                 });
@@ -3579,9 +3579,9 @@ totalshares = t[0].counting;
                     labyokeGlobal.getUsers(function(error, results) {
                         console.log("users transfer total: " + results);            
                         if (results != null && results.length > 0){
-                            res.render('admin/users', {labs:req.session.labs, transferuser:usertransfer, transfermess: result, erroruser: resultstransfer, mylab: req.session.lab,labyoker : req.session.user, isLoggedInAdmin: req.session.admin, users : results, loggedIn : true, title: 'Users'});
+                            res.render('admin/users', {currente:req.session.email,currentl:req.session.lab,labs:req.session.labs, transferuser:usertransfer, transfermess: result, erroruser: resultstransfer, mylab: req.session.lab,labyoker : req.session.user, isLoggedInAdmin: req.session.admin, users : results, loggedIn : true, title: 'Users'});
                         } else {
-                            res.render('admin/users', {labs:req.session.labs, transferuser:usertransfer, transfermess: result, erroruser: resultstransfer, mylab: req.session.lab,labyoker : req.session.user, isLoggedInAdmin: req.session.admin, loggedIn : true, title: 'Users'});
+                            res.render('admin/users', {currente:req.session.email,currentl:req.session.lab,labs:req.session.labs, transferuser:usertransfer, transfermess: result, erroruser: resultstransfer, mylab: req.session.lab,labyoker : req.session.user, isLoggedInAdmin: req.session.admin, loggedIn : true, title: 'Users'});
                         }
                         req.session.messages = null;
                     });     
@@ -3616,9 +3616,9 @@ totalshares = t[0].counting;
                     var labyokeGlobal = new LabYokeGlobal();
                     labyokeGlobal.getUsers(function(error, results) {           
                         if (results != null && results.length > 0){
-                            res.render('admin/users', {erroruser: resultsadmin, mylab: req.session.lab,labyoker : req.session.user, isLoggedInAdmin: req.session.admin, users : results, loggedIn : true, title: 'Users'});
+                            res.render('admin/users', {currente:req.session.email,currentl:req.session.lab,erroruser: resultsadmin, mylab: req.session.lab,labyoker : req.session.user, isLoggedInAdmin: req.session.admin, users : results, loggedIn : true, title: 'Users'});
                         } else {
-                            res.render('admin/users', {erroruser: resultsadmin, mylab: req.session.lab,labyoker : req.session.user, isLoggedInAdmin: req.session.admin, loggedIn : true, title: 'Users'});
+                            res.render('admin/users', {currente:req.session.email,currentl:req.session.lab,erroruser: resultsadmin, mylab: req.session.lab,labyoker : req.session.user, isLoggedInAdmin: req.session.admin, loggedIn : true, title: 'Users'});
                         }
                         req.session.messages = null;
                     });
@@ -3677,7 +3677,7 @@ totalshares = t[0].counting;
                     console.log("ordering reqcategory: " + reqcategory);
                     console.log("booster",req.session.savingsText);
                 
-                    res.render('admin/users', {booster:req.session.savingsText, boostercolor:req.session.savingsColor, currentlabname:req.session.lab, categories: req.session.categories, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, isLoggedInAdmin: req.session.admin, title:'Users',loggedIn : true, location: location, agent: agent, vendor: vendor, catalog: catalognumber, email: email});
+                    res.render('admin/users', {currente:req.session.email,currentl:req.session.lab,booster:req.session.savingsText, boostercolor:req.session.savingsColor, currentlabname:req.session.lab, categories: req.session.categories, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, isLoggedInAdmin: req.session.admin, title:'Users',loggedIn : true, location: location, agent: agent, vendor: vendor, catalog: catalognumber, email: email});
                     req.session.messages = null;
                 }
             });
@@ -3755,7 +3755,7 @@ totalshares = t[0].counting;
                         console.log("limit: " + limit);
                         if(i == (limit -1) ){
                             console.log("vennusers is: " +  JSON.stringify(vennusers));
-                            res.render('admin/departments', {orphandepts:results[6],vennuser:vennusers, admins:results[5],labadmins: results[4], labs: results[3], vennsettings: results[2], users: results[1], section:"all", depts: results[0], labyoker : req.session.user, loggedIn : true, isLoggedInAdmin: req.session.admin, title:'Departments'});
+                            res.render('admin/departments', {currente:req.session.email,currentl:req.session.lab,orphandepts:results[6],vennuser:vennusers, admins:results[5],labadmins: results[4], labs: results[3], vennsettings: results[2], users: results[1], section:"all", depts: results[0], labyoker : req.session.user, loggedIn : true, isLoggedInAdmin: req.session.admin, title:'Departments'});
                         }
                         console.log("i is: " + i);
                         i++;
@@ -3786,9 +3786,9 @@ totalshares = t[0].counting;
                     if(results[1].length == 0 && results[0] == "select"){
                         messageStr = "Sorry we could not find any results with your query request: <b>" + queryText + "</b>. Please try again.";
                     }
-                    res.render('admin/querytool', {rowCount:results[2], type:results[0], errorStr: errStr, error: err, mylab: req.session.lab, message: messageStr, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, isLoggedInAdmin: req.session.admin, title: 'Query Tool', fullname: req.session.fullname, sendemail: req.session.email, searchResults : results[1], agentsResults : results[2], searchformText: queryText, loggedIn : true});
+                    res.render('admin/querytool', {currente:req.session.email,currentl:req.session.lab,rowCount:results[2], type:results[0], errorStr: errStr, error: err, mylab: req.session.lab, message: messageStr, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, isLoggedInAdmin: req.session.admin, title: 'Query Tool', fullname: req.session.fullname, sendemail: req.session.email, searchResults : results[1], agentsResults : results[2], searchformText: queryText, loggedIn : true});
                 } else {
-                    res.render('admin/querytool', {rowCount:results[2], type:results[0], errorStr: errStr, error: err, message:'You entered an invalid DB statement. Please try again.',mylab: req.session.lab,ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, isLoggedInAdmin: req.session.admin, title: 'Query Tool', loggedIn : true, agentsResults : results[2]});
+                    res.render('admin/querytool', {currente:req.session.email,currentl:req.session.lab,rowCount:results[2], type:results[0], errorStr: errStr, error: err, message:'You entered an invalid DB statement. Please try again.',mylab: req.session.lab,ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, isLoggedInAdmin: req.session.admin, title: 'Query Tool', loggedIn : true, agentsResults : results[2]});
                 }
                 req.session.messages = null;
             });
