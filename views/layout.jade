@@ -350,6 +350,6 @@ html(lang='en')
                 },
                 success: function (response) {
                     console.log("success get sharesnum. now trying to nofity...");
-                    notify("Hello "+"#{labyoker}"+"! You have ", " new share(s) awaiting.","New shares");
+                    notify("#{i18n.__("notification.body1")}", "#{i18n.__("notification.body2")}","#{i18n.__("notification.title")}"+"#{labyoker}"+"!");
                 }
             });

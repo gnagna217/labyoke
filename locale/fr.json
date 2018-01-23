@@ -607,5 +607,9 @@
     "date.sept": "Septembre",
     "date.octobre": "Octobre",
     "date.nov": "Novembre",
-    "date.dec": "Decembre"
+    "date.dec": "Decembre",
+ 
+    "notification.body1": "Vous avez ", 
+    "notification.body2": " nouveau partage(s) en attente.",
+    "notification.title": "Salut "
 }

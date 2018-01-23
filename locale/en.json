@@ -608,6 +608,10 @@
     "date.nov": "November",
     "date.dec": "December",
 
+    "notification.body1": "! You have ", 
+    "notification.body2": " new share(s) awaiting.",
+    "notification.title": "Hello ",
+
     "key.title": ""
 
 
