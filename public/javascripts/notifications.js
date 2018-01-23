@@ -1,4 +1,5 @@
-var c = 600000;
+//var c = 600000;
+var c = 20000;
 initiate();
 window.setInterval(function() {
     initiate();
