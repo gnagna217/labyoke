@@ -22,7 +22,7 @@ function notify(body1, body2, title) {
     console.log("is_: " + is_);
     console.log("diff: " + diff);
 
-    if(getCookie("notified") == "" || diff > 0){
+    if((getCookie("notified") == "" && diff > 0) || diff > 0){
     // If it's okay let's create a notification
     var options = {
     body: body1 + diff + body2,
