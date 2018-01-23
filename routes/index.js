@@ -2095,7 +2095,7 @@ totalshares = t[0].counting;
         init.initialShares(function(error, resultsShares) {
             console.log("inside init shares " + resultsShares);
             console.log("initshares is " + initial_sharesnum);
-            res.cookie('is',initial_sharesnum);
+            //res.cookie('is',initial_sharesnum);
               var cookie = req.cookies.sh;
 console.log("cookie is " + cookie);
             if (resultsShares != null) {
@@ -3848,6 +3848,7 @@ console.log("cookie is " + cookie);
                                                     console.log("initshares is " + resultsShares);
                                                     shares = resultsShares;
                                                     req.session.shares = shares;
+                                                    initial_sharesnum = shares;
                                                 }
                                                 init.initialOrders(function(error, resultsOrders) {
                                                     console.log("inside init orders " + resultsOrders);

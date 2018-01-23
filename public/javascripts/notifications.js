@@ -13,6 +13,9 @@ function notify(body1, body2, title) {
   else if (Notification.permission === "granted") {
     var ns_ = 0, is_ = 0;
     var diff = 0;
+    if(is == ""){
+        is = ns;
+    }
     if(ns != "" && is !=""){
         ns_ = parseInt(ns);
         is_ = parseInt(is);
