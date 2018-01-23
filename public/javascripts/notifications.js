@@ -1,5 +1,6 @@
 function notify(body, title) {
   // Let's check if the browser supports notifications
+  console.log("sharesnum : " + getCookie("sharesnum"));
     var options = {
     body: body,
     requireInteraction: true
