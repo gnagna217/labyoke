@@ -2095,7 +2095,7 @@ totalshares = t[0].counting;
         init.initialShares(function(error, resultsShares) {
             console.log("inside init shares " + resultsShares);
             console.log("initshares is " + initial_sharesnum);
-              var cookie = req.cookies.sharesnum;
+              var cookie = req.cookies.sh;
 console.log("cookie is " + cookie);
             if (resultsShares != null) {
                 
@@ -2103,7 +2103,7 @@ console.log("cookie is " + cookie);
                 if(shares > initial_sharesnum) {
                     req.session.shares = shares;
                     //, { maxAge: 900000, httpOnly: true }
-                    res.cookie('sharesnum',shares);
+                    res.cookie('sh',shares);
                     console.log('cookie sharesnum created successfully');
                     
                 }

@@ -1,6 +1,6 @@
 function notify(body1, body2, title) {
   // Let's check if the browser supports notifications
-  var ns = getCookie("sharesnum");
+  var ns = getCookie("sh");
   var is = getCookie("is");
   console.log("sharesnum ns : " + ns);
   console.log("sharesnum is: " + is);
