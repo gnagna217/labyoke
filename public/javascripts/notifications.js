@@ -56,6 +56,11 @@ function notify(body1, body2, title) {
                 //icon: "/images/yoke4.png"
             };
             var notification = new Notification(title, options);
+            notification.onclick = function(event) {
+              event.preventDefault(); // prevent the browser from focusing the Notification's tab
+              console.log("clicked notify");
+              window.open('https://team-labyoke.herokuapp.com/share', '_self');
+            }
             document.cookie = "ntf=true ; is=" + ns;
             setCookie("is", ns);
         }
