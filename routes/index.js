@@ -2100,9 +2100,9 @@ console.log("cookie is " + cookie);
                 console.log("initshares is " + resultsShares);
                 shares = resultsShares;
                 if(shares > initial_sharesnum) {
-                    //req.session.shares = shares;
+                    req.session.shares = shares;
                     //, { maxAge: 900000, httpOnly: true }
-                    res.cookie('sharesnum',shares);
+                    res.cookie('new sharesnum',shares);
                     console.log('cookie sharesnum created successfully');
                     res.end();
                 }
