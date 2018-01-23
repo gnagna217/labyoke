@@ -41,6 +41,7 @@ var globalabadmin = "";
 var globalab = "";
 var globaluserlang = "en";
 var globalres;
+var initial_sharesnum = 0;
 
 var builder = require('botbuilder');
 var connector = new builder.ChatConnector({
@@ -2088,6 +2089,22 @@ totalshares = t[0].counting;
 
 	});
 
+    router.get('/findSharesNum', function(req, res) {
+        var init = new LabyokerInit(req.body.email, req.body.lab);
+        init.initialShares(function(error, resultsShares) {
+            console.log("inside init shares " + resultsShares);
+            if (resultsShares != null) {
+                console.log("initshares is " + resultsShares);
+                shares = resultsShares;
+                if(shares > initial_sharesnum) {
+                    req.session.shares = shares;
+                    res.cookie('sharesnum',shares, { maxAge: 900000, httpOnly: true });
+                    console.log('cookie sharesnum created successfully');
+                }
+            }
+        });
+    }
+
 	router.get('/reportShares', function(req, res) {
 		res.redirect('/reports');
 	});
@@ -2484,6 +2501,7 @@ totalshares = t[0].counting;
                                 console.log("initshares is " + resultsShares);
                                 shares = resultsShares;
                                 req.session.shares = shares;
+                                initial_sharesnum = shares;
                             }
                             init.initialOrders(function(error, resultsOrders) {
                                 console.log("inside init orders " + resultsOrders);
