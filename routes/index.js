@@ -2102,8 +2102,10 @@ totalshares = t[0].counting;
                     res.cookie('sharesnum',shares, { maxAge: 900000, httpOnly: true });
                     console.log('cookie sharesnum created successfully');
                 }
+
             }
         });
+        res.end();
     });
 
 	router.get('/reportShares', function(req, res) {
