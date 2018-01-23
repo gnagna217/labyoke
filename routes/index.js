@@ -48,7 +48,6 @@ var connector = new builder.ChatConnector({
  appPassword: "whLEJQ31#!&gghhuBOO674["
 });
 
-
 /*var bot = new builder.UniversalBot(connector);
 
 bot.dialog('/', function (session) {
