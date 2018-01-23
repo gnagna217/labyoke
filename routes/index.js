@@ -2104,8 +2104,9 @@ console.log("cookie is " + cookie);
                     //, { maxAge: 900000, httpOnly: true }
                     res.cookie('new sharesnum',shares);
                     console.log('cookie sharesnum created successfully');
-                    res.end();
+                    
                 }
+                res.end();
             }
         });
     });
