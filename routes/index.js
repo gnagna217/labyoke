@@ -1540,7 +1540,7 @@ totalshares = t[0].counting;
 		var dateto = "01-01-2017";
 		//var category = req.body.reportCategory;
 		console.log("reportSomething intro");
-		var labYokereporter = new LabYokeReporterShares(datefrom, dateto, req.session.lab, req.session.labs,res);
+		var labYokereporter = new LabYokeReporterShares(datefrom, dateto, req.session.lab, req.session.email, req.session.labs,res);
 		labYokereporter.reportSharesIntro(function(error, results) {
 		
 
@@ -1598,7 +1598,7 @@ totalshares = t[0].counting;
         }
         var res0, res1;
         if(!iserror){
-    		var labYokereporter = new LabYokeReporterShares(datefrom, dateto, req.session.lab, req.session.labs,res);
+    		var labYokereporter = new LabYokeReporterShares(datefrom, dateto, req.session.lab, req.session.email, req.session.labs,res);
     		labYokereporter.reportShares(function(error, results) {
                 labYokereporter.reportSharesIntro(function(error, resultsintro) {
                 
@@ -1664,7 +1664,7 @@ totalshares = t[0].counting;
 		var labYokereporterSavings = new LabYokeReporterSavings(datefrom,dateto,agent,vendor,catalognumber,lab, req.session.lab,req.session.labs,res);
 		labYokereporterSavings.reportMoney(function(error, results) {
 
-        var labYokereporter = new LabYokeReporterShares(datefrom, dateto, req.session.lab, req.session.labs,res);
+        var labYokereporter = new LabYokeReporterShares(datefrom, dateto, req.session.lab, req.session.email, req.session.labs,res);
             labYokereporter.reportSharesIntro(function(error, resultsintro) {
                 
                 res0 = resultsintro[0];
@@ -1730,7 +1730,7 @@ totalshares = t[0].counting;
 		var labYokereporterSavings = new LabYokeReporterSavings(datefrom,dateto,agent,vendor,catalognumber,lab, req.session.lab,req.session.labs,res);
 		labYokereporterSavings.reportInsuff(function(error, results) {
 
-        var labYokereporter = new LabYokeReporterShares(datefrom, dateto, req.session.lab, req.session.labs,res);
+        var labYokereporter = new LabYokeReporterShares(datefrom, dateto, req.session.lab, req.session.email, req.session.labs,res);
             labYokereporter.reportSharesIntro(function(error, resultsintro) {
                 var res0, res1;
                 res0 = resultsintro[0];
@@ -1845,7 +1845,7 @@ totalshares = t[0].counting;
         if(!iserror){
 		var labYokereporter = new LabYokeReporterOrders(datefrom, dateto, lab, req.session.labs, req.session.lab, res);
 		labYokereporter.reportOrders(function(error, results) {
-        var labYokereporter = new LabYokeReporterShares(datefrom, dateto, req.session.lab, req.session.labs,res);
+        var labYokereporter = new LabYokeReporterShares(datefrom, dateto, req.session.lab, req.session.email, req.session.labs,res);
             labYokereporter.reportSharesIntro(function(error, resultsintro) {
                 
                 console.log("resultsOrdersIntro: " + resultsintro.length);

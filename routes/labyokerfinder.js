@@ -82,10 +82,11 @@ LabYokeReporterOrders = function(datefrom, dateto, lab, labs, mylab, res) {
 	//this.category = category;
 };
 
-LabYokeReporterShares = function(datefrom, dateto, mylab, labs, res) {
+LabYokeReporterShares = function(datefrom, dateto, mylab, myemail, labs, res) {
 	this.datefrom = datefrom;
 	this.dateto = dateto;
 	this.mylab = mylab;
+	this.myemail = myemail;
 	this.labs = labs;
 	this.res = res;
 	//this.category = category;
@@ -825,6 +826,7 @@ LabYokeReporterShares.prototype.reportShares = function(callback) {
 	var where = "";
 	var isempty = true;
 	var mylab = this.mylab;
+	var myemail = this.myemail;
 	//var mylab = this.mylab.replace(" ","").toLowerCase();
 	console.log("report on something: datefrom: " + datefrom);
 	console.log("report on something: dateto: " + dateto);
@@ -1017,7 +1019,9 @@ console.log("report on shares my lab: " + mylab);
 
 	console.log("where2: " +  where);
 
-	var qryStr = "SELECT * FROM vm2016_agentsshare a, vm2016_users b" + where + " order by a.date desc";
+	//var qryStr = "SELECT * FROM vm2016_agentsshare a, vm2016_users b" + where + " order by a.date desc";
+	var qryStr = "SELECT * FROM "+mylab+"_orders where email='" + myemail + "' order by a.date desc";
+
 	console.log("query report shares: " + qryStr);
 	query = client.query(qryStr);
 
