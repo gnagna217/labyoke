@@ -11,7 +11,7 @@ block content
 			p
 				span(class="restrictreporttext float-left")!= i18n.__("reports.subtitle")
 				span(class="restrictreporttext float-right")!= i18n.__("reports.subtitle2")
-			span!= resultsMoneyIntro
+
 				- var now = (new Date())
 				- now = (now.getMonth() + 1) + "/" + now.getDate() + "/" + now.getFullYear()
 			- var selResultsMoney = resultsMoney
