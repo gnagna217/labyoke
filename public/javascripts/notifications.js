@@ -25,7 +25,7 @@ function notify(body1, body2, title) {
     console.log("is_: " + is_);
     console.log("diff: " + diff);
 
-    if((getCookie("notified") == "" && diff > 0) || diff > 0){
+    if((getCookie("ntf") == "" && diff > 0) || diff > 0){
     // If it's okay let's create a notification
     var options = {
     body: body1 + diff + body2,
@@ -33,9 +33,9 @@ function notify(body1, body2, title) {
     //icon: "/images/yoke4.png"
     };
    var notification = new Notification(title,options); 
-   document.cookie = "notified=true ; is="+ns;
+   document.cookie = "ntf=true ; is="+ns;
 }
-   console.log("here : " + getCookie("notified"));
+   console.log("here : " + getCookie("ntf"));
   }
 
   // Otherwise, we need to ask the user for permission

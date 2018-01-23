@@ -1078,6 +1078,9 @@ module.exports = function(router) {
         req.session.surname = null;
 		req.session.loggedin = false;
         req.session.to = null;
+        res.clearCookie("sh");
+        res.clearCookie("is");
+        res.clearCookie("ntf");
 		res.redirect('/login');
 	});
 
