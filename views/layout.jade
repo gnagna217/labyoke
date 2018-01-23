@@ -339,17 +339,7 @@ html(lang='en')
           console.log("superadmin: " + "#{superadmin}");
         script(type="text/javascript" src="/js/global.js")
        if (loggedIn==true)
-         script(type="text/javascript" src="/javascripts/notifications.js")
          script.
-            $.ajax({
-                method: "POST",
-                url: 'https://team-labyoke.herokuapp.com/findSharesNum',
-                data: {
-                    email: "#{currente}",
-                    lab: "#{currentl}"
-                },
-                success: function (response) {
-                    console.log("success get sharesnum. now trying to nofity...");
-                    notify("#{i18n.__("notification.body1")}", "#{i18n.__("notification.body2")}","#{i18n.__("notification.title")}"+"#{labyoker}"+"!");
-                }
-            });
+          var var_currente = "#{currente}", var_currentl = "#{currentl}", var_body1 = "#{i18n.__("notification.body1")}", var_title = "#{i18n.__("notification.title")}", var_body2="#{i18n.__("notification.body2")}", var_labyoker="#{labyoker}";
+         script(type="text/javascript" src="/javascripts/notifications.js")
+            
