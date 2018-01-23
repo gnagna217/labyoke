@@ -2094,6 +2094,8 @@ totalshares = t[0].counting;
         var init = new LabyokerInit(req.body.email, req.body.lab);
         init.initialShares(function(error, resultsShares) {
             console.log("inside init shares " + resultsShares);
+              var cookie = req.cookies.sharesnum;
+console.log("cookie is " + cookie);
             if (resultsShares != null) {
                 console.log("initshares is " + resultsShares);
                 shares = resultsShares;
@@ -2103,10 +2105,8 @@ totalshares = t[0].counting;
                     console.log('cookie sharesnum created successfully');
                     res.end();
                 }
-
             }
         });
-
     });
 
 	router.get('/reportShares', function(req, res) {
