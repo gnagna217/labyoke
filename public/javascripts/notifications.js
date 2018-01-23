@@ -56,6 +56,7 @@ function notify(body1, body2, title) {
             };
             var notification = new Notification(title, options);
             document.cookie = "ntf=true ; is=" + ns;
+            setCookie("is", ns);
         }
         console.log("here : " + getCookie("ntf"));
     }
@@ -88,4 +89,8 @@ function getCookie(cname) {
         }
     }
     return "";
+}
+
+function setCookie(cname, cvalue) {
+    document.cookie = cname + "=" + cvalue + ";"
 }
