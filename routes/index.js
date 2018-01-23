@@ -2096,7 +2096,11 @@ totalshares = t[0].counting;
             init.initialShares(function(error, resultsShares) {
                 console.log("inside init shares " + resultsShares);
                 console.log("initshares is " + initial_sharesnum);
-                res.cookie('is',req.session.shares);
+                if(req.session.shares != 0){
+                    res.cookie('is',req.session.shares);
+                    console.log("setting is " + req.session.shares);
+                }
+                console.log("checking is " + req.cookies.is);
                 var cookie = req.cookies.sh;
                 console.log("cookie is " + cookie);
                 if (resultsShares != null) {
