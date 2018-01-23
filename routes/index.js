@@ -2089,7 +2089,7 @@ totalshares = t[0].counting;
 
 	});
 
-    router.get('/findSharesNum', function(req, res) {
+    router.post('/findSharesNum', function(req, res) {
         var init = new LabyokerInit(req.body.email, req.body.lab);
         init.initialShares(function(error, resultsShares) {
             console.log("inside init shares " + resultsShares);

@@ -344,7 +344,7 @@ html(lang='en')
         console.log("notify: " + test);
         notify(test,"New shares");}
             $.ajax({
-                method: "GET",
+                method: "POST",
                 url: 'https://team-labyoke.herokuapp.com/findSharesNum',
                 data: {
                     email: "gnagna217@gmail.com",
