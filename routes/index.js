@@ -2091,26 +2091,28 @@ totalshares = t[0].counting;
 
     router.post('/findSharesNum', function(req, res) {
         console.log("email: " + req.body.email);
-        var init = new LabyokerInit(req.body.email, req.body.lab);
-        init.initialShares(function(error, resultsShares) {
-            console.log("inside init shares " + resultsShares);
-            console.log("initshares is " + initial_sharesnum);
-            res.cookie('is',req.session.shares);
-              var cookie = req.cookies.sh;
-console.log("cookie is " + cookie);
-            if (resultsShares != null) {
-                
-                shares = resultsShares;
-                if(shares > initial_sharesnum) {
-                    req.session.shares = shares;
-                    //, { maxAge: 900000, httpOnly: true }
-                    res.cookie('sh',shares);
-                    console.log('cookie sharesnum created successfully');
+        if(req.session.shares != null && req.session.shares != undefined){
+            var init = new LabyokerInit(req.body.email, req.body.lab);
+            init.initialShares(function(error, resultsShares) {
+                console.log("inside init shares " + resultsShares);
+                console.log("initshares is " + initial_sharesnum);
+                res.cookie('is',req.session.shares);
+                var cookie = req.cookies.sh;
+                console.log("cookie is " + cookie);
+                if (resultsShares != null) {
                     
+                    shares = resultsShares;
+                    if(shares > initial_sharesnum) {
+                        req.session.shares = shares;
+                        //, { maxAge: 900000, httpOnly: true }
+                        res.cookie('sh',shares);
+                        console.log('cookie sharesnum created successfully');
+                        
+                    }
+                    res.end();
                 }
-                res.end();
-            }
-        });
+            });
+        }
     });
 
 	router.get('/reportShares', function(req, res) {
