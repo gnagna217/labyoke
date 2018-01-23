@@ -2103,7 +2103,7 @@ totalshares = t[0].counting;
                 }
             }
         });
-    }
+    });
 
 	router.get('/reportShares', function(req, res) {
 		res.redirect('/reports');
