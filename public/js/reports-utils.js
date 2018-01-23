@@ -11,7 +11,7 @@ if (recenter == 0) {
             if (!$('.reportMoney').is(':visible') && !$('.reportShares').is(':visible') && !$('.reportInsuff').is(':visible') && !$('.reportOrders').is(':visible')) {
                 console.log("results visible ");
                 this.removeAttr("style");
-                var t = ($(window).height() - this.height()) / 2;
+                var t = ($(window).height() - this.height()) / 6;
                 console.log("t login: " + t);
                 console.log("$(window).height(): " + $(window).height());
                 console.log("this.height() login: " + this.height());
