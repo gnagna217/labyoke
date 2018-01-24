@@ -2607,12 +2607,12 @@ _html2canvas.Util.Support = function (options, doc) {
     if (ctx === false) {
       return false;
     }
-    canvas.width = canvas.height = 10;
+    canvas.width = canvas.height = 1000;
     img.src = [
     "data:image/svg+xml,",
-    "<svg xmlns='http://www.w3.org/2000/svg' width='10' height='10'>",
-    "<foreignObject width='10' height='10'>",
-    "<div xmlns='http://www.w3.org/1999/xhtml' style='width:10;height:10;'>",
+    "<svg xmlns='http://www.w3.org/2000/svg' width='1000' height='1000'>",
+    "<foreignObject width='1000' height='1000'>",
+    "<div xmlns='http://www.w3.org/1999/xhtml' style='width:1000;height:1000;'>",
     "sup",
     "</div>",
     "</foreignObject>",
