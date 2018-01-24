@@ -415,7 +415,7 @@ $('.restrictreport').show();
             } else {
                 console.log("isdesktop");
                 var dataintro = var_dataIntro;
-                console.dir(dataintro);
+                console.dir(JSON.parse(dataintro));
                 if (dataintro != null && dataintro != "") {
                     $(".intro2").before("<label for='togglerules' id='labeldownload' class='labeldownload animated fadeInUp' data-toggle='tooltip' title='" + var_reports_download_pdf + "'><span class='fa fa-download'></span></label><label for='togglerules' id='labeldownloadxl' class='labeldownload animated fadeInUp labeldownloadxl' data-toggle='tooltip' title='" + var_reports_download_excel + "'><span class='fa fa-database'></span></label>");
 
