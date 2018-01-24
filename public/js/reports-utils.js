@@ -383,6 +383,8 @@ $('.restrictreport').show();
             pdf2.setFontSize(10);
             source = ob;
 
+
+            $('.intro2').addClass("intro2");
             $(".intro2").show();
             $(".intro2").addClass("backintro");
             //$('.pin').show();
@@ -458,6 +460,7 @@ $('.restrictreport').show();
                     console.log("dataintro is empty");
                     $('.intro2').css("margin-right", "0px");
                     $('.intro2').css("margin-left", "0px");
+                    $('.intro2').removeClass("intro2");
                     $('.intro2').html("<div class='alert alert-danger-report alertshadow alert-shares'>"+var_fail+"</div>");
                 } //end check dataintro
 
