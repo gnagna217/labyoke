@@ -2622,7 +2622,7 @@ border-top: 5px solid #8a6d3b;
 .backintro{
     background-color: rgb(41, 117, 180) !important;
 }
-.intro2{
+.intro3{
     height: 360px;
     display: block;
     margin-right: 50px;
@@ -2636,11 +2636,11 @@ border-top: 5px solid #8a6d3b;
     border-radius: 100px / 20px;
 }
 
-.intro2 td, th {
+.intro3 td, th {
     padding-right: 5px !important;
     padding-left: 5px !important;
 }
-.intro2 > div{
+.intro3 > div{
     margin-left:0px !important;
 }
 
@@ -4294,7 +4294,7 @@ span.num.greatherthanninetynine {
 .labeldownload {
     display:none;
 }
-.intro2{
+.intro3{
     margin-left:0px !important;
     margin-right:0px !important;
 }
