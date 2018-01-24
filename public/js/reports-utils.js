@@ -451,13 +451,14 @@ $('.restrictreport').show();
                             background: '#fff'
                         };
 
-
+                        $('.intro4').removeClass("displaynone");
 
                         pdf2.addHTML($('.intro4'), options, function() {
                             console.log("source weekly savings");
 
                             pdf2.save(filetext + ".pdf");
                             $('.checkintro').addClass("noshow");
+                            $('.intro4').addClass("displaynone");
                         });
                     });
                 } else {
@@ -473,6 +474,7 @@ $('.restrictreport').show();
 
         } else {
             $('.checkintro').removeClass("noshow");
+            $('.intro4').addClass("displaynone");
         }
     });
 
