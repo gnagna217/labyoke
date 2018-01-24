@@ -50,7 +50,7 @@ $(document).ready(function() {
                 //var data = [[1,2,3,4],["Sample", "Sample", "Sample", "Sample"],["foo","bar","Hello","0.3"], ["baz", null, "qux"]];
                 console.log("" + var_dataInsuff);
 
-                var data = JSON.parse(JSON.stringify(var_dataInsuff));
+                var data = JSON.parse(var_dataInsuff);
                 console.dir(data);
                 var ws_name = "SheetJS";
 
