@@ -8,6 +8,10 @@
   user-select: none;*/
   -webkit-font-smoothing: antialiased;
 }
+
+.font-14{
+  font-size: 14pt !important;
+}
 .successful-fulfill{
       background: linear-gradient(to right, #1aaf1e , white);
 }

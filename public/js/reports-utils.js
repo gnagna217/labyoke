@@ -464,7 +464,7 @@ $('.restrictreport').show();
                     $('.intro2').css("margin-left", "0px");
                     $('.intro2').removeClass("intro3");
 
-                    $('.intro2').html("<div class='alert alert-danger-report alertshadow alert-shares'>"+var_fail+"</div>");
+                    $('.intro2').html("<div class='alert alert-danger-report alertshadow alert-shares font-14'>"+var_fail+"</div>");
                 } //end check dataintro
 
             }
