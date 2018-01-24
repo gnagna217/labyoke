@@ -1045,12 +1045,15 @@ console.log("report on shares my lab: " + mylab);
 			//"<p>This report is listing the inventory uploaded between " + moment(datefrom).tz("America/New_York").format('MM-DD-YYYY') + " and " + moment(dateto).tz("America/New_York").format('MM-DD-YYYY') + "</p></div>"
 		}
 		html += params;
+
+
+
 		
 		if(results != null && results != ""){
 			headeronly.push(i18n.__("index.reportsMoney.param9"));
 			headeronly.push(i18n.__("index.reportsMoney.param10"));
 			headeronly.push(i18n.__("index.reportsMoney.param11"));
-			//headeronly.push(i18n.__("index.reportsMoney.param15"));
+			headeronly.push(i18n.__("index.reportsMoney.param17"));
 			headeronly.push(i18n.__("index.reportsMoney.param16"));
 			headeronly.push(i18n.__("index.reportsMoney.param12"));
 			dataonly.push(headeronly);
@@ -1062,7 +1065,7 @@ console.log("report on shares my lab: " + mylab);
 				var agent = results[prop].agent;
 				var vendor = results[prop].vendor;
 				var catalognumber = results[prop].catalognumber;
-				var location = results[prop].location;
+				var requestoremail = results[prop].requestoremail;
 				var email = results[prop].email;
 				//var category = results[prop].category;
 				var date = results[prop].date;
@@ -1070,7 +1073,7 @@ console.log("report on shares my lab: " + mylab);
 				html += " <tr><td class='font-12px'>" + agent + "</td>";
 				html += " <td class='font-12px'>" + vendor + "</td>";
 				html += " <td class='font-12px'>" + catalognumber + "</td>";
-				//html += " <td class='font-12px'>" + location + "</td>";
+				html += " <td class='font-12px'>" + requestoremail + "</td>";
 				html += " <td class='font-12px'>" + email + "</td>";
 				//html += " <td class='font-12px'>" + category + "</td>";
 				html += " <td class='font-12px'>" + moment(date).tz("Africa/Bissau").format('MM-DD-YYYY') + "</td></tr>";
