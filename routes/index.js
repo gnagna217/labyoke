@@ -1549,11 +1549,11 @@ totalshares = t[0].counting;
         res0 = results[0];
         if(results !=null && results.length > 0){
             res0 = results[0];
-            console.log("resultsMoneyIntro: " + res0);
+            //console.log("resultsMoneyIntro: " + res0);
         }
         if(results !=null && results.length > 1){
             res1 = results[1];
-            console.log("dataintro: " + res1);
+            console.log("dataintro: " + JSON.stringify(res1));
         }
         
         
