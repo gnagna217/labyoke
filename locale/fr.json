@@ -436,7 +436,7 @@
     "index.reportsShares.html3": "<p>Ce rapport répertorie l'inventaire de réactifs entre ",
     "index.reportsShares.html4": " et ",
     "index.reportsShares.html5": "</p>",
-    "index.reportsShares.html6": "<table class='locale-table'><tbody><tr class='locale-tr'><td class='font-12px'>Réactif</td><td class='font-12px'>Vendeur</td><td class='font-12px'>Catalogue</td><td class='font-12px'>Demandeur</td><td class='font-12px'>Location</td><td>Date</td></tr>",
+    "index.reportsShares.html6": "<table class='locale-table'><tbody><tr class='locale-tr'><td class='font-12px'>Réactif</td><td class='font-12px'>Vendeur</td><td class='font-12px'>Catalogue</td><td class='font-12px'>Demandeur</td><td class='font-12px'>Proprio</td><td>Date</td></tr>",
     "index.reportsShares.html7": "L'Équipe <a href='https://team-labyoke.herokuapp.com/' class='color-white'>LabYoke</a>.",
     "index.reportsShares.nodataIntro": "<div class='shares-nodata'>Aucune donnée valide n'a pu être retrouvée. Commencez à partager dès aujourd'hui!</div>",
     "index.reportsOrders.html1": "Laboratoire: ",
