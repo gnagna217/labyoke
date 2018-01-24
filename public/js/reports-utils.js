@@ -454,6 +454,7 @@ $('.restrictreport').show();
 
 var doc = document.createElement('div');
   doc.innerHTML = source;
+  console.dir(doc);
                         pdf2.addHTML(doc, options, function() {
                             console.log("source weekly savings");
 
