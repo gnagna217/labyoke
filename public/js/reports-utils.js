@@ -458,6 +458,7 @@ $('.restrictreport').show();
                     console.log("dataintro is empty");
                     $('.intro2').css("margin-right", "0px");
                     $('.intro2').css("margin-left", "0px");
+                    $('.intro2').hide();
                 } //end check dataintro
 
             }
