@@ -451,8 +451,10 @@ $('.restrictreport').show();
                             background: '#fff'
                         };
 
-var xmlString = source, parser = new DOMParser(), doc = parser.parseFromString(xmlString, "text/xml");
-                        pdf2.addHTML(doc.firstChild, options, function() {
+
+var doc = document.createElement('div');
+  doc.innerHTML = source.trim();
+                        pdf2.addHTML(doc, options, function() {
                             console.log("source weekly savings");
 
                             pdf2.save(filetext + ".pdf");
