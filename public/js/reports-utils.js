@@ -2,6 +2,8 @@ console.log("recenter: ") + recenter;
 
 
 console.log("recenter: " + recenter);
+
+$('.intro2').addClass("intro2");
 if (recenter == 0) {
     var wi = $(window).width();
     console.log("wi is: " + wi);
@@ -384,7 +386,7 @@ $('.restrictreport').show();
             source = ob;
 
 
-            $('.intro2').addClass("intro2");
+            
             $(".intro2").show();
             $(".intro2").addClass("backintro");
             //$('.pin').show();
