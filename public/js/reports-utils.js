@@ -423,8 +423,8 @@ $('.restrictreport').show();
 
                     $(".intro2").prev('#labeldownloadxl').click(function() {
                         /* original data */
-                        console.debug(JSON.stringify(dataintro));
-                        var data = JSON.parse(JSON.stringify(dataintro));
+                        console.debug(JSON.parse(dataintro));
+                        var data = JSON.parse(dataintro);
                         console.dir(data);
                         var ws_name = "SheetJS";
 
