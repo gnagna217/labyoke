@@ -175,6 +175,7 @@
     "reports.label.insuff":"Replenish<br/>Insuff.",
     "reports.download.pdf": "Download PDF",
     "reports.download.excel": "Download Excel",
+    "reports.message.fail": "Unfortunately there is no data available during the past week timeframe.",
 
     "reports.money.title": "Shares Savings Report.",
     "reports.money.subtitle": "You can now retrieve a report of the savings each lab has made over a period of time per reagent.",

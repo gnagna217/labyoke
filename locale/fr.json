@@ -176,6 +176,7 @@
     "reports.label.insuff":"Appro<br/>visioner",
     "reports.download.pdf": "Télécharger PDF",
     "reports.download.excel": "Télécharger Excel",
+    "reports.message.fail": "Malheureusement aucun partage n'a été effectué dans la semaine.",
 
     "reports.money.title": "Rapport Économies de Partage.",
     "reports.money.subtitle": "Télécharger le rapport sur les économies de partage de chaque laboratoire sur une période déterminée par Réactif.",

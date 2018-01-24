@@ -458,7 +458,7 @@ $('.restrictreport').show();
                     console.log("dataintro is empty");
                     $('.intro2').css("margin-right", "0px");
                     $('.intro2').css("margin-left", "0px");
-                    $('.intro2').hide();
+                    $('.intro2').html("<div class='alert alert-danger-report alertshadow alert-shares'>"+var_fail+"</div>");
                 } //end check dataintro
 
             }
