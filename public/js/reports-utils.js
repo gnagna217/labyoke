@@ -451,7 +451,8 @@ $('.restrictreport').show();
                             background: '#fff'
                         };
 
-                        pdf2.addHTML(document.createRange().createContextualFragment(source), options, function() {
+var xmlString = source, parser = new DOMParser(), doc = parser.parseFromString(xmlString, "text/xml");
+                        pdf2.addHTML(doc, options, function() {
                             console.log("source weekly savings");
 
                             pdf2.save(filetext + ".pdf");
