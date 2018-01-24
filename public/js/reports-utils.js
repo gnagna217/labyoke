@@ -452,7 +452,7 @@ $('.restrictreport').show();
                         };
 
 var xmlString = source, parser = new DOMParser(), doc = parser.parseFromString(xmlString, "text/xml");
-                        pdf2.addHTML(doc, options, function() {
+                        pdf2.addHTML(doc.firstChild, options, function() {
                             console.log("source weekly savings");
 
                             pdf2.save(filetext + ".pdf");
