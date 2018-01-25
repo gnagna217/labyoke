@@ -476,8 +476,8 @@ $('.restrictreport').show();
                     right: 20,
                     width: 822
                 };
-pdf2.addFont('ComicSansMS', 'Comic Sans', 'normal');
-pdf2.setFont('Comic Sans');
+pdf2.addFont('Nunito', 'Nunito', 'normal');
+pdf2.setFont('Nunito');
 //pdf2.setFont('Nunito');
 //pdf2.setFontType('normal');
                 pdf2.fromHTML(
