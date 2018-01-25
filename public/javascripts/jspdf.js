@@ -884,9 +884,7 @@ var jsPDF = (function(global) {
 
 		//---------------------------------------
 		// Public API
-API.addFont = function(postScriptName, fontName, fontStyle) {
-      addFont(postScriptName, fontName, fontStyle, 'StandardEncoding');
-    };
+
 		/**
 		 * Object exposing internal API to plugins
 		 * @public
