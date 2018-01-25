@@ -481,7 +481,7 @@ $('.restrictreport').show();
                     source, // HTML string or DOM elem ref.
                     margins.left, // x coord
                     margins.top, { // y coord
-                        'width': 7.5, // max width of content on PDF
+                        'width': margins.width, // max width of content on PDF
                         'elementHandlers': specialElementHandlers
                     },
                     function(dispose) {

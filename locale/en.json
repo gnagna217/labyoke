@@ -436,7 +436,7 @@
     "index.reportsShares.html3": "<p>This report is listing the inventory uploaded between ",
     "index.reportsShares.html4": " and ",
     "index.reportsShares.html5": "</p>",
-    "index.reportsShares.html6": "<table class='locale-table'><tbody><tr class='locale-tr'><td class='font-12px'>Reagent</td><td class='font-12px'>Vendor</td><td class='font-12px'>Catalog#</td><td class='font-12px'>Requestor</td><td class='font-12px'>Owner</td><td>Date</td></tr>",
+    "index.reportsShares.html6": "<table class='locale-table' style='width:1000px'><tbody><tr class='locale-tr'><td class='font-12px'>Reagent</td><td class='font-12px'>Vendor</td><td class='font-12px'>Catalog#</td><td class='font-12px'>Requestor</td><td class='font-12px'>Owner</td><td>Date</td></tr>",
     "index.reportsShares.html7": "The <a href='https://team-labyoke.herokuapp.com/' class='color-white'>LabYoke</a> Team.",
     "index.reportsShares.nodataIntro": "<div class='shares-nodata'>There is no data available. Start sharing today!</div>",
     "index.reportsOrders.html1": "Lab: ",
