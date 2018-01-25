@@ -3318,9 +3318,9 @@ var jsPDF = (function(global) {
 			headers[i] = {
 				name : cell.textContent.toLowerCase().replace(/\s+/g, ''),
 				prompt : cell.textContent.replace(/\r?\n/g, ''),
-				width : (cell.clientWidth / table_with) * renderer.pdf.internal.pageSize.width + 30
+				width : (cell.clientWidth / table_with) * renderer.pdf.internal.pageSize.width + 25
 			};
-			console.log("jsPDF width is: " + (cell.clientWidth / table_with) * renderer.pdf.internal.pageSize.width + 30);
+			console.log("jsPDF width is: " + (cell.clientWidth / table_with) * renderer.pdf.internal.pageSize.width + 25);
 			i++;
 		}
 		i = 1;
