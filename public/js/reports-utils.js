@@ -473,8 +473,7 @@ $('.restrictreport').show();
                     top: 30,
                     bottom: 30,
                     left: 40,
-                    right: 40,
-                    width: 622
+                    right: 40
                 };
 
                 pdf2.fromHTML(
