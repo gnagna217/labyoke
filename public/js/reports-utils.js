@@ -53,6 +53,31 @@ $(window).resize(function() {
 });
 
 $(document).ready(function() {
+
+
+    //if (addMessageMoney != null)
+    if ($('.alert').is(':visible')) {
+        recenter = 1;
+
+        $(".reportlabels").addClass("reportlabels2");
+        if ($(window).width() > 900) {
+            $(".labelexpandmood").css("top", "0px");
+        }
+    }
+    if ($('.alert-shares').is(':visible')) {
+        $('.labelexpand').addClass("highlightlabel");
+    }
+    if ($('.alert-orders').is(':visible')) {
+        $('.labelexpandedit').addClass("highlightlabel");
+    }
+    if ($('.alert-insuff').is(':visible')) {
+        $('.labelexpandrules').addClass("highlightlabel");
+    }
+    if ($('.alert-inv').is(':visible')) {
+        $('.labelexpandadd').addClass("highlightlabel");
+    }
+
+
 $(".restrictreport").removeClass("displaynone");
 $("#reportDateFrom").click(function() {
             console.log("date visible");
@@ -485,27 +510,7 @@ $('.restrictreport').show();
 
 
 
-    //if (addMessageMoney != null)
-    if ($('.alert').is(':visible')) {
-        recenter = 1;
 
-        $(".reportlabels").addClass("reportlabels2");
-        if ($(window).width() > 900) {
-            $(".labelexpandmood").css("top", "0px");
-        }
-    }
-    if ($('.alert-shares').is(':visible')) {
-        $('.labelexpand').addClass("highlightlabel");
-    }
-    if ($('.alert-orders').is(':visible')) {
-        $('.labelexpandedit').addClass("highlightlabel");
-    }
-    if ($('.alert-insuff').is(':visible')) {
-        $('.labelexpandrules').addClass("highlightlabel");
-    }
-    if ($('.alert-inv').is(':visible')) {
-        $('.labelexpandadd').addClass("highlightlabel");
-    }
 
 
     $(function() {
