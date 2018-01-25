@@ -380,7 +380,7 @@ $('.restrictreport').show();
             var ob = var_resultsMoneyIntro
             ob = ob.replace(/&lt;/g, "<");
             ob = ob.replace(/&gt;/g, ">");
-            var pdf2 = new jsPDF('l', 'pt', 'letter');
+            var pdf2 = new jsPDF('p', 'pt', 'letter');
             pdf2.setFont("courier", "normal");
             pdf2.setFontSize(10);
             source = ob;
