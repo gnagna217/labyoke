@@ -1545,7 +1545,7 @@ totalshares = t[0].counting;
 		
 
 		var labyokerLab = new LabyokerLab(req.session.lab);
-        var res0, res1, res2;
+        var res0, res1;
         res0 = results[0];
         if(results !=null && results.length > 0){
             res0 = results[0];
@@ -1554,10 +1554,6 @@ totalshares = t[0].counting;
         if(results !=null && results.length > 1){
             res1 = JSON.stringify(results[1]);
             console.log("dataintro: " + JSON.stringify(res1));
-        }
-        if(results !=null && results.length > 2){
-            res2 = JSON.stringify(results[2]);
-            console.log("file dataintro: " + JSON.stringify(res2));
         }
         
         
@@ -1570,11 +1566,11 @@ totalshares = t[0].counting;
 				labyokerLabs.getlabs(function(error, labs) {
 					req.session.labs = labs;
 					console.log("load labs in reports : " + labs);
-					res.render('reports', {currente:req.session.email,currentl:req.session.lab,superadmin:req.session.usersuperadmin,lang:req.cookies.i18n, i18n:res, resultsMoneyIntro:res0, resultsMoneyIntroFile:res2,dataIntro:res1,dept: req.session.dept, categories: categories, labs: req.session.labs, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, labyokersurname : req.session.surname, isLoggedInAdmin: req.session.admin, loggedIn : true, title: 'Reports', isLoggedInAdmin: req.session.admin});
+					res.render('reports', {currente:req.session.email,currentl:req.session.lab,superadmin:req.session.usersuperadmin,lang:req.cookies.i18n, i18n:res, resultsMoneyIntro:res0,dataIntro:res1,dept: req.session.dept, categories: categories, labs: req.session.labs, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, labyokersurname : req.session.surname, isLoggedInAdmin: req.session.admin, loggedIn : true, title: 'Reports', isLoggedInAdmin: req.session.admin});
 					req.session.messages = null;
 				});
 			} else {
-				res.render('reports', {currente:req.session.email,currentl:req.session.lab,superadmin:req.session.usersuperadmin,lang:req.cookies.i18n, i18n:res, resultsMoneyIntro:res0, resultsMoneyIntroFile:res2, dataIntro:res1, dept: req.session.dept, categories: categories, labs: req.session.labs, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, labyokersurname : req.session.surname, isLoggedInAdmin: req.session.admin, loggedIn : true, title: 'Reports', isLoggedInAdmin: req.session.admin});
+				res.render('reports', {currente:req.session.email,currentl:req.session.lab,superadmin:req.session.usersuperadmin,lang:req.cookies.i18n, i18n:res, resultsMoneyIntro:res0,dataIntro:res1, dept: req.session.dept, categories: categories, labs: req.session.labs, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, labyokersurname : req.session.surname, isLoggedInAdmin: req.session.admin, loggedIn : true, title: 'Reports', isLoggedInAdmin: req.session.admin});
 				req.session.messages = null;
 			}
 		});

@@ -1033,25 +1033,19 @@ console.log("report on shares my lab: " + mylab);
 		results = result.rows;
 		console.log("results : " + results);
 		var html = "<div class='labyoker-report-container'>";
-		var htmlreport = "<div class='labyoker-report-container'>";
 		
 
 		html += i18n.__("index.reportsShares.html1", {dateto: dateto}); //"<div><span style='font-weight:bold;font-size:36pt;margin-bottom:20px;float:left'>Inventory.</span></div><div style=\"font-family:'calibri'; font-size:11pt;padding: 20px; width:50%;float:left\">";
 		html += "<div class='labyoker-report-container-one'>";
 
-		htmlreport += i18n.__("index.reportsShares.html1.file", {dateto: dateto});
-		htmlreport += "<div class='labyoker-report-container-one'>";
-
 		if(datefrom == 'all'){
 			html += i18n.__("index.reportsShares.html2"); //"<p>This report is listing all the inventory uploaded:</p></div>"
-			htmlreport += i18n.__("index.reportsShares.html2");
 		} else {
-			html += i18n.__("index.reportsShares.html3") + datefrom; /*moment(datefrom).tz("America/New_York").format('MM-DD-YYYY')*/ + i18n.__("index.reportsShares.html4") + dateto /*moment(dateto).tz("America/New_York").format('MM-DD-YYYY')*/ + i18n.__("index.reportsShares.html5");
-			htmlreport += i18n.__("index.reportsShares.html3") + datefrom;
+			html += i18n.__("index.reportsShares.html3") + datefrom /*moment(datefrom).tz("America/New_York").format('MM-DD-YYYY')*/ + i18n.__("index.reportsShares.html4") + dateto /*moment(dateto).tz("America/New_York").format('MM-DD-YYYY')*/ + i18n.__("index.reportsShares.html5");
 			//"<p>This report is listing the inventory uploaded between " + moment(datefrom).tz("America/New_York").format('MM-DD-YYYY') + " and " + moment(dateto).tz("America/New_York").format('MM-DD-YYYY') + "</p></div>"
 		}
 		html += params;
-		htmlreport += params;
+
 
 
 		
@@ -1065,7 +1059,6 @@ console.log("report on shares my lab: " + mylab);
 			dataonly.push(headeronly);
 		//"<table><tbody><tr class='locale-tr'><td class='font-12px'>Reagent</td><td class='font-12px'>Vendor</td><td class='font-12px'>Catalog#</td><td class='font-12px'>Location</td><td class='font-12px'>User</td><td>Date</td></tr>"
 			html += i18n.__("index.reportsShares.html6");
-			htmlreport += i18n.__("index.reportsShares.html6");
 			for(var prop in results){
 				var rowonly = [];
 				isempty = false;
@@ -1084,14 +1077,6 @@ console.log("report on shares my lab: " + mylab);
 				html += " <td class='font-12px'>" + email + "</td>";
 				//html += " <td class='font-12px'>" + category + "</td>";
 				html += " <td class='font-12px'>" + moment(date).tz("Africa/Bissau").format('MM-DD-YYYY') + "</td></tr>";
-				
-				htmlreport += " <tr><td class='font-12px'>" + agent + "</td>";
-				htmlreport += " <td class='font-12px'>" + vendor + "</td>";
-				htmlreport += " <td class='font-12px'>" + catalognumber + "</td>";
-				htmlreport += " <td class='font-12px'>" + requestoremail + "</td>";
-				htmlreport += " <td class='font-12px'>" + email + "</td>";
-				htmlreport += " <td class='font-12px'>" + moment(date).tz("Africa/Bissau").format('MM-DD-YYYY') + "</td></tr>";
-				
 				rowonly.push(agent);
 				rowonly.push(vendor);
 				rowonly.push(catalognumber);
@@ -1101,8 +1086,6 @@ console.log("report on shares my lab: " + mylab);
 				dataonly.push(rowonly);
 			}
 			html += "</tbody></table><p class='margintop-25'><i><b>" + i18n.__("index.reportsShares.html7") + "</b></i></p></div>";
-			htmlreport += "</tbody></table><p class='margintop-25'><i><b>" + i18n.__("index.reportsShares.html7") + "</b></i></p></div>";
-			
 			//html += "</tbody></table><p><i><b>The LabYoke Team.</b></i></p><img style='width: 141px; margin: 0 20px;float:left' src='https:\/\/team-labyoke.herokuapp.com\/images\/yoke4.png', alt='The Yoke',  title='Yoke', class='yokelogo'/>";
 			
 		}
@@ -1110,7 +1093,6 @@ console.log("report on shares my lab: " + mylab);
 		if(!isempty){
 			resultsbundled.push(html + "</div>");
 			resultsbundled.push(dataonly);
-			resultsbundled.push(htmlreport + "</div>");
 			callback(null, resultsbundled);
 		} else {
 			html = html + i18n.__("index.reportsShares.nodataIntro") + "<p class='margintop-25'><i><b>" + i18n.__("index.reportsShares.html7") + "</b></i></p>" + "</div>";
