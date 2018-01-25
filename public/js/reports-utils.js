@@ -453,13 +453,56 @@ $('.restrictreport').show();
 
                         $('.intro4').removeClass("displaynone");
 
-                        pdf2.addHTML($('.intro4'), options, function() {
+                        /*pdf2.addHTML($('.intro4'), options, function() {
                             console.log("source weekly savings");
 
                             pdf2.save(filetext + ".pdf");
                             $('.checkintro').addClass("noshow");
                             $('.intro4').addClass("displaynone");
                         });
+*/
+
+                specialElementHandlers = {
+                    // element with id of "bypass" - jQuery style selector
+                    '#bypassme': function(element, renderer) {
+                        // true = "handled elsewhere, bypass text extraction"
+                        return true;
+                    }
+                };
+                margins = {
+                    top: 30,
+                    bottom: 30,
+                    left: 40,
+                    right: 40,
+                    width: 622
+                };
+
+                pdf2.fromHTML(
+                    source, // HTML string or DOM elem ref.
+                    margins.left, // x coord
+                    margins.top, { // y coord
+                        'width': margins.width, // max width of content on PDF
+                        'elementHandlers': specialElementHandlers
+                    },
+                    function(dispose) {
+                        // dispose: object with X, Y of the last line add to the PDF 
+                        //          this allow the insertion of new lines after html
+                        if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+                            /*var binaryData = [];
+                            binaryData.push(pdf.output());
+                            var blob = new Blob(binaryData, {type: "application/pdf"});
+                            window.open(window.URL.createObjectURL(blob),'_blank');*/
+                            ////pdf2.output('dataurlnewwindow');
+                        } else {
+                            pdf2.save(filetext + ".pdf");
+                            $('.checkintro').addClass("noshow");
+                            $('.intro4').addClass("displaynone");
+                        }
+
+                    }, margins);
+
+
+
                     });
                 } else {
                     console.log("dataintro is empty");
@@ -660,5 +703,5 @@ window.onload = function() {
     if ($('.alert-inv').is(':visible')) {
         $('.labelexpandadd').addClass("highlightlabel");
     }
-    
+
 };
