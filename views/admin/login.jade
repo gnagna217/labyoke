@@ -27,7 +27,10 @@ block content
                     button.btn.btn-success.btn-lg.btn-block.shadow.resizebutton(type='submit') Get in
             div(class="margintop-10")
                 span(class="floatleft")
-                    a(href="https://team-labyoke.herokuapp.com/", class="z-index-10")="Labyoke"
+                    - if(loggedlabyoker != null && loggedlabyoker != "")
+                        a(href="https://team-labyoke.herokuapp.com/", class="z-index-10")="Return to Labyoke"
+                    - else
+                        a(href="https://team-labyoke.herokuapp.com/", class="z-index-10")="Labyoke"
                 span(class="float-right")
                     a(href="/forgot", class="z-index-10")="Forgot password"
     div(class="help")
