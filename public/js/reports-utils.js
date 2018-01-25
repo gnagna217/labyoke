@@ -470,10 +470,10 @@ $('.restrictreport').show();
                     }
                 };
                 margins = {
-                    top: 0,
+                    top: 30,
                     bottom: 30,
-                    left: 0,
-                    right: 40,
+                    left: 20,
+                    right: 20,
                     width: 822
                 };
 
