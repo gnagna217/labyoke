@@ -470,18 +470,17 @@ $('.restrictreport').show();
                     }
                 };
                 margins = {
-                    top: 30,
+                    top: 0,
                     bottom: 30,
-                    left: 40,
+                    left: 0,
                     right: 40,
                     width: 822
                 };
 
                 pdf2.fromHTML(
                     source, // HTML string or DOM elem ref.
-                    //margins.left, // x coord
-                    //margins.top, 
-                    { // y coord
+                    margins.left, // x coord
+                    margins.top, { // y coord
                         'width': margins.width, // max width of content on PDF
                         'elementHandlers': specialElementHandlers
                     },
