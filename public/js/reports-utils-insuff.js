@@ -8,8 +8,8 @@ recenter = 1;
 var ob = var_resultsInsuff;
 ob = ob.replace(/&lt;/g, "<");
 ob = ob.replace(/&gt;/g, ">");
-var pdf = new jsPDF('l', 'pt', 'ledger');
-var pdf2 = new jsPDF('l', 'pt', 'ledger');
+var pdf = new jsPDF('p', 'pt', 'ledger');
+var pdf2 = new jsPDF('p', 'pt', 'ledger');
 source = ob;
 
 $(document).ready(function() {

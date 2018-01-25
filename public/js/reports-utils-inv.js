@@ -13,8 +13,8 @@ var ob = var_resultsShares;
 ob = ob.replace(/&lt;/g, "<");
 ob = ob.replace(/&gt;/g, ">");
 
-var pdf = new jsPDF('l', 'pt', 'ledger');
-var pdf2 = new jsPDF('l', 'pt', 'ledger');
+var pdf = new jsPDF('p', 'pt', 'ledger');
+var pdf2 = new jsPDF('p', 'pt', 'ledger');
 // source can be HTML-formatted string, or a reference
 // to an actual DOM element from which the text will be scraped.
 source = ob;
