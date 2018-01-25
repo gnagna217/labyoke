@@ -498,6 +498,7 @@ $('.restrictreport').show();
         $('.labelexpand').addClass("highlightlabel");
     }
     if ($('.alert-orders').is(':visible')) {
+        console.log("highlight orders");
         $('.labelexpandedit').addClass("highlightlabel");
     }
     if ($('.alert-insuff').is(':visible')) {
