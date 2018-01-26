@@ -499,8 +499,8 @@ $('.restrictreport').show();
                             pdf2.save(filetext + ".pdf");
                             $('.checkintro').addClass("noshow");
                             $('.intro4').addClass("displaynone");
-                            $('.labeldownload').addClass("report-disable");
-                            $( ".labeldownload" ).off();
+                            $('#labeldownload').addClass("report-disable");
+                            $( "#labeldownload" ).off();
                         }
 
                     }, margins);
