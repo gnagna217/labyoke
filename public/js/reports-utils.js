@@ -140,7 +140,7 @@ $('.restrictreport').show();
 
         if ($('#reportMoney').is(':visible')) {
             $(".reportlabels").removeClass("reportlabels2");
-            $(".labelexpandmood").css("top", "-44px");
+            //$(".labelexpandmood").css("top", "-44px");
         } else {
             $(".alert").hide();
             $(".reportlabels").addClass("reportlabels2");
@@ -198,7 +198,7 @@ $('.restrictreport').show();
 
         if ($('#reportOrders').is(':visible')) {
             $(".reportlabels").removeClass("reportlabels2");
-            $(".labelexpandmood").css("top", "-44px");
+            //$(".labelexpandmood").css("top", "-44px");
 
             console.log("threedown show");
         } else {
@@ -254,7 +254,7 @@ $('.restrictreport').show();
 
         if ($('#reportShares').is(':visible')) {
             $(".reportlabels").removeClass("reportlabels2");
-            $(".labelexpandmood").css("top", "-44px");
+           // $(".labelexpandmood").css("top", "-44px");
         } else {
             $(".alert").hide();
 
@@ -309,7 +309,7 @@ $('.restrictreport').show();
 
         if ($('#reportInsuff').is(':visible')) {
             $(".reportlabels").removeClass("reportlabels2");
-            $(".labelexpandmood").css("top", "-44px");
+           // $(".labelexpandmood").css("top", "-44px");
         } else {
             $(".alert").hide();
 
