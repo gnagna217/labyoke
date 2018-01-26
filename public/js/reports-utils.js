@@ -64,12 +64,12 @@ $("#reportDateTo").click(function() {
 });
 
 
-	    if (!$('#reportMoney').is(':visible') || !$('#reportInsuff').is(':visible') || !$('#reportOrders').is(':visible') || !$('#reportShares').is(':visible') ) {
+	    if (!$('#reportMoney').is(':visible') && !$('#reportInsuff').is(':visible') && !$('#reportOrders').is(':visible') && !$('#reportShares').is(':visible') ) {
             console.log("report visible");
 
-            //if ($(window).width() < 900) {
-               //$(".labelexpandmood").css("top", "-44px");
-            //}
+            if ($(window).width() > 701) {
+               $(".labelexpandmood").css("top", "-44px");
+            }
         } else{
             console.log("report forms visible");
             if ($(window).width() > 701 && $(window).width() < 900) {
