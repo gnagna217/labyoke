@@ -90,7 +90,7 @@ $(document).ready(function() {
                 $('#labeldownloadxl').addClass("report-disable");
                 $( "#labeldownloadxl" ).off();
                 $( "#labeldownloadxl" ).attr("title",var_reportxcel);
-                $('.checkxcel').removeClass("displaynone");
+                $('.checkxcel').removeClass("displaynone-impt");
             });
 
 
@@ -154,7 +154,7 @@ $(document).ready(function() {
                             $('#labeldownload').addClass("report-disable");
                             $( "#labeldownload" ).off();
                             $( "#labeldownload" ).attr("title",var_reportpdf);
-                            $('.checkpdf').removeClass("displaynone");
+                            $('.checkpdf').removeClass("displaynone-impt");
                         }
 
                     }, margins);

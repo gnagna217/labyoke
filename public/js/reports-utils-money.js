@@ -82,7 +82,7 @@ $(document).ready(function() {
                 $('#labeldownloadxl').addClass("report-disable");
                 $( "#labeldownloadxl" ).off();
                 $( "#labeldownloadxl" ).attr("title",var_reportxcel);
-                $('.checkxcel').removeClass("displaynone");
+                $('.checkxcel').removeClass("displaynone-impt");
             });
 
             $(".intro2").prev().prev('#labeldownload').click(function() {
@@ -130,7 +130,7 @@ $(document).ready(function() {
                             $( "#labeldownload" ).off();
                             $("#labeldownload").attr("title",var_pdf_downloaded);
                             $( "#labeldownload" ).attr("title",var_reportpdf);
-                            $('.checkpdf').removeClass("displaynone");
+                            $('.checkpdf').removeClass("displaynone-impt");
                         }
                     }, margins);
             });

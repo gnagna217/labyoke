@@ -445,7 +445,7 @@ $('.restrictreport').show();
                         $('#labeldownloadxl').addClass("report-disable");
                         $( "#labeldownloadxl" ).off();
                         $( "#labeldownloadxl" ).attr("title",var_reportxcel);
-                        $('.checkxcel').removeClass("displaynone");
+                        $('.checkxcel').removeClass("displaynone-impt");
                     });
                     $(".intro2").prev().prev('#labeldownload').click(function() {
                         recenter = 1;
@@ -504,7 +504,7 @@ $('.restrictreport').show();
                             $('#labeldownload').addClass("report-disable");
                             $( "#labeldownload" ).off();
                             $( "#labeldownload" ).attr("title",var_reportpdf);
-                            $('.checkpdf').removeClass("displaynone");
+                            $('.checkpdf').removeClass("displaynone-impt");
                         }
 
                     }, margins);

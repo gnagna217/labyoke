@@ -10,10 +10,11 @@
 }
 
 .check-download-report{
-    font-size: 24pt;
-    top: -20px;
+    font-size: 17pt !important;
+    top: -95px;
     position: relative;
-    color: #ad9876 !important;
+    color: #ad9876!important;
+    margin-left: 25px;
 }
 .report-disable{
     color: #3d9dcb !important;
