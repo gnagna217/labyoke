@@ -444,6 +444,7 @@ $('.restrictreport').show();
                         }), filetext + ".xlsx");
                         $('#labeldownloadxl').addClass("report-disable");
                         $( "#labeldownloadxl" ).off();
+                        $( "#labeldownloadxl" ).attr("title",var_reportxcel);
                     });
                     $(".intro2").prev().prev('#labeldownload').click(function() {
                         recenter = 1;
@@ -501,6 +502,8 @@ $('.restrictreport').show();
                             $('.intro4').addClass("displaynone");
                             $('#labeldownload').addClass("report-disable");
                             $( "#labeldownload" ).off();
+                            $( "#labeldownload" ).attr("title",var_reportpdf);
+                            
                         }
 
                     }, margins);

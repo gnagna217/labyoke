@@ -87,6 +87,7 @@ $(document).ready(function() {
                 }), var_fileShares + ".xlsx");
                 $('#labeldownloadxl').addClass("report-disable");
                 $( "#labeldownloadxl" ).off();
+                $( "#labeldownloadxl" ).attr("title",var_reportxcel);
             });
 
             $(".intro2").prev().prev('#labeldownload').click(function() {
@@ -157,6 +158,7 @@ $(document).ready(function() {
                             pdf2.save(var_fileShares + ".pdf");
                             $('#labeldownload').addClass("report-disable");
                             $( "#labeldownload" ).off();
+                            $( "#labeldownload" ).attr("title",var_reportpdf);
                         }
 
                     }, margins);

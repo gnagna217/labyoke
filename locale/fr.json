@@ -612,5 +612,9 @@
  
     "notification.body1": "Vous avez ", 
     "notification.body2": " nouveau partage(s) en attente.",
-    "notification.title": "Salut "
+    "notification.title": "Salut ",
+
+    "report.pdf.downloaded": "Le fichier PDF a déjà été téléchargé. Veuillez vérifier le dossier de téléchargement de votre appareil.",
+    "report.xcel.downloaded": "Le fichier Excel a déjà été téléchargé. Veuillez vérifier le dossier de téléchargement de votre appareil."
+
 }
