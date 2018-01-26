@@ -561,7 +561,7 @@ $('.restrictreport').show();
     if ($('#reportMoney').is(':visible')) {
         $('.labelexpand').addClass("highlightlabel");
     }
-
+*/
 
 });
 
