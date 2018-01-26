@@ -122,6 +122,8 @@ $(document).ready(function() {
                             ////pdf.output('dataurlnewwindow');
                         } else {
                             pdf2.save(var_fileMoney + ".pdf");
+                            $('#labeldownload').addClass("report-disable");
+                            $( "#labeldownload" ).off();
                         }
                     }, margins);
             });

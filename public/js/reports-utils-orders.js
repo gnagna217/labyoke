@@ -147,6 +147,8 @@ $(document).ready(function() {
                             ////pdf2.output('dataurlnewwindow');
                         } else {
                             pdf2.save(var_fileOrders + ".pdf");
+                            $('#labeldownload').addClass("report-disable");
+                            $( "#labeldownload" ).off();
                         }
 
                     }, margins);
