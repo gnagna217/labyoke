@@ -613,8 +613,8 @@
     "notification.body2": " new share(s) awaiting.",
     "notification.title": "Hello ",
 
-    "report.pdf.downloaded": "The PDF file has been downloaded already. Please check the default folder on your device.",
-    "report.xcel.downloaded": "The Excel file has been downloaded already. Please check the default folder on your device.",
+    "report.pdf.downloaded": "The PDF file has already been downloaded. Please check the default folder on your device.",
+    "report.xcel.downloaded": "The Excel file has already been downloaded. Please check the default folder on your device.",
 
     "key.title": ""
 
