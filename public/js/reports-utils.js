@@ -36,6 +36,22 @@ if (recenter == 0) {
             if (wi > 440 && recenter == 0) {
                 $(".reportlabels2").center();
             }
+
+        if (!$('#reportMoney').is(':visible') && !$('#reportInsuff').is(':visible') && !$('#reportOrders').is(':visible') && !$('#reportShares').is(':visible') ) {
+            console.log("report visible");
+
+            if ($(window).width() > 701) {
+               $(".labelexpandmood").css("top", "-44px");
+            } else {
+                $(".labelexpandmood").css("top", "0px");
+            }
+        } else{
+            console.log("report forms visible");
+            if ($(window).width() > 701 && $(window).width() < 900) {
+               $(".labelexpandmood").css("top", "0px");
+            }
+            
+        }
         });
 
     });
