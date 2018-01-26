@@ -3091,6 +3091,9 @@ totalshares = t[0].counting;
     });
 
     router.get('/admin/login', function(req, res) {
+        if(req.cookies.i18n == null || req.cookies.i18n == undefined){
+            req.cookies.i18n = "en";
+        }
         console.log("login req.session.user: " + req.session.user);
         console.log("login req.session.usersuperadmin: " + req.session.usersuperadmin);
         if (req.session.usersuperadmin) {
@@ -3100,7 +3103,7 @@ totalshares = t[0].counting;
             labyokerLabs.getlabs(function(error, labs) {
                 req.session.labs = labs;
                 console.log("loggin in labs: " + labs);
-                res.render('admin/login', {currente:req.session.email,currentl:req.session.lab,loggedlabyoker:req.session.user,ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, title: 'Login',isLoggedInAdmin: req.session.admin});
+                res.render('admin/login', {i18n:res,currente:req.session.email,currentl:req.session.lab,loggedlabyoker:req.session.user,ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, title: 'Login',isLoggedInAdmin: req.session.admin});
                 req.session.messages = null;
             });
 

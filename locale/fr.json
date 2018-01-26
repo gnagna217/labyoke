@@ -615,6 +615,8 @@
     "notification.title": "Salut ",
 
     "report.pdf.downloaded": "Le fichier PDF a déjà été téléchargé. Veuillez vérifier le dossier de téléchargement de votre appareil.",
-    "report.xcel.downloaded": "Le fichier Excel a déjà été téléchargé. Veuillez vérifier le dossier de téléchargement de votre appareil."
+    "report.xcel.downloaded": "Le fichier Excel a déjà été téléchargé. Veuillez vérifier le dossier de téléchargement de votre appareil.",
+
+    "sysadmin.hello": "Salut les Sys Admins."
 
 }

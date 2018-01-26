@@ -616,6 +616,8 @@
     "report.pdf.downloaded": "The PDF file has already been downloaded. Please check the default folder on your device.",
     "report.xcel.downloaded": "The Excel file has already been downloaded. Please check the default folder on your device.",
 
+    "sysadmin.hello": "Hello Sys Admins.",
+    
     "key.title": ""
 
 
