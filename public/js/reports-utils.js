@@ -69,6 +69,8 @@ $("#reportDateTo").click(function() {
 
             if ($(window).width() > 701) {
                $(".labelexpandmood").css("top", "-44px");
+            } else {
+                $(".labelexpandmood").css("top", "0px");
             }
         } else{
             console.log("report forms visible");
