@@ -9,6 +9,11 @@
   -webkit-font-smoothing: antialiased;
 }
 
+.report-disable{
+    color: #3d9dcb;
+    background: 0 0;
+    text-shadow: none;
+}
 .font-14{
   font-size: 14pt !important;
 }
