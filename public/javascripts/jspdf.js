@@ -738,7 +738,8 @@ var jsPDF = (function(global) {
 			objectNumber = 2;
 			content = [];
 			offsets = [];
-
+			// allow for the download to be called multiple times
+			objectNumber = 2
 			// putHeader()
 			out('%PDF-' + pdfVersion);
 

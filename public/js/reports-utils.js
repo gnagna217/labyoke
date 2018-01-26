@@ -500,9 +500,6 @@ $('.restrictreport').show();
                         }
 
                     }, margins);
-
-
-
                     });
                 } else {
                     console.log("dataintro is empty");
