@@ -549,6 +549,7 @@ $('.restrictreport').show();
 
         if ($('#reportShares').is(':visible')) {
         $('.labelexpandadd').addClass("highlightlabel");
+        console.log("report SHARES HIGHLIGHTED");
     }
     if ($('#reportInsuff').is(':visible')) {
         console.log("highlight insuff");
