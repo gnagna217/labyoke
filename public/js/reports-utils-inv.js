@@ -84,7 +84,9 @@ $(document).ready(function() {
                 });
                 saveAs(new Blob([s2ab(wbout)], {
                     type: "application/octet-stream"
-                }), var_fileShares + ".xlsx")
+                }), var_fileShares + ".xlsx");
+                $('#labeldownloadxl').addClass("report-disable");
+                $( "#labeldownloadxl" ).off();
             });
 
             $(".intro2").prev().prev('#labeldownload').click(function() {

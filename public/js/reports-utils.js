@@ -441,7 +441,9 @@ $('.restrictreport').show();
                         });
                         saveAs(new Blob([s2ab(wbout)], {
                             type: "application/octet-stream"
-                        }), filetext + ".xlsx")
+                        }), filetext + ".xlsx");
+                        $('#labeldownloadxl').addClass("report-disable");
+                        $( "#labeldownloadxl" ).off();
                     });
                     $(".intro2").prev().prev('#labeldownload').click(function() {
                         recenter = 1;
