@@ -60,7 +60,7 @@ $(document).ready(function() {
         var dataorders = var_dataOrders;
 
         if (dataorders != null && dataorders != "") {
-            $(".intro2").before("<label for='togglerules' id='labeldownload'  class='labeldownload animated fadeInUp' data-toggle='tooltip' title='" + var_reports_download_pdf + "'><span class='fa fa-download'></span><span class='fa fa-check displaynone check-download-report checkpdf'></span></label><label for='togglerules' id='labeldownloadxl'  class='labeldownload animated fadeInUp labeldownloadxl' data-toggle='tooltip' title='" + var_reports_download_excel + "'><span class='fa fa-database'></span><span class='fa fa-check displaynone check-download-report checkxcel'></span></label>");
+            $(".intro2").before("<label for='togglerules' id='labeldownload'  class='labeldownload animated fadeInUp' data-toggle='tooltip' title='" + var_reports_download_pdf + "'><span class='fa fa-download'></span><span class='fa fa-check displaynone-impt check-download-report checkpdf'></span></label><label for='togglerules' id='labeldownloadxl'  class='labeldownload animated fadeInUp labeldownloadxl' data-toggle='tooltip' title='" + var_reports_download_excel + "'><span class='fa fa-database'></span><span class='fa fa-check displaynone-impt check-download-report checkxcel'></span></label>");
 
 
 
