@@ -68,7 +68,7 @@ $("#reportDateTo").click(function() {
             console.log("report visible");
 
             if ($(window).width() > 900) {
-               // $(".labelexpandmood").css("top", "-44px");
+               $(".labelexpandmood").css("top", "-44px");
             }
         } else{
         	$(".labelexpandmood").css("top", "0px");
