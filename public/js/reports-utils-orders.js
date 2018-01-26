@@ -101,8 +101,8 @@ $(document).ready(function() {
                 margins = {
                     top: 30,
                     bottom: 30,
-                    left: 40,
-                    right: 40,
+                    left: 20,
+                    right: 20,
                     width: 622
                 };
 
