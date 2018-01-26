@@ -67,11 +67,15 @@ $("#reportDateTo").click(function() {
 	    if (!$('#reportMoney').is(':visible') || !$('#reportInsuff').is(':visible') || !$('#reportOrders').is(':visible') || !$('#reportShares').is(':visible') ) {
             console.log("report visible");
 
-            if ($(window).width() > 900) {
+            //if ($(window).width() < 900) {
                //$(".labelexpandmood").css("top", "-44px");
-            }
+            //}
         } else{
-        	$(".labelexpandmood").css("top", "0px");
+            console.log("report forms visible");
+            if ($(window).width() > 701 && $(window).width() < 900) {
+               $(".labelexpandmood").css("top", "0px");
+            }
+        	
         }
 
 	$( ".adddatepicker" ).datepicker({
