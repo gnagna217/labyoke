@@ -708,6 +708,20 @@ window.onload = function() {
     if ($('.alert-inv').is(':visible')) {
         $('.labelexpandadd').addClass("highlightlabel");
     }
+
+    if ($('#reportShares').is(':visible')) {
+        $('.labelexpandadd').addClass("highlightlabel");
+    }
+    if ($('#reportInsuff').is(':visible')) {
+        console.log("highlight insuff");
+        $('.labelexpandrules').addClass("highlightlabel");
+    }
+    if ($('#reportOrders').is(':visible')) {
+        $('.labelexpandedit').addClass("highlightlabel");
+    }
+    if ($('#reportMoney').is(':visible')) {
+        $('.labelexpand').addClass("highlightlabel");
+    }
     $(".restrictreport").removeClass("displaynone");
 
 };
