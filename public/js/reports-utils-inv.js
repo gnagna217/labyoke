@@ -1,7 +1,7 @@
 var h = $(window).height() - 125;
 $(".marginbottom").css("min-height", h);
 
-
+$('.labelexpandadd').addClass("highlightlabel");
 
 
 recenter = 1;
