@@ -9,6 +9,12 @@
   -webkit-font-smoothing: antialiased;
 }
 
+.check-download-report{
+    font-size: 24pt;
+    top: -20px;
+    position: relative;
+    color: #ad9876 !important;
+}
 .report-disable{
     color: #3d9dcb !important;
     background: 0 0 !important;

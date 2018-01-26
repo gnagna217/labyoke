@@ -58,7 +58,7 @@ $(document).ready(function() {
         var datashares = var_dataShares;
 
         if (datashares != null && datashares != "") {
-            $(".intro2").before("<label for='togglerules' id='labeldownload' class='labeldownload animated fadeInUp' data-toggle='tooltip' title='" + var_reports_download_pdf + "'><span class='fa fa-download'></span></label><label for='togglerules' id='labeldownloadxl'  class='labeldownload animated fadeInUp labeldownloadxl' data-toggle='tooltip' title='" + var_reports_download_excel + "'><span class='fa fa-database'></span></label>");
+            $(".intro2").before("<label for='togglerules' id='labeldownload' class='labeldownload animated fadeInUp' data-toggle='tooltip' title='" + var_reports_download_pdf + "'><span class='fa fa-download'></span><span class='fa fa-check displaynone check-download-report checkpdf'></span></label><label for='togglerules' id='labeldownloadxl'  class='labeldownload animated fadeInUp labeldownloadxl' data-toggle='tooltip' title='" + var_reports_download_excel + "'><span class='fa fa-database'></span><span class='fa fa-check displaynone check-download-report checkxcel'></span></label>");
 
 
 
@@ -88,6 +88,7 @@ $(document).ready(function() {
                 $('#labeldownloadxl').addClass("report-disable");
                 $( "#labeldownloadxl" ).off();
                 $( "#labeldownloadxl" ).attr("title",var_reportxcel);
+                $('.checkxcel').removeClass("displaynone");
             });
 
             $(".intro2").prev().prev('#labeldownload').click(function() {
@@ -159,6 +160,7 @@ $(document).ready(function() {
                             $('#labeldownload').addClass("report-disable");
                             $( "#labeldownload" ).off();
                             $( "#labeldownload" ).attr("title",var_reportpdf);
+                            $('.checkpdf').removeClass("displaynone");
                         }
 
                     }, margins);
