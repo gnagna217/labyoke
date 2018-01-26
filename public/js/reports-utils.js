@@ -47,8 +47,8 @@ if (recenter == 0) {
             }
         } else{
             console.log("report forms visible");
-            if ($(window).width() > 701 && $(window).width() < 900) {
-               $(".labelexpandmood").css("top", "0px");
+            if ($(window).width() < 900 && $(window).width() > 701) {
+               $(".labelexpandmood").css("top", "-44px");
             }
             
         }
