@@ -49,6 +49,8 @@ if (recenter == 0) {
             console.log("report forms visible");
             if ($(window).width() < 900 && $(window).width() > 701) {
                $(".labelexpandmood").css("top", "-44px");
+            } else {
+                $(".labelexpandmood").css("top", "0px");
             }
             
         }
