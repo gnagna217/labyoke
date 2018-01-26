@@ -70,8 +70,9 @@ $("#reportDateTo").click(function() {
             if ($(window).width() > 900) {
                 $(".labelexpandmood").css("top", "-44px");
             }
-        } else{
+         else{
         	$(".labelexpandmood").css("top", "0px");
+        }
         }
 
 	$( ".adddatepicker" ).datepicker({
