@@ -9,6 +9,11 @@
   -webkit-font-smoothing: antialiased;
 }
 
+.reportMoneys{
+  width: 95%;
+margin-top: 25px !important;
+}
+
 .check-download-report{
     font-size: 17pt !important;
     top: -95px;
