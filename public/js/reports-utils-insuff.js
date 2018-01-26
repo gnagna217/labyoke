@@ -2,6 +2,7 @@ var h = $(window).height() - 125;
 $(".marginbottom").css("min-height", h);
 
 $('.labelexpandrules').addClass("highlightlabel");
+$(".labelexpandmood").css("top", "0px");
 
 recenter = 1;
 var ob = var_resultsInsuff;
