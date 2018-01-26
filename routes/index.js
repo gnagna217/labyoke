@@ -3091,6 +3091,7 @@ totalshares = t[0].counting;
     });
 
     router.get('/admin/login', function(req, res) {
+        console.log("sysdamin cookies: " + req.cookies.i18n);
         if(req.cookies.i18n == null || req.cookies.i18n == undefined){
             req.cookies.i18n = "en";
         }
