@@ -8,9 +8,9 @@ block content
                 img(src="/images/labadmin.png", alt="The Yoke",  title="Yoke", class="yokelogo")
              h1(class="font-30")!= i18n.__("sysadmin.hello")
              - if(loggedlabyoker != null && loggedlabyoker != "")
-                p(class="adminlogin-desc")!="Welcome to LabYoke Admin, <span class='font-15'><b>" + loggedlabyoker + "</b></span>.<br/> You are still logged into <a href='/search'>Labyoke</a>. Unfortunately you do not have sufficient permissions to access the System Admin pages. If you have a super admin account please log in below or reach out to your administrator for access."
+                p(class="adminlogin-desc")!=i18n.__("sysadmin.desc.one") + "<span class='font-15'><b>" + loggedlabyoker + "</b></span>." + i18n.__("sysadmin.desc.two")
              - else
-                p(class="adminlogin-desc")="Welcome to LabYoke Admin. You are one step away from managing useful entities!"
+                p(class="adminlogin-desc")!= i18n.__("sysadmin.desc")
 
          div(id="ctl00_Div2" class="frontdiv results3")
            div
@@ -24,16 +24,16 @@ block content
                     input(name="pass" type="password" id="pass" class="form-control form-control0 placeholderColor" placeholder="Password")
                     span(class="fa fa-key admin-login-key")
                 div(class="buttons")
-                    button.btn.btn-success.btn-lg.btn-block.shadow.resizebutton(type='submit') Get in
+                    button.btn.btn-success.btn-lg.btn-block.shadow.resizebutton(type='submit')!= i18n.__("sysadmin.enter")
             div(class="margintop-10")
                 span(class="floatleft")
                     - if(loggedlabyoker != null && loggedlabyoker != "")
-                        a(href="https://team-labyoke.herokuapp.com/", class="z-index-10")="Return to Labyoke"
+                        a(href="https://team-labyoke.herokuapp.com/", class="z-index-10")= i18n.__("sysadmin.return")
                     - else
-                        a(href="https://team-labyoke.herokuapp.com/", class="z-index-10")="Labyoke"
+                        a(href="https://team-labyoke.herokuapp.com/", class="z-index-10")= i18n.__("sysadmin.labyoke")
                 span(class="float-right")
-                    a(href="/forgot", class="z-index-10")="Forgot password"
+                    a(href="/forgot", class="z-index-10")=i18n.__("sysadmin.forgotpassword")
     div(class="help")
-       a(href="/help" title="Help")
-        img(src="/images/bouee3.png", alt="Help", title="Help", class="helplogin")
+       a(href="/help" title=i18n.__("sysadmin.help"))
+        img(src="/images/bouee3.png", alt="Help", title=i18n.__("sysadmin.help"), class="helplogin")
         script(type="text/javascript" src="/js/admin-login-utils.js")

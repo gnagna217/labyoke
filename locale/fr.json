@@ -617,6 +617,14 @@
     "report.pdf.downloaded": "Le fichier PDF a déjà été téléchargé. Veuillez vérifier le dossier de téléchargement de votre appareil.",
     "report.xcel.downloaded": "Le fichier Excel a déjà été téléchargé. Veuillez vérifier le dossier de téléchargement de votre appareil.",
 
-    "sysadmin.hello": "Salut les Sys Admins."
+    "sysadmin.hello": "Salut les Sys Admins.",
+    "sysadmin.desc.one": "Bienvenu(e) sur LabYoke Admin, ",
+    "sysadmin.desc.two": "<br/> Vous êtes toujours connecté sur <a href='/search'>Labyoke</a>. Malheureusement vous n'avez pas les permissions requises pour vous connecter directement sur la console Système Admin. Si vous avez un autre compte superadmin, veuillez l'utilisez ci-dessous ou contactez votre administrateur.",
+    "sysadmin.desc": "Bienvenu(e) sur LabYoke Admin. Vous êtes à un click de gérer plusieurs entités!",
+    "sysadmin.enter": "Entrez",
+    "sysadmin.return": "Retournez sur Labyoke",
+    "sysadmin.labyoke": "Labyoke",
+    "sysadmin.forgotpassword": "Mot de passe oublié",
+    "sysadmin.help": "Aide"
 
 }

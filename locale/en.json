@@ -617,7 +617,16 @@
     "report.xcel.downloaded": "The Excel file has already been downloaded. Please check the default folder on your device.",
 
     "sysadmin.hello": "Hello Sys Admins.",
-    
+    "sysadmin.desc.one": "Welcome to LabYoke Admin, ",
+    "sysadmin.desc.two": "<br/> You are still logged into <a href='/search'>Labyoke</a>. Unfortunately you do not have sufficient permissions to access the System Admin pages. If you have a super admin account please log in below or reach out to your administrator for access.",
+    "sysadmin.desc": "Welcome to LabYoke Admin. You are one step away from managing useful entities!",
+    "sysadmin.enter": "Get in",
+    "sysadmin.return": "Return to Labyoke",
+    "sysadmin.labyoke": "Labyoke",
+    "sysadmin.forgotpassword": "Forgot password",
+    "sysadmin.help": "Help",
+
+
     "key.title": ""
 
 
