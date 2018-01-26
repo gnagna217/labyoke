@@ -10,9 +10,9 @@
 }
 
 .report-disable{
-    color: #3d9dcb;
-    background: 0 0;
-    text-shadow: none;
+    color: #3d9dcb !important;
+    background: 0 0 !important;
+    text-shadow: none !important;
 }
 .font-14{
   font-size: 14pt !important;
