@@ -547,7 +547,7 @@ $('.restrictreport').show();
         });
     });
 
-        if ($('#reportShares').is(':visible')) {
+/*    if ($('#reportShares').is(':visible')) {
         $('.labelexpandadd').addClass("highlightlabel");
         console.log("report SHARES HIGHLIGHTED");
     }
@@ -561,7 +561,7 @@ $('.restrictreport').show();
     if ($('#reportMoney').is(':visible')) {
         $('.labelexpand').addClass("highlightlabel");
     }
-
+*/
 
 });
 
