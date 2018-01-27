@@ -632,7 +632,7 @@ if(!$(this).hasClass("highlightlabel")){
         $('.labelexpandrules').addClass("highlightlabel");
         $(window).scrollTop($('#reportInsuff').offset().top - 100).scrollLeft($('#reportInsuff').offset().left);
     }
-    iif (var_messageShares != "") {
+    if (var_messageShares != "") {
         $('.labelexpandadd').addClass("highlightlabel");
         $(window).scrollTop($('#reportShares').offset().top - 100).scrollLeft($('#reportShares').offset().left);
     }
