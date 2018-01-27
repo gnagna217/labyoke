@@ -619,19 +619,25 @@ if(!$(this).hasClass("highlightlabel")){
     }
 */
 
-    if ($('.alert-shares').is(':visible')) {
+    if (var_messageMoney != "") {
         $('.labelexpand').addClass("highlightlabel");
+        $(window).scrollTop($('#reportMoney').offset().top - 100).scrollLeft($('#reportMoney').offset().left);
     }
-    if ($('.alert-orders').is(':visible')) {
+   if (var_messageOrders != "") {
         console.log("highlight orders");
         $('.labelexpandedit').addClass("highlightlabel");
+         $(window).scrollTop($('#reportOrders').offset().top - 100).scrollLeft($('#reportOrders').offset().left);
     }
-    if ($('.alert-insuff').is(':visible')) {
+    if (var_messageInsuff != "") {
         $('.labelexpandrules').addClass("highlightlabel");
+        $(window).scrollTop($('#reportInsuff').offset().top - 100).scrollLeft($('#reportInsuff').offset().left);
     }
-    if ($('.alert-inv').is(':visible')) {
+    iif (var_messageShares != "") {
         $('.labelexpandadd').addClass("highlightlabel");
+        $(window).scrollTop($('#reportShares').offset().top - 100).scrollLeft($('#reportShares').offset().left);
     }
+
+    console.log("mekir");
 
 });
 

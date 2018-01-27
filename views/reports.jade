@@ -121,7 +121,7 @@ block content
 								script(type="text/javascript" src="/javascripts/FileSaver.js")
 								script(type="text/javascript" src="/javascripts/savexl.js")
 								script.
-									var var_resultsMoney = "#{resultsMoney}", var_reports_download_pdf = "#{i18n.__('reports.download.pdf')}",var_reports_download_excel = "#{i18n.__('reports.download.excel')}", var_dataMoney = '!{dataMoney}', var_fileMoney = "#{file_money}";
+									var var_resultsMoney = "#{resultsMoney}", var_reports_download_pdf = "#{i18n.__('reports.download.pdf')}",var_reports_download_excel = "#{i18n.__('reports.download.excel')}", var_dataMoney = '!{dataMoney}', var_fileMoney = "#{file_money}",var_message = "#{addMessageMoney}"; 
 								script(type="text/javascript" src="/js/reports-utils-money.js")
 								- resultsMoney = ""
 
@@ -177,7 +177,7 @@ block content
 								script(type="text/javascript" src="/javascripts/FileSaver.js")
 								script(type="text/javascript" src="/javascripts/savexl.js")
 								script.
-									var var_resultsOrders =  "#{resultsOrders}", var_dataOrders = '!{dataOrders}', var_reports_download_pdf = "#{i18n.__("reports.download.pdf")}", var_reports_download_excel = "#{i18n.__("reports.download.excel")}",var_fileOrders = "#{file_orders}"; 
+									var var_resultsOrders =  "#{resultsOrders}", var_dataOrders = '!{dataOrders}', var_reports_download_pdf = "#{i18n.__("reports.download.pdf")}", var_reports_download_excel = "#{i18n.__("reports.download.excel")}",var_fileOrders = "#{file_orders}" ,var_message = "#{addMessageOrders}"; 
 								script(type="text/javascript" src="/js/reports-utils-orders.js")
 								- resultsOrders = ""
 				div(class="reportSharess results2 resultsshadow reports-container displaynone", id="reportShares")
@@ -222,7 +222,7 @@ block content
 								script(type="text/javascript" src="/javascripts/FileSaver.js")
 								script(type="text/javascript" src="/javascripts/savexl.js")
 								script.
-									var var_resultsShares = "#{resultsShares}", var_dataShares = '!{dataShares}', var_reports_download_pdf = "#{i18n.__("reports.download.pdf")}", var_reports_download_excel= "#{i18n.__("reports.download.excel")}", var_fileShares = "#{file_shares}";
+									var var_resultsShares = "#{resultsShares}", var_dataShares = '!{dataShares}', var_reports_download_pdf = "#{i18n.__("reports.download.pdf")}", var_reports_download_excel= "#{i18n.__("reports.download.excel")}", var_fileShares = "#{file_shares}",var_message = "#{addMessageShares}"; 
 								script(type="text/javascript" src="/js/reports-utils-inv.js")
 								- resultsShares = ""
 
@@ -274,7 +274,7 @@ block content
 								script(type="text/javascript" src="/javascripts/FileSaver.js")
 								script(type="text/javascript" src="/javascripts/savexl.js")
 								script.
-									var var_resultsInsuff = "#{resultsInsuff}", var_reports_download_pdf = "#{i18n.__('reports.download.pdf')}", var_reports_download_excel = "#{i18n.__('reports.download.excel')}", var_dataInsuff = '!{dataInsuff}', var_fileinsuff = "#{file_insuff}";
+									var var_resultsInsuff = "#{resultsInsuff}", var_reports_download_pdf = "#{i18n.__('reports.download.pdf')}", var_reports_download_excel = "#{i18n.__('reports.download.excel')}", var_dataInsuff = '!{dataInsuff}', var_fileinsuff = "#{file_insuff}",var_message = "#{addMessageInsuff}"; 
 								script(type="text/javascript" src="/js/reports-utils-insuff.js")
 								- resultsInsuff = ""
 		div(class="threepointssep desktabonly3 reports-3-sep")
