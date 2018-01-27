@@ -37,11 +37,12 @@ $(document).ready(function() {
     });
 
     function hasTouch() {
-        return 'ontouchstart' in document.documentElement ||
-            navigator.maxTouchPoints > 0 ||
-            navigator.msMaxTouchPoints > 0;
+        return 'ontouchstart' in document.documentElement;
+        // ||
+          //  navigator.maxTouchPoints > 0 ||
+            //navigator.msMaxTouchPoints > 0;
     }
-    if (hasTouch()) {
+    if (!hasTouch()) {
         var query = $('#bot');
         var isVisible = query.is(':visible');
         if (isVisible === true) {
