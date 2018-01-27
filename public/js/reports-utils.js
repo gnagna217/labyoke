@@ -619,6 +619,20 @@ if(!$(this).hasClass("highlightlabel")){
     }
 */
 
+    if ($('.alert-shares').is(':visible')) {
+        $('.labelexpand').addClass("highlightlabel");
+    }
+    if ($('.alert-orders').is(':visible')) {
+        console.log("highlight orders");
+        $('.labelexpandedit').addClass("highlightlabel");
+    }
+    if ($('.alert-insuff').is(':visible')) {
+        $('.labelexpandrules').addClass("highlightlabel");
+    }
+    if ($('.alert-inv').is(':visible')) {
+        $('.labelexpandadd').addClass("highlightlabel");
+    }
+
 });
 
 
@@ -766,19 +780,7 @@ window.onload = function() {
             $(".labelexpandmood").css("top", "0px");
         }
     }
-    if ($('.alert-shares').is(':visible')) {
-        $('.labelexpand').addClass("highlightlabel");
-    }
-    if ($('.alert-orders').is(':visible')) {
-        console.log("highlight orders");
-        $('.labelexpandedit').addClass("highlightlabel");
-    }
-    if ($('.alert-insuff').is(':visible')) {
-        $('.labelexpandrules').addClass("highlightlabel");
-    }
-    if ($('.alert-inv').is(':visible')) {
-        $('.labelexpandadd').addClass("highlightlabel");
-    }
+
 
 
     $(".restrictreport").removeClass("displaynone");
