@@ -36,13 +36,13 @@ $(document).ready(function() {
         }, scroll_top_duration);
     });
 
-    function hasTouch() {
-        return 'ontouchstart' in document.documentElement;
+    //function hasTouch() {
+      //  return 'ontouchstart' in document.documentElement;
         // ||
           //  navigator.maxTouchPoints > 0 ||
             //navigator.msMaxTouchPoints > 0;
-    }
-    if (!hasTouch()) {
+    //}
+    //if (!hasTouch()) {
         var query = $('#bot');
         var isVisible = query.is(':visible');
         if (isVisible === true) {
@@ -63,7 +63,7 @@ $(document).ready(function() {
             }, document.getElementById("bot"));
             $("#bot").hide();
         }
-    }
+   // }
 
 
     //$('[data-toggle="tooltip"]').tooltip({placement: "bottom"});
