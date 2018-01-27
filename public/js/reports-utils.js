@@ -626,7 +626,7 @@ if(!$(this).hasClass("highlightlabel")){
    if (var_messageOrders != "") {
         console.log("highlight orders");
         $('.labelexpandedit').addClass("highlightlabel");
-         $(window).scrollTop($('#reportOrders').offset().top - 100).scrollLeft($('#reportOrders').offset().left);
+         $(window).scrollTop($('#reportOrders').offset().top).scrollLeft($('#reportOrders').offset().left);
     }
     if (var_messageInsuff != "") {
         $('.labelexpandrules').addClass("highlightlabel");
