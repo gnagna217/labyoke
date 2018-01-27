@@ -183,6 +183,12 @@ $('.restrictreport').show();
         //$("#reportMoney").toggleClass("animated fadeInUp");
 
         $(this).toggleClass("highlightlabel");
+if(!$(this).hasClass("highlightlabel")){
+    if ($(window).width() > 900) {
+                $(".labelexpandmood").css("top", "-44px");
+            }
+}
+
         //$('.containerreport').hide();
         $('.labelexpandedit').removeClass("highlightlabel");
         $('.labelexpandadd').removeClass("highlightlabel");
@@ -242,6 +248,13 @@ $('.restrictreport').show();
 
         //$("#reportOrders").toggleClass("animated fadeInUp");
         $(this).toggleClass("highlightlabel");
+
+        if(!$(this).hasClass("highlightlabel")){
+    if ($(window).width() > 900) {
+                $(".labelexpandmood").css("top", "-44px");
+            }
+}
+
         //$('.containerreport').hide();
         $('.labelexpand').removeClass("highlightlabel");
         $('.labelexpandadd').removeClass("highlightlabel");
@@ -297,6 +310,12 @@ $('.restrictreport').show();
         //$("#reportShares").toggleClass("animated fadeInUp");
 
         $(this).toggleClass("highlightlabel");
+        if(!$(this).hasClass("highlightlabel")){
+    if ($(window).width() > 900) {
+                $(".labelexpandmood").css("top", "-44px");
+            }
+}
+
         //$('.containerreport').hide();
 
         $('.labelexpandedit').removeClass("highlightlabel");
@@ -350,6 +369,12 @@ $('.restrictreport').show();
         }
 
         $(this).toggleClass("highlightlabel");
+        if(!$(this).hasClass("highlightlabel")){
+    if ($(window).width() > 900) {
+                $(".labelexpandmood").css("top", "-44px");
+            }
+}
+
         //$('.containerreport').hide();
         $('.labelexpandedit').removeClass("highlightlabel");
         $('.labelexpandadd').removeClass("highlightlabel");
@@ -393,6 +418,13 @@ $('.restrictreport').show();
         $('.intro2').hide();
         $('.labeldownload').hide();
         $(this).toggleClass("highlightlabel");
+
+        if(!$(this).hasClass("highlightlabel")){
+    if ($(window).width() > 900) {
+                $(".labelexpandmood").css("top", "-44px");
+            }
+}
+
         $('.labelexpandedit').removeClass("highlightlabel");
         $('.labelexpandadd').removeClass("highlightlabel");
         $('.labelexpand').removeClass("highlightlabel");
