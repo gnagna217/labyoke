@@ -166,6 +166,11 @@ $(document).ready(function() {
             $('.intro2').css("margin-left", "0px");
         } // end dataorders
     }
+    if ($('.alert-orders').is(':visible')) {
+        console.log("highlight orders");
+        $('.labelexpandedit').addClass("highlightlabel");
+    }
+    console.log("mekir");
 
 });
 
