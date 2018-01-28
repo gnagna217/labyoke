@@ -142,7 +142,7 @@
     "register.thanku": "Thanks for pre-registering",
     "register.thanku.desc1": "We have sent an email to your lab administrator to <span class='labColor'>complete</span><span> your registration. You will receive an email once your registration is confirmed.</span>",
     "register.thanku2": "Thanks for confirming this registration.",
-    "register.thanku2.desc1": "You may now start <a href='/search'>searching</a><span> or <a href='/share'>sharing</a></span><span> your own chemicals.</span>",
+    "register.thanku2.desc1": "You may now start <a href='/search'>searching</a><span> or <a href='/shares'>sharing</a></span><span> your own chemicals.</span>",
     "register.thanku3": "Registration Confirmation",
 
     "forgot.title": "We got You.",
@@ -414,7 +414,7 @@
     "index.login.time1.month": "this past {{ choosetime }}",
     "index.login.time1.year": "over time",
     "index.login.booster1": "<strong> Notification!</strong> You have <b>{{ orders }} new order(s)</b> pending completion.",
-    "index.login.booster2": "<strong> Notification!</strong> You have <b>{{ shares }} new share(s)</b> pending completion. <a href='/share'>Check it out</a> promptly and fulfill the request. Way to contribute to your lab's savings!",
+    "index.login.booster2": "<strong> Notification!</strong> You have <b>{{ shares }} new share(s)</b> pending completion. <a href='/shares'>Check it out</a> promptly and fulfill the request. Way to contribute to your lab's savings!",
     "index.login.cheer1": "Keep searching, ordering, and sharing!",
     "index.login.cheer2": "Amazing! You are a rock star!",
     "index.login.cheer3": "Incredible!",

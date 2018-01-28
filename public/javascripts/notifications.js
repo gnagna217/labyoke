@@ -59,7 +59,7 @@ function notify(body1, body2, title) {
             notification.onclick = function(event) {
               event.preventDefault(); // prevent the browser from focusing the Notification's tab
               console.log("clicked notify");
-              window.open('https://team-labyoke.herokuapp.com/share', '_self');
+              window.open('https://team-labyoke.herokuapp.com/shares', '_self');
             }
             document.cookie = "ntf=true ; is=" + ns;
             setCookie("is", ns);

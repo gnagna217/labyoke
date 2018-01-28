@@ -143,7 +143,7 @@
     "register.thanku": "Merci de vous être pré-inscris",
     "register.thanku.desc1": "Nous avons envoyé un email à votre lab administrateur pour <span class='labColor'>compléter</span> votre inscription. Vous recevrez un email dès que votre inscription est confirmée.",
     "register.thanku2": "Merci d'avoir confirmé cette inscription.",
-    "register.thanku2.desc1": "Vous pouvez maintenant effectuer une <a href='/search'>recherche</a><span> ou <a href='/share'>partager</a></span><span> vos produits chimiques et réactifs.</span>",
+    "register.thanku2.desc1": "Vous pouvez maintenant effectuer une <a href='/search'>recherche</a><span> ou <a href='/shares'>partager</a></span><span> vos produits chimiques et réactifs.</span>",
     "register.thanku3": "Confirmation Enregistrement",
 
     "forgot.title": "Pas de Soucis.",
@@ -414,7 +414,7 @@
     "index.login.time1.year" : "cette {{ choosetime }}",
     "index.login.time2" : "en plus",
     "index.login.booster1" : "<strong> Notification!</strong> Vous avez <b>{{ orders }} nouvelles commande(s)</b> en attente.",
-    "index.login.booster2" : "<strong> Notification!</strong> Vous avez <b>{{ shares }} nouveaux partage(s)</b> en attente. <a href='/share'>Vérifiez-le(s)</a> rapidement et répondez à la demande. Merci de contribuer aux économies de votre laboratoire!",
+    "index.login.booster2" : "<strong> Notification!</strong> Vous avez <b>{{ shares }} nouveaux partage(s)</b> en attente. <a href='/shares'>Vérifiez-le(s)</a> rapidement et répondez à la demande. Merci de contribuer aux économies de votre laboratoire!",
     "index.login.cheer1" : "Continuez à chercher, commander, et partager!",
     "index.login.cheer2" : "Incroyable! Vous êtes un(e) rock star!",
     "index.login.cheer3" : "Incroyable!",

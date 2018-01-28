@@ -148,7 +148,7 @@
 "register.thanku": "Tack för pre-registrering",
 "register.thanku.desc1": "Har vi överfört en email till din labbadministratör till <span class='labColor'> complete</span><span> din registrering. Du ska motta en email, när din registrering är confirmed.</span>",
 "register.thanku2": "Tack för att bekräfta denna registrering. ",
-"register.thanku2.desc1": "Kan du nu starta <ahref=/search'> searching</a><span> eller <ahref=/share'> sharing</a></span><span> din egen chemicals.</span>",
+"register.thanku2.desc1": "Kan du nu starta <ahref=/search'> searching</a><span> eller <ahref=/shares'> sharing</a></span><span> din egen chemicals.</span>",
 "register.thanku3": "Registreringsbekräftelse",
 
 
@@ -431,7 +431,7 @@
 "index.login.time1.month": "detta förbi {{choosetime}}",
 "index.login.time1.year": "med tiden",
 "index.login.booster1": "<strong>meddelande! </strong> har du ny order</b> oavgjord avslutning för <b> {{beställningar}}. ",
-"index.login.booster2": "<strong>meddelande! </strong> har du ny share</b> oavgjord avslutning för <b> {{aktier}}. <ahref=/share'>kontrollen fullgör den out</a> prompt och förfrågan. Väg att bidra till din labbs besparingar! ",
+"index.login.booster2": "<strong>meddelande! </strong> har du ny share</b> oavgjord avslutning för <b> {{aktier}}. <ahref=/shares'>kontrollen fullgör den out</a> prompt och förfrågan. Väg att bidra till din labbs besparingar! ",
 "index.login.cheer1": "Håll sökande, att beställa och att dela! ",
 "index.login.cheer2": "Förbluffa! Du är en vaggastjärna! ",
 "index.login.cheer3": "Oerhört! ",
