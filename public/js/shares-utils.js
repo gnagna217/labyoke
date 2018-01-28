@@ -114,7 +114,7 @@ if ( !$.fn.dataTable.isDataTable( '#rankTblreqshares' ) ) {
     $('#rankTblreqshares').DataTable({
         order: [],
         "columnDefs": [
-    { "orderable": false, "targets": 4 }
+    { "orderable": false, "targets": 6 }
   ],
         iDisplayLength: 5,
         aLengthMenu: [
@@ -151,6 +151,9 @@ if ( !$.fn.dataTable.isDataTable( '#rankTblreqshares' ) ) {
 if ( !$.fn.dataTable.isDataTable( '#rankTblshares' ) ) {
     $('#rankTblshares').DataTable({
         order: [],
+        "columnDefs": [
+    { "orderable": false, "targets": 3 }
+  ],
         iDisplayLength: 5,
         aLengthMenu: [
             [5, 10, 15, -1],
