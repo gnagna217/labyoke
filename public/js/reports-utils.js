@@ -621,20 +621,20 @@ if(!$(this).hasClass("highlightlabel")){
 
     if (var_messageMoney != "") {
         $('.labelexpand').addClass("highlightlabel");
-        $(window).scrollTop($('#reportMoney').offset().top - 100).scrollLeft($('#reportMoney').offset().left);
+        $(window).scrollTop($('.restrictreport').offset().top - 100).scrollLeft($('.restrictreport').offset().left);
     }
    if (var_messageOrders != "") {
         console.log("highlight orders");
         $('.labelexpandedit').addClass("highlightlabel");
-         $(window).scrollTop($('#reportOrders').offset().top).scrollLeft($('#reportOrders').offset().left);
+         $(window).scrollTop($('.restrictreport').offset().top).scrollLeft($('.restrictreport').offset().left);
     }
     if (var_messageInsuff != "") {
         $('.labelexpandrules').addClass("highlightlabel");
-        $(window).scrollTop($('#reportInsuff').offset().top - 100).scrollLeft($('#reportInsuff').offset().left);
+        $(window).scrollTop($('.restrictreport').offset().top - 100).scrollLeft($('.restrictreport').offset().left);
     }
     if (var_messageShares != "") {
         $('.labelexpandadd').addClass("highlightlabel");
-        $(window).scrollTop($('#reportShares').offset().top - 100).scrollLeft($('#reportShares').offset().left);
+        $(window).scrollTop($('.restrictreport').offset().top - 100).scrollLeft($('.restrictreport').offset().left);
     }
 
     console.log("mekir");
