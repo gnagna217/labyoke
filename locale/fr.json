@@ -317,7 +317,7 @@
 
     "shares.pop.title": "Partagez?",
     "shares.pop.subtitle": "<div id='actionorder' class='exit pop-subtitle')>OK</div><div class='exit' id='actioncancel'>Annuler</div>",
-    "shares.title": " Partager ",
+    "shares.title": " Partages ",
     "shares.non.title": "Vous ne partagez actuellement aucun réactif.",
     "shares.non.subtitle": "Veuillez contacter votre <a href='/account'>administrateur</a> pour réeapprovisioner votre inventaire.",
     "shares.subtitle1": "Fantastique.",
