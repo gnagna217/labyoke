@@ -5447,7 +5447,7 @@ width: 65px !important;font-weight: bold !important;
   margin-left: -3px;
 }
 .immediate-action{
-  color: #65c867; font-size: 15pt; padding-right: 7px; top: 4px; position: relative;
+  color: #65c867; font-size: 15pt !important; padding-right: 7px; top: 2px; position: relative;
 }
 @media (max-width: 900px) {
 .ui-datepicker{
