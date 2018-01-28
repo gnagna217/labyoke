@@ -41,6 +41,10 @@ $(document).ready(function() {
         order: [
             [6, "desc"]
         ],
+         "columnDefs": [
+    { "orderable": false, "targets": 7 },
+    { "orderable": false, "targets": 8 },
+  ],
         iDisplayLength: 6,
         aLengthMenu: [
             [6, 12, 18, -1],
@@ -86,6 +90,9 @@ $(document).ready(function() {
         order: [
             [1, "asc"]
         ],
+        "columnDefs": [
+    { "orderable": false, "targets": 6 }
+  ],
         iDisplayLength: 6,
         aLengthMenu: [
             [6, 12, 18, -1],
