@@ -621,20 +621,20 @@ if(!$(this).hasClass("highlightlabel")){
 
     if (var_messageMoney != "") {
         $('.labelexpand').addClass("highlightlabel");
-        $(window).scrollTop($('.restrictreport').offset().top - 100).scrollLeft($('.restrictreport').offset().left);
+        $(window).scrollTop($('.labelbuttons').offset().top - 100).scrollLeft($('.labelbuttons').offset().left);
     }
    if (var_messageOrders != "") {
         console.log("highlight orders");
         $('.labelexpandedit').addClass("highlightlabel");
-         $(window).scrollTop($('.restrictreport').offset().top).scrollLeft($('.restrictreport').offset().left);
+         $(window).scrollTop($('.labelbuttons').offset().top + 250).scrollLeft($('.labelbuttons').offset().left);
     }
     if (var_messageInsuff != "") {
         $('.labelexpandrules').addClass("highlightlabel");
-        $(window).scrollTop($('.restrictreport').offset().top - 100).scrollLeft($('.restrictreport').offset().left);
+        $(window).scrollTop($('.labelbuttons').offset().top - 100).scrollLeft($('.labelbuttons').offset().left);
     }
     if (var_messageShares != "") {
         $('.labelexpandadd').addClass("highlightlabel");
-        $(window).scrollTop($('.restrictreport').offset().top - 100).scrollLeft($('.restrictreport').offset().left);
+        $(window).scrollTop($('.labelbuttons').offset().top - 100).scrollLeft($('.labelbuttons').offset().left);
     }
 
     console.log("mekir");
