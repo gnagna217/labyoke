@@ -765,7 +765,7 @@ module.exports = function(router) {
     });
 });
 
-    router.post('/share/:doing', isLoggedIn, function(req, res) {
+    router.post('/shares/:doing', isLoggedIn, function(req, res) {
     	if(req.cookies.i18n == null || req.cookies.i18n == undefined){
 			req.cookies.i18n = "en";
 		}
@@ -869,7 +869,7 @@ module.exports = function(router) {
     });
 });
 
-    router.post('/share', isLoggedIn, function(req, res) {
+    router.post('/shares', isLoggedIn, function(req, res) {
     	if(req.cookies.i18n == null || req.cookies.i18n == undefined){
 			req.cookies.i18n = "en";
 		}
@@ -976,7 +976,7 @@ module.exports = function(router) {
 	});
 
 	router.get('/admin', function(req, res) {
-		res.redirect('/share');
+		res.redirect('/shares');
 	});
 
     router.get('/admins', isLoggedInAdmin, function(req, res) {
@@ -1443,11 +1443,11 @@ totalshares = t[0].counting;
 				if(results != null && results.length > 0){
 					//res.redirect('/share');
                     if(pos!=null && pos!=""){
-                        res.redirect('/share?pos=' + pos);
+                        res.redirect('/shares?pos=' + pos);
                     } else if(pos2!=null && pos2!=""){
-                        res.redirect('/share?pos2=' + pos2);
+                        res.redirect('/shares?pos2=' + pos2);
                     } else{
-                        res.redirect('/share');
+                        res.redirect('/shares');
                     }
 					//res.render('share', {ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, isLoggedInAdmin: req.session.admin, title:'Shares',loggedIn : true});
 					req.session.messages = null;
@@ -1906,7 +1906,7 @@ totalshares = t[0].counting;
 		req.session.messages = null;
 	});
 
-	router.get('/share/:doing', isLoggedIn, function(req, res) {
+	router.get('/shares/:doing', isLoggedIn, function(req, res) {
 		if(req.cookies.i18n == null || req.cookies.i18n == undefined){
 			req.cookies.i18n = "en";
 		}
@@ -1931,7 +1931,7 @@ totalshares = t[0].counting;
 		});
 	});
 
-	router.get('/share', isLoggedIn, function(req, res) {
+	router.get('/shares', isLoggedIn, function(req, res) {
         console.log("shares req.session.user0: " + req.session.user);
 		if(req.cookies.i18n == null || req.cookies.i18n == undefined){
 			req.cookies.i18n = "en";
@@ -2140,7 +2140,7 @@ totalshares = t[0].counting;
 	});
 
 	router.get('/cancelshare', function(req, res) {
-		res.redirect('/share');
+		res.redirect('/shares');
 	});
 
     router.get('/admincancelshare', function(req, res) {

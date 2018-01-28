@@ -319,7 +319,7 @@
 
     "shares.pop.title": "Sharing?",
     "shares.pop.subtitle": "<div id='actionorder' class='exit pop-subtitle')>OK</div><div class='exit' id='actioncancel'>Cancel</div>",
-    "shares.title": " Share ",
+    "shares.title": " Shares ",
     "shares.non.title": "You are currently not sharing any reagent.",
     "shares.non.subtitle": "Please contact your <a href='/account'>administrator</a> to replenish your LabYoke inventory.",
     "shares.subtitle1": "Fantastic.",

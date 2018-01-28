@@ -2813,10 +2813,10 @@ LabyokerRegister.prototype.register = function(callback) {
 					//		+ hash_register_id
 					//		+ "?lang=" + userlang + "</a>";
 					bodyadmin += "</span></p>";
-					bodyadmin += i18n.__({phrase: "index.register.body3", locale: adminlang}) + "<a href=\"https:\/\/team-labyoke.herokuapp.com\/share\"> " + i18n.__({phrase: "index.register.body6", locale: adminlang}) + "</a>" + i18n.__({phrase: "index.register.body4", locale: adminlang});
+					bodyadmin += i18n.__({phrase: "index.register.body3", locale: adminlang}) + "<a href=\"https:\/\/team-labyoke.herokuapp.com\/shares\"> " + i18n.__({phrase: "index.register.body6", locale: adminlang}) + "</a>" + i18n.__({phrase: "index.register.body4", locale: adminlang});
 					bodyadmin += "</p><b><i>" + i18n.__({phrase: "index.signature", locale: adminlang}) + "</i></b></div>";
 					bodyadmin += "</div>";
-					body += i18n.__({phrase: "index.register.body3", locale: userlang}) + "<a href=\"https:\/\/team-labyoke.herokuapp.com\/share\"> " + i18n.__({phrase: "index.register.body6", locale: userlang}) + "</a>" + i18n.__({phrase: "index.register.body4", locale: userlang});
+					body += i18n.__({phrase: "index.register.body3", locale: userlang}) + "<a href=\"https:\/\/team-labyoke.herokuapp.com\/shares\"> " + i18n.__({phrase: "index.register.body6", locale: userlang}) + "</a>" + i18n.__({phrase: "index.register.body4", locale: userlang});
 					body += "</p><b><i>" + i18n.__({phrase: "index.signature", locale: userlang}) + "</i></b></div>";
 					body += "</div>";
 					console.log("bodyadmin: " + bodyadmin);
@@ -2931,7 +2931,7 @@ Labyoker.prototype.requestChangePassword = function(callback) {
 					//body += "<p><span>You have <b><span style='color:red;'>1 day</span></b> to change your password. But don't worry you can always send us another " + "<a href=\"https:\/\/team-labyoke.herokuapp.com\/forgot\">" + "request" + "</a>" + " once this one has expired." + "</span> </p>";
 					body +=  i18n.__({phrase: "index.change.body2", locale: userlang}) + "<a href=\"https:\/\/team-labyoke.herokuapp.com\/forgot\">" + i18n.__({phrase: "index.change.body3", locale: userlang}) + "</a>" + i18n.__({phrase: "index.change.body4", locale: userlang}) + "</span> </p>";
 					//body += "<p>[PS: Have you " + "<a href=\"https:\/\/team-labyoke.herokuapp.com\/share\">" + "shared" + "</a>" + " some chemicals today?]";
-					body += i18n.__({phrase: "index.change.body5", locale: userlang}) + "<a href=\"https:\/\/team-labyoke.herokuapp.com\/share\">" + i18n.__({phrase: "index.change.body6", locale: userlang}) + "</a>" + i18n.__({phrase: "index.change.body7", locale: userlang});
+					body += i18n.__({phrase: "index.change.body5", locale: userlang}) + "<a href=\"https:\/\/team-labyoke.herokuapp.com\/shares\">" + i18n.__({phrase: "index.change.body6", locale: userlang}) + "</a>" + i18n.__({phrase: "index.change.body7", locale: userlang});
 					body += "</p><b><i>" + i18n.__({phrase: "index.signature", locale: userlang}) + "</i></b></div>";
 					body += "</div>";
 					console.log("body: " + body);
@@ -3016,7 +3016,7 @@ LabyokerConfirm.prototype.confirm = function(callback) {
 					body += "<p style=\"text-align:center\"><span style=''>";
 					body += i18n.__({phrase: "index.regconfirm.body", locale: userlang},{lab: userlab});
 					body += "</span></p>";
-					body += i18n.__({phrase: "index.register.body3", locale: userlang}) + "<a href=\"https:\/\/team-labyoke.herokuapp.com\/share\"> " + i18n.__({phrase: "index.register.body6", locale: userlang}) + "</a>" + i18n.__({phrase: "index.register.body4", locale: userlang});
+					body += i18n.__({phrase: "index.register.body3", locale: userlang}) + "<a href=\"https:\/\/team-labyoke.herokuapp.com\/shares\"> " + i18n.__({phrase: "index.register.body6", locale: userlang}) + "</a>" + i18n.__({phrase: "index.register.body4", locale: userlang});
 					body += "</p><b><i>" + i18n.__({phrase: "index.signature", locale: userlang}) + "</i></b></div>";
 					body += "</div>";
 					console.log("body: " + body);
