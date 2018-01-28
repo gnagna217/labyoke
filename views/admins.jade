@@ -234,7 +234,7 @@ block content
 												td(class="wrapped2") #{ob[prop].requestoremail}
 												td(class="wrapped2") #{ob[prop].email}
 												td #{d}
-												td(class="admin-cancel" title=canc)
+												td(class="admin-cancel textalign-center-all" title=canc)
 													form(action="/admincancelshare" method="post")
 														div(class="checkboxThree1" + showcancel)
 															input(type="checkbox" id=c name="cancel" value="cancel" class="cancel admin-fulfill" checked=(checkedstr===true ? "checked" : undefined))
@@ -249,7 +249,7 @@ block content
 														input(type="hidden" name="table" value=currentlabname.replace(" ","").toLowerCase() + "_orders")
 														input(type="hidden" name="adminType" value="laborders")
 														input(type="hidden" name="pos" value=prop)
-												td(class="admin-cancel "+point3 title=full)
+												td(class="admin-cancel textalign-center-all "+point3 title=full)
 													form(action="/fulfillshare" method="post")
 														
 														div(class="checkboxThree1" + showfulfill)
@@ -319,7 +319,7 @@ block content
 												td(class="wrapped2")  #{ob[prop].email}
 												td(class="wrapped2")  #{ob[prop].vendor}
 												td(class="wrapped2")  #{ob[prop].catalognumber}
-												td(class="admin-insuff " + point4,  title=canc)
+												td(class="admin-insuff textalign-center-all " + point4,  title=canc)
 													form(action="/admincancelshare" method="post")
 														div(class="checkboxThree1" + showfulfill)
 															input(type="checkbox" id=c name="cancel" value="cancel" class="cancel admin-fulfill" checked=(checkedstr===true ? "checked" : undefined))

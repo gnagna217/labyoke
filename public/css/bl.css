@@ -5016,6 +5016,9 @@ color:white !important;background-color:#3d9dcb !important;font-size:12px !impor
 .textalign-center{
   text-align: center !important;
 }
+.textalign-center-all{
+  text-align: center !important; margin: 0 auto;
+}
 .help-title{
    font-size: 20pt !important; font-weight: bold !important; text-align: center !important; margin: 0 auto !important; display: block !important;margin-left: -30px !important;
 }
