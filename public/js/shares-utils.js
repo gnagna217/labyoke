@@ -152,7 +152,7 @@ if ( !$.fn.dataTable.isDataTable( '#rankTblshares' ) ) {
     $('#rankTblshares').DataTable({
         order: [],
         "columnDefs": [
-    { "orderable": false, "targets": 3 }
+    { "orderable": false, "targets": 4 }
   ],
         iDisplayLength: 5,
         aLengthMenu: [
