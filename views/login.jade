@@ -60,6 +60,6 @@ block content
                                 span(class="test2 color-white")!="-|- "
                     script(type="text/javascript" src="/javascripts/worldcloud.js")
                     script.
-                        console.dir(j)
+                        console.dir(!{j})
                         WordCloud(document.getElementById('my_canvas'), { list: j } );
     span(class="desktabonly", id="checkdisplay")
