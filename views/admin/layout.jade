@@ -155,5 +155,8 @@ html(lang='en')
        a(href="#0" class="cd-top" title="go to top")
         span(class="fa fa-chevron-circle-up")
     :staticCache
-     script(type="text/javascript" src="/js/admin-layout-utils.js")
+    script(type="text/javascript" src="/js/admin-layout-utils.js")
+    script.
+      var var_currente = "#{currente}", var_currentl = "#{currentl}", var_body1 = "#{i18n.__("notification.body1")}", var_title = "#{i18n.__("notification.title")}", var_body2="#{i18n.__("notification.body2")}", var_labyoker="#{labyoker}";
+    script(type="text/javascript" src="/javascripts/notifications.js")
 
