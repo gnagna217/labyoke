@@ -4786,11 +4786,7 @@ a.mailto:link {
   display:none;z-index:1 !important;position: fixed !important;top: 25% !important;max-height:380px !important;
 }
 
-@media (max-width: 767px){
-  .account-slide-container{
-    display: none !important;
-  }
-}
+
 
 /* End account styles*/
 
@@ -5465,6 +5461,10 @@ width:68%;
 
 }
 
-
+@media (max-width: 767px){
+  .account-slide-container{
+    display: none !important;
+  }
+}
 
 /*end admins*/
