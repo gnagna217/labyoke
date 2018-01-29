@@ -5355,13 +5355,13 @@ width: 65px !important;font-weight: bold !important;
   top: 15px !important;
 }
 .admin-cancel{
-  width: 17px !important;padding-left: 0px !important;padding-right: 0px !important;
+  width: 17px !important;/*padding-left: 0px !important;*/padding-right: 0px !important;
 }
 .admin-fulfill{
   position:absolute !important;left: -9999px !important;
 }
 .admin-insuff{
-  width: 17px !important;display:block !important;padding-left: 0px !important;padding-right: 0px !important;
+  width: 17px !important;display:block !important;/*padding-left: 0px !important;*/padding-right: 0px !important;
 }
 .admin-slide{
   display:none;z-index:9 !important;position: fixed !important;top: 25% !important;max-height:380px !important;
