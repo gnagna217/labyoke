@@ -47,9 +47,18 @@ block content
                 p
                     -var ob = latestshares
                     - var i = 0
+                    - var j = []
+                    - var x = []
                     -for(var prop in ob.slice(0, 3))
                         - var n = ob[prop].agent
+                        - x.push(n)
+                        - x.push(prop)
+                        - x = []
+                        - j.push(x)
                             span(class="test login-color-slide")!= n + " "
                             - if(prop < 2)
                                 span(class="test2 color-white")!="-|- "
+                    script(type="text/javascript" src="/javascripts/worldcloud.js")
+                    script.
+                        WordCloud(document.getElementById('my_canvas'), { list: #{j} } );
     span(class="desktabonly", id="checkdisplay")

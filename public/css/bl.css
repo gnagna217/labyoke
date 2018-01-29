@@ -9,6 +9,11 @@
   -webkit-font-smoothing: antialiased;
 }
 
+.my_canvas{
+  width: 100%;
+  height: 25px;
+}
+
 .reportMoneys{
   /*width: 95%;*/
 margin-top: 25px !important;
