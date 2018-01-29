@@ -2915,11 +2915,11 @@ table.dataTable tbody tr.yokeBackColor.even{
 }
 table.dataTable thead .sorting_asc {
     background-image: url(/images/sort_asc.png);
-    padding-right: 10px !important;
+    padding-right: 20px !important;
 }
 table.dataTable thead .sorting {
     background-image: url(/images/sort_both.png);
-    padding-right: 10px !important;
+    padding-right: 20px !important;
 }
 .dataTables_wrapper .dataTables_paginate .paginate_button:hover {
     color: #3d9dcb !important;
