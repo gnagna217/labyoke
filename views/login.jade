@@ -47,8 +47,8 @@ block content
                 p
                     -var ob = latestshares
                     - var i = 0
-                    - var j = []
-                    - var x = []
+                    - var {"j": []}
+                    - var {"x": []}
                     -for(var prop in ob.slice(0, 3))
                         - var n = ob[prop].agent
                         - x.push("'" + n + "'")
