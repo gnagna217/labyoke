@@ -2031,8 +2031,10 @@ LabYokeAgents.prototype.reportAllSharesByCategory = function(callback) {
 LabyokerLab.prototype.getLabsInDept = function(callback) {
 	var results;
 	var lab = this.lab;
+	console.log("getLabsInDept LAB is: " + lab);
 	var query = client
 			.query("SELECT distinct labname FROM labs where department in (select department from labs where labname='"+lab+"')");
+	console.log("SELECT distinct labname FROM labs where department in (select department from labs where labname='"+lab+"')");
 	query.on("row", function(row, result) {
 		result.addRow(row);
 	});
