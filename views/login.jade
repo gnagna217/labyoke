@@ -55,6 +55,7 @@ block content
                                 span(class="test2 color-white")!="-|- "
                     script(type="text/javascript" src="/javascripts/worldcloud.js")
                     script.
+                        $(document).ready(function() {
                         var parsed = JSON.parse('!{words}');
                         for(var prop in parsed ){
                             var p = parsed[prop];
@@ -62,4 +63,5 @@ block content
                         }
                         console.log(parsed);
                         WordCloud(document.getElementById('my_canvas'), { list: parsed } );
+                        });
     span(class="desktabonly", id="checkdisplay")
