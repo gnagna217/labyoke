@@ -55,15 +55,10 @@ block content
                     script(type="text/javascript" src="/javascripts/worldcloud.js")
                     script.
                         var parsed = JSON.parse('!{words}');
-                        console.dir(parsed); 
                         for(var prop in parsed ){
                             var p = parsed[prop];
-                            console.dir(p);
-                            console.log("f[1] bef: " + p[1]);
                             p[1] = parseInt(p[1]);
-                            console.log("f[1] aft: " + p[1]);
-                        console.dir(parsed);
                         }
-                        console.dir(parsed);
+                        console.log(parsed);
                         WordCloud(document.getElementById('my_canvas'), { list: parsed } );
     span(class="desktabonly", id="checkdisplay")
