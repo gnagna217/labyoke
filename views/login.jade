@@ -57,10 +57,13 @@ block content
                         var parsed = JSON.parse('!{words}');
                         console.dir(parsed); 
                         for(var prop in parsed ){
-                            for(var j in parsed[prop])
-                            console.log("j[1] bef: " + j[1]);
-                            j[1] = parseInt(j[1]);
-                            console.log("j[1] aft: " + j[1]);
+                            var p = parsed[prop];
+                            for(var j in p){
+                            var f = p[j];
+                            console.log("f[1] bef: " + f[1]);
+                            f[1] = parseInt(f[1]);
+                            console.log("f[1] aft: " + f[1]);
+                            }
                         }
                         console.dir(parsed);
                         WordCloud(document.getElementById('my_canvas'), { list: parsed } );
