@@ -1402,7 +1402,7 @@ LabYokeGlobal.prototype.getlatestwords = function(callback) {
 		for(var prop in results){
 			console.log("values exist: " + prop);
 			var agent = results[prop].agent;
-			x.push("'"+agent+"'");
+			x.push(agent);
 			x.push(prop);
 			y.push(x);
 			x = [];
