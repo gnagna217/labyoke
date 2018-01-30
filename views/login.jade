@@ -54,6 +54,6 @@ block content
                                 span(class="test2 color-white")!="-|- "
                     script(type="text/javascript" src="/javascripts/worldcloud.js")
                     script.
-                        console.dir(JSON.parse(!{words}));
-                        WordCloud(document.getElementById('my_canvas'), { list: JSON.parse(!{words}) } );
+                        console.dir(JSON.parse("!{words}"));
+                        WordCloud(document.getElementById('my_canvas'), { list: JSON.parse("!{words}") } );
     span(class="desktabonly", id="checkdisplay")
