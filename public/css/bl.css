@@ -9,7 +9,7 @@
   -webkit-font-smoothing: antialiased;
 }
 
-.my_canvas{
+#my_canvas{
   width: 100%;
   height: 25px;
 }
