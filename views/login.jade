@@ -53,15 +53,4 @@ block content
                             span(class="test login-color-slide")!= n + " "
                             - if(prop < 2)
                                 span(class="test2 color-white")!="-|- "
-                    script(type="text/javascript" src="/javascripts/worldcloud.js")
-                    script.
-                        $(document).ready(function() {
-                        var parsed = JSON.parse('!{words}');
-                        for(var prop in parsed ){
-                            var p = parsed[prop];
-                            p[1] = parseInt(p[1]);
-                        }
-                        console.log(parsed);
-                        WordCloud(document.getElementById('my_canvas'), { list: parsed } );
-                        });
     span(class="desktabonly", id="checkdisplay")
