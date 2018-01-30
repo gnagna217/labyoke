@@ -1362,6 +1362,57 @@ LabYokeGlobal.prototype.getlatestshares = function(callback) {
 	});
 };
 
+LabYokeGlobal.prototype.getlatestwords = function(callback) {
+	var results;
+	var labs = this.param;
+	var LATEST_SHARES_NUM = 9;
+
+	var labsstr = "";
+	var i = 0;
+	var a = "a";
+	var select = "select agent,lab from (";
+
+	for(var prop in labs){
+		a = "a" + i;
+		labsstr = (labs[prop].labname).replace(/ /g,"").toLowerCase() + "_orders "; //+ a + " ";
+		select = select + "SELECT distinct agent, lab, date FROM " + labsstr + " group by agent,lab,date UNION ";
+		i++;
+	}
+
+	select = select.replace(/UNION\s*$/, "");
+	select = select + ") t group by agent,lab,date order by date desc limit " + LATEST_SHARES_NUM;
+
+	console.log("get getlatestshares labsstr: " + labsstr);
+	console.log("full getlatestshares query: " + select);
+
+	var query = client
+			.query(select);
+	query.on("row", function(row, result) {
+		result.addRow(row);
+	});
+
+
+	console.log("getlatestshares");
+	query.on("end", function(result) {
+		results = result.rows;
+		var x = [];
+		var y = [];
+		if(results != null){
+				
+		for(var prop in results){
+			console.log("values exist: " + prop);
+			var agent = results[prop].agent;
+			x.push(agent);
+			x.push(prop);
+			y.push(x);
+			x = [];
+		}
+	}
+		console.log("getlatestwords y: " + y);
+		callback(null, y)
+	});
+};
+
 LabYokeAgents.prototype.findmyshares = function(callback) {
 	var results = [];
 	var labs = this.labs;

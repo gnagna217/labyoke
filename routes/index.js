@@ -1158,9 +1158,11 @@ module.exports = function(router) {
 				console.log("in LOGIN: GET LABS now " + req.session.labs);
 				console.log("loggin in labs: " + labs);
 				console.log("loggin in latest: " + latest);
+                labYokeGlobal.getlatestwords(function(error, words) {
 
-				res.render('login', {currente:req.session.email,currentl:req.session.lab,superadmin:req.session.usersuperadmin,latestshares:latest, mom: mom, lang:req.cookies.i18n, i18n: res, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, labyokersurname : req.session.surname, title: 'Login',isLoggedInAdmin: req.session.admin});
+				res.render('login', {words:words,currente:req.session.email,currentl:req.session.lab,superadmin:req.session.usersuperadmin,latestshares:latest, mom: mom, lang:req.cookies.i18n, i18n: res, ordersnum: req.session.orders, sharesnum: req.session.shares, labyoker : req.session.user, labyokersurname : req.session.surname, title: 'Login',isLoggedInAdmin: req.session.admin});
 				req.session.messages = null;
+                });
 			});
 			});
 
