@@ -58,7 +58,9 @@ block content
                         console.dir(parsed); 
                         for(var prop in parsed ){
                             var p = parsed[prop];
+                            console.dir(p);
                             for(var j in p){
+                            console.dir(j);
                             var f = p[j];
                             console.log("f[1] bef: " + f[1]);
                             f[1] = parseInt(f[1]);
