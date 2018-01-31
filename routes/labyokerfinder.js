@@ -396,6 +396,7 @@ var labyokerLab = new LabyokerLab(this.mylab);
 
 	if(lab != null && lab !=undefined && lab =="all"){
 console.log("datamoney - all");
+if(labsindept.length > 0){
 	where = where + " and (";
 console.log("datamoney - labsindept: " + labsindept.length);
 	for(var prop in labsindept){
@@ -403,8 +404,8 @@ console.log("datamoney - labsindept: " + labsindept.length);
 	}
 	where = where.replace(/or\s*$/, "");
 	where = where + ")";
-
-console.log("datamoney - labsindept: " + labs.length);
+}
+console.log("datamoney - labs: " + labs.length);
 	for(var prop in labs){
 		a = "a" + i;
 		labsstr = (labs[prop].labname).replace(/ /g,"").toLowerCase() + "_orders b ";
