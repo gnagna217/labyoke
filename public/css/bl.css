@@ -1842,12 +1842,6 @@ p{
     margin-bottom: 5px;
 }
 
-.login form input{
-
-    max-width: 97%;
-
-}
-
 .login2 form input{
 
     max-width: 90%;
@@ -5170,7 +5164,7 @@ color:white !important;background-color:#3d9dcb !important;font-size:12px !impor
   display: block !important; text-align: center !important;
 }
 .search-submit{
-  margin: 0 auto !important;width: 278px !important;
+  margin: 0 auto !important;
 }
 .slide-content-one{
   right: -60px;left:-60px;

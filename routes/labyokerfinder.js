@@ -395,10 +395,11 @@ var labyokerLab = new LabyokerLab(this.mylab);
 	var select = "";
 
 	if(lab != null && lab !=undefined && lab =="all"){
+		console.log("datamoney - labsindept: " + labsindept.length);
 console.log("datamoney - all");
 if(labsindept.length > 0){
 	where = where + " and (";
-console.log("datamoney - labsindept: " + labsindept.length);
+console.log("datamoney - looping labs in dept ");
 	for(var prop in labsindept){
 		where = where + " b.lab = '" + labsindept[prop].labname + "' or ";
 	}
