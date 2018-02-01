@@ -19,8 +19,8 @@
   border-radius: 50%;
  
   transform: rotate(-50deg);
-  background-color:transparent;
-  color:black;
+  background-color:transparent !important;
+  color:black !important;
 }
 
 .badge h1 span {
