@@ -17,8 +17,6 @@ block content
                 $("h1").lettering();
                 var a = $(".badge").find("span").length;
                 $(".badge").find("span").each(function( index ) {
-                $( this ).
-                  console.log( index + ": " + $( this ).text() );
                   var b = 360 / a;
                   $(this).css("transform", "rotate(a*(index+1) + 'deg')");
                 });
