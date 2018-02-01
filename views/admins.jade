@@ -354,3 +354,6 @@ block content
 				div(class="slide-desc")
 					span!= i18n.__("admins.tip.desc")
 		span(class="desktabonly", id="checkdisplay")
+	script.
+		var var_admintype = "#{admintype}", var_pos = "#{pos}", var_pos2 = "#{pos2}";
+	script(type="text/javascript" src="/js/admins-utils-jump.js")
