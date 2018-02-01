@@ -126,6 +126,8 @@ block content
 										- var currentqtyint = parseInt(ob[prop].currentquantity)
 										- var qtyinsufficient = ""
 										- var checkedstr = false
+										- var d = new Date(ob[prop].date)
+										- d = d.toLocaleDateString("en-US")
 										- var insuff = parseInt(ob[prop].insufficient)
 										- var canc = ob[prop].agent + i18n.__("admins.table.insuff")
 										- if(insuff == 0)
@@ -149,7 +151,7 @@ block content
 													input(type="hidden" class="vendorid" name="vendor" value=ob[prop].vendor)
 													input(type="hidden" class="catalogid" name="catalognumber" value=ob[prop].catalognumber)
 													input(type="hidden" class="owneremailid" name="email" value=ob[prop].email)
-													input(type="hidden" name="date" value=ob[prop].date)
+													input(type="hidden" name="date" value=d)
 													input(type="hidden" name="table" value="vm2016_agentsshare")
 													input(type="hidden" name="pos2" value=prop)
 		div(class="share-container " + adjust + " adjustpaddingrightandwidth " + fadesections + " float-right")

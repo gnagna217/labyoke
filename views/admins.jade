@@ -245,11 +245,10 @@ block content
 														input(type="hidden" class="catalogid" name="catalognumber" value=ob[prop].catalognumber)
 														input(type="hidden" class="owneremailid" name="email" value=ob[prop].email)
 														input(type="hidden" class="requestorid" name="requestoremail" value=ob[prop].requestoremail)
-														input(type="hidden" name="date" value=ob[prop].date)
+														input(type="hidden" name="date" value=d)
 														input(type="hidden" name="table" value=currentlabname.replace(" ","").toLowerCase() + "_orders")
 														input(type="hidden" name="adminType" value="laborders")
 														input(type="hidden" name="pos" value=prop)
-														input(type="hidden" name="test" value=d)
 												td(class="admin-cancel textalign-center-all "+point3 title=full)
 													form(action="/fulfillshare" method="post")
 														
@@ -263,11 +262,10 @@ block content
 														input(type="hidden" class="catalogid" name="catalognumber" value=ob[prop].catalognumber)
 														input(type="hidden" class="requestorid" name="requestoremail" value=ob[prop].requestoremail)
 														input(type="hidden" name="email" value=ob[prop].email)
-														input(type="hidden" name="date" value=ob[prop].date)
+														input(type="hidden" name="date" value=d)
 														input(type="hidden" name="table" value=currentlabname.replace(" ","").toLowerCase() + "_orders")
 														input(type="hidden" name="adminType" value="laborders")
 														input(type="hidden" name="pos" value=prop)
-														input(type="hidden" name="test" value=(ob[prop].date).toUTCString())
 
 					div(class="threepointssep mobileonly3")
 				else
@@ -302,6 +300,8 @@ block content
 											- var qtyinsufficient = ""
 											- var checkedstr = false
 											- var insuff = parseInt(ob[prop].insufficient)
+											- var d = new Date(ob[prop].date)
+											- d = d.toLocaleDateString("en-US")
 											- var canc = ob[prop].agent + i18n.__("admins.table.insuff")
 											- if(insuff == 0)
 												- qtyinsufficient = "backColorinsuff"
@@ -331,11 +331,10 @@ block content
 														input(type="hidden" class="vendorid" name="vendor" value=ob[prop].vendor)
 														input(type="hidden" class="catalogid" name="catalognumber" value=ob[prop].catalognumber)
 														input(type="hidden" class="owneremailid" name="email" value=ob[prop].email)		
-														input(type="hidden" name="date" value=ob[prop].date)
+														input(type="hidden" name="date" value=d)
 														input(type="hidden" name="table" value="vm2016_agentsshare")
 														input(type="hidden" name="adminType" value="labreagents")
 														input(type="hidden" name="pos2" value=prop)
-														input(type="hidden" name="test" value=(ob[prop].date).toUTCString())
 					div(class="threepointssep mobileonly3")
 				else
 					p!= i18n.__("admins.noreagents.intro")
