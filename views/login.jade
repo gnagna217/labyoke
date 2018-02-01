@@ -11,10 +11,10 @@ block content
                 - x = x + n + " "
                             
             div(class="badge desktabonly")
-                h1!= x
+                div.h1!= x
             script.
                 $(document).ready(function() {
-                $("h1").lettering();
+                $(".h1").lettering();
                 var a = $(".badge").find("span").length;
                 $(".badge").find("span").each(function( index ) {
                   var b = 210 / (a + 1);
