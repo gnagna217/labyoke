@@ -3187,7 +3187,7 @@ LabYokerChangeShare.prototype.botCancelShare = function(callback) {
 	for(var prop in labs){
 		var labsstr = (labs[prop].labname).replace(/ /g,"").toLowerCase() + "_orders ";
 	var str = "UPDATE " + labsstr + " SET insufficient=" + checked
-			+ ", insuffdate='" + datenow + "' where email='" + email + "' and date between '" + date + "' and '" + moment(date).add(1,'days') + "' and agent='" + agent + "' and vendor='" + vendor + "' and catalognumber='" + catalognumber + "'" + orderonly;
+			+ ", insuffdate='" + datenow + "' where email='" + email + "' and date between '" + date + "' and '" + moment(date).add(1,'days').calendar() + "' and agent='" + agent + "' and vendor='" + vendor + "' and catalognumber='" + catalognumber + "'" + orderonly;
 	console.log("str: " + str);
 	var query = client.query(str);
 	query.on("row", function(row, result) {
@@ -3284,7 +3284,7 @@ LabYokerChangeShare.prototype.cancelShare = function(callback) {
 	for(var prop in labs){
 		var labsstr = (labs[prop].labname).replace(/ /g,"").toLowerCase() + "_orders ";
 	var str = "UPDATE " + labsstr + " SET insufficient=" + checked
-			+ ", insuffdate='" + datenow + "' where email='" + email + "' and date between '" + date + "' and '" + moment(date).add(1,'days') + "' and agent='" + agent + "' and vendor='" + vendor + "' and catalognumber='" + catalognumber + "'" + orderonly;
+			+ ", insuffdate='" + datenow + "' where email='" + email + "' and date between '" + date + "' and '" + moment(date).add(1,'days').calendar() + "' and agent='" + agent + "' and vendor='" + vendor + "' and catalognumber='" + catalognumber + "'" + orderonly;
 	console.log("str: " + str);
 	var query = client.query(str);
 	query.on("row", function(row, result) {
@@ -3440,7 +3440,7 @@ if(table != "vm2016_agentsshare"){
 	for(var prop in labs){
 		var labsstr = (labs[prop].labname).replace(/ /g,"").toLowerCase() + "_orders b ";
 	var str ="UPDATE " + labsstr + " SET status='" + status
-			+ "' where email='" + email + "' and requestoremail='" + requestor + "' and date between '" + date + "' and '" + moment(date).add(1,'days') + "' and agent='" + agent + "' and vendor='" + vendor + "' and catalognumber='" + catalognumber + "'" + orderonly;
+			+ "' where email='" + email + "' and requestoremail='" + requestor + "' and date between '" + date + "' and '" + moment(date).add(1,'days').calendar() + "' and agent='" + agent + "' and vendor='" + vendor + "' and catalognumber='" + catalognumber + "'" + orderonly;
 	console.log("str: " + str);
 	var query = client.query(str);
 	query.on("row", function(row, result) {
@@ -4676,7 +4676,7 @@ LabYokerChangeShare.prototype.admincancelShare = function(callback) {
 	}
 
 	var str = "UPDATE " + table + " SET insufficient=" + checked
-			+ ", insuffdate='" + datenow + "' where date between '" + date + "' and '" + moment(date).add(1,'days') + "' and agent='" + agent + "' and vendor='" + vendor + "' and catalognumber='" + catalognumber + "'" + orderonly;
+			+ ", insuffdate='" + datenow + "' where date between '" + date + "' and '" + moment(date).add(1,'days').calendar() + "' and agent='" + agent + "' and vendor='" + vendor + "' and catalognumber='" + catalognumber + "'" + orderonly;
 	console.log("str: " + str);
 	var query = client.query(str);
 	query.on("row", function(row, result) {
