@@ -29,16 +29,16 @@ $(document).ready(function() {
 
 
     var pos = getUrlParameter('pos');
-    console.log("pos: " + pos);
+    console.log("posing: " + pos);
     if (pos != null && pos != "") {
 
         var tableid = $('#rankTblreqshares').DataTable();
         $('#rankTblreqshares').removeClass("animated fadeIn");
-        console.debug("jumping");
+        console.log("jumping");
         tableid.page.jumpToData(pos, 0);
         var tr = $('#rankTblreqshares').find($("tr[data-pos=" + pos + "]"));
         var point = "successful-fulfill";
-        console.debug(tr);
+        console.dir(tr);
         if(tr.hasClass("backColorinsuff")){
             console.log("has point insuff");
             point = "successful-cancel";
@@ -61,7 +61,7 @@ $(document).ready(function() {
         var tableid = $('#rankTblshares').DataTable();
         var tr = $('#rankTblshares').find($("tr[data-pos=" + pos2 + "]"));
         var point = "successful-fulfill";
-        console.debug(tr);
+        console.dir(tr);
         if(tr.hasClass("backColorinsuff")){
             console.log("has point insuff");
             point = "successful-cancel";
