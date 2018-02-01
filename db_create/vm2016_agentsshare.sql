@@ -9,7 +9,7 @@ CREATE TABLE IF NOT EXISTS public.vm2016_agentsshare
     catalognumber text NOT NULL,
     location text,
     email text NOT NULL,
-    date date,
+    date timestamp without time zone,
     status text,
     quantity integer,
     insufficient integer,

@@ -9,7 +9,7 @@ CREATE TABLE IF NOT EXISTS public.vm2016_orders
     catalognumber text,
     email text,
     requestoremail text,
-    date date,
+    date timestamp without time zone,
     status text,
     category text,
     lab text,
