@@ -204,8 +204,3 @@ function radioclick() {
     $('input[name=search][value=keysearch]').prop('checked', 'checked');
 }
 
-function radiocatclick() {
-    $("#table1").hide();
-    $("#table2").show();
-    $('input[name=search][value=catalogsearch]').prop('checked', 'checked');
-}
