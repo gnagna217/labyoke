@@ -2071,7 +2071,7 @@ LabYokerOrder.prototype.order = function(callback) {
 	console.log("quantity: " + quantity);
 	quantity = parseInt(quantity) + 100;
 	console.log("currentquantity2: " + quantity);
-	var now = moment(new Date).tz("America/New_York").format('MM-DD-YYYY');
+	var now = moment(new Date).tz("America/New_York").format('MM-DD-YYYY HH:mm:ss');
 	console.log("order location: " + location);
 	var query = client.query("INSERT INTO " + lab.replace(/ /g,"").toLowerCase() + "_orders VALUES ('" + agent + "', '" + vendor + "', '" + catalognumber + "','" + email + "', '" + sendemail + "', '" + now + "', 'new','" + mylab + "',1 )");
 
