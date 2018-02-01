@@ -2,6 +2,28 @@ extends layout
 
 block content
     div(class="container login front containertop login-container")
+         - if(latestshares != null && latestshares != undefined)
+            -var ob = latestshares
+            - var i = 0
+            - var x = ""
+            - for(var prop in ob.slice(0, 3))
+                - var n = ob[prop].agent
+                - x = x + n + " "
+                            
+            div(class="badge desktabonly")
+                h1!= x
+            script.
+                $(document).ready(function() {
+                $("h1").lettering();
+                var a = $(".badge").find("span").length;
+                $(".badge").find("span").each(function( index ) {
+                $( this ).
+                  console.log( index + ": " + $( this ).text() );
+                  var b = 360 / a;
+                  $(this).css("transform", "rotate(a*(index+1) + 'deg')");
+                });
+                });
+
          div(class="login-center-relative")
              a(href="/search", class="sunlogos")
                 img(src="/images/yoke4.png", alt="The Yoke", class="yokelogo")
