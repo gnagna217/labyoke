@@ -17,7 +17,7 @@
                 $(".h1").lettering();
                 var a = $(".badge").find("span").length;
                 $(".badge").find("span").each(function( index ) {
-                  var b = 210 / (a + 1);
+                  var b = 200 / (a + 1);
                   var d = -40 + b * (index);
                   $(this).css("transform", "rotate(" + d + "deg)");
                   $(this).css("display","block");
