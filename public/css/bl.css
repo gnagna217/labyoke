@@ -23,8 +23,11 @@
   color:black !important;
 }
 
-.h1 {
-  font: 12px Monaco, MonoSpace;
+.badge h1 {
+  font: 12px !important;
+  height: 200px;
+  position: absolute;
+  width: 20px;
   left: 0;
   top: 0;
   transform-origin: bottom center;
