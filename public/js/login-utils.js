@@ -13,6 +13,16 @@
 
 
          $(document).ready(function() {
+                if (!$('.h1').is(':visible')){
+                $(".h1").lettering();
+                var a = $(".badge").find("span").length;
+                $(".badge").find("span").each(function( index ) {
+                  var b = 210 / (a + 1);
+                  var d = -40 + b * (index);
+                  $(this).css("transform", "rotate(" + d + "deg)");
+                  $(this).css("display","block");
+                });
+            }
 
              var toppinglogin = sessionStorage.getItem('toppinglogin');
              var topping = sessionStorage.getItem('topping');
