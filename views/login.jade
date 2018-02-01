@@ -18,7 +18,9 @@ block content
                 var a = $(".badge").find("span").length;
                 $(".badge").find("span").each(function( index ) {
                   var b = 360 / a;
-                  $(this).css("transform", "rotate(a*(index+1) + 'deg')");
+                  var d = b * (index + 1);
+                  $(this).css("transform", "rotate(" + d + "deg)");
+                  $(this).css("display","block");
                 });
                 });
 
